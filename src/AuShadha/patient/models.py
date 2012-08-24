@@ -5,12 +5,12 @@
 # Licence: GPL 3
 ########################
 
-from django.db 							import models
-from django.forms 					import ModelForm
-from django.core.exceptions 	import ValidationError
-from django 								import forms
+from django.db	import models
+from django.forms	import ModelForm
+from django.core.exceptions import ValidationError
+from django 			import forms
 
-from admission.models 			import *
+from admission.models 		import *
 
 #from dojango.forms import ModelForm
 
