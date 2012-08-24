@@ -10,23 +10,29 @@ AuShadha code is licensed under GNU-GPL Version 3
 How to Test
 ===========
 
-1) Activate Python VirtualEnv
+1) Activate Python VirtualEnv <code> source bin/activate </code> from the python_env directory
 
-2) go to src/AuShadha directory
+2) go to src/AuShadha directory <code> cd src/AuShadha </code>
 
 3) run <code> python manage.py runserver </code>
 
-test...
+4) Use your browser to navigate to http://localhost:8000/
+
 
 Plan
 =====
-I plan to develop the Clinic, Patient, Physician, Nurse modules first. 
-Visit Module will be next followed by Clinical Exam, Investigations, Procedure, Discharge, Prescription
-Stock and Pharmacy will follow.
-Allergy and Incident Reports next
-Admission Module will follow. 
+1) I plan to develop the Clinic, Patient, Physician, Nurse modules first. 
+2) Visit Module will be next followed by Clinical Exam, Investigations, Procedure, Discharge, Prescription
+3) Stock and Pharmacy will follow.
+4) Allergy and Incident Reports next
+5) Admission Module will follow. 
+6) Specific public health modules like Paediatrics, Neonatology, Gynaecology/ Obstetrics will be last as by then
+   the interdependencies will be solved
 
 Want to participate ?
 ====================
 
-please email me at dreaswar@gmail.com
+Suggestions and participation are welcome. 
+Please email me at dreaswar@gmail.com
+Visit me at http://www.dreaswar.com
+Follow me at http://www.twitter.com/dreaswar/
