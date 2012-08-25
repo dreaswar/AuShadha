@@ -32,7 +32,7 @@ Plan
 Want to participate ?
 ====================
 
-Suggestions and participation are welcome. 
-Please email me at dreaswar@gmail.com
-Visit me at http://www.dreaswar.com
-Follow me at http://www.twitter.com/dreaswar/
+Suggestions and participation are welcome.   
+Please email me at dreaswar@gmail.com  
+Visit me at http://www.dreaswar.com  
+Follow me at http://www.twitter.com/dreaswar/  
