@@ -21,13 +21,13 @@ How to Test
 
 Plan
 =====
-1) I plan to develop the Clinic, Patient, Physician, Nurse modules first. 
-2) Visit Module will be next followed by Clinical Exam, Investigations, Procedure, Discharge, Prescription
-3) Stock and Pharmacy will follow.
-4) Allergy and Incident Reports next
-5) Admission Module will follow. 
+1) I plan to develop the Clinic, Patient, Physician, Nurse modules first.  
+2) Visit Module will be next followed by Clinical Exam, Investigations, Procedure, Discharge, Prescription  
+3) Stock and Pharmacy will follow.  
+4) Allergy and Incident Reports next  
+5) Admission Module will follow.   
 6) Specific public health modules like Paediatrics, Neonatology, Gynaecology/ Obstetrics will be last as by then
-   the interdependencies will be solved
+   the interdependencies will be solved  
 
 Want to participate ?
 ====================
