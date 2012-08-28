@@ -1,4 +1,3 @@
-http://dreaswar.files.wordpress.com/2012/08/aushadha_logo.png
 
 AuShadha  (औषध)
 ========
