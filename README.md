@@ -1,4 +1,5 @@
-http://profile.ak.fbcdn.net/hprofile-ak-snc4/276872_464991203522876_109973142_n.jpg
+http://dreaswar.files.wordpress.com/2012/08/aushadha_logo.png
+
 AuShadha  (औषध)
 ========
 
