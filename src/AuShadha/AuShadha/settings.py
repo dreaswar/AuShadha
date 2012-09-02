@@ -5,7 +5,7 @@ import sys, os
 ROOT_PATH = os.path.dirname(__file__)
 
 LOGIN_URL = "/AuShadha/login/"
-LOGIN_REDIRECT_URL = "/AuShadha/home/"
+LOGIN_REDIRECT_URL = "/AuShadha/"
 
 
 SERIALIZATION_MODULES = {
@@ -77,9 +77,11 @@ STATIC_URL = '/AuShadha/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(ROOT_PATH, 'static/images/'),
-    os.path.join(ROOT_PATH, 'static/custom/scripts/'),
-    os.path.join(ROOT_PATH, 'static/custom/styles/'),
+    os.path.join(ROOT_PATH  , 'media/images'       ),
+    os.path.join(ROOT_PATH  , 'media'              ),
+    os.path.join(ROOT_PATH  , 'media/plugins'      ),
+    os.path.join(ROOT_PATH  , 'media/custom/js'    ),
+    os.path.join(ROOT_PATH  , 'media/custom/styles'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -119,7 +121,9 @@ ROOT_URLCONF = 'AuShadha.urls'
 WSGI_APPLICATION = 'AuShadha.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(ROOT_PATH,'templates'),
+    os.path.join(ROOT_PATH, 'templates'),
+    os.path.join(ROOT_PATH, 'media/custom/js/'),
+    os.path.join(ROOT_PATH, 'media/custom/styles'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -138,14 +142,15 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # Custom Apps here:
-    'patient',
     'clinic',
-    'admission',
-    'visit',
+    'patient',
+    'aushadha_users',
     'physician',
     'nurse',
-    'staff'
-
+    'staff',
+    'inv_and_imaging',
+    'admission',
+#    'visit',
 )
 
 # A sample logging configuration. The only tangible logging

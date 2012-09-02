@@ -1,0 +1,186 @@
+$(document).ready(function(){
+
+$('#preloader').fadeOut('2000');
+
+//$("#footer_json_message_div").css('top', window.innerHeight-70);
+
+$(".footer").css('text-align', 'justify').
+             css('position','relative').
+             css('float','right').
+             css("top",'-20px');
+
+	var splitter_bar_img = "<img src='media/images/silk/icons/application_tile_horizontal.png' alt='Sidebar' title='View Right Side Bar' class='small_img' id='toggle_rsidebar' style='cursor:pointer;'>";
+
+	isPopUpEnabled = true;
+
+
+	$('.login_area').prepend(splitter_bar_img);
+	$("#toggle_rsidebar").click(function(evt){ 
+		            $('.rsidebar').toggle('fast'); 
+								if( $('.rsidebar').is(':visible') && isPopUpEnabled){
+									createRsideBarInfo(evt);
+								}
+	});
+
+	$("#dontShowPopUp").live('click', function dontShowAgain(){
+																			$('.ui-info-popup').fadeOut('1000');
+																			isPopUpEnabled = false;
+																		}
+													);
+
+
+	function createRsideBarInfo(evt){
+		var top_pos  = parseFloat($(evt.target).offset().top) ;
+		var left_pos = parseFloat($(evt.target).offset().left);
+		console.log("Top position is..." + top_pos);
+		console.log("Left position is..." + left_pos);
+		console.log("Creating an info popup...");
+		var info = '<div class="ui-info-popup  ui-state-default ui-widget ui-corner-all"> Sidebar is hidden as your window size is small..\n Click icon to show..<div> <label for="dontShowPopUp"> Dont show again </label> <input type="checkbox" id="dontShowPopUp" name="dontShowPopUp" >  </div> </div> ';
+		$("#header_menu").after(info);
+		$(".ui-info-popup").css({"position": "absolute",
+										                   'top'     : top_pos + 30 ,
+										                   'left'    : left_pos -30 ,
+										                   'width'   : "200px"   ,
+										                   'height'  : "100px"   ,
+										                   'z-index' : "100000"  ,
+										                  }).fadeOut(7000);
+	}
+
+function setIntroWidth(){
+  console.log("Resizing the width of IntroDiv....")
+
+	var window_width   = window.innerWidth;
+	var window_height  = window.innerHeight;
+	var newIntroWidth   = window_width*0.62;
+	var newSidebarWidth   = (window_width/3)*0.50;	
+
+  $(".lsidebar").css('width', newSidebarWidth).
+		  css("left" ,  "0px");
+
+	var introLeftOffset = $(".lsidebar").offset().left;
+
+  $(".intro").css('width', newIntroWidth).
+		  css("left" ,  $(".lsidebar").width()+30).
+		  css("margin-right",'10px').
+ 		  css("margin-left",'10px').
+ 		  css("overflow",'hidden');
+
+  $(".rsidebar").css('width', newSidebarWidth).
+		  css("left" ,  $(".lsidebar").width+ $(".intro").width() + 40);
+
+	$("#footer_json_message_div .json_message_div").
+		html(window.innerWidth + " X " + window.innerHeight).
+		css(stdFeildsBlankMessageCss);
+
+	if (window.innerWidth <= 1920){
+		$('.rsidebar').hide('fast');
+		$("#toggle_rsidebar").show();
+		$(".intro").css("overflow","auto");
+		$("body").css("overflow-y",'visible');
+		setDataTablesWidth();
+	}
+
+	else if(window.innerWidth > 1920){
+		$('.rsidebar').slideDown('slow');
+		$("#toggle_rsidebar").hide();
+		$(".intro").css("overflow","hidden");
+		$("body").css("overflow-y",'hidden');
+		setDataTablesWidth();
+	}
+
+
+//	console.log("Left Sidebar is of width:: " + lsidebar_width + " and Right Sidebar is of width " + rsidebar_width + " and window width is .." + window.innerWidth);
+
+}
+
+ function setDataTablesWidth(){
+		 var intro_width    = $(".intro").width();
+	    $(".intro .dataTables_wrapper").
+	      css('width', intro_width *0.90 ).
+	      css("overflow",'auto').
+ 	      find('table').
+	        css('width', intro_width*0.90).
+		      css("overflow",'auto').
+		      css("border-collapse",'collapse');
+	    $(".intro .table_div").
+	      css('width', intro_width *0.95 ).
+	      css("overflow",'auto');
+      var dataTableGaps = $(".intro").width() - $(".intro .dataTables_wrapper").width();
+      console.log(dataTableGaps);
+		  $(".intro .dataTables_wrapper").
+		     css('left', dataTableGaps/2);
+	}
+
+ $(".dataTables_wrapper").livequery( function(){ setDataTablesWidth()});
+
+
+function setIntroHeight(){
+  console.log("Resizing the width of IntroDiv....")
+	var lsidebar_height = $(".lsidebar").height();
+	var rsidebar_height = $(".rsidebar").height();
+	console.log("Left Sidebar is of height:: " + lsidebar_height + " and Right Sidebar is of width " + rsidebar_height + " and window width is .." + window.innerHeight);
+	var intro_height = $('.intro').height(lsidebar_height);
+	
+	if(window.innerHeight ){
+	  $(".intro").height(intro_height).css("margin-bottom",'20px');
+	}
+	else{
+	  $(".intro").height(700).css("margin-bottom",'10px');
+	}
+
+	if(window.innerHeight - $("#footer_json_message_div").height() < $(".intro").offset().top + $(".intro").height())
+	{
+		$("#footer_json_message_div").
+		  css("top", $(".intro").offset().top + $(".intro").height() +150);
+	}
+	else{
+		$("#footer_json_message_div").
+		  css("top", window.innerHeight - $("#footer_json_message_div").height());
+	}
+
+  if($("#footer_json_message_div").offset().top > window.innerHeight){
+  	$("html, body").css("overflow-y", 'visible');
+  }
+  else{
+  	$("html , body").css("overflow-y", 'hidden');
+  }
+
+}
+
+setIntroWidth(); 
+setIntroHeight();
+
+$(window).resize(function(){ setIntroWidth(); setIntroHeight(); });
+
+/*
+$('.calendar_div_class').fullCalendar({});
+$('#calendar_div').hide();
+$('div.search_form_div').hide();
+$('#task_icon').draggable();
+
+$('#add_patient_detail_form_tabs').tabs();
+
+$('#task_icon_1').click(function(){
+			$.get(
+					'pat/rsidebar/',
+					function(html){
+								$('.content').
+									html(html).
+									dialog({resize: 'true', 
+									        modal: 'false'
+									       });
+					},
+					'html'
+			);
+	});
+//	$('#task_icon img#task_icon_2').click(function(){
+//							$('.lsidebar').toggle();
+//							$('#calendar_div').toggle();
+//							$('.calendar_div_class').toggle();
+//							});
+	$('#task_icon img#task_icon_3').click(function(){
+							$('div.search_form_div').toggle('slow');
+							});
+*/
+
+});

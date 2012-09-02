@@ -1,18 +1,18 @@
-######################
-# Patient Models for managing patient contact, phone, email, and Guardian details
-# Author; Dr. Easwar T R
-# Date: 15 - Feb 2011
-# Licence: GPL 3
-########################
 
-from django.db	import models
-from django.forms	import ModelForm
-from django.core.exceptions import ValidationError
-from django 			import forms
+###########################################################################################
+# PROJECT: AuShadha
+#          Patient Models for managing patient contact, phone, email, and Guardian details
+# Author : Dr. Easwar T R
+# Date   : 28-08-2012
+# Licence: GNU GPL V3. Please see AuShadha/LICENSE.txt
+###########################################################################################
 
-from admission.models 		import *
+from django.db	              import models
+from django.forms	      import ModelForm
+from django.core.exceptions   import ValidationError
+from django 		      import forms
 
-#from dojango.forms import ModelForm
+
 
 class PatientDetail(models.Model):
 
@@ -21,96 +21,105 @@ class PatientDetail(models.Model):
 	
 	'''
 
-	patient_hospital_id = models.CharField('Hospital ID',
-																				 max_length =15, 
-																				 null = True, 
-																				 blank = True
-															 )
+	patient_hospital_id = models.CharField('Hospital ID', 
+                                               max_length =15,  null = True,  blank = True, unique = True)
+	first_name 	    = models.CharField(max_length =30)
+	middle_name 	    = models.CharField(max_length = 30,  
+                                               help_text  = "Please enter Initials / Middle Name", 
+                                               blank = True,  null = True)
+	last_name 	    =  models.CharField(max_length = 30, blank = True, 
+                                                null       = True, 
+                                                help_text  = "Enter Initials / Last Name")
+	full_name 	    = models.CharField(max_length = 100, 
+                                               editable   = False,
+                                               null       = False, 
+                                               blank      = False 
+                                              )
+	age 		    = models.CharField(max_length =10,  blank = True, null = True )
+	sex 		    = models.CharField(max_length =6,  
+                                               choices=(("Male","Male"),
+                                                        ("Female","Female"),
+                                                        ("Others","Others") 
+                                                       ),
+                                               default = "Male")
+	parent_clinic       = models.ForeignKey('clinic.Clinic')
 
-	first_name 					= models.CharField(max_length =30)
 
-	middle_name 				= models.CharField(max_length =30, 
-																				 help_text = "Please enter Initials / Middle Name", 
-																				 blank = True, 
-																				 null = True
-																)
-
-	last_name 					=  models.CharField(max_length =30, 
-																					blank = True, 
-																					null = True, 
-																					help_text= "Enter Initials / Last Name"
-																)
-
-	full_name 					= models.CharField(max_length =100, 
-	                                       editable = False,
-	                                       null     = False,
-	                                       blank    = False
-	                             )
-
-	age 								= models.CharField(max_length =10, 
-																				 blank = True, 
-																				 null = True
-															 )
-
-	sex 								= models.CharField(max_length =6, 
-																				 choices=(("Male","Male"),
-																				 					("Female","Female"),
-																				 					("Others","Others")
-																				 ), 
-																				 default = "Male"
-															 )
-
+## Subclass Meta:
+	class Meta:
+		unique_together = ('patient_hospital_id','parent_clinic')
 
 ## Define the Unicode method for Patient Detail Model::
-
 	def __unicode__(self):
 		if self.middle_name and self.last_name:
 			return "%s %s %s" %(self.first_name.capitalize(), 
-													self.middle_name.capitalize(), 
-													self.last_name.capitalize()
-												 )
+                                            self.middle_name.capitalize(), 
+                                            self.last_name.capitalize() 
+                                           )
 		elif self.last_name:
-			return "%s %s" %(self.first_name.capitalize(),
-												self.last_name.capitalize()
-											 )
+			return "%s %s" %(self.first_name.capitalize(),self.last_name.capitalize())
 		else:
-			return "%s %s" %(self.first_name.capitalize(),
-												self.middle_name.capitalize()
-											 )
+			return "%s %s" %(self.first_name.capitalize(),self.middle_name.capitalize())
 
+
+# Defines and sets the Full Name for a Model on save. 
+# This stores the value under the self.full_name attribute. 
+# This is mainly intented for name display and search 
 	def _set_full_name(self):
 		if self.middle_name and self.last_name:
-			self.full_name =  unicode(
-			                   self.first_name.capitalize()+ " " +
-												 self.middle_name.capitalize()+ " "+
-												 self.last_name.capitalize()
-												)
-
+			self.full_name =  unicode(self.first_name.capitalize()  + " " + 
+                                                  self.middle_name.capitalize() + " " + 
+                                                  self.last_name.capitalize()
+                                                 )
 		elif self.last_name:
-			self.full_name = unicode(self.first_name.capitalize()+ " " +
-												       self.last_name.capitalize()
-											 )
+			self.full_name = unicode(self.first_name.capitalize() + " " + 
+                                                 self.last_name.capitalize() 
+                                                 )
 		else:
-			self.full_name = unicode(self.first_name.capitalize()+ " "+
-												self.middle_name.capitalize()
-											 )
+			self.full_name = unicode(self.first_name.capitalize() + " "+ 
+                                                 self.middle_name.capitalize()
+                                                )
 		return self.full_name
+
+# Check DOB and Age. See Which one to set. Dont set age if DOB is given. Dont allow age > 120 to be set. 
+# This should be called before Form & Model save.
+# If this returns false, the save should fail raising proper Exception
+	def _set_age(self):
+		if self.date_of_birth:
+			min_allowed_dob = datetime.datetime(1900,01,01)
+			max_allowed_dob = datetime.datetime.now()
+			if self.date_of_birth >= min_allowed_dob and \
+                           self.date_of_birth <= max_allowed_dob:
+				self.age     = "%.2f" %( round( (max_allowed_dob - self.date_of_birth).days/365.0, 2) )
+				return True
+			else:
+				raise Exception("Invalid Date: Date should be from January 01 1900 to Today's Date")
+		else:
+			if self.age and int(self.age[0:3])<=120:
+				self.date_of_bith = None
+				return True
+			else:
+				raise Exception("Invalid Date of Birth / Age Supplied")
+				return False
+
 
 
 ## Defines all the URLS associated with a Patient Model and the actions associated::    
+## General Pattern of URL methods in all models follow the convention: 
+##     get_ + 'app name' + 'model name' + '_url' 
 
 	def get_patient_home_url(self):
 		'''Returns the Home of the Patient with a specific ID. 
 			 This is the place where the central actions of the Patient can be managed at one place.
 			 This includes Contacts/ Admissions / OP visits etc..
 		'''
-		return '/ds/pat/home/%s/' %self.id
+		return '/AuShadha/pat/home/%s/' %self.id
 
 	def get_patient_main_window_url(self):
 		'''
 			Returns the Main Window URL for the Patient which allows editing of Patient details, visits, admission.
 		'''
-		return '/ds/pat/main_window/%s/' %self.id
+		return '/AuShadha/pat/main_window/%s/' %self.id
 
 ################################################################################
 
@@ -118,20 +127,20 @@ class PatientDetail(models.Model):
 		'''
 			Returns the Listing URL for the Patient which allows editing of Patient Contacts, Phone, Guardian etc..
 		'''
-		return '/ds/pat/detail/list/%s/' %self.id
+		return '/AuShadha/pat/detail/list/%s/' %self.id
 
 	def get_patient_detail_edit_url(self):
 		'''
 			Returns the Editing URL for the Patient which allows editing of Patient Contacts, Phone, Guardian etc..
 		'''
-		return '/ds/pat/detail/edit/%s/' %self.id
+		return '/AuShadha/pat/detail/edit/%s/' %self.id
 
 	def get_patient_detail_del_url(self):
 		'''
 			Returns the Deleting URL for the Patient.
 			This action will delete all details of the patient including the admission, visits, phy-exam records, media etc..
 		'''
-		return '/ds/pat/detail/del/%s/' %self.id
+		return '/AuShadha/pat/detail/del/%s/' %self.id
 
 ################################################################################
 
@@ -139,13 +148,13 @@ class PatientDetail(models.Model):
 		'''
 			Returns the URL for Listing contact details for a Patient
 		'''
-		return '/ds/pat/contact/list/%s/' %self.id
+		return '/AuShadha/pat/contact/list/%s/' %self.id
 
 	def get_patient_contact_add_url(self):
 		'''
 			Returns the URL for adding contact details for a Patient
 		'''
-		return '/ds/pat/contact/add/%s/' %self.id
+		return '/AuShadha/pat/contact/add/%s/' %self.id
 
 ################################################################################
 
@@ -155,13 +164,13 @@ class PatientDetail(models.Model):
 		'''
 			Returns the URL for listing phone details for a Patient
 		'''
-		return '/ds/pat/phone/list/%s/' %self.id
+		return '/AuShadha/pat/phone/list/%s/' %self.id
 
 	def get_patient_phone_add_url(self):
 		'''
 			Returns the URL for adding phone details for a Patient
 		'''
-		return '/ds/pat/phone/add/%s/' %self.id
+		return '/AuShadha/pat/phone/add/%s/' %self.id
 
 ################################################################################
 
@@ -171,13 +180,13 @@ class PatientDetail(models.Model):
 		'''
 			Returns the URL for List guardian details for a Patient
 		'''
-		return '/ds/pat/guardian/list/%s/' %self.id
+		return '/AuShadha/pat/guardian/list/%s/' %self.id
 
 	def get_patient_guardian_add_url(self):
 		'''
 			Returns the URL for adding guardian details for a Patient
 		'''
-		return '/ds/pat/guardian/add/%s/' %self.id
+		return '/AuShadha/pat/guardian/add/%s/' %self.id
 
 ################################################################################
 
@@ -187,13 +196,13 @@ class PatientDetail(models.Model):
 		'''
 			Returns the URL for list email and fax details for a Patient
 		'''
-		return '/ds/pat/email_and_fax/list/%s/' %self.id
+		return '/AuShadha/pat/email_and_fax/list/%s/' %self.id
 
 	def get_patient_email_and_fax_add_url(self):
 		'''
 			Returns the URL for adding email and fax details for a Patient
 		'''
-		return '/ds/pat/email_and_fax/add/%s/' %self.id
+		return '/AuShadha/pat/email_and_fax/add/%s/' %self.id
 
 ################################################################################
 
@@ -203,25 +212,25 @@ class PatientDetail(models.Model):
 		'''
 			Returns the URL for listing admissions for a Patient
 		'''
-		return '/ds/pat/admission/list/%s/' %self.id  
+		return '/AuShadha/pat/admission/list/%s/' %self.id  
 
 	def get_patient_admission_add_url(self):
 		'''
 			Returns the URL for adding admissions for a Patient
 		'''
-		return '/ds/pat/admission/add/%s/' %self.id  
+		return '/AuShadha/pat/admission/add/%s/' %self.id  
 
 	def get_patient_visit_list_url(self):
 		'''
 		Returns the URL for listing visits for a Patient
 		'''
-		return '/ds/visit/detail/list/%s/' %self.id    
+		return '/AuShadha/visit/detail/list/%s/' %self.id    
 
 	def get_patient_visit_add_url(self):
 		'''
 		Returns the URL for adding visit for a Patient
 		'''
-		return '/ds/visit/detail/add/%s/' %self.id    
+		return '/AuShadha/visit/detail/add/%s/' %self.id    
 
 ################################################################################
 
@@ -231,13 +240,13 @@ class PatientDetail(models.Model):
 		'''
 		Returns the URL for adding allergy for a Patient
 		'''
-		return '/ds/allergy/add/%s/' %self.id    
+		return '/AuShadha/allergy/add/%s/' %self.id    
 
 	def allergy_list_url(self):
 		'''
 		Returns the URL for listing allergy for a Patient
 		'''
-		return '/ds/allergy/list/%s/' %self.id    
+		return '/AuShadha/allergy/list/%s/' %self.id    
 
 ################################################################################
 
@@ -254,6 +263,7 @@ class PatientDetail(models.Model):
 			for patient in all_pat:
 				id_list.append(patient.patient_hospital_id)
 				if hosp_id in id_list:
+					#raise Exception("Patient Already Registered")
 					error = "Patient is already registered" 
 					return False,error
 				else:
@@ -261,20 +271,25 @@ class PatientDetail(models.Model):
 		else:
 			return True
 
+
+
 	def save(self,*args, **kwargs):
-		check_result = self.check_before_you_add()
-		if check_result:
-			self._set_full_name()
-			print "Created Patient:" , self.full_name
-			super(PatientDetail, self).save(*args, **kwargs)
-		else:
-			raise forms.ValidationError(check_result)
+		'''
+		Custom Save Method needs to be defined. 
+		This should check for:
+		1. Whether the patient is registered before. 
+		2. Patient DOB / Age Verfication and attribute setting
+		3. Setting the full_name attribute
+		'''
+		super(PatientDetail, self).save(*args, **kwargs)
+
+
 
 	def has_active_admission(self):
 		''' Queries whether a given patient has an active admission
 				returns the string representation of the number of active admissions
-				FIXME:: May be it is better to make it return a Boolean,
-							  but some feature in Template forced me to do this. 
+				#FIXME:: May be it is better to make it return a Boolean,
+				         but some feature in Template forced me to do this. 
 		'''
 		from admission.models import Admission
 		id = self.id
@@ -388,42 +403,21 @@ class PatientDetail(models.Model):
 			return False
 
 		class Meta:
-			verbose_name 				= "Basic Data"
+			verbose_name 	    = "Basic Data"
 			verbose_name_plural = "Basic Data"
-			ordering 						= ('first_name', 'middle_name','last_name','age','sex','patient_hospital_id')
+			ordering 	    = ('first_name', 'middle_name','last_name','age','sex','patient_hospital_id')
 
 
 
 class PatientGuardian(models.Model):
 
 	'''
-		Class that defines the Guardian of a Particular patient    
+	Class that defines the Guardian of a Particular patient    
 	'''
-
-	guardian_name 				= models.CharField(max_length = 20, 
-																					 blank 			= True, 
-																					 null 			= True, 
-																					 help_text 	=	"Enter Guardian Name if Patient is a minor"
-																 )
-
-	relation_to_guardian 	= models.CharField('Relation',
-																					max_length 	=	20, 
-																					blank 			= True, 
-																					null 				= True, 
-																					help_text 	= "Enter relationship to Guardian if Patient is a Minor", 
-																					choices 		=(("Father","Father"),
-																												("Mother","Mother"),
-																												("Local Guardian","LocalGuardian")
-																											 )
-																	)
-
-	guardian_phone 				= models.PositiveIntegerField('Phone',
-																											max_length 	= 20, 
-																											blank 			= True, 
-																											null 				= True
-																	)
-
-	patient_detail 				= models.ForeignKey(PatientDetail, null = True, blank = True)
+	guardian_name 		= models.CharField(max_length = 20, blank = True, null 	= True, help_text ="Enter Guardian Name if Patient is a minor" )
+	relation_to_guardian 	= models.CharField('Relation',max_length =20, blank= True, null	= True, help_text = "Enter relationship to Guardian if Patient is a Minor", choices =(("Father","Father"),("Mother","Mother"),("Local Guardian","LocalGuardian") ))
+	guardian_phone 		= models.PositiveIntegerField('Phone',max_length= 20, blank = True, null= True)
+	patient_detail 		= models.ForeignKey(PatientDetail, null = True, blank = True)
 
 	def __unicode__(self):
 		if self.guardian_name:
@@ -432,21 +426,21 @@ class PatientGuardian(models.Model):
 			return "No Guardian Name Provided"
 
 	class Meta:
-		verbose_name 				= "Guardian Details"
+		verbose_name 	    = "Guardian Details"
 		verbose_name_plural = "Guardian Details"
-		ordering 						= ('patient_detail','guardian_name')
+		ordering 	    = ('patient_detail','guardian_name')
 
 	def get_patient_guardian_edit_url(self):
 		'''
 			Returns the URL for editing Guardian details for a Patient
 		'''
-		return '/ds/pat/guardian/edit/%s/' %self.id
+		return '/AuShadha/pat/guardian/edit/%s/' %self.id
 
 	def get_patient_guardian_del_url(self):
 		'''
 			Returns the URL for adding Guardian details for a Patient
 		'''
-		return '/ds/pat/guardian/del/%s/' %self.id
+		return '/AuShadha/pat/guardian/del/%s/' %self.id
 
 
 class PatientContact(models.Model):
@@ -454,81 +448,52 @@ class PatientContact(models.Model):
 	'''Class that defines the Contact Address of a particular patient
 	'''
 
-	address_type 		= models.CharField('Type',
-																	max_length = 10, 
-																	choices =(("Home", "Home"),
-																					  ("Office","Office"),
-																					  ("Others","Others")
-																					 ), 
-																	default = "Home"
-																	)
-	address 				= models.TextField(max_length = 100, help_text = 'limit to 100 words')
-	city 						= models.CharField(max_length = 20,default = 'Coimbatore')
-	state 					= models.CharField(max_length =20, default= "Tamil Nadu")
-	country 				= models.CharField(max_length =20, default = "India")
-	pincode 				= models.PositiveIntegerField(max_length =8, null = True, blank = True)
+	address_type 	= models.CharField('Type',max_length = 10, choices =(("Home", "Home"),("Office","Office"), ("Others","Others") ), default = "Home")
+	address 	= models.TextField(max_length = 100, help_text = 'limit to 100 words')
+	city 		= models.CharField(max_length = 20,default = 'Coimbatore')
+	state 		= models.CharField(max_length =20, default= "Tamil Nadu")
+	country 	= models.CharField(max_length =20, default = "India")
+	pincode 	= models.PositiveIntegerField(max_length =8, null = True, blank = True)
 	patient_detail 	= models.ForeignKey(PatientDetail, null = True, blank = True)
 
 	def __unicode__(self):
 		if self.pincode:
-			return "%s, %s, %s, %s - %s"%( self.address , 
-			                               self.city    ,
-			                               self.state   , 
-			                               self.country , 
-			                               self.pincode
-			                             )
+			return "%s, %s, %s, %s - %s"%( self.address , self.city    ,self.state   , self.country , self.pincode )
 		else:
-			return "%s, %s, %s, %s"%( self.address, 
-			                          self.city   , 
-			                          self.state  ,
-			                          self.country
-			                        )
+			return "%s, %s, %s, %s"%( self.address, self.city   , self.state  ,self.country)
 
 	class Meta:
-		verbose_name 				= "Address"
+		verbose_name 	    = "Address"
 		verbose_name_plural = "Address"
-		ordering 						= ('patient_detail','city','state')
+		ordering 	    = ('patient_detail','city','state')
 
 	def get_patient_contact_edit_url(self):
 		'''
 			Returns the URL for editing phone details for a Patient
 		'''
-		return '/ds/pat/contact/edit/%s/' %self.id
+		return '/AuShadha/pat/contact/edit/%s/' %self.id
 
 	def get_patient_contact_del_url(self):
 		'''
 			Returns the URL for adding phone details for a Patient
 		'''
-		return '/ds/pat/contact/del/%s/' %self.id
+		return '/AuShadha/pat/contact/del/%s/' %self.id
 
 
 class PatientPhone(models.Model):
 	'''
 		Class that defines the Phone data of a patient
 	'''
-	phone_type 			= models.CharField('Type',
-																			max_length = 10, 
-																			choices =(("Home", "Home"),
-																								("Office","Office"),
-																								("Mobile","Mobile"),
-																								("Fax","Fax"),
-																								("Others","Others")
-																							 ), 
-																			default = "Home")
-	ISD_Code 				= models.PositiveIntegerField('ISD',max_length = 4, 
-	                                               null = True, blank = True, 
-	                                               default = "0091"
-	                                             )
-	STD_Code 				= models.PositiveIntegerField('STD',max_length = 4, null = True, 
-	                                              blank = True, default = "0422"
-	                                             )
-	phone 					= models.PositiveIntegerField(max_length = 10, null = True, blank = True)
+	phone_type 	= models.CharField('Type',max_length = 10, choices =(("Home", "Home"),("Office","Office"),("Mobile","Mobile"),("Fax","Fax"),("Others","Others") ), default = "Home")
+	ISD_Code 	= models.PositiveIntegerField('ISD',max_length = 4, null = True, blank = True, default = "0091")
+	STD_Code 	= models.PositiveIntegerField('STD',max_length = 4, null = True, blank = True, default = "0422")
+	phone 		= models.PositiveIntegerField(max_length = 10, null = True, blank = True)
 	patient_detail 	= models.ForeignKey(PatientDetail, null = True, blank = True)
 
 	class Meta:
-		verbose_name 				= "Phone"
+		verbose_name 	    = "Phone"
 		verbose_name_plural = "Phone"
-		ordering 						= ('patient_detail','phone_type','ISD_Code','STD_Code')
+		ordering 	    = ('patient_detail','phone_type','ISD_Code','STD_Code')
 
 	def __unicode__(self):
 		if self.phone:
@@ -541,13 +506,13 @@ class PatientPhone(models.Model):
 		'''
 			Returns the URL for editing phone details for a Patient
 		'''
-		return '/ds/pat/phone/edit/%s/' %self.id
+		return '/AuShadha/pat/phone/edit/%s/' %self.id
 
 	def get_patient_phone_del_url(self):
 		'''
 			Returns the URL for adding phone details for a Patient
 		'''
-		return '/ds/pat/phone/del/%s/' %self.id
+		return '/AuShadha/pat/phone/del/%s/' %self.id
 
 
 
@@ -556,30 +521,30 @@ class PatientEmailFax(models.Model):
 		Model that manages the Email, Fax and Web contact details of a patient
 	'''
 	date_entered 		= models.DateTimeField(auto_now_add = True)
-	email 					= models.EmailField(max_length = 75, blank = True, null = True)
-	fax 						= models.PositiveIntegerField(max_length = 20, null = True, blank = True)
-	web 						= models.URLField(max_length = 50, null = True, blank = True)
-	patient_detail 	= models.ForeignKey(PatientDetail, null = True, blank = True)
+	email 			= models.EmailField(max_length = 75, blank = True, null = True)
+	fax 			= models.PositiveIntegerField(max_length = 20, null = True, blank = True)
+	web 			= models.URLField(max_length = 50, null = True, blank = True)
+	patient_detail 	        = models.ForeignKey(PatientDetail, null = True, blank = True)
 
 	def __unicode__(self):
 		return "%s- %s -%s" %(self.email, self.fax, self.web)
 
 	class Meta:
-		verbose_name 				= "Email, Web and Fax"
+		verbose_name 	    = "Email, Web and Fax"
 		verbose_name_plural = "Email, Web and Fax"
-		ordering 						= ('date_entered','patient_detail')
+		ordering 	    = ('date_entered','patient_detail')
 
 	def get_patient_email_and_fax_edit_url(self):
 		'''
 			Returns the URL for editing Email details for a Patient
 		'''
-		return '/ds/pat/email_and_fax/edit/%s/' %self.id
+		return '/AuShadha/pat/email_and_fax/edit/%s/' %self.id
 
 	def get_patient_phone_del_url(self):
 		'''
 			Returns the URL for adding phone details for a Patient
 		'''
-		return '/ds/pat/email_and_fax/del/%s/' %self.id
+		return '/AuShadha/pat/email_and_fax/del/%s/' %self.id
 
 
 

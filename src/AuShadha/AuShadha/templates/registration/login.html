@@ -1,0 +1,161 @@
+<div id="loginDiv"> </div>
+  <h3 class  = "header_with_logo"
+      style  = "text-align     : center; 
+                position       : relative; 
+                left           : 5px; 
+                margin         : 10px; 
+                letter-spacing : 0.2em; 
+                font-family    : Sans-Serif; 
+                font-size      : 20px; 
+                color          : olive;"
+  >
+   <img src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_128.png" 
+        alt="AuShadha" 
+        title="AuShadha Public Health Clinic EMR & Management Open Source Project">
+  </h3>
+
+<div data-dojo-type = "dijit.form.Form" 
+     id             = "loginForm" 
+     data-dojo-id   = "loginForm"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = "">
+
+    <script type="dojo/method">
+      require(["dojo/behavior"], function(behaviour){genericFormBehaviour()});
+    </script>
+
+    <script type="dojo/method" data-dojo-event="onSubmit">
+     if(this.validate()){
+      require(["dojo/_base/xhr", 
+               "dojo/dom", 
+               "dojo/json", 
+               "dijit/registry", 
+               "dijit/Dialog",
+               "dojo/domReady!"
+      ],
+      function(xhr, dom, JSON, registry, Dialog){
+					var hasBeenSent   = false;
+					var dialog        = registry.byId("dialogJsonMessage");
+					console.log(dialog);
+					xhr.post({
+							url  : "/AuShadha/login/",
+							form : dom.byId("loginForm"),
+							load : function(json) {
+									var jsondata = JSON.parse(json)
+									if(jsondata.success == true){
+                     var loginDialog = registry.byId('loginDialog');
+                     loginDialog.hide();
+                     window.location.href = jsondata.redirect_to;
+ 									}
+									else{
+										var content = jsondata.error_message;
+                    dialog.set('title', "ERROR! ");
+							      dialog.set('content', content);
+							      dialog.show();
+									}
+							},
+							error: function(json ) {
+							    var jsondata = JSON.parse(json)
+                    dialog.set('title', "ERROR! ");
+							      dialog.set('content', jsondata.error_message);
+							      dialog.show();
+							},
+							handle: function() {
+									hasBeenSent = true;
+							}
+					});
+    });
+    return false;
+    }
+    else{
+     require(["dijit/registry"],
+     function(registry){
+       var dialog = registry.byId( "dialogJsonMessage" );
+       dialog.set( 'title'  , "ERROR! " );
+       dialog.set( 'content', "<p class='error_text'> Form contains invalid data. Please correct</p>" );
+       dialog.show();
+     });
+     return false;
+    }
+ </script>
+
+<script type="dojo/method">
+  
+</script>
+
+	<div id    = "login_form_div"
+	     style = "position   : relative; 
+	              left       : 80px; 
+	              text-align : center; padding:5px; width: 300px; margin-bottom: 20px;"
+	>
+	<table style="margin-bottom: 20px;">
+		<tr style  = "text-align:center; position:relative;padding: 10px;">
+				<td style="padding: 10px;"> <label for="id_username"> User Name </label></td>
+				<td  style="padding: 10px;"> 
+      				{% csrf_token %} 
+				     <input type = "text" 
+				            data-dojo-type  = "dijit.form.ValidationTextBox"
+				            data-dojo-props = "required:true" 
+				            id     = "id_username" 
+				            name   = "username" 
+				            value  = "">
+				</td>
+		</tr>
+		<tr  style="padding: 10px;">
+			 	<td  style="padding: 10px;"> <label for="id_password"> 
+				        Password 
+				     </label> 
+				</td>
+				<td  style="padding: 10px;"> <input type            = "password" 
+ 				            data-dojo-type  = "dijit.form.ValidationTextBox"
+				            data-dojo-props = "required:true" 
+				            id              = "id_password" 
+				            name            = "password" 
+				            value           = ""> 
+				</td>
+		</tr>
+		<input type  = "hidden" 
+			     name  = "next" 
+			     value = "{{ next }}" >
+		</table>
+     <button data-dojo-type = "dijit.form.Button" 
+	        type           = "submit" 
+	        value          = "Login" 
+	        name           = "submitLoginForm"
+	        >
+      <img src   = "{{STATIC_URL}}/images/access_key_small.png" 
+           alt   = "Login" 
+           title = "Login" 
+           class = "small_img"
+           style = "padding-right:2px;">
+      Login
+    </button>  
+
+ 		<button data-dojo-type = "dijit.form.Button" 
+ 		        data-dojo-id   = "applyForRegistration"
+	          type           = "button" 
+	          value          = "Register" 
+	          name           = "applyForRegistration"
+	          >
+      <img src   = "{{STATIC_URL}}/images/patient_data.png" 
+           alt   = "Register" 
+           title = "Register" 
+           class = "small_img"
+           style = "padding-right:2px;">
+      Register
+    </button>  		
+
+	</div>
+
+	<div id    = "login_footer" 
+	     style = "position:absolute; top:90%; left: 25%; font-size: 10px; color: RoyalBlue; text-align:center; margin-top:60px;margin-bottom:10px;">
+	  	 <i>
+	  	 <p> AuShadha and its Logo &copy; Dr. Easwar T.R 2012<p> 
+	  	 <p>AuShadha Licensed under GNU-GPL version 3</p>
+       <b>email:dreaswar@gmail.com</b>
+       </i>
+	</div>
+
+</div>
+
