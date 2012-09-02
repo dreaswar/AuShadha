@@ -39,8 +39,8 @@ from datetime import datetime, date, time
 # Application Specific Model Imports-----------------------
 from patient.models   import *
 from admission.models import *
-from discharge.models import *
-from visit.models     import *
+#from discharge.models import *
+#from visit.models     import *
 
 import AuShadha.settings as settings
 
