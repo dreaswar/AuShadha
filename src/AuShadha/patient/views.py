@@ -200,7 +200,7 @@ def logout_view(request):
     View for logging out of AuShadha
     '''
     logout(request)
-    return HttpResponseRedirect('/AuShadha/login/')
+    return HttpResponseRedirect('/AuShadha/')
 #    return HttpResponseRedirect('/login/')
 
 

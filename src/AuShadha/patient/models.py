@@ -281,6 +281,9 @@ class PatientDetail(models.Model):
 		2. Patient DOB / Age Verfication and attribute setting
 		3. Setting the full_name attribute
 		'''
+                self.check_before_you_add()
+                self._set_full_name()
+#                self._set_age()
 		super(PatientDetail, self).save(*args, **kwargs)
 
 
@@ -580,14 +583,20 @@ class PatientDetailForm(ModelForm):
                    {"field": 'age',
 		                'max_length'    :  30         ,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'\\d{3}','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'\\d{1,3}','invalidMessage' : 'Invalid Character. Only Numbers are allowed'"
                    },
                    {"field"    : 'sex',
 		                'max_length'    :  30         ,
                    "data-dojo-type": "dijit.form.Select",
 		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : ''"
                    },
-		              ]
+                   {
+                     "field"          : "parent_clinic"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.Select" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
+                   }
+	        ]
 		for field in text_fields:
 			print(self.fields[field['field']].widget);
 			self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
