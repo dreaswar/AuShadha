@@ -37,7 +37,7 @@
       function(xhr, dom, JSON, registry, Dialog){
 					var hasBeenSent   = false;
 					var dialog        = registry.byId("dialogJsonMessage");
-          var loginDialog   = registry.byId('loginDialog');
+          var loginDialog = registry.byId('loginDialog');
 					console.log(dialog);
 					xhr.post({
 							url  : "/AuShadha/login/",

@@ -10,9 +10,9 @@
 
 <!-- Custom Scripts     -->
 
-<!--    <script type="text/javascript" -->
-<!--	    src="{{STATIC_URL}}custom/js/script.js"> -->
-<!--    </script>-->
+    <script type="text/javascript" 
+	    src="{{STATIC_URL}}custom/js/script.js"> 
+    </script>
 
     <script type	=	"text/javascript"
 	    src		=	"{{STATIC_URL}}custom/js/complaints.js">

@@ -5,7 +5,7 @@ import sys, os
 ROOT_PATH = os.path.dirname(__file__)
 
 LOGIN_URL = "/AuShadha/login/"
-LOGIN_REDIRECT_URL = "/AuShadha/pat/list/"
+LOGIN_REDIRECT_URL = "/AuShadha/"
 
 
 SERIALIZATION_MODULES = {
@@ -149,7 +149,7 @@ INSTALLED_APPS = (
     'nurse',
     'staff',
     'inv_and_imaging',
-    'admission',
+#    'admission',
 #    'visit',
 )
 
