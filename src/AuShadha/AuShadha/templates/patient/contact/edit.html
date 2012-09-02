@@ -1,0 +1,120 @@
+<div data-dojo-type = "dijit.form.Form" 
+     id             = "newContactEditForm" 
+     data-dojo-id   = "newContactEditForm"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = "">
+
+    <script type="dojo/method" data-dojo-event="onSubmit">
+     if(this.validate()){
+      require(["dojo/_base/xhr", 
+               "dojo/dom", 
+               "dojo/json", 
+              "dojo/_base/fx",
+		          "dijit/Dialog",
+		          "dijit/form/Form",
+		          "dijit/form/Button",
+              "dijit/form/ValidationTextBox",
+              "dijit/form/SimpleTextarea",
+              "dijit/form/Select",
+              "dijit/registry"
+       ],
+       function(xhr, dom, JSON,fx, Dialog, Form, Button, TextBox, Select, registry){
+ 							var hasBeenSent = false;
+              var editDialog = dijit.byId("editPatientDialog");
+              var errorDialog = dijit.byId('dialogJsonMessage');
+       //	{% if perms.patient.change_patientcontact %}
+							xhr.post({
+									url  : "{{patient_contact_obj.get_patient_contact_edit_url}}",
+									form : dom.byId("newContactEditForm"),
+									load : function(json) {
+											var jsondata = JSON.parse(json)
+											if(jsondata.success == true){
+                        contactGrid.render();
+                        editDialog.hide();
+											}
+											else{
+                        errorDialog.set('title', 'ERROR!');
+                        errorDialog.set('content', jsondata.error_message);
+							          errorDialog.show();
+											}
+									},
+									error: function(json) {
+									    var jsondata = JSON.parse(json);
+                      errorDialog.set('title', "ERROR!");
+                      errorDialog.set('content', jsondata.error_message);
+							        errorDialog.show();
+									},
+									handle: function() {
+											hasBeenSent = true;
+									}
+							});
+       // {% else %}
+         dijit.byId("permissionDeniedErrorDialog").show();
+       // {%endif %}
+     });
+     return false;
+    }
+    else{
+     dijit.byId('invalidFormSubmissionErrorDialog').show();
+     return false;
+    }
+  </script>
+
+		<table>
+			{{patient_contact_edit_form}}
+		</table>
+
+    {% if perms.patient.change_patientcontact %}
+    <button data-dojo-type = "dijit.form.Button" 
+            data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+            type           = "submit" 
+            name           = "editButton" 
+            value          = "Edit"
+    >
+      Edit
+    </button>
+    {% endif %}
+
+    {% if perms.patient.delete_patientcontact %}
+    <button data-dojo-type  = "dijit.form.Button" 
+						data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+            type            = "button"
+            name            = "delContact"
+            id              = "delContactBtn">
+       Delete
+       <script  type            = "dojo/method" 
+                data-dojo-event = "onClick" 
+                data-dojo-args  = "evt"
+        >
+			    require(
+			      ["dojo/dom", 
+			       "dojo/_base/xhr",
+			       "dojo/json",
+			       "dijit/registry",
+			       "dijit/Dialog"
+			      ],
+			    function(dom, xhr, JSON, registry, Dialog){
+					  xhr.get({
+					    url: "{{patient_contact_obj.get_patient_contact_del_url}}",
+					    load: function(json){
+					            var jsondata = JSON.parse(json)
+					            if (jsondata.success == true){
+                        dijit.byId("editPatientDialog").hide();
+                        contactGrid.render();
+                        contactGrid.selection.clear();
+							        }
+							        else{
+                       var errorDialog = dijit.byId('dialogJsonMessage');
+                       errorDialog.set('title', "ERROR!");
+                       errorDialog.set('content', jsondata.error_message);
+                       errorDialog.show();
+							        }
+					          }
+					  });
+			    });
+        </script>
+    </button>
+    {% endif %}
+
+</div>
