@@ -142,9 +142,9 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # Custom Apps here:
+    'aushadha_users',
     'clinic',
     'patient',
-    'aushadha_users',
     'physician',
     'nurse',
     'staff',

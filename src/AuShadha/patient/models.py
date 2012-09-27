@@ -14,6 +14,9 @@ from django 		      import forms
 
 
 
+from clinic.models import Clinic
+
+
 class PatientDetail(models.Model):
 
 	'''
