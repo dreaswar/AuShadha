@@ -63,11 +63,11 @@
 
         // STORES;
         var myStore;
-        var phoneStore;
-        var contactStore;
-        var guardianStore;
-        var admissionStore;
-        var visitStore;
+//        var phoneStore;
+//        var contactStore;
+//        var guardianStore;
+//        var admissionStore;
+//        var visitStore;
 
        // Define Behaviours for the Application.
        genericFormBehaviour = function(){
@@ -114,12 +114,12 @@
           behaviour.apply()
        }
 
-//        var grid;
-//        var admissionGrid;
-//        var visitGrid;
-//        var contactGrid;
-//        var phoneGrid;
-//        var guardianGrid;
+        var grid,
+            admissionGrid,
+            visitGrid,
+            contactGrid,
+            phoneGrid,
+            guardianGrid;
 
        // Define Methods for cleaning up after use.
         var doPostDelCleanup;
@@ -169,9 +169,11 @@
 
 
         // Define Various Stores
-        phoneStore    = new JsonRest({target: ""});
-        contactStore  = new JsonRest({target:""});
-        guardianStore = new JsonRest({target:""});
+//        var phoneStore    = new JsonRest({target: ""});
+//        var contactStore  = new JsonRest({target:""});
+//        var guardianStore = new JsonRest({target:""});
+//        var admissionStore = new JsonRest({target:""});
+//        var visitStore = new JsonRest({target:""});
 
         complaintsStore = new Memory({data:COMPLAINTS});
         console.log(complaintsStore)
@@ -308,19 +310,26 @@
                                           + patid,
                             admissionUrl = "{%url admission_json %}" + 
                                            "?patient_id=" 
-                                           + patid,
-                            visitUrl     = "{%url visit_json %}" + 
+                                           + patid;
+                         {% comment %}
+                         /*
+                         var visitUrl     = "{%url visit_json %}" + 
                                            "?patient_id=" 
                                            + patid;
-                      var contactStore     = new JsonRest({target:contactUrl}),
-                           phoneStore      = new JsonRest({target:phoneUrl}),
-                           guardianStore   = new JsonRest({target:guardianUrl}),
-                           admissionStore  = new JsonRest({target:admissionUrl}),
-                           visitStore      = new JsonRest({target:visitUrl});
+                         */
+                         {% endcomment %}
+
+                       contactStore    = new JsonRest({target:contactUrl}),
+                       phoneStore      = new JsonRest({target:phoneUrl}),
+                       guardianStore   = new JsonRest({target:guardianUrl}),
+                       admissionStore  = new JsonRest({target:admissionUrl});
+                      {% comment %} 
+                        // visitStore      = new JsonRest({target:visitUrl}); 
+                      {% endcomment %}
 
                       reInitBottomPanels();
 
-                        contactGrid = new DataGrid({
+                      var contactGrid = new DataGrid({
                                       store         : dataStore = ObjectStore
                                                               ({
                                                                  objectStore: contactStore
@@ -395,7 +404,7 @@
                                       noDataMessage: "<span class='dojoxGridNoData'>No Contact Information in Store..</span>"
                                     }, 
                                     "contact_list"
-                        )
+                        );
 
                        function onPatientSubMenuRowClick(e, gridToUse, titleToUse){ 
                             var idx = e.rowIndex,
@@ -428,14 +437,19 @@
 	                     };
 
                        function reInitBottomPanels(){
-                              contactTable    = dijit.byId("contact_list")
-                              phoneTable      = dijit.byId("phone_list")
-                              guardianTable   = dijit.byId("guardian_list")
-                              admissionTable  = dijit.byId("admission_list")
-                              visitTable      = dijit.byId("visit_list")
+                              var contactTable        = dijit.byId("contact_list"),
+                                  phoneTable          = dijit.byId("phone_list"),
+                                  guardianTable       = dijit.byId("guardian_list"),
+                                  demographicsTable   = dijit.byId("demographics_list"),
+                                  allergyTable        = dijit.byId("allergy_list"),
+                                  immunizationTable   = dijit.byId("immunization_list"),
+                                  admissionTable      = dijit.byId("admission_list"),
+                                  visitTable          = dijit.byId("visit_list"),
+                                  patientMediaTable   = dijit.byId("patient_media_list");
 
                               if(contactTable){
                                 contactTable.destroyRecursive();
+                                console.log("Recreating Contact tab");
                                 domConstruct.place("<div id='contact_list'></div>",
                                                    "patientContactTab", 
                                                    'second'
@@ -444,6 +458,7 @@
                               }
                               if(phoneTable){
                                 phoneTable.destroyRecursive();
+                                console.log("Recreating Phone tab");
                                 domConstruct.place("<div id='phone_list'></div>",
                                                    "patientPhoneTab", 
                                                    'second'
@@ -452,14 +467,52 @@
                               }
                               if(guardianTable){
                                 guardianTable.destroyRecursive();
+                                console.log("Recreating Guardian tab");
                                 domConstruct.place("<div id='guardian_list'></div>",
                                                    "patientGuardianTab", 
                                                    'second'
                                                    );
                                 
                               }
+                              if(demographicsTable){
+                                demographicsTable.destroyRecursive();
+                                console.log("Recreating demographics tab");
+                                domConstruct.place("<div id='demographics_list'></div>",
+                                                   "patientDemographicsTab", 
+                                                   'second'
+                                                   );
+                                
+                              }
+                              if(allergyTable){
+                                allergyTable.destroyRecursive();
+                                console.log("Recreating allergy tab");
+                                domConstruct.place("<div id='allergy_list'></div>",
+                                                   "patientAllergyTab", 
+                                                   'second'
+                                                   );
+                                
+                              }
+                              if(immunizationTable){
+                                immunizationTable.destroyRecursive();
+                                console.log("Recreating immunization tab");
+                                domConstruct.place("<div id='immunization_list'></div>",
+                                                   "patientImmunizationTab", 
+                                                   'second'
+                                                   );
+                                
+                              }
+                              if(patientMediaTable){
+                                patientMediaTable.destroyRecursive();
+                                console.log("Recreating Patient Media tab");
+                                domConstruct.place("<div id='patient_media_list'></div>",
+                                                   "patientMediaTab", 
+                                                   'second'
+                                                   );
+                                
+                              }
                               if(admissionTable){
                                 admissionTable.destroyRecursive();
+                                console.log("Recreating Admission tab");
                                 domConstruct.place("<div id='admission_list'></div>",
                                                    "patientAdmissionTab", 
                                                    'second'
@@ -468,12 +521,13 @@
                               }
                               if(visitTable){
                                 visitTable.destroyRecursive();
+                                console.log("Recreating Visit tab tab");
                                 domConstruct.place("<div id='visit_list'></div>",
                                                    "patientVisitTab", 
                                                    'second'
                                                    );
                               }
-                              domStyle.set(dijit.byId("patientContextPane").domNode,{'display': 'display'});
+                              //domStyle.set(dijit.byId("patientContextPane").domNode,{'display': 'display'});
                        }
 
                       function cleanUpAdmissionPane(){
@@ -513,7 +567,7 @@
                                                       return false; 
                                                   };
 
-                  phoneGrid = new DataGrid({
+                  var phoneGrid = new DataGrid({
                                 store         : dataStore = ObjectStore
                                                         ({
                                                            objectStore: phoneStore
@@ -569,7 +623,7 @@
                               noDataMessage: "<span class='dojoxGridNoData'>No Phone Numbers in Store..</span>"
                           }, 
                           "phone_list"
-                  )
+                  );
 
                   phoneGrid.onRowDblClick = function(e){ 
         //                                  {% if perms.patient.change_patientphone or perms.patient.delete_patientphone %}
@@ -578,7 +632,7 @@
         //                                  {% endif %}
                   };
 
-                  guardianGrid = new DataGrid({
+                  var guardianGrid = new DataGrid({
                                           store         : dataStore = ObjectStore
                                                                 ({
                                                                    objectStore: guardianStore
@@ -637,7 +691,7 @@
           // {% endif %}
               };
 
-                  admissionGrid = new DataGrid({
+                  var admissionGrid = new DataGrid({
                                         store         : dataStore = ObjectStore
                                         ({
                                          objectStore: admissionStore
@@ -728,7 +782,7 @@
                                         noDataMessage: "<span class='dojoxGridNoData'>No Admission Information in Store..</span>",
                                         }, 
                                         "admission_list"
-    )
+    );
 
     admissionGrid.onRowDblClick = function(e){
 //  {% if perms.admission.change_admissiondetail or perms.admission.delete_admissiondetail %}
@@ -760,8 +814,9 @@
                                  };
 
 
-
-    visitGrid = new DataGrid({
+{% comment %}
+/*
+    var visitGrid = new DataGrid({
                               store         : dataStore = ObjectStore
                                                       ({
                                                          objectStore: visitStore
@@ -831,12 +886,16 @@
 //{% endif %}
                                    return false; 
     };
+*/
+{% endcomment %}
 
     contactGrid.startup();
     phoneGrid.startup();
     guardianGrid.startup();
     admissionGrid.startup();
-    visitGrid.startup();
+{% comment %}    
+    //visitGrid.startup(); 
+{% endcomment %}
     return false; 
  };
 
