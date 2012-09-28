@@ -1,23 +1,55 @@
       require([
-		"dojo/dom",
-		"dojo/_base/xhr",
-		"dojo/parser",
-		"dojox/grid/DataGrid",
-		"dojo/store/JsonRest",
-		"dojox/data/JsonRestStore",
-		"dojo/data/ObjectStore",
-		"dojo/on",
-		"dijit/registry",
-		"dijit/Dialog",
-		"dojo/ready",
-		"dojo/_base/array",
-		"dojo/dom-construct",
-		"dojo/dom-style",
-	        "dojox/layout/ContentPane", 
-	        "dojo/behavior",
-	        "dojo/store/Memory",
-	        "dojo/dom-geometry",
-		"dojo/domReady!"
+              "dojo/dom",
+              "dojo/_base/xhr",
+              "dojo/parser",
+              "dojox/grid/DataGrid",
+              "dojo/store/JsonRest",
+              "dojox/data/JsonRestStore",
+              "dojo/data/ObjectStore",
+              "dojo/on",
+              "dijit/registry",
+              "dijit/Dialog",
+              "dojo/ready",
+              "dojo/_base/array",
+              "dojo/dom-construct",
+              "dojo/dom-style",
+              "dojox/layout/ContentPane", 
+              "dojo/behavior",
+              "dojo/store/Memory",
+              "dojo/dom-geometry",
+
+              "dojo/_base/connect",
+              "dojo/on",
+              "dijit/TitlePane",
+              "dijit/layout/TabContainer", 
+              "dijit/layout/BorderContainer",
+              "dijit/layout/SplitContainer",
+              "dijit/form/Form",
+              "dijit/form/Button",
+              "dijit/form/TextBox", 		         
+              "dijit/form/ValidationTextBox", 
+              "dijit/form/Textarea",
+              "dijit/form/SimpleTextarea",
+              "dijit/form/DateTextBox",
+              "dijit/form/TimeTextBox",
+              "dijit/form/NumberTextBox",
+              "dijit/form/Select",
+              "dijit/form/MultiSelect",
+              "dijit/form/FilteringSelect",
+              "dojox/form/Manager", 
+              "dojox/validate/web",
+              "dijit/Menu",
+              "dijit/Tooltip",
+              "dijit/MenuBar",
+              "dijit/PopupMenuBarItem",
+              "dijit/DropDownMenu",
+              "dijit/MenuItem",
+              "dojo/data/ItemFileWriteStore",
+              "dojox/data/QueryReadStore",
+              "dijit/Tree",
+              "dojo/store/Observable",
+
+              "dojo/domReady!"
       ], 
       function(dom, xhr, parser      , DataGrid, 
                JsonRest, JsonRestStore, ObjectStore , on, 
@@ -130,7 +162,7 @@
         loginDialog.show();
 //   {% else %}
         var patientDialog = new dijit.Dialog({ title : "Add Patient", 
-                                           style : "width: 500px; height:350px; background:white;"
+                                                style : "width: 500px; height:350px; background:white;"
                                          }, 
                                          "editPatientDialog");
         patientDialog.startup();
@@ -148,568 +180,565 @@
         console.log(complaintDurationsStore)
 
 
-        myStore = new JsonRest({target:"{% url render_patient_list %}", idProperty: 'id'});
+        myStore = new JsonRest({target:"/AuShadha/pat/list/", idProperty: 'id'});
         grid    = new DataGrid({
-                        store         : dataStore = ObjectStore({objectStore: myStore}),
-                        query         : { search_field: 'id', search_for: "*" },
-                        clientSort    : true,
-                        autoWidth     : true,
-                        selectionMode : "single",
-                        rowSelector   : "20px",
-												structure: [
-														{name       : "ID", 
-														 field      : "id", 
-														 width      : "50px",
-														 hidden     : true,
-														 cellStyles : "text-align:center;"
-														},
-														{name       : "Edit", 
-														 field      : "edit", 
-														 width      : "50px",
-														 hidden     : true,
-														 cellStyles : "text-align:center;"
-														},
-														{name       : "Del", 
-														 field      : "del", 
-														 width      : "50px",
-														 hidden     : true,
-														 cellStyles : "text-align:center;"
-														},
-														{name       : "Visit", 
-														 field      : "visitadd", 
-														 width      : "50px",
-														 hidden     : true,
-														 cellStyles : "text-align:center;"
-														},
-														{name       : "Adm", 
-														 field      : "admissionadd", 
-														 width      : "50px",
-														 hidden     : true,
-														 cellStyles : "text-align:center;"
-														},
+                  store         : dataStore = ObjectStore({objectStore: myStore}),
+                  query         : { search_field: 'id', search_for: "*" },
+                  clientSort    : true,
+                  autoWidth     : true,
+                  selectionMode : "single",
+                  rowSelector   : "20px",
+                  structure: [
+                  {name       : "ID", 
+                  field      : "id", 
+                  width      : "50px",
+                  hidden     : true,
+                  cellStyles : "text-align:center;"
+                  },
+                  {name       : "Edit", 
+                  field      : "edit", 
+                  width      : "50px",
+                  hidden     : true,
+                  cellStyles : "text-align:center;"
+                  },
+                  {name       : "Del", 
+                  field      : "del", 
+                  width      : "50px",
+                  hidden     : true,
+                  cellStyles : "text-align:center;"
+                  },
+                  {name       : "Visit", 
+                  field      : "visitadd", 
+                  width      : "50px",
+                  hidden     : true,
+                  cellStyles : "text-align:center;"
+                  },
+                  {name       : "Adm", 
+                    field      : "admissionadd", 
+                    width      : "50px",
+                    hidden     : true,
+                    cellStyles : "text-align:center;"
+                  },
 
-														{name       : "Patient ID", 
-														 field      : "patient_hospital_id", 
-														  width      : "100px",
-														 cellStyles : "text-align:center;"
-														},
-														{ name      : "First Name", 
-														  field     : "first_name", 
-														  width      : "100px",
-														  cellStyles : "text-align:center;"
-														},
-														{ name      : "Middle Name", 
-														  field     : "middle_name", 
-														  width      : "100px",
-														  cellStyles : "text-align:center;"
-														},
-														{ name       : "Last Name" ,
-														  field      : "last_name" , 
-														  width      : "100px",
-														  cellStyles : "text-align:center;",
-														  formatter  : function(last_name){ 
-														                  return '<em>'+ last_name +'</em>';
-														               }
-														},
-														{ name        : "Full Name", 
-														  field       : "full_name", 
-														  width       : "100px",
-														  hidden      : true,
-														  cellStyles  : "text-align:center;"
-														},
-														{name       : "Age"   ,
-														 field      : "age"   ,
-														  width      : "100px",
-														 cellStyles : "text-align:center;"
-														},
-														{name      : "Sex" , 
-														 field     : "sex" ,
-														  width      : "100px",
-														 formatter : function(sex){
-																          if(sex == 'Male'){
-																           return '<img src="{{STATIC_URL}}images/male.png" '+
-																                   'alt="Male" class="small_img">'; 
-																          }
-																          else if(sex == 'Female'){
-																           return '<img '+
-																                  'src="{{STATIC_URL}}images/female.png"'+
-																                  'title="'+ sex +
-																                  '" alt="Male" class="small_img">'; 
-																          }
-																          else{
-																           return "Others"
-																          } 
-																        },
-														 cellStyles: "text-align:center;"
-														},
-														{ name      : "URL"   , 
-														  field     : "home"  ,
-														  width      : "50px",
-															hidden    : true,
-															cellStyles: "text-align:center;",
-														},
-												],
-												noDataMessage: "<span class='dojoxGridNoData'>No Matching Patients</span>"
-    }, "patient_grid"); 
-    grid.startup();
-    grid.canSort = function(){ return true;};
+                  {name       : "Patient ID", 
+                    field      : "patient_hospital_id", 
+                    width      : "100px",
+                    cellStyles : "text-align:center;"
+                  },
+                  { name      : "First Name", 
+                    field     : "first_name", 
+                    width      : "100px",
+                    cellStyles : "text-align:center;"
+                  },
+                  { name      : "Middle Name", 
+                    field     : "middle_name", 
+                    width      : "100px",
+                    cellStyles : "text-align:center;"
+                  },
+                  { name       : "Last Name" ,
+                    field      : "last_name" , 
+                    width      : "100px",
+                    cellStyles : "text-align:center;",
+                    formatter  : function(last_name){ 
+                                  return '<em>'+ last_name +'</em>';
+                               }
+                  },
+                  { name        : "Full Name", 
+                    field       : "full_name", 
+                    width       : "100px",
+                    hidden      : true,
+                    cellStyles  : "text-align:center;"
+                  },
+                  {name       : "Age"   ,
+                    field      : "age"   ,
+                    width      : "100px",
+                    cellStyles : "text-align:center;"
+                  },
+                  {name      : "Sex" , 
+                    field     : "sex" ,
+                    width      : "100px",
+                    formatter : function(sex){
+                              if(sex == 'Male'){
+                               return '<img src="{{STATIC_URL}}images/male.png" '+
+                                       'alt="Male" class="small_img">'; 
+                              }
+                              else if(sex == 'Female'){
+                               return '<img '+
+                                      'src="{{STATIC_URL}}images/female.png"'+
+                                      'title="'+ sex +
+                                      '" alt="Male" class="small_img">'; 
+                              }
+                              else{
+                               return "Others"
+                              } 
+                            },
+                    cellStyles: "text-align:center;"
+                  },
+                  { name      : "URL"   , 
+                    field     : "home"  ,
+                    width      : "50px",
+                    hidden    : true,
+                    cellStyles: "text-align:center;",
+                  },
+        ],
+        noDataMessage: "<span class='dojoxGridNoData'>No Matching Patients</span>"
+    }, 
+    "patient_grid"
+  ); 
 
-    grid.onRowClick = function(e) { 
-	                      var idx = e.rowIndex,
-	                          item = this.getItem(idx);
-	                      var patid = this.store.getValue(item, "id");
-	                      grid.selection.clear();
-	                      grid.selection.setSelected(item, true);
+  grid.startup();
+  grid.canSort = function(){ return true;};
 
-                          var contactUrl = "{%url contact_json %}" + 
+  grid.onRowClick = function(e) { 
+                        var idx    = e.rowIndex,
+                            item   = this.getItem(idx),
+                            patid  = this.store.getValue(item, "id");
+
+                        grid.selection.clear();
+                        grid.selection.setSelected(item, true);
+
+                        var contactUrl  = "{%url contact_json %}" + 
+                                           "?patient_id=" 
+                                           + patid,
+                            phoneUrl    = "{%url phone_json %}" + 
+                                          "?patient_id=" 
+                                          + patid,
+                            guardianUrl = "{%url guardian_json %}" + 
+                                          "?patient_id=" 
+                                          + patid,
+                            admissionUrl = "{%url admission_json %}" + 
+                                           "?patient_id=" 
+                                           + patid,
+                            visitUrl     = "{%url visit_json %}" + 
                                            "?patient_id=" 
                                            + patid;
+                      var contactStore     = new JsonRest({target:contactUrl}),
+                           phoneStore      = new JsonRest({target:phoneUrl}),
+                           guardianStore   = new JsonRest({target:guardianUrl}),
+                           admissionStore  = new JsonRest({target:admissionUrl}),
+                           visitStore      = new JsonRest({target:visitUrl});
 
-                          var phoneUrl = "{%url phone_json %}" + 
-                                         "?patient_id=" 
-                                         + patid;
-                          var guardianUrl = "{%url guardian_json %}" + 
-                                            "?patient_id=" 
-                                            + patid;
-                          var admissionUrl = "{%url admission_json %}" + 
-                                             "?patient_id=" 
-                                            + patid;
-                          var visitUrl = "{%url visit_json %}" + 
-                                         "?patient_id=" 
-                                         + patid;
+                      reInitBottomPanels();
 
+                        contactGrid = new DataGrid({
+                                      store         : dataStore = ObjectStore
+                                                              ({
+                                                                 objectStore: contactStore
+                                                              }),
+                                      selectionMode : "single",
+                                      rowSelector   : "20px",
+                                      structure: [
+                                                    {name       : "ID", 
+                                                     field      : "id", 
+                                                     width      : "50px",
+                                                     hidden     : true,
+                                                     cellStyles : "text-align:center;"
+                                                    },
 
-												  var contactStore    = new JsonRest({target:contactUrl});
-												  var phoneStore      = new JsonRest({target:phoneUrl});
-												  var guardianStore   = new JsonRest({target:guardianUrl});
-												  var admissionStore  = new JsonRest({target:admissionUrl});
-												  var visitStore      = new JsonRest({target:visitUrl});
+                                                    {name       : "PatID", 
+                                                     field      : "pat_id", 
+                                                     width      : "50px",
+                                                     hidden     : true,
+                                                     cellStyles : "text-align:center;"
+                                                    },
 
-                          reInitBottomPanels();
+                                                    {name       : "Edit", 
+                                                     field      : "edit", 
+                                                     width      : "50px",
+                                                     hidden     : true,
+                                                     cellStyles : "text-align:center;"
+                                                    },
 
-                          contactGrid = new DataGrid({
-																				store         : dataStore = ObjectStore
-																				                            ({
-																				                               objectStore: contactStore
-																				                            }),
-																				selectionMode : "single",
-																				rowSelector   : "20px",
-																				structure: [
-																						{name       : "ID", 
-																						 field      : "id", 
-																						 width      : "50px",
-																						 hidden     : true,
-																						 cellStyles : "text-align:center;"
-																						},
+                                                    {name       : "Del", 
+                                                     field      : "del", 
+                                                     width      : "50px",
+                                                     hidden     : true,
+                                                     cellStyles : "text-align:center;"
+                                                    },
 
-																						{name       : "PatID", 
-																						 field      : "pat_id", 
-																						 width      : "50px",
-																						 hidden     : true,
-																						 cellStyles : "text-align:center;"
-																						},
+                                                    {name       : "Type", 
+                                                     field      : "address_type", 
+                                                     width      : "50px",
+                                                     cellStyles : "text-align:center;"
+                                                    },
 
-																						{name       : "Edit", 
-																						 field      : "edit", 
-																						 width      : "50px",
-																						 hidden     : true,
-																						 cellStyles : "text-align:center;"
-																						},
+                                                    {name       : "Address", 
+                                                     field      : "address", 
+                                                     width      : "250px",
+                                                     cellStyles : "text-align:center;"
+                                                    },
 
-																						{name       : "Del", 
-																						 field      : "del", 
-																						 width      : "50px",
-																						 hidden     : true,
-																						 cellStyles : "text-align:center;"
-																						},
+                                                    {name       : "City", 
+                                                     field      : "city", 
+                                                     width      : "150px",
+                                                     cellStyles : "text-align:center;"
+                                                    },
 
-																						{name       : "Type", 
-																						 field      : "address_type", 
-																						 width      : "50px",
-																						 cellStyles : "text-align:center;"
-																						},
+                                                    {name       : "State", 
+                                                     field      : "state", 
+                                                     width      : "50px",
+                                                     cellStyles : "text-align:center;"
+                                                    },
 
-																						{name       : "Address", 
-																						 field      : "address", 
-																						 width      : "250px",
-																						 cellStyles : "text-align:center;"
-																						},
+                                                    {name       : "Country", 
+                                                     field      : "country", 
+                                                     width      : "100px",
+                                                     cellStyles : "text-align:center;"
+                                                    },
 
-																						{name       : "City", 
-																						 field      : "city", 
-																						 width      : "150px",
-																						 cellStyles : "text-align:center;"
-																						},
+                                                    {name       : "Pincode", 
+                                                     field      : "pincode", 
+                                                     width      : "100px",
+                                                     cellStyles : "text-align:center;"
+                                                    }
+                                      ],
+                                      noDataMessage: "<span class='dojoxGridNoData'>No Contact Information in Store..</span>"
+                                    }, 
+                                    "contact_list"
+                        )
 
-																						{name       : "State", 
-																						 field      : "state", 
-																						 width      : "50px",
-																						 cellStyles : "text-align:center;"
-																						},
+                       function onPatientSubMenuRowClick(e, gridToUse, titleToUse){ 
+                            var idx = e.rowIndex,
+                                item = gridToUse.getItem(idx);
+                            var contactid = gridToUse.store.getValue(item, "id");
+                            var edit      = gridToUse.store.getValue(item, "edit");
+                            var del       = gridToUse.store.getValue(item, "del");
+                            gridToUse.selection.clear();
+                            gridToUse.selection.setSelected(item, true);
+                            xhr.get({
+                                url  : edit,
+                                load : function(html, idx){
+                                var myDialog = dijit.byId("editPatientDialog");
+                                if(myDialog == undefined || myDialog == null){
+                                  myDialog = new dijit.Dialog({
+                                                    title: titleToUse,
+                                                    content: html,
+                                                    style: "width: 500px; height:500px;"
+                                                   }, "editPatientDialog");
+                                  myDialog.startup();
+                                }
+                                else{
+                                  myDialog.set('content', html);
+                                  myDialog.set('title', titleToUse); 
+                                }
+                                myDialog.show();
+                                }
+                            });
+                          return false; 
+	                     };
 
-																						{name       : "Country", 
-																						 field      : "country", 
-																						 width      : "100px",
-																						 cellStyles : "text-align:center;"
-																						},
+                       function reInitBottomPanels(){
+                              contactTable    = dijit.byId("contact_list")
+                              phoneTable      = dijit.byId("phone_list")
+                              guardianTable   = dijit.byId("guardian_list")
+                              admissionTable  = dijit.byId("admission_list")
+                              visitTable      = dijit.byId("visit_list")
 
-																						{name       : "Pincode", 
-																						 field      : "pincode", 
-																						 width      : "100px",
-																						 cellStyles : "text-align:center;"
-																						}
-																			],
-																			noDataMessage: "<span class='dojoxGridNoData'>No Contact Information in Store..</span>"
-																			}, 
-																			"contact_list"
-                          )
+                              if(contactTable){
+                                contactTable.destroyRecursive();
+                                domConstruct.place("<div id='contact_list'></div>",
+                                                   "patientContactTab", 
+                                                   'second'
+                                                   );
+                                
+                              }
+                              if(phoneTable){
+                                phoneTable.destroyRecursive();
+                                domConstruct.place("<div id='phone_list'></div>",
+                                                   "patientPhoneTab", 
+                                                   'second'
+                                                   );
+                                
+                              }
+                              if(guardianTable){
+                                guardianTable.destroyRecursive();
+                                domConstruct.place("<div id='guardian_list'></div>",
+                                                   "patientGuardianTab", 
+                                                   'second'
+                                                   );
+                                
+                              }
+                              if(admissionTable){
+                                admissionTable.destroyRecursive();
+                                domConstruct.place("<div id='admission_list'></div>",
+                                                   "patientAdmissionTab", 
+                                                   'second'
+                                                   );
+                                
+                              }
+                              if(visitTable){
+                                visitTable.destroyRecursive();
+                                domConstruct.place("<div id='visit_list'></div>",
+                                                   "patientVisitTab", 
+                                                   'second'
+                                                   );
+                              }
+                              domStyle.set(dijit.byId("patientContextPane").domNode,{'display': 'display'});
+                       }
 
+                      function cleanUpAdmissionPane(){
+                        var center_top_pane = dijit.byId('centerTopTabPane');
+                  //      var admission_pane  = dijit.findWidgets("admissionHomeContentPane")
+                        center_top_pane.selectChild(patientHomeContentPane);
+                        dojo.forEach(admissionHomeContentPane, function(e){e.destroyRecursive(true)})
+                        admissionHomeContentPane.domNode.innerHTML = 
+                            "Please select an admission to display details here."
+                      }
 
-     function onPatientSubMenuRowClick(e, gridToUse, titleToUse){ 
-          var idx = e.rowIndex,
-              item = gridToUse.getItem(idx);
-          var contactid = gridToUse.store.getValue(item, "id");
-          var edit      = gridToUse.store.getValue(item, "edit");
-          var del       = gridToUse.store.getValue(item, "del");
-          gridToUse.selection.clear();
-          gridToUse.selection.setSelected(item, true);
-          xhr.get({
-             url  : edit,
-             load : function(html, idx){
-											var myDialog = dijit.byId("editPatientDialog");
-											if(myDialog == undefined || myDialog == null){
-												myDialog = new dijit.Dialog({
-																					title: titleToUse,
-																					content: html,
-																					style: "width: 500px; height:500px;"
-																			   }, "editPatientDialog");
-												myDialog.startup();
-											}
-											else{
-												myDialog.set('content', html);
-												myDialog.set('title', titleToUse); 
-										  }
-											myDialog.show();
-                   }
-          });
-        return false; 
-	   };
-
-     function reInitBottomPanels(){
-            contactTable    = dijit.byId("contact_list")
-            phoneTable      = dijit.byId("phone_list")
-            guardianTable   = dijit.byId("guardian_list")
-            admissionTable  = dijit.byId("admission_list")
-            visitTable      = dijit.byId("visit_list")
-
-            if(contactTable){
-              contactTable.destroyRecursive();
-              domConstruct.place("<div id='contact_list'></div>",
-                                 "patientContactTab", 
-                                 'second'
-                                 );
-              
-            }
-            if(phoneTable){
-              phoneTable.destroyRecursive();
-              domConstruct.place("<div id='phone_list'></div>",
-                                 "patientPhoneTab", 
-                                 'second'
-                                 );
-              
-            }
-            if(guardianTable){
-              guardianTable.destroyRecursive();
-              domConstruct.place("<div id='guardian_list'></div>",
-                                 "patientGuardianTab", 
-                                 'second'
-                                 );
-              
-            }
-            if(admissionTable){
-              admissionTable.destroyRecursive();
-              domConstruct.place("<div id='admission_list'></div>",
-                                 "patientAdmissionTab", 
-                                 'second'
-                                 );
-              
-            }
-            if(visitTable){
-              visitTable.destroyRecursive();
-              domConstruct.place("<div id='visit_list'></div>",
-                                 "patientVisitTab", 
-                                 'second'
-                                 );
-            }
-            domStyle.set(dijit.byId("patientContextPane").domNode,{'display': 'display'});
-     }
-
-    function cleanUpAdmissionPane(){
-      var center_top_pane = dijit.byId('centerTopTabPane');
-//      var admission_pane  = dijit.findWidgets("admissionHomeContentPane")
-      center_top_pane.selectChild(patientHomeContentPane);
-      dojo.forEach(admissionHomeContentPane, function(e){e.destroyRecursive(true)})
-      admissionHomeContentPane.domNode.innerHTML = 
-          "Please select an admission to display details here."
-    }
-
-    function cleanUpVisitPane(){
-      var center_top_pane = dijit.byId('centerTopTabPane');
-//      var visit_pane  = dijit.findWidgets("centerBottomPaneTab3")
-      center_top_pane.selectChild(patientHomeContentPane);
-      dojo.forEach(visitHomeContentPane, function(e){e.destroyRecursive(true)})
-      visitHomeContentPane.domNode.innerHTML = 
-           "Please select a visit to display details here."
-    }
+                      function cleanUpVisitPane(){
+                        var center_top_pane = dijit.byId('centerTopTabPane');
+                  //      var visit_pane  = dijit.findWidgets("centerBottomPaneTab3")
+                        center_top_pane.selectChild(patientHomeContentPane);
+                        dojo.forEach(visitHomeContentPane, function(e){e.destroyRecursive(true)})
+                        visitHomeContentPane.domNode.innerHTML = 
+                             "Please select a visit to display details here."
+                      }
 
 
-    doPostDelCleanup = function (){
-      //TODO
-      /* This should update all the grid when a patient is deleted */
-      cleanUpAdmissionPane();
-      cleanUpVisitPane();
-      reInitBottomPanels();
-    }
+                      doPostDelCleanup = function (){
+                        //TODO
+                        /* This should update all the grid when a patient is deleted */
+                        cleanUpAdmissionPane();
+                        cleanUpVisitPane();
+                        reInitBottomPanels();
+                      }
 
-    contactGrid.onRowDblClick = function(e){ 
-//                                  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}
-                                    onPatientSubMenuRowClick(e,
-                                                             contactGrid, 
-                                                             "Edit Contact"
-                                                            );
-//                                  {%endif%}
-                                    return false; 
-                                };
+                      contactGrid.onRowDblClick = function(e){ 
+                  //  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}
+                                                      onPatientSubMenuRowClick(e,
+                                                                               contactGrid, 
+                                                                               "Edit Contact"
+                                                                              );
+                  //  {%endif%}
+                                                      return false; 
+                                                  };
 
-    phoneGrid = new DataGrid({
-									store         : dataStore = ObjectStore
-									                            ({
-									                               objectStore: phoneStore
-									                            }),
-									selectionMode : "single",
-									rowSelector   : "20px",
-									structure: [
-											{name       : "ID", 
-											 field      : "id", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                  phoneGrid = new DataGrid({
+                                store         : dataStore = ObjectStore
+                                                        ({
+                                                           objectStore: phoneStore
+                                                        }),
+                                selectionMode : "single",
+                                rowSelector   : "20px",
+                                structure: [
+                                            {name       : "ID", 
+                                             field      : "id", 
+                                             width      : "50px",
+                                             hidden     : true,
+                                             cellStyles : "text-align:center;"
+                                            },
 
-											{name       : "Edit", 
-											 field      : "edit", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                                            {name       : "Edit", 
+                                             field      : "edit", 
+                                             width      : "50px",
+                                             hidden     : true,
+                                             cellStyles : "text-align:center;"
+                                            },
 
-											{name       : "Del", 
-											 field      : "del", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                                            {name       : "Del", 
+                                             field      : "del", 
+                                             width      : "50px",
+                                             hidden     : true,
+                                             cellStyles : "text-align:center;"
+                                            },
 
-											{name       : "Type", 
-											 field      : "phone_type", 
-											 width      : "50px",
-											 cellStyles : "text-align:center;"
-											},
+                                            {name       : "Type", 
+                                             field      : "phone_type", 
+                                             width      : "50px",
+                                             cellStyles : "text-align:center;"
+                                            },
 
-											{name       : "ISD", 
-											 field      : "ISD_Code", 
-											 width      : "250px",
-											 cellStyles : "text-align:center;"
-											},
+                                            {name       : "ISD", 
+                                             field      : "ISD_Code", 
+                                             width      : "250px",
+                                             cellStyles : "text-align:center;"
+                                            },
 
-											{name       : "STD", 
-											 field      : "STD_Code", 
-											 width      : "150px",
-											 cellStyles : "text-align:center;"
-											},
+                                            {name       : "STD", 
+                                             field      : "STD_Code", 
+                                             width      : "150px",
+                                             cellStyles : "text-align:center;"
+                                            },
 
-											{name       : "Phone", 
-											 field      : "phone", 
-											 width      : "50px",
-											 cellStyles : "text-align:center;"
-											},
+                                            {name       : "Phone", 
+                                             field      : "phone", 
+                                             width      : "50px",
+                                             cellStyles : "text-align:center;"
+                                            },
+                              ],
+                              noDataMessage: "<span class='dojoxGridNoData'>No Phone Numbers in Store..</span>"
+                          }, 
+                          "phone_list"
+                  )
 
-								],
-								noDataMessage: "<span class='dojoxGridNoData'>No Phone Numbers in Store..</span>"
-								}, 
-								"phone_list"
-     )
+                  phoneGrid.onRowDblClick = function(e){ 
+        //                                  {% if perms.patient.change_patientphone or perms.patient.delete_patientphone %}
+                                            onPatientSubMenuRowClick(e,phoneGrid, "Edit Phone");
+                                            return false; 
+        //                                  {% endif %}
+                  };
 
-    phoneGrid.onRowDblClick = function(e){ 
-//                                  {% if perms.patient.change_patientphone or perms.patient.delete_patientphone %}
-                                    onPatientSubMenuRowClick(e,phoneGrid, "Edit Phone");
-                                    return false; 
-//                                  {% endif %}
-                                 };
+                  guardianGrid = new DataGrid({
+                                          store         : dataStore = ObjectStore
+                                                                ({
+                                                                   objectStore: guardianStore
+                                                                }),
+                                          selectionMode : "single",
+                                          rowSelector   : "20px",
+                                          structure: [
+                                                      {name       : "ID", 
+                                                        field      : "id", 
+                                                        width      : "50px",
+                                                        hidden     : true,
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-                          guardianGrid = new DataGrid({
-																				store         : dataStore = ObjectStore
-																				                            ({
-																				                               objectStore: guardianStore
-																				                            }),
-																				selectionMode : "single",
-																				rowSelector   : "20px",
-																				structure: [
-																						{name       : "ID", 
-																						 field      : "id", 
-																						 width      : "50px",
-																						 hidden     : true,
-																						 cellStyles : "text-align:center;"
-																						},
+                                                      {name       : "Edit", 
+                                                        field      : "edit", 
+                                                        width      : "50px",
+                                                        hidden     : true,
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-																						{name       : "Edit", 
-																						 field      : "edit", 
-																						 width      : "50px",
-																						 hidden     : true,
-																						 cellStyles : "text-align:center;"
-																						},
+                                                      {name       : "Del", 
+                                                        field      : "del", 
+                                                        width      : "50px",
+                                                        hidden     : true,
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-																						{name       : "Del", 
-																						 field      : "del", 
-																						 width      : "50px",
-																						 hidden     : true,
-																						 cellStyles : "text-align:center;"
-																						},
+                                                      {name       : "Name", 
+                                                        field      : "guardian_name", 
+                                                        width      : "50px",
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-																						{name       : "Name", 
-																						 field      : "guardian_name", 
-																						 width      : "50px",
-																						 cellStyles : "text-align:center;"
-																						},
+                                                      {name       : "Relation", 
+                                                        field      : "relation_to_guardian", 
+                                                        width      : "250px",
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-																						{name       : "Relation", 
-																						 field      : "relation_to_guardian", 
-																						 width      : "250px",
-																						 cellStyles : "text-align:center;"
-																						},
+                                                      {name       : "Phone", 
+                                                        field      : "guardian_phone", 
+                                                        width      : "150px",
+                                                        cellStyles : "text-align:center;"
+                                                      },
+                                          ],
+                                          noDataMessage: "<span class='dojoxGridNoData'>No Guardian Information in Store..</span>"
+                                        }, 
+                                      "guardian_list"
+              );
 
-																						{name       : "Phone", 
-																						 field      : "guardian_phone", 
-																						 width      : "150px",
-																						 cellStyles : "text-align:center;"
-																						},
-																			],
-																			noDataMessage: "<span class='dojoxGridNoData'>No Guardian Information in Store..</span>"
-																			}, 
-																			"guardian_list"
-                          )
+              guardianGrid.onRowDblClick = function(e){ 
+          // {% if perms.patient.change_patientguardian or perms.patient.delete_patientguardian %}
+                                              onPatientSubMenuRowClick(e,guardianGrid, "Edit Guardian");
+                                              return false; 
+          // {% endif %}
+              };
 
-    guardianGrid.onRowDblClick = function(e){ 
-//                                  {% if perms.patient.change_patientguardian or perms.patient.delete_patientguardian %}
-                                    onPatientSubMenuRowClick(e,guardianGrid, "Edit Guardian");
-                                    return false; 
-//                                  {% endif %}
-                                 };
+                  admissionGrid = new DataGrid({
+                                        store         : dataStore = ObjectStore
+                                        ({
+                                         objectStore: admissionStore
+                                        }),
+                                        selectionMode : "single",
+                                        rowSelector   : "20px",
+                                        clientSort    : false,
+                                        headerStyle   : ['text-align:center;'],
+                                        structure: [
+                                                      {name       : "ID", 
+                                                        field      : "id", 
+                                                        width      : "50px",
+                                                        hidden     : true,
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
+                                                      {name       : "Home", 
+                                                        field      : "home", 
+                                                        width      : "50px",
+                                                        hidden     : true,
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-    admissionGrid = new DataGrid({
-									store         : dataStore = ObjectStore
-									                            ({
-									                               objectStore: admissionStore
-									                            }),
-									selectionMode : "single",
-									rowSelector   : "20px",
-									clientSort    : false,
-									headerStyle   : ['text-align:center;'],
-									structure: [
-											{name       : "ID", 
-											 field      : "id", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                                                      {name       : "Edit", 
+                                                        field      : "edit", 
+                                                        width      : "50px",
+                                                        hidden     : true,
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-											{name       : "Home", 
-											 field      : "home", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                                                      {name       : "Del", 
+                                                        field      : "del", 
+                                                        width      : "50px",
+                                                        hidden     : true,
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-											{name       : "Edit", 
-											 field      : "edit", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                                                      {name       : "DOA", 
+                                                        field      : "date_of_admission", 
+                                                        width      : "50px",
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-											{name       : "Del", 
-											 field      : "del", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                                                      {name       : "TOA", 
+                                                        field      : "time_of_admission", 
+                                                        width      : "50px",
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-											{name       : "DOA", 
-											 field      : "date_of_admission", 
-											 width      : "50px",
-											 cellStyles : "text-align:center;"
-											},
+                                                      {name       : "Surgeon", 
+                                                        field      : "admitting_surgeon", 
+                                                        width      : "250px",
+                                                        cellStyles : "text-align:center;"
+                                                      },
 
-											{name       : "TOA", 
-											 field      : "time_of_admission", 
-											 width      : "50px",
-											 cellStyles : "text-align:center;"
-											},
+                                                      {name       : "Status", 
+                                                        field      : "admission_closed", 
+                                                        width      : "150px",
+                                                        cellStyles : "text-align:center;",
+                                                        formatter : function(admission_closed){
+                                                                          if(admission_closed == true){
+                                                                              return '<img src="{{STATIC_URL}}images/flag_green.png" '+
+                                                                              'alt="Discharged" class="small_img">'; 
+                                                                          }
+                                                                          else if(admission_closed == false){
+                                                                              return '<img '+
+                                                                              'src="{{STATIC_URL}}images/flag_green.png"'+
+                                                                              'alt="Active" class="small_img">'; 
+                                                                          }
+                                                                          else{
+                                                                              return "Others"
+                                                                          }
+                                                                    } 
+                                                      },
 
-											{name       : "Surgeon", 
-											 field      : "admitting_surgeon", 
-											 width      : "250px",
-											 cellStyles : "text-align:center;"
-											},
+                                                      {name       : "Room", 
+                                                      field      : "room_or_ward", 
+                                                      width      : "50px",
+                                                      cellStyles : "text-align:center;"
+                                                      },
 
-											{name       : "Status", 
-											 field      : "admission_closed", 
-											 width      : "150px",
-											 cellStyles : "text-align:center;",
-											 formatter : function(admission_closed){
-																			if(admission_closed == true){
-																			 return '<img src="{{STATIC_URL}}images/flag_green.png" '+
-																							 'alt="Discharged" class="small_img">'; 
-																			}
-																			else if(admission_closed == false){
-																			 return '<img '+
-																							'src="{{STATIC_URL}}images/flag_green.png"'+
-																							'alt="Active" class="small_img">'; 
-																			}
-																			else{
-																			 return "Others"
-																			}
-																		} 
-											},
-
-											{name       : "Room", 
-											 field      : "room_or_ward", 
-											 width      : "50px",
-											 cellStyles : "text-align:center;"
-											},
-
-											{name       : "Hospital", 
-											 field      : "hospital", 
-											 width      : "100px",
-											 cellStyles : "text-align:center;"
-											},
-
-								],
-								noDataMessage: "<span class='dojoxGridNoData'>No Admission Information in Store..</span>",
-								}, 
-								"admission_list"
+                                                      {name       : "Hospital", 
+                                                      field      : "hospital", 
+                                                      width      : "100px",
+                                                      cellStyles : "text-align:center;"
+                                                      },
+                                        ],
+                                        noDataMessage: "<span class='dojoxGridNoData'>No Admission Information in Store..</span>",
+                                        }, 
+                                        "admission_list"
     )
 
     admissionGrid.onRowDblClick = function(e){
-//                                  {% if perms.admission.change_admissiondetail or perms.admission.delete_admissiondetail %}
+//  {% if perms.admission.change_admissiondetail or perms.admission.delete_admissiondetail %}
                                     onPatientSubMenuRowClick(e,
                                                              admissionGrid, 
                                                              "Edit Admission"
                                                             );
                                     return false; 
-//                                  {% endif %}
-                                 };
+// {% endif %}
+   };
 
     admissionGrid.onRowClick   = function(e){ 
 //                                {% if perms.admission %}
@@ -733,170 +762,174 @@
 
 
     visitGrid = new DataGrid({
-									store         : dataStore = ObjectStore
-									                            ({
-									                               objectStore: visitStore
-									                            }),
-									selectionMode : "single",
-									rowSelector   : "20px",
-									structure: [
-											{name       : "ID", 
-											 field      : "id", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                              store         : dataStore = ObjectStore
+                                                      ({
+                                                         objectStore: visitStore
+                                                      }),
+                              selectionMode : "single",
+                              rowSelector   : "20px",
+                              structure: [
+                                          {name       : "ID", 
+                                           field      : "id", 
+                                           width      : "50px",
+                                           hidden     : true,
+                                           cellStyles : "text-align:center;"
+                                          },
 
-											{name       : "Edit", 
-											 field      : "edit", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                                          {name       : "Edit", 
+                                           field      : "edit", 
+                                           width      : "50px",
+                                           hidden     : true,
+                                           cellStyles : "text-align:center;"
+                                          },
 
-											{name       : "Del", 
-											 field      : "del", 
-											 width      : "50px",
-											 hidden     : true,
-											 cellStyles : "text-align:center;"
-											},
+                                          {name       : "Del", 
+                                           field      : "del", 
+                                           width      : "50px",
+                                           hidden     : true,
+                                           cellStyles : "text-align:center;"
+                                          },
 
-											{name       : "DOV", 
-											 field      : "visit_date", 
-											 width      : "50px",
-											 cellStyles : "text-align:center;"
-											},
+                                          {name       : "DOV", 
+                                           field      : "visit_date", 
+                                           width      : "50px",
+                                           cellStyles : "text-align:center;"
+                                          },
 
-											{name       : "Surgeon", 
-											 field      : "op_surgeon", 
-											 width      : "250px",
-											 cellStyles : "text-align:center;"
-											},
+                                          {name       : "Surgeon", 
+                                           field      : "op_surgeon", 
+                                           width      : "250px",
+                                           cellStyles : "text-align:center;"
+                                          },
 
-											{name       : "Nature", 
-											 field      : "consult_nature", 
-											 width      : "150px",
-											 cellStyles : "text-align:center;"
-											},
+                                          {name       : "Nature", 
+                                           field      : "consult_nature", 
+                                           width      : "150px",
+                                           cellStyles : "text-align:center;"
+                                          },
 
-											{name       : "Status", 
-											 field      : "is_active", 
-											 width      : "50px",
-											 cellStyles : "text-align:center;"
-											},
+                                          {name       : "Status", 
+                                           field      : "is_active", 
+                                           width      : "50px",
+                                           cellStyles : "text-align:center;"
+                                          },
 
-											{name       : "Remarks", 
-											 field      : "remarks", 
-											 width      : "100px",
-											 cellStyles : "text-align:center;"
-											},
-
-								],
-								noDataMessage: "<span class='dojoxGridNoData'>No Visit Information in Store..</span>"
-								}, 
-								"visit_list"
+                                          {name       : "Remarks", 
+                                           field      : "remarks", 
+                                           width      : "100px",
+                                           cellStyles : "text-align:center;"
+                                          },
+                              ],
+                              noDataMessage: "<span class='dojoxGridNoData'>No Visit Information in Store..</span>"
+                              }, 
+                              "visit_list"
     );
 
     visitGrid.onRowDblClick = function(e){ 
-//                                {% if perms.visit.change_visitdetail or perms.visit.delete_visitdetail %}
+//{% if perms.visit.change_visitdetail or perms.visit.delete_visitdetail %}
                                     onPatientSubMenuRowClick(e,visitGrid, "Edit Visit");
-//                                {% endif %}
-                                  return false; 
-                                 };
+//{% endif %}
+                                   return false; 
+    };
 
     contactGrid.startup();
     phoneGrid.startup();
     guardianGrid.startup();
     admissionGrid.startup();
     visitGrid.startup();
-  return false; 
+    return false; 
  };
 
- grid.onRowDblClick = function(e){ 
-//                     {% if perms.patient.change_patientdetail or perms.patient.delete_patientdetail %}
-	                      var idx = e.rowIndex,
-	                          item = this.getItem(idx);
-	                      var patid = this.store.getValue(item, "id");
-	                      var edit  = this.store.getValue(item, "edit");
-	                      var del   = this.store.getValue(item, "del");
-	                      var visitadd      = this.store.getValue(item, "visitadd");
-	                      var admissionadd  = this.store.getValue(item, "admissionadd");
-                        if( e.cell.field == 'home'){
-                               e.cell.loadTab();
-                        }
-                        else{
-		                      grid.selection.clear();
-		                      grid.selection.setSelected(item, true);
-		                      xhr.get({
-		                         url  : edit,
-		                         load : function(html, idx){
-																				var myDialog = dijit.byId("editPatientDialog");
-																				if(myDialog == undefined || myDialog == null){
-																					myDialog = new dijit.Dialog({
-																														title: "Edit Patient",
-																														content: html,
-																														style: "width: 500px; height:500px;"
-																												   }, "editPatientDialog");
-																					myDialog.startup();
-																				}
-																				else{
-																					myDialog.set('content', html);
-																					myDialog.set('title', "Edit Patient"); 
-																			  }
-																				myDialog.show();
-		                               }
-		                      })
-		                    }
-//		                {% endif %}
+    grid.onRowDblClick = function(e){ 
+                        //{% if perms.patient.change_patientdetail or perms.patient.delete_patientdetail %}
+                          var idx = e.rowIndex,
+                              item = this.getItem(idx);
+                          var patid = this.store.getValue(item, "id");
+                          var edit  = this.store.getValue(item, "edit");
+                          var del   = this.store.getValue(item, "del");
+                          var visitadd      = this.store.getValue(item, "visitadd");
+                          var admissionadd  = this.store.getValue(item, "admissionadd");
+                          if( e.cell.field == 'home'){
+                              e.cell.loadTab();
+                          }
+                          else{
+                              grid.selection.clear();
+                              grid.selection.setSelected(item, true);
+                              xhr.get({
+                                      url  : edit,
+                                      load : function(html, idx){
+                                                var myDialog = dijit.byId("editPatientDialog");
+                                                if(myDialog == undefined || myDialog == null){
+                                                  myDialog = new dijit.Dialog({
+                                                                      title: "Edit Patient",
+                                                                      content: html,
+                                                                      style: "width: 500px; height:500px;"
+                                                                      }, 
+                                                                      "editPatientDialog"
+                                                  );
+                                                  myDialog.startup();
+                                                }
+                                                else{
+                                                  myDialog.set('content', html);
+                                                  myDialog.set('title', "Edit Patient"); 
+                                                }
+                                                myDialog.show();
+                                      }
+                            })
+                          }
+                    //{% endif %}
                       return false; 
-                     };
+    };
 
 //{% if perms.patient.add_patientdetail %}
-		var addPatientButton =  new dijit.form.Button({
-																				label: "New Patient",
-																				iconClass:"dijitIconNewTask",
-																				onClick: function(){
-																									require(["dojo/_base/xhr",
-										                   										"dijit/registry", 
-                    										                  "dijit/Dialog"
-										                              ], 
-                    										         function(xhr, registry, Dialog){
-                    										           var myDialog = dijit.byId("editPatientDialog");
-																				           xhr.get({
-																				                   url: "{%url patient_new_add %}",
-																				                   load: function(html){
-																				                         myDialog.set('content', html);
-																				                         myDialog.set('title', "Add Patient");
-																				                         myDialog.show();
-																				                   }
-                                                   });
-										                             });
-										                    }
-																		}, "addPatientButton");
+    var addPatientButton =  new dijit.form.Button({
+                                              label: "Register New Patient",
+                                              iconClass:"dijitIconNewTask",
+                                              onClick: function(){
+                                                                require(["dojo/_base/xhr",
+                                                                        "dijit/registry", 
+                                                                        "dijit/Dialog"
+                                                                ], 
+                                                                function(xhr, registry, Dialog){
+                                                                      var myDialog = dijit.byId("editPatientDialog");
+                                                                      xhr.get({
+                                                                              url: "{%url patient_new_add %}",
+                                                                              load: function(html){
+                                                                                   myDialog.set('content', html);
+                                                                                   myDialog.set('title', "Enroll New Patient to the Clinic - {{ user.clinic_name }}");
+                                                                                   myDialog.show();
+                                                                              }
+                                                                      });
+                                                                });
+                                              }
+                                            }, 
+                                            "addPatientButton"
+    );
 //{% endif %}
 
 //{% if perms.patient.add_patientcontact %}
-	  var addContactButton =  new dijit.form.Button({
-                                          label: "Add Contact",
-                                          iconClass: "dijitIconNewTask",
-                                          onClick: function(){
-                                                 require(
-                                                  ["dojo/_base/xhr", "dojo/_base/array"],
-                                                  function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id         = grid.store.getValue(gridRow[0], 'id');
-                                                    xhr.get({
-                                                      url: "{%url contact_json %}"+"?patient_id="+ id +"&action=add",
-                                                      load: function(html){
-                               										           var myDialog = dijit.byId("editPatientDialog");
-																		                         myDialog.set('content', html);
-																		                         myDialog.set('title', "Add Contact");
-																		                         myDialog.show();
-																				                   }
-                                                   });
-                                                 })
-                                          }
-                         }, "addContactButton");
+    var addContactButton =  new dijit.form.Button({
+                                                  label: "Add Contact",
+                                                  iconClass: "dijitIconNewTask",
+                                                  onClick: function(){
+                                                                require(["dojo/_base/xhr", "dojo/_base/array"],
+                                                                function(xhr, array){
+                                                                    var gridRow    = grid.selection.getSelected();
+                                                                    var id         = grid.store.getValue(gridRow[0], 'id');
+                                                                    xhr.get({
+                                                                            url: "{%url contact_json %}"+"?patient_id="+ id +"&action=add",
+                                                                            load: function(html){
+                                                                                          var myDialog = dijit.byId("editPatientDialog");
+                                                                                          myDialog.set('content', html);
+                                                                                          myDialog.set('title', "Add Postal Address Information");
+                                                                                          myDialog.show();
+                                                                                  }
+                                                                     });
+                                                                });
+                                                 }
+                                              }, 
+                                              "addContactButton"
+    );
 //{% endif %}
 
 //{% if perms.patient.add_patientphone %}
@@ -912,19 +945,21 @@
                                                     xhr.get({
                                                       url: "{%url phone_json %}"+"?patient_id="+ id +"&action=add",
                                                       load: function(html){
-                               										           var myDialog = dijit.byId("editPatientDialog");
-																		                         myDialog.set('content', html);
-																		                         myDialog.set('title', "Add Phone");
-																		                         myDialog.show();
-																				                   }
+                                                                   var myDialog = dijit.byId("editPatientDialog");
+                                                                   myDialog.set('content', html);
+                                                                   myDialog.set('title', "Add Phone Numbers");
+                                                                   myDialog.show();
+                                                             }
                                                    });
                                                  })
                                           }
-                         }, "addPhoneButton");
+                         }, 
+                         "addPhoneButton"
+  );
 //{% endif %}
 
 //{%if perms.patient.add_patientguardian %}
-	  var addGuardianButton =  new dijit.form.Button({
+    var addGuardianButton =  new dijit.form.Button({
                                           label: "Add Guardian",
                                           iconClass: "dijitIconNewTask",
                                           onClick: function(){
@@ -936,11 +971,11 @@
                                                     xhr.get({
                                                       url: "{%url guardian_json %}"+"?patient_id="+ id +"&action=add",
                                                       load: function(html){
-                               										           var myDialog = dijit.byId("editPatientDialog");
-																		                         myDialog.set('content', html);
-																		                         myDialog.set('title', "Add Guardian");
-																		                         myDialog.show();
-																				                   }
+                                                               var myDialog = dijit.byId("editPatientDialog");
+                                                               myDialog.set('content', html);
+                                                               myDialog.set('title', "Add Guardian Information ");
+                                                               myDialog.show();
+                                                            }
                                                    });
                                                  })
                                           }
@@ -949,7 +984,7 @@
 
 //{% if perms.admission.add_admissiondetail %}
 	  var addAdmissionButton =  new dijit.form.Button({
-                                          label: "Add Admission",
+                                          label: "New Admission",
                                           iconClass: "dijitIconNewTask",
                                           onClick: function(){
                                                  require(
@@ -960,11 +995,11 @@
                                                     xhr.get({
                                                       url: "{%url admission_json %}"+"?patient_id="+ id +"&action=add",
                                                       load: function(html){
-                               										           var myDialog = dijit.byId("editPatientDialog");
-																		                         myDialog.set('content', html);
-																		                         myDialog.set('title', "Add Admission");
-																		                         myDialog.show();
-																				                   }
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record New Admission to the Clinic - {{ user.clinic_name }}");
+                                                                 myDialog.show();
+                                                            }
                                                    });
                                                  })
                                           }
@@ -973,7 +1008,7 @@
 
 //{% if perms.visit.add_visitdetail %}
 	  var addVisitButton =  new dijit.form.Button({
-                                          label: "Add Visit",
+                                          label: "New Visit",
                                           iconClass: "dijitIconNewTask",
                                           onClick: function(){
                                                  require(
@@ -984,22 +1019,122 @@
                                                     xhr.get({
                                                       url: "{%url visit_json %}"+"?patient_id="+ id +"&action=add",
                                                       load: function(html){
-                               										           var myDialog = dijit.byId("editPatientDialog");
-																		                         myDialog.set('content', html);
-																		                         myDialog.set('title', "Add Visit");
-																		                         myDialog.show();
-																				                   }
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', " Record New Out Patient Visit to the Clinic - {% user.clinic_name %}");
+                                                                 myDialog.show();
+                                                            }
                                                    });
                                                  })
                                           }
                          }, "addVisitButton");
 //{% endif %}
 
+//{% if perms.patient %}
+	  var addDemographicsButton =  new dijit.form.Button({
+                                          label: "Add Demographics",
+                                          iconClass: "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    var gridRow    = grid.selection.getSelected();
+                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    xhr.get({
+                                                      url: "/AuShadha/"+"?patient_id="+ id +"&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record Demographics Information");
+                                                                  myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         }, "addDemographicsButton");
+//{% endif %}
+
+
+//{% if perms.patient %}
+	  var addAllergyButton =  new dijit.form.Button({
+                                          label: "New Allergy",
+                                          iconClass: "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    var gridRow    = grid.selection.getSelected();
+                                                    var id         = grid.store.getValue(gridRow[0], 'id');
+                                                    xhr.get({
+                                                      url: "/AuShadha/"+"?patient_id="+ id +"&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record New Allergy Details");
+                                                                 myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         }, "addAllergyButton");
+//{% endif %}
+
+//{% if perms.patient %}
+	  var addPatientImmunizationButton =  new dijit.form.Button({
+                                          label: "Add Immunization",
+                                          iconClass: "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    var gridRow    = grid.selection.getSelected();
+                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    xhr.get({
+                                                      url: "/AuShadha/"+"?patient_id="+ id +"&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record New Immunization Details");
+                                                                 myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         }, "addPatientImmunizationButton");
+//{% endif %}
+
+
+//{% if perms.patient %}
+	  var addPatientMediaButton =  new dijit.form.Button({
+                                          label: "Add Patient Media",
+                                          iconClass: "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    var gridRow    = grid.selection.getSelected();
+                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    xhr.get({
+                                                      url: "/AuShadha/"+"?patient_id="+ id +"&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Add Patient Media");
+                                                                 myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         }, "addPatientMediaButton");
+//{% endif %}
+
+
+
 // {% endif %} 
 
-   genericFormBehaviour();
+  genericFormBehaviour();
 
-    var patientIdStore = new JsonRest({
+  var patientIdStore = new JsonRest({
             target     : "{%url patient_id_autocompleter %}",
             idProperty : 'patient_id'
         });
