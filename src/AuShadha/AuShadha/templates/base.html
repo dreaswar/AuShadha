@@ -84,6 +84,13 @@
 
   <script type="text/javascript">
     /* 
+       Global Variables for Grid Structures
+    */
+       {% include 'grid_structures.js' %}
+  </script>
+
+  <script type="text/javascript">
+    /* 
        Contains the Logic of eventing in Patient Search Form Partly. 
        Some of it is implemented in the HTML declaratively.
        Triggered when the patient search text is entered 
@@ -274,14 +281,14 @@
 
                         <!--  START OF PATIENTCONTEXTTABS  -->
                         <div id              = "patientContextTabs"
-                             class           = "patientContextTabs"
+                             class           = "patientContextTabContainer"
                              data-dojo-type  = "dijit/layout/TabContainer"
                              data-dojo-props = "tabPosition:'bottom'"
                         >
 
                             <!--  START OF PATIENTCONTEXTTABS1  -->
                             <div  id              = "patientContactTab"
-                                  class           = "patientContactTab"
+                                  class           = "patientContextTabs"
                                   data-dojo-type  = "dojox/layout/ContentPane"
                                   data-dojo-props = "title: 'Address'"
                             >
@@ -294,7 +301,6 @@
                                 </button>
                                 {% endif %}
                                 <div id     = "contact_list" 
-                                    style   = "height :300px; overflow:auto;"
                                 > 
                                 </div>
                             </div>
@@ -302,7 +308,7 @@
 
                           <!--  START OF PATIENTCONTEXTTABS2  -->
                           <div  id              = "patientPhoneTab"
-                                class           = "patientPhoneTab"
+                                class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title: 'Phone'"
                           >
@@ -315,7 +321,6 @@
                             </button>
                             {% endif %}
                             <div id="phone_list"
-                                 style   = "height :300px; overflow:auto;"
                             > 
                             </div>
                          </div>
@@ -323,7 +328,7 @@
 
                           <!--  START OF PATIENTCONTEXTTABS3  -->
                           <div  id              = "patientGuardianTab"
-                                class           = "patientGuardianTab"
+                                class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title: 'Guardian'"
                           >
@@ -335,7 +340,6 @@
                             </button>
                             {% endif %}
                             <div id="guardian_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             </div>
                           </div>
@@ -343,7 +347,7 @@
 
                           <!--  START OF PATIENTCONTEXTTABS4  -->
                           <div  id              = "patientDemographicsTab"
-                                class           = "patientDemographicsTab"
+                                class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title          : 'Demographics'"
                            >
@@ -356,7 +360,6 @@
                             </button>
                             {% endif %}
                             <div id="demographics_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                              This will be filled with Demographics Info.
                             </div>
@@ -365,7 +368,7 @@
 
                           <!--  START OF PATIENTCONTEXTTABS5  -->
                           <div  id              = "patientAllergyTab"
-                                class           = "patientAllergyTab"
+                                class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title          : 'Allergy'"
                            >
@@ -378,7 +381,6 @@
                             </button>
                             {% endif %}
                             <div id="allergy_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             This will list Allergies the patient has
                             </div>
@@ -387,7 +389,7 @@
 
                           <!--  START OF PATIENTCONTEXTTABS6  -->
                           <div  id              = "patientImmunizationTab"
-                                class           = "patientImmunizationTab"
+                                class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title  : 'Immunizations'"
                            >
@@ -400,7 +402,6 @@
                             </button>
                             {% endif %}
                             <div id="immunization_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             This will list the immunization history 
                             </div>
@@ -409,9 +410,9 @@
 
                           <!--  START OF PATIENTCONTEXTTABS7  -->
                           <div  id              = "patientAdmissionTab"
-                                class           = "patientAdmissionTab"
+                                class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title: 'In Patient'"
+                                data-dojo-props = "title: 'Admission'"
                           >
                             {% if perms.admission.add_admissiondetail %}
                             <button id              = "addAdmissionButton" 
@@ -422,7 +423,6 @@
                             </button>
                             {% endif %}
                             <div id="admission_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             </div>
                           </div>
@@ -431,9 +431,9 @@
 
                           <!--  START OF PATIENTCONTEXTTABS8  -->
                           <div  id              = "patientVisitTab"
-                                class           = "patientVisitTab"
+                                class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title          : 'Out Patient '"
+                                data-dojo-props = "title          : 'Visits '"
                            >
                             {% if perms.visit.add_visitdetail %}
                             <button id              = "addVisitButton" 
@@ -444,8 +444,8 @@
                             </button>
                             {% endif %}
                             <div id="visit_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
+                            This Page will list all the Clinic Visits
                             </div>
                           </div>
                           <!--  END OF PATIENTCONTEXTTABS8  -->
@@ -453,7 +453,7 @@
 
                           <!--  START OF PATIENTCONTEXTTABS8  -->
                           <div  id              = "patientMediaTab"
-                                class           = "patientMediaTab"
+                                class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title          : 'Media'"
                            >
@@ -466,7 +466,6 @@
                             </button>
                             {% endif %}
                             <div id="patient_media_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             This will list the attachments the patient has.. 
                             documents, images, video, slides etc.. 
@@ -493,7 +492,7 @@
                 data-dojo-id    =  "admissionHomeContentPane"
                 data-dojo-type  =  "dojox/layout/ContentPane"
                 style           =  "height:1500px; "
-                data-dojo-props =  "title          :'In Patient', 
+                data-dojo-props =  "title          :'Admission', 
                                     executeScripts :true, 
                                     scriptHasHooks :true
                                   "
@@ -511,7 +510,7 @@
                 data-dojo-id    = "visitHomeContentPane"
                 data-dojo-type  =  "dojox/layout/ContentPane"
                 style           =  "height:1500px; "
-                data-dojo-props =  "title          :'Out Patient Visits',
+                data-dojo-props =  "title          :'Visits',
                                     executeScripts : true, 
                                     scriptHasHooks : true
                                    "

@@ -114,12 +114,12 @@
           behaviour.apply()
        }
 
-        var grid,
-            admissionGrid,
-            visitGrid,
-            contactGrid,
-            phoneGrid,
-            guardianGrid;
+//        var grid,
+//            admissionGrid,
+//            visitGrid,
+//            contactGrid,
+//            phoneGrid,
+//            guardianGrid;
 
        // Define Methods for cleaning up after use.
         var doPostDelCleanup;
@@ -190,115 +190,36 @@
                   autoWidth     : true,
                   selectionMode : "single",
                   rowSelector   : "20px",
-                  structure: [
-                  {name       : "ID", 
-                  field      : "id", 
-                  width      : "50px",
-                  hidden     : true,
-                  cellStyles : "text-align:center;"
-                  },
-                  {name       : "Edit", 
-                  field      : "edit", 
-                  width      : "50px",
-                  hidden     : true,
-                  cellStyles : "text-align:center;"
-                  },
-                  {name       : "Del", 
-                  field      : "del", 
-                  width      : "50px",
-                  hidden     : true,
-                  cellStyles : "text-align:center;"
-                  },
-                  {name       : "Visit", 
-                  field      : "visitadd", 
-                  width      : "50px",
-                  hidden     : true,
-                  cellStyles : "text-align:center;"
-                  },
-                  {name       : "Adm", 
-                    field      : "admissionadd", 
-                    width      : "50px",
-                    hidden     : true,
-                    cellStyles : "text-align:center;"
-                  },
-
-                  {name       : "Patient ID", 
-                    field      : "patient_hospital_id", 
-                    width      : "100px",
-                    cellStyles : "text-align:center;"
-                  },
-                  { name      : "First Name", 
-                    field     : "first_name", 
-                    width      : "100px",
-                    cellStyles : "text-align:center;"
-                  },
-                  { name      : "Middle Name", 
-                    field     : "middle_name", 
-                    width      : "100px",
-                    cellStyles : "text-align:center;"
-                  },
-                  { name       : "Last Name" ,
-                    field      : "last_name" , 
-                    width      : "100px",
-                    cellStyles : "text-align:center;",
-                    formatter  : function(last_name){ 
-                                  return '<em>'+ last_name +'</em>';
-                               }
-                  },
-                  { name        : "Full Name", 
-                    field       : "full_name", 
-                    width       : "100px",
-                    hidden      : true,
-                    cellStyles  : "text-align:center;"
-                  },
-                  {name       : "Age"   ,
-                    field      : "age"   ,
-                    width      : "100px",
-                    cellStyles : "text-align:center;"
-                  },
-                  {name      : "Sex" , 
-                    field     : "sex" ,
-                    width      : "100px",
-                    formatter : function(sex){
-                              if(sex == 'Male'){
-                               return '<img src="{{STATIC_URL}}images/male.png" '+
-                                       'alt="Male" class="small_img">'; 
-                              }
-                              else if(sex == 'Female'){
-                               return '<img '+
-                                      'src="{{STATIC_URL}}images/female.png"'+
-                                      'title="'+ sex +
-                                      '" alt="Male" class="small_img">'; 
-                              }
-                              else{
-                               return "Others"
-                              } 
-                            },
-                    cellStyles: "text-align:center;"
-                  },
-                  { name      : "URL"   , 
-                    field     : "home"  ,
-                    width      : "50px",
-                    hidden    : true,
-                    cellStyles: "text-align:center;",
-                  },
-        ],
-        noDataMessage: "<span class='dojoxGridNoData'>No Matching Patients</span>"
-    }, 
-    "patient_grid"
-  ); 
+                  structure     : GRID_STRUCTURES.PATIENT_GRID,
+                  noDataMessage: "<span class='dojoxGridNoData'>No Matching Patients</span>"
+                  }, 
+                "patient_grid"
+        ); 
 
   grid.startup();
   grid.canSort = function(){ return true;};
 
   grid.onRowClick = function(e) { 
+                        /* 
+                           Get the Clicked Rows index and the Grid item from that
+                           Fetch the Item in the Store so that the patient ID is
+                           retrieved. 
+                        */
                         var idx    = e.rowIndex,
                             item   = this.getItem(idx),
                             patid  = this.store.getValue(item, "id");
 
+                        /* 
+                           Clear the current Grid selection
+                           Set the new selected Row
+                        */
                         grid.selection.clear();
                         grid.selection.setSelected(item, true);
 
+                        /* 
+                           Construct the URLs to retreive the info
+                           from the Patient ID generated. 
+                        */
                         var contactUrl  = "{%url contact_json %}" + 
                                            "?patient_id=" 
                                            + patid,
@@ -319,576 +240,317 @@
                          */
                          {% endcomment %}
 
-                       contactStore    = new JsonRest({target:contactUrl}),
-                       phoneStore      = new JsonRest({target:phoneUrl}),
-                       guardianStore   = new JsonRest({target:guardianUrl}),
-                       admissionStore  = new JsonRest({target:admissionUrl});
+                      /* 
+                         Set the Stores for Contacts, Phone, Guardian and admission 
+                         data. 
+                      */
+                       var contactStore    = new JsonRest({target:contactUrl});
+                       var phoneStore      = new JsonRest({target:phoneUrl});
+                       var guardianStore   = new JsonRest({target:guardianUrl});
+                       var admissionStore  = new JsonRest({target:admissionUrl});
                       {% comment %} 
-                        // visitStore      = new JsonRest({target:visitUrl}); 
+                        // var visitStore      = new JsonRest({target:visitUrl}); 
                       {% endcomment %}
 
+                      /* 
+                        Reinitiate the Bottom Panels so that 
+                        the dijits there are wiped and recreated as new rows
+                        are clicked in the patient list table.
+                      */
                       reInitBottomPanels();
 
-                      contactGrid = new DataGrid({
-                                      store         : dataStore = ObjectStore
-                                                              ({
+                      /* 
+                        Reconfigure the grids again and attach the onRowClick and
+                        onRowDblClick methods
+                      */
+
+                      var contactGrid = new DataGrid({
+                                      store         : dataStore = ObjectStore({
                                                                  objectStore: contactStore
-                                                              }),
+                                                      }),
                                       selectionMode : "single",
                                       rowSelector   : "20px",
-                                      structure: [
-                                                    {name       : "ID", 
-                                                     field      : "id", 
-                                                     width      : "50px",
-                                                     hidden     : true,
-                                                     cellStyles : "text-align:center;"
-                                                    },
-
-                                                    {name       : "PatID", 
-                                                     field      : "pat_id", 
-                                                     width      : "50px",
-                                                     hidden     : true,
-                                                     cellStyles : "text-align:center;"
-                                                    },
-
-                                                    {name       : "Edit", 
-                                                     field      : "edit", 
-                                                     width      : "50px",
-                                                     hidden     : true,
-                                                     cellStyles : "text-align:center;"
-                                                    },
-
-                                                    {name       : "Del", 
-                                                     field      : "del", 
-                                                     width      : "50px",
-                                                     hidden     : true,
-                                                     cellStyles : "text-align:center;"
-                                                    },
-
-                                                    {name       : "Type", 
-                                                     field      : "address_type", 
-                                                     width      : "50px",
-                                                     cellStyles : "text-align:center;"
-                                                    },
-
-                                                    {name       : "Address", 
-                                                     field      : "address", 
-                                                     width      : "250px",
-                                                     cellStyles : "text-align:center;"
-                                                    },
-
-                                                    {name       : "City", 
-                                                     field      : "city", 
-                                                     width      : "150px",
-                                                     cellStyles : "text-align:center;"
-                                                    },
-
-                                                    {name       : "State", 
-                                                     field      : "state", 
-                                                     width      : "50px",
-                                                     cellStyles : "text-align:center;"
-                                                    },
-
-                                                    {name       : "Country", 
-                                                     field      : "country", 
-                                                     width      : "100px",
-                                                     cellStyles : "text-align:center;"
-                                                    },
-
-                                                    {name       : "Pincode", 
-                                                     field      : "pincode", 
-                                                     width      : "100px",
-                                                     cellStyles : "text-align:center;"
-                                                    }
-                                      ],
-                                      noDataMessage: "<span class='dojoxGridNoData'>No Contact Information in Store..</span>"
+                                      structure     : GRID_STRUCTURES.PATIENT_CONTACT_GRID_STRUCTURE,
+                                      noDataMessage : "<span class='dojoxGridNoData'>No Contact Information in Store..</span>"
                                     }, 
                                     "contact_list"
                         );
 
-                       function onPatientSubMenuRowClick(e, gridToUse, titleToUse){ 
-                            var idx = e.rowIndex,
-                                item = gridToUse.getItem(idx);
-                            var contactid = gridToUse.store.getValue(item, "id");
-                            var edit      = gridToUse.store.getValue(item, "edit");
-                            var del       = gridToUse.store.getValue(item, "del");
-                            gridToUse.selection.clear();
-                            gridToUse.selection.setSelected(item, true);
-                            xhr.get({
-                                url  : edit,
-                                load : function(html, idx){
-                                var myDialog = dijit.byId("editPatientDialog");
-                                if(myDialog == undefined || myDialog == null){
-                                  myDialog = new dijit.Dialog({
-                                                    title: titleToUse,
-                                                    content: html,
-                                                    style: "width: 500px; height:500px;"
-                                                   }, "editPatientDialog");
-                                  myDialog.startup();
-                                }
-                                else{
-                                  myDialog.set('content', html);
-                                  myDialog.set('title', titleToUse); 
-                                }
-                                myDialog.show();
-                                }
-                            });
-                          return false; 
-	                     };
+                contactGrid.onRowDblClick = function(e){ 
+                //  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}
+                                                  onPatientSubMenuRowClick(e,
+                                                                           contactGrid, 
+                                                                           "Edit Contact"
+                                                                          );
+                //  {%endif%}
+                                                  return false; 
+               };
 
-                       function reInitBottomPanels(){
-                              var contactTable        = dijit.byId("contact_list"),
-                                  phoneTable          = dijit.byId("phone_list"),
-                                  guardianTable       = dijit.byId("guardian_list"),
-                                  demographicsTable   = dijit.byId("demographics_list"),
-                                  allergyTable        = dijit.byId("allergy_list"),
-                                  immunizationTable   = dijit.byId("immunization_list"),
-                                  admissionTable      = dijit.byId("admission_list"),
-                                  visitTable          = dijit.byId("visit_list"),
-                                  patientMediaTable   = dijit.byId("patient_media_list");
-
-                              if(contactTable){
-                                contactTable.destroyRecursive();
-                                console.log("Recreating Contact tab");
-                                domConstruct.place("<div id='contact_list'></div>",
-                                                   "patientContactTab", 
-                                                   'second'
-                                                   );
-                                
-                              }
-                              if(phoneTable){
-                                phoneTable.destroyRecursive();
-                                console.log("Recreating Phone tab");
-                                domConstruct.place("<div id='phone_list'></div>",
-                                                   "patientPhoneTab", 
-                                                   'second'
-                                                   );
-                                
-                              }
-                              if(guardianTable){
-                                guardianTable.destroyRecursive();
-                                console.log("Recreating Guardian tab");
-                                domConstruct.place("<div id='guardian_list'></div>",
-                                                   "patientGuardianTab", 
-                                                   'second'
-                                                   );
-                                
-                              }
-                              if(demographicsTable){
-                                demographicsTable.destroyRecursive();
-                                console.log("Recreating demographics tab");
-                                domConstruct.place("<div id='demographics_list'></div>",
-                                                   "patientDemographicsTab", 
-                                                   'second'
-                                                   );
-                                
-                              }
-                              if(allergyTable){
-                                allergyTable.destroyRecursive();
-                                console.log("Recreating allergy tab");
-                                domConstruct.place("<div id='allergy_list'></div>",
-                                                   "patientAllergyTab", 
-                                                   'second'
-                                                   );
-                                
-                              }
-                              if(immunizationTable){
-                                immunizationTable.destroyRecursive();
-                                console.log("Recreating immunization tab");
-                                domConstruct.place("<div id='immunization_list'></div>",
-                                                   "patientImmunizationTab", 
-                                                   'second'
-                                                   );
-                                
-                              }
-                              if(patientMediaTable){
-                                patientMediaTable.destroyRecursive();
-                                console.log("Recreating Patient Media tab");
-                                domConstruct.place("<div id='patient_media_list'></div>",
-                                                   "patientMediaTab", 
-                                                   'second'
-                                                   );
-                                
-                              }
-                              if(admissionTable){
-                                admissionTable.destroyRecursive();
-                                console.log("Recreating Admission tab");
-                                domConstruct.place("<div id='admission_list'></div>",
-                                                   "patientAdmissionTab", 
-                                                   'second'
-                                                   );
-                                
-                              }
-                              if(visitTable){
-                                visitTable.destroyRecursive();
-                                console.log("Recreating Visit tab tab");
-                                domConstruct.place("<div id='visit_list'></div>",
-                                                   "patientVisitTab", 
-                                                   'second'
-                                                   );
-                              }
-                              //domStyle.set(dijit.byId("patientContextPane").domNode,{'display': 'display'});
-                       }
-
-                      function cleanUpAdmissionPane(){
-                        var center_top_pane = dijit.byId('centerTopTabPane');
-                  //      var admission_pane  = dijit.findWidgets("admissionHomeContentPane")
-                        center_top_pane.selectChild(patientHomeContentPane);
-                        dojo.forEach(admissionHomeContentPane, function(e){e.destroyRecursive(true)})
-                        admissionHomeContentPane.domNode.innerHTML = 
-                            "Please select an admission to display details here."
-                      }
-
-                      function cleanUpVisitPane(){
-                        var center_top_pane = dijit.byId('centerTopTabPane');
-                  //      var visit_pane  = dijit.findWidgets("centerBottomPaneTab3")
-                        center_top_pane.selectChild(patientHomeContentPane);
-                        dojo.forEach(visitHomeContentPane, function(e){e.destroyRecursive(true)})
-                        visitHomeContentPane.domNode.innerHTML = 
-                             "Please select a visit to display details here."
-                      }
-
-
-                      doPostDelCleanup = function (){
-                        //TODO
-                        /* This should update all the grid when a patient is deleted */
-                        cleanUpAdmissionPane();
-                        cleanUpVisitPane();
-                        reInitBottomPanels();
-                      }
-
-                      contactGrid.onRowDblClick = function(e){ 
-                  //  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}
-                                                      onPatientSubMenuRowClick(e,
-                                                                               contactGrid, 
-                                                                               "Edit Contact"
-                                                                              );
-                  //  {%endif%}
-                                                      return false; 
-                                                  };
-
-                  phoneGrid = new DataGrid({
-                                store         : dataStore = ObjectStore
-                                                        ({
+                var phoneGrid = new DataGrid({
+                                store         : dataStore = ObjectStore({
                                                            objectStore: phoneStore
-                                                        }),
+                                                }),
                                 selectionMode : "single",
                                 rowSelector   : "20px",
-                                structure: [
-                                            {name       : "ID", 
-                                             field      : "id", 
-                                             width      : "50px",
-                                             hidden     : true,
-                                             cellStyles : "text-align:center;"
-                                            },
-
-                                            {name       : "Edit", 
-                                             field      : "edit", 
-                                             width      : "50px",
-                                             hidden     : true,
-                                             cellStyles : "text-align:center;"
-                                            },
-
-                                            {name       : "Del", 
-                                             field      : "del", 
-                                             width      : "50px",
-                                             hidden     : true,
-                                             cellStyles : "text-align:center;"
-                                            },
-
-                                            {name       : "Type", 
-                                             field      : "phone_type", 
-                                             width      : "50px",
-                                             cellStyles : "text-align:center;"
-                                            },
-
-                                            {name       : "ISD", 
-                                             field      : "ISD_Code", 
-                                             width      : "250px",
-                                             cellStyles : "text-align:center;"
-                                            },
-
-                                            {name       : "STD", 
-                                             field      : "STD_Code", 
-                                             width      : "150px",
-                                             cellStyles : "text-align:center;"
-                                            },
-
-                                            {name       : "Phone", 
-                                             field      : "phone", 
-                                             width      : "50px",
-                                             cellStyles : "text-align:center;"
-                                            },
-                              ],
-                              noDataMessage: "<span class='dojoxGridNoData'>No Phone Numbers in Store..</span>"
+                                structure     : GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE,
+                              noDataMessage   : "<span class='dojoxGridNoData'>No Phone Numbers in Store..</span>"
                           }, 
                           "phone_list"
                   );
 
                   phoneGrid.onRowDblClick = function(e){ 
-        //                                  {% if perms.patient.change_patientphone or perms.patient.delete_patientphone %}
+                  // {% if perms.patient.change_patientphone or perms.patient.delete_patientphone %}
                                             onPatientSubMenuRowClick(e,phoneGrid, "Edit Phone");
                                             return false; 
-        //                                  {% endif %}
+                  // {% endif %}
                   };
 
-                  guardianGrid = new DataGrid({
-                                          store         : dataStore = ObjectStore
-                                                                ({
+                  var guardianGrid = new DataGrid({
+                                          store         : dataStore = ObjectStore({
                                                                    objectStore: guardianStore
-                                                                }),
+                                                          }),
                                           selectionMode : "single",
                                           rowSelector   : "20px",
-                                          structure: [
-                                                      {name       : "ID", 
-                                                        field      : "id", 
-                                                        width      : "50px",
-                                                        hidden     : true,
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "Edit", 
-                                                        field      : "edit", 
-                                                        width      : "50px",
-                                                        hidden     : true,
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "Del", 
-                                                        field      : "del", 
-                                                        width      : "50px",
-                                                        hidden     : true,
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "Name", 
-                                                        field      : "guardian_name", 
-                                                        width      : "50px",
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "Relation", 
-                                                        field      : "relation_to_guardian", 
-                                                        width      : "250px",
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "Phone", 
-                                                        field      : "guardian_phone", 
-                                                        width      : "150px",
-                                                        cellStyles : "text-align:center;"
-                                                      },
-                                          ],
-                                          noDataMessage: "<span class='dojoxGridNoData'>No Guardian Information in Store..</span>"
+                                          structure     : GRID_STRUCTURES.PATIENT_GUARDIAN_GRID_STRUCTURE,
+                                          noDataMessage : "<span class='dojoxGridNoData'>No Guardian Information in Store..</span>"
                                         }, 
                                       "guardian_list"
-              );
+                  );
 
-              guardianGrid.onRowDblClick = function(e){ 
-          // {% if perms.patient.change_patientguardian or perms.patient.delete_patientguardian %}
-                                              onPatientSubMenuRowClick(e,guardianGrid, "Edit Guardian");
-                                              return false; 
-          // {% endif %}
-              };
+                  guardianGrid.onRowDblClick = function(e){ 
+                  // {% if perms.patient.change_patientguardian or perms.patient.delete_patientguardian %}
+                                                  onPatientSubMenuRowClick(e,guardianGrid, "Edit Guardian");
+                                                  return false; 
+                  // {% endif %}
+                  };
 
-                  admissionGrid = new DataGrid({
-                                        store         : dataStore = ObjectStore
-                                        ({
-                                         objectStore: admissionStore
-                                        }),
-                                        selectionMode : "single",
-                                        rowSelector   : "20px",
-                                        clientSort    : false,
-                                        headerStyle   : ['text-align:center;'],
-                                        structure: [
-                                                      {name       : "ID", 
-                                                        field      : "id", 
-                                                        width      : "50px",
-                                                        hidden     : true,
-                                                        cellStyles : "text-align:center;"
-                                                      },
+                  var admissionGrid = new DataGrid({
+                                          store         : dataStore = ObjectStore({
+                                                                       objectStore: admissionStore
+                                                          }),
+                                          selectionMode : "single",
+                                          rowSelector   : "20px",
+                                          clientSort    : false,
+                                          headerStyle   : ['text-align:center;'],
+                                          structure     : GRID_STRUCTURES.PATIENT_ADMISSION_GRID_SRUCTURE,
+                                          noDataMessage : "<span class='dojoxGridNoData'>No Admission Information in Store..</span>",
+                                      }, 
+                                      "admission_list"
+                    );
 
-                                                      {name       : "Home", 
-                                                        field      : "home", 
-                                                        width      : "50px",
-                                                        hidden     : true,
-                                                        cellStyles : "text-align:center;"
-                                                      },
+                    admissionGrid.onRowDblClick = function(e){
+                     //  {% if perms.admission.change_admissiondetail or perms.admission.delete_admissiondetail %}
+                                                    onPatientSubMenuRowClick(e,
+                                                                             admissionGrid, 
+                                                                             "Edit Admission"
+                                                                            );
+                                                    return false; 
+                    // {% endif %}
+                    };
 
-                                                      {name       : "Edit", 
-                                                        field      : "edit", 
-                                                        width      : "50px",
-                                                        hidden     : true,
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "Del", 
-                                                        field      : "del", 
-                                                        width      : "50px",
-                                                        hidden     : true,
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "DOA", 
-                                                        field      : "date_of_admission", 
-                                                        width      : "50px",
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "TOA", 
-                                                        field      : "time_of_admission", 
-                                                        width      : "50px",
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "Surgeon", 
-                                                        field      : "admitting_surgeon", 
-                                                        width      : "250px",
-                                                        cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "Status", 
-                                                        field      : "admission_closed", 
-                                                        width      : "150px",
-                                                        cellStyles : "text-align:center;",
-                                                        formatter : function(admission_closed){
-                                                                          if(admission_closed == true){
-                                                                              return '<img src="{{STATIC_URL}}images/flag_green.png" '+
-                                                                              'alt="Discharged" class="small_img">'; 
-                                                                          }
-                                                                          else if(admission_closed == false){
-                                                                              return '<img '+
-                                                                              'src="{{STATIC_URL}}images/flag_green.png"'+
-                                                                              'alt="Active" class="small_img">'; 
-                                                                          }
-                                                                          else{
-                                                                              return "Others"
-                                                                          }
-                                                                    } 
-                                                      },
-
-                                                      {name       : "Room", 
-                                                      field      : "room_or_ward", 
-                                                      width      : "50px",
-                                                      cellStyles : "text-align:center;"
-                                                      },
-
-                                                      {name       : "Hospital", 
-                                                      field      : "hospital", 
-                                                      width      : "100px",
-                                                      cellStyles : "text-align:center;"
-                                                      },
-                                        ],
-                                        noDataMessage: "<span class='dojoxGridNoData'>No Admission Information in Store..</span>",
-                                        }, 
-                                        "admission_list"
-    );
-
-    admissionGrid.onRowDblClick = function(e){
-//  {% if perms.admission.change_admissiondetail or perms.admission.delete_admissiondetail %}
-                                    onPatientSubMenuRowClick(e,
-                                                             admissionGrid, 
-                                                             "Edit Admission"
-                                                            );
-                                    return false; 
-// {% endif %}
-   };
-
-    admissionGrid.onRowClick   = function(e){ 
-//                                {% if perms.admission %}
-                                  var topContentPane = registry.byId('centerTopTabPane');
-                                  var newTabPane     = registry.byId("admissionHomeContentPane");
-                                  console.log(newTabPane)
-                                  var item           = admissionGrid.getItem(e.rowIndex);
-                                  var homeUrl        = admissionGrid.store.getValue(item,'home')
-                                  console.log(homeUrl)
-                                  xhr.get({
-                                       url    : homeUrl,
-                                       load   : function(content){
-                                                  newTabPane.set('content', content)
-                                                  topContentPane.selectChild(newTabPane);
-                                                }
-                                  });
-                                  return false; 
-//                                {% endif %}
-                                 };
+                    admissionGrid.onRowClick   = function(e){ 
+                      //  {% if perms.admission %}
+                                                  var topContentPane = registry.byId('centerTopTabPane');
+                                                  var newTabPane     = registry.byId("admissionHomeContentPane");
+                                                  console.log(newTabPane)
+                                                  var item           = admissionGrid.getItem(e.rowIndex);
+                                                  var homeUrl        = admissionGrid.store.getValue(item,'home')
+                                                  console.log(homeUrl)
+                                                  xhr.get({
+                                                       url    : homeUrl,
+                                                       load   : function(content){
+                                                                  newTabPane.set('content', content)
+                                                                  topContentPane.selectChild(newTabPane);
+                                                                }
+                                                  });
+                                                  return false; 
+                      //  {% endif %}
+                    };
 
 
 {% comment %}
-/*
-    visitGrid = new DataGrid({
-                              store         : dataStore = ObjectStore
-                                                      ({
-                                                         objectStore: visitStore
-                                                      }),
-                              selectionMode : "single",
-                              rowSelector   : "20px",
-                              structure: [
-                                          {name       : "ID", 
-                                           field      : "id", 
-                                           width      : "50px",
-                                           hidden     : true,
-                                           cellStyles : "text-align:center;"
-                                          },
+                    /*
+                        var visitGrid = new DataGrid({
+                                                  store         : dataStore = ObjectStore({objectStore: visitStore
+                                                                  }),
+                                                  selectionMode : "single",
+                                                  rowSelector   : "20px",
+                                                  structure     : GRID_STRUCTURES.PATIENT_VISIT_GRID_STRUCTURE,
+                                                  noDataMessage : "<span class='dojoxGridNoData'>No Visit Information in Store..</span>"
+                                                  }, 
+                                                  "visit_list"
+                        );
 
-                                          {name       : "Edit", 
-                                           field      : "edit", 
-                                           width      : "50px",
-                                           hidden     : true,
-                                           cellStyles : "text-align:center;"
-                                          },
-
-                                          {name       : "Del", 
-                                           field      : "del", 
-                                           width      : "50px",
-                                           hidden     : true,
-                                           cellStyles : "text-align:center;"
-                                          },
-
-                                          {name       : "DOV", 
-                                           field      : "visit_date", 
-                                           width      : "50px",
-                                           cellStyles : "text-align:center;"
-                                          },
-
-                                          {name       : "Surgeon", 
-                                           field      : "op_surgeon", 
-                                           width      : "250px",
-                                           cellStyles : "text-align:center;"
-                                          },
-
-                                          {name       : "Nature", 
-                                           field      : "consult_nature", 
-                                           width      : "150px",
-                                           cellStyles : "text-align:center;"
-                                          },
-
-                                          {name       : "Status", 
-                                           field      : "is_active", 
-                                           width      : "50px",
-                                           cellStyles : "text-align:center;"
-                                          },
-
-                                          {name       : "Remarks", 
-                                           field      : "remarks", 
-                                           width      : "100px",
-                                           cellStyles : "text-align:center;"
-                                          },
-                              ],
-                              noDataMessage: "<span class='dojoxGridNoData'>No Visit Information in Store..</span>"
-                              }, 
-                              "visit_list"
-    );
-
-    visitGrid.onRowDblClick = function(e){ 
-//{% if perms.visit.change_visitdetail or perms.visit.delete_visitdetail %}
-                                    onPatientSubMenuRowClick(e,visitGrid, "Edit Visit");
-//{% endif %}
-                                   return false; 
-    };
-*/
+                        visitGrid.onRowDblClick = function(e){ 
+                        //{% if perms.visit.change_visitdetail or perms.visit.delete_visitdetail %}
+                                                       onPatientSubMenuRowClick(e,visitGrid, "Edit Visit");
+                        //{% endif %}
+                                                       return false; 
+                        };
+                    */
 {% endcomment %}
 
+     function onPatientSubMenuRowClick(e, gridToUse, titleToUse){ 
+          var idx = e.rowIndex,
+              item = gridToUse.getItem(idx);
+          var contactid = gridToUse.store.getValue(item, "id");
+          var edit      = gridToUse.store.getValue(item, "edit");
+          var del       = gridToUse.store.getValue(item, "del");
+          gridToUse.selection.clear();
+          gridToUse.selection.setSelected(item, true);
+          xhr.get({
+              url  : edit,
+              load : function(html, idx){
+              var myDialog = dijit.byId("editPatientDialog");
+              if(myDialog == undefined || myDialog == null){
+                myDialog = new dijit.Dialog({
+                                  title: titleToUse,
+                                  content: html,
+                                  style: "width: 500px; height:500px;"
+                                 }, "editPatientDialog");
+                myDialog.startup();
+              }
+              else{
+                myDialog.set('content', html);
+                myDialog.set('title', titleToUse); 
+              }
+              myDialog.show();
+              }
+          });
+        return false; 
+     };
+
+     function reInitBottomPanels(){
+            var contactTable        = dijit.byId("contact_list"),
+                phoneTable          = dijit.byId("phone_list"),
+                guardianTable       = dijit.byId("guardian_list"),
+                demographicsTable   = dijit.byId("demographics_list"),
+                allergyTable        = dijit.byId("allergy_list"),
+                immunizationTable   = dijit.byId("immunization_list"),
+                admissionTable      = dijit.byId("admission_list"),
+                visitTable          = dijit.byId("visit_list"),
+                patientMediaTable   = dijit.byId("patient_media_list");
+
+            if(contactTable){
+              contactTable.destroyRecursive();
+              console.log("Recreating Contact tab");
+              domConstruct.place("<div id='contact_list'></div>",
+                                 "patientContactTab", 
+                                 'second'
+                                 );
+              
+            }
+            if(phoneTable){
+              phoneTable.destroyRecursive();
+              console.log("Recreating Phone tab");
+              domConstruct.place("<div id='phone_list'></div>",
+                                 "patientPhoneTab", 
+                                 'second'
+                                 );
+              
+            }
+            if(guardianTable){
+              guardianTable.destroyRecursive();
+              console.log("Recreating Guardian tab");
+              domConstruct.place("<div id='guardian_list'></div>",
+                                 "patientGuardianTab", 
+                                 'second'
+                                 );
+              
+            }
+            if(demographicsTable){
+              demographicsTable.destroyRecursive();
+              console.log("Recreating demographics tab");
+              domConstruct.place("<div id='demographics_list' class='patientContextTabs'></div>",
+                                 "patientDemographicsTab", 
+                                 'second'
+                                 );
+              
+            }
+            if(allergyTable){
+              allergyTable.destroyRecursive();
+              console.log("Recreating allergy tab");
+              domConstruct.place("<div id='allergy_list' class='patientContextTabs'></div>",
+                                 "patientAllergyTab", 
+                                 'second'
+                                 );
+              
+            }
+            if(immunizationTable){
+              immunizationTable.destroyRecursive();
+              console.log("Recreating immunization tab");
+              domConstruct.place("<div id='immunization_list' class='patientContextTabs'></div>",
+                                 "patientImmunizationTab", 
+                                 'second'
+                                 );
+              
+            }
+            if(patientMediaTable){
+              patientMediaTable.destroyRecursive();
+              console.log("Recreating Patient Media tab");
+              domConstruct.place("<div id='patient_media_list' class='patientContextTabs'></div>",
+                                 "patientMediaTab", 
+                                 'second'
+                                 );
+              
+            }
+            if(admissionTable){
+              admissionTable.destroyRecursive();
+              console.log("Recreating Admission tab");
+              domConstruct.place("<div id='admission_list' class='patientContextTabs'></div>",
+                                 "patientAdmissionTab", 
+                                 'second'
+                                 );
+              
+            }
+            if(visitTable){
+              visitTable.destroyRecursive();
+              console.log("Recreating Visit tab tab");
+              domConstruct.place("<div id='visit_list' class='patientContextTabs'></div>",
+                                 "patientVisitTab", 
+                                 'second'
+                                 );
+            }
+            dojo.forEach(dojo.query(".patientContextTabs"), 
+                         function(tabs){ 
+                              domStyle.set(tabs,{'height'   : '1000px', 
+                                                 "overflow" : "auto"
+                                                }
+                                          ); 
+                         }
+            );
+     }
+
+    function cleanUpAdmissionPane(){
+      var center_top_pane = dijit.byId('centerTopTabPane');
+//      var admission_pane  = dijit.findWidgets("admissionHomeContentPane")
+      center_top_pane.selectChild(patientHomeContentPane);
+      dojo.forEach(admissionHomeContentPane, function(e){e.destroyRecursive(true)})
+      admissionHomeContentPane.domNode.innerHTML = 
+          "Please select an admission to display details here."
+    }
+
+    function cleanUpVisitPane(){
+      var center_top_pane = dijit.byId('centerTopTabPane');
+//      var visit_pane  = dijit.findWidgets("centerBottomPaneTab3")
+      center_top_pane.selectChild(patientHomeContentPane);
+      dojo.forEach(visitHomeContentPane, function(e){e.destroyRecursive(true)})
+      visitHomeContentPane.domNode.innerHTML = 
+           "Please select a visit to display details here."
+    }
+
+
+    doPostDelCleanup = function (){
+      //TODO
+      /* This should update all the grid when a patient is deleted */
+      cleanUpAdmissionPane();
+      cleanUpVisitPane();
+      reInitBottomPanels();
+    }
+
+   /*
+    Run Functions to initiate the grids
+  */
     contactGrid.startup();
     phoneGrid.startup();
     guardianGrid.startup();
@@ -936,8 +598,8 @@
                                       }
                             })
                           }
-                    //{% endif %}
-                      return false; 
+                      //{% endif %}
+                         return false; 
     };
 
 //{% if perms.patient.add_patientdetail %}

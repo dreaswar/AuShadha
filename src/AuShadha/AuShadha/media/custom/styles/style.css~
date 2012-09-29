@@ -14,9 +14,17 @@
 					height: 100%;
 			}
 
-			#topPane, 
 			#bottomPane{
 				height     : 30px;
+				margin     : 0 ;
+				padding    : 1;
+				overflow   : hidden;
+        background : -moz-linear-gradient(center top , #EDF2F7, white) repeat scroll 0 0 transparent;
+        color       : Navy;
+			}
+
+			#topPane {
+				height     : 70px;
 				margin     : 0 ;
 				padding    : 1;
 				overflow   : hidden;
@@ -68,6 +76,20 @@
    left: 45px;
    min-height: 300px;
    max-height: 375px;
+	}
+
+	#contact_list,
+	#phone_list,
+	#guardian_list,
+	#demographics_list,
+	#allergy_list,
+	#patient_media_list,
+	#admission_list,
+	#visit_list
+{
+   min-height : 230px;
+   max-height : 230px;
+//   overflow   :auto;
 	}
 
 

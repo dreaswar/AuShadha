@@ -76,6 +76,21 @@
    left: 45px;
    min-height: 300px;
    max-height: 375px;
+   margin-top: 20px;
+	}
+
+	#contact_list,
+	#phone_list,
+	#guardian_list,
+	#demographics_list,
+	#allergy_list,
+	#patient_media_list,
+	#admission_list,
+	#visit_list
+{
+   min-height : 230px;
+   max-height : 230px;
+//   overflow   :auto;
 	}
 
 
