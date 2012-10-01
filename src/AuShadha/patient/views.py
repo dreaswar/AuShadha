@@ -646,6 +646,36 @@ def guardian_json(request):
 
 
 @login_required
+def demographics_json(request):
+  try:
+    action                  = unicode(request.GET.get('action'))
+    id                      = int(request.GET.get('patient_id'))
+    if action == 'add':
+      return patient_demographics_add(request, id)
+    patient_detail_obj           = PatientDetail.objects.get(pk = id)
+  except(AttributeError, NameError, TypeError, ValueError, KeyError):
+    raise Http404("ERROR:: Bad request.Invalid arguments passed")
+  except(PatientDetail.DoesNotExist):
+    raise Http404("ERROR:: Patient requested does not exist.")
+  patient_demographics_obj    = PatientDemographicsAndSocialData.objects.filter(patient_detail = patient_detail_obj)
+  data                    = []
+  if patient_demographics_obj:
+    for demographics in patient_demographics_obj:
+      data_to_append = {}
+      data_to_append['id']                    = guardian.id
+      data_to_append['guardian_name']         = guardian.guardian_name
+      data_to_append['relation_to_guardian']  = guardian.relation_to_guardian
+      data_to_append['guardian_phone']        = guardian.guardian_phone
+      data_to_append['edit']                  = guardian.get_patient_guardian_edit_url()
+      data_to_append['del']                   = guardian.get_patient_guardian_del_url()
+      data.append(data_to_append)
+  json   = simplejson.dumps(data)
+  return HttpResponse(json, content_type = "application/json")
+
+
+
+
+@login_required
 def admission_json(request):
   try:
     action                  = unicode(request.GET.get('action'))

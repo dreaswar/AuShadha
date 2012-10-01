@@ -555,6 +555,72 @@ class PatientEmailFax(models.Model):
 
 
 
+class PatientDemographicsAndSocialData(models.Model):
+    """
+      Maintains Demographic, Social and Family data for the patient
+      This has been adapted from the excellent work by GNU Health project
+      However this is a very rudimentary adaptation
+    """
+    date_of_birth     = models.DateField(auto_now_add = False, null = True, blank = True)
+    socioeconomics    = models.CharField(max_length = 100, default="Middle", 
+                                         choices = (("low", "Low"), 
+                                                    ("middle", "Middle" ),
+                                                    ("high","High")
+                                                   )
+                                        )
+    education         = models.CharField(max_length = 100, default = "Graduate", choices = (('pg','Post-Graduate'),
+                                                                                        ('g','Graduate'),
+                                                                                        ('hs','High School'),
+                                                                                        ('lg',"Lower Grade School"),
+                                                                                        ('i', "Iliterate")
+                                                                                       ))
+    housing_conditions = models.TextField(max_length = 250, default = "Comfortable, with good sanitory conditions")
+    occupation         = models.CharField(max_length = 200)
+    religion           = models.CharField(max_length = 200)    
+    race               = models.CharField(max_length = 200)
+    languages_known    = models.TextField(max_length = 300)
+    marital_status     = models.CharField(max_length = 50, choices = (("sing","Single"), 
+                                                                      ("marr","Married"), 
+                                                                      ("wid","Widowed"), 
+                                                                      ("sep","Separated"),
+                                                                      ("div","Divorded") 
+                                                                     ))
+    family_members     = models.CharField(max_length = 100, 
+                                          choices = ( ('father','Father'),('mother',"Mother"),
+                                                      ('husband', "Husband"),('wife',"Wife"),
+                                                      ('son',"Son"),
+                                                      ('daughter',"Daughter"),
+                                                      ('grand-parents',"Grand-parents"),
+                                                      ('others',"Others"),
+                                                      ('staying-alone', "Staying Alone"))
+                                          )
+
+    drug_abuse_history = models.BooleanField(default = False)
+    alcohol_intake     = models.TextField(max_length = 250, default= "None",
+                                          help_text = "brief account on the amount, frequency and age when started")
+    smoking            = models.TextField(max_length = 100, default="None",
+                                          help_text = "bried account on the cigarretes/day for 'x' number of years" )
+
+
+
+
+    patient_detail     = models.ForeignKey(PatientDetail)
+
+
+    def __unicode__(self):
+        return "%s" %(patient_detail)
+
+    def save(self, *args, **kwargs):
+        patient_obj      = self.patient_detail
+        demographics_obj = PatientDemographicsAndSocialData.objects.filter(patient_detail = patient_obj)
+        if demographics_obj:
+           raise Exception("Demographics Data already exists")
+        else:
+           super(PatientDemographicsAndSocialData,self).save(*args, **kwargs)
+        
+
+
+
 ## Modelform definition of Patients.
 
 class PatientDetailForm(ModelForm):

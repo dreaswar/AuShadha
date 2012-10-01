@@ -18,9 +18,12 @@ class PatientEmailFaxAdmin(admin.ModelAdmin):
   list_display = ['patient_detail', 'email', 'web', 'fax']
   search_fields = ['patient_detail', 'email', 'web', 'fax']
   
+class PatientDemographicsAndSocialDataAdmin(admin.ModelAdmin):
+  pass
+
 admin.site.register(PatientDetail,PatientDetailAdmin)
 admin.site.register(PatientGuardian,PatientGuardianAdmin)
 admin.site.register(PatientContact,PatientContactAdmin)
 admin.site.register(PatientPhone,PatientPhoneAdmin)
 admin.site.register(PatientEmailFax, PatientEmailFaxAdmin)
-
+admin.site.register(PatientDemographicsAndSocialData, PatientDemographicsAndSocialDataAdmin)
