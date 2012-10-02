@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 
 #################### PATIENT ###############################
 
-  url(	r'list/$',
+  url(r'list/$',
 	'patient.views.render_patient_list'	,
 	name = 'render_patient_list'
   ),

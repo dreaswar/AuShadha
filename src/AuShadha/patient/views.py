@@ -50,6 +50,24 @@ import AuShadha.settings as settings
 
 ################################################################################
 
+def generate_json_for_datagrid(obj, success=True, error_message = "Saved Successfully", form_errors  = None):
+    """
+      Returns the JSON formatted Values of a specific Django Model Instance for use with Dojo Grid.
+      A few default DOJO Grid Values are specified, rest are instance specific and are generated on the fly.
+    """
+    data = { 'success'      : unicode(success), 
+             'error_message': unicode(error_message) ,
+             'form_errors'  : form_errors,
+             'edit'         : obj.get_edit_url(),
+             'del'          : obj.get_del_url()
+           }
+    for i in obj._meta.fields:
+      if i.name not in data:
+        data[i.name] = getattr(obj, i.name, None)
+    json = simplejson.dumps(data)
+    return json
+
+
 def return_patient_json(patient, success = True):
     data_to_append = {}
     if patient:
@@ -657,17 +675,28 @@ def demographics_json(request):
     raise Http404("ERROR:: Bad request.Invalid arguments passed")
   except(PatientDetail.DoesNotExist):
     raise Http404("ERROR:: Patient requested does not exist.")
-  patient_demographics_obj    = PatientDemographicsAndSocialData.objects.filter(patient_detail = patient_detail_obj)
-  data                    = []
+  patient_demographics_obj   = PatientDemographicsData.objects.filter(patient_detail = patient_detail_obj)
+  data                       = []
   if patient_demographics_obj:
     for demographics in patient_demographics_obj:
       data_to_append = {}
-      data_to_append['id']                    = guardian.id
-      data_to_append['guardian_name']         = guardian.guardian_name
-      data_to_append['relation_to_guardian']  = guardian.relation_to_guardian
-      data_to_append['guardian_phone']        = guardian.guardian_phone
-      data_to_append['edit']                  = guardian.get_patient_guardian_edit_url()
-      data_to_append['del']                   = guardian.get_patient_guardian_del_url()
+      data_to_append['id']                     = demographics.id
+      data_to_append['date_of_birth']          = demographics.date_of_birth
+      data_to_append['socioeconomics']         = demographics.socioeconomics
+      data_to_append['education']              = demographics.education
+      data_to_append['housing_conditions']     = demographics.housing_conditions
+      data_to_append['occupation']             = demographics.occupation
+      data_to_append['religion']               = demographics.religion
+      data_to_append['race']                   = demographics.race
+      data_to_append['languages_known']        = demographics.languages_known
+      data_to_append['marital_status']         = demographics.marital_status
+      data_to_append['family_members']         = demographics.family_members
+      data_to_append['drug_abuse_history']     = demographics.drug_abuse_history
+      data_to_append['alcohol_intake']         = demographics.alcohol_intake
+      data_to_append['smoking']                = demographics.smoking
+
+      data_to_append['edit']                  = demographics.get_patient_demographics_edit_url()
+      data_to_append['del']                   = demographics.get_patient_demographics_del_url()
       data.append(data_to_append)
   json   = simplejson.dumps(data)
   return HttpResponse(json, content_type = "application/json")
@@ -1460,6 +1489,141 @@ def patient_phone_del(request, id):
       raise Http404("BadRequest: Unsupported Request Method")
   else:
     raise Http404("Server Error: No Permission to delete.")
+
+
+
+################################################################################
+
+@login_required
+def patient_demographics_add(request, id):
+  if request.user:
+    user = request.user
+    if request.method =="GET" and request.is_ajax():
+      try:
+        id                   = int(id)
+        patient_detail_obj   = PatientDetail.objects.get(pk =id)
+        demographics_obj     = PatientDetail.objects.filter(patient_detail = patient_detail_obj)
+        if demographics_obj:
+          return Http404("Demographics Data Already exists.. Do you want to edit ? ")
+        else:
+          patient_demographics_obj       = PatientDemographicsData(patient_detail = patient_detail_obj)
+          patient_demographics_add_form  = PatientDemographicsDataForm(instance = patient_demographics_obj)
+          variable                = RequestContext(request, 
+                                                    {"user" 									:	user,
+                                                    "patient_detail_obj"			:	patient_detail_obj ,
+                                                    "patient_demographics_add_form" :	patient_demographics_add_form, 
+                                                    "patient_demographics_obj" 		  :	patient_demographics_obj ,
+                                                    })
+      except TypeError or ValueError or AttributeError:
+        raise Http404("BadRequest")
+      except PatientDetail.DoesNotExist:
+        raise Http404("BadRequest: Patient Data Does Not Exist")
+      return render_to_response('patient/demographics/add.html',variable)
+    elif request.method == 'POST' and request.is_ajax():
+      try:
+        id                      = int(id)
+        patient_detail_obj      = PatientDetail.objects.get(pk =id)
+        patient_demographics_obj       = PatientDemographicsData(patient_detail = patient_detail_obj)
+        patient_demographics_add_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_obj)
+        if patient_demographics_add_form.is_valid():
+          demographics_obj  = patient_demographics_add_form.save()
+          json              = generate_json_for_datagrid(demographics_obj)
+          return HttpResponse(json, content_type = 'application/json')
+        else:
+          success       = False
+          error_message = "Error Occured. DemographicsData data could not be added."
+          form_errors   = ''
+          for error in patient_demographics_add_form.errors:
+            form_errors += '<p>' + error +'</p>'
+          data = { 'success'      : success, 
+                   'error_message': error_message,
+                   'form_errors'  : form_errors
+                 }
+          json = simplejson.dumps(data)
+          return HttpResponse(json, content_type = 'application/json')
+      except ValueError or AttributeError or TypeError:
+        raise Http404("BadRequest: Server Error")
+      except PatientDetail.DoesNotExist:
+        raise Http404("BadRequest: Requested Patient DoesNotExist")
+    else:
+      raise Http404("BadRequest: Unsupported Request Method. AJAX status is:: " + unicode(request.is_ajax()))
+
+
+@login_required
+def patient_demographics_edit(request, id):
+  if request.user:
+    user = request.user
+    if request.method =="GET" and request.is_ajax():
+      try:
+        id                             = int(id)
+        patient_demographics_obj       = PatientDemographicsData.objects.get(pk = id)
+        patient_demographics_edit_form = PatientDemographicsDataForm(instance = patient_demographics_obj)
+        patient_detail_obj             = patient_demographics_obj.patient_detail
+        variable                        = RequestContext(request, 
+                                                          {"user":user,
+                                                          "patient_detail_obj"            : patient_detail_obj ,
+                                                          "patient_demographics_edit_form": patient_demographics_edit_form, 
+                                                          "patient_demographics_obj":patient_demographics_obj 
+                                                          })
+      except TypeError or ValueError or AttributeError:
+        raise Http404("BadRequest")
+      except PatientDemographicsData.DoesNotExist:
+        raise Http404("BadRequest: Patient DemographicsData Data Does Not Exist")
+      return render_to_response('patient/demographics/edit.html',variable)
+    elif request.method == 'POST' and request.is_ajax():
+      try:
+        id                              = int(id)
+        patient_demographics_obj        = PatientDemographicsData.objects.get(pk =id)
+        patient_demographics_edit_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_obj)
+        patient_detail_obj              = patient_demographics_obj.patient_detail
+        if patient_demographics_edit_form.is_valid():
+          demographics_obj  = patient_demographics_edit_form.save()
+          data              = generate_json_for_datagrid(demographics_obj)
+          json              = simplejson.dumps(data)
+          return HttpResponse(json, content_type = 'application/json')
+        else:
+          success       = False
+          error_message = "Error Occured. Demographics Data data could not be added."
+          form_errors   = ''
+          for error in patient_demographics_edit_form.errors:
+            form_errors += '<p>' + error +'</p>'
+          data = {'success': success, 'error_message': error_message,'form_errors': form_errors}
+          json = simplejson.dumps(data)
+          return HttpResponse(json, content_type = 'application/json')          
+      except ValueError or AttributeError or TypeError:
+        raise Http404("BadRequest: Server Error")
+      except PatientDemographicsData.DoesNotExist:
+        raise Http404("BadRequest: Requested Patient Demographics Data DoesNotExist")
+    else:
+      raise Http404("BadRequest: Unsupported Request Method. request's AJAX status was:: ", request.is_ajax())
+
+
+@login_required
+def patient_demographics_del(request, id):
+  user = request.user
+  if request.user and user.is_superuser:
+    if request.method =="GET":
+       try:
+          id                      = int(id)
+          patient_demographics_obj = PatientDemographicsData(pk = id)
+          patient_detail_obj       = patient_demographics_obj.patient_detail
+       except TypeError or ValueError or AttributeError:
+          raise Http404("BadRequest")
+       except PatientDemographicsData.DoesNotExist:
+          raise Http404("BadRequest: Patient Demographics Data Does Not Exist")
+       patient_demographics_obj.delete()
+       success = True
+       error_message = "Demographics Data Deleted Successfully"
+       data = {'success': success, 'error_message': error_message}
+       json = simplejson.dumps(data)
+       return HttpResponse(json, content_type = 'application/json')
+    else:
+      raise Http404("BadRequest: Unsupported Request Method")
+  else:
+    raise Http404("Server Error: No Permission to delete.")
+
+
+################################################################################
 
 
 @login_required

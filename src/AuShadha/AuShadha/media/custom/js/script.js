@@ -764,7 +764,7 @@
                                                     var gridRow    = grid.selection.getSelected();
                                                     var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "/AuShadha/"+"?patient_id="+ id +"&action=add",
+                                                      url: "/AuShadha/pat/demographics/add/"+ id + "/",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);

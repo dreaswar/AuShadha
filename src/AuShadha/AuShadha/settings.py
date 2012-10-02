@@ -4,8 +4,9 @@ import sys, os
 
 ROOT_PATH = os.path.dirname(__file__)
 
-LOGIN_URL          = "/AuShadha/login/"
-LOGIN_REDIRECT_URL = "/AuShadha/"
+APP_ROOT_URL       = u"/AuShadha/"
+LOGIN_URL          = APP_ROOT_URL + u"login/"
+LOGIN_REDIRECT_URL = APP_ROOT_URL
 
 
 SERIALIZATION_MODULES = {
@@ -63,7 +64,7 @@ MEDIA_ROOT = os.path.join(ROOT_PATH,'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/AuShadha/media/'
+MEDIA_URL = APP_ROOT_URL + 'media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -73,7 +74,7 @@ STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/AuShadha/static/'
+STATIC_URL = APP_ROOT_URL+'static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (

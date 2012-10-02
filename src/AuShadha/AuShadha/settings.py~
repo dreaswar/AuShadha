@@ -4,8 +4,9 @@ import sys, os
 
 ROOT_PATH = os.path.dirname(__file__)
 
-LOGIN_URL = "/AuShadha/login/"
-LOGIN_REDIRECT_URL = "/AuShadha/"
+APP_ROOT_URL       = u"/AuShadha/"
+LOGIN_URL          = APP_ROOT_URL + u"login/"
+LOGIN_REDIRECT_URL = APP_ROOT_URL
 
 
 SERIALIZATION_MODULES = {
@@ -63,7 +64,7 @@ MEDIA_ROOT = os.path.join(ROOT_PATH,'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/AuShadha/media/'
+MEDIA_URL = APP_ROOT_URL + 'media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -108,7 +109,7 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+#    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
@@ -142,14 +143,14 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # Custom Apps here:
+    'aushadha_users',
     'clinic',
     'patient',
-    'aushadha_users',
     'physician',
     'nurse',
     'staff',
     'inv_and_imaging',
-#    'admission',
+    'admission',
 #    'visit',
 )
 
