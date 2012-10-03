@@ -126,11 +126,39 @@ urlpatterns = patterns('',
     url(r'guardian/del/(?P<id>\d+)/$','patient.views.patient_guardian_del',name = 'patient_guardian_del' ),
 
 
+###########################################################################################
+
+    url(r'demographics/json/$',
+    		'patient.views.demographics_json',
+    		name = 'demographics_add'
+    ),
+
+#    url(r'demographics/list/(?P<id>\d+)/$',
+#    		'patient.views.patient_demographics_list',
+#    		name = 'patient_demographics_list'
+#    ),
+
+    url(r'demographics/add/(?P<id>\d+)/$',
+    		'patient.views.patient_demographics_add',
+   		  name = 'patient_demographics_add'
+    ),
+    url(r'demographics/edit/(?P<id>\d+)/$',
+    		'patient.views.patient_demographics_edit',
+    		name = 'patient_demographics_edit'
+    ),
+    url(r'demographics/del/(?P<id>\d+)/$',
+    		'patient.views.patient_demographics_del',
+    		name = 'patient_demographics_del'
+    ),
+
+###########################################################################################
+
     url(r'admission/json/$','patient.views.admission_json',name = 'admission_json'  ),
 
 #   url(r'admission/list/(?P<id>\d+)/$','patient.views.patient_admission_list', name = 'get_patient_admission_list'	 ),
     url( r'admission/add/(?P<id>\d+)/$'	,'patient.views.patient_admission_add',	name ='patient_admission_add'),
     url( r'admission/add/$','patient.views.patient_admission_add',name ='patient_admission_add'	),
+
 
     url(r'visit/json/$','patient.views.visit_json',name = 'visit_json' ),
 

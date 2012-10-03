@@ -229,6 +229,9 @@
                             guardianUrl = "{%url guardian_json %}" + 
                                           "?patient_id=" 
                                           + patid,
+                            demographicsUrl = "{%url demographics_json %}" + 
+                                           "?patient_id=" 
+                                           + patid,
                             admissionUrl = "{%url admission_json %}" + 
                                            "?patient_id=" 
                                            + patid;
@@ -247,6 +250,7 @@
                        var contactStore    = new JsonRest({target:contactUrl});
                        var phoneStore      = new JsonRest({target:phoneUrl});
                        var guardianStore   = new JsonRest({target:guardianUrl});
+                       var demographicsStore  = new JsonRest({target:demographicsUrl});
                        var admissionStore  = new JsonRest({target:admissionUrl});
                       {% comment %} 
                         // var visitStore      = new JsonRest({target:visitUrl}); 
@@ -323,6 +327,33 @@
                                                   return false; 
                   // {% endif %}
                   };
+
+
+                  var demographicsGrid = new DataGrid({
+                                          store         : dataStore = ObjectStore({
+                                                                       objectStore: demographicsStore
+                                                          }),
+                                          selectionMode : "single",
+                                          rowSelector   : "20px",
+                                          clientSort    : false,
+                                          headerStyle   : ['text-align:center;'],
+                                          structure     : GRID_STRUCTURES.PATIENT_DEMOGRAPHICS_GRID_STRUCTURE,
+                                          noDataMessage : "<span class='dojoxGridNoData'>No Demographics Information in Store..</span>",
+                                      }, 
+                                      "demographics_list"
+                    );
+
+                    demographicsGrid.onRowDblClick = function(e){
+                     //  {% if perms.patient.change_patientdemographicsdata or perms.patient.delete_patientdemographicsdata %}
+                                                    onPatientSubMenuRowClick(e,
+                                                                             demographicsGrid, 
+                                                                             "Edit Demographics"
+                                                                            );
+                                                    return false; 
+                    // {% endif %}
+                    };
+
+
 
                   var admissionGrid = new DataGrid({
                                           store         : dataStore = ObjectStore({
@@ -556,6 +587,7 @@
     contactGrid.startup();
     phoneGrid.startup();
     guardianGrid.startup();
+    demographicsGrid.startup();
     admissionGrid.startup();
 {% comment %}    
     //visitGrid.startup(); 
@@ -764,7 +796,7 @@
                                                     var gridRow    = grid.selection.getSelected();
                                                     var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "/AuShadha/pat/demographics/add/"+ id + "/",
+                                                      url: "{%url demographics_json %}"+ "?patient_id=" + id +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);

@@ -55,15 +55,18 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
       Returns the JSON formatted Values of a specific Django Model Instance for use with Dojo Grid.
       A few default DOJO Grid Values are specified, rest are instance specific and are generated on the fly.
     """
-    data = { 'success'      : unicode(success), 
-             'error_message': unicode(error_message) ,
-             'form_errors'  : form_errors,
-             'edit'         : obj.get_edit_url(),
-             'del'          : obj.get_del_url()
-           }
-    for i in obj._meta.fields:
-      if i.name not in data:
-        data[i.name] = getattr(obj, i.name, None)
+    json = []
+    for element in obj:
+      data = { 'success'      : unicode(success), 
+               'error_message': unicode(error_message) ,
+               'form_errors'  : form_errors,
+               'edit'         : element.get_edit_url(),
+               'del'          : element.get_del_url()
+             }
+      for i in element._meta.fields:
+        if i.name not in data:
+          data[i.name] = getattr(element, i.name, None)
+          json.append(data)
     json = simplejson.dumps(data)
     return json
 
@@ -676,29 +679,30 @@ def demographics_json(request):
   except(PatientDetail.DoesNotExist):
     raise Http404("ERROR:: Patient requested does not exist.")
   patient_demographics_obj   = PatientDemographicsData.objects.filter(patient_detail = patient_detail_obj)
-  data                       = []
-  if patient_demographics_obj:
-    for demographics in patient_demographics_obj:
-      data_to_append = {}
-      data_to_append['id']                     = demographics.id
-      data_to_append['date_of_birth']          = demographics.date_of_birth
-      data_to_append['socioeconomics']         = demographics.socioeconomics
-      data_to_append['education']              = demographics.education
-      data_to_append['housing_conditions']     = demographics.housing_conditions
-      data_to_append['occupation']             = demographics.occupation
-      data_to_append['religion']               = demographics.religion
-      data_to_append['race']                   = demographics.race
-      data_to_append['languages_known']        = demographics.languages_known
-      data_to_append['marital_status']         = demographics.marital_status
-      data_to_append['family_members']         = demographics.family_members
-      data_to_append['drug_abuse_history']     = demographics.drug_abuse_history
-      data_to_append['alcohol_intake']         = demographics.alcohol_intake
-      data_to_append['smoking']                = demographics.smoking
+#  data                       = []
+  json = generate_json_for_datagrid(patient_demographics_obj)
+#  if patient_demographics_obj:
+#    for demographics in patient_demographics_obj:
+#      data_to_append = {}
+#      data_to_append['id']                     = demographics.id
+#      data_to_append['date_of_birth']          = demographics.date_of_birth
+#      data_to_append['socioeconomics']         = demographics.socioeconomics
+#      data_to_append['education']              = demographics.education
+#      data_to_append['housing_conditions']     = demographics.housing_conditions
+#      data_to_append['occupation']             = demographics.occupation
+#      data_to_append['religion']               = demographics.religion
+#      data_to_append['race']                   = demographics.race
+#      data_to_append['languages_known']        = demographics.languages_known
+#      data_to_append['marital_status']         = demographics.marital_status
+#      data_to_append['family_members']         = demographics.family_members
+#      data_to_append['drug_abuse_history']     = demographics.drug_abuse_history
+#      data_to_append['alcohol_intake']         = demographics.alcohol_intake
+#      data_to_append['smoking']                = demographics.smoking
 
-      data_to_append['edit']                  = demographics.get_patient_demographics_edit_url()
-      data_to_append['del']                   = demographics.get_patient_demographics_del_url()
-      data.append(data_to_append)
-  json   = simplejson.dumps(data)
+#      data_to_append['edit']                  = demographics.get_patient_demographics_edit_url()
+#      data_to_append['del']                   = demographics.get_patient_demographics_del_url()
+#      data.append(data_to_append)
+#  json   = simplejson.dumps(data)
   return HttpResponse(json, content_type = "application/json")
 
 

@@ -243,7 +243,45 @@ var GRID_STRUCTURES= {
                                       cellStyles : "text-align:center;"
                                     }],
 
-  PATIENT_DEMOGRAPHICS_GRID_STRUCTURE: "",
+  PATIENT_DEMOGRAPHICS_GRID_STRUCTURE: [
+                                    {name       : "ID", 
+                                      field      : "id", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Edit", 
+                                      field      : "edit", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Del", 
+                                      field      : "del", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Socioeconomics", 
+                                      field      : "socioeconomics", 
+                                      width      : "50px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Education", 
+                                      field      : "education", 
+                                      width      : "250px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Date of Birth", 
+                                      field      : "date_of_birth", 
+                                      width      : "150px",
+                                      cellStyles : "text-align:center;"
+                                    }],
 
   PATIENT_ALLERGY_GRID_STRUCTURE: "",
 
