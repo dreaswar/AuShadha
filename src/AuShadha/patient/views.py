@@ -55,19 +55,22 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
       Returns the JSON formatted Values of a specific Django Model Instance for use with Dojo Grid.
       A few default DOJO Grid Values are specified, rest are instance specific and are generated on the fly.
     """
+    print obj
     json = []
     for element in obj:
-      data = { 'success'      : unicode(success), 
+      print element._meta.fields
+      data = { 'success'      : success, 
                'error_message': unicode(error_message) ,
                'form_errors'  : form_errors,
                'edit'         : element.get_edit_url(),
-               'del'          : element.get_del_url()
+               'del'          : element.get_del_url(),
+               'patient_detail': element.patient_detail.__unicode__()
              }
       for i in element._meta.fields:
-        if i.name not in data:
+        if i.name not in data.keys():
           data[i.name] = getattr(element, i.name, None)
           json.append(data)
-    json = simplejson.dumps(data)
+    json = simplejson.dumps(json)
     return json
 
 
@@ -622,19 +625,20 @@ def phone_json(request):
   except(PatientDetail.DoesNotExist):
     raise Http404("ERROR:: Patient requested does not exist.")
   patient_phone_obj			= PatientPhone.objects.filter(patient_detail = patient_detail_obj)
-  data                    = []
-  if patient_phone_obj:
-    for phone in patient_phone_obj:
-      data_to_append = {}
-      data_to_append['id']           = phone.id
-      data_to_append['phone_type']   = phone.phone_type
-      data_to_append['ISD_Code']     = phone.ISD_Code
-      data_to_append['STD_Code']     = phone.STD_Code
-      data_to_append['phone']        = phone.phone
-      data_to_append['edit']         = phone.get_patient_phone_edit_url()
-      data_to_append['del']          = phone.get_patient_phone_del_url()
-      data.append(data_to_append)
-  json   = simplejson.dumps(data)
+  json = generate_json_for_datagrid(patient_phone_obj)
+#  data                    = []
+#  if patient_phone_obj:
+#    for phone in patient_phone_obj:
+#      data_to_append = {}
+#      data_to_append['id']           = phone.id
+#      data_to_append['phone_type']   = phone.phone_type
+#      data_to_append['ISD_Code']     = phone.ISD_Code
+#      data_to_append['STD_Code']     = phone.STD_Code
+#      data_to_append['phone']        = phone.phone
+#      data_to_append['edit']         = phone.get_patient_phone_edit_url()
+#      data_to_append['del']          = phone.get_patient_phone_del_url()
+#      data.append(data_to_append)
+#  json   = simplejson.dumps(data)
   return HttpResponse(json, content_type = "application/json")
 
 

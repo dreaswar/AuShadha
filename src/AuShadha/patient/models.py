@@ -554,12 +554,17 @@ class PatientPhone(models.Model):
 		'''
 		return '/AuShadha/pat/phone/edit/%s/' %self.id
 
+	def get_edit_url(self):
+		return self.get_patient_phone_edit_url()
+
 	def get_patient_phone_del_url(self):
 		'''
 			Returns the URL for adding phone details for a Patient
 		'''
 		return '/AuShadha/pat/phone/del/%s/' %self.id
 
+	def get_del_url(self):
+		return self.get_patient_phone_del_url()
 
 
 class PatientEmailFax(models.Model):

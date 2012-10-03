@@ -554,6 +554,9 @@ class PatientPhone(models.Model):
 		'''
 		return '/AuShadha/pat/phone/edit/%s/' %self.id
 
+	def get_edit_url(self):
+		return self.get_patient_phone_edit_url()
+
 	def get_patient_phone_del_url(self):
 		'''
 			Returns the URL for adding phone details for a Patient
@@ -835,3 +838,104 @@ class PatientEmailFaxForm(ModelForm):
 	class Meta:
 		model   = PatientEmailFax
 		exclude = ('patient_detail',)
+
+
+
+class PatientDemographicsDataForm(ModelForm):
+
+	class Meta:
+		model = PatientDemographicsData
+	def __init__(self, *args, **kwargs):
+		super(PatientDemographicsDataForm, self).__init__(*args, **kwargs)
+		text_fields = [{"field"         : 'date_of_birth',
+		                'max_length'    :  30         ,
+		                "data-dojo-type": "dijit.form.DateBox",
+		                "data-dojo-props": r"'required' :'true' ,'regExp':'','invalidMessage':'Invalid Character' "
+		                },
+		               {"field": 'socioeconomics',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		               },
+                   {"field": 'education',
+                   'max_length':30,
+                   "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+                   },
+                   {"field": 'housing_conditions',
+		                'max_length'    :  30         ,
+                   "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+                   },
+                   {"field": 'occupation',
+		                'max_length'    :  30         ,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w+]','invalidMessage' : 'Invalid Character. Only Numbers are allowed'"
+                   },
+                   {"field"    : 'religion',
+		                'max_length'    :  30         ,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w+]','invalidMessage' : ''"
+                   },
+                   {
+                     "field"          : "race"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.ValidationTextBox" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
+                   },
+                   {
+                     "field"          : "languages_known"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.ValidationTextBox" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
+                   },
+                   {
+                     "field"          : "marital_status"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.Select" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
+                   },
+                   {
+                     "field"          : "family_members"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.Select" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
+                   },
+                   {
+                     "field"          : "race"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.ValidationTextBox" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
+                   },
+                   {
+                     "field"          : "drug_abuse_history"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.CheckBox" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
+                   },
+                   {
+                     "field"          : "alcohol_intake"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.SimpleTextBox" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
+                   },
+                   {
+                     "field"          : "smoking"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.SimpleTextBox" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
+                   },
+                   {
+                     "field"          : "patient_detail"     , 
+                     "max_length"     : 30                  , 
+                     "data-dojo-type" : "dijit.form.ValidationTextBox" , 
+                     "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'readOnly': true, 'invalidMessage': 'Please select a value' "
+                   }
+
+	        ]
+		for field in text_fields:
+			print(self.fields[field['field']].widget);
+			self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+			self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+			self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
