@@ -54,23 +54,32 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
     """
       Returns the JSON formatted Values of a specific Django Model Instance for use with Dojo Grid.
       A few default DOJO Grid Values are specified, rest are instance specific and are generated on the fly.
+      It assumes the presence of get_edit_url and get_del_url in the model instances passed to it via obj.
+
+      ARGUMENTS: obj           : model instace / queryset
+                 success       : A success message 
+                 error_message : Error Message if any.
+                 form_errors   : Form Validation Errors from Django while saving can be passed.
     """
-    print obj
+    print "TRYING TO RETURN JSON FOR OBJECT: ", obj
     json = []
     for element in obj:
       print element._meta.fields
-      data = { 'success'      : success, 
-               'error_message': unicode(error_message) ,
-               'form_errors'  : form_errors,
-               'edit'         : element.get_edit_url(),
-               'del'          : element.get_del_url(),
-               'patient_detail': element.patient_detail.__unicode__()
+      data = { 'success'       : success, 
+               'error_message' : unicode(error_message) ,
+               'form_errors'   : form_errors,
+               'edit'          : getattr(element, element.get_edit_url(), None),
+               'del'           : getattr(element, element.get_del_url(), None),
+               'patient_detail': getattr(element, element.patient_detail.__unicode__(), None)
              }
       for i in element._meta.fields:
+        print "CURRENT ITERATING FIELD NAME IS : ", i
+        print "DATA DICTIONARY NOW IS ", data.keys()
         if i.name not in data.keys():
           data[i.name] = getattr(element, i.name, None)
-          json.append(data)
+      json.append(data)
     json = simplejson.dumps(json)
+    print "RETURNED JSON IS ", unicode(json)
     return json
 
 
