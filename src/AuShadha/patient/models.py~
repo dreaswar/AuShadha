@@ -563,6 +563,8 @@ class PatientPhone(models.Model):
 		'''
 		return '/AuShadha/pat/phone/del/%s/' %self.id
 
+	def get_del_url(self):
+		return self.get_patient_phone_del_url()
 
 
 class PatientEmailFax(models.Model):

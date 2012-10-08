@@ -55,8 +55,9 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
       Returns the JSON formatted Values of a specific Django Model Instance for use with Dojo Grid.
       A few default DOJO Grid Values are specified, rest are instance specific and are generated on the fly.
       It assumes the presence of get_edit_url and get_del_url in the model instances passed to it via obj.
+
       ARGUMENTS: obj           : model instace / queryset
-                 success       : A success message
+                 success       : A success message 
                  error_message : Error Message if any.
                  form_errors   : Form Validation Errors from Django while saving can be passed.
     """

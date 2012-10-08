@@ -76,6 +76,7 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
         print "CURRENT ITERATING FIELD NAME IS : ", i
         print "DATA DICTIONARY NOW IS ", data.keys()
         if i.name not in data.keys():
+          print "Adding ", i.name
           data[i.name] = getattr(element, i.name, None)
       json.append(data)
     json = simplejson.dumps(json)

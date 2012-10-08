@@ -646,7 +646,7 @@ class PatientDemographicsData(models.Model):
     smoking            = models.TextField(max_length = 100, default="None",
                                           help_text = "bried account on the cigarretes/day for 'x' number of years" )
 
-    patient_detail     = models.ForeignKey(PatientDetail)
+    patient_detail     = models.ForeignKey(PatientDetail, null = True, blank = True)
 
 
     def __unicode__(self):
