@@ -555,7 +555,7 @@ class PatientPhone(models.Model):
 		return '/AuShadha/pat/phone/edit/%s/' %self.id
 
 	def get_edit_url(self):
-		return self.get_patient_phone_edit_url()
+		return self.get_patient_phone_edit_url(self)
 
 	def get_patient_phone_del_url(self):
 		'''
@@ -564,7 +564,7 @@ class PatientPhone(models.Model):
 		return '/AuShadha/pat/phone/del/%s/' %self.id
 
 	def get_del_url(self):
-		return self.get_patient_phone_del_url()
+		return self.get_patient_phone_del_url(self)
 
 
 class PatientEmailFax(models.Model):
@@ -646,7 +646,7 @@ class PatientDemographicsData(models.Model):
     smoking            = models.TextField(max_length = 100, default="None",
                                           help_text = "bried account on the cigarretes/day for 'x' number of years" )
 
-    patient_detail     = models.ForeignKey(PatientDetail)
+    patient_detail     = models.ForeignKey(PatientDetail, null = True, blank = True)
 
 
     def __unicode__(self):

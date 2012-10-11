@@ -68,9 +68,9 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
       data = { 'success'       : success, 
                'error_message' : unicode(error_message) ,
                'form_errors'   : form_errors,
-               'edit'          : getattr(element, element.get_edit_url(), None),
-               'del'           : getattr(element, element.get_del_url(), None),
-               'patient_detail': getattr(element, element.patient_detail.__unicode__(), None)
+               'edit'          : getattr(element, 'get_edit_url()',element.get_edit_url()),
+               'del'           : getattr(element, 'get_del_url()',element.get_del_url()),
+               'patient_detail': getattr(element, 'patient_detail.__unicode__()', None)
              }
       for i in element._meta.fields:
         print "CURRENT ITERATING FIELD NAME IS : ", i

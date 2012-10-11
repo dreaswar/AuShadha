@@ -32,7 +32,7 @@
 //        {% if perms.patient.add_patientcontact %}
           xhr("{{patient_detail_obj.get_patient_contact_add_url}}",{
                handleAs: "text",
-               method  : "POST",
+               method  :"POST",
                data    : domForm.toObject("newContactAddForm")
           }).then(
              function(json){ 

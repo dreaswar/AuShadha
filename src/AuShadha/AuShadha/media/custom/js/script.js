@@ -117,7 +117,7 @@
 //        var grid,
 //            admissionGrid,
 //            visitGrid,
-//            contactGrid,
+var            contactGrid;
 //            phoneGrid,
 //            guardianGrid;
 
@@ -268,17 +268,17 @@
                         onRowDblClick methods
                       */
 
-                      var contactGrid = new DataGrid({
-                                      store         : dataStore = ObjectStore({
-                                                                 objectStore: contactStore
-                                                      }),
-                                      selectionMode : "single",
-                                      rowSelector   : "20px",
-                                      structure     : GRID_STRUCTURES.PATIENT_CONTACT_GRID_STRUCTURE,
-                                      noDataMessage : "<span class='dojoxGridNoData'>No Contact Information in Store..</span>"
-                                    }, 
-                                    "contact_list"
-                        );
+                contactGrid = new DataGrid({
+                              store         : dataStore = ObjectStore({
+                                                         objectStore: contactStore
+                                              }),
+                              selectionMode : "single",
+                              rowSelector   : "20px",
+                              structure     : GRID_STRUCTURES.PATIENT_CONTACT_GRID_STRUCTURE,
+                              noDataMessage : "<span class='dojoxGridNoData'>No Contact Information in Store..</span>"
+                            }, 
+                            "contact_list"
+                );
 
                 contactGrid.onRowDblClick = function(e){ 
                 //  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}

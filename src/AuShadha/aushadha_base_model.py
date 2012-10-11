@@ -41,19 +41,13 @@ class AuShadhaBaseModel(models.Model):
     base AuShadha Model From which all AuShadha Models Derive. 
   '''
 
-  get_edit_url = models.CharField(max_length = 150, default = "", editable = False)
-  get_del_url  = models.CharField(max_length = 150, default = "", editable = False)
-
-
   def __init__(self, *args, **kwargs):
     super(self, AuShadhaBaseModel).__init__(*args, **kwargs)
 
-  def save(self, *args, **kwargs):
-    super(self, AuShadhaBaseModel).save(*args, **kwargs)
-    id  = self.id
-    self._set_urls(id)
+  def get_edit_urls(self):
+    return  generic_url_maker(self, "edit", self.id)
 
-  def _set_urls(self, id):
-    self.get_edit_url = generic_url_maker(self, "edit", id)
-    self.get_del_url  = generic_url_maker(self, "del", id)
-    super(self, AuShadhaBaseModel).save(*args, **kwargs)
+  def get_del_urls(self):
+    return  generic_url_maker(self, "del", self.id)
+
+

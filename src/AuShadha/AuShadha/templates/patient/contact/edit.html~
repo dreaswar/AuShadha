@@ -56,6 +56,7 @@
        // {%endif %}
      });
      return false;
+    }
     else{
      dijit.byId('invalidFormSubmissionErrorDialog').show();
      return false;
