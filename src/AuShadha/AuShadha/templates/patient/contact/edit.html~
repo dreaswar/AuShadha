@@ -1,64 +1,28 @@
-<div data-dojo-type = "dijit.form.Form" 
+<div data-dojo-type = "dijit/form/Form" 
      id             = "newContactEditForm" 
      data-dojo-id   = "newContactEditForm"
      encType        = "multipart/form-data" 
      action         = "" 
      method         = "">
 
-    <script type="dojo/method" data-dojo-event="onSubmit">
-     if(this.validate()){
-      require(["dojo/request/xhr", 
-               "dojo/dom", 
-               "dojo/json", 
-              "dojo/_base/fx",
-		          "dijit/Dialog",
-		          "dijit/form/Form",
-		          "dijit/form/Button",
-              "dijit/form/ValidationTextBox",
-              "dijit/form/SimpleTextarea",
-              "dijit/form/Select",
-              "dijit/registry",
-              "dojo/dom-form"
-       ],
-       function(xhr, dom, JSON,fx, Dialog, Form, Button, TextBox, Select, registry, domForm){
- 							var hasBeenSent = false;
-              var editDialog = dijit.byId("editPatientDialog");
-              var errorDialog = dijit.byId('dialogJsonMessage');
-       //	{% if perms.patient.change_patientcontact %}
-							xhr("{{patient_contact_obj.get_patient_contact_edit_url}}",{
-									data    : domForm.toObject("newContactEditForm"),
-									handleAs:"text",
-									method  : "POST"
-									}).
-									then(function(json) {
-									        var jsondata = JSON.parse(json)
-									        if(jsondata.success == true){
-                            dijit.byId("contact_list").render();
-                            editDialog.hide();
-									        }
-									        else{
-                            errorDialog.set('title', 'ERROR!');
-                            errorDialog.set('content', jsondata.error_message);
-					                  errorDialog.show();
-									        }
-									     },function(json) {
-									              var jsondata = JSON.parse(json);
-                                errorDialog.set('title', "ERROR!");
-                                errorDialog.set('content', jsondata.error_message);
-							                  errorDialog.show();
-									     },function() {
-          											console.log("Contact action has been completed..")
-									     }
-									 );
-			 }
-       // {% else %}
-         dijit.byId("permissionDeniedErrorDialog").show();
-       // {%endif %}
-     });
+  <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
+    if( this.validate() ){
+      require(["dijit/registry",
+               "dojo/domReady!"
+      ],
+       function(registry){
+         //	{% if perms.patient.change_patientcontact %}
+          editItem("{{patient_contact_obj.get_patient_contact_edit_url}}","newContactEditForm","contact_list");
+         // {% else %}
+          registry.byId("permissionDeniedErrorDialog").show();
+         // {%endif %}
+         return false;
+   	   }
+ 		  );
      return false;
     }
     else{
-     dijit.byId('invalidFormSubmissionErrorDialog').show();
+     raiseInvalidFormSubmission();
      return false;
     }
   </script>
@@ -89,32 +53,11 @@
                 data-dojo-event = "onClick" 
                 data-dojo-args  = "evt"
         >
-			    require(
-			      ["dojo/dom", 
-			       "dojo/request/xhr",
-			       "dojo/json",
-			       "dijit/registry",
-			       "dijit/Dialog"
-			      ],
-			    function(dom, xhr, JSON, registry, Dialog){
-					  xhr.get({
-					    url: "{{patient_contact_obj.get_patient_contact_del_url}}",
-					    load: function(json){
-					            var jsondata = JSON.parse(json)
-					            if (jsondata.success == true){
-                        dijit.byId("editPatientDialog").hide();
-                        dijit.byId("contact_list").render();
-                        dijit.byId("contact_list").selection.clear();
-							        }
-							        else{
-                       var errorDialog = dijit.byId('dialogJsonMessage');
-                       errorDialog.set('title', "ERROR!");
-                       errorDialog.set('content', jsondata.error_message);
-                       errorDialog.show();
-							        }
-					          }
-					  });
-			    });
+         //	{% if perms.patient.delete_patientcontact %}
+		     delItem("{{patient_contact_obj.get_patient_contact_del_url}}", "contact_list");
+         // {% else %}
+          registry.byId("permissionDeniedErrorDialog").show();
+         // {%endif %}
         </script>
     </button>
     {% endif %}

@@ -117,7 +117,7 @@
 //        var grid,
 //            admissionGrid,
 //            visitGrid,
-            contactGrid;
+var            contactGrid;
 //            phoneGrid,
 //            guardianGrid;
 
@@ -996,3 +996,166 @@
 });
 
 
+
+
+/* GENERIC CRUD FUNCTION FOR FORM SUBMISSION - ADDING, EDITING, DELETING */
+
+
+
+/*
+Raise an Invalid Form Submission Dialog and return false
+*/
+function raiseInvalidFormSubmission(){
+  require(["dijit/registry"], function(registry){
+           registry.byId("invalidFormSubmissionErrorDialog").show();
+           return false;
+         });
+  return false;
+}
+
+/*
+Raise an Permission Denied Dialog and return false
+*/
+function raisePermissionDenied(){
+  require(["dijit/registry"], function(registry){
+           registry.byId("permissionDeniedErrorDialog").show();
+           return false;
+         });
+  return false;
+}
+
+
+/*
+  A generic function to do an adding of all Items and update the div / grid accordingly
+  to call it with the URL , the Form's dojo-id and the grid to update and add the row to
+  We are assuming that the server returns a JSON with json.addData so that the row can be 
+  updated. 
+*/
+function addItem(url,form_id,grid_id){
+  require(["dojo/dom",
+           "dojo/request/xhr", 
+           "dijit/registry"  , 
+           "dojo/json"       ,
+           "dojo/dom-form"   , 
+           "dijit/Dialog"
+  ], 
+  function(dom, xhr, registry, JSON, domForm, Dialog){
+    var editDialog  = registry.byId("editPatientDialog");
+    var errorDialog = registry.byId("dialogJsonMessage");
+    xhr(url,{
+         handleAs: "text",
+         method  : "POST",
+         data    : domForm.toObject(form_id)
+    }).then(
+       function(json){ 
+          var jsondata = JSON.parse(json)
+          console.log(jsondata);
+          if(jsondata.success == true){
+            dom.byId(form_id).reset();
+            var data = jsondata.addData;
+            dijit.byId(grid_id).store.newItem(data);
+            if(ADD_MORE_ITEMS == false){
+              editDialog.hide();
+            }
+            else{
+              registry.byId(form_id).focus();
+            }
+          }
+       }, 
+       function(json){ 
+            var jsondata = JSON.parse(json);
+            errorDialog.set("title", "ERROR");
+            errorDialog.set("content", jsondata.error_message);
+            errorDialog.show();
+       },
+       function(evt){console.log("Adding Data Finished Successfully...")}
+    );
+  });
+}
+
+
+
+/*
+  A generic function to do an update of all Items and update the div / grid accordingly
+  to call it with the URL , the Form's dojo-id and the grid to update and re-render
+*/
+function editItem(url,form_id,grid_id){
+  require(["dojo/request/xhr", 
+           "dijit/registry"  , 
+           "dojo/json"       ,
+           "dojo/dom-form"   , 
+           "dijit/Dialog"
+  ], 
+  function(xhr,registry,JSON, domForm, Dialog){
+    var editDialog  = registry.byId("editPatientDialog");
+    var errorDialog = registry.byId("dialogJsonMessage");
+    xhr(url,{
+         handleAs: "text",
+         method  : "POST",
+         data    : domForm.toObject(form_id)
+    }).
+    then(
+       function(json){ 
+          var jsondata = JSON.parse(json)
+          console.log(jsondata);
+          if(jsondata.success == true){
+            registry.byId(grid_id).render();
+            editDialog.hide();
+          }
+          else{
+            errorDialog.set("title", "ERROR");
+            errorDialog.set("content", jsondata.error_message);
+            errorDialog.show();
+          }
+       }, 
+       function(json){ 
+            var jsondata = JSON.parse(json);
+            errorDialog.set("title", "ERROR");
+            errorDialog.set("content", jsondata.error_message);
+            errorDialog.show();
+       },
+       function(evt){
+            console.log("Update Actions Finished Successfully...")
+       }
+    );
+  });
+}
+
+/*
+ Generic Delete Function 
+ Gets the URL to call and the Grid to update as the arguments. 
+*/
+
+function delItem(url,grid_id){
+  require(["dojo/dom", 
+		         "dojo/request/xhr",
+		         "dojo/json",
+		         "dijit/registry",
+		         "dijit/Dialog"
+	],
+  function(dom, xhr, JSON, registry, Dialog){
+    xhr(url,{method: "GET", handleAs:"text" }).
+    then(
+      function(json){
+        var jsondata = JSON.parse(json)
+        if (jsondata.success == true){
+          registry.byId("editPatientDialog").hide();
+          registry.byId(grid_id).render();
+          registry.byId(grid_id).selection.clear();
+        }
+        else{
+         var errorDialog = registry.byId('dialogJsonMessage');
+         errorDialog.set('title', "ERROR!");
+         errorDialog.set('content', jsondata.error_message);
+         errorDialog.show();
+        }
+      }, 
+      function(json){  
+        console.log("ERROR in Server.. Please retry.");
+      },
+      function(evt){
+        console.log("Deleting Item Complete")
+      }
+    );
+  });
+}

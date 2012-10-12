@@ -17,66 +17,20 @@
   >
    if(this.validate()){
       require([
-       "dojo/request/xhr", 
-       "dojo/dom", 
-       "dojo/json", 
        "dijit/registry", 
-       "dijit/Dialog",
-       "dojo/dom-form",
-       "dojo/domReady!"
       ],
-      function(xhr, dom, JSON, registry, Dialog, domForm){
-          var hasBeenSent = false;
-          var editDialog  = dijit.byId("editPatientDialog");
-          var errorDialog = dijit.byId("dialogJsonMessage");
-//        {% if perms.patient.add_patientcontact %}
-          xhr("{{patient_detail_obj.get_patient_contact_add_url}}",{
-               handleAs: "text",
-               method  :"POST",
-               data    : domForm.toObject("newContactAddForm")
-          }).then(
-             function(json){ 
-                var jsondata = JSON.parse(json)
-                console.log(jsondata);
-                if(jsondata.success == true){
-                  console.log("Successfully Added Contact");
-                  dom.byId("newContactAddForm").reset();
-                  var data = {"id"         : jsondata.id, 
-                               "address_type": jsondata.address_type,
-                               "address"     : jsondata.address,
-                               "city"        : jsondata.city,
-                               "state"       : jsondata.state,
-                               "country"     : jsondata.country,
-                               "pincode"     : jsondata.pincode,
-                               "edit"        : jsondata.edit,
-                               "del"         : jsondata.del
-                  }
-                  dijit.byId("contact_list").store.newItem(data);
-                  if(ADD_MORE_PATIENT_CONTACT == false){
-                    editDialog.hide();
-                  }
-                  else{
-                    registry.byId("id_address_type").focus();
-                  }
-                }
-             }, 
-             function(json){ 
-                  var jsondata = JSON.parse(json);
-                  errorDialog.set("title", "ERROR");
-                  errorDialog.set("content", jsondata.error_message);
-                  errorDialog.show();
-             },
-             function(evt){console.log("Adding Contact Finished Successfully...")}
-          )
-//       {% else %}
-      dijit.byId("permissionDeniedErrorDialog").show();
-//       {% endif %}
+      function(registry){
+//    {% if perms.patient.add_patientcontact %}
+      addItem("{{patient_detail_obj.get_patient_contact_add_url}}", "newContactAddForm", "contact_list");
+//    {% else %}
+      registry.byId("permissionDeniedErrorDialog").show();
+//   {% endif %}
      });
      return false;
     }
     else{
-       dijit.byId("invalidFormSubmissionErrorDialog").show();
-       return false;
+      raiseInvalidFormSubmission();
+      return false;
     }
   </script>
 
@@ -95,7 +49,8 @@
              data-dojo-event = "onClick" 
              data-dojo-args  = "evt"
      >
-       ADD_MORE_PATIENT_CONTACT = false;
+//       ADD_MORE_PATIENT_CONTACT = false;
+       ADD_MORE_ITEMS           = false;
      </script>
 		</button>
 
@@ -110,7 +65,8 @@
              data-dojo-event = "onClick"
              data-dojo-args  = "evt"
      >
-      ADD_MORE_PATIENT_CONTACT = true;
+//      ADD_MORE_PATIENT_CONTACT = true;
+      ADD_MORE_ITEMS           = true;
      </script>
 		</button>
 

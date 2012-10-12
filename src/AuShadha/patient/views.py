@@ -964,9 +964,7 @@ def patient_contact_add(request, id):
           success = True
           error_message = "Contact Saved Successfully"
           form_errors = None
-          data = {"success"       : success, 
-                  "error_message" : error_message, 
-                  "form_errors"   : form_errors,
+          addData  = {
                    "id"           : contact_object.id,
                    'pat_id'       : contact_object.patient_detail.id,
                    "address_type" : contact_object.address_type,
@@ -976,7 +974,12 @@ def patient_contact_add(request, id):
                    "country"      : contact_object.country,
                    "pincode"      : contact_object.pincode,
                    "edit"         : contact_object.get_patient_contact_edit_url(),
-                   "del"          : contact_object.get_patient_contact_del_url()
+                   "del"          : contact_object.get_patient_contact_del_url(),
+          }
+          data = {"success"       : success, 
+                  "error_message" : error_message, 
+                  "form_errors"   : form_errors,
+                   "addData"      : addData
                   }
           json = simplejson.dumps(data)
           return HttpResponse(json, content_type = 'application/json')

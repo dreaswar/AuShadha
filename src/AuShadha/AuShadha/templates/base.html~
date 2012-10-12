@@ -301,7 +301,6 @@
                                 </button>
                                 {% endif %}
                                 <div id     = "contact_list" 
-                                    style   = "height :300px; overflow:auto;"
                                 > 
                                 </div>
                             </div>
@@ -322,7 +321,6 @@
                             </button>
                             {% endif %}
                             <div id="phone_list"
-                                 style   = "height :300px; overflow:auto;"
                             > 
                             </div>
                          </div>
@@ -342,7 +340,6 @@
                             </button>
                             {% endif %}
                             <div id="guardian_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             </div>
                           </div>
@@ -363,7 +360,6 @@
                             </button>
                             {% endif %}
                             <div id="demographics_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                              This will be filled with Demographics Info.
                             </div>
@@ -385,7 +381,6 @@
                             </button>
                             {% endif %}
                             <div id="allergy_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             This will list Allergies the patient has
                             </div>
@@ -407,7 +402,6 @@
                             </button>
                             {% endif %}
                             <div id="immunization_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             This will list the immunization history 
                             </div>
@@ -429,7 +423,6 @@
                             </button>
                             {% endif %}
                             <div id="admission_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             </div>
                           </div>
@@ -451,7 +444,6 @@
                             </button>
                             {% endif %}
                             <div id="visit_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             This Page will list all the Clinic Visits
                             </div>
@@ -474,7 +466,6 @@
                             </button>
                             {% endif %}
                             <div id="patient_media_list"
-                               style   = "height :300px; overflow:auto;"
                             > 
                             This will list the attachments the patient has.. 
                             documents, images, video, slides etc.. 

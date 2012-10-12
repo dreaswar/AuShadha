@@ -70,7 +70,7 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
                'form_errors'   : form_errors,
                'edit'          : getattr(element, 'get_edit_url()',element.get_edit_url()),
                'del'           : getattr(element, 'get_del_url()',element.get_del_url()),
-               'patient_detail': getattr(element, element.patient_detail.__unicode__(), None)
+               'patient_detail': getattr(element, 'patient_detail.__unicode__()', None)
              }
       for i in element._meta.fields:
         print "CURRENT ITERATING FIELD NAME IS : ", i
@@ -964,6 +964,18 @@ def patient_contact_add(request, id):
           success = True
           error_message = "Contact Saved Successfully"
           form_errors = None
+          addData  = {
+                   "id"           : contact_object.id,
+                   'pat_id'       : contact_object.patient_detail.id,
+                   "address_type" : contact_object.address_type,
+                   "address"      : contact_object.address,
+                   "city"         : contact_object.city,
+                   "state"        : contact_object.state,
+                   "country"      : contact_object.country,
+                   "pincode"      : contact_object.pincode,
+                   "edit"         : contact_object.get_patient_contact_edit_url(),
+                   "del"          : contact_object.get_patient_contact_del_url(),
+          }
           data = {"success"       : success, 
                   "error_message" : error_message, 
                   "form_errors"   : form_errors,
@@ -976,7 +988,8 @@ def patient_contact_add(request, id):
                    "country"      : contact_object.country,
                    "pincode"      : contact_object.pincode,
                    "edit"         : contact_object.get_patient_contact_edit_url(),
-                   "del"          : contact_object.get_patient_contact_del_url()
+                   "del"          : contact_object.get_patient_contact_del_url(),
+                   "addData"      : addData
                   }
           json = simplejson.dumps(data)
           return HttpResponse(json, content_type = 'application/json')
