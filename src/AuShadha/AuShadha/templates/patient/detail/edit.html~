@@ -106,7 +106,7 @@
 		</table>
 
     {% if perms.patient.change_patientdetail %}
-    <button data-dojo-type = "dijit/form/Button" 
+    <button data-dojo-type = "dijit.form.Button" 
             data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
             type           = "submit" 
             name           = "editButton" 
@@ -116,7 +116,7 @@
     {%endif%}
 
     {% if perms.patient.delete_patientdetail %}
-    <button data-dojo-type  = "dijit/form/Button" 
+    <button data-dojo-type  = "dijit.form.Button" 
 						data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
             type            = "button"
             name            = "delPatient"

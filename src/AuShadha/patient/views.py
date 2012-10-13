@@ -85,8 +85,9 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
 
 
 def return_patient_json(patient, success = True):
-    data_to_append = {}
+    data ={"addData":{}}
     if patient:
+        data_to_append = data.addData
         data_to_append['id']                   = patient.id
         data_to_append['patient_hospital_id']  = patient.patient_hospital_id
 
@@ -122,9 +123,9 @@ def return_patient_json(patient, success = True):
       success                 = False
       error_message           = "Error! Form could not be saved. "
       form_errors             = True
-    data_to_append['success']       = success
-    data_to_append['error_message'] = error_message
-    data_to_append['form_errors']   = form_errors
+    data['success']       = success
+    data['error_message'] = error_message
+    data['form_errors']   = form_errors
     json = simplejson.dumps(data_to_append)
     print "JSON=", json
     return json
@@ -424,6 +425,7 @@ def patient_name_autocompleter(request, patient_name = None):
 
 ######################################################################################
 
+@login_required
 def patient_list(request):
     '''
     View for Generating Patient List
@@ -436,6 +438,18 @@ def patient_list(request):
                                                  })
     return render_to_response('patient/patient_list.html', variable)
 
+@login_required
+def alternate_layout(request):
+    '''
+
+    View for Generating an alternate layout for sandboxing purposes...
+    '''
+    user = request.user
+    all_patients = PatientDetail.objects.all().order_by('first_name')
+    variable            = RequestContext(request,{'user'         : user,
+                                                  "all_patients" : all_patients  
+                                                 })
+    return render_to_response('base_alternate.html', variable)
 
 
 @login_required
@@ -601,22 +615,7 @@ def contact_json(request):
   except(PatientDetail.DoesNotExist):
     raise Http404("ERROR:: Patient requested does not exist.")
   patient_contact_obj			= PatientContact.objects.filter(patient_detail = patient_detail_obj)
-  data                    = []
-  if patient_contact_obj:
-    for contact in patient_contact_obj:
-      data_to_append = {}
-      data_to_append['id']           = contact.id
-      data_to_append['pat_id']       = contact.patient_detail.id
-      data_to_append['address_type'] = contact.address_type
-      data_to_append['address']      = contact.address
-      data_to_append['city']         = contact.city
-      data_to_append['state']        = contact.state
-      data_to_append['country']      = contact.country
-      data_to_append['pincode']      = contact.pincode
-      data_to_append['edit']         = contact.get_patient_contact_edit_url()
-      data_to_append['del']          = contact.get_patient_contact_del_url()
-      data.append(data_to_append)
-  json   = simplejson.dumps(data)
+  json = generate_json_for_datagrid(patient_contact_obj)
   print json
   return HttpResponse(json, content_type = "application/json")
 
@@ -636,19 +635,6 @@ def phone_json(request):
     raise Http404("ERROR:: Patient requested does not exist.")
   patient_phone_obj			= PatientPhone.objects.filter(patient_detail = patient_detail_obj)
   json = generate_json_for_datagrid(patient_phone_obj)
-#  data                    = []
-#  if patient_phone_obj:
-#    for phone in patient_phone_obj:
-#      data_to_append = {}
-#      data_to_append['id']           = phone.id
-#      data_to_append['phone_type']   = phone.phone_type
-#      data_to_append['ISD_Code']     = phone.ISD_Code
-#      data_to_append['STD_Code']     = phone.STD_Code
-#      data_to_append['phone']        = phone.phone
-#      data_to_append['edit']         = phone.get_patient_phone_edit_url()
-#      data_to_append['del']          = phone.get_patient_phone_del_url()
-#      data.append(data_to_append)
-#  json   = simplejson.dumps(data)
   return HttpResponse(json, content_type = "application/json")
 
 
@@ -665,18 +651,7 @@ def guardian_json(request):
   except(PatientDetail.DoesNotExist):
     raise Http404("ERROR:: Patient requested does not exist.")
   patient_guardian_obj			= PatientGuardian.objects.filter(patient_detail = patient_detail_obj)
-  data                    = []
-  if patient_guardian_obj:
-    for guardian in patient_guardian_obj:
-      data_to_append = {}
-      data_to_append['id']                    = guardian.id
-      data_to_append['guardian_name']         = guardian.guardian_name
-      data_to_append['relation_to_guardian']  = guardian.relation_to_guardian
-      data_to_append['guardian_phone']        = guardian.guardian_phone
-      data_to_append['edit']                  = guardian.get_patient_guardian_edit_url()
-      data_to_append['del']                   = guardian.get_patient_guardian_del_url()
-      data.append(data_to_append)
-  json   = simplejson.dumps(data)
+  json = generate_json_for_datagrid(patient_guardian_obj)
   return HttpResponse(json, content_type = "application/json")
 
 
@@ -693,30 +668,7 @@ def demographics_json(request):
   except(PatientDetail.DoesNotExist):
     raise Http404("ERROR:: Patient requested does not exist.")
   patient_demographics_obj   = PatientDemographicsData.objects.filter(patient_detail = patient_detail_obj)
-#  data                       = []
   json = generate_json_for_datagrid(patient_demographics_obj)
-#  if patient_demographics_obj:
-#    for demographics in patient_demographics_obj:
-#      data_to_append = {}
-#      data_to_append['id']                     = demographics.id
-#      data_to_append['date_of_birth']          = demographics.date_of_birth
-#      data_to_append['socioeconomics']         = demographics.socioeconomics
-#      data_to_append['education']              = demographics.education
-#      data_to_append['housing_conditions']     = demographics.housing_conditions
-#      data_to_append['occupation']             = demographics.occupation
-#      data_to_append['religion']               = demographics.religion
-#      data_to_append['race']                   = demographics.race
-#      data_to_append['languages_known']        = demographics.languages_known
-#      data_to_append['marital_status']         = demographics.marital_status
-#      data_to_append['family_members']         = demographics.family_members
-#      data_to_append['drug_abuse_history']     = demographics.drug_abuse_history
-#      data_to_append['alcohol_intake']         = demographics.alcohol_intake
-#      data_to_append['smoking']                = demographics.smoking
-
-#      data_to_append['edit']                  = demographics.get_patient_demographics_edit_url()
-#      data_to_append['del']                   = demographics.get_patient_demographics_del_url()
-#      data.append(data_to_append)
-#  json   = simplejson.dumps(data)
   return HttpResponse(json, content_type = "application/json")
 
 
@@ -1044,8 +996,8 @@ def patient_contact_edit(request, id):
                    "state"        : contact_object.state,
                    "country"      : contact_object.country,
                    "pincode"      : contact_object.pincode,
-                   "edit"         : contact_object.get_patient_contact_edit_url(),
-                   "del"          : contact_object.get_patient_contact_del_url()
+                   "edit"         : contact_object.get_edit_url(),
+                   "del"          : contact_object.get_del_url()
                   }
           json 					= simplejson.dumps(data)
           return HttpResponse(json, content_type = 'application/json')
@@ -1251,15 +1203,19 @@ def patient_guardian_add(request, id):
           success = True
           error_message = "Guardian data Saved Successfully"
           form_errors = None
-          data = {'success': success, 
-                  'error_message': error_message, 
-                  'form_errors': form_errors,
-                  "edit"        : guardian_object.get_patient_guardian_edit_url(),
-                  "del"         : guardian_object.get_patient_guardian_del_url(),
-                  "guardian_name": guardian_object.guardian_name,
-                  "relation_to_guardian": guardian_object.relation_to_guardian,
-                  "guardian_phone": guardian_object.guardian_phone
-                  }
+          addData     = {
+                         "id"                   : guardian_object.id,
+                          "edit"                : guardian_object.get_edit_url(),
+                          "del"                 : guardian_object.get_del_url(),
+                          "guardian_name"       : guardian_object.guardian_name,
+                          "relation_to_guardian": guardian_object.relation_to_guardian,
+                          "guardian_phone"      : guardian_object.guardian_phone
+          }
+          data = {'success'             : success, 
+                  'error_message'       : error_message, 
+                  'form_errors'         : form_errors,
+                  "addData"             : addData
+          }
           json = simplejson.dumps(data)
           return HttpResponse(json, content_type = 'application/json')
         else:
@@ -1308,15 +1264,19 @@ def patient_guardian_edit(request, id):
           success = True
           error_message = "Guardian data Saved Successfully"
           form_errors = None
+          addData     = {
+                         "id"                   : guardian_object.id,
+                          "edit"                : guardian_object.get_edit_url(),
+                          "del"                 : guardian_object.get_del_url(),
+                          "guardian_name"       : guardian_object.guardian_name,
+                          "relation_to_guardian": guardian_object.relation_to_guardian,
+                          "guardian_phone"      : guardian_object.guardian_phone
+          }
           data = {'success'             : success, 
                   'error_message'       : error_message, 
                   'form_errors'         : form_errors,
-                  "edit"                : guardian_object.get_patient_guardian_edit_url(),
-                  "del"                 : guardian_object.get_patient_guardian_del_url(),
-                  "guardian_name"       : guardian_object.guardian_name,
-                  "relation_to_guardian": guardian_object.relation_to_guardian,
-                  "guardian_phone"      : guardian_object.guardian_phone
-                  }
+                  "addData"             : addData
+          }
           json = simplejson.dumps(data)
           return HttpResponse(json, content_type = 'application/json')
         else:
@@ -1396,17 +1356,20 @@ def patient_phone_add(request, id):
           phone_obj          = patient_phone_add_form.save()
           success        = True
           error_message  = "Phone Data Added Successfully"
-          data           = {'success'      : success, 
-                            'error_message': error_message,
-                            "form_errors"  : None,
+          addData        = {
                             "id"           : phone_obj.id,
                             "phone_type"   : phone_obj.phone_type,
                             "ISD_Code"     : phone_obj.ISD_Code,
                             "STD_Code"     : phone_obj.STD_Code,
                             "phone"        : phone_obj.phone,
-                            "edit"         : phone_obj.get_patient_phone_edit_url(),
-                            "del"          : phone_obj.get_patient_phone_del_url()
-                           }
+                            "edit"         : phone_obj.get_edit_url(),
+                            "del"          : phone_obj.get_del_url()
+          }
+          data           = {'success'      : success, 
+                            'error_message': error_message,
+                            "form_errors"  : None,
+                            "addData"      : addData
+          }
           json           = simplejson.dumps(data)
           return HttpResponse(json, content_type = 'application/json')
         else:

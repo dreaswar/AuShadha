@@ -193,31 +193,31 @@
 <!--             ">-->
    <table>
 
-<!--      <tr>-->
-<!--        <td>-->
-<!--          <label for="patientHospitalIdSelection"-->
-<!--                 style="margin-left: 0px; float:left;"-->
-<!--          > -->
-<!--            Id -->
-<!--          </label>-->
-<!--          <div id="patientHospitalIdSelection"-->
-<!--               style="margin-left: 0px; float:left;"-->
-<!--          > </div>-->
-<!--        </td>-->
-<!--      </tr>-->
+      <tr>
+        <td>
+          <label for="patientHospitalIdSelection"
+                 style="margin-left: 0px; float:left;"
+          > 
+            Id 
+          </label>
+          <div id="patientHospitalIdSelection"
+               style="margin-left: 0px; float:left;"
+          > </div>
+        </td>
+      </tr>
 
-<!--      <tr>-->
-<!--        <td>-->
-<!--          <label for="patientNameSelection"-->
-<!--                 style="margin-left: 0px; float:left;"-->
-<!--          > -->
-<!--            Name -->
-<!--          </label>-->
-<!--          <div id="patientNameSelection"-->
-<!--                style="margin-left: 0px; float:left;"-->
-<!--          > </div>-->
-<!--        </td>-->
-<!--      </tr>-->
+      <tr>
+        <td>
+          <label for="patientNameSelection"
+                 style="margin-left: 0px; float:left;"
+          > 
+            Name 
+          </label>
+          <div id="patientNameSelection"
+                style="margin-left: 0px; float:left;"
+          > </div>
+        </td>
+      </tr>
 
 <!--      <tr>-->
 <!--        <td>-->

@@ -208,7 +208,11 @@ var            contactGrid;
                         var idx    = e.rowIndex,
                             item   = this.getItem(idx),
                             patid  = this.store.getValue(item, "id");
-
+                        var full_name  = this.store.getValue(item, "full_name");
+                        var hosp_id  = this.store.getValue(item, "patient_hospital_id");
+                        var sex  = this.store.getValue(item, "sex");
+                        var age  = this.store.getValue(item, "age");
+                        var patient_ticker_content = full_name + "&nbsp;" + sex + "/" + age + "&nbsp" +hosp_id;
                         /* 
                            Clear the current Grid selection
                            Set the new selected Row
@@ -242,6 +246,13 @@ var            contactGrid;
                                            + patid;
                          */
                          {% endcomment %}
+
+                      /*
+                        Set the patient information bar
+                      */
+                        if (dom.byId("selected_patient_info")){
+                          dom.byId("selected_patient_info").innerHTML = patient_ticker_content;
+                        }
 
                       /* 
                          Set the Stores for Contacts, Phone, Guardian and admission 

@@ -44,6 +44,7 @@ urlpatterns = patterns('',
 (r'^AuShadha/logout/$', 'patient.views.logout_view'),
 
 ## If it dosent match anything else.. 
+(r'^AuShadha/alternate_layout/$', 'patient.views.alternate_layout'),
 (r'^AuShadha/$', 'patient.views.patient_list'),
 (r'^$'         , 'patient.views.patient_list'),
 

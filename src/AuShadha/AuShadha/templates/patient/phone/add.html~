@@ -61,7 +61,7 @@
 		</button>
 
 		<button 	type 	          = "reset" 
-						  data-dojo-type  = "dijit/form/Button"
+						  data-dojo-type  = "dijit.form.Button"
 						  data-dojo-props = "iconClass:'dijitIconClear'"
 						  id 		          = "patient_phone_add_form_reset"
 						  value           = "Reset">

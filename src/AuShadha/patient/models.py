@@ -158,9 +158,22 @@ class PatientDetail(models.Model):
 		'''
 			Returns the Editing URL for the Patient which allows editing of Patient Contacts, Phone, Guardian etc..
 		'''
+		return self.get_edit_url()
+
+	def get_edit_url(self):
+		'''
+			Returns the Editing URL for the Patient which allows editing of Patient Contacts, Phone, Guardian etc..
+		'''
 		return '/AuShadha/pat/detail/edit/%s/' %self.id
 
 	def get_patient_detail_del_url(self):
+		'''
+			Returns the Deleting URL for the Patient.
+			This action will delete all details of the patient including the admission, visits, phy-exam records, media etc..
+		'''
+		return self.get_del_url()
+
+	def get_del_url(self):
 		'''
 			Returns the Deleting URL for the Patient.
 			This action will delete all details of the patient including the admission, visits, phy-exam records, media etc..
@@ -476,17 +489,29 @@ class PatientGuardian(models.Model):
 		verbose_name_plural = "Guardian Details"
 		ordering 	    = ('patient_detail','guardian_name')
 
-	def get_patient_guardian_edit_url(self):
+	def get_edit_url(self):
 		'''
 			Returns the URL for editing Guardian details for a Patient
 		'''
 		return '/AuShadha/pat/guardian/edit/%s/' %self.id
 
-	def get_patient_guardian_del_url(self):
+	def get_patient_guardian_edit_url(self):
+		'''
+			Returns the URL for editing Guardian details for a Patient
+		'''
+		return self.get_edit_url()
+
+	def get_del_url(self):
 		'''
 			Returns the URL for adding Guardian details for a Patient
 		'''
 		return '/AuShadha/pat/guardian/del/%s/' %self.id
+
+	def get_patient_guardian_del_url(self):
+		'''
+			Returns the URL for adding Guardian details for a Patient
+		'''
+		return self.get_del_url()
 
 
 class PatientContact(models.Model):
@@ -513,17 +538,30 @@ class PatientContact(models.Model):
 		verbose_name_plural = "Address"
 		ordering 	    = ('patient_detail','city','state')
 
-	def get_patient_contact_edit_url(self):
+
+	def get_edit_url(self):
 		'''
 			Returns the URL for editing phone details for a Patient
 		'''
 		return '/AuShadha/pat/contact/edit/%s/' %self.id
 
-	def get_patient_contact_del_url(self):
+	def get_patient_contact_edit_url(self):
+		'''
+			Returns the URL for editing phone details for a Patient
+		'''
+		return self.get_edit_url()
+
+	def get_del_url(self):
 		'''
 			Returns the URL for adding phone details for a Patient
 		'''
 		return '/AuShadha/pat/contact/del/%s/' %self.id
+
+	def get_patient_contact_del_url(self):
+		'''
+			Returns the URL for adding phone details for a Patient
+		'''
+		return self.get_del_url()
 
 
 class PatientPhone(models.Model):
@@ -585,17 +623,30 @@ class PatientEmailFax(models.Model):
 		verbose_name_plural = "Email, Web and Fax"
 		ordering 	    = ('date_entered','patient_detail')
 
-	def get_patient_email_and_fax_edit_url(self):
+
+	def get_edit_url(self):
 		'''
 			Returns the URL for editing Email details for a Patient
 		'''
 		return '/AuShadha/pat/email_and_fax/edit/%s/' %self.id
 
-	def get_patient_phone_del_url(self):
+	def get_patient_email_and_fax_edit_url(self):
+		'''
+			Returns the URL for editing Email details for a Patient
+		'''
+		return self.get_edit_url()
+
+	def get_del_url(self):
 		'''
 			Returns the URL for adding phone details for a Patient
 		'''
 		return '/AuShadha/pat/email_and_fax/del/%s/' %self.id
+
+	def get_patient_phone_del_url(self):
+		'''
+			Returns the URL for adding phone details for a Patient
+		'''
+		return self.get_del_url()
 
 
 

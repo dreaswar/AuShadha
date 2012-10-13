@@ -11,23 +11,8 @@
       </script>
 
     <script type="dojo/method" data-dojo-event="onSubmit">
-     if(this.validate()){
-        require([
-         "dijit/registry", 
-        ],
-        function(registry){
-  //    {% if perms.patient.add_patientguardian %}
-        addItem("{{patient_detail_obj.get_patient_guardian_add_url}}", "newGuardianAddForm", "guardian_list");
-  //    {% else %}
-        registry.byId("permissionDeniedErrorDialog").show();
-  //   {% endif %}
-       });
-       return false;
-      }
-      else{
-        raiseInvalidFormSubmission();
-        return false;
-      }
+
+
     </script>
 
   {% if perms.patient.add_patientguardian %}

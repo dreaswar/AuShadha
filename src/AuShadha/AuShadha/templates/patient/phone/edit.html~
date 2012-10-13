@@ -37,7 +37,7 @@
 		</table>
 
 {% if perms.patient.change_patientphone %}
-   <button data-dojo-type = "dijit/form/Button" 
+   <button data-dojo-type = "dijit.form.Button" 
             data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
             type           = "submit" 
             name           = "editButton" 

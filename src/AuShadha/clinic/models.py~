@@ -103,17 +103,17 @@ class Department(models.Model):
                             )
 
     def get_edit_url(self):
-        return 'clinic/department/edit/%s/' % (self.id)
+        return 'department/edit/%s/' % (self.id)
 
     def get_del_url(self):
-        return 'clinic/department/del/%s/' % (self.id)
+        return 'department/del/%s/' % (self.id)
 
 
     def get_staff_in_department_url(self):
-        return 'clinic/department/staff/list/%s/' % (self.id)
+        return 'department/staff/list/%s/' % (self.id)
 
     def get_hod_in_department_url(self):
-        return 'clinic/department/hod/%s/' % (self.id)
+        return 'department/hod/%s/' % (self.id)
 
 
 

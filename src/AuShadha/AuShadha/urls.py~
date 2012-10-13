@@ -11,7 +11,7 @@ urlpatterns = patterns('',
 
 #Specific URLS..
 #(r'^AuShadha/clinic/',         include('clinic.urls')),
-(r'^ AuShadha/pat/',            include('patient.urls')),
+(r'^AuShadha/pat/',            include('patient.urls')),
 #(r'^AuShadha/visit/',          include('visit.urls')),
 #(r'^AuShadha/admission/',      include('admission.urls')),
 
@@ -44,6 +44,7 @@ urlpatterns = patterns('',
 (r'^AuShadha/logout/$', 'patient.views.logout_view'),
 
 ## If it dosent match anything else.. 
+(r'^AuShadha/alternate_layout/$', 'patient.views.patient_list'),
 (r'^AuShadha/$', 'patient.views.patient_list'),
 (r'^$'         , 'patient.views.patient_list'),
 
