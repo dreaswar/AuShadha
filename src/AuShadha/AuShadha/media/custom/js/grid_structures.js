@@ -130,6 +130,7 @@ var GRID_STRUCTURES= {
                                 {name       : "Address", 
                                  field      : "address", 
                                  width      : "250px",
+                                 editable   : true,
                                  cellStyles : "text-align:center;"
                                 },
 
