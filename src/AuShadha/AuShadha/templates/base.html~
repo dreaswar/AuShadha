@@ -72,7 +72,7 @@
     /* 
        Global Variables
     */
-
+    alert("hello");
     var ADD_MORE_PATIENTS,
         ADD_MORE_PATIENT_CONTACT,
         ADD_MORE_PATIENT_PHONE   ,
@@ -285,7 +285,7 @@
                                                              font-style : italics;
                                                              background : lightblue;"
                       > 
-                        
+
                       </div>
 
                         <!--  START OF PATIENTCONTEXTTABS  -->

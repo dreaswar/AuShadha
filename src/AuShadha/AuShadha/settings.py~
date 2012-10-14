@@ -5,8 +5,8 @@ import sys, os
 ROOT_PATH = os.path.dirname(__file__)
 
 APP_ROOT_URL       = u"/AuShadha/"
-LOGIN_URL          = APP_ROOT_URL + u"login/"
-LOGIN_REDIRECT_URL = APP_ROOT_URL
+LOGIN_URL          = APP_ROOT_URL 
+LOGIN_REDIRECT_URL = "/"
 
 
 SERIALIZATION_MODULES = {
@@ -74,7 +74,7 @@ STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/AuShadha/static/'
+STATIC_URL = APP_ROOT_URL+'static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (

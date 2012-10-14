@@ -1,3 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+	<meta name    = "generator" 
+	      content = "HTML Tidy for Linux (vers 6 November 2007), see www.w3.org"
+	>
+	{% block title %} 
+	  <title> AuShadha </title> 
+	{% endblock title %} 
+
+<!--The global non template tagged style sheet and Dojo specific Style sheets from here-->
+  {% block media %} 
+    {% include 'style_links.html' %} 
+  {% endblock media %} 
+
+  {% block style_bits %} 
+    <style  type="text/css">
+      {%include "style.css" %}
+    </style>
+  {% endblock style_bits %} 
+
+  {% block js %} 
+    {% include 'script_links.html' %} 
+  {% endblock js %} 
+
+  <script type="text/javascript">
+   {% include 'login.js' %}
+  </script>
+
+  <script type="text/javascript">
+  require([ 
+          "dojo/parser", 
+          "dojo/_base/connect",
+          "dojo/on",
+          "dijit/form/Form",
+          "dijit/form/Button",
+          "dijit/form/TextBox",
+          "dijit/form/ValidationTextBox", 
+          "dijit/form/Textarea",
+          "dojox/form/Manager", 
+          "dojox/validate/web",
+  ]);
+  </script>
+
+</head>
+
+<body class="claro">
 <div id="loginDiv"> </div>
   <h3 class  = "header_with_logo"
       style  = "text-align     : center; 
@@ -13,8 +63,7 @@
         alt="AuShadha" 
         title="AuShadha Public Health Clinic EMR & Management Open Source Project">
   </h3>
-
-<div data-dojo-type = "dijit.form.Form" 
+<div data-dojo-type = "dijit/form/Form" 
      id             = "loginForm" 
      data-dojo-id   = "loginForm"
      encType        = "multipart/form-data" 
@@ -22,62 +71,21 @@
      method         = "">
 
     <script type="dojo/method">
-      require(["dojo/behavior"], function(behaviour){genericFormBehaviour()});
+//      require(["dojo/behavior"], function(behaviour){genericFormBehaviour()});
     </script>
 
     <script type="dojo/method" data-dojo-event="onSubmit">
-     if(this.validate()){
-      require(["dojo/_base/xhr", 
-               "dojo/dom", 
-               "dojo/json", 
-               "dijit/registry", 
-               "dijit/Dialog",
-               "dojo/domReady!"
-      ],
-      function(xhr, dom, JSON, registry, Dialog){
-					var hasBeenSent   = false;
-					var dialog        = registry.byId("dialogJsonMessage");
-          var loginDialog = registry.byId('loginDialog');
-					console.log(dialog);
-					xhr.post({
-							url  : "/AuShadha/login/",
-							form : dom.byId("loginForm"),
-							load : function(json) {
-									var jsondata = JSON.parse(json)
-									if(jsondata.success == true){
-                     loginDialog.hide();
-                     window.location.href = jsondata.redirect_to;
- 									}
-									else{
-										var content = jsondata.error_message;
-                    dialog.set('title', "ERROR! ");
-							      dialog.set('content', content);
-							      dialog.show();
-									}
-							},
-							error: function(json ) {
-							    var jsondata = JSON.parse(json)
-                    dialog.set('title', "ERROR! ");
-							      dialog.set('content', jsondata.error_message);
-							      dialog.show();
-							},
-							handle: function() {
-									hasBeenSent = true;
-							}
-					});
-    });
-    return false;
-    }
-    else{
-     require(["dijit/registry"],
-     function(registry){
-       var dialog = registry.byId( "dialogJsonMessage" );
-       dialog.set( 'title'  , "ERROR! " );
-       dialog.set( 'content', "<p class='error_text'> Form contains invalid data. Please correct</p>" );
-       dialog.show();
-     });
-     return false;
-    }
+     if(this.validate()){ handleLogin(); return false;}
+     else{
+       require(["dijit/registry"],
+       function(registry){
+         var dialog = registry.byId( "dialogJsonMessage" );
+         dialog.set( 'title'  , "ERROR! " );
+         dialog.set( 'content', "<p class='error_text'> Form contains invalid data. Please correct</p>" );
+         dialog.show();
+       });
+      return false;
+     }
  </script>
 
 <script type="dojo/method">
@@ -95,7 +103,7 @@
 				<td  style="padding: 10px;"> 
       				{% csrf_token %} 
 				     <input type = "text" 
-				            data-dojo-type  = "dijit.form.ValidationTextBox"
+				            data-dojo-type  = "dijit/form/ValidationTextBox"
 				            data-dojo-props = "required:true" 
 				            id     = "id_username" 
 				            name   = "username" 
@@ -108,7 +116,7 @@
 				     </label> 
 				</td>
 				<td  style="padding: 10px;"> <input type            = "password" 
- 				            data-dojo-type  = "dijit.form.ValidationTextBox"
+ 				            data-dojo-type  = "dijit/form/ValidationTextBox"
 				            data-dojo-props = "required:true" 
 				            id              = "id_password" 
 				            name            = "password" 
@@ -119,7 +127,7 @@
 			     name  = "next" 
 			     value = "{{ next }}" >
 		</table>
-     <button data-dojo-type = "dijit.form.Button" 
+     <button data-dojo-type = "dijit/form/Button" 
 	        type           = "submit" 
 	        value          = "Login" 
 	        name           = "submitLoginForm"
@@ -132,7 +140,7 @@
       Login
     </button>  
 
- 		<button data-dojo-type = "dijit.form.Button" 
+ 		<button data-dojo-type = "dijit/form/Button" 
  		        data-dojo-id   = "applyForRegistration"
 	          type           = "button" 
 	          value          = "Register" 
@@ -147,7 +155,7 @@
     </button>  		
 
 	</div>
-
+  <div id="loginErrorDialog"> </div>
 	<div id    = "login_footer" 
 	     style = "position:absolute; top:90%; left: 25%; font-size: 10px; color: RoyalBlue; text-align:center; margin-top:60px;margin-bottom:10px;">
 	  	 <i>
@@ -158,4 +166,6 @@
 	</div>
 
 </div>
+</body>
+</html>
 
