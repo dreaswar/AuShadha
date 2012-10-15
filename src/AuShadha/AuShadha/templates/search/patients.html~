@@ -1,21 +1,18 @@
 
 <div id              = "simplePatientSearch"
-     data-dojo-type  = "dijit/TitlePane" 
-     data-dojo-props = "title: 'Search'"
-     style           = "padding :1px 20px 1px 20px;"
  >
-    <img src   = "{{MEDIA_URL}}images/search.png" 
-         alt   = "Search" 
-         title = "Search"
-         id    = patSearchIcon
-         style = "//position : relative; 
-                  //top      : -50px; 
-                  //left     : -30px;
-                  margin   : -30px;
-                  //padding  : 0px;
-                  z-index  : 10;
-                  display  : none;
-                 ">
+<!--    <img src   = "{{MEDIA_URL}}images/search.png" -->
+<!--         alt   = "Search" -->
+<!--         title = "Search"-->
+<!--         id    = patSearchIcon-->
+<!--         style = "//position : relative; -->
+<!--                  //top      : -50px; -->
+<!--                  //left     : -30px;-->
+<!--                  margin   : -30px;-->
+<!--                  //padding  : 0px;-->
+<!--                  z-index  : 10;-->
+<!--                  display  : none;-->
+<!--                 ">-->
 
     <div data-dojo-type  = "dojo/store/Memory"
          data-dojo-id    = "patSearchForStore"
@@ -39,6 +36,7 @@
     <!--</div>-->
 
     <div data-dojo-type   = "dijit/form/FilteringSelect"
+         class            = "search_form_div"
          value            = "full_name"
          data-dojo-props  = "store:patSearchForStore, required:true, searchAttr:'name'"
          name             = "patSearchForFilteringSelect"
@@ -50,6 +48,7 @@
     </div>
 
     <div id    = "searchLinker" 
+         class            = "search_form_div"
          style = "font-style : italic; 
                   color      : navy  ; 
                   text-align : left;
@@ -58,6 +57,7 @@
     </div>
 
     <div  data-dojo-type  = "dijit/form/ValidationTextBox" 
+         class            = "search_form_div"
           data-dojo-id    = "filterPatGridTextBox"
           data-dojo-props = "regExp         : '[a-zA-Z0-9 -]+', 
                              required       : true,
@@ -70,6 +70,7 @@
     </div>
 
     <button data-dojo-type  = "dijit/form/Button" 
+         class            = "search_form_div"
             data-dojo-props = "iconClass: 'dijitIconFilter'"
             type            = "submit"
             data-dojo-id    = "patientGridFilterBtn"
@@ -98,6 +99,7 @@
     </button>
 
     <button data-dojo-type  = "dijit/form/Button" 
+         class            = "search_form_div"
             data-dojo-props = "iconClass: 'dijitIconClear'"
             type            = "submit"
             data-dojo-id    = "patientGridFilterClearBtn"
@@ -117,6 +119,7 @@
 
     </button>
 </div>
+
 
 <div data-dojo-type  = "dijit/TitlePane" 
      data-dojo-props = "title: 'Advanced Search', open:false"
@@ -193,31 +196,31 @@
 <!--             ">-->
    <table>
 
-      <tr>
-        <td>
-          <label for="patientHospitalIdSelection"
-                 style="margin-left: 0px; float:left;"
-          > 
-            Id 
-          </label>
-          <div id="patientHospitalIdSelection"
-               style="margin-left: 0px; float:left;"
-          > </div>
-        </td>
-      </tr>
+<!--      <tr>-->
+<!--        <td>-->
+<!--          <label for="patientHospitalIdSelection"-->
+<!--                 style="margin-left: 0px; float:left;"-->
+<!--          > -->
+<!--            Id -->
+<!--          </label>-->
+<!--          <div id="patientHospitalIdSelection"-->
+<!--               style="margin-left: 0px; float:left;"-->
+<!--          > </div>-->
+<!--        </td>-->
+<!--      </tr>-->
 
-      <tr>
-        <td>
-          <label for="patientNameSelection"
-                 style="margin-left: 0px; float:left;"
-          > 
-            Name 
-          </label>
-          <div id="patientNameSelection"
-                style="margin-left: 0px; float:left;"
-          > </div>
-        </td>
-      </tr>
+<!--      <tr>-->
+<!--        <td>-->
+<!--          <label for="patientNameSelection"-->
+<!--                 style="margin-left: 0px; float:left;"-->
+<!--          > -->
+<!--            Name -->
+<!--          </label>-->
+<!--          <div id="patientNameSelection"-->
+<!--                style="margin-left: 0px; float:left;"-->
+<!--          > </div>-->
+<!--        </td>-->
+<!--      </tr>-->
 
 <!--      <tr>-->
 <!--        <td>-->

@@ -649,7 +649,7 @@ var            contactGrid;
 
 //{% if perms.patient.add_patientdetail %}
     var addPatientButton =  new dijit.form.Button({
-                                              label: "Register New Patient",
+                                              label: "New Patient",
                                               iconClass:"dijitIconNewTask",
                                               onClick: function(){
                                                                 require(["dojo/_base/xhr",

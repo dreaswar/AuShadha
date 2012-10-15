@@ -72,7 +72,7 @@
     /* 
        Global Variables
     */
-    alert("hello");
+
     var ADD_MORE_PATIENTS,
         ADD_MORE_PATIENT_CONTACT,
         ADD_MORE_PATIENT_PHONE   ,
@@ -237,7 +237,6 @@
                             data-dojo-props = "region    : 'center', 
                                                splitter  :  true
                                               "
-                            style           = "height: 600px;"
                       >
 
                           {%if perms.patient.add_patientdetail %}
@@ -252,18 +251,17 @@
 
                           <div style="
                                   margin-bottom  : 1px;
-                                  position       : absolute;
-                                  left           : 800px;
-                                  top            : 40px;
-                                  width          : 250px;
-                                  border-radius  : 3px;
-                                  margin-left    : 5px;
+                                  position       : relative;
+                                  left           : 100px;
+                                  top            : -25px;
+                                  width          : 650px;
+                                  overflow        : auto;
+                                  margin-left    : 2px;"
                                id = "searchPatientContainerDiv"
                            >
                              {% include 'search/patients.html' %}
                           </div>
                           <div id      = "patient_grid" 
-                               style   = "height :300px; overflow:auto;"
                           >       
                           </div>
 
@@ -274,16 +272,19 @@
                     <div  id              = "patientContextPane"
                           class           = "patientContextPane"
                           data-dojo-type  = "dojox/layout/ContentPane"
-                          data-dojo-props = "region    : 'bottom',
+                          data-dojo-props = "region    : 'right',
                                              splitter  :  true
                                              "
-                          style           = "height       :300px;"
+                          style           = "width       :600px; height:auto;"
                     >
 
                       <div id="selected_patient_info" style="color      : navy; 
                                                              font-size  : 12px; 
                                                              font-style : italics;
-                                                             background : lightblue;"
+                                                             background : lightblue;
+                                                            text-align     : center;
+                                                            font-weight    : bold;
+                                                             "
                       > 
 
                       </div>
@@ -292,7 +293,8 @@
                         <div id              = "patientContextTabs"
                              class           = "patientContextTabContainer"
                              data-dojo-type  = "dijit/layout/TabContainer"
-                             data-dojo-props = "tabPosition:'bottom'"
+                             data-dojo-props = "tabPosition:'top'"
+                             style           = "height: 600px;"
                         >
 
                             <!--  START OF PATIENTCONTEXTTABS1  -->

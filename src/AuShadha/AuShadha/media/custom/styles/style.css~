@@ -73,9 +73,11 @@
 	#patient_grid,
 {
    position:relative;
-   left: 45px;
+   left: 55px;
    min-height: 300px;
-   max-height: 375px;
+   height      :500px; 
+   max-height: 550px;
+  margin-top: 5px;
 	}
 
 	#contact_list,
@@ -190,6 +192,20 @@
 	#loginDiv+div{
 		background: red;
 	}
+
+#patientContextPane{
+  height: 700px;
+}
+
+
+#simplePatientSearch .search_form_div{
+  float :left;
+  display:inline;
+  margin-left:10px;
+  margin-right:10px;
+  margin-top:0px;
+  padding:0px;
+}
 
 /*TABLES*/
 
