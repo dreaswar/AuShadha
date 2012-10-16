@@ -278,11 +278,41 @@ var GRID_STRUCTURES= {
                                       cellStyles : "text-align:center;"
                                     },
 
-                                    {name       : "Date of Birth", 
-                                      field      : "date_of_birth", 
+                                    {name       : "Housing", 
+                                      field      : "housing_conditions", 
                                       width      : "150px",
                                       cellStyles : "text-align:center;"
-                                    }],
+                                    },
+                                    {name       : "Religion", 
+                                      field      : "religion", 
+                                      width      : "150px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name       : "Language", 
+                                      field      : "languages_known", 
+                                      width      : "150px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name       : "Marital Status", 
+                                      field      : "marital_status", 
+                                      width      : "150px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name       : "Drug Abuse", 
+                                      field      : "drug_abuse_history", 
+                                      width      : "150px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name       : "Alcohol", 
+                                      field      : "alcohol_intake", 
+                                      width      : "150px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name       : "Smoking", 
+                                      field      : "smoking", 
+                                      width      : "150px",
+                                      cellStyles : "text-align:center;"
+                                    } ],
 
   PATIENT_ALLERGY_GRID_STRUCTURE: "",
 

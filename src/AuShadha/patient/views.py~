@@ -87,7 +87,7 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
 def return_patient_json(patient, success = True):
     data ={"addData":{}}
     if patient:
-        data_to_append = data.addData
+        data_to_append = data['addData']
         data_to_append['id']                   = patient.id
         data_to_append['patient_hospital_id']  = patient.patient_hospital_id
 
@@ -1508,7 +1508,7 @@ def patient_demographics_add(request, id):
         id                      = int(id)
         patient_detail_obj      = PatientDetail.objects.get(pk =id)
         patient_demographics_data_obj       = PatientDemographicsData(patient_detail = patient_detail_obj)
-        patient_demographics_data_add_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_obj)
+        patient_demographics_data_add_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_data_obj)
         if patient_demographics_add_form.is_valid():
           demographics_obj  = patient_demographics_add_form.save()
           json              = generate_json_for_datagrid(demographics_obj)

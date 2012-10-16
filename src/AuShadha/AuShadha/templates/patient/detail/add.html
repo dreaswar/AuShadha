@@ -31,19 +31,7 @@
 											var jsondata = JSON.parse(json)
 											if(jsondata.success = true){
 												dom.byId("newPatientAddForm").reset();
-												var data = {'id': jsondata.id, 
-												 'first_name': jsondata.first_name,
-												 'middle_name': jsondata.middle_name,
-												 'last_name'  : jsondata.last_name,
-												 'age'        : jsondata.age,
-												 'sex'        : jsondata.sex,
-												 'patient_hospital_id': jsondata.patient_hospital_id,
-												 'home'         : jsondata.home,
-												 'edit'         : jsondata.edit,
-												 'del'          : jsondata.del,
-												 'visitadd'     : jsondata.visitadd,
-												 'admissionadd' : jsondata.admissionadd,
-												};
+												var data = jsondata.addData;
 												grid.store.newItem(data);
 												if(ADD_MORE_PATIENTS == false){
                           editDialog.hide();

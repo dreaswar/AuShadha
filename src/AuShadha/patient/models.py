@@ -902,7 +902,7 @@ class PatientDemographicsDataForm(ModelForm):
 		super(PatientDemographicsDataForm, self).__init__(*args, **kwargs)
 		text_fields = [{"field"         : 'date_of_birth',
 		                'max_length'    :  30         ,
-		                "data-dojo-type": "dijit.form.DateBox",
+		                "data-dojo-type": "dijit.form.DateTextBox",
 		                "data-dojo-props": r"'required' :'true' ,'regExp':'','invalidMessage':'Invalid Character' "
 		                },
 		               {"field": 'socioeconomics',
@@ -917,7 +917,7 @@ class PatientDemographicsDataForm(ModelForm):
                    },
                    {"field": 'housing_conditions',
 		                'max_length'    :  30         ,
-                   "data-dojo-type": "dijit.form.Select",
+                   "data-dojo-type": "dijit.form.SimpleTextarea",
 		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
                    },
                    {"field": 'occupation',
@@ -969,13 +969,13 @@ class PatientDemographicsDataForm(ModelForm):
                    {
                      "field"          : "alcohol_intake"     , 
                      "max_length"     : 30                  , 
-                     "data-dojo-type" : "dijit.form.SimpleTextBox" , 
+                     "data-dojo-type" : "dijit.form.SimpleTextarea" , 
                      "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
                    },
                    {
                      "field"          : "smoking"     , 
                      "max_length"     : 30                  , 
-                     "data-dojo-type" : "dijit.form.SimpleTextBox" , 
+                     "data-dojo-type" : "dijit.form.SimpleTextarea" , 
                      "data-dojo-props": r"'required':'true', 'regExp': '[\\w+]', 'invalidMessage': 'Please select a value' "
                    },
                    {

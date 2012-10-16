@@ -87,7 +87,7 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
 def return_patient_json(patient, success = True):
     data ={"addData":{}}
     if patient:
-        data_to_append = data.addData
+        data_to_append = data['addData']
         data_to_append['id']                   = patient.id
         data_to_append['patient_hospital_id']  = patient.patient_hospital_id
 
@@ -126,7 +126,7 @@ def return_patient_json(patient, success = True):
     data['success']       = success
     data['error_message'] = error_message
     data['form_errors']   = form_errors
-    json = simplejson.dumps(data_to_append)
+    json = simplejson.dumps(data)
     print "JSON=", json
     return json
 
