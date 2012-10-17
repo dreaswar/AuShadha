@@ -1,0 +1,72 @@
+<div data-dojo-type = "dijit/form/Form" 
+     id             = "newDemographicsDataAddOrEditForm" 
+     data-dojo-id   = "newDemographicsDataAddOrEditForm"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = "">
+
+  <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
+    if( this.validate() ){
+      require(["dijit/registry", 
+              "dojo/request","dojo/dom","dojo/dom-form","dojo/json",
+               "dojo/domReady!"
+      ],
+       function(registry, request, dom, domForm, JSON){
+          var url = "{{action}}"
+          var data = domForm.toObject('newDemographicsDataAddOrEditForm');
+          request(url,{method:"POST", handleAs: "text", data: data}).
+          then( 
+            function(json){
+              var jsondata = JSON.parse(json);
+              if (jsondata.success == true){
+                alert("Demographics Completed Successfully");
+                
+              }
+            },
+            function(json){
+              console.log("Demographics Form Request ERROR !...")
+            },
+            function(evt){
+              console.log("Demographics Form Request Completed...")
+            }
+          )
+   	   }
+ 		  );
+     return false;
+    }
+    else{
+     raiseInvalidFormSubmission();
+     return false;
+    }
+  </script>
+
+
+<table>
+  {{patient_demographics_data_form}}
+</table>
+
+    <button data-dojo-type = "dijit/form/Button" 
+            data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+            type           = "submit" 
+            name           = "{{button_label}}Button" 
+            value          = "{{button_label}}"
+    >
+      {{button_label}}
+    </button>
+
+{% if button_label == 'Edit' %}
+    <button data-dojo-type  = "dijit/form/Button" 
+						data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+            type            = "button"
+            name            = "delPatientDemographicsData"
+            id              = "delPatientDemographicsDataBtn">
+       Delete
+       <script  type            = "dojo/method" 
+                data-dojo-event = "onClick" 
+                data-dojo-args  = "evt"
+        >
+        </script>
+    </button>
+{% endif %}
+
+</div>

@@ -130,31 +130,45 @@ var GRID_STRUCTURES= {
                                 {name       : "Address", 
                                  field      : "address", 
                                  width      : "250px",
-                                 editable   : true,
-                                 cellStyles : "text-align:center;"
+                                 cellStyles : "text-align:center;",
+                                 formatter  : function(address,rowI){
+                                                var thisRow   = this.grid.getItem(rowI);
+                                                var city_name = thisRow.city;
+                                                var state     = thisRow.state;
+                                                var country   = thisRow.country;
+                                                var pincode   = thisRow.pincode;
+                                                var formatted_data = address   +"</br>" + 
+                                                                     city_name  +","  + state + "</br>"+
+                                                                     country    +"-" + pincode;
+                                                return formatted_data;
+                                              }
                                 },
 
                                 {name       : "City", 
                                  field      : "city", 
                                  width      : "150px",
+                                 hidden     : true,
                                  cellStyles : "text-align:center;"
                                 },
 
                                 {name       : "State", 
                                  field      : "state", 
                                  width      : "50px",
+                                 hidden     : true,
                                  cellStyles : "text-align:center;"
                                 },
 
                                 {name       : "Country", 
                                  field      : "country", 
                                  width      : "100px",
+                                 hidden     : true,
                                  cellStyles : "text-align:center;"
                                 },
 
                                 {name       : "Pincode", 
                                  field      : "pincode", 
                                  width      : "100px",
+                                 hidden     : true,
                                  cellStyles : "text-align:center;"
                                 }],
 
@@ -189,19 +203,28 @@ var GRID_STRUCTURES= {
                                   {name       : "ISD", 
                                    field      : "ISD_Code", 
                                    width      : "250px",
+                                   hidden     : true,
                                    cellStyles : "text-align:center;"
                                   },
 
                                   {name       : "STD", 
                                    field      : "STD_Code", 
                                    width      : "150px",
+                                   hidden     : true,
                                    cellStyles : "text-align:center;"
                                   },
 
                                   {name       : "Phone", 
                                    field      : "phone", 
-                                   width      : "50px",
-                                   cellStyles : "text-align:center;"
+                                   width      : "120px",
+                                   cellStyles : "text-align:center;",
+                                   formatter  : function(phone, rowI){
+                                                  var rowdata = this.grid.getItem(rowI);
+                                                  var ISD     = rowdata.ISD_Code;
+                                                  var STD     = rowdata.STD_Code;
+                                                  var formatted_data = ISD + "-" + STD + "-" + phone
+                                                  return formatted_data;
+                                                }
                                   }],
 
   PATIENT_GUARDIAN_GRID_STRUCTURE: [
@@ -229,18 +252,18 @@ var GRID_STRUCTURES= {
                                     {name       : "Name", 
                                       field      : "guardian_name", 
                                       width      : "50px",
-                                      cellStyles : "text-align:center;"
+                                      cellStyles : "text-align:center;",
                                     },
 
                                     {name       : "Relation", 
                                       field      : "relation_to_guardian", 
-                                      width      : "250px",
+                                      width      : "60px",
                                       cellStyles : "text-align:center;"
                                     },
 
                                     {name       : "Phone", 
                                       field      : "guardian_phone", 
-                                      width      : "150px",
+                                      width      : "70px",
                                       cellStyles : "text-align:center;"
                                     }],
 
@@ -312,9 +335,7 @@ var GRID_STRUCTURES= {
                                       field      : "smoking", 
                                       width      : "150px",
                                       cellStyles : "text-align:center;"
-                                    },
-
-                                    ],
+                                    } ],
 
   PATIENT_ALLERGY_GRID_STRUCTURE: "",
 

@@ -17,6 +17,7 @@
               "dojo/behavior",
               "dojo/store/Memory",
               "dojo/dom-geometry",
+              "dojo/request",
 
               "dojo/_base/connect",
               "dojo/on",
@@ -56,7 +57,7 @@
                registry, Dialog      , ready, 
                array   , domConstruct, 
                domStyle, ContentPane,
-               behaviour, Memory, domGeom
+               behaviour, Memory, domGeom, request
                )
         {
         // Define Variables to be used later in the app..
@@ -233,9 +234,13 @@ var            contactGrid;
                             guardianUrl = "{%url guardian_json %}" + 
                                           "?patient_id=" 
                                           + patid,
+/*
                             demographicsUrl = "{%url demographics_json %}" + 
                                            "?patient_id=" 
                                            + patid,
+*/
+                            demographicsUrl = "/AuShadha/pat/demographics/add/" + patid +"/",
+
                             admissionUrl = "{%url admission_json %}" + 
                                            "?patient_id=" 
                                            + patid;
@@ -339,7 +344,7 @@ var            contactGrid;
                   // {% endif %}
                   };
 
-
+/*
                   var demographicsGrid = new DataGrid({
                                           store         : dataStore = ObjectStore({
                                                                        objectStore: demographicsStore
@@ -363,7 +368,7 @@ var            contactGrid;
                                                     return false; 
                     // {% endif %}
                     };
-
+*/
 
 
                   var admissionGrid = new DataGrid({
@@ -467,6 +472,7 @@ var            contactGrid;
                 phoneTable          = dijit.byId("phone_list"),
                 guardianTable       = dijit.byId("guardian_list"),
                 demographicsTable   = dijit.byId("demographics_list"),
+                demographicsForm    = dijit.byId("newDemographicsDataAddOrEditForm"),
                 allergyTable        = dijit.byId("allergy_list"),
                 immunizationTable   = dijit.byId("immunization_list"),
                 admissionTable      = dijit.byId("admission_list"),
@@ -509,6 +515,26 @@ var            contactGrid;
                                  );
               
             }
+
+            if(demographicsForm){
+              demographicsForm.destroyRecursive();
+            }
+            request(demographicsUrl,
+                    {handleAs:'html',method: "GET"}
+            ).
+            then(
+              function(html){
+                  dom.byId('demographics_add_or_edit_form').innerHTML = html;
+                  parser.parse( dom.byId("demographics_add_or_edit_form"));
+              },
+              function(html){
+                  console.log("Error occured while GETTING the Demographics Form...");
+              },
+              function(evt){ 
+                  console.log("Demographics Request Completed...")
+              }
+            );
+
             if(allergyTable){
               allergyTable.destroyRecursive();
               console.log("Recreating allergy tab");
@@ -598,8 +624,9 @@ var            contactGrid;
     contactGrid.startup();
     phoneGrid.startup();
     guardianGrid.startup();
-    demographicsGrid.startup();
+//    demographicsGrid.startup();
     admissionGrid.startup();
+
 {% comment %}    
     //visitGrid.startup(); 
 {% endcomment %}

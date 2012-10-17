@@ -1488,36 +1488,46 @@ def patient_demographics_add(request, id):
         patient_detail_obj   = PatientDetail.objects.get(pk =id)
         demographics_obj     = PatientDemographicsData.objects.filter(patient_detail = patient_detail_obj)
         if demographics_obj:
-          return Http404("Demographics Data Already exists.. Do you want to edit ? ")
+          patient_demographics_data_obj    = demographics_obj[0]
+          patient_demographics_data_form   = PatientDemographicsDataForm(instance = patient_demographics_data_obj)
+          variable = {'user'                      : user, 
+                      'patient_detail_obj'        : patient_detail_obj,
+                      'patient_demographics_obj'  : patient_demographics_data_obj,
+                      'patient_demographics_form' : patient_demographics_data_form,
+                      'button_label'              : 'Edit',
+                      'action'                    : patient_demographics_data_obj.get_edit_url()
+                      }
         else:
-          patient_demographics_data_obj       = PatientDemographicsData(patient_detail = patient_detail_obj)
-          patient_demographics_data_add_form  = PatientDemographicsDataForm(instance = patient_demographics_data_obj)
-          variable                = RequestContext(request, 
-                                                    {"user" 									:	user,
-                                                    "patient_detail_obj"			:	patient_detail_obj ,
-                                                    "patient_demographics_data_add_form" :	patient_demographics_data_add_form, 
-                                                    "patient_demographics_data_obj" 		  :	patient_demographics_data_obj ,
-                                                    })
+          patient_demographics_data_obj   = PatientDemographicsData(patient_detail = patient_detail_obj)
+          patient_demographics_data_form  = PatientDemographicsDataForm(instance = patient_demographics_data_obj)
+          variable                        = RequestContext(request, 
+                                          {"user" 									       :	user,
+                                          "patient_detail_obj"			       :	patient_detail_obj ,
+                                          "patient_demographics_data_form"  :	patient_demographics_data_form, 
+                                          "patient_demographics_data_obj"  :	patient_demographics_data_obj ,
+                                          'button_label'                  :  "Add",
+                                          "action"                     : patient_detail_obj.get_patient_demographics_add_url()
+                                           })
+        return render_to_response('patient/demographics_data/add_or_edit_form.html', variable)
       except TypeError or ValueError or AttributeError:
         raise Http404("BadRequest")
       except PatientDetail.DoesNotExist:
         raise Http404("BadRequest: Patient Data Does Not Exist")
-      return render_to_response('patient/demographics_data/add.html',variable)
     elif request.method == 'POST' and request.is_ajax():
       try:
-        id                      = int(id)
-        patient_detail_obj      = PatientDetail.objects.get(pk =id)
-        patient_demographics_data_obj       = PatientDemographicsData(patient_detail = patient_detail_obj)
-        patient_demographics_data_add_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_data_obj)
-        if patient_demographics_add_form.is_valid():
-          demographics_obj  = patient_demographics_add_form.save()
+        id                              = int(id)
+        patient_detail_obj              = PatientDetail.objects.get(pk =id)
+        patient_demographics_data_obj   = PatientDemographicsData(patient_detail = patient_detail_obj)
+        patient_demographics_data_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_data_obj)
+        if patient_demographics_data_form.is_valid():
+          demographics_obj  = patient_demographics_data_form.save()
           json              = generate_json_for_datagrid(demographics_obj)
           return HttpResponse(json, content_type = 'application/json')
         else:
           success       = False
           error_message = "Error Occured. DemographicsData data could not be added."
           form_errors   = ''
-          for error in patient_demographics_add_form.errors:
+          for error in patient_demographics_data_form.errors:
             form_errors += '<p>' + error +'</p>'
           data = { 'success'      : success, 
                    'error_message': error_message,
@@ -1533,6 +1543,7 @@ def patient_demographics_add(request, id):
       raise Http404("BadRequest: Unsupported Request Method. AJAX status is:: " + unicode(request.is_ajax()))
 
 
+
 @login_required
 def patient_demographics_edit(request, id):
   if request.user:
@@ -1540,28 +1551,30 @@ def patient_demographics_edit(request, id):
     if request.method =="GET" and request.is_ajax():
       try:
         id                             = int(id)
-        patient_demographics_obj       = PatientDemographicsData.objects.get(pk = id)
-        patient_demographics_edit_form = PatientDemographicsDataForm(instance = patient_demographics_obj)
-        patient_detail_obj             = patient_demographics_obj.patient_detail
-        variable                        = RequestContext(request, 
-                                                          {"user":user,
-                                                          "patient_detail_obj"            : patient_detail_obj ,
-                                                          "patient_demographics_edit_form": patient_demographics_edit_form, 
-                                                          "patient_demographics_obj":patient_demographics_obj 
-                                                          })
+        patient_demographics_data_obj       = PatientDemographicsData.objects.get(pk = id)
+        patient_demographics_data_edit_form = PatientDemographicsDataForm(instance = patient_demographics_obj)
+        patient_detail_obj                  = patient_demographics_obj.patient_detail
+        variable                            = RequestContext(request, 
+                                                {"user":user,
+                                                "patient_detail_obj"             : patient_detail_obj ,
+                                                "patient_demographics_data_form" : patient_demographics_data_edit_form, 
+                                                "patient_demographics_data_obj"  :patient_demographics_data_obj ,
+                                                'action'                          : patient_demographics_obj.get_edit_url(),
+                                                'button_label'                    : "Edit"
+                                               })
       except TypeError or ValueError or AttributeError:
         raise Http404("BadRequest")
       except PatientDemographicsData.DoesNotExist:
         raise Http404("BadRequest: Patient DemographicsData Data Does Not Exist")
-      return render_to_response('patient/demographics_data/edit.html',variable)
+      return render_to_response('patient/demographics_data/add_or_edit_form.html',variable)
     elif request.method == 'POST' and request.is_ajax():
       try:
         id                              = int(id)
-        patient_demographics_obj        = PatientDemographicsData.objects.get(pk =id)
-        patient_demographics_edit_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_obj)
+        patient_demographics_data_obj        = PatientDemographicsData.objects.get(pk =id)
+        patient_demographics_data_edit_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_obj)
         patient_detail_obj              = patient_demographics_obj.patient_detail
-        if patient_demographics_edit_form.is_valid():
-          demographics_obj  = patient_demographics_edit_form.save()
+        if patient_demographics_data_edit_form.is_valid():
+          demographics_obj  = patient_demographics_data_edit_form.save()
           data              = generate_json_for_datagrid(demographics_obj)
           json              = simplejson.dumps(data)
           return HttpResponse(json, content_type = 'application/json')
