@@ -1550,7 +1550,15 @@ def patient_demographics_add(request, id):
         if patient_demographics_data_form.is_valid():
           try:
             demographics_obj  = patient_demographics_data_form.save()
-            json              = generate_json_for_datagrid(demographics_obj)
+#            json              = generate_json_for_datagrid(demographics_obj)
+            success       = True
+            error_message = "Demographics Data Added Successfully"
+            form_errors   = ''
+            data = { 'success'      : success, 
+                     'error_message': error_message,
+                     'form_errors'  : form_errors
+                   }
+            json = simplejson.dumps(data)
             return HttpResponse(json, content_type = 'application/json')
           except (DemographicsDataExistsError):
             success       = False
@@ -1614,7 +1622,14 @@ def patient_demographics_edit(request, id):
         patient_detail_obj              = patient_demographics_data_obj.patient_detail
         if patient_demographics_data_form.is_valid():
           demographics_obj  = patient_demographics_data_form.save()
-          data              = generate_json_for_datagrid(demographics_obj)
+          success       = True
+          error_message = "Demographics Data Edited Successfully"
+          form_errors   = ''
+          data = { 'success'      : success, 
+                   'error_message': error_message,
+                   'form_errors'  : form_errors
+                 }
+#          data             = generate_json_for_datagrid(demographics_obj)
           json              = simplejson.dumps(data)
           return HttpResponse(json, content_type = 'application/json')
         else:
