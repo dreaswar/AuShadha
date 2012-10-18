@@ -15,13 +15,17 @@ from django.template                 import RequestContext
 #from django.core.context_processors import csrf
 from django.contrib.auth.models      import User
 
+
 from django.views.decorators.csrf   import csrf_exempt
 from django.views.decorators.cache  import never_cache
 from django.views.decorators.csrf   import csrf_protect
 from django.views.decorators.debug  import sensitive_post_parameters
 
 from django.core.paginator           import Paginator
+
 from django.utils                    import simplejson
+from django.core.serializers         import json    
+from django.core.serializers.json    import DjangoJSONEncoder
 
 from django.contrib.auth.views       import login, logout
 from django.contrib.auth.decorators  import login_required
@@ -62,26 +66,50 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
                  form_errors   : Form Validation Errors from Django while saving can be passed.
     """
     print "TRYING TO RETURN JSON FOR OBJECT: ", obj
-    json = []
-    for element in obj:
-      print element._meta.fields
+    json_data = []
+
+    try:
+      iterable = iter(obj)
+      if iterable:
+        for element in obj:
+          print element._meta.fields
+          data = { 'success'       : success, 
+                   'error_message' : unicode(error_message) ,
+                   'form_errors'   : form_errors,
+                   'edit'          : getattr(element, 'get_edit_url()',element.get_edit_url()),
+                   'del'           : getattr(element, 'get_del_url()',element.get_del_url()),
+                   'patient_detail': getattr(element, 'patient_detail.__unicode__()', None)
+                 }
+          for i in element._meta.fields:
+            print "CURRENT ITERATING FIELD NAME IS : ", i
+            print "DATA DICTIONARY NOW IS ", data.keys()
+            if i.name not in data.keys():
+              print "Adding ", i.name
+              print i.name.__class__
+              data[i.name] = getattr(element, i.name, None)
+          json_data.append(data)
+
+    except TypeError:
+      print obj._meta.fields
       data = { 'success'       : success, 
                'error_message' : unicode(error_message) ,
                'form_errors'   : form_errors,
-               'edit'          : getattr(element, 'get_edit_url()',element.get_edit_url()),
-               'del'           : getattr(element, 'get_del_url()',element.get_del_url()),
-               'patient_detail': getattr(element, 'patient_detail.__unicode__()', None)
+               'edit'          : getattr(obj, 'get_edit_url()',obj.get_edit_url()),
+               'del'           : getattr(obj, 'get_del_url()',obj.get_del_url()),
+               'patient_detail': getattr(obj, 'patient_detail.__unicode__()', None)
              }
-      for i in element._meta.fields:
+      for i in obj._meta.fields:
         print "CURRENT ITERATING FIELD NAME IS : ", i
         print "DATA DICTIONARY NOW IS ", data.keys()
         if i.name not in data.keys():
           print "Adding ", i.name
-          data[i.name] = getattr(element, i.name, None)
-      json.append(data)
-    json = simplejson.dumps(json)
+          print i.name.__class__
+          data[i.name] = getattr(obj, i.name, None)
+      json_data.append(data)
+
+    json_data = simplejson.dumps(json_data, cls=DjangoJSONEncoder)
     print "RETURNED JSON IS ", unicode(json)
-    return json
+    return json_data
 
 
 def return_patient_json(patient, success = True):
@@ -1492,8 +1520,8 @@ def patient_demographics_add(request, id):
           patient_demographics_data_form   = PatientDemographicsDataForm(instance = patient_demographics_data_obj)
           variable = {'user'                      : user, 
                       'patient_detail_obj'        : patient_detail_obj,
-                      'patient_demographics_obj'  : patient_demographics_data_obj,
-                      'patient_demographics_form' : patient_demographics_data_form,
+                      'patient_demographics_data_obj'  : patient_demographics_data_obj,
+                      'patient_demographics_data_form' : patient_demographics_data_form,
                       'button_label'              : 'Edit',
                       'action'                    : patient_demographics_data_obj.get_edit_url()
                       }
@@ -1520,9 +1548,20 @@ def patient_demographics_add(request, id):
         patient_demographics_data_obj   = PatientDemographicsData(patient_detail = patient_detail_obj)
         patient_demographics_data_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_data_obj)
         if patient_demographics_data_form.is_valid():
-          demographics_obj  = patient_demographics_data_form.save()
-          json              = generate_json_for_datagrid(demographics_obj)
-          return HttpResponse(json, content_type = 'application/json')
+          try:
+            demographics_obj  = patient_demographics_data_form.save()
+            json              = generate_json_for_datagrid(demographics_obj)
+            return HttpResponse(json, content_type = 'application/json')
+          except (DemographicsDataExistsError):
+            success       = False
+            error_message = "Demographics Data Already Exists ! Cannot add more.."
+            form_errors   = ''
+            data = { 'success'      : success, 
+                     'error_message': error_message,
+                     'form_errors'  : form_errors
+                   }
+            json = simplejson.dumps(data)
+            return HttpResponse(json, content_type = 'application/json')
         else:
           success       = False
           error_message = "Error Occured. DemographicsData data could not be added."
@@ -1552,12 +1591,12 @@ def patient_demographics_edit(request, id):
       try:
         id                             = int(id)
         patient_demographics_data_obj       = PatientDemographicsData.objects.get(pk = id)
-        patient_demographics_data_edit_form = PatientDemographicsDataForm(instance = patient_demographics_obj)
+        patient_demographics_data_form = PatientDemographicsDataForm(instance = patient_demographics_obj)
         patient_detail_obj                  = patient_demographics_obj.patient_detail
         variable                            = RequestContext(request, 
                                                 {"user":user,
                                                 "patient_detail_obj"             : patient_detail_obj ,
-                                                "patient_demographics_data_form" : patient_demographics_data_edit_form, 
+                                                "patient_demographics_data_form" : patient_demographics_data_form, 
                                                 "patient_demographics_data_obj"  :patient_demographics_data_obj ,
                                                 'action'                          : patient_demographics_obj.get_edit_url(),
                                                 'button_label'                    : "Edit"
@@ -1571,10 +1610,10 @@ def patient_demographics_edit(request, id):
       try:
         id                              = int(id)
         patient_demographics_data_obj        = PatientDemographicsData.objects.get(pk =id)
-        patient_demographics_data_edit_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_obj)
-        patient_detail_obj              = patient_demographics_obj.patient_detail
-        if patient_demographics_data_edit_form.is_valid():
-          demographics_obj  = patient_demographics_data_edit_form.save()
+        patient_demographics_data_form  = PatientDemographicsDataForm(request.POST,instance = patient_demographics_data_obj)
+        patient_detail_obj              = patient_demographics_data_obj.patient_detail
+        if patient_demographics_data_form.is_valid():
+          demographics_obj  = patient_demographics_data_form.save()
           data              = generate_json_for_datagrid(demographics_obj)
           json              = simplejson.dumps(data)
           return HttpResponse(json, content_type = 'application/json')
@@ -1582,7 +1621,7 @@ def patient_demographics_edit(request, id):
           success       = False
           error_message = "Error Occured. Demographics Data data could not be added."
           form_errors   = ''
-          for error in patient_demographics_edit_form.errors:
+          for error in patient_demographics_data_form.errors:
             form_errors += '<p>' + error +'</p>'
           data = {'success': success, 'error_message': error_message,'form_errors': form_errors}
           json = simplejson.dumps(data)

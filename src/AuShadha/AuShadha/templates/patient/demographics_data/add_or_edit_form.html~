@@ -19,11 +19,11 @@
             function(json){
               var jsondata = JSON.parse(json);
               if (jsondata.success == true){
-                alert("Demographics Completed Successfully");
                 
               }
             },
             function(json){
+              console.log(this,arguments);
               console.log("Demographics Form Request ERROR !...")
             },
             function(evt){
@@ -54,7 +54,8 @@
       {{button_label}}
     </button>
 
-{% if button_label == 'Edit' %}
+
+{% if perms.patient.delete_patientdemographicsdata %}
     <button data-dojo-type  = "dijit/form/Button" 
 						data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
             type            = "button"
@@ -65,8 +66,35 @@
                 data-dojo-event = "onClick" 
                 data-dojo-args  = "evt"
         >
-        </script>
+          require(["dijit/registry", 
+                "dojo/request","dojo/dom","dojo/dom-form","dojo/json",
+                 "dojo/domReady!"
+          ],
+           function(registry, request, dom, domForm, JSON){
+              var url = "{{patient_demographics_data_obj.get_del_url}}"
+              request(url,{method:"GET", handleAs: "json"}).
+              then( 
+                function(json){
+                  var jsondata = JSON.parse(json);
+                  if (jsondata.success == true){
+                    alert("Demographics Deleted Successfully");
+                    
+                  }
+                },
+                function(json){
+                  console.log(this,arguments);
+                  console.log("Demographics Form Request ERROR !...")
+                },
+                function(evt){
+                  console.log("Demographics Form Request Completed...")
+                }
+              )
+     	     }
+   		   );
+         return false;
+       </script>
     </button>
 {% endif %}
+
 
 </div>

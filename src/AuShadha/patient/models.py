@@ -704,11 +704,11 @@ class PatientDemographicsData(models.Model):
         return " Demographics for - %s" %(self.patient_detail)
 
     def save(self, *args, **kwargs):
-        patient_obj      = self.patient_detail
-        demographics_obj = PatientDemographicsData.objects.filter(patient_detail = patient_obj)
-        if demographics_obj:
-           raise Exception("Demographics Data already exists")
-        else:
+#        patient_obj      = self.patient_detail
+#        demographics_obj = PatientDemographicsData.objects.filter(patient_detail = patient_obj)
+#        if self.id:
+#           raise Exception("DemographicsDataExistsError")
+#        else:
            super(PatientDemographicsData,self).save(*args, **kwargs)
 
     def get_edit_url(self):
@@ -917,8 +917,8 @@ class PatientDemographicsDataForm(ModelForm):
 		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
                    },
                    {"field": 'housing_conditions',
-		                'max_length'    :  30         ,
-                   "data-dojo-type": "dijit.form.SimpleTextarea",
+		                'max_length'    :  100         ,
+                   "data-dojo-type": "dijit.form.Textarea",
 		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
                    },
                    {"field": 'occupation',
@@ -939,8 +939,8 @@ class PatientDemographicsDataForm(ModelForm):
                    },
                    {
                      "field"          : "languages_known"     , 
-                     "max_length"     : 30                  , 
-                     "data-dojo-type" : "dijit.form.ValidationTextBox" , 
+                     "max_length"     : 100                  , 
+                     "data-dojo-type" : "dijit.form.Textarea" , 
                      "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
                    },
                    {
@@ -965,18 +965,18 @@ class PatientDemographicsDataForm(ModelForm):
                      "field"          : "drug_abuse_history"     , 
                      "max_length"     : 30                  , 
                      "data-dojo-type" : "dijit.form.CheckBox" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
+                     "data-dojo-props": r"'required':'', 'regExp': '', 'invalidMessage': 'Please select a value' "
                    },
                    {
                      "field"          : "alcohol_intake"     , 
-                     "max_length"     : 30                  , 
-                     "data-dojo-type" : "dijit.form.SimpleTextarea" , 
+                     "max_length"     : 100                  , 
+                     "data-dojo-type" : "dijit.form.Textarea" , 
                      "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
                    },
                    {
                      "field"          : "smoking"     , 
                      "max_length"     : 30                  , 
-                     "data-dojo-type" : "dijit.form.SimpleTextarea" , 
+                     "data-dojo-type" : "dijit.form.Textarea" , 
                      "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
                    }
 
