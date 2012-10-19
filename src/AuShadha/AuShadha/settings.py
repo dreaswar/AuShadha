@@ -145,6 +145,7 @@ INSTALLED_APPS = (
     # Custom Apps here:
     'aushadha_users',
     'clinic',
+    'aushadha_base_models',
     'patient',
     'physician',
     'nurse',

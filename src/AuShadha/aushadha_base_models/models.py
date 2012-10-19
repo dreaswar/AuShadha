@@ -1,0 +1,123 @@
+
+###########################################################################################
+# PROJECT: Base AuShadha Model Deriving from models.Model
+#          
+# Author : Dr. Easwar T R
+# Date   : 28-08-2012
+# Licence: GNU GPL V3. Please see AuShadha/LICENSE.txt
+###########################################################################################
+
+from django.db	              import models
+from django.forms	      import ModelForm
+from django.core.exceptions   import ValidationError
+from django 		      import forms
+
+from django.utils                    import simplejson
+from django.core.serializers         import json    
+from django.core.serializers.json    import DjangoJSONEncoder
+
+
+from clinic.models import Clinic
+
+def generic_url_maker(instance,action,id, root_object = False):
+  """
+    Returns the URL Pattern for any AuShadha Object
+    Following the naming conventions
+    instance   : an instance of a Django Model
+    action     : action that URL will commit : add/edit/delete/list/
+    root_object: for the list option is root_object is False, instance id will be appended to URL else no id 
+                 will be appended. 
+                 Eg:: to list all patients, under a clinic once a queryset is done
+                 the id will be that of the clinic. But for the root object clinic since there is no db_relationship
+                 that fetches a list of clinics, all clinics are fetched and listed.
+  """
+  #FIXME:: may be better to rely on django.contrib.contenttypes.ContentType to do a similar thing rather than using _meta  
+  from AuShadha.settings import APP_ROOT_URL
+  if not root_object:
+    url = unicode(APP_ROOT_URL) + unicode(instance._meta.app_label)+ "/" + unicode(action) +"/" + unicode(id) +"/"
+  if root_object:
+    url = unicode(APP_ROOT_URL) + unicode(instance._meta.app_label)+ "/" + unicode(action) +"/"
+  return url
+
+
+def generate_json_for_datagrid(obj, success=True, error_message = "Saved Successfully", form_errors  = None):
+    """
+      Returns the JSON formatted Values of a specific Django Model Instance for use with Dojo Grid.
+      A few default DOJO Grid Values are specified, rest are instance specific and are generated on the fly.
+      It assumes the presence of get_edit_url and get_del_url in the model instances passed to it via obj.
+
+      ARGUMENTS: obj           : model instace / queryset
+                 success       : A success message 
+                 error_message : Error Message if any.
+                 form_errors   : Form Validation Errors from Django while saving can be passed.
+    """
+    print "TRYING TO RETURN JSON FOR OBJECT: ", obj
+    json_data = []
+
+    try:
+      iterable = iter(obj)
+      if iterable:
+        for element in obj:
+          print element._meta.fields
+          data = { 'success'       : success, 
+                   'error_message' : unicode(error_message) ,
+                   'form_errors'   : form_errors,
+                   'edit'          : getattr(element, 'get_edit_url()',element.get_edit_url()),
+                   'del'           : getattr(element, 'get_del_url()',element.get_del_url()),
+                   'patient_detail': getattr(element, 'patient_detail.__unicode__()', None)
+                 }
+          for i in element._meta.fields:
+            print "CURRENT ITERATING FIELD NAME IS : ", i
+            print "DATA DICTIONARY NOW IS ", data.keys()
+            if i.name not in data.keys():
+              print "Adding ", i.name
+              print i.name.__class__
+              data[i.name] = getattr(element, i.name, None)
+          json_data.append(data)
+
+    except TypeError:
+      print obj._meta.fields
+      data = { 'success'       : success, 
+               'error_message' : unicode(error_message) ,
+               'form_errors'   : form_errors,
+               'edit'          : getattr(obj, 'get_edit_url()',obj.get_edit_url()),
+               'del'           : getattr(obj, 'get_del_url()',obj.get_del_url()),
+               'patient_detail': getattr(obj, 'patient_detail.__unicode__()', None)
+             }
+      for i in obj._meta.fields:
+        print "CURRENT ITERATING FIELD NAME IS : ", i
+        print "DATA DICTIONARY NOW IS ", data.keys()
+        if i.name not in data.keys():
+          print "Adding ", i.name
+          print i.name.__class__
+          data[i.name] = getattr(obj, i.name, None)
+      json_data.append(data)
+
+    json_data = simplejson.dumps(json_data, cls=DjangoJSONEncoder)
+    print "RETURNED JSON IS ", unicode(json)
+    return json_data
+
+
+
+
+class AuShadhaBaseModel(models.Model):
+
+  '''
+    base AuShadha Model From which all AuShadha Models Except the Clinic Model Derive. 
+  '''
+
+  parent_clinic = models.ForeignKey('clinic.Clinic')
+
+  def __init__(self, *args, **kwargs):
+    super(self, AuShadhaBaseModel).__init__(*args, **kwargs)
+
+  def get_add_url(self):
+    return  generic_url_maker(self, "add", self.parent_clinic.id)
+
+  def get_edit_url(self):
+    return  generic_url_maker(self, "edit", self.id)
+
+  def get_del_url(self):
+    return  generic_url_maker(self, "del", self.id)
+
+

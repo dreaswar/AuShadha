@@ -5,8 +5,8 @@ import sys, os
 ROOT_PATH = os.path.dirname(__file__)
 
 APP_ROOT_URL       = u"/AuShadha/"
-LOGIN_URL          = APP_ROOT_URL 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_URL          = APP_ROOT_URL + u"login/"
+LOGIN_REDIRECT_URL = APP_ROOT_URL
 
 
 SERIALIZATION_MODULES = {

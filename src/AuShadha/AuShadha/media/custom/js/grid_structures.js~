@@ -33,41 +33,65 @@ var GRID_STRUCTURES= {
 
                   {name       : "Patient ID", 
                     field      : "patient_hospital_id", 
-                    width      : "100px",
+                    width      : "75px",
                     cellStyles : "text-align:center;"
                   },
                   { name      : "First Name", 
                     field     : "first_name", 
                     width      : "100px",
+                    hidden      : true,
                     cellStyles : "text-align:center;"
                   },
                   { name      : "Middle Name", 
                     field     : "middle_name", 
                     width      : "100px",
+                    hidden      : true,
                     cellStyles : "text-align:center;"
                   },
                   { name       : "Last Name" ,
                     field      : "last_name" , 
                     width      : "100px",
                     cellStyles : "text-align:center;",
+                    hidden      : true,
                     formatter  : function(last_name){ 
                                   return '<em>'+ last_name +'</em>';
                                }
                   },
                   { name        : "Full Name", 
                     field       : "full_name", 
-                    width       : "100px",
-                    hidden      : true,
+                    width       : "150px",
+                    hidden      : false,
                     cellStyles  : "text-align:center;"
                   },
-                  {name       : "Age"   ,
+                  {name       : "Age/Sex"   ,
                     field      : "age"   ,
-                    width      : "100px",
-                    cellStyles : "text-align:center;"
+                    width      : "60px",
+                    cellStyles : "text-align:center;",
+                    formatter  : function(age,rowI){
+                                  var thisRow   = this.grid.getItem(rowI);
+                                  var sex       = thisRow.sex;
+                                  var sex_symbol;
+                                  if(sex == 'Male'){
+                                   sex_symbol= '<img src="{{STATIC_URL}}images/male.png" '+
+                                           'alt="Male" class="small_img">'; 
+                                  }
+                                  else if(sex == 'Female'){
+                                   sex_symbol= '<img '+
+                                          'src="{{STATIC_URL}}images/female.png"'+
+                                          'title="'+ sex +
+                                          '" alt="Male" class="small_img">'; 
+                                  }
+                                  else{
+                                   sex_symbol="Others"
+                                  } 
+                                  var formatted_data = age +"&nbsp;&nbsp;" + sex_symbol;
+                                  return formatted_data;
+                                }
                   },
                   {name      : "Sex" , 
                     field     : "sex" ,
                     width      : "100px",
+                    hidden    : true,
                     formatter : function(sex){
                               if(sex == 'Male'){
                                return '<img src="{{STATIC_URL}}images/male.png" '+
@@ -251,7 +275,7 @@ var GRID_STRUCTURES= {
 
                                     {name       : "Name", 
                                       field      : "guardian_name", 
-                                      width      : "50px",
+                                      width      : "100px",
                                       cellStyles : "text-align:center;",
                                     },
 

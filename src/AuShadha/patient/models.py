@@ -12,6 +12,7 @@ from django.forms	      import ModelForm
 from django.core.exceptions   import ValidationError
 from django 		      import forms
 
+from aushadha_base_models.models import AuShadhaBaseModel
 
 
 from clinic.models import Clinic
@@ -724,6 +725,80 @@ class PatientDemographicsData(models.Model):
         return '/AuShadha/pat/demographics/del/%s/' %self.id
 
 
+class PatientAllergies(AuShadhaBaseModel):
+  """
+    Inherits from the AuShadha Base Model. 
+    This defines the Allergies that the patient has. 
+    The patient automatically belongs to a Clinic and has some add, edit, del 
+    methods defined on him. 
+    
+  """
+  allergic_to       = models.CharField(max_length = 100)
+  reaction_observed = models.CharField(max_length = 100, 
+                                       choices = (("rash",'Rash'),
+                                                  ('angioedema','Angioedema'), 
+                                                  ("anaphylaxis", "Anaphylaxis")
+                                                  ), 
+                                       default = "Rash"
+                                      )
+  patient_detail = models.ForeignKey(PatientDetail,null = True,blank = True)
+
+  def __unicode__(self):
+    return "%s" %(self.allergic_to)
+
+
+class PatientImmunisation(AuShadhaBaseModel):
+  """
+    Inherits from the AuShadha Base Model. 
+    This defines the Immunisation that the patient has had. 
+    The patient automatically belongs to a Clinic and has some add, edit, del 
+    methods defined on him. 
+    
+  """
+  vaccine_name      = models.CharField(max_length = 100)
+  vaccination_date  = models.DateField(auto_now_add = False)
+  adverse_reaction  = models.TextField(max_length = 100, default = "None")
+  patient_detail    = models.ForeignKey(PatientDetail,null = True,blank = True)
+
+  def __unicode__(self):
+    return "%s" %(self.vaccine_name)
+
+
+class PatientMedicationList(AuShadhaBaseModel):
+  """
+    Inherits from the AuShadha Base Model. 
+    This defines the medication list that the patient is currently having. 
+    The patient automatically belongs to a Clinic and has some add, edit, del 
+    methods defined on him. 
+    
+  """
+  medication        = models.CharField(max_length = 100, help_text = "Only Generic Names..")
+  strength          = models.CharField(max_length = 100)
+  dosage            = models.CharField(max_length = 100, help_text = "OD, BD, TDS, QID, HS, SOS, PID etc..")
+  prescription_date = models.DateField(auto_now_add = False)
+  prescribed_by     = models.CharField(max_length = 100, 
+                                      choices = (("internal", "Internal"),
+                                                  ("external","External")
+                                                ), 
+                                      default = "Internal"
+                                     )
+  currently_active  = models.BooleanField(default = True)
+  patient_detail    = models.ForeignKey(PatientDetail,null = True,blank = True)
+
+  def __unicode__(self):
+    return "%s" %(self.medication)
+
+
+class PatientFamilyHistory(AuShadhaBaseModel):
+  """
+    Inherits from the AuShadha Base Model. 
+    This defines the Family Medical History that the patient has had. 
+    The patient automatically belongs to a Clinic and has some add, edit, del 
+    methods defined on him. 
+    
+  """
+  pass
+
 
 
 ## Modelform definition of Patients.
@@ -963,9 +1038,9 @@ class PatientDemographicsDataForm(ModelForm):
                    },
                    {
                      "field"          : "drug_abuse_history"     , 
-                     "max_length"     : 30                  , 
+                     "max_length"     : 2                  , 
                      "data-dojo-type" : "dijit.form.CheckBox" , 
-                     "data-dojo-props": r"'required':'', 'regExp': '', 'invalidMessage': 'Please select a value' "
+                     "data-dojo-props": r"'required':false"
                    },
                    {
                      "field"          : "alcohol_intake"     , 
