@@ -377,7 +377,9 @@
                              This will be filled with Demographics Info.
                             </div>
 -->
+
                             <div id="demographics_add_or_edit_form"
+                                 data-dojo-type="dojox/layout/ContentPane"
                             > 
                             </div>
                             {% endif %}

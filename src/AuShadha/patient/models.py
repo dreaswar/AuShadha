@@ -252,7 +252,7 @@ class PatientDetail(models.Model):
 		'''
 		return '/AuShadha/pat/demographics/list/%s/' %self.id
 
-	def get_patient_demographics_add_url(self):
+	def get_patient_demographics_data_add_url(self):
 		'''
 			Returns the URL for adding Demographics details for a Patient
 		'''

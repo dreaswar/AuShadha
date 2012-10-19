@@ -1523,7 +1523,11 @@ def patient_demographics_add(request, id):
                       'patient_demographics_data_obj'  : patient_demographics_data_obj,
                       'patient_demographics_data_form' : patient_demographics_data_form,
                       'button_label'              : 'Edit',
-                      'action'                    : patient_demographics_data_obj.get_edit_url()
+                      'action'                    : patient_demographics_data_obj.get_edit_url(),
+                      'canDel'                    : True,
+                      "addUrl"                    : None,
+                      'editUrl'                   : patient_demographics_data_obj.get_edit_url(),
+                      'delUrl'                    : patient_demographics_data_obj.get_del_url()
                       }
         else:
           patient_demographics_data_obj   = PatientDemographicsData(patient_detail = patient_detail_obj)
@@ -1534,7 +1538,11 @@ def patient_demographics_add(request, id):
                                           "patient_demographics_data_form"  :	patient_demographics_data_form, 
                                           "patient_demographics_data_obj"  :	patient_demographics_data_obj ,
                                           'button_label'                  :  "Add",
-                                          "action"                     : patient_detail_obj.get_patient_demographics_add_url()
+                                          "action"                        : patient_detail_obj.get_patient_demographics_data_add_url(),
+                                          "addUrl"                        : patient_detail_obj.get_patient_demographics_data_add_url(),
+                                          'canDel'                        : False,
+                                          'editUrl'                       : None,
+                                          'delUrl'                        : None
                                            })
         return render_to_response('patient/demographics_data/add_or_edit_form.html', variable)
       except TypeError or ValueError or AttributeError:
@@ -1556,7 +1564,11 @@ def patient_demographics_add(request, id):
             form_errors   = ''
             data = { 'success'      : success, 
                      'error_message': error_message,
-                     'form_errors'  : form_errors
+                     'form_errors'  : form_errors,
+                     'canDel'       : True,
+                     'addUrl'       : None,
+                     'editUrl'      : demographics_obj.get_edit_url(),
+                     'delUrl'       : demographics_obj.get_del_url(),
                    }
             json = simplejson.dumps(data)
             return HttpResponse(json, content_type = 'application/json')
@@ -1599,15 +1611,19 @@ def patient_demographics_edit(request, id):
       try:
         id                             = int(id)
         patient_demographics_data_obj       = PatientDemographicsData.objects.get(pk = id)
-        patient_demographics_data_form = PatientDemographicsDataForm(instance = patient_demographics_obj)
-        patient_detail_obj                  = patient_demographics_obj.patient_detail
+        patient_demographics_data_form = PatientDemographicsDataForm(instance = patient_demographics_data_obj)
+        patient_detail_obj                  = patient_demographics_data_obj.patient_detail
         variable                            = RequestContext(request, 
                                                 {"user":user,
                                                 "patient_detail_obj"             : patient_detail_obj ,
                                                 "patient_demographics_data_form" : patient_demographics_data_form, 
                                                 "patient_demographics_data_obj"  :patient_demographics_data_obj ,
-                                                'action'                          : patient_demographics_obj.get_edit_url(),
-                                                'button_label'                    : "Edit"
+                                                'action'                          : patient_demographics_data_obj.get_edit_url(),
+                                                'button_label'                    : "Edit",
+                                                'canDel'                          : True,
+                                                'addUrl'                          : None,
+                                                'editUrl'                         : patient_demographics_data_obj.get_edit_url(),
+                                                'delUrl'                          : patient_demographics_data_obj.get_del_url(),
                                                })
       except TypeError or ValueError or AttributeError:
         raise Http404("BadRequest")
@@ -1656,7 +1672,7 @@ def patient_demographics_del(request, id):
     if request.method =="GET":
        try:
           id                      = int(id)
-          patient_demographics_obj = PatientDemographicsData(pk = id)
+          patient_demographics_obj = PatientDemographicsData.objects.get(pk = id)
           patient_detail_obj       = patient_demographics_obj.patient_detail
        except TypeError or ValueError or AttributeError:
           raise Http404("BadRequest")
@@ -1665,7 +1681,13 @@ def patient_demographics_del(request, id):
        patient_demographics_obj.delete()
        success = True
        error_message = "Demographics Data Deleted Successfully"
-       data = {'success': success, 'error_message': error_message}
+       data = {'success'        : success, 
+                'error_message' : error_message, 
+                'addUrl'        : patient_detail_obj.get_patient_demographics_data_add_url(),
+                'canDel'        : False, 
+                'editUrl'       : None, 
+                'delUrl'        : None
+               }
        json = simplejson.dumps(data)
        return HttpResponse(json, content_type = 'application/json')
     else:

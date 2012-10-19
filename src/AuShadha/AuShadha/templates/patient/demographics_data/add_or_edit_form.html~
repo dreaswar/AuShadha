@@ -8,10 +8,10 @@
   <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
     if( this.validate() ){
       require(["dijit/registry", 
-              "dojo/request","dojo/dom","dojo/dom-form","dojo/json","dojo/_base/fx",
+              "dojo/request","dojo/dom","dojo/dom-form","dojo/json","dojo/_base/fx","dojo/dom-construct",
                "dojo/domReady!"
       ],
-      function(registry, request, dom, domForm, JSON,fx){
+      function(registry, request, dom, domForm, JSON,fx, domConstruct){
           var url = "{{action}}";
           var form_data = domForm.toObject('newDemographicsDataAddOrEditForm');
           request(url,{method:"POST", data: form_data}).
@@ -19,28 +19,24 @@
             function(json){
               var jsondata = JSON.parse(json);
               if (jsondata.success == true){
-                var jsonNode = dom.byId("patientDemographicsFormJsonMessage");
-                jsonNode.innerHTML = jsondata.error_message;
-                fx.fadeIn({node: jsonNode, duration: 2000}).play();
-                fx.fadeOut({node: jsonNode, duration: 2000}).play();
-                console.log("Saved Successfully..")
+                if (jsondata.editUrl){
+                  registry.byId("demographics_add_or_edit_form").set('href', jsondata.editUrl);
+                }
               }
             },
             function(json){
-              var jsondata  = JSON.parse(json);
-              var jsonNode = dom.byId("patientDemographicsFormJsonMessage");
-              jsonNode.innerHTML = jsondata.error_message;
-              fx.fadeIn({node: jsonNode, duration: 2000}).play();
-              fx.fadeOut({node: jsonNode, duration: 2000}).play();
-              console.log("Demographics Form Request ERROR !...")
+              alert("Server Error ! Please retry..")
             },
             function(evt){
-              console.log("Demographics Form Request Completed...")
+//              dom.byId('patientDemographicsFormJsonMessage').innerHTML = "Demographics Form action completed successfully";
+              fx.fadeOut( {node: domConstruct.place(dom.byId('demographics_add_or_edit_form'),"<div id='patientDemographicsFormJsonMessage'> </div>", 'second'), duration: 2000}).play();
+              return false;
             }
           );
+        return false;
    	   }
  		 );
-     return false;
+ 		 return false;
     }
     else{
      raiseInvalidFormSubmission();
@@ -62,57 +58,45 @@
       {{button_label}}
     </button>
 
-
-    <button data-dojo-type  = "dijit/form/Button" 
+{% if canDel %}
+  <button data-dojo-type  = "dijit/form/Button" 
 						data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
             type            = "button"
             name            = "delPatientDemographicsData"
-            id              = "delPatientDemographicsDataBtn">
-       Delete
-       <script  type            = "dojo/method" 
-                data-dojo-event = "onClick" 
-                data-dojo-args  = "evt"
-        >
-          require(["dijit/registry", 
-                "dojo/request","dojo/dom","dojo/dom-form","dojo/json",
-                 "dojo/domReady!"
-          ],
-           function(registry, request, dom, domForm, JSON){
-              var url = "{{patient_demographics_data_obj.get_del_url}}"
-              request(url,{method:"GET", handleAs: "json"}).
-              then( 
-                function(json){
-                  var jsondata = JSON.parse(json);
-                  if (jsondata.success == true){
-                    request("{{patient_demographics_data_obj.get_del_url}}",{method:"GET"}).
-                    then(
-                      function(html){
-                        dom.byId("demographics_add_or_edit_form").innerHTML = html;
-                        parser.parse(dom.byId('demographics_add_or_edit_form'));
-                    },
-                    function(json){
-                      console.log(" SERVER ERROR! ")
-                    }
-                    );
-                  }
-                  else{
-                    
-                  }
-                },
-                function(json){
-                  console.log(this,arguments);
-                  console.log("Demographics Form Request ERROR !...")
-                },
-                function(evt){
-                  console.log("Demographics Form Request Completed...")
-                }
-              )
-     	     }
-   		   );
-         return false;
-       </script>
-    </button>
+            id              = "delPatientDemographicsDataBtn"
+   >
+    Delete
+    <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
+      var confirmDialog = confirm("This will delete the Demographics Data.. Are you Sure ? ");
+      if (confirmDialog == true){
+        require(["dojo/request", "dojo/json", "dojo/dom", "dijit/registry"], 
+        function(request, JSON, dom, registry){
+          request("{{delUrl}}",{method: "GET"}).
+          then(
+            function(json){
+              var jsondata = JSON.parse(json);
+              if(jsondata.success == true){
+                registry.byId("demographics_add_or_edit_form").set('href', jsondata.addUrl);
+              }
+              else{
+                dom.byId("patientDemographicsFormJsonMessage").innerHTML = jsondata.error_message;
+              }
+            },
+            function(json){
+              alert("Server Error ! Please retry..")
+            },
+            function(evt){
+              console.log("Delete functions run successfully..");
+            }
+          );
+        });
+      }
+      else{
+        return false;
+      }
+    </script>
+  </button>
+{% endif %}
 
-
-<div id="patientDemographicsFormJsonMessage"></div>
-</div>
+<!--<div id="patientDemographicsFormJsonMessage"></div>-->
+<!--</div>-->

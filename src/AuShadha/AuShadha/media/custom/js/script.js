@@ -468,16 +468,16 @@ var            contactGrid;
      };
 
      function reInitBottomPanels(){
-            var contactTable        = dijit.byId("contact_list"),
-                phoneTable          = dijit.byId("phone_list"),
-                guardianTable       = dijit.byId("guardian_list"),
-                demographicsTable   = dijit.byId("demographics_list"),
-                demographicsForm    = dijit.byId("newDemographicsDataAddOrEditForm"),
-                allergyTable        = dijit.byId("allergy_list"),
-                immunizationTable   = dijit.byId("immunization_list"),
-                admissionTable      = dijit.byId("admission_list"),
-                visitTable          = dijit.byId("visit_list"),
-                patientMediaTable   = dijit.byId("patient_media_list");
+            var contactTable        = registry.byId("contact_list"),
+                phoneTable          = registry.byId("phone_list"),
+                guardianTable       = registry.byId("guardian_list"),
+                demographicsTable   = registry.byId("demographics_list"),
+                demographicsForm    = registry.byId("newDemographicsDataAddOrEditForm"),
+                allergyTable        = registry.byId("allergy_list"),
+                immunizationTable   = registry.byId("immunization_list"),
+                admissionTable      = registry.byId("admission_list"),
+                visitTable          = registry.byId("visit_list"),
+                patientMediaTable   = registry.byId("patient_media_list");
 
             if(contactTable){
               contactTable.destroyRecursive();
@@ -515,25 +515,16 @@ var            contactGrid;
                                  );
               
             }
-
+/*
             if(demographicsForm){
               demographicsForm.destroyRecursive();
+              console.log("Recreating demographics form Div");
+              domConstruct.place("<div id='demographics_add_or_edit_form' class='patientContextTabs'></div>",
+                                 "patientDemographicsTab", 
+                                 'second'
+                                 );
             }
-            request(demographicsUrl,
-                    {handleAs:'html',method: "GET"}
-            ).
-            then(
-              function(html){
-                  dom.byId('demographics_add_or_edit_form').innerHTML = html;
-                  parser.parse( dom.byId("demographics_add_or_edit_form"));
-              },
-              function(html){
-                  console.log("Error occured while GETTING the Demographics Form...");
-              },
-              function(evt){ 
-                  console.log("Demographics Request Completed...")
-              }
-            );
+*/
 
             if(allergyTable){
               allergyTable.destroyRecursive();
@@ -627,6 +618,28 @@ var            contactGrid;
 //    demographicsGrid.startup();
     admissionGrid.startup();
 
+// Call the Demographics Form Method:
+  dijit.byId("demographics_add_or_edit_form").set('href',demographicsUrl);
+  
+   /*
+   request(demographicsUrl,
+           {handleAs:'html',method: "GET"}
+          ).
+   then(
+      function(html){
+          
+          dom.byId("demographics_add_or_edit_form")
+          dom.byId('demographics_add_or_edit_form').innerHTML = html;
+          parser.parse( dom.byId("demographics_add_or_edit_form"));
+      },
+      function(html){
+          console.log("Error occured while GETTING the Demographics Form...");
+      },
+      function(evt){ 
+          console.log("Demographics Request Completed...")
+      }
+   );
+  */
 {% comment %}    
     //visitGrid.startup(); 
 {% endcomment %}
