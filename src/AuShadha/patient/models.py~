@@ -247,7 +247,7 @@ class PatientDetail(models.Model):
 
 ################################################################################
 
-	def get_demographics_list_url(self):
+	def get_patient_demographics_data_list_url(self):
 		'''
 			Returns the Demographics details for a Patient
 		'''
@@ -293,17 +293,17 @@ class PatientDetail(models.Model):
 
 ################################################################################
 
-	def allergy_add_url(self):
+	def get_patient_allergies_add_url(self):
 		'''
 		Returns the URL for adding allergy for a Patient
 		'''
-		return '/AuShadha/allergy/add/%s/' %self.id    
+		return '/AuShadha/pat/allergy/add/%s/' %self.id    
 
-	def allergy_list_url(self):
+	def get_patient_allergies_list_url(self):
 		'''
 		Returns the URL for listing allergy for a Patient
 		'''
-		return '/AuShadha/allergy/list/%s/' %self.id    
+		return '/AuShadha/pat/allergy/list/%s/' %self.id    
 
 ################################################################################
 
@@ -797,9 +797,160 @@ class PatientFamilyHistory(AuShadhaBaseModel):
     methods defined on him. 
     
   """
-  pass
+  family_member = models.CharField(max_length = 100, help_text = "mention only relationship..") 
+  deceased      = models.BooleanField(default = False)
+  age           = models.PositiveIntegerField()
+  disease       = models.CharField(max_length = 100, help_text = "mention diagnosis as stated by patient / as per reports")
+  age_at_onset  = models.PositiveIntegerField()
+
+  def __unicode__(self):
+    return "%s" %(self.family_member)
+
 
 ## Modelform definition of Patients.
+
+class PatientImmunisationForm(ModelForm):
+
+	class Meta:
+		model = PatientImmunisation
+		exclude = ('patient_detail','parent_clinic')
+	def __init__(self, *args, **kwargs):
+		super(PatientImmunisationForm, self).__init__(*args, **kwargs)
+		text_fields = [{"field"         : 'vaccine_name',
+		                'max_length'    :  30         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :'true' ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
+		                },
+		               {"field": 'vaccination_date',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.DateTextBox",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		               },
+                   {"field": 'adverse_reaction',
+                   'max_length':30,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+                   }
+	        ]
+		for field in text_fields:
+			print(self.fields[field['field']].widget);
+			self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+			self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+			self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+class PatientMedicationListForm(ModelForm):
+
+	class Meta:
+		model = PatientMedicationList
+		exclude = ('patient_detail','parent_clinic')
+	def __init__(self, *args, **kwargs):
+		super(PatientMedicationListForm, self).__init__(*args, **kwargs)
+		text_fields = [{"field"         : 'medication',
+		                'max_length'    :  30         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :'true' ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
+		                },
+		               {"field": 'strength',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		               },
+                   {"field": 'dosage',
+                   'max_length':30,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+                   },
+                   {"field": 'prescription_date',
+                   'max_length':30,
+                   "data-dojo-type": "dijit.form.DateTextBox",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+                   },
+                   {"field": 'prescribed_by',
+                   'max_length':30,
+                   "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+                   },
+                   {"field": 'currently_active',
+                   'max_length':2,
+                   "data-dojo-type": "dijit.form.CheckBox",
+		                "data-dojo-props": r""
+                   }
+	        ]
+		for field in text_fields:
+			print(self.fields[field['field']].widget);
+			self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+			self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+			self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+class PatientFamilyHistoryForm(ModelForm):
+
+	class Meta:
+		model = PatientFamilyHistory
+		exclude = ('patient_detail','parent_clinic')
+	def __init__(self, *args, **kwargs):
+		super(PatientFamilyHistoryForm, self).__init__(*args, **kwargs)
+		text_fields = [{"field"         : 'family_member',
+		                'max_length'    :  30         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :'true' ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
+		                },
+		               {"field": 'disease',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		               },
+                   {"field": 'age_at_onset',
+                   'max_length':30,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+                   },
+                   {"field": 'deceased',
+                   'max_length':2,
+                   "data-dojo-type": "dijit.form.CheckBox",
+		                "data-dojo-props": r""
+                   },
+                   {"field": 'age',
+                   'max_length':30,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
+                   },
+                   {"field": 'currently_active',
+                   'max_length':2,
+                   "data-dojo-type": "dijit.form.CheckBox",
+		                "data-dojo-props": r""
+                   }
+	        ]
+		for field in text_fields:
+			print(self.fields[field['field']].widget);
+			self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+			self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+			self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+
+class PatientAllergiesForm(ModelForm):
+
+	class Meta:
+		model = PatientAllergies
+		exclude = ('patient_detail','parent_clinic')
+	def __init__(self, *args, **kwargs):
+		super(PatientAllergiesForm, self).__init__(*args, **kwargs)
+		text_fields = [{"field"         : 'allergic_to',
+		                'max_length'    :  100        ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :'true' ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
+		                },
+		               {"field": 'reaction_observed',
+		                'max_length'    :  100         ,
+		               "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		               }
+	        ]
+		for field in text_fields:
+			print(self.fields[field['field']].widget);
+			self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+			self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+			self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
 
 class PatientDetailForm(ModelForm):
 

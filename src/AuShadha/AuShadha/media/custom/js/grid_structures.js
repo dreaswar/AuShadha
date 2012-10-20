@@ -361,9 +361,197 @@ var GRID_STRUCTURES= {
                                       cellStyles : "text-align:center;"
                                     } ],
 
-  PATIENT_ALLERGY_GRID_STRUCTURE: "",
 
-  PATIENT_IMMUNIZATION_GRID_STRUCTURE: "",
+  PATIENT_FAMILY_HISTORY_GRID_STRUCTURE: [
+                                    {name       : "ID", 
+                                      field      : "id", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Edit", 
+                                      field      : "edit", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Del", 
+                                      field      : "del", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Member", 
+                                      field      : "family_member", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;",
+                                    },
+
+                                    {name       : "Age", 
+                                      field      : "age", 
+                                      width      : "40px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Deceased", 
+                                      field      : "deceased", 
+                                      width      : "30px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    
+                                    {name       : "Disease", 
+                                      field      : "disease", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    
+                                    {name       : "Age at Onset", 
+                                      field      : "age_at_onset", 
+                                      width      : "40px",
+                                      cellStyles : "text-align:center;"
+                                    }
+                                  ],
+
+  PATIENT_MEDICATION_LIST_GRID_STRUCTURE: [
+                                    {name       : "ID", 
+                                      field      : "id", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Edit", 
+                                      field      : "edit", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Del", 
+                                      field      : "del", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Name", 
+                                      field      : "medication", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;",
+                                    },
+
+                                    {name       : "Strength", 
+                                      field      : "strength", 
+                                      width      : "60px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Dosage", 
+                                      field      : "dosage", 
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Prescription Date", 
+                                      field      : "prescription_date", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Currently Active ?", 
+                                      field      : "currently_active", 
+                                      width      : "60px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Prescribed by", 
+                                      field      : "prescribed_by", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    }
+
+                                  ],
+
+  PATIENT_ALLERGIES_GRID_STRUCTURE: [
+                                    {name       : "ID", 
+                                      field      : "id", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Edit", 
+                                      field      : "edit", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Del", 
+                                      field      : "del", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Allergic To", 
+                                      field      : "allergic_to", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;",
+                                    },
+
+                                    {name       : "Reaction Observed", 
+                                      field      : "reaction_observed", 
+                                      width      : "60px",
+                                      cellStyles : "text-align:center;"
+                                    }
+                                  ],
+
+
+  PATIENT_IMMUNIZATION_GRID_STRUCTURE: [
+                                    {name        : "ID", 
+                                      field      : "id", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Edit", 
+                                      field      : "edit", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Del", 
+                                      field      : "del", 
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Name", 
+                                      field      : "vaccine_name", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;",
+                                    },
+
+                                    {name        : "Date", 
+                                      field      : "vaccination_date", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Adverse Reaction", 
+                                      field      : "adverse_reaction", 
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    }
+                                  ],
+
 
   PATIENT_PATIENT_MEDIA_GRID_STRUCTURE: "",
 

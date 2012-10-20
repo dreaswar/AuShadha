@@ -241,9 +241,14 @@ var            contactGrid;
 */
                             demographicsUrl = "/AuShadha/pat/demographics/add/" + patid +"/",
 
+                            allergiesUrl = "{%url allergies_json %}" + 
+                                          "?patient_id=" 
+                                          + patid,
+
                             admissionUrl = "{%url admission_json %}" + 
                                            "?patient_id=" 
                                            + patid;
+
                          {% comment %}
                          /*
                          var visitUrl     = "{%url visit_json %}" + 
@@ -263,11 +268,12 @@ var            contactGrid;
                          Set the Stores for Contacts, Phone, Guardian and admission 
                          data. 
                       */
-                       var contactStore    = new JsonRest({target:contactUrl});
-                       var phoneStore      = new JsonRest({target:phoneUrl});
-                       var guardianStore   = new JsonRest({target:guardianUrl});
+                       var contactStore       = new JsonRest({target:contactUrl});
+                       var phoneStore         = new JsonRest({target:phoneUrl});
+                       var guardianStore      = new JsonRest({target:guardianUrl});
                        var demographicsStore  = new JsonRest({target:demographicsUrl});
-                       var admissionStore  = new JsonRest({target:admissionUrl});
+                       var allergiesStore     = new JsonRest({target:allergiesUrl});
+                       var admissionStore     = new JsonRest({target:admissionUrl});
                       {% comment %} 
                         // var visitStore      = new JsonRest({target:visitUrl}); 
                       {% endcomment %}
@@ -369,6 +375,25 @@ var            contactGrid;
                     // {% endif %}
                     };
 */
+
+                var allergiesGrid = new DataGrid({
+                                store         : dataStore = ObjectStore({
+                                                           objectStore: allergiesStore
+                                                }),
+                                selectionMode : "single",
+                                rowSelector   : "20px",
+                                structure     : GRID_STRUCTURES.PATIENT_ALLERGIES_GRID_STRUCTURE,
+                              noDataMessage   : "<span class='dojoxGridNoData'>No Allergies in Store..</span>"
+                          }, 
+                          "allergy_list"
+                  );
+
+                  allergiesGrid.onRowDblClick = function(e){ 
+                  // {% if perms.patient.change_patientallergies or perms.patient.delete_patientallergies %}
+                                            onPatientSubMenuRowClick(e,phoneGrid, "Edit Allergy");
+                                            return false; 
+                  // {% endif %}
+                  };
 
 
                   var admissionGrid = new DataGrid({
@@ -616,6 +641,7 @@ var            contactGrid;
     phoneGrid.startup();
     guardianGrid.startup();
 //    demographicsGrid.startup();
+    allergiesGrid.startup();
     admissionGrid.startup();
 
 // Call the Demographics Form Method:
@@ -872,7 +898,7 @@ var            contactGrid;
                                                     var gridRow    = grid.selection.getSelected();
                                                     var id         = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "/AuShadha/"+"?patient_id="+ id +"&action=add",
+                                                      url: "{% url allergies_json %}"+"?patient_id="+ id +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);

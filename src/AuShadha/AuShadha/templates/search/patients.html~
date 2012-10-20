@@ -104,7 +104,7 @@
             type            = "submit"
             data-dojo-id    = "patientGridFilterClearBtn"
             id              = "patientGridFilterClearBtn"
-            title           = "Clear Filter"
+            title           = ""
     >
       Clear
       <script type             = "dojo/connect" 
@@ -124,7 +124,7 @@
 <div data-dojo-type  = "dijit/TitlePane" 
      data-dojo-props = "title: 'Advanced Search', open:false"
      id              = "advancedPatSearchDiv"
-     style           = "padding :1px 20px 1px 20px;"
+     style           = "padding :1px 20px 1px 20px;display:none;"
 >
 <form data-dojo-type= "dijit/form/Form"
       data-dojo-id  = "patient_advanced_search_form"

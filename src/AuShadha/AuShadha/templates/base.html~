@@ -378,7 +378,7 @@
                             </div>
 -->
 
-                            <div id="demographics_add_or_edit_form"
+                            <div id             ="demographics_add_or_edit_form"
                                  data-dojo-type="dojox/layout/ContentPane"
                             > 
                             </div>
@@ -387,48 +387,102 @@
                           <!--  END OF PATIENTCONTEXTTABS4  -->
 
                           <!--  START OF PATIENTCONTEXTTABS5  -->
-                          <div  id              = "patientAllergyTab"
+                          <div  id              = "patientFamilyHistoryTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title          : 'Allergy'"
+                                data-dojo-props = "title  : 'Family History'"
                            >
-                            {% if perms.patient %}
-                            <button id              = "addAllergyButton" 
-                                    type            = "button"
-                                    data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                            {% comment %}
+                              {% if perms.patient %}
+                              <button id              = "addPatientFamilyHistoryButton" 
+                                      type            = "button"
+                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                              > 
+                                Add
+                              </button>
+                              {% endif %}
+                            {% endcomment %}
+
+                            <div id="family_history_list"
                             > 
-                              Add
-                            </button>
-                            {% endif %}
-                            <div id="allergy_list"
-                            > 
-                            This will list Allergies the patient has
+                            This will list the family history 
                             </div>
                           </div>
                           <!--  END OF PATIENTCONTEXTTABS5  -->
 
                           <!--  START OF PATIENTCONTEXTTABS6  -->
-                          <div  id              = "patientImmunizationTab"
+                          <div  id              = "patientMedicationListTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Immunizations'"
+                                data-dojo-props = "title  : 'Medications'"
                            >
-                            {% if perms.patient %}
-                            <button id              = "addPatientImmunizationButton" 
-                                    type            = "button"
-                                    data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                            {% comment %}
+                              {% if perms.patient %}
+                              <button id              = "addPatientMedicationListButton" 
+                                      type            = "button"
+                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                              > 
+                                Add
+                              </button>
+                              {% endif %}
+                            {% endcomment %}
+
+                            <div id="medication_list"
                             > 
-                              Add
-                            </button>
-                            {% endif %}
-                            <div id="immunization_list"
-                            > 
-                            This will list the immunization history 
+                            This will list the Medication List 
                             </div>
                           </div>
                           <!--  END OF PATIENTCONTEXTTABS6  -->
 
                           <!--  START OF PATIENTCONTEXTTABS7  -->
+                          <div  id              = "patientAllergyTab"
+                                class           = "patientContextTabs"
+                                data-dojo-type  = "dojox/layout/ContentPane"
+                                data-dojo-props = "title          : 'Allergy'"
+                           >
+                            {% comment %}
+                              {% if perms.patient %}
+                              <button id              = "addAllergyButton" 
+                                      type            = "button"
+                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                              > 
+                                Add
+                              </button>
+                              {% endif %}
+                            {% endcomment %}
+
+                            <div id="allergy_list"
+                            > 
+                            This will list Allergies the patient has
+                            </div>
+                          </div>
+                          <!--  END OF PATIENTCONTEXTTABS7 -->
+
+                          <!--  START OF PATIENTCONTEXTTABS8  -->
+                          <div  id              = "patientImmunizationTab"
+                                class           = "patientContextTabs"
+                                data-dojo-type  = "dojox/layout/ContentPane"
+                                data-dojo-props = "title  : 'Immunizations'"
+                           >
+                            {% comment %}
+                              {% if perms.patient %}
+                              <button id              = "addPatientImmunizationButton" 
+                                      type            = "button"
+                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                              > 
+                                Add
+                              </button>
+                              {% endif %}
+                            {% endcomment %}
+
+                            <div id="immunization_list"
+                            > 
+                            This will list the immunization history 
+                            </div>
+                          </div>
+                          <!--  END OF PATIENTCONTEXTTABS8  -->
+
+                          <!--  START OF PATIENTCONTEXTTABS8  -->
                           <div  id              = "patientAdmissionTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
@@ -446,10 +500,10 @@
                             > 
                             </div>
                           </div>
-                          <!--  END OF PATIENTCONTEXTTABS7  -->
+                          <!--  END OF PATIENTCONTEXTTABS8  -->
 
 
-                          <!--  START OF PATIENTCONTEXTTABS8  -->
+                          <!--  START OF PATIENTCONTEXTTABS9  -->
                           <div  id              = "patientVisitTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
@@ -468,10 +522,10 @@
                             This Page will list all the Clinic Visits
                             </div>
                           </div>
-                          <!--  END OF PATIENTCONTEXTTABS8  -->
+                          <!--  END OF PATIENTCONTEXTTABS9  -->
 
 
-                          <!--  START OF PATIENTCONTEXTTABS8  -->
+                          <!--  START OF PATIENTCONTEXTTABS10  -->
                           <div  id              = "patientMediaTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
@@ -491,7 +545,7 @@
                             documents, images, video, slides etc.. 
                             </div>
                           </div>
-                          <!--  END OF PATIENTCONTEXTTABS8  -->
+                          <!--  END OF PATIENTCONTEXTTABS10  -->
 
                        </div>
                        <!--  END OF PATIENTCONTEXTTABS  -->

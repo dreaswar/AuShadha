@@ -16,7 +16,7 @@ from django.utils                    import simplejson
 from django.core.serializers         import json    
 from django.core.serializers.json    import DjangoJSONEncoder
 
-
+#import AuShadha.settings
 from clinic.models import Clinic
 
 def generic_url_maker(instance,action,id, root_object = False):
@@ -108,11 +108,14 @@ class AuShadhaBaseModel(models.Model):
 
   parent_clinic = models.ForeignKey('clinic.Clinic')
 
-  def __init__(self, *args, **kwargs):
-    super(self, AuShadhaBaseModel).__init__(*args, **kwargs)
+#  def __init__(self, *args, **kwargs):
+#    super(self, AuShadhaBaseModel).__init__(*args, **kwargs)
 
-  def get_add_url(self):
-    return  generic_url_maker(self, "add", self.parent_clinic.id)
+#  def get_add_url(self):
+#    if self.patient_detail:
+#      return  generic_url_maker(self, "add", self.patient_detail.id)
+#    else:
+#      return  generic_url_maker(self, "add", self.parent_clinic.id)
 
   def get_edit_url(self):
     return  generic_url_maker(self, "edit", self.id)
@@ -120,4 +123,53 @@ class AuShadhaBaseModel(models.Model):
   def get_del_url(self):
     return  generic_url_maker(self, "del", self.id)
 
+
+  def generic_url_maker(self,action,id, root_object = False):
+    """
+      Returns the URL Pattern for any AuShadha Object
+      Following the naming conventions
+      instance   : an instance of a Django Model
+      action     : action that URL will commit : add/edit/delete/list/
+      root_object: for the list option is root_object is False, instance id will be appended to URL else no id 
+                   will be appended. 
+                   Eg:: to list all patients, under a clinic once a queryset is done
+                   the id will be that of the clinic. But for the root object clinic since there is no db_relationship
+                   that fetches a list of clinics, all clinics are fetched and listed.
+    """
+    #FIXME:: may be better to rely on django.contrib.contenttypes.ContentType to do a similar thing rather than using _meta  
+    from AuShadha.settings import APP_ROOT_URL
+    if root_object:
+        url = unicode(APP_ROOT_URL) + unicode(self._meta.app_label)+ "/" + unicode(action) +"/"
+    else:
+      url = unicode(APP_ROOT_URL) + unicode(self._meta.app_label)+ "/" + unicode(action) +"/" + unicode(id) +"/"
+    return url
+
+
+  def generate_json_for_datagrid(self):
+      """
+        Returns the JSON formatted Values of a specific Django Model Instance for use with Dojo Grid.
+        A few default DOJO Grid Values are specified, rest are instance specific and are generated on the fly.
+        It assumes the presence of get_edit_url and get_del_url in the model instances passed to it via obj.
+
+      """
+      print "TRYING TO RETURN JSON FOR OBJECT: ", self
+      json_data = []
+      print self._meta.fields
+      data = { 'add'           : getattr(self, 'get_add_url()',self.get_add_url()),
+               'edit'          : getattr(self, 'get_edit_url()',self.get_edit_url()),
+               'del'           : getattr(self, 'get_del_url()',self.get_del_url()),
+               'patient_detail': getattr(self, 'patient_detail.__unicode__()', self.patient_detail.__unicode__())
+             }
+      for i in self._meta.fields:
+        print "CURRENT ITERATING FIELD NAME IS : ", i
+        print "DATA DICTIONARY NOW IS ", data.keys()
+        if i.name not in data.keys():
+          print "Adding ", i.name
+          print i.name.__class__
+          data[i.name] = getattr(self, i.name, None)
+      json_data.append(data)
+
+      json_data = simplejson.dumps(json_data, cls=DjangoJSONEncoder)
+      print "RETURNED JSON IS ", unicode(json_data)
+      return json_data
 
