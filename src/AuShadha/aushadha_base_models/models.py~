@@ -106,16 +106,19 @@ class AuShadhaBaseModel(models.Model):
     base AuShadha Model From which all AuShadha Models Except the Clinic Model Derive. 
   '''
 
-  parent_clinic = models.ForeignKey('clinic.Clinic')
+  parent_clinic = models.ForeignKey('clinic.Clinic', null = True, blank = True)
 
+  def __unicode__(self):
+    return "%s" %self.__class__
+  
 #  def __init__(self, *args, **kwargs):
 #    super(self, AuShadhaBaseModel).__init__(*args, **kwargs)
 
-  def get_add_url(self):
-    if self.patient_detail:
-      return  generic_url_maker(self, "add", self.patient_detail.id)
-    else:
-      return  generic_url_maker(self, "add", self.parent_clinic.id)
+#  def get_add_url(self):
+#    if self.patient_detail:
+#      return  generic_url_maker(self, "add", self.patient_detail.id)
+#    else:
+#      return  generic_url_maker(self, "add", self.parent_clinic.id)
 
   def get_edit_url(self):
     return  generic_url_maker(self, "edit", self.id)

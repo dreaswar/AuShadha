@@ -104,7 +104,10 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
         if i.name not in data.keys():
           print "Adding ", i.name
           print i.name.__class__
-          data[i.name] = getattr(obj, i.name, None)
+          try:
+            data[i.name] = getattr(obj, i.name, None)
+          except(TypeError):
+            print "Type Error.. "
       json_data.append(data)
 
     json_data = simplejson.dumps(json_data, cls=DjangoJSONEncoder)
@@ -710,8 +713,8 @@ def allergies_json(request):
     patient_allergies_obj   = PatientAllergies.objects.filter(patient_detail = patient_detail_obj)
     json = generate_json_for_datagrid(patient_allergies_obj)
     return HttpResponse(json, content_type = "application/json")
-  except(AttributeError, NameError, TypeError, ValueError, KeyError):
-    raise Http404("ERROR:: Bad request.Invalid arguments passed")
+#  except(AttributeError, NameError, TypeError, ValueError, KeyError):
+#    raise Http404("ERROR:: Bad request.Invalid arguments passed")
   except(PatientDetail.DoesNotExist):
     raise Http404("ERROR:: Patient requested does not exist.")
 

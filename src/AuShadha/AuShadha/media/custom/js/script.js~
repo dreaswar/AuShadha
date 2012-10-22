@@ -385,7 +385,7 @@ var            contactGrid;
                                 structure     : GRID_STRUCTURES.PATIENT_ALLERGIES_GRID_STRUCTURE,
                               noDataMessage   : "<span class='dojoxGridNoData'>No Allergies in Store..</span>"
                           }, 
-                          "allergies_list"
+                          "allergy_list"
                   );
 
                   allergiesGrid.onRowDblClick = function(e){ 

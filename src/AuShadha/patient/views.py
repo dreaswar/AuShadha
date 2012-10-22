@@ -104,7 +104,11 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
         if i.name not in data.keys():
           print "Adding ", i.name
           print i.name.__class__
-          data[i.name] = getattr(obj, i.name, None)
+          try:
+            data[i.name] = getattr(obj, i.name, None)
+          except(TypeError):
+            print "Type Error.. "
+            break
       json_data.append(data)
 
     json_data = simplejson.dumps(json_data, cls=DjangoJSONEncoder)

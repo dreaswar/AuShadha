@@ -106,8 +106,11 @@ class AuShadhaBaseModel(models.Model):
     base AuShadha Model From which all AuShadha Models Except the Clinic Model Derive. 
   '''
 
-  parent_clinic = models.ForeignKey('clinic.Clinic')
+  parent_clinic = models.ForeignKey('clinic.Clinic', null = True, blank = True)
 
+  def __unicode__(self):
+    return "%s" %self.__doc__
+  
 #  def __init__(self, *args, **kwargs):
 #    super(self, AuShadhaBaseModel).__init__(*args, **kwargs)
 

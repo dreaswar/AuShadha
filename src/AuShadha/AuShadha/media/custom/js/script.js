@@ -390,7 +390,7 @@ var            contactGrid;
 
                   allergiesGrid.onRowDblClick = function(e){ 
                   // {% if perms.patient.change_patientallergies or perms.patient.delete_patientallergies %}
-                                            onPatientSubMenuRowClick(e,phoneGrid, "Edit Allergy");
+                                            onPatientSubMenuRowClick(e,allergiesGrid, "Edit Allergy");
                                             return false; 
                   // {% endif %}
                   };
