@@ -24,6 +24,7 @@ from django.views.decorators.debug  import sensitive_post_parameters
 from django.core.paginator           import Paginator
 
 from django.utils                    import simplejson
+from django.core                     import serializers
 from django.core.serializers         import json    
 from django.core.serializers.json    import DjangoJSONEncoder
 
@@ -73,6 +74,7 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
       if iterable:
         for element in obj:
           print element._meta.fields
+          print element._meta.app_label
           data = { 'success'       : success, 
                    'error_message' : unicode(error_message) ,
                    'form_errors'   : form_errors,
@@ -86,7 +88,13 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
             if i.name not in data.keys():
               print "Adding ", i.name
               print i.name.__class__
-              data[i.name] = getattr(element, i.name, None)
+              try:
+                if i.name == 'aushadhabasemodel_ptr':
+                  data[i.name] = "AuShadhaBaseModel"
+                else:
+                  data[i.name] = getattr(element, i.name, None)
+              except(TypeError):
+                raise Exception("Error In serialization..")
           json_data.append(data)
 
     except TypeError:
@@ -105,13 +113,19 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
           print "Adding ", i.name
           print i.name.__class__
           try:
-            data[i.name] = getattr(obj, i.name, None)
+            if i.name == 'aushadhabasemodel_ptr':
+              data[i.name] = "AuShadhaBaseModel"
+            else:
+              data[i.name] = getattr(obj, i.name, None)
           except(TypeError):
-            print "Type Error.. "
+            raise Exception("Error In serialization..")
       json_data.append(data)
-
+    
+#    json_serializer = serializers.get_serializer('json')()
+#    json_data = json_serializer.serialize(json_data, ensure_ascii = False)    
     json_data = simplejson.dumps(json_data, cls=DjangoJSONEncoder)
-    print "RETURNED JSON IS ", unicode(json)
+#    json_data = simplejson.dumps(json_data)
+    print "RETURNED JSON IS ", unicode(json_data)
     return json_data
 
 
@@ -711,6 +725,12 @@ def allergies_json(request):
       return patient_allergies_add(request, id)
     patient_detail_obj      = PatientDetail.objects.get(pk = id)
     patient_allergies_obj   = PatientAllergies.objects.filter(patient_detail = patient_detail_obj)
+#    json_list = []
+#    for allergy in patient_allergies_obj:
+#      json = allergy.generate_json_for_datagrid()
+#      json_list.append(json)
+#    print "ALLERGIES JSON LIST TO BE RETURNED BY THE VIEW IS: ", json_list
+#    json_list = simplejson.dumps(json_list)
     json = generate_json_for_datagrid(patient_allergies_obj)
     return HttpResponse(json, content_type = "application/json")
 #  except(AttributeError, NameError, TypeError, ValueError, KeyError):
