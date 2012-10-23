@@ -1,6 +1,6 @@
 <div data-dojo-type = "dijit/form/Form" 
-     id             = "newDemographicsDataAddOrEditForm" 
-     data-dojo-id   = "newDemographicsDataAddOrEditForm"
+     id             = "newImmunisationAddOrEditForm" 
+     data-dojo-id   = "newImmunisationAddOrEditForm"
      encType        = "multipart/form-data" 
      action         = "" 
      method         = "">
@@ -13,14 +13,14 @@
       ],
       function(registry, request, dom, domForm, JSON,fx){
           var url = "{{action}}";
-          var form_data = domForm.toObject('newDemographicsDataAddOrEditForm');
+          var form_data = domForm.toObject('newImmunisationAddOrEditForm');
           request(url,{method:"POST", data: form_data}).
           then( 
             function(json){
               var jsondata = JSON.parse(json);
               if (jsondata.success == true){
                 if (jsondata.editUrl){
-                  registry.byId("demographics_add_or_edit_form").set('href', jsondata.editUrl);
+                  registry.byId("immunisation_add_or_edit_form").set('href', jsondata.editUrl);
                 }
               }
             },
@@ -28,8 +28,8 @@
               alert("Server Error ! Please retry..")
             },
             function(evt){
-              dom.byId('patientDemographicsFormJsonMessage').innerHTML = "Demographics Form action completed successfully";
-              fx.fadeOut( {node: dom.byId("patientDemographicsFormJsonMessage"), duration: 2000}).play();
+              dom.byId('patientImmunisationFormJsonMessage').innerHTML = "Immunisation Form action completed successfully";
+              fx.fadeOut( {node: dom.byId("patientImmunisationFormJsonMessage"), duration: 2000}).play();
               return false;
             }
           );
@@ -46,7 +46,7 @@
 
 
 <table>
-  {{patient_demographics_data_form}}
+  {{patient_immunisation_form}}
 </table>
 
     <button data-dojo-type = "dijit/form/Button" 
@@ -62,12 +62,12 @@
   <button data-dojo-type  = "dijit/form/Button" 
 						data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
             type            = "button"
-            name            = "delPatientDemographicsData"
-            id              = "delPatientDemographicsDataBtn"
+            name            = "delPatientImmunisation"
+            id              = "delPatientImmunisationBtn"
    >
     Delete
     <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
-      var confirmDialog = confirm("This will delete the Demographics Data.. Are you Sure ? ");
+      var confirmDialog = confirm("This will delete the Immunisation Data.. Are you Sure ? ");
       if (confirmDialog == true){
         require(["dojo/request", "dojo/json", "dojo/dom", "dijit/registry"], 
         function(request, JSON, dom, registry){
@@ -76,10 +76,10 @@
             function(json){
               var jsondata = JSON.parse(json);
               if(jsondata.success == true){
-                registry.byId("demographics_add_or_edit_form").set('href', jsondata.addUrl);
+                registry.byId("immunisation_add_or_edit_form").set('href', jsondata.addUrl);
               }
               else{
-                dom.byId("patientDemographicsFormJsonMessage").innerHTML = jsondata.error_message;
+                dom.byId("patientImmunisationFormJsonMessage").innerHTML = jsondata.error_message;
               }
             },
             function(json){
@@ -98,5 +98,5 @@
   </button>
 {% endif %}
 
-<div id="patientDemographicsFormJsonMessage"></div>
+<div id="patientImmunisationFormJsonMessage"></div>
 </div>

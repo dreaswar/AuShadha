@@ -1,6 +1,6 @@
 <div data-dojo-type = "dijit/form/Form" 
-     id             = "newFamilyHistoryAddForm" 
-     data-dojo-id   = "newFamilyHistoryAddForm"
+     id             = "newMedicationListAddForm" 
+     data-dojo-id   = "newMedicationListAddForm"
      encType        = "multipart/form-data" 
      action         = "" 
      method         = "">
@@ -20,8 +20,8 @@
        "dijit/registry", 
       ],
       function(registry){
-//    {% if perms.patient.add_patientfamilyhistory %}
-      addItem("{{patient_detail_obj.get_patient_family_history_add_url}}", "newFamilyHistoryAddForm", "family_history_list");
+//    {% if perms.patient.add_patientmedicationlist %}
+      addItem("{{patient_detail_obj.get_patient_medication_list_add_url}}", "newMedicationListAddForm", "medication_list_list");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}
@@ -34,15 +34,15 @@
     }
   </script>
 
-    {% if perms.patient.add_patientfamilyhistory %}
+    {% if perms.patient.add_patientmedicationlist %}
 		<table>
-			{{patient_family_history_add_form}}
+			{{patient_medication_list_add_form}}
 		</table>
 		<button 	type 	          = "submit" 
 						  data-dojo-type  = "dijit/form/Button"
 						  data-dojo-props = "iconClass:'dijitIconSave'"
 					   	name 	          = "submitbutton" 
-						  id 		          = "patient_family_history_add_form_submit"
+						  id 		          = "patient_medication_list_add_form_submit"
 						  value           = "Add">
 		 Add
      <script type            = "dojo/connect" 
@@ -58,7 +58,7 @@
 <!--						  data-dojo-type  = "dijit/form/Button"-->
 <!--						  data-dojo-props = "iconClass:'dijitIconSave'"-->
 <!--					   	name 	          = "submitAndAddMoreButton" -->
-<!--						  id 		          = "patient_family_history_add_form_add_more"-->
+<!--						  id 		          = "patient_medication_list_add_form_add_more"-->
 <!--						  value           = "Add More">-->
 <!--		 Add More-->
 <!--     <script type            = "dojo/connect" -->
@@ -73,12 +73,12 @@
 		<button 	type 	          = "reset" 
 						  data-dojo-type  = "dijit/form/Button"
 						  data-dojo-props = "iconClass:'dijitIconClear'"
-						  id 		          = "patient_family_history_add_form_reset"
+						  id 		          = "patient_medication_list_add_form_reset"
 						  value           = "Reset">
 		 Reset
 		</button>
     {% else %}
-      <p class="suggestion_text"> Insufficient Permissions to add family_history </p>
+      <p class="suggestion_text"> Insufficient Permissions to add medication_list </p>
     {%endif%}
 </div>
 

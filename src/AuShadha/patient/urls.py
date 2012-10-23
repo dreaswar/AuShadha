@@ -3,6 +3,10 @@ from django.conf.urls.defaults import *
 import AuShadha.settings
 
 from patient.views import *
+from patient.medication_list import *
+from patient.family_history import *
+from patient.immunisation import *
+
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -153,31 +157,6 @@ urlpatterns = patterns('',
 
 ###########################################################################################
 
-#    url(r'family_history/json/$',
-#    		'patient.views.family_history_json',
-#    		name = 'family_history_json'
-#    ),
-
-#    url(r'family_history/list/(?P<id>\d+)/$',
-#    		'patient.views.patient_family_history_list',
-#    		name = 'patient_family_history_list'
-#    ),
-
-#    url(r'family_history/add/(?P<id>\d+)/$',
-#    		'patient.views.patient_family_history_add',
-#   		  name = 'patient_family_history_add'
-#    ),
-#    url(r'family_history/edit/(?P<id>\d+)/$',
-#    		'patient.views.patient_family_history_edit',
-#    		name = 'patient_family_history_edit'
-#    ),
-#    url(r'family_history/del/(?P<id>\d+)/$',
-#    		'patient.views.patient_family_history_del',
-#    		name = 'patient_family_history_del'
-#    ),
-
-###########################################################################################
-
 
     url(r'allergies/json/$',
     		'patient.views.allergies_json',
@@ -204,54 +183,79 @@ urlpatterns = patterns('',
 
 ###########################################################################################
 
-#    url(r'immunisation/json/$',
-#    		'patient.views.immunisation_json',
-#    		name = 'immunisation_json'
+    url(r'family_history/json/$',
+    		'patient.views.family_history_json',
+    		name = 'family_history_json'
+    ),
+
+#    url(r'family_history/list/(?P<id>\d+)/$',
+#    		'patient.family_history.patient_family_history_list',
+#    		name = 'patient_family_history_list'
 #    ),
 
+    url(r'family_history/add/(?P<id>\d+)/$',
+    		'patient.family_history.patient_family_history_add',
+   		  name = 'patient_family_history_add'
+    ),
+    url(r'family_history/edit/(?P<id>\d+)/$',
+    		'patient.family_history.patient_family_history_edit',
+    		name = 'patient_family_history_edit'
+    ),
+    url(r'family_history/del/(?P<id>\d+)/$',
+    		'patient.family_history.patient_family_history_del',
+    		name = 'patient_family_history_del'
+    ),
+
+###########################################################################################
+
+    url(r'immunisation/json/$',
+    		'patient.views.immunisation_json',
+    		name = 'immunisation_json'
+    ),
+
 #    url(r'immunisation/list/(?P<id>\d+)/$',
-#    		'patient.views.patient_immunisation_list',
+#    		'patient.immunisation.patient_immunisation_list',
 #    		name = 'patient_immunisation_list'
 #    ),
 
-#    url(r'immunisation/add/(?P<id>\d+)/$',
-#    		'patient.views.patient_immunisation_add',
-#   		  name = 'patient_immunisation_add'
-#    ),
-#    url(r'immunisation/edit/(?P<id>\d+)/$',
-#    		'patient.views.patient_immunisation_edit',
-#    		name = 'patient_immunisation_edit'
-#    ),
-#    url(r'immunisation/del/(?P<id>\d+)/$',
-#    		'patient.views.patient_immunisation_del',
-#    		name = 'patient_immunisation_del'
-#    ),
+    url(r'immunisation/add/(?P<id>\d+)/$',
+    		'patient.immunisation.patient_immunisation_add',
+   		  name = 'patient_immunisation_add'
+    ),
+    url(r'immunisation/edit/(?P<id>\d+)/$',
+    		'patient.immunisation.patient_immunisation_edit',
+    		name = 'patient_immunisation_edit'
+    ),
+    url(r'immunisation/del/(?P<id>\d+)/$',
+    		'patient.immunisation.patient_immunisation_del',
+    		name = 'patient_immunisation_del'
+    ),
 
 
 ###########################################################################################
 
-#    url(r'medication_list/json/$',
-#    		'patient.views.medication_list_json',
-#    		name = 'medication_list_json'
-#    ),
+    url(r'medication_list/json/$',
+    		'patient.views.medication_list_json',
+    		name = 'medication_list_json'
+    ),
 
 #    url(r'medication_list/list/(?P<id>\d+)/$',
-#    		'patient.views.patient_medication_list_list',
+#    		'patient.medication_list.patient_medication_list_list',
 #    		name = 'patient_medication_list_list'
 #    ),
 
-#    url(r'medication_list/add/(?P<id>\d+)/$',
-#    		'patient.views.patient_medication_list_add',
-#   		  name = 'patient_medication_list_add'
-#    ),
-#    url(r'medication_list/edit/(?P<id>\d+)/$',
-#    		'patient.views.patient_medication_list_edit',
-#    		name = 'patient_medication_list_edit'
-#    ),
-#    url(r'medication_list/del/(?P<id>\d+)/$',
-#    		'patient.views.patient_medication_list_del',
-#    		name = 'patient_medication_list_del'
-#    ),
+    url(r'medication_list/add/(?P<id>\d+)/$',
+    		'patient.medication_list.patient_medication_list_add',
+   		  name = 'patient_medication_list_add'
+    ),
+    url(r'medication_list/edit/(?P<id>\d+)/$',
+    		'patient.medication_list.patient_medication_list_edit',
+    		name = 'patient_medication_list_edit'
+    ),
+    url(r'medication_list/del/(?P<id>\d+)/$',
+    		'patient.medication_list.patient_medication_list_del',
+    		name = 'patient_medication_list_del'
+    ),
 
 
 ###########################################################################################

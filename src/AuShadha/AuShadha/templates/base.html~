@@ -392,7 +392,6 @@
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title  : 'Family History'"
                            >
-                            {% comment %}
                               {% if perms.patient %}
                               <button id              = "addPatientFamilyHistoryButton" 
                                       type            = "button"
@@ -401,7 +400,6 @@
                                 Add
                               </button>
                               {% endif %}
-                            {% endcomment %}
 
                             <div id="family_history_list"
                             > 
@@ -416,7 +414,6 @@
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title  : 'Medications'"
                            >
-                            {% comment %}
                               {% if perms.patient %}
                               <button id              = "addPatientMedicationListButton" 
                                       type            = "button"
@@ -425,7 +422,6 @@
                                 Add
                               </button>
                               {% endif %}
-                            {% endcomment %}
 
                             <div id="medication_list"
                             > 
@@ -440,8 +436,7 @@
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title          : 'Allergy'"
                            >
-                            {% comment %}
-                              {% if perms.patient %}
+                              {% if perms.patient and perms.patient.add_patientallergies %}
                               <button id              = "addAllergyButton" 
                                       type            = "button"
                                       data-dojo-props = "iconClass: 'dijitIconNewTask'"
@@ -449,7 +444,6 @@
                                 Add
                               </button>
                               {% endif %}
-                            {% endcomment %}
 
                             <div id="allergy_list"
                             > 
@@ -459,12 +453,11 @@
                           <!--  END OF PATIENTCONTEXTTABS7 -->
 
                           <!--  START OF PATIENTCONTEXTTABS8  -->
-                          <div  id              = "patientImmunizationTab"
+                          <div  id              = "patientImmunisationTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Immunizations'"
+                                data-dojo-props = "title  : 'Immunisations'"
                            >
-                            {% comment %}
                               {% if perms.patient %}
                               <button id              = "addPatientImmunizationButton" 
                                       type            = "button"
@@ -473,9 +466,8 @@
                                 Add
                               </button>
                               {% endif %}
-                            {% endcomment %}
 
-                            <div id="immunization_list"
+                            <div id="immunisation_list"
                             > 
                             This will list the immunization history 
                             </div>

@@ -739,6 +739,140 @@ def allergies_json(request):
     raise Http404("ERROR:: Patient requested does not exist.")
 
 @login_required
+def immunisation_json(request):
+  try:
+    action                  = unicode(request.GET.get('action'))
+    id                      = int(request.GET.get('patient_id'))
+    if action == 'add':
+      return patient_immunisation_add(request, id)
+    patient_detail_obj      = PatientDetail.objects.get(pk = id)
+    patient_immunisation_obj   = PatientImmunisation.objects.filter(patient_detail = patient_detail_obj)
+#    json_list = []
+#    for immunisation in patient_immunisation_obj:
+#      json = immunisation.generate_json_for_datagrid()
+#      json_list.append(json)
+#    print "ALLERGIES JSON LIST TO BE RETURNED BY THE VIEW IS: ", json_list
+#    json_list = simplejson.dumps(json_list)
+    json = generate_json_for_datagrid(patient_immunisation_obj)
+    return HttpResponse(json, content_type = "application/json")
+#  except(AttributeError, NameError, TypeError, ValueError, KeyError):
+#    raise Http404("ERROR:: Bad request.Invalid arguments passed")
+  except(PatientDetail.DoesNotExist):
+    raise Http404("ERROR:: Patient requested does not exist.")
+
+@login_required
+def family_history_json(request):
+  try:
+    action                  = unicode(request.GET.get('action'))
+    id                      = int(request.GET.get('patient_id'))
+    if action == 'add':
+      return patient_family_history_add(request, id)
+    patient_detail_obj      = PatientDetail.objects.get(pk = id)
+    patient_family_history_obj   = PatientFamilyHistory.objects.filter(patient_detail = patient_detail_obj)
+#    json_list = []
+#    for family_history in patient_family_history_obj:
+#      json = family_history.generate_json_for_datagrid()
+#      json_list.append(json)
+#    print "ALLERGIES JSON LIST TO BE RETURNED BY THE VIEW IS: ", json_list
+#    json_list = simplejson.dumps(json_list)
+    json = generate_json_for_datagrid(patient_family_history_obj)
+    return HttpResponse(json, content_type = "application/json")
+#  except(AttributeError, NameError, TypeError, ValueError, KeyError):
+#    raise Http404("ERROR:: Bad request.Invalid arguments passed")
+  except(PatientDetail.DoesNotExist):
+    raise Http404("ERROR:: Patient requested does not exist.")
+
+@login_required
+def medication_list_json(request):
+  try:
+    action                  = unicode(request.GET.get('action'))
+    id                      = int(request.GET.get('patient_id'))
+    if action == 'add':
+      return patient_medication_list_add(request, id)
+    patient_detail_obj      = PatientDetail.objects.get(pk = id)
+    patient_medication_list_obj   = PatientMedicationList.objects.filter(patient_detail = patient_detail_obj)
+#    json_list = []
+#    for medication_list in patient_medication_list_obj:
+#      json = medication_list.generate_json_for_datagrid()
+#      json_list.append(json)
+#    print "ALLERGIES JSON LIST TO BE RETURNED BY THE VIEW IS: ", json_list
+#    json_list = simplejson.dumps(json_list)
+    json = generate_json_for_datagrid(patient_medication_list_obj)
+    return HttpResponse(json, content_type = "application/json")
+#  except(AttributeError, NameError, TypeError, ValueError, KeyError):
+#    raise Http404("ERROR:: Bad request.Invalid arguments passed")
+  except(PatientDetail.DoesNotExist):
+    raise Http404("ERROR:: Patient requested does not exist.")
+
+
+@login_required
+def admission_json(request):
+  try:
+    action                  = unicode(request.GET.get('action'))
+    id	                    = int(request.GET.get('patient_id'))
+    if action == 'add':
+      return patient_admission_add(request, id)
+    patient_detail_obj			= PatientDetail.objects.get(pk = id)
+  except(AttributeError, NameError, TypeError, ValueError, KeyError):
+    raise Http404("ERROR:: Bad request.Invalid arguments passed")
+  except(PatientDetail.DoesNotExist):
+    raise Http404("ERROR:: Patient requested does not exist.")
+  patient_admission_obj			= Admission.objects.filter(patient_detail = patient_detail_obj)
+  data                    = []
+  if patient_admission_obj:
+    for admission in patient_admission_obj:
+      data_to_append = {}
+      data_to_append['id']                   = admission.id
+      data_to_append['date_of_admission']    = admission.date_of_admission.isoformat()
+      data_to_append['time_of_admission']    = admission.time_of_admission.isoformat()
+      data_to_append['admitting_surgeon']    = admission.admitting_surgeon.surgeon_name
+      data_to_append['room_or_ward']         = admission.room_or_ward
+      data_to_append['admission_closed']     = admission.admission_closed
+      data_to_append['hospital']             = admission.hospital
+      data_to_append['home']                 = admission.get_admission_main_window_url()
+      data_to_append['edit']                 = admission.get_admission_edit_url()
+      data_to_append['del']                  = admission.get_admission_del_url()
+      data.append(data_to_append)
+  json   = simplejson.dumps(data)
+  return HttpResponse(json, content_type = "application/json")
+
+
+@login_required
+def visit_json(request):
+  try:
+    action                  = unicode(request.GET.get('action'))
+    id	                    = int(request.GET.get('patient_id'))
+    if action == 'add':
+      return patient_visit_add(request, id)
+    patient_detail_obj			= PatientDetail.objects.get(pk = id)
+  except(AttributeError, NameError, TypeError, ValueError, KeyError):
+    raise Http404("ERROR:: Bad request.Invalid arguments passed")
+  except(PatientDetail.DoesNotExist):
+    raise Http404("ERROR:: Patient requested does not exist.")
+  patient_visit_obj			= VisitDetail.objects.filter(patient_detail = patient_detail_obj)
+  data                    = []
+  if patient_visit_obj:
+    for visit in patient_visit_obj:
+      data_to_append = {}
+      data_to_append['id']               = visit.id
+      data_to_append['visit_date']       = visit.visit_date
+      data_to_append['op_surgeon']       = visit.op_surgeon
+      data_to_append['is_active']        = visit.is_active
+      data_to_append['referring_doctor'] = visit.referring_doctor
+      data_to_append['consult_nature']   = visit.consult_nature
+      data_to_append['remarks']          = visit.remarks
+      data_to_append['edit']             = visit.get_patient_visit_edit_url()
+      data_to_append['del']              = visit.get_patient_visit_del_url()
+      data.append(data_to_append)
+  json   = simplejson.dumps(data)
+  return HttpResponse(json, content_type = "application/json")
+
+
+
+########################################################################################################
+
+
+@login_required
 def patient_allergies_add(request,id):
   if request.user:
     user = request.user
@@ -814,10 +948,10 @@ def patient_allergies_edit(request,id):
         patient_allergies_obj         = PatientAllergies.objects.get(pk = id)
         patient_allergies_edit_form   = PatientAllergiesForm(instance = patient_allergies_obj)
         variable                      = RequestContext(request, 
-        																					{"user" 									:	user,
-        																					 "patient_detail_obj"			:	patient_allergies_obj.patient_detail ,
-        																					 "patient_allergies_edit_form" :	patient_allergies_edit_form, 
-																									 "patient_allergies_obj" 		  :	patient_allergies_obj ,
+        																					{"user" 									      :	user,
+        																					 "patient_detail_obj"			      :	patient_allergies_obj.patient_detail ,
+        																					 "patient_allergies_edit_form"  :	patient_allergies_edit_form, 
+																									 "patient_allergies_obj" 		    :	patient_allergies_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
         raise Http404("BadRequest")
@@ -894,71 +1028,6 @@ def patient_allergies_del(request,id):
     raise Http404("Server Error: No Permission to delete.")
 
 
-@login_required
-def admission_json(request):
-  try:
-    action                  = unicode(request.GET.get('action'))
-    id	                    = int(request.GET.get('patient_id'))
-    if action == 'add':
-      return patient_admission_add(request, id)
-    patient_detail_obj			= PatientDetail.objects.get(pk = id)
-  except(AttributeError, NameError, TypeError, ValueError, KeyError):
-    raise Http404("ERROR:: Bad request.Invalid arguments passed")
-  except(PatientDetail.DoesNotExist):
-    raise Http404("ERROR:: Patient requested does not exist.")
-  patient_admission_obj			= Admission.objects.filter(patient_detail = patient_detail_obj)
-  data                    = []
-  if patient_admission_obj:
-    for admission in patient_admission_obj:
-      data_to_append = {}
-      data_to_append['id']                   = admission.id
-      data_to_append['date_of_admission']    = admission.date_of_admission.isoformat()
-      data_to_append['time_of_admission']    = admission.time_of_admission.isoformat()
-      data_to_append['admitting_surgeon']    = admission.admitting_surgeon.surgeon_name
-      data_to_append['room_or_ward']         = admission.room_or_ward
-      data_to_append['admission_closed']     = admission.admission_closed
-      data_to_append['hospital']             = admission.hospital
-      data_to_append['home']                 = admission.get_admission_main_window_url()
-      data_to_append['edit']                 = admission.get_admission_edit_url()
-      data_to_append['del']                  = admission.get_admission_del_url()
-      data.append(data_to_append)
-  json   = simplejson.dumps(data)
-  return HttpResponse(json, content_type = "application/json")
-
-
-@login_required
-def visit_json(request):
-  try:
-    action                  = unicode(request.GET.get('action'))
-    id	                    = int(request.GET.get('patient_id'))
-    if action == 'add':
-      return patient_visit_add(request, id)
-    patient_detail_obj			= PatientDetail.objects.get(pk = id)
-  except(AttributeError, NameError, TypeError, ValueError, KeyError):
-    raise Http404("ERROR:: Bad request.Invalid arguments passed")
-  except(PatientDetail.DoesNotExist):
-    raise Http404("ERROR:: Patient requested does not exist.")
-  patient_visit_obj			= VisitDetail.objects.filter(patient_detail = patient_detail_obj)
-  data                    = []
-  if patient_visit_obj:
-    for visit in patient_visit_obj:
-      data_to_append = {}
-      data_to_append['id']               = visit.id
-      data_to_append['visit_date']       = visit.visit_date
-      data_to_append['op_surgeon']       = visit.op_surgeon
-      data_to_append['is_active']        = visit.is_active
-      data_to_append['referring_doctor'] = visit.referring_doctor
-      data_to_append['consult_nature']   = visit.consult_nature
-      data_to_append['remarks']          = visit.remarks
-      data_to_append['edit']             = visit.get_patient_visit_edit_url()
-      data_to_append['del']              = visit.get_patient_visit_del_url()
-      data.append(data_to_append)
-  json   = simplejson.dumps(data)
-  return HttpResponse(json, content_type = "application/json")
-
-
-
-########################################################################################################
 
 @login_required
 def patient_new_add(request):

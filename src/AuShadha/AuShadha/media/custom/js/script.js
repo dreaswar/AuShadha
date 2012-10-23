@@ -245,6 +245,19 @@ var            contactGrid;
                                           "?patient_id=" 
                                           + patid,
 
+                            familyHistoryUrl = "{%url family_history_json %}" + 
+                                          "?patient_id=" 
+                                          + patid,
+
+                            immunisationUrl = "{%url immunisation_json %}" + 
+                                          "?patient_id=" 
+                                          + patid,
+
+                            medicationListUrl = "{%url medication_list_json %}" + 
+                                          "?patient_id=" 
+                                          + patid,
+
+
                             admissionUrl = "{%url admission_json %}" + 
                                            "?patient_id=" 
                                            + patid;
@@ -273,7 +286,10 @@ var            contactGrid;
                        var guardianStore      = new JsonRest({target:guardianUrl});
                        var demographicsStore  = new JsonRest({target:demographicsUrl});
                        var allergiesStore     = new JsonRest({target:allergiesUrl});
-                       var admissionStore     = new JsonRest({target:admissionUrl});
+                       var familyHistoryStore     = new JsonRest({target:familyHistoryUrl});
+                       var immunisationStore      = new JsonRest({target:immunisationUrl});
+                       var medicationListStore    = new JsonRest({target:medicationListUrl});
+                       var admissionStore         = new JsonRest({target:admissionUrl});
                       {% comment %} 
                         // var visitStore      = new JsonRest({target:visitUrl}); 
                       {% endcomment %}
@@ -376,7 +392,7 @@ var            contactGrid;
                     };
 */
 
-                var allergiesGrid = new DataGrid({
+                 var allergiesGrid = new DataGrid({
                                 store         : dataStore = ObjectStore({
                                                            objectStore: allergiesStore
                                                 }),
@@ -391,6 +407,66 @@ var            contactGrid;
                   allergiesGrid.onRowDblClick = function(e){ 
                   // {% if perms.patient.change_patientallergies or perms.patient.delete_patientallergies %}
                                             onPatientSubMenuRowClick(e,allergiesGrid, "Edit Allergy");
+                                            return false; 
+                  // {% endif %}
+                  };
+
+
+                 var medicationListGrid = new DataGrid({
+                                store         : dataStore = ObjectStore({
+                                                           objectStore: medicationListStore
+                                                }),
+                                selectionMode : "single",
+                                rowSelector   : "20px",
+                                structure     : GRID_STRUCTURES.PATIENT_MEDICATION_LIST_GRID_STRUCTURE,
+                              noDataMessage   : "<span class='dojoxGridNoData'>No Medications  Recorded..</span>"
+                          }, 
+                          "medication_list"
+                  );
+
+                  medicationListGrid.onRowDblClick = function(e){ 
+                  // {% if perms.patient.change_patientmedicationlist or perms.patient.delete_patientmedicationlist %}
+                                            onPatientSubMenuRowClick(e,medicationListGrid, "Edit Medication List");
+                                            return false; 
+                  // {% endif %}
+                  };
+
+
+                 var familyHistoryGrid = new DataGrid({
+                                store         : dataStore = ObjectStore({
+                                                           objectStore: familyHistoryStore
+                                                }),
+                                selectionMode : "single",
+                                rowSelector   : "20px",
+                                structure     : GRID_STRUCTURES.PATIENT_FAMILY_HISTORY_GRID_STRUCTURE,
+                              noDataMessage   : "<span class='dojoxGridNoData'>No Family History Recorded..</span>"
+                          }, 
+                          "family_history_list"
+                  );
+
+                  familyHistoryGrid.onRowDblClick = function(e){ 
+                  // {% if perms.patient.change_patientfamilyhistory or perms.patient.delete_patientfamilyhistory %}
+                                            onPatientSubMenuRowClick(e,familyHistoryGrid, "Edit Family History");
+                                            return false; 
+                  // {% endif %}
+                  };
+
+
+                 var immunisationGrid = new DataGrid({
+                                store         : dataStore = ObjectStore({
+                                                           objectStore: immunisationStore
+                                                }),
+                                selectionMode : "single",
+                                rowSelector   : "20px",
+                                structure     : GRID_STRUCTURES.PATIENT_IMMUNIZATION_GRID_STRUCTURE,
+                              noDataMessage   : "<span class='dojoxGridNoData'>No Immunisations Recorded..</span>"
+                          }, 
+                          "immunisation_list"
+                  );
+
+                  immunisationGrid.onRowDblClick = function(e){ 
+                  // {% if perms.patient.change_patientimmunisation or perms.patient.delete_patientimmunisation %}
+                                            onPatientSubMenuRowClick(e,immunisationGrid, "Edit Immunisation");
                                             return false; 
                   // {% endif %}
                   };
@@ -499,7 +575,9 @@ var            contactGrid;
                 demographicsTable   = registry.byId("demographics_list"),
                 demographicsForm    = registry.byId("newDemographicsDataAddOrEditForm"),
                 allergyTable        = registry.byId("allergy_list"),
-                immunizationTable   = registry.byId("immunization_list"),
+                immunizationTable   = registry.byId("immunisation_list"),
+                familyHistoryTable   = registry.byId("family_history_list"),
+                medicationListTable   = registry.byId("medication_list"),
                 admissionTable      = registry.byId("admission_list"),
                 visitTable          = registry.byId("visit_list"),
                 patientMediaTable   = registry.byId("patient_media_list");
@@ -562,13 +640,32 @@ var            contactGrid;
             }
             if(immunizationTable){
               immunizationTable.destroyRecursive();
-              console.log("Recreating immunization tab");
-              domConstruct.place("<div id='immunization_list' class='patientContextTabs'></div>",
-                                 "patientImmunizationTab", 
+              console.log("Recreating immunisation tab");
+              domConstruct.place("<div id='immunisation_list' class='patientContextTabs'></div>",
+                                 "patientImmunisationTab", 
                                  'second'
                                  );
               
             }
+            if(familyHistoryTable){
+              familyHistoryTable.destroyRecursive();
+              console.log("Recreating Family History tab");
+              domConstruct.place("<div id='family_history_list' class='patientContextTabs'></div>",
+                                 "patientFamilyHistoryTab", 
+                                 'second'
+                                 );
+              
+            }
+            if(medicationListTable){
+              medicationListTable.destroyRecursive();
+              console.log("Recreating Medication List tab");
+              domConstruct.place("<div id='medication_list' class='patientContextTabs'></div>",
+                                 "patientMedicationListTab", 
+                                 'second'
+                                 );
+              
+            }
+
             if(patientMediaTable){
               patientMediaTable.destroyRecursive();
               console.log("Recreating Patient Media tab");
@@ -642,6 +739,9 @@ var            contactGrid;
     guardianGrid.startup();
 //    demographicsGrid.startup();
     allergiesGrid.startup();
+    immunisationGrid.startup();
+    familyHistoryGrid.startup();
+    medicationListGrid.startup();
     admissionGrid.startup();
 
 // Call the Demographics Form Method:
@@ -912,8 +1012,8 @@ var            contactGrid;
 //{% endif %}
 
 //{% if perms.patient %}
-	  var addPatientImmunizationButton =  new dijit.form.Button({
-                                          label: "Add Immunization",
+	  var addPatientImmunisationButton =  new dijit.form.Button({
+                                          label: "Add Immunisation",
                                           iconClass: "dijitIconNewTask",
                                           onClick: function(){
                                                  require(
@@ -922,17 +1022,65 @@ var            contactGrid;
                                                     var gridRow    = grid.selection.getSelected();
                                                     var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "/AuShadha/"+"?patient_id="+ id +"&action=add",
+                                                      url: "{%url immunisation_json %}"+"?patient_id="+ id +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);
-                                                                 myDialog.set('title', "Record New Immunization Details");
+                                                                 myDialog.set('title', "Record New Immunisation Details");
                                                                  myDialog.show();
                                                             }
                                                    });
                                                  })
                                           }
-                         }, "addPatientImmunizationButton");
+                         }, "addPatientImmunisationButton");
+//{% endif %}
+
+//{% if perms.patient %}
+	  var addPatientFamilyHistoryButton =  new dijit.form.Button({
+                                          label: "Add Family History",
+                                          iconClass: "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    var gridRow    = grid.selection.getSelected();
+                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    xhr.get({
+                                                      url: "{%url family_history_json %}"+"?patient_id="+ id +"&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record New Family History Details");
+                                                                 myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         }, "addPatientFamilyHistoryButton");
+//{% endif %}
+
+//{% if perms.patient %}
+	  var addPatientMedicationListButton =  new dijit.form.Button({
+                                          label: "Add Medication",
+                                          iconClass: "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    var gridRow    = grid.selection.getSelected();
+                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    xhr.get({
+                                                      url: "{%url medication_list_json%}"+"?patient_id="+ id +"&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record Medication Details");
+                                                                 myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         }, "addPatientMedicationListButton");
 //{% endif %}
 
 

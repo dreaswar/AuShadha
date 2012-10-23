@@ -865,6 +865,7 @@ class PatientFamilyHistory(AuShadhaBaseModel):
   age           = models.PositiveIntegerField()
   disease       = models.CharField(max_length = 100, help_text = "mention diagnosis as stated by patient / as per reports")
   age_at_onset  = models.PositiveIntegerField()
+  patient_detail    = models.ForeignKey(PatientDetail,null = True,blank = True)
 
   def __unicode__(self):
     return "%s" %(self.family_member)
@@ -938,7 +939,7 @@ class PatientMedicationListForm(ModelForm):
                    {"field": 'prescription_date',
                    'max_length':30,
                    "data-dojo-type": "dijit.form.DateTextBox",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : 'true'"
                    },
                    {"field": 'prescribed_by',
                    'max_length':30,
@@ -988,11 +989,6 @@ class PatientFamilyHistoryForm(ModelForm):
                    'max_length':30,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
 		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
-                   },
-                   {"field": 'currently_active',
-                   'max_length':2,
-                   "data-dojo-type": "dijit.form.CheckBox",
-		                "data-dojo-props": r""
                    }
 	        ]
 		for field in text_fields:
