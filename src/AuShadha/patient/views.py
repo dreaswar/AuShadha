@@ -806,11 +806,92 @@ def patient_allergies_add(request,id):
 
 @login_required
 def patient_allergies_edit(request,id):
-  pass
+  if request.user:
+    user = request.user
+    if request.method =="GET" and request.is_ajax():
+      try:
+        id                            = int(id)
+        patient_allergies_obj         = PatientAllergies.objects.get(pk = id)
+        patient_allergies_edit_form   = PatientAllergiesForm(instance = patient_allergies_obj)
+        variable                      = RequestContext(request, 
+        																					{"user" 									      :	user,
+        																					 "patient_detail_obj"			      :	patient_allergies_obj.patient_detail ,
+        																					 "patient_allergies_edit_form"  :	patient_allergies_edit_form, 
+																									 "patient_allergies_obj" 		    :	patient_allergies_obj ,
+																									})
+      except TypeError or ValueError or AttributeError:
+        raise Http404("BadRequest")
+      except PatientAllergies.DoesNotExist:
+        raise Http404("BadRequest: Patient Data Does Not Exist")
+      return render_to_response('patient/allergies/edit.html',variable)
+    elif request.method == 'POST' and request.is_ajax():
+      try:
+        id                            = int(id)
+        patient_allergies_obj         = PatientAllergies.objects.get(pk = id)
+        patient_allergies_edit_form   = PatientAllergiesForm(request.POST,instance = patient_allergies_obj)
+        if patient_allergies_edit_form.is_valid():
+          allergies_obj           = patient_allergies_edit_form.save()
+          success                 = True
+          error_message           = "Allergies Data Edited Successfully"
+          addData                 = {
+                                    "id"                : allergies_obj.id,
+                                    "allergic_to"       : allergies_obj.allergic_to,
+                                    "reaction_observed" : allergies_obj.reaction_observed,
+                                    "edit"              : allergies_obj.get_edit_url(),
+                                    "del"               : allergies_obj.get_del_url()
+                                    }
+          data                    = {
+                                    'success'      : success, 
+                                    'error_message': error_message,
+                                    "form_errors"  : None,
+                                    "addData"      : addData
+                                    }
+          json           = simplejson.dumps(data)
+          return HttpResponse(json, content_type = 'application/json')
+        else:
+          success       = False
+          error_message = "Error Occured. Allergies data could not be added."
+          form_errors   = ''
+          for error in patient_allergies_edit_form.errors:
+            form_errors += '<p>' + error +'</p>'
+          data = { 'success'      : success, 
+                   'error_message': error_message,
+                   'form_errors'  : form_errors
+                 }
+          json = simplejson.dumps(data)
+          return HttpResponse(json, content_type = 'application/json')
+      except ValueError or AttributeError or TypeError:
+        raise Http404("BadRequest: Server Error")
+      except PatientDetail.DoesNotExist:
+        raise Http404("BadRequest: Requested Patient DoesNotExist")
+    else:
+      raise Http404("BadRequest: Unsupported Request Method. AJAX status is:: " + unicode(request.is_ajax()))
+  else:
+    raise Http404("You need to Login")
 
 @login_required
 def patient_allergies_del(request,id):
-  pass
+  user = request.user
+  if request.user and user.is_superuser:
+    if request.method =="GET":
+       try:
+          id                      = int(id)
+          patient_allergies_obj   = PatientAllergies.objects.get(pk = id)
+          patient_detail_obj      = patient_allergies_obj.patient_detail
+       except TypeError or ValueError or AttributeError:
+          raise Http404("BadRequest")
+       except PatientAllergies.DoesNotExist:
+          raise Http404("BadRequest: Patient allergies Data Does Not Exist")
+       patient_allergies_obj.delete()
+       success        = True
+       error_message  = "allergies Data Deleted Successfully"
+       data           = {'success': success, 'error_message': error_message}
+       json           = simplejson.dumps(data)
+       return HttpResponse(json, content_type = 'application/json')
+    else:
+      raise Http404("BadRequest: Unsupported Request Method")
+  else:
+    raise Http404("Server Error: No Permission to delete.")
 
 
 @login_required

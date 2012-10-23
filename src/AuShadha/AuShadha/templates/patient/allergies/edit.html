@@ -12,7 +12,7 @@
       ],
        function(registry){
          //	{% if perms.patient.change_patientallergies %}
-          editItem("{{patient_allergies_obj.get_edit_url}}","newAllergiesEditForm","allergies_list");
+          editItem("{{patient_allergies_obj.get_edit_url}}","newAllergiesEditForm","allergy_list");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -54,7 +54,7 @@
                 data-dojo-args  = "evt"
         >
          //	{% if perms.patient.delete_patientallergies %}
-		     delItem("{{patient_allergies_obj.get_del_url}}", "allergies_list");
+		     delItem("{{patient_allergies_obj.get_del_url}}", "allergy_list");
          // {% else %}
          registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}

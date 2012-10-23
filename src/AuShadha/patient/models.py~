@@ -46,6 +46,8 @@ class PatientDetail(models.Model):
 	Patient Detail Model that gives the models definition and the associated methods to control the Patient models.
 	
 	'''
+	
+	__model_label__ = "detail"
 
 	patient_hospital_id = models.CharField('Hospital ID', 
                                                max_length =15,  null = True,  blank = True, unique = True)
@@ -297,13 +299,13 @@ class PatientDetail(models.Model):
 		'''
 		Returns the URL for adding allergy for a Patient
 		'''
-		return '/AuShadha/pat/allergy/add/%s/' %self.id    
+		return '/AuShadha/pat/allergies/add/%s/' %self.id    
 
 	def get_patient_allergies_list_url(self):
 		'''
 		Returns the URL for listing allergy for a Patient
 		'''
-		return '/AuShadha/pat/allergy/list/%s/' %self.id    
+		return '/AuShadha/pat/allergies/list/%s/' %self.id    
 
 ################################################################################
 
@@ -474,6 +476,9 @@ class PatientGuardian(models.Model):
 	'''
 	Class that defines the Guardian of a Particular patient    
 	'''
+
+	__model_label__ = "guardian"
+
 	guardian_name 		= models.CharField(max_length = 20, blank = True, null 	= True, help_text ="Enter Guardian Name if Patient is a minor" )
 	relation_to_guardian 	= models.CharField('Relation',max_length =20, blank= True, null	= True, help_text = "Enter relationship to Guardian if Patient is a Minor", choices =(("Father","Father"),("Mother","Mother"),("Local Guardian","LocalGuardian") ))
 	guardian_phone 		= models.PositiveIntegerField('Phone',max_length= 20, blank = True, null= True)
@@ -520,6 +525,8 @@ class PatientContact(models.Model):
 	'''Class that defines the Contact Address of a particular patient
 	'''
 
+	__model_label__ = "contact"
+	
 	address_type 	= models.CharField('Type',max_length = 10, choices =(("Home", "Home"),("Office","Office"), ("Others","Others") ), default = "Home")
 	address 	= models.TextField(max_length = 100, help_text = 'limit to 100 words')
 	city 		= models.CharField(max_length = 20,default = 'Coimbatore')
@@ -569,6 +576,9 @@ class PatientPhone(models.Model):
 	'''
 		Class that defines the Phone data of a patient
 	'''
+	
+	__model_label__ = "phone"
+		
 	phone_type 	= models.CharField('Type',max_length = 10, choices =(("Home", "Home"),("Office","Office"),("Mobile","Mobile"),("Fax","Fax"),("Others","Others") ), default = "Home")
 	ISD_Code 	= models.PositiveIntegerField('ISD',max_length = 4, null = True, blank = True, default = "0091")
 	STD_Code 	= models.PositiveIntegerField('STD',max_length = 4, null = True, blank = True, default = "0422")
@@ -610,6 +620,8 @@ class PatientEmailFax(models.Model):
 	''' 
 		Model that manages the Email, Fax and Web contact details of a patient
 	'''
+	__model_label__ = "email_and_fax"
+		
 	date_entered 		= models.DateTimeField(auto_now_add = True)
 	email 			= models.EmailField(max_length = 75, blank = True, null = True)
 	fax 			= models.PositiveIntegerField(max_length = 20, null = True, blank = True)
@@ -658,6 +670,9 @@ class PatientDemographicsData(models.Model):
       This has been adapted from the excellent work by GNU Health project
       However this is a very rudimentary adaptation
     """
+
+    __model_label__ = "demographics"
+
     date_of_birth     = models.DateField(auto_now_add = False, null = True, blank = True)
     socioeconomics    = models.CharField(max_length = 100, default="Middle", 
                                          choices = (("low", "Low"), 
@@ -733,6 +748,9 @@ class PatientAllergies(AuShadhaBaseModel):
     methods defined on him. 
     
   """
+
+  __model_label__ = "allergies"
+
   allergic_to       = models.CharField(max_length = 100)
   reaction_observed = models.CharField(max_length = 100, 
                                        choices = (("rash",'Rash'),
@@ -746,6 +764,18 @@ class PatientAllergies(AuShadhaBaseModel):
   def __unicode__(self):
     return "%s" %(self.allergic_to)
 
+  def get_edit_url(self):
+      '''
+      Returns the URL for editing Demographics details for a Patient
+      '''
+      return '/AuShadha/pat/allergies/edit/%s/' %self.id
+
+  def get_del_url(self):
+      '''
+      Returns the URL for adding Demographics for a Patient
+      '''
+      return '/AuShadha/pat/allergies/del/%s/' %self.id
+
 
 class PatientImmunisation(AuShadhaBaseModel):
   """
@@ -755,6 +785,9 @@ class PatientImmunisation(AuShadhaBaseModel):
     methods defined on him. 
     
   """
+
+  __model_label__ = "immunisation"
+
   vaccine_name      = models.CharField(max_length = 100)
   vaccination_date  = models.DateField(auto_now_add = False)
   adverse_reaction  = models.TextField(max_length = 100, default = "None")
@@ -763,6 +796,17 @@ class PatientImmunisation(AuShadhaBaseModel):
   def __unicode__(self):
     return "%s" %(self.vaccine_name)
 
+  def get_edit_url(self):
+      '''
+      Returns the URL for editing Demographics details for a Patient
+      '''
+      return '/AuShadha/pat/immunisation/edit/%s/' %self.id
+
+  def get_del_url(self):
+      '''
+      Returns the URL for adding Demographics for a Patient
+      '''
+      return '/AuShadha/pat/immunisation/del/%s/' %self.id
 
 class PatientMedicationList(AuShadhaBaseModel):
   """
@@ -772,6 +816,9 @@ class PatientMedicationList(AuShadhaBaseModel):
     methods defined on him. 
     
   """
+
+  __model_label__ = "medication_list"
+
   medication        = models.CharField(max_length = 100, help_text = "Only Generic Names..")
   strength          = models.CharField(max_length = 100)
   dosage            = models.CharField(max_length = 100, help_text = "OD, BD, TDS, QID, HS, SOS, PID etc..")
@@ -788,6 +835,19 @@ class PatientMedicationList(AuShadhaBaseModel):
   def __unicode__(self):
     return "%s" %(self.medication)
 
+  def get_edit_url(self):
+      '''
+      Returns the URL for editing Demographics details for a Patient
+      '''
+      return '/AuShadha/pat/medication_list/edit/%s/' %self.id
+
+  def get_del_url(self):
+      '''
+      Returns the URL for adding Demographics for a Patient
+      '''
+      return '/AuShadha/pat/medication_list/del/%s/' %self.id
+
+
 
 class PatientFamilyHistory(AuShadhaBaseModel):
   """
@@ -797,6 +857,9 @@ class PatientFamilyHistory(AuShadhaBaseModel):
     methods defined on him. 
     
   """
+
+  __model_label__ = "family_history"
+
   family_member = models.CharField(max_length = 100, help_text = "mention only relationship..") 
   deceased      = models.BooleanField(default = False)
   age           = models.PositiveIntegerField()
@@ -805,6 +868,18 @@ class PatientFamilyHistory(AuShadhaBaseModel):
 
   def __unicode__(self):
     return "%s" %(self.family_member)
+
+  def get_edit_url(self):
+      '''
+      Returns the URL for editing Demographics details for a Patient
+      '''
+      return '/AuShadha/pat/family_history/edit/%s/' %self.id
+
+  def get_del_url(self):
+      '''
+      Returns the URL for adding Demographics for a Patient
+      '''
+      return '/AuShadha/pat/family_history/del/%s/' %self.id
 
 
 ## Modelform definition of Patients.
@@ -941,7 +1016,7 @@ class PatientAllergiesForm(ModelForm):
 		                },
 		               {"field": 'reaction_observed',
 		                'max_length'    :  100         ,
-		               "data-dojo-type": "dijit.form.ValidationTextBox",
+		               "data-dojo-type": "dijit.form.Select",
 		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
 		               }
 	        ]

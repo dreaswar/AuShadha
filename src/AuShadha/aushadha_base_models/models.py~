@@ -105,6 +105,7 @@ class AuShadhaBaseModel(models.Model):
   '''
     base AuShadha Model From which all AuShadha Models Except the Clinic Model Derive. 
   '''
+  __model_label__ = "AuShadhaBaseModel"
 
   parent_clinic = models.ForeignKey('clinic.Clinic', null = True, blank = True)
 
@@ -112,8 +113,9 @@ class AuShadhaBaseModel(models.Model):
   def __unicode__(self):
     return "AuShadhaBaseModel" 
   
-#  def __init__(self, *args, **kwargs):
-#    super(self, AuShadhaBaseModel).__init__(*args, **kwargs)
+  def __init__(self, au_model_label = "AuShadhaBaseModel", *args, **kwargs):
+    self.__model_label__ = au_model_label
+    super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
 
 #  def get_add_url(self):
 #    if self.patient_detail:
@@ -143,10 +145,10 @@ class AuShadhaBaseModel(models.Model):
     #FIXME:: may be better to rely on django.contrib.contenttypes.ContentType to do a similar thing rather than using _meta  
     from AuShadha.settings import APP_ROOT_URL
     if root_object:
-        url = unicode(APP_ROOT_URL) + unicode(self._meta.app_label)+ "/" + unicode(action) +"/"
+        url = unicode(APP_ROOT_URL) + unicode(self._meta.app_label)+ "/" + unicode(self.__model_label__) + "/" + unicode(action) +"/"
     else:
-      
-      url = unicode(APP_ROOT_URL) + unicode(self._meta.app_label)+ "/" + unicode(action) +"/" + unicode(id) +"/"
+      print ("APP LABEL FOR URL IS", unicode(self._meta.app_label))
+      url = unicode(APP_ROOT_URL) + unicode(self._meta.app_label)+ "/" + unicode(self.__model_label__) + "/" + unicode(action) +"/" + unicode(id) +"/"
     return url
 
 

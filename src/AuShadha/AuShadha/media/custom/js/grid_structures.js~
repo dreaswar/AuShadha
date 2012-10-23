@@ -507,12 +507,6 @@ var GRID_STRUCTURES= {
                                       field      : "reaction_observed", 
                                       width      : "60px",
                                       cellStyles : "text-align:center;"
-                                    },
-
-                                    {name       : "Phone", 
-                                      field      : "guardian_phone", 
-                                      width      : "70px",
-                                      cellStyles : "text-align:center;"
                                     }
                                   ],
 

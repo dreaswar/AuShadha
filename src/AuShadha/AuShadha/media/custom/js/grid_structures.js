@@ -499,13 +499,13 @@ var GRID_STRUCTURES= {
 
                                     {name       : "Allergic To", 
                                       field      : "allergic_to", 
-                                      width      : "100px",
+                                      width      : "120px",
                                       cellStyles : "text-align:center;",
                                     },
 
                                     {name       : "Reaction Observed", 
                                       field      : "reaction_observed", 
-                                      width      : "60px",
+                                      width      : "120px",
                                       cellStyles : "text-align:center;"
                                     }
                                   ],
