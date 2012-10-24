@@ -89,7 +89,7 @@ def patient_immunisation_add(request,id):
           addData        = {
                             "id"                : immunisation_obj.id,
                             "vaccine_name"       : immunisation_obj.vaccine_name,
-                            "vaccination_date" : immunisation_obj.vaccination_date,
+                            "vaccination_date" : immunisation_obj.vaccination_date.isoformat(),
                             "adverse_reaction" : immunisation_obj.adverse_reaction,
                             "edit"              : immunisation_obj.get_edit_url(),
                             "del"               : immunisation_obj.get_del_url()
@@ -154,7 +154,7 @@ def patient_immunisation_edit(request,id):
           addData        = {
                             "id"                : immunisation_obj.id,
                             "vaccine_name"       : immunisation_obj.vaccine_name,
-                            "vaccination_date" : immunisation_obj.vaccination_date,
+                            "vaccination_date" : immunisation_obj.vaccination_date.isoformat(),
                             "adverse_reaction" : immunisation_obj.adverse_reaction,
                             "edit"              : immunisation_obj.get_edit_url(),
                             "del"               : immunisation_obj.get_del_url()

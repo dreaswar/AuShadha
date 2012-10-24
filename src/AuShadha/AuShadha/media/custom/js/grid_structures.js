@@ -392,27 +392,29 @@ var GRID_STRUCTURES= {
 
                                     {name       : "Age", 
                                       field      : "age", 
-                                      width      : "40px",
+                                      width      : "50px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Disease", 
+                                      field      : "disease", 
+                                      width      : "150px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Onset at", 
+                                      field      : "age_at_onset", 
+                                      width      : "60px",
                                       cellStyles : "text-align:center;"
                                     },
 
                                     {name       : "Deceased", 
                                       field      : "deceased", 
-                                      width      : "30px",
+                                      width      : "80px",
                                       cellStyles : "text-align:center;"
                                     },
                                     
-                                    {name       : "Disease", 
-                                      field      : "disease", 
-                                      width      : "100px",
-                                      cellStyles : "text-align:center;"
-                                    },
                                     
-                                    {name       : "Age at Onset", 
-                                      field      : "age_at_onset", 
-                                      width      : "40px",
-                                      cellStyles : "text-align:center;"
-                                    }
                                   ],
 
   PATIENT_MEDICATION_LIST_GRID_STRUCTURE: [
@@ -439,7 +441,7 @@ var GRID_STRUCTURES= {
 
                                     {name       : "Name", 
                                       field      : "medication", 
-                                      width      : "100px",
+                                      width      : "150px",
                                       cellStyles : "text-align:center;",
                                     },
 
@@ -455,13 +457,13 @@ var GRID_STRUCTURES= {
                                       cellStyles : "text-align:center;"
                                     },
 
-                                    {name       : "Prescription Date", 
+                                    {name       : "Prescribed on", 
                                       field      : "prescription_date", 
-                                      width      : "100px",
+                                      width      : "120px",
                                       cellStyles : "text-align:center;"
                                     },
 
-                                    {name       : "Currently Active ?", 
+                                    {name       : "Active ?", 
                                       field      : "currently_active", 
                                       width      : "60px",
                                       cellStyles : "text-align:center;"

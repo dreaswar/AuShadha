@@ -1,10 +1,10 @@
 ##--------------------------------------------------------------
-# Views for Patient contact and details display and modification.
+# Views for Patient Medication List as part of AuShadha Project
 # Author: Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
-# Date: 26-09-2010
+# Please see AuShadha Project License for Details
+# Date: 24-10-2012
 ##---------------------------------------------------------------
 
-#import wx
 import os, sys
 
 # General Django Imports----------------------------------
@@ -92,7 +92,7 @@ def patient_medication_list_add(request,id):
                             "medication"        : medication_list_obj.medication,
                             "strength"          : medication_list_obj.strength,
                             "dosage"            : medication_list_obj.dosage,
-                            "prescription_date" : medication_list_obj.prescription_date,
+                            "prescription_date" : medication_list_obj.prescription_date.isoformat(),
                             "prescribed_by"     : medication_list_obj.prescribed_by,
                             "currently_active"  : medication_list_obj.currently_active,
                             "edit"              : medication_list_obj.get_edit_url(),
@@ -160,7 +160,7 @@ def patient_medication_list_edit(request,id):
                             "medication"        : medication_list_obj.medication,
                             "strength"          : medication_list_obj.strength,
                             "dosage"            : medication_list_obj.dosage,
-                            "prescription_date" : medication_list_obj.prescription_date,
+                            "prescription_date" : medication_list_obj.prescription_date.isoformat(),
                             "prescribed_by"     : medication_list_obj.prescribed_by,
                             "currently_active"  : medication_list_obj.currently_active,
                             "edit"              : medication_list_obj.get_edit_url(),

@@ -89,6 +89,7 @@ def patient_family_history_add(request,id):
           addData        = {
                             "id"                : family_history_obj.id,
                             "family_member"     : family_history_obj.family_member,
+                            "age"     : family_history_obj.age,
                             "deceased"          : family_history_obj.deceased,
                             "age_at_onset"      : family_history_obj.age_at_onset,
                             "disease"           : family_history_obj.disease,
@@ -155,6 +156,7 @@ def patient_family_history_edit(request,id):
           addData        = {
                             "id"                : family_history_obj.id,
                             "family_member"     : family_history_obj.family_member,
+                            "age"     : family_history_obj.age,
                             "deceased"          : family_history_obj.deceased,
                             "age_at_onset"      : family_history_obj.age_at_onset,
                             "disease"           : family_history_obj.disease,

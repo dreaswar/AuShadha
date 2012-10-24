@@ -12,7 +12,7 @@
       ],
        function(registry){
          //	{% if perms.patient.change_patientfamilyhistory %}
-          editItem("{{patient_family_history_obj.get_patient_family_history_edit_url}}","newFamilyHistoryEditForm","family_history_list");
+          editItem("{{patient_family_history_obj.get_edit_url}}","newFamilyHistoryEditForm","family_history_list");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -54,7 +54,7 @@
                 data-dojo-args  = "evt"
         >
          //	{% if perms.patient.delete_patientfamilyhistory %}
-		     delItem("{{patient_family_history_obj.get_patient_family_history_del_url}}", "family_history_list");
+		     delItem("{{patient_family_history_obj.get_del_url}}", "family_history_list");
          // {% else %}
          registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}

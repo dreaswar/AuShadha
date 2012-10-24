@@ -12,7 +12,7 @@
       ],
        function(registry){
          //	{% if perms.patient.change_patientimmunisation %}
-          editItem("{{patient_immunisation_obj.get_patient_immunisation_edit_url}}","newImmunisationEditForm","immunisation_list");
+          editItem("{{patient_immunisation_obj.get_edit_url}}","newImmunisationEditForm","immunisation_list");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -54,7 +54,7 @@
                 data-dojo-args  = "evt"
         >
          //	{% if perms.patient.delete_patientimmunisation %}
-		     delItem("{{patient_immunisation_obj.get_patient_immunisation_del_url}}", "immunisation_list");
+		     delItem("{{patient_immunisation_obj.get_del_url}}", "immunisation_list");
          // {% else %}
          registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
