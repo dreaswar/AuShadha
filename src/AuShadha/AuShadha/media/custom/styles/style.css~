@@ -46,9 +46,11 @@
 	}
 
 	#centerTopPane, 
-	#centerBottomPane
+	#centerBottomPane,
+	#selected_patient_info
 	{
     background: -moz-linear-gradient(center top ,whitesmoke, white) repeat scroll 0 0 transparent;
+    font-family : Cantarell, Droid-Sans, Sans-Serif;
 	}
 
   #login_area
@@ -84,6 +86,9 @@
 	#phone_list,
 	#guardian_list,
 	#demographics_list,
+	#immunisation_list,
+	#family_history_list,
+	#medication_list,
 	#allergy_list,
 	#patient_media_list,
 	#admission_list,

@@ -595,8 +595,8 @@ var            contactGrid;
               phoneTable.destroyRecursive();
               console.log("Recreating Phone tab");
               domConstruct.place("<div id='phone_list'></div>",
-                                 "patientPhoneTab", 
-                                 'second'
+                                 "patientContactTab", 
+                                 'third'
                                  );
               
             }
@@ -604,8 +604,8 @@ var            contactGrid;
               guardianTable.destroyRecursive();
               console.log("Recreating Guardian tab");
               domConstruct.place("<div id='guardian_list'></div>",
-                                 "patientGuardianTab", 
-                                 'second'
+                                 "patientContactTab", 
+                                 'fourth'
                                  );
               
             }
@@ -629,12 +629,22 @@ var            contactGrid;
             }
 */
 
+            if(medicationListTable){
+              medicationListTable.destroyRecursive();
+              console.log("Recreating Medication List tab");
+              domConstruct.place("<div id='medication_list' class='patientContextTabs'></div>",
+                                 "patientMedicationListAndAllergiesTab", 
+                                 'second'
+                                 );
+              
+            }
+
             if(allergyTable){
               allergyTable.destroyRecursive();
               console.log("Recreating allergy tab");
               domConstruct.place("<div id='allergy_list' class='patientContextTabs'></div>",
-                                 "patientAllergyTab", 
-                                 'second'
+                                 "patientMedicationListAndAllergiesTab", 
+                                 'third'
                                  );
               
             }
@@ -652,15 +662,6 @@ var            contactGrid;
               console.log("Recreating Family History tab");
               domConstruct.place("<div id='family_history_list' class='patientContextTabs'></div>",
                                  "patientFamilyHistoryTab", 
-                                 'second'
-                                 );
-              
-            }
-            if(medicationListTable){
-              medicationListTable.destroyRecursive();
-              console.log("Recreating Medication List tab");
-              domConstruct.place("<div id='medication_list' class='patientContextTabs'></div>",
-                                 "patientMedicationListTab", 
                                  'second'
                                  );
               
@@ -815,7 +816,8 @@ var            contactGrid;
 
 //{% if perms.patient.add_patientdetail %}
     var addPatientButton =  new dijit.form.Button({
-                                              label: "New Patient",
+                                              label: "New", 
+                                              title: "Register a New Patient to the Clinic..",
                                               iconClass:"dijitIconNewTask",
                                               onClick: function(){
                                                                 require(["dojo/_base/xhr",
@@ -1032,7 +1034,7 @@ var            contactGrid;
                                                    });
                                                  })
                                           }
-                         }, "addPatientImmuniSationButton");
+                         }, "addPatientImmunisationButton");
 //{% endif %}
 
 //{% if perms.patient %}

@@ -245,19 +245,22 @@
                                   type           = "button"
                                   data-dojo-props= "iconClass: 'dijitIconNewTask'"
                                   data-dojo-id   = "addPatientButton"
+                                  title          = "Register a New Patient to the Clinic"
                           > 
                               Add Patient
                           </button>
                           {% endif %}
 
                           <div style="
-                                  margin-bottom  : 1px;
-                                  position       : relative;
-                                  left           : 100px;
-                                  top            : -25px;
-                                  width          : 650px;
+                                  margin-bottom   : 0px;
+                                  position        : relative;
+                                  left            : 0px;
+//                                  left          : 50px;
+//                                  top           : -25px;
+                                  width           : 600px;
                                   overflow        : auto;
-                                  margin-left    : 2px;"
+                                  margin-left     : 0px; 
+                                  padding-left    : 0px;"
                                id = "searchPatientContainerDiv"
                            >
                              {% include 'search/patients.html' %}
@@ -302,7 +305,7 @@
                             <div  id              = "patientContactTab"
                                   class           = "patientContextTabs"
                                   data-dojo-type  = "dojox/layout/ContentPane"
-                                  data-dojo-props = "title: 'Address'"
+                                  data-dojo-props = "title: 'Contact'"
                             >
                                 {% if perms.patient.add_patientcontact %}
                                 <button id              = "addContactButton" 
@@ -312,48 +315,30 @@
                                     Add
                                 </button>
                                 {% endif %}
+                                {% if perms.patient.add_patientphone %}
+                                <button id              = "addPhoneButton" 
+                                        data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                                        type            = "button"
+                                > 
+                                  Add
+                                </button>
+                                {% endif %}
+                                {% if perms.patient.add_patientguardian %}
+                                <button id              = "addGuardianButton" 
+                                        type            = "button"
+                                        data-dojo-props = "iconClass: 'dijitIconNewTask'"> 
+                                    Add
+                                </button>
+                                {% endif %}
                                 <div id     = "contact_list" 
                                 > 
                                 </div>
-                            </div>
-                          <!--  END OF PATIENTCONTEXTTABS1  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS2  -->
-                          <div  id              = "patientPhoneTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title: 'Phone'"
-                          >
-                            {% if perms.patient.add_patientphone %}
-                            <button id              = "addPhoneButton" 
-                                    data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                                    type            = "button"
-                            > 
-                              Add
-                            </button>
-                            {% endif %}
-                            <div id="phone_list"
-                            > 
-                            </div>
-                         </div>
-                          <!--  END OF PATIENTCONTEXTTABS2  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS3  -->
-                          <div  id              = "patientGuardianTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title: 'Guardian'"
-                          >
-                            {% if perms.patient.add_patientguardian %}
-                            <button id              = "addGuardianButton" 
-                                    type            = "button"
-                                    data-dojo-props = "iconClass: 'dijitIconNewTask'"> 
-                                Add
-                            </button>
-                            {% endif %}
-                            <div id="guardian_list"
-                            > 
-                            </div>
+                                <div id="phone_list"
+                                > 
+                                </div>
+                                <div id="guardian_list"
+                                > 
+                                </div>
                           </div>
                           <!--  END OF PATIENTCONTEXTTABS3  -->
 
@@ -409,7 +394,7 @@
                           <!--  END OF PATIENTCONTEXTTABS5  -->
 
                           <!--  START OF PATIENTCONTEXTTABS6  -->
-                          <div  id              = "patientMedicationListTab"
+                          <div  id              = "patientMedicationListAndAllergiesTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title  : 'Medications'"
@@ -422,20 +407,6 @@
                                 Add
                               </button>
                               {% endif %}
-
-                            <div id="medication_list"
-                            > 
-                            This will list the Medication List 
-                            </div>
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS6  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS7  -->
-                          <div  id              = "patientAllergyTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title          : 'Allergy'"
-                           >
                               {% if perms.patient and perms.patient.add_patientallergies %}
                               <button id              = "addAllergyButton" 
                                       type            = "button"
@@ -445,12 +416,16 @@
                               </button>
                               {% endif %}
 
+                            <div id="medication_list"
+                            > 
+                            This will list the Medication List 
+                            </div>
                             <div id="allergy_list"
                             > 
                             This will list Allergies the patient has
                             </div>
                           </div>
-                          <!--  END OF PATIENTCONTEXTTABS7 -->
+                          <!--  END OF PATIENTCONTEXTTABS6 -->
 
                           <!--  START OF PATIENTCONTEXTTABS8  -->
                           <div  id              = "patientImmunisationTab"
