@@ -661,8 +661,8 @@ var            contactGrid;
               familyHistoryTable.destroyRecursive();
               console.log("Recreating Family History tab");
               domConstruct.place("<div id='family_history_list' class='patientContextTabs'></div>",
-                                 "patientFamilyHistoryTab", 
-                                 'second'
+                                 "patientFamilyAndSocialHistoryTab", 
+                                 'third'
                                  );
               
             }
@@ -679,8 +679,8 @@ var            contactGrid;
               admissionTable.destroyRecursive();
               console.log("Recreating Admission tab");
               domConstruct.place("<div id='admission_list' class='patientContextTabs'></div>",
-                                 "patientAdmissionTab", 
-                                 'second'
+                                 "patientAdmissionAndVisitsTab", 
+                                 'third'
                                  );
               
             }
@@ -688,7 +688,7 @@ var            contactGrid;
               visitTable.destroyRecursive();
               console.log("Recreating Visit tab tab");
               domConstruct.place("<div id='visit_list' class='patientContextTabs'></div>",
-                                 "patientVisitTab", 
+                                 "patientAdmissionAndVisitsTab", 
                                  'second'
                                  );
             }
@@ -1058,6 +1058,29 @@ var            contactGrid;
                                                  })
                                           }
                          }, "addPatientFamilyHistoryButton");
+
+	  var addPatientSocialHistoryButton =  new dijit.form.Button({
+                                          label: "Add Social History",
+                                          iconClass: "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    var gridRow    = grid.selection.getSelected();
+                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    xhr.get({
+                                                      url: "{%url social_history_json %}"+"?patient_id="+ id +"&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record New Social History Details");
+                                                                 myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         }, "addPatientSocialHistoryButton");
+
 //{% endif %}
 
 //{% if perms.patient %}

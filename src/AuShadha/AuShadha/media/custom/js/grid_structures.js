@@ -153,7 +153,7 @@ var GRID_STRUCTURES= {
 
                                 {name       : "Address", 
                                  field      : "address", 
-                                 width      : "250px",
+                                 width      : "300px",
                                  cellStyles : "text-align:center;",
                                  formatter  : function(address,rowI){
                                                 var thisRow   = this.grid.getItem(rowI);

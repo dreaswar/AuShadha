@@ -15,7 +15,7 @@
 			}
 
 			#bottomPane{
-				height     : 30px;
+				height     : 16px;
 				margin     : 0 ;
 				padding    : 1;
 				overflow   : hidden;
@@ -24,7 +24,7 @@
 			}
 
 			#topPane {
-				height     : 70px;
+				height     : 20px;
 				margin     : 0 ;
 				padding    : 1;
 				overflow   : hidden;
@@ -46,11 +46,9 @@
 	}
 
 	#centerTopPane, 
-	#centerBottomPane,
-	#selected_patient_info
+	#centerBottomPane
 	{
     background: -moz-linear-gradient(center top ,whitesmoke, white) repeat scroll 0 0 transparent;
-    font-family : Cantarell, Droid-Sans, Sans-Serif;
 	}
 
   #login_area
@@ -97,6 +95,7 @@
    min-height : 230px;
    max-height : 230px;
 //   overflow   :auto;
+	margin-top: 5px;
 	}
 
 
@@ -110,8 +109,8 @@
 
 	.login_area_img
 	{
-		width:32px;
-		height:32px;
+		width:28px;
+		height:28px;
 		border:none;
 		margin:0px;
 		padding:0px;
@@ -194,20 +193,19 @@
 //     background-color: ivory;
   }
 
-	#loginDiv+div{
-		background: red;
-	}
 
 #patientContextPane{
-  height: 700px;
+  min-height: 600px;
+  min-width : 800px;
+  overflow:auto;
 }
 
 
 #simplePatientSearch .search_form_div{
   float :left;
   display:inline;
-  margin-left:10px;
-  margin-right:10px;
+  margin-left:0px;
+  margin-right:1px;
   margin-top:0px;
   padding:0px;
 }
