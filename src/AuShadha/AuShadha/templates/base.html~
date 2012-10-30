@@ -133,7 +133,7 @@
      > 
 
 	     <h3 class="header_with_logo"> 
-                     <img src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_64.png" 
+                     <img src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_32.png" 
                           alt="AuShadha" 
                           title="AuShadha Public Health Clinic EMR & Management Open Source Project">
         </h3>
@@ -257,8 +257,8 @@
                                   left            : 0px;
 //                                  left          : 50px;
 //                                  top           : -25px;
-                                  width           : 600px;
-                                  overflow        : auto;
+//                                  width           : 600px;
+//                                  overflow        : auto;
                                   margin-left     : 0px; 
                                   padding-left    : 0px;"
                                id = "searchPatientContainerDiv"
@@ -372,10 +372,10 @@
                           <!--  END OF PATIENTCONTEXTTABS4  -->
 
                           <!--  START OF PATIENTCONTEXTTABS5  -->
-                          <div  id              = "patientFamilyHistoryTab"
+                          <div  id              = "patientFamilyAndSocialHistoryTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Family History'"
+                                data-dojo-props = "title  : 'Family & Social History'"
                            >
                               {% if perms.patient %}
                               <button id              = "addPatientFamilyHistoryButton" 
@@ -388,18 +388,24 @@
 
                             <div id="family_history_list"
                             > 
-                            This will list the family history 
+  	                          This will list the family history 
                             </div>
+                            <div id="social_history_list" 
+                                data-dojo-type="dojox.layout.ContentPane"
+                            > 
+	                            This will list the social history 
+                            </div>
+
                           </div>
                           <!--  END OF PATIENTCONTEXTTABS5  -->
 
                           <!--  START OF PATIENTCONTEXTTABS6  -->
-                          <div  id              = "patientMedicationListTab"
+                          <div  id              = "patientMedicationListAndAllergiesTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Medications'"
+                                data-dojo-props = "title  : 'Medications & Allergies'"
                            >
-                              {% if perms.patient %}
+                              {% if perms.patient and perms.patient.add_patientmedicationlist %}
                               <button id              = "addPatientMedicationListButton" 
                                       type            = "button"
                                       data-dojo-props = "iconClass: 'dijitIconNewTask'"
@@ -433,7 +439,7 @@
                                 data-dojo-type  = "dojox/layout/ContentPane"
                                 data-dojo-props = "title  : 'Immunisations'"
                            >
-                              {% if perms.patient %}
+                              {% if perms.patient and perms.patient.add_patientimmunisation %}
                               <button id              = "addPatientImmunisationButton" 
                                       type            = "button"
                                       data-dojo-props = "iconClass: 'dijitIconNewTask'"
@@ -450,10 +456,10 @@
                           <!--  END OF PATIENTCONTEXTTABS8  -->
 
                           <!--  START OF PATIENTCONTEXTTABS8  -->
-                          <div  id              = "patientAdmissionTab"
+                          <div  id              = "patientAdmissionAndVisitsTab"
                                 class           = "patientContextTabs"
                                 data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title: 'Admission'"
+                                data-dojo-props = "title: 'Visits & Admissions'"
                           >
                             {% if perms.admission.add_admissiondetail %}
                             <button id              = "addAdmissionButton" 
@@ -463,19 +469,6 @@
                               Add
                             </button>
                             {% endif %}
-                            <div id="admission_list"
-                            > 
-                            </div>
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS8  -->
-
-
-                          <!--  START OF PATIENTCONTEXTTABS9  -->
-                          <div  id              = "patientVisitTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title          : 'Visits '"
-                           >
                             {% if perms.visit.add_visitdetail %}
                             <button id              = "addVisitButton" 
                                     type            = "button"
@@ -488,8 +481,13 @@
                             > 
                             This Page will list all the Clinic Visits
                             </div>
+
+                            <div id="admission_list"
+                            > 
+                            This Page will list all the Clinic Visits                            
+                            </div>
                           </div>
-                          <!--  END OF PATIENTCONTEXTTABS9  -->
+                          <!--  END OF PATIENTCONTEXTTABS8  -->
 
 
                           <!--  START OF PATIENTCONTEXTTABS10  -->

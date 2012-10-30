@@ -720,6 +720,24 @@ def demographics_json(request):
   except(PatientDetail.DoesNotExist):
     raise Http404("ERROR:: Patient requested does not exist.")
 
+
+@login_required
+def social_history_json(request):
+  try:
+    action                  = unicode(request.GET.get('action'))
+    id                      = int(request.GET.get('patient_id'))
+    if action == 'add':
+      return patient_social_history_add(request, id)
+    patient_detail_obj         = PatientDetail.objects.get(pk = id)
+    patient_social_history_obj   = PatientSocialHistory.objects.filter(patient_detail = patient_detail_obj)
+    json = generate_json_for_datagrid(patient_social_history_obj)
+    return HttpResponse(json, content_type = "application/json")
+#  except(AttributeError, NameError, TypeError, ValueError, KeyError):
+#    raise Http404("ERROR:: Bad request.Invalid arguments passed")
+  except(PatientDetail.DoesNotExist):
+    raise Http404("ERROR:: Patient requested does not exist.")
+
+
 @login_required
 def allergies_json(request):
   try:

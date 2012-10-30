@@ -158,6 +158,31 @@ urlpatterns = patterns('',
 ###########################################################################################
 
 
+    url(r'social_history/json/$',
+    		'patient.views.social_history_json',
+    		name = 'social_history_json'
+    ),
+
+#    url(r'social_history/list/(?P<id>\d+)/$',
+#    		'patient.social_history.patient_social_history_list',
+#    		name = 'patient_social_history_list'
+#    ),
+
+    url(r'social_history/add/(?P<id>\d+)/$',
+    		'patient.social_history.patient_social_history_add',
+   		  name = 'patient_social_history_add'
+    ),
+    url(r'social_history/edit/(?P<id>\d+)/$',
+    		'patient.social_history.patient_social_history_edit',
+    		name = 'patient_social_history_edit'
+    ),
+    url(r'social_history/del/(?P<id>\d+)/$',
+    		'patient.social_history.patient_social_history_del',
+    		name = 'patient_social_history_del'
+    ),
+
+###########################################################################################
+
     url(r'allergies/json/$',
     		'patient.views.allergies_json',
     		name = 'allergies_json'

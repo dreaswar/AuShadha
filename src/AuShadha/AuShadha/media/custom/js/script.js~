@@ -240,6 +240,7 @@ var            contactGrid;
                                            + patid,
 */
                             demographicsUrl = "/AuShadha/pat/demographics/add/" + patid +"/",
+                            socialHistoryUrl = "/AuShadha/pat/social_history/add/" + patid +"/",
 
                             allergiesUrl = "{%url allergies_json %}" + 
                                           "?patient_id=" 
@@ -281,11 +282,12 @@ var            contactGrid;
                          Set the Stores for Contacts, Phone, Guardian and admission 
                          data. 
                       */
-                       var contactStore       = new JsonRest({target:contactUrl});
-                       var phoneStore         = new JsonRest({target:phoneUrl});
-                       var guardianStore      = new JsonRest({target:guardianUrl});
-                       var demographicsStore  = new JsonRest({target:demographicsUrl});
-                       var allergiesStore     = new JsonRest({target:allergiesUrl});
+                       var contactStore           = new JsonRest({target:contactUrl});
+                       var phoneStore             = new JsonRest({target:phoneUrl});
+                       var guardianStore          = new JsonRest({target:guardianUrl});
+                       var demographicsStore      = new JsonRest({target:demographicsUrl});
+                       var socialHistoryStore     = new JsonRest({target:socialHistoryUrl});
+                       var allergiesStore         = new JsonRest({target:allergiesUrl});
                        var familyHistoryStore     = new JsonRest({target:familyHistoryUrl});
                        var immunisationStore      = new JsonRest({target:immunisationUrl});
                        var medicationListStore    = new JsonRest({target:medicationListUrl});
@@ -577,6 +579,7 @@ var            contactGrid;
                 allergyTable        = registry.byId("allergy_list"),
                 immunizationTable   = registry.byId("immunisation_list"),
                 familyHistoryTable   = registry.byId("family_history_list"),
+                socialHistoryTable   = registry.byId("social_history_list"),
                 medicationListTable   = registry.byId("medication_list"),
                 admissionTable      = registry.byId("admission_list"),
                 visitTable          = registry.byId("visit_list"),
@@ -661,12 +664,11 @@ var            contactGrid;
               familyHistoryTable.destroyRecursive();
               console.log("Recreating Family History tab");
               domConstruct.place("<div id='family_history_list' class='patientContextTabs'></div>",
-                                 "patientFamilyHistoryTab", 
-                                 'second'
+                                 "patientFamilyAndSocialHistoryTab", 
+                                 'third'
                                  );
               
             }
-
             if(patientMediaTable){
               patientMediaTable.destroyRecursive();
               console.log("Recreating Patient Media tab");
@@ -680,8 +682,8 @@ var            contactGrid;
               admissionTable.destroyRecursive();
               console.log("Recreating Admission tab");
               domConstruct.place("<div id='admission_list' class='patientContextTabs'></div>",
-                                 "patientAdmissionTab", 
-                                 'second'
+                                 "patientAdmissionAndVisitsTab", 
+                                 'third'
                                  );
               
             }
@@ -689,7 +691,7 @@ var            contactGrid;
               visitTable.destroyRecursive();
               console.log("Recreating Visit tab tab");
               domConstruct.place("<div id='visit_list' class='patientContextTabs'></div>",
-                                 "patientVisitTab", 
+                                 "patientAdmissionAndVisitsTab", 
                                  'second'
                                  );
             }
@@ -747,6 +749,7 @@ var            contactGrid;
 
 // Call the Demographics Form Method:
   dijit.byId("demographics_add_or_edit_form").set('href',demographicsUrl);
+//  dijit.byId("social_history_list").set('href',socialHistoryUrl);
   
    /*
    request(demographicsUrl,
@@ -1059,6 +1062,29 @@ var            contactGrid;
                                                  })
                                           }
                          }, "addPatientFamilyHistoryButton");
+
+	  var addPatientSocialHistoryButton =  new dijit.form.Button({
+                                          label: "Add Social History",
+                                          iconClass: "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    var gridRow    = grid.selection.getSelected();
+                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    xhr.get({
+                                                      url: "{%url social_history_json %}"+"?patient_id="+ id +"&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record New Social History Details");
+                                                                 myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         }, "addPatientSocialHistoryButton");
+
 //{% endif %}
 
 //{% if perms.patient %}

@@ -257,8 +257,8 @@
                                   left            : 0px;
 //                                  left          : 50px;
 //                                  top           : -25px;
-                                  width           : 600px;
-                                  overflow        : auto;
+//                                  width           : 600px;
+//                                  overflow        : auto;
                                   margin-left     : 0px; 
                                   padding-left    : 0px;"
                                id = "searchPatientContainerDiv"
@@ -385,20 +385,13 @@
                                 Add
                               </button>
                               {% endif %}
-                              {% if perms.patient %}
-                              <button id              = "addPatientSocialHistoryButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
 
                             <div id="family_history_list"
                             > 
   	                          This will list the family history 
                             </div>
-                            <div id="social_history_list"
+                            <div id            = "social_history_list" 
+                                 data-dojo-type="dojox.layout.ContentPane"
                             > 
 	                            This will list the social history 
                             </div>

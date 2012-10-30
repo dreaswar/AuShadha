@@ -240,6 +240,7 @@ var            contactGrid;
                                            + patid,
 */
                             demographicsUrl = "/AuShadha/pat/demographics/add/" + patid +"/",
+                            socialHistoryUrl = "/AuShadha/pat/social_history/add/" + patid +"/",
 
                             allergiesUrl = "{%url allergies_json %}" + 
                                           "?patient_id=" 
@@ -281,11 +282,12 @@ var            contactGrid;
                          Set the Stores for Contacts, Phone, Guardian and admission 
                          data. 
                       */
-                       var contactStore       = new JsonRest({target:contactUrl});
-                       var phoneStore         = new JsonRest({target:phoneUrl});
-                       var guardianStore      = new JsonRest({target:guardianUrl});
-                       var demographicsStore  = new JsonRest({target:demographicsUrl});
-                       var allergiesStore     = new JsonRest({target:allergiesUrl});
+                       var contactStore           = new JsonRest({target:contactUrl});
+                       var phoneStore             = new JsonRest({target:phoneUrl});
+                       var guardianStore          = new JsonRest({target:guardianUrl});
+                       var demographicsStore      = new JsonRest({target:demographicsUrl});
+                       var socialHistoryStore     = new JsonRest({target:socialHistoryUrl});
+                       var allergiesStore         = new JsonRest({target:allergiesUrl});
                        var familyHistoryStore     = new JsonRest({target:familyHistoryUrl});
                        var immunisationStore      = new JsonRest({target:immunisationUrl});
                        var medicationListStore    = new JsonRest({target:medicationListUrl});
@@ -577,6 +579,7 @@ var            contactGrid;
                 allergyTable        = registry.byId("allergy_list"),
                 immunizationTable   = registry.byId("immunisation_list"),
                 familyHistoryTable   = registry.byId("family_history_list"),
+                socialHistoryTable   = registry.byId("social_history_list"),
                 medicationListTable   = registry.byId("medication_list"),
                 admissionTable      = registry.byId("admission_list"),
                 visitTable          = registry.byId("visit_list"),
@@ -746,6 +749,7 @@ var            contactGrid;
 
 // Call the Demographics Form Method:
   dijit.byId("demographics_add_or_edit_form").set('href',demographicsUrl);
+  dijit.byId("social_history_list").set('href',socialHistoryUrl);
   
    /*
    request(demographicsUrl,
