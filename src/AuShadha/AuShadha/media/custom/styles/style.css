@@ -230,3 +230,7 @@
   padding       : 5px; 
   font-size     : 11px;
 }
+
+#social_history_form_table tr {
+  margin: 25px 0px 25px 0px;
+}

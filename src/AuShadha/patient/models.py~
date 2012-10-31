@@ -962,7 +962,7 @@ class PatientSocialHistory(AuShadhaBaseModel):
   """
 
   exercise_choices = (('sendentary', "Sedentary"), 
-                       ("active lifestyle", "Active, but no exercise"), 
+                       ("active lifestyle", "Active, but no Exercise"), 
                        ("minimal","Minimal"),('moderate','Moderate'), 
                        ('extreme',"Extreme")
                       )
@@ -983,27 +983,35 @@ class PatientSocialHistory(AuShadhaBaseModel):
 
   abuse_frequency = (('none',"None"),('former',"Former"),('everyday',"Everyday"),("periodic","Periodic"))
 
-  diet_choices = (('vegan',"Vegetarian"),('non_vegetarian',"Non-Vegetarian"),("junk","Junk"))
+  diet_choices = (
+                  ('well_balanced',"Well Balanced"),
+                  ('vegetarian',"Vegetarian"),
+                  ('jain',"Jain"),
+                  ('vegan',"Vegan"),
+                  ('non_vegetarian',"Non-Vegetarian"),
+                  ("junk","Junk"),
+                  ("others","Others")
+                 )
 
-  marital_status        = models.CharField(max_length = 250, choices=marital_status_choices)
+  marital_status        = models.CharField(max_length = 250, choices=marital_status_choices, default="Single")
   marital_status_notes  = models.CharField(max_length = 250, null=True, blank=True)
   occupation            = models.CharField(max_length = 100)
   occupation_notes      = models.CharField(max_length = 100, null=True, blank=True)
-  exercise              = models.CharField(max_length = 100, choices=exercise_choices)
+  exercise              = models.CharField(max_length = 100, choices=exercise_choices, default="Active but no Exercise")
   exercise_notes        = models.CharField(max_length = 100, null=True, blank=True)
-  diet                  = models.CharField(max_length = 100, choices=diet_choices)
+  diet                  = models.CharField(max_length = 100, choices=diet_choices, default="Well Balanced")
   diet_notes            = models.CharField(max_length = 100, null=True, blank=True)
   home_occupants        = models.CharField(max_length = 300)
   home_occupants_notes  = models.CharField(max_length = 100, null=True, blank=True)  
-  pets                  = models.CharField(max_length = 300)
+  pets                  = models.CharField(max_length = 300, default = "None")
   pets_notes            = models.CharField(max_length = 300, null=True, blank=True)
-  alcohol               = models.CharField(max_length = 250, choices=abuse_frequency)
+  alcohol               = models.CharField(max_length = 250, choices=abuse_frequency, default="None")
   alcohol_no            = models.CharField(max_length = 100, null=True, blank=True)
   alcohol_notes         = models.CharField(max_length = 250, null=True, blank=True)  
-  tobacco               = models.CharField(max_length = 250, choices=abuse_frequency)
+  tobacco               = models.CharField(max_length = 250, choices=abuse_frequency, default="None")
   tobacco_no            = models.CharField(max_length = 250, null=True, blank=True)
   tobacco_notes         = models.CharField(max_length = 250, null=True, blank=True)
-  drug_abuse            = models.CharField(max_length = 250, choices=abuse_frequency)
+  drug_abuse            = models.CharField(max_length = 250, choices=abuse_frequency, default="None")
   drug_abuse_notes      = models.CharField(max_length = 250, null=True, blank=True)
   sexual_preference     = models.CharField(max_length = 100, choices= sexual_preference_choices)
   sexual_preference_notes = models.CharField(max_length = 100, null=True, blank=True)
@@ -1060,7 +1068,7 @@ class PatientSocialHistoryForm(ModelForm):
                     {"field"         : 'occupation_notes',
 		                'max_length'    :  100         ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' :false,placeHolder:'Others '"
 		                },
                    {"field": 'exercise',
                    'max_length':100,
@@ -1070,7 +1078,7 @@ class PatientSocialHistoryForm(ModelForm):
                   {"field"         : 'exercise_notes',
 		                'max_length'    :  100         ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' :false,placeHolder:'Other Notes...'"
 		                },
                    {"field": 'diet',
                    'max_length':100,
@@ -1080,7 +1088,7 @@ class PatientSocialHistoryForm(ModelForm):
                   {"field"         : 'diet_notes',
 		                'max_length'    :  100         ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' :false,placeHolder:'Specify'"
 		                },
                    {"field": 'home_occupants',
                    'max_length':150,
@@ -1090,17 +1098,17 @@ class PatientSocialHistoryForm(ModelForm):
                   {"field"         : 'home_occupants_notes',
 		                'max_length'    :  100         ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' :false,placeHolder:'Other details ?'"
 		                },
                    {"field": 'pets',
                    'max_length':150,
-                   "data-dojo-type": "dijit.form.ValidationTextBox",
+                   "data-dojo-type": "dijit.form.MultiSelect",
 		                "data-dojo-props": r"'required' : 'true'"
                    },
                   {"field"         : 'pets_notes',
 		                'max_length'    :  100         ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' :false,placeHolder:'Notes'"
 		                },
                    {"field": 'alcohol',
                    'max_length':150,
@@ -1109,13 +1117,13 @@ class PatientSocialHistoryForm(ModelForm):
                    },
                   {"field"         : 'alcohol_no',
 		                'max_length'    :  3         ,
-		                "data-dojo-type": "dijit.form.FilteringSelect",
-		                "data-dojo-props": r"'required' :'false'"
+		                "data-dojo-type": "dijit.form.ComboBox",
+		                "data-dojo-props": r"'required' :false"
 		                },
                   {"field"         : 'alcohol_notes',
 		                'max_length'    :  100         ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' :false,placeHolder:'Any Other Notes...'"
 		                },
                    {"field": 'tobacco',
                    'max_length':150,
@@ -1123,14 +1131,14 @@ class PatientSocialHistoryForm(ModelForm):
 		                "data-dojo-props": r"'required' : 'true'"
                    },
                   {"field"         : 'tobacco_no',
-		                'max_length'    :  3         ,
-		                "data-dojo-type": "dijit.form.FilteringSelect",
-		                "data-dojo-props": r"'required' :'false'"
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.ComboBox",
+		                "data-dojo-props": r"'required' :false"
 		                },
                   {"field"         : 'tobacco_notes',
 		                'max_length'    :  200         ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' :false,placeHolder:'Any Other Notes...'"
 		                },
                    {"field": 'drug_abuse',
                    'max_length':100,
@@ -1140,7 +1148,7 @@ class PatientSocialHistoryForm(ModelForm):
                    {"field": 'drug_abuse_notes',
                    'max_length':150,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' : false,placeHolder:'Details..'"
                    },
                    {"field": 'sexual_preference',
                    'max_length':100,
@@ -1150,12 +1158,12 @@ class PatientSocialHistoryForm(ModelForm):
                    {"field": 'sexual_preference_notes',
                    'max_length':250,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' : false,placeHolder:'Other details'"
                    },
                    {"field": 'current_events',
                    'max_length':250,
                    "data-dojo-type": "dijit.form.Textarea",
-		                "data-dojo-props": r"'required' : 'false',placeHolder:'Notes about specific events in family that has bearing on treatment'"
+		                "data-dojo-props": r"'required' : false,placeHolder:'Notes about specific events in family that has bearing on treatment'"
                    }
 	        ]
 		for field in text_fields:

@@ -196,7 +196,7 @@
 
 #patientContextPane{
   height: 600px;
-  min-width : 700px;
+//  min-width : 700px;
   overflow:auto;
 }
 
@@ -229,4 +229,8 @@
   border-bottom:solid 1pt #759DC0; 
   padding       : 5px; 
   font-size     : 11px;
+}
+
+#social_history_form_table tr {
+  margin: 15px 0px 15px 0px;
 }
