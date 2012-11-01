@@ -12,56 +12,120 @@
                 "dijit/form/ComboBox",
                 "dijit/form/FilteringSelect",
                 "dijit/form/MultiSelect",
-                "dojo/dom","dojo/_base/window"
+                "dojo/dom","dojo/_base/window",
+                "dojo/dom-construct","dojo/dom-style"
       ],
-      function(registry,Memory,ready,ComboBox, FilteringSelect,MultiSelect,dom,win){
+      function(registry,Memory,ready,ComboBox, FilteringSelect, MultiSelect,dom,win, domConstruct, domStyle){
         ready( function(){
 
-          registerOccupation();
-          registerHomeOccupants();
-          registerPets();
 
+//          init(); /* Intialize everything */
+
+          /* Set Variables */
           var tobacco_abuse_frequency = []
           var alcohol_abuse_frequency = []
           var interval_list = ['per day', 'per week', 'per month','per year'];
 
-            function constructAbuseFrequencyList(l /*List to Update*/,u /* Units */ ){
-              for(var i=0; i<50; i++){
-                for(var q=0; q<interval_list.length; q++){
-                  var array_to_append ={}
-                  array_to_append['id'] = i.toString()+"_" + interval_list[q].replace(" ","_");
-                  array_to_append['name'] = i.toString()+ " " + u.toString() +" " + interval_list[q];
-                  l.push(array_to_append);
+          /* Call Functions */
+          registerOccupation();
+          registerHomeOccupants();
+          registerPets();
+
+          constructAbuseFrequencyList(alcohol_abuse_frequency, "ml");
+          var alcoholAbuseStore = new Memory({data:alcohol_abuse_frequency})
+          createAbuseWidget('id_alcohol_no',alcoholAbuseStore,"alcohol_no");
+
+          constructAbuseFrequencyList(tobacco_abuse_frequency, "Cigarettes");
+          var tobaccoAbuseStore = new Memory({data:tobacco_abuse_frequency})
+          createAbuseWidget('id_tobacco_no',tobaccoAbuseStore,"tobacco_no");
+
+          AlcoholAndTobaccoWidgetEvents();
+
+          function AlcoholAndTobaccoWidgetEvents(){
+          /* Assign onBlur events to ComboBoxes*/
+            var alcoholCb    = registry.byId("id_alcohol");
+            var alcohol_noCb = registry.byId("id_alcohol_no");
+            var tobaccoCb    = registry.byId("id_tobacco");
+            var tobacco_noCb = registry.byId("id_tobacco_no");
+
+            function onChangeOrBlurDo(/*Widget*/w, /* Widge to update*/ n){
+                var cbVal = w.get('value');
+                if(cbVal == "none"){
+                  n.set('value',"");
+                  n.set('disabled',true);
                 }
+                else{
+                   n.set('disabled',false);
+                }
+            }
+
+            alcoholCb.onChange = function(){
+              onChangeOrBlurDo(alcoholCb,alcohol_noCb);
+            }
+            alcoholCb.onBlur = function(){
+              onChangeOrBlurDo(alcoholCb,alcohol_noCb);
+            }
+            tobaccoCb.onChange = function() {
+              onChangeOrBlurDo(tobaccoCb,tobacco_noCb);
+            }
+            tobaccoCb.onBlur = function(){
+              onChangeOrBlurDo(tobaccoCb,tobacco_noCb);
+            }
+
+          }
+
+          /* Set Functions */
+
+          function constructAbuseFrequencyList(l /*List to Update*/,u /* Units */ ){
+            for(var i=1; i<500; i++){
+              for(var q=0; q<interval_list.length; q++){
+                var array_to_append ={}
+                array_to_append['id'] = i.toString()+"_" + interval_list[q].replace(" ","_");
+                array_to_append['name'] = i.toString()+ " " + u.toString() +" " + interval_list[q];
+                l.push(array_to_append);
               }
             }
+          }
 
           function createAbuseWidget(dId/*domId of the widget */,sV /*Store*/, wN /*widgets name attribute*/){
             var wid   = dId.toString()
             var wname = wN.toString()
-            console.log(wid);
-            console.log(wname);
-            registry.byId(wid).destroy(true);
+            var span_id = wid +"_span"
+            console.log("Trying to create a widge with ID:" + wid);
+            console.log("Trying to create a widge with Name:" + wname);
+            registry.byId(wid).destroyRecursive();
             console.log("Destroyed the Tobacco/Alcohol Widget..")
-            console.log(sV)
-            var w = new FilteringSelect({
+            console.log("Checking for presence of destroyed node:" + dom.byId(wid))
+            var spanNode = dom.byId(span_id);
+            console.log(spanNode)
+            var newNode = domConstruct.create("select",{id:wid,name:wname},spanNode)
+            console.log("Checking New node:" + newNode);
+            var w = new ComboBox({
                                 name          : wname,
                                 store         : sV,
                                 searchAttr    : "name",
+                                onBlur        : function(){
+                                                  /* Define the onBlur Event to check for invalid values */
+                                                  if(wid=='id_alcohol_no'){
+                                                    var nodeIdVal = registry.byId('id_alcohol').get('value');
+                                                     if(nodeIdVal == "none"){
+                                                       this.set('value',"");
+                                                    }
+                                                  }
+                                                  if(wid=='id_tobacco_no'){
+                                                    var nodeIdVal = registry.byId('id_tobacco').get('value');
+                                                    if(nodeIdVal == "none"){
+                                                      this.set('value',"");
+                                                    }
+                                                  }
+                                                }
                                 }, 
                                 wid);
             w.startup();
+            console.log(w)
             console.log("Created the Tobacco/Alcohol Widget..")
           }
 
-          constructAbuseFrequencyList(tobacco_abuse_frequency, "Cigarettes");
-          constructAbuseFrequencyList(alcohol_abuse_frequency, "ml");
-
-          var tobaccoAbuseStore = new Memory({data:tobacco_abuse_frequency})
-          var alcoholAbuseStore = new Memory({data:alcohol_abuse_frequency})
-
-          createAbuseWidget('id_alcohol_no',alcoholAbuseStore,"alcohol_no");
-          createAbuseWidget('id_tobacco_no',tobaccoAbuseStore,"tobacco_no");
 
           function alertConflict(){
               var conflicting_choices = "Please remove conflicing choices";
@@ -266,7 +330,8 @@
   <tr>
       <th><label for="id_alcohol"> Alcohol</label>
        <td>   {{ patient_social_history_form.alcohol }}
-              <span style="color:navy; font-style:italics;">&nbsp;&nbsp;# 
+              <span id="id_alcohol_no_span" style="color:navy; font-style:italics;">
+              &nbsp;&nbsp;# 
               {{patient_social_history_form.alcohol_no}}
               &nbsp;
               </span>
@@ -276,7 +341,8 @@
   <tr>
       <th>  <label for="id_smoking"> Smoking</label> </th>
        <td> {{ patient_social_history_form.tobacco }} 
-            <span style="color:navy; font-style:italics;">&nbsp;&nbsp;# 
+            <span id="id_tobacco_no_span"style="color:navy; font-style:italics;">
+            &nbsp;&nbsp;# 
             {{patient_social_history_form.tobacco_no}}
             &nbsp;
             </span>

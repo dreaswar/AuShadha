@@ -83,10 +83,10 @@ def patient_social_history_add(request, id):
           patient_social_history_obj   = PatientSocialHistory(patient_detail = patient_detail_obj)
           patient_social_history_form  = PatientSocialHistoryForm(instance = patient_social_history_obj)
           variable                        = RequestContext(request, 
-                                          {"user" 									       :	user,
-                                          "patient_detail_obj"			       :	patient_detail_obj ,
-                                          "patient_social_history_form"  :	patient_social_history_form, 
-                                          "patient_social_history_obj"  :	patient_social_history_obj ,
+                                          {"user" 									      :	user,
+                                          "patient_detail_obj"			      :	patient_detail_obj ,
+                                          "patient_social_history_form"   :	patient_social_history_form, 
+                                          "patient_social_history_obj"    :	patient_social_history_obj ,
                                           'button_label'                  :  "Add",
                                           "action"                        : patient_detail_obj.get_patient_social_history_add_url(),
                                           "addUrl"                        : patient_detail_obj.get_patient_social_history_add_url(),
@@ -117,12 +117,13 @@ def patient_social_history_add(request, id):
                      'form_errors'  : form_errors,
                      'canDel'       : True,
                      'addUrl'       : None,
+                     "savedObj"          : social_history_obj,
                      'editUrl'      : social_history_obj.get_edit_url(),
                      'delUrl'       : social_history_obj.get_del_url(),
                    }
             json = simplejson.dumps(data)
             return HttpResponse(json, content_type = 'application/json')
-          except (SocialHistoryExistsError):
+          except (Exception("SocialHistoryExistsError")):
             success       = False
             error_message = "SocialHistory Data Already Exists ! Cannot add more.."
             form_errors   = ''
@@ -193,7 +194,8 @@ def patient_social_history_edit(request, id):
           form_errors   = ''
           data = { 'success'      : success, 
                    'error_message': error_message,
-                   'form_errors'  : form_errors
+                   'form_errors'  : form_errors,
+                   "savedObj"          : social_history_obj
                  }
 #          data             = generate_json_for_datagrid(social_history_obj)
           json              = simplejson.dumps(data)
