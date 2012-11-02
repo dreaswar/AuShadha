@@ -93,7 +93,7 @@
 	#visit_list
 {
    min-height : 230px;
-   max-height : 230px;
+//   max-height : 230px;
 //   overflow   :auto;
 	margin-top: 5px;
 	}
@@ -232,5 +232,5 @@
 }
 
 #social_history_form_table tr {
-  margin: 15px 0px 15px 0px;
+  margin: 25px 0px 25px 0px;
 }

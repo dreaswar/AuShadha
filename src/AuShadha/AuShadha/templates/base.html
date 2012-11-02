@@ -323,171 +323,296 @@
                                   Add
                                 </button>
                                 {% endif %}
-                                {% if perms.patient.add_patientguardian %}
-                                <button id              = "addGuardianButton" 
-                                        type            = "button"
-                                        data-dojo-props = "iconClass: 'dijitIconNewTask'"> 
-                                    Add
-                                </button>
-                                {% endif %}
                                 <div id     = "contact_list" 
                                 > 
                                 </div>
                                 <div id="phone_list"
                                 > 
                                 </div>
-                                <div id="guardian_list"
-                                > 
-                                </div>
                           </div>
                           <!--  END OF PATIENTCONTEXTTABS3  -->
 
-                          <!--  START OF PATIENTCONTEXTTABS4  -->
-                          <div  id              = "patientDemographicsTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title          : 'Demographics'"
-                           >
-                            {% if perms.patient%}
-<!--
-                            <button id              = "addDemographicsButton" 
+
+                        <!--  START OF patientHistoryTab  -->
+                        <div  id              = "patientHistoryTab"
+                              class           = "patientContextTabs"
+                              data-dojo-type  = "dojox/layout/ContentPane"
+                              data-dojo-props = "title  : 'History'"
+                         >
+
+                            <div id              = "patientHistoryTabs"
+                                 class           = "patientContextTabContainer"
+                                 data-dojo-type  = "dijit/layout/TabContainer"
+                                 data-dojo-props = "tabPosition:'top'"
+                                 style           = "height: 500px;"
+                            >
+
+                                {% if perms.patient%}
+                                <div  id              = "patientDemographicsTab"
+                                      class           = "patientContextTabs"
+                                      data-dojo-type  = "dojox/layout/ContentPane"
+                                      data-dojo-props = "title : 'Demographics'"
+                                 >
+
+                                  <div id             ="demographics_add_or_edit_form"
+                                       data-dojo-type="dojox/layout/ContentPane"
+                                  > 
+	                                  This will list the Demographics Details
+                                  </div>
+                                  <fieldset>
+                                    {% if perms.patient.add_patientguardian %}
+                                      <button id              = "addGuardianButton" 
+                                              type            = "button"
+                                              data-dojo-props = "iconClass: 'dijitIconNewTask'"> 
+                                          Add
+                                      </button>
+                                    {% endif %}
+                                    <div id="guardian_list"
+                                    > 
+                                      Guardian, Kith & Kin Contact Details will be listed here. 
+                                    </div>
+                                   </fieldset>
+                                </div>
+                               {% endif %}
+
+                                <div id               = "patientSocialHistoryTab" 
+                                      class           = "patientContextTabs"
+                                     data-dojo-type   ="dojox/layout/ContentPane"
+                                      data-dojo-props = "title  : 'Social'"
+                                > 
+                                  This will list the Social history of the Patient
+                                </div>
+
+                                <div  id              = "patientFamilyHistoryTab"
+                                      class           = "patientContextTabs"
+                                      data-dojo-type  = "dojox/layout/ContentPane"
+                                      data-dojo-props = "title  : 'Family'"
+                                 >
+                                    {% if perms.patient.add_patientfamilyhistory %}
+                                      <button id              = "addPatientFamilyHistoryButton" 
+                                              type            = "button"
+                                              data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                                      > 
+                                        Add
+                                      </button>
+                                    {% endif %}
+                                  <div id="family_history_list"
+                                  > 
+        	                          This will list the Family history of the patient
+                                  </div>
+                               </div>
+
+                               <div  id               = "patientMedicalAndSurgicalHistoryTab"
+                                      class           = "patientContextTabs"
+                                      data-dojo-type  = "dojox/layout/ContentPane"
+                                      data-dojo-props = "title  : 'Medical & Surgical'"
+                                 >
+                                    {% if perms.patient.add_patientfamilyhistory %}
+                                      <button id              = "addPatientMedicalAndSurgicalHistoryButton" 
+                                              type            = "button"
+                                              data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                                      > 
+                                        Add
+                                      </button>
+                                    {% endif %}
+                                  <div id="medical_and_surgical_history_list"
+                                  > 
+        	                          This will list the Past Medical / Surgical history of the patient
+                                  </div>
+                               </div>
+
+                          </div>
+                        </div>
+                        <!--  END OF patientHistoryTab  -->
+
+                        <!--  START OF patientPreventiveHealthTab  -->
+                        <div  id              = "patientPreventiveHealthTab"
+                              class           = "patientContextTabs"
+                              data-dojo-type  = "dojox/layout/ContentPane"
+                              data-dojo-props = "title  : 'Preventive Health'"
+                         >
+                            <div id              = "patientPreventivesTabs"
+                                 class           = "patientContextTabContainer"
+                                 data-dojo-type  = "dijit/layout/TabContainer"
+                                 data-dojo-props = "tabPosition:'top'"
+                                 style           = "height: 500px;"
+                            >
+                              <div  id              = "patientNeonatalAndPaediatricExamTab"
+                                    class           = "patientContextTabs"
+                                    data-dojo-type  = "dojox/layout/ContentPane"
+                                    data-dojo-props = "title  : 'Neonatal & Paediatric'"
+                               >
+                                  {% if perms.patient and perms.patient.add_patientimmunisation %}
+                                  <button id              = "addPatientNeonatalAndPaediatricExamButton" 
+                                          type            = "button"
+                                          data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                                  > 
+                                    Add
+                                  </button>
+                                  {% endif %}
+                                <div id="neonatal_and_paediatric_exam_list"
+                                > 
+                                  This will list the Neonatal & Paediatric Routine Preventive Exams list.
+                                </div>
+                              </div>
+
+                              <div  id              = "patientImmunisationTab"
+                                    class           = "patientContextTabs"
+                                    data-dojo-type  = "dojox/layout/ContentPane"
+                                    data-dojo-props = "title  : 'Immunisations'"
+                               >
+                                  {% if perms.patient and perms.patient.add_patientimmunisation %}
+                                  <button id              = "addPatientImmunisationButton" 
+                                          type            = "button"
+                                          data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                                  > 
+                                    Add
+                                  </button>
+                                  {% endif %}
+
+                                <div id="immunisation_list"
+                                > 
+                                This will list the immunization history 
+                                </div>
+                              </div>
+
+
+                              <div  id              = "patientObstetricsPreventivesTab"
+                                    class           = "patientContextTabs"
+                                    data-dojo-type  = "dojox/layout/ContentPane"
+                                    data-dojo-props = "title  : 'Obstetrics'"
+                               >
+                                  {% if perms.patient and perms.patient.add_patientimmunisation %}
+                                  <button id              = "addPatientObstetricsPreventivesButton" 
+                                          type            = "button"
+                                          data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                                  > 
+                                    Add
+                                  </button>
+                                  {% endif %}
+
+                                <div id="obstetrics_preventives_list"
+                                > 
+                                This will list the Obstetric exams like antenatal, post-natal exams etc..
+                                </div>
+                              </div>
+
+                              <div  id              = "patientGynaecologyPreventivesTab"
+                                    class           = "patientContextTabs"
+                                    data-dojo-type  = "dojox/layout/ContentPane"
+                                    data-dojo-props = "title  : 'Gynaecology'"
+                               >
+                                  {% if perms.patient and perms.patient.add_patientimmunisation %}
+                                  <button id              = "addPatientGynaecologyPreventivesButton" 
+                                          type            = "button"
+                                          data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                                  > 
+                                    Add
+                                  </button>
+                                  {% endif %}
+
+                                <div id="gynaecology_preventives_list"
+                                > 
+                                This will list the Gynaecological Preventive exams like mammograms, pap smear etc..
+                                </div>
+                              </div>
+
+
+                              <div  id              = "patientMedicalPreventivesTab"
+                                    class           = "patientContextTabs"
+                                    data-dojo-type  = "dojox/layout/ContentPane"
+                                    data-dojo-props = "title  : 'Medical'"
+                               >
+                                  {% if perms.patient and perms.patient.add_patientimmunisation %}
+                                  <button id              = "addPatientMedicalPreventivesButton" 
+                                          type            = "button"
+                                          data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                                  > 
+                                    Add
+                                  </button>
+                                  {% endif %}
+
+                                <div id="medical_preventives_list"
+                                > 
+                                This will list the Medical Preventive Exams like  - TMT, Colonoscopy etc..
+                                </div>
+                              </div>
+
+                            </div>
+                        </div>
+                        <!--  END OF patientPreventiveHealthTab  -->
+
+
+
+                        <!--  START OF patientMedicationListAndAllergiesTab  -->
+                        <div  id              = "patientMedicationListAndAllergiesTab"
+                              class           = "patientContextTabs"
+                              data-dojo-type  = "dojox/layout/ContentPane"
+                              data-dojo-props = "title  : 'Medications & Allergies'"
+                         >
+                            {% if perms.patient and perms.patient.add_patientmedicationlist %}
+                            <button id              = "addPatientMedicationListButton" 
                                     type            = "button"
                                     data-dojo-props = "iconClass: 'dijitIconNewTask'"
                             > 
                               Add
                             </button>
-
-                            <div id="demographics_list"
-                            > 
-                             This will be filled with Demographics Info.
-                            </div>
--->
-
-                            <div id             ="demographics_add_or_edit_form"
-                                 data-dojo-type="dojox/layout/ContentPane"
-                            > 
-                            </div>
                             {% endif %}
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS4  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS5  -->
-                          <div  id              = "patientFamilyAndSocialHistoryTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Family & Social History'"
-                           >
-                              {% if perms.patient %}
-                              <button id              = "addPatientFamilyHistoryButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
-
-                            <div id="family_history_list"
-                            > 
-  	                          This will list the family history 
-                            </div>
-                            <div id            = "social_history_list" 
-                                 data-dojo-type="dojox.layout.ContentPane"
-                            > 
-	                            This will list the social history 
-                            </div>
-
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS5  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS6  -->
-                          <div  id              = "patientMedicationListAndAllergiesTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Medications & Allergies'"
-                           >
-                              {% if perms.patient and perms.patient.add_patientmedicationlist %}
-                              <button id              = "addPatientMedicationListButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
-                              {% if perms.patient and perms.patient.add_patientallergies %}
-                              <button id              = "addAllergyButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
-
-                            <div id="medication_list"
-                            > 
-                            This will list the Medication List 
-                            </div>
-                            <div id="allergy_list"
-                            > 
-                            This will list Allergies the patient has
-                            </div>
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS6 -->
-
-                          <!--  START OF PATIENTCONTEXTTABS8  -->
-                          <div  id              = "patientImmunisationTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Immunisations'"
-                           >
-                              {% if perms.patient and perms.patient.add_patientimmunisation %}
-                              <button id              = "addPatientImmunisationButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
-
-                            <div id="immunisation_list"
-                            > 
-                            This will list the immunization history 
-                            </div>
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS8  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS8  -->
-                          <div  id              = "patientAdmissionAndVisitsTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title: 'Visits & Admissions'"
-                          >
-                            {% if perms.admission.add_admissiondetail %}
-                            <button id              = "addAdmissionButton" 
+                            {% if perms.patient and perms.patient.add_patientallergies %}
+                            <button id              = "addAllergyButton" 
                                     type            = "button"
                                     data-dojo-props = "iconClass: 'dijitIconNewTask'"
                             > 
                               Add
                             </button>
                             {% endif %}
-                            {% if perms.visit.add_visitdetail %}
-                            <button id              = "addVisitButton" 
-                                    type            = "button"
-                                    data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                            > 
-                              Add
-                            </button>
-                            {% endif %}
-                            <div id="visit_list"
-                            > 
-                            This Page will list all the Clinic Visits
-                            </div>
 
-                            <div id="admission_list"
-                            > 
-                            This Page will list all the Clinic Visits                            
-                            </div>
+                          <div id="medication_list"
+                          > 
+                          This will list the Medication List 
                           </div>
-                          <!--  END OF PATIENTCONTEXTTABS8  -->
+                          <div id="allergy_list"
+                          > 
+                          This will list Allergies the patient has
+                          </div>
+                        </div>
+                        <!--  END OF patientMedicationListAndAllergiesTab  -->
+
+
+
+                        <!--  START OF PATIENTCONTEXTTABS8  -->
+                        <div  id              = "patientAdmissionAndVisitsTab"
+                              class           = "patientContextTabs"
+                              data-dojo-type  = "dojox/layout/ContentPane"
+                              data-dojo-props = "title: 'Visits & Admissions'"
+                        >
+                          {% if perms.admission.add_admissiondetail %}
+                          <button id              = "addAdmissionButton" 
+                                  type            = "button"
+                                  data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                          > 
+                            Add
+                          </button>
+                          {% endif %}
+                          {% if perms.visit.add_visitdetail %}
+                          <button id              = "addVisitButton" 
+                                  type            = "button"
+                                  data-dojo-props = "iconClass: 'dijitIconNewTask'"
+                          > 
+                            Add
+                          </button>
+                          {% endif %}
+                          <div id="visit_list"
+                          > 
+                          This Page will list all the Clinic Visits
+                          </div>
+
+                          <div id="admission_list"
+                          > 
+                          This Page will list all the Admissions
+                          </div>
+                        </div>
+                        <!--  END OF PATIENTCONTEXTTABS8  -->
 
 
                           <!--  START OF PATIENTCONTEXTTABS10  -->

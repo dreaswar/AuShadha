@@ -6,24 +6,27 @@
      method         = "">
 
   <script type="dojo/method">
-      require(["dijit/registry", 
+      require( ["dijit/registry", 
                 "dojo/store/Memory",
                 "dojo/ready", 
+
                 "dijit/form/ComboBox",
                 "dijit/form/FilteringSelect",
                 "dijit/form/MultiSelect",
+
                 "dojo/dom","dojo/_base/window",
-                "dojo/dom-construct","dojo/dom-style"
+                "dojo/dom-construct","dojo/dom-style",
+                "dojo/parser"
       ],
-      function(registry,Memory,ready,ComboBox, FilteringSelect, MultiSelect,dom,win, domConstruct, domStyle){
-        ready( function(){
-
-
-//          init(); /* Intialize everything */
+      function(registry,Memory,ready,ComboBox, FilteringSelect, 
+               MultiSelect,dom,win, domConstruct, domStyle, parser
+              )
+      {
+        ready( function(){ 
 
           /* Set Variables */
-          var tobacco_abuse_frequency = []
-          var alcohol_abuse_frequency = []
+          var tobacco_abuse_frequency = [];
+          var alcohol_abuse_frequency = [];
           var interval_list = ['per day', 'per week', 'per month','per year'];
 
           /* Call Functions */
@@ -32,22 +35,25 @@
           registerPets();
 
           constructAbuseFrequencyList(alcohol_abuse_frequency, "ml");
-          var alcoholAbuseStore = new Memory({data:alcohol_abuse_frequency})
+          var alcoholAbuseStore = new Memory({data:alcohol_abuse_frequency});
           createAbuseWidget('id_alcohol_no',alcoholAbuseStore,"alcohol_no");
 
           constructAbuseFrequencyList(tobacco_abuse_frequency, "Cigarettes");
-          var tobaccoAbuseStore = new Memory({data:tobacco_abuse_frequency})
+          var tobaccoAbuseStore = new Memory({data:tobacco_abuse_frequency});
           createAbuseWidget('id_tobacco_no',tobaccoAbuseStore,"tobacco_no");
 
-          AlcoholAndTobaccoWidgetEvents();
+          AlcoholAndTobaccoWidgetEvents('id_alcohol','id_alcohol_no');
+          AlcoholAndTobaccoWidgetEvents('id_tobacco','id_tobacco_no');
 
-          function AlcoholAndTobaccoWidgetEvents(){
+          function AlcoholAndTobaccoWidgetEvents(/*widget id| String*/wi, /*node id to change | String */ no){
           /* Assign onBlur events to ComboBoxes*/
-            var alcoholCb    = registry.byId("id_alcohol");
-            var alcohol_noCb = registry.byId("id_alcohol_no");
-            var tobaccoCb    = registry.byId("id_tobacco");
-            var tobacco_noCb = registry.byId("id_tobacco_no");
-
+            console.log("trying to assign onBlur and onChange event to widget with ID:" + wi)
+            var Cb    = registry.byId(wi.toString());
+            console.log("widget with ID:" + wi)
+            console.log(Cb)
+            var noCb  = registry.byId(no.toString());
+            console.log("widget with ID:" + no)
+            console.log(noCb)
             function onChangeOrBlurDo(/*Widget*/w, /* Widge to update*/ n){
                 var cbVal = w.get('value');
                 if(cbVal == "none"){
@@ -58,18 +64,11 @@
                    n.set('disabled',false);
                 }
             }
-
-            alcoholCb.onChange = function(){
-              onChangeOrBlurDo(alcoholCb,alcohol_noCb);
+            Cb.onChange = function(){
+              onChangeOrBlurDo(Cb,noCb);
             }
-            alcoholCb.onBlur = function(){
-              onChangeOrBlurDo(alcoholCb,alcohol_noCb);
-            }
-            tobaccoCb.onChange = function() {
-              onChangeOrBlurDo(tobaccoCb,tobacco_noCb);
-            }
-            tobaccoCb.onBlur = function(){
-              onChangeOrBlurDo(tobaccoCb,tobacco_noCb);
+            Cb.onBlur = function(){
+              onChangeOrBlurDo(Cb,noCb);
             }
 
           }
@@ -91,13 +90,16 @@
             var wid   = dId.toString()
             var wname = wN.toString()
             var span_id = wid +"_span"
-            console.log("Trying to create a widge with ID:" + wid);
-            console.log("Trying to create a widge with Name:" + wname);
-            registry.byId(wid).destroyRecursive();
-            console.log("Destroyed the Tobacco/Alcohol Widget..")
-            console.log("Checking for presence of destroyed node:" + dom.byId(wid))
             var spanNode = dom.byId(span_id);
             console.log(spanNode)
+            console.log("Trying to create a widge with ID:" + wid);
+            console.log("Trying to create a widge with Name:" + wname);
+            var widget = registry.byId(wid); 
+            if (widget){
+              widget.destroyRecursive();
+              console.log("Destroyed the Tobacco/Alcohol Widget..");
+              console.log("Checking for presence of destroyed node:" + dom.byId(wid))
+            }
             var newNode = domConstruct.create("select",{id:wid,name:wname},spanNode)
             console.log("Checking New node:" + newNode);
             var w = new ComboBox({
@@ -247,9 +249,9 @@
             pets_widget.startup();
             console.log("Widget recreated..");
           }
-
         });
       });
+
   </script>
 
   <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
@@ -267,8 +269,18 @@
               var jsondata = JSON.parse(json);
               if (jsondata.success == true){
                 if (jsondata.editUrl){
-                  registry.byId("social_history_list").set('href', jsondata.editUrl);
+                  registry.byId("patientSocialHistoryTab").set('href', jsondata.editUrl);
                 }
+                registry.byId('id_marital_status').set('value',jsondata.savedObj.marital_status);
+                registry.byId('id_marital_status_notes').set('value',jsondata.savedObj.marital_status_notes);
+                registry.byId('id_occupation').set('value',jsondata.savedObj.marital_status);
+                registry.byId('id_occupation_notes').set('value',jsondata.savedObj.occupation_notes);
+                registry.byId('id_exercise').set('value',jsondata.savedObj.exercise);
+                registry.byId('id_exercise_notes').set('value',jsondata.savedObj.exercise_notes);
+                registry.byId('id_diet').set('value',jsondata.savedObj.diet);
+                registry.byId('id_diet_notes').set('value',jsondata.savedObj.diet_notes);
+                registry.byId('id_home_occupants').set('value',jsondata.savedObj.home_occupants.split(','));
+                registry.byId('id_home_occupants_notes').set('value',jsondata.savedObj.home_occupants_notes);
               }
             },
             function(json){
@@ -398,7 +410,7 @@
             function(json){
               var jsondata = JSON.parse(json);
               if(jsondata.success == true){
-                registry.byId("social_history_add_or_edit_form").set('href', jsondata.addUrl);
+                registry.byId("patientSocialHistoryTab").set('href', jsondata.addUrl);
               }
               else{
                 dom.byId("patientSocialHistoryFormJsonMessage").innerHTML = jsondata.error_message;

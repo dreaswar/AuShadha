@@ -1117,7 +1117,7 @@ class PatientSocialHistoryForm(ModelForm):
                    },
                   {"field"         : 'alcohol_no',
 		                'max_length'    :  ""         ,
-		                "data-dojo-type": "dijit.form.ComboBox",
+		                "data-dojo-type": "dijit.form.Select",
 		                "data-dojo-props": r"'required' :false"
 		                },
                   {"field"         : 'alcohol_notes',
@@ -1132,7 +1132,7 @@ class PatientSocialHistoryForm(ModelForm):
                    },
                   {"field"         : 'tobacco_no',
 		                'max_length'    :  ""         ,
-		                "data-dojo-type": "dijit.form.ComboBox",
+		                "data-dojo-type": "dijit.form.Select",
 		                "data-dojo-props": r"'required' :false"
 		                },
                   {"field"         : 'tobacco_notes',
@@ -1183,17 +1183,17 @@ class PatientImmunisationForm(ModelForm):
 		text_fields = [{"field"         : 'vaccine_name',
 		                'max_length'    :  30         ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'true' ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
+		                "data-dojo-props": r"'required' :true ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
 		                },
 		               {"field": 'vaccination_date',
 		                'max_length'    :  30         ,
 		               "data-dojo-type": "dijit.form.DateTextBox",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
 		               },
                    {"field": 'adverse_reaction',
                    'max_length':150,
                    "data-dojo-type": "dijit.form.Textarea",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
                    }
 	        ]
 		for field in text_fields:
@@ -1261,12 +1261,12 @@ class PatientFamilyHistoryForm(ModelForm):
 		               {"field": 'disease',
 		                'max_length'    :  150         ,
 		               "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : false ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
 		               },
                    {"field": 'age_at_onset',
                    'max_length':30,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : false ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
                    },
                    {"field": 'deceased',
                    'max_length':2,
@@ -1276,7 +1276,7 @@ class PatientFamilyHistoryForm(ModelForm):
                    {"field": 'age',
                    'max_length':30,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : false ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
                    }
 	        ]
 		for field in text_fields:
@@ -1296,12 +1296,12 @@ class PatientAllergiesForm(ModelForm):
 		text_fields = [{"field"         : 'allergic_to',
 		                'max_length'    :  100        ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'true' ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
+		                "data-dojo-props": r"'required' :true ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
 		                },
 		               {"field": 'reaction_observed',
 		                'max_length'    :  100         ,
 		               "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : 'true' "
+		                "data-dojo-props": r"'required' : true "
 		               }
 	        ]
 		for field in text_fields:
@@ -1487,44 +1487,44 @@ class PatientDemographicsDataForm(ModelForm):
 		text_fields = [{"field"         : 'date_of_birth',
 		                'max_length'    :  30         ,
 		                "data-dojo-type": "dijit.form.DateTextBox",
-		                "data-dojo-props": r"'required' :'true' ,'regExp':'','invalidMessage':'Invalid Character' "
+		                "data-dojo-props": r"'required' :true ,'regExp':'','invalidMessage':'Invalid Character' "
 		                },
 		               {"field": 'socioeconomics',
 		                'max_length'    :  30         ,
 		               "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
 		               },
                    {"field": 'education',
                    'max_length':30,
                    "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
                    },
                    {"field": 'housing_conditions',
 		                'max_length'    :  100         ,
                    "data-dojo-type": "dijit.form.Textarea",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
                    },
                    {"field"    : 'religion',
 		                'max_length'    :  30         ,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : ''"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : ''"
                    },
                   {"field"         : 'religion_notes',
 		                'max_length'    :  100         ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'false',placeHolder:'Any Other Notes...'"
+		                "data-dojo-props": r"'required' :false,placeHolder:'Any Other Notes...'"
 		                },
                    {
                      "field"          : "race"     , 
                      "max_length"     : 30                  , 
                      "data-dojo-type" : "dijit.form.ValidationTextBox" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
+                     "data-dojo-props": r"'required':true, 'regExp': '', 'invalidMessage': 'Please select a value' "
                    },
                    {
                      "field"          : "languages_known"     , 
                      "max_length"     : 100                  , 
                      "data-dojo-type" : "dijit.form.Textarea" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
+                     "data-dojo-props": r"'required':true, 'regExp': '', 'invalidMessage': 'Please select a value' "
                    }
 #                   ,
 

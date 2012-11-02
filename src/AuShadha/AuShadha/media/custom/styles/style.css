@@ -93,7 +93,7 @@
 	#visit_list
 {
    min-height : 230px;
-   max-height : 230px;
+//   max-height : 230px;
 //   overflow   :auto;
 	margin-top: 5px;
 	}
@@ -196,7 +196,7 @@
 
 #patientContextPane{
   height: 600px;
-//  min-width : 700px;
+  min-width : 700px;
   overflow:auto;
 }
 
