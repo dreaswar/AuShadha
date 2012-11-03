@@ -168,6 +168,18 @@ var            contactGrid;
                                          "editPatientDialog");
         patientDialog.startup();
 
+/*
+    on(window,'scroll',function(e){
+        var scrollY = dojo.position(dojo.body()).y
+        var divY    = dojo.position(dom.byId('selected_patient_info'));
+        if(divY<= scrollY){
+          domStyle.set('selected_patient_info',{'position':"fixed"});
+        }
+        if(divY<= scrollY){
+          domStyle.set('selected_patient_info',{'position':"relative"});
+        }
+    })
+*/
 
         // Define Various Stores
 //        var phoneStore    = new JsonRest({target: ""});
@@ -276,6 +288,7 @@ var            contactGrid;
                       */
                         if (dom.byId("selected_patient_info")){
                           dom.byId("selected_patient_info").innerHTML = patient_ticker_content;
+                          domStyle.set( dom.byId('selected_patient_info'),{'display':"","padding":"0px"});
                         }
 
                       /* 

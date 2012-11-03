@@ -1,29 +1,5 @@
-<div id              = "simplePatientSearch" 
+<span id              = "simplePatientSearch" 
  >
-<!--    <img src   = "{{MEDIA_URL}}images/search.png" -->
-<!--         alt   = "Search" -->
-<!--         title = "Search"-->
-<!--         id    = patSearchIcon-->
-<!--         style = "//position : relative; -->
-<!--                  //top      : -50px; -->
-<!--                  //left     : -30px;-->
-<!--                  margin   : -30px;-->
-<!--                  //padding  : 0px;-->
-<!--                  z-index  : 10;-->
-<!--                  display  : none;-->
-<!--                 ">-->
-
-   {%if perms.patient.add_patientdetail %}
-      <button id             = "addPatientButton" 
-              type           = "button"
-              data-dojo-props= "iconClass: 'dijitIconNewTask'"
-              data-dojo-id   = "addPatientButton"
-              title          = "Register a New Patient to the Clinic"
-      > 
-          Add Patient
-      </button>
-   {% endif %}
-
     <div data-dojo-type  = "dojo/store/Memory"
          data-dojo-id    = "patSearchForStore"
          data-dojo-props = "data: [
@@ -33,17 +9,17 @@
                                   {id: 'last_name'  ,  name: 'Last Name'  },
                                   {id: 'age'        , name: 'Age'  },
                                   {id: 'sex'        , name: 'Sex'  },
+                                  {id: 'guardian_name', name: 'Guardian Name'  },
+                                  {id: 'phone_number', name: 'Phone Number'  },
+                                  {id: 'city'        , name: 'City'  },
                                   {id: 'patient_hospital_id'   , name: 'Hospital ID'  }
-                                  {% if user.is_superuser %}
-                                  ,{id: 'id' , name: 'Primary Key' }
-                                  {% endif %}
                                  ]">
     </div>
 
-    <!--<div data-dojo-type  = "dijit.Tooltip" -->
-    <!--     data-dojo-props = "connectId:'patientGridFilterBtn',position:['above']">-->
-    <!--     Enter Search terms and click to search for a Patient-->
-    <!--</div>-->
+    <div data-dojo-type  = "dojox/data/JsonRestStore"
+         data-dojo-id    = "patSearchForJsonRestStore"
+         data-dojo-props = "target: '{%url patient_filtering_search_json %}', idAttribute:'id'">
+    </div>
 
     <div data-dojo-type   = "dijit/form/FilteringSelect"
          class            = "search_form_div"
@@ -58,14 +34,35 @@
     </div>
 
     <div id    = "searchLinker" 
-         class            = "search_form_div"
+         class = "search_form_div"
          style = "font-style : italic; 
                   color      : navy  ; 
                   text-align : left;
-                 ">  
+                 "
+    >  
       contains ..
     </div>
 
+    <div  data-dojo-type  = "dijit/form/FilteringSelect" 
+         class            = "search_form_div"
+          data-dojo-id    = "filteringSelectPatSearch"
+          data-dojo-props = "regExp         : '[a-zA-Z0-9 -]+', 
+                             required       : true,
+                             invalidMessage : 'No Results',
+                             store          : patSearchForJsonRestStore,
+                             searchAttr     : 'name',
+                             labelAttr      : 'label',
+                             labelType      : 'html'
+                             
+                            "
+          id              = "filteringSelectPatSearch"
+          onKeyUp         = "patFilteringSearchOnKeyUp('evt');"
+          onChange         = "patFilteringSearchOnKeyUp('evt');"
+     >
+
+    </div>
+
+<!-- 
     <div  data-dojo-type  = "dijit/form/ValidationTextBox" 
          class            = "search_form_div"
           data-dojo-id    = "filterPatGridTextBox"
@@ -78,9 +75,10 @@
      >
 
     </div>
+-->
 
     <button data-dojo-type  = "dijit/form/Button" 
-         class            = "search_form_div"
+         class              = "search_form_div"
             data-dojo-props = "iconClass: 'dijitIconFilter'"
             type            = "submit"
             data-dojo-id    = "patientGridFilterBtn"
@@ -314,5 +312,5 @@
    </table>
 </form>
 
-</div>
+</span>
 

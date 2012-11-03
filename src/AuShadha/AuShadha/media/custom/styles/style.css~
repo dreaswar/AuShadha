@@ -1,5 +1,6 @@
 				html, body {
 					height   : 100%;
+					width:100%;
 					margin   : 0;
 					overflow : hidden;
 					padding  : 0;
@@ -40,10 +41,12 @@
 			 font-size   : 16px;
 			}
 
+/*
 	#patient_grid_menubar{
 		height:40px;
 		width: 400px;
 	}
+*/
 
 	#centerTopPane, 
 	#centerBottomPane
@@ -99,6 +102,7 @@
 	}
 
 
+/*
 	#leftCol, 
 	#rightCol 
 	{
@@ -106,6 +110,9 @@
     background: -moz-linear-gradient(center top , #EDF2F7, whitesmoke) repeat scroll 0 0 transparent;
     font-size: 10px;
 	}
+*/
+
+
 
 	.login_area_img
 	{
@@ -194,21 +201,24 @@
   }
 
 
+/*
 #patientContextPane{
   height: 600px;
-//  min-width : 700px;
+  min-width : 700px;
   overflow:auto;
 }
-
+*/
 
 #simplePatientSearch .search_form_div{
   float :left;
   display:inline;
+  clear:both;
   margin-left:0px;
   margin-right:2px;
   margin-top:0px;
   padding:0px;
 }
+
 
 /*TABLES*/
 

@@ -27,7 +27,7 @@
         search_obj.search_for   = "*"
         search_obj.search_field = "id"
       }
-      console.log("You searched for " + search_obj.search_for + search_obj.search_field);
+      console.log("you searched for " + search_obj.search_for + search_obj.search_field);
     }
 
     function patSearchForFilteringSelectOnChange(newVal){
