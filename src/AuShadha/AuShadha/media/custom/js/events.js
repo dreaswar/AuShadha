@@ -28,6 +28,7 @@
         search_obj.search_field = "full_name"
       }
       console.log("You searched for " + search_obj.search_for + search_obj.search_field);
+      patSearchForJsonRestStore.query("?search_for="+search_obj.search_field +"&search_field="+search_obj.search_field)
     }
 
     function patSearchForFilteringSelectOnChange(newVal){

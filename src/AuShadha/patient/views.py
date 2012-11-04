@@ -2167,7 +2167,7 @@ def patient_filtering_search_json(request):
 #FIXME Dojo sends REST queries with * suffix. This has to be split and dealt with before json generation is done.
 # Right now whatever you search for will not get results. 
   try:
-    name = unicode(request.GET.get('full_name'))
+    name = unicode(request.GET.get('name'))
     print "You have queried Patients with Full Name containing: ", name
   except(TypeError,ValueError,NameError,KeyError):
     raise Http404("Bad Parameters.. No Search Results Could be returned. ")
