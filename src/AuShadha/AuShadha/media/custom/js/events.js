@@ -21,11 +21,11 @@
     function patFilteringSearchOnKeyUp(e){
       console.log(e.target);
       var search_field   = patSearchForFilteringSelect.get('value');
-      var txt            = filteringSelectPatSearch.get('value');
+      var txt            = filteringSelectPatSearch.get('displayedvalue');
       var search_obj     = { search_field : search_field , search_for : txt };
       if( !filteringSelectPatSearch.get('value') || !patSearchForFilteringSelect.get('value') ){
         search_obj.search_for   = "*"
-        search_obj.search_field = "id"
+        search_obj.search_field = "full_name"
       }
       console.log("You searched for " + search_obj.search_for + search_obj.search_field);
     }

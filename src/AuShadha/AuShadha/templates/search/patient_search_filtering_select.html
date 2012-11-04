@@ -50,13 +50,12 @@
                              required       : true,
                              invalidMessage : 'No Results',
                              store          : patSearchForJsonRestStore,
-                             searchAttr     : 'name',
+                             searchAttr     : 'full_name',
                              labelAttr      : 'label',
-                             labelType      : 'html'
-                             
+                             labelType      : 'html',
+                             autoComplete   :false
                             "
           id              = "filteringSelectPatSearch"
-          onKeyUp         = "patFilteringSearchOnKeyUp('evt');"
           onChange         = "patFilteringSearchOnKeyUp('evt');"
      >
 

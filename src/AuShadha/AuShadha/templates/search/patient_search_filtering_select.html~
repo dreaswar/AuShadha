@@ -16,9 +16,9 @@
                                  ]">
     </div>
 
-    <div data-dojo-type  = "dojox/data/JsonRestStore"
-         data-dojo-id    = "patSearchForJsonRestStore"
-         data-dojo-props = "target: '{%url patient_filtering_search_json %}', idAttribute:'id'">
+    <div data-dojo-type  = "dojo/store/Memory"
+         data-dojo-id    = "patSearchForMemoryStore"
+         data-dojo-props = "data: '{%url patient_filtering_search_json %}'">
     </div>
 
     <div data-dojo-type   = "dijit/form/FilteringSelect"
@@ -48,15 +48,14 @@
           data-dojo-id    = "filteringSelectPatSearch"
           data-dojo-props = "regExp         : '[a-zA-Z0-9 -]+', 
                              required       : true,
-                             invalidMessage : 'Invalid Search Terms: No Results',
-                             store          : patSearchForJsonRestStore,
-                             searchAttr     : 'name',
+                             invalidMessage : 'No Results',
+                             store          : patSearchForMemoryStore,
+                             searchAttr     : 'full_name',
                              labelAttr      : 'label',
-                             labelType      : 'html'
-                             
+                             labelType      : 'html',
+                             autoComplete   :false
                             "
           id              = "filteringSelectPatSearch"
-          onKeyUp         = "patFilteringSearchOnKeyUp('evt');"
           onChange         = "patFilteringSearchOnKeyUp('evt');"
      >
 
