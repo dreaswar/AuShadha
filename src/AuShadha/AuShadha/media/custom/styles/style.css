@@ -209,14 +209,18 @@
 }
 */
 
+#simplePatientSearch {
+  padding:0px;
+//  height: 120px;
+  padding: 0px 0px 20px 0px;
+}
+
 #simplePatientSearch .search_form_div{
   float :left;
   display:inline;
-  clear   :right;
   margin-left:0px;
   margin-right:2px;
   margin-top:0px;
-  padding:0px;
 }
 
 

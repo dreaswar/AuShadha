@@ -251,16 +251,6 @@
                                id = "searchPatientContainerDiv"
                            >
 
-                            {%if perms.patient.add_patientdetail %}
-                              <button id             = "addPatientButton" 
-                                      type           = "button"
-                                      data-dojo-props= "iconClass: 'dijitIconNewTask'"
-                                      data-dojo-id   = "addPatientButton"
-                                      title          = "Register a New Patient to the Clinic"
-                              > 
-                                  Add Patient
-                              </button>
-                            {% endif %}
                             {% include 'search/patient_search_filtering_select.html' %}
 
                           </div>
@@ -660,9 +650,24 @@
                                     scriptHasHooks :true
                                   "
           >
-           <div id      = "patient_grid" 
-           >       
-           </div>
+             <div id              = "SearchPaneBorderContainer" 
+                  data-dojo-type  = "dijit/layout/BorderContainer"
+             >
+               <div id              = "patientGridContentPane" 
+                    data-dojo-type  = "dijit/layout/ContentPane"
+                    data-dojo-props = "region: 'center'"
+               >
+                 <div id              = "patient_grid" 
+                 >
+                 </div>
+               </div>
+               <div id              = "patientSearchContentPane"
+                    data-dojo-type  = "dijit/layout/ContentPane"
+                    data-dojo-props = "region: 'right',splitter:true, gutter:true"
+               >
+                 {% include 'search/patients.html' %}
+              </div>
+            </div>
           </div>
           {% endif %}
           <!--  END OF ADMISSIONHOMECONTENTPANE  -->

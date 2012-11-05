@@ -61,6 +61,9 @@ USE_TZ = True
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = os.path.join(ROOT_PATH,'media')
 
+CUSTOM_SCRIPT_ROOT = os.path.join(MEDIA_ROOT,'custom/js/')
+CUSTOM_STYLE_ROOT = os.path.join(MEDIA_ROOT,'custom/styles/')
+
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
