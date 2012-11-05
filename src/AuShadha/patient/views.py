@@ -2163,36 +2163,49 @@ def patient_admission_add(request, id=None):
         return render_to_response('admission/detail/add.html', variable)
 
 @login_required
-def patient_filtering_search_json(request):
+def patient_filtering_search_json(request, id=None):
 #FIXME Dojo sends REST queries with * suffix. This has to be split and dealt with before json generation is done.
 # Right now whatever you search for will not get results. 
-  try:
-    name = unicode(request.GET.get('name'))
-    print "You have queried Patients with Full Name containing: ", name
-  except(TypeError,ValueError,NameError,KeyError):
-    raise Http404("Bad Parameters.. No Search Results Could be returned. ")
-  if name =="*":
-    pat_obj = PatientDetail.objects.all()
-  elif name[-1:] == "*":
-    name = name[0:-1]
-    print "Name after stripping trailing '*' is: " , name
-    pat_obj = PatientDetail.objects.filter(full_name__icontains= name)
+  if request.method == "GET" and request.is_ajax():
+    if not id:
+      try:
+        name = unicode(request.GET.get('name'))
+        print "You have queried Patients with Full Name containing: ", name
+      except(TypeError,ValueError,NameError,KeyError):
+        raise Http404("Bad Parameters.. No Search Results Could be returned. ")
+      if name =="*":
+        pat_obj = PatientDetail.objects.all()
+      elif name[-1:] == "*":
+        name = name[0:-1]
+        print "Name after stripping trailing '*' is: " , name
+        pat_obj = PatientDetail.objects.filter(full_name__icontains= name)
+      else:
+        pat_obj = PatientDetail.objects.filter(full_name__icontains= name)
+      json = []
+      if pat_obj:
+        for patient in pat_obj:
+          data_to_append = {}
+          data_to_append['name']= patient.full_name
+          data_to_append['id']= patient.id
+          data_to_append['hospital_id'] = patient.patient_hospital_id
+          data_to_append['age'] = patient.age
+          data_to_append['sex'] = patient.sex
+          data_to_append['label'] = patient.full_name + "-" + \
+                                    patient.age       + "/" + \
+                                    patient.sex       + "(" + \
+                                    patient.patient_hospital_id +")"
+          json.append(data_to_append)
+      json = simplejson.dumps(json)
+      return HttpResponse(json, content_type = "application/json")
+    elif id:
+      try:
+        id      = int(id)
+        pat_obj = PatientDetail.objects.get(pk = id)
+      except(TypeError, KeyError, NameError, AttributeError):
+        raise Http404("ERROR ! Bad Parameters. No Patients in result.")
+      except(PatientDetail.DoesNotExist):
+        raise Http404("ERROR! Patient Does Not Exist")
+      json = return_patient_json(pat_obj)
+      return HttpResponse(json, content_type = "application/json")
   else:
-    pat_obj = PatientDetail.objects.filter(full_name__icontains= name)
-  json = []
-  if pat_obj:
-    for patient in pat_obj:
-      data_to_append = {}
-      data_to_append['name']= patient.full_name
-      data_to_append['id']= patient.id
-      data_to_append['hospital_id'] = patient.patient_hospital_id
-      data_to_append['age'] = patient.age
-      data_to_append['sex'] = patient.sex
-      data_to_append['label'] = patient.full_name + "-" + \
-                                patient.age       + "/" + \
-                                patient.sex       + "(" + \
-                                patient.patient_hospital_id +")"
-      json.append(data_to_append)
-  json = simplejson.dumps(json)
-  return HttpResponse(json, content_type = "application/json")
-
+    raise Http404("Bad Request")

@@ -1,5 +1,6 @@
 <span id              = "simplePatientSearch" 
  >
+<!-- 
     <div data-dojo-type  = "dojo/store/Memory"
          data-dojo-id    = "patSearchForStore"
          data-dojo-props = "data: [
@@ -14,11 +15,6 @@
                                   {id: 'city'        , name: 'City'  },
                                   {id: 'patient_hospital_id'   , name: 'Hospital ID'  }
                                  ]">
-    </div>
-
-    <div data-dojo-type  = "dojox/data/JsonRestStore"
-         data-dojo-id    = "patSearchForJsonRestStore"
-         data-dojo-props = "target: '{%url patient_filtering_search_json %}'">
     </div>
 
     <div data-dojo-type   = "dijit/form/FilteringSelect"
@@ -43,6 +39,14 @@
       contains ..
     </div>
 
+-->
+
+    <div data-dojo-type  = "dojo/store/JsonRest"
+         data-dojo-id    = "patSearchForJsonRestStore"
+         data-dojo-props = "target: '{%url patient_filtering_search_json_without_id %}'">
+    </div>
+
+
     <div  data-dojo-type  = "dijit/form/FilteringSelect" 
          class            = "search_form_div"
           data-dojo-id    = "filteringSelectPatSearch"
@@ -53,12 +57,10 @@
                              searchAttr     : 'name',
                              labelAttr      : 'label',
                              labelType      : 'html',
-                             autoComplete   :false
+                             autoComplete   : false
                             "
           id              = "filteringSelectPatSearch"
-          oKeyDown       = "patFilteringSearchOnKeyUp('evt');"
-          oKeyUp          = "patFilteringSearchOnKeyUp('evt');"
-          onChange        = "patFilteringSearchOnKeyUp('evt');"
+          onChange        = "patFilteringSearchOnKeyUp(this);"
      >
 
     </div>
@@ -76,7 +78,7 @@
      >
 
     </div>
--->
+
 
     <button data-dojo-type  = "dijit/form/Button" 
          class              = "search_form_div"
@@ -127,6 +129,7 @@
       </script>
 
     </button>
+-->
 </div>
 
 

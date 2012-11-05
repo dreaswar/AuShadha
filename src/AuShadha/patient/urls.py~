@@ -33,9 +33,10 @@ urlpatterns = patterns('',
       name = 'patient_new_add'	
    ),
 
-  url(r'patient_filtering_search_json/$'	, 
-      'patient.views.filtering_search_json',
-      name = "patient_filtering_search_json"
+
+  url(r'patient_filtering_search_json/(?P<id>\d+)/$'	, 
+      'patient.views.patient_filtering_search_json',
+      name = "patient_filtering_search_json_with_id"
   ),
 
 ###########################################################################################

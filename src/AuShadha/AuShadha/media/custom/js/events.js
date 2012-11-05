@@ -19,16 +19,33 @@
     }
 
     function patFilteringSearchOnKeyUp(e){
-      console.log(e.target);
-      var search_field   = patSearchForFilteringSelect.get('value');
-      var txt            = filteringSelectPatSearch.get('displayedvalue');
-      var search_obj     = { search_field : search_field , search_for : txt };
-      if( !filteringSelectPatSearch.get('value') || !patSearchForFilteringSelect.get('value') ){
-        search_obj.search_for   = "*"
-        search_obj.search_field = "full_name"
-      }
-      console.log("You searched for " + search_obj.search_for + search_obj.search_field);
-      patSearchForJsonRestStore.query("?search_for="+search_obj.search_field +"&search_field="+search_obj.search_field)
+      require(["dijit/registry","dojo/dom","dojo/dom-style","dojo/dom-construct"], 
+      function(registry, dom, domStyle, domConstruct){
+/*
+        var search_field   = patSearchForFilteringSelect.get('value');
+        var txt            = filteringSelectPatSearch.get('value');
+        var search_obj     = { search_field : search_field , search_for : txt };
+        if( !filteringSelectPatSearch.get('value') || !patSearchForFilteringSelect.get('value') ){
+          search_obj.search_for   = "*"
+          search_obj.search_field = "full_name"
+        }
+        console.log("You searched for " + search_obj.search_for + search_obj.search_field);
+        console.log( e.store.get( e.get('value') ) );
+*/
+        e.store.get(e.get('value')).then(
+          function(item /*returned item*/){
+            console.log(item)
+//            console.log(contactStore);
+            domStyle.set('selected_patient_info',{"display":"","padding":"0px","margin":"0px"});
+            var addData = item.addData;
+            var selectedPatientContent = addData.full_name + "-" + addData.age +"-" + addData.sex +"(" +addData.patient_hospital_id +")"
+            registry.byId('selected_patient_info').set('content', selectedPatientContent);
+            var demographicsUrl = "/AuShadha/pat/demographics/add/"+addData.id+"/";
+            registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
+          }
+        );
+      });
+//      patSearchForJsonRestStore.query("?search_for="+search_obj.search_field +"&search_field="+search_obj.search_field)
     }
 
     function patSearchForFilteringSelectOnChange(newVal){
