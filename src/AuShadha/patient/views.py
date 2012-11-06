@@ -15,6 +15,7 @@ from django.template                 import RequestContext
 #from django.core.context_processors import csrf
 from django.contrib.auth.models      import User
 
+from django.core.urlresolvers import reverse
 
 from django.views.decorators.csrf   import csrf_exempt
 from django.views.decorators.cache  import never_cache
@@ -48,6 +49,7 @@ from admission.models import *
 #from visit.models     import *
 
 import AuShadha.settings as settings
+from AuShadha.settings import APP_ROOT_URL
 
 from patient.medication_list import patient_medication_list_add, patient_medication_list_edit
 from patient.immunisation import patient_immunisation_add, patient_immunisation_edit
@@ -136,11 +138,12 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
 def return_patient_json(patient, success = True):
     data ={"addData":{}}
     if patient:
+        patient_id = unicode(patient.id)
         data_to_append = data['addData']
         data_to_append['id']                   = patient.id
         data_to_append['patient_hospital_id']  = patient.patient_hospital_id
 
-        data_to_append['full_name']          = patient.full_name
+        data_to_append['full_name']            = patient.full_name
         data_to_append['first_name']           = patient.first_name
         data_to_append['middle_name']          = patient.middle_name
         data_to_append['last_name']            = patient.last_name
@@ -153,18 +156,51 @@ def return_patient_json(patient, success = True):
 
         data_to_append['contactadd']   = patient.get_patient_contact_add_url()
         data_to_append['contactlist']  = patient.get_patient_contact_list_url()
+        data_to_append['contactjson']  = APP_ROOT_URL+"/contact_json/"+ patient_id +"/"
 
         data_to_append['phoneadd']     = patient.get_patient_phone_add_url()
         data_to_append['phonelist']    = patient.get_patient_phone_list_url()
+        data_to_append['phonejson']  = APP_ROOT_URL+"/phone_json/"+ patient_id+"/"
+
         data_to_append['guardianadd']  = patient.get_patient_guardian_add_url()
         data_to_append['guardianlist'] = patient.get_patient_guardian_list_url()
-        data_to_append['emailadd']     = patient.get_patient_email_and_fax_add_url()
-        data_to_append['emaillist']    = patient.get_patient_email_and_fax_list_url()
+        data_to_append['guardianjson']  = APP_ROOT_URL+"/guardian_json/"+ patient_id+"/"
 
-        data_to_append['admissionadd']  = patient.get_patient_admission_add_url()
+        data_to_append['emailadd']      = patient.get_patient_email_and_fax_add_url()
+        data_to_append['emaillist']     = patient.get_patient_email_and_fax_list_url()
+        data_to_append['emailjson']     = APP_ROOT_URL+"/email_json/"+ patient_id+"/"
+
+        data_to_append['admissionadd']    = patient.get_patient_admission_add_url()
+        data_to_append['admissionlist']   = patient.get_patient_admission_list_url()
+#        data_to_append['admissionjson']  = APP_ROOT_URL+"/admission_json/"+ patient_id+"/"
+
         data_to_append['visitadd']      = patient.get_patient_visit_add_url()
-        data_to_append['admissionlist'] = patient.get_patient_admission_list_url()
         data_to_append['visitlist']     = patient.get_patient_visit_list_url()
+#        data_to_append['visitjson']    = APP_ROOT_URL+"/visit_json/"+ patient.id+"/"
+
+        data_to_append['demographicsadd']   = patient.get_patient_demographics_data_add_url()
+        data_to_append['demographicslist']  = patient.get_patient_demographics_data_list_url()
+
+        data_to_append['familyhistorylist']  = patient.get_patient_family_history_add_url()
+        data_to_append['familyhistoryadd']   = patient.get_patient_family_history_list_url()
+        data_to_append['familyhistoryjson']  = APP_ROOT_URL+"/family_history_json/"+patient_id+"/"
+
+        data_to_append['immunisationadd']   = patient.get_patient_immunisation_add_url()
+        data_to_append['immunisationlist']  = patient.get_patient_immunisation_list_url()
+        data_to_append['immunisationjson']  = APP_ROOT_URL+"/immunisation_json/"+patient_id+"/"
+
+        data_to_append['medicationlistadd']   = patient.get_patient_medication_list_add_url()
+        data_to_append['medicationlistlist']  = patient.get_patient_medication_list_list_url()
+        data_to_append['medicationlistjson']  = APP_ROOT_URL+"/medication_list_json/"+patient_id+"/"
+
+        data_to_append['allergiesadd']   = patient.get_patient_allergies_add_url()
+        data_to_append['allergieslist']  = patient.get_patient_allergies_list_url()
+        data_to_append['allergiesjson']  = APP_ROOT_URL+"/allergies_json/"+ patient_id +"/"
+
+        data_to_append['socialhistoryadd']  = patient.get_patient_social_history_add_url()
+        data_to_append['socialhistorylist'] = patient.get_patient_social_history_list_url()
+
+
     if success:
       error_message           = "Patient Detail Saved Successfully"
       form_errors             = None

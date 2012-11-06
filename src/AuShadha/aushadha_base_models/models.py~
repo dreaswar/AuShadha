@@ -113,9 +113,9 @@ class AuShadhaBaseModel(models.Model):
   def __unicode__(self):
     return "AuShadhaBaseModel" 
   
-  def __init__(self, au_model_label = "AuShadhaBaseModel", *args, **kwargs):
-    self.__model_label__ = au_model_label
-    super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
+#  def __init__(self, au_model_label = "AuShadhaBaseModel", *args, **kwargs):
+#    self.__model_label__ = au_model_label
+#    super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
 
 #  def get_add_url(self):
 #    if self.patient_detail:
@@ -128,6 +128,9 @@ class AuShadhaBaseModel(models.Model):
 
   def get_del_url(self):
     return  generic_url_maker(self, "del", self.id)
+
+  def get_object_json_url(self):
+    return APP_ROOT_URL+"/%s_json/%s/" %(self.app_label, self.id)
 
 
   def generic_url_maker(self,action,id, root_object = False):

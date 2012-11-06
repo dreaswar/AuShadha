@@ -182,11 +182,11 @@ var            contactGrid;
 */
 
         // Define Various Stores
-//        var phoneStore    = new JsonRest({target: ""});
-//        var contactStore  = new JsonRest({target:""});
-//        var guardianStore = new JsonRest({target:""});
+//        var phoneStore     = new JsonRest({target: ""});
+//        var contactStore   = new JsonRest({target:""});
+//        var guardianStore  = new JsonRest({target:""});
 //        var admissionStore = new JsonRest({target:""});
-//        var visitStore = new JsonRest({target:""});
+//        var visitStore     = new JsonRest({target:""});
 
         complaintsStore = new Memory({data:COMPLAINTS});
         console.log(complaintsStore)

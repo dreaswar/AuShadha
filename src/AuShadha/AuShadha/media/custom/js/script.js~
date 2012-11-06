@@ -219,8 +219,9 @@ var            contactGrid;
                            retrieved. 
                         */
                         var idx    = e.rowIndex,
-                            item   = this.getItem(idx),
-                            patid  = this.store.getValue(item, "id");
+                            item   = this.getItem(idx);
+
+                        var patid  = this.store.getValue(item, "id");
                         var full_name  = this.store.getValue(item, "full_name");
                         var hosp_id  = this.store.getValue(item, "patient_hospital_id");
                         var sex  = this.store.getValue(item, "sex");
