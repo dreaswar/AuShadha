@@ -156,46 +156,46 @@ def return_patient_json(patient, success = True):
 
         data_to_append['contactadd']   = patient.get_patient_contact_add_url()
         data_to_append['contactlist']  = patient.get_patient_contact_list_url()
-        data_to_append['contactjson']  = APP_ROOT_URL+"/contact_json/"+ patient_id +"/"
+        data_to_append['contactjson']  = APP_ROOT_URL+"pat/contact/json/?patient_id="+ patient_id 
 
         data_to_append['phoneadd']     = patient.get_patient_phone_add_url()
         data_to_append['phonelist']    = patient.get_patient_phone_list_url()
-        data_to_append['phonejson']  = APP_ROOT_URL+"/phone_json/"+ patient_id+"/"
+        data_to_append['phonejson']  = APP_ROOT_URL+"pat/phone/json/?patient_id="+ patient_id
 
         data_to_append['guardianadd']  = patient.get_patient_guardian_add_url()
         data_to_append['guardianlist'] = patient.get_patient_guardian_list_url()
-        data_to_append['guardianjson']  = APP_ROOT_URL+"/guardian_json/"+ patient_id+"/"
+        data_to_append['guardianjson']  = APP_ROOT_URL+"pat/guardian/json/?patient_id="+ patient_id
 
         data_to_append['emailadd']      = patient.get_patient_email_and_fax_add_url()
         data_to_append['emaillist']     = patient.get_patient_email_and_fax_list_url()
-        data_to_append['emailjson']     = APP_ROOT_URL+"/email_json/"+ patient_id+"/"
+        data_to_append['emailjson']     = APP_ROOT_URL+"pat/email/json/?patient_id="+ patient_id
 
         data_to_append['admissionadd']    = patient.get_patient_admission_add_url()
         data_to_append['admissionlist']   = patient.get_patient_admission_list_url()
-#        data_to_append['admissionjson']  = APP_ROOT_URL+"/admission_json/"+ patient_id+"/"
+#        data_to_append['admissionjson']  = APP_ROOT_URL+"pat/admission_json/"+ patient_id
 
         data_to_append['visitadd']      = patient.get_patient_visit_add_url()
         data_to_append['visitlist']     = patient.get_patient_visit_list_url()
-#        data_to_append['visitjson']    = APP_ROOT_URL+"/visit_json/"+ patient.id+"/"
+#        data_to_append['visitjson']    = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
 
         data_to_append['demographicsadd']   = patient.get_patient_demographics_data_add_url()
         data_to_append['demographicslist']  = patient.get_patient_demographics_data_list_url()
 
         data_to_append['familyhistorylist']  = patient.get_patient_family_history_add_url()
         data_to_append['familyhistoryadd']   = patient.get_patient_family_history_list_url()
-        data_to_append['familyhistoryjson']  = APP_ROOT_URL+"/family_history_json/"+patient_id+"/"
+        data_to_append['familyhistoryjson']  = APP_ROOT_URL+"pat/family_history/json/?patient_id="+patient_id
 
         data_to_append['immunisationadd']   = patient.get_patient_immunisation_add_url()
         data_to_append['immunisationlist']  = patient.get_patient_immunisation_list_url()
-        data_to_append['immunisationjson']  = APP_ROOT_URL+"/immunisation_json/"+patient_id+"/"
+        data_to_append['immunisationjson']  = APP_ROOT_URL+"pat/immunisation/json/?patient_id="+patient_id
 
         data_to_append['medicationlistadd']   = patient.get_patient_medication_list_add_url()
         data_to_append['medicationlistlist']  = patient.get_patient_medication_list_list_url()
-        data_to_append['medicationlistjson']  = APP_ROOT_URL+"/medication_list_json/"+patient_id+"/"
+        data_to_append['medicationlistjson']  = APP_ROOT_URL+"pat/medication_list/json/?patient_id="+patient_id
 
         data_to_append['allergiesadd']   = patient.get_patient_allergies_add_url()
         data_to_append['allergieslist']  = patient.get_patient_allergies_list_url()
-        data_to_append['allergiesjson']  = APP_ROOT_URL+"/allergies_json/"+ patient_id +"/"
+        data_to_append['allergiesjson']  = APP_ROOT_URL+"pat/allergies/json/?patient_id="+ patient_id
 
         data_to_append['socialhistoryadd']  = patient.get_patient_social_history_add_url()
         data_to_append['socialhistorylist'] = patient.get_patient_social_history_list_url()

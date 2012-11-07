@@ -35,60 +35,39 @@
             var emailUrl          = addData.emailjson;
 
             var immunisationUrl   = addData.immunisationjson;
-            var allergiesUrl        = addData.allergyjson;
+            var allergiesUrl      = addData.allergiesjson;
             var medicationListUrl = addData.medicationlistjson;
 
             var familyHistoryUrl  = addData.familyhistoryjson;
             var demographicsUrl   = addData.demographicsadd;
             var socialHistoryUrl  = addData.socialhistoryadd;
 
-            var admissionUrl      = addData.admissionadd;
-
+//            var admissionUrl      = addData.admissionadd;
 //            var visitUrl        = addData.visitadd;
 
-
-/*
-             var contactStore           = new JsonRest({target:contactUrl});
-             console.log(contactStore);
-             var phoneStore             = new JsonRest({target:phoneUrl});
-             var guardianStore          = new JsonRest({target:guardianUrl});
-             var demographicsStore      = new JsonRest({target:demographicsUrl});
-             var socialHistoryStore     = new JsonRest({target:socialHistoryUrl});
-             var allergiesStore         = new JsonRest({target:allergiesUrl});
-             var familyHistoryStore     = new JsonRest({target:familyHistoryUrl});
-             var immunisationStore      = new JsonRest({target:immunisationUrl});
-             var medicationListStore    = new JsonRest({target:medicationListUrl});
-
-             var admissionStore    = new JsonRest({target:admissionUrl});
-*/
-//            {% comment %} 
-  //             var visitStore        = new JsonRest({target:visitUrl}); 
-//            {% endcomment %}
-
             console.log("Destroying the Grids and Forms...");
+              reInitBottomPanels();
+            console.log("Finished Destroying the existing Widgets..");
 
-            registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
-            registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
-
+            console.log("Setting up the Forms...");
+              registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
+              registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
             console.log("Finished setting up the Forms...");
 
-//            reInitBottomPanels();
             console.log("Setting up the Grids Now...");
-            setupContactGrid(contactUrl);
-            setupPhoneGrid(phoneUrl);
+              setupContactGrid(contactUrl);
+              setupPhoneGrid(phoneUrl);
 
-            setupFamilyHistoryGrid(familyHistoryUrl);
-            setupGuardianGrid(guardianUrl);
+              setupFamilyHistoryGrid(familyHistoryUrl);
+              setupGuardianGrid(guardianUrl);
 
+              setupImmunisationGrid(immunisationUrl);
 
-            setupImmunisationGrid(immunisationUrl);
+              setupMedicationListGrid(medicationListUrl);
+              setupAllergiesGrid(allergiesUrl);
 
-            setupMedicationListGrid(medicationListUrl);
-            setupAllergiesGrid(allergiesUrl);
-
-            setupAdmissionGrid(admissionUrl);
-//            setupVisitGrid(visitUrl);
-
+  //            setupAdmissionGrid(admissionUrl);
+  //            setupVisitGrid(visitUrl);
            console.log("Finished setting up the grids....");
 
          }

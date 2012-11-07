@@ -1,12 +1,13 @@
 
 function setupContactGrid(url){
-  require(["dojox/grid/DataGrid", "dojox/data/JsonRestStore"], 
-  function(DataGrid, JsonRest){
-    var store   = new JsonRest({target:url});
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
+  function(DataGrid, JsonRest, ObjectStore, registry){
+    var Cstore   = new JsonRest({target:url});
+    console.log(Cstore);
     console.log("Creating the Contact Grid")
     var contactGrid = new DataGrid({
                   store         : dataStore = ObjectStore({
-                                             objectStore: store
+                                             objectStore: Cstore
                                   }),
                   selectionMode : "single",
                   rowSelector   : "20px",
@@ -26,11 +27,15 @@ function setupContactGrid(url){
                       return false; 
     };
     contactGrid.startup();
+
     console.log("Finished creating Contact Grid");
-  })
+  });
 }
 
+
 function setupPhoneGrid(url){
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
+  function(DataGrid, JsonRest, ObjectStore){
     var store   = new JsonRest({target:url});
     var phoneGrid = new DataGrid({
                     store         : dataStore = ObjectStore({
@@ -51,9 +56,12 @@ function setupPhoneGrid(url){
       // {% endif %}
       };
     phoneGrid.startup();
+})
 }
 
 function setupGuardianGrid(url){
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
+  function(DataGrid, JsonRest, ObjectStore){
     var store   = new JsonRest({target:url});
       var guardianGrid = new DataGrid({
                               store         : dataStore = ObjectStore({
@@ -74,33 +82,44 @@ function setupGuardianGrid(url){
       // {% endif %}
       };
     guardianGrid.startup();
+})
 }
 
 
 function setupAllergiesGrid(url){
-    var store   = new JsonRest({target:url});
-       var allergiesGrid = new DataGrid({
-                      store         : dataStore = ObjectStore({
-                                                 objectStore: store
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
+  function(DataGrid, JsonRest, ObjectStore){
+     console.log("Setting up Allergy Grid with URL: " + url)
+     var store   = new JsonRest({target:url});
+     var allergiesGrid = new DataGrid({
+                    store           : dataStore = ObjectStore({
+                                               objectStore: store
                                       }),
-                      selectionMode : "single",
-                      rowSelector   : "20px",
-                      structure     : GRID_STRUCTURES.PATIENT_ALLERGIES_GRID_STRUCTURE,
+                    selectionMode   : "single",
+                    rowSelector     : "20px",
+                    structure       : GRID_STRUCTURES.PATIENT_ALLERGIES_GRID_STRUCTURE,
                     noDataMessage   : "<span class='dojoxGridNoData'>No Allergies in Store..</span>"
-                }, 
-                "allergy_list"
-        );
+              }, 
+              "allergy_list"
+      );
 
-        allergiesGrid.onRowDblClick = function(e){ 
-        // {% if perms.patient.change_patientallergies or perms.patient.delete_patientallergies %}
-                                  onPatientSubMenuRowClick(e,allergiesGrid, "Edit Allergy");
-                                  return false; 
-        // {% endif %}
-        };
+    console.log(allergiesGrid);
+
+    allergiesGrid.onRowDblClick = function(e){ 
+    // {% if perms.patient.change_patientallergies or perms.patient.delete_patientallergies %}
+                              onPatientSubMenuRowClick(e,allergiesGrid, "Edit Allergy");
+                              return false; 
+    // {% endif %}
+    };
+
     allergiesGrid.startup();
+
+  });
 }
 
 function setupMedicationListGrid(url){
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
+  function(DataGrid, JsonRest, ObjectStore){
     var store   = new JsonRest({target:url});
      var medicationListGrid = new DataGrid({
                     store         : dataStore = ObjectStore({
@@ -122,9 +141,12 @@ function setupMedicationListGrid(url){
       };
     medicationListGrid.startup();
 
+})
 }
 
 function setupFamilyHistoryGrid(url){
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
+  function(DataGrid, JsonRest, ObjectStore){
     var store   = new JsonRest({target:url});
      var familyHistoryGrid = new DataGrid({
                     store         : dataStore = ObjectStore({
@@ -146,10 +168,13 @@ function setupFamilyHistoryGrid(url){
       };
 
     familyHistoryGrid.startup();
+})
 }
 
 function setupImmunisationGrid(url){
-    var store   = new JsonRest({target:url});
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
+  function(DataGrid, JsonRest, ObjectStore){
+   var store   = new JsonRest({target:url});
    var immunisationGrid = new DataGrid({
                   store         : dataStore = ObjectStore({
                                              objectStore: store
@@ -169,9 +194,12 @@ function setupImmunisationGrid(url){
     // {% endif %}
     };
     immunisationGrid.startup();
+})
 }
 
 function setupAdmissionGrid(url){
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
+  function(DataGrid, JsonRest, ObjectStore){
     var store   = new JsonRest({target:url});
     var admissionGrid = new DataGrid({
                             store         : dataStore = ObjectStore({
@@ -216,11 +244,14 @@ function setupAdmissionGrid(url){
         //  {% endif %}
       };
     admissionGrid.startup();
+})
 }
 
 //{% comment %}
  /*
 function setupVisitGrid(url){
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
+  function(DataGrid, JsonRest, ObjectStore){
     var store   = new JsonRest({target:url});
     var visitGrid = new DataGrid({
                               store         : dataStore = ObjectStore({objectStore: store
@@ -239,6 +270,7 @@ function setupVisitGrid(url){
     //{% endif %}
                                    return false; 
     };
+})
 }
 */
 //{% endcomment %}
@@ -274,15 +306,18 @@ function setupVisitGrid(url){
  };
 
 function reInitBottomPanels(){
+  console.log("Running function to destroy existing widgets...");
+  require(["dijit/registry","dojo/dom","dojo/dom-construct","dojo/dom-style"], 
+  function(registry, dom, domConstruct, domStyle){
       var contactTable        = registry.byId("contact_list"),
           phoneTable          = registry.byId("phone_list"),
           guardianTable       = registry.byId("guardian_list"),
-//          demographicsTable   = registry.byId("demographics_list"),
-//          demographicsForm    = registry.byId("newDemographicsDataAddOrEditForm"),
+//        demographicsTable   = registry.byId("demographics_list"),
+//        demographicsForm    = registry.byId("newDemographicsDataAddOrEditForm"),
           allergyTable        = registry.byId("allergy_list"),
           immunizationTable   = registry.byId("immunisation_list"),
           familyHistoryTable  = registry.byId("family_history_list"),
-//          socialHistoryTable  = registry.byId("social_history_list"),
+//        socialHistoryTable  = registry.byId("social_history_list"),
           medicationListTable = registry.byId("medication_list"),
           admissionTable      = registry.byId("admission_list"),
           visitTable          = registry.byId("visit_list"),
@@ -331,7 +366,7 @@ function reInitBottomPanels(){
         console.log("Recreating allergy tab");
         domConstruct.place("<div id='allergy_list' class='patientContextTabs'></div>",
                            "patientMedicationListAndAllergiesTab", 
-                           'third'
+                           'second'
                            );
         
       }
@@ -380,6 +415,7 @@ function reInitBottomPanels(){
                            'second'
                            );
       }
+   });
 }
 
 function cleanUpAdmissionPane(){
