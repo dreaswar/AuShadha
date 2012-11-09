@@ -271,6 +271,15 @@ var            contactGrid;
                                     if (dom.byId("selected_patient_info")){
                                       domStyle.set( dom.byId('selected_patient_info'),{'display':"","padding":"0px"});
                                       registry.byId('selected_patient_info').set('content', patient_ticker_content);
+                                      var patientInfo = dom.byId('selected_patient_info');
+                                      domConstruct.
+                                        create("div",{innerHTML: patid, 
+                                                      id       :"selected_patient_id_info",
+                                                      style    :{display:"none"} 
+                                                     },
+                                                patientInfo
+                                        );
+                                      console.log(dom.byId('selected_patient_id_info').innerHTML )
                                     }
 
                                   console.log("Destroying the Grids and Forms...");
@@ -297,6 +306,9 @@ var            contactGrid;
                         //            setupAdmissionGrid(admissionUrl);
                         //            setupVisitGrid(visitUrl);
                                  console.log("Finished setting up the grids....");
+                                 var mainTabContainer = registry.byId('centerTopTabPane');
+                                 var patientListTab   = registry.byId('patientHomeContentPane');
+                                 mainTabContainer.selectChild(patientListTab);
 /*
                     function cleanUpAdmissionPane(){
                       var center_top_pane = dijit.byId('centerTopTabPane');
@@ -404,10 +416,10 @@ var            contactGrid;
                                   onClick: function(){
                                             require(["dojo/_base/xhr", "dojo/_base/array"],
                                             function(xhr, array){
-                                                var gridRow    = grid.selection.getSelected();
-                                                var id         = grid.store.getValue(gridRow[0], 'id');
+                                                //var gridRow    = grid.selection.getSelected();
+                                                //var id         = grid.store.getValue(gridRow[0], 'id');
                                                 xhr.get({
-                                                        url: "{%url contact_json %}"+"?patient_id="+ id +"&action=add",
+                                                        url: "{%url contact_json %}"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                         load: function(html){
                                                                       var myDialog = dijit.byId("editPatientDialog");
                                                                       myDialog.set('content', html);
@@ -430,10 +442,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "{%url phone_json %}"+"?patient_id="+ id +"&action=add",
+                                                      url: "{%url phone_json %}"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                    var myDialog = dijit.byId("editPatientDialog");
                                                                    myDialog.set('content', html);
@@ -456,10 +468,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "{%url guardian_json %}"+"?patient_id="+ id +"&action=add",
+                                                      url: "{%url guardian_json %}"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                var myDialog = dijit.byId("editPatientDialog");
                                                                myDialog.set('content', html);
@@ -480,10 +492,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "{%url admission_json %}"+"?patient_id="+ id +"&action=add",
+                                                      url: "{%url admission_json %}"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);
@@ -504,10 +516,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "{%url visit_json %}"+"?patient_id="+ id +"&action=add",
+                                                      url: "{%url visit_json %}"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);
@@ -528,10 +540,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "{%url demographics_json %}"+ "?patient_id=" + id +"&action=add",
+                                                      url: "{%url demographics_json %}"+ "?patient_id=" + dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);
@@ -553,10 +565,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id         = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id         = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "{% url allergies_json %}"+"?patient_id="+ id +"&action=add",
+                                                      url: "{% url allergies_json %}"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);
@@ -577,10 +589,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "{%url immunisation_json %}"+"?patient_id="+ id +"&action=add",
+                                                      url: "{%url immunisation_json %}"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);
@@ -601,10 +613,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "{%url family_history_json %}"+"?patient_id="+ id +"&action=add",
+                                                      url: "{%url family_history_json %}"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);
@@ -627,10 +639,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "{%url medication_list_json%}"+"?patient_id="+ id +"&action=add",
+                                                      url: "{%url medication_list_json%}"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);
@@ -652,10 +664,10 @@ var            contactGrid;
                                                  require(
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
+                                                    //var gridRow    = grid.selection.getSelected();
+                                                    //var id = grid.store.getValue(gridRow[0], 'id');
                                                     xhr.get({
-                                                      url: "/AuShadha/"+"?patient_id="+ id +"&action=add",
+                                                      url: "/AuShadha/pat/media/"+"?patient_id="+ dom.byId("selected_patient_id_info").innerHTML +"&action=add",
                                                       load: function(html){
                                                                  var myDialog = dijit.byId("editPatientDialog");
                                                                  myDialog.set('content', html);

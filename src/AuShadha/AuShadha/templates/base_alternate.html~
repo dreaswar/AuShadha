@@ -291,8 +291,7 @@
                                    class           = "patientContextTabContainer"
                                    data-dojo-type  = "dijit/layout/TabContainer"
                                    data-dojo-props = "tabPosition:'top'"
-                                   style=" height:550px;
-                                         "
+                                   style           = " height:550px;"
                               >
 
                                   <!--  START OF PATIENTCONTEXTTABS1  -->
@@ -623,7 +622,6 @@
                                   </button>
                                   {% endif %}
                                   <div id="patient_media_list"
-                                     data-dojo-type="dojox/layout/ContentPane"
                                   > 
                                   This will list the attachments the patient has.. 
                                   documents, images, video, slides etc.. 

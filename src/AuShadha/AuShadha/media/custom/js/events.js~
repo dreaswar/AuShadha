@@ -24,12 +24,25 @@
         e.store.get(e.get('value')).then(
           function(item /*returned item*/){
             console.log(item)
-            domStyle.set('selected_patient_info',{"display":"","padding":"0px","margin":"0px"});
             var addData = item.addData;
-            var selectedPatientContent = addData.full_name + "-" + addData.age +"-" + addData.sex +"(" +addData.patient_hospital_id +")"
+
+            domStyle.set('selected_patient_info',{"display":"","padding":"0px","margin":"0px"});
+            var selectedPatientContent = addData.full_name + "-" + 
+                                         addData.age +"-" + addData.sex +
+                                         "(" +addData.patient_hospital_id +")";
             registry.byId('selected_patient_info').set('content', selectedPatientContent);
+            var patientInfo = dom.byId('selected_patient_info');
+            domConstruct.
+              create("div",{innerHTML: addData.id, 
+                            id       : "selected_patient_id_info",
+                            style    : { display:"none" } 
+                           },
+                      patientInfo
+              );
+            console.log( dom.byId('selected_patient_id_info').innerHTML )
 
             var contactUrl        = addData.contactjson;
+            var contactAddUrl        = addData.contactaddurl;
             var phoneUrl          = addData.phonejson;
             var guardianUrl       = addData.guardianjson;
             var emailUrl          = addData.emailjson;
@@ -65,7 +78,6 @@
 
               setupMedicationListGrid(medicationListUrl);
               setupAllergiesGrid(allergiesUrl);
-
 
   //            setupAdmissionGrid(admissionUrl);
   //            setupVisitGrid(visitUrl);

@@ -1,7 +1,12 @@
 
 function setupContactGrid(url){
-  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
-  function(DataGrid, JsonRest, ObjectStore, registry){
+  require(["dojox/grid/DataGrid", 
+           "dojo/store/JsonRest",
+           "dojo/data/ObjectStore",
+           "dijit/registry",
+           "dojox/layout/ContentPane"
+  ], 
+  function(DataGrid, JsonRest, ObjectStore, registry,ContentPane){
     var Cstore   = new JsonRest({target:url});
     console.log(Cstore);
     console.log("Creating the Contact Grid")
@@ -276,33 +281,38 @@ function setupVisitGrid(url){
 //{% endcomment %}
 
  function onPatientSubMenuRowClick(e, gridToUse, titleToUse){ 
-      var idx = e.rowIndex,
-          item = gridToUse.getItem(idx);
-      var contactid = gridToUse.store.getValue(item, "id");
-      var edit      = gridToUse.store.getValue(item, "edit");
-      var del       = gridToUse.store.getValue(item, "del");
-      gridToUse.selection.clear();
-      gridToUse.selection.setSelected(item, true);
-      xhr.get({
-          url  : edit,
-          load : function(html, idx){
-          var myDialog = dijit.byId("editPatientDialog");
-          if(myDialog == undefined || myDialog == null){
-            myDialog = new dijit.Dialog({
-                              title: titleToUse,
-                              content: html,
-                              style: "width: 500px; height:500px;"
-                             }, "editPatientDialog");
-            myDialog.startup();
-          }
-          else{
-            myDialog.set('content', html);
-            myDialog.set('title', titleToUse); 
-          }
-          myDialog.show();
-          }
-      });
+      require(["dijit/registry","dijit/Dialog","dojox/grid/DataGrid","dojo/_base/xhr"], 
+      function(registry, Dialog, DataGrid, xhr){
+        var idx = e.rowIndex,
+            item = gridToUse.getItem(idx);
+        var id        = gridToUse.store.getValue(item, "id");
+        var edit      = gridToUse.store.getValue(item, "edit");
+        var del       = gridToUse.store.getValue(item, "del");
+        gridToUse.selection.clear();
+        gridToUse.selection.setSelected(item, true);
+        xhr.get({
+            url  : edit,
+            load : function(html, idx){
+            var myDialog = dijit.byId("editPatientDialog");
+            if(myDialog == undefined || myDialog == null){
+              myDialog = new dijit.Dialog({
+                                title    : titleToUse,
+                                content  : html,
+                                style    : "width: 500px; height:500px;"
+                               }, 
+                               "editPatientDialog"
+                        );
+              myDialog.startup();
+            }
+            else{
+              myDialog.set('content', html);
+              myDialog.set('title', titleToUse); 
+            }
+            myDialog.show();
+            }
+        });
     return false; 
+    });
  };
 
 function reInitBottomPanels(){
