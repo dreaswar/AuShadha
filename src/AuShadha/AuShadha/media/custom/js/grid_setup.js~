@@ -311,8 +311,8 @@ function setupVisitGrid(url){
             myDialog.show();
             }
         });
-    });
     return false; 
+    });
  };
 
 function reInitBottomPanels(){

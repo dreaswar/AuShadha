@@ -262,9 +262,9 @@
 
                           </div>
 
-                          <div id             ="selected_patient_info" 
-                               data-dojo-type ="dojox/layout/ContentPane"
-                               data-dojo-props="region:'center'"
+                          <div id             = "selected_patient_info" 
+                               data-dojo-type = "dojox/layout/ContentPane"
+                               data-dojo-props= "region:'center'"
                                style=" color      : #252525; 
                                        font-size  : 12px; 
                                        font-style : italics;
@@ -281,9 +281,9 @@
                           </div>
 
 
-                          <div data-dojo-type="dojox/layout/ContentPane"
-                               data-dojo-props="region:'bottom'"
-                               id = "patientContextContainer"
+                          <div data-dojo-type  = "dojox/layout/ContentPane"
+                               data-dojo-props = "region:'bottom'"
+                               id              = "patientContextContainer"
                            >
 
                               <!--  START OF PATIENTCONTEXTTABS  -->

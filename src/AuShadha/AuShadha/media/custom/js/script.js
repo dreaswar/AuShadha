@@ -59,7 +59,7 @@
                domStyle, ContentPane,
                behaviour, Memory, domGeom, request
                )
-        {
+      {
         // Define Variables to be used later in the app..
 
         // STORES;
@@ -114,16 +114,6 @@
           behaviour.add(FormBehaviour)
           behaviour.apply()
        }
-
-//        var grid,
-//            admissionGrid,
-//            visitGrid,
-var            contactGrid;
-//            phoneGrid,
-//            guardianGrid;
-
-       // Define Methods for cleaning up after use.
-        var doPostDelCleanup;
 
       //Define Admission Trees
         var admissionTree;
@@ -790,6 +780,7 @@ var            contactGrid;
 // Setting Focus on Page Load;;
 //    dijit.byId('filterPatGridTextBox').focus();
 
+
 });
 
 
@@ -958,3 +949,103 @@ function delItem(url,grid_id){
     );
   });
 }
+
+/* Function to Hide, Show, Create and Destroy tabs and sub-tabs */
+var MAIN_AND_SUB_TABS;
+
+function keepTabs(){
+  require(["dijit/registry",
+
+           "dojo/dom",
+           "dojo/dom-construct",
+           "dojo/dom-style",
+           "dojo/dom-attr",
+
+           "dijit/layout/TabContainer",
+           "dojox/layout/ContentPane",
+           "dojox/grid/DataGrid",
+           "dijit/form/Button",
+
+           "dojo/_base/array"
+  ], 
+  function(registry, 
+           dom, 
+           domConstruct, 
+           domStyle, 
+           domAttr, 
+           TabContainer, 
+           ContentPane, 
+           DataGrid, 
+           Button,
+           array
+          )
+   {
+      var childrenTabs = registry.findWidgets("patientContextContainer");
+      MAIN_AND_SUB_TABS = childrenTabs;
+      console.log(childrenTabs);
+      /*
+      array.forEach(childrenTabs,
+                    function(item){ item.destroyRecursive(); },
+                    this
+      );
+      */
+      var ContextTabList =  {
+                              patientContactTab:{
+                                  "divs" : [ "contact_list","phone_list"]
+                              },
+                              patientHistoryTab:{
+                                  patientDemographicsTab:{
+                                    "ContentPane": ["demographics_add_or_edit_form"],
+                                    "divs": ["guardian_list"]
+                                  },
+                                  patientSocialHistoryTab:{
+                                    "ContentPane": ["patientSocialHistoryTab"]
+                                  },
+                                  patientFamilyHistoryTab:{
+                                    "divs":["family_history_list"]
+                                  },
+                                  patientMedicalAndSurgicalHistoryTab:{
+                                    "divs":["medical_and_surgical_history_list"]
+                                  }
+                              },
+                              patientPreventiveHealthTab:{
+                                  patientNeonatalAndPaediatricExamTab:{
+                                    "div": ["neonatal_and_paediatric_exam_list"]
+                                  },
+                                  patientImmunisationTab:{
+                                    "div": ["immunisation_list"]
+                                  },
+                                  patientObstetricsPreventivesTab:{
+                                    "divs": ["obstetrics_preventives_list"]
+                                  },
+                                  patientGynaecologyPreventivesTab:{
+                                    "divs" : ["gynaecology_preventives_list"]
+                                  },
+                                  patientMedicalPreventivesTab:{
+                                    "divs": ["medical_preventives_list"]
+                                  }
+                              },
+                              patientMedicationListAndAllergiesTab:{
+                                  "divs" : ["medication_list","allergy_list"]
+                              },
+                              patientAdmissionAndVisitsTab:{
+                                  "divs": ["admission_list","visit_list"]
+                              },
+                              patientMediaTab:{
+                                  "divs": ["patient_media_list"]
+                              }
+                           };
+  });
+}
+
+require(["dojo/ready","dojo/parser","dijit/registry"], 
+function(ready){
+  ready(
+    function(){
+//      keepTabs();
+    }
+  );
+});
+
+
+
