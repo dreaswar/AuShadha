@@ -285,6 +285,7 @@
                                data-dojo-props = "region:'bottom'"
                                id              = "patientContextContainer"
                            >
+{% comment %}
 
                               <!--  START OF PATIENTCONTEXTTABS  -->
                               <div id              = "patientContextTabs"
@@ -631,7 +632,7 @@
 
                              </div>
                              <!--  END OF PATIENTCONTEXTTABS  -->
-
+{% endcomment %}
                        </div>
                       <!--  END OF patientContextContainer  -->
 

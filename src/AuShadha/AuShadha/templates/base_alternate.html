@@ -99,6 +99,15 @@
 
   <script type="text/javascript">
     /* 
+       Contains the Patient Context Tabs set up
+    */
+
+   {% include 'patient_context_tab_setup.js' %}
+  </script>
+
+
+  <script type="text/javascript">
+    /* 
        Contains the Logic of eventing in Patient Search Form Partly. 
        Some of it is implemented in the HTML declaratively.
        Triggered when the patient search text is entered 
@@ -285,6 +294,7 @@
                                data-dojo-props = "region:'bottom'"
                                id              = "patientContextContainer"
                            >
+{% comment %}
 
                               <!--  START OF PATIENTCONTEXTTABS  -->
                               <div id              = "patientContextTabs"
@@ -631,7 +641,7 @@
 
                              </div>
                              <!--  END OF PATIENTCONTEXTTABS  -->
-
+{% endcomment %}
                        </div>
                       <!--  END OF patientContextContainer  -->
 

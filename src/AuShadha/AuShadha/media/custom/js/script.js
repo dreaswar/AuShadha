@@ -329,7 +329,7 @@
         };
 
     grid.onRowDblClick = function(e){ 
-                        //{% if perms.patient.change_patientdetail or perms.patient.delete_patientdetail %}
+            //{% if perms.patient.change_patientdetail or perms.patient.delete_patientdetail %}
                           var idx = e.rowIndex,
                               item = this.getItem(idx);
                           var patid = this.store.getValue(item, "id");
@@ -365,7 +365,7 @@
                                       }
                             })
                           }
-                      //{% endif %}
+          //{% endif %}
                          return false; 
             };
     }
@@ -966,7 +966,7 @@ function keepTabs(){
            "dojox/grid/DataGrid",
            "dijit/form/Button",
 
-           "dojo/_base/array"
+           "dojo/_base/array", "dojo/domReady!"
   ], 
   function(registry, 
            dom, 
@@ -980,15 +980,15 @@ function keepTabs(){
            array
           )
    {
-      var childrenTabs = registry.findWidgets("patientContextContainer");
-      MAIN_AND_SUB_TABS = childrenTabs;
+      var childrenTabs = registry.byId("patientContextTabs");
+//      MAIN_AND_SUB_TABS = childrenTabs;
       console.log(childrenTabs);
-      /*
+/*
       array.forEach(childrenTabs,
                     function(item){ item.destroyRecursive(); },
                     this
       );
-      */
+*/
       var ContextTabList =  {
                               patientContactTab:{
                                   "divs" : [ "contact_list","phone_list"]
@@ -1038,11 +1038,12 @@ function keepTabs(){
   });
 }
 
-require(["dojo/ready","dojo/parser","dijit/registry"], 
+require(["dojo/ready","dojo/parser","dijit/registry","dojo/domReady!"], 
 function(ready){
   ready(
     function(){
-//      keepTabs();
+      //keepTabs();
+//      patientContextTabSetup();
     }
   );
 });
