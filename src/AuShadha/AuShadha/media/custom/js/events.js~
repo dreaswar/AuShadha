@@ -42,7 +42,7 @@
             console.log( dom.byId('selected_patient_id_info').innerHTML )
 
             var contactUrl        = addData.contactjson;
-            var contactAddUrl        = addData.contactaddurl;
+//            var contactAddUrl        = addData.contactaddurl;
             var phoneUrl          = addData.phonejson;
             var guardianUrl       = addData.guardianjson;
             var emailUrl          = addData.emailjson;

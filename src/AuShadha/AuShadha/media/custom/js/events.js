@@ -62,6 +62,8 @@
               reInitBottomPanels();
             console.log("Finished Destroying the existing Widgets..");
 
+            patientContextTabSetup();
+
             console.log("Setting up the Forms...");
               registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
               registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
