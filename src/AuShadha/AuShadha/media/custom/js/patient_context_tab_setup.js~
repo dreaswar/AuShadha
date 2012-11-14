@@ -7,12 +7,17 @@ require(
    "dojo/dom",
    "dojo/dom-construct",
    "dojo/dom-style",
-   "dojo/ready"
+   "dojo/ready",
+   "dojo/_base/array"
   ],
-  function(registry,parser, TabContainer, ContentPane, dom, domConstruct, domStyle, ready){
+  function(registry,parser, TabContainer, ContentPane, dom, domConstruct, domStyle, ready,array){
 
 ready( function(){
 
+      if (registry.byId("patientContextTabs")){
+        return; 
+      }
+      else{
       domConstruct.create('div', {id: "patientContextTabs"}, 
                             "patientContextContainer", "first"
                             );
@@ -73,11 +78,12 @@ ready( function(){
 
 
       var mainContainer = new ContentPane({id     : "patientContextContainer",
-                                           region  : "bottom",
-                                           style :"min-height: 550px; overflow:auto;"
-                                          }, 
+                                             region  : "bottom",
+                                             style :"min-height: 550px; overflow:auto;"
+                                            }, 
                                           "patientContextContainer"
-                                        );
+        );
+
       var tabs = new TabContainer({ 
                                     id: "patientContextTabs",
                                     tabPosition:"top",
@@ -209,10 +215,10 @@ ready( function(){
      preventiveHealthTabs.startup();
 
     registry.byId("centerMainPane").resize();
-
+    }
    });
 });
 
 }
 
-patientContextTabSetup();
+//patientContextTabSetup();
