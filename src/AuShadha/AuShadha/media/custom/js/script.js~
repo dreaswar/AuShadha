@@ -420,7 +420,7 @@
                                             });
                                  }
                               }, 
-                              domConstruct.create('button',{type:"button",id:"addContactButton"},"patientContactTab","first")
+                              "addContactButton"
     );
 //{% endif %}
 
@@ -670,7 +670,18 @@
                          }, "addPatientMediaButton");
 //{% endif %}
 
-
+require(["dojo/window","dojo/_base/window","dojo/on","dojo/dom"], 
+    function(window,baseWindow, on, dom){ 
+          console.log(window);
+          console.log(baseWindow);
+          on(baseWindow.body(),
+            'onmouseenter',
+             function(){ 
+                alert("you just resized"); 
+             }
+          ) 
+    }
+)
 
 // {% endif %} 
 

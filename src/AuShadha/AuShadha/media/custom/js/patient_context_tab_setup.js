@@ -20,23 +20,23 @@ ready( function(){
       {
 
       domConstruct.destroy('frontPageSearchPatientAuShadhaLogo');
-      domStyle.set(dom.byId('searchPatientContainerDiv'),{top         : "0px",
-                                                          left        : "0px",
-                                                          height      : "50px", 
-                                                          width       : "auto",
-                                                          background  : "none",
-                                                          border      : "none",
-                                                          'box-shadow': "none",
-                                                          "border-radius":"none",
-                                                          'font-size' : "inherit",
-                                                          "padding" : "0px 0px 10px 0px;",
-                                                          "margin" : "0px 0px 10px 0px;"
+      domStyle.set(dom.byId('searchPatientContainerDiv'),{top           : "0px",
+                                                          left          : "0px",
+                                                          height        : "50px", 
+                                                          width         : "auto",
+                                                          background    : "none",
+                                                          border        : "none",
+                                                          'boxShadow'   : "none",
+                                                          "borderRadius": "none",
+                                                          'fontSize'    : "inherit",
+                                                          "padding"     : "0px 0px 10px 0px;",
+                                                          "margin"      : "0px 0px 10px 0px;"
                                                         });
       domStyle.set(dom.byId('searchTitle'),{top:"0px",left:"0px"});
       domStyle.set(dom.byId('simplePatientFilteringSearch'),{top:"0px",left:"0px"});
 
-      registry.byId('addPatientButton').set("style", {"font-size": "12px"} );
-      registry.byId('filteringSelectPatSearch').set("style",{width: "200px","font-size":"12px"} );
+      registry.byId('addPatientButton').set("style", {"fontSize": "12px"} );
+      registry.byId('filteringSelectPatSearch').set("style",{width: "400px", left: "5%", "fontSize":"12px"} );
 
       domConstruct.create('div', 
                           {id: "patientContextTabs"}, 

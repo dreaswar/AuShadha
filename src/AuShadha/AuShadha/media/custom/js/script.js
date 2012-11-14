@@ -670,7 +670,18 @@
                          }, "addPatientMediaButton");
 //{% endif %}
 
-
+require(["dojo/window","dojo/_base/window","dojo/on","dojo/dom"], 
+    function(window,baseWindow, on, dom){ 
+          console.log(window);
+          console.log(baseWindow);
+          on(baseWindow.body(),
+            'resize',
+             function(){ 
+                alert("you just resized"); 
+             }
+          ) 
+    }
+)
 
 // {% endif %} 
 
