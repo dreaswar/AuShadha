@@ -1,5 +1,7 @@
-<span id   = "simplePatientFilteringSearch" 
- >
+<span id               = "simplePatientFilteringSearch" 
+      data-dojo-it     = "simplePatientFilteringSearch"
+      data-dojo-type   = "dojox/layout/ContentPane"
+>
     {%if perms.patient.add_patientdetail %}
     <table>
     <tr> 
@@ -33,11 +35,11 @@
                                    labelAttr      : 'label',
                                    labelType      : 'html',
                                    autoComplete   : false,
-                                   placeHolder    : 'Search by Patient name',
+                                   placeHolder    : 'Patient\'s Name',
                                   "
                 id              = "filteringSelectPatSearch"
                 onChange        = "patFilteringSearchOnKeyUp(this);"
-                style           = "width: 500px; margin-left: 30px; 
+                style           = "margin-left: 10%; min-width:400px;
                                    padding: inherit 10px inherit 10px;"
            >
           </div>

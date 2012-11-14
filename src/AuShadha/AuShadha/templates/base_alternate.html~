@@ -219,15 +219,44 @@
                           <div style="
                                   margin-bottom   : 0px;
                                   position        : relative;
-                                  left            : 0px;
+                                  left            : 5%;
+                                  top             : 40%;
+                                  width           : 85%;
                                   margin-left     : 0px; 
-                                  padding-left    : 0px;"
-                               data-dojo-type="dojox/layout/ContentPane"
-                               data-dojo-props="region:'top'"
-                               id = "searchPatientContainerDiv"
+                                  padding-left    : 0px;
+                                  border          : solid 1pt #cecece;
+                                  border-radius   : 3px;
+                                  background      : #D0DFEA;
+                                  overflow        : visible;
+                                  height          : 76px;
+                                  "
+                               data-dojo-type   = "dojox/layout/ContentPane"
+                               data-dojo-props  = "region:'top'"
+                               id               = "searchPatientContainerDiv"
                            >
-
-                            {% include 'search/patient_search_filtering_select.html' %}
+                            <div id="searchTitle" 
+                                  style="color:navy; 
+                                        font-size: 16px;
+                                        text-align:center;
+                                        vertical-align:middle; 
+                                        font-family: Droid-Sans, Sans-Serif;
+                                        position: relative;
+                                        top:-100px;
+                                        height:76px;
+                                       "
+                             > 
+                              <img    src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_128.png" 
+                                      alt="AuShadha Search" 
+                                      title="AuShadha Search"
+                                      style="position:relative;
+                                             top: -13px; 
+                                             padding:0px; 
+                                             margin:0px;
+                                            "
+                                      id="frontPageSearchPatientAuShadhaLogo"
+                              >
+                             {% include 'search/patient_search_filtering_select.html' %}
+                            </div>
 
                           </div>
 
@@ -237,12 +266,12 @@
                                style=" color      : #252525; 
                                        font-size  : 12px; 
                                        font-style : italics;
-                                       background : #C6E2EE;
+                                       border          : solid 1pt #cecece;
+                                       border-radius   : 3px;
+                                       background      : #D0DFEA;
+                                       box-shadow  : 1px 1px 2px #ddd;
                                        text-align     : center;
                                        font-weight    : bold;
-                                       box-shadow: 1px 1px 2px #ddd;
-                                       border: solid 1px #252525;
-                                       border-radius: 2px;
                                        display:none;
                                      "
                           > 
@@ -250,9 +279,7 @@
                           </div>
 
                          <!--  START OF patientContextContainer  -->
-                          <div data-dojo-type  = "dojox/layout/ContentPane"
-                               data-dojo-props = "region:'bottom'"
-                               id              = "patientContextContainer"
+                          <div id              = "patientContextContainer"
                            >
                          </div>
                          <!--  END OF patientContextContainer  -->
