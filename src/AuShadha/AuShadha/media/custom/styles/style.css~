@@ -15,6 +15,10 @@
 					height: 100%;
 			}
 
+    #logoDiv{
+      overflow:visible;
+    }
+
 			#bottomPane{
 				height     : 16px;
 				margin     : 0 ;
@@ -40,6 +44,11 @@
 			 font-family : "Droid-Sans", "Helvetica",'Sans-Serif';
 			 font-size   : 16px;
 			}
+
+    #topPane h3 img{
+      width: 32px;
+      height:32px;
+    }
 
 /*
 	#patient_grid_menubar{
@@ -211,7 +220,7 @@
 
 #simplePatientSearch {
   padding:0px;
-  height: 120px;
+//  height: 120px;
   padding: 0px 0px 20px 0px;
 }
 

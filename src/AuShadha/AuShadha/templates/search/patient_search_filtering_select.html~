@@ -10,10 +10,9 @@
                 type           = "button"
                 data-dojo-props= "iconClass: 'dijitIconNewTask'"
                 data-dojo-id   = "addPatientButton"
-                title          = "Register a New Patient to the Clinic"
                 style          = "display:inline;"
         > 
-            Add Patient
+            New
         </button>
 
           <div data-dojo-type  = "dojo/store/JsonRest"
@@ -42,7 +41,7 @@
                 style           = "margin-left : 10%; 
                                    left        : 15%;
                                    position    : relative;
-                                   width       : 300px;
+                                   width       : 350px;
                                    padding     : inherit 10px inherit 10px;"
            >
           </div>
@@ -52,8 +51,14 @@
     {% else %}
       <p class="suggestion_text"> No Permission to add </p>
     {% endif %}
+
+  <!-- TOOLTIPS -->
+    <div  data-dojo-type="dijit/Tooltip" 
+          data-dojo-props="connectId:'addPatientButton',position:['below']">
+        Register a New Patient to the Clinic..
+    </div>
+  <!-- TOOLTIPS -->
+
 </span>
 
-<div id="tablist" style="display:none;">
 
-</div>

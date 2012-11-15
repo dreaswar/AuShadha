@@ -375,24 +375,23 @@
 //{% if perms.patient.add_patientdetail %}
     var addPatientButton =  new dijit.form.Button({
                                               label: "New", 
-                                              title: "Register a New Patient to the Clinic..",
                                               iconClass:"dijitIconNewTask",
                                               onClick: function(){
-                                                                require(["dojo/_base/xhr",
-                                                                        "dijit/registry", 
-                                                                        "dijit/Dialog"
-                                                                ], 
-                                                                function(xhr, registry, Dialog){
-                                                                      var myDialog = dijit.byId("editPatientDialog");
-                                                                      xhr.get({
-                                                                              url: "{%url patient_new_add %}",
-                                                                              load: function(html){
-                                                                                   myDialog.set('content', html);
-                                                                                   myDialog.set('title', "Enroll New Patient to the Clinic - {{ user.clinic_name }}");
-                                                                                   myDialog.show();
-                                                                              }
-                                                                      });
-                                                                });
+                                                          require(["dojo/_base/xhr",
+                                                                  "dijit/registry", 
+                                                                  "dijit/Dialog"
+                                                          ], 
+                                                          function(xhr, registry, Dialog){
+                                                            var myDialog = dijit.byId("editPatientDialog");
+                                                            xhr.get({
+                                                                    url: "{%url patient_new_add %}",
+                                                                    load: function(html){
+                                                                           myDialog.set('content', html);
+                                                                           myDialog.set('title', "Enroll New Patient to the Clinic");
+                                                                           myDialog.show();
+                                                                    }
+                                                            });
+                                                          });
                                               }
                                             }, 
                                             "addPatientButton"

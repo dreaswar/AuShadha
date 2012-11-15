@@ -108,11 +108,14 @@
           data-dojo-type  = "dijit/layout/BorderContainer"
      > 
 
-	     <h3 class="header_with_logo"> 
-                     <img src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_32.png" 
-                          alt="AuShadha" 
-                          title="AuShadha Public Health Clinic EMR & Management Open Source Project">
+       <div id="logoDiv">
+        <h3 class="header_with_logo"> 
+           <img src   =  "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_64.png" 
+                alt   ="AuShadha" 
+                id    = "AuShadhaHeaderIcon"
+           >
         </h3>
+      </div>
 
        <!--  START OF LOGINAREA  -->
 		   <div id              ="login_area"
@@ -130,32 +133,34 @@
                                "
        > 
 		     {% if user.is_authenticated %}
-		      <img src   = "{{STATIC_URL}}images/user.png" 
+		      <img src   = "{{STATIC_URL}}images/user_16.png" 
 		           alt   = "{{user.username}}"
-		           title = "Logged in as: {{user.username}}"
-		           class = "login_area_img">
-		       &nbsp; <em>{{user.username}}</em>
+		           class = "login_area_img"
+		           id    = "loggedInUserIcon"
+		           >
 		      {% if user.is_staff %}
-		      <a href="/AuShadha/admin/" title="Admin Area">
-		      <img src   = "{{STATIC_URL}}images/system_run.png" 
+		      <a href="/AuShadha/admin/" 
+		         id="adminAreaHref" 
+		         target="_blank">
+		      <img src   = "{{STATIC_URL}}images/system_run_16.png" 
 		           alt   = "Admin"
-		           title = "Admin Area"
-		           class = "login_area_img">
+		           class = "login_area_img" >
 		      </a>
 		      {% endif %}
 		      &nbsp; 
-		      <a href="/AuShadha/logout/" title="Logout">
-		      <img src   = "{{STATIC_URL}}images/system_log_out.png" 
+		      <a href="/AuShadha/logout/" id="logoutHref">
+		      <img src   = "{{STATIC_URL}}images/system_log_out_16.png" 
 		           alt   = "Logout"
-		           title = "Logout: {{user.username}}"
-		           class = "login_area_img">
+		           class = "login_area_img"
+		           >
 		      </a>&nbsp; 
 		     {% else %}
-		      <a href="/AuShadha/login/" title="Login">
-		      <img src   = "{{STATIC_URL}}images/system_log_in.png" 
+		      <a href="/AuShadha/login/" id="loginHref">
+		      <img src   = "{{STATIC_URL}}images/login_indicator.png" 
 		           alt   = "Login"
-		           title = "Login"
-		           class = "login_area_img">
+		           class = "login_area_img"
+		            style="width:16px; height:16px;"
+		           >
 		      </a>
 		     {% endif %}
 		 </div>
@@ -247,8 +252,6 @@
                                        "
                              > 
                               <img    src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_128.png" 
-                                      alt="AuShadha Search" 
-                                      title="AuShadha Search"
                                       style="position:relative;
                                              top: -13px; 
                                              padding:0px; 
@@ -371,6 +374,36 @@
     </div>
     <!--  END OF CENTERTOPTABPANE  -->
 
+    <!-- TOOLTIPS -->
+    <div  data-dojo-type="dijit/Tooltip" 
+          data-dojo-props="connectId:'AuShadhaHeaderIcon',position:['below']">
+        Welcome to AuShadha Open Source EMR & Clinic Management System
+    </div>
+    <div  data-dojo-type="dijit/Tooltip" 
+          data-dojo-props="connectId:'loggedInUserIcon',position:['below']">
+        Logged in as: {{user.username}}
+    </div>
+    <div data-dojo-type="dijit/Tooltip" 
+         data-dojo-props="connectId:'adminAreaHref',position:['below']">
+        Admin Area 
+    </div>
+    <div data-dojo-type="dijit/Tooltip" 
+         data-dojo-props="connectId:'loginHref',position:['below']">
+        Login
+    </div>
+    <div data-dojo-type="dijit/Tooltip" 
+         data-dojo-props="connectId:'logoutHref',position:['below']">
+        Logout 
+    </div>
+    <div data-dojo-type="dijit/Tooltip" 
+         data-dojo-props="connectId:'frontPageSearchPatientAuShadhaLogo',position:['above']"
+         >
+        <b style="color:navy; text-align:center;"><em> Search Box <em></b>
+        <p class="suggestion_text">Start searching by Patient's name or Add a New one</p>
+    </div>
+   <!-- END TOOLTIPS -->
+
+
  </div>
  <!--  END OF CENTERMAINPANE  -->
 {% endblock centerbar %}
@@ -432,6 +465,7 @@
 	    <p class="error_text"> Invalid Form Submission         </p> 
       <p class="suggestion_text">Please Correct & Resubmit </p>
     </div>
+
   <!--  END DIALOGS AND MISC  -->
 
 </div>
