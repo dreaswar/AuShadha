@@ -30,10 +30,24 @@ ready( function(){
                                                           "borderRadius": "none",
                                                           'fontSize'    : "inherit",
                                                           "padding"     : "0px 0px 10px 0px;",
+                                                            overflow:'hidden',
                                                           "margin"      : "0px 0px 10px 0px;"
                                                         });
       domStyle.set(dom.byId('searchTitle'),{top:"0px",left:"0px"});
-      domStyle.set(dom.byId('simplePatientFilteringSearch'),{top:"0px",left:"0px"});
+      registry.byId('addPatientButton').set('iconClass',"addPatientIcon_16");
+      domStyle.set(dom.byId('simplePatientFilteringSearch'),{top:"0px",
+                                                            left:"0px",
+                                                            overflow:'hidden',
+                                                            height        : "50px", 
+                                                            width         : "auto",
+                                                            background    : "none",
+                                                            border        : "none",
+                                                            'boxShadow'   : "none",
+                                                            "borderRadius": "none",
+                                                            'fontSize'    : "inherit",
+                                                            "padding"     : "0px 0px 10px 0px;",
+                                                            "margin"      : "0px 0px 10px 0px;"
+                                                            });
 
       registry.byId('addPatientButton').set("style", {"fontSize": "12px"} );
       registry.byId('filteringSelectPatSearch').set("style",{width: "400px", left: "5%", "fontSize":"12px"} );
@@ -358,7 +372,7 @@ ready( function(){
     var addContactButton =  new Button({
                                   label: "Add",
                                   title: "Add New Contact Details",
-                                  iconClass: "dijitIconNewTask",
+                                  iconClass: "addPatientContactIcon_32",
                                   onClick: function(){
                                             require(["dojo/_base/xhr", "dojo/_base/array"],
                                             function(xhr, array){
@@ -392,7 +406,7 @@ ready( function(){
 	  var addPhoneButton =  new Button({
                                     label: "Add",
                                     title: "Add New Phone Numbers",
-                                    iconClass: "dijitIconNewTask",
+                                    iconClass: "addPatientPhoneIcon_32",
                                     onClick: function(){
                                            require(
                                             ["dojo/_base/xhr", "dojo/_base/array"],

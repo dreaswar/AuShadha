@@ -97,41 +97,32 @@
 {% block topbar %}
   <!--  START OF TOPPANE  -->
   <div    id              = "topPane"
-          class           = "edgePanel"
           data-dojo-type  = "dojox/layout/ContentPane"
           data-dojo-props = "region: 'top'"
   >
 
     <!--  START OF HEADERAREA  -->
      <div id              ="header_area"
-          class           = "edge"
           data-dojo-type  = "dijit/layout/BorderContainer"
      > 
 
-       <h3 class="header_with_logo"> 
-           <img src   =  "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_64.png" 
-                alt   ="AuShadha" 
+       <div id="logoDiv"
+       >
+        <h3 class="header_with_logo"> 
+           <img src   =  "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_32.png" 
+                alt   = "AuShadha" 
                 id    = "AuShadhaHeaderIcon"
            >
         </h3>
+       </div>
 
        <!--  START OF LOGINAREA  -->
 		   <div id              ="login_area"
-		        class           = "edge"
             data-dojo-type  = "dojox/layout/ContentPane"
             data-dojo-props = "region     : 'right'"
-            style           = "border     : none; 
-                               margin     : 0px !important; 
-                               padding    : 0px !important; 
-                               background : none; 
-                               overflow   : visible;
-                               position   : absolute;
-                               top        : 0px;
-                               height     : 40px;
-                               "
        > 
 		     {% if user.is_authenticated %}
-		      <img src   = "{{STATIC_URL}}images/user_16.png" 
+		      <img src   = "{{STATIC_URL}}images/generic/auth/user_16.png" 
 		           alt   = "{{user.username}}"
 		           class = "login_area_img"
 		           id    = "loggedInUserIcon"
@@ -140,24 +131,24 @@
 		      <a href="/AuShadha/admin/" 
 		         id="adminAreaHref" 
 		         target="_blank">
-		      <img src   = "{{STATIC_URL}}images/system_run_16.png" 
+		      <img src   = "{{STATIC_URL}}images/generic/dashboard_and_settings/settings_16.png" 
 		           alt   = "Admin"
 		           class = "login_area_img" >
 		      </a>
 		      {% endif %}
 		      &nbsp; 
 		      <a href="/AuShadha/logout/" id="logoutHref">
-		      <img src   = "{{STATIC_URL}}images/system_log_out_16.png" 
+		      <img src   = "{{STATIC_URL}}images/generic/auth/system-shutdown-panel-restart.svg" 
 		           alt   = "Logout"
 		           class = "login_area_img"
 		           >
 		      </a>&nbsp; 
 		     {% else %}
 		      <a href="/AuShadha/login/" id="loginHref">
-		      <img src   = "{{STATIC_URL}}images/login_indicator.png" 
+		      <img src   = "{{STATIC_URL}}images/generic/auth/login_128.png" 
 		           alt   = "Login"
 		           class = "login_area_img"
-		            style="width:16px; height:16px;"
+		           style="width:16px; height:16px;"
 		           >
 		      </a>
 		     {% endif %}
@@ -219,24 +210,12 @@
                             style           = "height: 900px;"
                       >
 
-                          <div style="
-                                  margin-bottom   : 0px;
-                                  position        : relative;
-                                  left            : 20%;
-                                  top             : 40%;
-                                  width           : 60%;
-                                  margin-left     : 0px; 
-                                  padding-left    : 0px;
-                                  border          : solid 1px #cecece;
-                                  border-radius   : 3px;
-                                  box-shadow      : 1px 1px 1px #cecece;
-                                  background      : #D0DFEA;
-                                  overflow        : visible;
-                                  height          : 20%;
-                                  "
-                               data-dojo-type   = "dojox/layout/ContentPane"
+                          <div data-dojo-type   = "dojox/layout/ContentPane"
                                data-dojo-props  = "region:'top'"
                                id               = "searchPatientContainerDiv"
+                               style  = "position:relative;
+                                         top: 100px;
+                                         "
                            >
                             <div id="searchTitle" 
                                   style="color:navy; 
@@ -245,18 +224,10 @@
                                         vertical-align:middle; 
                                         font-family: Droid-Sans, Sans-Serif;
                                         position: relative;
-                                        top:-100px;
-                                        height:76px;
+                                        top:0px;
                                        "
                              > 
-                              <img    src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_128.png" 
-                                      style="position:relative;
-                                             top: -13px; 
-                                             padding:0px; 
-                                             margin:0px;
-                                            "
-                                      id="frontPageSearchPatientAuShadhaLogo"
-                              >
+                              
                              {% include 'search/patient_search_filtering_select.html' %}
                             </div>
 

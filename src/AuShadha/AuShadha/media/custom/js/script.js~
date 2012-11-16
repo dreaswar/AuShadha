@@ -375,7 +375,7 @@
 //{% if perms.patient.add_patientdetail %}
     var addPatientButton =  new dijit.form.Button({
                                               label: "New", 
-                                              iconClass:"dijitIconNewTask",
+                                              iconClass:"addPatientIcon",
                                               onClick: function(){
                                                           require(["dojo/_base/xhr",
                                                                   "dijit/registry", 
@@ -387,7 +387,7 @@
                                                                     url: "{%url patient_new_add %}",
                                                                     load: function(html){
                                                                            myDialog.set('content', html);
-                                                                           myDialog.set('title', "Enroll New Patient to the Clinic);
+                                                                           myDialog.set('title', "Enroll New Patient to the Clinic");
                                                                            myDialog.show();
                                                                     }
                                                             });

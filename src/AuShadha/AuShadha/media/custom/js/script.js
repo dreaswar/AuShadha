@@ -375,7 +375,7 @@
 //{% if perms.patient.add_patientdetail %}
     var addPatientButton =  new dijit.form.Button({
                                               label: "New", 
-                                              iconClass:"dijitIconNewTask",
+                                              iconClass:"addPatientIcon_32",
                                               onClick: function(){
                                                           require(["dojo/_base/xhr",
                                                                   "dijit/registry", 

@@ -1,14 +1,38 @@
 <span id               = "simplePatientFilteringSearch" 
       data-dojo-it     = "simplePatientFilteringSearch"
       data-dojo-type   = "dojox/layout/ContentPane"
+      style="
+            position        : relative;
+            left            : 20%;
+            min-width           : 60%;
+            height          : 20%;
+            overflow        : auto;
+            margin-left     : 0px; 
+            margin-bottom   : 0px;
+            padding-left    : 0px;
+            border          : solid 1px #cecece;
+            border-radius   : 3px;
+            background      : #D0DFEA;
+            box-shadow      : 1px 1px 1px #cecece;
+            "
 >
+    <img    src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo.svg" 
+            style="position:relative;
+                   top: -13px; 
+                   padding:0px; 
+                   margin:0px;
+                   width: 128px;
+                   height:128px;
+                  "
+            id="frontPageSearchPatientAuShadhaLogo"
+    >
     {%if perms.patient.add_patientdetail %}
     <table>
     <tr> 
       <td>
         <button id             = "addPatientButton" 
                 type           = "button"
-                data-dojo-props= "iconClass: 'dijitIconNewTask'"
+                data-dojo-props= "iconClass: 'addPatientIcon_32'"
                 data-dojo-id   = "addPatientButton"
                 style          = "display:inline;"
         > 
@@ -38,10 +62,10 @@
                                   "
                 id              = "filteringSelectPatSearch"
                 onChange        = "patFilteringSearchOnKeyUp(this);"
-                style           = "margin-left : 10%; 
-                                   left        : 15%;
-                                   position    : relative;
-                                   width       : 350px;
+                style           = "width       : 300px;
+                                   margin-left : 40px;
+                                   left : 33%; 
+                                   position:relative;
                                    padding     : inherit 10px inherit 10px;"
            >
           </div>
@@ -54,7 +78,9 @@
 
   <!-- TOOLTIPS -->
     <div  data-dojo-type="dijit/Tooltip" 
-          data-dojo-props="connectId:'addPatientButton',position:['below']">
+          data-dojo-props="connectId:'addPatientButton',position:['below']"
+          style="display:none;"
+    >
         Register a New Patient to the Clinic..
     </div>
   <!-- TOOLTIPS -->
