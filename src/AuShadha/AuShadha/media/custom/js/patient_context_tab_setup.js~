@@ -407,7 +407,6 @@ ready( function(){
                                     label: "Add",
                                     title: "Add New Phone Numbers",
                                     iconClass: "addPatientPhoneIcon_32",
-                                    style   : "width:100px; height:35px; font-size:11px;",
                                     onClick: function(){
                                            require(
                                             ["dojo/_base/xhr", "dojo/_base/array"],

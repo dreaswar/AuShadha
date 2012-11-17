@@ -109,10 +109,12 @@
        <div id="logoDiv"
        >
         <h3 class="header_with_logo"> 
-           <img src   =  "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo.svg" 
+           <a href="/" target="_blank" alt="AuShadha" >
+           <img src   =  "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_text.svg" 
                 alt   = "AuShadha" 
                 id    = "AuShadhaHeaderIcon"
            >
+           </a>
         </h3>
        </div>
 
@@ -121,6 +123,7 @@
             data-dojo-type  = "dojox/layout/ContentPane"
             data-dojo-props = "region     : 'right'"
        > 
+  	     <span id="timeBox"> </span>
 		     {% if user.is_authenticated %}
 		      <img src   = "{{STATIC_URL}}images/generic/auth/user_16.png" 
 		           alt   = "{{user.username}}"

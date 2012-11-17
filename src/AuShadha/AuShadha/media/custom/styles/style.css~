@@ -8,7 +8,8 @@ html, body {
 
 body{
 //  background  : -moz-linear-gradient(center top , #EDF2F7, #D0DFEA) repeat scroll 0 0 transparent;
-  background    : -moz-linear-gradient(center top , snow, whitesmoke) repeat scroll 0 0 transparent;
+//  background    : -moz-linear-gradient(center top , snow, whitesmoke) repeat scroll 0 0 transparent;
+  background    : -moz-linear-gradient(center top , #D0DFEA, whitesmoke) repeat scroll 0 0 transparent;
   font-family   : Droid-Sans, Sans-Serif, Ubuntu, Helvetica, Cantarell;
   font-size     : 12px;
 }
@@ -65,18 +66,18 @@ body{
 }
 
 #logoDiv img{
- position :relative;
- top: -22px;
- left: 10px;
- width       : 32px;
- height      : 32px;
+ position : relative;
+ top      : -20px;
+ left     : 10px;
+ width    : 100px;
+ height   : 20px;
 }
 
 #login_area{
   position    : relative;
   top         : 3px !important;
   height      : 20px;
-  width:      : 250px;
+  width:      : 400px;
   border      : none; 
   margin      : 0px; 
   padding     : 0px; 
@@ -89,46 +90,52 @@ body{
  height      : 16px;
 }
 
-	#centerTopPane, 
-	#centerBottomPane
-	{
+#timeBox{
+  position      : relative;
+  left          : 0px;
+  margin-right  : 5px;
+  padding-right : 5px;
+  top           : -5px;
+  border-right  : solid #aaa 1px;
+  color         : #404040;
+  font-size     : 10px;
+}
+
+#centerTopPane, 
+#centerBottomPane{
     background: -moz-linear-gradient(center top ,whitesmoke, white) repeat scroll 0 0 transparent;
-	}
+}
 
 #centerMainPane{
-  position:absolute !important;
+  position: absolute !important;
   top     : 35px !important;
   left    : 0px !important;
   width   : 99% !important;
   border  : none !important;
-  background    : -moz-linear-gradient(center top , snow, whitesmoke) repeat scroll 0 0 transparent;
+//  background    : -moz-linear-gradient(center top , snow, whitesmoke) repeat scroll 0 0 transparent;
+  background    : -moz-linear-gradient(center top , #D0DFEA, whitesmoke) repeat scroll 0 0 transparent;
 }
 
 #bottomPane{
-	position   : absolute !important;
-	bottom     : 0px !important; 
-	left       : 0px !important;
-	margin     : 0px !important;
-	padding    : 0px !important;
-	height     : 16px !important;
-	width      : 100% !important;
-  background : -moz-linear-gradient(center top , #EDF2F7, white) repeat scroll 0 0 transparent;
+	position    : absolute !important;
+	bottom      : 0px !important; 
+	left        : 0px !important;
+	margin      : 0px !important;
+	padding     : 0px !important;
+	height      : 16px !important;
+	width       : 100% !important;
+  background  : -moz-linear-gradient(center top , #EDF2F7, white) repeat scroll 0 0 transparent;
   color       : Navy;
 }
 
-
-
-
-
-	#patient_grid,
-{
+#patient_grid{
    position:relative;
    left: 70px;
    min-height: 300px;
    height      :500px; 
    max-height: 550px;
    margin-top: 5px;
-	}
+}
 
 
 /*
@@ -229,18 +236,29 @@ body{
 
 
 /* dijit Custom Classess */
+
+#addPatientButton >*{
+    text-align:center;
+    vertical-align:middle;
+    padding: 2px;
+    margin:0px;
+    background-color:lightgray;
+}
+
+
+
   .addPatientIcon_32
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/patient_detail_add_32.png');
+     background-image    : url('{{MEDIA_URL}}/images/patient/patient_add.svg');
      background-repeat   : no-repeat;
-     height: 32px;
-     width:32px;
+     height: 16px;
+     width:16px;
      text-align:center;
    }
 
   .addPatientIcon_16
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/patient_detail_add_16.png');
+     background-image    : url('{{MEDIA_URL}}/images/patient/patient_add.svg');
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;

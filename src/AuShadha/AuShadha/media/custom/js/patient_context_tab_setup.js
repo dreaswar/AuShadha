@@ -372,7 +372,7 @@ ready( function(){
     var addContactButton =  new Button({
                                   label: "Add",
                                   title: "Add New Contact Details",
-                                  iconClass: "addPatientContactIcon_32",
+                                  iconClass: "addPatientContactIcon_16",
                                   onClick: function(){
                                             require(["dojo/_base/xhr", "dojo/_base/array"],
                                             function(xhr, array){
