@@ -6,6 +6,7 @@ from patient.views import *
 from patient.medication_list import *
 from patient.family_history import *
 from patient.immunisation import *
+from obs_and_gyn.views import *
 
 
 # Uncomment the next two lines to enable the admin:
@@ -190,6 +191,31 @@ urlpatterns = patterns('',
     		'patient.social_history.patient_social_history_del',
     		name = 'patient_social_history_del'
     ),
+
+###########################################################################################
+
+#    url(r'obs_and_gyn_history/json/$',
+#    		'obs_and_gyn.views.obs_and_gyn_history_json',
+#    		name = 'obs_and_gyn_history_json'
+#    ),
+
+#    url(r'obs_and_gyn_history/list/(?P<id>\d+)/$',
+#    		'obs_and_gyn.views.obs_and_gyn_history_list',
+#    		name = 'obs_and_gyn_history_list'
+#    ),
+
+    url(r'obs_and_gyn_history/add/(?P<id>\d+)/$',
+    		'obs_and_gyn.views.obs_and_gyn_history_add',
+   		  name = 'obs_and_gyn_history_add'
+    ),
+#    url(r'obs_and_gyn_history/edit/(?P<id>\d+)/$',
+#    		'obs_and_gyn.views.obs_and_gyn_history_edit',
+#    		name = 'obs_and_gyn_history_edit'
+#    ),
+#    url(r'obs_and_gyn_history/del/(?P<id>\d+)/$',
+#    		'obs_and_gyn.views.obs_and_gyn_history_del',
+#    		name = 'obs_and_gyn_history_del'
+#    ),
 
 ###########################################################################################
 

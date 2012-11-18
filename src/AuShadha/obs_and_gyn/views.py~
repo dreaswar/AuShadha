@@ -128,36 +128,36 @@ def obs_and_gyn_history_edit(request, id):
     if request.method =="GET" and request.is_ajax():
       try:
         id                             = int(id)
-        obs_and_gyn_detail_obj   = ObstetricDetail.objects.get(pk = id)
-        obs_and_gyn_detail_form  = ObstetricDetailForm(instance = obs_and_gyn_detail_obj)
-        patient_detail_obj                = obs_and_gyn_detail_obj.patient_detail
+        patient_obs_and_gyn_history_obj   = ObstetricDetail.objects.get(pk = id)
+        patient_obs_and_gyn_history_form  = ObstetricDetailForm(instance = patient_obs_and_gyn_history_obj)
+        patient_detail_obj                = patient_obs_and_gyn_history_obj.patient_detail
         variable                          = RequestContext(request, 
                                                 {"user":user,
                                                 "patient_detail_obj"              : patient_detail_obj ,
-                                                "obs_and_gyn_detail_form"     : obs_and_gyn_detail_form, 
-                                                "obs_and_gyn_detail_obj"      :obs_and_gyn_detail_obj ,
-                                                'action'                          : obs_and_gyn_detail_obj.get_edit_url(),
+                                                "patient_obs_and_gyn_history_form"     : patient_obs_and_gyn_history_form, 
+                                                "patient_obs_and_gyn_history_obj"      :patient_obs_and_gyn_history_obj ,
+                                                'action'                          : patient_obs_and_gyn_history_obj.get_edit_url(),
                                                 'button_label'                    : "Edit",
                                                 'canDel'                          : True,
                                                 'addUrl'                          : None,
-                                                'editUrl'                         : obs_and_gyn_detail_obj.get_edit_url(),
-                                                'delUrl'                          : obs_and_gyn_detail_obj.get_del_url(),
+                                                'editUrl'                         : patient_obs_and_gyn_history_obj.get_edit_url(),
+                                                'delUrl'                          : patient_obs_and_gyn_history_obj.get_del_url(),
                                                })
       except TypeError or ValueError or AttributeError:
         raise Http404("BadRequest")
       except ObstetricDetail.DoesNotExist:
-        raise Http404("BadRequest: Patient Obstetric History Data Does Not Exist")
+        raise Http404("BadRequest: Patient SocialHistory Data Does Not Exist")
       return render_to_response('patient/obs_and_gyn_history/add_or_edit_form.html',variable)
     elif request.method == 'POST' and request.is_ajax():
       try:
         id                              = int(id)
-        obs_and_gyn_detail_obj        = ObstetricDetail.objects.get(pk =id)
-        obs_and_gyn_detail_form  = ObstetricDetailForm(request.POST,instance = obs_and_gyn_detail_obj)
-        patient_detail_obj              = obs_and_gyn_detail_obj.patient_detail
-        if obs_and_gyn_detail_form.is_valid():
-          obs_and_gyn_history_obj  = obs_and_gyn_detail_form.save()
+        patient_obs_and_gyn_history_obj        = ObstetricDetail.objects.get(pk =id)
+        patient_obs_and_gyn_history_form  = ObstetricDetailForm(request.POST,instance = patient_obs_and_gyn_history_obj)
+        patient_detail_obj              = patient_obs_and_gyn_history_obj.patient_detail
+        if patient_obs_and_gyn_history_form.is_valid():
+          obs_and_gyn_history_obj  = patient_obs_and_gyn_history_form.save()
           success       = True
-          error_message = "Obstetric History Data Edited Successfully"
+          error_message = "SocialHistory Data Edited Successfully"
           form_errors   = ''
           data = { 'success'      : success, 
                    'error_message': error_message,
@@ -169,9 +169,9 @@ def obs_and_gyn_history_edit(request, id):
           return HttpResponse(json, content_type = 'application/json')
         else:
           success       = False
-          error_message = "Error Occured. Obstetric History Data data could not be added."
+          error_message = "Error Occured. SocialHistory Data data could not be added."
           form_errors   = ''
-          for error in obs_and_gyn_detail_form.errors:
+          for error in patient_obs_and_gyn_history_form.errors:
             form_errors += '<p>' + error +'</p>'
           data = {'success': success, 'error_message': error_message,'form_errors': form_errors}
           json = simplejson.dumps(data)
@@ -179,7 +179,7 @@ def obs_and_gyn_history_edit(request, id):
       except ValueError or AttributeError or TypeError:
         raise Http404("BadRequest: Server Error")
       except ObstetricDetail.DoesNotExist:
-        raise Http404("BadRequest: Requested Patient Obstetric History Data DoesNotExist")
+        raise Http404("BadRequest: Requested Patient SocialHistory Data DoesNotExist")
     else:
       raise Http404("BadRequest: Unsupported Request Method. request's AJAX status was:: ", request.is_ajax())
 
@@ -191,18 +191,18 @@ def obs_and_gyn_history_del(request, id):
     if request.method =="GET":
        try:
           id                      = int(id)
-          obs_and_gyn_detail_obj = ObstetricDetail.objects.get(pk = id)
-          patient_detail_obj       = obs_and_gyn_detail_obj.patient_detail
+          patient_obs_and_gyn_history_obj = ObstetricDetail.objects.get(pk = id)
+          patient_detail_obj       = patient_obs_and_gyn_history_obj.patient_detail
        except TypeError or ValueError or AttributeError:
           raise Http404("BadRequest")
        except ObstetricDetail.DoesNotExist:
-          raise Http404("BadRequest: Patient Obstetric History Data Does Not Exist")
-       obs_and_gyn_detail_obj.delete()
+          raise Http404("BadRequest: Patient SocialHistory Data Does Not Exist")
+       patient_obs_and_gyn_history_obj.delete()
        success = True
-       error_message = "Obstetric History Data Deleted Successfully"
+       error_message = "SocialHistory Data Deleted Successfully"
        data = {'success'        : success, 
                 'error_message' : error_message, 
-                'addUrl'        : patient_detail_obj.get_obs_and_gyn_detail_add_url(),
+                'addUrl'        : patient_detail_obj.get_patient_obs_and_gyn_history_add_url(),
                 'canDel'        : False, 
                 'editUrl'       : None, 
                 'delUrl'        : None
