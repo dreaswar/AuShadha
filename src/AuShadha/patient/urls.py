@@ -46,22 +46,6 @@ urlpatterns = patterns('',
 
 ###########################################################################################
 
-#    url(r'detail/(?P<id>\d+)/$',
-#    		'patient.views.patient_detail_list',
-#    		name = 'patient_detail_list'
-#    ),
-
-    url(r'detail/edit/(?P<id>\d+)/$',
-    		'patient.views.patient_detail_edit',
-    		name ='patient_detail_edit'
-    ),
-    url(r'detail/del/(?P<id>\d+)/$',
-    		'patient.views.patient_detail_del',
-    		name = 'patient_detail_del'
-    ),
-
-###########################################################################################
-
     url(r'contact/json/$',
     		'patient.views.contact_json',
     		name = 'contact_json'
@@ -204,10 +188,11 @@ urlpatterns = patterns('',
 #    		name = 'obs_and_gyn_history_list'
 #    ),
 
-    url(r'obs_and_gyn_history/add/(?P<id>\d+)/$',
-    		'obs_and_gyn.views.obs_and_gyn_history_add',
-   		  name = 'obs_and_gyn_history_add'
-    ),
+#    url(r'obs_and_gyn_history/add/(?P<id>\d+)/$',
+#    		'obs_and_gyn.views.obs_and_gyn_history_add',
+#   		  name = 'obs_and_gyn_history_add'
+#    ),
+
 #    url(r'obs_and_gyn_history/edit/(?P<id>\d+)/$',
 #    		'obs_and_gyn.views.obs_and_gyn_history_edit',
 #    		name = 'obs_and_gyn_history_edit'
@@ -215,6 +200,33 @@ urlpatterns = patterns('',
 #    url(r'obs_and_gyn_history/del/(?P<id>\d+)/$',
 #    		'obs_and_gyn.views.obs_and_gyn_history_del',
 #    		name = 'obs_and_gyn_history_del'
+#    ),
+
+###########################################################################################
+
+
+#    url(r'obstetric_history_detail/json/$',
+#    		'obs_and_gyn.views.obstetric_history_detail_json',
+#    		name = 'obstetric_history_detail_json'
+#    ),
+
+#    url(r'obstetric_history_detail/list/(?P<id>\d+)/$',
+#    		'obs_and_gyn.views.obstetric_history_detail_list',
+#    		name = 'obstetric_history_detail_list'
+#    ),
+
+    url(r'obstetric_history_detail/add/(?P<id>\d+)/$',
+    		'obs_and_gyn.views.obstetric_history_detail_add',
+   		  name = 'obstetric_history_detail_add'
+    ),
+    url(r'obstetric_history_detail/edit/(?P<id>\d+)/$',
+    		'obs_and_gyn.views.obstetric_history_detail_edit',
+    		name = 'obstetric_history_detail_edit'
+    ),
+
+#    url(r'obstetric_history_detail/del/(?P<id>\d+)/$',
+#    		'obs_and_gyn.views.obstetric_history_detail_del',
+#    		name = 'obstetric_history_detail_del'
 #    ),
 
 ###########################################################################################
@@ -346,6 +358,23 @@ urlpatterns = patterns('',
 
 
 ###########################################################################################
+
+#    url(r'detail/(?P<id>\d+)/$',
+#    		'patient.views.patient_detail_list',
+#    		name = 'patient_detail_list'
+#    ),
+
+    url(r'detail/edit/(?P<id>\d+)/$',
+    		'patient.views.patient_detail_edit',
+    		name ='patient_detail_edit'
+    ),
+    url(r'detail/del/(?P<id>\d+)/$',
+    		'patient.views.patient_detail_del',
+    		name = 'patient_detail_del'
+    ),
+
+###########################################################################################
+
 
     url(r'admission/json/$','patient.views.admission_json',name = 'admission_json'  ),
 

@@ -12,8 +12,8 @@ from django.core.exceptions   import ValidationError
 from django 		              import forms
 
 from aushadha_base_models.models import AuShadhaBaseModel
-from clinic.models import Clinic
-from patient.models import PatientDetail, generic_url_maker
+from clinic.models               import Clinic
+from patient.models              import PatientDetail, generic_url_maker
 
 
 
@@ -28,15 +28,10 @@ class ObstetricHistoryDetail(AuShadhaBaseModel):
     
   """
 
-  never_been_pregnant    = models.BooleanField('Click here if you have never been pregnant', default = False)
-  adoped_children        = models.BooleanField(default = False)
-  adoped_children_names  = models.TextField(default="Not Applicable", blank = True, null = True)
-  pregnancy_listing      = models.TextField(
-                                          default='''List all pregnancies in order, 
-                                                     including still, premature births, 
-                                                     ectopics and abortions
-                                                   ''', 
-                                          blank = True, null = True
+  never_been_pregnant    = models.BooleanField('Never been pregnant', default = False)
+  adoped_children        = models.BooleanField("Adopted Children ?", default = False)
+  adoped_children_names  = models.TextField("Adopted Children Names", default="Not Applicable", blank = True, null = True)
+  pregnancy_listing      = models.TextField(help_text='''List all pregnancies in order,including still, premature births, ectopics and abortions''',blank = True, null = True
                            )
   patient_detail         = models.ForeignKey('patient.PatientDetail',null = True,blank = True, unique = True)
 
@@ -124,12 +119,12 @@ class ObstetricHistoryDetailForm(ModelForm):
 		               {"field": 'adoped_children_names',
 		                'max_length'    :  100         ,
 		               "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : false"
+		                "data-dojo-props": r"'required' : false, disabled:true"
 		               },
                     {"field"         : 'pregnancy_listing',
 		                'max_length'    :  250         ,
 		                "data-dojo-type": "dijit.form.Textarea",
-		                "data-dojo-props": r"'required' :true"
+		                "data-dojo-props": r"'required' :false, 'placeHolder': 'List all pregnancies in order including still, premature births,ectopics and abortions'"
 		                }
 	        ]
 		for field in text_fields:

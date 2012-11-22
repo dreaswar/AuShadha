@@ -130,7 +130,7 @@ class AuShadhaBaseModel(models.Model):
     return  generic_url_maker(self, "del", self.id)
 
   def get_object_json_url(self):
-    return APP_ROOT_URL+"/%s_json/%s/" %(self.app_label, self.id)
+    return APP_ROOT_URL+"/%s_json/%s/" %(self.__model_label__, self.id)
 
 
   def generic_url_maker(self,action,id, root_object = False):

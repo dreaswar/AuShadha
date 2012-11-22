@@ -296,6 +296,22 @@ class PatientDetail(models.Model):
 
 ################################################################################
 
+	def get_patient_obstetric_history_detail_list_url(self):
+		'''
+			Returns the Social Obstetric details for a Patient
+		'''
+		return '/AuShadha/pat/obstetric_history_detail/list/%s/' %self.id
+
+	def get_patient_obstetirc_history_detail_add_url(self):
+		'''
+			Returns the URL for adding Obstetric History details for a Patient
+		'''
+		return '/AuShadha/pat/obstetric_history_detail/add/%s/' %self.id
+
+################################################################################
+
+################################################################################
+
 	def get_patient_medication_list_list_url(self):
 		'''
 			Returns the Medication details for a Patient

@@ -170,7 +170,7 @@
             function(json){
               var jsondata = JSON.parse(json);
               if(jsondata.success == true){
-                registry.byId("obstetric_history_detail").set('href', jsondata.addUrl);
+                registry.byId("obstetric_detail").set('href', jsondata.addUrl);
               }
               else{
                 dom.byId("patientObstetricHistoryFormJsonMessage").innerHTML = jsondata.error_message;

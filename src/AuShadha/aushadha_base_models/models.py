@@ -105,7 +105,7 @@ class AuShadhaBaseModel(models.Model):
   '''
     base AuShadha Model From which all AuShadha Models Except the Clinic Model Derive. 
   '''
-  __model_label__ = "AuShadhaBaseModel"
+#  __model_label__ = "AuShadhaBaseModel"
 
   parent_clinic = models.ForeignKey('clinic.Clinic', null = True, blank = True)
 

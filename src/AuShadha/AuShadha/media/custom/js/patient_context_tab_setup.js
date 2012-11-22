@@ -160,11 +160,20 @@ ready( function(){
                               "patientPreventiveTabs", 
                               "last"
           );
+
             domConstruct.create('div', 
-                                {id: "obstetrics_preventives_list"}, 
+                                {id: "obstetric_history_detail"}, 
                                 "patientObstetricsPreventivesTab", 
                                 "first"
             );
+/*
+            domConstruct.create('div', 
+                                {id: "obstetric_history_form"}, 
+                                "obstetrics_history_detail", 
+                                "after"
+            );
+*/
+
           domConstruct.create('div', 
                               {id: "patientGynaecologyPreventivesTab"}, 
                               "patientPreventiveTabs", 
@@ -322,12 +331,28 @@ ready( function(){
                                                     "patientImmunisationTab"
                                                     );
           preventiveHealthTabs.addChild(patientImmunisationTab);
+
           var patientObstetricsPreventivesTab = new ContentPane({id:"patientObstetricsPreventivesTab",
                                                        title:"Obstetrics"
                                                       },
                                                       "patientObstetricsPreventivesTab"
                                                       );
           preventiveHealthTabs.addChild(patientObstetricsPreventivesTab);
+
+
+            var patientObstetricsHistoryDetail = new ContentPane({id:"obstetric_history_detail",
+                                                        },
+                                                        "obstetric_history_detail"
+                                                        );
+            patientObstetricsPreventivesTab.addChild(patientObstetricsHistoryDetail);
+/*
+            var patientObstetricsHistoryForm = new ContentPane({id:"obstetric_history_form",
+                                                        },
+                                                        "obstetric_history_form"
+                                                        );
+            patientObstetricsPreventivesTab.addChild(patientObstetricsHistoryForm);
+*/
+
           var patientGynaecologyPreventivesTab = new ContentPane({id:"patientGynaecologyPreventivesTab",
                                                        title:"Gynaecology"
                                                       },

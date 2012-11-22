@@ -109,6 +109,11 @@
                                    domStyle.set(el, 'color','RoyalBlue');
                                    domStyle.set(el, 'font-style','italic');
                          }
+             },
+             "#obs_and_gyn_history_formset_table": {   
+                found: function(n){
+                          domStyle.set(n, 'display','none');
+                        }
              }
          }
           behaviour.add(FormBehaviour)

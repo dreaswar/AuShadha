@@ -200,6 +200,9 @@ def return_patient_json(patient, success = True):
         data_to_append['socialhistoryadd']  = patient.get_patient_social_history_add_url()
         data_to_append['socialhistorylist'] = patient.get_patient_social_history_list_url()
 
+        data_to_append['obstetrichistorydetailadd']  = patient.get_patient_obstetric_history_detail_add_url()
+        data_to_append['obstetrichistorydetaillist'] = patient.get_patient_obstetric_history_detail_list_url()
+
 
     if success:
       error_message           = "Patient Detail Saved Successfully"

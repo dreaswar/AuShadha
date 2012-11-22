@@ -95,6 +95,7 @@
             console.log("Setting up the Forms...");
               registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
               registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
+              registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
             console.log("Finished setting up the Forms...");
 
             console.log("Setting up the Grids Now...");
