@@ -44,6 +44,7 @@ urlpatterns = patterns('',
       name = "patient_filtering_search_json_with_id"
   ),
 
+###########################################################################################
 
     url(r'contact/json/$',
     		'patient.views.contact_json',

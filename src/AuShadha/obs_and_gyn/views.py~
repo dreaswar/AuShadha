@@ -148,17 +148,17 @@ def obstetric_history_detail_edit(request, id):
         obs_and_gyn_detail_obj   = ObstetricHistoryDetail.objects.get(pk = id)
         obs_and_gyn_detail_form  = ObstetricHistoryDetailForm(instance = obs_and_gyn_detail_obj)
         patient_detail_obj       = obs_and_gyn_detail_obj.patient_detail
-        variable                 = RequestContext(request, 
-                                                {"user"                   : user,
-                                                "patient_detail_obj"      : patient_detail_obj ,
-                                                "obs_and_gyn_detail_form" : obs_and_gyn_detail_form, 
-                                                "obs_and_gyn_detail_obj"  : obs_and_gyn_detail_obj ,
-                                                'action'                  : obs_and_gyn_detail_obj.get_edit_url(),
-                                                'button_label'            : "Edit",
-                                                'canDel'                  : True,
-                                                'addUrl'                  : None,
-                                                'editUrl'                 : obs_and_gyn_detail_obj.get_edit_url(),
-                                                'delUrl'                  : obs_and_gyn_detail_obj.get_del_url(),
+        variable                 = RequestContext(request, {
+                                                      "user"                    : user,
+                                                      "patient_detail_obj"      : patient_detail_obj ,
+                                                      "obs_and_gyn_detail_form" : obs_and_gyn_detail_form, 
+                                                      "obs_and_gyn_detail_obj"  : obs_and_gyn_detail_obj ,
+                                                      'action'                  : obs_and_gyn_detail_obj.get_edit_url(),
+                                                      'button_label'            : "Edit",
+                                                      'canDel'                  : True,
+                                                      'addUrl'                  : None,
+                                                      'editUrl'                 : obs_and_gyn_detail_obj.get_edit_url(),
+                                                      'delUrl'                  : obs_and_gyn_detail_obj.get_del_url(),
                                    })
       except TypeError or ValueError or AttributeError:
         raise Http404("BadRequest")
@@ -179,7 +179,11 @@ def obstetric_history_detail_edit(request, id):
           data = { 'success'      : success, 
                    'error_message': error_message,
                    'form_errors'  : form_errors,
-                   "savedObj"          : obs_and_gyn_history_obj
+                   "savedObj"     : obs_and_gyn_history_obj.patient_detail.__unicode__(),
+                   "editUrl"      : obs_and_gyn_history_obj.get_edit_url(),
+                   "delUrl"       : obs_and_gyn_history_obj.get_del_url(),
+                   'canDel'       : True,
+                   "addUrl"       : None,
                  }
 #          data             = generate_json_for_datagrid(obs_and_gyn_history_obj)
           json              = simplejson.dumps(data)
@@ -202,13 +206,13 @@ def obstetric_history_detail_edit(request, id):
 
 
 @login_required
-def obs_and_gyn_history_del(request, id):
+def obstetric_history_detail_del(request, id):
   user = request.user
   if request.user and user.is_superuser:
     if request.method =="GET":
        try:
-          id                      = int(id)
-          obs_and_gyn_detail_obj = ObstetricHistoryDetail.objects.get(pk = id)
+          id                       = int(id)
+          obs_and_gyn_detail_obj   = ObstetricHistoryDetail.objects.get(pk = id)
           patient_detail_obj       = obs_and_gyn_detail_obj.patient_detail
        except TypeError or ValueError or AttributeError:
           raise Http404("BadRequest")
@@ -219,7 +223,7 @@ def obs_and_gyn_history_del(request, id):
        error_message = "Obstetric History Data Deleted Successfully"
        data = {'success'        : success, 
                 'error_message' : error_message, 
-                'addUrl'        : patient_detail_obj.get_obs_and_gyn_detail_add_url(),
+                'addUrl'        : patient_detail_obj.get_obstetric_history_detail_add_url(),
                 'canDel'        : False, 
                 'editUrl'       : None, 
                 'delUrl'        : None

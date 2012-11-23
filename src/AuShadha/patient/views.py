@@ -97,6 +97,10 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
               try:
                 if i.name == 'aushadhabasemodel_ptr':
                   data[i.name] = "AuShadhaBaseModel"
+                elif i.name=="administrator":
+                  data[i.name] = getattr(element, 'i.name.username', i.name)
+                elif i.name=="vaccine_detail":
+                  data[i.name] = getattr(element, 'i.name.__unicode__()', None)
                 else:
                   data[i.name] = getattr(element, i.name, None)
               except(TypeError):
@@ -121,6 +125,10 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
           try:
             if i.name == 'aushadhabasemodel_ptr':
               data[i.name] = "AuShadhaBaseModel"
+            elif i.name=="administrator":
+              data[i.name] = getattr(obj, 'i.name.username', i.name)
+            elif i.name=="vaccine_detail":
+              data[i.name] = getattr(obj, 'i.name.__unicode__()',None)
             else:
               data[i.name] = getattr(obj, i.name, None)
           except(TypeError):

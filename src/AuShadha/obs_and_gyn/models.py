@@ -27,6 +27,8 @@ class ObstetricHistoryDetail(AuShadhaBaseModel):
     methods defined on him. 
     
   """
+  
+  __model_label__  = "obstetric_history_detail"
 
   never_been_pregnant    = models.BooleanField('Never been pregnant', default = False)
   adoped_children        = models.BooleanField("Adopted Children ?", default = False)

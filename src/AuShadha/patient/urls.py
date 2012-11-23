@@ -224,10 +224,10 @@ urlpatterns = patterns('',
     		name = 'obstetric_history_detail_edit'
     ),
 
-#    url(r'obstetric_history_detail/del/(?P<id>\d+)/$',
-#    		'obs_and_gyn.views.obstetric_history_detail_del',
-#    		name = 'obstetric_history_detail_del'
-#    ),
+    url(r'obstetric_history_detail/del/(?P<id>\d+)/$',
+    		'obs_and_gyn.views.obstetric_history_detail_del',
+    		name = 'obstetric_history_detail_del'
+    ),
 
 ###########################################################################################
 

@@ -536,9 +536,14 @@ var GRID_STRUCTURES= {
                                     },
 
                                     {name        : "Name", 
-                                      field      : "vaccine_name", 
+                                      field      : "vaccine_detail", 
                                       width      : "100px",
                                       cellStyles : "text-align:center;",
+                                    },
+                                    {name        : "Administrator", 
+                                      field      : "administrator", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
                                     },
 
                                     {name        : "Date", 
@@ -547,6 +552,26 @@ var GRID_STRUCTURES= {
                                       cellStyles : "text-align:center;"
                                     },
 
+                                    {name        : "Next Due", 
+                                      field      : "next_due", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Site", 
+                                      field      : "injection_site", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Route", 
+                                      field      : "route", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Dose", 
+                                      field      : "dose", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
                                     {name        : "Adverse Reaction", 
                                       field      : "adverse_reaction", 
                                       width      : "70px",

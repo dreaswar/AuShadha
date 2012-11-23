@@ -11,6 +11,7 @@ from django.forms	      import ModelForm
 from django.core.exceptions   import ValidationError
 from django 		      import forms
 
+from django.contrib.auth.models import User
 from aushadha_base_models.models import AuShadhaBaseModel
 
 
@@ -302,7 +303,7 @@ class PatientDetail(models.Model):
 		'''
 		return '/AuShadha/pat/obstetric_history_detail/list/%s/' %self.id
 
-	def get_patient_obstetirc_history_detail_add_url(self):
+	def get_patient_obstetric_history_detail_add_url(self):
 		'''
 			Returns the URL for adding Obstetric History details for a Patient
 		'''
@@ -865,31 +866,94 @@ class PatientImmunisation(AuShadhaBaseModel):
     Inherits from the AuShadha Base Model. 
     This defines the Immunisation that the patient has had. 
     The patient automatically belongs to a Clinic and has some add, edit, del 
-    methods defined on him. 
+    methods defined on him.
     
   """
 
   __model_label__ = "immunisation"
 
-  vaccine_name      = models.CharField(max_length = 100)
+#  vaccine_name     = models.CharField(max_length = 100)
+  vaccine_detail    = models.ForeignKey('VaccineRegistry')
+  route             = models.CharField(max_length = 30,
+                                       choices=(("im", "IM"), 
+                                                ("deep_im", "Deep IM"),
+                                                ("iv", "Intravenous"),
+                                                ("sc", "Sub Cutaneous"),
+                                                ("oral", "Oral")
+                                        ), 
+                                        default="IM" 
+                      )
+  injection_site    = models.CharField(max_length = 100, 
+                                       choices=(("lue", "Left Upper Arm"), 
+                                                ("rue", "Right Upper Arm"),
+                                                ("lb",  "Left Buttock"),
+                                                ("rb",  "Right Buttock"),
+                                                ("abd", "Abdomen"),
+                                                ("oral", "Oral")
+                                        ), 
+                                        default="Right Upper Arm"
+                      )
+  dose              = models.CharField(max_length = 100)
+  administrator     = models.ForeignKey(User)
   vaccination_date  = models.DateField(auto_now_add = False)
+  next_due          = models.DateField(auto_now_add= False)
   adverse_reaction  = models.TextField(max_length = 100, default = "None")
   patient_detail    = models.ForeignKey(PatientDetail,null = True,blank = True)
 
+
   def __unicode__(self):
-    return "%s" %(self.vaccine_name)
+    return "%s" %(self.vaccine_detail)
+
+  def save(self,*args, **kwargs):
+    self.__model_label__ = "immunisation"
+    super(PatientImmunisation, self).save(*args, **kwargs)
+
 
   def get_edit_url(self):
       '''
       Returns the URL for editing Demographics details for a Patient
       '''
-      return '/AuShadha/pat/immunisation/edit/%s/' %self.id
+      return '/AuShadha/pat/%s/edit/%s/' %(self.__model_label__, self.id)
 
   def get_del_url(self):
       '''
       Returns the URL for adding Demographics for a Patient
       '''
-      return '/AuShadha/pat/immunisation/del/%s/' %self.id
+      return '/AuShadha/pat/%s/del/%s/' % (self.__model_label__,self.id)
+
+
+class VaccineRegistry(models.Model):
+  """
+    Registry for the Vaccines
+    This contains the details of vaccine, VIS, Manufacturer, Lot #, Expiration etc..
+  """
+  vaccine_name        = models.CharField(max_length = 100)
+  manufacturer        = models.CharField(max_length = 100)
+  lot_number          = models.CharField(max_length = 100)
+  manufacturing_date  = models.DateField(auto_now_add = False)
+  expiry_date         = models.DateField(auto_now_add = False)
+  vis                 = models.TextField("Vaccine Information Statement", 
+                                         max_length = 1000, blank = True, null = True
+                        )
+
+  def __unicode__(self):
+    return "%s" %(self.vaccine_name)
+
+  def save(self,*args, **kwargs):
+    self.__model_label__ = "vaccine_registry"
+    super(VaccineRegistry, self).save(*args, **kwargs)
+
+  def get_edit_url(self):
+      '''
+      Returns the URL for editing Vaccine Registry
+      '''
+      return '/AuShadha/vaccine_registry/%s/edit/%s/' %(self.__model_label__, self.id)
+
+  def get_del_url(self):
+      '''
+      Returns the URL for adding Vaccine Registry
+      '''
+      return '/AuShadha/vaccine_registry/%s/del/%s/' % (self.__model_label__,self.id)
 
 
 
@@ -1196,16 +1260,42 @@ class PatientImmunisationForm(ModelForm):
 		exclude = ('patient_detail','parent_clinic')
 	def __init__(self, *args, **kwargs):
 		super(PatientImmunisationForm, self).__init__(*args, **kwargs)
-		text_fields = [{"field"         : 'vaccine_name',
+		text_fields = [{"field"         : 'vaccine_detail',
 		                'max_length'    :  30         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :true ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
+		                "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required': true"
 		                },
+		               {"field": 'route',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		               },
+		               {"field": 'injection_site',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		               },
+		               {"field": 'dose',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		               },
+		               {"field": 'administrator',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required': true"
+		               },
 		               {"field": 'vaccination_date',
 		                'max_length'    :  30         ,
 		               "data-dojo-type": "dijit.form.DateTextBox",
 		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
 		               },
+		               {"field": 'next_due',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.DateTextBox",
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		               },
+
                    {"field": 'adverse_reaction',
                    'max_length':150,
                    "data-dojo-type": "dijit.form.Textarea",
