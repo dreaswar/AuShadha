@@ -108,16 +108,41 @@ def patient_social_history_add(request, id):
         if patient_social_history_form.is_valid():
           try:
             social_history_obj  = patient_social_history_form.save()
-#            json              = generate_json_for_datagrid(social_history_obj)
+#            json               = generate_json_for_datagrid(social_history_obj)
             success       = True
             error_message = "SocialHistory Data Added Successfully"
             form_errors   = ''
+            addData = {
+                      "marital_status"      : social_history_obj.marital_status,
+                      "marital_status_notes": social_history_obj.marital_status_notes,
+                      "occupation"          : social_history_obj.occupation,
+                      "occupation_notes"    : social_history_obj.occupation_notes,
+                      "exercise"            : social_history_obj.exercise,
+                      "exercise_notes"      : social_history_obj.exercise_notes,
+                      "diet"                : social_history_obj.diet_notes,
+                      "home_occupants"      : social_history_obj.home_occupants.split(','),
+                      "home_occupants_notes": social_history_obj.home_occupants_notes,
+                      "pets"                : social_history_obj.pets.split(','),
+                      "pets_notes"          : social_history_obj.pets_notes,
+                      "alcohol"             : social_history_obj.alcohol,
+                      "alcohol_no"          : social_history_obj.alcohol_no,
+                      "alcohol_notes"       : social_history_obj.alcohol_notes,
+                      "tobacco"             : social_history_obj.tobacco,
+                      "tobacco_no"          : social_history_obj.tobacco_no,
+                      "tobacco_notes"       : social_history_obj.tobacco_notes,
+                      "drug_abuse"          : social_history_obj.drug_abuse,
+                      "drug_abuse_notes"    : social_history_obj.drug_abuse_notes,
+                      "sexual_preference"   : social_history_obj.sexual_preference,
+                      "sexual_preference_notes": social_history_obj.sexual_preference_notes,
+                      "current_events"         : social_history_obj.current_events
+            }
+            print addData
             data = { 'success'      : success, 
                      'error_message': error_message,
                      'form_errors'  : form_errors,
                      'canDel'       : True,
                      'addUrl'       : None,
-                     "savedObj"          : social_history_obj,
+                     "addData"     : addData,
                      'editUrl'      : social_history_obj.get_edit_url(),
                      'delUrl'       : social_history_obj.get_del_url(),
                    }
@@ -161,20 +186,47 @@ def patient_social_history_edit(request, id):
     if request.method =="GET" and request.is_ajax():
       try:
         id                             = int(id)
-        patient_social_history_obj       = PatientSocialHistory.objects.get(pk = id)
-        patient_social_history_form = PatientSocialHistoryForm(instance = patient_social_history_obj)
-        patient_detail_obj                  = patient_social_history_obj.patient_detail
+        social_history_obj       = PatientSocialHistory.objects.get(pk = id)
+        patient_social_history_form = PatientSocialHistoryForm(instance = social_history_obj)
+        patient_detail_obj                  = social_history_obj.patient_detail
+        addData = {
+                  "marital_status"      : social_history_obj.marital_status,
+                  "marital_status_notes": social_history_obj.marital_status_notes,
+                  "occupation"          : social_history_obj.occupation,
+                  "occupation_notes"    : social_history_obj.occupation_notes,
+                  "exercise"            : social_history_obj.exercise,
+                  "exercise_notes"      : social_history_obj.exercise_notes,
+                  "diet"                : social_history_obj.diet_notes,
+                  "home_occupants"      : social_history_obj.home_occupants.split(','),
+                  "home_occupants_notes": social_history_obj.home_occupants_notes,
+                  "pets"                : social_history_obj.pets.split(','),
+                  "pets_notes"          : social_history_obj.pets_notes,
+                  "alcohol"             : social_history_obj.alcohol,
+                  "alcohol_no"          : social_history_obj.alcohol_no,
+                  "alcohol_notes"       : social_history_obj.alcohol_notes,
+                  "tobacco"             : social_history_obj.tobacco,
+                  "tobacco_no"          : social_history_obj.tobacco_no,
+                  "tobacco_notes"       : social_history_obj.tobacco_notes,
+                  "drug_abuse"          : social_history_obj.drug_abuse,
+                  "drug_abuse_notes"    : social_history_obj.drug_abuse_notes,
+                  "sexual_preference"   : social_history_obj.sexual_preference,
+                  "sexual_preference_notes": social_history_obj.sexual_preference_notes,
+                  "current_events"         : social_history_obj.current_events
+        }
+        print addData
+
         variable                            = RequestContext(request, 
                                                 {"user":user,
                                                 "patient_detail_obj"              : patient_detail_obj ,
                                                 "patient_social_history_form"     : patient_social_history_form, 
-                                                "patient_social_history_obj"      :patient_social_history_obj ,
-                                                'action'                          : patient_social_history_obj.get_edit_url(),
+                                                "patient_social_history_obj"      : social_history_obj ,
+                                                "addData"                         : addData,
+                                                'action'                          : social_history_obj.get_edit_url(),
                                                 'button_label'                    : "Edit",
                                                 'canDel'                          : True,
                                                 'addUrl'                          : None,
-                                                'editUrl'                         : patient_social_history_obj.get_edit_url(),
-                                                'delUrl'                          : patient_social_history_obj.get_del_url(),
+                                                'editUrl'                         : social_history_obj.get_edit_url(),
+                                                'delUrl'                          : social_history_obj.get_del_url(),
                                                })
       except TypeError or ValueError or AttributeError:
         raise Http404("BadRequest")
@@ -184,18 +236,44 @@ def patient_social_history_edit(request, id):
     elif request.method == 'POST' and request.is_ajax():
       try:
         id                              = int(id)
-        patient_social_history_obj        = PatientSocialHistory.objects.get(pk =id)
-        patient_social_history_form  = PatientSocialHistoryForm(request.POST,instance = patient_social_history_obj)
+        patient_social_history_obj      = PatientSocialHistory.objects.get(pk =id)
+        patient_social_history_form     = PatientSocialHistoryForm(request.POST,instance = patient_social_history_obj)
         patient_detail_obj              = patient_social_history_obj.patient_detail
         if patient_social_history_form.is_valid():
           social_history_obj  = patient_social_history_form.save()
           success       = True
           error_message = "SocialHistory Data Edited Successfully"
           form_errors   = ''
+          addData = {
+                    "marital_status"      : social_history_obj.marital_status,
+                    "marital_status_notes": social_history_obj.marital_status_notes,
+                    "occupation"          : social_history_obj.occupation,
+                    "occupation_notes"    : social_history_obj.occupation_notes,
+                    "exercise"            : social_history_obj.exercise,
+                    "exercise_notes"      : social_history_obj.exercise_notes,
+                    "diet"                : social_history_obj.diet_notes,
+                    "home_occupants"      : social_history_obj.home_occupants.split(','),
+                    "home_occupants_notes": social_history_obj.home_occupants_notes,
+                    "pets"                : social_history_obj.pets.split(','),
+                    "pets_notes"          : social_history_obj.pets_notes,
+                    "alcohol"             : social_history_obj.alcohol,
+                    "alcohol_no"          : social_history_obj.alcohol_no,
+                    "alcohol_notes"       : social_history_obj.alcohol_notes,
+                    "tobacco"             : social_history_obj.tobacco,
+                    "tobacco_no"          : social_history_obj.tobacco_no,
+                    "tobacco_notes"       : social_history_obj.tobacco_notes,
+                    "drug_abuse"          : social_history_obj.drug_abuse,
+                    "drug_abuse_notes"    : social_history_obj.drug_abuse_notes,
+                    "sexual_preference"   : social_history_obj.sexual_preference,
+                    "sexual_preference_notes": social_history_obj.sexual_preference_notes,
+                    "current_events"         : social_history_obj.current_events
+          }
+          print addData
+
           data = { 'success'      : success, 
                    'error_message': error_message,
                    'form_errors'  : form_errors,
-                   "savedObj"          : social_history_obj
+                   "addData"          : addData
                  }
 #          data             = generate_json_for_datagrid(social_history_obj)
           json              = simplejson.dumps(data)

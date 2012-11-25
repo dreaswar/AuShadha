@@ -258,9 +258,9 @@
     if( this.validate() ){
       require(["dijit/registry", 
               "dojo/request","dojo/dom","dojo/dom-form","dojo/json","dojo/_base/fx",
-               "dojo/domReady!"
+               "dojo/ready","dijit/form/Button","dojo/domReady!"
       ],
-      function(registry, request, dom, domForm, JSON,fx){
+      function(registry, request, dom, domForm, JSON,fx,ready){
           var url = "{{action}}";
           var form_data = domForm.toObject('newSocialHistoryAddOrEditForm');
           request(url,{method:"POST", data: form_data}).
@@ -268,28 +268,24 @@
             function(json){
               var jsondata = JSON.parse(json);
               if (jsondata.success == true){
+                console.log(jsondata);
                 if (jsondata.editUrl){
                   registry.byId("patientSocialHistoryTab").set('href', jsondata.editUrl);
+                  ready(
+                    function(){
+                      
+                      
+                    }
+                  )
                 }
-                registry.byId('id_marital_status').set('value',jsondata.savedObj.marital_status);
-                registry.byId('id_marital_status_notes').set('value',jsondata.savedObj.marital_status_notes);
-                registry.byId('id_occupation').set('value',jsondata.savedObj.marital_status);
-                registry.byId('id_occupation_notes').set('value',jsondata.savedObj.occupation_notes);
-                registry.byId('id_exercise').set('value',jsondata.savedObj.exercise);
-                registry.byId('id_exercise_notes').set('value',jsondata.savedObj.exercise_notes);
-                registry.byId('id_diet').set('value',jsondata.savedObj.diet);
-                registry.byId('id_diet_notes').set('value',jsondata.savedObj.diet_notes);
-                registry.byId('id_home_occupants').set('value',jsondata.savedObj.home_occupants.split(','));
-                registry.byId('id_home_occupants_notes').set('value',jsondata.savedObj.home_occupants_notes);
-                registry.byId('id_pets').set('value',jsondata.savedObj.pets.split(','));
-                registry.byId('id_pets_notes').set('value',jsondata.savedObj.pets_notes);
               }
             },
             function(json){
               alert("Server Error ! Please retry..")
             },
             function(evt){
-              dom.byId('patientSocialHistoryFormJsonMessage').innerHTML = "SocialHistory Form action completed successfully";
+              dom.byId('patientSocialHistoryFormJsonMessage').
+                    innerHTML = "SocialHistory Form action completed successfully";
               fx.fadeOut( {node: dom.byId("patientSocialHistoryFormJsonMessage"), duration: 2000}).play();
               return false;
             }
@@ -390,6 +386,7 @@
             type           = "submit" 
             name           = "{{button_label}}Button" 
             value          = "{{button_label}}"
+            id             = "socialHistoryFormAddOrEditButton"
     >
       {{button_label}}
     </button>
@@ -398,8 +395,8 @@
   <button data-dojo-type  = "dijit/form/Button" 
 						data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
             type            = "button"
-            name            = "delPatientSocialHistory"
-            id              = "delPatientSocialHistoryBtn"
+            name            = "socialHistoryFormDelButton"
+            id              = "socialHistoryFormDelButton"
    >
     Delete
     <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">

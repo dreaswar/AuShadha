@@ -76,7 +76,10 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
     json_data = []
 
     try:
-      iterable = iter(obj)
+      # Find out if the Object is an iterable one that is a Django Query Object..
+      # If iterable iterate over the fields of _meta attribute
+      # set a basic attribute dictionary and getattr method specifying default fallbacks
+      iterable = iter(obj) 
       if iterable:
         for element in obj:
           print element._meta.fields
@@ -92,15 +95,16 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
             print "CURRENT ITERATING FIELD NAME IS : ", i
             print "DATA DICTIONARY NOW IS ", data.keys()
             if i.name not in data.keys():
-              print "Adding ", i.name
-              print i.name.__class__
+              print "Dealing with object: ", i
+              print "Trying to add it Name attribute: ", i.name
+              print "Class of the i object is: ", i.name.__class__
               try:
                 if i.name == 'aushadhabasemodel_ptr':
                   data[i.name] = "AuShadhaBaseModel"
                 elif i.name=="administrator":
-                  data[i.name] = getattr(element, 'i.name.username', i.name)
+                  data[i.name] = getattr(element, '__unicode__()',element.administrator.__unicode__())
                 elif i.name=="vaccine_detail":
-                  data[i.name] = getattr(element, 'i.name.__unicode__()', i)
+                  data[i.name] = getattr(element, '__unicode__()',element.vaccine_detail.vaccine_name)
                 else:
                   data[i.name] = getattr(element, i.name, None)
               except(TypeError):
@@ -126,9 +130,9 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
             if i.name == 'aushadhabasemodel_ptr':
               data[i.name] = "AuShadhaBaseModel"
             elif i.name=="administrator":
-              data[i.name] = getattr(obj, 'i.name.username', i.name)
+              data[i.name] = getattr(obj, 'username', i.username)
             elif i.name=="vaccine_detail":
-              data[i.name] = getattr(obj, 'i.name.__unicode__()',i)
+              data[i.name] = getattr(obj, 'vaccine_name',i.vaccine_name)
             else:
               data[i.name] = getattr(obj, i.name, None)
           except(TypeError):

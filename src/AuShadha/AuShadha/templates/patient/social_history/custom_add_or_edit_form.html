@@ -120,7 +120,9 @@
         function setValue(){
           require(["dojo/on", "dojo/dom", "dijit/registry"], 
           function(on,dom,registry){
-            registry.byId('id_marital_status').set('value', registry.byId("marital_status_choices").get('displayedValue') );
+            registry.byId('id_marital_status').
+                      set('value', registry.byId("marital_status_choices").
+                        get('displayedValue') );
           });
         }
         this.onBlur   = function(){setValue()};
