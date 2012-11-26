@@ -249,6 +249,53 @@
             pets_widget.startup();
             console.log("Widget recreated..");
           }
+
+        //{% if canDel %}
+
+          console.log('{{addData}}');
+
+          registry.byId('id_marital_status').set('value','{{addData.marital_status}}');
+          registry.byId('id_marital_status_notes').set('value','{{addData.marital_status_notes}}');
+
+          registry.byId('id_occupation').set('value','{{addData.occupation}}');
+          registry.byId('id_occupation_notes').set('value','{{addData.occupation_notes}}');
+
+          registry.byId('id_exercise').set('value','{{addData.exercise}}');
+          registry.byId('id_exercise_notes').set('value','{{addData.exercise_notes}}');
+
+          registry.byId('id_diet').set('value','{{addData.diet}}');
+          registry.byId('id_diet_notes').set('value','{{addData.diet_notes}}');
+
+          registry.byId('id_home_occupants').set('value','{{addData.home_occupants}}');
+          registry.byId('id_home_occupants_notes').set('value','{{addData.home_occupants_notesnotes}}');
+
+          registry.byId('id_pets').set('value','{{addData.pets}}');
+          registry.byId('id_pets_notes').set('value','{{addData.pets_notes}}');
+
+          registry.byId('id_alcohol').set('value','{{addData.alcohol}}');
+          registry.byId('id_alcohol_no').set('value','{{addData.alcohol_no}}');
+          registry.byId('id_alcohol_notes').set('value','{{addData.alcohol_notes}}');
+
+          registry.byId('id_tobacco').set('value','{{addData.tobacco}}');
+          registry.byId('id_tobacco_no').set('value','{{addData.tobacco_no}}');
+          registry.byId('id_tobacco_notes').set('value','{{addData.tobacco_notes}}');
+
+          registry.byId('id_drug_abuse').set('value','{{addData.drug_abuse}}');
+          registry.byId('id_drug_abuse_notes').set('value','{{addData.drug_abuse_notes}}');
+
+          registry.byId('id_sexual_preference').set('value',
+                                                    '{{addData.sexual_preference}}'
+          );
+          registry.byId('id_sexual_preference_notes').set('value',
+                                                     '{{addData.sexual_preference_notes}}'
+          );
+
+          registry.byId('id_current_events').set('value',
+                                                '{{addData.current_events}}'
+          );
+
+        //{% endif %}
+
         });
       });
 
@@ -270,14 +317,11 @@
               if (jsondata.success == true){
                 console.log(jsondata);
                 if (jsondata.editUrl){
-//                  registry.byId("patientSocialHistoryTab").set('href', jsondata.editUrl);
-                  ready(
-                    function(){
-                      
-                      
-                    }
-                  )
+                  registry.byId("patientSocialHistoryTab").set('href', jsondata.editUrl);
                 }
+              }
+              else{
+                 alert("Error Saving. Please retry")
               }
             },
             function(json){

@@ -58,27 +58,18 @@ from patient.views import *
 
 @login_required
 def patient_social_history_add(request, id):
+
   if request.user:
     user = request.user
+
     if request.method =="GET" and request.is_ajax():
       try:
         id                   = int(id)
         patient_detail_obj   = PatientDetail.objects.get(pk =id)
-        social_history_obj     = PatientSocialHistory.objects.filter(patient_detail = patient_detail_obj)
+        social_history_obj   = PatientSocialHistory.objects.filter(patient_detail = patient_detail_obj)
+
         if social_history_obj:
-          patient_social_history_obj    = social_history_obj[0]
-          patient_social_history_form   = PatientSocialHistoryForm(instance = patient_social_history_obj)
-          variable = {'user'                      : user, 
-                      'patient_detail_obj'        : patient_detail_obj,
-                      'patient_social_history_obj'  : patient_social_history_obj,
-                      'patient_social_history_form' : patient_social_history_form,
-                      'button_label'              : 'Edit',
-                      'action'                    : patient_social_history_obj.get_edit_url(),
-                      'canDel'                    : True,
-                      "addUrl"                    : None,
-                      'editUrl'                   : patient_social_history_obj.get_edit_url(),
-                      'delUrl'                    : patient_social_history_obj.get_del_url()
-                      }
+          return patient_social_history_edit(request, social_history_obj[0].id)
         else:
           patient_social_history_obj   = PatientSocialHistory(patient_detail = patient_detail_obj)
           patient_social_history_form  = PatientSocialHistoryForm(instance = patient_social_history_obj)
@@ -94,17 +85,22 @@ def patient_social_history_add(request, id):
                                           'editUrl'                       : None,
                                           'delUrl'                        : None
                                            })
-        return render_to_response('patient/social_history/add_or_edit_form.html', variable)
+          return render_to_response('patient/social_history/add_or_edit_form.html', variable)
+
       except TypeError or ValueError or AttributeError:
         raise Http404("BadRequest")
+
       except PatientDetail.DoesNotExist:
         raise Http404("BadRequest: Patient Data Does Not Exist")
+
     elif request.method == 'POST' and request.is_ajax():
+      print request.POST
       try:
         id                              = int(id)
         patient_detail_obj              = PatientDetail.objects.get(pk =id)
         patient_social_history_obj   = PatientSocialHistory(patient_detail = patient_detail_obj)
         patient_social_history_form  = PatientSocialHistoryForm(request.POST,instance = patient_social_history_obj)
+
         if patient_social_history_form.is_valid():
           try:
             social_history_obj  = patient_social_history_form.save()
@@ -112,6 +108,10 @@ def patient_social_history_add(request, id):
             success       = True
             error_message = "SocialHistory Data Added Successfully"
             form_errors   = ''
+            home_occupants = list( social_history_obj.home_occupants.split(',') )
+            pets           = list( social_history_obj.pets.split(',') )
+            print home_occupants
+            print pets
             addData = {
                       "marital_status"      : social_history_obj.marital_status,
                       "marital_status_notes": social_history_obj.marital_status_notes,
@@ -120,9 +120,9 @@ def patient_social_history_add(request, id):
                       "exercise"            : social_history_obj.exercise,
                       "exercise_notes"      : social_history_obj.exercise_notes,
                       "diet"                : social_history_obj.diet_notes,
-                      "home_occupants"      : social_history_obj.home_occupants.split(','),
+                      "home_occupants"      : home_occupants,
                       "home_occupants_notes": social_history_obj.home_occupants_notes,
-                      "pets"                : social_history_obj.pets.split(','),
+                      "pets"                : pets,
                       "pets_notes"          : social_history_obj.pets_notes,
                       "alcohol"             : social_history_obj.alcohol,
                       "alcohol_no"          : social_history_obj.alcohol_no,
@@ -181,14 +181,21 @@ def patient_social_history_add(request, id):
 
 @login_required
 def patient_social_history_edit(request, id):
+
   if request.user:
     user = request.user
     if request.method =="GET" and request.is_ajax():
+
       try:
-        id                             = int(id)
-        social_history_obj       = PatientSocialHistory.objects.get(pk = id)
+        id                          = int(id)
+        social_history_obj          = PatientSocialHistory.objects.get(pk = id)
         patient_social_history_form = PatientSocialHistoryForm(instance = social_history_obj)
-        patient_detail_obj                  = social_history_obj.patient_detail
+        patient_detail_obj          = social_history_obj.patient_detail
+        print social_history_obj.home_occupants
+        home_occupants = list( social_history_obj.home_occupants.split(',') )
+        pets           = list( social_history_obj.pets.split(',') )
+        print home_occupants
+        print pets
         addData = {
                   "marital_status"      : social_history_obj.marital_status,
                   "marital_status_notes": social_history_obj.marital_status_notes,
@@ -197,9 +204,9 @@ def patient_social_history_edit(request, id):
                   "exercise"            : social_history_obj.exercise,
                   "exercise_notes"      : social_history_obj.exercise_notes,
                   "diet"                : social_history_obj.diet_notes,
-                  "home_occupants"      : social_history_obj.home_occupants.split(','),
+                  "home_occupants"      : home_occupants,
                   "home_occupants_notes": social_history_obj.home_occupants_notes,
-                  "pets"                : social_history_obj.pets.split(','),
+                  "pets"                : pets,
                   "pets_notes"          : social_history_obj.pets_notes,
                   "alcohol"             : social_history_obj.alcohol,
                   "alcohol_no"          : social_history_obj.alcohol_no,
@@ -228,17 +235,21 @@ def patient_social_history_edit(request, id):
                                                 'editUrl'                         : social_history_obj.get_edit_url(),
                                                 'delUrl'                          : social_history_obj.get_del_url(),
                                                })
+        return render_to_response('patient/social_history/add_or_edit_form.html',variable)
+
       except TypeError or ValueError or AttributeError:
         raise Http404("BadRequest")
       except PatientSocialHistory.DoesNotExist:
         raise Http404("BadRequest: Patient SocialHistory Data Does Not Exist")
-      return render_to_response('patient/social_history/add_or_edit_form.html',variable)
+      
     elif request.method == 'POST' and request.is_ajax():
+      
       try:
         id                              = int(id)
         patient_social_history_obj      = PatientSocialHistory.objects.get(pk =id)
         patient_social_history_form     = PatientSocialHistoryForm(request.POST,instance = patient_social_history_obj)
         patient_detail_obj              = patient_social_history_obj.patient_detail
+
         if patient_social_history_form.is_valid():
           social_history_obj  = patient_social_history_form.save()
           success       = True

@@ -1128,6 +1128,18 @@ class PatientSocialHistoryForm(ModelForm):
 	class Meta:
 		model = PatientSocialHistory
 		exclude = ('patient_detail','parent_clinic')
+
+	#home_occupants = forms.MultipleChoiceField(choices=())
+	#pets 					 = forms.MultipleChoiceField(choices=())
+
+	def clean_home_occupants(self):
+		home_occupants = self.cleaned_data['home_occupants']
+		print "Home Occupants are", home_occupants
+		return home_occupants
+
+  #def clean_pets(self):
+    
+
 	def __init__(self, *args, **kwargs):
 		super(PatientSocialHistoryForm, self).__init__(*args, **kwargs)
 		text_fields = [{"field"         : 'marital_status',
