@@ -266,10 +266,13 @@
           registry.byId('id_diet').set('value','{{addData.diet}}');
           registry.byId('id_diet_notes').set('value','{{addData.diet_notes}}');
 
-          registry.byId('id_home_occupants').set('value','{{addData.home_occupants}}');
+          var home_occupants = "{{addData.home_occupants}}".split(',');
+          var pets           = "{{addData.pets}}".split(',');
+
+          registry.byId('id_home_occupants').set('value',home_occupants);
           registry.byId('id_home_occupants_notes').set('value','{{addData.home_occupants_notesnotes}}');
 
-          registry.byId('id_pets').set('value','{{addData.pets}}');
+          registry.byId('id_pets').set('value',pets);
           registry.byId('id_pets_notes').set('value','{{addData.pets_notes}}');
 
           registry.byId('id_alcohol').set('value','{{addData.alcohol}}');
@@ -321,7 +324,7 @@
                 }
               }
               else{
-                 alert("Error Saving. Please retry")
+                 alert("Error Saving. Please retry");
               }
             },
             function(json){
