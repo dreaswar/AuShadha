@@ -76,9 +76,9 @@
           /* Set Functions */
 
           function constructAbuseFrequencyList(l /*List to Update*/,u /* Units */ ){
-            for(var i=1; i<500; i++){
+            for(var i=1; i<=500; i++){
               for(var q=0; q<interval_list.length; q++){
-                var array_to_append ={}
+                var array_to_append ={};
                 array_to_append['id'] = i.toString()+"_" + interval_list[q].replace(" ","_");
                 array_to_append['name'] = i.toString()+ " " + u.toString() +" " + interval_list[q];
                 l.push(array_to_append);
@@ -270,7 +270,7 @@
           var pets           = "{{addData.pets}}".split(',');
 
           registry.byId('id_home_occupants').set('value',home_occupants);
-          registry.byId('id_home_occupants_notes').set('value','{{addData.home_occupants_notesnotes}}');
+          registry.byId('id_home_occupants_notes').set('value','{{addData.home_occupants_notes}}');
 
           registry.byId('id_pets').set('value',pets);
           registry.byId('id_pets_notes').set('value','{{addData.pets_notes}}');

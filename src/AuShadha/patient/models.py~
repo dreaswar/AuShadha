@@ -1122,6 +1122,139 @@ class PatientSocialHistory(AuShadhaBaseModel):
 
 
 
+
+class PatientICD10(AuShadhaBaseModel):
+  '''
+    Placeholder for ICD 10 Codes
+  '''
+
+class PatientCPC(AuShadhaBaseModel):
+  '''
+  Placeholder for CP Codes
+  '''
+
+class PatientMedicalHistory(AuShadhaBaseModel):
+  """
+  Inherits from the AuShadha Base Model.
+  This defines the Medical History that the patient has had.
+  The patient automatically belongs to a Clinic and has some add, edit, del
+  methods defined on him.
+
+  """
+
+
+  disease         = models.CharField(max_length = 250)
+  icd_10_code     = models.ForeignKey("PatientICD10",null=True, blank=True)
+  status          = models.CharField("Status of the Disease"
+                                      max_length = 250,
+                                      null=True,
+                                      blank=True
+                    )
+  active                = models.BooleanField("Active Diseaase")
+  infectious_disease    = models.BooleanField()
+  severity              = models.CharField(max_length = 100)
+  allergic_disease      = models.BooleanField()
+  pregnancy_warning     = models.ForeignKey('obs_and_gyn.ObstetricHistoryDetail',
+                                            blank=True,
+                                            null = True
+                          )
+  date_of_diagnosis     = models.DateField(auto_now_add = False,
+                                           null=True,
+                                           blank = True
+                          )
+  healed                = models.BooleanField()
+  remarks               = models.TextField(max_length = 300,
+                                            help_text = "Any Other Remarks",
+                                          default = "None"
+                          )
+  patient_detail  = models.ForeignKey(PatientDetail,
+                                      null = True,
+                                      blank = True,
+                    )
+
+  __model_label__ = "medical_history"
+
+  def __unicode__(self):
+    return "%s" %(self.patient_detail)
+
+  def save(self, *args, **kwargs):
+    self.__model_label__ = "medical_history"
+    super(PatientMedicalHistory, self).save(*args, **kwargs)
+
+    def get_edit_url(self):
+      '''
+      Returns the URL for editing Medical History details for a Patient
+      '''
+      return '/AuShadha/pat/%sy/edit/%s/' %(self.__model_label__, self.id)
+
+    def get_del_url(self):
+      '''
+      Returns the URL for deleting Medical History detail for a Patient
+      '''
+      return '/AuShadha/pat/%s/del/%s/' %(self.__model_label__, self.id)
+
+
+class PatientSurgicalHistory(AuShadhaBaseModel):
+  """
+  Inherits from the AuShadha Base Model.
+  This defines the Surgical History that the patient has had.
+  The patient automatically belongs to a Clinic and has some add, edit, del
+  methods defined on him.
+
+  """
+
+  description     = models.CharField(max_length = 250)
+  icd_10_code     = models.ForeignKey("PatientICD10",null=True, blank=True)
+  cpc_code        = models.ForeignKey("PatientCPC",null=True, blank=True)
+  base_condition  = models.CharField("Base Condition",
+                                    max_length = 250,
+                                    null=True,
+                                    blank=True
+                    )
+  med_condition    = models.ForeignKey("PatientMedicalHistory",
+                                        null=True,
+                                        blank=True
+                     )
+  classification   = models.CharField(max_length = 250, null=True, blank = True)
+  healed           = models.BooleanField()
+  date_of_surgery  = models.DateField(auto_now_add = False,
+                                       null = True,
+                                       blank = True
+                       )
+  remarks          = models.TextField(max_length = 300,
+                                          help_text = "Any Other Remarks",
+                                          default = "None"
+                     )
+  patient_detail  = models.ForeignKey(PatientDetail,
+                                      null = True,
+                                      blank = True,
+                    )
+
+  __model_label__ = "surgical_history"
+
+  def __unicode__(self):
+    return "%s" %(self.patient_detail)
+
+  def save(self, *args, **kwargs):
+    self.__model_label__ = "surgical_history"
+    super(PatientSurgicalHistory, self).save(*args, **kwargs)
+
+    def get_edit_url(self):
+      '''
+      Returns the URL for editing Surgical History details for a Patient
+      '''
+      return '/AuShadha/pat/%s/edit/%s/' %(self.__model_label__, self.id)
+
+    def get_del_url(self):
+      '''
+      Returns the URL for deleting Surgical History detail for a Patient
+      '''
+      return '/AuShadha/pat/%s/del/%s/' %(self.__model_label__, self.id)
+
+    
+
+
+
 ## Modelform definition of Patients.
 
 class PatientSocialHistoryForm(ModelForm):
@@ -1132,10 +1265,10 @@ class PatientSocialHistoryForm(ModelForm):
 	#home_occupants = forms.MultipleChoiceField(choices=())
 	#pets 					 = forms.MultipleChoiceField(choices=())
 
-	def clean_home_occupants(self):
-		home_occupants = self.cleaned_data['home_occupants']
-		print "Home Occupants are", home_occupants
-		return home_occupants
+	#def clean_home_occupants(self):
+		#home_occupants = self.cleaned_data['home_occupants']
+		#print "Home Occupants are", home_occupants
+		#return home_occupants
 
   #def clean_pets(self):
     
