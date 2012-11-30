@@ -225,7 +225,9 @@
                                       demographicsUrl = "/AuShadha/pat/demographics/add/" + patid +"/",
                                       socialHistoryUrl = "/AuShadha/pat/social_history/add/" + patid +"/",
 
-                                      allergiesUrl = "{%url allergies_json %}" + 
+                                      obstetricHistoryUrl = "/AuShadha/pat/obstetric_history_detail/add/" + patid +"/",
+
+                                      allergiesUrl = "{%url allergies_json %}" +
                                                     "?patient_id=" 
                                                     + patid,
 
@@ -233,7 +235,14 @@
                                                     "?patient_id=" 
                                                     + patid,
 
-                                      immunisationUrl = "{%url immunisation_json %}" + 
+                                      medicalHistoryUrl = "{%url medical_history_json %}" +
+                                                    "?patient_id="
+                                                    + patid,
+                                      surgicalHistoryUrl = "{%url surgical_history_json %}" +
+                                                    "?patient_id="
+                                                    + patid,
+
+                                      immunisationUrl = "{%url immunisation_json %}" +
                                                     "?patient_id=" 
                                                     + patid,
 
@@ -281,6 +290,7 @@
                                   console.log("Setting up the Forms...");
                                     registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
                                     registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
+                                    registry.byId("obstetric_history_detail").set('href', obstetricHistoryUrl);
                                   console.log("Finished setting up the Forms...");
 
                                   console.log("Setting up the Grids Now...");
@@ -294,6 +304,9 @@
 
                                     setupAllergiesGrid(allergiesUrl);
                                     setupMedicationListGrid(medicationListUrl);
+
+                                    setupMedicalHistoryGrid(medicalHistoryUrl);
+                                    setupSurgicalHistoryGrid(surgicalHistoryUrl);
 
                         //            setupAdmissionGrid(admissionUrl);
                         //            setupVisitGrid(visitUrl);

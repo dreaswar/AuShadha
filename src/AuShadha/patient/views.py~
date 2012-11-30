@@ -130,9 +130,9 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
             if i.name == 'aushadhabasemodel_ptr':
               data[i.name] = "AuShadhaBaseModel"
             elif i.name=="administrator":
-              data[i.name] = getattr(obj, 'username', i.username)
+              data[i.name] = getattr(obj, 'username', obj.administrator.username)
             elif i.name=="vaccine_detail":
-              data[i.name] = getattr(obj, 'vaccine_name',i.vaccine_name)
+              data[i.name] = getattr(obj, 'vaccine_name',obj.vaccine_detail.vaccine_name)
             else:
               data[i.name] = getattr(obj, i.name, None)
           except(TypeError):
@@ -1607,7 +1607,8 @@ def patient_guardian_edit(request, id):
         patient_guardian_edit_form = PatientGuardianForm(instance = patient_guardian_obj)
         patient_detail_obj      	 = patient_guardian_obj.patient_detail
         variable                   = RequestContext(request, {"user" 										 :	user,
-        																										"patient_detail_obj"			   :	patient_detail_obj , 																															"patient_guardian_edit_form" :	patient_guardian_edit_form, 
+        																										"patient_detail_obj"			   :	patient_detail_obj ,
+        																										"patient_guardian_edit_form" :	patient_guardian_edit_form,
 																														"patient_guardian_obj" 			 :	patient_guardian_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1764,7 +1765,8 @@ def patient_phone_edit(request, id):
         patient_phone_edit_form = PatientPhoneForm(instance = patient_phone_obj)
         patient_detail_obj      = patient_phone_obj.patient_detail
         variable                = RequestContext(request, {"user" 					          :	user, 
-                                                            "patient_detail_obj"			:	patient_detail_obj , 																															"patient_phone_edit_form"	:	patient_phone_edit_form, 
+                                                            "patient_detail_obj"			:	patient_detail_obj ,
+                                                            "patient_phone_edit_form"	:	patient_phone_edit_form,
 																														"patient_phone_obj" 			:	patient_phone_obj ,
 																									})
       except TypeError or ValueError or AttributeError:

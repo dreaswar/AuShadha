@@ -178,32 +178,57 @@ urlpatterns = patterns('',
 
 ###########################################################################################
 
-#    url(r'obs_and_gyn_history/json/$',
-#    		'obs_and_gyn.views.obs_and_gyn_history_json',
-#    		name = 'obs_and_gyn_history_json'
-#    ),
+   url(r'surgical_history/json/$',
+      'patient.surgical_history.surgical_history_json',
+      name = 'surgical_history_json'
+   ),
 
-#    url(r'obs_and_gyn_history/list/(?P<id>\d+)/$',
-#    		'obs_and_gyn.views.obs_and_gyn_history_list',
-#    		name = 'obs_and_gyn_history_list'
-#    ),
+   #url(r'surgical_history/list/(?P<id>\d+)/$',
+      #'patient.surgical_history.surgical_history_list',
+      #name = 'surgical_history_list'
+   #),
 
-#    url(r'obs_and_gyn_history/add/(?P<id>\d+)/$',
-#    		'obs_and_gyn.views.obs_and_gyn_history_add',
-#   		  name = 'obs_and_gyn_history_add'
-#    ),
+   url(r'surgical_history/add/(?P<id>\d+)/$',
+      'patient.surgical_history.patient_surgical_history_add',
+        name = 'surgical_history_add'
+   ),
 
-#    url(r'obs_and_gyn_history/edit/(?P<id>\d+)/$',
-#    		'obs_and_gyn.views.obs_and_gyn_history_edit',
-#    		name = 'obs_and_gyn_history_edit'
-#    ),
-#    url(r'obs_and_gyn_history/del/(?P<id>\d+)/$',
-#    		'obs_and_gyn.views.obs_and_gyn_history_del',
-#    		name = 'obs_and_gyn_history_del'
-#    ),
+   url(r'surgical_history/edit/(?P<id>\d+)/$',
+      'patient.surgical_history.patient_surgical_history_edit',
+      name = 'surgical_history_edit'
+   ),
+   url(r'surgical_history/del/(?P<id>\d+)/$',
+      'patient.surgical_history.patient_surgical_history_del',
+      name = 'surgical_history_del'
+   ),
 
 ###########################################################################################
 
+   url(r'medical_history/json/$',
+      'patient.medical_history.medical_history_json',
+      name = 'medical_history_json'
+   ),
+
+   #url(r'medical_history/list/(?P<id>\d+)/$',
+      #'patient.medical_history.medical_history_list',
+      #name = 'medical_history_list'
+   #),
+
+   url(r'medical_history/add/(?P<id>\d+)/$',
+      'patient.medical_history.patient_medical_history_add',
+        name = 'medical_history_add'
+   ),
+
+   url(r'medical_history/edit/(?P<id>\d+)/$',
+      'patient.medical_history.patient_medical_history_edit',
+      name = 'medical_history_dit'
+   ),
+   url(r'medical_history/del/(?P<id>\d+)/$',
+      'patient.medical_history.patient_medical_history_del',
+      name = 'medical_history_del'
+   ),
+
+###########################################################################################
 
 #    url(r'obstetric_history_detail/json/$',
 #    		'obs_and_gyn.views.obstetric_history_detail_json',

@@ -124,8 +124,18 @@ ready( function(){
                                 "patientMedicalAndSurgicalHistoryTab", 
                                 "first"
             );
+              domConstruct.create('div',
+                                  {id: "medical_history_list"},
+                                  "medical_and_surgical_history_list",
+                                  "first"
+                          );
+              domConstruct.create('div',
+                                  {id: "surgical_history_list"},
+                                  "medical_history_list",
+                                  "after"
+                          );
 
-      domConstruct.create('div', 
+    domConstruct.create('div',
                           {id: "patientPreventiveHealthTab"}, 
                           "patientContextTabs", 
                           "last"
@@ -304,8 +314,20 @@ ready( function(){
                                             "patientMedicalAndSurgicalHistoryTab"
                                             );
           historyTabs.addChild(medicalAndSurgicalHistoryTab);
+/*
+            var medicalHistoryTab = new ContentPane({id:"medical_history_list"
+                                                    },
+                                                    "medical_history_list"
+                                                    );
+            medicalAndSurgicalHistoryTab.addChild(medicalHistoryTab);
 
-      var preventiveHealthTab = new ContentPane({id:"patientPreventiveHealthTab",
+            var surgicalHistoryTab = new ContentPane({id:"surgical_history_list"
+                                                    },
+                                                    "surgical_history_list"
+                                                    );
+            medicalAndSurgicalHistoryTab.addChild(surgicalHistoryTab);
+*/
+          var preventiveHealthTab = new ContentPane({id:"patientPreventiveHealthTab",
                                                  title:"Preventive Health"
                                                 },
                                                 "patientPreventiveHealthTab"
@@ -339,12 +361,13 @@ ready( function(){
                                                       );
           preventiveHealthTabs.addChild(patientObstetricsPreventivesTab);
 
-/*
+
             var patientObstetricsHistoryDetail = new ContentPane({id:"obstetric_history_detail",
                                                         },
                                                         "obstetric_history_detail"
                                                         );
             patientObstetricsPreventivesTab.addChild(patientObstetricsHistoryDetail);
+/*
             var patientObstetricsHistoryForm = new ContentPane({id:"obstetric_history_form",
                                                         },
                                                         "obstetric_history_form"
@@ -701,6 +724,78 @@ ready( function(){
 
 
 //{% endif %}
+
+//{% if perms.patient %}
+    var addPatientMedicalHistoryButton =  new Button({
+                                          label       : "Add",
+                                          title       : "Add Medical History Details",
+                                          iconClass   : "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    xhr.get({
+                                                      url: "{%url medical_history_json %}"+
+                                                           "?patient_id="+
+                                                           dom.byId("selected_patient_id_info").innerHTML +
+                                                           "&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record New Medical History Details");
+                                                                 myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         },
+                         domConstruct.create('button',
+                                            {type : "button",
+                                             id   : "addPatientMedicalHistoryButton"
+                                            },
+                                            "medical_history_list",
+                                            "before"
+                         )
+);
+
+
+//{% endif %}
+
+//{% if perms.patient %}
+    var addPatientSurgicalHistoryButton =  new Button({
+                                          label       : "Add",
+                                          title       : "Add Surgical History Details",
+                                          iconClass   : "dijitIconNewTask",
+                                          onClick: function(){
+                                                 require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    xhr.get({
+                                                      url: "{%url surgical_history_json %}"+
+                                                           "?patient_id="+
+                                                           dom.byId("selected_patient_id_info").innerHTML +
+                                                           "&action=add",
+                                                      load: function(html){
+                                                                 var myDialog = dijit.byId("editPatientDialog");
+                                                                 myDialog.set('content', html);
+                                                                 myDialog.set('title', "Record New Surgical History Details");
+                                                                 myDialog.show();
+                                                            }
+                                                   });
+                                                 })
+                                          }
+                         },
+                         domConstruct.create('button',
+                                            {type : "button",
+                                             id   : "addPatientSurgicalHistoryButton"
+                                            },
+                                            "surgical_history_list",
+                                            "before"
+                         )
+);
+
+//{% endif %}
+
 
 //{% if perms.patient %}
 	  var addPatientMedicationListButton =  new Button({

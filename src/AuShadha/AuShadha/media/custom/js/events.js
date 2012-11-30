@@ -79,7 +79,10 @@
             var allergiesUrl      = addData.allergiesjson;
             var medicationListUrl = addData.medicationlistjson;
 
-            var familyHistoryUrl  = addData.familyhistoryjson;
+            var familyHistoryUrl    = addData.familyhistoryjson;
+            var medicalHistoryUrl   = addData.medicalhistoryjson;
+            var surgicalHistoryUrl  = addData.surgicalhistoryjson;
+
             var demographicsUrl   = addData.demographicsadd;
             var socialHistoryUrl  = addData.socialhistoryadd;
 
@@ -103,12 +106,16 @@
               setupPhoneGrid(phoneUrl);
 
               setupFamilyHistoryGrid(familyHistoryUrl);
+
               setupGuardianGrid(guardianUrl);
 
               setupImmunisationGrid(immunisationUrl);
 
               setupMedicationListGrid(medicationListUrl);
               setupAllergiesGrid(allergiesUrl);
+
+              setupMedicalHistoryGrid(medicalHistoryUrl);
+              setupSurgicalHistoryGrid(surgicalHistoryUrl);
 
   //            setupAdmissionGrid(admissionUrl);
   //            setupVisitGrid(visitUrl);

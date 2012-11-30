@@ -197,6 +197,14 @@ def return_patient_json(patient, success = True):
         data_to_append['familyhistoryadd']   = patient.get_patient_family_history_list_url()
         data_to_append['familyhistoryjson']  = APP_ROOT_URL+"pat/family_history/json/?patient_id="+patient_id
 
+        data_to_append['medicalhistorylist']  = patient.get_patient_medical_history_add_url()
+        data_to_append['medicalhistoryadd']   = patient.get_patient_medical_history_list_url()
+        data_to_append['medicalhistoryjson']  = APP_ROOT_URL+"pat/medical_history/json/?patient_id="+patient_id
+
+        data_to_append['surgicalhistorylist']  = patient.get_patient_surgical_history_add_url()
+        data_to_append['surgicalhistoryadd']   = patient.get_patient_surgical_history_list_url()
+        data_to_append['surgicalhistoryjson']  = APP_ROOT_URL+"pat/surgical_history/json/?patient_id="+patient_id
+
         data_to_append['immunisationadd']   = patient.get_patient_immunisation_add_url()
         data_to_append['immunisationlist']  = patient.get_patient_immunisation_list_url()
         data_to_append['immunisationjson']  = APP_ROOT_URL+"pat/immunisation/json/?patient_id="+patient_id
@@ -1607,7 +1615,8 @@ def patient_guardian_edit(request, id):
         patient_guardian_edit_form = PatientGuardianForm(instance = patient_guardian_obj)
         patient_detail_obj      	 = patient_guardian_obj.patient_detail
         variable                   = RequestContext(request, {"user" 										 :	user,
-        																										"patient_detail_obj"			   :	patient_detail_obj , 																															"patient_guardian_edit_form" :	patient_guardian_edit_form, 
+        																										"patient_detail_obj"			   :	patient_detail_obj ,
+        																										"patient_guardian_edit_form" :	patient_guardian_edit_form,
 																														"patient_guardian_obj" 			 :	patient_guardian_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1764,7 +1773,8 @@ def patient_phone_edit(request, id):
         patient_phone_edit_form = PatientPhoneForm(instance = patient_phone_obj)
         patient_detail_obj      = patient_phone_obj.patient_detail
         variable                = RequestContext(request, {"user" 					          :	user, 
-                                                            "patient_detail_obj"			:	patient_detail_obj , 																															"patient_phone_edit_form"	:	patient_phone_edit_form, 
+                                                            "patient_detail_obj"			:	patient_detail_obj ,
+                                                            "patient_phone_edit_form"	:	patient_phone_edit_form,
 																														"patient_phone_obj" 			:	patient_phone_obj ,
 																									})
       except TypeError or ValueError or AttributeError:

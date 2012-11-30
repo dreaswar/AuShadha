@@ -87,6 +87,7 @@ function setupGuardianGrid(url){
       // {% endif %}
       };
     guardianGrid.startup();
+    console.log("Guardian Grid Started up...")
 })
 }
 
@@ -176,6 +177,60 @@ function setupFamilyHistoryGrid(url){
 })
 }
 
+function setupMedicalHistoryGrid(url){
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"],
+  function(DataGrid, JsonRest, ObjectStore){
+   var store   = new JsonRest({target:url});
+   var medicalHistoryGrid = new DataGrid({
+                  store         : dataStore = ObjectStore({
+                                             objectStore: store
+                                  }),
+                  selectionMode : "single",
+                  rowSelector   : "20px",
+                  structure     : GRID_STRUCTURES.PATIENT_MEDICAL_HISTORY_GRID_STRUCTURE,
+                noDataMessage   : "<span class='dojoxGridNoData'>No Medical History Recorded..</span>"
+            },
+            "medical_history_list"
+    );
+
+    medicalHistoryGrid.onRowDblClick = function(e){
+    // {% if perms.patient.change_patientmedicalhistory or perms.patient.delete_patientmedicalhistory %}
+                              onPatientSubMenuRowClick(e,medicalHistoryGrid, "Edit Medical History");
+                              return false;
+    // {% endif %}
+    };
+    medicalHistoryGrid.startup();
+    console.log("Medical History Grid Started up...")
+})
+}
+
+function setupSurgicalHistoryGrid(url){
+  require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"],
+  function(DataGrid, JsonRest, ObjectStore){
+   var store   = new JsonRest({target:url});
+   var surgicalHistoryGrid = new DataGrid({
+                  store         : dataStore = ObjectStore({
+                                             objectStore: store
+                                  }),
+                  selectionMode : "single",
+                  rowSelector   : "20px",
+                  structure     : GRID_STRUCTURES.PATIENT_SURGICAL_HISTORY_GRID_STRUCTURE,
+                noDataMessage   : "<span class='dojoxGridNoData'>No Surgical History Recorded..</span>"
+            },
+            "surgical_history_list"
+    );
+
+    surgicalHistoryGrid.onRowDblClick = function(e){
+    // {% if perms.patient.change_patientsurgicalhistory or perms.patient.delete_patientsurgicalhistory %}
+                              onPatientSubMenuRowClick(e,surgicalHistoryGrid, "Edit Surgical History");
+                              return false;
+    // {% endif %}
+    };
+    surgicalHistoryGrid.startup();
+    console.log("Surgical History Grid Started up...");
+})
+}
+
 function setupImmunisationGrid(url){
   require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
   function(DataGrid, JsonRest, ObjectStore){
@@ -201,6 +256,8 @@ function setupImmunisationGrid(url){
     immunisationGrid.startup();
 })
 }
+
+
 
 function setupAdmissionGrid(url){
   require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"], 
@@ -327,6 +384,7 @@ function reInitBottomPanels(){
           allergyTable        = registry.byId("allergy_list"),
           immunizationTable   = registry.byId("immunisation_list"),
           familyHistoryTable  = registry.byId("family_history_list"),
+          historyTable        = registry.byId("medical_and_surgical_history"),
 //        socialHistoryTable  = registry.byId("social_history_list"),
           medicationListTable = registry.byId("medication_list"),
           admissionTable      = registry.byId("admission_list"),

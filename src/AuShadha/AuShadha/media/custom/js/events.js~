@@ -79,7 +79,12 @@
             var allergiesUrl      = addData.allergiesjson;
             var medicationListUrl = addData.medicationlistjson;
 
-            var familyHistoryUrl  = addData.familyhistoryjson;
+            var familyHistoryUrl    = addData.familyhistoryjson;
+            var medicalHistoryUrl   = addData.medicalhistoryjson;
+            console.log("Medical History JSON is: "+ medicalHistoryUrl);
+            var surgicalHistoryUrl  = addData.surgicalhistoryjson;
+            console.log("Surgical History JSON is: "+ surgicalHistoryUrl);
+
             var demographicsUrl   = addData.demographicsadd;
             var socialHistoryUrl  = addData.socialhistoryadd;
 
@@ -95,7 +100,7 @@
             console.log("Setting up the Forms...");
               registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
               registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
-              registry.byId("obstetric_history_detail").set('href', addData.obsandgynhistorydetailadd);
+              registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
             console.log("Finished setting up the Forms...");
 
             console.log("Setting up the Grids Now...");
@@ -103,12 +108,16 @@
               setupPhoneGrid(phoneUrl);
 
               setupFamilyHistoryGrid(familyHistoryUrl);
+
               setupGuardianGrid(guardianUrl);
 
               setupImmunisationGrid(immunisationUrl);
 
               setupMedicationListGrid(medicationListUrl);
               setupAllergiesGrid(allergiesUrl);
+
+              setupMedicalHistoryGrid(medicalHistoryUrl);
+              setupSurgicalHistoryGrid(surgicalHistoryUrl);
 
   //            setupAdmissionGrid(admissionUrl);
   //            setupVisitGrid(visitUrl);

@@ -579,6 +579,155 @@ var GRID_STRUCTURES= {
                                     }
                                   ],
 
+  PATIENT_MEDICAL_HISTORY_GRID_STRUCTURE: [
+                                    {name        : "ID",
+                                      field      : "id",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Edit",
+                                      field      : "edit",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Del",
+                                      field      : "del",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Disease",
+                                      field      : "disease",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;",
+                                    },
+                                    {name        : "ICD 10  ",
+                                      field      : "icd_10_code",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Status",
+                                      field      : "status",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Infectious ?",
+                                      field      : "infectious_disease",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Active ?",
+                                      field      : "active",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Severity",
+                                      field      : "severity",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Allergic ?",
+                                      field      : "allergic_disease",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Pregnancy Warning",
+                                      field      : "pregnancy_warning",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Date of Diagnosis",
+                                      field      : "date_of_diagnosis",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Healed",
+                                      field      : "healed",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Remarks",
+                                      field      : "remarks",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    }
+                                  ],
+
+  PATIENT_SURGICAL_HISTORY_GRID_STRUCTURE: [
+                                    {name        : "ID",
+                                      field      : "id",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Edit",
+                                      field      : "edit",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Del",
+                                      field      : "del",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Description",
+                                      field      : "description",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;",
+                                    },
+                                    {name        : "ICD 10  ",
+                                      field      : "icd_10_code",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "CPC Code",
+                                      field      : "cpc_code",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Base Condition",
+                                      field      : "base_condition",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Med. Condition",
+                                      field      : "med_condition",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Classification",
+                                      field      : "classification",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Date of Surgery",
+                                      field      : "date_of_surgery",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Remarks",
+                                      field      : "remarks",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    }
+                                  ],
 
   PATIENT_PATIENT_MEDIA_GRID_STRUCTURE: "",
 

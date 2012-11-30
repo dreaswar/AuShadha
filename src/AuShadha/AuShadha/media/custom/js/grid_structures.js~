@@ -536,7 +536,7 @@ var GRID_STRUCTURES= {
                                     },
 
                                     {name        : "Name", 
-                                      field      : "vaccine_name", 
+                                      field      : "vaccine_detail", 
                                       width      : "100px",
                                       cellStyles : "text-align:center;",
                                     },

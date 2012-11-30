@@ -151,11 +151,13 @@ body{
 #demographics_list,
 #immunisation_list,
 #family_history_list,
+#medical_history_list,
 #medication_list,
 #allergy_list,
 #patient_media_list,
 #admission_list,
-#visit_list{
+#visit_list
+{
   min-height : 230px;
 	margin-top: 5px;
 }
