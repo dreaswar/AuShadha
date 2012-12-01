@@ -81,6 +81,7 @@ def surgical_history_json(request):
 def patient_surgical_history_add(request,id):
   if request.user:
     user = request.user
+    print "Request received for adding Surgical History"
     if request.method =="GET" and request.is_ajax():
       try:
         id                      = int(id)
@@ -111,13 +112,13 @@ def patient_surgical_history_add(request,id):
           addData        = {
                             "id"                : surgical_history_obj.id,
                             "description"       : surgical_history_obj.description,
-                            "icd_10_code"       : surgical_history_obj.icd_10_code.__unicode__(),
-                            "cpc_code"          : surgical_history_obj.cpc_code.__unicode__(),
+                            "icd_10_code"       : getattr(surgical_history_obj,'icd_10_code.__unicode__()', None),
+                            "cpc_code"          : getattr(surgical_history_obj,'cpc_code.__unicode__()', None),
                             "base_condition"    : surgical_history_obj.base_condition,
-                            "med_condition"     : surgical_history_obj.med_condition.__unicode__(),
+                            "med_condition"     : getattr(surgical_history_obj,'med_condition.__unicode__()',None),
                             "classification"    : surgical_history_obj.classification,
                             "healed"            : surgical_history_obj.healed,
-                            "date_of_surgery"   : surgical_history_obj.date_of_surgery.isoformat(),
+                            "date_of_surgery"   : getattr(surgical_history_obj,'date_of_surgery.isoformat()',None),
                             "remarks"           : surgical_history_obj.remarks,
                             "edit"              : surgical_history_obj.get_edit_url(),
                             "del"               : surgical_history_obj.get_del_url()
@@ -154,6 +155,7 @@ def patient_surgical_history_add(request,id):
 def patient_surgical_history_edit(request,id):
   if request.user:
     user = request.user
+    print "Request received for editing Surgical History"
     if request.method =="GET" and request.is_ajax():
       try:
         id                            = int(id)
@@ -182,13 +184,13 @@ def patient_surgical_history_edit(request,id):
           addData        = {
                             "id"                : surgical_history_obj.id,
                             "description"       : surgical_history_obj.description,
-                            "icd_10_code"       : surgical_history_obj.icd_10_code.__unicode__(),
-                            "cpc_code"          : surgical_history_obj.cpc_code.__unicode__(),
+                            "icd_10_code"       : getattr(surgical_history_obj,'icd_10_code.__unicode__()', None),
+                            "cpc_code"          : getattr(surgical_history_obj,'cpc_code.__unicode__()', None),
                             "base_condition"    : surgical_history_obj.base_condition,
-                            "med_condition"     : surgical_history_obj.med_condition.__unicode__(),
+                            "med_condition"     : getattr(surgical_history_obj,'med_condition.__unicode__()',None),
                             "classification"    : surgical_history_obj.classification,
                             "healed"            : surgical_history_obj.healed,
-                            "date_of_surgery"   : surgical_history_obj.date_of_surgery.isoformat(),
+                            "date_of_surgery"   : getattr(surgical_history_obj,'date_of_surgery.isoformat()',None),
                             "remarks"           : surgical_history_obj.remarks,
                             "edit"              : surgical_history_obj.get_edit_url(),
                             "del"               : surgical_history_obj.get_del_url()

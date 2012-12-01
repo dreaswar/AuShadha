@@ -96,8 +96,8 @@ ready( function(){
             );
             domConstruct.create('div', 
                                 {id: "guardian_list"}, 
-                                "demographics_add_or_edit_form", 
-                                "after"
+                                "patientDemographicsTab",
+                                "last"
             );
           domConstruct.create('div', 
                               {id: "patientSocialHistoryTab"}, 
@@ -119,21 +119,23 @@ ready( function(){
                               "patientHistoryTabs", 
                               "last"
           );
+/*
             domConstruct.create('div', 
                                 {id: "medical_and_surgical_history_list"}, 
                                 "patientMedicalAndSurgicalHistoryTab", 
                                 "first"
             );
-              domConstruct.create('div',
-                                  {id: "medical_history_list"},
-                                  "medical_and_surgical_history_list",
-                                  "first"
-                          );
-              domConstruct.create('div',
-                                  {id: "surgical_history_list"},
-                                  "medical_history_list",
-                                  "after"
-                          );
+*/
+            domConstruct.create('div',
+                                {id: "medical_history_list"},
+                                "patientMedicalAndSurgicalHistoryTab",
+                                "first"
+            );
+            domConstruct.create('div',
+                                {id: "surgical_history_list"},
+                                "patientMedicalAndSurgicalHistoryTab",
+                                "last"
+             );
 
     domConstruct.create('div',
                           {id: "patientPreventiveHealthTab"}, 
@@ -343,7 +345,8 @@ ready( function(){
                                                   );
         preventiveHealthTab.addChild(preventiveHealthTabs);
           var patientNeonatalAndPaediatricTab = new ContentPane({id:"patientNeonatalAndPaediatricExamTab",
-                                                       title:"Neonatal & Paediatric"
+                                                       title:"Neonatal & Paediatric",
+                                                       disabled: true
                                                       },
                                                       "patientNeonatalAndPaediatricExamTab"
                                                       );
@@ -383,7 +386,8 @@ ready( function(){
                                                       );
           preventiveHealthTabs.addChild(patientGynaecologyPreventivesTab);
           var patientMedicalPreventivesTab      = new ContentPane({id:"patientMedicalPreventivesTab",
-                                                       title:"Medical & Surgical"
+                                                       title:"Medical & Surgical",
+                                                       disabled: true
                                                       },
                                                       "patientMedicalPreventivesTab"
                                                       );
@@ -454,7 +458,7 @@ ready( function(){
 	  var addPhoneButton =  new Button({
                                     label: "Add",
                                     title: "Add New Phone Numbers",
-                                    iconClass: "addPatientPhoneIcon_32",
+                                    iconClass: "addPatientPhoneIcon_16",
                                     onClick: function(){
                                            require(
                                             ["dojo/_base/xhr", "dojo/_base/array"],

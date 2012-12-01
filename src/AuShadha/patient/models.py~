@@ -1185,20 +1185,20 @@ class PatientMedicalHistory(AuShadhaBaseModel):
     return "%s" %(self.patient_detail)
 
   def save(self, *args, **kwargs):
-    self.__model_label__ = __model_label__
+    self.__model_label__ = "medical_history"
     super(PatientMedicalHistory, self).save(*args, **kwargs)
 
-    def get_edit_url(self):
-      '''
-      Returns the URL for editing Medical History details for a Patient
-      '''
-      return '/AuShadha/pat/%s/edit/%s/' %(self.__model_label__, self.id)
+  def get_edit_url(self):
+    '''
+    Returns the URL for editing Medical History details for a Patient
+    '''
+    return '/AuShadha/pat/%s/edit/%s/' %(self.__model_label__, self.id)
 
-    def get_del_url(self):
-      '''
-      Returns the URL for deleting Medical History detail for a Patient
-      '''
-      return '/AuShadha/pat/%s/del/%s/' %(self.__model_label__, self.id)
+  def get_del_url(self):
+    '''
+    Returns the URL for deleting Medical History detail for a Patient
+    '''
+    return '/AuShadha/pat/%s/del/%s/' %(self.__model_label__, self.id)
 
 
 class PatientSurgicalHistory(AuShadhaBaseModel):
@@ -1248,17 +1248,17 @@ class PatientSurgicalHistory(AuShadhaBaseModel):
     self.__model_label__ = "surgical_history"
     super(PatientSurgicalHistory, self).save(*args, **kwargs)
 
-    def get_edit_url(self):
-      '''
-      Returns the URL for editing Surgical History details for a Patient
-      '''
-      return '/AuShadha/pat/%s/edit/%s/' %(self.__model_label__, self.id)
+  def get_edit_url(self):
+    '''
+    Returns the URL for editing Surgical History details for a Patient
+    '''
+    return '/AuShadha/pat/%s/edit/%s/' %(self.__model_label__, self.id)
 
-    def get_del_url(self):
-      '''
-      Returns the URL for deleting Surgical History detail for a Patient
-      '''
-      return '/AuShadha/pat/%s/del/%s/' %(self.__model_label__, self.id)
+  def get_del_url(self):
+    '''
+    Returns the URL for deleting Surgical History detail for a Patient
+    '''
+    return '/AuShadha/pat/%s/del/%s/' %(self.__model_label__, self.id)
 
     
 
@@ -1894,6 +1894,11 @@ class PatientSurgicalHistoryForm(ModelForm):
                    "data-dojo-type": "dijit.form.ValidationTextBox",
                     "data-dojo-props": r"'required' : false"
                    },
+                  {"field"         : 'healed',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
                   {"field"         : 'classification',
                     'max_length'    :  100         ,
                     "data-dojo-type": "dijit.form.ValidationTextBox",

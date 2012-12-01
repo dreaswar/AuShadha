@@ -384,7 +384,10 @@ function reInitBottomPanels(){
           allergyTable        = registry.byId("allergy_list"),
           immunizationTable   = registry.byId("immunisation_list"),
           familyHistoryTable  = registry.byId("family_history_list"),
-          historyTable        = registry.byId("medical_and_surgical_history"),
+
+          medicalHistoryTable = registry.byId("medical_history_list"),
+          surgicalHistoryTable = registry.byId("surgical_history_list"),
+
 //        socialHistoryTable  = registry.byId("social_history_list"),
           medicationListTable = registry.byId("medication_list"),
           admissionTable      = registry.byId("admission_list"),
@@ -394,104 +397,127 @@ function reInitBottomPanels(){
       if(contactTable){
         contactTable.destroyRecursive();
         console.log("Recreating Contact tab");
-        domConstruct.place("<div id='contact_list'></div>",
+        domConstruct.create("div",{id:'contact_list'},
                            "patientContactTab", 
-                           'second'
-                           );
-        
+                           1
+        );
       }
+
       if(phoneTable){
         phoneTable.destroyRecursive();
         console.log("Recreating Phone tab");
-        domConstruct.place("<div id='phone_list'></div>",
+        domConstruct.create("div",{id:'phone_list'},
                            "patientContactTab", 
-                           'third'
-                           );
-        
+                           'last'
+        );
       }
+
       if(guardianTable){
         guardianTable.destroyRecursive();
         console.log("Recreating Guardian tab");
-        domConstruct.place("<div id='guardian_list'></div>",
+        domConstruct.create("div",{ id:'guardian_list'},
                            "patientDemographicsTab", 
                            'last'
-                           );
-        
+        );
       }
 
       if(medicationListTable){
         medicationListTable.destroyRecursive();
         console.log("Recreating Medication List tab");
-        domConstruct.place("<div id='medication_list' class='patientContextTabs'></div>",
+        domConstruct.create("div",
+                           { id:'medication_list', class:'patientContextTabs'},
                            "patientMedicationListAndAllergiesTab", 
-                           'second'
-                           );
-        
+                           1
+        );
       }
 
       if(allergyTable){
         allergyTable.destroyRecursive();
         console.log("Recreating allergy tab");
-        domConstruct.place("<div id='allergy_list' class='patientContextTabs'></div>",
+        domConstruct.create("div",
+                            {id:'allergy_list', class:'patientContextTabs'},
                            "patientMedicationListAndAllergiesTab", 
-                           'second'
-                           );
-        
+                           3
+        );
       }
+
       if(immunizationTable){
         immunizationTable.destroyRecursive();
         console.log("Recreating immunisation tab");
-        domConstruct.place("<div id='immunisation_list' class='patientContextTabs'></div>",
+        domConstruct.create("div",
+                           { id:'immunisation_list',
+                            class:'patientContextTabs'
+                          },
                            "patientImmunisationTab", 
-                           'second'
-                           );
-        
+                           1
+        );
       }
 
       if(familyHistoryTable){
         familyHistoryTable.destroyRecursive();
         console.log("Recreating Family History tab");
-        domConstruct.place("<div id='family_history_list' class='patientContextTabs'></div>",
+        domConstruct.create("div",
+                            { id:'family_history_list',
+                             class:'patientContextTabs'
+                            },
                            "patientFamilyHistoryTab", 
-                           'third'
-                           );
-        
+                           1
+        );
       }
-      if(historyTable){
-        historyTable.destroyRecursive();
-        console.log("Recreating History tab");
-        domConstruct.place("<div id='medical_and_surgical_history_list' ></div>",
-                           "patientMedicalAndSurgicalHistoryTab",
-                           'first'
-                           );
 
+      if(medicalHistoryTable){
+        medicalHistoryTable.destroyRecursive();
+        console.log("Recreating History tab");
+        domConstruct.create("div",
+                            { id:'medical_history_list'},
+                            "patientMedicalAndSurgicalHistoryTab",
+                            1
+        );
       }
+
+      if(surgicalHistoryTable){
+        surgicalHistoryTable.destroyRecursive();
+        console.log("Recreating History tab");
+        domConstruct.create("div",
+                            {id:'surgical_history_list'},
+                           "patientMedicalAndSurgicalHistoryTab",
+                           "last"
+        );
+      }
+
+
       if(patientMediaTable){
         patientMediaTable.destroyRecursive();
         console.log("Recreating Patient Media tab");
-        domConstruct.place("<div id='patient_media_list' class='patientContextTabs'></div>",
+        domConstruct.create("div",
+                            {id:'patient_media_list', class:'patientContextTabs'},
                            "patientMediaTab", 
-                           'second'
-                           );
+                           1
+        );
         
       }
+
       if(admissionTable){
         admissionTable.destroyRecursive();
         console.log("Recreating Admission tab");
-        domConstruct.place("<div id='admission_list' class='patientContextTabs'></div>",
+        domConstruct.create("div",
+                            {id:'admission_list', class:'patientContextTabs'},
                            "patientAdmissionAndVisitsTab", 
-                           'third'
-                           );
+                           1
+        );
         
       }
+
       if(visitTable){
         visitTable.destroyRecursive();
         console.log("Recreating Visit tab tab");
-        domConstruct.place("<div id='visit_list' class='patientContextTabs'></div>",
+        domConstruct.create("div",
+                            {id:'visit_list', class:'patientContextTabs'},
                            "patientAdmissionAndVisitsTab", 
-                           'second'
-                           );
+                           3
+        );
       }
+
    });
 }
 
