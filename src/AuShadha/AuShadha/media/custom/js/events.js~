@@ -81,9 +81,7 @@
 
             var familyHistoryUrl    = addData.familyhistoryjson;
             var medicalHistoryUrl   = addData.medicalhistoryjson;
-            console.log("Medical History JSON is: "+ medicalHistoryUrl);
             var surgicalHistoryUrl  = addData.surgicalhistoryjson;
-            console.log("Surgical History JSON is: "+ surgicalHistoryUrl);
 
             var demographicsUrl   = addData.demographicsadd;
             var socialHistoryUrl  = addData.socialhistoryadd;

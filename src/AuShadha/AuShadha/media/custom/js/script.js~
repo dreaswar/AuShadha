@@ -224,6 +224,7 @@
 
                                       demographicsUrl = "/AuShadha/pat/demographics/add/" + patid +"/",
                                       socialHistoryUrl = "/AuShadha/pat/social_history/add/" + patid +"/",
+
                                       obstetricHistoryUrl = "/AuShadha/pat/obstetric_history_detail/add/" + patid +"/",
 
                                       allergiesUrl = "{%url allergies_json %}" +
@@ -233,6 +234,7 @@
                                       familyHistoryUrl = "{%url family_history_json %}" + 
                                                     "?patient_id=" 
                                                     + patid,
+
                                       medicalHistoryUrl = "{%url medical_history_json %}" +
                                                     "?patient_id="
                                                     + patid,
@@ -778,6 +780,11 @@ function keepTabs(){
   });
 }
 
+//{% if alternate_layout %}
+ require(["dojo/ready"], function(ready){ buildPatientTree();});
+//{% endif %}
+
+ 
 /*
 require(["dojo/ready","dojo/parser","dijit/registry","dojo/domReady!"], 
 function(ready){

@@ -780,6 +780,9 @@ function keepTabs(){
   });
 }
 
+
+
+ 
 /*
 require(["dojo/ready","dojo/parser","dijit/registry","dojo/domReady!"], 
 function(ready){

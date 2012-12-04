@@ -152,6 +152,7 @@ body{
 #immunisation_list,
 #family_history_list,
 #medical_history_list,
+#surgical_history_list,
 #medication_list,
 #allergy_list,
 #patient_media_list,
@@ -263,6 +264,15 @@ body{
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;
+     text-align:center;
+   }
+
+   .addPatientIcon_16_small
+   {
+     background-image    : url('{{MEDIA_URL}}/images/patient/patient_add_small.svg');
+     background-repeat   : no-repeat;
+     //height: 16px;
+     //width:16px;
      text-align:center;
    }
 

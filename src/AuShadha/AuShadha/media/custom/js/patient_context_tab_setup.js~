@@ -2,6 +2,7 @@ function patientContextTabSetup(){
 require(
   ["dijit/registry",
    "dojo/parser",
+   "dijit/layout/BorderContainer",
    "dijit/layout/TabContainer",
    "dojox/layout/ContentPane",
    "dijit/form/Button",
@@ -11,7 +12,10 @@ require(
    "dojo/ready",
    "dojo/_base/array"
   ],
-  function(registry,parser, TabContainer, ContentPane, Button, dom, domConstruct, domStyle, ready,array){
+  function(registry,parser, BorderContainer,
+           TabContainer, ContentPane, Button,
+           dom, domConstruct, domStyle, ready,array
+  ){
 ready( function(){
       if (registry.byId("patientContextContainer")){
         return; 
@@ -52,7 +56,8 @@ ready( function(){
       registry.byId('addPatientButton').set("style", {"fontSize": "12px"} );
       registry.byId('filteringSelectPatSearch').set("style",{width: "400px", left: "5%", "fontSize":"12px"} );
 
-      domConstruct.create('div', 
+
+      domConstruct.create('div',
                           {id: "patientContextTabs"}, 
                           "patientContextContainer", 
                           "first"
@@ -249,13 +254,37 @@ ready( function(){
                               "patientMediaTab", "first"
           );
 
+
+/*      var mainBorderContainer = new BorderContainer({id      : "patientBorderContainer",
+                                             },
+                                            "patientBorderContainer"
+      );
+      var mainTreeContainer = new ContentPane({id      : "patientTreeContainer",
+                                               region  : "left",
+                                               style   : "width: 300px; overflow:auto;"
+                                              },
+                                             "patientTreeContainer"
+      );
+*/
+      var mainContainer = new ContentPane({id     : "patientContextContainer",
+                                           region  : "center",
+                                           splitter: true,
+                                           style :"min-height: 550px; overflow:auto;"
+                                          },
+                                          "patientContextContainer"
+      );
+  //    mainBorderContainer.addChild(mainTreeContainer);
+      mainBorderContainer.addChild(mainContainer);
+      //buildPatientTree();
+      
+/*
       var mainContainer = new ContentPane({id     : "patientContextContainer",
                                              region  : "bottom",
                                              style :"min-height: 550px; overflow:auto;"
                                             }, 
                                           "patientContextContainer"
         );
-
+*/
       var tabs = new TabContainer({ 
                                     id: "patientContextTabs",
                                     tabPosition:"top",
@@ -417,7 +446,8 @@ ready( function(){
      historyTabs.startup();
      preventiveHealthTabs.startup();
 
-    registry.byId("centerMainPane").resize();
+
+     registry.byId("centerMainPane").resize();
 
 
 //{% if perms.patient.add_patientcontact %}
@@ -514,8 +544,8 @@ ready( function(){
                                               {type : "button",
                                                id   : "addGuardianButton"
                                               },
-                                              "patientDemographicsTab",
-                                              1)
+                                              "guardian_list",
+                                              "before")
     );
 //{% endif %}
 

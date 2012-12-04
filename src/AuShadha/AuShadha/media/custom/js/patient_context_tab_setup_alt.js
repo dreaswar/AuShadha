@@ -18,15 +18,17 @@ require(
   ){
 ready( function(){
       if (registry.byId("patientContextContainer")){
-        return; 
+        console.log("Context Container already set up.. ")
+        return;
       }
       else
       {
+      console.log("No Content Panes set up so far.. setting the same..");
 
       domConstruct.destroy('frontPageSearchPatientAuShadhaLogo');
       domStyle.set(dom.byId('searchPatientContainerDiv'),{top           : "0px",
                                                           left          : "0px",
-                                                          height        : "50px", 
+                                                          height        : "50px",
                                                           width         : "auto",
                                                           background    : "none",
                                                           border        : "none",
@@ -42,7 +44,7 @@ ready( function(){
       domStyle.set(dom.byId('simplePatientFilteringSearch'),{top:"0px",
                                                             left:"0px",
                                                             overflow:'hidden',
-                                                            height        : "50px", 
+                                                            height        : "50px",
                                                             width         : "auto",
                                                             background    : "none",
                                                             border        : "none",
@@ -56,78 +58,92 @@ ready( function(){
       registry.byId('addPatientButton').set("style", {"fontSize": "12px"} );
       registry.byId('filteringSelectPatSearch').set("style",{width: "400px", left: "5%", "fontSize":"12px"} );
 
-
       domConstruct.create('div',
-                          {id: "patientContextTabs"}, 
-                          "patientContextContainer", 
+                          {id: "patientTreeContainer"},
+                          "patientTabsBorderContainer",
                           "first"
       );
-      domConstruct.create('div', 
-                          {id: "patientContactTab"}, 
-                         "patientContextTabs", 
-                         "first"
-      );
-        domConstruct.create('div', 
-                            {id: "contact_list"}, 
-                            "patientContactTab", 
+        domConstruct.create('div',
+                            {id: "patientTreeDiv"},
+                            "patientTreeContainer",
                             "first"
         );
-        domConstruct.create('div', 
-                            {id: "phone_list"}, 
-                            "patientContactTab", 
+      console.log("Created a Patient Tree Container..." + dom.byId("patientTreeContainer"));
+      
+      domConstruct.create('div',
+                          {id: "patientContextTabs"},
+                          "patientContextContainer",
+                          "first"
+      );
+      console.log("Created a PatientContextTabs..." + dom.byId("patientContextTabs"));
+
+      console.log("Starting to set up individual tabs.. now creating domElements for the same");
+      domConstruct.create('div',
+                          {id: "patientContactTab"},
+                         "patientContextTabs",
+                         "first"
+      );
+        domConstruct.create('div',
+                            {id: "contact_list"},
+                            "patientContactTab",
+                            "first"
+        );
+        domConstruct.create('div',
+                            {id: "phone_list"},
+                            "patientContactTab",
                             "last"
         );
 
-      domConstruct.create('div', 
-                          {id: "patientHistoryTab"}, 
-                          "patientContextTabs", 
+      domConstruct.create('div',
+                          {id: "patientHistoryTab"},
+                          "patientContextTabs",
                           "last"
       );
 
-        domConstruct.create('div', 
-                            {id: "patientHistoryTabs"}, 
-                            "patientHistoryTab", 
+        domConstruct.create('div',
+                            {id: "patientHistoryTabs"},
+                            "patientHistoryTab",
                             "first"
         );
-          domConstruct.create('div', 
-                              {id: "patientDemographicsTab"}, 
-                              "patientHistoryTabs", 
+          domConstruct.create('div',
+                              {id: "patientDemographicsTab"},
+                              "patientHistoryTabs",
                               "first"
           );
-            domConstruct.create('div', 
-                                {id: "demographics_add_or_edit_form"}, 
-                                "patientDemographicsTab", 
+            domConstruct.create('div',
+                                {id: "demographics_add_or_edit_form"},
+                                "patientDemographicsTab",
                                 "first"
             );
-            domConstruct.create('div', 
-                                {id: "guardian_list"}, 
+            domConstruct.create('div',
+                                {id: "guardian_list"},
                                 "patientDemographicsTab",
                                 "last"
             );
-          domConstruct.create('div', 
-                              {id: "patientSocialHistoryTab"}, 
-                              "patientHistoryTabs", 
+          domConstruct.create('div',
+                              {id: "patientSocialHistoryTab"},
+                              "patientHistoryTabs",
                               "first"
           );
-          domConstruct.create('div', 
-                              {id: "patientFamilyHistoryTab"}, 
-                              "patientHistoryTabs", 
+          domConstruct.create('div',
+                              {id: "patientFamilyHistoryTab"},
+                              "patientHistoryTabs",
                               "last"
           );
-            domConstruct.create('div', 
-                                {id: "family_history_list"}, 
-                                "patientFamilyHistoryTab", 
+            domConstruct.create('div',
+                                {id: "family_history_list"},
+                                "patientFamilyHistoryTab",
                                 "first"
             );
-          domConstruct.create('div', 
-                              {id: "patientMedicalAndSurgicalHistoryTab"}, 
-                              "patientHistoryTabs", 
+          domConstruct.create('div',
+                              {id: "patientMedicalAndSurgicalHistoryTab"},
+                              "patientHistoryTabs",
                               "last"
           );
 /*
-            domConstruct.create('div', 
-                                {id: "medical_and_surgical_history_list"}, 
-                                "patientMedicalAndSurgicalHistoryTab", 
+            domConstruct.create('div',
+                                {id: "medical_and_surgical_history_list"},
+                                "patientMedicalAndSurgicalHistoryTab",
                                 "first"
             );
 */
@@ -143,126 +159,145 @@ ready( function(){
              );
 
     domConstruct.create('div',
-                          {id: "patientPreventiveHealthTab"}, 
-                          "patientContextTabs", 
+                          {id: "patientPreventiveHealthTab"},
+                          "patientContextTabs",
                           "last"
       );
-        domConstruct.create('div', 
-                            {id: "patientPreventiveTabs"}, 
-                            "patientPreventiveHealthTab", 
+        domConstruct.create('div',
+                            {id: "patientPreventiveTabs"},
+                            "patientPreventiveHealthTab",
                             "first"
         );
-          domConstruct.create('div', 
-                              {id: "patientNeonatalAndPaediatricExamTab"}, 
-                              "patientPreventiveTabs", 
+          domConstruct.create('div',
+                              {id: "patientNeonatalAndPaediatricExamTab"},
+                              "patientPreventiveTabs",
                               "first"
           );
-            domConstruct.create('div', 
-                                {id: "neonatal_and_paediatric_exam_list"}, 
-                                "patientNeonatalAndPaediatricExamTab", 
+            domConstruct.create('div',
+                                {id: "neonatal_and_paediatric_exam_list"},
+                                "patientNeonatalAndPaediatricExamTab",
                                 "first"
             );
-          domConstruct.create('div', 
-                              {id: "patientImmunisationTab"}, 
-                              "patientPreventiveTabs", 
+          domConstruct.create('div',
+                              {id: "patientImmunisationTab"},
+                              "patientPreventiveTabs",
                               "last"
           );
-            domConstruct.create('div', 
-                                {id: "immunisation_list"}, 
-                                "patientImmunisationTab", 
+            domConstruct.create('div',
+                                {id: "immunisation_list"},
+                                "patientImmunisationTab",
                                 "first"
             );
-          domConstruct.create('div', 
-                              {id: "patientObstetricsPreventivesTab"}, 
-                              "patientPreventiveTabs", 
+          domConstruct.create('div',
+                              {id: "patientObstetricsPreventivesTab"},
+                              "patientPreventiveTabs",
                               "last"
           );
 
-            domConstruct.create('div', 
-                                {id: "obstetric_history_detail"}, 
-                                "patientObstetricsPreventivesTab", 
+            domConstruct.create('div',
+                                {id: "obstetric_history_detail"},
+                                "patientObstetricsPreventivesTab",
                                 "first"
             );
 /*
-            domConstruct.create('div', 
-                                {id: "obstetric_history_form"}, 
-                                "obstetrics_history_detail", 
+            domConstruct.create('div',
+                                {id: "obstetric_history_form"},
+                                "obstetrics_history_detail",
                                 "after"
             );
 */
 
-          domConstruct.create('div', 
-                              {id: "patientGynaecologyPreventivesTab"}, 
-                              "patientPreventiveTabs", 
+          domConstruct.create('div',
+                              {id: "patientGynaecologyPreventivesTab"},
+                              "patientPreventiveTabs",
                               "last"
           );
-            domConstruct.create('div', 
-                                {id: "gynaecology_preventives_list"}, 
-                                "patientGynaecologyPreventivesTab", 
+            domConstruct.create('div',
+                                {id: "gynaecology_preventives_list"},
+                                "patientGynaecologyPreventivesTab",
                                 "first"
             );
-          domConstruct.create('div', 
-                              {id: "patientMedicalPreventivesTab"}, 
-                              "patientPreventiveTabs", 
+          domConstruct.create('div',
+                              {id: "patientMedicalPreventivesTab"},
+                              "patientPreventiveTabs",
                               "last"
           );
-            domConstruct.create('div', 
-                                {id: "medical_preventives_list"}, 
-                                "patientMedicalPreventivesTab", 
+            domConstruct.create('div',
+                                {id: "medical_preventives_list"},
+                                "patientMedicalPreventivesTab",
                                 "first"
             );
 
-      domConstruct.create('div', 
-                          {id: "patientMedicationListAndAllergiesTab"}, 
-                          "patientContextTabs", 
+      domConstruct.create('div',
+                          {id: "patientMedicationListAndAllergiesTab"},
+                          "patientContextTabs",
                           "last"
       );
-          domConstruct.create('div', 
-                              {id: "medication_list"}, 
-                              "patientMedicationListAndAllergiesTab", 
+          domConstruct.create('div',
+                              {id: "medication_list"},
+                              "patientMedicationListAndAllergiesTab",
                               "first"
           );
-          domConstruct.create('div', 
-                              {id: "allergy_list"}, 
-                              "medication_list", 
+          domConstruct.create('div',
+                              {id: "allergy_list"},
+                              "medication_list",
                               "after"
           );
 
-      domConstruct.create('div', 
-                          {id: "patientAdmissionAndVisitsTab"}, 
-                          "patientContextTabs", 
+      domConstruct.create('div',
+                          {id: "patientAdmissionAndVisitsTab"},
+                          "patientContextTabs",
                           "last"
       );
-          domConstruct.create('div', 
-                              {id: "admission_list"}, 
-                              "patientAdmissionAndVisitsTab", 
+          domConstruct.create('div',
+                              {id: "admission_list"},
+                              "patientAdmissionAndVisitsTab",
                               "first"
           );
-          domConstruct.create('div', 
-                              {id: "visit_list"}, 
-                              "admission_list", 
+          domConstruct.create('div',
+                              {id: "visit_list"},
+                              "admission_list",
                               "after"
           );
 
-      domConstruct.create('div', 
-                          {id: "patientMediaTab"}, 
-                          "patientContextTabs", 
+      domConstruct.create('div',
+                          {id: "patientMediaTab"},
+                          "patientContextTabs",
                           "last"
       );
-          domConstruct.create('div', 
-                              {id: "patient_media_list"}, 
+          domConstruct.create('div',
+                              {id: "patient_media_list"},
                               "patientMediaTab", "first"
           );
 
+      console.log("Created all the necessary DOM ELements.. Creating Dijits")
+
+      var mainBorderContaner = registry.byId("patientTabsBorderContainer");
+
+      var mainTreeContainer = new ContentPane({id     : "patientTreeContainer",
+                                             region  : "left",
+                                             style :"width:200px;"
+                                            },
+                                          "patientTreeContainer"
+      );
+      console.log("Created patientTreeContainer Dijit")
+      console.log("Adding patientTreeContainer Dijit to the BorderContainer")
+      mainBorderContaner.addChild(mainTreeContainer);
 
       var mainContainer = new ContentPane({id     : "patientContextContainer",
-                                             region  : "bottom",
-                                             style :"min-height: 550px; overflow:auto;"
-                                            }, 
+                                           region  : "center",
+                                           style :"min-height: 550px; overflow:auto;"
+                                           },
                                           "patientContextContainer"
-        );
+      );
+      console.log("Created patientContextContainer Dijit")
+      console.log("Adding patientContextContainer Dijit to the BorderContainer")
+      mainBorderContaner.addChild(mainContainer);
+      domStyle.set(mainBorderContaner.domNode,
+                   {"height":"600px","overflow":"auto"}
+      );
 
-      var tabs = new TabContainer({ 
+      var tabs = new TabContainer({
                                     id: "patientContextTabs",
                                     tabPosition:"top",
                                     tabStrip:true,
@@ -270,8 +305,9 @@ ready( function(){
                                    },
                                    "patientContextTabs"
                                   );
-
+      console.log("Created patientContextTabs Dijit")
       mainContainer.addChild(tabs);
+      console.log("Added patientContextTabs to patientContextContainer Dijit");
 
       var contactTab = new ContentPane({id:"patientContactTab",
                                          title:"Contact"
@@ -288,7 +324,7 @@ ready( function(){
         var historyTabs = new TabContainer({id:"patientHistoryTabs",
                                             tabPosition:"top",
                                             tabStrip:true,
-                                            style : "min-height: 550px;overflow:auto;"        
+                                            style : "min-height: 550px;overflow:auto;"
                                           },
                                           "patientHistoryTabs"
                                           );
@@ -423,10 +459,20 @@ ready( function(){
      historyTabs.startup();
      preventiveHealthTabs.startup();
 
+     console.log("Building Patient Tree..")
+     buildPatientTree();
+     console.log("Finished Building Patient Tree..")
 
+     registry.byId("patientTabsBorderContainer").resize();
      registry.byId("centerMainPane").resize();
 
-
+     var searchBoxHtml = dom.byId("searchTitle").innerHTML;
+     console.log("Got the Patient SearchBox Html");
+     array.each(registry.byId("searchTitle"),function(w){w.destroyRecursive()});
+     console.log("Destroyed the existing widgets inside searchbox");
+     dom.byId("patientSearchBox").innerHTML = searchBoxHtml;
+     console.log("Populated the searchbox");
+     
 //{% if perms.patient.add_patientcontact %}
     var addContactButton =  new Button({
                                   label: "Add",
@@ -437,7 +483,7 @@ ready( function(){
                                             function(xhr, array){
                                                 xhr.get({
                                                         url: "{%url contact_json %}"+
-                                                             "?patient_id="+ 
+                                                             "?patient_id="+
                                                              dom.byId("selected_patient_id_info").innerHTML +
                                                              "&action=add",
                                                         load: function(html){
@@ -449,7 +495,7 @@ ready( function(){
                                                  });
                                             });
                                  }
-                              }, 
+                              },
                               domConstruct.create('button',
                                                   {type : "button",
                                                    id   : "addContactButton"
@@ -462,7 +508,7 @@ ready( function(){
 
 
 //{% if perms.patient.add_patientphone %}
-	  var addPhoneButton =  new Button({
+    var addPhoneButton =  new Button({
                                     label: "Add",
                                     title: "Add New Phone Numbers",
                                     iconClass: "addPatientPhoneIcon_16",
@@ -471,7 +517,7 @@ ready( function(){
                                             ["dojo/_base/xhr", "dojo/_base/array"],
                                             function(xhr, array){
                                               xhr.get({
-                                                url: "{%url phone_json %}"+"?patient_id="+ 
+                                                url: "{%url phone_json %}"+"?patient_id="+
                                                        dom.byId("selected_patient_id_info").innerHTML +
                                                       "&action=add",
                                                 load: function(html){
@@ -483,7 +529,7 @@ ready( function(){
                                              });
                                            })
                                     }
-                         }, 
+                         },
                          domConstruct.create('button',
                                             {type :"button",
                                              id   :"addPhoneButton"
@@ -504,7 +550,7 @@ ready( function(){
                                                 ["dojo/_base/xhr", "dojo/_base/array"],
                                                 function(xhr, array){
                                                   xhr.get({
-                                                    url: "{%url guardian_json %}"+"?patient_id="+ 
+                                                    url: "{%url guardian_json %}"+"?patient_id="+
                                                           dom.byId("selected_patient_id_info").innerHTML +
                                                           "&action=add",
                                                     load: function(html){
@@ -516,7 +562,7 @@ ready( function(){
                                                  });
                                                })
                                         }
-                         }, 
+                         },
                          domConstruct.create('button',
                                               {type : "button",
                                                id   : "addGuardianButton"
@@ -527,7 +573,7 @@ ready( function(){
 //{% endif %}
 
 //{% if perms.admission.add_admissiondetail %}
-	  var addAdmissionButton =  new Button({
+    var addAdmissionButton =  new Button({
                                         label: "Add",
                                         title:"Add New Admission",
                                         iconClass: "dijitIconNewTask",
@@ -539,20 +585,20 @@ ready( function(){
                                                   //var id = grid.store.getValue(gridRow[0], 'id');
                                                   xhr.get({
                                                     url: "{%url admission_json %}"+
-                                                          "?patient_id="+ 
+                                                          "?patient_id="+
                                                           dom.byId("selected_patient_id_info").innerHTML +
                                                           "&action=add",
                                                     load: function(html){
                                                                var myDialog = dijit.byId("editPatientDialog");
                                                                myDialog.set('content', html);
-                                                               myDialog.set('title', 
+                                                               myDialog.set('title',
                                                                             "Record New Admission to the Clinic ");
                                                                myDialog.show();
                                                           }
                                                  });
                                                })
                                         }
-                                      }, 
+                                      },
                                       domConstruct.create('button',
                                                           {type : "button",
                                                            id   : "addAdmissionButton"
@@ -564,7 +610,7 @@ ready( function(){
 //{% endif %}
 
 //{% if perms.visit.add_visitdetail %}
-	  var addVisitButton =  new Button({
+    var addVisitButton =  new Button({
                                     label: "Add",
                                     title: "Add New OPD Visit",
                                     iconClass: "dijitIconNewTask",
@@ -574,7 +620,7 @@ ready( function(){
                                             function(xhr, array){
                                               xhr.get({
                                                 url: "{%url visit_json %}"+
-                                                     "?patient_id="+ 
+                                                     "?patient_id="+
                                                      dom.byId("selected_patient_id_info").innerHTML +
                                                      "&action=add",
                                                 load: function(html){
@@ -586,7 +632,7 @@ ready( function(){
                                              });
                                            })
                                     }
-                         }, 
+                         },
                          domConstruct.create('button',
                                               {type : "button",
                                                id   : "addVisitButton"
@@ -599,7 +645,7 @@ ready( function(){
 
 //{% comment %}
 //{% if perms.patient %}
-	  var addDemographicsButton =  new Button({
+    var addDemographicsButton =  new Button({
                                           label: "Add",
                                           title: "Add Demographics Data",
                                           iconClass: "dijitIconNewTask",
@@ -608,8 +654,8 @@ ready( function(){
                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                   function(xhr, array){
                                                     xhr.get({
-                                                      url: "{%url demographics_json %}"+ 
-                                                           "?patient_id=" + 
+                                                      url: "{%url demographics_json %}"+
+                                                           "?patient_id=" +
                                                            dom.byId("selected_patient_id_info").innerHTML +
                                                            "&action=add",
                                                       load: function(html){
@@ -621,7 +667,7 @@ ready( function(){
                                                    });
                                                  })
                                           }
-                         }, 
+                         },
                           domConstruct.create('button',
                                               {type : "button",
                                                id   : "addDemographicsButton"
@@ -634,7 +680,7 @@ ready( function(){
 //{%endcomment%}
 
 //{% if perms.patient %}
-	  var addAllergyButton =  new Button({
+    var addAllergyButton =  new Button({
                                       label: "Add",
                                       title: "Add Allergy Details",
                                       iconClass: "dijitIconNewTask",
@@ -644,7 +690,7 @@ ready( function(){
                                               function(xhr, array){
                                                 xhr.get({
                                                   url: "{% url allergies_json %}"+
-                                                       "?patient_id="+ 
+                                                       "?patient_id="+
                                                        dom.byId("selected_patient_id_info").innerHTML +
                                                        "&action=add",
                                                   load: function(html){
@@ -656,7 +702,7 @@ ready( function(){
                                                });
                                              })
                                       }
-                         }, 
+                         },
                         domConstruct.create('button',
                                             {type : "button",
                                              id   : "addAllergyButton"
@@ -668,7 +714,7 @@ ready( function(){
 //{% endif %}
 
 //{% if perms.patient %}
-	  var addPatientImmunisationButton =  new Button({
+    var addPatientImmunisationButton =  new Button({
                                           label: "Add",
                                           title: "Add Immunisation Details",
                                           iconClass: "dijitIconNewTask",
@@ -678,7 +724,7 @@ ready( function(){
                                                   function(xhr, array){
                                                     xhr.get({
                                                       url: "{%url immunisation_json %}"+
-                                                           "?patient_id="+ 
+                                                           "?patient_id="+
                                                            dom.byId("selected_patient_id_info").innerHTML +
                                                            "&action=add",
                                                       load: function(html){
@@ -690,7 +736,7 @@ ready( function(){
                                                    });
                                                  })
                                           }
-                                       }, 
+                                       },
                                       domConstruct.create('button',
                                                           {type : "button",
                                                            id   : "addPatientImmunisationButton"
@@ -702,7 +748,7 @@ ready( function(){
 //{% endif %}
 
 //{% if perms.patient %}
-	  var addPatientFamilyHistoryButton =  new Button({
+    var addPatientFamilyHistoryButton =  new Button({
                                           label       : "Add",
                                           title       : "Add Family History Details",
                                           iconClass   : "dijitIconNewTask",
@@ -712,7 +758,7 @@ ready( function(){
                                                   function(xhr, array){
                                                     xhr.get({
                                                       url: "{%url family_history_json %}"+
-                                                           "?patient_id="+ 
+                                                           "?patient_id="+
                                                            dom.byId("selected_patient_id_info").innerHTML +
                                                            "&action=add",
                                                       load: function(html){
@@ -724,7 +770,7 @@ ready( function(){
                                                    });
                                                  })
                                           }
-                         }, 
+                         },
                          domConstruct.create('button',
                                             {type : "button",
                                              id   : "addPatientFamilyHistoryButton"
@@ -810,7 +856,7 @@ ready( function(){
 
 
 //{% if perms.patient %}
-	  var addPatientMedicationListButton =  new Button({
+    var addPatientMedicationListButton =  new Button({
                                           label: "Add",
                                           title : "Add New Medication List",
                                           iconClass: "dijitIconNewTask",
@@ -820,7 +866,7 @@ ready( function(){
                                                   function(xhr, array){
                                                     xhr.get({
                                                       url: "{%url medication_list_json%}"+
-                                                           "?patient_id="+ 
+                                                           "?patient_id="+
                                                            dom.byId("selected_patient_id_info").innerHTML +
                                                            "&action=add",
                                                       load: function(html){
@@ -832,7 +878,7 @@ ready( function(){
                                                    });
                                                  })
                                           }
-                         }, 
+                         },
                         domConstruct.create('button',
                                             {type : "button",
                                              id   : "addPatientMedicationListButton"
@@ -845,7 +891,7 @@ ready( function(){
 
 
 //{% if perms.patient %}
-	  var addPatientMediaButton =  new Button({
+    var addPatientMediaButton =  new Button({
                                           label: "Add",
                                           title : "Add Patient Media Attachements",
                                           iconClass: "dijitIconNewTask",
@@ -855,7 +901,7 @@ ready( function(){
                                                   function(xhr, array){
                                                     xhr.get({
                                                       url: "/AuShadha/pat/media/"+
-                                                           "?patient_id="+ 
+                                                           "?patient_id="+
                                                            dom.byId("selected_patient_id_info").innerHTML +
                                                            "&action=add",
                                                       load: function(html){
@@ -867,7 +913,7 @@ ready( function(){
                                                    });
                                                  })
                                           }
-                                  }, 
+                                  },
                                   domConstruct.create('button',
                                                       {type : "button",
                                                        id   : "addPatientMediaButton"

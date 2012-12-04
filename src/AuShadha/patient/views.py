@@ -541,8 +541,9 @@ def patient_list(request):
     '''
     user = request.user
     all_patients = PatientDetail.objects.all().order_by('first_name')
-    variable            = RequestContext(request,{'user'         : user,
-                                                  "all_patients" : all_patients  
+    variable            = RequestContext(request,{'user'            : user,
+                                                  "all_patients"    : all_patients,
+                                                  "alternate_layout": False
                                                  })
     return render_to_response('patient/patient_list.html', variable)
 
@@ -554,8 +555,9 @@ def alternate_layout(request):
     '''
     user = request.user
     all_patients = PatientDetail.objects.all().order_by('first_name')
-    variable            = RequestContext(request,{'user'         : user,
-                                                  "all_patients" : all_patients  
+    variable            = RequestContext(request,{'user'              : user,
+                                                  "all_patients"      : all_patients,
+                                                   "alternate_layout" : True
                                                  })
     return render_to_response('base_alternate.html', variable)
 

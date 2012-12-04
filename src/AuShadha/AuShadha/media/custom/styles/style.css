@@ -267,6 +267,15 @@ body{
      text-align:center;
    }
 
+   .addPatientIcon_16_small
+   {
+     background-image    : url('{{MEDIA_URL}}/images/patient/patient_add_small.svg');
+     background-repeat   : no-repeat;
+     height: 16px;
+     width:16px;
+     text-align:center;
+   }
+
   .addPatientContactIcon_32
    {
      background-image    : url('{{MEDIA_URL}}/images/patient/patient_contact_add_32.png');

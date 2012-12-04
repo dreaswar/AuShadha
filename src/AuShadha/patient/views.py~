@@ -197,6 +197,14 @@ def return_patient_json(patient, success = True):
         data_to_append['familyhistoryadd']   = patient.get_patient_family_history_list_url()
         data_to_append['familyhistoryjson']  = APP_ROOT_URL+"pat/family_history/json/?patient_id="+patient_id
 
+        data_to_append['medicalhistorylist']  = patient.get_patient_medical_history_add_url()
+        data_to_append['medicalhistoryadd']   = patient.get_patient_medical_history_list_url()
+        data_to_append['medicalhistoryjson']  = APP_ROOT_URL+"pat/medical_history/json/?patient_id="+patient_id
+
+        data_to_append['surgicalhistorylist']  = patient.get_patient_surgical_history_add_url()
+        data_to_append['surgicalhistoryadd']   = patient.get_patient_surgical_history_list_url()
+        data_to_append['surgicalhistoryjson']  = APP_ROOT_URL+"pat/surgical_history/json/?patient_id="+patient_id
+
         data_to_append['immunisationadd']   = patient.get_patient_immunisation_add_url()
         data_to_append['immunisationlist']  = patient.get_patient_immunisation_list_url()
         data_to_append['immunisationjson']  = APP_ROOT_URL+"pat/immunisation/json/?patient_id="+patient_id

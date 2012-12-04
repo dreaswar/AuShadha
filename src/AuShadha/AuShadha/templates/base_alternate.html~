@@ -62,7 +62,7 @@
        Contains the Patient Context Tabs set up
     */
 
-   {% include 'patient_context_tab_setup.js' %}
+   {% include 'patient_context_tab_setup_alt.js' %}
   </script>
 
 
@@ -131,6 +131,11 @@
             data-dojo-type  = "dojox/layout/ContentPane"
             data-dojo-props = "region     : 'right'"
        >
+         <span id="patientSearchBox"
+               style="position: absolute; left: 30%;top:1px;"
+         >
+            {% include 'search/patient_search_filtering_select_small.html' %}
+         </span>
          <span id="timeBox"> </span>
          {% if user.is_authenticated %}
           <img src   = "{{STATIC_URL}}images/generic/auth/user_16.png"
@@ -244,47 +249,55 @@
 
                           </div>
 
-                          <div id             = "selected_patient_info"
-                               data-dojo-type = "dojox/layout/ContentPane"
-                               data-dojo-props= "region:'center'"
-                               style=" color      : #252525;
-                                       font-size  : 12px;
-                                       font-style : italics;
-                                       font-weight    : bold;
-                                       border          : solid 1pt #cecece;
-                                       border-radius   : 3px;
-                                       background      : #D0DFEA;
-                                       box-shadow  : 1px 1px 2px #ddd;
-                                       text-align     : center;
-                                       display:none;
-                                     "
+                          <div id              = "selected_patient_info"
+                               data-dojo-type  = "dojox/layout/ContentPane"
+                               data-dojo-props = "region:'center'"
+                               style = " color         : #252525;
+                                         font-size     : 12px;
+                                         font-style    : italics;
+                                         font-weight   : bold;
+                                         border        : solid 1pt #cecece;
+                                         border-radius : 3px;
+                                         background    : #D0DFEA;
+                                         box-shadow    : 1px 1px 2px #ddd;
+                                         text-align    : center;
+                                         display       : none;
+                                      "
                           >
 
                           </div>
-                          <!--  START OF patientTabsBorderContainerr  -->
-                          <div id             = "patientTabsBorderContainer"
-                              data-dojo-type = "dijit/layout/BorderContainer"
-                              data-dojo-id   = "patientTabsBorderContainer"
+
+                          <div id            = "patientMainContainer"
+                              data-dojo-type = "dojox/layout/ContentPane"
+                              data-dojo-id   = "patientMainContainer"
+                              data-dojo-props= "region: 'bottom'"
                           >
 
-                            <!--  START OF patientTreeContainer  -->
-                              <div id              = "patientTreeContainer"
-                                  data-dojo-props  = "region: 'left', splitter: true"
-                                  style            = "width:100px; display:display; overflow:auto;"
-                              >
-                              </div>
-                            <!--  END OF patientTreeContainer  -->
+                            <!--  START OF patientTabsBorderContainerr  -->
+                            <div id             = "patientTabsBorderContainer"
+                                data-dojo-type = "dijit/layout/BorderContainer"
+                                data-dojo-id   = "patientTabsBorderContainer"
+                            >
 
-                            <!--  START OF patientContextContainer  -->
-                              <div id              = "patientContextContainer"
-                                  data-dojo-props="region: 'center'"
-                              >
-                              </div>
-                            <!--  END OF patientContextContainer  -->
+                              <!--  START OF patientTreeContainer  -->
+                                <!--<div id              = "patientTreeContainer"
+                                    data-dojo-props  = "region: 'left', splitter: true"
+                                    style            = "width:200px;overflow:auto;"
+                                >
+                                </div>-->
+                              <!--  END OF patientTreeContainer  -->
+
+                              <!--  START OF patientContextContainer  -->
+                                <div id              = "patientContextContainer"
+                                >
+                                </div>
+                              <!--  END OF patientContextContainer  -->
+
+                            </div>
+                            <!--  END OF patientTabsBorderContainerr  -->
 
                           </div>
-                          <!--  END OF patientTabsBorderContainerr  -->
-
+                          <!--  END OF patientMainContainer  -->
                      </div>
                     <!--  END OF PATIENTLISTCONTENTPANE  -->
                     {% endif %}
