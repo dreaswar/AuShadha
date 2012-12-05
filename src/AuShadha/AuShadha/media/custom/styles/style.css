@@ -237,8 +237,24 @@ body{
      margin                : 10px 0px 20px 0px;
    }
 
+.patientIcon
+  {
+      background-image: url("{{MEDIA_URL}}images/generic/auth/user_16.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 16px;
+      height: 16px;
+  } 
+.patientContactTreeIcon
+  {
+      background-image: url("{{MEDIA_URL}}images/patient/patient_contact_list_16.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 16px;
+      height: 16px;
+  }    
 
-/* dijit Custom Classess */
+  /* dijit Custom Classess */
 
 #addPatientButton >*{
     text-align:center;

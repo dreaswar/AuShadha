@@ -387,30 +387,44 @@
 
   setupPatientGrid();
 
+  function addNewPatient(){
+    require(["dojo/_base/xhr",
+            "dijit/registry",
+            "dijit/Dialog"
+    ],
+    function(xhr, registry, Dialog){
+      var myDialog = dijit.byId("editPatientDialog");
+      xhr.get({
+              url: "{%url patient_new_add %}",
+              load: function(html){
+                      myDialog.set('content', html);
+                      myDialog.set('title', "Enroll New Patient to the Clinic");
+                      myDialog.show();
+              }
+      });
+    });
+  }
+
 //{% if perms.patient.add_patientdetail %}
     var addPatientButton =  new dijit.form.Button({
                                               label: "New", 
                                               iconClass:"addPatientIcon_32",
                                               onClick: function(){
-                                                          require(["dojo/_base/xhr",
-                                                                  "dijit/registry", 
-                                                                  "dijit/Dialog"
-                                                          ], 
-                                                          function(xhr, registry, Dialog){
-                                                            var myDialog = dijit.byId("editPatientDialog");
-                                                            xhr.get({
-                                                                    url: "{%url patient_new_add %}",
-                                                                    load: function(html){
-                                                                           myDialog.set('content', html);
-                                                                           myDialog.set('title', "Enroll New Patient to the Clinic");
-                                                                           myDialog.show();
-                                                                    }
-                                                            });
-                                                          });
+                                                            addNewPatient();
                                               }
                                             }, 
                                             "addPatientButton"
     );
+  require(["dojo/on","dojo/dom"],
+          function(on,dom){
+              on(dom.byId("addPatientButtonSmall"),
+                          "click",
+                          function(){
+                              addNewPatient();
+                          }
+              );
+          }
+  );
 //{% endif %}
 
 // {% endif %} 

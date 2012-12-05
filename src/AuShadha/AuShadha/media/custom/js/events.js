@@ -120,7 +120,8 @@
   //            setupAdmissionGrid(admissionUrl);
   //            setupVisitGrid(visitUrl);
            console.log("Finished setting up the grids....");
-
+              buildPatientTree();
+           console.log("Finished Rendering the tree...")
          }
         );
       });

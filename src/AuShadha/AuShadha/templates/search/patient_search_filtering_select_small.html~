@@ -16,16 +16,18 @@
             New
         </button>-->
 
-        <a href="" id="addPatientMenuBarIcon">
+        <div href="#" id="addPatientMenuBarIcon">
           <img id             = "addPatientButtonSmall"
               src            = "{{MEDIA_URL}}images/patient/patient_add.svg"
-              style          = " position:relative;
-                                 top:-0.40em;
-                                 width: 16px; height: 16px;
-                                 margin-right: 20px;
+              style          = " position     : relative;
+                                 top          : -0.40em;
+                                 width        : 16px;
+                                 height       : 16px;
+                                 margin-right : 10px;
+                                 cursor       : pointer;
                                 "
           >
-        </a>
+        </div>
 
         <div data-dojo-type  = "dojo/store/JsonRest"
               data-dojo-id    = "patSearchForJsonRestStoreSmall"
@@ -84,7 +86,7 @@
         <p class="suggestion_text"> Register a New Patient to the Clinic..</p>
     </div>
     <div  data-dojo-type="dijit/Tooltip"
-          data-dojo-props="connectId:'searchPatientMenuBarTd',position:['below']"
+          data-dojo-props="connectId:'searchPatientMenuBarTd',position:['l']"
           style="display:none;"
     >
         <div class="suggestion_text">

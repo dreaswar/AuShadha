@@ -4,9 +4,33 @@ function buildPatientTree(){
       "dojo/_base/window",
       "dojo/store/Memory",
       "dijit/tree/ObjectStoreModel",
-      "dijit/Tree","dojo/dom"
-  ], function(ready, win, Memory, ObjectStoreModel, Tree,dom){
-      // Create store, adding the getChildren() method required by ObjectStoreModel
+      "dijit/Tree","dojo/dom",
+      "dijit/registry",
+      "dojo/dom-construct","dojo/dom-style"
+  ], function(ready, win, Memory, ObjectStoreModel, Tree,dom, registry, domConstruct, domStyle){
+
+    var existingTree = registry.byId('patientTreeDiv');
+
+     if(existingTree){
+       console.log("Tree exists.. proceeding to destroy it..")
+       existingTree.destroyRecursive();
+     }
+
+     console.log(registry.byId("patientTreeDiv"));
+     if(!dom.byId("patientTreeDiv")){
+        domConstruct.create('div',
+                            {id: "patientTreeDiv"},
+                            "patientTreeContainer",
+                            "first"
+        );
+        domStyle.set( dom.byId('patientTreeDiv'),{'minWidth':'200px',
+                                                  'maxWidth':'300px',
+                                                  'minHeight':"400px",
+                                                  'overflow':"auto"
+        });
+    }  
+
+     // Create store, adding the getChildren() method required by ObjectStoreModel
       var patientTreeStore = new Memory({
           data: [
               { id: 'patient',
@@ -50,24 +74,20 @@ function buildPatientTree(){
                       type:'second_branch',
                       parent: 'history'
                     },
-                    { id: 'medical_and_surgical_history',
-                      name:'Medical & Surgical ',
+
+                    { id: 'medical_history',
+                      name:'Medical',
                       type:'second_branch',
                       parent: 'history'
                     },
-                        { id: 'medical_history',
-                          name:'Medical History',
-                          type:'third_branch',
-                          parent: 'medical_and_surgical_history'
-                        },
-                        { id: 'surgical_history',
-                          name:'Surgical History',
-                          type:'third_branch',
-                          parent: 'medical_and_surgical_history'
-                        },
+                    { id: 'surgical_history',
+                      name:'Surgical',
+                      type:'second_branch',
+                      parent: 'history'
+                    },
 
                 { id: 'preventive_health',
-                  name:'Preventive Health',
+                  name:'Preventives',
                   type:'main_branch',
                   parent: 'patient'
                 },
@@ -104,32 +124,27 @@ function buildPatientTree(){
                 },
 
                     { id: 'medication_list',
-                      name:'Medication List',
+                      name:'Medications',
                       type:'second_branch',
                       parent: 'medication_and_allergies'
                     },
                     { id: 'allergy_list',
-                      name:'Allergy List',
+                      name:'Allergies',
                       type:'second_branch',
                       parent: 'medication_and_allergies'
                     },
 
-                { id: 'admissions_and_visits',
-                  name:'Admissions & Visits',
+                { id: 'admissions',
+                  name:'Admissions',
                   type:'main_branch',
                   parent: 'patient'
                 },
 
-                    { id: 'patient_admissions',
-                      name:'Admissions',
-                      type:'second_branch',
-                      parent: 'admissions_and_visits'
-                    },
-                    { id: 'patient_visits',
-                      name:'Visits',
-                      type:'second_branch',
-                      parent: 'admissions_and_visits'
-                    },
+                { id: 'visits',
+                  name:'Visits',
+                  type:'main_branch',
+                  parent: 'patient'
+                },
 
                 { id: 'patient_media',
                   name:'Media',
@@ -164,14 +179,36 @@ function buildPatientTree(){
           query: {id: 'patient'}
       });
 
+
       // Create the Tree.
       ready(function(){
+
+          function setTreeIcons(item, opened){
+            //console.log(item.tree.rootNode || "Not defined");
+            if(item.id=='patient'){
+              console.log(item.id)
+              console.log("Returning iconclass for tree root..")
+              return 'patientIcon'
+            }
+            else{
+              console.log(item.id)
+              console.log("Returning iconclass for tree root..")
+              return (opened ? "dijitFolderOpened" : "dijitFolderClosed")
+            }
+          }
+
           var patientTree = new Tree({
-              model: patientTreeModel
-          });
-          //patientTree.placeAt(win.body());
-          patientTree.placeAt('patientTreeDiv')
+              model   : patientTreeModel,
+              showRoot: true
+          },'patientTreeDiv');
+
+          patientTree.getIconClass = setTreeIcons;
+          console.log("Setting Tree icons complete");
+
+          //patientTree.placeAt('patientTreeDiv')
           patientTree.startup();
+         // patientTree.expandAll();
       });
+
   });
 }
