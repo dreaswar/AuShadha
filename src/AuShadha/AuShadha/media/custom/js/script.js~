@@ -61,7 +61,7 @@
                )
       {
         // Define Variables to be used later in the app..
-
+        console.log("Starting script script.js");
         // STORES;
         var myStore;
 //        var phoneStore;
@@ -385,7 +385,9 @@
             };
     }
 
+  console.log("Calling setupPatientGrid");
   setupPatientGrid();
+  console.log("setupPatientGrid Returned");
 
   function addNewPatient(){
     require(["dojo/_base/xhr",
@@ -415,16 +417,7 @@
                                             }, 
                                             "addPatientButton"
     );
-  require(["dojo/on","dojo/dom"],
-          function(on,dom){
-              on(dom.byId("addPatientButtonSmall"),
-                          "click",
-                          function(){
-                              addNewPatient()
-                          }
-              );
-          }
-  );
+
 //{% endif %}
 
 // {% endif %} 
@@ -536,6 +529,7 @@
 // Setting Focus on Page Load;;
 //    dijit.byId('filterPatGridTextBox').focus();
 
+  console.log("Finished running script script.js");
 
 });
 

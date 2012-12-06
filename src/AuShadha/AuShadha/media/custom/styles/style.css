@@ -328,7 +328,14 @@ body{
      text-align:center;
    }
 
-/* End of Dijit Custom Classes */
+ .dndDropIndicator {
+  border: 2px dashed #99BBE8;
+  cursor:default;
+  margin-bottom:5px;
+  }
+
+
+  /* End of Dijit Custom Classes */
 
 
   #editPatientDialog, 

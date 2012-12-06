@@ -22,6 +22,17 @@ urlpatterns = patterns('',
 	'patient.views.render_patient_list'	,
 	name = 'render_patient_list'
   ),
+
+  url(r'summary/$',
+  'patient.views.render_patient_summary' ,
+  name = 'render_patient_summary_without_id'
+  ),
+
+  url(r'summary/(?P<id>\d+)/$',
+  'patient.views.render_patient_summary' ,
+  name = 'render_patient_summary_with_id'
+  ),
+
   url(r'search/$'	, 
       'patient.views.patient_search',
       name = "patient_search"

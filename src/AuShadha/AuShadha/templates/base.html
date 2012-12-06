@@ -122,7 +122,12 @@
 		   <div id              ="login_area"
             data-dojo-type  = "dojox/layout/ContentPane"
             data-dojo-props = "region     : 'right'"
-       > 
+       >
+         <span id="patientSearchBox"
+               style="position: absolute; left: -400px;top:1px;"
+         >
+            {% include 'search/patient_search_filtering_select_small.html' %}
+         </span>
   	     <span id="timeBox"> </span>
 		     {% if user.is_authenticated %}
 		      <img src   = "{{STATIC_URL}}images/generic/auth/user_16.png" 

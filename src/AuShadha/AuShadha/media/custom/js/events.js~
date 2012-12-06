@@ -16,6 +16,7 @@
             "dojo/domReady!"
     ],
     function(timing,dom, domStyle, domConstruct, registry, dateLocale, ready){
+      console.log("Starting script events.js");
       ready(function(){
         var t = new timing.Timer(60000);
         var fmt = "MMMM d yyyy  - hh:mm ";
@@ -120,7 +121,8 @@
   //            setupAdmissionGrid(admissionUrl);
   //            setupVisitGrid(visitUrl);
            console.log("Finished setting up the grids....");
-              buildPatientTree();
+            buildPatientTree();
+           console.log("Finished Rendering the tree...")
          }
         );
       });

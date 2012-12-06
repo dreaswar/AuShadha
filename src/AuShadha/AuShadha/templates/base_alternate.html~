@@ -26,7 +26,7 @@
     {% include 'script_links.html' %}
   {% endblock js %}
 
- <!- Defining Global Events in Javascript -->
+ <!-- Defining Global Events in Jasvascript -->
 
   <script type="text/javascript">
     /*
@@ -54,7 +54,7 @@
     /*
        Global Functions for Grid Setup
     */
-       {% include 'grid_setup.js' %}
+       {% include 'grid_setup_alt.js' %}
   </script>
 
   <script type="text/javascript">
@@ -75,7 +75,7 @@
        for handling the click event of the Filter button
     */
 
-   {% include 'events.js' %}
+   {% include 'events_alt.js' %}
   </script>
 
  <script type="text/javascript">
@@ -87,7 +87,7 @@
   </script>
 
   <script type="text/javascript">
-   {% include 'script.js' %}
+   {% include 'script_alt.js' %}
   </script>
 
   {% block js_bits %}
@@ -132,7 +132,7 @@
             data-dojo-props = "region     : 'right'"
        >
          <span id="patientSearchBox"
-               style="position: absolute; left: 30%;top:1px;"
+               style="position: absolute; left: -400px;top:1px;"
          >
             {% include 'search/patient_search_filtering_select_small.html' %}
          </span>

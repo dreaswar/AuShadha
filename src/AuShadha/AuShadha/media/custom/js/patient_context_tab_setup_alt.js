@@ -80,10 +80,16 @@ ready( function(){
       console.log("Created a PatientContextTabs..." + dom.byId("patientContextTabs"));
 
       console.log("Starting to set up individual tabs.. now creating domElements for the same");
+
       domConstruct.create('div',
-                          {id: "patientContactTab"},
+                          {id: "patientSummaryTab"},
                          "patientContextTabs",
                          "first"
+      );
+      domConstruct.create('div',
+                          {id: "patientContactTab"},
+                         "patientSummaryTab",
+                         "after"
       );
         domConstruct.create('div',
                             {id: "contact_list"},
@@ -312,6 +318,12 @@ ready( function(){
       mainContainer.addChild(tabs);
       console.log("Added patientContextTabs to patientContextContainer Dijit");
 
+      var summaryTab = new ContentPane({id:"patientSummaryTab",
+                                         title:"Summary"
+                                        },
+                                        "patientSummaryTab"
+                                        );
+      tabs.addChild(summaryTab);
       var contactTab = new ContentPane({id:"patientContactTab",
                                          title:"Contact"
                                         },
@@ -458,9 +470,9 @@ ready( function(){
       tabs.addChild(mediaTab);
 
      mainContainer.startup();
-     tabs.startup();
-     historyTabs.startup();
-     preventiveHealthTabs.startup();
+     //tabs.startup();
+     //historyTabs.startup();
+     //preventiveHealthTabs.startup();
 
      console.log("Building Patient Tree..")
      buildPatientTree();
@@ -468,6 +480,9 @@ ready( function(){
 
      registry.byId("patientTabsBorderContainer").resize();
      registry.byId("centerMainPane").resize();
+
+     //domStyle.set("patientContactTab",{'display':"none"});
+
 
 //{% if perms.patient.add_patientcontact %}
     var addContactButton =  new Button({

@@ -2,28 +2,44 @@
 
 
     <link rel="stylesheet" 
-	      href="{{STATIC_URL}}/plugins/dojo-1.7.2/dojo/resources/dojo.css" 
+	      href="{{STATIC_URL}}/plugins/dojo-1.8.0/dojo/resources/dojo.css" 
 	      type="text/css" />
 
     <link rel="stylesheet" 
-	      href="{{STATIC_URL}}/plugins/dojo-1.7.2/dijit/themes/claro/claro.css" 
+	      href="{{STATIC_URL}}/plugins/dojo-1.8.0/dijit/themes/claro/claro.css" 
 	      type="text/css" />
 
     <link rel="stylesheet" 
-	      href="{{STATIC_URL}}/plugins/dojo-1.7.2/dojox/grid/resources/Grid.css" 
+	      href="{{STATIC_URL}}/plugins/dojo-1.8.0/dojox/grid/resources/Grid.css" 
 	      type="text/css" />
 
     <link rel="stylesheet" 
-	      href="{{STATIC_URL}}/plugins/dojo-1.7.2/dojox/grid/resources/claroGrid.css" 
+	      href="{{STATIC_URL}}/plugins/dojo-1.8.0/dojox/grid/resources/claroGrid.css" 
 	      type="text/css" />
+
+    <link rel="stylesheet"
+        href="{{STATIC_URL}}/plugins/dojo-1.8.0/dojox/widget/Portlet/Portlet.css"
+        type="text/css" />
+
+    <link rel="stylesheet"
+        href="{{STATIC_URL}}/plugins/dojo-1.8.0/dojox/layout/resources/GridContainer.css"
+        type="text/css" />
+
+    <link rel="stylesheet"
+        href="{{STATIC_URL}}/plugins/dojo-1.8.0/dojox/layout/resources/DndGridContainer.csss"
+        type="text/css" />
+        
+    <link rel="stylesheet"
+        href="{{STATIC_URL}}/plugins/dojo-1.8.0/dojox/widget/Calendar/Calendar.css"
+        type="text/css" />
 
 
 <!-- Custom Stylesheets. -->
 
 
-    <link rel="stylesheet" 
-	      href="{{STATIC_URL}}custom/styles/style.css" 
-	      type="text/css" />
+<!--    <link rel="stylesheet" -->
+<!--	      href="{{STATIC_URL}}custom/styles/style.css" -->
+<!--	      type="text/css" />-->
 
 <!-- End of custom styles -->
 

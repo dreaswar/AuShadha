@@ -1,7 +1,7 @@
-    /* 
-       Contains the Logic of eventing in Patient Search Form Partly. 
+    /*
+       Contains the Logic of eventing in Patient Search Form Partly.
        Some of it is implemented in the HTML declaratively.
-       Triggered when the patient search text is entered 
+       Triggered when the patient search text is entered
        A separate trigger is present in search/patient.html
        for handling the click event of the Filter button
     */
@@ -48,7 +48,7 @@
     }
 
     function patFilteringSearchOnKeyUp(e){
-      require(["dijit/registry","dojo/dom","dojo/dom-style","dojo/dom-construct"], 
+      require(["dijit/registry","dojo/dom","dojo/dom-style","dojo/dom-construct"],
       function(registry, dom, domStyle, domConstruct){
         e.store.get(e.get('value')).then(
           function(item /*returned item*/){
@@ -56,20 +56,21 @@
             var addData = item.addData;
 
             domStyle.set('selected_patient_info',{"display":"","padding":"0px","margin":"0px"});
-            var selectedPatientContent = addData.full_name + "-" + 
+            var selectedPatientContent = addData.full_name + "-" +
                                          addData.age +"-" + addData.sex +
                                          "(" +addData.patient_hospital_id +")";
             registry.byId('selected_patient_info').set('content', selectedPatientContent);
             var patientInfo = dom.byId('selected_patient_info');
             domConstruct.
-              create("div",{innerHTML: addData.id, 
+              create("div",{innerHTML: addData.id,
                             id       : "selected_patient_id_info",
-                            style    : { display:"none" } 
+                            style    : { display:"none" }
                            },
                       patientInfo
               );
             console.log( dom.byId('selected_patient_id_info').innerHTML )
 
+            var patientSummaryUrl = addData.patientsummary;
             var contactUrl        = addData.contactjson;
 //            var contactAddUrl        = addData.contactaddurl;
             var phoneUrl          = addData.phonejson;
@@ -103,6 +104,7 @@
             console.log("Finished setting up the Forms...");
 
             console.log("Setting up the Grids Now...");
+              setupPatientSummary(patientSummaryUrl);
               setupContactGrid(contactUrl);
               setupPhoneGrid(phoneUrl);
 
@@ -121,7 +123,9 @@
   //            setupAdmissionGrid(admissionUrl);
   //            setupVisitGrid(visitUrl);
            console.log("Finished setting up the grids....");
-            buildPatientTree();
+            if(!registry.byId("patientTreeDiv")){
+              buildPatientTree();
+            }
            console.log("Finished Rendering the tree...")
          }
         );

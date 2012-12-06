@@ -176,7 +176,8 @@ function buildPatientTree(){
       // Create the model
       var patientTreeModel = new ObjectStoreModel({
           store: patientTreeStore,
-          query: {id: 'patient'}
+          query: {id: 'patient'},
+          labelAttr: "name"
       });
 
 
@@ -208,6 +209,7 @@ function buildPatientTree(){
           //patientTree.placeAt('patientTreeDiv')
           patientTree.startup();
          // patientTree.expandAll();
+         //patientTree.collapseAll();
       });
 
   });

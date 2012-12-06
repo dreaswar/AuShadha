@@ -5,8 +5,9 @@ function buildPatientTree(){
       "dojo/store/Memory",
       "dijit/tree/ObjectStoreModel",
       "dijit/Tree","dojo/dom",
-      "dijit/registry"
-  ], function(ready, win, Memory, ObjectStoreModel, Tree,dom, registry){
+      "dijit/registry",
+      "dojo/dom-construct","dojo/dom-style"
+  ], function(ready, win, Memory, ObjectStoreModel, Tree,dom, registry, domConstruct, domStyle){
 
     var existingTree = registry.byId('patientTreeDiv');
 
@@ -175,7 +176,8 @@ function buildPatientTree(){
       // Create the model
       var patientTreeModel = new ObjectStoreModel({
           store: patientTreeStore,
-          query: {id: 'patient'}
+          query: {id: 'patient'},
+          labelAttr: "name"
       });
 
 
@@ -207,6 +209,7 @@ function buildPatientTree(){
           //patientTree.placeAt('patientTreeDiv')
           patientTree.startup();
          // patientTree.expandAll();
+         patientTree.collapseAll();
       });
 
   });

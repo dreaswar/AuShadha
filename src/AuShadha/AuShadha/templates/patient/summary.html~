@@ -1,0 +1,95 @@
+<div data-dojo-type     = "dojox/layout/GridContainer"
+    id                  = "patient_summary_grid_container"
+    acceptTypes         = "dojox/widget/Portlet, dojox/widget/FeedPortlet"
+    hasResizableColumns = "true"
+    opacity             = "0.3"
+    nbZones             = "4"
+    allowAutoScroll     = "true"
+    withHandles         = "true"
+    handleClasses       = "dijitTitlePaneTitle"
+    region              = "center"
+    minChildWidth       = "100"
+    minColWidth         = "50"
+    style               = "height:90%; width:100%;"
+  >
+
+    <div data-dojo-type="dojox/widget/Portlet" title="Patient Portlet">
+
+      <div data-dojo-type="dojox/widget/PortletSettings">
+        Patient settings here...
+      </div>
+      <div style="font-family:console">
+         <p> First Name  : {{pat_obj.first_name}} </p>
+         <p>Middle Name : {{pat_obj.middle_name}}</p>
+         <p>Last Name   : {{pat_obj.last_name}}</p>
+         
+         <p>Age : {{pat_obj.age}}</p>
+         <p>Sex : {{pat_obj.sex}}</p>
+         
+         <p style="font-family:console"> Patient ID:{{pat_obj.patient_hospital_id}} </p>
+      </div>
+    </div>
+
+
+    <div data-dojo-type="dojox/widget/Portlet"
+         title="Contact Info"
+         id="patientContact"
+         maxResults="5"
+    >
+      <div >
+        {%if pat_contact_obj %}
+          {%for contact in pat_contact_obj %}
+            <div>
+            {{contact.address_type}} - {{contact.address}}
+            {{contact.city}} - {{contact.district}}
+            {{contact.state}}
+            <b>{{contact.country}}</b>
+            -{{contact.pincode}}
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="suggestion_text"> No Contact Details in Store</p>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <div data-dojo-type="dojox/widget/Portlet"
+         title="Phone"
+         id="patientPhone"
+         maxResults="5"
+    >
+      <div >
+        {%if pat_phone_obj %}
+          {%for phone in pat_phone_obj %}
+            <div>
+            {{phone.phone_type}}
+            {{phone.ISD_Code}}
+            {{phone.STD_Code}}
+            {{phone.phone}}
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="suggestion_text"> No Phone Numbers in Store</p>
+        {% endif %}
+      </div>
+
+    </div>
+<!--
+    <div data-dojo-type="dojox/widget/Portlet"
+         title="Calendar Portlet">
+      <div data-dojo-type="dojox/widget/PortletSettings">
+        Put whatever settings you like in here
+      </div>
+      <div data-dojo-type="dojox/widget/Calendar">
+        <script type="dojo/connect" data-dojo-event="onValueSelected" data-dojo-args="date">
+          dojo.byId("dateGoesHere").innerHTML = "Date Selected: " + date.toString();
+        </script>
+      </div>
+      <div id="dateGoesHere">
+
+      </div>
+    </div>
+-->
+
+  </div>

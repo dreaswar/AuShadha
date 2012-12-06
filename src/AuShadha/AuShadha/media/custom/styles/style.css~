@@ -239,7 +239,7 @@ body{
 
 .patientIcon
   {
-      background-image: url("{{MEDIA_URL}}images/generic/auth/user_16.svg");
+      background-image: url("{{MEDIA_URL}}images/generic/auth/user_16.png");
       background-repeat: no-repeat;
       background-position: center center;
       width: 16px;
