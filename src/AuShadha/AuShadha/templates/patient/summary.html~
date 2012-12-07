@@ -1,80 +1,250 @@
 <div data-dojo-type     = "dojox/layout/GridContainer"
     id                  = "patient_summary_grid_container"
     acceptTypes         = "dojox/widget/Portlet, dojox/widget/FeedPortlet"
-    hasResizableColumns = "true"
+    hasResizableColumns = "false"
     opacity             = "0.3"
-    nbZones             = "4"
-    allowAutoScroll     = "true"
-    withHandles         = "true"
+    nbZones             = "2"
+    allowAutoScroll     = "false"
+    withHandles         = "false"
     handleClasses       = "dijitTitlePaneTitle"
     region              = "center"
-    minChildWidth       = "100"
-    minColWidth         = "50"
-    style               = "height:90%; width:100%;"
+    minChildWidth       = "75"
+    minColWidth         = "75"
+    dragRestriction     = "true"
+    style               = "height:90%; width:100%;overflow:auto;"
   >
 
-    <div data-dojo-type="dojox/widget/Portlet" title="Patient Portlet">
+  <script type="dojo/method" >
+    require(
+       ["dojo/on","dojo/dom","dojo/query","dojo/dom-attr","dojo/ready"],
+    function(on,dom, query, domAttr, ready){
+              ready(function(){
+                query(".portletInnerActionSpanATag").
+                  on("click",
+                      function(evt){
+                        var url_to_call = domAttr.get(this,'href');
+                        require(["dojo/_base/xhr",
+                                  "dijit/registry",
+                                  "dijit/Dialog"
+                        ],
+                        function(xhr, registry, Dialog){
+                          var myDialog = registry.byId("editPatientDialog");
+                          xhr.get({
+                                  url: url_to_call,
+                                  load: function(html){
+                                          myDialog.set('content', html);
+                                          myDialog.set('title', "Add");
+                                          myDialog.show();
+                                  }
+                          });
+                          evt.preventDefault();
+                        });
+                      }
+                  );
+              });
+    });
+    require(
+       ["dojo/on","dojo/dom","dojo/query","dojo/dom-attr","dojo/ready","dijit/registry"],
+    function(on,dom, query, domAttr, ready, registry){
+      ready(function(){
+        var patient_id = dom.byId('selected_patient_id_info').innerHTML;
+        setupContactGridForPortlet("/AuShadha/pat/contact/json/?patient_id="+patient_id);
+        setupPhoneGrid("/AuShadha/pat/phone/json/?patient_id="+patient_id,'phone_grid_alt');
+        registry.byId("patient_summary_grid_container").disableDnd();
+      });
+     });
+  </script>
 
+<!--
+    <div data-dojo-type="dojox/widget/Portlet" title="Patient Summary">
       <div data-dojo-type="dojox/widget/PortletSettings">
         Patient settings here...
       </div>
+
       <div style="font-family:console">
          <p> First Name  : {{pat_obj.first_name}} </p>
-         <p>Middle Name : {{pat_obj.middle_name}}</p>
-         <p>Last Name   : {{pat_obj.last_name}}</p>
-         
+         <p> Middle Name : {{pat_obj.middle_name}}</p>
+         <p> Last Name   : {{pat_obj.last_name}}  </p>
+
          <p>Age : {{pat_obj.age}}</p>
          <p>Sex : {{pat_obj.sex}}</p>
-         
+
          <p style="font-family:console"> Patient ID:{{pat_obj.patient_hospital_id}} </p>
       </div>
-    </div>
 
+    </div>
+-->
 
     <div data-dojo-type="dojox/widget/Portlet"
-         title="Contact Info"
+         title="Address"
          id="patientContact"
          maxResults="5"
     >
-      <div >
+      <div data-dojo-type="dojox/widget/PortletSettings">
+        Patient Contact settings here...
+      </div>
+        {% if perms.patient.add_patientcontact %}
+          <span class="portletInnerActionSpan">
+            <a href="{{pat_obj.get_patient_contact_add_url}}"
+              class="portletInnerActionSpanATag"> Add </a>
+          </span>
+        {% endif %}
+      <!--
+      <div>
         {%if pat_contact_obj %}
           {%for contact in pat_contact_obj %}
-            <div>
-            {{contact.address_type}} - {{contact.address}}
-            {{contact.city}} - {{contact.district}}
-            {{contact.state}}
-            <b>{{contact.country}}</b>
-            -{{contact.pincode}}
+            <div class="portletInnerDiv">
+              <p><i>{{contact.address_type}}</i> - {{contact.address}}</p>
+              <p>{{contact.city}} - {{contact.district}}</p>
+              <p>{{contact.state}}</p>
+              <p><b>{{contact.country}}</b> -{{contact.pincode}} </p>
+              <span class="portletInnerActionSpan">
+                <a href="{{contact.get_patient_contact_edit_url}}"
+                   class="portletInnerActionSpanATag"> Edit </a>
+                <a href="{{contact.get_patient_contact_del_url}}"
+                   class="portletInnerActionSpanATag"> Del </a>
+               </span>
             </div>
           {% endfor %}
         {% else %}
           <p class="suggestion_text"> No Contact Details in Store</p>
         {% endif %}
       </div>
+      -->
 
+      <div id="contact_grid_alt"> </div>
     </div>
 
-    <div data-dojo-type="dojox/widget/Portlet"
-         title="Phone"
-         id="patientPhone"
-         maxResults="5"
+
+
+    <div data-dojo-type = "dojox/widget/Portlet"
+         title          = "Phone"
+         id             = "patientPhone"
+         maxResults     = "5"
     >
+      <div data-dojo-type="dojox/widget/PortletSettings">
+        Patient Phone settings here...
+      </div>
+        {% if perms.patient.add_patientphone %}
+          <span class="portletInnerActionSpan">
+            <a href="{{pat_obj.get_patient_phone_add_url}}"
+              class="portletInnerActionSpanATag"> Add </a>
+          </span>
+        {% endif %}
+      <!--
       <div >
         {%if pat_phone_obj %}
           {%for phone in pat_phone_obj %}
-            <div>
-            {{phone.phone_type}}
-            {{phone.ISD_Code}}
-            {{phone.STD_Code}}
-            {{phone.phone}}
+            <div class="portletInnerDiv">
+              <p> <b> {{phone.phone_type}} </b> </p>
+              <p> {{phone.ISD_Code}}-
+                  {{phone.STD_Code}}-
+                  {{phone.phone}}
+              </p>
+              <span class="portletInnerActionSpan">
+                {% if perms.patient.change_patientphone %}
+                <a href="{{phone.get_patient_phone_edit_url}}"
+                   class="portletInnerActionSpanATag"
+                   id   = "portletInnerEditActionSpanATagPhone"
+                   > Edit </a>
+                {% endif %}
+                {% if perms.patient.delete_patientphone %}
+                <a href="{{phone.get_patient_phone_del_url}}"
+                   class="portletInnerActionSpanATag"> Del </a>
+                {% endif %}
+               </span>
             </div>
           {% endfor %}
         {% else %}
           <p class="suggestion_text"> No Phone Numbers in Store</p>
         {% endif %}
       </div>
-
+      -->
+      <div id="phone_grid_alt"> </div>
     </div>
+
+
+
+    <div data-dojo-type = "dojox/widget/Portlet"
+         title          = "Admissions"
+         id             = "patientAdmissionsPortlet"
+         maxResults     = "5"
+    >
+      <div data-dojo-type="dojox/widget/PortletSettings">
+        Patient Admission settings here...
+      </div>
+      <div >
+        {% if perms.admission.add_admissiondetail %}
+              <span class="portletInnerActionSpan">
+                <a href="{{pat_obj.get_patient_admission_add_url}}"
+                  class="portletInnerActionSpanATag"> Add </a>
+              </span>
+            {% endif %}
+        {%if pat_admission_obj %}
+          {%for admission in pat_admission_obj %}
+            <div class="portletInnerDiv">
+
+              <span class="portletInnerActionSpan">
+                {% if perms.admission.change_admissiondetail %}
+                <a href="{{admission.get_patient_admission_edit_url}}"
+                   class="portletInnerActionSpanATag"> Edit </a>
+                {% endif %}
+                {% if perms.admission.delete_admissiondetail %}
+                <a href="{{admission.get_patient_admission_del_url}}"
+                   class="portletInnerActionSpanATag"> Del </a>
+                {% endif %}
+               </span>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="suggestion_text"> No Admissions in Store</p>
+        {% endif %}
+      </div>
+    </div>
+
+
+    <div data-dojo-type = "dojox/widget/Portlet"
+         title          = "Visits"
+         id             = "patientVisitsPortlet"
+         maxResults     = "5"
+    >
+      <div data-dojo-type="dojox/widget/PortletSettings">
+        Patient Visit settings here...
+      </div>
+      <div >
+        {% if perms.visits.add_visitdetail %}
+              <span class="portletInnerActionSpan">
+                <a href="{{pat_obj.get_patient_visit_add_url}}"
+                  class="portletInnerActionSpanATag"> Add </a>
+              </span>
+            {% endif %}
+        {%if pat_visit_obj %}
+          {%for visit in pat_visit_obj %}
+            <div class="portletInnerDiv">
+
+              <span class="portletInnerActionSpan">
+                {% if perms.visit.change_visitdetail %}
+                <a href="{{visit.get_patient_visit_edit_url}}"
+                   class="portletInnerActionSpanATag"> Edit </a>
+                {% endif %}
+                {% if perms.visit.delete_visitdetail %}
+                <a href="{{visit.get_patient_visit_del_url}}"
+                   class="portletInnerActionSpanATag"> Del </a>
+                {% endif %}
+               </span>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="suggestion_text"> No Visits in Store</p>
+        {% endif %}
+      </div>
+    </div>
+
+
+
+
+
+
 <!--
     <div data-dojo-type="dojox/widget/Portlet"
          title="Calendar Portlet">

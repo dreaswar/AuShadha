@@ -26,13 +26,13 @@
                   "
             id="frontPageSearchPatientAuShadhaLogo"
     >-->
-    <img    src   = "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_text.svg"
+    <img    src   = "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo.svg"
             style = " position:relative;
                       top: -0.5em;
                       padding:0px;
                       margin:0px;
                       width: 256px;
-                      height:58px;
+                      height:256px;
                     "
             id="frontPageSearchPatientAuShadhaLogo"
     >
@@ -75,7 +75,7 @@
                 onChange        = "patFilteringSearchOnKeyUp(this);"
                 style           = "width       : 300px;
                                    margin-left : 40px;
-                                   left : 33%; 
+                                   left        : 0.3em; 
                                    position:relative;
                                    padding     : inherit 10px inherit 10px;"
            >

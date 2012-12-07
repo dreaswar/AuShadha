@@ -105,8 +105,10 @@
 
             console.log("Setting up the Grids Now...");
               setupPatientSummary(patientSummaryUrl);
-              setupContactGrid(contactUrl);
-              setupPhoneGrid(phoneUrl);
+              //setupContactGridForPortlet(contactUrl);
+              //setupContactGrid(contactUrl);
+              //setupPhoneGrid(phoneUrl,'phone_list');
+              setupPhoneGrid(phoneUrl,'phone_grid_alt');
 
               setupFamilyHistoryGrid(familyHistoryUrl);
 
@@ -124,7 +126,7 @@
   //            setupVisitGrid(visitUrl);
            console.log("Finished setting up the grids....");
             if(!registry.byId("patientTreeDiv")){
-              buildPatientTree();
+              //buildPatientTree();
             }
            console.log("Finished Rendering the tree...")
          }

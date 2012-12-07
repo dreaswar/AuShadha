@@ -36,7 +36,7 @@ function setupPatientSummary(url){
     console.log("Finished creating Patient Summary");
   });
   */
-
+  });
 }
 
 
@@ -73,10 +73,53 @@ function setupContactGrid(url){
                       return false;
     };
     contactGrid.startup();
-
     console.log("Finished creating Contact Grid");
   });
 }
+
+function setupContactGridForPortlet(url){
+  require(["dojox/grid/DataGrid",
+           "dojo/store/JsonRest",
+           "dojo/data/ObjectStore",
+           "dijit/registry",
+           "dojox/layout/ContentPane"
+  ],
+  function(DataGrid, JsonRest, ObjectStore, registry,ContentPane){
+    var Cstore   = new JsonRest({target:url});
+    console.log(Cstore);
+    console.log("Creating the Contact Grid for patient summary")
+    var contactAltGrid = new DataGrid({
+                  store         : dataStore = ObjectStore({
+                                             objectStore: Cstore
+                                  }),
+                  selectionMode : "single",
+                  rowSelector   : "20px",
+                  structure     : GRID_STRUCTURES.PATIENT_CONTACT_GRID_STRUCTURE,
+                  noDataMessage : "<span class='dojoxGridNoData'>No Contact Information in Store..</span>"
+                },
+                "contact_grid_alt"
+    );
+
+    contactAltGrid.onRowDblClick = function(e){
+    //  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}
+                      onPatientSubMenuRowClick(e,
+                                               contactAltGrid,
+                                               "Edit Contact"
+                                              );
+    //  {%endif%}
+                      return false;
+    };
+
+    if(registry.byId('patientContact')){
+      registry.byId("patientContact").addChild(contactAltGrid)
+      contactAltGrid.startup();
+      console.log(contactAltGrid);
+      console.log("Finished creating summary contact grid.")
+    }
+    console.log("Finished creating Contact Grid");
+  });
+}
+
 
 
 function setupPhoneGrid(url){

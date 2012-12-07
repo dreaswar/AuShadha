@@ -163,6 +163,13 @@ body{
 	margin-top: 5px;
 }
 
+#contact_grid_alt,
+#phone_grid_alt
+{
+  height : 150px;
+  margin-top: 5px;
+  overflow:auto;
+}
 
 /*
 	#leftCol, 

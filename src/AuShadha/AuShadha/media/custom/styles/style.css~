@@ -157,12 +157,18 @@ body{
 #allergy_list,
 #patient_media_list,
 #admission_list,
-#visit_list
-{
+#visit_list{
   min-height : 230px;
 	margin-top: 5px;
 }
 
+#contact_grid_alt,
+#phone_grid_alt
+{
+  height : 150px;
+  margin-top: 5px;
+  overflow:auto;
+}
 
 /*
 	#leftCol, 
@@ -328,7 +334,14 @@ body{
      text-align:center;
    }
 
-/* End of Dijit Custom Classes */
+ .dndDropIndicator {
+  border: 2px dashed #99BBE8;
+  cursor:default;
+  margin-bottom:5px;
+  }
+
+
+  /* End of Dijit Custom Classes */
 
 
   #editPatientDialog, 

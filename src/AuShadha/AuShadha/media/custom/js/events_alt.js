@@ -105,8 +105,10 @@
 
             console.log("Setting up the Grids Now...");
               setupPatientSummary(patientSummaryUrl);
-              setupContactGrid(contactUrl);
-              setupPhoneGrid(phoneUrl);
+              //setupContactGridForPortlet(contactUrl);
+              //setupContactGrid(contactUrl);
+              //setupPhoneGrid(phoneUrl,'phone_list');
+              //setupPhoneGrid(phoneUrl,'phone_grid_alt');
 
               setupFamilyHistoryGrid(familyHistoryUrl);
 

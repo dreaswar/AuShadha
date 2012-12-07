@@ -55,7 +55,7 @@
               //"dojox/widget/ExpandableFeedPortlet",
               "dojox/widget/PortletSettings",
               "dojox/widget/Calendar",
-              "dijit/dijit"
+              "dijit/dijit",
 
               "dojo/domReady!"
       ],
@@ -301,8 +301,10 @@
                                   console.log("Finished setting up the Forms...");
 
                                   console.log("Setting up the Grids Now...");
-                                    setupContactGrid(contactUrl);
-                                    setupPhoneGrid(phoneUrl);
+                                    //setupContactGrid(contactUrl);
+                                    setupContactGridForPortlet(contactUrl);
+                                    //setupPhoneGrid(phoneUrl,'phone_list');
+                                    //setupPhoneGrid(phoneUrl,'phone_grid_alt');
 
                                     setupGuardianGrid(guardianUrl);
                                     setupFamilyHistoryGrid(familyHistoryUrl);
@@ -438,7 +440,6 @@
 //{% endif %}
 
 // {% endif %}
-
 
   genericFormBehaviour();
 
@@ -610,7 +611,7 @@ function addItem(url,form_id,grid_id){
           if(jsondata.success == true){
             dom.byId(form_id).reset();
             var data = jsondata.addData;
-            dijit.byId(grid_id).store.newItem(data);
+            registry.byId(grid_id).store.newItem(data);
             if(ADD_MORE_ITEMS == false){
               editDialog.hide();
             }

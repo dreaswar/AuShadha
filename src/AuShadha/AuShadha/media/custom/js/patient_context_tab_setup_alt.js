@@ -91,6 +91,7 @@ ready( function(){
                          "patientSummaryTab",
                          "after"
       );
+        /*
         domConstruct.create('div',
                             {id: "contact_list"},
                             "patientContactTab",
@@ -101,6 +102,7 @@ ready( function(){
                             "patientContactTab",
                             "last"
         );
+        */
 
       domConstruct.create('div',
                           {id: "patientHistoryTab"},
@@ -251,7 +253,7 @@ ready( function(){
                               "medication_list",
                               "after"
           );
-
+      /*
       domConstruct.create('div',
                           {id: "patientAdmissionAndVisitsTab"},
                           "patientContextTabs",
@@ -267,7 +269,7 @@ ready( function(){
                               "admission_list",
                               "after"
           );
-
+      */
       domConstruct.create('div',
                           {id: "patientMediaTab"},
                           "patientContextTabs",
@@ -323,13 +325,13 @@ ready( function(){
                                         },
                                         "patientSummaryTab"
                                         );
-      tabs.addChild(summaryTab);
+      tabs.addChild(summaryTab);/*
       var contactTab = new ContentPane({id:"patientContactTab",
                                          title:"Contact"
                                         },
                                         "patientContactTab"
                                         );
-      tabs.addChild(contactTab);
+      tabs.addChild(contactTab);*/
       var historyTab = new ContentPane({id:"patientHistoryTab",
                                          title:"History"
                                         },
@@ -456,12 +458,14 @@ ready( function(){
                                                       "patientMedicationListAndAllergiesTab"
                                                       );
       tabs.addChild(medicationAndAllergiesTab);
+      /*
       var admissionAndVisitTab      = new ContentPane({id:"patientAdmissionAndVisitsTab",
                                                        title:"Admissions & Visits"
                                                       },
                                                       "patientAdmissionAndVisitsTab"
                                                       );
       tabs.addChild(admissionAndVisitTab);
+      */
       var mediaTab                 = new ContentPane({id:"patientMediaTab",
                                                        title:"Media"
                                                       },
@@ -485,6 +489,7 @@ ready( function(){
 
 
 //{% if perms.patient.add_patientcontact %}
+     /*{% comment %}
     var addContactButton =  new Button({
                                   label: "Add",
                                   title: "Add New Contact Details",
@@ -515,10 +520,12 @@ ready( function(){
                                                   "before"
                               )
     );
+*/
 //{% endif %}
 
 
 //{% if perms.patient.add_patientphone %}
+/*
     var addPhoneButton =  new Button({
                                     label: "Add",
                                     title: "Add New Phone Numbers",
@@ -549,6 +556,7 @@ ready( function(){
                                             "before"
                          )
   );
+ {% endcomment %}*/
 //{% endif %}
 
 //{%if perms.patient.add_patientguardian %}
@@ -583,7 +591,9 @@ ready( function(){
     );
 //{% endif %}
 
+    /*
 //{% if perms.admission.add_admissiondetail %}
+     {% comment %}
     var addAdmissionButton =  new Button({
                                         label: "Add",
                                         title:"Add New Admission",
@@ -652,7 +662,9 @@ ready( function(){
                                               "before"
                          )
   );
+{% endcomment %}
 //{% endif %}
+*/
 
 //{% comment %}
 //{% if perms.patient %}
