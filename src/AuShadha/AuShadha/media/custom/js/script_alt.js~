@@ -302,7 +302,7 @@
 
                                   console.log("Setting up the Grids Now...");
                                     //setupContactGrid(contactUrl);
-                                    setupContactGridForPortlet(contactUrl);
+                                    //setupContactGridForPortlet(contactUrl);
                                     //setupPhoneGrid(phoneUrl,'phone_list');
                                     //setupPhoneGrid(phoneUrl,'phone_grid_alt');
 

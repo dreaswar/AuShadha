@@ -1,5 +1,5 @@
 
-function setupPatientSummary(url){
+function setupPatientSummary(DivId, url){
   require(["dojox/grid/DataGrid",
            "dojo/store/JsonRest",
            "dojo/data/ObjectStore",
@@ -10,8 +10,11 @@ function setupPatientSummary(url){
   function(DataGrid, JsonRest, ObjectStore,
            registry,ContentPane, xhr, dom, domStyle, JSON
            ){
-    console.log("Creating the Patient Summary")
-    registry.byId("patientSummaryTab").set('href',url)
+
+    console.log("Filling DOM: " + DivId + " with URL: " + url);
+    registry.byId(DivId).set('href',url);
+
+    //registry.byId("patientSidebarDiv_contact").set('href',url);
 
     /*
     xhr(url,{
@@ -94,7 +97,7 @@ function setupContactGridForPortlet(url){
                                   }),
                   selectionMode : "single",
                   rowSelector   : "20px",
-                  structure     : GRID_STRUCTURES.PATIENT_CONTACT_GRID_STRUCTURE,
+                  structure     : GRID_STRUCTURES.PATIENT_CONTACT_GRID_STRUCTURE_SMALL,
                   noDataMessage : "<span class='dojoxGridNoData'>No Contact Information in Store..</span>"
                 },
                 "contact_grid_alt"
@@ -122,7 +125,7 @@ function setupContactGridForPortlet(url){
 
 
 
-function setupPhoneGrid(url, /*divId of Grid*/grid_id){
+function setupPhoneGrid(url, /*divId of Grid*/grid_id, grid_str /* grid structure */){
   require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"],
   function(DataGrid, JsonRest, ObjectStore){
     var store   = new JsonRest({target:url});
@@ -132,7 +135,7 @@ function setupPhoneGrid(url, /*divId of Grid*/grid_id){
                                     }),
                     selectionMode : "single",
                     rowSelector   : "20px",
-                    structure     : GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE,
+                    structure     : grid_str,
                   noDataMessage   : "<span class='dojoxGridNoData'>No Phone Numbers in Store..</span>"
               },
               grid_id

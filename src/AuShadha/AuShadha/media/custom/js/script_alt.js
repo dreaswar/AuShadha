@@ -25,6 +25,7 @@
               "dijit/layout/TabContainer",
               "dijit/layout/BorderContainer",
               "dijit/layout/SplitContainer",
+              "dijit/Editor",
               "dijit/form/Form",
               "dijit/form/Button",
               "dijit/form/TextBox",

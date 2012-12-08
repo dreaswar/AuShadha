@@ -166,8 +166,9 @@ def return_patient_json(patient, success = True):
         data_to_append['edit']         = patient.get_patient_detail_edit_url()
         data_to_append['del']          = patient.get_patient_detail_del_url()
 
-        data_to_append['patientsummary']  = APP_ROOT_URL+"pat/summary/?patient_id="+ patient_id
-        
+        data_to_append['patientsummary']            = APP_ROOT_URL+"pat/summary/?patient_id="+ patient_id
+        data_to_append['patientsidebarcontacttab']  = APP_ROOT_URL+"pat/sidebar_contact_tab/?patient_id="+ patient_id
+
         data_to_append['contactadd']   = patient.get_patient_contact_add_url()
         data_to_append['contactlist']  = patient.get_patient_contact_list_url()
         data_to_append['contactjson']  = APP_ROOT_URL+"pat/contact/json/?patient_id="+ patient_id 
@@ -433,6 +434,7 @@ def return_patient_tree(request,id = None):
 
 def render_patient_summary(request,id=None):
   if request.method=="GET" and request.is_ajax():
+    user = request.user
     if id:
       patient_id = int(id)
     else:
@@ -464,6 +466,39 @@ def render_patient_summary(request,id=None):
   else:
      raise Http404("Bad Request")
 
+def render_patient_sidebar_contact_tab(request,id=None):
+  if request.method=="GET" and request.is_ajax():
+    user = request.user
+    if id:
+      patient_id = int(id)
+    else:
+      try:
+        patient_id        = int(request.GET.get('patient_id'))
+        pat_obj           = PatientDetail.objects.get(pk = patient_id)
+        pat_contact_obj   = PatientContact.objects.filter(patient_detail  = pat_obj)
+        pat_phone_obj     = PatientPhone.objects.filter(patient_detail = pat_obj)
+        pat_guardian_obj  = PatientGuardian.objects.filter(patient_detail = pat_obj)
+        pat_admission_obj = None
+        pat_visit_obj     = None
+        pat_allergy_obj   = PatientAllergies.objects.filter(patient_detail = pat_obj)
+        pat_medication_list_obj   = PatientMedicationList.objects.filter(patient_detail = pat_obj)
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Bad Request Parameters")
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Requested Patient Data Does not exist")
+      variable = RequestContext(request,{'user'            : user,
+                                        'pat_obj'          : pat_obj,
+                                        'pat_contact_obj'  : pat_contact_obj,
+                                        'pat_phone_obj'    : pat_phone_obj,
+                                        'pat_guardian_obj' : pat_guardian_obj,
+                                        'pat_admission_obj': pat_admission_obj,
+                                        'pat_visit_obj'    : pat_visit_obj,
+                                        'pat_allergy_obj'  : pat_allergy_obj,
+                                        'pat_medication_list_obj': pat_medication_list_obj
+                                        })
+      return render_to_response('patient/sidebar_contact_tab.html', variable)
+  else:
+     raise Http404("Bad Request")
 
 ####################################################################################
 
@@ -1495,7 +1530,9 @@ def patient_contact_add(request, id):
         patient_detail_obj        = PatientDetail.objects.get(pk =id)
         patient_contact_obj       = PatientContact(patient_detail = patient_detail_obj)
         patient_contact_add_form  = PatientContactForm(instance = patient_contact_obj)
-        variable                  = RequestContext(request, {"user" 									:	user, 																														"patient_detail_obj"			:	patient_detail_obj , 																															"patient_contact_add_form" 	:	patient_contact_add_form, 
+        variable                  = RequestContext(request, {"user" 									:	user,
+                                                              "patient_detail_obj"			:	patient_detail_obj ,
+                                                              "patient_contact_add_form" 	:	patient_contact_add_form, 
 																														"patient_contact_obj" 			:	patient_contact_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1561,7 +1598,8 @@ def patient_contact_edit(request, id):
         patient_detail_obj        = patient_contact_obj.patient_detail
         variable                  = RequestContext(request, 
         																						{"user" :	user,
-        																						 "patient_detail_obj"			  :	patient_detail_obj , 																											 "patient_contact_edit_form":	patient_contact_edit_form, 
+        																						 "patient_detail_obj"			  :	patient_detail_obj ,
+        																						 "patient_contact_edit_form":	patient_contact_edit_form, 
 																										 "patient_contact_obj" 			:	patient_contact_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1659,7 +1697,9 @@ def patient_email_and_fax_add(request, id):
         patient_detail_obj      = PatientDetail.objects.get(pk =id)
         patient_email_and_fax_obj       = PatientEmailAndFax(patient_detail = patient_detail_obj)
         patient_email_and_fax_add_form  = PatientEmailAndFaxForm(instance = patient_email_and_fax_obj)
-        variable                = RequestContext(request, {"user" 									:	user, 																													"patient_detail_obj"			:	patient_detail_obj , 																														"patient_email_and_fax_add_form" 	:	patient_email_and_fax_add_form, 
+        variable                = RequestContext(request, {"user" 									:	user,
+                                                            "patient_detail_obj"			:	patient_detail_obj ,
+                                                            "patient_email_and_fax_add_form" 	:	patient_email_and_fax_add_form, 
 																													"patient_email_and_fax_obj" 			:	patient_email_and_fax_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1708,7 +1748,8 @@ def patient_email_and_fax_edit(request, id):
         patient_email_and_fax_edit_form = PatientEmailAndFaxForm(instance = patient_email_and_fax_obj)
         patient_detail_obj      = patient_email_and_fax_obj.patient_detail
         variable                = RequestContext(request, {"user" :	user,
-        																										"patient_detail_obj"			:	patient_detail_obj , 																															"patient_email_and_fax_edit_form"	:	patient_email_and_fax_edit_form, 
+        																										"patient_detail_obj"			:	patient_detail_obj ,
+        																										"patient_email_and_fax_edit_form"	:	patient_email_and_fax_edit_form, 
 																														"patient_email_and_fax_obj" 			:	patient_email_and_fax_obj ,
 																									})
       except TypeError or ValueError or AttributeError:

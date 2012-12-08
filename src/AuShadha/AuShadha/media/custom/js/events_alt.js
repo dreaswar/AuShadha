@@ -70,7 +70,9 @@
               );
             console.log( dom.byId('selected_patient_id_info').innerHTML )
 
-            var patientSummaryUrl = addData.patientsummary;
+            var patientSummaryUrl           = addData.patientsummary;
+            var patientSidebarDivContactUrl = addData.sidebarcontacttab;
+
             var contactUrl        = addData.contactjson;
 //            var contactAddUrl        = addData.contactaddurl;
             var phoneUrl          = addData.phonejson;
@@ -104,7 +106,9 @@
             console.log("Finished setting up the Forms...");
 
             console.log("Setting up the Grids Now...");
-              setupPatientSummary(patientSummaryUrl);
+              //setupPatientSummary('patientSummaryTab',patientSummaryUrl);
+              setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
+
               //setupContactGridForPortlet(contactUrl);
               //setupContactGrid(contactUrl);
               //setupPhoneGrid(phoneUrl,'phone_list');

@@ -5,6 +5,7 @@ require(
    "dijit/layout/BorderContainer",
    "dijit/layout/TabContainer",
    "dojox/layout/ContentPane",
+   "dijit/Editor",
    "dijit/form/Button",
    "dojo/dom",
    "dojo/dom-construct",
@@ -13,7 +14,7 @@ require(
    "dojo/_base/array"
   ],
   function(registry,parser, BorderContainer,
-           TabContainer, ContentPane, Button,
+           TabContainer, ContentPane, Editor,Button,
            dom, domConstruct, domStyle, ready,array
   ){
 ready( function(){
@@ -60,16 +61,45 @@ ready( function(){
       registry.byId('filteringSelectPatSearch').set("style",{width: "400px", left: "5%", "fontSize":"12px"} );
 
       domConstruct.create('div',
-                          {id: "patientTreeContainer"},
+                          {id: "patientSidebarTabContainer"},
                           "patientTabsBorderContainer",
                           "first"
       );
         domConstruct.create('div',
-                            {id: "patientTreeDiv"},
-                            "patientTreeContainer",
+                            {id: "patientSidebarContentPane"},
+                            "patientTabsBorderContainer",
                             "first"
         );
-        domStyle.set( dom.byId('patientTreeDiv'),{'minWidth':'200px','maxWidth':'300px', 'minHeight':"400px",'overflow':"auto"});
+          domConstruct.create('div',
+                              {id: "patientTreeContainer"},
+                              "patientSidebarTabContainer",
+                              "first"
+          );
+            domConstruct.create('div',
+                                {id: "patientTreeContainer"},
+                                "patientSidebarTabContainer",
+                                "first"
+            );
+              domConstruct.create('div',
+                                  {id: "patientTreeDiv"},
+                                  "patientTreeContainer",
+                                  "first"
+              );
+            domConstruct.create('div',
+                                {id: "patientSidebarDiv_contact"},
+                                "patientTreeContainer",
+                                "after"
+            );
+            domConstruct.create('div',
+                                {id: "patientSidebarDiv_media"},
+                                "patientSidebarDiv_contact",
+                                "after"
+            );
+            domStyle.set( dom.byId('patientSidebarContentPane'),{'minWidth':'275px','minHeight':"400px",'overflow':"auto"});
+            domStyle.set( dom.byId('patientTreeContainer'),{'minWidth':'275px','minHeight':"400px",'overflow':"auto"});
+            domStyle.set( dom.byId('patientTreeDiv'),{'minWidth':'275px','minHeight':"400px",'overflow':"auto"});
+            domStyle.set( dom.byId('patientSidebarDiv_contact'),{'minWidth':'275px','minHeight':"400px",'overflow':"auto"});
+            domStyle.set( dom.byId('patientSidebarDiv_media'),{'minWidth':'275px','minHeight':"400px",'overflow':"auto"});
       console.log("Created a Patient Tree Container..." + dom.byId("patientTreeContainer"));
       
       domConstruct.create('div',
@@ -86,12 +116,67 @@ ready( function(){
                          "patientContextTabs",
                          "first"
       );
+        domConstruct.create('div',
+                            {id: "patientSynopsisBorderContainer"},
+                          "patientSummaryTab",
+                          "first"
+        );
+        domStyle.set( dom.byId('patientSynopsisBorderContainer'),{'minWidth':'100em','minHeight':"100em",'height':'100em','overflow':"auto"});
+          domConstruct.create('div',
+                              {id: "patientSynopsisTopContentPane"},
+                            "patientSynopsisBorderContainer",
+                            "first"
+          );
+          domStyle.set( dom.byId('patientSynopsisTopContentPane'),{'minWidth':'91em','height':'20em','overflow':"auto"});
+            domConstruct.create('div',
+                                {id: "medication_list"},
+                                "patientSynopsisTopContentPane",
+                                "first"
+            );
+            domConstruct.create('div',
+                                {id: "allergy_list"},
+                                "medication_list",
+                                "after"
+            );
+          domConstruct.create('div',
+                              {id: "patientSynopsisBottomContentPane"},
+                            "patientSynopsisTopContentPane",
+                            "after"
+          );
+//          domStyle.set( dom.byId('patientSynopsisBottomContentPane'),{'minWidth':'91em','minHeight':"75em",'overflow':"auto"});
+            domConstruct.create('div',
+                                {id: "patientSynopsisBottomTabContainer"},
+                              "patientSynopsisBottomContentPane",
+                              "first"
+            );
+              domConstruct.create('div',
+                                {id: "patientSynopsisBottomContentPaneAdmissions"},
+                              "patientSynopsisBottomTabContainer",
+                              "first"
+              );
+                domConstruct.create('div',
+                                  {id: "patientNewAdmissionNotes"},
+                                  "patientSynopsisBottomContentPaneAdmissions",
+                                  "first"
+                );
+              domConstruct.create('div',
+                              {id: "patientSynopsisBottomContentPaneVisits"},
+                            "patientSynopsisBottomContentPaneAdmissions",
+                            "after"
+              );
+                domConstruct.create('div',
+                                  {id: "patientNewVisitNotes"},
+                                "patientSynopsisBottomContentPaneVisits",
+                                "first"
+                );
+
+      /*
       domConstruct.create('div',
                           {id: "patientContactTab"},
                          "patientSummaryTab",
                          "after"
       );
-        /*
+        
         domConstruct.create('div',
                             {id: "contact_list"},
                             "patientContactTab",
@@ -227,6 +312,7 @@ ready( function(){
                                 "patientGynaecologyPreventivesTab",
                                 "first"
             );
+          
           domConstruct.create('div',
                               {id: "patientMedicalPreventivesTab"},
                               "patientPreventiveTabs",
@@ -237,22 +323,16 @@ ready( function(){
                                 "patientMedicalPreventivesTab",
                                 "first"
             );
-
+          
+      /*
       domConstruct.create('div',
                           {id: "patientMedicationListAndAllergiesTab"},
                           "patientContextTabs",
                           "last"
       );
-          domConstruct.create('div',
-                              {id: "medication_list"},
-                              "patientMedicationListAndAllergiesTab",
-                              "first"
-          );
-          domConstruct.create('div',
-                              {id: "allergy_list"},
-                              "medication_list",
-                              "after"
-          );
+      */
+      
+
       /*
       domConstruct.create('div',
                           {id: "patientAdmissionAndVisitsTab"},
@@ -270,6 +350,7 @@ ready( function(){
                               "after"
           );
       */
+      /*
       domConstruct.create('div',
                           {id: "patientMediaTab"},
                           "patientContextTabs",
@@ -279,21 +360,59 @@ ready( function(){
                               {id: "patient_media_list"},
                               "patientMediaTab", "first"
           );
+      */
 
       console.log("Created all the necessary DOM ELements.. Creating Dijits")
 
       var mainBorderContaner = registry.byId("patientTabsBorderContainer");
 
-      var mainTreeContainer = new ContentPane({id     : "patientTreeContainer",
-                                             region  : "left",
-                                              splitter: true,
-                                             style :"width:200px;"
-                                            },
-                                          "patientTreeContainer"
-      );
-      console.log("Created patientTreeContainer Dijit")
-      console.log("Adding patientTreeContainer Dijit to the BorderContainer")
-      mainBorderContaner.addChild(mainTreeContainer);
+        var sideBarContentPane = new ContentPane({id     : "patientSidebarContentPane",
+                                                  region :"left",
+                                                  style :"width:200px;",
+                                                  splitter:true
+                                              },
+                                            "patientSidebarContentPane"
+        );
+        mainBorderContaner.addChild(sideBarContentPane);
+          var sideBarTabContainer = new TabContainer({id     : "patientSidebarTabContainer",
+                                                tabStrip  : true,
+                                                tabPosition:'bottom',
+                                                },
+                                              "patientSidebarTabContainer"
+          );
+          sideBarContentPane.addChild(sideBarTabContainer)
+
+            var sidebarTreeContainer = new ContentPane({id     : "patientTreeContainer",
+                                                    region  : "left",
+                                                    title  : "Tree",
+                                                    splitter: true,
+                                                    style :"width:200px;",
+                                                    iconClass:"navigationIcon"
+                                                  },
+                                                "patientTreeContainer"
+            );
+            sideBarTabContainer.addChild(sidebarTreeContainer);
+            var sidebarContactContainer = new ContentPane({id     : "patientSidebarDiv_contact",
+                                                          title   : "Contact",
+                                                          style :"width:200px;",
+                                                          iconClass:"contactIcon"
+                                                  },
+                                                "patientSidebarDiv_contact"
+            );
+            sideBarTabContainer.addChild(sidebarContactContainer);
+            var sidebarMediaContainer = new ContentPane({id     : "patientSidebarDiv_media",
+                                                  style :"width:200px;",
+                                                  title : "Media",
+                                                  iconClass:"mediaIcon"
+                                                  },
+                                                "patientSidebarDiv_media"
+            );
+            sideBarTabContainer.addChild(sidebarMediaContainer);  
+
+            console.log("Created patientTreeContainer Dijit")
+            console.log("Adding patientTreeContainer Dijit to the BorderContainer")
+
+      console.log("Added all the sidebar dijits..")
 
       var mainContainer = new ContentPane({id     : "patientContextContainer",
                                            region  : "center",
@@ -321,17 +440,68 @@ ready( function(){
       console.log("Added patientContextTabs to patientContextContainer Dijit");
 
       var summaryTab = new ContentPane({id:"patientSummaryTab",
-                                         title:"Summary"
+                                         title:"Synopsis"
                                         },
                                         "patientSummaryTab"
                                         );
-      tabs.addChild(summaryTab);/*
+      tabs.addChild(summaryTab);
+        var patientSynopsisBorderContainer = new BorderContainer({id:"patientSynopsisBorderContainer",
+                                                                 },
+                                          "patientSynopsisBorderContainer"
+                                          );
+        summaryTab.addChild(patientSynopsisBorderContainer);
+          var patientSynopsisTopContentPane = new ContentPane({
+                                                id:"patientSynopsisTopContentPane",
+                                                region: "top",
+                                                splitter: true
+                                                },
+                                            "patientSynopsisTopContentPane"
+                                            );
+          patientSynopsisBorderContainer.addChild(patientSynopsisTopContentPane);
+          
+          var patientSynopsisBottomContentPane = new ContentPane({
+                                                        id:"patientSynopsisBottomContentPane",
+                                                        region: "center",
+                                                        },
+                                          "patientSynopsisBottomContentPane"
+                                          );
+          patientSynopsisBorderContainer.addChild(patientSynopsisBottomContentPane);
+            var patientSynopsisBottomTabContainer = new TabContainer({
+                                                          id:"patientSynopsisBottomTabContainer",
+                                                          tabStrip:true,
+                                                          tabPosition:"top",
+                                                          nested: true
+                                                          },
+                                            "patientSynopsisBottomTabContainer"
+                                            );
+            patientSynopsisBottomContentPane.addChild(patientSynopsisBottomTabContainer);
+              var patientSynopsisBottomContentPaneAdmissions = new ContentPane({
+                                                          id:"patientSynopsisBottomContentPaneAdmissions",
+                                                          title : "Admissions",
+                                                          },
+                                            "patientSynopsisBottomContentPaneAdmissions"
+                                            );
+              patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneAdmissions);
+                var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes"},"patientNewAdmissionNotes");
+                patientSynopsisBottomContentPaneAdmissions.addChild(admissionNotesEditor);
+              var patientSynopsisBottomContentPaneVisits = new ContentPane({
+                                                          id:"patientSynopsisBottomContentPaneVisits",
+                                                          title: "Visits",
+                                                          },
+                                            "patientSynopsisBottomContentPaneVisits"
+                                            );
+              patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneVisits);
+                var visitNotesEditor = new Editor({id:"patientNewVisitNotes"},"patientNewVisitNotes");
+                patientSynopsisBottomContentPaneVisits.addChild(visitNotesEditor);
+
+/*
       var contactTab = new ContentPane({id:"patientContactTab",
                                          title:"Contact"
                                         },
                                         "patientContactTab"
                                         );
-      tabs.addChild(contactTab);*/
+      tabs.addChild(contactTab);
+      */
       var historyTab = new ContentPane({id:"patientHistoryTab",
                                          title:"History"
                                         },
@@ -341,6 +511,7 @@ ready( function(){
         var historyTabs = new TabContainer({id:"patientHistoryTabs",
                                             tabPosition:"top",
                                             tabStrip:true,
+                                            nested : true,
                                             style : "min-height: 550px;overflow:auto;"
                                           },
                                           "patientHistoryTabs"
@@ -390,7 +561,7 @@ ready( function(){
 */
 
       var preventiveHealthTab = new ContentPane({id:"patientPreventiveHealthTab",
-                                                 title:"Preventive Health"
+                                                 title:"Preventives"
                                                 },
                                                 "patientPreventiveHealthTab"
                                                 );
@@ -398,18 +569,13 @@ ready( function(){
         var preventiveHealthTabs = new TabContainer({id:"patientPreventivesTabs",
                                                       tabPosition:"top",
                                                       tabStrip:true,
+                                                      nested : true,
                                                       style : "min-height: 550px;overflow:auto;"
                                                   },
                                                   "patientPreventiveTabs"
                                                   );
         preventiveHealthTab.addChild(preventiveHealthTabs);
-          var patientNeonatalAndPaediatricTab = new ContentPane({id:"patientNeonatalAndPaediatricExamTab",
-                                                       title:"Neonatal & Paediatric",
-                                                       disabled: true
-                                                      },
-                                                      "patientNeonatalAndPaediatricExamTab"
-                                                      );
-          preventiveHealthTabs.addChild(patientNeonatalAndPaediatricTab);
+
           var patientImmunisationTab = new ContentPane({id:"patientImmunisationTab",
                                                      title:"Immunisation"
                                                     },
@@ -444,6 +610,7 @@ ready( function(){
                                                       "patientGynaecologyPreventivesTab"
                                                       );
           preventiveHealthTabs.addChild(patientGynaecologyPreventivesTab);
+         
           var patientMedicalPreventivesTab      = new ContentPane({id:"patientMedicalPreventivesTab",
                                                        title:"Medical & Surgical",
                                                        disabled: true
@@ -451,13 +618,22 @@ ready( function(){
                                                       "patientMedicalPreventivesTab"
                                                       );
           preventiveHealthTabs.addChild(patientMedicalPreventivesTab);
-
+         
+          var patientNeonatalAndPaediatricTab = new ContentPane({id:"patientNeonatalAndPaediatricExamTab",
+                                                       title:"Neonatal & Paediatric",
+                                                       disabled: true
+                                                      },
+                                                      "patientNeonatalAndPaediatricExamTab"
+                                                      );
+          preventiveHealthTabs.addChild(patientNeonatalAndPaediatricTab);
+      /*
       var medicationAndAllergiesTab = new ContentPane({id:"patientMedicationListAndAllergiesTab",
                                                        title:"Medications & Allergies"
                                                       },
                                                       "patientMedicationListAndAllergiesTab"
                                                       );
       tabs.addChild(medicationAndAllergiesTab);
+      */
       /*
       var admissionAndVisitTab      = new ContentPane({id:"patientAdmissionAndVisitsTab",
                                                        title:"Admissions & Visits"
@@ -466,12 +642,14 @@ ready( function(){
                                                       );
       tabs.addChild(admissionAndVisitTab);
       */
+      /*
       var mediaTab                 = new ContentPane({id:"patientMediaTab",
                                                        title:"Media"
                                                       },
                                                       "patientMediaTab"
                                                       );
       tabs.addChild(mediaTab);
+      */
 
      mainContainer.startup();
      //tabs.startup();
@@ -662,8 +840,8 @@ ready( function(){
                                               "before"
                          )
   );
-//{% endif %}
 {% endcomment %}
+//{% endif %}
 */
 
 //{% comment %}
@@ -707,6 +885,7 @@ ready( function(){
                                       label: "Add",
                                       title: "Add Allergy Details",
                                       iconClass: "dijitIconNewTask",
+                                      style    :"position:relative; top: -17.6em; left: 58em;",
                                       onClick: function(){
                                              require(
                                               ["dojo/_base/xhr", "dojo/_base/array"],
@@ -912,7 +1091,7 @@ ready( function(){
 );
 //{% endif %}
 
-
+//{% comment %}
 //{% if perms.patient %}
     var addPatientMediaButton =  new Button({
                                           label: "Add",
@@ -946,7 +1125,7 @@ ready( function(){
                                   )
 );
 //{% endif %}
-
+//{% endcomment %}
     }
 
    });

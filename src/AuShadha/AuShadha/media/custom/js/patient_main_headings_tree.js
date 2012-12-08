@@ -37,7 +37,7 @@ function buildPatientTree(){
                 name:'Patient',
                 type:'trunk'
               },
-
+/*
                 { id: 'contact',
                   name:'Contact',
                   type:'main_branch',
@@ -53,7 +53,7 @@ function buildPatientTree(){
                       type:'second_branch',
                       parent: 'contact'
                     },
-
+*/
                 { id: 'history',
                   name:'History',
                   type:'main_branch',
@@ -86,7 +86,7 @@ function buildPatientTree(){
                       parent: 'history'
                     },
 
-                { id: 'preventive_health',
+                { id: 'preventives',
                   name:'Preventives',
                   type:'main_branch',
                   parent: 'patient'
@@ -94,27 +94,27 @@ function buildPatientTree(){
                     { id: 'neonatal_and_paediatric_preventives',
                       name:'Neonatal & Paediatric',
                       type:'second_branch',
-                      parent: 'preventive_health'
+                      parent: 'preventives'
                     },
                     { id: 'immunisation',
                       name:'Immunisation',
                       type:'second_branch',
-                      parent: 'preventive_health'
+                      parent: 'preventives'
                     },
                     { id: 'obstetric_preventives',
                       name:'Obstetrics',
                       type:'second_branch',
-                      parent: 'preventive_health'
+                      parent: 'preventives'
                     },
                     { id: 'gynaecology_preventives',
                       name:'Gynaecology',
                       type:'second_branch',
-                      parent: 'preventive_health'
+                      parent: 'preventives'
                     },
                     { id: 'medical_and_surgical_preventives',
                       name:'Medical & Surgical',
                       type:'second_branch',
-                      parent: 'preventive_health'
+                      parent: 'preventives'
                     },
 
                 { id: 'medication_and_allergies',
@@ -145,7 +145,7 @@ function buildPatientTree(){
                   type:'main_branch',
                   parent: 'patient'
                 },
-
+/*
                 { id: 'patient_media',
                   name:'Media',
                   type:'main_branch',
@@ -167,6 +167,7 @@ function buildPatientTree(){
                       type:'second_branch',
                       parent: 'patient_media'
                     }
+*/
           ],
           getChildren: function(object){
               return this.query({parent: object.id});

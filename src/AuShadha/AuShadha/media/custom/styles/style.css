@@ -153,8 +153,6 @@ body{
 #family_history_list,
 #medical_history_list,
 #surgical_history_list,
-#medication_list,
-#allergy_list,
 #patient_media_list,
 #admission_list,
 #visit_list
@@ -163,6 +161,24 @@ body{
 	margin-top: 5px;
 }
 
+
+#medication_list
+{
+  height : 15em;
+  overflow:auto;
+  width: 57em;
+}
+#allergy_list
+{
+  height : 15em;
+  width: 28em;
+  position:relative;
+  top: -17.6em;
+  left: 57.1em;
+  overflow:auto;
+}
+
+/*
 #contact_grid_alt,
 #phone_grid_alt
 {
@@ -170,7 +186,7 @@ body{
   margin-top: 5px;
   overflow:auto;
 }
-
+*/
 /*
 	#leftCol, 
 	#rightCol 
@@ -261,14 +277,43 @@ body{
       height: 16px;
   }    
 
+
   /* dijit Custom Classess */
 
-#addPatientButton >*{
-    text-align:center;
-    vertical-align:middle;
-    padding: 2px;
-    margin:0px;
-}
+.contactIcon
+   {
+     background-image    : url('{{MEDIA_URL}}/images/patient/addressbook.svg');
+     background-repeat   : no-repeat;
+     height: 16px;
+     width:16px;
+     text-align:center;
+   }
+
+   .navigationIcon
+   {
+     background-image    : url('{{MEDIA_URL}}/images/patient/view-list.svg');
+     background-repeat   : no-repeat;
+     height: 16px;
+     width:16px;
+     text-align:center;
+   }
+
+   .mediaIcon
+   {
+     background-image    : url('{{MEDIA_URL}}/images/generic/mimes/word_document_media.svg');
+     background-repeat   : no-repeat;
+     height: 16px;
+     width:16px;
+     text-align:center;
+   }
+
+
+  #addPatientButton >*{
+      text-align:center;
+      vertical-align:middle;
+      padding: 2px;
+      margin:0px;
+  }
 
 
 

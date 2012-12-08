@@ -33,6 +33,16 @@ urlpatterns = patterns('',
   name = 'render_patient_summary_with_id'
   ),
 
+  url(r'sidebar_contact_tab/$',
+  'patient.views.render_patient_sidebar_contact_tab' ,
+  name = 'render_patient_sidebar_contact_tab_without_id'
+  ),
+
+  url(r'sidebar_contact_tab/(?P<id>\d+)/$',
+  'patient.views.render_patient_sidebar_contact_tab' ,
+  name = 'render_patient_sidebar_contact_tab_with_id'
+  ),
+
   url(r'search/$'	, 
       'patient.views.patient_search',
       name = "patient_search"
