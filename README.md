@@ -1,4 +1,3 @@
-
 AuShadha  (औषध)
 ========
 
@@ -33,41 +32,48 @@ AuShadha is designed by me, a Medical Doctor in association with other Developer
 AuShadha benefits from inputs, feature requests from my medical colleagues as the development progresses. 
 
 
-
-
 How to Test
 ===========
 
-1) AuShadha requirements please refer to Requirements.txt in docs/
+1) For AuShadha requirements please refer to REQUIREMENTS.txt in docs/
 
-2) AuShadha has been tested and developed with Python 2.7, Django 1.4.1 and Dojo 1.7.2 in Linux. It should work as long as dependencies are satisfied. 
+2) AuShadha has been tested and developed with Python 2.7, Django 1.4.1 and Dojo 1.7.2 in Linux. It should work as long as dependencies are satisfied.
 
 3) Ideally create a Python Virtual Environment. If virtualenv is not installed, please run in Debian systems <code> sudo easy_install virtualenv </code>
 
-4) After installing virtualenv, Create a Python Virtual Environment  <code> virtualenv python_env </code> 
+4) After installing virtualenv, Create a Python Virtual Environment <code> virtualenv python_env </code>
 
-5) Change the working directory to the virtualenv folder <code> cd python_env </code> and activate it <code> source bin/activate </code>
+5) Change the working directory to the virtualenv folder <code> cd python_env</code> and activate it <code> source bin/activate </code>
 
-6) With Python pip installed, run <code> pip install -f requirements.txt </code>. This will install all the necessary dependencies you need. 
- 
-7) cd into src/AuShadha directory <code> cd src/AuShadha </code>
+6) With Python pip installed, run <code> pip install -r ../docs/REQUIREMENTS.txt </code> if you are in python_env directory . This will install all the necessary dependencies you need. 
+
+You may need to install Python development libraries if you are on Linux. Required to compile PIL. 
+
+`$ apt-get install python-dev #in debian systems.` 
+
+`$ yum install python-devel #in Redhat-like systems.`
+
+7) cd into src/AuShadha directory <code> cd src/AuShadha </code> 
 
 8) run <code> python manage.py runserver </code>
 
-9) Use your browser to navigate to http://localhost:8000/AuShadha/. You will be greeted with a login page. Use username = admin, password = admin for a trial run. 
+9) Use your browser to navigate to <link> http://localhost:8000/AuShadha/ </link> . You will be greeted with a login page. Use username = admin, password = admin for a trial run.
 
 10) Please read the issues, license before using. Currently AuShadha is under active development and is not fit in anyway for real world use.
 
-
 Project Structure
 =================
-AuShadha_logo : Contains the logo, with SVG and .png file along with License.
 
-docs          : Contains the Requirements.txt, License.txt
+1) AuShadha_logo : Contains the logo, with SVG and .png file along with License.
 
-src           : Project Source Code, Media files(Icons,Images, File uploads), Javscript (custom and Dojo)
+2) docs : Contains the Requirements.txt, License.txt
 
-README.md
+3) src : Project Source Code, Media files(Icons,Images, File uploads), Javscript (custom and Dojo)
+
+4) README.md
+
+5) LICENSE.txt
+
 
 
 
