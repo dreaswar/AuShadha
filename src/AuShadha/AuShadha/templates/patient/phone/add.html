@@ -17,6 +17,7 @@
       function(registry){
 //    {% if perms.patient.add_patientphone %}
       addItem("{{patient_detail_obj.get_patient_phone_add_url}}", "newPhoneAddForm", "phone_list");
+      addItem("{{patient_detail_obj.get_patient_phone_add_url}}", "newPhoneAddForm", "phone_grid_alt");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}

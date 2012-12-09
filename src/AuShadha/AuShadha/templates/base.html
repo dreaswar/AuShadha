@@ -26,46 +26,6 @@
     {% include 'script_links.html' %} 
   {% endblock js %} 
 
-  {% comment %}
-    <script type="text/javascript">
-      require([ 
-              "dojo/parser", 
-              "dojo/_base/connect",
-              "dojo/on",
-              "dijit/TitlePane",
-              "dojox/layout/ContentPane", 
-              "dijit/layout/TabContainer", 
-              "dijit/layout/BorderContainer",
-              "dijit/layout/SplitContainer",
-              "dijit/form/Form",
-              "dijit/form/Button",
-              "dijit/form/TextBox",
-              "dijit/form/ValidationTextBox", 
-              "dijit/form/Textarea",
-              "dijit/form/SimpleTextarea",
-              "dijit/form/DateTextBox",
-              "dijit/form/TimeTextBox",
-              "dijit/form/NumberTextBox",
-              "dijit/form/Select",
-              "dijit/form/MultiSelect",
-              "dijit/form/FilteringSelect",
-              "dojox/form/Manager", 
-              "dojox/validate/web",
-              "dijit/Menu",
-              "dijit/Tooltip",
-              "dijit/MenuBar",
-              "dijit/PopupMenuBarItem",
-              "dijit/DropDownMenu",
-              "dijit/MenuItem",
-              "dojo/data/ItemFileWriteStore",
-              "dojox/data/QueryReadStore",
-              "dijit/Tree",
-              "dojo/store/Observable"
-      ]);
-    </script>
-  {% endcomment %}
-
-
  <!- Defining Global Events in Javascript -->
 
   <script type="text/javascript">
@@ -89,6 +49,22 @@
     */
        {% include 'grid_structures.js' %}
   </script>
+
+  <script type="text/javascript">
+    /* 
+       Global Functions for Grid Setup
+    */
+       {% include 'grid_setup.js' %}
+  </script>
+
+  <script type="text/javascript">
+    /* 
+       Contains the Patient Context Tabs set up
+    */
+
+   {% include 'patient_context_tab_setup.js' %}
+  </script>
+
 
   <script type="text/javascript">
     /* 
@@ -121,65 +97,67 @@
 {% block topbar %}
   <!--  START OF TOPPANE  -->
   <div    id              = "topPane"
-          class           = "edgePanel"
           data-dojo-type  = "dojox/layout/ContentPane"
           data-dojo-props = "region: 'top'"
   >
 
     <!--  START OF HEADERAREA  -->
      <div id              ="header_area"
-          class           = "edge"
           data-dojo-type  = "dijit/layout/BorderContainer"
      > 
 
-	     <h3 class="header_with_logo"> 
-                     <img src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_32.png" 
-                          alt="AuShadha" 
-                          title="AuShadha Public Health Clinic EMR & Management Open Source Project">
+       <div id="logoDiv"
+       >
+        <h3 class="header_with_logo"> 
+           <a href="/" target="_blank" alt="AuShadha" >
+           <img src   =  "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_text.svg" 
+                alt   = "AuShadha" 
+                id    = "AuShadhaHeaderIcon"
+           >
+           </a>
         </h3>
+       </div>
 
        <!--  START OF LOGINAREA  -->
 		   <div id              ="login_area"
-		        class           = "edge"
             data-dojo-type  = "dojox/layout/ContentPane"
             data-dojo-props = "region     : 'right'"
-            style           = "border     : none; 
-                               margin     : 0px !important; 
-                               padding    : 0px !important; 
-                               background : none; 
-                               overflow   : visible;
-                               position   : absolute;
-                               top        : 0px;
-                               height     : 40px;
-                               "
-       > 
+       >
+         <span id="patientSearchBox"
+               style="position: absolute; left: -400px;top:1px;"
+         >
+            {% include 'search/patient_search_filtering_select_small.html' %}
+         </span>
+  	     <span id="timeBox"> </span>
 		     {% if user.is_authenticated %}
-		      <img src   = "{{STATIC_URL}}images/user.png" 
+		      <img src   = "{{STATIC_URL}}images/generic/auth/user_16.png" 
 		           alt   = "{{user.username}}"
-		           title = "Logged in as: {{user.username}}"
-		           class = "login_area_img">
-		       &nbsp; <em>{{user.username}}</em>
+		           class = "login_area_img"
+		           id    = "loggedInUserIcon"
+		           >
 		      {% if user.is_staff %}
-		      <a href="/AuShadha/admin/" title="Admin Area">
-		      <img src   = "{{STATIC_URL}}images/system_run.png" 
+		      <a href="/AuShadha/admin/" 
+		         id="adminAreaHref" 
+		         target="_blank">
+		      <img src   = "{{STATIC_URL}}images/generic/dashboard_and_settings/settings_16.png" 
 		           alt   = "Admin"
-		           title = "Admin Area"
-		           class = "login_area_img">
+		           class = "login_area_img" >
 		      </a>
 		      {% endif %}
 		      &nbsp; 
-		      <a href="/AuShadha/logout/" title="Logout">
-		      <img src   = "{{STATIC_URL}}images/system_log_out.png" 
+		      <a href="/AuShadha/logout/" id="logoutHref">
+		      <img src   = "{{STATIC_URL}}images/generic/auth/system-shutdown-panel-restart.svg" 
 		           alt   = "Logout"
-		           title = "Logout: {{user.username}}"
-		           class = "login_area_img">
+		           class = "login_area_img"
+		           >
 		      </a>&nbsp; 
 		     {% else %}
-		      <a href="/AuShadha/login/" title="Login">
-		      <img src   = "{{STATIC_URL}}images/system_log_in.png" 
+		      <a href="/AuShadha/login/" id="loginHref">
+		      <img src   = "{{STATIC_URL}}images/generic/auth/login_128.png" 
 		           alt   = "Login"
-		           title = "Login"
-		           class = "login_area_img">
+		           class = "login_area_img"
+		           style="width:16px; height:16px;"
+		           >
 		      </a>
 		     {% endif %}
 		 </div>
@@ -237,154 +215,55 @@
                             data-dojo-props = "region    : 'center', 
                                                splitter  :  true
                                               "
-                            style           = "height: 500px;"
+                            style           = "height: 900px;"
                       >
 
-                          {%if perms.patient.add_patientdetail %}
-                          <button id             = "addPatientButton" 
-                                  type           = "button"
-                                  data-dojo-props= "iconClass: 'dijitIconNewTask'"
-                                  data-dojo-id   = "addPatientButton"
-                                  title          = "Register a New Patient to the Clinic"
+                          <div data-dojo-type   = "dojox/layout/ContentPane"
+                               data-dojo-props  = "region:'top'"
+                               id               = "searchPatientContainerDiv"
+                               style  = "position:relative;
+                                         top: 100px;
+                                         "
+                           >
+                            <div id="searchTitle" 
+                                  style="color:navy; 
+                                        font-size: 16px;
+                                        text-align:center;
+                                        vertical-align:middle; 
+                                        font-family: Droid-Sans, Sans-Serif;
+                                        position: relative;
+                                        top:0px;
+                                       "
+                             > 
+                              
+                             {% include 'search/patient_search_filtering_select.html' %}
+                            </div>
+
+                          </div>
+
+                          <div id             = "selected_patient_info" 
+                               data-dojo-type = "dojox/layout/ContentPane"
+                               data-dojo-props= "region:'center'"
+                               style=" color      : #252525; 
+                                       font-size  : 12px; 
+                                       font-style : italics;
+                                       font-weight    : bold;
+                                       border          : solid 1pt #cecece;
+                                       border-radius   : 3px;
+                                       background      : #D0DFEA;
+                                       box-shadow  : 1px 1px 2px #ddd;
+                                       text-align     : center;
+                                       display:none;
+                                     "
                           > 
-                              Add Patient
-                          </button>
-                          {% endif %}
 
-                          <div style="
-                                  margin-bottom   : 0px;
-                                  position        : relative;
-                                  left            : 0px;
-//                                  left          : 50px;
-//                                  top           : -25px;
-                                  width           : 600px;
-                                  overflow        : auto;
-                                  margin-left     : 0px; 
-                                  padding-left    : 0px;"
-                               id = "searchPatientContainerDiv"
+                          </div>
+
+                         <!--  START OF patientContextContainer  -->
+                          <div id              = "patientContextContainer"
                            >
-                             {% include 'search/patients.html' %}
-                          </div>
-                          <div id      = "patient_grid" 
-                          >       
-                          </div>
-
-                     </div>
-                    <!--  END OF PATIENTLISTCONTENTPANE  -->
-
-                    <!--  START OF PATIENTCONTEXTPANE  -->
-                    <div  id              = "patientContextPane"
-                          class           = "patientContextPane"
-                          data-dojo-type  = "dojox/layout/ContentPane"
-                          data-dojo-props = "region    : 'right',
-                                             splitter  :  true
-                                             "
-                          style           = "width       :600px; height:auto;"
-                    >
-
-                      <div id="selected_patient_info" style="color      : navy; 
-                                                             font-size  : 12px; 
-                                                             font-style : italics;
-                                                             background : lightblue;
-                                                            text-align     : center;
-                                                            font-weight    : bold;
-                                                             "
-                      > 
-
-                      </div>
-
-                        <!--  START OF PATIENTCONTEXTTABS  -->
-                        <div id              = "patientContextTabs"
-                             class           = "patientContextTabContainer"
-                             data-dojo-type  = "dijit/layout/TabContainer"
-                             data-dojo-props = "tabPosition:'top'"
-                             style           = "height: 600px;"
-                        >
-
-                            <!--  START OF PATIENTCONTEXTTABS1  -->
-                            <div  id              = "patientContactTab"
-                                  class           = "patientContextTabs"
-                                  data-dojo-type  = "dojox/layout/ContentPane"
-                                  data-dojo-props = "title: 'Contact'"
-                            >
-                                {% if perms.patient.add_patientcontact %}
-                                <button id              = "addContactButton" 
-                                        data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                                        type            = "button"
-                                > 
-                                    Add
-                                </button>
-                                {% endif %}
-                                {% if perms.patient.add_patientphone %}
-                                <button id              = "addPhoneButton" 
-                                        data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                                        type            = "button"
-                                > 
-                                  Add
-                                </button>
-                                {% endif %}
-                                {% if perms.patient.add_patientguardian %}
-                                <button id              = "addGuardianButton" 
-                                        type            = "button"
-                                        data-dojo-props = "iconClass: 'dijitIconNewTask'"> 
-                                    Add
-                                </button>
-                                {% endif %}
-                                <div id     = "contact_list" 
-                                > 
-                                </div>
-                                <div id="phone_list"
-                                > 
-                                </div>
-                                <div id="guardian_list"
-                                > 
-                                </div>
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS3  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS4  -->
-                          <div  id              = "patientDemographicsTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title          : 'Demographics'"
-                           >
-                            {% if perms.patient%}
-<!--
-                            <button id              = "addDemographicsButton" 
-                                    type            = "button"
-                                    data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                            > 
-                              Add
-                            </button>
-
-                            <div id="demographics_list"
-                            > 
-                             This will be filled with Demographics Info.
-                            </div>
--->
-
-                            <div id             ="demographics_add_or_edit_form"
-                                 data-dojo-type="dojox/layout/ContentPane"
-                            > 
-                            </div>
-                            {% endif %}
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS4  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS5  -->
-                          <div  id              = "patientFamilyAndSocialHistoryTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Family & Social History'"
-                           >
-                              {% if perms.patient %}
-                              <button id              = "addPatientFamilyHistoryButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
+                         </div>
+                         <!--  END OF patientContextContainer  -->
                               {% if perms.patient %}
                               <button id              = "addPatientSocialHistoryButton" 
                                       type            = "button"
@@ -394,143 +273,58 @@
                               </button>
                               {% endif %}
 
-                            <div id="family_history_list"
-                            > 
-  	                          This will list the family history 
-                            </div>
                             <div id="social_history_list"
                             > 
 	                            This will list the social history 
                             </div>
 
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS5  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS6  -->
-                          <div  id              = "patientMedicationListAndAllergiesTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Medications & Allergies'"
-                           >
-                              {% if perms.patient and perms.patient.add_patientmedicationlist %}
-                              <button id              = "addPatientMedicationListButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
-                              {% if perms.patient and perms.patient.add_patientallergies %}
-                              <button id              = "addAllergyButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
-
-                            <div id="medication_list"
-                            > 
-                            This will list the Medication List 
-                            </div>
-                            <div id="allergy_list"
-                            > 
-                            This will list Allergies the patient has
-                            </div>
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS6 -->
-
-                          <!--  START OF PATIENTCONTEXTTABS8  -->
-                          <div  id              = "patientImmunisationTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title  : 'Immunisations'"
-                           >
-                              {% if perms.patient and perms.patient.add_patientimmunisation %}
-                              <button id              = "addPatientImmunisationButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
-
-                            <div id="immunisation_list"
-                            > 
-                            This will list the immunization history 
-                            </div>
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS8  -->
-
-                          <!--  START OF PATIENTCONTEXTTABS8  -->
-                          <div  id              = "patientAdmissionAndVisitsTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title: 'Visits & Admissions'"
-                          >
-                            {% if perms.admission.add_admissiondetail %}
-                            <button id              = "addAdmissionButton" 
-                                    type            = "button"
-                                    data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                            > 
-                              Add
-                            </button>
-                            {% endif %}
-                            {% if perms.visit.add_visitdetail %}
-                            <button id              = "addVisitButton" 
-                                    type            = "button"
-                                    data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                            > 
-                              Add
-                            </button>
-                            {% endif %}
-                            <div id="visit_list"
-                            > 
-                            This Page will list all the Clinic Visits
-                            </div>
-
-                            <div id="admission_list"
-                            > 
-                            This Page will list all the Clinic Visits                            
-                            </div>
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS8  -->
-
-
-                          <!--  START OF PATIENTCONTEXTTABS10  -->
-                          <div  id              = "patientMediaTab"
-                                class           = "patientContextTabs"
-                                data-dojo-type  = "dojox/layout/ContentPane"
-                                data-dojo-props = "title          : 'Media'"
-                           >
-                            {% if perms.patient %}
-                            <button id              = "addPatientMediaButton" 
-                                    type            = "button"
-                                    data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                            > 
-                              Add
-                            </button>
-                            {% endif %}
-                            <div id="patient_media_list"
-                            > 
-                            This will list the attachments the patient has.. 
-                            documents, images, video, slides etc.. 
-                            </div>
-                          </div>
-                          <!--  END OF PATIENTCONTEXTTABS10  -->
-
-                       </div>
-                       <!--  END OF PATIENTCONTEXTTABS  -->
-
-                  </div>
-                  {% endif %}
-                  <!--  END OF PATIENTCONTEXTPANE  -->
+                     </div>
+                    <!--  END OF PATIENTLISTCONTENTPANE  -->
+                    {% endif %}
 
             </div>
             <!--  END OF PATIENTBORDERCONTAINER  --> 
 
            </div>
           <!--  END OF PATIENTHOMECONTENTPANE  -->
+
+          <!--  START OF SEARCHPATIENTSCONTENTPANE  -->
+          {% if perms.admission %}
+          <div  id              =  "searchPatientsContentPane"
+                data-dojo-id    =  "searchPatientsContentPane"
+                data-dojo-type  =  "dojox/layout/ContentPane"
+                style           =  "height:1500px; "
+                data-dojo-props =  "title          :'Search', 
+                                    executeScripts :true, 
+                                    scriptHasHooks :true
+                                  "
+          >
+             <div id              = "SearchPaneBorderContainer" 
+                  data-dojo-type  = "dijit/layout/BorderContainer"
+             >
+               <div id              = "patientGridContentPane" 
+                    data-dojo-type  = "dijit/layout/ContentPane"
+                    data-dojo-props = "region: 'center'"
+               >
+                 <div id              = "patient_grid" 
+                 >
+                 </div>
+
+                            <div id="admission_list"
+                            > 
+                            This Page will list all the Clinic Visits                            
+                            </div>
+               </div>
+               <div id              = "patientSearchContentPane"
+                    data-dojo-type  = "dijit/layout/ContentPane"
+                    data-dojo-props = "region: 'right',splitter:true, gutter:true"
+               >
+                 {% include 'search/patients.html' %}
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          <!--  END OF ADMISSIONHOMECONTENTPANE  -->
 
           <!--  START OF ADMISSIONHOMECONTENTPANE  -->
           {% if perms.admission %}
@@ -540,12 +334,14 @@
                 style           =  "height:1500px; "
                 data-dojo-props =  "title          :'Admission', 
                                     executeScripts :true, 
-                                    scriptHasHooks :true
+                                    scriptHasHooks :true,
+                                    closable :true,
+                                    disabled :true,
                                   "
           >
             <span class="dojoxGridNoData">
               Choose an Admission to display details here.
-            </span>
+           </span>
           </div>
           {% endif %}
           <!--  END OF ADMISSIONHOMECONTENTPANE  -->
@@ -558,7 +354,9 @@
                 style           =  "height:1500px; "
                 data-dojo-props =  "title          :'Visits',
                                     executeScripts : true, 
-                                    scriptHasHooks : true
+                                    scriptHasHooks : true,
+                                    closable :true,
+                                    disabled :true,
                                    "
           >
             <span class="dojoxGridNoData">
@@ -570,6 +368,36 @@
 
     </div>
     <!--  END OF CENTERTOPTABPANE  -->
+
+    <!-- TOOLTIPS -->
+    <div  data-dojo-type="dijit/Tooltip" 
+          data-dojo-props="connectId:'AuShadhaHeaderIcon',position:['below']">
+        Welcome to AuShadha Open Source EMR & Clinic Management System
+    </div>
+    <div  data-dojo-type="dijit/Tooltip" 
+          data-dojo-props="connectId:'loggedInUserIcon',position:['below']">
+        Logged in as: {{user.username}}
+    </div>
+    <div data-dojo-type="dijit/Tooltip" 
+         data-dojo-props="connectId:'adminAreaHref',position:['below']">
+        Admin Area 
+    </div>
+    <div data-dojo-type="dijit/Tooltip" 
+         data-dojo-props="connectId:'loginHref',position:['below']">
+        Login
+    </div>
+    <div data-dojo-type="dijit/Tooltip" 
+         data-dojo-props="connectId:'logoutHref',position:['below']">
+        Logout 
+    </div>
+    <div data-dojo-type="dijit/Tooltip" 
+         data-dojo-props="connectId:'frontPageSearchPatientAuShadhaLogo',position:['above']"
+         >
+        <b style="color:navy; text-align:center;"><em> Search Box <em></b>
+        <p class="suggestion_text">Start searching by Patient's name or Add a New one</p>
+    </div>
+   <!-- END TOOLTIPS -->
+
 
  </div>
  <!--  END OF CENTERMAINPANE  -->
@@ -632,6 +460,7 @@
 	    <p class="error_text"> Invalid Form Submission         </p> 
       <p class="suggestion_text">Please Correct & Resubmit </p>
     </div>
+
   <!--  END DIALOGS AND MISC  -->
 
 </div>

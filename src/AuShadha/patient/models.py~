@@ -1,4 +1,3 @@
-
 ###########################################################################################
 # PROJECT: AuShadha
 #          Patient Models for managing patient contact, phone, email, and Guardian details
@@ -12,6 +11,7 @@ from django.forms	      import ModelForm
 from django.core.exceptions   import ValidationError
 from django 		      import forms
 
+from django.contrib.auth.models import User
 from aushadha_base_models.models import AuShadhaBaseModel
 
 
@@ -276,6 +276,69 @@ class PatientDetail(models.Model):
 			Returns the URL for adding family History details for a Patient
 		'''
 		return '/AuShadha/pat/family_history/add/%s/' %self.id
+
+################################################################################
+
+################################################################################
+
+	def get_patient_social_history_list_url(self):
+		'''
+			Returns the Social History details for a Patient
+		'''
+		return '/AuShadha/pat/social_history/list/%s/' %self.id
+
+	def get_patient_social_history_add_url(self):
+		'''
+			Returns the URL for adding Social History details for a Patient
+		'''
+		return '/AuShadha/pat/social_history/add/%s/' %self.id
+
+################################################################################
+
+################################################################################
+
+	def get_patient_medical_history_list_url(self):
+		'''
+			Returns the Medical History details for a Patient
+		'''
+		return '/AuShadha/pat/medical_history/list/%s/' %self.id
+
+	def get_patient_medical_history_add_url(self):
+		'''
+			Returns the URL for adding Medical History details for a Patient
+		'''
+		return '/AuShadha/pat/medical_history/add/%s/' %self.id
+
+	################################################################################
+	################################################################################
+
+	def get_patient_surgical_history_list_url(self):
+		'''
+			Returns the Surgical history details for a Patient
+		'''
+		return '/AuShadha/pat/surgical_history/list/%s/' %self.id
+
+	def get_patient_surgical_history_add_url(self):
+		'''
+			Returns the URL for adding Surgical History details for a Patient
+		'''
+		return '/AuShadha/pat/surgical_history/add/%s/' %self.id
+
+################################################################################
+
+################################################################################
+
+	def get_patient_obstetric_history_detail_list_url(self):
+		'''
+			Returns the Social Obstetric details for a Patient
+		'''
+		return '/AuShadha/pat/obstetric_history_detail/list/%s/' %self.id
+
+	def get_patient_obstetric_history_detail_add_url(self):
+		'''
+			Returns the URL for adding Obstetric History details for a Patient
+		'''
+		return '/AuShadha/pat/obstetric_history_detail/add/%s/' %self.id
 
 ################################################################################
 
@@ -727,52 +790,31 @@ class PatientDemographicsData(models.Model):
                                                     ("high","High")
                                                    )
                                         )
-    education         = models.CharField(max_length = 100, default = "Graduate", choices = (('pg','Post-Graduate'),
-                                                                                        ('g','Graduate'),
-                                                                                        ('hs','High School'),
-                                                                                        ('lg',"Lower Grade School"),
-                                                                                        ('i', "Iliterate")
-                                                                                       ))
-    housing_conditions = models.TextField(max_length = 250, default = "Comfortable, with good sanitory conditions")
-    occupation         = models.CharField(max_length = 200)
+    education         = models.CharField(max_length = 100, default = "Graduate",              choices = (('pg','Post-Graduate'),
+               ('g','Graduate'),
+               ('hs','High School'),
+               ('lg',"Lower Grade School"),
+               ('i', "Iliterate")
+              )
+    )
+    housing_conditions = models.TextField(max_length = 250,
+                                         default = "Comfortable, with good sanitary conditions"
+                         )
     religion           = models.CharField(max_length = 200)    
+    religion_notes     = models.CharField(max_length = 100,
+                                          null=True, blank=True
+                         )
     race               = models.CharField(max_length = 200)
     languages_known    = models.TextField(max_length = 300)
-    marital_status     = models.CharField(max_length = 50, choices = (("sing","Single"), 
-                                                                      ("marr","Married"), 
-                                                                      ("wid","Widowed"), 
-                                                                      ("sep","Separated"),
-                                                                      ("div","Divorded") 
-                                                                     ))
-    family_members     = models.CharField(max_length = 100, 
-                                          choices = ( ('father','Father'),('mother',"Mother"),
-                                                      ('husband', "Husband"),('wife',"Wife"),
-                                                      ('son',"Son"),
-                                                      ('daughter',"Daughter"),
-                                                      ('grand-parents',"Grand-parents"),
-                                                      ('others',"Others"),
-                                                      ('staying-alone', "Staying Alone"))
-                                          )
-
-    drug_abuse_history = models.BooleanField(default = False)
-    alcohol_intake     = models.TextField(max_length = 250, default= "None",
-                                          help_text = "brief account on the amount, frequency and age when started")
-    smoking            = models.TextField(max_length = 100, default="None",
-                                          help_text = "brief account on the cigarretes/day for 'x' number of years" )
-
-    patient_detail     = models.ForeignKey(PatientDetail, null = True, blank = True, unique = True)
+    patient_detail     = models.ForeignKey(PatientDetail,
+                                           null = True,
+                                           blank = True,
+                                           unique = True
+                         )
 
 
     def __unicode__(self):
         return " Demographics for - %s" %(self.patient_detail)
-
-    def save(self, *args, **kwargs):
-#        patient_obj      = self.patient_detail
-#        demographics_obj = PatientDemographicsData.objects.filter(patient_detail = patient_obj)
-#        if self.id:
-#           raise Exception("DemographicsDataExistsError")
-#        else:
-           super(PatientDemographicsData,self).save(*args, **kwargs)
 
     def get_edit_url(self):
         '''
@@ -824,36 +866,102 @@ class PatientAllergies(AuShadhaBaseModel):
       return '/AuShadha/pat/allergies/del/%s/' %self.id
 
 
+
 class PatientImmunisation(AuShadhaBaseModel):
   """
     Inherits from the AuShadha Base Model. 
     This defines the Immunisation that the patient has had. 
     The patient automatically belongs to a Clinic and has some add, edit, del 
-    methods defined on him. 
+    methods defined on him.
     
   """
 
   __model_label__ = "immunisation"
 
-  vaccine_name      = models.CharField(max_length = 100)
+#  vaccine_name     = models.CharField(max_length = 100)
+  vaccine_detail    = models.ForeignKey('VaccineRegistry')
+  route             = models.CharField(max_length = 30,
+                                       choices=(("im", "IM"), 
+                                                ("deep_im", "Deep IM"),
+                                                ("iv", "Intravenous"),
+                                                ("sc", "Sub Cutaneous"),
+                                                ("oral", "Oral")
+                                        ), 
+                                        default="IM" 
+                      )
+  injection_site    = models.CharField(max_length = 100, 
+                                       choices=(("lue", "Left Upper Arm"), 
+                                                ("rue", "Right Upper Arm"),
+                                                ("lb",  "Left Buttock"),
+                                                ("rb",  "Right Buttock"),
+                                                ("abd", "Abdomen"),
+                                                ("oral", "Oral")
+                                        ), 
+                                        default="Right Upper Arm"
+                      )
+  dose              = models.CharField(max_length = 100)
+  administrator     = models.ForeignKey(User)
   vaccination_date  = models.DateField(auto_now_add = False)
+  next_due          = models.DateField(auto_now_add= False)
   adverse_reaction  = models.TextField(max_length = 100, default = "None")
   patient_detail    = models.ForeignKey(PatientDetail,null = True,blank = True)
 
+
   def __unicode__(self):
-    return "%s" %(self.vaccine_name)
+    return "%s" %(self.vaccine_detail)
+
+  def save(self,*args, **kwargs):
+    self.__model_label__ = "immunisation"
+    super(PatientImmunisation, self).save(*args, **kwargs)
+
 
   def get_edit_url(self):
       '''
       Returns the URL for editing Demographics details for a Patient
       '''
-      return '/AuShadha/pat/immunisation/edit/%s/' %self.id
+      return '/AuShadha/pat/%s/edit/%s/' %(self.__model_label__, self.id)
 
   def get_del_url(self):
       '''
       Returns the URL for adding Demographics for a Patient
       '''
-      return '/AuShadha/pat/immunisation/del/%s/' %self.id
+      return '/AuShadha/pat/%s/del/%s/' % (self.__model_label__,self.id)
+
+
+class VaccineRegistry(models.Model):
+  """
+    Registry for the Vaccines
+    This contains the details of vaccine, VIS, Manufacturer, Lot #, Expiration etc..
+  """
+  vaccine_name        = models.CharField(max_length = 100)
+  manufacturer        = models.CharField(max_length = 100)
+  lot_number          = models.CharField(max_length = 100)
+  manufacturing_date  = models.DateField(auto_now_add = False)
+  expiry_date         = models.DateField(auto_now_add = False)
+  vis                 = models.TextField("Vaccine Information Statement", 
+                                         max_length = 1000, blank = True, null = True
+                        )
+
+  def __unicode__(self):
+    return "%s" %(self.vaccine_name)
+
+  def save(self,*args, **kwargs):
+    self.__model_label__ = "vaccine_registry"
+    super(VaccineRegistry, self).save(*args, **kwargs)
+
+  def get_edit_url(self):
+      '''
+      Returns the URL for editing Vaccine Registry
+      '''
+      return '/AuShadha/vaccine_registry/%s/edit/%s/' %(self.__model_label__, self.id)
+
+  def get_del_url(self):
+      '''
+      Returns the URL for adding Vaccine Registry
+      '''
+      return '/AuShadha/vaccine_registry/%s/del/%s/' % (self.__model_label__,self.id)
+
+
 
 class PatientMedicationList(AuShadhaBaseModel):
   """
@@ -930,7 +1038,374 @@ class PatientFamilyHistory(AuShadhaBaseModel):
       return '/AuShadha/pat/family_history/del/%s/' %self.id
 
 
+class PatientSocialHistory(AuShadhaBaseModel):
+  """
+    Inherits from the AuShadha Base Model. 
+    This defines the Social History that the patient has had. 
+    The patient automatically belongs to a Clinic and has some add, edit, del 
+    methods defined on him. 
+    
+  """
+
+  exercise_choices = (('sendentary', "Sedentary"), 
+                       ("active lifestyle", "Active, but no Exercise"), 
+                       ("minimal","Minimal"),('moderate','Moderate'), 
+                       ('extreme',"Extreme")
+                      )
+
+  sexual_preference_choices = (("opposite_sex", "Opposite Sex"), 
+                               ('same_sex', "Same Sex"), 
+                              ("both","Both"),
+                              ('neither','Neither')
+                          )
+
+  marital_status_choices = (('single', "Single"), 
+                            ("married", "Married"), 
+                            ("divorced","Divorced"),
+                            ('separated','Separated'),
+                            ('widowed','Widowed'),
+                            ('living with partner','Living with Partner')
+                           )
+
+  abuse_frequency = (('none',"None"),('former',"Former"),('everyday',"Everyday"),("periodic","Periodic"))
+
+  diet_choices = (
+                  ('well_balanced',"Well Balanced"),
+                  ('vegetarian',"Vegetarian"),
+                  ('jain',"Jain"),
+                  ('vegan',"Vegan"),
+                  ('non_vegetarian',"Non-Vegetarian"),
+                  ("junk","Junk"),
+                  ("others","Others")
+                 )
+
+  marital_status        = models.CharField(max_length = 250, choices=marital_status_choices, default="Single")
+  marital_status_notes  = models.CharField(max_length = 250, null=True, blank=True)
+  occupation            = models.CharField(max_length = 100)
+  occupation_notes      = models.CharField(max_length = 100, null=True, blank=True)
+  exercise              = models.CharField(max_length = 100, choices=exercise_choices, default="Active but no Exercise")
+  exercise_notes        = models.CharField(max_length = 100, null=True, blank=True)
+  diet                  = models.CharField(max_length = 100, choices=diet_choices, default="Well Balanced")
+  diet_notes            = models.CharField(max_length = 100, null=True, blank=True)
+  home_occupants        = models.CharField(max_length = 300)
+  home_occupants_notes  = models.CharField(max_length = 100, null=True, blank=True)  
+  pets                  = models.CharField(max_length = 300, default = "None")
+  pets_notes            = models.CharField(max_length = 300, null=True, blank=True)
+  alcohol               = models.CharField(max_length = 250, choices=abuse_frequency, default="None")
+  alcohol_no            = models.CharField(max_length = 100, null=True, blank=True)
+  alcohol_notes         = models.CharField(max_length = 250, null=True, blank=True)  
+  tobacco               = models.CharField(max_length = 250, choices=abuse_frequency, default="None")
+  tobacco_no            = models.CharField(max_length = 250, null=True, blank=True)
+  tobacco_notes         = models.CharField(max_length = 250, null=True, blank=True)
+  drug_abuse            = models.CharField(max_length = 250, choices=abuse_frequency, default="None")
+  drug_abuse_notes      = models.CharField(max_length = 250, null=True, blank=True)
+  sexual_preference     = models.CharField(max_length = 100, choices= sexual_preference_choices, default="Opposite Sex")
+  sexual_preference_notes = models.CharField(max_length = 100, null=True, blank=True)
+  current_events          = models.TextField(max_length = 300, 
+                                     help_text = "Any ongoing / coming up issues in family having a bearing on treatment",
+                                     default = "None"
+                                     )
+  patient_detail  = models.ForeignKey(PatientDetail,null = True,blank = True, unique = True)
+
+  def __unicode__(self):
+    return "%s" %(self.patient_detail)
+
+  def save(self, *args, **kwargs):
+    self.__model_label__ = "social_history"
+    super(PatientSocialHistory, self).save(*args, **kwargs)
+
+  def get_edit_url(self):
+      '''
+      Returns the URL for editing Social details for a Patient
+      '''
+      return '/AuShadha/pat/social_history/edit/%s/' %self.id
+
+  def get_del_url(self):
+      '''
+      Returns the URL for adding Social for a Patient
+      '''
+      return '/AuShadha/pat/social_history/del/%s/' %self.id
+
+
+
+
+class PatientICD10(AuShadhaBaseModel):
+  '''
+    Placeholder for ICD 10 Codes
+  '''
+
+class PatientCPC(AuShadhaBaseModel):
+  '''
+  Placeholder for CP Codes
+  '''
+
+class PatientMedicalHistory(AuShadhaBaseModel):
+  """
+  Inherits from the AuShadha Base Model.
+  This defines the Medical History that the patient has had.
+  The patient automatically belongs to a Clinic and has some add, edit, del
+  methods defined on him.
+
+  """
+  from obs_and_gyn.models import ObstetricHistoryDetail
+
+  __model_label__ = "medical_history"
+
+  disease         = models.CharField(max_length = 250)
+  icd_10_code     = models.ForeignKey("PatientICD10",null=True, blank=True)
+  status          = models.CharField("Status of the Disease",
+                                      max_length = 250,
+                                      null=True,
+                                      blank=True
+                    )
+  active                = models.BooleanField("Active Diseaase")
+  infectious_disease    = models.BooleanField()
+  severity              = models.CharField(max_length = 100)
+  allergic_disease      = models.BooleanField()
+  pregnancy_warning     = models.ForeignKey('obs_and_gyn.ObstetricHistoryDetail',
+                                            blank=True,
+                                            null = True
+                          )
+  date_of_diagnosis     = models.DateField(auto_now_add = False,
+                                           null=True,
+                                           blank = True
+                          )
+  healed                = models.BooleanField()
+  remarks               = models.TextField(max_length = 300,
+                                            help_text = "Any Other Remarks",
+                                          default = "None"
+                          )
+  patient_detail  = models.ForeignKey(PatientDetail,
+                                      null = True,
+                                      blank = True,
+                    )
+
+
+  def __unicode__(self):
+    return "%s" %(self.patient_detail)
+
+  def save(self, *args, **kwargs):
+    self.__model_label__ = "medical_history"
+    super(PatientMedicalHistory, self).save(*args, **kwargs)
+
+  def get_edit_url(self):
+    '''
+    Returns the URL for editing Medical History details for a Patient
+    '''
+    return '/AuShadha/pat/%s/edit/%s/' %(self.__model_label__, self.id)
+
+  def get_del_url(self):
+    '''
+    Returns the URL for deleting Medical History detail for a Patient
+    '''
+    return '/AuShadha/pat/%s/del/%s/' %(self.__model_label__, self.id)
+
+
+class PatientSurgicalHistory(AuShadhaBaseModel):
+  """
+  Inherits from the AuShadha Base Model.
+  This defines the Surgical History that the patient has had.
+  The patient automatically belongs to a Clinic and has some add, edit, del
+  methods defined on him.
+
+  """
+  from obs_and_gyn.models import ObstetricHistoryDetail
+
+  __model_label__ = "surgical_history"
+
+  description     = models.CharField(max_length = 250)
+  icd_10_code     = models.ForeignKey("PatientICD10",null=True, blank=True)
+  cpc_code        = models.ForeignKey("PatientCPC",null=True, blank=True)
+  base_condition  = models.CharField("Base Condition",
+                                    max_length = 250,
+                                    null=True,
+                                    blank=True
+                    )
+  med_condition    = models.ForeignKey("PatientMedicalHistory",
+                                        null=True,
+                                        blank=True
+                     )
+  classification   = models.CharField(max_length = 250, null=True, blank = True)
+  healed           = models.BooleanField()
+  date_of_surgery  = models.DateField(auto_now_add = False,
+                                       null = True,
+                                       blank = True
+                       )
+  remarks          = models.TextField(max_length = 300,
+                                          help_text = "Any Other Remarks",
+                                          default = "None"
+                     )
+  patient_detail  = models.ForeignKey(PatientDetail,
+                                      null = True,
+                                      blank = True,
+                    )
+
+
+  def __unicode__(self):
+    return "%s" %(self.patient_detail)
+
+  def save(self, *args, **kwargs):
+    self.__model_label__ = "surgical_history"
+    super(PatientSurgicalHistory, self).save(*args, **kwargs)
+
+  def get_edit_url(self):
+    '''
+    Returns the URL for editing Surgical History details for a Patient
+    '''
+    return '/AuShadha/pat/%s/edit/%s/' %(self.__model_label__, self.id)
+
+  def get_del_url(self):
+    '''
+    Returns the URL for deleting Surgical History detail for a Patient
+    '''
+    return '/AuShadha/pat/%s/del/%s/' %(self.__model_label__, self.id)
+
+    
+
+
+
 ## Modelform definition of Patients.
+
+class PatientSocialHistoryForm(ModelForm):
+	class Meta:
+		model = PatientSocialHistory
+		exclude = ('patient_detail','parent_clinic')
+
+	#home_occupants = forms.MultipleChoiceField(choices=())
+	#pets 					 = forms.MultipleChoiceField(choices=())
+
+	#def clean_home_occupants(self):
+		#home_occupants = self.cleaned_data['home_occupants']
+		#print "Home Occupants are", home_occupants
+		#return home_occupants
+
+  #def clean_pets(self):
+    
+
+	def __init__(self, *args, **kwargs):
+		super(PatientSocialHistoryForm, self).__init__(*args, **kwargs)
+		text_fields = [{"field"         : 'marital_status',
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' :true"
+		                },
+                  {"field"         : 'marital_status_notes',
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :false ,placeHolder:'Any Other Notes...'"
+		                },
+		               {"field": 'occupation',
+		                'max_length'    :  100         ,
+		               "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true"
+		               },
+                    {"field"         : 'occupation_notes',
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :false,placeHolder:'Others '"
+		                },
+                   {"field": 'exercise',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true"
+                   },
+                  {"field"         : 'exercise_notes',
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :false,placeHolder:'Other Notes...'"
+		                },
+                   {"field": 'diet',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true"
+                   },
+                  {"field"         : 'diet_notes',
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :false,placeHolder:'Specify'"
+		                },
+                   {"field": 'home_occupants',
+                   'max_length':150,
+                   "data-dojo-type": "dijit.form.MultiSelect",
+		                "data-dojo-props": r"'required' : true"
+                   },
+                  {"field"         : 'home_occupants_notes',
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :false,placeHolder:'Other details ?'"
+		                },
+                   {"field": 'pets',
+                   'max_length':150,
+                   "data-dojo-type": "dijit.form.MultiSelect",
+		                "data-dojo-props": r"'required' : true"
+                   },
+                  {"field"         : 'pets_notes',
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :false,placeHolder:'Notes'"
+		                },
+                   {"field": 'alcohol',
+                   'max_length':150,
+                   "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true"
+                   },
+                  {"field"         : 'alcohol_no',
+		                'max_length'    :  ""         ,
+		                "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' :false"
+		                },
+                  {"field"         : 'alcohol_notes',
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :false,placeHolder:'Any Other Notes...'"
+		                },
+                   {"field": 'tobacco',
+                   'max_length':150,
+                   "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true"
+                   },
+                  {"field"         : 'tobacco_no',
+		                'max_length'    :  ""         ,
+		                "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' :false"
+		                },
+                  {"field"         : 'tobacco_notes',
+		                'max_length'    :  200         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :false,placeHolder:'Any Other Notes...'"
+		                },
+                   {"field": 'drug_abuse',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true"
+                   },
+                   {"field": 'drug_abuse_notes',
+                   'max_length':150,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : false,placeHolder:'Details..'"
+                   },
+                   {"field": 'sexual_preference',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true"
+                   },
+                   {"field": 'sexual_preference_notes',
+                   'max_length':250,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : false,placeHolder:'Other details'"
+                   },
+                   {"field": 'current_events',
+                   'max_length':250,
+                   "data-dojo-type": "dijit.form.Textarea",
+		                "data-dojo-props": r"'required' : false,placeHolder:'Notes about specific events in family that has bearing on treatment'"
+                   }
+	        ]
+		for field in text_fields:
+			print(self.fields[field['field']].widget);
+			self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+			self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+			self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
 
 class PatientImmunisationForm(ModelForm):
 
@@ -939,20 +1414,46 @@ class PatientImmunisationForm(ModelForm):
 		exclude = ('patient_detail','parent_clinic')
 	def __init__(self, *args, **kwargs):
 		super(PatientImmunisationForm, self).__init__(*args, **kwargs)
-		text_fields = [{"field"         : 'vaccine_name',
+		text_fields = [{"field"         : 'vaccine_detail',
 		                'max_length'    :  30         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'true' ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
+		                "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required': true"
 		                },
+		               {"field": 'route',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		               },
+		               {"field": 'injection_site',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		               },
+		               {"field": 'dose',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		               },
+		               {"field": 'administrator',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.Select",
+		                "data-dojo-props": r"'required': true"
+		               },
 		               {"field": 'vaccination_date',
 		                'max_length'    :  30         ,
 		               "data-dojo-type": "dijit.form.DateTextBox",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
 		               },
+		               {"field": 'next_due',
+		                'max_length'    :  30         ,
+		               "data-dojo-type": "dijit.form.DateTextBox",
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		               },
+
                    {"field": 'adverse_reaction',
-                   'max_length':30,
+                   'max_length':150,
                    "data-dojo-type": "dijit.form.Textarea",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
                    }
 	        ]
 		for field in text_fields:
@@ -1020,12 +1521,12 @@ class PatientFamilyHistoryForm(ModelForm):
 		               {"field": 'disease',
 		                'max_length'    :  150         ,
 		               "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : false ,'regExp':'[\\w]+','invalidMessage' : 'Invalid Character'"
 		               },
                    {"field": 'age_at_onset',
                    'max_length':30,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : false ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
                    },
                    {"field": 'deceased',
                    'max_length':2,
@@ -1035,7 +1536,7 @@ class PatientFamilyHistoryForm(ModelForm):
                    {"field": 'age',
                    'max_length':30,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'false' ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : false ,'regExp':'[\\d]+','invalidMessage' : 'Invalid Character'"
                    }
 	        ]
 		for field in text_fields:
@@ -1055,12 +1556,12 @@ class PatientAllergiesForm(ModelForm):
 		text_fields = [{"field"         : 'allergic_to',
 		                'max_length'    :  100        ,
 		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :'true' ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
+		                "data-dojo-props": r"'required' :true ,'regExp':'[\\w]+','invalidMessage':'Invalid Character' "
 		                },
 		               {"field": 'reaction_observed',
 		                'max_length'    :  100         ,
 		               "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : 'true' "
+		                "data-dojo-props": r"'required' : true "
 		               }
 	        ]
 		for field in text_fields:
@@ -1119,8 +1620,6 @@ class PatientDetailForm(ModelForm):
 			self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
 			self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
 
-#		def initTextField(self,*args, **kwargs):
-#			
 
 class PatientGuardianForm(ModelForm):
 
@@ -1246,86 +1745,179 @@ class PatientDemographicsDataForm(ModelForm):
 		text_fields = [{"field"         : 'date_of_birth',
 		                'max_length'    :  30         ,
 		                "data-dojo-type": "dijit.form.DateTextBox",
-		                "data-dojo-props": r"'required' :'true' ,'regExp':'','invalidMessage':'Invalid Character' "
+		                "data-dojo-props": r"'required' :true ,'regExp':'','invalidMessage':'Invalid Character' "
 		                },
 		               {"field": 'socioeconomics',
 		                'max_length'    :  30         ,
 		               "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
 		               },
                    {"field": 'education',
                    'max_length':30,
                    "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
                    },
                    {"field": 'housing_conditions',
 		                'max_length'    :  100         ,
                    "data-dojo-type": "dijit.form.Textarea",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Character'"
-                   },
-                   {"field": 'occupation',
-		                'max_length'    :  30         ,
-                   "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : 'Invalid Characters'"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
                    },
                    {"field"    : 'religion',
 		                'max_length'    :  30         ,
                    "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : 'true' ,'regExp':'','invalidMessage' : ''"
+		                "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : ''"
                    },
+                  {"field"         : 'religion_notes',
+		                'max_length'    :  100         ,
+		                "data-dojo-type": "dijit.form.ValidationTextBox",
+		                "data-dojo-props": r"'required' :false,placeHolder:'Any Other Notes...'"
+		                },
                    {
                      "field"          : "race"     , 
                      "max_length"     : 30                  , 
                      "data-dojo-type" : "dijit.form.ValidationTextBox" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
+                     "data-dojo-props": r"'required':true, 'regExp': '', 'invalidMessage': 'Please select a value' "
                    },
                    {
                      "field"          : "languages_known"     , 
                      "max_length"     : 100                  , 
                      "data-dojo-type" : "dijit.form.Textarea" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
-                   },
-                   {
-                     "field"          : "marital_status"     , 
-                     "max_length"     : 30                  , 
-                     "data-dojo-type" : "dijit.form.Select" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
-                   },
-                   {
-                     "field"          : "family_members"     , 
-                     "max_length"     : 30                  , 
-                     "data-dojo-type" : "dijit.form.Select" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
-                   },
-                   {
-                     "field"          : "race"     , 
-                     "max_length"     : 30                  , 
-                     "data-dojo-type" : "dijit.form.ValidationTextBox" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
-                   },
-                   {
-                     "field"          : "drug_abuse_history"     , 
-                     "max_length"     : 2                  , 
-                     "data-dojo-type" : "dijit.form.CheckBox" , 
-                     "data-dojo-props": r"'required':false"
-                   },
-                   {
-                     "field"          : "alcohol_intake"     , 
-                     "max_length"     : 100                  , 
-                     "data-dojo-type" : "dijit.form.Textarea" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
-                   },
-                   {
-                     "field"          : "smoking"     , 
-                     "max_length"     : 30                  , 
-                     "data-dojo-type" : "dijit.form.Textarea" , 
-                     "data-dojo-props": r"'required':'true', 'regExp': '', 'invalidMessage': 'Please select a value' "
+                     "data-dojo-props": r"'required':true, 'regExp': '', 'invalidMessage': 'Please select a value' "
                    }
-
 	        ]
 		for field in text_fields:
 			print(self.fields[field['field']].widget);
 			self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
 			self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
 			self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+
+class PatientMedicalHistoryForm(ModelForm):
+  class Meta:
+    model = PatientMedicalHistory
+    exclude = ('patient_detail','parent_clinic')
+
+  def __init__(self, *args, **kwargs):
+    super(PatientMedicalHistoryForm, self).__init__(*args, **kwargs)
+    text_fields = [{"field"         : 'disease',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' :true"
+                    },
+                  {"field"         : 'icd_10_code',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.Select",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'status',
+                    'max_length'    :  100         ,
+                   "data-dojo-type": "dijit.form.Select",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                    {"field"         : 'infectious_disease',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'active',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                  {"field"         : 'severity',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' :false,placeHolder:'Severity of disease'"
+                    },
+                   {"field": 'allergic_disease',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                  {"field"         : 'pregnancy_warning',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'date_of_diagnosis',
+                   'max_length':150,
+                   "data-dojo-type": "dijit.form.DateTextBox",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                  {"field"         : 'healed',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'remarks',
+                   'max_length':150,
+                   "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' : false"
+                   }
+          ]
+    for field in text_fields:
+      print(self.fields[field['field']].widget);
+      self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+      self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+      self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+
+class PatientSurgicalHistoryForm(ModelForm):
+  class Meta:
+    model = PatientSurgicalHistory
+    exclude = ('patient_detail','parent_clinic')
+
+  def __init__(self, *args, **kwargs):
+    super(PatientSurgicalHistoryForm, self).__init__(*args, **kwargs)
+    text_fields = [{"field"         : 'description',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' :true"
+                    },
+                  {"field"         : 'icd_10_code',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.Select",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'cpc_code',
+                    'max_length'    :  100         ,
+                   "data-dojo-type": "dijit.form.Select",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                    {"field"         : 'base_condition',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'med_condition',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                  {"field"         : 'healed',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                  {"field"         : 'classification',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' :false,placeHolder:'Any other Classification..'"
+                    },
+                   {"field": 'date_of_surgery',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.DateTextBox",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                   {"field": 'remarks',
+                   'max_length':150,
+                   "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' : false"
+                   }
+          ]
+    for field in text_fields:
+      print(self.fields[field['field']].widget);
+      self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+      self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+      self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
 

@@ -13,6 +13,7 @@
        function(registry){
          //	{% if perms.patient.change_patientphone %}
           editItem("{{patient_phone_obj.get_patient_phone_edit_url}}","newPhoneEditForm","phone_list");
+          editItem("{{patient_phone_obj.get_patient_phone_edit_url}}","newPhoneEditForm","phone_grid_alt");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -56,6 +57,7 @@
      <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
          //	{% if perms.patient.delete_patientphone %}
 		     delItem("{{patient_phone_obj.get_del_url}}", "phone_list");
+		     delItem("{{patient_phone_obj.get_del_url}}", "phone_grid_alt");
          // {% else %}
          registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}

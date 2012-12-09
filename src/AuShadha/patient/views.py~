@@ -15,6 +15,7 @@ from django.template                 import RequestContext
 #from django.core.context_processors import csrf
 from django.contrib.auth.models      import User
 
+from django.core.urlresolvers import reverse
 
 from django.views.decorators.csrf   import csrf_exempt
 from django.views.decorators.cache  import never_cache
@@ -48,6 +49,11 @@ from admission.models import *
 #from visit.models     import *
 
 import AuShadha.settings as settings
+from AuShadha.settings import APP_ROOT_URL
+
+from patient.medication_list import patient_medication_list_add, patient_medication_list_edit
+from patient.immunisation import patient_immunisation_add, patient_immunisation_edit
+from patient.family_history import patient_family_history_add, patient_family_history_edit
 
 #Views start here -----------------------------------------
 
@@ -70,7 +76,10 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
     json_data = []
 
     try:
-      iterable = iter(obj)
+      # Find out if the Object is an iterable one that is a Django Query Object..
+      # If iterable iterate over the fields of _meta attribute
+      # set a basic attribute dictionary and getattr method specifying default fallbacks
+      iterable = iter(obj) 
       if iterable:
         for element in obj:
           print element._meta.fields
@@ -86,11 +95,16 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
             print "CURRENT ITERATING FIELD NAME IS : ", i
             print "DATA DICTIONARY NOW IS ", data.keys()
             if i.name not in data.keys():
-              print "Adding ", i.name
-              print i.name.__class__
+              print "Dealing with object: ", i
+              print "Trying to add it Name attribute: ", i.name
+              print "Class of the i object is: ", i.name.__class__
               try:
                 if i.name == 'aushadhabasemodel_ptr':
                   data[i.name] = "AuShadhaBaseModel"
+                elif i.name=="administrator":
+                  data[i.name] = getattr(element, '__unicode__()',element.administrator.__unicode__())
+                elif i.name=="vaccine_detail":
+                  data[i.name] = getattr(element, '__unicode__()',element.vaccine_detail.vaccine_name)
                 else:
                   data[i.name] = getattr(element, i.name, None)
               except(TypeError):
@@ -115,6 +129,10 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
           try:
             if i.name == 'aushadhabasemodel_ptr':
               data[i.name] = "AuShadhaBaseModel"
+            elif i.name=="administrator":
+              data[i.name] = getattr(obj, 'username', obj.administrator.username)
+            elif i.name=="vaccine_detail":
+              data[i.name] = getattr(obj, 'vaccine_name',obj.vaccine_detail.vaccine_name)
             else:
               data[i.name] = getattr(obj, i.name, None)
           except(TypeError):
@@ -132,11 +150,12 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
 def return_patient_json(patient, success = True):
     data ={"addData":{}}
     if patient:
+        patient_id = unicode(patient.id)
         data_to_append = data['addData']
         data_to_append['id']                   = patient.id
         data_to_append['patient_hospital_id']  = patient.patient_hospital_id
 
-        data_to_append['full_name']          = patient.full_name
+        data_to_append['full_name']            = patient.full_name
         data_to_append['first_name']           = patient.first_name
         data_to_append['middle_name']          = patient.middle_name
         data_to_append['last_name']            = patient.last_name
@@ -147,20 +166,67 @@ def return_patient_json(patient, success = True):
         data_to_append['edit']         = patient.get_patient_detail_edit_url()
         data_to_append['del']          = patient.get_patient_detail_del_url()
 
+        data_to_append['patientsummary']            = APP_ROOT_URL+"pat/summary/?patient_id="+ patient_id
+        data_to_append['patientsidebarcontacttab']  = APP_ROOT_URL+"pat/sidebar_contact_tab/?patient_id="+ patient_id
+
         data_to_append['contactadd']   = patient.get_patient_contact_add_url()
         data_to_append['contactlist']  = patient.get_patient_contact_list_url()
+        data_to_append['contactjson']  = APP_ROOT_URL+"pat/contact/json/?patient_id="+ patient_id 
 
         data_to_append['phoneadd']     = patient.get_patient_phone_add_url()
         data_to_append['phonelist']    = patient.get_patient_phone_list_url()
+        data_to_append['phonejson']  = APP_ROOT_URL+"pat/phone/json/?patient_id="+ patient_id
+
         data_to_append['guardianadd']  = patient.get_patient_guardian_add_url()
         data_to_append['guardianlist'] = patient.get_patient_guardian_list_url()
-        data_to_append['emailadd']     = patient.get_patient_email_and_fax_add_url()
-        data_to_append['emaillist']    = patient.get_patient_email_and_fax_list_url()
+        data_to_append['guardianjson']  = APP_ROOT_URL+"pat/guardian/json/?patient_id="+ patient_id
 
-        data_to_append['admissionadd']  = patient.get_patient_admission_add_url()
+        data_to_append['emailadd']      = patient.get_patient_email_and_fax_add_url()
+        data_to_append['emaillist']     = patient.get_patient_email_and_fax_list_url()
+        data_to_append['emailjson']     = APP_ROOT_URL+"pat/email/json/?patient_id="+ patient_id
+
+        data_to_append['admissionadd']    = patient.get_patient_admission_add_url()
+        data_to_append['admissionlist']   = patient.get_patient_admission_list_url()
+#        data_to_append['admissionjson']  = APP_ROOT_URL+"pat/admission_json/"+ patient_id
+
         data_to_append['visitadd']      = patient.get_patient_visit_add_url()
-        data_to_append['admissionlist'] = patient.get_patient_admission_list_url()
         data_to_append['visitlist']     = patient.get_patient_visit_list_url()
+#        data_to_append['visitjson']    = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
+
+        data_to_append['demographicsadd']   = patient.get_patient_demographics_data_add_url()
+        data_to_append['demographicslist']  = patient.get_patient_demographics_data_list_url()
+
+        data_to_append['familyhistorylist']  = patient.get_patient_family_history_add_url()
+        data_to_append['familyhistoryadd']   = patient.get_patient_family_history_list_url()
+        data_to_append['familyhistoryjson']  = APP_ROOT_URL+"pat/family_history/json/?patient_id="+patient_id
+
+        data_to_append['medicalhistorylist']  = patient.get_patient_medical_history_add_url()
+        data_to_append['medicalhistoryadd']   = patient.get_patient_medical_history_list_url()
+        data_to_append['medicalhistoryjson']  = APP_ROOT_URL+"pat/medical_history/json/?patient_id="+patient_id
+
+        data_to_append['surgicalhistorylist']  = patient.get_patient_surgical_history_add_url()
+        data_to_append['surgicalhistoryadd']   = patient.get_patient_surgical_history_list_url()
+        data_to_append['surgicalhistoryjson']  = APP_ROOT_URL+"pat/surgical_history/json/?patient_id="+patient_id
+
+        data_to_append['immunisationadd']   = patient.get_patient_immunisation_add_url()
+        data_to_append['immunisationlist']  = patient.get_patient_immunisation_list_url()
+        data_to_append['immunisationjson']  = APP_ROOT_URL+"pat/immunisation/json/?patient_id="+patient_id
+
+        data_to_append['medicationlistadd']   = patient.get_patient_medication_list_add_url()
+        data_to_append['medicationlistlist']  = patient.get_patient_medication_list_list_url()
+        data_to_append['medicationlistjson']  = APP_ROOT_URL+"pat/medication_list/json/?patient_id="+patient_id
+
+        data_to_append['allergiesadd']   = patient.get_patient_allergies_add_url()
+        data_to_append['allergieslist']  = patient.get_patient_allergies_list_url()
+        data_to_append['allergiesjson']  = APP_ROOT_URL+"pat/allergies/json/?patient_id="+ patient_id
+
+        data_to_append['socialhistoryadd']  = patient.get_patient_social_history_add_url()
+        data_to_append['socialhistorylist'] = patient.get_patient_social_history_list_url()
+
+        data_to_append['obstetrichistorydetailadd']  = patient.get_patient_obstetric_history_detail_add_url()
+        data_to_append['obstetrichistorydetaillist'] = patient.get_patient_obstetric_history_detail_list_url()
+
+
     if success:
       error_message           = "Patient Detail Saved Successfully"
       form_errors             = None
@@ -177,6 +243,264 @@ def return_patient_json(patient, success = True):
 
 ####################################################################################
 
+@login_required
+def return_patient_tree(request,id = None):
+  if request.method=="GET" and request.is_ajax():
+    if id:
+      patient_id = int(id)
+    else:
+      try:
+        patient_id = int(request.GET.get('patient_id'))
+        pat_obj = PatientDetail.objects.get(pk = patient_id)
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Bad Request Parameters")
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Requested Patient Data Does not exist")
+
+      json  = []
+      patient_tree_json  = { id                      : 'patient',
+                            name                     : pat_obj.__unicode__(),
+                            type                     :'trunk',
+                            patient_id               : pat_obj.id,
+
+                            editUrl                  : pat_obj.get_patient_detail_edit_url(),
+                            delUrl                   : pat_obj.get_patient_detail_del_url(),
+
+                            contactJsonUrl           : None,
+                            phoneJsonUrl             : None,
+
+                            guardianJsonUrl          : None,
+                            demographicsAddUrl       : None,
+                            familyHistoryJsonUrl     : None,
+                            socialHistoryAddUrl      : None,
+
+                            obstetricHistoryJsonUrl  : None,
+                            gynaecHistoryJsonUrl     : None,
+                            surgicalHistoryJsonUrl   : None,
+                            medicalHistoryJsonUrl    : None,
+
+                            allergyJsonUrl           : None,
+                            medicationListJsonUrl    : None,
+
+                            medicalHistoryJsonUrl    : None,
+                            surgicalHistoryJsonUrl   : None,
+
+                            admissionJsonUrl : pat_obj.get_patient_admission_add_url(),
+                            admissionAddUrl  : pat_obj.get_patient_admission_add_url(),
+                            visitJsonUrl     : pat_obj.get_patient_visit_add_url(),
+                            visitAddUrl      : pat_obj.get_patient_visit_add_url(),
+
+                            delUrl     : pat_obj.get_patient_detail_del_url(),
+                            delUrl     : pat_obj.get_patient_detail_del_url(),
+                            delUrl     : pat_obj.get_patient_detail_del_url(),
+      }
+
+      contact_json = [{ id: 'contact',
+                      name:'Contact',
+                      type:'main_branch',
+                      parent: 'patient'
+                    },
+                        { id: 'address',
+                          name:'Address',
+                          type:'second_branch',
+                          parent: 'contact'
+                        },
+                        { id: 'phone',
+                          name:'Phone',
+                          type:'second_branch',
+                          parent: 'contact'
+                        }
+      ]
+
+      history_json = [{ id: 'history',
+                      name:'History',
+                      type:'main_branch',
+                      parent: 'patient'
+                    },
+                        { id: 'demographics',
+                          name:'Demographics',
+                          type:'second_branch',
+                          parent: 'history'
+                        },
+                        { id: 'social',
+                          name:'Social',
+                          type:'second_branch',
+                          parent: 'history'
+                        },
+                        { id: 'family',
+                          name:'Family',
+                          type:'second_branch',
+                          parent: 'history'
+                        },
+
+                        { id: 'medical_history',
+                          name:'Medical',
+                          type:'second_branch',
+                          parent: 'history'
+                        },
+                        { id: 'surgical_history',
+                          name:'Surgical',
+                          type:'second_branch',
+                          parent: 'history'
+                        }
+      ]
+      preventive_health_json = [{ id: 'preventive_health',
+                                name:'Preventives',
+                                type:'main_branch',
+                                parent: 'patient'
+                              },
+                                  { id: 'neonatal_and_paediatric_preventives',
+                                    name:'Neonatal & Paediatric',
+                                    type:'second_branch',
+                                    parent: 'preventive_health'
+                                  },
+                                  { id: 'immunisation',
+                                    name:'Immunisation',
+                                    type:'second_branch',
+                                    parent: 'preventive_health'
+                                  },
+                                  { id: 'obstetric_preventives',
+                                    name:'Obstetrics',
+                                    type:'second_branch',
+                                    parent: 'preventive_health'
+                                  },
+                                  { id: 'gynaecology_preventives',
+                                    name:'Gynaecology',
+                                    type:'second_branch',
+                                    parent: 'preventive_health'
+                                  },
+                                  { id: 'medical_and_surgical_preventives',
+                                    name:'Medical & Surgical',
+                                    type:'second_branch',
+                                    parent: 'preventive_health'
+                                  }
+      ]
+      medication_and_allergies_json = [{ id: 'medication_and_allergies',
+                                        name:'Medications & Allergies',
+                                        type:'main_branch',
+                                        parent: 'patient'
+                                      },
+                                        { id: 'medication_list',
+                                          name:'Medications',
+                                          type:'second_branch',
+                                          parent: 'medication_and_allergies'
+                                        },
+                                        { id: 'allergy_list',
+                                          name:'Allergies',
+                                          type:'second_branch',
+                                          parent: 'medication_and_allergies'
+                                        }
+      ]
+      admissions_json = [{ id: 'admissions',
+                          name:'Admissions',
+                          type:'main_branch',
+                          parent: 'patient'
+                        }
+      ]
+
+      visits_json = [{ id: 'visits',
+                      name:'Visits',
+                      type:'main_branch',
+                      parent: 'patient'
+                    }
+      ]
+
+      patient_media_json= [{ id: 'patient_media',
+                            name:'Media',
+                            type:'main_branch',
+                            parent: 'patient'
+                          },
+                            { id: 'patient_documents',
+                              name:'Documents',
+                              type:'second_branch',
+                              parent: 'patient_media'
+                            },
+                            { id: 'patient_images',
+                              name:'Images',
+                              type:'second_branch',
+                              parent: 'patient_media'
+                            },
+                            { id: 'patient_videos',
+                              name:'Videos',
+                              type:'second_branch',
+                              parent: 'patient_media'
+                            }
+      ]
+    json = simplejson.dumps(json)
+    return HttpResponse(json, content_type = "application/json")
+  else:
+     raise Http404("Bad Request")
+
+
+def render_patient_summary(request,id=None):
+  if request.method=="GET" and request.is_ajax():
+    user = request.user
+    if id:
+      patient_id = int(id)
+    else:
+      try:
+        patient_id        = int(request.GET.get('patient_id'))
+        pat_obj           = PatientDetail.objects.get(pk = patient_id)
+        pat_contact_obj   = PatientContact.objects.filter(patient_detail  = pat_obj)
+        pat_phone_obj     = PatientPhone.objects.filter(patient_detail = pat_obj)
+        pat_guardian_obj  = PatientGuardian.objects.filter(patient_detail = pat_obj)
+        pat_admission_obj = None
+        pat_visit_obj     = None
+        pat_allergy_obj   = PatientAllergies.objects.filter(patient_detail = pat_obj)
+        pat_medication_list_obj   = PatientMedicationList.objects.filter(patient_detail = pat_obj)
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Bad Request Parameters")
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Requested Patient Data Does not exist")
+      variable = RequestContext(request,{'user'            : user,
+                                        'pat_obj'          : pat_obj,
+                                        'pat_contact_obj'  : pat_contact_obj,
+                                        'pat_phone_obj'    : pat_phone_obj,
+                                        'pat_guardian_obj' : pat_guardian_obj,
+                                        'pat_admission_obj': pat_admission_obj,
+                                        'pat_visit_obj'    : pat_visit_obj,
+                                        'pat_allergy_obj'  : pat_allergy_obj,
+                                        'pat_medication_list_obj': pat_medication_list_obj
+                                        })
+      return render_to_response('patient/summary.html', variable)
+  else:
+     raise Http404("Bad Request")
+
+def render_patient_sidebar_contact_tab(request,id=None):
+  if request.method=="GET" and request.is_ajax():
+    user = request.user
+    if id:
+      patient_id = int(id)
+    else:
+      try:
+        patient_id        = int(request.GET.get('patient_id'))
+        pat_obj           = PatientDetail.objects.get(pk = patient_id)
+        pat_contact_obj   = PatientContact.objects.filter(patient_detail  = pat_obj)
+        pat_phone_obj     = PatientPhone.objects.filter(patient_detail = pat_obj)
+        pat_guardian_obj  = PatientGuardian.objects.filter(patient_detail = pat_obj)
+        pat_admission_obj = None
+        pat_visit_obj     = None
+        pat_allergy_obj   = PatientAllergies.objects.filter(patient_detail = pat_obj)
+        pat_medication_list_obj   = PatientMedicationList.objects.filter(patient_detail = pat_obj)
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Bad Request Parameters")
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Requested Patient Data Does not exist")
+      variable = RequestContext(request,{'user'            : user,
+                                        'pat_obj'          : pat_obj,
+                                        'pat_contact_obj'  : pat_contact_obj,
+                                        'pat_phone_obj'    : pat_phone_obj,
+                                        'pat_guardian_obj' : pat_guardian_obj,
+                                        'pat_admission_obj': pat_admission_obj,
+                                        'pat_visit_obj'    : pat_visit_obj,
+                                        'pat_allergy_obj'  : pat_allergy_obj,
+                                        'pat_medication_list_obj': pat_medication_list_obj
+                                        })
+      return render_to_response('patient/sidebar_contact_tab.html', variable)
+  else:
+     raise Http404("Bad Request")
+
+####################################################################################
 
 def check_before_adding(patient_obj):
     patient_object    = patient_obj
@@ -478,8 +802,9 @@ def patient_list(request):
     '''
     user = request.user
     all_patients = PatientDetail.objects.all().order_by('first_name')
-    variable            = RequestContext(request,{'user'         : user,
-                                                  "all_patients" : all_patients  
+    variable            = RequestContext(request,{'user'            : user,
+                                                  "all_patients"    : all_patients,
+                                                  "alternate_layout": False
                                                  })
     return render_to_response('patient/patient_list.html', variable)
 
@@ -491,8 +816,9 @@ def alternate_layout(request):
     '''
     user = request.user
     all_patients = PatientDetail.objects.all().order_by('first_name')
-    variable            = RequestContext(request,{'user'         : user,
-                                                  "all_patients" : all_patients  
+    variable            = RequestContext(request,{'user'              : user,
+                                                  "all_patients"      : all_patients,
+                                                   "alternate_layout" : True
                                                  })
     return render_to_response('base_alternate.html', variable)
 
@@ -715,6 +1041,24 @@ def demographics_json(request):
 #    raise Http404("ERROR:: Bad request.Invalid arguments passed")
   except(PatientDetail.DoesNotExist):
     raise Http404("ERROR:: Patient requested does not exist.")
+
+
+@login_required
+def social_history_json(request):
+  try:
+    action                  = unicode(request.GET.get('action'))
+    id                      = int(request.GET.get('patient_id'))
+    if action == 'add':
+      return patient_social_history_add(request, id)
+    patient_detail_obj         = PatientDetail.objects.get(pk = id)
+    patient_social_history_obj   = PatientSocialHistory.objects.filter(patient_detail = patient_detail_obj)
+    json = generate_json_for_datagrid(patient_social_history_obj)
+    return HttpResponse(json, content_type = "application/json")
+#  except(AttributeError, NameError, TypeError, ValueError, KeyError):
+#    raise Http404("ERROR:: Bad request.Invalid arguments passed")
+  except(PatientDetail.DoesNotExist):
+    raise Http404("ERROR:: Patient requested does not exist.")
+
 
 @login_required
 def allergies_json(request):
@@ -1186,7 +1530,9 @@ def patient_contact_add(request, id):
         patient_detail_obj        = PatientDetail.objects.get(pk =id)
         patient_contact_obj       = PatientContact(patient_detail = patient_detail_obj)
         patient_contact_add_form  = PatientContactForm(instance = patient_contact_obj)
-        variable                  = RequestContext(request, {"user" 									:	user, 																														"patient_detail_obj"			:	patient_detail_obj , 																															"patient_contact_add_form" 	:	patient_contact_add_form, 
+        variable                  = RequestContext(request, {"user" 									:	user,
+                                                              "patient_detail_obj"			:	patient_detail_obj ,
+                                                              "patient_contact_add_form" 	:	patient_contact_add_form, 
 																														"patient_contact_obj" 			:	patient_contact_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1252,7 +1598,8 @@ def patient_contact_edit(request, id):
         patient_detail_obj        = patient_contact_obj.patient_detail
         variable                  = RequestContext(request, 
         																						{"user" :	user,
-        																						 "patient_detail_obj"			  :	patient_detail_obj , 																											 "patient_contact_edit_form":	patient_contact_edit_form, 
+        																						 "patient_detail_obj"			  :	patient_detail_obj ,
+        																						 "patient_contact_edit_form":	patient_contact_edit_form, 
 																										 "patient_contact_obj" 			:	patient_contact_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1350,7 +1697,9 @@ def patient_email_and_fax_add(request, id):
         patient_detail_obj      = PatientDetail.objects.get(pk =id)
         patient_email_and_fax_obj       = PatientEmailAndFax(patient_detail = patient_detail_obj)
         patient_email_and_fax_add_form  = PatientEmailAndFaxForm(instance = patient_email_and_fax_obj)
-        variable                = RequestContext(request, {"user" 									:	user, 																													"patient_detail_obj"			:	patient_detail_obj , 																														"patient_email_and_fax_add_form" 	:	patient_email_and_fax_add_form, 
+        variable                = RequestContext(request, {"user" 									:	user,
+                                                            "patient_detail_obj"			:	patient_detail_obj ,
+                                                            "patient_email_and_fax_add_form" 	:	patient_email_and_fax_add_form, 
 																													"patient_email_and_fax_obj" 			:	patient_email_and_fax_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1399,7 +1748,8 @@ def patient_email_and_fax_edit(request, id):
         patient_email_and_fax_edit_form = PatientEmailAndFaxForm(instance = patient_email_and_fax_obj)
         patient_detail_obj      = patient_email_and_fax_obj.patient_detail
         variable                = RequestContext(request, {"user" :	user,
-        																										"patient_detail_obj"			:	patient_detail_obj , 																															"patient_email_and_fax_edit_form"	:	patient_email_and_fax_edit_form, 
+        																										"patient_detail_obj"			:	patient_detail_obj ,
+        																										"patient_email_and_fax_edit_form"	:	patient_email_and_fax_edit_form, 
 																														"patient_email_and_fax_obj" 			:	patient_email_and_fax_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1534,7 +1884,8 @@ def patient_guardian_edit(request, id):
         patient_guardian_edit_form = PatientGuardianForm(instance = patient_guardian_obj)
         patient_detail_obj      	 = patient_guardian_obj.patient_detail
         variable                   = RequestContext(request, {"user" 										 :	user,
-        																										"patient_detail_obj"			   :	patient_detail_obj , 																															"patient_guardian_edit_form" :	patient_guardian_edit_form, 
+        																										"patient_detail_obj"			   :	patient_detail_obj ,
+        																										"patient_guardian_edit_form" :	patient_guardian_edit_form,
 																														"patient_guardian_obj" 			 :	patient_guardian_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -1691,7 +2042,8 @@ def patient_phone_edit(request, id):
         patient_phone_edit_form = PatientPhoneForm(instance = patient_phone_obj)
         patient_detail_obj      = patient_phone_obj.patient_detail
         variable                = RequestContext(request, {"user" 					          :	user, 
-                                                            "patient_detail_obj"			:	patient_detail_obj , 																															"patient_phone_edit_form"	:	patient_phone_edit_form, 
+                                                            "patient_detail_obj"			:	patient_detail_obj ,
+                                                            "patient_phone_edit_form"	:	patient_phone_edit_form,
 																														"patient_phone_obj" 			:	patient_phone_obj ,
 																									})
       except TypeError or ValueError or AttributeError:
@@ -2139,3 +2491,51 @@ def patient_admission_add(request, id=None):
             return HttpResponseRedirect('/login/')
     else:
         return render_to_response('admission/detail/add.html', variable)
+
+@login_required
+def patient_filtering_search_json(request, id=None):
+#FIXME Dojo sends REST queries with * suffix. This has to be split and dealt with before json generation is done.
+# Right now whatever you search for will not get results. 
+  if request.method == "GET" and request.is_ajax():
+    if not id:
+      try:
+        name = unicode(request.GET.get('name'))
+        print "You have queried Patients with Full Name containing: ", name
+      except(TypeError,ValueError,NameError,KeyError):
+        raise Http404("Bad Parameters.. No Search Results Could be returned. ")
+      if name =="*":
+        pat_obj = PatientDetail.objects.all()
+      elif name[-1:] == "*":
+        name = name[0:-1]
+        print "Name after stripping trailing '*' is: " , name
+        pat_obj = PatientDetail.objects.filter(full_name__icontains= name)
+      else:
+        pat_obj = PatientDetail.objects.filter(full_name__icontains= name)
+      json = []
+      if pat_obj:
+        for patient in pat_obj:
+          data_to_append = {}
+          data_to_append['name']= patient.full_name
+          data_to_append['id']= patient.id
+          data_to_append['hospital_id'] = patient.patient_hospital_id
+          data_to_append['age'] = patient.age
+          data_to_append['sex'] = patient.sex
+          data_to_append['label'] = patient.full_name + "-" + \
+                                    patient.age       + "/" + \
+                                    patient.sex       + "(" + \
+                                    patient.patient_hospital_id +")"
+          json.append(data_to_append)
+      json = simplejson.dumps(json)
+      return HttpResponse(json, content_type = "application/json")
+    elif id:
+      try:
+        id      = int(id)
+        pat_obj = PatientDetail.objects.get(pk = id)
+      except(TypeError, KeyError, NameError, AttributeError):
+        raise Http404("ERROR ! Bad Parameters. No Patients in result.")
+      except(PatientDetail.DoesNotExist):
+        raise Http404("ERROR! Patient Does Not Exist")
+      json = return_patient_json(pat_obj)
+      return HttpResponse(json, content_type = "application/json")
+  else:
+    raise Http404("Bad Request")

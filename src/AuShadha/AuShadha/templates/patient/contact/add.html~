@@ -21,7 +21,8 @@
       ],
       function(registry){
 //    {% if perms.patient.add_patientcontact %}
-      addItem("{{patient_detail_obj.get_patient_contact_add_url}}", "newContactAddForm", "contact_list");
+        addItem("{{patient_detail_obj.get_patient_contact_add_url}}", "newContactAddForm", "contact_list");
+        addItem("{{patient_detail_obj.get_patient_contact_add_url}}", "newContactAddForm", "contact_grid_alt");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}

@@ -13,6 +13,7 @@
        function(registry){
          //	{% if perms.patient.change_patientcontact %}
           editItem("{{patient_contact_obj.get_patient_contact_edit_url}}","newContactEditForm","contact_list");
+          editItem("{{patient_contact_obj.get_patient_contact_edit_url}}","newContactEditForm","contact_grid_alt");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -55,6 +56,7 @@
         >
          //	{% if perms.patient.delete_patientcontact %}
 		     delItem("{{patient_contact_obj.get_patient_contact_del_url}}", "contact_list");
+		     delItem("{{patient_contact_obj.get_patient_contact_del_url}}", "contact_grid_alt");
          // {% else %}
          registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}

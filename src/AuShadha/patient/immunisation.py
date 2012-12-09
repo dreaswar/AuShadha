@@ -80,7 +80,7 @@ def patient_immunisation_add(request,id):
       try:
         id                      = int(id)
         patient_detail_obj      = PatientDetail.objects.get(pk =id)
-        patient_immunisation_obj       = PatientImmunisation(patient_detail = patient_detail_obj)
+        patient_immunisation_obj       = PatientImmunisation(patient_detail = patient_detail_obj, administrator = user)
         patient_immunisation_add_form  = PatientImmunisationForm(request.POST,instance = patient_immunisation_obj)
         if patient_immunisation_add_form.is_valid():
           immunisation_obj          = patient_immunisation_add_form.save()
@@ -88,9 +88,14 @@ def patient_immunisation_add(request,id):
           error_message  = "Immunisation Data Added Successfully"
           addData        = {
                             "id"                : immunisation_obj.id,
-                            "vaccine_name"       : immunisation_obj.vaccine_name,
-                            "vaccination_date" : immunisation_obj.vaccination_date.isoformat(),
-                            "adverse_reaction" : immunisation_obj.adverse_reaction,
+                            "vaccine_detail"      : immunisation_obj.vaccine_detail.vaccine_name,
+                            "vaccination_date"  : immunisation_obj.vaccination_date.isoformat(),
+                            "next_due"          : immunisation_obj.next_due.isoformat(),
+                            "route"             : immunisation_obj.route,
+                            "injection_site"    : immunisation_obj.injection_site,
+                            "dose"              : immunisation_obj.dose,
+                            "administrator"     : immunisation_obj.administrator.__unicode__(),
+                            "adverse_reaction"  : immunisation_obj.adverse_reaction,
                             "edit"              : immunisation_obj.get_edit_url(),
                             "del"               : immunisation_obj.get_del_url()
           }
@@ -153,9 +158,14 @@ def patient_immunisation_edit(request,id):
           error_message           = "Immunisation Data Edited Successfully"
           addData        = {
                             "id"                : immunisation_obj.id,
-                            "vaccine_name"       : immunisation_obj.vaccine_name,
-                            "vaccination_date" : immunisation_obj.vaccination_date.isoformat(),
-                            "adverse_reaction" : immunisation_obj.adverse_reaction,
+                            "vaccine_detail"      : immunisation_obj.vaccine_detail.vaccine_name,
+                            "vaccination_date"  : immunisation_obj.vaccination_date.isoformat(),
+                            "next_due"          : immunisation_obj.next_due.isoformat(),
+                            "route"             : immunisation_obj.route,
+                            "injection_site"    : immunisation_obj.injection_site,
+                            "dose"              : immunisation_obj.dose,
+                            "administrator"     : immunisation_obj.administrator.__unicode__(),
+                            "adverse_reaction"  : immunisation_obj.adverse_reaction,
                             "edit"              : immunisation_obj.get_edit_url(),
                             "del"               : immunisation_obj.get_del_url()
           }
@@ -194,9 +204,9 @@ def patient_immunisation_del(request,id):
   if request.user and user.is_superuser:
     if request.method =="GET":
        try:
-          id                      = int(id)
-          patient_immunisation_obj   = PatientImmunisation.objects.get(pk = id)
-          patient_detail_obj      = patient_immunisation_obj.patient_detail
+          id                       = int(id)
+          patient_immunisation_obj = PatientImmunisation.objects.get(pk = id)
+          patient_detail_obj       = patient_immunisation_obj.patient_detail
        except TypeError or ValueError or AttributeError:
           raise Http404("BadRequest")
        except PatientImmunisation.DoesNotExist:

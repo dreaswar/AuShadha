@@ -196,6 +196,89 @@ var GRID_STRUCTURES= {
                                  cellStyles : "text-align:center;"
                                 }],
 
+PATIENT_CONTACT_GRID_STRUCTURE_SMALL: [
+                                {name       : "ID",
+                                 field      : "id",
+                                 width      : "50px",
+                                 hidden     : true,
+                                 cellStyles : "text-align:center;"
+                                },
+
+                                {name       : "PatID",
+                                 field      : "pat_id",
+                                 width      : "50px",
+                                 hidden     : true,
+                                 cellStyles : "text-align:center;"
+                                },
+
+                                {name       : "Edit",
+                                 field      : "edit",
+                                 width      : "50px",
+                                 hidden     : true,
+                                 cellStyles : "text-align:center;"
+                                },
+
+                                {name       : "Del",
+                                 field      : "del",
+                                 width      : "50px",
+                                 hidden     : true,
+                                 cellStyles : "text-align:center;"
+                                },
+
+                                {name       : "Type",
+                                 field      : "address_type",
+                                 width      : "50px",
+                                 cellStyles : "text-align:center;",
+                                 hidden     : true
+                                },
+
+                                {name       : "Address",
+                                 field      : "address",
+                                 width      : "300px",
+                                 cellStyles : "text-align:center;",
+                                 formatter  : function(address,rowI){
+                                                var thisRow   = this.grid.getItem(rowI);
+                                                var address_type = thisRow.address_type;
+                                                var city_name = thisRow.city;
+                                                var state     = thisRow.state;
+                                                var country   = thisRow.country;
+                                                var pincode   = thisRow.pincode;
+                                                var formatted_data = "<i><b>"+ address_type+ "</b></i></br>"+
+                                                                     address   +"</br>" +
+                                                                     city_name  +","  + state + "</br>"+
+                                                                     country    +"-" + pincode;
+                                                return formatted_data;
+                                              }
+                                },
+
+                                {name       : "City",
+                                 field      : "city",
+                                 width      : "150px",
+                                 hidden     : true,
+                                 cellStyles : "text-align:center;"
+                                },
+
+                                {name       : "State",
+                                 field      : "state",
+                                 width      : "50px",
+                                 hidden     : true,
+                                 cellStyles : "text-align:center;"
+                                },
+
+                                {name       : "Country",
+                                 field      : "country",
+                                 width      : "100px",
+                                 hidden     : true,
+                                 cellStyles : "text-align:center;"
+                                },
+
+                                {name       : "Pincode",
+                                 field      : "pincode",
+                                 width      : "100px",
+                                 hidden     : true,
+                                 cellStyles : "text-align:center;"
+                                }],
+
   PATIENT_PHONE_GRID_STRUCTURE: [
                                  {name       : "ID", 
                                    field      : "id", 
@@ -250,6 +333,64 @@ var GRID_STRUCTURES= {
                                                   return formatted_data;
                                                 }
                                   }],
+
+PATIENT_PHONE_GRID_STRUCTURE_SMALL: [
+                                 {name       : "ID",
+                                   field      : "id",
+                                   width      : "50px",
+                                   hidden     : true,
+                                   cellStyles : "text-align:center;"
+                                  },
+
+                                  {name       : "Edit",
+                                   field      : "edit",
+                                   width      : "50px",
+                                   hidden     : true,
+                                   cellStyles : "text-align:center;"
+                                  },
+
+                                  {name       : "Del",
+                                   field      : "del",
+                                   width      : "50px",
+                                   hidden     : true,
+                                   cellStyles : "text-align:center;"
+                                  },
+
+                                  {name       : "Type",
+                                   field      : "phone_type",
+                                   width      : "50px",
+                                   cellStyles : "text-align:center;",
+                                   hidden     : true
+                                  },
+
+                                  {name       : "ISD",
+                                   field      : "ISD_Code",
+                                   width      : "250px",
+                                   hidden     : true,
+                                   cellStyles : "text-align:center;"
+                                  },
+
+                                  {name       : "STD",
+                                   field      : "STD_Code",
+                                   width      : "150px",
+                                   hidden     : true,
+                                   cellStyles : "text-align:center;"
+                                  },
+
+                                  {name       : "Phone",
+                                   field      : "phone",
+                                   width      : "120px",
+                                   cellStyles : "text-align:center;",
+                                   formatter  : function(phone, rowI){
+                                                  var rowdata = this.grid.getItem(rowI);
+                                                  var type     = rowdata.phone_type;
+                                                  var ISD     = rowdata.ISD_Code;
+                                                  var STD     = rowdata.STD_Code;
+                                                  var formatted_data = "<b> <i>" + type + "</i> </b></br>" + ISD + "-" + STD + "-" + phone
+                                                  return formatted_data;
+                                                }
+                                  }],
+
 
   PATIENT_GUARDIAN_GRID_STRUCTURE: [
                                     {name       : "ID", 
@@ -536,9 +677,14 @@ var GRID_STRUCTURES= {
                                     },
 
                                     {name        : "Name", 
-                                      field      : "vaccine_name", 
+                                      field      : "vaccine_detail", 
                                       width      : "100px",
                                       cellStyles : "text-align:center;",
+                                    },
+                                    {name        : "Administrator", 
+                                      field      : "administrator", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
                                     },
 
                                     {name        : "Date", 
@@ -547,6 +693,26 @@ var GRID_STRUCTURES= {
                                       cellStyles : "text-align:center;"
                                     },
 
+                                    {name        : "Next Due", 
+                                      field      : "next_due", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Site", 
+                                      field      : "injection_site", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Route", 
+                                      field      : "route", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Dose", 
+                                      field      : "dose", 
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
                                     {name        : "Adverse Reaction", 
                                       field      : "adverse_reaction", 
                                       width      : "70px",
@@ -554,6 +720,155 @@ var GRID_STRUCTURES= {
                                     }
                                   ],
 
+  PATIENT_MEDICAL_HISTORY_GRID_STRUCTURE: [
+                                    {name        : "ID",
+                                      field      : "id",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Edit",
+                                      field      : "edit",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Del",
+                                      field      : "del",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Disease",
+                                      field      : "disease",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;",
+                                    },
+                                    {name        : "ICD 10  ",
+                                      field      : "icd_10_code",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Status",
+                                      field      : "status",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Infectious ?",
+                                      field      : "infectious_disease",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Active ?",
+                                      field      : "active",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Severity",
+                                      field      : "severity",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Allergic ?",
+                                      field      : "allergic_disease",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Pregnancy Warning",
+                                      field      : "pregnancy_warning",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Date of Diagnosis",
+                                      field      : "date_of_diagnosis",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Healed",
+                                      field      : "healed",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Remarks",
+                                      field      : "remarks",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    }
+                                  ],
+
+  PATIENT_SURGICAL_HISTORY_GRID_STRUCTURE: [
+                                    {name        : "ID",
+                                      field      : "id",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Edit",
+                                      field      : "edit",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Del",
+                                      field      : "del",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Description",
+                                      field      : "description",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;",
+                                    },
+                                    {name        : "ICD 10  ",
+                                      field      : "icd_10_code",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "CPC Code",
+                                      field      : "cpc_code",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name        : "Base Condition",
+                                      field      : "base_condition",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Med. Condition",
+                                      field      : "med_condition",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Classification",
+                                      field      : "classification",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Date of Surgery",
+                                      field      : "date_of_surgery",
+                                      width      : "100px",
+                                      cellStyles : "text-align:center;"
+                                    },
+                                    {name        : "Remarks",
+                                      field      : "remarks",
+                                      width      : "70px",
+                                      cellStyles : "text-align:center;"
+                                    }
+                                  ],
 
   PATIENT_PATIENT_MEDIA_GRID_STRUCTURE: "",
 

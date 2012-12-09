@@ -105,7 +105,7 @@ class AuShadhaBaseModel(models.Model):
   '''
     base AuShadha Model From which all AuShadha Models Except the Clinic Model Derive. 
   '''
-  __model_label__ = "AuShadhaBaseModel"
+#  __model_label__ = "AuShadhaBaseModel"
 
   parent_clinic = models.ForeignKey('clinic.Clinic', null = True, blank = True)
 
@@ -128,6 +128,9 @@ class AuShadhaBaseModel(models.Model):
 
   def get_del_url(self):
     return  generic_url_maker(self, "del", self.id)
+
+  def get_object_json_url(self):
+    return APP_ROOT_URL+"/%s_json/%s/" %(self.__model_label__, self.id)
 
 
   def generic_url_maker(self,action,id, root_object = False):
