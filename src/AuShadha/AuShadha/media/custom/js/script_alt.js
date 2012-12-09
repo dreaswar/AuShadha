@@ -257,7 +257,7 @@
                                       medicationListUrl = "{%url medication_list_json %}" +
                                                     "?patient_id="
                                                     + patid;
-
+																			 patientSidebarDivContactUrl = "/AuShadha/pat/sidebar_contact_tab/?patient_id="+patid;
             // {% comment %}
             /*
                                      var admissionUrl = "{%url admission_json %}" +
@@ -302,20 +302,19 @@
                                   console.log("Finished setting up the Forms...");
 
                                   console.log("Setting up the Grids Now...");
-                                    //setupContactGrid(contactUrl);
+																		setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
+																			setupMedicationListGrid(medicationListUrl);  
+																			setupAllergiesGrid(allergiesUrl);	
+																		//setupContactGrid(contactUrl);
                                     //setupContactGridForPortlet(contactUrl);
                                     //setupPhoneGrid(phoneUrl,'phone_list');
                                     //setupPhoneGrid(phoneUrl,'phone_grid_alt');
 
                                     setupGuardianGrid(guardianUrl);
                                     setupFamilyHistoryGrid(familyHistoryUrl);
-
                                     setupImmunisationGrid(immunisationUrl);
 
-                                    setupAllergiesGrid(allergiesUrl);
-                                    setupMedicationListGrid(medicationListUrl);
-
-                                    setupMedicalHistoryGrid(medicalHistoryUrl);
+																			setupMedicalHistoryGrid(medicalHistoryUrl);
                                     setupSurgicalHistoryGrid(surgicalHistoryUrl);
 
                         //            setupAdmissionGrid(admissionUrl);

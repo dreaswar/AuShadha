@@ -429,6 +429,7 @@ function reInitBottomPanels(){
                            "patientMedicationListAndAllergiesTab", 
                            1
         );
+				domStyle.set( dom.byId('medication_list'),{"height" : "15em", "overflow":"auto", "width": "57em"});
       }
 
       if(allergyTable){
@@ -439,6 +440,12 @@ function reInitBottomPanels(){
                            "patientMedicationListAndAllergiesTab", 
                            3
         );
+				domStyle.set( dom.byId('allergy_list'),{ "height" : "15em", 
+																									"width": "28em", 
+																									"position":"relative",
+																									//"top":"-17.6em",
+																									//"left":"57.1em",
+																									"overflow":"auto", });
       }
 
       if(immunizationTable){

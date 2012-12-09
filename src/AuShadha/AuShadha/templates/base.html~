@@ -264,19 +264,6 @@
                            >
                          </div>
                          <!--  END OF patientContextContainer  -->
-                              {% if perms.patient %}
-                              <button id              = "addPatientSocialHistoryButton" 
-                                      type            = "button"
-                                      data-dojo-props = "iconClass: 'dijitIconNewTask'"
-                              > 
-                                Add
-                              </button>
-                              {% endif %}
-
-                            <div id="social_history_list"
-                            > 
-	                            This will list the social history 
-                            </div>
 
                      </div>
                     <!--  END OF PATIENTLISTCONTENTPANE  -->
@@ -313,6 +300,7 @@
                             <div id="admission_list"
                             > 
                             This Page will list all the Clinic Visits                            
+                            </div>
                </div>
                <div id              = "patientSearchContentPane"
                     data-dojo-type  = "dijit/layout/ContentPane"

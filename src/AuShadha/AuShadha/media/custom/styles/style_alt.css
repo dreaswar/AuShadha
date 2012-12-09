@@ -155,9 +155,7 @@ body{
 #surgical_history_list,
 #patient_media_list,
 #admission_list,
-#visit_list,
-#medication_list,
-#allergy_list
+#visit_list
 {
   min-height : 230px;
 	margin-top: 5px;
@@ -171,7 +169,7 @@ body{
 	overflow:auto;
 }
 
-/*
+
 #medication_list
 {
   height : 15em;
@@ -187,7 +185,7 @@ body{
   left: 57.1em;
   overflow:auto;
 }
-*/
+
 /*
 #contact_grid_alt,
 #phone_grid_alt

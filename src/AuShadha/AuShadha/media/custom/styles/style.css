@@ -155,7 +155,9 @@ body{
 #surgical_history_list,
 #patient_media_list,
 #admission_list,
-#visit_list
+#visit_list,
+#medication_list,
+#allergy_list
 {
   min-height : 230px;
 	margin-top: 5px;
@@ -163,39 +165,11 @@ body{
 }
 
 
-#medication_list
-{
-  height : 15em;
-  overflow:auto;
-  width: 57em;
+#patientSynopsisBottomContentPane{
+	//width: 70em;
+	height:18em;
+	overflow:auto;
 }
-#allergy_list
-{
-  height : 15em;
-  width: 28em;
-  position:relative;
-  top: -17.6em;
-  left: 57.1em;
-  overflow:auto;
-}
-
-/*
-#contact_grid_alt,
-#phone_grid_alt
-{
-  height : 150px;
-  margin-top: 5px;
-  overflow:auto;
-}
-*/
-/*
-	#leftCol, 
-	#rightCol 
-	{width: 20em;
-    background: -moz-linear-gradient(center top , #EDF2F7, whitesmoke) repeat scroll 0 0 transparent;
-    font-size: 10px;
-	}
-*/
 
 
 	.login_area_img

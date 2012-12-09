@@ -385,8 +385,6 @@ function reInitBottomPanels(){
           immunizationTable   = registry.byId("immunisation_list"),
           familyHistoryTable  = registry.byId("family_history_list"),
 
-          //medicalAndSurgicalHistoryList = registry.byId("medical_and_surgical_history_list");
-
           medicalHistoryTable = registry.byId("medical_history_list"),
           surgicalHistoryTable = registry.byId("surgical_history_list"),
 
@@ -431,6 +429,7 @@ function reInitBottomPanels(){
                            "patientMedicationListAndAllergiesTab", 
                            1
         );
+				domStyle.set( dom.byId('medication_list'),{"height" : "15em", "overflow":"auto", "width": "57em"});
       }
 
       if(allergyTable){
@@ -441,6 +440,12 @@ function reInitBottomPanels(){
                            "patientMedicationListAndAllergiesTab", 
                            3
         );
+				domStyle.set( dom.byId('allergy_list'),{ "height" : "15em", 
+																									"width": "28em", 
+																									"position":"relative",
+																									"top":"-17.6em",
+																									"left":"57.1em",
+																									"overflow":"auto", });
       }
 
       if(immunizationTable){

@@ -121,13 +121,13 @@ ready( function(){
                           "patientSummaryTab",
                           "first"
         );
-        domStyle.set( dom.byId('patientSynopsisBorderContainer'),{'minWidth':'100em','height':'100em','overflow':"auto"});
+        //domStyle.set( dom.byId('patientSynopsisBorderContainer'),{'minWidth':'100em','height':'100em','overflow':"auto"});
           domConstruct.create('div',
                               {id: "patientSynopsisTopContentPane"},
                             "patientSynopsisBorderContainer",
                             "first"
           );
-          domStyle.set( dom.byId('patientSynopsisTopContentPane'),{'minWidth':'91em','height':'20em','overflow':"auto"});
+          //domStyle.set( dom.byId('patientSynopsisTopContentPane'),{'width':'70em','height':'auto','overflow':"auto"});
             domConstruct.create('div',
                                 {id: "medication_list"},
                                 "patientSynopsisTopContentPane",
@@ -446,13 +446,14 @@ ready( function(){
                                         );
       tabs.addChild(summaryTab);
         var patientSynopsisBorderContainer = new BorderContainer({id:"patientSynopsisBorderContainer",
-                                                                 },
+                                                                 //doLayout:true,
+																																		},
                                           "patientSynopsisBorderContainer"
                                           );
         summaryTab.addChild(patientSynopsisBorderContainer);
           var patientSynopsisTopContentPane = new ContentPane({
                                                 id:"patientSynopsisTopContentPane",
-                                                region: "top",
+                                                region: "center",
                                                 splitter: true
                                                 },
                                             "patientSynopsisTopContentPane"
@@ -461,7 +462,8 @@ ready( function(){
           
           var patientSynopsisBottomContentPane = new ContentPane({
                                                         id:"patientSynopsisBottomContentPane",
-                                                        region: "center",
+                                                        region: "bottom",
+																													splitter: true
                                                         },
                                           "patientSynopsisBottomContentPane"
                                           );

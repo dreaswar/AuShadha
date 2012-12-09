@@ -513,9 +513,10 @@ function reInitBottomPanels(){
         console.log("Recreating Medication List tab");
         domConstruct.create("div",
                            { id:'medication_list', class:'patientContextTabs'},
-                           "patientMedicationListAndAllergiesTab",
+                           "patientSynopsisTopContentPane",
                            1
         );
+				domStyle.set( dom.byId('medication_list'),{"height" : "15em", "overflow":"auto", "width": "57em"});
       }
 
       if(allergyTable){
@@ -523,9 +524,15 @@ function reInitBottomPanels(){
         console.log("Recreating allergy tab");
         domConstruct.create("div",
                             {id:'allergy_list', class:'patientContextTabs'},
-                           "patientMedicationListAndAllergiesTab",
+                           "patientSynopsisTopContentPane",
                            3
         );
+				domStyle.set( dom.byId('allergy_list'),{ "height" : "15em", 
+																									"width": "28em", 
+																									"position":"relative",
+																									"top":"-17.6em",
+																									"left":"57.1em",
+																									"overflow":"auto", });
       }
 
       if(immunizationTable){
