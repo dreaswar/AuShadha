@@ -190,7 +190,7 @@ function setupAllergiesGrid(url){
                                       }),
                     selectionMode   : "single",
                     rowSelector     : "20px",
-                    structure       : GRID_STRUCTURES.PATIENT_ALLERGIES_GRID_STRUCTURE,
+                    structure       : GRID_STRUCTURES.PATIENT_ALLERGIES_GRID_STRUCTURE_SMALL,
                     noDataMessage   : "<span class='dojoxGridNoData'>No Allergies in Store..</span>"
               },
               "allergy_list"
@@ -506,6 +506,7 @@ function reInitBottomPanels(){
                            "patientDemographicsTab",
                            'last'
         );
+        domStyle.set( dom.byId('guardian_list'),{"height" : "15em", "overflow":"auto", "width": "35em"});
       }
 
       if(medicationListTable){
@@ -524,15 +525,15 @@ function reInitBottomPanels(){
         console.log("Recreating allergy tab");
         domConstruct.create("div",
                             {id:'allergy_list', class:'patientContextTabs'},
-                           "patientSynopsisTopContentPane",
-                           3
+                           "patientSidebarDiv_allergyGridContainer",
+                           1
         );
 				domStyle.set( dom.byId('allergy_list'),{ "height" : "15em", 
-																									"width": "28em", 
+																									"width": "15",
 																									"position":"relative",
-																									//"top":"-17.6em",
-																									//"left":"57.1em",
-																									"overflow":"auto", });
+																									"top":"0",
+																									"left":"0",
+																									"overflow":"hidden", });
       }
 
       if(immunizationTable){

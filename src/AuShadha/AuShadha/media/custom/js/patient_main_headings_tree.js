@@ -54,6 +54,7 @@ function buildPatientTree(){
                       parent: 'contact'
                     },
 */
+/*
                 { id: 'history',
                   name:'History',
                   type:'main_branch',
@@ -133,15 +134,24 @@ function buildPatientTree(){
                       type:'second_branch',
                       parent: 'medication_and_allergies'
                     },
-
+*/
+                { id: 'visits',
+                  name:'Visits',
+                  type:'main_branch',
+                  parent: 'patient'
+                },
                 { id: 'admissions',
                   name:'Admissions',
                   type:'main_branch',
                   parent: 'patient'
                 },
-
-                { id: 'visits',
-                  name:'Visits',
+                { id: 'investigations',
+                  name:'Investigations',
+                  type:'main_branch',
+                  parent: 'patient'
+                },
+                { id: 'imaging',
+                  name:'Imaging',
                   type:'main_branch',
                   parent: 'patient'
                 },
@@ -165,7 +175,7 @@ function buildPatientTree(){
                     { id: 'patient_videos',
                       name:'Videos',
                       type:'second_branch',
-                      parent: 'patient_media'
+                      parent: s'patient_media'
                     }
 */
           ],

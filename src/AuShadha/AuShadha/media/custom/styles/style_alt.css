@@ -147,7 +147,6 @@ body{
 
 #contact_list,
 #phone_list,
-#guardian_list,
 #demographics_list,
 #immunisation_list,
 #family_history_list,
@@ -170,20 +169,38 @@ body{
 }
 
 
+#guardian_list{
+  min-height : 15em;
+  height : 15em;
+  max-height:15em;
+  //overflow:auto;
+  width: 35em;
+}
+
+#family_history_list{
+  min-height : 15em;
+  height : 15em;
+  max-height:20em;
+  //overflow:auto;
+  width: 45em;
+}
+
 #medication_list
 {
   height : 15em;
-  overflow:auto;
+  //overflow:auto;
   width: 57em;
 }
 #allergy_list
 {
   height : 15em;
-  width: 28em;
+  width  : 15em;
   position:relative;
-  top: -17.6em;
-  left: 57.1em;
-  overflow:auto;
+  top: 0;
+  left:0;
+  //top: -17.6em;
+  //left: 57.1em;
+  //overflow:hidden;
 }
 
 /*

@@ -554,8 +554,6 @@ PATIENT_PHONE_GRID_STRUCTURE_SMALL: [
                                       width      : "80px",
                                       cellStyles : "text-align:center;"
                                     },
-                                    
-                                    
                                   ],
 
   PATIENT_MEDICATION_LIST_GRID_STRUCTURE: [
@@ -653,6 +651,47 @@ PATIENT_PHONE_GRID_STRUCTURE_SMALL: [
                                     }
                                   ],
 
+PATIENT_ALLERGIES_GRID_STRUCTURE_SMALL: [
+                                    {name       : "ID",
+                                      field      : "id",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Edit",
+                                      field      : "edit",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Del",
+                                      field      : "del",
+                                      width      : "50px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    },
+
+                                    {name       : "Drug",
+                                      field      : "allergic_to",
+                                      width      : "120px",
+                                      cellStyles : "text-align:center;",
+                                      formatter  : function(allergy, rowI){
+                                                  var rowdata  = this.grid.getItem(rowI);
+                                                  var reaction    = rowdata.reaction_observed;
+                                                  var formatted_data = "<b style='color:sienna'>" + allergy + "<b></br> <i style='color:black'>" + reaction + "</i>";
+                                                  return formatted_data;
+                                                }
+                                    },
+
+                                    {name       : "Reaction Observed",
+                                      field      : "reaction_observed",
+                                      width      : "120px",
+                                      hidden     : true,
+                                      cellStyles : "text-align:center;"
+                                    }
+                                  ],
 
   PATIENT_IMMUNIZATION_GRID_STRUCTURE: [
                                     {name        : "ID", 
