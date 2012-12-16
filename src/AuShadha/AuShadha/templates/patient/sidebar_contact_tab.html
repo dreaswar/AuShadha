@@ -1,6 +1,6 @@
 <div data-dojo-type     = "dojox/layout/ContentPane"
     id                  = "patient_sidebar_content_pane_contact"
-    style               = "height:90%; width:100%;overflow:auto;"
+    style               = "height:90%; width:100%;overflow:auto; margin-left:0px;"
   >
 
   <script type="dojo/method" >
@@ -41,15 +41,23 @@
       });
      });
   </script>
-
-    <div data-dojo-type="dijit/TitlePane"
-         title="Address"
+<div data-dojo-type  = "dijit/layout/TabContainer"
+     data-dojo-props = "tabPosition:'top',tabStrip:true"
+     data-dojo-id    = "sidebarContact_accordion"
+     style           = "margin-left:0px; padding-left:0px; width: 15em;overflow:auto;position:relative; float:left;"
+>
+    <div data-dojo-type="dojox/layout/ContentPane"
+         data-dojo-props="title: 'Address'"
          id="patientContact"
     >
       {% if perms.patient.add_patientcontact %}
         <span class="portletInnerActionSpan">
           <a href="{{pat_obj.get_patient_contact_add_url}}"
-            class="portletInnerActionSpanATag"> Add </a>
+            class="portletInnerActionSpanATag">
+            <img src="{{STATIC_URL}}images/add.png"
+                 alt="Add"
+                 title="Add New Contact">
+          </a>
         </span>
       {% endif %}
 
@@ -70,15 +78,15 @@
             </div>
           {% endfor %}
         {% else %}
-          <p class="suggestion_text"> No Contact Details in Store</p>
+          <p > No Contact Details in Store</p>
         {% endif %}
       </div>
     </div>
 
 
 
-    <div data-dojo-type = "dijit/TitlePane"
-         title          = "Phone"
+    <div data-dojo-type="dojox/layout/ContentPane"
+         data-dojo-props="title: 'Phone'"
          id             = "patientPhone"
     >
 
@@ -113,7 +121,7 @@
             </div>
           {% endfor %}
         {% else %}
-          <p class="suggestion_text"> No Phone Numbers in Store</p>
+          <p > No Phone Numbers in Store</p>
         {% endif %}
       </div>
 

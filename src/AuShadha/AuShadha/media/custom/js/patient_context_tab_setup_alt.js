@@ -458,21 +458,25 @@ ready( function(){
 
             var sidebarTreeContainer = new ContentPane({id     : "patientTreeContainer",
                                                     title  : "Tree",
-                                                    iconClass:"navigationIcon"
+                                                    iconClass:"navigationIcon",
+                                                    showTitle: false,
+                                                    toolTip: "Patient Tree"
                                                   },
                                                 "patientTreeContainer"
             );
             sideBarTabContainer.addChild(sidebarTreeContainer);
             var sidebarContactContainer = new ContentPane({id     : "patientSidebarDiv_contact",
                                                           title   : "Contact",
-                                                          iconClass:"contactIcon"
+                                                          iconClass:"contactIcon",
+                                                          showTitle: false,
                                                   },
                                                 "patientSidebarDiv_contact"
             );
             sideBarTabContainer.addChild(sidebarContactContainer);
             var sidebarMediaContainer = new ContentPane({id     : "patientSidebarDiv_media",
                                                   title : "Media",
-                                                  iconClass:"mediaIcon"
+                                                  iconClass:"mediaIcon",
+                                                  showTitle: false,
                                                   },
                                                 "patientSidebarDiv_media"
             );

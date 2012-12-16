@@ -1,7 +1,7 @@
 <!-- Dojo library -->
 
     <script type="text/javascript"
-            src="{{STATIC_URL}}plugins/dojo-1.7.2/dojo/dojo.js"    
+            src="{{STATIC_URL}}plugins/dojo-1.8.0/dojo/dojo.js"    
             data-dojo-config="async: true, parseOnLoad: true, executeScripts:true, isDebug:true">
     </script>
 
@@ -10,9 +10,9 @@
 
 <!-- Custom Scripts     -->
 
-    <script type="text/javascript" 
-	    src="{{STATIC_URL}}custom/js/script.js"> 
-    </script>
+<!--    <script type="text/javascript" -->
+<!--	    src="{{STATIC_URL}}custom/js/script.js"> -->
+<!--    </script>-->
 
     <script type	=	"text/javascript"
 	    src		=	"{{STATIC_URL}}custom/js/complaints.js">
@@ -26,8 +26,10 @@
 	    src		=	"{{STATIC_URL}}custom/js/patient_list.js">
     </script>
 
+{% comment %}
     <script type	=	"text/javascript"
 	    src		=	"{{STATIC_URL}}custom/js/events.js">
     </script>
+{% endcomment %}
 
 <!-- end Custom Scripts     -->
