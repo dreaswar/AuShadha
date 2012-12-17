@@ -171,43 +171,21 @@ body{
 	overflow:auto;
 }
 
-/*
-#medication_list
-{
-  height : 15em;
-  overflow:auto;
-  width: 57em;
+.sidebarDiv{
+  width         : 15em;
+  max-width     : 15em;
+  border        : solid 1px #ddd;
+  border-radius : 2px;
+  background    : whitesmoke;
 }
-#allergy_list
-{
-  height : 15em;
-  width: 28em;
+
+.portletInnerActionSpan{
   position:relative;
-  top: -17.6em;
-  left: 57.1em;
-  overflow:auto;
+  float:right;
+  font-size: 10px;
 }
-*/
-/*
-#contact_grid_alt,
-#phone_grid_alt
-{
-  height : 150px;
-  margin-top: 5px;
-  overflow:auto;
-}
-*/
-/*
-	#leftCol, 
-	#rightCol 
-	{width: 20em;
-    background: -moz-linear-gradient(center top , #EDF2F7, whitesmoke) repeat scroll 0 0 transparent;
-    font-size: 10px;
-	}
-*/
 
-
-	.login_area_img
+.login_area_img
 	{
 		width:28px;
 		height:28px;

@@ -12,11 +12,13 @@
                   on("click",
                       function(evt){
                         var url_to_call = domAttr.get(this,'href');
+                        var a_target  = evt.target;
                         require(["dojo/_base/xhr",
                                   "dijit/registry",
                                   "dijit/Dialog"
                         ],
                         function(xhr, registry, Dialog){
+                          console.log(a_target);
                           var myDialog = registry.byId("editPatientDialog");
                           xhr.get({
                                   url: url_to_call,
@@ -37,7 +39,6 @@
     function(on,dom, query, domAttr, ready, registry){
       ready(function(){
         var patient_id = dom.byId('selected_patient_id_info').innerHTML;
-        
       });
      });
   </script>
@@ -52,11 +53,16 @@
     >
       {% if perms.patient.add_patientcontact %}
         <span class="portletInnerActionSpan">
-          <a href="{{pat_obj.get_patient_contact_add_url}}"
-            class="portletInnerActionSpanATag">
-            <img src="{{STATIC_URL}}images/add.png"
-                 alt="Add"
-                 title="Add New Contact">
+          <a href = "{{pat_obj.get_patient_contact_add_url}}"
+            class = "portletInnerActionSpanATag"
+            id    = "addContactSidebarHrefTag"
+            >
+              {%comment %}
+                <img src="{{STATIC_URL}}images/add.png"
+                    alt="Add"
+                    title="Add New Contact">
+              {% endcomment %}
+             Add
           </a>
         </span>
       {% endif %}
@@ -64,18 +70,31 @@
       <div>
         {%if pat_contact_obj %}
           {%for contact in pat_contact_obj %}
-            <div class="portletInnerDiv">
-              <p><i>{{contact.address_type}}</i> - {{contact.address}}</p>
-              <p>{{contact.city}} - {{contact.district}}</p>
-              <p>{{contact.state}}</p>
-              <p><b>{{contact.country}}</b> -{{contact.pincode}} </p>
-              <span class="portletInnerActionSpan">
-                <a href="{{contact.get_patient_contact_edit_url}}"
-                   class="portletInnerActionSpanATag"> Edit </a>
-                <a href="{{contact.get_patient_contact_del_url}}"
-                   class="portletInnerActionSpanATag"> Del </a>
-               </span>
-            </div>
+              <div class="sidebarDiv">
+                  <i>{{contact.address_type}}</i> -
+                    {{contact.address}}
+                    {{contact.city}} -
+                    {{contact.district}}
+                    {{contact.state}}
+                  <b>{{contact.country}}</b> -
+                  {{contact.pincode}} 
+                  <div class="portletInnerActionSpan">
+                    <a href="{{contact.get_patient_contact_edit_url}}"
+                      class="portletInnerActionSpanATag">
+                      <img src="{{STATIC_URL}}images/edit.png"
+                            alt="Edit"
+                            title="Edit"
+                            class="small_img">
+                    </a>
+                    <a href="{{contact.get_patient_contact_del_url}}"
+                      class="portletInnerActionSpanATag">
+                        <img src="{{STATIC_URL}}images/trash.png"
+                            alt="Del"
+                            title="Delete"
+                            class="small_img">
+                      </a>
+                  </div>
+              </div>
           {% endfor %}
         {% else %}
           <p > No Contact Details in Store</p>
@@ -91,31 +110,43 @@
     >
 
       {% if perms.patient.add_patientphone %}
-        <span class="portletInnerActionSpan">
-          <a href="{{pat_obj.get_patient_phone_add_url}}"
-            class="portletInnerActionSpanATag"> Add </a>
-        </span>
+        <div class="portletInnerActionSpan">
+          <a href = "{{pat_obj.get_patient_phone_add_url}}"
+            class = "portletInnerActionSpanATag"
+            id    = "addPhoneSidebarHrefTag"
+            > Add </a>
+        </div>
       {% endif %}
 
       <div >
         {%if pat_phone_obj %}
           {%for phone in pat_phone_obj %}
-            <div class="portletInnerDiv">
-              <p> <b> {{phone.phone_type}} </b> </p>
-              <p> {{phone.ISD_Code}}-
+            <div class="sidebarDiv">
+              <b> {{phone.phone_type}} </b> 
+                  {{phone.ISD_Code}}-
                   {{phone.STD_Code}}-
                   {{phone.phone}}
-              </p>
               <span class="portletInnerActionSpan">
                 {% if perms.patient.change_patientphone %}
-                <a href="{{phone.get_patient_phone_edit_url}}"
-                   class="portletInnerActionSpanATag"
-                   id   = "portletInnerEditActionSpanATagPhone"
-                   > Edit </a>
+                  <a href="{{phone.get_patient_phone_edit_url}}"
+                    class="portletInnerActionSpanATag"
+                    id   = "portletInnerEditActionSpanATagPhone"
+                    >
+                    <img src="{{STATIC_URL}}images/edit.png"
+                    alt="Edit"
+                    title="Edit"
+                    class="small_img">
+                    
+                  </a>
                 {% endif %}
                 {% if perms.patient.delete_patientphone %}
-                <a href="{{phone.get_patient_phone_del_url}}"
-                   class="portletInnerActionSpanATag"> Del </a>
+                  <a href="{{phone.get_patient_phone_del_url}}"
+                    class="portletInnerActionSpanATag">
+                    <img src="{{STATIC_URL}}images/trash.png"
+                    alt="Del"
+                    title="Delete"
+                    class="small_img">
+                  </a>
                 {% endif %}
                </span>
             </div>

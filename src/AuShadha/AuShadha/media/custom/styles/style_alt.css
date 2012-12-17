@@ -221,6 +221,24 @@ body{
 	}
 */
 
+/* Sidebar Inner Div Styles */
+
+.sidebarDiv{
+  width         : 15em;
+  max-width     : 15em;
+  border        : solid 1px #ddd;
+  border-radius : 2px;
+  background    : whitesmoke;
+  margin        : 5px 0px 5px 0px;
+  padding       : 5px 0px 5px 0px;
+}
+
+.portletInnerActionSpan{
+  position:relative;
+  float:right;
+  font-size: 10px;
+  margin:1px;
+}
 
 	.login_area_img
 	{
