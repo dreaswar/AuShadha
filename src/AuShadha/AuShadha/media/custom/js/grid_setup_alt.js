@@ -113,13 +113,9 @@ function setupContactGridForPortlet(url){
                       return false;
     };
 
-    if(registry.byId('patientContact')){
-      registry.byId("patientContact").addChild(contactAltGrid)
-      contactAltGrid.startup();
-      console.log(contactAltGrid);
-      console.log("Finished creating summary contact grid.")
-    }
-    console.log("Finished creating Contact Grid");
+    contactAltGrid.startup();
+    console.log(contactAltGrid);
+    console.log("Finished creating summary contact grid.")
   });
 }
 
@@ -148,7 +144,7 @@ function setupPhoneGrid(url, /*divId of Grid*/grid_id, grid_str /* grid structur
       // {% endif %}
       };
     phoneGrid.startup();
-})
+});
 }
 
 function setupGuardianGrid(url){

@@ -104,15 +104,15 @@ ready( function(){
                                   {id: "allergy_list"},
                                   "patientSidebarDiv_allergyGridContainer",
                                   "first"
-                  );
+                  );/*
             domConstruct.create('div',
                                 {id: "patientSidebarDiv_contact"},
                                 "patientTreeContainer",
                                 "after"
-            );
+            );*/
             domConstruct.create('div',
                                 {id: "patientSidebarDiv_media"},
-                                "patientSidebarDiv_contact",
+                                "patientTreeContainer",
                                 "after"
             );
             domStyle.set( dom.byId('patientSidebarContentPane'),{'minWidth'  : '17em',
@@ -166,11 +166,11 @@ ready( function(){
                                                                     "position"       : "relative",
                                                                     "top"            : "0"        ,
                                                                     "fontFamily"     : "dejavu sans"
-                });
+                });/*
             domStyle.set( dom.byId('patientSidebarDiv_contact'),{'minWidth'  : '275px',
                                                                  'minHeight' : "400px",
                                                                  'overflow'  : "auto"
-            });
+            });*/
             domStyle.set( dom.byId('patientSidebarDiv_media'),{'minWidth' : '275px',
                                                                'minHeight': "400px",
                                                                'overflow' : "auto"
@@ -239,7 +239,53 @@ ready( function(){
                                 "patientSynopsisBottomContentPaneVisits",
                                 "first"
                 );
+              domConstruct.create('div',
+                              {id: "patientSynopsisBottomContentPaneContact"},
+                            "patientSynopsisBottomContentPaneVisits",
+                            "after"
+              );
+              domConstruct.create('div',
+                                  {id: "demographics_add_or_edit_form"},
+                                  "patientSynopsisBottomContentPaneContact",
+                                  "first"
+                          );
 
+              domConstruct.create("div",
+                                  {"id":"contact_tab_container"},
+                                'demographics_add_or_edit_form',
+                                "after"
+              );
+
+              domConstruct.create("div",
+                                    {"id":"contact_list_container"},
+                                  'contact_tab_container',
+                                  "first"
+                );
+                domConstruct.create("div",
+                                      {"id":"contact_list"},
+                                    'contact_list_container',
+                                    "first"
+                  );
+              domConstruct.create("div",
+                                    {"id":"phone_list_container"},
+                                  'contact_list_container',
+                                  'after'
+                );
+                domConstruct.create("div",
+                                    {"id":"phone_list"},
+                                  'phone_list_container',
+                                  'first'
+                );
+              domConstruct.create('div',
+                                    {id: "guardian_list_container"},
+                                    "phone_list_container",
+                                    "after"
+                );
+                domConstruct.create('div',
+                                    {id: "guardian_list"},
+                                    "guardian_list_container",
+                                    "first"
+                );
       /*
       domConstruct.create('div',
                           {id: "patientContactTab"},
@@ -269,7 +315,7 @@ ready( function(){
                             {id: "patientHistoryTabs"},
                             "patientHistoryTab",
                             "first"
-        );
+        );/*
           domConstruct.create('div',
                               {id: "patientDemographicsTab"},
                               "patientHistoryTabs",
@@ -284,7 +330,7 @@ ready( function(){
                                 {id: "guardian_list"},
                                 "demographics_add_or_edit_form",
                                 "after"
-            );
+            );*/
           domConstruct.create('div',
                               {id: "patientSocialHistoryTab"},
                               "patientHistoryTabs",
@@ -460,10 +506,12 @@ ready( function(){
                                                     title  : "Tree",
                                                     iconClass:"navigationIcon",
                                                     showTitle: false,
+                                                    toolTip: "Patient Tree"
                                                   },
                                                 "patientTreeContainer"
             );
             sideBarTabContainer.addChild(sidebarTreeContainer);
+            /*
             var sidebarContactContainer = new ContentPane({id     : "patientSidebarDiv_contact",
                                                           title   : "Contact",
                                                           iconClass:"contactIcon",
@@ -472,6 +520,7 @@ ready( function(){
                                                 "patientSidebarDiv_contact"
             );
             sideBarTabContainer.addChild(sidebarContactContainer);
+            */
             var sidebarMediaContainer = new ContentPane({id     : "patientSidebarDiv_media",
                                                   title : "Media",
                                                   iconClass:"mediaIcon",
@@ -564,7 +613,49 @@ ready( function(){
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneVisits);
                   var visitNotesEditor = new Editor({id:"patientNewVisitNotes"},"patientNewVisitNotes");
                   patientSynopsisBottomContentPaneVisits.addChild(visitNotesEditor);
+                var patientSynopsisBottomContentPaneContact = new ContentPane({
+                                                            id:"patientSynopsisBottomContentPaneContact",
+                                                            title: "Contact & Demographics",
+                                                            iconClass: "contactIcon",
+                                                            showTitle: false,
+                                                            tooptip: "Contact & Demographics",
+                                                            },
+                                              "patientSynopsisBottomContentPaneContact"
+                                              );
+                patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneContact);
+                var demographicsAddOrEditForm = new ContentPane({id:"demographics_add_or_edit_form"
+                                                },
+                                                "demographics_add_or_edit_form"
+                                                );
+                patientSynopsisBottomContentPaneContact.addChild(demographicsAddOrEditForm);
+                var contactTabs = new TabContainer({
+                                      id: "contact_tab_container",
+                                      tabPosition:"right-h",
+                                      tabStrip:true,
+                                      style:"position:relative; top:-25em; left: 45em; height: 25em; width: 35.3em;"
+                                    },
+                                    "contact_tab_container"
+                );
+                patientSynopsisBottomContentPaneContact.addChild(contactTabs);
+                var contactListPane = new ContentPane({id:"contact_list_container",title: "Address"
+                                                },
+                                                "contact_list_container"
+                                                );
+                contactTabs.addChild(contactListPane);
+                var phoneListPane   = new ContentPane({id:"phone_list_container",
+                                                  title: "Phone"
+                                                },
+                                                "phone_list_container"
+                                                );
+                contactTabs.addChild(phoneListPane);
+                var guardianListPane    = new ContentPane({id:"guardian_list_container",
+                                                  title:"Guardian"
+                                                },
+                                                "guardian_list_container"
+                                                );
+                contactTabs.addChild(guardianListPane);
 
+                //domConstruct.create("div",{"id":"contact_list"},'patientSynopsisBottomContentPaneContact','first')
   /*
         var contactTab = new ContentPane({id:"patientContactTab",
                                           title:"Contact"
@@ -588,17 +679,20 @@ ready( function(){
                                             "patientHistoryTabs"
                                             );
           historyTab.addChild(historyTabs);
+            /*
             var demographicsTab = new ContentPane({id:"patientDemographicsTab",
                                               title:"Demographics"
                                               },
                                               "patientDemographicsTab"
                                               );
             historyTabs.addChild(demographicsTab);
+            
               var demographicsAddOrEditForm = new ContentPane({id:"demographics_add_or_edit_form"
                                                 },
                                                 "demographics_add_or_edit_form"
                                                 );
               demographicsTab.addChild(demographicsAddOrEditForm);
+            */
             var socialHistoryTab = new ContentPane({id:"patientSocialHistoryTab",
                                               title:"Social"
                                               },
@@ -739,8 +833,24 @@ ready( function(){
      //domStyle.set("patientContactTab",{'display':"none"});
 
 
+    require(["dijit/registry","dojo/dom-style"],
+    function(registry, domStyle){
+      var tab = registry.byId('patientSynopsisBottomTabContainer');
+      var tabList = tab.tablist;
+      console.log(tabList);
+      console.log(tabList.domNode.childNodes);
+
+      domStyle.set(tabList.domNode.children[2] ,
+                  {"position": "relative",
+                  "float"   : "right"
+                  }
+      );
+
+    }
+    );
+
 //{% if perms.patient.add_patientcontact %}
-     /*{% comment %}
+
     var addContactButton =  new Button({
                                   label: "Add",
                                   title: "Add New Contact Details",
@@ -771,12 +881,12 @@ ready( function(){
                                                   "before"
                               )
     );
-*/
+
 //{% endif %}
 
 
 //{% if perms.patient.add_patientphone %}
-/*
+
     var addPhoneButton =  new Button({
                                     label: "Add",
                                     title: "Add New Phone Numbers",
@@ -807,7 +917,7 @@ ready( function(){
                                             "before"
                          )
   );
- {% endcomment %}*/
+
 //{% endif %}
 
 //{%if perms.patient.add_patientguardian %}

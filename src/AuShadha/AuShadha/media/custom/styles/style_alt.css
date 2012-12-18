@@ -146,7 +146,19 @@ body{
 */
 
 #contact_list,
-#phone_list,
+#phone_list{
+  min-height: 15em;
+  height: 15em;
+  width:35em;
+  //margin-top:3px;
+  position:relative;
+}
+
+#contact_list,#phone_list{
+  left:0em;
+  top:0.1em;
+}
+
 #demographics_list,
 #immunisation_list,
 #family_history_list,
@@ -224,18 +236,21 @@ body{
 /* Sidebar Inner Div Styles */
 
 .sidebarDiv{
-  width         : 15em;
+  width         : 14.8em;
   max-width     : 15em;
   border        : solid 1px #ddd;
   border-radius : 2px;
   background    : whitesmoke;
-  margin        : 5px 0px 5px 0px;
-  padding       : 5px 0px 5px 0px;
+  margin        : 10px 0px 25px 0px;
+  padding       : 7px;
+  position      : relative;
+  left          : -0.5em;
 }
 
 .portletInnerActionSpan{
   position:relative;
   float:right;
+  top: -0.1em;
   font-size: 10px;
   margin:1px;
 }
@@ -253,8 +268,8 @@ body{
 
 	.small_img
 	{
-		width:20px;
-		height:20px;
+		width:12px;
+		height:12px;
 		border:none;
 		margin:none;
 		padding:none;

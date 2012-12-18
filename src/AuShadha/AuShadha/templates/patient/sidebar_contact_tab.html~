@@ -1,6 +1,5 @@
 <div data-dojo-type     = "dojox/layout/ContentPane"
     id                  = "patient_sidebar_content_pane_contact"
-    style               = "height:90%; width:100%;overflow:auto; margin-left:0px;"
   >
 
   <script type="dojo/method" >
@@ -51,17 +50,19 @@
          data-dojo-props="title: 'Address'"
          id="patientContact"
     >
+      <div id="contact_grid_alt"> </div>
+
       {% if perms.patient.add_patientcontact %}
-        <span class="portletInnerActionSpan">
+        <span>
           <a href = "{{pat_obj.get_patient_contact_add_url}}"
             class = "portletInnerActionSpanATag"
             id    = "addContactSidebarHrefTag"
             >
-              {%comment %}
-                <img src="{{STATIC_URL}}images/add.png"
+                <img src="{{STATIC_URL}}images/generic/crud/add.png"
                     alt="Add"
-                    title="Add New Contact">
-              {% endcomment %}
+                    title="Add New Contact"
+                    class="small_img"
+                    >
              Add
           </a>
         </span>
@@ -81,14 +82,14 @@
                   <div class="portletInnerActionSpan">
                     <a href="{{contact.get_patient_contact_edit_url}}"
                       class="portletInnerActionSpanATag">
-                      <img src="{{STATIC_URL}}images/pencil.png"
+                      <img src="{{STATIC_URL}}images/generic/crud/edit.png"
                             alt="Edit"
                             title="Edit"
                             class="small_img">
                     </a>
                     <a href="{{contact.get_patient_contact_del_url}}"
                       class="portletInnerActionSpanATag">
-                        <img src="{{STATIC_URL}}images/delete.png"
+                        <img src="{{STATIC_URL}}images/generic/crud/delete.png"
                             alt="Del"
                             title="Delete"
                             class="small_img">
@@ -100,6 +101,7 @@
           <p > No Contact Details in Store</p>
         {% endif %}
       </div>
+
     </div>
 
 
@@ -114,7 +116,12 @@
           <a href = "{{pat_obj.get_patient_phone_add_url}}"
             class = "portletInnerActionSpanATag"
             id    = "addPhoneSidebarHrefTag"
-            > Add </a>
+            > 
+              <img src="{{STATIC_URL}}images/generic/crud/add.png"
+                    alt="Add"
+                    title="Add"
+                    class="small_img">
+            </a>
         </div>
       {% endif %}
 
@@ -129,10 +136,10 @@
               <span class="portletInnerActionSpan">
                 {% if perms.patient.change_patientphone %}
                   <a href="{{phone.get_patient_phone_edit_url}}"
-                    class="portletInnerActionSpanATag"
-                    id   = "portletInnerEditActionSpanATagPhone"
-                    >
-                    <img src="{{STATIC_URL}}images/pencil.png"
+                      class="portletInnerActionSpanATag"
+                      id   = "portletInnerEditActionSpanATagPhone"
+                      >
+                    <img src="{{STATIC_URL}}images/generic/crud/edit.png"
                     alt="Edit"
                     title="Edit"
                     class="small_img">
@@ -142,10 +149,10 @@
                 {% if perms.patient.delete_patientphone %}
                   <a href="{{phone.get_patient_phone_del_url}}"
                     class="portletInnerActionSpanATag">
-                    <img src="{{STATIC_URL}}images/delete.png"
-                    alt="Del"
-                    title="Delete"
-                    class="small_img">
+                    <img src="{{STATIC_URL}}images/generic/crud/delete.png"
+                        alt="Del"
+                        title="Delete"
+                        class="small_img">
                   </a>
                 {% endif %}
                </span>

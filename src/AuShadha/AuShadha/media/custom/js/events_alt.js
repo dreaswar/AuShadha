@@ -107,11 +107,11 @@
 
             console.log("Setting up the Grids Now...");
               //setupPatientSummary('patientSummaryTab',patientSummaryUrl);
-              setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
+              //setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
 
               //setupContactGridForPortlet(contactUrl);
-              //setupContactGrid(contactUrl);
-              //setupPhoneGrid(phoneUrl,'phone_list');
+              setupContactGrid(contactUrl);
+              setupPhoneGrid(phoneUrl, 'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
               //setupPhoneGrid(phoneUrl,'phone_grid_alt');
 
               setupFamilyHistoryGrid(familyHistoryUrl);

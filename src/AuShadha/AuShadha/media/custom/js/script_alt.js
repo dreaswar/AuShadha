@@ -302,12 +302,12 @@
                                   console.log("Finished setting up the Forms...");
 
                                   console.log("Setting up the Grids Now...");
-																		setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
-																			setupMedicationListGrid(medicationListUrl);  
-																			setupAllergiesGrid(allergiesUrl);	
-																		//setupContactGrid(contactUrl);
+																		//setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
+                                    setupMedicationListGrid(medicationListUrl);  
+                                    setupAllergiesGrid(allergiesUrl);	
+																		setupContactGrid(contactUrl);
                                     //setupContactGridForPortlet(contactUrl);
-                                    //setupPhoneGrid(phoneUrl,'phone_list');
+                                    setupPhoneGrid(phoneUrl, 'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
                                     //setupPhoneGrid(phoneUrl,'phone_grid_alt');
 
                                     setupGuardianGrid(guardianUrl);

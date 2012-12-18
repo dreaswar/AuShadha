@@ -171,7 +171,7 @@
             data-dojo-props = "tabPosition:'top',  nested:true, tabStrip:true"
         >
 
-          <div id             = "patientSynopsisBottomTabContainerAdmissions"
+          <div id             = "patientSynopsisBottomContenPaneAdmissions"
             data-dojo-type   = "dojox/layout/ContentPane"
             data-dojo-props  = "title:'Admissions'"
           >
@@ -191,7 +191,7 @@
 
           </div>
 
-          <div id             = "patientSynopsisBottomTabContainerVisits"
+          <div id             = "patientSynopsisBottomContentPaneVisits"
             data-dojo-type   = "dojox/layout/ContentPane"
             data-dojo-props  = "title:'Visits'"
           >
@@ -209,7 +209,22 @@
             </div>
 
           </div>
+          <div id             = "patientSynopsisBottomContentPaneContact"
+            data-dojo-type   = "dojox/layout/ContentPane"
+            data-dojo-props  = "title:'Contact & Demographics'"
+          >
+<!--
+            <div data-dojo-type = "dijit/TitlePane"
+                id             = "previousVisitList"
+                data-dojo-props= "title:'Visits'"
+            >
+                <p>This will list all the Visits </p>
+            </div>
+-->
+            <div id             = "contact_grid_alt">
+            </div>
 
+          </div>
         </div>
   </div>
 
