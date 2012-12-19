@@ -7,8 +7,6 @@ html, body {
 }
 
 body{
-//  background  : -moz-linear-gradient(center top , #EDF2F7, #D0DFEA) repeat scroll 0 0 transparent;
-//  background    : -moz-linear-gradient(center top , snow, whitesmoke) repeat scroll 0 0 transparent;
   background    : -moz-linear-gradient(center top , #D0DFEA, whitesmoke) repeat scroll 0 0 transparent;
   font-family   : Droid-Sans, Sans-Serif, Ubuntu, Helvetica, Cantarell;
   font-size     : 12px;
@@ -77,7 +75,7 @@ body{
   position    : relative;
   top         : 3px !important;
   height      : 20px;
-  width:      : 400px;
+  width       : 400px;
   border      : none; 
   margin      : 0px; 
   padding     : 0px; 
@@ -112,7 +110,6 @@ body{
   left    : 0px !important;
   width   : 99% !important;
   border  : none !important;
-//  background    : -moz-linear-gradient(center top , snow, whitesmoke) repeat scroll 0 0 transparent;
   background    : -moz-linear-gradient(center top , #D0DFEA, whitesmoke) repeat scroll 0 0 transparent;
 }
 
@@ -150,14 +147,11 @@ body{
   min-height: 15em;
   height: 15em;
   width:35em;
-  //margin-top:3px;
   position:relative;
-}
-
-#contact_list,#phone_list{
   left:0em;
   top:0.1em;
 }
+
 
 #demographics_list,
 #immunisation_list,
@@ -175,7 +169,6 @@ body{
 
 
 #patientSynopsisBottomContentPane{
-	//width: 70em;
 	height:18em;
 	overflow:auto;
 }
@@ -185,7 +178,6 @@ body{
   min-height : 15em;
   height : 15em;
   max-height:15em;
-  //overflow:auto;
   width: 35em;
 }
 
@@ -193,26 +185,20 @@ body{
   min-height : 15em;
   height : 15em;
   max-height:20em;
-  //overflow:auto;
   width: 45em;
 }
 
-#medication_list
-{
+#medication_list{
   height : 15em;
-  //overflow:auto;
   width: 57em;
 }
-#allergy_list
-{
+
+#allergy_list{
   height : 15em;
   width  : 15em;
   position:relative;
   top: 0;
   left:0;
-  //top: -17.6em;
-  //left: 57.1em;
-  //overflow:hidden;
 }
 
 #demographics_add_or_edit_form,
@@ -262,8 +248,7 @@ body{
   margin:1px;
 }
 
-	.login_area_img
-	{
+.login_area_img{
 		width:28px;
 		height:28px;
 		border:none;
@@ -273,13 +258,12 @@ body{
 		top:0px;
 	}
 
-	.small_img
-	{
+.small_img	{
 		width:12px;
 		height:12px;
 		border:none;
-		margin:none;
-		padding:none;
+		margin:0px;
+		padding:0px;
 	}
 
   a
@@ -292,9 +276,9 @@ body{
    .help_text
   {
    font-size  : 9px;
-   font-style : bold;
+   font-style : italic;
    color      :  navy;
-   background-image: url('{{MEDIA_URL}}/images/generic/notification/info_128.png');
+   background-image: url('{{STATIC_URL}}images/generic/notification/info_128.png');
    background-repeat: no-repeat;
    background-size:12px 12px;
    padding:0px 0px 0px 14px; 
@@ -304,9 +288,9 @@ body{
    .error_text
    {
      font-size  : 12px;
-     font-style : bold;
+     font-weight : bold;
      color       : red;
-     background-image  : url('{{MEDIA_URL}}/images/generic/notifications/critical_128.png');
+     background-image  : url('{{STATIC_URL}}images/generic/notifications/critical_128.png');
      background-repeat : no-repeat;
      background-size     : 12px 12px;
      padding             : 0px 0px 0px 15px; 
@@ -318,7 +302,7 @@ body{
      font-size  : 10px;
      font-style : italic;
      color      :  RoyalBlue;
-     background-image    : url('{{MEDIA_URL}}/images/generic/notifications/bulb_32.png');
+     background-image    : url('{{STATIC_URL}}images/generic/notifications/bulb_32.png');
      background-repeat   : no-repeat;
      background-size       : 12px 12px;
      padding               : 0px 0px 0px 14px; 
@@ -327,7 +311,7 @@ body{
 
 .patientIcon
   {
-      background-image: url("{{MEDIA_URL}}images/generic/auth/user_16.png");
+      background-image: url("{{STATIC_URL}}images/generic/auth/user_16.png");
       background-repeat: no-repeat;
       background-position: center center;
       width: 16px;
@@ -335,7 +319,7 @@ body{
   } 
 .patientContactTreeIcon
   {
-      background-image: url("{{MEDIA_URL}}images/patient/patient_contact_list_16.png");
+      background-image: url("{{STATIC_URL}}images/patient/patient_contact_list_16.png");
       background-repeat: no-repeat;
       background-position: center center;
       width: 16px;
@@ -345,9 +329,18 @@ body{
 
 /* dijit Custom Classess */
 
+.settingsIcon
+   {
+     background-image    : url('{{STATIC_URL}}images/generic/dashboard_and_settings/settings_16.png');
+     background-repeat   : no-repeat;
+     height: 16px;
+     width:16px;
+     text-align:center;
+   }
+
 .contactIcon
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/addressbook.svg');
+     background-image    : url('{{STATIC_URL}}images/patient/addressbook.svg');
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;
@@ -355,7 +348,7 @@ body{
    }
 
 .addItemIcon{
-     background-image    : url('{{MEDIA_URL}}/images/generic/crud/add.png');
+     background-image    : url('{{STATIC_URL}}images/generic/crud/add.png');
      background-repeat   : no-repeat;
      height              : 16px;
      width               : 16px;
@@ -364,7 +357,7 @@ body{
 
 .navigationIcon
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/view-list.svg');
+     background-image    : url('{{STATIC_URL}}images/patient/view-list.svg');
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;
@@ -373,7 +366,7 @@ body{
 
 .mediaIcon
    {
-     background-image    : url('{{MEDIA_URL}}/images/generic/mimes/word_document_media.svg');
+     background-image    : url('{{STATIC_URL}}images/generic/mimes/word_document_media.svg');
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;
@@ -393,7 +386,7 @@ body{
 
   .addPatientIcon_32
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/patient_add.svg');
+     background-image    : url('{{STATIC_URL}}images/patient/patient_add.svg');
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;
@@ -402,7 +395,7 @@ body{
 
   .addPatientIcon_16
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/patient_add.svg');
+     background-image    : url('{{STATIC_URL}}images/patient/patient_add.svg');
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;
@@ -411,7 +404,7 @@ body{
 
    .addPatientIcon_16_small
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/patient_add_small.svg');
+     background-image    : url('{{STATIC_URL}}images/patient/patient_add_small.svg');
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;
@@ -420,7 +413,7 @@ body{
 
   .addPatientContactIcon_32
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/patient_contact_add_32.png');
+     background-image    : url('{{STATIC_URL}}images/patient/patient_contact_add_32.png');
      background-repeat   : no-repeat;
      height: 32px;
      width:32px;
@@ -429,7 +422,7 @@ body{
 
   .addPatientContactIcon_16
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/patient_contact_add_16.png');
+     background-image    : url('{{STATIC_URL}}images/patient/patient_contact_add_16.png');
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;
@@ -438,7 +431,7 @@ body{
 
   .addPatientPhoneIcon_32
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/phone_32.png');
+     background-image    : url('{{STATIC_URL}}images/patient/phone_32.png');
      background-repeat   : no-repeat;
      height: 32px;
      width:32px;
@@ -447,7 +440,7 @@ body{
 
   .addPatientPhoneIcon_16
    {
-     background-image    : url('{{MEDIA_URL}}/images/patient/phone_16.png');
+     background-image    : url('{{STATIC_URL}}images/patient/phone_16.png');
      background-repeat   : no-repeat;
      height: 16px;
      width:16px;
@@ -469,7 +462,7 @@ body{
   #loginDialog
   {
    background: white;
-   opacity:100%;
+   opacity:100;
   }
 
   #loginDiv

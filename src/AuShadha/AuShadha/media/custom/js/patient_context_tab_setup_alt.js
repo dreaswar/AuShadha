@@ -545,14 +545,107 @@ ready( function(){
         console.log("Adding patientContextContainer Dijit to the BorderContainer")
 
         mainBorderContaner.addChild(mainContainer);
-        var tabs = new TabContainer({
-                                      id: "patientContextTabs",
-                                      tabPosition:"top",
-                                      tabStrip:true,
-                                      style : "min-height: 550px;overflow:auto;"
+
+        require(["dojo/ready", "dijit/MenuBar",
+                "dijit/PopupMenuBarItem", "dijit/Menu",
+                "dijit/MenuItem", "dijit/DropDownMenu"
+                ],
+                function(ready, MenuBar, PopupMenuBarItem, Menu, MenuItem, DropDownMenu){
+                  ready(function(){
+
+                      var pMenuBar = new MenuBar({});
+
+                      var pSynopsisLayout = new DropDownMenu({});
+                      pSynopsisLayout.addChild(new MenuItem({
+                          label: "Default"
+                      }));
+                      pSynopsisLayout.addChild(new MenuItem({
+                          label: "Portlets Only"
+                      }));
+                      pSynopsisLayout.addChild(new MenuItem({
+                          label: "Tabbed Layout"
+                      }));
+/*
+                      var Personalize = new DropDownMenu({});
+                      Personalize.addChild(new MenuItem({
+                          label: "Personalize Layout",
+                          popup: pSynopsisLayout
+                      }));
+*/
+                      var pAddMenu = new DropDownMenu({});
+                      pAddMenu.addChild(new MenuItem({
+                          label: "Obs.History"
+                      }));
+                      pAddMenu.addChild(new MenuItem({
+                          label: "Gyn.History"
+                      }));
+                      pAddMenu.addChild(new MenuItem({
+                          label: "Paed & Neonatal History"
+                      }));
+
+                      var pSubMenu = new DropDownMenu({});
+
+                      pSubMenu.addChild(new MenuItem({
+                          label: "Layout",
+                          title : "Personalize Layout of Application",
+                          popup: pSynopsisLayout,
+                          iconClass: "navigationIcon"
+                      }));
+
+                      pSubMenu.addChild(new MenuItem({
+                          label: "Add-On Sheets",
+                          title: "Add specific speciality History Charts",
+                          popup: pAddMenu,
+                          iconClass: "dijitEditorIcon dijitEditorIconCopy"
+                      }));
+
+                      pMenuBar.addChild(new PopupMenuBarItem({
+                          title     : "Customise to look and feel",
+                          label     : "Customise",
+                          popup     : pSubMenu,
+                          iconClass : "dijitEditorIcon dijitEditorIconCopy"
+                      }));
+
+                      pMenuBar.set("style",{"border"     : "none",
+                                            "background" : "none",
+                                            "position"   : "relative",
+                                            "float"      : "right"
+                                            });
+/*
+                      var pSubMenu2 = new DropDownMenu({});
+                      pSubMenu2.addChild(new MenuItem({
+                          label: "Cut",
+                          iconClass: "dijitEditorIcon dijitEditorIconCut"
+                      }));
+                      pSubMenu2.addChild(new MenuItem({
+                          label: "Copy",
+                          iconClass: "dijitEditorIcon dijitEditorIconCopy"
+                      }));
+                      pSubMenu2.addChild(new MenuItem({
+                          label: "Paste",
+                          iconClass: "dijitEditorIcon dijitEditorIconPaste"
+                      }));
+
+                      pMenuBar.addChild(new PopupMenuBarItem({
+                          label: "Edit",
+                          popup: pSubMenu2
+                      }));
+*/
+                      domConstruct.create('div',{'id':"patientMenuBar"},'patientContextContainer','first');
+                      pMenuBar.placeAt('patientMenuBar');
+                      pMenuBar.startup();
+                  });
+                }
+        );
+
+        var tabs = new TabContainer({id: "patientContextTabs",
+                                     tabPosition:"top",
+                                     tabStrip:true,
+                                     nested: false,
+                                     style : "min-height: 550px;overflow:auto;"
                                     },
                                     "patientContextTabs"
-                                    );
+        );
         console.log("Created patientContextTabs Dijit")
         mainContainer.addChild(tabs);
         console.log("Added patientContextTabs to patientContextContainer Dijit");
@@ -561,13 +654,13 @@ ready( function(){
                                           title:"Synopsis"
                                           },
                                           "patientSummaryTab"
-                                          );
+        );
         tabs.addChild(summaryTab);
           var patientSynopsisBorderContainer = new BorderContainer({id:"patientSynopsisBorderContainer",
                                                                   //doLayout:true,
                                                                       },
                                             "patientSynopsisBorderContainer"
-                                            );
+          );
           summaryTab.addChild(patientSynopsisBorderContainer);
             var patientSynopsisTopContentPane = new ContentPane({
                                                   id:"patientSynopsisTopContentPane",
@@ -575,7 +668,7 @@ ready( function(){
                                                   splitter: true
                                                   },
                                               "patientSynopsisTopContentPane"
-                                              );
+            );
             patientSynopsisBorderContainer.addChild(patientSynopsisTopContentPane);
 
             var patientSynopsisBottomContentPane = new ContentPane({
@@ -584,7 +677,7 @@ ready( function(){
                                                             splitter: true
                                                           },
                                             "patientSynopsisBottomContentPane"
-                                            );
+            );
             patientSynopsisBorderContainer.addChild(patientSynopsisBottomContentPane);
               var patientSynopsisBottomTabContainer = new TabContainer({
                                                             id:"patientSynopsisBottomTabContainer",
@@ -593,7 +686,7 @@ ready( function(){
                                                             nested: true
                                                             },
                                               "patientSynopsisBottomTabContainer"
-                                              );
+              );
               patientSynopsisBottomContentPane.addChild(patientSynopsisBottomTabContainer);
                 var patientSynopsisBottomContentPaneAdmissions = new ContentPane({
                                                             id:"patientSynopsisBottomContentPaneAdmissions",
@@ -601,7 +694,7 @@ ready( function(){
                                                             toolTip:"Record New Admission"
                                                             },
                                               "patientSynopsisBottomContentPaneAdmissions"
-                                              );
+                );
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneAdmissions);
                   var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes",style:"width:50em;"},"patientNewAdmissionNotes");
                   patientSynopsisBottomContentPaneAdmissions.addChild(admissionNotesEditor);
@@ -611,7 +704,7 @@ ready( function(){
                                                             toolTip: "Enter New Visit"
                                                             },
                                               "patientSynopsisBottomContentPaneVisits"
-                                              );
+                );
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneVisits);
                   var visitNotesEditor = new Editor({id:"patientNewVisitNotes",style:"width:50em;"},"patientNewVisitNotes");
                   patientSynopsisBottomContentPaneVisits.addChild(visitNotesEditor);
@@ -863,6 +956,7 @@ ready( function(){
                                         "borderBottom":"solid medium #CFE5FA"
                                         }
                       );
+                      this.resize();
         }
         registry.byId('patientSynopsisBottomContentPaneContact').onHide = function(){
                       domStyle.set(tabList.domNode.children[2] ,
@@ -872,6 +966,7 @@ ready( function(){
                                         "borderBottom":"medium none"
                                         }
                       );
+                      
         }
       }
    );
