@@ -8,10 +8,10 @@
   <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
     if( this.validate() ){
       require(["dijit/registry", 
-              "dojo/request","dojo/dom","dojo/dom-form","dojo/json","dojo/_base/fx","dojo/dom-construct",
+              "dojo/request","dojo/dom","dojo/dom-form","dojo/json","dojo/_base/fx",
                "dojo/domReady!"
       ],
-      function(registry, request, dom, domForm, JSON,fx, domConstruct){
+      function(registry, request, dom, domForm, JSON,fx){
           var url = "{{action}}";
           var form_data = domForm.toObject('newDemographicsDataAddOrEditForm');
           request(url,{method:"POST", data: form_data}).
@@ -28,8 +28,8 @@
               alert("Server Error ! Please retry..")
             },
             function(evt){
-//              dom.byId('patientDemographicsFormJsonMessage').innerHTML = "Demographics Form action completed successfully";
-              fx.fadeOut( {node: domConstruct.place(dom.byId('demographics_add_or_edit_form'),"<div id='patientDemographicsFormJsonMessage'> </div>", 'second'), duration: 2000}).play();
+              dom.byId('patientDemographicsFormJsonMessage').innerHTML = "Demographics Form action completed successfully";
+              fx.fadeOut( {node: dom.byId("patientDemographicsFormJsonMessage"), duration: 2000}).play();
               return false;
             }
           );
@@ -46,7 +46,38 @@
 
 
 <table>
-  {{patient_demographics_data_form}}
+
+  {% comment %} {{patient_demographics_data_form}} {% endcomment %}
+
+    <tr> <td> <label for="id_date_of_birth"> Birth Date</label> 
+              {{patient_demographics_data_form.date_of_birth}}
+         </td>
+    </tr>
+    <tr>
+        <td > <label for="id_socioeconomics"> Socioeconomics</label> </td>
+        <td > {{patient_demographics_data_form.socioeconomics}}
+              <label for="id_education"> Education </label>
+              {{patient_demographics_data_form.education}}
+        </td>
+    </tr>
+    <tr>
+        <td > <label for="id_housing_condition"> Housing</label> </td>
+        <td>  {{patient_demographics_data_form.housing_conditions}} </td>
+    </tr>
+    <tr>
+        <td > <label for="id_religion"> Religion</label> </td>
+         <td> {{patient_demographics_data_form.religion}}
+              {{patient_demographics_data_form.religion_notes}}</td>
+    </tr>
+    <tr>
+        <td > <label for="id_race"> Race</label> </td>
+        <td>  {{patient_demographics_data_form.race}} </td>
+    </tr>
+    <tr>
+        <td > <label for="id_religion"> Languages</label> </td>
+        <td> {{patient_demographics_data_form.languages_known}} </td>
+    </tr>
+
 </table>
 
     <button data-dojo-type = "dijit/form/Button" 
@@ -98,5 +129,5 @@
   </button>
 {% endif %}
 
-<!--<div id="patientDemographicsFormJsonMessage"></div>-->
-<!--</div>-->
+<div id="patientDemographicsFormJsonMessage"></div>
+</div>

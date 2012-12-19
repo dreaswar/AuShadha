@@ -156,7 +156,7 @@ body{
 
 #contact_list,#phone_list{
   left:0em;
-  top:0.2em;
+  top:0.1em;
 }
 
 #demographics_list,
@@ -213,6 +213,13 @@ body{
   //top: -17.6em;
   //left: 57.1em;
   //overflow:hidden;
+}
+
+#demographics_add_or_edit_form,
+#demographics_add_or_edit_form form{
+  width:36em;
+  height:35em;
+  overflow:auto;
 }
 
 /*
@@ -336,7 +343,7 @@ body{
   }    
 
 
-  /* dijit Custom Classess */
+/* dijit Custom Classess */
 
 .contactIcon
    {
@@ -347,7 +354,15 @@ body{
      text-align:center;
    }
 
-   .navigationIcon
+.newItemIcon{
+     background-image    : url('{{MEDIA_URL}}/images/generic/crud/add.png');
+     background-repeat   : no-repeat;
+     height              : 16px;
+     width               : 16px;
+     text-align          : center;
+  }
+
+.navigationIcon
    {
      background-image    : url('{{MEDIA_URL}}/images/patient/view-list.svg');
      background-repeat   : no-repeat;
@@ -356,7 +371,7 @@ body{
      text-align:center;
    }
 
-   .mediaIcon
+.mediaIcon
    {
      background-image    : url('{{MEDIA_URL}}/images/generic/mimes/word_document_media.svg');
      background-repeat   : no-repeat;
@@ -372,6 +387,7 @@ body{
       padding: 2px;
       margin:0px;
   }
+
 
 
 

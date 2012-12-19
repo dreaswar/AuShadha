@@ -597,28 +597,31 @@ ready( function(){
               patientSynopsisBottomContentPane.addChild(patientSynopsisBottomTabContainer);
                 var patientSynopsisBottomContentPaneAdmissions = new ContentPane({
                                                             id:"patientSynopsisBottomContentPaneAdmissions",
-                                                            title : "Admissions",
+                                                            title : "Admission",
+                                                            toolTip:"Record New Admission"
                                                             },
                                               "patientSynopsisBottomContentPaneAdmissions"
                                               );
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneAdmissions);
-                  var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes"},"patientNewAdmissionNotes");
+                  var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes",style:"width:50em;"},"patientNewAdmissionNotes");
                   patientSynopsisBottomContentPaneAdmissions.addChild(admissionNotesEditor);
                 var patientSynopsisBottomContentPaneVisits = new ContentPane({
                                                             id:"patientSynopsisBottomContentPaneVisits",
-                                                            title: "Visits",
+                                                            title: "Visit",
+                                                            toolTip: "Enter New Visit"
                                                             },
                                               "patientSynopsisBottomContentPaneVisits"
                                               );
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneVisits);
-                  var visitNotesEditor = new Editor({id:"patientNewVisitNotes"},"patientNewVisitNotes");
+                  var visitNotesEditor = new Editor({id:"patientNewVisitNotes",style:"width:50em;"},"patientNewVisitNotes");
                   patientSynopsisBottomContentPaneVisits.addChild(visitNotesEditor);
                 var patientSynopsisBottomContentPaneContact = new ContentPane({
                                                             id:"patientSynopsisBottomContentPaneContact",
                                                             title: "Contact & Demographics",
                                                             iconClass: "contactIcon",
                                                             showTitle: false,
-                                                            tooptip: "Contact & Demographics",
+                                                            toopTip: "Contact & Demographics",
+                                                            style:"overflow:auto;background:#CFE5FA;border-top: solid 2px #CFE5FA;"
                                                             },
                                               "patientSynopsisBottomContentPaneContact"
                                               );
@@ -632,24 +635,29 @@ ready( function(){
                                       id: "contact_tab_container",
                                       tabPosition:"right-h",
                                       tabStrip:true,
-                                      style:"position:relative; top:-24em; left: 45em; height: 25em; width: 35.3em;"
+                                      style:"position:relative; top:-36em; left: 42em; height: 19em; width: 42em;"
                                     },
                                     "contact_tab_container"
                 );
                 patientSynopsisBottomContentPaneContact.addChild(contactTabs);
-                var contactListPane = new ContentPane({id:"contact_list_container",title: "Address"
+                var contactListPane = new ContentPane({id:"contact_list_container",
+                                                       title: "Address",
+                                                       style:"position:relative; top:0; left: 0; height: auto; width: 42em;"
                                                 },
                                                 "contact_list_container"
                                                 );
                 contactTabs.addChild(contactListPane);
                 var phoneListPane   = new ContentPane({id:"phone_list_container",
-                                                  title: "Phone"
+                                                  title: "Phone",
+                                                  style:"position:relative; top:0; left: 0; height: auto; width: 42em;"
                                                 },
                                                 "phone_list_container"
                                                 );
                 contactTabs.addChild(phoneListPane);
                 var guardianListPane    = new ContentPane({id:"guardian_list_container",
-                                                  title:"Guardian"
+                                                  title:"Guardian",
+                                                  style:"position:relative; top:0; left: 0; height: auto; width: 42em;"
+                                                  
                                                 },
                                                 "guardian_list_container"
                                                 );
@@ -833,21 +841,40 @@ ready( function(){
      //domStyle.set("patientContactTab",{'display':"none"});
 
 
-    require(["dijit/registry","dojo/dom-style"],
-    function(registry, domStyle){
-      var tab = registry.byId('patientSynopsisBottomTabContainer');
-      var tabList = tab.tablist;
-      console.log(tabList);
-      console.log(tabList.domNode.childNodes);
+    require(["dijit/registry","dojo/dom-style","dojo/on"],
+      function(registry, domStyle,on){
+        var tab = registry.byId('patientSynopsisBottomTabContainer');
+        var tabList = tab.tablist;
+        console.log(tabList);
+        console.log(tabList.domNode.childNodes);
 
-      domStyle.set(tabList.domNode.children[2] ,
-                  {"position": "relative",
-                  "float"   : "right"
-                  }
-      );
-
-    }
-    );
+        domStyle.set(tabList.domNode.children[2] ,
+                    {"position": "relative",
+                    "float"    : "right",
+                    "top"     : "0",
+                    "border"  : "medium none"
+                    }
+        );
+        registry.byId('patientSynopsisBottomContentPaneContact').onShow = function(){
+                      domStyle.set(tabList.domNode.children[2] ,
+                                      {"position": "relative",
+                                        "float"   : "right",
+                                        "top"    : "0.4em",
+                                        "borderBottom":"solid medium #CFE5FA"
+                                        }
+                      );
+        }
+        registry.byId('patientSynopsisBottomContentPaneContact').onHide = function(){
+                      domStyle.set(tabList.domNode.children[2] ,
+                                      {"position": "relative",
+                                        "float"   : "right",
+                                        "top"    : "0",
+                                        "borderBottom":"medium none"
+                                        }
+                      );
+        }
+      }
+   );
 
 //{% if perms.patient.add_patientcontact %}
 

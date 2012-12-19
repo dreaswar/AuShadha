@@ -46,7 +46,37 @@
 
 
 <table>
-  {{patient_demographics_data_form}}
+
+  {% comment %} {{patient_demographics_data_form}} {% endcomment %}
+
+    <tr> <td> <label for="id_date_of_birth"> Birth Date</label> </td>
+         <td> {{patient_demographics_data_form.date_of_birth}}  </td>
+    </tr>
+    <tr>
+        <td > <label for="id_socioeconomics"> Socioeconomics</label> </td>
+        <td > {{patient_demographics_data_form.socioeconomics}}
+              <label for="id_education"> Education </label>
+              {{patient_demographics_data_form.education}}
+        </td>
+    </tr>
+    <tr>
+        <td > <label for="id_housing_condition"> Housing</label> </td>
+        <td>  {{patient_demographics_data_form.housing_conditions}} </td>
+    </tr>
+    <tr>
+        <td > <label for="id_religion"> Religion</label> </td>
+         <td> {{patient_demographics_data_form.religion}}
+              {{patient_demographics_data_form.religion_notes}}</td>
+    </tr>
+    <tr>
+        <td > <label for="id_race"> Race</label> </td>
+        <td>  {{patient_demographics_data_form.race}} </td>
+    </tr>
+    <tr>
+        <td > <label for="id_religion"> Languages</label> </td>
+        <td> {{patient_demographics_data_form.languages_known}} </td>
+    </tr>
+
 </table>
 
     <button data-dojo-type = "dijit/form/Button" 

@@ -481,7 +481,7 @@ function reInitBottomPanels(){
         contactTable.destroyRecursive();
         console.log("Recreating Contact tab");
         domConstruct.create("div",{id:'contact_list'},
-                           "patientContactTab",
+                           "contact_list_container",
                            1
         );
       }
@@ -490,8 +490,8 @@ function reInitBottomPanels(){
         phoneTable.destroyRecursive();
         console.log("Recreating Phone tab");
         domConstruct.create("div",{id:'phone_list'},
-                           "patientContactTab",
-                           'last'
+                           "phone_list_container",
+                           1
         );
       }
 
@@ -499,8 +499,8 @@ function reInitBottomPanels(){
         guardianTable.destroyRecursive();
         console.log("Recreating Guardian tab");
         domConstruct.create("div",{ id:'guardian_list'},
-                           "patientDemographicsTab",
-                           'last'
+                           "guardian_list_container",
+                           1
         );
         //domStyle.set( dom.byId('guardian_list'),{"height" : "15em", "overflow":"auto", "width": "35em"});
       }
