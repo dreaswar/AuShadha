@@ -548,23 +548,23 @@ ready( function(){
 
         require(["dojo/ready", "dijit/MenuBar",
                 "dijit/PopupMenuBarItem", "dijit/Menu",
-                "dijit/MenuItem", "dijit/DropDownMenu"
+                "dijit/MenuItem", "dijit/DropDownMenu","dijit/MenuBarItem"
                 ],
-                function(ready, MenuBar, PopupMenuBarItem, Menu, MenuItem, DropDownMenu){
+                function(ready, MenuBar, PopupMenuBarItem, Menu, MenuItem, DropDownMenu,MenuBarItem){
                   ready(function(){
 
                       var pMenuBar = new MenuBar({});
 
                       var pSynopsisLayout = new DropDownMenu({});
-                      pSynopsisLayout.addChild(new MenuItem({
-                          label: "Default"
-                      }));
-                      pSynopsisLayout.addChild(new MenuItem({
-                          label: "Portlets Only"
-                      }));
-                      pSynopsisLayout.addChild(new MenuItem({
-                          label: "Tabbed Layout"
-                      }));
+                        pSynopsisLayout.addChild(new MenuItem({
+                            label: "Default"
+                        }));
+                        pSynopsisLayout.addChild(new MenuItem({
+                            label: "Portlets Only"
+                        }));
+                        pSynopsisLayout.addChild(new MenuItem({
+                            label: "Tabbed Layout"
+                        }));
 /*
                       var Personalize = new DropDownMenu({});
                       Personalize.addChild(new MenuItem({
@@ -573,45 +573,86 @@ ready( function(){
                       }));
 */
                       var pAddMenu = new DropDownMenu({});
-                      pAddMenu.addChild(new MenuItem({
-                          label: "Obs.History",
-                          iconClass: "addItemIcon"
-                      }));
-                      pAddMenu.addChild(new MenuItem({
-                          label: "Gyn.History"
-                      }));
-                      pAddMenu.addChild(new MenuItem({
-                          label: "Paed & Neonatal History"
+                        pAddMenu.addChild(new MenuItem({
+                            label: "Neonatal History"
+                        }));
+                        pAddMenu.addChild(new MenuItem({
+                            label: "Obs.History"
+                        }));
+                        pAddMenu.addChild(new MenuItem({
+                            label: "Gyn.History"
+                        }));
+                        pAddMenu.addChild(new MenuItem({
+                            label: "Medical Preventives"
+                        }));
+                        pAddMenu.addChild(new MenuItem({
+                            label: "Surgical Preventives"
+                        }));
+
+                      //var pSubMenu = new DropDownMenu({});
+
+                      pMenuBar.addChild(new PopupMenuBarItem({
+                          label     : "Customise",
+                          title     : "Personalize Layout of Application",
+                          popup     : pSynopsisLayout,
+                          iconClass : "navigationIcon"
                       }));
 
-                      var pSubMenu = new DropDownMenu({});
-
-                      pSubMenu.addChild(new MenuItem({
-                          label: "Layout",
-                          title : "Personalize Layout of Application",
-                          popup: pSynopsisLayout,
-                          iconClass: "navigationIcon"
-                      }));
-
-                      pSubMenu.addChild(new MenuItem({
+                      pMenuBar.addChild(new PopupMenuBarItem({
                           label: "Add-On Sheets",
-                          title: "Add specific speciality History Charts",
+                          title: "Add specific Speciality History and Preventive Info.",
                           popup: pAddMenu,
                           iconClass: "dijitEditorIcon dijitEditorIconCopy"
                       }));
-
+/*
                       pMenuBar.addChild(new PopupMenuBarItem({
                           title     : "Customise to look and feel",
                           label     : "Customise",
                           popup     : pSubMenu,
-                          iconClass : "dijitEditorIcon dijitEditorIconCopy"
+                      }));
+*/
+                      pMenuBar.addChild(new MenuBarItem({
+                          title     : "Contacts, Demographics and Insurance Info.",
+                          label     : "Demographics",
+                          onClick   :  function(){
+                                        require(["dojo/dom-construct",
+                                                 "dojo/dom-style",
+                                                 "dojox/layout/ContentPane",
+                                                 "dijit/registry","dojo/dom"],
+                                          function(domConstruct,domStyle,ContentPane,registry,dom){
+                                            domConstruct.create('div',
+                                                                  {id:"contactAndDemographicsTab"},
+                                                                  'patientPreventivesTabs',
+                                                                  "after"
+                                            );
+                                            //var htmlToAdd = dom.byId("patientSynopsisBottomContentPaneContact").innerHTML;
+                                            //dom.byId('contactAndDemographicsTab').innerHTML = htmlToAdd;
+                                            if(!registry.byId('contactAndDemographicsTab') ){
+                                                var demographicsTab = new ContentPane({ title     : "Demographics",
+                                                                                        closable  : true,
+                                                                                        iconClass : "contactIcon",
+                                                                                        content   : ""
+                                                                                      },
+                                                                                      "contactAndDemographicsTab"
+                                                );
+                                                registry.byId('patientContextTabs').addChild(demographicsTab);
+                                                console.log(CHOSEN_PATIENT.addData)
+                                            }
+                                            registry.byId("patientContextTabs").selectChild("contactAndDemographicsTab");
+
+                                          }
+                                        )
+                          }
                       }));
 
-                      pMenuBar.set("style",{"border"     : "none",
-                                            "background" : "none",
+                      pMenuBar.set("style",{
+//                                            "border"     : "none",
+//                                            "background" : "none",
                                             "position"   : "relative",
-                                            "float"      : "right"
+                                            "float"      : "right",
+//                                            "width"      : "60em"
                                             });
+
 /*
                       var pSubMenu2 = new DropDownMenu({});
                       pSubMenu2.addChild(new MenuItem({

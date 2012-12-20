@@ -86,7 +86,7 @@
         <p class="suggestion_text"> Register a New Patient to the Clinic..</p>
     </div>
     <div  data-dojo-type="dijit/Tooltip"
-          data-dojo-props="connectId:'searchPatientMenuBarTd',position:['l']"
+          data-dojo-props="connectId:'searchPatientMenuBarTd',position:['below']"
           style="display:none;"
     >
         <div class="suggestion_text">

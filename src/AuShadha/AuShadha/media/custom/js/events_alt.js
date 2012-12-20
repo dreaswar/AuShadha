@@ -6,6 +6,7 @@
        for handling the click event of the Filter button
     */
 
+
     require(["dojox/timing",
             "dojo/dom",
             "dojo/dom-style",
@@ -53,6 +54,7 @@
         e.store.get(e.get('value')).then(
           function(item /*returned item*/){
             console.log(item)
+            CHOSEN_PATIENT = item;
             var addData = item.addData;
 
             domStyle.set('selected_patient_info',{"display":"","padding":"0px","margin":"0px"});
