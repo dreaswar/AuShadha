@@ -880,7 +880,9 @@ def render_patient_list(request):
 
   def create_patient_list_json(all_patients):
     for patient in all_patients:
-      data_to_append = {}
+      data_to_append = {'addData':{}}
+      addData = data_to_append['addData']
+
       data_to_append['id']                   = patient.id
       data_to_append['patient_hospital_id']  = patient.patient_hospital_id
       data_to_append['full_name']           = patient.full_name
@@ -890,23 +892,98 @@ def render_patient_list(request):
       data_to_append['age']                  = patient.age
       data_to_append['sex']                  = patient.sex
 
-      data_to_append['home']         = patient.get_patient_main_window_url()
-      data_to_append['edit']         = patient.get_patient_detail_edit_url()
-      data_to_append['del']          = patient.get_patient_detail_del_url()
+      #data_to_append['home']         = patient.get_patient_main_window_url()
+      #data_to_append['edit']         = patient.get_patient_detail_edit_url()
+      #data_to_append['del']          = patient.get_patient_detail_del_url()
 
-      data_to_append['contactadd']   = patient.get_patient_contact_add_url()
-      data_to_append['contactlist']  = patient.get_patient_contact_list_url()
-      data_to_append['phoneadd']     = patient.get_patient_phone_add_url()
-      data_to_append['phonelist']    = patient.get_patient_phone_list_url()
-      data_to_append['guardianadd']  = patient.get_patient_guardian_add_url()
-      data_to_append['guardianlist'] = patient.get_patient_guardian_list_url()
-      data_to_append['emailadd']     = patient.get_patient_email_and_fax_add_url()
-      data_to_append['emaillist']    = patient.get_patient_email_and_fax_list_url()
+      #data_to_append['contactadd']   = patient.get_patient_contact_add_url()
+      #data_to_append['contactlist']  = patient.get_patient_contact_list_url()
+      #data_to_append['phoneadd']     = patient.get_patient_phone_add_url()
+      #data_to_append['phonelist']    = patient.get_patient_phone_list_url()
+      #data_to_append['guardianadd']  = patient.get_patient_guardian_add_url()
+      #data_to_append['guardianlist'] = patient.get_patient_guardian_list_url()
+      #data_to_append['emailadd']     = patient.get_patient_email_and_fax_add_url()
+      #data_to_append['emaillist']    = patient.get_patient_email_and_fax_list_url()
 
-      data_to_append['admissionadd']  = patient.get_patient_admission_add_url()
-      data_to_append['visitadd']      = patient.get_patient_visit_add_url()
-      data_to_append['admissionlist'] = patient.get_patient_admission_list_url()
-      data_to_append['visitlist']     = patient.get_patient_visit_list_url()
+      #data_to_append['admissionadd']  = patient.get_patient_admission_add_url()
+      #data_to_append['visitadd']      = patient.get_patient_visit_add_url()
+      #data_to_append['admissionlist'] = patient.get_patient_admission_list_url()
+      #data_to_append['visitlist']     = patient.get_patient_visit_list_url()
+
+      patient_id = unicode(patient.id)
+      addData['id']                   = patient.id
+      addData['patient_hospital_id']  = patient.patient_hospital_id
+
+      addData['full_name']            = patient.full_name
+      addData['first_name']           = patient.first_name
+      addData['middle_name']          = patient.middle_name
+      addData['last_name']            = patient.last_name
+      addData['age']                  = patient.age
+      addData['sex']                  = patient.sex
+
+      addData['home']         = patient.get_patient_main_window_url()
+      addData['edit']         = patient.get_patient_detail_edit_url()
+      addData['del']          = patient.get_patient_detail_del_url()
+
+      addData['patientsummary']            = APP_ROOT_URL+"pat/summary/?patient_id="+ patient_id
+      addData['sidebarcontacttab']  = APP_ROOT_URL+"pat/sidebar_contact_tab/?patient_id="+ patient_id
+
+      addData['contactadd']   = patient.get_patient_contact_add_url()
+      addData['contactlist']  = patient.get_patient_contact_list_url()
+      addData['contactjson']  = APP_ROOT_URL+"pat/contact/json/?patient_id="+ patient_id
+
+      addData['phoneadd']     = patient.get_patient_phone_add_url()
+      addData['phonelist']    = patient.get_patient_phone_list_url()
+      addData['phonejson']  = APP_ROOT_URL+"pat/phone/json/?patient_id="+ patient_id
+
+      addData['guardianadd']  = patient.get_patient_guardian_add_url()
+      addData['guardianlist'] = patient.get_patient_guardian_list_url()
+      addData['guardianjson']  = APP_ROOT_URL+"pat/guardian/json/?patient_id="+ patient_id
+
+      addData['emailadd']      = patient.get_patient_email_and_fax_add_url()
+      addData['emaillist']     = patient.get_patient_email_and_fax_list_url()
+      addData['emailjson']     = APP_ROOT_URL+"pat/email/json/?patient_id="+ patient_id
+
+      addData['admissionadd']    = patient.get_patient_admission_add_url()
+      addData['admissionlist']   = patient.get_patient_admission_list_url()
+    #        addData['admissionjson']  = APP_ROOT_URL+"pat/admission_json/"+ patient_id
+
+      addData['visitadd']      = patient.get_patient_visit_add_url()
+      addData['visitlist']     = patient.get_patient_visit_list_url()
+    #        addData['visitjson']    = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
+
+      addData['demographicsadd']   = patient.get_patient_demographics_data_add_url()
+      addData['demographicslist']  = patient.get_patient_demographics_data_list_url()
+
+      addData['familyhistorylist']  = patient.get_patient_family_history_add_url()
+      addData['familyhistoryadd']   = patient.get_patient_family_history_list_url()
+      addData['familyhistoryjson']  = APP_ROOT_URL+"pat/family_history/json/?patient_id="+patient_id
+
+      addData['medicalhistorylist']  = patient.get_patient_medical_history_add_url()
+      addData['medicalhistoryadd']   = patient.get_patient_medical_history_list_url()
+      addData['medicalhistoryjson']  = APP_ROOT_URL+"pat/medical_history/json/?patient_id="+patient_id
+
+      addData['surgicalhistorylist']  = patient.get_patient_surgical_history_add_url()
+      addData['surgicalhistoryadd']   = patient.get_patient_surgical_history_list_url()
+      addData['surgicalhistoryjson']  = APP_ROOT_URL+"pat/surgical_history/json/?patient_id="+patient_id
+
+      addData['immunisationadd']   = patient.get_patient_immunisation_add_url()
+      addData['immunisationlist']  = patient.get_patient_immunisation_list_url()
+      addData['immunisationjson']  = APP_ROOT_URL+"pat/immunisation/json/?patient_id="+patient_id
+
+      addData['medicationlistadd']   = patient.get_patient_medication_list_add_url()
+      addData['medicationlistlist']  = patient.get_patient_medication_list_list_url()
+      addData['medicationlistjson']  = APP_ROOT_URL+"pat/medication_list/json/?patient_id="+patient_id
+
+      addData['allergiesadd']   = patient.get_patient_allergies_add_url()
+      addData['allergieslist']  = patient.get_patient_allergies_list_url()
+      addData['allergiesjson']  = APP_ROOT_URL+"pat/allergies/json/?patient_id="+ patient_id
+
+      addData['socialhistoryadd']  = patient.get_patient_social_history_add_url()
+      addData['socialhistorylist'] = patient.get_patient_social_history_list_url()
+
+      addData['obstetrichistorydetailadd']  = patient.get_patient_obstetric_history_detail_add_url()
+      addData['obstetrichistorydetaillist'] = patient.get_patient_obstetric_history_detail_list_url()
 
       data.append(data_to_append)
     json = simplejson.dumps(data)

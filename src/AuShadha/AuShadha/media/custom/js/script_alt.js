@@ -199,13 +199,18 @@
                                     item   = this.getItem(idx);
 
                                 console.log(item);
+                                //CHOSEN_PATIENT = item.addData;
 
-                                var patid  = this.store.getValue(item, "id");
+                                var addData  = item.addData;
+                                renderGridsFormsAndTrees(addData);
+                                
+                                var patid      = this.store.getValue(item, "id");
                                 var full_name  = this.store.getValue(item, "full_name");
-                                var hosp_id  = this.store.getValue(item, "patient_hospital_id");
-                                var sex  = this.store.getValue(item, "sex");
-                                var age  = this.store.getValue(item, "age");
+                                var hosp_id    = this.store.getValue(item, "patient_hospital_id");
+                                var sex        = this.store.getValue(item, "sex");
+                                var age        = this.store.getValue(item, "age");
                                 var patient_ticker_content = full_name + "&nbsp;" + sex + "/" + age + "&nbsp" +hosp_id;
+
                                 /*
                                    Clear the current Grid selection
                                    Set the new selected Row
@@ -275,6 +280,7 @@
                                   /*
                                     Set the patient information bar
                                   */
+/*
                                     if (dom.byId("selected_patient_info")){
                                       domStyle.set( dom.byId('selected_patient_info'),{'display':"","padding":"0px"});
                                       registry.byId('selected_patient_info').set('content', patient_ticker_content);
@@ -323,6 +329,7 @@
                                  var mainTabContainer = registry.byId('centerTopTabPane');
                                  var patientListTab   = registry.byId('patientHomeContentPane');
                                  mainTabContainer.selectChild(patientListTab);
+*/
 /*
                     function cleanUpAdmissionPane(){
                       var center_top_pane = dijit.byId('centerTopTabPane');
