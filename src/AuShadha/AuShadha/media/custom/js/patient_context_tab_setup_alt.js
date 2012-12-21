@@ -1,4 +1,5 @@
 function patientContextTabSetup(){
+//	alert("Running tab setup...");
 require(
   ["dijit/registry",
    "dojo/parser",
@@ -17,7 +18,7 @@ require(
            TabContainer, ContentPane, Editor,Button,
            dom, domConstruct, domStyle, ready,array
   ){
-ready( function(){
+//ready( function(){
       if (registry.byId("patientContextContainer")){
         console.log("Context Container already set up.. ")
         return;
@@ -27,6 +28,7 @@ ready( function(){
       console.log("No Content Panes set up so far.. setting the same..");
 
       domConstruct.destroy('frontPageSearchPatientAuShadhaLogo');
+			console.log("Destroyed the logo....first..")
       domStyle.set(dom.byId('searchPatientContainerDiv'),{top           : "0px",
                                                           left          : "0px",
                                                           height        : "50px",
@@ -59,7 +61,9 @@ ready( function(){
 
       registry.byId('addPatientButton').set("style", {"fontSize": "12px"} );
       registry.byId('filteringSelectPatSearch').set("style",{width: "400px", left: "5%", "fontSize":"12px"} );
-
+			
+			console.log("Creating the necessary DOMS after setting some styles...")
+			
       domConstruct.create('div',
                           {id: "patientSidebarTabContainer"},
                           "patientTabsBorderContainer",
@@ -1476,7 +1480,7 @@ ready( function(){
     }
 
    });
-  });
+  //});
 
 }
 

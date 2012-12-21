@@ -54,93 +54,11 @@
         e.store.get(e.get('value')).then(
           function(item /*returned item*/){
             console.log(item)
-            //CHOSEN_PATIENT = item.addData;
             var addData = item.addData;
             renderGridsFormsAndTrees(addData);
-/*
-            domStyle.set('selected_patient_info',{"display":"","padding":"0px","margin":"0px"});
-            var selectedPatientContent = addData.full_name + "-" +
-                                         addData.age +"-" + addData.sex +
-                                         "(" +addData.patient_hospital_id +")";
-            registry.byId('selected_patient_info').set('content', selectedPatientContent);
-            var patientInfo = dom.byId('selected_patient_info');
-            domConstruct.
-              create("div",{innerHTML: addData.id,
-                            id       : "selected_patient_id_info",
-                            style    : { display:"none" }
-                           },
-                      patientInfo
-              );
-            console.log( dom.byId('selected_patient_id_info').innerHTML )
-
-            var patientSummaryUrl           = addData.patientsummary;
-            var patientSidebarDivContactUrl = addData.sidebarcontacttab;
-
-            var contactUrl        = addData.contactjson;
-//            var contactAddUrl        = addData.contactaddurl;
-            var phoneUrl          = addData.phonejson;
-            var guardianUrl       = addData.guardianjson;
-            var emailUrl          = addData.emailjson;
-
-            var immunisationUrl   = addData.immunisationjson;
-            var allergiesUrl      = addData.allergiesjson;
-            var medicationListUrl = addData.medicationlistjson;
-
-            var familyHistoryUrl    = addData.familyhistoryjson;
-            var medicalHistoryUrl   = addData.medicalhistoryjson;
-            var surgicalHistoryUrl  = addData.surgicalhistoryjson;
-
-            var demographicsUrl   = addData.demographicsadd;
-            var socialHistoryUrl  = addData.socialhistoryadd;
-
-//            var admissionUrl      = addData.admissionadd;
-//            var visitUrl        = addData.visitadd;
-
-            console.log("Destroying the Grids and Forms...");
-              reInitBottomPanels();
-            console.log("Finished Destroying the existing Widgets..");
-
-            patientContextTabSetup();
-
-            console.log("Setting up the Forms...");
-              registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
-              registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
-              registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
-            console.log("Finished setting up the Forms...");
-
-            console.log("Setting up the Grids Now...");
-              //setupPatientSummary('patientSummaryTab',patientSummaryUrl);
-              //setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
-
-              //setupContactGridForPortlet(contactUrl);
-              setupContactGrid(contactUrl);
-              setupPhoneGrid(phoneUrl, 'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
-              //setupPhoneGrid(phoneUrl,'phone_grid_alt');
-
-              setupFamilyHistoryGrid(familyHistoryUrl);
-
-              setupGuardianGrid(guardianUrl);
-
-              setupImmunisationGrid(immunisationUrl);
-
-              setupMedicationListGrid(medicationListUrl);
-              setupAllergiesGrid(allergiesUrl);
-
-              setupMedicalHistoryGrid(medicalHistoryUrl);
-              setupSurgicalHistoryGrid(surgicalHistoryUrl);
-
-  //            setupAdmissionGrid(admissionUrl);
-  //            setupVisitGrid(visitUrl);
-           console.log("Finished setting up the grids....");
-            if(!registry.byId("patientTreeDiv")){
-              //buildPatientTree();
-            }
-           console.log("Finished Rendering the tree...")
-        */
          }
         );
       });
-//      patSearchForJsonRestStore.query("?search_for="+search_obj.search_field +"&search_field="+search_obj.search_field)
     }
 
     function patSearchForFilteringSelectOnChange(newVal){
@@ -168,91 +86,94 @@
     }
 
 
-function renderGridsFormsAndTrees(addData/*Data Object Containing all URLS*/){
-  require(["dijit/registry","dojo/dom","dojo/dom-style","dojo/dom-construct"],
+var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URLS*/){
+  require(["dijit/registry",
+					 "dojo/dom",
+					 "dojo/dom-style",
+					 "dojo/dom-construct"
+	],
   function(registry, dom, domStyle, domConstruct){
+				CHOSEN_PATIENT = addData;
+				domStyle.set('selected_patient_info',{"display":"",
+																							 "padding":"0px",
+																							 "margin":"0px"
+				});
+				var selectedPatientContent = addData.full_name + "-" +
+																			addData.age +"-" + addData.sex +
+																			"(" +addData.patient_hospital_id +")";
+				registry.byId('selected_patient_info').set('content', selectedPatientContent);
+				var patientInfo = dom.byId('selected_patient_info');
+				domConstruct.create("div",{innerHTML: addData.id,
+																		id       : "selected_patient_id_info",
+																		style    : { display:"none" }
+																	 },
+														 patientInfo
+				);
+				console.log( dom.byId('selected_patient_id_info').innerHTML )
 
-        CHOSEN_PATIENT = addData;
-        var selectedPatientContent = addData.full_name + "-" +
-                                     addData.age +"-" + addData.sex +
-                                    "(" +addData.patient_hospital_id +")";
+				var patientSummaryUrl           = addData.patientsummary;
+				var patientSidebarDivContactUrl = addData.sidebarcontacttab;
 
-        domStyle.set('selected_patient_info',{"display":"","padding":"0px","margin":"0px"});
-        registry.byId('selected_patient_info').set('content', selectedPatientContent);
-        var patientInfo = dom.byId('selected_patient_info');
-        domConstruct.create("div",
-                            {innerHTML : addData.id,
-                              id       : "selected_patient_id_info",
-                              style    : { display:"none" }
-                            },
-                        patientInfo
-        );
-
-        console.log( dom.byId('selected_patient_id_info').innerHTML )
-
-        var patientSummaryUrl           = addData.patientsummary;
-        var patientSidebarDivContactUrl = addData.sidebarcontacttab;
-
-        var contactUrl        = addData.contactjson;
+				var contactUrl        = addData.contactjson;
 //            var contactAddUrl        = addData.contactaddurl;
-        var phoneUrl          = addData.phonejson;
-        var guardianUrl       = addData.guardianjson;
-        var emailUrl          = addData.emailjson;
+				var phoneUrl          = addData.phonejson;
+				var guardianUrl       = addData.guardianjson;
+				var emailUrl          = addData.emailjson;
 
-        var immunisationUrl   = addData.immunisationjson;
-        var allergiesUrl      = addData.allergiesjson;
-        var medicationListUrl = addData.medicationlistjson;
+				var immunisationUrl   = addData.immunisationjson;
+				var allergiesUrl      = addData.allergiesjson;
+				var medicationListUrl = addData.medicationlistjson;
 
-        var familyHistoryUrl    = addData.familyhistoryjson;
-        var medicalHistoryUrl   = addData.medicalhistoryjson;
-        var surgicalHistoryUrl  = addData.surgicalhistoryjson;
+				var familyHistoryUrl    = addData.familyhistoryjson;
+				var medicalHistoryUrl   = addData.medicalhistoryjson;
+				var surgicalHistoryUrl  = addData.surgicalhistoryjson;
 
-        var demographicsUrl   = addData.demographicsadd;
-        var socialHistoryUrl  = addData.socialhistoryadd;
+				var demographicsUrl   = addData.demographicsadd;
+				var socialHistoryUrl  = addData.socialhistoryadd;
 
 //            var admissionUrl      = addData.admissionadd;
 //            var visitUrl        = addData.visitadd;
 
-        console.log("Destroying the Grids and Forms...");
-          reInitBottomPanels();
-        console.log("Finished Destroying the existing Widgets..");
+				console.log("Destroying the Grids and Forms...");
+					reInitBottomPanels();
+				console.log("Finished Destroying the existing Widgets..");
 
-        patientContextTabSetup();
+				patientContextTabSetup();
 
-        console.log("Setting up the Forms...");
-          registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
-          registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
-          registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
-        console.log("Finished setting up the Forms...");
+				console.log("Setting up the Forms...");
+					registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
+					registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
+					registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
+				console.log("Finished setting up the Forms...");
 
-        console.log("Setting up the Grids Now...");
-          //setupPatientSummary('patientSummaryTab',patientSummaryUrl);
-          //setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
+				console.log("Setting up the Grids Now...");
+					//setupPatientSummary('patientSummaryTab',patientSummaryUrl);
+					//setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
 
-          //setupContactGridForPortlet(contactUrl);
-          setupContactGrid(contactUrl);
-          setupPhoneGrid(phoneUrl, 'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
-          //setupPhoneGrid(phoneUrl,'phone_grid_alt');
+					//setupContactGridForPortlet(contactUrl);
+					setupContactGrid(contactUrl);
+					setupPhoneGrid(phoneUrl, 'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
+					//setupPhoneGrid(phoneUrl,'phone_grid_alt');
 
-          setupFamilyHistoryGrid(familyHistoryUrl);
+					setupFamilyHistoryGrid(familyHistoryUrl);
 
-          setupGuardianGrid(guardianUrl);
+					setupGuardianGrid(guardianUrl);
 
-          setupImmunisationGrid(immunisationUrl);
+					setupImmunisationGrid(immunisationUrl);
 
-          setupMedicationListGrid(medicationListUrl);
-          setupAllergiesGrid(allergiesUrl);
+					setupMedicationListGrid(medicationListUrl);
+					setupAllergiesGrid(allergiesUrl);
 
-          setupMedicalHistoryGrid(medicalHistoryUrl);
-          setupSurgicalHistoryGrid(surgicalHistoryUrl);
+					setupMedicalHistoryGrid(medicalHistoryUrl);
+					setupSurgicalHistoryGrid(surgicalHistoryUrl);
 
 //            setupAdmissionGrid(admissionUrl);
 //            setupVisitGrid(visitUrl);
-      console.log("Finished setting up the grids....");
-        if(!registry.byId("patientTreeDiv")){
-          //buildPatientTree();
-        }
-      console.log("Finished Rendering the tree...")
+				console.log("Finished setting up the grids....");
+				if(!registry.byId("patientTreeDiv")){
+					//buildPatientTree();
+				}
+				console.log("Finished Rendering the tree...")
 
   });
 

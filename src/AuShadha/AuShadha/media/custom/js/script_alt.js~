@@ -199,135 +199,20 @@
                                     item   = this.getItem(idx);
 
                                 console.log(item);
-                                //CHOSEN_PATIENT = item.addData;
-
+                                CHOSEN_PATIENT = item.addData;
                                 var addData  = item.addData;
-                                renderGridsFormsAndTrees(addData);
-                                var patid      = this.store.getValue(item, "id");
-                                var full_name  = this.store.getValue(item, "full_name");
-                                var hosp_id    = this.store.getValue(item, "patient_hospital_id");
-                                var sex        = this.store.getValue(item, "sex");
-                                var age        = this.store.getValue(item, "age");
-                                var patient_ticker_content = full_name + "&nbsp;" + sex + "/" + age + "&nbsp" +hosp_id;
-                                /*
+                                renderGridsFormsAndTrees(e, addData);
+																/*
                                    Clear the current Grid selection
                                    Set the new selected Row
                                 */
                                 grid.selection.clear();
                                 grid.selection.setSelected(item, true);
 
-                              /*
-                                 Construct the URLs to retreive the info
-                                 from the Patient ID generated.
-                              */
-
-
-
-                                  var contactUrl  = "{%url contact_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-                                      phoneUrl    = "{%url phone_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-                                      guardianUrl = "{%url guardian_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-
-                                      demographicsUrl = "/AuShadha/pat/demographics/add/" + patid +"/",
-                                      socialHistoryUrl = "/AuShadha/pat/social_history/add/" + patid +"/",
-
-                                      obstetricHistoryUrl = "/AuShadha/pat/obstetric_history_detail/add/" + patid +"/",
-
-                                      allergiesUrl = "{%url allergies_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-
-                                      familyHistoryUrl = "{%url family_history_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-
-                                      medicalHistoryUrl = "{%url medical_history_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-                                      surgicalHistoryUrl = "{%url surgical_history_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-
-                                      immunisationUrl = "{%url immunisation_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-
-                                      medicationListUrl = "{%url medication_list_json %}" +
-                                                    "?patient_id="
-                                                    + patid;
-																			 patientSidebarDivContactUrl = "/AuShadha/pat/sidebar_contact_tab/?patient_id="+patid;
-            // {% comment %}
-            /*
-                                     var admissionUrl = "{%url admission_json %}" +
-                                                     "?patient_id="
-                                                     + patid;
-            */
-
-            /*
-                                     var visitUrl     = "{%url visit_json %}" +
-                                                       "?patient_id="
-                                                       + patid;
-            */
-            // {% endcomment %}
-
-                                  /*
-                                    Set the patient information bar
-                                  */
-/*
-                                    if (dom.byId("selected_patient_info")){
-                                      domStyle.set( dom.byId('selected_patient_info'),{'display':"","padding":"0px"});
-                                      registry.byId('selected_patient_info').set('content', patient_ticker_content);
-                                      var patientInfo = dom.byId('selected_patient_info');
-                                      domConstruct.
-                                        create("div",{innerHTML: patid,
-                                                      id       :"selected_patient_id_info",
-                                                      style    :{display:"none"}
-                                                     },
-                                                patientInfo
-                                        );
-                                      console.log(dom.byId('selected_patient_id_info').innerHTML )
-                                    }
-
-                                  console.log("Destroying the Grids and Forms...");
-                                    reInitBottomPanels();
-                                  console.log("Finished Destroying the existing Widgets..");
-
-                                  patientContextTabSetup();
-
-                                  console.log("Setting up the Forms...");
-                                    registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
-                                    registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
-                                    registry.byId("obstetric_history_detail").set('href', obstetricHistoryUrl);
-                                  console.log("Finished setting up the Forms...");
-
-                                  console.log("Setting up the Grids Now...");
-																		//setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
-                                    setupMedicationListGrid(medicationListUrl);  
-                                    setupAllergiesGrid(allergiesUrl);	
-																		setupContactGrid(contactUrl);
-                                    //setupContactGridForPortlet(contactUrl);
-                                    setupPhoneGrid(phoneUrl, 'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
-                                    //setupPhoneGrid(phoneUrl,'phone_grid_alt');
-
-                                    setupGuardianGrid(guardianUrl);
-                                    setupFamilyHistoryGrid(familyHistoryUrl);
-                                    setupImmunisationGrid(immunisationUrl);
-
-																			setupMedicalHistoryGrid(medicalHistoryUrl);
-                                    setupSurgicalHistoryGrid(surgicalHistoryUrl);
-
-                        //            setupAdmissionGrid(admissionUrl);
-                        //            setupVisitGrid(visitUrl);
-                                 console.log("Finished setting up the grids....");
-                                 var mainTabContainer = registry.byId('centerTopTabPane');
+																	var mainTabContainer = registry.byId('centerTopTabPane');
                                  var patientListTab   = registry.byId('patientHomeContentPane');
                                  mainTabContainer.selectChild(patientListTab);
-*/
+
 /*
                     function cleanUpAdmissionPane(){
                       var center_top_pane = dijit.byId('centerTopTabPane');

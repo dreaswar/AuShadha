@@ -26,10 +26,11 @@
 	    src		=	"{{STATIC_URL}}custom/js/patient_list.js">
     </script>
 
-{% comment %}
+
     <script type	=	"text/javascript"
-	    src		=	"{{STATIC_URL}}custom/js/events.js">
+	    src		=	"{{STATIC_URL}}custom/js/events_alt.js">
     </script>
-{% endcomment %}
+
+
 
 <!-- end Custom Scripts     -->

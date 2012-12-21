@@ -32,7 +32,7 @@
     /*
        Global Variables
     */
-
+    var CHOSEN_PATIENT;
     var ADD_MORE_PATIENTS,
         ADD_MORE_PATIENT_CONTACT,
         ADD_MORE_PATIENT_PHONE   ,
@@ -65,7 +65,7 @@
    {% include 'patient_context_tab_setup_alt.js' %}
   </script>
 
-
+{% comment %}
   <script type="text/javascript">
     /*
        Contains the Logic of eventing in Patient Search Form Partly.
@@ -77,6 +77,7 @@
 
    {% include 'events_alt.js' %}
   </script>
+{% endcomment %}
 
  <script type="text/javascript">
     /*
