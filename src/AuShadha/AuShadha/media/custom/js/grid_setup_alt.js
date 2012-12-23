@@ -462,8 +462,8 @@ function reInitBottomPanels(){
       var contactTable        = registry.byId("contact_list"),
           phoneTable          = registry.byId("phone_list"),
           guardianTable       = registry.byId("guardian_list"),
-//        demographicsTable   = registry.byId("demographics_list"),
-//        demographicsForm    = registry.byId("newDemographicsDataAddOrEditForm"),
+					demographicsTab     = registry.byId("contactAndDemographicsTab"),
+					obstetricHistoryDetailTab     = registry.byId("patientObstetricPreventivesTab"),
           allergyTable        = registry.byId("allergy_list"),
           immunizationTable   = registry.byId("immunisation_list"),
           familyHistoryTable  = registry.byId("family_history_list"),
@@ -477,7 +477,33 @@ function reInitBottomPanels(){
           visitTable          = registry.byId("visit_list"),
           patientMediaTable   = registry.byId("patient_media_list");
 
-      if(contactTable){
+      if(demographicsTab){
+				registry.byId("patientContextTabs").
+					selectChild(
+						registry.byId('patientSummaryTab')
+					);
+				registry.byId('patientContextTabs').
+					removeChild( 
+							registry.byId('contactAndDemographicsTab') 
+					);
+				registry.byId("contactAndDemographicsTab").
+					destroyRecursive();
+      }
+
+      if(obstetricHistoryDetailTab){
+				registry.byId("patientContextTabs").
+					selectChild(
+						registry.byId('patientSummaryTab')
+					);
+				registry.byId('patientContextTabs').
+					removeChild( 
+							registry.byId('patientObstetricPreventivesTab') 
+					);
+				registry.byId("patientObstetricPreventivesTab").
+					destroyRecursive();
+      }
+/*
+			if(contactTable){
         contactTable.destroyRecursive();
         console.log("Recreating Contact tab");
         domConstruct.create("div",{id:'contact_list'},
@@ -504,7 +530,7 @@ function reInitBottomPanels(){
         );
         //domStyle.set( dom.byId('guardian_list'),{"height" : "15em", "overflow":"auto", "width": "35em"});
       }
-
+*/
       if(medicationListTable){
         medicationListTable.destroyRecursive();
         console.log("Recreating Medication List tab");

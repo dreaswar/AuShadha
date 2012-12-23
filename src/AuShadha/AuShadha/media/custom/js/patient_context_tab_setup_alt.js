@@ -108,12 +108,7 @@ require(
                                   {id: "allergy_list"},
                                   "patientSidebarDiv_allergyGridContainer",
                                   "first"
-                  );/*
-            domConstruct.create('div',
-                                {id: "patientSidebarDiv_contact"},
-                                "patientTreeContainer",
-                                "after"
-            );*/
+                  );
             domConstruct.create('div',
                                 {id: "patientSidebarDiv_media"},
                                 "patientTreeContainer",
@@ -170,11 +165,7 @@ require(
                                                                     "position"       : "relative",
                                                                     "top"            : "0"        ,
                                                                     "fontFamily"     : "dejavu sans"
-                });/*
-            domStyle.set( dom.byId('patientSidebarDiv_contact'),{'minWidth'  : '275px',
-                                                                 'minHeight' : "400px",
-                                                                 'overflow'  : "auto"
-            });*/
+                });
             domStyle.set( dom.byId('patientSidebarDiv_media'),{'minWidth' : '275px',
                                                                'minHeight': "400px",
                                                                'overflow' : "auto"
@@ -199,13 +190,13 @@ require(
                           "patientSummaryTab",
                           "first"
         );
-        //domStyle.set( dom.byId('patientSynopsisBorderContainer'),{'minWidth':'100em','height':'100em','overflow':"auto"});
+        
           domConstruct.create('div',
                               {id: "patientSynopsisTopContentPane"},
                             "patientSynopsisBorderContainer",
                             "first"
           );
-          //domStyle.set( dom.byId('patientSynopsisTopContentPane'),{'width':'70em','height':'auto','overflow':"auto"});
+       
             domConstruct.create('div',
                                 {id: "medication_list"},
                                 "patientSynopsisTopContentPane",
@@ -217,7 +208,7 @@ require(
                             "patientSynopsisTopContentPane",
                             "after"
           );
-//          domStyle.set( dom.byId('patientSynopsisBottomContentPane'),{'minWidth':'91em','minHeight':"75em",'overflow':"auto"});
+
             domConstruct.create('div',
                                 {id: "patientSynopsisBottomTabContainer"},
                               "patientSynopsisBottomContentPane",
@@ -243,72 +234,6 @@ require(
                                 "patientSynopsisBottomContentPaneVisits",
                                 "first"
                 );
-              domConstruct.create('div',
-                              {id: "patientSynopsisBottomContentPaneContact"},
-                            "patientSynopsisBottomContentPaneVisits",
-                            "after"
-              );
-              domConstruct.create('div',
-                                  {id: "demographics_add_or_edit_form"},
-                                  "patientSynopsisBottomContentPaneContact",
-                                  "first"
-                          );
-
-              domConstruct.create("div",
-                                  {"id":"contact_tab_container"},
-                                'demographics_add_or_edit_form',
-                                "after"
-              );
-
-              domConstruct.create("div",
-                                    {"id":"contact_list_container"},
-                                  'contact_tab_container',
-                                  "first"
-                );
-                domConstruct.create("div",
-                                      {"id":"contact_list"},
-                                    'contact_list_container',
-                                    "first"
-                  );
-              domConstruct.create("div",
-                                    {"id":"phone_list_container"},
-                                  'contact_list_container',
-                                  'after'
-                );
-                domConstruct.create("div",
-                                    {"id":"phone_list"},
-                                  'phone_list_container',
-                                  'first'
-                );
-              domConstruct.create('div',
-                                    {id: "guardian_list_container"},
-                                    "phone_list_container",
-                                    "after"
-                );
-                domConstruct.create('div',
-                                    {id: "guardian_list"},
-                                    "guardian_list_container",
-                                    "first"
-                );
-      /*
-      domConstruct.create('div',
-                          {id: "patientContactTab"},
-                         "patientSummaryTab",
-                         "after"
-      );
-        
-        domConstruct.create('div',
-                            {id: "contact_list"},
-                            "patientContactTab",
-                            "first"
-        );
-        domConstruct.create('div',
-                            {id: "phone_list"},
-                            "patientContactTab",
-                            "last"
-        );
-        */
-
       domConstruct.create('div',
                           {id: "patientHistoryTab"},
                           "patientContextTabs",
@@ -319,22 +244,7 @@ require(
                             {id: "patientHistoryTabs"},
                             "patientHistoryTab",
                             "first"
-        );/*
-          domConstruct.create('div',
-                              {id: "patientDemographicsTab"},
-                              "patientHistoryTabs",
-                              "first"
-          );
-            domConstruct.create('div',
-                                {id: "demographics_add_or_edit_form"},
-                                "patientDemographicsTab",
-                                "first"
-            );
-            domConstruct.create('div',
-                                {id: "guardian_list"},
-                                "demographics_add_or_edit_form",
-                                "after"
-            );*/
+        );
           domConstruct.create('div',
                               {id: "patientSocialHistoryTab"},
                               "patientHistoryTabs",
@@ -355,13 +265,7 @@ require(
                               "patientHistoryTabs",
                               "last"
           );
-/*
-            domConstruct.create('div',
-                                {id: "medical_and_surgical_history_list"},
-                                "patientMedicalAndSurgicalHistoryTab",
-                                "first"
-            );
-*/
+
             domConstruct.create('div',
                                 {id: "medical_history_list"},
                                 "patientMedicalAndSurgicalHistoryTab",
@@ -382,7 +286,7 @@ require(
                             {id: "patientPreventiveTabs"},
                             "patientPreventiveHealthTab",
                             "first"
-        );
+        );/*
           domConstruct.create('div',
                               {id: "patientNeonatalAndPaediatricExamTab"},
                               "patientPreventiveTabs",
@@ -392,7 +296,7 @@ require(
                                 {id: "neonatal_and_paediatric_exam_list"},
                                 "patientNeonatalAndPaediatricExamTab",
                                 "first"
-            );
+            );*/
           domConstruct.create('div',
                               {id: "patientImmunisationTab"},
                               "patientPreventiveTabs",
@@ -402,7 +306,7 @@ require(
                                 {id: "immunisation_list"},
                                 "patientImmunisationTab",
                                 "first"
-            );
+            );/*
           domConstruct.create('div',
                               {id: "patientObstetricsPreventivesTab"},
                               "patientPreventiveTabs",
@@ -414,13 +318,6 @@ require(
                                 "patientObstetricsPreventivesTab",
                                 "first"
             );
-/*
-            domConstruct.create('div',
-                                {id: "obstetric_history_form"},
-                                "obstetrics_history_detail",
-                                "after"
-            );
-*/
 
           domConstruct.create('div',
                               {id: "patientGynaecologyPreventivesTab"},
@@ -442,45 +339,7 @@ require(
                                 {id: "medical_preventives_list"},
                                 "patientMedicalPreventivesTab",
                                 "first"
-            );
-          
-      /*
-      domConstruct.create('div',
-                          {id: "patientMedicationListAndAllergiesTab"},
-                          "patientContextTabs",
-                          "last"
-      );
-      */
-      
-
-      /*
-      domConstruct.create('div',
-                          {id: "patientAdmissionAndVisitsTab"},
-                          "patientContextTabs",
-                          "last"
-      );
-          domConstruct.create('div',
-                              {id: "admission_list"},
-                              "patientAdmissionAndVisitsTab",
-                              "first"
-          );
-          domConstruct.create('div',
-                              {id: "visit_list"},
-                              "admission_list",
-                              "after"
-          );
-      */
-      /*
-      domConstruct.create('div',
-                          {id: "patientMediaTab"},
-                          "patientContextTabs",
-                          "last"
-      );
-          domConstruct.create('div',
-                              {id: "patient_media_list"},
-                              "patientMediaTab", "first"
-          );
-      */
+            );*/
 
       console.log("Created all the necessary DOM ELements.. Creating Dijits")
 
@@ -515,16 +374,7 @@ require(
                                                 "patientTreeContainer"
             );
             sideBarTabContainer.addChild(sidebarTreeContainer);
-            /*
-            var sidebarContactContainer = new ContentPane({id     : "patientSidebarDiv_contact",
-                                                          title   : "Contact",
-                                                          iconClass:"contactIcon",
-                                                          showTitle: false,
-                                                  },
-                                                "patientSidebarDiv_contact"
-            );
-            sideBarTabContainer.addChild(sidebarContactContainer);
-            */
+
             var sidebarMediaContainer = new ContentPane({id     : "patientSidebarDiv_media",
                                                   title : "Media",
                                                   iconClass:"mediaIcon",
@@ -555,7 +405,7 @@ require(
                 "dijit/MenuItem", "dijit/DropDownMenu","dijit/MenuBarItem"
                 ],
                 function(ready, MenuBar, PopupMenuBarItem, Menu, MenuItem, DropDownMenu,MenuBarItem){
-                  ready(function(){
+//                  ready(function(){
 
                       var pMenuBar = new MenuBar({});
 
@@ -581,7 +431,27 @@ require(
                             label: "Neonatal History"
                         }));
                         pAddMenu.addChild(new MenuItem({
-                            label: "Obs.History"
+                            label: "Obs.History",
+															onClick   :  function(){
+																					require(["dojo/dom-construct",
+																									"dojo/dom-style",
+																									"dojox/layout/ContentPane",
+																									"dijit/registry","dojo/dom"],
+																						function(domConstruct,domStyle,ContentPane,registry,dom){
+																							var urlDict = {obstetricHistoryUrl: CHOSEN_PATIENT.obstetrichistoryadd
+																							}
+																							if(!registry.byId('patientObstetricsPreventivesTab') ){
+																									console.log(CHOSEN_PATIENT);
+																									makeObstetricHistoryDetailTab(urlDict);
+																							}
+																							else{
+																								registry.byId("patientContextTabs").selectChild(
+																									registry.byId("patientObstetricsPreventivesTab")
+																								);
+																							}
+																						}
+																					)
+														}
                         }));
                         pAddMenu.addChild(new MenuItem({
                             label: "Gyn.History"
@@ -624,26 +494,20 @@ require(
                                                  "dojox/layout/ContentPane",
                                                  "dijit/registry","dojo/dom"],
                                           function(domConstruct,domStyle,ContentPane,registry,dom){
-                                            domConstruct.create('div',
-                                                                  {id:"contactAndDemographicsTab"},
-                                                                  'patientPreventivesTabs',
-                                                                  "after"
-                                            );
-                                            //var htmlToAdd = dom.byId("patientSynopsisBottomContentPaneContact").innerHTML;
-                                            //dom.byId('contactAndDemographicsTab').innerHTML = htmlToAdd;
+                                            var urlDict = {demographicsUrl : CHOSEN_PATIENT.demographicsadd,
+																																contactUrl 			 : CHOSEN_PATIENT.contactjson,
+																																phoneUrl 				 : CHOSEN_PATIENT.phonejson,
+																																guardianUrl			 : CHOSEN_PATIENT.guardianjson
+																						 }
                                             if(!registry.byId('contactAndDemographicsTab') ){
-                                                var demographicsTab = new ContentPane({ title     : "Demographics",
-                                                                                        closable  : true,
-                                                                                        iconClass : "contactIcon",
-                                                                                        content   : ""
-                                                                                      },
-                                                                                      "contactAndDemographicsTab"
-                                                );
-                                                registry.byId('patientContextTabs').addChild(demographicsTab);
-                                                console.log(CHOSEN_PATIENT.addData);
+																							   console.log(CHOSEN_PATIENT);
+																								makeDemographicsTab(urlDict);
                                             }
-                                            registry.byId("patientContextTabs").selectChild("contactAndDemographicsTab");
-
+                                            else{
+																							registry.byId("patientContextTabs").selectChild(
+																								registry.byId("contactAndDemographicsTab")
+																							);
+																						 }
                                           }
                                         )
                           }
@@ -677,13 +541,24 @@ require(
                           popup: pSubMenu2
                       }));
 */
-                      domConstruct.create('div',{'id':"patientMenuBar"},'patientContextContainer','first');
+                      domConstruct.create('div',{'id':"patientMenuBar"},'patientTabsBorderContainer','before');
                       pMenuBar.placeAt('patientMenuBar');
                       pMenuBar.startup();
-                  });
+//                  });
                 }
         );
 
+				domStyle.set('patientMenuBar',
+										 {'top'		    : "2.5em",
+											"right" 	  : "1em",
+								      "position" : "relative",
+										  "zIndex"   : "1"
+								     }
+				);
+
+				registry.byId("patientTabsBorderContainer").resize();
+				registry.byId('patientContextContainer').set('dolayout',true);
+				
         var tabs = new TabContainer({id: "patientContextTabs",
                                      tabPosition:"top",
                                      tabStrip:true,
@@ -754,63 +629,6 @@ require(
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneVisits);
                   var visitNotesEditor = new Editor({id:"patientNewVisitNotes",style:"width:50em;"},"patientNewVisitNotes");
                   patientSynopsisBottomContentPaneVisits.addChild(visitNotesEditor);
-                var patientSynopsisBottomContentPaneContact = new ContentPane({
-                                                            id:"patientSynopsisBottomContentPaneContact",
-                                                            title: "Contact & Demographics",
-                                                            iconClass: "contactIcon",
-                                                            showTitle: false,
-                                                            toopTip: "Contact & Demographics",
-                                                            style:"overflow:auto;background:#CFE5FA;border-top: solid 2px #CFE5FA;"
-                                                            },
-                                              "patientSynopsisBottomContentPaneContact"
-                                              );
-                patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneContact);
-                var demographicsAddOrEditForm = new ContentPane({id:"demographics_add_or_edit_form"
-                                                },
-                                                "demographics_add_or_edit_form"
-                                                );
-                patientSynopsisBottomContentPaneContact.addChild(demographicsAddOrEditForm);
-                var contactTabs = new TabContainer({
-                                      id: "contact_tab_container",
-                                      tabPosition:"right-h",
-                                      tabStrip:true,
-                                      style:"position:relative; top:-36em; left: 42em; height: 19em; width: 42em;"
-                                    },
-                                    "contact_tab_container"
-                );
-                patientSynopsisBottomContentPaneContact.addChild(contactTabs);
-                var contactListPane = new ContentPane({id:"contact_list_container",
-                                                       title: "Address",
-                                                       style:"position:relative; top:0; left: 0; height: auto; width: 42em;"
-                                                },
-                                                "contact_list_container"
-                                                );
-                contactTabs.addChild(contactListPane);
-                var phoneListPane   = new ContentPane({id:"phone_list_container",
-                                                  title: "Phone",
-                                                  style:"position:relative; top:0; left: 0; height: auto; width: 42em;"
-                                                },
-                                                "phone_list_container"
-                                                );
-                contactTabs.addChild(phoneListPane);
-                var guardianListPane    = new ContentPane({id:"guardian_list_container",
-                                                  title:"Guardian",
-                                                  style:"position:relative; top:0; left: 0; height: auto; width: 42em;"
-                                                  
-                                                },
-                                                "guardian_list_container"
-                                                );
-                contactTabs.addChild(guardianListPane);
-
-                //domConstruct.create("div",{"id":"contact_list"},'patientSynopsisBottomContentPaneContact','first')
-  /*
-        var contactTab = new ContentPane({id:"patientContactTab",
-                                          title:"Contact"
-                                          },
-                                          "patientContactTab"
-                                          );
-        tabs.addChild(contactTab);
-        */
         var historyTab = new ContentPane({id:"patientHistoryTab",
                                           title:"History"
                                           },
@@ -826,20 +644,6 @@ require(
                                             "patientHistoryTabs"
                                             );
           historyTab.addChild(historyTabs);
-            /*
-            var demographicsTab = new ContentPane({id:"patientDemographicsTab",
-                                              title:"Demographics"
-                                              },
-                                              "patientDemographicsTab"
-                                              );
-            historyTabs.addChild(demographicsTab);
-            
-              var demographicsAddOrEditForm = new ContentPane({id:"demographics_add_or_edit_form"
-                                                },
-                                                "demographics_add_or_edit_form"
-                                                );
-              demographicsTab.addChild(demographicsAddOrEditForm);
-            */
             var socialHistoryTab = new ContentPane({id:"patientSocialHistoryTab",
                                               title:"Social"
                                               },
@@ -858,20 +662,7 @@ require(
                                               "patientMedicalAndSurgicalHistoryTab"
                                               );
             historyTabs.addChild(medicalAndSurgicalHistoryTab);
-  /*
-              var medicalHistoryTab = new ContentPane({id:"medical_history_list"
-                                                      },
-                                                      "medical_history_list"
-                                                      );
-              medicalAndSurgicalHistoryTab.addChild(medicalHistoryTab);
-
-              var surgicalHistoryTab = new ContentPane({id:"surgical_history_list"
-                                                      },
-                                                      "surgical_history_list"
-                                                      );
-              medicalAndSurgicalHistoryTab.addChild(surgicalHistoryTab);
-  */
-
+  
         var preventiveHealthTab = new ContentPane({id:"patientPreventiveHealthTab",
                                                   title:"Preventives"
                                                   },
@@ -894,7 +685,7 @@ require(
                                                       "patientImmunisationTab"
                                                       );
             preventiveHealthTabs.addChild(patientImmunisationTab);
-
+/*
             var patientObstetricsPreventivesTab = new ContentPane({id:"patientObstetricsPreventivesTab",
                                                         title:"Obstetrics"
                                                         },
@@ -908,14 +699,7 @@ require(
                                                           "obstetric_history_detail"
                                                           );
               patientObstetricsPreventivesTab.addChild(patientObstetricsHistoryDetail);
-  /*
-              var patientObstetricsHistoryForm = new ContentPane({id:"obstetric_history_form",
-                                                          },
-                                                          "obstetric_history_form"
-                                                          );
-              patientObstetricsPreventivesTab.addChild(patientObstetricsHistoryForm);
-  */
-
+  
             var patientGynaecologyPreventivesTab = new ContentPane({id:"patientGynaecologyPreventivesTab",
                                                         title:"Gynaecology"
                                                         },
@@ -938,6 +722,7 @@ require(
                                                         "patientNeonatalAndPaediatricExamTab"
                                                         );
             preventiveHealthTabs.addChild(patientNeonatalAndPaediatricTab);
+*/
         /*
         var medicationAndAllergiesTab = new ContentPane({id:"patientMedicationListAndAllergiesTab",
                                                         title:"Medications & Allergies"
@@ -964,9 +749,7 @@ require(
         */
 
       mainContainer.startup();
-     //tabs.startup();
-     //historyTabs.startup();
-     //preventiveHealthTabs.startup();
+			mainContainer.resize();
 
      console.log("Building Patient Tree..")
      buildPatientTree();
@@ -974,12 +757,10 @@ require(
 
      mainBorderContaner.resize();
      patientSynopsisBorderContainer.resize();
-     //registry.byId("patientTabsBorderContainer").resize();
      registry.byId("centerMainPane").resize();
 
-     //domStyle.set("patientContactTab",{'display':"none"});
 
-
+/*
     require(["dijit/registry","dojo/dom-style","dojo/on"],
       function(registry, domStyle,on){
         var tab = registry.byId('patientSynopsisBottomTabContainer');
@@ -1016,109 +797,7 @@ require(
         }
       }
    );
-
-//{% if perms.patient.add_patientcontact %}
-
-    var addContactButton =  new Button({
-                                  label: "Add",
-                                  title: "Add New Contact Details",
-                                  iconClass: "addPatientContactIcon_16",
-                                  onClick: function(){
-                                            require(["dojo/_base/xhr", "dojo/_base/array"],
-                                            function(xhr, array){
-                                                xhr.get({
-                                                        url: "{%url contact_json %}"+
-                                                             "?patient_id="+
-                                                             dom.byId("selected_patient_id_info").innerHTML +
-                                                             "&action=add",
-                                                        load: function(html){
-                                                                      var myDialog = dijit.byId("editPatientDialog");
-                                                                      myDialog.set('content', html);
-                                                                      myDialog.set('title', "Add Postal Address Information");
-                                                                      myDialog.show();
-                                                              }
-                                                 });
-                                            });
-                                 }
-                              },
-                              domConstruct.create('button',
-                                                  {type : "button",
-                                                   id   : "addContactButton"
-                                                  },
-                                                  "contact_list",
-                                                  "before"
-                              )
-    );
-
-//{% endif %}
-
-
-//{% if perms.patient.add_patientphone %}
-
-    var addPhoneButton =  new Button({
-                                    label: "Add",
-                                    title: "Add New Phone Numbers",
-                                    iconClass: "addPatientPhoneIcon_16",
-                                    onClick: function(){
-                                           require(
-                                            ["dojo/_base/xhr", "dojo/_base/array"],
-                                            function(xhr, array){
-                                              xhr.get({
-                                                url: "{%url phone_json %}"+"?patient_id="+
-                                                       dom.byId("selected_patient_id_info").innerHTML +
-                                                      "&action=add",
-                                                load: function(html){
-                                                             var myDialog = dijit.byId("editPatientDialog");
-                                                             myDialog.set('content', html);
-                                                             myDialog.set('title', "Add Phone Numbers");
-                                                             myDialog.show();
-                                                       }
-                                             });
-                                           })
-                                    }
-                         },
-                         domConstruct.create('button',
-                                            {type :"button",
-                                             id   :"addPhoneButton"
-                                            },
-                                            "phone_list",
-                                            "before"
-                         )
-  );
-
-//{% endif %}
-
-//{%if perms.patient.add_patientguardian %}
-    var addGuardianButton =  new Button({
-                                        label: "Add",
-                                        title:"Add Guardian Details",
-                                        iconClass: "dijitIconNewTask",
-                                        onClick: function(){
-                                               require(
-                                                ["dojo/_base/xhr", "dojo/_base/array"],
-                                                function(xhr, array){
-                                                  xhr.get({
-                                                    url: "{%url guardian_json %}"+"?patient_id="+
-                                                          dom.byId("selected_patient_id_info").innerHTML +
-                                                          "&action=add",
-                                                    load: function(html){
-                                                             var myDialog = dijit.byId("editPatientDialog");
-                                                             myDialog.set('content', html);
-                                                             myDialog.set('title', "Add Guardian Information ");
-                                                             myDialog.show();
-                                                          }
-                                                 });
-                                               })
-                                        }
-                         },
-                         domConstruct.create('button',
-                                              {type : "button",
-                                               id   : "addGuardianButton"
-                                              },
-                                              "guardian_list",
-                                              "before")
-    );
-//{% endif %}
+*/
 
     /*
 //{% if perms.admission.add_admissiondetail %}
@@ -1194,42 +873,6 @@ require(
 {% endcomment %}
 //{% endif %}
 */
-
-//{% comment %}
-//{% if perms.patient %}
-    var addDemographicsButton =  new Button({
-                                          label: "Add",
-                                          title: "Add Demographics Data",
-                                          iconClass: "dijitIconNewTask",
-                                          onClick: function(){
-                                                 require(
-                                                  ["dojo/_base/xhr", "dojo/_base/array"],
-                                                  function(xhr, array){
-                                                    xhr.get({
-                                                      url: "{%url demographics_json %}"+
-                                                           "?patient_id=" +
-                                                           dom.byId("selected_patient_id_info").innerHTML +
-                                                           "&action=add",
-                                                      load: function(html){
-                                                                 var myDialog = dijit.byId("editPatientDialog");
-                                                                 myDialog.set('content', html);
-                                                                 myDialog.set('title', "Record Demographics Information");
-                                                                 myDialog.show();
-                                                            }
-                                                   });
-                                                 })
-                                          }
-                         },
-                          domConstruct.create('button',
-                                              {type : "button",
-                                               id   : "addDemographicsButton"
-                                              },
-                                              "demographics_add_or_edit_form",
-                                              "before"
-                          )
-);
-//{% endif %}
-//{%endcomment%}
 
 //{% if perms.patient %}
     var addAllergyButton =  new Button({
@@ -1483,5 +1126,3 @@ require(
   //});
 
 }
-
-//patientContextTabSetup();

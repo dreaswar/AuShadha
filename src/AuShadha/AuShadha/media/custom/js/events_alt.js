@@ -115,7 +115,7 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 				var patientSidebarDivContactUrl = addData.sidebarcontacttab;
 
 				var contactUrl        = addData.contactjson;
-//            var contactAddUrl        = addData.contactaddurl;
+//      var contactAddUrl     = addData.contactaddurl;
 				var phoneUrl          = addData.phonejson;
 				var guardianUrl       = addData.guardianjson;
 				var emailUrl          = addData.emailjson;
@@ -131,8 +131,8 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 				var demographicsUrl   = addData.demographicsadd;
 				var socialHistoryUrl  = addData.socialhistoryadd;
 
-//            var admissionUrl      = addData.admissionadd;
-//            var visitUrl        = addData.visitadd;
+//      var admissionUrl      = addData.admissionadd;
+//      var visitUrl        = addData.visitadd;
 
 				console.log("Destroying the Grids and Forms...");
 					reInitBottomPanels();
@@ -142,23 +142,12 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 
 				console.log("Setting up the Forms...");
 					registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
-					registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
-					registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
+					//registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
+					//makeObstetricHistoryDetailTab({"obstetricHistoryUrl": addData.obstetrichistorydetailadd});
 				console.log("Finished setting up the Forms...");
 
 				console.log("Setting up the Grids Now...");
-					//setupPatientSummary('patientSummaryTab',patientSummaryUrl);
-					//setupPatientSummary('patientSidebarDiv_contact',patientSidebarDivContactUrl);
-
-					//setupContactGridForPortlet(contactUrl);
-					setupContactGrid(contactUrl);
-					setupPhoneGrid(phoneUrl, 'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
-					//setupPhoneGrid(phoneUrl,'phone_grid_alt');
-
 					setupFamilyHistoryGrid(familyHistoryUrl);
-
-					setupGuardianGrid(guardianUrl);
-
 					setupImmunisationGrid(immunisationUrl);
 
 					setupMedicationListGrid(medicationListUrl);
@@ -170,10 +159,6 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 //            setupAdmissionGrid(admissionUrl);
 //            setupVisitGrid(visitUrl);
 				console.log("Finished setting up the grids....");
-				if(!registry.byId("patientTreeDiv")){
-					//buildPatientTree();
-				}
-				console.log("Finished Rendering the tree...")
 
   });
 

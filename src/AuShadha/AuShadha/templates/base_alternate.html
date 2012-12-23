@@ -57,14 +57,28 @@
        {% include 'grid_setup_alt.js' %}
   </script>
 
-  <script type="text/javascript">
+	<script type="text/javascript">
+    /*
+       Contains the Patient Demographics Tab Setup.
+    */
+
+   var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
+  
+		/*
+       Contains the Patient Obstetric History Tab Setup.
+    */
+
+   var makeObstetricHistoryDetailTab  = {% include 'obstetric_history_tab.js' %}
+   
     /*
        Contains the Patient Context Tabs set up
     */
 
    {% include 'patient_context_tab_setup_alt.js' %}
+  
   </script>
-
+  
+  
 
   <script type="text/javascript">
     /*
@@ -433,6 +447,7 @@
                   <i id="click_for_gpl3"> GNU GPL Version 3 License</i> &nbsp;
                   <a href="mailto:dreaswar@gmail.com">dreaswar@gmail.com</a> &nbsp;
             </span>
+            {% comment %}
             <p style="position:relative; float:right">
                 <a href="http://jigsaw.w3.org/css-validator/check/referer">
                     <img style="border:0;width:88px;height:31px"
@@ -440,6 +455,7 @@
                         alt="Valid CSS!" />
                 </a>
             </p>
+            {% endcomment %}
           </div>
        {% endblock footer %}
   </div>
