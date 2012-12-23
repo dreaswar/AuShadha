@@ -495,7 +495,7 @@ function reInitBottomPanels(){
 					selectChild(
 						registry.byId('patientSummaryTab')
 					);
-				registry.byId('patientContextTabs').
+				registry.byId('patientPreventivesTab').
 					removeChild( 
 							registry.byId('patientObstetricPreventivesTab') 
 					);

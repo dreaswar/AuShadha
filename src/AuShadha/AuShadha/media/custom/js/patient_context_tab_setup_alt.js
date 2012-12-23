@@ -438,14 +438,16 @@ require(
 																									"dojox/layout/ContentPane",
 																									"dijit/registry","dojo/dom"],
 																						function(domConstruct,domStyle,ContentPane,registry,dom){
-																							var urlDict = {obstetricHistoryUrl: CHOSEN_PATIENT.obstetrichistoryadd
+																							var urlDict = {"obstetricHistoryUrl": CHOSEN_PATIENT.obstetrichistorydetailadd
 																							}
 																							if(!registry.byId('patientObstetricsPreventivesTab') ){
 																									console.log(CHOSEN_PATIENT);
 																									makeObstetricHistoryDetailTab(urlDict);
 																							}
 																							else{
-																								registry.byId("patientContextTabs").selectChild(
+																								registry.byId('patientContextTabs').selectChild(
+																									registry.byId('patientPreventiveHealthTab') )
+																								registry.byId("patientPreventivesTabs").selectChild(
 																									registry.byId("patientObstetricsPreventivesTab")
 																								);
 																							}

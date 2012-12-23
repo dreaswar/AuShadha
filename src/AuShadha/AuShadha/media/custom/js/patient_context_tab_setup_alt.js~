@@ -438,15 +438,18 @@ require(
 																									"dojox/layout/ContentPane",
 																									"dijit/registry","dojo/dom"],
 																						function(domConstruct,domStyle,ContentPane,registry,dom){
-																							var urlDict = {obstetricHistoryUrl: CHOSEN_PATIENT.obstetrichistoryadd
+																							alert(CHOSEN_PATIENT.obstetrichistorydetailadd);
+																							var urlDict = {"obstetricHistoryUrl": CHOSEN_PATIENT.obstetrichistorydetailadd
 																							}
-																							if(!registry.byId('contactAndDemographicsTab') ){
+																							if(!registry.byId('patientObstetricsPreventivesTab') ){
 																									console.log(CHOSEN_PATIENT);
-																									makeDemographicsTab(urlDict);
+																									makeObstetricHistoryDetailTab(urlDict);
 																							}
 																							else{
-																								registry.byId("patientContextTabs").selectChild(
-																									registry.byId("contactAndDemographicsTab")
+																								registry.byId('patientContextTabs').selectChild(
+																									registry.byId('patientPreventiveHealthTab') )
+																								registry.byId("patientPreventivesTabs").selectChild(
+																									registry.byId("patientObstetricsPreventivesTab")
 																								);
 																							}
 																						}

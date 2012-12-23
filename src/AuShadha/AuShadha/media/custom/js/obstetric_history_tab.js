@@ -22,7 +22,7 @@ function(urlObj /* URL Object */){
 		function makeDoms(){
 			domConstruct.create('div',
 													{id: "patientObstetricsPreventivesTab"},
-													"patientPreventiveTabs",
+													"patientPreventivesTabs",
 													"last"
 			);
 
@@ -34,9 +34,11 @@ function(urlObj /* URL Object */){
 		}
 
 		function makeDijits(){
-		  var preventiveHealthTabs  =  registry.byId('prenventiveHealthTabs');
+		  var preventiveHealthTabs  =  registry.byId('patientPreventivesTabs');
 			var patientObstetricsPreventivesTab = new ContentPane({id:"patientObstetricsPreventivesTab",
-                                                        title:"Obstetrics"
+                                                        title:"Obstetrics History",
+																												 closable:true,
+																												 doLayout:true
                                                         },
                                                         "patientObstetricsPreventivesTab"
                                                         );
@@ -47,10 +49,11 @@ function(urlObj /* URL Object */){
 																											"obstetric_history_detail"
 																											);
 					patientObstetricsPreventivesTab.addChild(patientObstetricsHistoryDetail);
-		
-					registry.byId('obstetric_history_detail').set('href',urlObj.obstetricHistoryUrl);
-					registry.byId('preventiveHealthTabs').
-						selectChild( registry.byId('obstetric_history_detail') )
+					registry.byId('obstetric_history_detail').set('href', urlObj.obstetricHistoryUrl);
+					registry.byId('patientContextTabs').
+						selectChild( registry.byId('patientPreventiveHealthTab') )
+					registry.byId('patientPreventivesTabs').
+						selectChild( registry.byId('patientObstetricsPreventivesTab') )
 			
 		}
 

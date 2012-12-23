@@ -490,12 +490,12 @@ function reInitBottomPanels(){
 					destroyRecursive();
       }
 
-      if(obstetricsTab){
+      if(obstetricHistoryDetailTab){
 				registry.byId("patientContextTabs").
 					selectChild(
 						registry.byId('patientSummaryTab')
 					);
-				registry.byId('patientContextTabs').
+				registry.byId('patientPreventiveHealthTab').
 					removeChild( 
 							registry.byId('patientObstetricPreventivesTab') 
 					);

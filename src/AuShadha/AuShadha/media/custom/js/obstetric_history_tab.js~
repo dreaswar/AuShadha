@@ -20,9 +20,10 @@ function(urlObj /* URL Object */){
 					 BorderContainer){
 		
 		function makeDoms(){
+			alert("Tying to make doms");
 			domConstruct.create('div',
 													{id: "patientObstetricsPreventivesTab"},
-													"patientPreventiveTabs",
+													"patientPreventivesTabs",
 													"last"
 			);
 
@@ -31,12 +32,16 @@ function(urlObj /* URL Object */){
 															"patientObstetricsPreventivesTab",
 															"first"
 					);
+			alert("made all the DOMS")
 		}
 
 		function makeDijits(){
-		  var preventiveHealthTabs  =  registry.byId('prenventiveHealthTabs');
+			alert("Trying to make DIJITS")
+		  var preventiveHealthTabs  =  registry.byId('patientPreventivesTabs');
 			var patientObstetricsPreventivesTab = new ContentPane({id:"patientObstetricsPreventivesTab",
-                                                        title:"Obstetrics"
+                                                        title:"Obstetrics History",
+																												 closable:true,
+																												 doLayout:true
                                                         },
                                                         "patientObstetricsPreventivesTab"
                                                         );
@@ -47,16 +52,17 @@ function(urlObj /* URL Object */){
 																											"obstetric_history_detail"
 																											);
 					patientObstetricsPreventivesTab.addChild(patientObstetricsHistoryDetail);
-		
-					registry.byId('obstetric_history_detail').set('href',urlObj.obstetricHistoryUrl);
-					registry.byId('preventiveHealthTabs').
-						selectChild( registry.byId('obstetric_history_detail') )
+					alert(urlObj.obstetricHistoryUrl);
+					registry.byId('obstetric_history_detail').set('href', urlObj.obstetricHistoryUrl);
+					registry.byId('patientContextTabs').
+						selectChild( registry.byId('patientPreventiveHealthTab') )
+					registry.byId('patientPreventivesTabs').
+						selectChild( registry.byId('patientObstetricsPreventivesTab') )
 			
 		}
 
 		makeDoms();
 		makeDijits();
-	
 
 });
 
