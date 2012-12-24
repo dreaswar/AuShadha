@@ -22,7 +22,7 @@ function(urlObj /* URL Object */){
 		function makeDoms(){
 			domConstruct.create('div',
 													{id: "patientObstetricsPreventivesTab"},
-													"patientPreventivesTabs",
+													"patientPreventiveTabs",
 													"last"
 			);
 
@@ -34,7 +34,7 @@ function(urlObj /* URL Object */){
 		}
 
 		function makeDijits(){
-		  var preventiveHealthTabs  =  registry.byId('patientPreventivesTabs');
+		  var preventiveHealthTabs  =  registry.byId('patientPreventiveTabs');
 			var patientObstetricsPreventivesTab = new ContentPane({id:"patientObstetricsPreventivesTab",
                                                         title:"Obstetrics History",
 																												 closable:true,
@@ -52,7 +52,7 @@ function(urlObj /* URL Object */){
 					registry.byId('obstetric_history_detail').set('href', urlObj.obstetricHistoryUrl);
 					registry.byId('patientContextTabs').
 						selectChild( registry.byId('patientPreventiveHealthTab') )
-					registry.byId('patientPreventivesTabs').
+					registry.byId('patientPreventiveTabs').
 						selectChild( registry.byId('patientObstetricsPreventivesTab') )
 			
 		}

@@ -463,7 +463,8 @@ function reInitBottomPanels(){
           phoneTable          = registry.byId("phone_list"),
           guardianTable       = registry.byId("guardian_list"),
 					demographicsTab     = registry.byId("contactAndDemographicsTab"),
-					obstetricHistoryDetailTab     = registry.byId("patientObstetricPreventivesTab"),
+					obstetricsHistoryDetailTab  = registry.byId("patientObstetricsPreventivesTab"),
+          gynaecologyHistoryDetailTab     = registry.byId("patientGynaecologyPreventivesTab"),
           allergyTable        = registry.byId("allergy_list"),
           immunizationTable   = registry.byId("immunisation_list"),
           familyHistoryTable  = registry.byId("family_history_list"),
@@ -490,18 +491,45 @@ function reInitBottomPanels(){
 					destroyRecursive();
       }
 
-      if(obstetricHistoryDetailTab){
+      if(neonatalAndPaediatricExamTab){
+        registry.byId("patientContextTabs").
+          selectChild(
+            registry.byId('patientSummaryTab')
+          );
+        registry.byId('patientPreventiveTabs').
+          removeChild(
+              registry.byId('patientNeonatalAndPaediatricExamTab')
+          );
+        registry.byId("patientNeonatalAndPaediatricExamTab").
+          destroyRecursive();
+      }
+
+      if(obstetricsHistoryDetailTab){
 				registry.byId("patientContextTabs").
 					selectChild(
 						registry.byId('patientSummaryTab')
 					);
-				registry.byId('patientPreventiveHealthTab').
+				registry.byId('patientPreventiveTabs').
 					removeChild( 
-							registry.byId('patientObstetricPreventivesTab') 
+							registry.byId('patientObstetricsPreventivesTab') 
 					);
-				registry.byId("patientObstetricPreventivesTab").
+				registry.byId("patientObstetricsPreventivesTab").
 					destroyRecursive();
       }
+
+      if(gynaecologyHistoryDetailTab){
+        registry.byId("patientContextTabs").
+          selectChild(
+            registry.byId('patientSummaryTab')
+          );
+        registry.byId('patientPreventiveTabs').
+          removeChild(
+              registry.byId('patientGynaecologyPreventivesTab')
+          );
+        registry.byId("patientGynaecologyPreventivesTab").
+          destroyRecursive();
+      }
+
 /*
 			if(contactTable){
         contactTable.destroyRecursive();

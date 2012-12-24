@@ -300,7 +300,7 @@ require(
           domConstruct.create('div',
                               {id: "patientImmunisationTab"},
                               "patientPreventiveTabs",
-                              "last"
+                              "first"
           );
             domConstruct.create('div',
                                 {id: "immunisation_list"},
@@ -428,7 +428,29 @@ require(
 */
                       var pAddMenu = new DropDownMenu({});
                         pAddMenu.addChild(new MenuItem({
-                            label: "Neonatal History"
+                            label: "Neonatal History",
+                            onClick   :  function(){
+                                        require(["dojo/dom-construct",
+                                                "dojo/dom-style",
+                                                "dojox/layout/ContentPane",
+                                                "dijit/registry","dojo/dom"],
+                                          function(domConstruct,domStyle,ContentPane,registry,dom){
+                                            var urlDict = {"neontalAndPaediatricExamUrl": CHOSEN_PATIENT.neonatalandpaediatricexamurl
+                                            }
+                                            if(!registry.byId('patientNeonatalAndPaediatricExamTab') ){
+                                                console.log(CHOSEN_PATIENT);
+                                                makeNeonatalAndPaediatricExamTab(urlDict);
+                                            }
+                                            else{
+                                              registry.byId('patientContextTabs').selectChild(
+                                                registry.byId('patientPreventiveHealthTab') )
+                                              registry.byId("patientPreventiveTabs").selectChild(
+                                                registry.byId("patientNeonatalAndPaediatricExamTab")
+                                              );
+                                            }
+                                          }
+                                        )
+                          }
                         }));
                         pAddMenu.addChild(new MenuItem({
                             label: "Obs.History",
@@ -447,7 +469,7 @@ require(
 																							else{
 																								registry.byId('patientContextTabs').selectChild(
 																									registry.byId('patientPreventiveHealthTab') )
-																								registry.byId("patientPreventivesTabs").selectChild(
+																								registry.byId("patientPreventiveTabs").selectChild(
 																									registry.byId("patientObstetricsPreventivesTab")
 																								);
 																							}
@@ -456,7 +478,29 @@ require(
 														}
                         }));
                         pAddMenu.addChild(new MenuItem({
-                            label: "Gyn.History"
+                            label: "Gyn.History",
+                              onClick   :  function(){
+                                          require(["dojo/dom-construct",
+                                                  "dojo/dom-style",
+                                                  "dojox/layout/ContentPane",
+                                                  "dijit/registry","dojo/dom"],
+                                            function(domConstruct,domStyle,ContentPane,registry,dom){
+                                              var urlDict = {"gynaecologyHistoryUrl": CHOSEN_PATIENT.gynaecologyhistorydetailadd
+                                              }
+                                              if(!registry.byId('patientGynaecologyPreventivesTab') ){
+                                                  console.log(CHOSEN_PATIENT);
+                                                  makeGynaecologyHistoryDetailTab(urlDict);
+                                              }
+                                              else{
+                                                registry.byId('patientContextTabs').selectChild(
+                                                  registry.byId('patientPreventiveHealthTab') )
+                                                registry.byId("patientPreventiveTabs").selectChild(
+                                                  registry.byId("patientGynaecologyPreventivesTab")
+                                                );
+                                              }
+                                            }
+                                          )
+                            }
                         }));
                         pAddMenu.addChild(new MenuItem({
                             label: "Medical Preventives"
@@ -671,7 +715,7 @@ require(
                                                   "patientPreventiveHealthTab"
                                                   );
         tabs.addChild(preventiveHealthTab);
-          var preventiveHealthTabs = new TabContainer({id:"patientPreventivesTabs",
+          var preventiveHealthTabs = new TabContainer({id:"patientPreventiveTabs",
                                                         tabPosition:"top",
                                                         tabStrip:true,
                                                         nested : true,

@@ -68,7 +68,13 @@
        Contains the Patient Obstetric History Tab Setup.
     */
 
-   var makeObstetricHistoryDetailTab  = {% include 'obstetric_history_detail_tab.js' %}
+   var makeObstetricHistoryDetailTab  = {% include 'obstetric_history_tab.js' %}
+
+   /*
+       Contains the Patient Gynaecology History Tab Setup.
+    */
+
+   var makeGynaecologyHistoryDetailTab  = {% include 'gynaecology_history_tab.js' %}
    
     /*
        Contains the Patient Context Tabs set up

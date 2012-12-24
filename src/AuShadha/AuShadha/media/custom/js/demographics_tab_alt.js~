@@ -26,7 +26,7 @@ function (urlObj/* URL DICT */){
 													'patientPreventivesTabs',
 													"after"
 			);
-			domStyle.set('contactAndDemographicsTab',{"height":"auto","overflow":"auto"})
+			domStyle.set('contactAndDemographicsTab',{"height":"auto","overflow":"auto"});
 					domConstruct.create('div',
 															{id: "demographics_add_or_edit_form"},
 															"contactAndDemographicsTab",

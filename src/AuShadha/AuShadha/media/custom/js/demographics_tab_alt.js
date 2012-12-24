@@ -23,7 +23,7 @@ function (urlObj/* URL DICT */){
 
 			domConstruct.create('div',
 													{id:"contactAndDemographicsTab"},
-													'patientPreventivesTabs',
+													'patientPreventiveTabs',
 													"after"
 			);
 			domStyle.set('contactAndDemographicsTab',{"height":"auto","overflow":"auto"});
