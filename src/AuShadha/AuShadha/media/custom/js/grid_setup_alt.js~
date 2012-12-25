@@ -462,20 +462,27 @@ function reInitBottomPanels(){
       var contactTable        = registry.byId("contact_list"),
           phoneTable          = registry.byId("phone_list"),
           guardianTable       = registry.byId("guardian_list"),
-					demographicsTab     = registry.byId("contactAndDemographicsTab"),
-					obstetricsHistoryDetailTab  = registry.byId("patientObstetricsPreventivesTab"),
-          gynaecologyHistoryDetailTab     = registry.byId("patientGynaecologyPreventivesTab"),
-          allergyTable        = registry.byId("allergy_list"),
-          immunizationTable   = registry.byId("immunisation_list"),
-          familyHistoryTable  = registry.byId("family_history_list"),
+          demographicsTab     = registry.byId("contactAndDemographicsTab"),
 
+          immunizationTable               = registry.byId("immunisation_list"),
+          neonatalAndPaediatricExamTab    = registry.byId("patientNeonatalAndPaediatricExamTab"),
+          medicalPreventivesTab           = registry.byId("patientSurgicalPreventivesTab"),
+          surgicalPreventivesTab          = registry.byId("patientMedicalPreventivesTab"),
+          obstetricsHistoryDetailTab      = registry.byId("patientObstetricsPreventivesTab"),
+          gynaecologyHistoryDetailTab     = registry.byId("patientGynaecologyPreventivesTab"),
+
+          allergyTable        = registry.byId("allergy_list"),
+          medicationListTable = registry.byId("medication_list"),
+
+          familyHistoryTable  = registry.byId("family_history_list"),
           medicalHistoryTable = registry.byId("medical_history_list"),
           surgicalHistoryTable = registry.byId("surgical_history_list"),
 
 //        socialHistoryTable  = registry.byId("social_history_list"),
-          medicationListTable = registry.byId("medication_list"),
+
           admissionTable      = registry.byId("admission_list"),
           visitTable          = registry.byId("visit_list"),
+
           patientMediaTable   = registry.byId("patient_media_list");
 
       if(demographicsTab){
@@ -491,6 +498,34 @@ function reInitBottomPanels(){
 					destroyRecursive();
       }
 
+      if(medicalPreventivesTab){
+        registry.byId('patientPreventiveTabs').
+          removeChild(
+              registry.byId('patientMedicalPreventivesTab')
+          );
+        registry.byId("patientMedicalPreventivesTab").
+          destroyRecursive();
+        registry.byId("patientContextTabs").
+          selectChild(
+            registry.byId('patientSummaryTab')
+          );
+      }
+
+      if(surgicalPreventivesTab){
+        registry.byId('patientPreventiveTabs').
+          removeChild(
+              registry.byId('patientSurgicalPreventivesTab')
+          );
+        registry.byId("patientSurgicalPreventivesTab").
+          destroyRecursive();
+
+        registry.byId("patientContextTabs").
+          selectChild(
+            registry.byId('patientSummaryTab');
+          );
+      }
+
+
       if(neonatalAndPaediatricExamTab){
         registry.byId("patientContextTabs").
           selectChild(
@@ -503,7 +538,7 @@ function reInitBottomPanels(){
         registry.byId("patientNeonatalAndPaediatricExamTab").
           destroyRecursive();
       }
-
+      
       if(obstetricsHistoryDetailTab){
 				registry.byId("patientContextTabs").
 					selectChild(

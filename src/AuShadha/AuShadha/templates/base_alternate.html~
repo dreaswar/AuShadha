@@ -75,6 +75,12 @@
     */
 
    var makeGynaecologyHistoryDetailTab  = {% include 'gynaecology_history_tab.js' %}
+
+   /*
+       Contains the Patient Paediatric / Neonatal Exam Tab Setup.
+    */
+
+   var makeNeonatalAndPaediatricExamTab  = {% include 'neonatal_and_paediatric_exam_tab.js' %}
    
     /*
        Contains the Patient Context Tabs set up

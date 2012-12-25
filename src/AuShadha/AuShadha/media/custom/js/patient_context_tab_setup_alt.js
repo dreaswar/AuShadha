@@ -503,10 +503,54 @@ require(
                             }
                         }));
                         pAddMenu.addChild(new MenuItem({
-                            label: "Medical Preventives"
+                            label: "Medical Preventives",
+                            onClick   :  function(){
+                                        require(["dojo/dom-construct",
+                                                "dojo/dom-style",
+                                                "dojox/layout/ContentPane",
+                                                "dijit/registry","dojo/dom"],
+                                          function(domConstruct,domStyle,ContentPane,registry,dom){
+                                            var urlDict = {"medicalPreventivesUrl": CHOSEN_PATIENT.medicalpreventivesadd
+                                            }
+                                            if(!registry.byId('patientMedicalPreventivesTab') ){
+                                                console.log(CHOSEN_PATIENT);
+                                                makeMedicalPreventivesTab(urlDict);
+                                            }
+                                            else{
+                                              registry.byId('patientContextTabs').selectChild(
+                                                registry.byId('patientPreventiveHealthTab') )
+                                              registry.byId("patientPreventiveTabs").selectChild(
+                                                registry.byId("patientMedicalPreventivesTab")
+                                              );
+                                            }
+                                          }
+                                        )
+                          }
                         }));
                         pAddMenu.addChild(new MenuItem({
-                            label: "Surgical Preventives"
+                            label: "Surgical Preventives",
+                            onClick   :  function(){
+                                        require(["dojo/dom-construct",
+                                                "dojo/dom-style",
+                                                "dojox/layout/ContentPane",
+                                                "dijit/registry","dojo/dom"],
+                                          function(domConstruct,domStyle,ContentPane,registry,dom){
+                                            var urlDict = {"surgicalPreventivesUrl": CHOSEN_PATIENT.surgicalpreventivesadd
+                                            }
+                                            if(!registry.byId('patientSurgicalPreventivesTab') ){
+                                                console.log(CHOSEN_PATIENT);
+                                                makeSurgicalPreventivesTab(urlDict);
+                                            }
+                                            else{
+                                              registry.byId('patientContextTabs').selectChild(
+                                                registry.byId('patientPreventiveHealthTab') )
+                                              registry.byId("patientPreventiveTabs").selectChild(
+                                                registry.byId("patientSurgicalPreventivesTab")
+                                              );
+                                            }
+                                          }
+                                        )
+                          }
                         }));
 
                       //var pSubMenu = new DropDownMenu({});
