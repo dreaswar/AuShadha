@@ -62,6 +62,7 @@ USE_TZ = True
 MEDIA_ROOT = os.path.join(ROOT_PATH,'media')
 
 CUSTOM_SCRIPT_ROOT = os.path.join(MEDIA_ROOT,'custom/js/')
+CUSTOM_STYLE_ROOT = os.path.join(MEDIA_ROOT,'custom/styles/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -155,6 +156,7 @@ INSTALLED_APPS = (
     'inv_and_imaging',
     'admission',
 #    'visit',
+    'obs_and_gyn'
 )
 
 # A sample logging configuration. The only tangible logging

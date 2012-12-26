@@ -215,6 +215,13 @@ class Staff(models.Model):
             staff_obj.is_staff_hod = False
 #        self.save()
 
+    def is_staff_provider(self):
+        staff_obj = self
+        staff_role = self.clinic_staff_role
+        if staff_role == 'doctor':
+           return True
+        else:
+           return False
 
     def get_edit_url(self):
         return 'clinic/staff/edit/%s/' % (self.id)

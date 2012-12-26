@@ -155,7 +155,7 @@ INSTALLED_APPS = (
     'staff',
     'inv_and_imaging',
     'admission',
-#    'visit',
+    'visit',
     'obs_and_gyn'
 )
 

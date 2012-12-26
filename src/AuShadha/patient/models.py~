@@ -15,7 +15,7 @@ from django.contrib.auth.models import User
 from aushadha_base_models.models import AuShadhaBaseModel
 
 
-from clinic.models import Clinic
+from clinic.models import Clinic, Staff
 
 
 def generic_url_maker(instance,action,id, root_object = False):
@@ -1836,7 +1836,7 @@ class PatientMedicalHistoryForm(ModelForm):
                    },
                   {"field"         : 'pregnancy_warning',
                     'max_length'    :  100         ,
-                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-type": "dijit.form.Select",
                     "data-dojo-props": r"'required' :false"
                     },
                    {"field": 'date_of_diagnosis',

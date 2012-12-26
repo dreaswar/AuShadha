@@ -103,17 +103,17 @@ class Department(models.Model):
                             )
 
     def get_edit_url(self):
-        return 'department/edit/%s/' % (self.id)
+        return 'clinic/department/edit/%s/' % (self.id)
 
     def get_del_url(self):
-        return 'department/del/%s/' % (self.id)
+        return 'clinic/department/del/%s/' % (self.id)
 
 
     def get_staff_in_department_url(self):
-        return 'department/staff/list/%s/' % (self.id)
+        return 'clinic/department/staff/list/%s/' % (self.id)
 
     def get_hod_in_department_url(self):
-        return 'department/hod/%s/' % (self.id)
+        return 'clinic/department/hod/%s/' % (self.id)
 
 
 
@@ -215,6 +215,13 @@ class Staff(models.Model):
             staff_obj.is_staff_hod = False
 #        self.save()
 
+    def is_staff_provider(self):
+        staff_obj = self
+        staff_role = self.clinic_staff_role
+        if staff_role == 'doctor':
+           return True
+        else:
+           return False
 
     def get_edit_url(self):
         return 'clinic/staff/edit/%s/' % (self.id)
