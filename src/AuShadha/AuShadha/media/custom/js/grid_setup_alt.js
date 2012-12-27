@@ -346,6 +346,8 @@ function setupAdmissionGrid(url){
   require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"],
   function(DataGrid, JsonRest, ObjectStore){
     var store   = new JsonRest({target:url});
+    console.log("Printing Admission Store");
+    console.log(store);
     var admissionGrid = new DataGrid({
                             store         : dataStore = ObjectStore({
                                                          objectStore: store
@@ -392,12 +394,14 @@ function setupAdmissionGrid(url){
 })
 }
 
-//{% comment %}
- /*
+
+
 function setupVisitGrid(url){
   require(["dojox/grid/DataGrid", "dojo/store/JsonRest","dojo/data/ObjectStore"],
   function(DataGrid, JsonRest, ObjectStore){
     var store   = new JsonRest({target:url});
+    console.log("Printing Visit Store");
+    console.log(store);
     var visitGrid = new DataGrid({
                               store         : dataStore = ObjectStore({objectStore: store
                                               }),
@@ -417,8 +421,7 @@ function setupVisitGrid(url){
     };
 })
 }
-*/
-//{% endcomment %}
+
 
  function onPatientSubMenuRowClick(e, gridToUse, titleToUse){
       require(["dijit/registry","dijit/Dialog","dojox/grid/DataGrid","dojo/_base/xhr"],

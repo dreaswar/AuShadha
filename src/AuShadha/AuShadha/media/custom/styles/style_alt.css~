@@ -168,6 +168,14 @@ body{
 }
 
 
+#visit_list_container, #admission_list_container{
+  width: 60em;
+  height: 22em;
+  position:relative;
+  top: -28.5em;
+  left: 50em;
+}
+
 #patientSynopsisBottomContentPane{
 	height:18em;
 	overflow:auto;
@@ -347,7 +355,7 @@ body{
      text-align:center;
    }
 
-.dijitIcon .dijitMenuItemIcon .addItemIcon{
+.addItemIcon{
      background-image    : url('{{STATIC_URL}}images/generic/crud/add.png');
      background-repeat   : no-repeat;
      height              : 16px;

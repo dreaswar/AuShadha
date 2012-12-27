@@ -199,7 +199,7 @@ def visit_detail_add(request, id):
       else:
         success       = False
         error_message = "Error! Visit Could not be added"
-        for error in visit_detail_form.errors:
+        for error in visit_detail_add_form.errors:
           form_errors.append('<p>' + error +'<p>')
     data = { 'success'      : success      ,
              'error_message': error_message,

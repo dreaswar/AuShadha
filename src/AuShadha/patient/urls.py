@@ -23,6 +23,16 @@ urlpatterns = patterns('',
 	name = 'render_patient_list'
   ),
 
+  url(r'tree/(?P<id>\d+)/$',
+  'patient.views.render_patient_tree' ,
+  name = 'render_patient_tree_with_id'
+  ),
+
+  url(r'tree/$',
+  'patient.views.render_patient_tree' ,
+  name = 'render_patient_tree_without_id'
+  ),
+  
   url(r'summary/$',
   'patient.views.render_patient_summary' ,
   name = 'render_patient_summary_without_id'

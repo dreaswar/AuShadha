@@ -26,7 +26,7 @@
         type="text/css" />
 
     <link rel="stylesheet"
-        href="{{STATIC_URL}}/plugins/dojo-1.8.0/dojox/layout/resources/DndGridContainer.csss"
+        href="{{STATIC_URL}}/plugins/dojo-1.8.0/dojox/layout/resources/DndGridContainer.css"
         type="text/css" />
         
     <link rel="stylesheet"

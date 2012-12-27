@@ -6,17 +6,19 @@ require(
    "dijit/layout/BorderContainer",
    "dijit/layout/TabContainer",
    "dojox/layout/ContentPane",
+   //"dojox/layout/ExpandoPane",
    "dijit/Editor",
    "dijit/form/Button",
    "dojo/dom",
    "dojo/dom-construct",
    "dojo/dom-style",
    "dojo/ready",
-   "dojo/_base/array"
+   "dojo/_base/array",
+   "dojo/request/xhr"
   ],
   function(registry,parser, BorderContainer,
-           TabContainer, ContentPane, Editor,Button,
-           dom, domConstruct, domStyle, ready,array
+           TabContainer, ContentPane, /*ExpandoPane,*/ Editor,Button,
+           dom, domConstruct, domStyle, ready,array,xhr
   ){
 //ready( function(){
       if (registry.byId("patientContextContainer")){
@@ -224,6 +226,16 @@ require(
                                   "patientSynopsisBottomContentPaneAdmissions",
                                   "first"
                 );
+                domConstruct.create('div',
+                                  {id: "admission_list_container"},
+                                "patientSynopsisBottomContentPaneAdmissions",
+                                "last"
+                );
+                  domConstruct.create('div',
+                                    {id: "admission_list"},
+                                  "admission_list_container",
+                                  "first"
+                  );
               domConstruct.create('div',
                               {id: "patientSynopsisBottomContentPaneVisits"},
                             "patientSynopsisBottomContentPaneAdmissions",
@@ -234,6 +246,16 @@ require(
                                 "patientSynopsisBottomContentPaneVisits",
                                 "first"
                 );
+                domConstruct.create('div',
+                                  {id: "visit_list_container"},
+                                "patientSynopsisBottomContentPaneVisits",
+                                "last"
+                );
+                  domConstruct.create('div',
+                                    {id: "visit_list"},
+                                  "visit_list_container",
+                                  "first"
+                  );
       domConstruct.create('div',
                           {id: "patientHistoryTab"},
                           "patientContextTabs",
@@ -709,6 +731,15 @@ require(
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneAdmissions);
                   var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes",style:"width:50em;"},"patientNewAdmissionNotes");
                   patientSynopsisBottomContentPaneAdmissions.addChild(admissionNotesEditor);
+                  var AdmissionListContainer = new ContentPane({
+                                                            id:"admission_list_container"
+                                                            },
+                                              "admission_list_container"
+                  );
+                  patientSynopsisBottomContentPaneAdmissions.addChild(AdmissionListContainer);
+                  //setupAdmissionGrid(CHOSEN_PATIENT.admissionjson);
+                  //registry.byId("admission_list_container").set('href', CHOSEN_PATIENT.admissionadd);
+
                 var patientSynopsisBottomContentPaneVisits = new ContentPane({
                                                             id:"patientSynopsisBottomContentPaneVisits",
                                                             title: "Visit",
@@ -719,6 +750,17 @@ require(
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneVisits);
                   var visitNotesEditor = new Editor({id:"patientNewVisitNotes",style:"width:50em;"},"patientNewVisitNotes");
                   patientSynopsisBottomContentPaneVisits.addChild(visitNotesEditor);
+
+                  var VisitListContainer = new ContentPane({
+                                                            id:"visit_list_container"
+                                                            },
+                                              "visit_list_container"
+                  );
+                  patientSynopsisBottomContentPaneVisits.addChild(VisitListContainer);
+                  //setupVisitGrid(CHOSEN_PATIENT.visitjson);
+                  registry.byId("visit_list_container").set('href', CHOSEN_PATIENT.visitadd);
+
+
         var historyTab = new ContentPane({id:"patientHistoryTab",
                                           title:"History"
                                           },
@@ -889,9 +931,9 @@ require(
    );
 */
 
-    /*
+//{% comment %}
+
 //{% if perms.admission.add_admissiondetail %}
-     {% comment %}
     var addAdmissionButton =  new Button({
                                         label: "Add",
                                         title:"Add New Admission",
@@ -922,8 +964,8 @@ require(
                                                           {type : "button",
                                                            id   : "addAdmissionButton"
                                                           },
-                                                          "admission_list",
-                                                          "before"
+                                                          "admission_list_container",
+                                                          "first"
                                       )
 );
 //{% endif %}
@@ -956,13 +998,13 @@ require(
                                               {type : "button",
                                                id   : "addVisitButton"
                                               },
-                                              "visit_list",
-                                              "before"
+                                              "visit_list_container",
+                                              "first"
                          )
   );
-{% endcomment %}
 //{% endif %}
-*/
+
+//{% endcomment %}
 
 //{% if perms.patient %}
     var addAllergyButton =  new Button({

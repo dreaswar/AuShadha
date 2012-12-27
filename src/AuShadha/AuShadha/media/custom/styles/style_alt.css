@@ -168,6 +168,15 @@ body{
 }
 
 
+#visit_list_container,
+#admission_list_container{
+  width: 60em;
+  height: 22em;
+  position:relative;
+  top: -28.5em;
+  left: 50em;
+}
+
 #patientSynopsisBottomContentPane{
 	height:18em;
 	overflow:auto;

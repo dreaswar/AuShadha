@@ -42,7 +42,7 @@ urlpatterns = patterns('',
   'patient.views.render_patient_sidebar_contact_tab' ,
   name = 'render_patient_sidebar_contact_tab_with_id'
   ),
-  
+
   url(r'search/$'	, 
       'patient.views.patient_search',
       name = "patient_search"
@@ -324,32 +324,6 @@ urlpatterns = patterns('',
     		'patient.family_history.patient_family_history_del',
     		name = 'patient_family_history_del'
     ),
-
-###########################################################################################
-
-
-    url(r'social_history/json/$',
-    		'patient.views.family_history_json',
-    		name = 'social_history_json'
-    ),
-
-#    url(r'family_history/list/(?P<id>\d+)/$',
-#    		'patient.family_history.patient_family_history_list',
-#    		name = 'patient_family_history_list'
-#    ),
-
-#    url(r'social_history/add/(?P<id>\d+)/$',
-#    		'patient.social_history.patient_social_history_add',
-#   		  name = 'patient_social_history_add'
-#    ),
-#    url(r'social_history/edit/(?P<id>\d+)/$',
-#    		'patient.social_history.patient_social_history_edit',
-#    		name = 'patient_social_history_edit'
-#    ),
-#    url(r'social_history/del/(?P<id>\d+)/$',
-#    		'patient.social_history.patient_social_history_del',
-#    		name = 'patient_social_history_del'
-#    ),
 
 ###########################################################################################
 

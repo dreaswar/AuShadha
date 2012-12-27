@@ -2,12 +2,23 @@ function buildPatientTree(){
   require([
       "dojo/ready",
       "dojo/_base/window",
+
       "dojo/store/Memory",
       "dijit/tree/ObjectStoreModel",
-      "dijit/Tree","dojo/dom",
+      "dijit/Tree",
+      "dijit/tree/ForestStoreModel",
+      "dojo/data/ItemFileReadStore",
+
+      "dojo/dom",
       "dijit/registry",
-      "dojo/dom-construct","dojo/dom-style"
-  ], function(ready, win, Memory, ObjectStoreModel, Tree,dom, registry, domConstruct, domStyle){
+      "dojo/dom-construct","dojo/dom-style","dojo/json"
+  ], function(ready, win,
+              Memory, ObjectStoreModel,
+              Tree,
+              ForestStoreModel,
+              ItemFileReadStore,
+              dom, registry,
+              domConstruct, domStyle, JSON){
 
     var existingTree = registry.byId('patientTreeDiv');
 
@@ -30,7 +41,22 @@ function buildPatientTree(){
         });
     }  
 
-     // Create store, adding the getChildren() method required by ObjectStoreModel
+     // Create store 
+     var patientTreeStore = new ItemFileReadStore({url: CHOSEN_PATIENT.patientTreeUrl,
+                                                   clearOnClose:true,
+                                                  heirarchial:false
+    });
+    console.log(patientTreeStore);
+     // Create the model
+      var patientTreeModel = new ForestStoreModel({
+          store: patientTreeStore,
+          query: {type: 'application'},
+          rootId: 'root',
+          rootLabel:"Patient",
+          childrenAttrs:["children"]
+      });
+     
+     /*
       var patientTreeStore = new Memory({
           data: [
               { id: 'patient',
@@ -135,6 +161,7 @@ function buildPatientTree(){
                       parent: 'medication_and_allergies'
                     },
 */
+/*
                 { id: 'visits',
                   name:'Visits',
                   type:'main_branch',
@@ -145,7 +172,6 @@ function buildPatientTree(){
                   type:'main_branch',
                   parent: 'patient'
                 },
-
                 { id: 'investigations',
                   name:'Investigations',
                   type:'main_branch',
@@ -156,6 +182,7 @@ function buildPatientTree(){
                   type:'main_branch',
                   parent: 'patient'
                 },
+*/
 /*
                 { id: 'patient_media',
                   name:'Media',
@@ -179,10 +206,12 @@ function buildPatientTree(){
                       parent: s'patient_media'
                     }
 */
+/*
           ],
           getChildren: function(object){
               return this.query({parent: object.id});
           }
+
       });
 
       // Create the model
@@ -191,14 +220,14 @@ function buildPatientTree(){
           query: {id: 'patient'},
           labelAttr: "name"
       });
-
+  */
 
       // Create the Tree.
       ready(function(){
 
           function setTreeIcons(item, opened){
             //console.log(item.tree.rootNode || "Not defined");
-            if(item.id=='patient'){
+            if(item.id=='root'){
               console.log(item.id)
               console.log("Returning iconclass for tree root..")
               return 'patientIcon'

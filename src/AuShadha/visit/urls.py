@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
 
 import AuShadha.settings
+from visit.views import *
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -8,13 +9,13 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-    #url(r'render_visit_list/$'              , render_visit_list  , name="render_visit_list"),
+    url(r'render_visit_list/$'  , render_visit_list  , name="render_visit_list"),
     #url(r'render_visit_json/(?P<id>\d+)/$'  , render_visit_json  , name="render_visit_json"),
 
-    #url(r'detail/add/(?P<id>\d+)/$'  , visit_detail_add  , name="visit_detail_add"),
-    #url(r'detail/list/(?P<id>\d+)/$' , visit_detail_list , name="visit_detail_list"),
-    #url(r'detail/edit/(?P<id>\d+)/$' , visit_detail_edit , name="visit_detail_edit"),
-    #url(r'detail/del/(?P<id>\d+)/$'  , visit_detail_del  , name="visit_detail_del"),
+    url(r'detail/add/(?P<id>\d+)/$'  , visit_detail_add  , name="visit_detail_add"),
+    url(r'detail/list/(?P<id>\d+)/$' , visit_detail_list , name="visit_detail_list"),
+    url(r'detail/edit/(?P<id>\d+)/$' , visit_detail_edit , name="visit_detail_edit"),
+    url(r'detail/del/(?P<id>\d+)/$'  , visit_detail_del  , name="visit_detail_del"),
 
     #url(r'complaint/add/(?P<id>\d+)/$'  , visit_complaint_add  , name="visit_complaint_add"),
     #url(r'complaint/list/(?P<id>\d+)/$' , visit_complaint_list , name="visit_complaint_list"),

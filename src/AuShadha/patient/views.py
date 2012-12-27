@@ -46,7 +46,7 @@ from datetime import datetime, date, time
 from patient.models   import *
 from admission.models import *
 #from discharge.models import *
-#from visit.models     import *
+from visit.models     import *
 
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
@@ -166,7 +166,9 @@ def return_patient_json(patient, success = True):
         data_to_append['edit']         = patient.get_patient_detail_edit_url()
         data_to_append['del']          = patient.get_patient_detail_del_url()
 
-        data_to_append['patientsummary']            = APP_ROOT_URL+"pat/summary/?patient_id="+ patient_id
+        data_to_append['patientTreeUrl']   =  APP_ROOT_URL+"pat/tree/?patient_id="+ patient_id
+
+        data_to_append['patientsummary']     = APP_ROOT_URL+"pat/summary/?patient_id="+ patient_id
         data_to_append['sidebarcontacttab']  = APP_ROOT_URL+"pat/sidebar_contact_tab/?patient_id="+ patient_id
 
         data_to_append['contactadd']   = patient.get_patient_contact_add_url()
@@ -244,7 +246,7 @@ def return_patient_json(patient, success = True):
 ####################################################################################
 
 @login_required
-def return_patient_tree(request,id = None):
+def render_patient_tree(request,id = None):
   if request.method=="GET" and request.is_ajax():
     if id:
       patient_id = int(id)
@@ -257,177 +259,55 @@ def return_patient_tree(request,id = None):
       except(AttributeError, NameError, KeyError, TypeError,ValueError):
         raise Http404("ERROR! Requested Patient Data Does not exist")
 
-      json  = []
-      patient_tree_json  = { id                      : 'patient',
-                            name                     : pat_obj.__unicode__(),
-                            type                     :'trunk',
-                            patient_id               : pat_obj.id,
+      adm_obj               = Admission.objects.filter(patient_detail = pat_obj)
+      visit_obj             = VisitDetail.objects.filter(patient_detail = pat_obj)
 
-                            editUrl                  : pat_obj.get_patient_detail_edit_url(),
-                            delUrl                   : pat_obj.get_patient_detail_del_url(),
-
-                            contactJsonUrl           : None,
-                            phoneJsonUrl             : None,
-
-                            guardianJsonUrl          : None,
-                            demographicsAddUrl       : None,
-                            familyHistoryJsonUrl     : None,
-                            socialHistoryAddUrl      : None,
-
-                            obstetricHistoryJsonUrl  : None,
-                            gynaecHistoryJsonUrl     : None,
-                            surgicalHistoryJsonUrl   : None,
-                            medicalHistoryJsonUrl    : None,
-
-                            allergyJsonUrl           : None,
-                            medicationListJsonUrl    : None,
-
-                            medicalHistoryJsonUrl    : None,
-                            surgicalHistoryJsonUrl   : None,
-
-                            admissionJsonUrl : pat_obj.get_patient_admission_add_url(),
-                            admissionAddUrl  : pat_obj.get_patient_admission_add_url(),
-                            visitJsonUrl     : pat_obj.get_patient_visit_add_url(),
-                            visitAddUrl      : pat_obj.get_patient_visit_add_url(),
-
-                            delUrl     : pat_obj.get_patient_detail_del_url(),
-                            delUrl     : pat_obj.get_patient_detail_del_url(),
-                            delUrl     : pat_obj.get_patient_detail_del_url(),
+      data = {
+         "identifier": "id"   ,
+         "label"     : "name" ,
+         "items"     : [
+                          {"name"  : "Admissions"   , "type":"application", "id":"ADM",
+                           'len'   : len(adm_obj),
+                           "addUrl": None,
+                          },
+                          {"name"  : "Visits"          , "type":"application", "id":"VISIT",
+                           "len"   : len(visit_obj),
+                           "addUrl": None,
+                          },
+                          {"name"  : "Investigation" , "type":"application", "id":"INV" ,
+                           "len"   : 1,
+                           "addUrl": None,
+                          },
+                          {"name"  : "Imaging"      , "type":"application", "id":"IMAG" ,
+                           "len"   : 1,
+                           "addUrl": None,
+                          }
+                    ],
       }
 
-      contact_json = [{ id: 'contact',
-                      name:'Contact',
-                      type:'main_branch',
-                      parent: 'patient'
-                    },
-                        { id: 'address',
-                          name:'Address',
-                          type:'second_branch',
-                          parent: 'contact'
-                        },
-                        { id: 'phone',
-                          name:'Phone',
-                          type:'second_branch',
-                          parent: 'contact'
-                        }
-      ]
+      if adm_obj:
+        data['items'][0]['children'] = []
+        children_list  = data['items'][0]['children']
+        for adm in adm_obj:
+          dict_to_append = {"name":"", "type":"admission", "id":"","editUrl":"","delUrl":""}
+          dict_to_append['name']    = adm.date_of_admission.isoformat()
+          dict_to_append['id']      = "ADM_"+ unicode(adm.id)
+          dict_to_append['editUrl'] = adm.get_admission_edit_url()
+          dict_to_append['delUrl']  = adm.get_admission_del_url()
+          children_list.append(dict_to_append)
 
-      history_json = [{ id: 'history',
-                      name:'History',
-                      type:'main_branch',
-                      parent: 'patient'
-                    },
-                        { id: 'demographics',
-                          name:'Demographics',
-                          type:'second_branch',
-                          parent: 'history'
-                        },
-                        { id: 'social',
-                          name:'Social',
-                          type:'second_branch',
-                          parent: 'history'
-                        },
-                        { id: 'family',
-                          name:'Family',
-                          type:'second_branch',
-                          parent: 'history'
-                        },
-
-                        { id: 'medical_history',
-                          name:'Medical',
-                          type:'second_branch',
-                          parent: 'history'
-                        },
-                        { id: 'surgical_history',
-                          name:'Surgical',
-                          type:'second_branch',
-                          parent: 'history'
-                        }
-      ]
-      preventive_health_json = [{ id: 'preventive_health',
-                                name:'Preventives',
-                                type:'main_branch',
-                                parent: 'patient'
-                              },
-                                  { id: 'neonatal_and_paediatric_preventives',
-                                    name:'Neonatal & Paediatric',
-                                    type:'second_branch',
-                                    parent: 'preventive_health'
-                                  },
-                                  { id: 'immunisation',
-                                    name:'Immunisation',
-                                    type:'second_branch',
-                                    parent: 'preventive_health'
-                                  },
-                                  { id: 'obstetric_preventives',
-                                    name:'Obstetrics',
-                                    type:'second_branch',
-                                    parent: 'preventive_health'
-                                  },
-                                  { id: 'gynaecology_preventives',
-                                    name:'Gynaecology',
-                                    type:'second_branch',
-                                    parent: 'preventive_health'
-                                  },
-                                  { id: 'medical_and_surgical_preventives',
-                                    name:'Medical & Surgical',
-                                    type:'second_branch',
-                                    parent: 'preventive_health'
-                                  }
-      ]
-      medication_and_allergies_json = [{ id: 'medication_and_allergies',
-                                        name:'Medications & Allergies',
-                                        type:'main_branch',
-                                        parent: 'patient'
-                                      },
-                                        { id: 'medication_list',
-                                          name:'Medications',
-                                          type:'second_branch',
-                                          parent: 'medication_and_allergies'
-                                        },
-                                        { id: 'allergy_list',
-                                          name:'Allergies',
-                                          type:'second_branch',
-                                          parent: 'medication_and_allergies'
-                                        }
-      ]
-      admissions_json = [{ id: 'admissions',
-                          name:'Admissions',
-                          type:'main_branch',
-                          parent: 'patient'
-                        }
-      ]
-
-      visits_json = [{ id: 'visits',
-                      name:'Visits',
-                      type:'main_branch',
-                      parent: 'patient'
-                    }
-      ]
-
-      patient_media_json= [{ id: 'patient_media',
-                            name:'Media',
-                            type:'main_branch',
-                            parent: 'patient'
-                          },
-                            { id: 'patient_documents',
-                              name:'Documents',
-                              type:'second_branch',
-                              parent: 'patient_media'
-                            },
-                            { id: 'patient_images',
-                              name:'Images',
-                              type:'second_branch',
-                              parent: 'patient_media'
-                            },
-                            { id: 'patient_videos',
-                              name:'Videos',
-                              type:'second_branch',
-                              parent: 'patient_media'
-                            }
-      ]
-    json = simplejson.dumps(json)
-    return HttpResponse(json, content_type = "application/json")
+      if visit_obj:
+        data['items'][1]['children'] = []
+        children_list  = data['items'][1]['children']
+        for visit in visit_obj:
+          dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+          dict_to_append['name']    = visit.visit_date.isoformat()
+          dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
+          dict_to_append['editUrl'] = visit.get_edit_url()
+          dict_to_append['delUrl']  = visit.get_del_url()
+          children_list.append(dict_to_append)
+      json = simplejson.dumps(data)
+      return HttpResponse(json, content_type = "application/json")
   else:
      raise Http404("Bad Request")
 
@@ -925,6 +805,8 @@ def render_patient_list(request):
       addData['edit']         = patient.get_patient_detail_edit_url()
       addData['del']          = patient.get_patient_detail_del_url()
 
+      addData['patientTreeUrl']   = APP_ROOT_URL+"pat/tree/?patient_id="+ patient_id
+      
       addData['patientsummary']            = APP_ROOT_URL+"pat/summary/?patient_id="+ patient_id
       addData['sidebarcontacttab']  = APP_ROOT_URL+"pat/sidebar_contact_tab/?patient_id="+ patient_id
 
@@ -950,7 +832,7 @@ def render_patient_list(request):
 
       addData['visitadd']      = patient.get_patient_visit_add_url()
       addData['visitlist']     = patient.get_patient_visit_list_url()
-    #        addData['visitjson']    = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
+      addData['visitjson']     = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
 
       addData['demographicsadd']   = patient.get_patient_demographics_data_add_url()
       addData['demographicslist']  = patient.get_patient_demographics_data_list_url()
@@ -1276,14 +1158,14 @@ def visit_json(request):
     for visit in patient_visit_obj:
       data_to_append = {}
       data_to_append['id']               = visit.id
-      data_to_append['visit_date']       = visit.visit_date
-      data_to_append['op_surgeon']       = visit.op_surgeon
+      data_to_append['visit_date']       = visit.visit_date.isoformat()
+      data_to_append['op_surgeon']       = visit.op_surgeon.__unicode__()
       data_to_append['is_active']        = visit.is_active
       data_to_append['referring_doctor'] = visit.referring_doctor
       data_to_append['consult_nature']   = visit.consult_nature
       data_to_append['remarks']          = visit.remarks
-      data_to_append['edit']             = visit.get_patient_visit_edit_url()
-      data_to_append['del']              = visit.get_patient_visit_del_url()
+      data_to_append['edit']             = visit.get_edit_url()
+      data_to_append['del']              = visit.get_del_url()
       data.append(data_to_append)
   json   = simplejson.dumps(data)
   return HttpResponse(json, content_type = "application/json")
