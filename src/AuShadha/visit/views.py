@@ -158,8 +158,8 @@ def visit_detail_add(request, id):
     error_message = None
     visit_detail_form = None
     visit_detail_obj      = None
-#    if patient_detail_obj.has_active_visit():
-#      error_message         = "There is an active visit. You cannot add visit.\nYou can however append a follow up visit"
+    #if patient_detail_obj.has_active_visit():
+      #error_message         = "There is an active visit. You cannot add visit.\nYou can however append a follow up visit"
     if patient_detail_obj.has_active_admission() != '0':
       error_message         = "There is an active Admission. You cannot add visit Now."
     else:

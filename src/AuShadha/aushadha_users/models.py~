@@ -40,8 +40,7 @@ class AuShadhaUser(User):
                                           help_text   =""" Users Role in AuShadha Software. 
                                                            This is different from the role in the Clinic""",  
                                           max_length  = 30, 
-                                          choices     = AUSHADHA_USER_ROLES,
-                                          default     = "aushadha_user"
+                                          choices     = AUSHADHA_USER_ROLES, 
                                           )
   
 

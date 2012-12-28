@@ -6,7 +6,7 @@
 
 #Django Specific Imports
 from django.db import models
-from django.forms import ModelForm, ModelMultipleChoiceField, Textarea, TextInput
+from django.forms import ModelForm, ModelChoiceField, Textarea, TextInput
 
 #General Imports
 from datetime import datetime, date, time
@@ -67,7 +67,7 @@ class VisitDetail(AuShadhaBaseModel):
     verbose_name_plural = "Visit Details"
 
   def __unicode__(self):
-    return '%s: %s: %s' %(self.patient_detail, self.visit_date.date().isoformat(),self.op_surgeon.clinic_staff_list.username)
+    return '%s: %s: %s' %(self.patient_detail, self.visit_date.date().isoformat(),self.op_surgeon)
 
   
 
@@ -114,14 +114,14 @@ class VisitDetail(AuShadhaBaseModel):
 
   def save(self, *args, **kwargs):
     self.__model_label__ = 'detail'
-    if self.op_surgeon.clinic_staff_role == 'doctor':
-      if not self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
-        self.is_active = False
-      else:
-        self.is_active = True
-      super(VisitDetail, self).save(*args, **kwargs)
+    #if self.op_surgeon.clinic_staff_role == 'doctor':
+    if not self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
+      self.is_active = False
     else:
-      raise Exception("User is not a Provider. Only Doctors can save Visits. ")
+      self.is_active = True
+    super(VisitDetail, self).save(*args, **kwargs)
+    #else:
+      #raise Exception("User is not a Provider. Only Doctors can save Visits. ")
 
 
 
@@ -281,7 +281,7 @@ class VisitInv(AuShadhaBaseModel):
 ## ModelForm start here..
 
 class VisitDetailForm(ModelForm):
-  op_surgeon = ModelMultipleChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  op_surgeon = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
 
   class Meta:
     model   = VisitDetail

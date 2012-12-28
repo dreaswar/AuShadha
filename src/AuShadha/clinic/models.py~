@@ -188,21 +188,20 @@ class Staff(models.Model):
                                               help_text = " This is the Role of the Staff in the Clinic",
                                               choices   = CLINIC_STAFF_ROLE
                                            )
-    department            = models.ForeignKey(Department)
+    #department            = models.ForeignKey(Department)
     is_staff_hod          = models.BooleanField("Is Staff Head of the Department", 
                                                 editable = False
                                                )
 
     class Meta:
          unique_together = (('clinic', 'clinic_staff_list'),
-                            ('clinic_staff_list', 'department')
                            )
 
     def __unicode__(self):
         return "%s" %self.clinic_staff_list.user_name
 
     def save(self, *args, **kw):
-        self.is_staff_hod()
+        self.is_staff_hod
         super(Staff, self).save(*args, **kw)
 
     def _is_staff_hod(self):
