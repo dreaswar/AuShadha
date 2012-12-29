@@ -6,7 +6,7 @@ require(
    "dijit/layout/BorderContainer",
    "dijit/layout/TabContainer",
    "dojox/layout/ContentPane",
-   "dojox/layout/ExpandoPane",
+   //"dojox/layout/ExpandoPane",
    "dijit/Editor",
    "dijit/form/Button",
    "dojo/dom",
@@ -17,7 +17,7 @@ require(
    "dojo/request/xhr"
   ],
   function(registry,parser, BorderContainer,
-           TabContainer, ContentPane, ExpandoPane, Editor,Button,
+           TabContainer, ContentPane, /*ExpandoPane,*/ Editor,Button,
            dom, domConstruct, domStyle, ready,array,xhr
   ){
 //ready( function(){
@@ -81,11 +81,6 @@ require(
                               "patientSidebarTabContainer",
                               "first"
           );
-            domConstruct.create('div',
-                                {id: "patientTreeContainer"},
-                                "patientSidebarTabContainer",
-                                "first"
-            );
               domConstruct.create('div',
                                   {id: "patientTreeDiv"},
                                   "patientTreeContainer",
@@ -111,11 +106,11 @@ require(
                                   "patientSidebarDiv_allergyGridContainer",
                                   "first"
                   );
-            domConstruct.create('div',
-                                {id: "patientSidebarDiv_media"},
-                                "patientTreeContainer",
-                                "after"
-            );
+        domConstruct.create('div',
+                            {id: "patientSidebarDiv_media"},
+                            "patientTreeContainer",
+                            "after"
+        );
             domStyle.set( dom.byId('patientSidebarContentPane'),{'minWidth'  : '17em',
                                                                  'minHeight' : "400px",
                                                                  'overflow'  : "auto"
@@ -216,30 +211,11 @@ require(
                               "patientSynopsisBottomContentPane",
                               "first"
             );
-              domConstruct.create('div',
-                                {id: "patientSynopsisBottomContentPaneAdmissions"},
-                              "patientSynopsisBottomTabContainer",
-                              "first"
-              );
-                domConstruct.create('div',
-                                  {id: "patientNewAdmissionNotes"},
-                                  "patientSynopsisBottomContentPaneAdmissions",
-                                  "first"
-                );
-                domConstruct.create('div',
-                                  {id: "admission_list_container"},
-                                "patientSynopsisBottomContentPaneAdmissions",
-                                "last"
-                );
-                  domConstruct.create('div',
-                                    {id: "admission_list"},
-                                  "admission_list_container",
-                                  "first"
-                  );
+
               domConstruct.create('div',
                               {id: "patientSynopsisBottomContentPaneVisits"},
-                            "patientSynopsisBottomContentPaneAdmissions",
-                            "after"
+                            "patientSynopsisBottomTabContainer",
+                            "first"
               );
                 domConstruct.create('div',
                                   {id: "patientNewVisitNotes"},
@@ -256,6 +232,27 @@ require(
                                   "visit_list_container",
                                   "first"
                   );
+              domConstruct.create('div',
+                                {id: "patientSynopsisBottomContentPaneAdmissions"},
+                              "patientSynopsisBottomContentPaneVisits",
+                              "after"
+              );
+                domConstruct.create('div',
+                                  {id: "patientNewAdmissionNotes"},
+                                  "patientSynopsisBottomContentPaneAdmissions",
+                                  "first"
+                );
+                domConstruct.create('div',
+                                  {id: "admission_list_container"},
+                                "patientSynopsisBottomContentPaneAdmissions",
+                                "last"
+                );
+                  domConstruct.create('div',
+                                    {id: "admission_list"},
+                                  "admission_list_container",
+                                  "first"
+                  );
+
       domConstruct.create('div',
                           {id: "patientHistoryTab"},
                           "patientContextTabs",
@@ -328,7 +325,8 @@ require(
                                 {id: "immunisation_list"},
                                 "patientImmunisationTab",
                                 "first"
-            );/*
+            );
+            /*
           domConstruct.create('div',
                               {id: "patientObstetricsPreventivesTab"},
                               "patientPreventiveTabs",
@@ -364,6 +362,10 @@ require(
             );*/
 
       console.log("Created all the necessary DOM ELements.. Creating Dijits")
+
+     console.log("Building Patient Tree..")
+     buildPatientTree();
+     console.log("Finished Building Patient Tree..")
 
       var mainBorderContaner = registry.byId("patientTabsBorderContainer");
       domStyle.set(mainBorderContaner.domNode,
@@ -721,24 +723,7 @@ require(
                                               "patientSynopsisBottomTabContainer"
               );
               patientSynopsisBottomContentPane.addChild(patientSynopsisBottomTabContainer);
-                var patientSynopsisBottomContentPaneAdmissions = new ContentPane({
-                                                            id:"patientSynopsisBottomContentPaneAdmissions",
-                                                            title : "Admission",
-                                                            toolTip:"Record New Admission"
-                                                            },
-                                              "patientSynopsisBottomContentPaneAdmissions"
-                );
-                patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneAdmissions);
-                  var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes",style:"width:50em;"},"patientNewAdmissionNotes");
-                  patientSynopsisBottomContentPaneAdmissions.addChild(admissionNotesEditor);
-                  var AdmissionListContainer = new ContentPane({
-                                                            id:"admission_list_container"
-                                                            },
-                                              "admission_list_container"
-                  );
-                  patientSynopsisBottomContentPaneAdmissions.addChild(AdmissionListContainer);
-                  //setupAdmissionGrid(CHOSEN_PATIENT.admissionjson);
-                  //registry.byId("admission_list_container").set('href', CHOSEN_PATIENT.admissionadd);
+
 
                 var patientSynopsisBottomContentPaneVisits = new ContentPane({
                                                             id:"patientSynopsisBottomContentPaneVisits",
@@ -760,6 +745,24 @@ require(
                   //setupVisitGrid(CHOSEN_PATIENT.visitjson);
                   registry.byId("visit_list_container").set('href', CHOSEN_PATIENT.visitadd);
 
+                var patientSynopsisBottomContentPaneAdmissions = new ContentPane({
+                                                            id:"patientSynopsisBottomContentPaneAdmissions",
+                                                            title : "Admission",
+                                                            toolTip:"Record New Admission"
+                                                            },
+                                              "patientSynopsisBottomContentPaneAdmissions"
+                );
+                patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneAdmissions);
+                  var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes",style:"width:50em;"},"patientNewAdmissionNotes");
+                  patientSynopsisBottomContentPaneAdmissions.addChild(admissionNotesEditor);
+                  var AdmissionListContainer = new ContentPane({
+                                                            id:"admission_list_container"
+                                                            },
+                                              "admission_list_container"
+                  );
+                  patientSynopsisBottomContentPaneAdmissions.addChild(AdmissionListContainer);
+                  //setupAdmissionGrid(CHOSEN_PATIENT.admissionjson);
+                  //registry.byId("admission_list_container").set('href', CHOSEN_PATIENT.admissionadd);
 
         var historyTab = new ContentPane({id:"patientHistoryTab",
                                           title:"History"
@@ -882,10 +885,6 @@ require(
 
       mainContainer.startup();
 			mainContainer.resize();
-
-     console.log("Building Patient Tree..")
-     buildPatientTree();
-     console.log("Finished Building Patient Tree..")
 
      mainBorderContaner.resize();
      patientSynopsisBorderContainer.resize();

@@ -140,10 +140,14 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 
 				patientContextTabSetup();
 
-				console.log("Setting up the Forms...");
+        buildPatientTree();
+
+        console.log("Setting up the Forms...");
 					registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
+          registry.byId("visit_list_container").set('href', CHOSEN_PATIENT.visitadd);
+          //registry.byId("admission_list_container").set('href', CHOSEN_PATIENT.admissionadd);
 					//registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
-					makeObstetricHistoryDetailTab({"obstetricHistoryUrl": addData.obstetrichistorydetailadd});
+					//makeObstetricHistoryDetailTab({"obstetricHistoryUrl": addData.obstetrichistorydetailadd});
 				console.log("Finished setting up the Forms...");
 
 				console.log("Setting up the Grids Now...");
@@ -156,9 +160,10 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 					setupMedicalHistoryGrid(medicalHistoryUrl);
 					setupSurgicalHistoryGrid(surgicalHistoryUrl);
 
-//            setupAdmissionGrid(admissionUrl);
-//            setupVisitGrid(visitUrl);
+//        setupAdmissionGrid(admissionUrl);
+//        setupVisitGrid(visitUrl);
 				console.log("Finished setting up the grids....");
+
 
   });
 

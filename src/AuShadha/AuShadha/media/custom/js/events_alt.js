@@ -132,7 +132,7 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 				var socialHistoryUrl  = addData.socialhistoryadd;
 
 //      var admissionUrl      = addData.admissionadd;
-//      var visitUrl        = addData.visitadd;
+//      var visitUrl          = addData.visitadd;
 
 				console.log("Destroying the Grids and Forms...");
 					reInitBottomPanels();
@@ -140,8 +140,12 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 
 				patientContextTabSetup();
 
-				console.log("Setting up the Forms...");
+        buildPatientTree();
+
+        console.log("Setting up the Forms...");
 					registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
+          registry.byId("visit_list_container").set('href', CHOSEN_PATIENT.visitadd);
+          //registry.byId("admission_list_container").set('href', CHOSEN_PATIENT.admissionadd);
 					//registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
 					//makeObstetricHistoryDetailTab({"obstetricHistoryUrl": addData.obstetrichistorydetailadd});
 				console.log("Finished setting up the Forms...");
@@ -156,9 +160,10 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 					setupMedicalHistoryGrid(medicalHistoryUrl);
 					setupSurgicalHistoryGrid(surgicalHistoryUrl);
 
-//            setupAdmissionGrid(admissionUrl);
-//            setupVisitGrid(visitUrl);
+//        setupAdmissionGrid(admissionUrl);
+//        setupVisitGrid(visitUrl);
 				console.log("Finished setting up the grids....");
+
 
   });
 
