@@ -259,7 +259,6 @@ def render_patient_tree(request,id = None):
       except(AttributeError, NameError, KeyError, TypeError,ValueError):
         raise Http404("ERROR! Requested Patient Data Does not exist")
 
-      json  = []
       adm_obj               = Admission.objects.filter(patient_detail = pat_obj)
       visit_obj             = VisitDetail.objects.filter(patient_detail = pat_obj)
 
@@ -291,7 +290,7 @@ def render_patient_tree(request,id = None):
         children_list  = data['items'][0]['children']
         for adm in adm_obj:
           dict_to_append = {"name":"", "type":"admission", "id":"","editUrl":"","delUrl":""}
-          dict_to_append['name']    = adm.date_of_admission.isoformat()
+          dict_to_append['name']    = adm.date_of_admission.date().isoformat()
           dict_to_append['id']      = "ADM_"+ unicode(adm.id)
           dict_to_append['editUrl'] = adm.get_admission_edit_url()
           dict_to_append['delUrl']  = adm.get_admission_del_url()
@@ -302,10 +301,11 @@ def render_patient_tree(request,id = None):
         children_list  = data['items'][1]['children']
         for visit in visit_obj:
           dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
-          dict_to_append['name']    = visit.visit_date.isoformat()
+          dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
           dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
-          dict_to_append['editUrl'] = visit.get_edit_url()
-          dict_to_append['delUrl']  = visit.get_del_url()
+          dict_to_append['absoluteUrl'] = visit.get_absolute_url()
+          dict_to_append['editUrl']     = visit.get_edit_url()
+          dict_to_append['delUrl']      = visit.get_del_url()
           children_list.append(dict_to_append)
       json = simplejson.dumps(data)
       return HttpResponse(json, content_type = "application/json")
@@ -1157,9 +1157,10 @@ def visit_json(request):
   data                    = []
   if patient_visit_obj:
     for visit in patient_visit_obj:
+      i=0
       data_to_append = {}
       data_to_append['id']               = visit.id
-      data_to_append['visit_date']       = visit.visit_date.isoformat()
+      data_to_append['visit_date']       = visit.visit_date.date().isoformat() + i
       data_to_append['op_surgeon']       = visit.op_surgeon.__unicode__()
       data_to_append['is_active']        = visit.is_active
       data_to_append['referring_doctor'] = visit.referring_doctor
@@ -1168,6 +1169,7 @@ def visit_json(request):
       data_to_append['edit']             = visit.get_edit_url()
       data_to_append['del']              = visit.get_del_url()
       data.append(data_to_append)
+      i+=1
   json   = simplejson.dumps(data)
   return HttpResponse(json, content_type = "application/json")
 

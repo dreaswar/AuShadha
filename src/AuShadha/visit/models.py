@@ -69,7 +69,8 @@ class VisitDetail(AuShadhaBaseModel):
   def __unicode__(self):
     return '%s: %s: %s' %(self.patient_detail, self.visit_date.date().isoformat(),self.op_surgeon)
 
-  
+  def get_absolute_url(self):
+    return '/AuShadha/visit/detail/%d/' %(self.id)
 
   def visit_nature(self):
     return unicode(self.consult_nature)

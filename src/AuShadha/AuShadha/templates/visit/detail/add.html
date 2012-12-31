@@ -29,22 +29,27 @@
 									form : dom.byId("newVisitAddForm"),
 									load : function(json) {
 											var jsondata = JSON.parse(json)
-											if(jsondata.success = true){
+											console.log(jsondata);
+											if(jsondata.success == true){
 												dom.byId("newVisitAddForm").reset();
-												var data = jsondata.addData;
-												grid.store.newItem(data);
+												//var data = jsondata.addData;
+												//grid.store.newItem(data);
+												publishInfo("Visit Added Successfully.")
+                        buildPatientTree();
+												/*
 												if(ADD_MORE_PATIENTS == false){
                           editDialog.hide();
 												}
 												else{
 												  dijit.byId("id_visit_date").focus();
-												}
+												}*/
 											}
 											else{
 												var content = jsondata.error_message + "\n" + jsondata.form_errors;
                         dijit.byId("dialogJsonMessage").set('title', "ERROR!")
                         dijit.byId("dialogJsonMessage").set('content',content)
 					              dijit.byId("dialogJsonMessage").show();
+					              publishError("ERROR! " + jsondata.error_message);
 											}
 									},
 									error: function(json) {
@@ -52,6 +57,7 @@
                             dijit.byId("dialogJsonMessage").set('title', "ERROR!")
                             dijit.byId("dialogJsonMessage").set('content', jsondata.error_message)
 							              dijit.byId("dialogJsonMessage").show();
+							              publishError("ERROR! " + jsondata.error_message);
 									},
 									handle: function() {
 											hasBeenSent = true;

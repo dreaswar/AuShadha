@@ -28,23 +28,14 @@
 									url  : "{%url patient_new_add %}",
 									form : dom.byId("newPatientAddForm"),
 									load : function(json) {
-											var jsondata = JSON.parse(json)
+											var jsondata = JSON.parse(json);
 											if(jsondata.success = true){
 												dom.byId("newPatientAddForm").reset();
-												var data = {'id': jsondata.id, 
-												 'first_name': jsondata.first_name,
-												 'middle_name': jsondata.middle_name,
-												 'last_name'  : jsondata.last_name,
-												 'age'        : jsondata.age,
-												 'sex'        : jsondata.sex,
-												 'patient_hospital_id': jsondata.patient_hospital_id,
-												 'home'         : jsondata.home,
-												 'edit'         : jsondata.edit,
-												 'del'          : jsondata.del,
-												 'visitadd'     : jsondata.visitadd,
-												 'admissionadd' : jsondata.admissionadd,
-												};
+												var data = jsondata.addData;
 												grid.store.newItem(data);
+												publishInfo("<p class='suggestion_text'>New Patient Added Successfully.<p>\
+												             \nPlease switch to the Patient Grid under the Search Tab if you want to open Chart"
+                        );
 												if(ADD_MORE_PATIENTS == false){
                           editDialog.hide();
 												}
@@ -54,16 +45,21 @@
 											}
 											else{
 												var content = jsondata.error_message + "\n" + jsondata.form_errors;
-                        dijit.byId("dialogJsonMessage").set('title', "ERROR!")
-                        dijit.byId("dialogJsonMessage").set('content',content)
+                        dijit.byId("dialogJsonMessage").set('title', "ERROR!");
+                        dijit.byId("dialogJsonMessage").set('content',content);
 					              dijit.byId("dialogJsonMessage").show();
+					              publishError("<p class='suggestion_text'> ERROR! :" +
+                                     jsondata.error_message +
+                                     "</p>"
+                        );
 											}
 									},
 									error: function(json) {
 									          var jsondata = JSON.parse(json)
-                            dijit.byId("dialogJsonMessage").set('title', "ERROR!")
-                            dijit.byId("dialogJsonMessage").set('content', jsondata.error_message)
+                            dijit.byId("dialogJsonMessage").set('title', "ERROR!");
+                            dijit.byId("dialogJsonMessage").set('content', jsondata.error_message);
 							              dijit.byId("dialogJsonMessage").show();
+							              publishError("ERROR! : \n"+ jsondata.error_message);
 									},
 									handle: function() {
 											hasBeenSent = true;

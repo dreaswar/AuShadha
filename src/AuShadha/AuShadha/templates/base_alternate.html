@@ -128,6 +128,27 @@
    {% include 'script_alt.js' %}
   </script>
 
+  <script type="text/javascript">
+   {% include 'notifications.js' %}
+  </script>
+
+{% comment %}
+  <script type="text/javascript">
+    var notifyMe = require(["dojox/widget/Toaster"],
+                   function(Toaster){
+                      dojo.publish("appwideNotificationMessage",
+                        [
+                          {
+                            message: "Notifications will pop-up here ! ",
+                            type: "fatal",
+                            duration: 500
+                          }
+                        ]
+                      );
+                   });
+  </script>
+{% endcomment %}
+
   {% block js_bits %}
 
   {% endblock js_bits %}
@@ -523,6 +544,17 @@
       <p class="suggestion_text">Please Correct & Resubmit </p>
     </div>
 
+    <div id              = "appwideNotificationPopup"
+         data-dojo-id    = "appwideNotificationPopup"
+         data-dojo-type  = "dojox/widget/Toaster"
+         data-dojo-props = "positionDirection : 'tr-down',
+                            duration          : 0,
+                            messageTopic      : 'appwideNotificationMessage'
+                            "
+    >
+
+    </div>
+    
   <!--  END DIALOGS AND MISC  -->
 
 </div>

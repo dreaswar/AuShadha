@@ -101,27 +101,33 @@ def generate_json_for_datagrid(obj, success=True, error_message = "Saved Success
 
 
 class AuShadhaBaseModel(models.Model):
-
   '''
     base AuShadha Model From which all AuShadha Models Except the Clinic Model Derive. 
   '''
-#  __model_label__ = "AuShadhaBaseModel"
-
+  #__model_label__ = "AuShadhaBaseModel"
+  #__root_url__ = APP_ROOT_URL
   parent_clinic = models.ForeignKey('clinic.Clinic', null = True, blank = True)
 
+  #def __init__(self, au_model_label = "AuShadhaBaseModel", *args, **kwargs):
+    #from AuShadha.settings import APP_ROOT_URL
+    #self.__root_url__ = APP_ROOT_URL
+    #super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
 
   def __unicode__(self):
     return "AuShadhaBaseModel" 
-  
-#  def __init__(self, au_model_label = "AuShadhaBaseModel", *args, **kwargs):
-#    self.__model_label__ = au_model_label
-#    super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
+
+  def save(self, *args, **kwargs):
+    self.__model_label__ = "AuShadhaBaseModel"
+    super(AuShadhaBaseModel, self).save(*args, **kwargs)
 
 #  def get_add_url(self):
 #    if self.patient_detail:
 #      return  generic_url_maker(self, "add", self.patient_detail.id)
 #    else:
 #      return  generic_url_maker(self, "add", self.parent_clinic.id)
+
+  #def get_absolute_url(self):
+    #return  "/AuShadha/%s/%s/%d/"(self._meta.app_label, self.__model_label__, self.id)
 
   def get_edit_url(self):
     return  generic_url_maker(self, "edit", self.id)
@@ -130,7 +136,7 @@ class AuShadhaBaseModel(models.Model):
     return  generic_url_maker(self, "del", self.id)
 
   def get_object_json_url(self):
-    return APP_ROOT_URL+"/%s_json/%s/" %(self.__model_label__, self.id)
+    return "/AuShadha/%s_json/%s/" %(self.__model_label__, self.id)
 
 
   def generic_url_maker(self,action,id, root_object = False):

@@ -218,7 +218,8 @@ require(
                             "first"
               );
                 domConstruct.create('div',
-                                  {id: "patientNewVisitNotes"},
+                                  {id: "patientNewVisitNotes",
+                                  style:"max-height:20em; width:30em;"},
                                 "patientSynopsisBottomContentPaneVisits",
                                 "first"
                 );
@@ -238,7 +239,8 @@ require(
                               "after"
               );
                 domConstruct.create('div',
-                                  {id: "patientNewAdmissionNotes"},
+                                  {id: "patientNewAdmissionNotes",
+                                   style:"max-height:20em; width:30em;"},
                                   "patientSynopsisBottomContentPaneAdmissions",
                                   "first"
                 );
@@ -305,17 +307,7 @@ require(
                             {id: "patientPreventiveTabs"},
                             "patientPreventiveHealthTab",
                             "first"
-        );/*
-          domConstruct.create('div',
-                              {id: "patientNeonatalAndPaediatricExamTab"},
-                              "patientPreventiveTabs",
-                              "first"
-          );
-            domConstruct.create('div',
-                                {id: "neonatal_and_paediatric_exam_list"},
-                                "patientNeonatalAndPaediatricExamTab",
-                                "first"
-            );*/
+        );
           domConstruct.create('div',
                               {id: "patientImmunisationTab"},
                               "patientPreventiveTabs",
@@ -326,40 +318,6 @@ require(
                                 "patientImmunisationTab",
                                 "first"
             );
-            /*
-          domConstruct.create('div',
-                              {id: "patientObstetricsPreventivesTab"},
-                              "patientPreventiveTabs",
-                              "last"
-          );
-
-            domConstruct.create('div',
-                                {id: "obstetric_history_detail"},
-                                "patientObstetricsPreventivesTab",
-                                "first"
-            );
-
-          domConstruct.create('div',
-                              {id: "patientGynaecologyPreventivesTab"},
-                              "patientPreventiveTabs",
-                              "last"
-          );
-            domConstruct.create('div',
-                                {id: "gynaecology_preventives_list"},
-                                "patientGynaecologyPreventivesTab",
-                                "first"
-            );
-          
-          domConstruct.create('div',
-                              {id: "patientMedicalPreventivesTab"},
-                              "patientPreventiveTabs",
-                              "last"
-          );
-            domConstruct.create('div',
-                                {id: "medical_preventives_list"},
-                                "patientMedicalPreventivesTab",
-                                "first"
-            );*/
 
       console.log("Created all the necessary DOM ELements.. Creating Dijits")
 
@@ -429,8 +387,6 @@ require(
                 "dijit/MenuItem", "dijit/DropDownMenu","dijit/MenuBarItem"
                 ],
                 function(ready, MenuBar, PopupMenuBarItem, Menu, MenuItem, DropDownMenu,MenuBarItem){
-//                  ready(function(){
-
                       var pMenuBar = new MenuBar({});
 
                       var pSynopsisLayout = new DropDownMenu({});
@@ -443,13 +399,7 @@ require(
                         pSynopsisLayout.addChild(new MenuItem({
                             label: "Tabbed Layout"
                         }));
-/*
-                      var Personalize = new DropDownMenu({});
-                      Personalize.addChild(new MenuItem({
-                          label: "Personalize Layout",
-                          popup: pSynopsisLayout
-                      }));
-*/
+
                       var pAddMenu = new DropDownMenu({});
                         pAddMenu.addChild(new MenuItem({
                             label: "Neonatal History",
@@ -577,8 +527,6 @@ require(
                           }
                         }));
 
-                      //var pSubMenu = new DropDownMenu({});
-
                       pMenuBar.addChild(new PopupMenuBarItem({
                           label     : "Customise",
                           title     : "Personalize Layout of Application",
@@ -592,13 +540,6 @@ require(
                           popup: pAddMenu,
                           iconClass: "dijitEditorIcon dijitEditorIconCopy"
                       }));
-/*
-                      pMenuBar.addChild(new PopupMenuBarItem({
-                          title     : "Customise to look and feel",
-                          label     : "Customise",
-                          popup     : pSubMenu,
-                      }));
-*/
                       pMenuBar.addChild(new MenuBarItem({
                           title     : "Contacts, Demographics and Insurance Info.",
                           label     : "Demographics",
@@ -628,11 +569,8 @@ require(
                       }));
 
                       pMenuBar.set("style",{
-//                                            "border"     : "none",
-//                                            "background" : "none",
                                             "position"   : "relative",
                                             "float"      : "right",
-//                                            "width"      : "60em"
                                             });
 
 /*
@@ -733,7 +671,11 @@ require(
                                               "patientSynopsisBottomContentPaneVisits"
                 );
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneVisits);
-                  var visitNotesEditor = new Editor({id:"patientNewVisitNotes",style:"width:50em;"},"patientNewVisitNotes");
+                  var visitNotesEditor = new Editor({id:"patientNewVisitNotes",
+                                                    height:'20em',
+                                                     style:"width:40em; height:20em; max-height:20em;"
+                                                    },
+                                                    "patientNewVisitNotes");
                   patientSynopsisBottomContentPaneVisits.addChild(visitNotesEditor);
 
                   var VisitListContainer = new ContentPane({
@@ -753,7 +695,9 @@ require(
                                               "patientSynopsisBottomContentPaneAdmissions"
                 );
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneAdmissions);
-                  var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes",style:"width:50em;"},"patientNewAdmissionNotes");
+                  var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes",
+                                                         style:"width:40em;height:20em;max-height:20em;"
+                                                        },"patientNewAdmissionNotes");
                   patientSynopsisBottomContentPaneAdmissions.addChild(admissionNotesEditor);
                   var AdmissionListContainer = new ContentPane({
                                                             id:"admission_list_container"

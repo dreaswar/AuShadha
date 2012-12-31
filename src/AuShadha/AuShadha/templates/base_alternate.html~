@@ -64,6 +64,18 @@
 
    var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
   
+    /*
+       Contains the Patient Medical Preventives Tab Setup.
+    */
+
+   var makeMedicalPreventivesTab  = {% include 'medical_preventives_tab.js' %}
+
+    /*
+       Contains the Patient Surgical Preventives Tab Setup.
+    */
+
+   var makeSurgicalPreventivesTab  = {% include 'surgical_preventives_tab.js' %}
+
 		/*
        Contains the Patient Obstetric History Tab Setup.
     */
@@ -115,6 +127,23 @@
   <script type="text/javascript">
    {% include 'script_alt.js' %}
   </script>
+
+{% comment %}
+  <script type="text/javascript">
+    var notifyMe = require(["dojox/widget/Toaster"],
+                   function(Toaster){
+                      dojo.publish("appwideNotificationMessage",
+                        [
+                          {
+                            message: "Notifications will pop-up here ! ",
+                            type: "fatal",
+                            duration: 500
+                          }
+                        ]
+                      );
+                   });
+  </script>
+{% endcomment %}
 
   {% block js_bits %}
 
@@ -511,6 +540,17 @@
       <p class="suggestion_text">Please Correct & Resubmit </p>
     </div>
 
+    <div id              = "appwideNotificationPopup"
+         data-dojo-id    = "appwideNotificationPopup"
+         data-dojo-type  = "dojox/widget/Toaster"
+         data-dojo-props = "positionDirection : 'tr-down',
+                            duration          : 0,
+                            messageTopic      : 'appwideNotificationMessage'
+                            "
+    >
+
+    </div>
+    
   <!--  END DIALOGS AND MISC  -->
 
 </div>

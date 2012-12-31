@@ -281,7 +281,7 @@ class VisitInv(AuShadhaBaseModel):
 ## ModelForm start here..
 
 class VisitDetailForm(ModelForm):
-  op_surgeon = ModelMultipleChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  op_surgeon = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
 
   class Meta:
     model   = VisitDetail

@@ -218,7 +218,8 @@ require(
                             "first"
               );
                 domConstruct.create('div',
-                                  {id: "patientNewVisitNotes"},
+                                  {id: "patientNewVisitNotes",
+                                  style:"max-height:20em; width:30em;"},
                                 "patientSynopsisBottomContentPaneVisits",
                                 "first"
                 );
@@ -238,7 +239,8 @@ require(
                               "after"
               );
                 domConstruct.create('div',
-                                  {id: "patientNewAdmissionNotes"},
+                                  {id: "patientNewAdmissionNotes",
+                                   style:"max-height:20em; width:30em;"},
                                   "patientSynopsisBottomContentPaneAdmissions",
                                   "first"
                 );
@@ -669,7 +671,11 @@ require(
                                               "patientSynopsisBottomContentPaneVisits"
                 );
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneVisits);
-                  var visitNotesEditor = new Editor({id:"patientNewVisitNotes",style:"width:50em;"},"patientNewVisitNotes");
+                  var visitNotesEditor = new Editor({id:"patientNewVisitNotes",
+                                                    height:'20em',
+                                                     style:"width:40em; height:20em; max-height:20em;"
+                                                    },
+                                                    "patientNewVisitNotes");
                   patientSynopsisBottomContentPaneVisits.addChild(visitNotesEditor);
 
                   var VisitListContainer = new ContentPane({
@@ -689,7 +695,10 @@ require(
                                               "patientSynopsisBottomContentPaneAdmissions"
                 );
                 patientSynopsisBottomTabContainer.addChild(patientSynopsisBottomContentPaneAdmissions);
-                  var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes",style:"width:50em;"},"patientNewAdmissionNotes");
+                  var admissionNotesEditor = new Editor({id:"patientNewAdmissionNotes",
+                                                         height:'20em',
+                                                         style:"width:40em;height:20em;max-height:20em;"
+                                                        },"patientNewAdmissionNotes");
                   patientSynopsisBottomContentPaneAdmissions.addChild(admissionNotesEditor);
                   var AdmissionListContainer = new ContentPane({
                                                             id:"admission_list_container"

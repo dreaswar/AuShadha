@@ -173,7 +173,7 @@ body{
   width: 60em;
   height: 22em;
   position:relative;
-  top: -28.5em;
+  top: -20.0em;
   left: 50em;
 }
 
@@ -529,4 +529,21 @@ body{
 
 #social_history_form_table tr {
   margin: 25px 0px 25px 0px;
+}
+
+
+/* Toaster Notification CSS */
+
+.dijitToasterMessage{
+    color:#fff;
+    text-align:center;
+}
+
+.dijitToasterContent {
+    padding:1em;
+    padding-top:0.25em;
+    background:#000;
+    border-radius: 8px;
+    text-align:center;
+    vertical-align:middle;
 }
