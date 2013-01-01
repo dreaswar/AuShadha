@@ -53,10 +53,12 @@
 </head>
 
 <body class="claro">
-<div id="loginDiv"> </div>
+
+<div id="loginContainerDiv" style="overflow:auto; height:100%; width:100%; margin:0px; padding:0px;"> 
   <div class  = "header_with_logo"
       style  = "position       : relative; 
-                left           : 60em;"
+                left           : 42%;
+                width						: 20%"
   >
    <img src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_128.png" 
         alt="AuShadha" 
@@ -93,7 +95,7 @@
 
 	<div id    = "login_form_div"
 	     style = "position   : relative; 
-	              left       : 46em; 
+	              left       : 32%; 
 	              top        : 10em;
 	              text-align : center; vertical-align:middle; padding:5px; width: 300px; margin-bottom: 20px;
 	              border     : solid #ddd 2px;
@@ -197,7 +199,7 @@
 					     title="License &amp; Credits"
 					     data-dojo-id="aushadha_license_clickable"
 					     onClick="aushadha_license_text_dialog.show();"
-					     style="cursor:pointer;"
+					     style="cursor:pointer; font-weight:bold;"
 					 > 
 					 <img src="http://www.gnu.org/graphics/gplv3-127x51.png" style="width:64px; height:32px;">
 					 License &amp; Credits
