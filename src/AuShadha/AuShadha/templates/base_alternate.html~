@@ -58,42 +58,53 @@
   </script>
 
 	<script type="text/javascript">
-    /*
-       Contains the Patient Demographics Tab Setup.
-    */
 
-   var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
+		{% if perms.patient %}
+			/*
+				Contains the Patient Demographics Tab Setup.
+			*/
+
+			var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
   
     /*
        Contains the Patient Medical Preventives Tab Setup.
     */
 
-   var makeMedicalPreventivesTab  = {% include 'medical_preventives_tab.js' %}
+			var makeMedicalPreventivesTab  = {% include 'medical_preventives_tab.js' %}
+
 
     /*
        Contains the Patient Surgical Preventives Tab Setup.
     */
 
-   var makeSurgicalPreventivesTab  = {% include 'surgical_preventives_tab.js' %}
-
+			var makeSurgicalPreventivesTab  = {% include 'surgical_preventives_tab.js' %}
+		{% endif %}		
+		
+		{% if perms.obs_and_gyn %}
 		/*
        Contains the Patient Obstetric History Tab Setup.
     */
 
-   var makeObstetricHistoryDetailTab  = {% include 'obstetric_history_tab.js' %}
+			var	makeObstetricHistoryDetailTab  = {% include 'obstetric_history_tab.js' %}
+		{% endif %}
 
+		{% if perms.obs_and_gyn %}
    /*
        Contains the Patient Gynaecology History Tab Setup.
     */
 
-   var makeGynaecologyHistoryDetailTab  = {% include 'gynaecology_history_tab.js' %}
+			var makeGynaecologyHistoryDetailTab  = {% include 'gynaecology_history_tab.js' %}
+		
+		{% endif %}
+		
+		{% if perms.patient %}
+			/*
+				Contains the Patient Paediatric / Neonatal Exam Tab Setup.
+			*/
 
-   /*
-       Contains the Patient Paediatric / Neonatal Exam Tab Setup.
-    */
-
-   var makeNeonatalAndPaediatricExamTab  = {% include 'neonatal_and_paediatric_exam_tab.js' %}
+				var makeNeonatalAndPaediatricExamTab  = {% include 'neonatal_and_paediatric_exam_tab.js' %}
    
+		{% endif %}
     /*
        Contains the Patient Context Tabs set up
     */
@@ -128,22 +139,9 @@
    {% include 'script_alt.js' %}
   </script>
 
-{% comment %}
   <script type="text/javascript">
-    var notifyMe = require(["dojox/widget/Toaster"],
-                   function(Toaster){
-                      dojo.publish("appwideNotificationMessage",
-                        [
-                          {
-                            message: "Notifications will pop-up here ! ",
-                            type: "fatal",
-                            duration: 500
-                          }
-                        ]
-                      );
-                   });
+   {% include 'notifications.js' %}
   </script>
-{% endcomment %}
 
   {% block js_bits %}
 
@@ -186,11 +184,13 @@
             data-dojo-type  = "dojox/layout/ContentPane"
             data-dojo-props = "region     : 'right'"
        >
+				{% if perms.patient %}
          <span id="patientSearchBox"
                style="position: absolute; left: -400px;top:1px;"
          >
             {% include 'search/patient_search_filtering_select_small.html' %}
          </span>
+         {% endif %}
          <span id="timeBox"> </span>
          {% if user.is_authenticated %}
           <img src   = "{{STATIC_URL}}images/generic/auth/user_16.png"

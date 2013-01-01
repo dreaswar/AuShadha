@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 #(r'^AuShadha/clinic/',         include('clinic.urls')),
 (r'^AuShadha/pat/',            include('patient.urls')),
 (r'^AuShadha/patient/',        include('patient.urls')),
-#(r'^AuShadha/visit/',          include('visit.urls')),
+(r'^AuShadha/visit/',          include('visit.urls')),
 #(r'^AuShadha/admission/',      include('admission.urls')),
 
 #(r'^AuShadha/history/'       ,     include('history.urls')),

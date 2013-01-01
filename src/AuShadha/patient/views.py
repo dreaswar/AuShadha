@@ -29,10 +29,8 @@ from django.core                     import serializers
 from django.core.serializers         import json    
 from django.core.serializers.json    import DjangoJSONEncoder
 
-from django.contrib.auth.views       import login, logout
+
 from django.contrib.auth.decorators  import login_required
-from django.contrib.auth             import REDIRECT_FIELD_NAME
-from django.contrib.auth.forms       import AuthenticationForm
 from django.template.response        import TemplateResponse
 from django.contrib.sites.models     import get_current_site
 import urlparse
@@ -43,13 +41,15 @@ from datetime import datetime, date, time
 
 
 # Application Specific Model Imports-----------------------
+import AuShadha.settings as settings
+from AuShadha.settings import APP_ROOT_URL
+
 from patient.models   import *
 from admission.models import *
 #from discharge.models import *
 from visit.models     import *
 
-import AuShadha.settings as settings
-from AuShadha.settings import APP_ROOT_URL
+
 
 from patient.medication_list import patient_medication_list_add, patient_medication_list_edit
 from patient.immunisation import patient_immunisation_add, patient_immunisation_edit
@@ -412,83 +412,6 @@ def check_before_adding(patient_obj):
             return False
 
 ######################################################################################
-
-
-@sensitive_post_parameters()
-@csrf_protect
-@never_cache
-def login_view(request, template_name='registration/login.html',
-          redirect_field_name=REDIRECT_FIELD_NAME,
-          authentication_form=AuthenticationForm,
-          current_app=None, extra_context=None):
-    """
-    Displays the login form and handles the login action.
-    """
-    redirect_to = request.REQUEST.get(redirect_field_name, '')
-
-    if request.method == "POST":
-        form = authentication_form(data=request.POST)
-        if form.is_valid():
-            netloc = urlparse.urlparse(redirect_to)[1]
-
-            # Use default setting if redirect_to is empty
-            if not redirect_to:
-                redirect_to = settings.LOGIN_REDIRECT_URL
-
-            # Heavier security check -- don't allow redirection to a different
-            # host.
-            elif netloc and netloc != request.get_host():
-                redirect_to = settings.LOGIN_REDIRECT_URL
-
-            # Okay, security checks complete. Log the user in.
-            login(request, form.get_user())
-
-            if request.session.test_cookie_worked():
-                request.session.delete_test_cookie()
-            data  = {'success'       : True, 
-                     'error_message' : "Successfully Loggged In !", 
-                     'redirect_to'   : redirect_to
-                    }
-        else:
-           data  = {'success'       : False, 
-                     'error_message' : '''<em class='error_text'>ERROR! Could not login</em>
-                                         <p class='suggestion_text'>Please Check your Username & Password.</p>
-                                         <i class='help_text'>If you are sure they are correct, 
-                                         Please contact Administrator to find 
-                                         out whether you need to activate your account.
-                                         </i>
-                                       ''',
-                  }
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type = 'application/json')
-    else:
-        form = authentication_form(request)
-
-    request.session.set_test_cookie()
-
-    current_site = get_current_site(request)
-
-    context = {
-        'form': form,
-        redirect_field_name: redirect_to,
-        'site': current_site,
-        'site_name': current_site.name,
-    }
-    if extra_context is not None:
-        context.update(extra_context)
-    return TemplateResponse(request, template_name, context,
-                            current_app=current_app)
-
-
-@login_required
-def logout_view(request):
-    '''
-    View for logging out of AuShadha
-    '''
-    logout(request)
-    return HttpResponseRedirect('/AuShadha/')
-#    return HttpResponseRedirect('/login/')
-
 
 @login_required
 def patient_index(request):

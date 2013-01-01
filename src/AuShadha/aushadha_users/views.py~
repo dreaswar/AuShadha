@@ -45,7 +45,6 @@ from datetime import datetime, date, time
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from aushadha_users.models import AuShadhaUser, AuShadhaUserForm
-
 #Views start here -----------------------------------------
 
 

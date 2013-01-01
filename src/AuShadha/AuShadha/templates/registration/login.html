@@ -27,10 +27,6 @@
   {% endblock js %} 
 
   <script type="text/javascript">
-   {% include 'login.js' %}
-  </script>
-
-  <script type="text/javascript">
   require([ 
           "dojo/parser", 
           "dojo/_base/connect",
@@ -42,27 +38,30 @@
           "dijit/form/Textarea",
           "dojox/form/Manager", 
           "dojox/validate/web",
+          "dijit/Dialog",
+          "dijit/layout/ContentPane",
+          "dijit/layout/TabContainer"
   ]);
   </script>
+  
+  <script type="text/javascript">
+   {% include 'login.js' %}
+  </script>
+
+
 
 </head>
 
 <body class="claro">
 <div id="loginDiv"> </div>
-  <h3 class  = "header_with_logo"
-      style  = "text-align     : center; 
-                position       : relative; 
-                left           : 5px; 
-                margin         : 10px; 
-                letter-spacing : 0.2em; 
-                font-family    : Sans-Serif; 
-                font-size      : 20px; 
-                color          : olive;"
+  <div class  = "header_with_logo"
+      style  = "position       : relative; 
+                left           : 60em;"
   >
    <img src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_128.png" 
         alt="AuShadha" 
         title="AuShadha Public Health Clinic EMR & Management Open Source Project">
-  </h3>
+  </div>
 <div data-dojo-type = "dijit/form/Form" 
      id             = "loginForm" 
      data-dojo-id   = "loginForm"
@@ -94,8 +93,17 @@
 
 	<div id    = "login_form_div"
 	     style = "position   : relative; 
-	              left       : 80px; 
-	              text-align : center; padding:5px; width: 300px; margin-bottom: 20px;"
+	              left       : 46em; 
+	              top        : 10em;
+	              text-align : center; vertical-align:middle; padding:5px; width: 300px; margin-bottom: 20px;
+	              border     : solid #ddd 2px;
+	              border-radius: 4px;
+	              box-shadow: 1px 1px 10px #aaa;
+	              background: #fff;
+	              width: 25em; 
+	              height: auto;
+	              padding: 7em;
+	              "
 	>
 	<table style="margin-bottom: 20px;">
 		<tr style  = "text-align:center; position:relative;padding: 10px;">
@@ -152,16 +160,72 @@
            class = "small_img"
            style = "padding-right:2px;">
       Register
+      <script type="dojo/on" data-dojo-event="click">
+				require(["dijit/Dialog"], 
+				function(Dialog){
+						var dialog = new Dialog({
+														title : "Sorry..",
+														content: "Dear User, This feature will be implemented soon\
+														         \nThanks for your patience",
+														style  : "width: 30em; height: auto;"
+														});
+						dialog.show();
+					});
+      </script>
     </button>  		
 
 	</div>
-  <div id="loginErrorDialog"data-dojo-type="dijit/Dialog"> </div>
+  <div id="loginErrorDialog" data-dojo-type="dijit/Dialog"> </div>
+
 	<div id    = "login_footer" 
-	     style = "position:absolute; top:90%; left: 25%; font-size: 10px; color: RoyalBlue; text-align:center; margin-top:60px;margin-bottom:10px;">
+	     style = "position:relative; 
+	              top:10em; 
+	              left: 0em; 
+	              font-size: 14px; 
+	              color: RoyalBlue; 
+	              text-align:center; 
+	              margin-top: 10em;
+	              margin-bottom:10px;">
 	  	 <i>
-	  	 <p> AuShadha and its Logo &copy; Dr. Easwar T.R 2012<p> 
-	  	 <p>AuShadha Licensed under GNU-GPL version 3</p>
-       <b>email:dreaswar@gmail.com</b>
+				<p> AuShadha and its Logo &copy; 
+					<a href="http://www.dreaswar.com" target="_blank" title="Dr. Easwar's Website & Blog'"> 
+					   Dr. Easwar T.R 2012 
+					</a>
+					&nbsp; | &nbsp; 
+					<a   id='aushadha_license_clickable' 
+					     href="#"
+					     title="License &amp; Credits"
+					     data-dojo-id="aushadha_license_clickable"
+					     onClick="aushadha_license_text_dialog.show();"
+					     style="cursor:pointer; font-weight:bold;"
+					 > 
+					 <img src="http://www.gnu.org/graphics/gplv3-127x51.png" style="width:64px; height:32px;">
+					 License &amp; Credits
+					</a>
+
+					<!--START OF DIALOG DIV 	 -->
+					<div  data-dojo-type  = "dijit/Dialog" 
+					      style           = "display:none;" 
+					      data-dojo-id    = 'aushadha_license_text_dialog'
+					      data-dojo-props = "title:'PLEASE READ'"
+					> 
+								{% include 'about_credits_and_license.html' %}
+					</div>
+					<!--  END OF DIALOG DIV -->
+
+				</p>
+				&nbsp; | &nbsp; 
+				<a href="mailto:dreaswar@gmail.com">dreaswar.gmail.com </a> 
+				&nbsp; | &nbsp; 
+				<a href='http://www.facebook.com/AuShadha/' target="_blank" title="Facebook Page"> Facebook </a>
+				&nbsp; | &nbsp; 
+				<a href="http://dreaswar.github.com/AuShadha/" target="_blank"> 
+					<img src="http://octodex.github.com/images/original.jpg" 
+						style="width:32px; height: 32px;" 
+						title="Github Repo"
+						alt=""> GitHub 
+				</a>
+				&nbsp; | &nbsp; 
        </i>
 	</div>
 

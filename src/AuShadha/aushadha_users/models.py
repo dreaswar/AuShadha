@@ -17,6 +17,10 @@ from django.forms   import ModelForm
 #from staff.models     import *
 
 from django.contrib.auth.models import User
+#from django.contrib.auth.views       import login, logout
+#from django.contrib.auth.decorators  import login_required
+from django.contrib.auth             import REDIRECT_FIELD_NAME
+from django.contrib.auth.forms       import AuthenticationForm
 
 
 AUSHADHA_USER_ROLES =( ('audhadha_admin'      , 'AuShadha Admin'     ) ,
@@ -43,10 +47,9 @@ class AuShadhaUser(User):
                                           choices     = AUSHADHA_USER_ROLES,
                                           default     = "aushadha_user"
                                           )
-  
 
 
-class AuShadhaUserForm(ModelForm):
+class AuShadhaUserForm(AuthenticationForm):
   model = AuShadhaUser
 
 

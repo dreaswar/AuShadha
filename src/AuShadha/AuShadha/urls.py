@@ -41,8 +41,8 @@ urlpatterns = patterns('',
 
 ## Login and Logout URLS
 #(r'^AuShadha/login/$', 'django.contrib.auth.views.login'),
-(r'^AuShadha/login/$', 'patient.views.login_view'),
-(r'^AuShadha/logout/$', 'patient.views.logout_view'),
+(r'^AuShadha/login/$', 'aushadha_users.views.login_view'),
+(r'^AuShadha/logout/$', 'aushadha_users.views.logout_view'),
 
 ## If it dosent match anything else.. 
 (r'^AuShadha/alternate_layout/$', 'patient.views.alternate_layout'),
