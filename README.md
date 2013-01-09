@@ -45,7 +45,7 @@ How to Test
 
 5) Change the working directory to the virtualenv folder <code> cd python_env</code> and activate it <code> source bin/activate </code>
 
-6) With Python pip installed, run <code> pip install -r ../docs/REQUIREMENTS.txt </code> if you are in python_env directory . This will install all the necessary dependencies you need. 
+6) With Python pip installed, run <code> pip install -f ../docs/REQUIREMENTS.txt </code> if you are in python_env directory . This will install all the necessary dependencies you need. 
 
 You may need to install Python development libraries if you are on Linux. Required to compile PIL. 
 
