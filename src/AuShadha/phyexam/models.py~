@@ -66,7 +66,7 @@ class PhyExam(AuShadhaBaseModel):
     verbose_name_plural = "Physical Examination"
     verbose_name        = "Physical Examination"
     unique_together     = (('admission_detail','created_at'),('visit_detail','created_at'))
-    ordering            = ['created_at','admission_detail','visit_detail','physician']
+    ordering            = ['created_at','admission_detail','physician']
 
   def __unicode__(self):
     return "ID: %s, Date: %s, Time: %s Nature:%s" %(self.id,

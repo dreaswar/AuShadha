@@ -156,7 +156,8 @@ INSTALLED_APPS = (
     'inv_and_imaging',
     'admission',
     'visit',
-    'obs_and_gyn'
+    'obs_and_gyn',
+    'phyexam'
 )
 
 # A sample logging configuration. The only tangible logging

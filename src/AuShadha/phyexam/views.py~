@@ -295,7 +295,7 @@ def phyexam_edit(request,id = None):
     if request.method == 'GET' and request.is_ajax():
       phyexam_form = OP_PhyExamForm(instance = phyexam_obj)
       variable     = RequestContext(request, {'user': user,
-                                              'pat_obj':phyexam_obj.visit_detail.patient_detail,
+                                              'pat_obj':phyexam_obj.visit_detail.pat_obj,
                                               'visit_obj': phyexam_obj.visit_detail,
                                               'phyexam_obj':phyexam_obj,
                                               'phyexam_form':phyexam_form

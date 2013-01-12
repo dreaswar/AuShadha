@@ -42,6 +42,20 @@ urlpatterns = patterns('',
     #url(r'inv/edit/(?P<id>\d+)/$' , visit_inv_edit , name="visit_inv_edit"),
     #url(r'inv/del/(?P<id>\d+)/$'  , visit_inv_del  , name="visit_inv_del"),
 
+    #url(r'phyexam/add/(?P<id>\d+)/$'  , visit_phyexam_add  , name="visit_phyexam_add"),
+    #url(r'phyexam/list/(?P<id>\d+)/$' , visit_phyexam_list , name="visit_phyexam_list"),
+    #url(r'phyexam/edit/(?P<id>\d+)/$' , visit_phyexam_edit , name="visit_phyexam_edit"),
+    #url(r'phyexam/del/(?P<id>\d+)/$'  , visit_phyexam_del  , name="visit_phyexam_del"),
+
+    #url(r'(?P<exam_to_add>\w+)/add/(?P<id>\d+)/$'  ,exam_add , exam_add_with_id"),
+    #url(r'(?P<exam_to_add>\w+)/add/$'  ,exam_add , exam_add_without_id"),
+
+    #url(r'phyexam/add/(?P<id>\d+)/$'  , visit_phyexam_add  , name="visit_phyexam_add"),
+    #url(r'phyexam/list/(?P<id>\d+)/$' , visit_phyexam_list , name="visit_phyexam_list"),
+    #url(r'phyexam/edit/(?P<id>\d+)/$' , visit_phyexam_edit , name="visit_phyexam_edit"),
+    #url(r'phyexam/del/(?P<id>\d+)/$'  , visit_phyexam_del  , name="visit_phyexam_del"),
+
+
     #url(r'close/(?P<id>\d+)/$'       , visit_close       , name="visit_close"),
 
 )
