@@ -7,21 +7,7 @@ fields:
     excludes2: carrier or suspected carrier of infectious disease (Z22.-)infectious
         and parasitic diseases specific to the perinatal period (P35-P39)
     includes: diseases generally recognized as communicable or transmissible
-    sectionIndex: "\n         Intestinal infectious diseases\n      \n         Tuberculosis\n\
-        \      \n         Certain zoonotic bacterial diseases\n      \n         Other\
-        \ bacterial diseases\n      \n         Infections with a predominantly sexual\
-        \ mode of transmission\n      \n         Other spirochetal diseases\n    \
-        \  \n         Other diseases caused by chlamydiae\n      \n         Rickettsioses\n\
-        \      \n         Viral and prion infections of the central nervous system\n\
-        \      \n         Arthropod-borne viral fevers and viral hemorrhagic fevers\n\
-        \      \n         Viral infections characterized by skin and mucous membrane\
-        \ lesions\n      \n         Other human herpesviruses\n      \n         Viral\
-        \ hepatitis\n      \n         Human immunodeficiency virus [HIV] disease\n\
-        \      \n         Other viral diseases\n      \n         Mycoses\n      \n\
-        \         Protozoal diseases\n      \n         Helminthiases\n      \n   \
-        \      Pediculosis, acariasis and other infestations\n      \n         Sequelae\
-        \ of infectious and parasitic diseases\n      \n         Bacterial and viral\
-        \ infectious agents\n      \n         Other infectious diseases\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: code to identify resistance to antimicrobial drugs (Z16-)
 model: icd10.chapter
 pk: 1
@@ -31,25 +17,7 @@ fields:
     excludes1: No Notes
     excludes2: No Notes
     includes: No Notes
-    sectionIndex: "\n         Malignant neoplasms of lip, oral cavity and pharynx\n\
-        \      \n         Malignant neoplasms of digestive organs\n      \n      \
-        \   Malignant neoplasms of respiratory and intrathoracic organs\n      \n\
-        \         Malignant neoplasms of bone and articular cartilage\n      \n  \
-        \       Melanoma and other malignant neoplasms of skin\n      \n         Malignant\
-        \ neoplasms of mesothelial and soft tissue\n      \n         Malignant neoplasms\
-        \ of breast\n      \n         Malignant neoplasms of female genital organs\n\
-        \      \n         Malignant neoplasms of male genital organs\n      \n   \
-        \      Malignant neoplasms of urinary tract\n      \n         Malignant neoplasms\
-        \ of eye, brain and other parts of central nervous system\n      \n      \
-        \   Malignant neoplasms of thyroid and other endocrine glands\n      \n  \
-        \       Malignant neuroendocrine tumors\n      \n         Secondary neuroendocrine\
-        \ tumors\n      \n         Malignant neoplasms of ill-defined, other secondary\
-        \ and unspecified sites\n      \n         Malignant neoplasms of lymphoid,\
-        \ hematopoietic and related tissue\n      \n         In situ neoplasms\n \
-        \     \n         Benign neoplasms, except benign neuroendocrine tumors\n \
-        \     \n         Benign neuroendocrine tumors\n      \n         Neoplasms\
-        \ of uncertain behavior, polycythemia vera and myelodysplastic syndromes\n\
-        \      \n         Neoplasms of unspecified behavior\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 2
@@ -66,13 +34,7 @@ fields:
         consequences of external causes (S00-T88)neoplasms (C00-D49)symptoms, signs
         and abnormal clinical and laboratory findings, not elsewhere classified (R00-R94)
     includes: No Notes
-    sectionIndex: "\n         Nutritional anemias\n      \n         Hemolytic anemias\n\
-        \      \n         Aplastic and other anemias and other bone marrow failure\
-        \ syndromes\n      \n         Coagulation defects, purpura and other hemorrhagic\
-        \ conditions\n      \n         Other disorders of blood and blood-forming\
-        \ organs\n      \n         Intraoperative and postprocedural complications\
-        \ of the spleen\n      \n         Certain disorders involving the immune mechanism\n\
-        \      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 3
@@ -82,14 +44,7 @@ fields:
     excludes1: transitory endocrine and metabolic disorders specific to newborn (P70-P74)
     excludes2: No Notes
     includes: No Notes
-    sectionIndex: "\n         Disorders of thyroid gland\n      \n         Diabetes\
-        \ mellitus\n      \n         Other disorders of glucose regulation and pancreatic\
-        \ internal secretion\n      \n         Disorders of other endocrine glands\n\
-        \      \n         Intraoperative complications of endocrine system\n     \
-        \ \n         Malnutrition\n      \n         Other nutritional deficiencies\n\
-        \      \n         Overweight, obesity and other hyperalimentation\n      \n\
-        \         Metabolic disorders\n      \n         Postprocedural endocrine and\
-        \ metabolic complications and disorders, not elsewhere classified\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 4
@@ -100,18 +55,7 @@ fields:
     excludes2: symptoms, signs and abnormal clinical laboratory findings, not elsewhere
         classified (R00-R99)
     includes: disorders of psychological development
-    sectionIndex: "\n         Mental disorders due to known physiological conditions\n\
-        \      \n         Mental and behavioral disorders due to psychoactive substance\
-        \ use\n      \n         Schizophrenia, schizotypal, delusional, and other\
-        \ non-mood psychotic disorders\n      \n         Mood [affective] disorders\n\
-        \      \n         Anxiety, dissociative, stress-related, somatoform and other\
-        \ nonpsychotic mental disorders\n      \n         Behavioral syndromes associated\
-        \ with physiological disturbances and physical factors\n      \n         Disorders\
-        \ of adult personality and behavior\n      \n         Intellectual disabilities\n\
-        \      \n         Pervasive and specific developmental disorders\n      \n\
-        \         Behavioral and emotional disorders with onset usually occurring\
-        \ in childhood and adolescence\n      \n         Unspecified mental disorder\n\
-        \      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 5
@@ -127,17 +71,7 @@ fields:
         (C00-D49)symptoms, signs and abnormal clinical and laboratory findings, not
         elsewhere classified (R00-R94)
     includes: No Notes
-    sectionIndex: "\n         Inflammatory diseases of the central nervous system\n\
-        \      \n         Systemic atrophies primarily affecting the central nervous\
-        \ system\n      \n         Extrapyramidal and movement disorders\n      \n\
-        \         Other degenerative diseases of the nervous system\n      \n    \
-        \     Demyelinating diseases of the central nervous system\n      \n     \
-        \    Episodic and paroxysmal disorders\n      \n         Nerve, nerve root\
-        \ and plexus disorders\n      \n         Polyneuropathies and other disorders\
-        \ of the peripheral nervous system\n      \n         Diseases of myoneural\
-        \ junction and muscle\n      \n         Cerebral palsy and other paralytic\
-        \ syndromes\n      \n         Other disorders of the nervous system\n    \
-        \  "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 6
@@ -155,16 +89,7 @@ fields:
         clinical and laboratory findings, not elsewhere classified (R00-R94)syphilis
         related eye disorders (A50.01, A50.3-, A51.43, A52.71)
     includes: No Notes
-    sectionIndex: "\n         Disorders of eyelid, lacrimal system and orbit\n   \
-        \   \n         Disorders of conjunctiva\n      \n         Disorders of sclera,\
-        \ cornea, iris and ciliary body\n      \n         Disorders of lens\n    \
-        \  \n         Disorders of choroid and retina\n      \n         Glaucoma\n\
-        \      \n         Disorders of vitreous body and globe\n      \n         Disorders\
-        \ of optic nerve and visual pathways\n      \n         Disorders of ocular\
-        \ muscles, binocular movement, accommodation and refraction\n      \n    \
-        \     Visual disturbances and blindness\n      \n         Other disorders\
-        \ of eye and adnexa\n      \n         Intraoperative and postprocedural complications\
-        \ and disorders of eye and adnexa, not elsewhere classified\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 7
@@ -180,11 +105,7 @@ fields:
         (C00-D49)symptoms, signs and abnormal clinical and laboratory findings, not
         elsewhere classified (R00-R94)
     includes: No Notes
-    sectionIndex: "\n         Diseases of external ear\n      \n         Diseases\
-        \ of middle ear and mastoid\n      \n         Diseases of inner ear\n    \
-        \  \n         Other disorders of ear\n      \n         Intraoperative and\
-        \ postprocedural complications and disorders of ear and mastoid process, not\
-        \ elsewhere classified\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 8
@@ -201,14 +122,7 @@ fields:
         elsewhere classified (R00-R94)systemic connective tissue disorders (M30-M36)transient
         cerebral ischemic attacks and related syndromes (G45.-)
     includes: No Notes
-    sectionIndex: "\n         Acute rheumatic fever\n      \n         Chronic rheumatic\
-        \ heart diseases\n      \n         Hypertensive diseases\n      \n       \
-        \  Ischemic heart diseases\n      \n         Pulmonary heart disease and diseases\
-        \ of pulmonary circulation\n      \n         Other forms of heart disease\n\
-        \      \n         Cerebrovascular diseases\n      \n         Diseases of arteries,\
-        \ arterioles and capillaries\n      \n         Diseases of veins, lymphatic\
-        \ vessels and lymph nodes, not elsewhere classified\n      \n         Other\
-        \ and unspecified disorders of the circulatory system\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 9
@@ -224,16 +138,7 @@ fields:
         (C00-D49)smoke inhalation (T59.81-)symptoms, signs and abnormal clinical and
         laboratory findings, not elsewhere classified (R00-R94)
     includes: No Notes
-    sectionIndex: "\n         Acute upper respiratory infections\n      \n       \
-        \  Influenza and pneumonia\n      \n         Other acute lower respiratory\
-        \ infections\n      \n         Other diseases of upper respiratory tract\n\
-        \      \n         Chronic lower respiratory diseases\n      \n         Lung\
-        \ diseases due to external agents\n      \n         Other respiratory diseases\
-        \ principally affecting the interstitium\n      \n         Suppurative and\
-        \ necrotic conditions of the lower respiratory tract\n      \n         Other\
-        \ diseases of the pleura\n      \n         Intraoperative and postprocedural\
-        \ complications and disorders of respiratory system, not elsewhere classified\n\
-        \      \n         Other diseases of the respiratory system\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: code, where applicable, to identify:exposure to environmental
         tobacco smoke (Z77.22)exposure to tobacco smoke in the perinatal period (P96.81)history
         of tobacco use (Z87.891)occupational exposure to environmental tobacco smoke
@@ -252,13 +157,7 @@ fields:
         (C00-D49)symptoms, signs and abnormal clinical and laboratory findings, not
         elsewhere classified (R00-R94)
     includes: No Notes
-    sectionIndex: "\n         Diseases of oral cavity and salivary glands\n      \n\
-        \         Diseases of esophagus, stomach and duodenum\n      \n         Diseases\
-        \ of appendix\n      \n         Hernia\n      \n         Noninfective enteritis\
-        \ and colitis\n      \n         Other diseases of intestines\n      \n   \
-        \      Diseases of peritoneum and retroperitoneum\n      \n         Diseases\
-        \ of liver\n      \n         Disorders of gallbladder, biliary tract and pancreas\n\
-        \      \n         Other diseases of the digestive system\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 11
@@ -274,14 +173,7 @@ fields:
         and laboratory findings, not elsewhere classified (R00-R94)systemic connective
         tissue disorders (M30-M36)viral warts (B07.-)
     includes: No Notes
-    sectionIndex: "\n         Infections of the skin and subcutaneous tissue\n   \
-        \   \n         Bullous disorders\n      \n         Dermatitis and eczema\n\
-        \      \n         Papulosquamous disorders\n      \n         Urticaria and\
-        \ erythema\n      \n         Radiation-related disorders of the skin and subcutaneous\
-        \ tissue\n      \n         Disorders of skin appendages\n      \n        \
-        \ Intraoperative and postprocedural complications of skin and subcutaneous\
-        \ tissue\n      \n         Other disorders of the skin and subcutaneous tissue\n\
-        \      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 12
@@ -298,19 +190,7 @@ fields:
         (C00-D49)symptoms, signs and abnormal clinical and laboratory findings, not
         elsewhere classified (R00-R94)
     includes: No Notes
-    sectionIndex: "\n         Infectious arthropathies\n      \n         Inflammatory\
-        \ polyarthropathies\n      \n         Osteoarthritis\n      \n         Other\
-        \ joint disorders\n      \n         Dentofacial anomalies [including malocclusion]\
-        \ and other disorders of jaw\n      \n         Systemic connective tissue\
-        \ disorders\n      \n         Deforming dorsopathies\n      \n         Spondylopathies\n\
-        \      \n         Other dorsopathies\n      \n         Disorders of muscles\n\
-        \      \n         Disorders of synovium and tendon\n      \n         Other\
-        \ soft tissue disorders\n      \n         Disorders of bone density and structure\n\
-        \      \n         Other osteopathies\n      \n         Chondropathies\n  \
-        \    \n         Other disorders of the musculoskeletal system and connective\
-        \ tissue\n      \n         Intraoperative and postprocedural complications\
-        \ and disorders of musculoskeletal system, not elsewhere classified\n    \
-        \  \n         Biomechanical lesions, not elsewhere classified\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 13
@@ -326,15 +206,7 @@ fields:
         (C00-D49)symptoms, signs and abnormal clinical and laboratory findings, not
         elsewhere classified (R00-R94)
     includes: No Notes
-    sectionIndex: "\n         Glomerular diseases\n      \n         Renal tubulo-interstitial\
-        \ diseases\n      \n         Acute kidney failure and chronic kidney disease\n\
-        \      \n         Urolithiasis\n      \n         Other disorders of kidney\
-        \ and ureter\n      \n         Other diseases of the urinary system\n    \
-        \  \n         Diseases of male genital organs\n      \n         Disorders\
-        \ of breast\n      \n         Inflammatory diseases of female pelvic organs\n\
-        \      \n         Noninflammatory disorders of female genital tract\n    \
-        \  \n         Intraoperative and postprocedural complications and disorders\
-        \ of genitourinary system, not elsewhere classified\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 14
@@ -346,15 +218,7 @@ fields:
         tetanus (A34)postpartum necrosis of pituitary gland (E23.0)puerperal osteomalacia
         (M83.0)
     includes: No Notes
-    sectionIndex: "\n         Pregnancy with abortive outcome\n      \n         Supervision\
-        \ of high risk pregnancy\n      \n         Edema, proteinuria and hypertensive\
-        \ disorders in pregnancy, childbirth and the puerperium\n      \n        \
-        \ Other maternal disorders predominantly related to pregnancy\n      \n  \
-        \       Maternal care related to the fetus and amniotic cavity and possible\
-        \ delivery problems\n      \n         Complications of labor and delivery\n\
-        \      \n         Encounter for delivery\n      \n         Complications predominantly\
-        \ related to the puerperium\n      \n         Other obstetric conditions,\
-        \ not elsewhere classified\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: code from category Z3A, Weeks of gestation, to identify the
         specific week of the pregnancy
 model: icd10.chapter
@@ -369,18 +233,7 @@ fields:
         neonatorum (A33)
     includes: conditions that have their origin in the fetal or perinatal period (before
         birth through the first 28 days after birth) even if morbidity occurs later
-    sectionIndex: "\n         Newborn affected by maternal factors and by complications\
-        \ of pregnancy, labor, and delivery\n      \n         Disorders of newborn\
-        \ related to length of gestation and fetal growth\n      \n         Abnormal\
-        \ findings on neonatal screening\n      \n         Birth trauma\n      \n\
-        \         Respiratory and cardiovascular disorders specific to the perinatal\
-        \ period\n      \n         Infections specific to the perinatal period\n \
-        \     \n         Hemorrhagic and hematological disorders of newborn\n    \
-        \  \n         Transitory endocrine and metabolic disorders specific to newborn\n\
-        \      \n         Digestive system disorders of newborn\n      \n        \
-        \ Conditions involving the integument and temperature regulation of newborn\n\
-        \      \n         Other problems with newborn\n      \n         Other disorders\
-        \ originating in the perinatal period\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 16
@@ -391,16 +244,7 @@ fields:
     excludes1: inborn errors of metabolism (E70-E88)
     excludes2: No Notes
     includes: No Notes
-    sectionIndex: "\n         Congenital malformations of the nervous system\n   \
-        \   \n         Congenital malformations of eye, ear, face and neck\n     \
-        \ \n         Congenital malformations of the circulatory system\n      \n\
-        \         Congenital malformations of the respiratory system\n      \n   \
-        \      Cleft lip and cleft palate\n      \n         Other congenital malformations\
-        \ of the digestive system\n      \n         Congenital malformations of genital\
-        \ organs\n      \n         Congenital malformations of the urinary system\n\
-        \      \n         Congenital malformations and deformations of the musculoskeletal\
-        \ system\n      \n         Other congenital malformations\n      \n      \
-        \   Chromosomal abnormalities, not elsewhere classified\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 17
@@ -413,21 +257,7 @@ fields:
         originating in the perinatal period (P04-P96)signs and symptoms classified
         in the body system chapterssigns and symptoms of breast (N63, N64.5)
     includes: No Notes
-    sectionIndex: "\n         Symptoms and signs involving the circulatory and respiratory\
-        \ systems\n      \n         Symptoms and signs involving the digestive system\
-        \ and abdomen\n      \n         Symptoms and signs involving the skin and\
-        \ subcutaneous tissue\n      \n         Symptoms and signs involving the nervous\
-        \ and musculoskeletal systems\n      \n         Symptoms and signs involving\
-        \ the genitourinary system\n      \n         Symptoms and signs involving\
-        \ cognition, perception, emotional state and behavior\n      \n         Symptoms\
-        \ and signs involving speech and voice\n      \n         General symptoms\
-        \ and signs\n      \n         Abnormal findings on examination of blood, without\
-        \ diagnosis\n      \n         Abnormal findings on examination of urine, without\
-        \ diagnosis\n      \n         Abnormal findings on examination of other body\
-        \ fluids, substances and tissues, without diagnosis\n      \n         Abnormal\
-        \ findings on diagnostic imaging and in function studies, without diagnosis\n\
-        \      \n         Abnormal tumor markers\n      \n         Ill-defined and\
-        \ unknown cause of mortality\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 18
@@ -438,26 +268,7 @@ fields:
     excludes1: birth trauma (P10-P15)obstetric trauma (O70-O71)
     excludes2: No Notes
     includes: No Notes
-    sectionIndex: "\n         Injuries to the head\n      \n         Injuries to the\
-        \ neck\n      \n         Injuries to the thorax\n      \n         Injuries\
-        \ to the abdomen, lower back, lumbar spine, pelvis and external genitals\n\
-        \      \n         Injuries to the shoulder and upper arm\n      \n       \
-        \  Injuries to the elbow and forearm\n      \n         Injuries to the wrist,\
-        \ hand and fingers\n      \n         Injuries to the hip and thigh\n     \
-        \ \n         Injuries to the knee and lower leg\n      \n         Injuries\
-        \ to the ankle and foot\n      \n         Injuries involving multiple body\
-        \ regions\n      \n         Injury of unspecified body region\n      \n  \
-        \       Effects of foreign body entering through natural orifice\n      \n\
-        \         Burns and corrosions\n      \n         Burns and corrosions of external\
-        \ body surface, specified by site\n      \n         Burns and corrosions confined\
-        \ to eye and internal organs\n      \n         Burns and corrosions of multiple\
-        \ and unspecified body regions\n      \n         Frostbite\n      \n     \
-        \    Poisoning by, adverse effect of and underdosing of drugs, medicaments\
-        \ and biological substances\n      \n         Toxic effects of substances\
-        \ chiefly nonmedicinal as to source\n      \n         Other and unspecified\
-        \ effects of external causes\n      \n         Certain early complications\
-        \ of trauma\n      \n         Complications of surgical and medical care,\
-        \ not elsewhere classified\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: code to identify any retained foreign body, if applicable (Z18.-)
 model: icd10.chapter
 pk: 19
@@ -467,36 +278,7 @@ fields:
     excludes1: No Notes
     excludes2: No Notes
     includes: No Notes
-    sectionIndex: "\n         Accidents\n      \n         Transport accidents\n  \
-        \    \n         Pedestrian injured in transport accident\n      \n       \
-        \  Pedal cycle rider injured in transport accident\n      \n         Motorcycle\
-        \ rider injured in transport accident\n      \n         Occupant of three-wheeled\
-        \ motor vehicle injured in transport accident\n      \n         Car occupant\
-        \ injured in transport accident\n      \n         Occupant of pick-up truck\
-        \ or van injured in transport accident\n      \n         Occupant of heavy\
-        \ transport vehicle injured in transport accident\n      \n         Bus occupant\
-        \ injured in transport accident\n      \n         Other land transport accidents\n\
-        \      \n         Water transport accidents\n      \n         Air and space\
-        \ transport accidents\n      \n         Other and unspecified transport accidents\n\
-        \      \n         Other external causes of accidental injury\n      \n   \
-        \      Slipping, tripping, stumbling and falls\n      \n         Exposure\
-        \ to inanimate mechanical forces\n      \n         Exposure to animate mechanical\
-        \ forces\n      \n         Accidental non-transport drowning and submersion\n\
-        \      \n         Exposure to electric current, radiation and extreme ambient\
-        \ air temperature and pressure\n      \n         Exposure to smoke, fire and\
-        \ flames\n      \n         Contact with heat and hot substances\n      \n\
-        \         Exposure to forces of nature\n      \n         Accidental exposure\
-        \ to other specified factors\n      \n         Intentional self-harm\n   \
-        \   \n         Assault\n      \n         Event of undetermined intent\n  \
-        \    \n         Legal intervention, operations of war, military operations,\
-        \ and terrorism\n      \n         Complications of medical and surgical care\n\
-        \      \n         Misadventures to patients during surgical and medical care\n\
-        \      \n         Medical devices associated with adverse incidents in diagnostic\
-        \ and therapeutic use\n      \n         Surgical and other medical procedures\
-        \ as the cause of abnormal reaction of the patient, or of later complication,\
-        \ without mention of misadventure at the time of the procedure\n      \n \
-        \        Supplementary factors related to causes of morbidity classified elsewhere\n\
-        \      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 20
@@ -507,20 +289,7 @@ fields:
     excludes1: No Notes
     excludes2: No Notes
     includes: No Notes
-    sectionIndex: "\n         Persons encountering health services for examinations\n\
-        \      \n         Genetic carrier and genetic susceptibility to disease\n\
-        \      \n         Resistance to antimicrobial drugs\n      \n         Estrogen\
-        \ receptor status\n      \n         Retained foreign body fragments\n    \
-        \  \n         Persons with potential health hazards related to communicable\
-        \ diseases\n      \n         Persons encountering health services in circumstances\
-        \ related to reproduction\n      \n         Encounters for other specific\
-        \ health care\n      \n         Persons with potential health hazards related\
-        \ to socioeconomic and psychosocial circumstances\n      \n         Do not\
-        \ resuscitate status\n      \n         Blood type\n      \n         Body mass\
-        \ index (BMI)\n      \n         Persons encountering health services in other\
-        \ circumstances\n      \n         Persons with potential health hazards related\
-        \ to family and personal history and certain conditions influencing health\
-        \ status\n      "
+    sectionIndex: sectionIndex
     useAdditionalCode: No Notes
 model: icd10.chapter
 pk: 21
