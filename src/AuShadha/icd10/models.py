@@ -29,13 +29,13 @@ class Chapter(models.Model):
 	
 	__model_label__ = "icd10_chapter"
 
-	chapter_name    = models.CharField('Chapter Name', max_length =100,  null = True,  blank = True, unique = True)
-	chapter_desc    = models.CharField('Chapter Description', max_length =100,  null = True,  blank = True, unique = True)
-	includes        = models.CharField('Includes', max_length =100,  null = True,  blank = True, unique = True)
-	useAdditionalCodes    = models.CharField('Use Additional Codes', max_length =100,  null = True,  blank = True, unique = True)
-	excludes1    = models.CharField('Excludes 1', max_length =100,  null = True,  blank = True, unique = True)
-	excludes2    = models.CharField('Excludes 2', max_length =100,  null = True,  blank = True, unique = True)
-	sectionIndex    = models.CharField('Section Index', max_length =100,  null = True,  blank = True, unique = True)
+	chapter_name    = models.CharField('Chapter Name', max_length =100,  null = True,  blank = True)
+	chapter_desc    = models.CharField('Chapter Description', max_length =100,  null = True,  blank = True)
+	includes        = models.CharField('Includes', max_length =100,  null = True,  blank = True)
+	useAdditionalCode    = models.CharField('Use Additional Codes', max_length =100,  null = True,  blank = True)
+	excludes1    = models.CharField('Excludes 1', max_length =100,  null = True,  blank = True)
+	excludes2    = models.CharField('Excludes 2', max_length =100,  null = True,  blank = True)
+	sectionIndex    = models.CharField('Section Index', max_length =100,  null = True,  blank = True)
 
 ## Define the Unicode method ::
 	def __unicode__(self):
@@ -54,9 +54,9 @@ class Section(models.Model):
 	
 	__model_label__ = "icd10_section"
 
-	sec_id        = models.CharField('Section ID', max_length =100,  null = True,  blank = True, unique = True)
-	diag_id       = models.TextField('Diagnosis ID', max_length =200,  null = True,  blank = True, unique = True)
-	desc          = models.TextField('Description', max_length =200,  null = True,  blank = True, unique = True)
+	sec_id        = models.CharField('Section ID', max_length =100,  null = True,  blank = True)
+	diag_id       = models.TextField('Diagnosis ID', max_length =200,  null = True,  blank = True)
+	desc          = models.TextField('Description', max_length =200,  null = True,  blank = True)
 	chapter_fk    = models.ForeignKey('Chapter')
 
 ## Define the Unicode method ::
@@ -75,8 +75,8 @@ class Diagnosis(models.Model):
 	
 	__model_label__ = "icd10_diagnosis"
 
-	diag_name       = models.CharField('Diagnosis Name', max_length =100,  null = True,  blank = True, unique = True)
-	diag_code       = models.TextField('Diagnosis Code', max_length =200,  null = True,  blank = True, unique = True)
+	diag_name       = models.CharField('Diagnosis Name', max_length =100,  null = True,  blank = True)
+	diag_code       = models.TextField('Diagnosis Code', max_length =200,  null = True,  blank = True)
 	section_fk      = models.ForeignKey('Section')
 
 ## Define the Unicode method ::
