@@ -159,7 +159,8 @@ INSTALLED_APPS = (
     'obs_and_gyn',
     'phyexam',
     'icd10',
-    'icd10_pcs'
+    'icd10_pcs',
+    'drug_db'
 )
 
 # A sample logging configuration. The only tangible logging

@@ -158,7 +158,8 @@ INSTALLED_APPS = (
     'visit',
     'obs_and_gyn',
     'phyexam',
-    'icd10'
+    'icd10',
+    'icd10_pcs'
 )
 
 # A sample logging configuration. The only tangible logging
