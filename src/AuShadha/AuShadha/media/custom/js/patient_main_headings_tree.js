@@ -241,15 +241,34 @@ function buildPatientTree(){
 
           var patientTree = new Tree({
               model   : patientTreeModel,
-              showRoot: false
+              showRoot: false,
+              onClick: function(item){
+                        var allowed_items     = ['Visits','Admissions',"Investigations","Imaging"];
+                        var centerTopTabPane  = registry.byId("centerTopTabPane");
+                        var visitPane         = registry.byId('visitHomeContentPane');
+                        var admissionPane     = registry.byId('admissionHomeContentPane');
+
+                        if (item.name == "Visits"){
+                          visitPane.set('disabled',false);
+                          visitPane.set('content',"This will Hold the Visit Data");
+                          centerTopTabPane.selectChild(visitPane);
+                        }
+
+                        if (item.name == "Admissions"){
+                          admissionPane.set('disabled',false);
+                          admissionPane.set('content',"This will Hold the Admission Data");
+                          centerTopTabPane.selectChild(admissionPane);
+                        }
+
+              }
           },'patientTreeDiv');
 
           patientTree.getIconClass = setTreeIcons;
           console.log("Setting Tree icons complete");
 
-          //patientTree.placeAt('patientTreeDiv')
+         //patientTree.placeAt('patientTreeDiv')
           patientTree.startup();
-         // patientTree.expandAll();
+         //patientTree.expandAll();
          //patientTree.collapseAll();
       });
 
