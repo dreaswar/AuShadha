@@ -245,13 +245,15 @@ function buildPatientTree(){
               onClick: function(item){
                         var allowed_items     = ['Visits','Admissions',"Investigations","Imaging"];
                         var centerTopTabPane  = registry.byId("centerTopTabPane");
-                        var visitPane         = registry.byId('visitHomeContentPane');
+//                         var visitPane         = registry.byId('visitHomeContentPane');
                         var admissionPane     = registry.byId('admissionHomeContentPane');
 
                         if (item.name == "Visits"){
-                          visitPane.set('disabled',false);
-                          visitPane.set('content',"This will Hold the Visit Data");
-                          centerTopTabPane.selectChild(visitPane);
+                          
+                          setUpVisitTab();
+//                        visitPane.set('disabled',false);
+//                        visitPane.set('content',"This will Hold the Visit Data");
+//                        centerTopTabPane.selectChild(visitPane);
                         }
 
                         if (item.name == "Admissions"){
@@ -261,7 +263,8 @@ function buildPatientTree(){
                         }
 
               }
-          },'patientTreeDiv');
+          },
+          'patientTreeDiv');
 
           patientTree.getIconClass = setTreeIcons;
           console.log("Setting Tree icons complete");

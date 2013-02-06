@@ -143,6 +143,11 @@
    {% include 'notifications.js' %}
   </script>
 
+  <script type="text/javascript">
+   {% include 'visit_tab.js' %}
+  </script>
+
+
   {% block js_bits %}
 
   {% endblock js_bits %}
@@ -364,7 +369,7 @@
           <!--  END OF PATIENTHOMECONTENTPANE  -->
 
           <!--  START OF SEARCHPATIENTSCONTENTPANE  -->
-          {% if perms.admission %}
+          {% if perms.patient %}
           <div  id              =  "searchPatientsContentPane"
                 data-dojo-id    =  "searchPatientsContentPane"
                 data-dojo-type  =  "dojox/layout/ContentPane"

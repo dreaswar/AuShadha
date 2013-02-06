@@ -143,6 +143,11 @@
    {% include 'notifications.js' %}
   </script>
 
+  <script type="text/javascript">
+   {% include 'visit_tab.js' %}
+  </script>
+
+
   {% block js_bits %}
 
   {% endblock js_bits %}
@@ -420,7 +425,7 @@
           {% if perms.visit %}
           <div  id              =  "visitHomeContentPane"
                 data-dojo-id    = "visitHomeContentPane"
-                data-dojo-type  =  "dojox/layout/ContentPane"
+                data-dojo-type  =  "dijit/layout/BorderContainer"
                 style           =  "height:1500px; "
                 data-dojo-props =  "title          :'Visits',
                                     executeScripts : true,
