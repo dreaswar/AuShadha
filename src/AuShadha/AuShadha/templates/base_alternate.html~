@@ -410,13 +410,51 @@
                 data-dojo-props =  "title          :'Admission',
                                     executeScripts :true,
                                     scriptHasHooks :true,
-                                    closable :true,
                                     disabled :true,
                                   "
           >
-            <span class="dojoxGridNoData">
+            <div  id            =  "admissionPaneTopbar"
+                data-dojo-id    =  "admissionPaneTopbar"
+                data-dojo-type  =  "dojox/layout/ContentPane"
+                style           =  " color         : #252525;
+                                    font-size     : 12px;
+                                    font-style    : italics;
+                                    font-weight   : bold;
+                                    border        : solid 1pt #cecece;
+                                    border-radius : 3px;
+                                    background    : #D0DFEA;
+                                    box-shadow    : 1px 1px 2px #ddd;
+                                    text-align    : center;
+                                    margin-bottom : 3px;
+                                  "
+                data-dojo-props = "
+                                    region: 'top',splitter:false
+                                  "
+            >
+            </div>
+
+            <div  id              =  "admissionPaneLSidebar"
+                  data-dojo-id    =  "admissionPaneLSidebar"
+                  data-dojo-type  =  "dojox/layout/ContentPane"
+                  style           =  "height:1500px; width: 20em;"
+                  data-dojo-props =  "
+                                      region: 'leading', splitter: true, gutters: true, liveSplitter: true
+                                    "
+              >
+              </div>
+
+              <div  id              =  "admissionPaneContentArea"
+                  data-dojo-id    = "admissionPaneContentArea"
+                  data-dojo-type  =  "dojox/layout/ContentPane"
+                  style           =  "height:1500px; "
+                  data-dojo-props =  "
+                                      region: 'center'
+                                    "
+              >
+              </div>
+            <!--<span class="dojoxGridNoData">
               Choose an Admission to display details here.
-           </span>
+           </span>-->
           </div>
           {% endif %}
           <!--  END OF ADMISSIONHOMECONTENTPANE  -->
@@ -425,18 +463,59 @@
           {% if perms.visit %}
           <div  id              =  "visitHomeContentPane"
                 data-dojo-id    = "visitHomeContentPane"
-                data-dojo-type  =  "dojox/layout/ContentPane"
-                style           =  "height:1500px; "
+                data-dojo-type  =  "dijit/layout/BorderContainer"
+                style           =  "height:auto; "
                 data-dojo-props =  "title          :'Visits',
                                     executeScripts : true,
                                     scriptHasHooks : true,
-                                    closable :true,
                                     disabled :true,
                                    "
           >
-            <span class="dojoxGridNoData">
+            <!--<span class="dojoxGridNoData">
               Choose an OPD visit to display details here.
-            </span>
+            </span>-->
+
+            <div  id            =  "visitPaneTopbar"
+                data-dojo-id    = "visitPaneTopbar"
+                data-dojo-type  =  "dojox/layout/ContentPane"
+                style           = " color         : #252525;
+                                    font-size     : 12px;
+                                    font-style    : italics;
+                                    font-weight   : bold;
+                                    border        : solid 1pt #cecece;
+                                    border-radius : 3px;
+                                    background    : #D0DFEA;
+                                    box-shadow    : 1px 1px 2px #ddd;
+                                    text-align    : center;
+                                    margin-bottom : 3px;
+                                    height        : 20px;
+                                "
+                data-dojo-props =  "
+                                    region: 'top',splitter:false
+                                   "
+            >
+            </div>
+
+            <div  id              =  "visitPaneLSidebar"
+                data-dojo-id    = "visitPaneLSidebar"
+                data-dojo-type  =  "dojox/layout/ContentPane"
+                style           =  "height:auto; width: 20em;"
+                data-dojo-props =  "
+                                    region: 'leading', splitter: true, gutters: true, liveSplitter: true
+                                   "
+            >
+            </div>
+
+            <div  id              =  "visitPaneContentArea"
+                data-dojo-id    = "visitPaneContentArea"
+                data-dojo-type  =  "dojox/layout/ContentPane"
+                style           =  "height:auto; "
+                data-dojo-props =  "
+                                    region: 'center'
+                                   "
+            >
+            </div>
+
           </div>
           {% endif %}
           <!--  END OF VISITHOMECONTENTPANE  -->

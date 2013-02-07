@@ -35,7 +35,8 @@ function setUpVisitTab(){
         var visitPane = new ContentPane({id       : "visitHomeContentPane",
                                          closable : true,
                                          disabled : false,
-                                         selected : true
+                                         selected : true,
+                                         closable: false
                                         },
                                         'visitHomeContentPane'
                                        );
@@ -47,10 +48,14 @@ function setUpVisitTab(){
         console.log("Visit Tab already present.. so not creating. Selecting the same..");
         var visit_tab  = registry.byId('visitHomeContentPane');
         visit_tab.set('disabled',false);
+        visit_tab.set('closable',false);
         main_tab_container.selectChild(visit_tab);
       }
 
-      fillTabWithDomAndDijits();
+      var topBarHTML = dom.byId('selected_patient_info').innerHTML;
+      dom.byId('visitPaneTopbar').innerHTML = topBarHTML;
+
+//       fillTabWithDomAndDijits();
     }
 
     function fillTabWithDomAndDijits(){
