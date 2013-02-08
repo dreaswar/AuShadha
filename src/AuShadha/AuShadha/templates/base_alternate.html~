@@ -426,6 +426,7 @@
                                     box-shadow    : 1px 1px 2px #ddd;
                                     text-align    : center;
                                     margin-bottom : 3px;
+                                    height        : 20px;
                                   "
                 data-dojo-props = "
                                     region: 'top',splitter:false
@@ -504,16 +505,107 @@
                                     region: 'leading', splitter: true, gutters: true, liveSplitter: true
                                    "
             >
+
             </div>
 
             <div  id              =  "visitPaneContentArea"
-                data-dojo-id    = "visitPaneContentArea"
-                data-dojo-type  =  "dojox/layout/ContentPane"
-                style           =  "height:auto; "
-                data-dojo-props =  "
-                                    region: 'center'
-                                   "
+                  data-dojo-id    = "visitPaneContentArea"
+                  data-dojo-type  =  "dijit/layout/BorderContainer"
+                  style           =  "height:auto; "
+                  data-dojo-props = "
+                                     region: 'center'
+                                    "
             >
+              <div  id              =  "visitPaneNotesArea"
+                    data-dojo-id    =  "visitPaneNotesArea"
+                    data-dojo-type  =  "dojox/layout/ContentPane"
+                    data-dojo-props =  "
+                                        region: 'center',
+                                        splitter: true,
+                                        gutters: true,
+                                        liveSplitter: true
+                                       "
+              >
+              </div>
+              <div  id              =  "visitPaneTabContainerArea"
+                  data-dojo-id    = "visitPaneTabContainerArea"
+                  data-dojo-type  =  "dijit/layout/TabContainer"
+                  style           =  "height:10em; "
+                  data-dojo-props =  "
+                                      region: 'bottom',
+                                      splitter: true,
+                                      gutters:true,
+                                      liveSplitter:true,
+                                      tabStrip: true,
+                                      tabPosition: 'bottom'
+                                    "
+              >
+                  <div  id            =  "visitPaneInvestigationTab"
+                      data-dojo-id    =  "visitPaneInvestigationTab"
+                      data-dojo-type  =  "dojox/layout/ContentPane"
+                      style           =  "height:15em; "
+                      data-dojo-props =  "
+                                          title: 'Investigation'
+                                        "
+                  >
+                  </div>
+                  <div  id              =  "visitPaneImagingTab"
+                        data-dojo-id    =  "visitPaneImagingTab"
+                        data-dojo-type  =  "dojox/layout/ContentPane"
+                        style           =  "height:15em; "
+                        data-dojo-props =  "
+                                            title: 'Imaging'
+                                          "
+                  >
+                  </div>
+                  <div  id            =  "visitPaneDiagnosisTab"
+                      data-dojo-id    =  "visitPaneDiagnosisTab"
+                      data-dojo-type  =  "dojox/layout/ContentPane"
+                      style           =  "height:15em; "
+                      data-dojo-props =  "
+                                          title: 'Diagnosis'
+                                        "
+                  >
+                  </div>
+                  <div  id              =  "visitPaneProceduresTab"
+                        data-dojo-id    =  "visitPaneProceduresTab"
+                        data-dojo-type  =  "dojox/layout/ContentPane"
+                        style           =  "height:15em; "
+                        data-dojo-props =  "
+                                            title: 'Procedures'
+                                          "
+                  >
+                  </div>
+                  <div  id              =  "visitPaneDocumentsTab"
+                        data-dojo-id    =  "visitPaneDocumentsTab"
+                        data-dojo-type  =  "dojox/layout/ContentPane"
+                        style           =  "height:15em; "
+                        data-dojo-props =  "
+                                            title: 'Documents'
+                                          "
+                  >
+                  </div>
+                  <div  id              =  "visitPanePrescriptionTab"
+                        data-dojo-id    =  "visitPanePrescriptionTab"
+                        data-dojo-type  =  "dojox/layout/ContentPane"
+                        style           =  "height:15em; "
+                        data-dojo-props =  "
+                                            title: 'Prescription'
+                                          "
+                  >
+                  </div>
+                  <div  id              =  "visitPaneAllergyTab"
+                        data-dojo-id    =  "visitPaneAllergyTab"
+                        data-dojo-type  =  "dojox/layout/ContentPane"
+                        style           =  "height:15em; "
+                        data-dojo-props =  "
+                                            title: 'Allergy'
+                                          "
+                  >
+                  </div>
+
+              </div>
+
             </div>
 
           </div>
