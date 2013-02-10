@@ -258,7 +258,7 @@ function buildPatientTree(){
 
                         if (item.name == "Admissions"){
                           admissionPane.set('disabled',false);
-                          admissionPane.set('content',"This will Hold the Admission Data");
+//                           admissionPane.set('content',"This will Hold the Admission Data");
                           centerTopTabPane.selectChild(admissionPane);
                         }
 

@@ -250,7 +250,7 @@ function buildPatientTree(){
 
                         if (item.name == "Visits"){
                           
-                          setUpVisitTabs();
+                          setUpVisitTab();
 //                        visitPane.set('disabled',false);
 //                        visitPane.set('content',"This will Hold the Visit Data");
 //                        centerTopTabPane.selectChild(visitPane);
