@@ -405,7 +405,7 @@
           {% if perms.admission %}
           <div  id              =  "admissionHomeContentPane"
                 data-dojo-id    =  "admissionHomeContentPane"
-                data-dojo-type  =  "dojox/layout/ContentPane"
+                data-dojo-type  =  "dijit/layout/BorderContainer"
                 style           =  "height:1500px; "
                 data-dojo-props =  "title          :'Admission',
                                     executeScripts :true,

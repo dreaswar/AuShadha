@@ -245,21 +245,13 @@ function buildPatientTree(){
               onClick: function(item){
                         var allowed_items     = ['Visits','Admissions',"Investigations","Imaging"];
                         var centerTopTabPane  = registry.byId("centerTopTabPane");
-//                         var visitPane         = registry.byId('visitHomeContentPane');
-                        var admissionPane     = registry.byId('admissionHomeContentPane');
 
                         if (item.name == "Visits"){
-                          
                           setUpVisitTab();
-//                        visitPane.set('disabled',false);
-//                        visitPane.set('content',"This will Hold the Visit Data");
-//                        centerTopTabPane.selectChild(visitPane);
                         }
 
                         if (item.name == "Admissions"){
-                          admissionPane.set('disabled',false);
-//                           admissionPane.set('content',"This will Hold the Admission Data");
-                          centerTopTabPane.selectChild(admissionPane);
+                          setUpAdmissionTab();
                         }
 
               }
