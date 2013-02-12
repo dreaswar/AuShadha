@@ -144,12 +144,21 @@
   </script>
 
   <script type="text/javascript">
+   {% include 'visit_tree.js' %}
+  </script>
+
+  <script type="text/javascript">
+   {% include 'admission_tree.js' %}
+  </script>
+
+  <script type="text/javascript">
    {% include 'visit_tab.js' %}
   </script>
 
   <script type="text/javascript">
    {% include 'admission_tab.js' %}
   </script>
+
 
   {% block js_bits %}
 
@@ -459,7 +468,9 @@
                                         region: 'leading', splitter: true, gutters: true, liveSplitter: true
                                       "
                 >
+                  <div id="patientAdmissionTreeContainer">
 
+                  </div>
                 </div>
 
                 <div  id              =  "admissionPaneCurrentAdmission"
@@ -709,7 +720,9 @@
                                         region: 'leading', splitter: true, gutters: true, liveSplitter: true
                                       "
                 >
+                  <div id="patientVisitTreeContainer">
 
+                  </div>
                 </div>
 
                 <div  id              =  "visitPaneCurrentVisit"

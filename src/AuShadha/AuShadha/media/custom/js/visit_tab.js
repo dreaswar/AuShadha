@@ -55,6 +55,7 @@ function setUpVisitTab(){
       var topBarHTML = dom.byId('selected_patient_info').innerHTML;
       dom.byId('visitPaneTopbar').innerHTML = topBarHTML;
 
+      buildVisitTree();
 //    fillTabWithDomAndDijits();
     }
 
