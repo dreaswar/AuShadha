@@ -148,7 +148,7 @@ function buildAdmissionTree(){
           },
           'patientAdmissionTreeDiv');
 
-          patientAdmissionTree.getIconClass = setAdmissionTreeIcons;
+//           patientAdmissionTree.getIconClass = setAdmissionTreeIcons;
           console.log("Setting Tree icons complete");
 
          //patientAdmissionTree.placeAt('patientAdmissionTreeDiv')

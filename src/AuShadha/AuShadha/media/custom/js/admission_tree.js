@@ -112,7 +112,7 @@ function buildAdmissionTree(){
           query: {id: 'admission'},
           labelAttr: "name"
       });
-  */
+
 
       // Create the Tree.
       ready(function(){

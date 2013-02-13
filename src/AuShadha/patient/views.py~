@@ -51,7 +51,6 @@ from visit.models     import *
 
 
 
-
 from patient.medication_list import patient_medication_list_add, patient_medication_list_edit
 from patient.immunisation import patient_immunisation_add, patient_immunisation_edit
 from patient.family_history import patient_family_history_add, patient_family_history_edit
@@ -195,6 +194,7 @@ def return_patient_json(patient, success = True):
         data_to_append['visitadd']      = patient.get_patient_visit_add_url()
         data_to_append['visitlist']     = patient.get_patient_visit_list_url()
 #        data_to_append['visitjson']    = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
+        data_to_append['visittree']     = APP_ROOT_URL+"/visit/render_visit_tree/?patient_id="+ patient_id
 
         data_to_append['demographicsadd']   = patient.get_patient_demographics_data_add_url()
         data_to_append['demographicslist']  = patient.get_patient_demographics_data_list_url()
@@ -271,7 +271,7 @@ def render_patient_tree(request,id = None):
                            'len'   : len(adm_obj),
                            "addUrl": None,
                           },
-                          {"name"  : "Visits"          , "type":"application", "id":"VISIT",
+                          {"name"  : "OPD Visits"          , "type":"application", "id":"VISIT",
                            "len"   : len(visit_obj),
                            "addUrl": None,
                           },
@@ -280,6 +280,18 @@ def render_patient_tree(request,id = None):
                            "addUrl": None,
                           },
                           {"name"  : "Imaging"      , "type":"application", "id":"IMAG" ,
+                           "len"   : 1,
+                           "addUrl": None,
+                          },
+                          {"name"  : "Calendar" , "type":"application", "id":"CAL" ,
+                           "len"   : 1,
+                           "addUrl": None,
+                          },
+                          {"name"  : "Media" , "type":"application", "id":"MEDIA" ,
+                           "len"   : 1,
+                           "addUrl": None,
+                          },
+                          {"name"  : "Documents" , "type":"application", "id":"DOCS" ,
                            "len"   : 1,
                            "addUrl": None,
                           }

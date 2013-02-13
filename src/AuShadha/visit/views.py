@@ -66,6 +66,95 @@ def visit_home(request,id = 'id'):
 
 ################################################################################
 @login_required
+def render_visit_tree(request,id = None):
+  if request.method=="GET" and request.is_ajax():
+    if id:
+      patient_id = int(id)
+    else:
+      try:
+        patient_id = int(request.GET.get('patient_id'))
+        pat_obj = PatientDetail.objects.get(pk = patient_id)
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Bad Request Parameters")
+      except(AttributeError, NameError, KeyError, TypeError,ValueError):
+        raise Http404("ERROR! Requested Patient Data Does not exist")
+
+      adm_obj               = Admission.objects.filter(patient_detail = pat_obj)
+      visit_obj             = VisitDetail.objects.filter(patient_detail = pat_obj)
+
+      data = {
+         "identifier": "id"   ,
+         "label"     : "name" ,
+         "items"     : [
+                          {"name"  : "Visit No: 1"    , "type":"application", "id":"VISIT_NO_1",
+                           "len"   : len(visit_obj),
+                           "addUrl": pat_obj.get_patient_visit_add_url(),
+                           'children':[
+																			{"name"  : "SOAP Notes" , "type":"application", "id":"SOAP_NOTES" ,
+																			"len"   : 1,
+																			"addUrl": None,
+																			},
+
+																			#{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
+																			#"len"   : 1,
+																			#"addUrl": None,
+																			#},
+
+																			{"name"  : "Advice" , "type":"application","id":"ADVICE" ,
+																			"len"   : 1,
+																			"addUrl": None,
+																			},
+
+																			{"name"  : "Procedure" , "type":"application", "id":"PROC" ,
+																			"len"   : 1,
+																			"addUrl": None,
+																			},
+
+																			#{"name"  : "Investigation" , "type":"application", "id":"INV" ,
+																			#"len"   : 1,
+																			#"addUrl": None,
+																			#},
+																			#{"name"  : "Imaging"      , "type":"application", "id":"IMAG" ,
+																			#"len"   : 1,
+																			#"addUrl": None,
+																			#},
+
+																			#{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
+																			#"len"   : 1,
+																			#"addUrl": None,
+																			#},
+
+																			#{"name"  : "Media" , "type":"application", "id":"MEDIA" ,
+																			#"len"   : 1,
+																			#"addUrl": None,
+																			#},
+
+																			{"name"  : "Documents" , "type":"application", "id":"DOCS" ,
+																			"len"   : 1,
+																			"addUrl": None,
+																			}
+														]
+                          }
+                    ],
+      }
+
+      if visit_obj:
+        data['items'][1]['children'] = []
+        children_list  = data['items'][1]['children']
+        for visit in visit_obj:
+          dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+          dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
+          dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
+          dict_to_append['absoluteUrl'] = visit.get_absolute_url()
+          dict_to_append['editUrl']     = visit.get_edit_url()
+          dict_to_append['delUrl']      = visit.get_del_url()
+          children_list.append(dict_to_append)
+      json = simplejson.dumps(data)
+      return HttpResponse(json, content_type = "application/json")
+  else:
+     raise Http404("Bad Request")
+
+@login_required
 def render_visit_list(request):
     '''
     View for Generating Visit List

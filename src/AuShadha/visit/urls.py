@@ -10,6 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 
     url(r'render_visit_list/$'  , render_visit_list  , name="render_visit_list"),
+    url(r'render_visit_tree/$'  , render_visit_tree  , name="render_visit_tree"),
     #url(r'render_visit_json/(?P<id>\d+)/$'  , render_visit_json  , name="render_visit_json"),
 
     url(r'detail/add/(?P<id>\d+)/$'  , visit_detail_add  , name="visit_detail_add"),

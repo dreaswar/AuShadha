@@ -414,7 +414,13 @@ class PatientDetail(models.Model):
 		'''
 		Returns the URL for adding visit for a Patient
 		'''
-		return '/AuShadha/visit/detail/add/%s/' %self.id    
+		return '/AuShadha/visit/detail/add/%s/' %self.id
+
+	def get_patient_visit_tree_url(self):
+		'''
+			Returns the URL for listing visits for a Patient
+		'''
+		return '/AuShadha/render_visit_tree/?patient_id=%s/' %self.id
 
 ################################################################################
 

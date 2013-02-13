@@ -42,80 +42,80 @@ function buildVisitTree(){
     }
 
      // Create store
-//      var patientVisitTreeStore = new ItemFileReadStore({url: CHOSEN_PATIENT.patientVisitTreeUrl,
-//                                                         clearOnClose:true,
-//                                                         heirarchial:false
-//     });
-//     console.log(patientVisitTreeStore);
+     var patientVisitTreeStore = new ItemFileReadStore({url: CHOSEN_PATIENT.visittree,
+                                                        clearOnClose:true,
+                                                        heirarchial:false
+    });
+    console.log(patientVisitTreeStore);
 
-  /*
+
     // Create the model
       var patientVisitTreeModel = new ForestStoreModel({
           store: patientVisitTreeStore,
           query: {type: 'application'},
           rootId: 'root',
-          rootLabel:"Visit",
+          rootLabel:"OPD Visits",
           childrenAttrs:["children"]
       });
-  */
-      var patientVisitTreeStore = new Memory({
-          data: [
-              { id: 'visit',
-                name:'Visit 2013-02-01',
-                type:'trunk'
-              },
-                { id: 'synopsis',
-                  name:'Synopsis',
-                  type:'main_branch',
-                  parent: 'visit'
-                },
-                { id: 'investigations',
-                  name:'Investigations',
-                  type:'main_branch',
-                  parent: 'visit'
-                },
-                { id: 'imaging',
-                  name:'Imaging',
-                  type:'main_branch',
-                  parent: 'visit'
-                },
 
-                { id: 'patient_media',
-                  name:'Media',
-                  type:'main_branch',
-                  parent: 'visit'
-                },
-
-                    { id: 'patient_documents',
-                      name:'Documents',
-                      type:'second_branch',
-                      parent: 'patient_media'
-                    },
-                    { id: 'patient_images',
-                      name:'Images',
-                      type:'second_branch',
-                      parent: 'patient_media'
-                    },
-                    { id: 'patient_videos',
-                      name:'Videos',
-                      type:'second_branch',
-                      parent: 'patient_media'
-                    }
-
-
-          ],
-          getChildren: function(object){
-              return this.query({parent: object.id});
-          }
-
-      });
+//       var patientVisitTreeStore = new Memory({
+//           data: [
+//               { id: 'visit',
+//                 name:'Visit 2013-02-01',
+//                 type:'trunk'
+//               },
+//                 { id: 'synopsis',
+//                   name:'Synopsis',
+//                   type:'main_branch',
+//                   parent: 'visit'
+//                 },
+//                 { id: 'investigations',
+//                   name:'Investigations',
+//                   type:'main_branch',
+//                   parent: 'visit'
+//                 },
+//                 { id: 'imaging',
+//                   name:'Imaging',
+//                   type:'main_branch',
+//                   parent: 'visit'
+//                 },
+// 
+//                 { id: 'patient_media',
+//                   name:'Media',
+//                   type:'main_branch',
+//                   parent: 'visit'
+//                 },
+// 
+//                     { id: 'patient_documents',
+//                       name:'Documents',
+//                       type:'second_branch',
+//                       parent: 'patient_media'
+//                     },
+//                     { id: 'patient_images',
+//                       name:'Images',
+//                       type:'second_branch',
+//                       parent: 'patient_media'
+//                     },
+//                     { id: 'patient_videos',
+//                       name:'Videos',
+//                       type:'second_branch',
+//                       parent: 'patient_media'
+//                     }
+// 
+// 
+//           ],
+//           getChildren: function(object){
+//               return this.query({parent: object.id});
+//           }
+// 
+//       });
 
       // Create the model
-      var patientVisitTreeModel = new ObjectStoreModel({
-          store: patientVisitTreeStore,
-          query: {id: 'visit'},
-          labelAttr: "name"
-      });
+//       var patientVisitTreeModel = new ObjectStoreModel({
+//           store: patientVisitTreeStore,
+//           query: {id: 'visit'},
+//           labelAttr: "name"
+//       });
 
 
       // Create the Tree.
