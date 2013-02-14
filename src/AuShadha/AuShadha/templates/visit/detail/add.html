@@ -35,7 +35,9 @@
 												//var data = jsondata.addData;
 												//grid.store.newItem(data);
 												publishInfo("Visit Added Successfully.")
+												var dialog = dijit.byId("editPatientDialog").hide();
                         buildPatientTree();
+                        buildVisitTree();
 												/*
 												if(ADD_MORE_PATIENTS == false){
                           editDialog.hide();

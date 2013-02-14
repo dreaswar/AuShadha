@@ -246,11 +246,11 @@ function buildPatientTree(){
                         var allowed_items     = ['Visits','Admissions',"Investigations","Imaging"];
                         var centerTopTabPane  = registry.byId("centerTopTabPane");
 
-                        if (item.name == "OPD Visits"){
+                        if (item.name == "OPD Visits" || item.type == 'visit'){
                           setUpVisitTab();
                         }
 
-                        if (item.name == "Admissions"){
+                        if (item.name == "Admissions" || item.type == 'admission'){
                           setUpAdmissionTab();
                         }
 

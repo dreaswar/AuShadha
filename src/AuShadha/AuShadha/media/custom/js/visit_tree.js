@@ -140,7 +140,17 @@ function buildVisitTree(){
               showRoot: true,
               onClick: function(item){
 
-                        if (item.name == "Visits"){
+												if (item.id == "NEW_OPD_VISIT"){
+													var addVisitUrl = CHOSEN_PATIENT.visitadd;
+													if( registry.byId("newVisitAddForm") != undefined){
+														registry.byId("newVisitAddForm").destroyRecursive();
+													}
+													registry.byId("editPatientDialog").set('href', CHOSEN_PATIENT.visitadd);
+													registry.byId("editPatientDialog").set('title', "Record New Visit");
+													registry.byId('editPatientDialog').show();
+                        }
+
+												if (item.name == "Visits"){
                           setUpVisitTab();
                         }
 

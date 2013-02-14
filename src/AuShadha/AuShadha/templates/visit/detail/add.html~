@@ -29,13 +29,14 @@
 									form : dom.byId("newVisitAddForm"),
 									load : function(json) {
 											var jsondata = JSON.parse(json)
-											console.log(jsondata)
+											console.log(jsondata);
 											if(jsondata.success == true){
 												dom.byId("newVisitAddForm").reset();
 												//var data = jsondata.addData;
 												//grid.store.newItem(data);
 												publishInfo("Visit Added Successfully.")
                         buildPatientTree();
+                        buildVisitTree();
 												/*
 												if(ADD_MORE_PATIENTS == false){
                           editDialog.hide();

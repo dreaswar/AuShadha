@@ -85,58 +85,66 @@ def render_visit_tree(request,id = None):
       data = {
          "identifier": "id"   ,
          "label"     : "name" ,
-         "items"     : [
-                          {"name"  : "Visit No: 1"    , "type":"application", "id":"VISIT_NO_1",
-                           "len"   : len(visit_obj),
-                           "addUrl": pat_obj.get_patient_visit_add_url(),
-                           'children':[
-																			{"name"  : "SOAP Notes" , "type":"application", "id":"SOAP_NOTES" ,
-																			"len"   : 1,
-																			"addUrl": None,
-																			},
+         "items"     : [None,
+												{"name"  : "Visit No: 1"    , "type":"application", "id":"VISIT_NO_1",
+													"len"   : len(visit_obj),
+													"addUrl": pat_obj.get_patient_visit_add_url(),
+													'children':[
+																		{"name"  : "SOAP Notes" , "type":"application", "id":"SOAP_NOTES" ,
+																		"len"   : 1,
+																		"addUrl": None,
+																		},
 
-																			#{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
-																			#"len"   : 1,
-																			#"addUrl": None,
-																			#},
+																		#{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
+																		#"len"   : 1,
+																		#"addUrl": None,
+																		#},
 
-																			{"name"  : "Advice" , "type":"application","id":"ADVICE" ,
-																			"len"   : 1,
-																			"addUrl": None,
-																			},
+																		{"name"  : "Advice" , "type":"application","id":"ADVICE" ,
+																		"len"   : 1,
+																		"addUrl": None,
+																		},
 
-																			{"name"  : "Procedure" , "type":"application", "id":"PROC" ,
-																			"len"   : 1,
-																			"addUrl": None,
-																			},
+																		{"name"  : "Procedure" , "type":"application", "id":"PROC" ,
+																		"len"   : 1,
+																		"addUrl": None,
+																		},
 
-																			#{"name"  : "Investigation" , "type":"application", "id":"INV" ,
-																			#"len"   : 1,
-																			#"addUrl": None,
-																			#},
-																			#{"name"  : "Imaging"      , "type":"application", "id":"IMAG" ,
-																			#"len"   : 1,
-																			#"addUrl": None,
-																			#},
+																		#{"name"  : "Investigation" , "type":"application", "id":"INV" ,
+																		#"len"   : 1,
+																		#"addUrl": None,
+																		#},
+																		#{"name"  : "Imaging"      , "type":"application", "id":"IMAG" ,
+																		#"len"   : 1,
+																		#"addUrl": None,
+																		#},
 
-																			#{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
-																			#"len"   : 1,
-																			#"addUrl": None,
-																			#},
+																		#{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
+																		#"len"   : 1,
+																		#"addUrl": None,
+																		#},
 
-																			#{"name"  : "Media" , "type":"application", "id":"MEDIA" ,
-																			#"len"   : 1,
-																			#"addUrl": None,
-																			#},
+																		#{"name"  : "Media" , "type":"application", "id":"MEDIA" ,
+																		#"len"   : 1,
+																		#"addUrl": None,
+																		#},
 
-																			{"name"  : "Documents" , "type":"application", "id":"DOCS" ,
-																			"len"   : 1,
-																			"addUrl": None,
-																			}
-														]
-                          }
+																		{"name"  : "Documents" , "type":"application", "id":"DOCS" ,
+																		"len"   : 1,
+																		"addUrl": None,
+																		}
+													]
+												}
                     ],
       }
+
+      if pat_obj.has_active_admission() =='0':
+				data['items'][0] = {"name"  : "New OPD Visit" ,
+				                    "type"  : "application"   ,
+				                    "id"    : "NEW_OPD_VISIT" ,
+													  "len"   : len(visit_obj)  ,
+													  "addUrl": pat_obj.get_patient_visit_add_url()
+                           }
 
       if visit_obj:
         data['items'][1]['children'] = []

@@ -30,6 +30,9 @@
 											var jsondata = JSON.parse(json)
 											if(jsondata.success == true){
                         var dialog = dijit.byId("editPatientDialog").hide();
+												buildPatientTree();
+                        buildVisitTree();
+
 /*
 												console.log(jsondata)
 												var data = {

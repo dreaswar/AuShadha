@@ -30,6 +30,9 @@
 											var jsondata = JSON.parse(json)
 											if(jsondata.success == true){
                         var dialog = dijit.byId("editPatientDialog").hide();
+												buildPatientTree();
+                        buildVisitTree();
+                        
 /*
 												console.log(jsondata)
 												var data = {
@@ -102,7 +105,7 @@
   </script>
 
 		<table id		=	"visit_detail_edit_form_table">
-					{{visit_detail_edit_form}}
+					{{visit_detail_form}}
 		</table>
 
     {% if perms.visit.change_visitdetail %}

@@ -144,7 +144,7 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 
         console.log("Setting up the Forms...");
 					registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
-          registry.byId("visit_list_container").set('href', CHOSEN_PATIENT.visitadd);
+          //registry.byId("visit_list_container").set('href', CHOSEN_PATIENT.visitadd);
           //registry.byId("admission_list_container").set('href', CHOSEN_PATIENT.admissionadd);
 					//registry.byId("obstetric_history_detail").set('href', addData.obstetrichistorydetailadd);
 					//makeObstetricHistoryDetailTab({"obstetricHistoryUrl": addData.obstetrichistorydetailadd});

@@ -637,13 +637,14 @@ require(
           summaryTab.addChild(patientSynopsisBorderContainer);
             var patientSynopsisTopContentPane = new ContentPane({
                                                   id:"patientSynopsisTopContentPane",
-                                                  region: "center",
-                                                  splitter: true
+                                                  region: "top",
+                                                  //splitter: true
                                                   },
                                               "patientSynopsisTopContentPane"
             );
             patientSynopsisBorderContainer.addChild(patientSynopsisTopContentPane);
-
+					//{% comment %}
+						/*
             var patientSynopsisBottomContentPane = new ContentPane({
                                                           id:"patientSynopsisBottomContentPane",
                                                           region: "bottom",
@@ -652,6 +653,7 @@ require(
                                             "patientSynopsisBottomContentPane"
             );
             patientSynopsisBorderContainer.addChild(patientSynopsisBottomContentPane);
+						
               var patientSynopsisBottomTabContainer = new TabContainer({
                                                             id:"patientSynopsisBottomTabContainer",
                                                             tabStrip:true,
@@ -683,9 +685,9 @@ require(
                                                             },
                                               "visit_list_container"
                   );
-                  patientSynopsisBottomContentPaneVisits.addChild(VisitListContainer);
+                  //patientSynopsisBottomContentPaneVisits.addChild(VisitListContainer);
                   //setupVisitGrid(CHOSEN_PATIENT.visitjson);
-                  registry.byId("visit_list_container").set('href', CHOSEN_PATIENT.visitadd);
+                  //registry.byId("visit_list_container").set('href', CHOSEN_PATIENT.visitadd);
 
                 var patientSynopsisBottomContentPaneAdmissions = new ContentPane({
                                                             id:"patientSynopsisBottomContentPaneAdmissions",
@@ -706,6 +708,8 @@ require(
                                               "admission_list_container"
                   );
                   patientSynopsisBottomContentPaneAdmissions.addChild(AdmissionListContainer);
+							*/
+						//{% endcomment %}
                   //setupAdmissionGrid(CHOSEN_PATIENT.admissionjson);
                   //registry.byId("admission_list_container").set('href', CHOSEN_PATIENT.admissionadd);
 
@@ -877,6 +881,7 @@ require(
 
 //{% comment %}
 
+/*
 //{% if perms.admission.add_admissiondetail %}
     var addAdmissionButton =  new Button({
                                         label: "Add",
@@ -947,6 +952,7 @@ require(
                          )
   );
 //{% endif %}
+*/
 
 //{% endcomment %}
 
