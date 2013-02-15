@@ -85,8 +85,8 @@ def render_visit_tree(request,id = None):
       data = {
          "identifier": "id"   ,
          "label"     : "name" ,
-         "items"     : [
-												{"name"  : "Visit No: 1"    , "type":"application", "id":"VISIT_NO_1",
+         "items"     : [None,
+												{"name"  : "Visits"    , "type":"application", "id":"VISITS",
 													"len"   : len(visit_obj),
 													"addUrl": pat_obj.get_patient_visit_add_url(),
 													'children':[
@@ -145,18 +145,30 @@ def render_visit_tree(request,id = None):
 													  "len"   : len(visit_obj)  ,
 													  "addUrl": pat_obj.get_patient_visit_add_url()
                            }
-
       if visit_obj:
         data['items'][1]['children'] = []
         children_list  = data['items'][1]['children']
+        sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
         for visit in visit_obj:
-          dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+          dict_to_append = sub_dict.copy()
           dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
           dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
           dict_to_append['absoluteUrl'] = visit.get_absolute_url()
           dict_to_append['editUrl']     = visit.get_edit_url()
           dict_to_append['delUrl']      = visit.get_del_url()
           children_list.append(dict_to_append)
+
+      #if visit_obj:
+        #data['items'][1]['children'] = []
+        #children_list  = data['items'][1]['children']
+        #for visit in visit_obj:
+          #dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+          #dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
+          #dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
+          #dict_to_append['absoluteUrl'] = visit.get_absolute_url()
+          #dict_to_append['editUrl']     = visit.get_edit_url()
+          #dict_to_append['delUrl']      = visit.get_del_url()
+          #children_list.append(dict_to_append)
       json = simplejson.dumps(data)
       return HttpResponse(json, content_type = "application/json")
   else:

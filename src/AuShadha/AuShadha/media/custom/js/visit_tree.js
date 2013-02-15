@@ -137,7 +137,7 @@ function buildVisitTree(){
 
           var patientVisitTree = new Tree({
               model   : patientVisitTreeModel,
-              showRoot: true,
+              showRoot: false,
               onClick: function(item){
 
 												if (item.id == "NEW_OPD_VISIT"){
@@ -145,7 +145,7 @@ function buildVisitTree(){
 													if( registry.byId("newVisitAddForm") != undefined){
 														registry.byId("newVisitAddForm").destroyRecursive();
 													}
-													registry.byId("editPatientDialog").set('href', CHOSEN_PATIENT.visitadd);
+													registry.byId("editPatientDialog").set('href' , CHOSEN_PATIENT.visitadd);
 													registry.byId("editPatientDialog").set('title', "Record New Visit");
 													registry.byId('editPatientDialog').show();
                         }

@@ -144,6 +144,14 @@
   </script>
 
   <script type="text/javascript">
+   {% include 'visit_tree.js' %}
+  </script>
+
+  <script type="text/javascript">
+   {% include 'admission_tree.js' %}
+  </script>
+
+  <script type="text/javascript">
    {% include 'visit_tab.js' %}
   </script>
 
@@ -151,13 +159,6 @@
    {% include 'admission_tab.js' %}
   </script>
 
-  <script type="text/javascript">
-   {% include 'visit_tree.js' %}
-  </script>
-
-  <script type="text/javascript">
-   {% include 'admission_tree.js' %}
-  </script>
 
   {% block js_bits %}
 
@@ -1023,7 +1024,23 @@
     >
 
     </div>
-    
+
+    <div id             = "dialogJsonMessage"
+         data-dojo-type = "dijit/Dialog"
+         data-dojo-id   = "dialogJsonMessage"
+         data-dojo-props = "title: 'ERROR!'"
+    >
+      <div data-dojo-type = "dijit/form/Form"
+          id              = "addDialogForm"
+          data-dojo-id    = "addDialogForm"
+          encType         = "multipart/form-data"
+          action          = ""
+          method          = ""
+      >
+
+      </div>
+    </div>
+
   <!--  END DIALOGS AND MISC  -->
 
 </div>
