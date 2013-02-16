@@ -716,12 +716,15 @@ require(["dojo/on",
          "dojo/keys",
          "dijit/form/ComboBox",
          "dijit/form/FilteringSelect",
-        "dijit/form/Button",
-        "dojo/store/Memory",
-        "dojo/dom-construct",
+         "dijit/form/Button",
+         "dojo/store/Memory",
+         "dojo/dom-construct",
+         "dojo/request",
+         "dojo/dom",
+         "dojo/json",
          "dojo/domReady!"
         ],
-function(on, registry, keys, ComboBox, FilteringSelect, Button, Memory, domConstruct){
+function(on, registry, keys, ComboBox, FilteringSelect, Button, Memory, domConstruct, request, dom, JSON){
     on(document.body, "keyup", function (e) {
 //        if( registry.byId('centerTopTabPane').get('selected'))
 //         e.keyCode;
@@ -747,42 +750,76 @@ function(on, registry, keys, ComboBox, FilteringSelect, Button, Memory, domConst
                                                 {name:"Demographics", id:CHOSEN_PATIENT.demographicsadd}
                                             ]
                                 });
+              domConstruct.create("div", {id: "addDialogContentDiv"},"addDialogContent","first");
+              domConstruct.create("div", {id: "addChoiceFilteringSelect"},"addDialogContentDiv",0);
+              domConstruct.create("input", {id: "addChoiceSubmitButton",
+                                            name: "addChoiceSubmitButton",
+                                            type:'button',
+                                            value: 'Go>'
+                                           },
+                                  "addDialogContentDiv",1
+              );
 
-              domConstruct.create("div", {id: "addChoiceFilteringSelect"},"addDialogForm","first");
-              domConstruct.create("input", {id: "addChoiceSubmitButton",type:'submit', value: 'Go>'},"addDialogForm",1);
+              if(registry.byId('addChoiceFilteringSelect')){
+                registry.byId('addChoiceFilteringSelect').destroyRecursive();
+              }
+              if(registry.byId('addChoiceSubmitButton')){
+                registry.byId('addChoiceSubmitButton').destroyRecursive();
+              }
+
               var filteringSelect = new FilteringSelect({
                                                         name         : "addChoiceFilteringSelect",
                                                         value        : "Contact",
                                                         store        : addUrlStore,
                                                         searchAttr   : "name",
                                                         hasDownArrow : false,
-                                                        onBlur        :function(e){
+                                                        autoComplete : true,
+                                                        onBlur       : function(e){
                                                                           var urlToCall = this.get('value');
                                                                           if(urlToCall){
-                                                                            alert(urlToCall);
+                                                                            console.log("Calling URL "+ urlToCall);
+                                                                            registry.byId('addChoiceSubmitButton').focus();
                                                                           }
                                                                           else{
                                                                             return false;
                                                                           }
                                                                         }
-                                                    },"addFilteringSelect");
-             /* var submitButton = new Button({id     : 'addChoiceSubmitButton',
+                                                    },"addChoiceFilteringSelect");
+
+              var submitButton = new Button({id     : 'addChoiceSubmitButton',
                                              label  : "Go >> ",
-                                             onClick: function(){
+                                             onClick: function(e){
                                                         var urlToCall = registry.byId('addChoiceFilteringSelect').get('value');
                                                         if(urlToCall){
-                                                          alert(urlToCall)
+                                                          request(urlToCall).then(
+                                                            function(html){
+                                                              registry.byId('addDialog').hide();
+                                                              registry.byId('editPatientDialog').set('content',html);
+                                                              registry.byId('editPatientDialog').set('title',"Add");
+                                                              registry.byId('editPatientDialog').show();
+                                                            },
+                                                            function(error){
+                                                              //dijit.byId("dialogJsonMessage").set('title', "ERROR!")
+                                                              //dijit.byId("dialogJsonMessage").set('content',error)
+                                                              //dijit.byId("dialogJsonMessage").show();
+                                                              publishError("ERROR! " + error);
+                                                              registry.byId('addChoiceFilteringSelect').set('displayedValue','Contact');
+                                                              registry.byId('addChoiceFilteringSelect').focus();
+                                                            }
+                                                          );
                                                         }
                                                         else{
-                                                          return false
+                                                          registry.byId('addChoiceFilteringSelect').focus();
+                                                          return false;
                                                         }
                                                       }
                                             },"addChoiceSubmitButton"
                                            );
-            */
-
-             registry.byId("addDialog").set('content',filteringSelect);
-             registry.byId("addDialog").set('content',submitButton);
+             filteringSelect.startup();
+             submitButton.startup();
+             //registry.byId("addDialog").set('content',filteringSelect);
+             //registry.byId("addDialog").set('content',submitButton);
+             //registry.byId("addDialog").set('content',submitButton);
              registry.byId("addDialog").show();
             }
           }

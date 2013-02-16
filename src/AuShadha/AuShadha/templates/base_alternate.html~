@@ -159,6 +159,9 @@
    {% include 'admission_tab.js' %}
   </script>
 
+  <script type="text/javascript">
+   {% include 'key_bindings.js' %}
+  </script>
 
   {% block js_bits %}
 
@@ -1025,10 +1028,10 @@
 
     </div>
 
-    <div id             = "dialogJsonMessage"
+    <div id             = "addDialog"
          data-dojo-type = "dijit/Dialog"
-         data-dojo-id   = "dialogJsonMessage"
-         data-dojo-props = "title: 'ERROR!'"
+         data-dojo-id   = "addDialog"
+         data-dojo-props = "title: 'Add'"
     >
       <div data-dojo-type = "dijit/form/Form"
           id              = "addDialogForm"
@@ -1039,6 +1042,28 @@
       >
 
       </div>
+      <div id              = "addDialogContent"
+      >
+
+      </div>
+      
+    </div>
+
+
+    <div id             = "gridDialog"
+         data-dojo-type = "dijit/Dialog"
+         data-dojo-id   = "gridDialog"
+         data-dojo-props = "title: 'List'"
+    >
+      <div id     = "gridDialogContent"
+           style  = "height   : 600px;
+                     width    : 600px;
+                     overflow : auto;
+                    "
+      >
+
+      </div>
+
     </div>
 
   <!--  END DIALOGS AND MISC  -->

@@ -189,26 +189,29 @@ def return_patient_json(patient, success = True):
 
         data_to_append['admissionadd']    = patient.get_patient_admission_add_url()
         data_to_append['admissionlist']   = patient.get_patient_admission_list_url()
+        data_to_append['admissionjson']   = patient.get_patient_admission_list_url()
 #        data_to_append['admissionjson']  = APP_ROOT_URL+"pat/admission_json/"+ patient_id
 
         data_to_append['visitadd']      = patient.get_patient_visit_add_url()
         data_to_append['visitlist']     = patient.get_patient_visit_list_url()
+        data_to_append['visitjson']     = patient.get_patient_visit_list_url()
 #        data_to_append['visitjson']    = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
-        data_to_append['visittree']     = APP_ROOT_URL+"/visit/render_visit_tree/?patient_id="+ patient_id
+        data_to_append['visittree']     = APP_ROOT_URL+"visit/render_visit_tree/?patient_id="+ patient_id
 
         data_to_append['demographicsadd']   = patient.get_patient_demographics_data_add_url()
         data_to_append['demographicslist']  = patient.get_patient_demographics_data_list_url()
+        data_to_append['demographicsjson']  = patient.get_patient_demographics_data_list_url()
 
-        data_to_append['familyhistorylist']  = patient.get_patient_family_history_add_url()
-        data_to_append['familyhistoryadd']   = patient.get_patient_family_history_list_url()
+        data_to_append['familyhistorylist']  = patient.get_patient_family_history_list_url()
+        data_to_append['familyhistoryadd']   = patient.get_patient_family_history_add_url()
         data_to_append['familyhistoryjson']  = APP_ROOT_URL+"pat/family_history/json/?patient_id="+patient_id
 
-        data_to_append['medicalhistorylist']  = patient.get_patient_medical_history_add_url()
-        data_to_append['medicalhistoryadd']   = patient.get_patient_medical_history_list_url()
+        data_to_append['medicalhistorylist']  = patient.get_patient_medical_history_list_url()
+        data_to_append['medicalhistoryadd']   = patient.get_patient_medical_history_add_url()
         data_to_append['medicalhistoryjson']  = APP_ROOT_URL+"pat/medical_history/json/?patient_id="+patient_id
 
-        data_to_append['surgicalhistorylist']  = patient.get_patient_surgical_history_add_url()
-        data_to_append['surgicalhistoryadd']   = patient.get_patient_surgical_history_list_url()
+        data_to_append['surgicalhistorylist']  = patient.get_patient_surgical_history_list_url()
+        data_to_append['surgicalhistoryadd']   = patient.get_patient_surgical_history_add_url()
         data_to_append['surgicalhistoryjson']  = APP_ROOT_URL+"pat/surgical_history/json/?patient_id="+patient_id
 
         data_to_append['immunisationadd']   = patient.get_patient_immunisation_add_url()

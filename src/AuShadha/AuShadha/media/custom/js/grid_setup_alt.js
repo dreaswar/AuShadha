@@ -80,6 +80,50 @@ function setupContactGrid(url){
   });
 }
 
+function setupPopUpGrid(url, gridStr, divId){
+  require(["dojox/grid/DataGrid",
+           "dojo/store/JsonRest",
+           "dojo/data/ObjectStore",
+           "dijit/registry",
+           "dojox/layout/ContentPane",
+  ],
+  function(DataGrid, JsonRest, ObjectStore, registry,ContentPane){
+    var Cstore   = new JsonRest({target:url});
+    console.log(Cstore);
+    console.log("Creating the Popup Grid")
+
+    if( registry.byId(divId) ){
+      registry.byId(divId).destroyRecursive(true);
+    }
+
+    var popUpGrid = new DataGrid({
+                  store         : dataStore = ObjectStore({
+                                             objectStore: Cstore
+                                  }),
+                  selectionMode : "single",
+                  rowSelector   : "20px",
+                  structure     : gridStr,
+                  noDataMessage : "<span class='dojoxGridNoData'>No Information in Store..</span>",
+                  style         : "height: 600px; width: 600px; overflow:auto; "
+                },
+                divId
+    );
+
+    popUpGrid.onRowDblClick = function(e){
+    //  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}
+                      onPatientSubMenuRowClick(e,
+                                               popUpGrid,
+                                               "Edit"
+                                              );
+    //  {%endif%}
+                      return false;
+    };
+    popUpGrid.startup();
+    console.log("Finished creating Pop-up Grid");
+  });
+}
+
+
 function setupContactGridForPortlet(url){
   require(["dojox/grid/DataGrid",
            "dojo/store/JsonRest",
