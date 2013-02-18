@@ -200,7 +200,6 @@ def return_patient_json(patient, success = True):
 
         data_to_append['demographicsadd']   = patient.get_patient_demographics_data_add_url()
         data_to_append['demographicslist']  = patient.get_patient_demographics_data_list_url()
-        data_to_append['demographicsjson']  = patient.get_patient_demographics_data_list_url()
 
         data_to_append['familyhistorylist']  = patient.get_patient_family_history_list_url()
         data_to_append['familyhistoryadd']   = patient.get_patient_family_history_add_url()
@@ -266,10 +265,92 @@ def render_patient_tree(request,id = None):
       adm_obj               = Admission.objects.filter(patient_detail = pat_obj)
       visit_obj             = VisitDetail.objects.filter(patient_detail = pat_obj)
 
+      demographics_obj      = PatientDemographicsData.objects.filter(patient_detail = pat_obj)
+      social_history_obj    = PatientSocialHistory.objects.filter(patient_detail = pat_obj)
+      family_history_obj    = PatientFamilyHistory.objects.filter(patient_detail = pat_obj)
+      medical_history_obj   = PatientMedicalHistory.objects.filter(patient_detail = pat_obj)
+      surgical_history_obj  = PatientSurgicalHistory.objects.filter(patient_detail = pat_obj)
+
+      immunisation_obj      = PatientImmunisation.objects.filter(patient_detail = pat_obj)
+
+      medication_list_obj   = PatientMedicationList.objects.filter(patient_detail = pat_obj)
+      allergies_obj           = PatientAllergies.objects.filter(patient_detail = pat_obj)
+
+      pat_inv_obj        = VisitInv.objects.filter(visit_detail__patient_detail = pat_obj)
+      pat_imaging_obj    = VisitImaging.objects.filter(visit_detail__patient_detail = pat_obj)
+
       data = {
          "identifier": "id"   ,
          "label"     : "name" ,
          "items"     : [
+                          {"name"  : "Synopsis"   , "type":"application", "id":"SYNOPSIS",
+                           'len'   : 1,
+                           "addUrl": None,
+                          },
+                          {"name"    : "Front Page"   , "type":"application", "id":"FRONT_PAGE",
+                           'len'     : 1,
+                           "addUrl"  : None,
+                           'children':[ 
+                                        {"name"  : "Medical History"   , "type":"application", "id":"MEDICAL_HISTORY",
+                                         'len'   : len(medical_history_obj),
+                                          "addUrl": None,
+                                        },
+                                        {"name"  : "Surgical History"   , "type":"application", "id":"SURGICAL_HISTORY",
+                                         'len'   : len(surgical_history_obj),
+                                          "addUrl": None,
+                                        },
+                                        {"name"  : "Family History"   , "type":"application", "id":"FAMILY_HISTORY",
+                                         'len'   : len(family_history_obj),
+                                          "addUrl": None,
+                                        },
+                                        {"name"  : "Social History"   , "type":"application", "id":"SOCIAL_HISTORY",
+                                         'len'   : len(social_history_obj),
+                                          "addUrl": None,
+                                        },
+                                        {"name"  : "Demographics"   , "type":"application", "id":"DEMOGRAPHICS",
+                                         'len'   : len(demographics_obj),
+                                          "addUrl": None,
+                                        },
+                                        {"name"  : "Medications"   , "type":"application", "id":"MEDICATIONS",
+                                         'len'   : len(medication_list_obj),
+                                          "addUrl": None,
+                                        },
+                                        {"name"  : "Allergies"   , "type":"application", "id":"ALLERGIES",
+                                         'len'   : len(allergies_obj),
+                                          "addUrl": None,
+                                        }
+                                      ]
+                          },
+                          {"name"  : "Preventives"   , "type":"application", "id":"PREVENTIVES",
+                           'len'   : len(immunisation_obj),
+                           "addUrl": None,
+                           "chidlren":[
+                                       {"name"       : "Immunisation"   , "type":"application", "id":"IMMUNISATION",
+                                         'len'       : len(immunisation_obj),
+                                          "addUrl"   : pat_obj.get_patient_immunisation_add_url(),
+                                          "children" : [
+                                           ]
+                                        },
+                                        {"name"  : "Obstetric & Gynaec"   , "type":"application", "id":"OBS_PREVENTIVES",
+                                         'len'   : None,
+                                          "addUrl": None,
+                                          "children":[
+                                           ]
+                                        },
+                                        {"name"  : "Medical"   , "type":"application", "id":"MEDICAL_PREVENTIVES",
+                                         'len'   :  None,
+                                          "addUrl": None,
+                                          "children" :[
+                                           ]
+                                        },
+                                        {"name"  : "Surgical"   , "type":"application", "id":"SURGICAL_PREVENTIVES",
+                                         'len'   :  None,
+                                          "addUrl": None,
+                                          "children" :[
+                                           ]
+                                        }
+                            ]
+                          },
                           {"name"  : "Admissions"   , "type":"application", "id":"ADM",
                            'len'   : len(adm_obj),
                            "addUrl": None,
@@ -279,12 +360,12 @@ def render_patient_tree(request,id = None):
                            "addUrl": None,
                           },
                           {"name"  : "Investigation" , "type":"application", "id":"INV" ,
-                           "len"   : 1,
+                           "len"   : len(pat_inv_obj),
                            "addUrl": None,
                           },
                           {"name"  : "Imaging"      , "type":"application", "id":"IMAG" ,
                            "len"   : 1,
-                           "addUrl": None,
+                           "addUrl": len(pat_imaging_obj),
                           },
                           {"name"  : "Calendar" , "type":"application", "id":"CAL" ,
                            "len"   : 1,
@@ -301,9 +382,64 @@ def render_patient_tree(request,id = None):
                     ],
       }
 
+
+      history_obj_list = [medical_history_obj ,
+                          surgical_history_obj,
+                          family_history_obj  ,
+                          social_history_obj  ,
+                          demographics_obj    ,
+                          medication_list_obj ,
+                          allergies_obj
+                         ]
+
+      add_url_mapper = {medical_history_obj  : pat_obj.get_patient_medical_history_add_url(),
+                        surgical_history_obj : pat_obj.get_patient_surgical_history_add_url(),
+                        family_history_obj   : pat_obj.get_patient_family_history_add_url(),
+                        social_history_obj   : pat_obj.get_patient_social_history_add_url(),
+                        demographics_obj     : pat_obj.get_patient_demographics_data_add_url(),
+                        medication_list_obj  : pat_obj.get_patient_medication_list_add_url(),
+                        allergies_obj        : pat_obj.get_patient_allergies_add_url()
+                       }
+
+      obj_list_label_mapper = { medical_history_obj  : 'medical_history',
+                                surgical_history_obj : 'surgical_history',
+                                family_history_obj   : 'family_history',
+                                social_history_obj   : 'social_history',
+                                demographics_obj     : 'demographics',
+                                medication_list_obj  : 'medication_list',
+                                allergies_obj        : 'allergies'
+                              }
+
+      def generic_tree_builder(obj_list, index, type_label):
+        if not obj_list:
+          data['items'][index]['addUrl']  = add_url_mapper[obj_list],
+        else:
+          data['items'][index]['addUrl']   = None
+          s                                = obj_list[0]
+          data['items'][index]['children'] = []
+          children_list                    = data['items'][index]['children']
+          dict_to_append                   = {"name"   : "",
+                                              "type"   : type_label,
+                                              "id"     : "",
+                                              "editUrl": "",
+                                              "delUrl" : "",
+                                              "addUrl" : None
+                                             }
+          dict_to_append['name']           = s.get_formatted_obj()
+          dict_to_append['id']             = type_label.upper()+"_"+ unicode(s.id)
+          dict_to_append['absoluteUrl']    = s.get_absolute_url()
+          dict_to_append['editUrl']        = s.get_edit_url()
+          dict_to_append['delUrl']         = s.get_del_url()
+          children_list.append(dict_to_append)
+
+      obj_list_index = 0
+      for obj_list in history_obj_list:
+        generic_tree_builder(obj_list, obj_list_index, obj_list_label_mapper[obj_list])
+        obj_list_index += 1
+
       if adm_obj:
         data['items'][0]['children'] = []
-        children_list  = data['items'][0]['children']
+        children_list  = data['items'][2]['children']
         for adm in adm_obj:
           dict_to_append = {"name":"", "type":"admission", "id":"","editUrl":"","delUrl":""}
           dict_to_append['name']    = adm.date_of_admission.date().isoformat()
@@ -314,8 +450,8 @@ def render_patient_tree(request,id = None):
           children_list.append(dict_to_append)
 
       if visit_obj:
-        data['items'][1]['children'] = []
-        children_list  = data['items'][1]['children']
+        data['items'][3]['children'] = []
+        children_list  = data['items'][3]['children']
         for visit in visit_obj:
           dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
           dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"

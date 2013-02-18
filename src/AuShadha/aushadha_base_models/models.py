@@ -129,6 +129,12 @@ class AuShadhaBaseModel(models.Model):
   #def get_absolute_url(self):
     #return  "/AuShadha/%s/%s/%d/"(self._meta.app_label, self.__model_label__, self.id)
 
+  def get_absolute_url(self):
+    return  None
+
+  def get_formatted_obj(self):
+    return  None
+
   def get_edit_url(self):
     return  generic_url_maker(self, "edit", self.id)
 

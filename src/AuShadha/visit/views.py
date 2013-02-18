@@ -82,6 +82,18 @@ def render_visit_tree(request,id = None):
       adm_obj               = Admission.objects.filter(patient_detail = pat_obj)
       visit_obj             = VisitDetail.objects.filter(patient_detail = pat_obj)
 
+      demographics_obj      = PatientDemographicsData.objects.filter(patient_detail = pat_obj)
+      social_history_obj    = PatientSocialHistory.objects.filter(patient_detail = pat_obj)
+      family_history_obj    = PatientFamilylHistory.objects.filter(patient_detail = pat_obj)
+      medical_history_obj   = PatientMedicalHistory.objects.filter(patient_detail = pat_obj)
+      surgical_history_obj  = PatientSurgicalHistory.objects.filter(patient_detail = pat_obj)
+
+      medication_list_obj   = PatientMedicationList.objects.filter(patient_detail = pat_obj)
+      allergy_obj           = PatientAllergies.objects.filter(patient_detail = pat_obj)
+
+      pat_inv_obj        = VisitInv.objects.filter(visit_detail__patient_detail = pat_obj)
+      pat_imaging_obj    = VisitImaging.objects.filter(visit_detail__patient_detail = pat_obj)
+
       data = {
          "identifier": "id"   ,
          "label"     : "name" ,
