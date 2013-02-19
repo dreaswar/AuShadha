@@ -166,7 +166,7 @@ function(on,
                                                     //{% endif %}
 
                                                     //{% if perms.patient.add_patientimmunisation %}
-                                                    {name:"Immunisation History" , id:CHOSEN_PATIENT.immunisationjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_IMMUNISATION_GRID_STRUCTURE},
+                                                    {name:"Immunisation History" , id:CHOSEN_PATIENT.immunisationjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_IMMUNIZATION_GRID_STRUCTURE},
                                                     //{% endif %}
 
                                                     //{% if perms.patient.add_patientsurgicalhistory %}

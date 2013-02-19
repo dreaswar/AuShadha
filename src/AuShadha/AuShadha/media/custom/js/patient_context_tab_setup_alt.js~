@@ -86,26 +86,27 @@ require(
                                   "patientTreeContainer",
                                   "first"
               );
-              domConstruct.create('div',
-                                  {id: "patientSidebarDiv_allergy"},
-                                  "patientTreeDiv",
-                                  "after"
-              );
-                domConstruct.create('div',
-                                    {id: "patientSidebarDiv_allergyHeader"},
-                                    "patientSidebarDiv_allergy",
-                                    "first"
-                );
-                domConstruct.create('div',
-                                    {id: "patientSidebarDiv_allergyGridContainer"},
-                                    "patientSidebarDiv_allergyHeader",
-                                    "after"
-                );
-                  domConstruct.create('div',
-                                  {id: "allergy_list"},
-                                  "patientSidebarDiv_allergyGridContainer",
-                                  "first"
-                  );
+//               domConstruct.create('div',
+//                                   {id: "patientSidebarDiv_allergy"},
+//                                   "patientTreeDiv",
+//                                   "after"
+//               );
+//                 domConstruct.create('div',
+//                                     {id: "patientSidebarDiv_allergyHeader"},
+//                                     "patientSidebarDiv_allergy",
+//                                     "first"
+//                 );
+//                 domConstruct.create('div',
+//                                     {id: "patientSidebarDiv_allergyGridContainer"},
+//                                     "patientSidebarDiv_allergyHeader",
+//                                     "after"
+//                 );
+//                   domConstruct.create('div',
+//                                   {id: "allergy_list"},
+//                                   "patientSidebarDiv_allergyGridContainer",
+//                                   "first"
+//                   );
+
         domConstruct.create('div',
                             {id: "patientSidebarDiv_media"},
                             "patientTreeContainer",
@@ -125,44 +126,44 @@ require(
                                                         'overflow' : "auto",
                                                         "display"  : "block"
               });
-              domStyle.set( dom.byId('patientSidebarDiv_allergy'),{'minWidth' : '15em'  ,
-                                                                  'minHeight': "15em"  ,
-                                                                  'overflow' : "hidden"  ,
-                                                                  "display"  : "block" ,
-                                                                  "float"    : "left"  ,
-                                                                  "position" : "absolute"     ,
-                                                                  "bottom"   : "0.3em"        ,
-                                                                  "border"   : "solid 1px #ddd",
-                                                                  "padding"  : "0.4em",
-                                                                  "background":"#CFE5FA"
-              });
-                domStyle.set( dom.byId('patientSidebarDiv_allergyHeader'),
-                                                                    {'minWidth'       : '15em'  ,
-                                                                    'height'         : "auto"  ,
-                                                                    "display"        : "block" ,
-                                                                    "float"          : "left"  ,
-                                                                    "clear"          : "both" ,
-                                                                    "position"       : "relative",
-                                                                    "top"            : "0"        ,
-                                                                    "padding"        : "1px",
-                                                                    "background"     : "#2D285A",
-                                                                    "color"          : "whitesmoke",
-                                                                    "textAlign"      : "center",
-                                                                    "verticalAlign"  : "middle",
-                                                                    "fontWeight"     : "bold",
-                                                                    "fontFamily"     : "dejavu sans"
-                });
-                  dom.byId("patientSidebarDiv_allergyHeader").innerHTML = "ALLERGY";
-                domStyle.set( dom.byId('patientSidebarDiv_allergyGridContainer'),
-                                                                    {'maxWidth'         : '15em'  ,
-                                                                    'height'         : "auto"  ,
-                                                                    "display"        : "block" ,
-                                                                    "float"          : "left"  ,
-                                                                    "clear"          : "both" ,
-                                                                    "position"       : "relative",
-                                                                    "top"            : "0"        ,
-                                                                    "fontFamily"     : "dejavu sans"
-                });
+//               domStyle.set( dom.byId('patientSidebarDiv_allergy'),{'minWidth' : '15em'  ,
+//                                                                   'minHeight': "15em"  ,
+//                                                                   'overflow' : "hidden"  ,
+//                                                                   "display"  : "block" ,
+//                                                                   "float"    : "left"  ,
+//                                                                   "position" : "absolute"     ,
+//                                                                   "bottom"   : "0.3em"        ,
+//                                                                   "border"   : "solid 1px #ddd",
+//                                                                   "padding"  : "0.4em",
+//                                                                   "background":"#CFE5FA"
+//               });
+//                 domStyle.set( dom.byId('patientSidebarDiv_allergyHeader'),
+//                                                                     {'minWidth'       : '15em'  ,
+//                                                                     'height'         : "auto"  ,
+//                                                                     "display"        : "block" ,
+//                                                                     "float"          : "left"  ,
+//                                                                     "clear"          : "both" ,
+//                                                                     "position"       : "relative",
+//                                                                     "top"            : "0"        ,
+//                                                                     "padding"        : "1px",
+//                                                                     "background"     : "#2D285A",
+//                                                                     "color"          : "whitesmoke",
+//                                                                     "textAlign"      : "center",
+//                                                                     "verticalAlign"  : "middle",
+//                                                                     "fontWeight"     : "bold",
+//                                                                     "fontFamily"     : "dejavu sans"
+//                 });
+//                   dom.byId("patientSidebarDiv_allergyHeader").innerHTML = "ALLERGY";
+//                 domStyle.set( dom.byId('patientSidebarDiv_allergyGridContainer'),
+//                                                                     {'maxWidth'         : '15em'  ,
+//                                                                     'height'         : "auto"  ,
+//                                                                     "display"        : "block" ,
+//                                                                     "float"          : "left"  ,
+//                                                                     "clear"          : "both" ,
+//                                                                     "position"       : "relative",
+//                                                                     "top"            : "0"        ,
+//                                                                     "fontFamily"     : "dejavu sans"
+//                 });
             domStyle.set( dom.byId('patientSidebarDiv_media'),{'minWidth' : '275px',
                                                                'minHeight': "400px",
                                                                'overflow' : "auto"
@@ -199,61 +200,114 @@ require(
                                 "patientSynopsisTopContentPane",
                                 "first"
             );
-
-          domConstruct.create('div',
-                              {id: "patientSynopsisBottomContentPane"},
-                            "patientSynopsisTopContentPane",
-                            "after"
-          );
-
             domConstruct.create('div',
-                                {id: "patientSynopsisBottomTabContainer"},
-                              "patientSynopsisBottomContentPane",
-                              "first"
-            );
+                                  {id: "patient_allergy_div"},
+                                  "medication_list",
+                                  "after"
+              );
+              domStyle.set( dom.byId('patient_allergy_div'),
+                                          {
+                                           "height" : '27em',
+                                            "position": "relative",
+                                            "top"   : "-17.7em",
+                                           "left"    : "58em"
+              });
+                domConstruct.create('div',
+                                    {id: "patient_allergyHeader"},
+                                    "patient_allergy_div",
+                                    "first"
+                );
+                  domStyle.set( dom.byId('patient_allergyHeader'),
+                                          {"width"         : "15em",
+                                          'height'         : "auto"  ,
+                                          "display"        : "block" ,
+                                          "float"          : "left"  ,
+                                          "clear"          : "both" ,
+                                          "position"       : "relative",
+                                          "top"            : "0"        ,
+                                          "padding"        : "1px",
+                                          "background"     : "#2D285A",
+                                          "color"          : "whitesmoke",
+                                          "textAlign"      : "center",
+                                          "verticalAlign"  : "middle",
+                                          "fontWeight"     : "bold",
+                                          "fontFamily"     : "dejavu sans"
+                      });
+                  dom.byId("patient_allergyHeader").innerHTML = "ALLERGY";
+                domConstruct.create('div',
+                                    {id: "patient_allergyGridContainer"},
+                                    "patient_allergyHeader",
+                                    "after"
+                );
+                  domStyle.set( dom.byId('patient_allergyGridContainer'),
+                                            {'height'         : "auto"      ,
+                                            "display"        : "block"     ,
+                                            "float"          : "left"      ,
+                                            "clear"          : "both"      ,
+                                            "position"       : "relative"  ,
+                                            "top"            : "0em"     ,
+                                            "fontFamily"     : "dejavu sans"
+                  });
+                domConstruct.create('div',
+                                      {id: "allergy_list"},
+                                      "patient_allergyGridContainer",
+                                      "first"
+                );
 
-              domConstruct.create('div',
-                              {id: "patientSynopsisBottomContentPaneVisits"},
-                            "patientSynopsisBottomTabContainer",
-                            "first"
-              );
-                domConstruct.create('div',
-                                  {id: "patientNewVisitNotes",
-                                  style:"max-height:20em; width:30em;"},
-                                "patientSynopsisBottomContentPaneVisits",
-                                "first"
-                );
-                domConstruct.create('div',
-                                  {id: "visit_list_container"},
-                                "patientSynopsisBottomContentPaneVisits",
-                                "last"
-                );
-                  domConstruct.create('div',
-                                    {id: "visit_list"},
-                                  "visit_list_container",
-                                  "first"
-                  );
-              domConstruct.create('div',
-                                {id: "patientSynopsisBottomContentPaneAdmissions"},
-                              "patientSynopsisBottomContentPaneVisits",
-                              "after"
-              );
-                domConstruct.create('div',
-                                  {id: "patientNewAdmissionNotes",
-                                   style:"max-height:20em; width:30em;"},
-                                  "patientSynopsisBottomContentPaneAdmissions",
-                                  "first"
-                );
-                domConstruct.create('div',
-                                  {id: "admission_list_container"},
-                                "patientSynopsisBottomContentPaneAdmissions",
-                                "last"
-                );
-                  domConstruct.create('div',
-                                    {id: "admission_list"},
-                                  "admission_list_container",
-                                  "first"
-                  );
+//             domConstruct.create('div',
+//                               {id: "patientSynopsisBottomContentPane"},
+//                             "patientSynopsisTopContentPane",
+//                             "after"
+//             );
+// 
+//             domConstruct.create('div',
+//                                 {id: "patientSynopsisBottomTabContainer"},
+//                               "patientSynopsisBottomContentPane",
+//                               "first"
+//             );
+// 
+//               domConstruct.create('div',
+//                               {id: "patientSynopsisBottomContentPaneVisits"},
+//                             "patientSynopsisBottomTabContainer",
+//                             "first"
+//               );
+//                 domConstruct.create('div',
+//                                   {id: "patientNewVisitNotes",
+//                                   style:"max-height:20em; width:30em;"},
+//                                 "patientSynopsisBottomContentPaneVisits",
+//                                 "first"
+//                 );
+//                 domConstruct.create('div',
+//                                   {id: "visit_list_container"},
+//                                 "patientSynopsisBottomContentPaneVisits",
+//                                 "last"
+//                 );
+//                   domConstruct.create('div',
+//                                     {id: "visit_list"},
+//                                   "visit_list_container",
+//                                   "first"
+//                   );
+//               domConstruct.create('div',
+//                                 {id: "patientSynopsisBottomContentPaneAdmissions"},
+//                               "patientSynopsisBottomContentPaneVisits",
+//                               "after"
+//               );
+//                 domConstruct.create('div',
+//                                   {id: "patientNewAdmissionNotes",
+//                                    style:"max-height:20em; width:30em;"},
+//                                   "patientSynopsisBottomContentPaneAdmissions",
+//                                   "first"
+//                 );
+//                 domConstruct.create('div',
+//                                   {id: "admission_list_container"},
+//                                 "patientSynopsisBottomContentPaneAdmissions",
+//                                 "last"
+//                 );
+//                   domConstruct.create('div',
+//                                     {id: "admission_list"},
+//                                   "admission_list_container",
+//                                   "first"
+//                   );
 
       domConstruct.create('div',
                           {id: "patientHistoryTab"},
@@ -637,7 +691,7 @@ require(
           summaryTab.addChild(patientSynopsisBorderContainer);
             var patientSynopsisTopContentPane = new ContentPane({
                                                   id:"patientSynopsisTopContentPane",
-                                                  region: "center",
+                                                  region: "top",
                                                   //splitter: true
                                                   },
                                               "patientSynopsisTopContentPane"
@@ -983,10 +1037,11 @@ require(
                          },
                         domConstruct.create('button',
                                             {type : "button",
-                                             id   : "addAllergyButton"
+                                             id   : "addAllergyButton",
+                                             style : "position:relative; margin-left: 5px;"
                                             },
-                                            "allergy_list",
-                                            "before"
+                                            "patient_allergyHeader",
+                                            1
                         )
 );
 //{% endif %}

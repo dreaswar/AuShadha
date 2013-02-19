@@ -146,7 +146,7 @@ function(on,
                                                     //{% endif %}
 
                                                     //{% if perms.patient.add_patientallergy %}
-                                                    {name:"Allergy"              , id:CHOSEN_PATIENT.allergiesjson, gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_ALLERGY_GRID_STRUCTURE},
+                                                    {name:"Allergy"              , id:CHOSEN_PATIENT.allergiesjson, gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_ALLERGIES_GRID_STRUCTURE},
                                                     //{% endif %}
 
                                                     //{% if perms.patient.add_patientmedia %}

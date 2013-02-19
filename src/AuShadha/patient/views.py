@@ -291,63 +291,56 @@ def render_patient_tree(request,id = None):
                            'len'     : 1,
                            "addUrl"  : None,
                            'children':[ 
-                                        {"name"  : "Medical History"   , "type":"application", "id":"MEDICAL_HISTORY",
+                                        {"name"  : "Medical History"   , "type":"medical_history_module", "id":"MEDICAL_HISTORY",
                                          'len'   : len(medical_history_obj),
                                           "addUrl": None,
                                         },
-                                        {"name"  : "Surgical History"   , "type":"application", "id":"SURGICAL_HISTORY",
+                                        {"name"  : "Surgical History"   , "type":"surgical_history_module", "id":"SURGICAL_HISTORY",
                                          'len'   : len(surgical_history_obj),
                                           "addUrl": None,
                                         },
-                                        {"name"  : "Family History"   , "type":"application", "id":"FAMILY_HISTORY",
+                                        {"name"  : "Family History"   , "type":"family_history_module", "id":"FAMILY_HISTORY",
                                          'len'   : len(family_history_obj),
                                           "addUrl": None,
                                         },
-                                        {"name"  : "Social History"   , "type":"application", "id":"SOCIAL_HISTORY",
+                                        {"name"  : "Social History"   , "type":"social_history_module", "id":"SOCIAL_HISTORY",
                                          'len'   : len(social_history_obj),
                                           "addUrl": None,
                                         },
-                                        {"name"  : "Demographics"   , "type":"application", "id":"DEMOGRAPHICS",
+                                        {"name"  : "Demographics"   , "type":"demographics_module", "id":"DEMOGRAPHICS",
                                          'len'   : len(demographics_obj),
                                           "addUrl": None,
-                                        },
-                                        {"name"  : "Medications"   , "type":"application", "id":"MEDICATIONS",
-                                         'len'   : len(medication_list_obj),
-                                          "addUrl": None,
-                                        },
-                                        {"name"  : "Allergies"   , "type":"application", "id":"ALLERGIES",
-                                         'len'   : len(allergies_obj),
-                                          "addUrl": None,
                                         }
+                                        #,
+                                        #{"name"  : "Medications"   , "type":"application", "id":"MEDICATIONS",
+                                         #'len'   : len(medication_list_obj),
+                                          #"addUrl": None,
+                                        #},
+                                        #{"name"  : "Allergies"   , "type":"application", "id":"ALLERGIES",
+                                         #'len'   : len(allergies_obj),
+                                          #"addUrl": None,
+                                        #}
                                       ]
                           },
                           {"name"  : "Preventives"   , "type":"application", "id":"PREVENTIVES",
                            'len'   : len(immunisation_obj),
                            "addUrl": None,
-                           "chidlren":[
-                                       {"name"       : "Immunisation"   , "type":"application", "id":"IMMUNISATION",
+                           "children":[
+                                       {"name"       : "Immunisation"   , "type":"immunisation_module", "id":"IMMUNISATION",
                                          'len'       : len(immunisation_obj),
                                           "addUrl"   : pat_obj.get_patient_immunisation_add_url(),
-                                          "children" : [
-                                           ]
                                         },
-                                        {"name"  : "Obstetric & Gynaec"   , "type":"application", "id":"OBS_PREVENTIVES",
-                                         'len'   : None,
-                                          "addUrl": None,
-                                          "children":[
-                                           ]
+                                        {"name"    : "Obstetric & Gynaec"   , "type":"obs_and_gyn_preventives_module", "id":"OBS_PREVENTIVES",
+                                         'len'     : None,
+                                          "addUrl" : None,
                                         },
-                                        {"name"  : "Medical"   , "type":"application", "id":"MEDICAL_PREVENTIVES",
-                                         'len'   :  None,
-                                          "addUrl": None,
-                                          "children" :[
-                                           ]
+                                        {"name"    : "Medical"   , "type":"medical_preventives_module", "id":"MEDICAL_PREVENTIVES",
+                                         'len'     :  None,
+                                          "addUrl" : None,
                                         },
-                                        {"name"  : "Surgical"   , "type":"application", "id":"SURGICAL_PREVENTIVES",
-                                         'len'   :  None,
-                                          "addUrl": None,
-                                          "children" :[
-                                           ]
+                                        {"name"    : "Surgical"   , "type":"surgical_preventives_module", "id":"SURGICAL_PREVENTIVES",
+                                         'len'     :  None,
+                                          "addUrl" : None,
                                         }
                             ]
                           },
@@ -388,8 +381,8 @@ def render_patient_tree(request,id = None):
                           family_history_obj  ,
                           social_history_obj  ,
                           demographics_obj    ,
-                          medication_list_obj ,
-                          allergies_obj
+                          #medication_list_obj ,
+                          #allergies_obj
                          ]
 
       add_url_mapper = {medical_history_obj  : pat_obj.get_patient_medical_history_add_url(),
@@ -397,8 +390,8 @@ def render_patient_tree(request,id = None):
                         family_history_obj   : pat_obj.get_patient_family_history_add_url(),
                         social_history_obj   : pat_obj.get_patient_social_history_add_url(),
                         demographics_obj     : pat_obj.get_patient_demographics_data_add_url(),
-                        medication_list_obj  : pat_obj.get_patient_medication_list_add_url(),
-                        allergies_obj        : pat_obj.get_patient_allergies_add_url()
+                        #medication_list_obj  : pat_obj.get_patient_medication_list_add_url(),
+                        #allergies_obj        : pat_obj.get_patient_allergies_add_url()
                        }
 
       obj_list_label_mapper = { medical_history_obj  : 'medical_history',
@@ -406,8 +399,8 @@ def render_patient_tree(request,id = None):
                                 family_history_obj   : 'family_history',
                                 social_history_obj   : 'social_history',
                                 demographics_obj     : 'demographics',
-                                medication_list_obj  : 'medication_list',
-                                allergies_obj        : 'allergies'
+                                #medication_list_obj  : 'medication_list',
+                                #allergies_obj        : 'allergies'
                               }
 
       def generic_tree_builder(obj_list, index, type_label):
@@ -438,20 +431,20 @@ def render_patient_tree(request,id = None):
         obj_list_index += 1
 
       if adm_obj:
-        data['items'][2]['children'] = []
-        children_list  = data['items'][2]['children']
+        data['items'][3]['children'] = []
+        children_list  = data['items'][3]['children']
         for adm in adm_obj:
           dict_to_append = {"name":"", "type":"admission", "id":"","editUrl":"","delUrl":""}
           dict_to_append['name']    = adm.date_of_admission.date().isoformat()
           dict_to_append['id']      = "ADM_"+ unicode(adm.id)
-          dict_to_append['absoluteUrl'] = visit.get_absolute_url()
+          dict_to_append['absoluteUrl'] = adm.get_absolute_url()
           dict_to_append['editUrl'] = adm.get_admission_edit_url()
           dict_to_append['delUrl']  = adm.get_admission_del_url()
           children_list.append(dict_to_append)
 
       if visit_obj:
-        data['items'][3]['children'] = []
-        children_list  = data['items'][3]['children']
+        data['items'][4]['children'] = []
+        children_list  = data['items'][4]['children']
         for visit in visit_obj:
           dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
           dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"

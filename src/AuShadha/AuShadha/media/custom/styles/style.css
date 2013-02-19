@@ -155,15 +155,20 @@ body{
 #surgical_history_list,
 #patient_media_list,
 #admission_list,
-#visit_list,
-#medication_list,
-#allergy_list
+#visit_list
 {
   min-height : 230px;
 	margin-top: 5px;
 	margin-top: 5px;
 }
 
+#medication_list,
+#allergy_list
+{
+  min-height : 60em;
+  margin-top : 5px;
+  margin-top : 5px;
+}
 
 #patientSynopsisBottomContentPane{
 	//width: 70em;
