@@ -580,13 +580,14 @@ require(
                                         )
                           }
                         }));
-
+/*
                       pMenuBar.addChild(new PopupMenuBarItem({
                           label     : "Customise",
                           title     : "Personalize Layout of Application",
                           popup     : pSynopsisLayout,
                           iconClass : "navigationIcon"
                       }));
+*/
 
                       pMenuBar.addChild(new PopupMenuBarItem({
                           label: "Add-On Sheets",
@@ -594,6 +595,8 @@ require(
                           popup: pAddMenu,
                           iconClass: "dijitEditorIcon dijitEditorIconCopy"
                       }));
+
+                      /*
                       pMenuBar.addChild(new MenuBarItem({
                           title     : "Contacts, Demographics and Insurance Info.",
                           label     : "Demographics",
@@ -603,10 +606,10 @@ require(
                                                  "dojox/layout/ContentPane",
                                                  "dijit/registry","dojo/dom"],
                                           function(domConstruct,domStyle,ContentPane,registry,dom){
-                                            var urlDict = {demographicsUrl : CHOSEN_PATIENT.demographicsadd,
-																																contactUrl 			 : CHOSEN_PATIENT.contactjson,
-																																phoneUrl 				 : CHOSEN_PATIENT.phonejson,
-																																guardianUrl			 : CHOSEN_PATIENT.guardianjson
+                                            var urlDict = {demographicsUrl   : CHOSEN_PATIENT.demographicsadd,
+                                                           contactUrl 			 : CHOSEN_PATIENT.contactjson,
+                                                           phoneUrl 				 : CHOSEN_PATIENT.phonejson,
+                                                           guardianUrl			 : CHOSEN_PATIENT.guardianjson
 																						 }
                                             if(!registry.byId('contactAndDemographicsTab') ){
 																							   console.log(CHOSEN_PATIENT);
@@ -621,6 +624,7 @@ require(
                                         )
                           }
                       }));
+                      */
 
                       pMenuBar.set("style",{
                                             "position"   : "relative",
@@ -655,7 +659,7 @@ require(
         );
 
 				domStyle.set('patientMenuBar',
-										 {'top'		    : "2.5em",
+										 {'top'		    : "2.3em",
 											"right" 	  : "1em",
 								      "position" : "relative",
 										  "zIndex"   : "1"

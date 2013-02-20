@@ -416,11 +416,11 @@ class PatientDetail(models.Model):
 		'''
 		return '/AuShadha/visit/detail/add/%s/' %self.id
 
-  def get_patient_visit_tree_url(self):
-    '''
-     Returns the URL for listing visits for a Patient
-    '''
-    return '/AuShadha/render_visit_tree/?patient_id=%s/' %self.id
+	def get_patient_visit_tree_url(self):
+		'''
+			Returns the URL for listing visits for a Patient
+		'''
+		return '/AuShadha/render_visit_tree/?patient_id=%s/' %self.id
 
 ################################################################################
 
@@ -834,6 +834,8 @@ class PatientDemographicsData(models.Model):
         '''
         return '/AuShadha/pat/demographics/del/%s/' %self.id
 
+    def get_formatted_obj(self):
+      return None
 
 class PatientAllergies(AuShadhaBaseModel):
   """

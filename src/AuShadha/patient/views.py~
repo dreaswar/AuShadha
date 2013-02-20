@@ -291,23 +291,23 @@ def render_patient_tree(request,id = None):
                            'len'     : 1,
                            "addUrl"  : None,
                            'children':[ 
-                                        {"name"  : "Medical History"   , "type":"medical_history", "id":"MEDICAL_HISTORY",
+                                        {"name"  : "Medical History"   , "type":"medical_history_module", "id":"MEDICAL_HISTORY",
                                          'len'   : len(medical_history_obj),
                                           "addUrl": None,
                                         },
-                                        {"name"  : "Surgical History"   , "type":"surgical_history", "id":"SURGICAL_HISTORY",
+                                        {"name"  : "Surgical History"   , "type":"surgical_history_module", "id":"SURGICAL_HISTORY",
                                          'len'   : len(surgical_history_obj),
                                           "addUrl": None,
                                         },
-                                        {"name"  : "Family History"   , "type":"family_history", "id":"FAMILY_HISTORY",
+                                        {"name"  : "Family History"   , "type":"family_history_module", "id":"FAMILY_HISTORY",
                                          'len'   : len(family_history_obj),
                                           "addUrl": None,
                                         },
-                                        {"name"  : "Social History"   , "type":"social_history", "id":"SOCIAL_HISTORY",
+                                        {"name"  : "Social History"   , "type":"social_history_module", "id":"SOCIAL_HISTORY",
                                          'len'   : len(social_history_obj),
                                           "addUrl": None,
                                         },
-                                        {"name"  : "Demographics"   , "type":"demographics", "id":"DEMOGRAPHICS",
+                                        {"name"  : "Demographics"   , "type":"demographics_module", "id":"DEMOGRAPHICS",
                                          'len'   : len(demographics_obj),
                                           "addUrl": None,
                                         }
@@ -326,19 +326,19 @@ def render_patient_tree(request,id = None):
                            'len'   : len(immunisation_obj),
                            "addUrl": None,
                            "children":[
-                                       {"name"       : "Immunisation"   , "type":"immunisation", "id":"IMMUNISATION",
+                                       {"name"       : "Immunisation"   , "type":"immunisation_module", "id":"IMMUNISATION",
                                          'len'       : len(immunisation_obj),
                                           "addUrl"   : pat_obj.get_patient_immunisation_add_url(),
                                         },
-                                        {"name"    : "Obstetric & Gynaec"   , "type":"obs_and_gyn_preventives", "id":"OBS_PREVENTIVES",
+                                        {"name"    : "Obstetric & Gynaec"   , "type":"obs_and_gyn_preventives_module", "id":"OBS_PREVENTIVES",
                                          'len'     : None,
                                           "addUrl" : None,
                                         },
-                                        {"name"    : "Medical"   , "type":"medical_preventives", "id":"MEDICAL_PREVENTIVES",
+                                        {"name"    : "Medical"   , "type":"medical_preventives_module", "id":"MEDICAL_PREVENTIVES",
                                          'len'     :  None,
                                           "addUrl" : None,
                                         },
-                                        {"name"    : "Surgical"   , "type":"surgical_preventives", "id":"SURGICAL_PREVENTIVES",
+                                        {"name"    : "Surgical"   , "type":"surgical_preventives_module", "id":"SURGICAL_PREVENTIVES",
                                          'len'     :  None,
                                           "addUrl" : None,
                                         }
@@ -430,29 +430,29 @@ def render_patient_tree(request,id = None):
         generic_tree_builder(obj_list, obj_list_index, obj_list_label_mapper[obj_list])
         obj_list_index += 1
 
-      if adm_obj:
-        data['items'][3]['children'] = []
-        children_list  = data['items'][3]['children']
-        for adm in adm_obj:
-          dict_to_append = {"name":"", "type":"admission", "id":"","editUrl":"","delUrl":""}
-          dict_to_append['name']    = adm.date_of_admission.date().isoformat()
-          dict_to_append['id']      = "ADM_"+ unicode(adm.id)
-          dict_to_append['absoluteUrl'] = adm.get_absolute_url()
-          dict_to_append['editUrl'] = adm.get_admission_edit_url()
-          dict_to_append['delUrl']  = adm.get_admission_del_url()
-          children_list.append(dict_to_append)
+      #if adm_obj:
+        #data['items'][3]['children'] = []
+        #children_list  = data['items'][3]['children']
+        #for adm in adm_obj:
+          #dict_to_append = {"name":"", "type":"admission", "id":"","editUrl":"","delUrl":""}
+          #dict_to_append['name']    = adm.date_of_admission.date().isoformat()
+          #dict_to_append['id']      = "ADM_"+ unicode(adm.id)
+          #dict_to_append['absoluteUrl'] = adm.get_absolute_url()
+          #dict_to_append['editUrl'] = adm.get_admission_edit_url()
+          #dict_to_append['delUrl']  = adm.get_admission_del_url()
+          #children_list.append(dict_to_append)
 
-      if visit_obj:
-        data['items'][4]['children'] = []
-        children_list  = data['items'][4]['children']
-        for visit in visit_obj:
-          dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
-          dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
-          dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
-          dict_to_append['absoluteUrl'] = visit.get_absolute_url()
-          dict_to_append['editUrl']     = visit.get_edit_url()
-          dict_to_append['delUrl']      = visit.get_del_url()
-          children_list.append(dict_to_append)
+      #if visit_obj:
+        #data['items'][4]['children'] = []
+        #children_list  = data['items'][4]['children']
+        #for visit in visit_obj:
+          #dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+          #dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
+          #dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
+          #dict_to_append['absoluteUrl'] = visit.get_absolute_url()
+          #dict_to_append['editUrl']     = visit.get_edit_url()
+          #dict_to_append['delUrl']      = visit.get_del_url()
+          #children_list.append(dict_to_append)
       json = simplejson.dumps(data)
       return HttpResponse(json, content_type = "application/json")
   else:

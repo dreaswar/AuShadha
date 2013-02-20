@@ -834,7 +834,12 @@ class PatientDemographicsData(models.Model):
         '''
         return '/AuShadha/pat/demographics/del/%s/' %self.id
 
+    def get_formatted_obj(self):
+      return None
 
+    def get_absolute_url(self):
+      return None
+      
 class PatientAllergies(AuShadhaBaseModel):
   """
     Inherits from the AuShadha Base Model. 

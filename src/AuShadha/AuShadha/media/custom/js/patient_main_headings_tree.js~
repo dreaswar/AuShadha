@@ -222,6 +222,7 @@ function buildPatientTree(){
       });
   */
 
+
       // Create the Tree.
       ready(function(){
 
@@ -239,23 +240,71 @@ function buildPatientTree(){
             }
           }
 
+          var demographicsUrlDict = {demographicsUrl   : CHOSEN_PATIENT.demographicsadd,
+                                     contactUrl        : CHOSEN_PATIENT.contactjson,
+                                     phoneUrl          : CHOSEN_PATIENT.phonejson,
+                                     guardianUrl       : CHOSEN_PATIENT.guardianjson
+                                    }
+
           var patientTree = new Tree({
               model   : patientTreeModel,
               showRoot: false,
-              onClick: function(item){
-                        var allowed_items     = ['Visits','Admissions',"Investigations","Imaging"];
-                        var centerTopTabPane  = registry.byId("centerTopTabPane");
+              onClick : function(item){
 
-                        if (item.name == "OPD Visits" || item.type == 'visit'){
-                          setUpVisitTab();
-                        }
+                          var allowed_items     = ['Visits','Admissions',"Investigations","Imaging"];
+                          var centerTopTabPane  = registry.byId("centerTopTabPane");
 
-                        if (item.name == "Admissions"){
-                          setUpAdmissionTab();
-                        }
+                          if (item.name == "Synopsis" || item.id == 'SYNOPSIS'){
+                            setUpVisitTab();
+                          }
 
+                          if (item.name == "Front Page" || item.id == 'FRONT_PAGE'){
+                            setUpVisitTab();
+                          }
+
+                          if (item.name == "Medical History" || item.type == 'medical_history_module'){
+                            setUpVisitTab();
+                          }
+
+                          if (item.name == "Surgical History" || item.type == 'surgical_history_module'){
+                            setUpVisitTab();
+                          }
+
+                          if (item.name == "Demographics" || item.type == 'demographics_module'){
+                                if(!registry.byId('contactAndDemographicsTab') ){
+                                    console.log(CHOSEN_PATIENT);
+                                    makeDemographicsTab(demographicsUrlDict);
+                                }
+                                else{
+                                  registry.byId("patientContextTabs").selectChild(
+                                    registry.byId("contactAndDemographicsTab")
+                                  );
+                                }
+                          }
+
+                          if (item.name == "OPD Visits" || item.type == 'visit'){
+                            setUpVisitTab();
+                          }
+
+                          if (item.name == "Admissions" || item.type == 'admissions'){
+                            setUpAdmissionTab();
+                          }
+
+              },
+              onDblClick: function(item,node,evt){
+                            if(item.name =="Demographics" || item.type=="demographics_module"){
+                                  if(!registry.byId('contactAndDemographicsTab') ){
+                                      console.log(CHOSEN_PATIENT);
+                                      makeDemographicsTab(demographicsUrlDict);
+                                  }
+                                  else{
+                                    registry.byId("patientContextTabs").selectChild(
+                                      registry.byId("contactAndDemographicsTab")
+                                    );
+                                  }
+                            }
               }
-          },
+           },
           'patientTreeDiv');
 
           patientTree.getIconClass = setTreeIcons;
