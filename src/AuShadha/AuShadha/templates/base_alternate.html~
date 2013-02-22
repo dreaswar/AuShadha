@@ -65,6 +65,14 @@
 			*/
 
 			var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
+
+			/*
+        Contains the Patient History Tab Setup.
+      */
+
+      var createHistoryTabs  = {% include 'layouts/tree_based/history_tabs.js' %}
+
+      var createMedicalHistoryTabs  = {% include 'layouts/tree_based/medical_history_tabs.js' %}
   
     /*
        Contains the Patient Medical Preventives Tab Setup.
@@ -1050,9 +1058,9 @@
     </div>
 
 
-    <div id             = "gridDialog"
-         data-dojo-type = "dijit/Dialog"
-         data-dojo-id   = "gridDialog"
+    <div id              = "gridDialog"
+         data-dojo-type  = "dijit/Dialog"
+         data-dojo-id    = "gridDialog"
          data-dojo-props = "title: 'List'"
     >
       <div id     = "gridDialogContent"

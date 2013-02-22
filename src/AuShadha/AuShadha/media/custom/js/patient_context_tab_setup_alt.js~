@@ -194,10 +194,18 @@ require(
                             "patientSynopsisBorderContainer",
                             "first"
           );
-       
+//           domStyle.set('patientSynopsisTopContentPane',{height:"auto", overflow:"auto"});
+
+          domConstruct.create('div',
+                              {id: "patientSynopsisBottomContentPane"},
+                            "patientSynopsisTopContentPane",
+                            "after"
+          );
+//           domStyle.set('patientSynopsisBottomContentPane',{height:"17em",width: "auto"});
+          
             domConstruct.create('div',
                                 {id: "medication_list"},
-                                "patientSynopsisTopContentPane",
+                                "patientSynopsisBottomContentPane",
                                 "first"
             );
             domConstruct.create('div',
@@ -206,11 +214,11 @@ require(
                                   "after"
               );
               domStyle.set( dom.byId('patient_allergy_div'),
-                                          {
-                                           "height" : '27em',
-                                            "position": "relative",
-                                            "top"   : "-17.7em",
-                                           "left"    : "58em"
+                                          { "height"   : '20em',
+                                            "position" : "relative",
+                                            "top"      : "-17.7em",
+                                            "left"     : "58em",
+                                            "width"    : "20em"
               });
                 domConstruct.create('div',
                                     {id: "patient_allergyHeader"},
@@ -240,7 +248,8 @@ require(
                                     "after"
                 );
                   domStyle.set( dom.byId('patient_allergyGridContainer'),
-                                            {'height'         : "auto"      ,
+                                            {'height'        : "auto"      ,
+                                             "width"         : "20em"      ,
                                             "display"        : "block"     ,
                                             "float"          : "left"      ,
                                             "clear"          : "both"      ,
@@ -254,11 +263,7 @@ require(
                                       "first"
                 );
 
-//             domConstruct.create('div',
-//                               {id: "patientSynopsisBottomContentPane"},
-//                             "patientSynopsisTopContentPane",
-//                             "after"
-//             );
+
 // 
 //             domConstruct.create('div',
 //                                 {id: "patientSynopsisBottomTabContainer"},
@@ -309,48 +314,48 @@ require(
 //                                   "first"
 //                   );
 
-      domConstruct.create('div',
-                          {id: "patientHistoryTab"},
-                          "patientContextTabs",
-                          "last"
-      );
-
-        domConstruct.create('div',
-                            {id: "patientHistoryTabs"},
-                            "patientHistoryTab",
-                            "first"
-        );
-          domConstruct.create('div',
-                              {id: "patientSocialHistoryTab"},
-                              "patientHistoryTabs",
-                              "first"
-          );
-          domConstruct.create('div',
-                              {id: "patientFamilyHistoryTab"},
-                              "patientHistoryTabs",
-                              "last"
-          );
-            domConstruct.create('div',
-                                {id: "family_history_list"},
-                                "patientFamilyHistoryTab",
-                                "first"
-            );
-          domConstruct.create('div',
-                              {id: "patientMedicalAndSurgicalHistoryTab"},
-                              "patientHistoryTabs",
-                              "last"
-          );
-
-            domConstruct.create('div',
-                                {id: "medical_history_list"},
-                                "patientMedicalAndSurgicalHistoryTab",
-                                "first"
-            );
-            domConstruct.create('div',
-                                {id: "surgical_history_list"},
-                                "patientMedicalAndSurgicalHistoryTab",
-                                "last"
-             );
+//       domConstruct.create('div',
+//                           {id: "patientHistoryTab"},
+//                           "patientContextTabs",
+//                           "last"
+//       );
+// 
+//         domConstruct.create('div',
+//                             {id: "patientHistoryTabs"},
+//                             "patientHistoryTab",
+//                             "first"
+//         );
+//           domConstruct.create('div',
+//                               {id: "patientSocialHistoryTab"},
+//                               "patientHistoryTabs",
+//                               "first"
+//           );
+//           domConstruct.create('div',
+//                               {id: "patientFamilyHistoryTab"},
+//                               "patientHistoryTabs",
+//                               "last"
+//           );
+//             domConstruct.create('div',
+//                                 {id: "family_history_list"},
+//                                 "patientFamilyHistoryTab",
+//                                 "first"
+//             );
+//           domConstruct.create('div',
+//                               {id: "patientMedicalAndSurgicalHistoryTab"},
+//                               "patientHistoryTabs",
+//                               "last"
+//           );
+// 
+//             domConstruct.create('div',
+//                                 {id: "medical_history_list"},
+//                                 "patientMedicalAndSurgicalHistoryTab",
+//                                 "first"
+//             );
+//             domConstruct.create('div',
+//                                 {id: "surgical_history_list"},
+//                                 "patientMedicalAndSurgicalHistoryTab",
+//                                 "last"
+//              );
 
     domConstruct.create('div',
                           {id: "patientPreventiveHealthTab"},
@@ -659,7 +664,7 @@ require(
         );
 
 				domStyle.set('patientMenuBar',
-										 {'top'		    : "2.4em",
+										 {'top'		    : "2.3em",
 											"right" 	  : "1em",
 								      "position" : "relative",
 										  "zIndex"   : "1"
@@ -688,30 +693,33 @@ require(
         );
         tabs.addChild(summaryTab);
           var patientSynopsisBorderContainer = new BorderContainer({id:"patientSynopsisBorderContainer",
-                                                                  //doLayout:true,
-                                                                      },
+                                                                    doLayout:true
+                                                                   },
                                             "patientSynopsisBorderContainer"
           );
           summaryTab.addChild(patientSynopsisBorderContainer);
             var patientSynopsisTopContentPane = new ContentPane({
-                                                  id:"patientSynopsisTopContentPane",
-                                                  region: "top",
-                                                  //splitter: true
+                                                  id        : "patientSynopsisTopContentPane",
+                                                  region    : "center",
+                                                  splitter  : true,
+                                                  gutters   : true
                                                   },
                                               "patientSynopsisTopContentPane"
             );
             patientSynopsisBorderContainer.addChild(patientSynopsisTopContentPane);
-					//{% comment %}
-						/*
+
             var patientSynopsisBottomContentPane = new ContentPane({
-                                                          id:"patientSynopsisBottomContentPane",
-                                                          region: "bottom",
-                                                            splitter: true
+                                                            id        : "patientSynopsisBottomContentPane",
+                                                            region    : "bottom",
+                                                            splitter  : true,
+                                                            gutters   : true
                                                           },
                                             "patientSynopsisBottomContentPane"
             );
             patientSynopsisBorderContainer.addChild(patientSynopsisBottomContentPane);
-						
+
+            //{% comment %}
+            /*						
               var patientSynopsisBottomTabContainer = new TabContainer({
                                                             id:"patientSynopsisBottomTabContainer",
                                                             tabStrip:true,
@@ -771,39 +779,39 @@ require(
                   //setupAdmissionGrid(CHOSEN_PATIENT.admissionjson);
                   //registry.byId("admission_list_container").set('href', CHOSEN_PATIENT.admissionadd);
 
-        var historyTab = new ContentPane({id:"patientHistoryTab",
-                                          title:"History"
-                                          },
-                                          "patientHistoryTab"
-                                          );
-        tabs.addChild(historyTab);
-          var historyTabs = new TabContainer({id:"patientHistoryTabs",
-                                              tabPosition:"top",
-                                              tabStrip:true,
-                                              nested : true,
-                                              style : "min-height: 550px;overflow:auto;"
-                                            },
-                                            "patientHistoryTabs"
-                                            );
-          historyTab.addChild(historyTabs);
-            var socialHistoryTab = new ContentPane({id:"patientSocialHistoryTab",
-                                              title:"Social"
-                                              },
-                                              "patientSocialHistoryTab"
-                                              );
-            historyTabs.addChild(socialHistoryTab);
-            var familyHistoryTab = new ContentPane({id:"patientFamilyHistoryTab",
-                                              title:"Family"
-                                              },
-                                              "patientFamilyHistoryTab"
-                                              );
-            historyTabs.addChild(familyHistoryTab);
-            var medicalAndSurgicalHistoryTab = new ContentPane({id:"patientMedicalAndSurgicalHistoryTab",
-                                              title:"Medical & Surgical"
-                                              },
-                                              "patientMedicalAndSurgicalHistoryTab"
-                                              );
-            historyTabs.addChild(medicalAndSurgicalHistoryTab);
+//         var historyTab = new ContentPane({id:"patientHistoryTab",
+//                                           title:"History"
+//                                           },
+//                                           "patientHistoryTab"
+//                                           );
+//         tabs.addChild(historyTab);
+//           var historyTabs = new TabContainer({id:"patientHistoryTabs",
+//                                               tabPosition:"top",
+//                                               tabStrip:true,
+//                                               nested : true,
+//                                               style : "min-height: 550px;overflow:auto;"
+//                                             },
+//                                             "patientHistoryTabs"
+//                                             );
+//           historyTab.addChild(historyTabs);
+//             var socialHistoryTab = new ContentPane({id:"patientSocialHistoryTab",
+//                                               title:"Social"
+//                                               },
+//                                               "patientSocialHistoryTab"
+//                                               );
+//             historyTabs.addChild(socialHistoryTab);
+//             var familyHistoryTab = new ContentPane({id:"patientFamilyHistoryTab",
+//                                               title:"Family"
+//                                               },
+//                                               "patientFamilyHistoryTab"
+//                                               );
+//             historyTabs.addChild(familyHistoryTab);
+//             var medicalAndSurgicalHistoryTab = new ContentPane({id:"patientMedicalAndSurgicalHistoryTab",
+//                                               title:"Medical & Surgical"
+//                                               },
+//                                               "patientMedicalAndSurgicalHistoryTab"
+//                                               );
+//             historyTabs.addChild(medicalAndSurgicalHistoryTab);
   
         var preventiveHealthTab = new ContentPane({id:"patientPreventiveHealthTab",
                                                   title:"Preventives"
@@ -896,6 +904,12 @@ require(
      mainBorderContaner.resize();
      patientSynopsisBorderContainer.resize();
      registry.byId("centerMainPane").resize();
+
+     registry.byId('admissionHomeContentPane').set('disabled',false);
+     buildAdmissionTree();
+     registry.byId('visitHomeContentPane').set('disabled',false);
+     buildVisitTree();
+     
 
 
 /*

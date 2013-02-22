@@ -31,7 +31,7 @@ from datetime                        import datetime, date, time
 from aushadha_users.models            import AuShadhaUser
 from clinic.models                   import Clinic, Staff
 from visit.models                    import *
-from patient.models                  import PatientDetail
+from patient.models                  import PatientDetail, PatientDemographicsData
 from admission.models                import Admission
 from physician.models                import PhysicianDetail
 from inv_and_imaging.models          import LabInvestigationRegistry, ImagingInvestigationRegistry

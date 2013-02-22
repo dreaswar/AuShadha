@@ -255,54 +255,48 @@ function buildPatientTree(){
                           var centerTopTabPane  = registry.byId("centerTopTabPane");
 
                           if (item.name == "Synopsis" || item.id == 'SYNOPSIS'){
-                            setUpVisitTab();
-                          }
-
-                          if (item.name == "Front Page" || item.id == 'FRONT_PAGE'){
-                            setUpVisitTab();
+//                             setUpVisitTab();
                           }
 
                           if (item.name == "Medical History" || item.type == 'medical_history_module'){
-                            setUpVisitTab();
+//                             setUpVisitTab();
+//                               createHistoryTabs();
                           }
 
                           if (item.name == "Surgical History" || item.type == 'surgical_history_module'){
-                            setUpVisitTab();
+//                             setUpVisitTab();
                           }
 
                           if (item.name == "Demographics" || item.type == 'demographics_module'){
-                                if(!registry.byId('contactAndDemographicsTab') ){
-                                    console.log(CHOSEN_PATIENT);
-                                    makeDemographicsTab(demographicsUrlDict);
-                                }
-                                else{
-                                  registry.byId("patientContextTabs").selectChild(
-                                    registry.byId("contactAndDemographicsTab")
-                                  );
-                                }
-                          }
-
-                          if (item.name == "OPD Visits" || item.type == 'visit'){
-                            setUpVisitTab();
-                          }
-
-                          if (item.name == "Admissions" || item.type == 'admissions'){
-                            setUpAdmissionTab();
                           }
 
               },
               onDblClick: function(item,node,evt){
+                            var contextTabs = registry.byId('patientContextTabs');
                             if(item.name =="Demographics" || item.type=="demographics_module"){
-                                  if(!registry.byId('contactAndDemographicsTab') ){
-                                      console.log(CHOSEN_PATIENT);
-                                      makeDemographicsTab(demographicsUrlDict);
-                                  }
-                                  else{
-                                    registry.byId("patientContextTabs").selectChild(
-                                      registry.byId("contactAndDemographicsTab")
-                                    );
-                                  }
+                                    if(!registry.byId('contactAndDemographicsTab') ){
+                                        console.log(CHOSEN_PATIENT);
+                                        makeDemographicsTab(demographicsUrlDict);
+                                    }
+                                    else{
+                                      registry.byId("patientContextTabs").selectChild(
+                                        registry.byId("contactAndDemographicsTab")
+                                      );
+                                    }
                             }
+
+//                             if(item.type == "family_history_module"   ||
+//                                item.type == "medical_history_module"  || 
+//                                item.type == "surgical_history_module" || 
+//                                item.type == "social_history_module"
+//                             ){
+//                               //createHistoryTabs();
+//                             }
+
+                            if(item.type == "medical_history_module"){
+                              createMedicalHistoryTabs();
+                            }
+
               }
            },
           'patientTreeDiv');

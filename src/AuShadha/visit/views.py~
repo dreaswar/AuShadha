@@ -91,7 +91,7 @@ def render_visit_tree(request,id = None):
       medication_list_obj   = PatientMedicationList.objects.filter(patient_detail = pat_obj)
       allergy_obj           = PatientAllergies.objects.filter(patient_detail = pat_obj)
 
-      pat_inv_obj        = VisitInvestigation.objects.filter(visit_detail__patient_detail = pat_obj)
+      pat_inv_obj        = VisitInv.objects.filter(visit_detail__patient_detail = pat_obj)
       pat_imaging_obj    = VisitImaging.objects.filter(visit_detail__patient_detail = pat_obj)
 
       data = {
