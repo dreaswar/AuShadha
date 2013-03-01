@@ -532,7 +532,7 @@ def render_patient_summary(request,id=None):
         
         pat_medical_history_obj  = PatientMedicalHistory.objects.filter(patient_detail  = pat_obj)
         pat_surgical_history_obj = PatientSurgicalHistory.objects.filter(patient_detail  = pat_obj)
-        pat_social_history_obj   = PatientSocialHistory.filter(patient_detail  = pat_obj)
+        pat_social_history_obj   = PatientSocialHistory.objects.filter(patient_detail  = pat_obj)
         pat_family_history_obj   = PatientFamilyHistory.objects.filter(patient_detail  = pat_obj)
         pat_demographics_obj     = PatientDemographicsData.objects.filter(patient_detail =pat_obj)
         

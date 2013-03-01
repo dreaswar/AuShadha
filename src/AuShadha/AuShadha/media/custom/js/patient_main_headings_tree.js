@@ -255,7 +255,135 @@ function buildPatientTree(){
                           var centerTopTabPane  = registry.byId("centerTopTabPane");
 
                           if (item.name == "Synopsis" || item.id == 'SYNOPSIS'){
-//                             setUpVisitTab();
+                            require(['dojo/dom',
+                                    'dijit/registry',
+                                    'dojo/dom-style',
+                                    'dojo/query',
+                                    'dojo/dom-construct',
+                                    'dijit/form/Button',
+                                    'dijit/Dialog',
+                                    'dijit/layout/BorderContainer',
+                                    'dojox/layout/ContentPane',
+                                    'dijit/layout/TabContainer',
+                                    'dojo/json','dojo/request'
+                                    ],
+                            function(dom,registry,
+                                     domStyle,query,
+                                     domConstruct,
+                                     Button, 
+                                     Dialog,
+                                     BorderContainer,
+                                     ContentPane,
+                                     TabContainer, 
+                                     JSON,
+                                     request
+                                    )
+                              {
+                                request(CHOSEN_PATIENT.patientsummary).
+                                then(
+                                  function(html){
+                                    if(dom.byId('patientSynopsisContainer')){
+                                      dom.byId('patientSynopsisContainer').remove();
+                                    }
+                                    domConstruct.create('div',
+                                                        {id: 'patientSynopsisContainer'},
+                                                        'patientSynopsisTopContentPane',
+                                                        'first');
+                                    domConstruct.create('div',
+                                                        {id: 'patientHistoryContainer'},
+                                                        'patientSynopsisContainer',
+                                                        0);
+                                      domConstruct.create('div',
+                                                          {id: 'patientMedicalHistoryContainer'},
+                                                          'patientHistoryContainer',
+                                                          0);
+                                      domConstruct.create('div',
+                                                          {id: 'patientSurgicalHistoryContainer'},
+                                                          'patientHistoryContainer',
+                                                          1);
+                                      domConstruct.create('div',
+                                                          {id: 'patientFamilyHistoryContainer'},
+                                                          'patientHistoryContainer',
+                                                          2);
+                                      domConstruct.create('div',
+                                                          {id: 'patientSocialHistoryContainer'},
+                                                          'patientHistoryContainer',
+                                                          3);
+                                      domConstruct.create('div',
+                                                          {id: 'patientDemographicsContainer'},
+                                                          'patientHistoryContainer',
+                                                          4);
+
+                                    domConstruct.create('div',
+                                                        {id: 'patientPreventivesContainer'},
+                                                        'patientSynopsisContainer',
+                                                        2);
+                                      domConstruct.create('div',
+                                                            {id: 'patientImmunisationContainer'},
+                                                            'patientPreventivesContainer',
+                                                            0);
+                                      domConstruct.create('div',
+                                                            {id: 'patientObstetricHistoryDetailContainer'},
+                                                            'patientPreventivesContainer',
+                                                            1);
+                                      domConstruct.create('div',
+                                                            {id: 'patientMedicalPreventivesContainer'},
+                                                            'patientPreventivesContainer',
+                                                            2);
+
+                                    domConstruct.create('div',
+                                                        {id: 'patientMedicationListContainer'},
+                                                        'patientSynopsisContainer',
+                                                        3);
+                                    domConstruct.create('div',
+                                                        {id: 'patientAllergyContainer'},
+                                                        'patientSynopsisContainer',
+                                                        4);
+                                    domConstruct.create('div',
+                                                        {id: 'patientInvContainer'},
+                                                        'patientSynopsisContainer',
+                                                        5);
+                                    domConstruct.create('div',
+                                                        {id: 'patientImagingContainer'},
+                                                        'patientSynopsisContainer',
+                                                        6);
+                                    domConstruct.create('div',
+                                                        {id: 'patientDiagnosisContainer'},
+                                                        'patientSynopsisContainer',
+                                                        7);
+                                    domConstruct.create('div',
+                                                        {id: 'patientProceduresContainer'},
+                                                        'patientSynopsisContainer',
+                                                        8);
+                                    query('#patientSynopsisContainer > div').
+                                      forEach( function(node, index, nodeList){
+                                        console.log("setting styles...")
+                                        domStyle.set(node,
+                                                     {borderRadius : "2px",
+                                                      background   : "white",
+                                                      border       : "solid #ddd 1px",
+                                                      minHeight    : " 10em",
+                                                      margin       : "3px",
+                                                      padding      : "10px"
+                                                     }
+                                        );
+                                      });
+                                      query('#patientSynopsisContainer > div:focus').
+                                      forEach( function(node, index, nodeList){
+                                        console.log("setting styles...")
+                                        domStyle.set(node,
+                                                     {
+                                                      background   : "#faf9ff",
+                                                     }
+                                        );
+                                      });
+                                  },
+                                  function(error){
+                                      publishError("ERROR!: " + error);
+                                  }
+                                )
+                              }
+                            )
                           }
 
                           if (item.name == "Medical History" || item.type == 'medical_history_module'){
