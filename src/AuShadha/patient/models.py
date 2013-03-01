@@ -1,17 +1,18 @@
-###########################################################################################
+################################################################################
 # PROJECT: AuShadha
-#          Patient Models for managing patient contact, phone, email, and Guardian details
+#          Patient Models for managing patient contact, 
+#          phone, email, and Guardian details
 # Author : Dr. Easwar T R
 # Date   : 28-08-2012
 # Licence: GNU GPL V3. Please see AuShadha/LICENSE.txt
-###########################################################################################
+################################################################################
 
 from django.db	              import models
-from django.forms	      import ModelForm
+from django.forms	          import ModelForm
 from django.core.exceptions   import ValidationError
-from django 		      import forms
+from django 		          import forms
 
-from django.contrib.auth.models import User
+from django.contrib.auth.models  import User
 from aushadha_base_models.models import AuShadhaBaseModel
 
 
@@ -96,17 +97,17 @@ class PatientDetail(models.Model):
 	def _set_full_name(self):
 		if self.middle_name and self.last_name:
 			self.full_name =  unicode(self.first_name.capitalize()  + " " + 
-                                                  self.middle_name.capitalize() + " " + 
-                                                  self.last_name.capitalize()
-                                                 )
+                                      self.middle_name.capitalize() + " " + 
+                                      self.last_name.capitalize()
+                                      )
 		elif self.last_name:
 			self.full_name = unicode(self.first_name.capitalize() + " " + 
-                                                 self.last_name.capitalize() 
-                                                 )
+                                     self.last_name.capitalize() 
+                                     )
 		else:
 			self.full_name = unicode(self.first_name.capitalize() + " "+ 
-                                                 self.middle_name.capitalize()
-                                                )
+                                     self.middle_name.capitalize()
+                                     )
 		return self.full_name
 
 # Check DOB and Age. See Which one to set. Dont set age if DOB is given. Dont allow age > 120 to be set. 
@@ -138,14 +139,16 @@ class PatientDetail(models.Model):
 
 	def get_patient_home_url(self):
 		'''Returns the Home of the Patient with a specific ID. 
-			 This is the place where the central actions of the Patient can be managed at one place.
+			 This is the place where the central actions of the 
+			 Patient can be managed at one place.
 			 This includes Contacts/ Admissions / OP visits etc..
 		'''
 		return '/AuShadha/pat/home/%s/' %self.id
 
 	def get_patient_main_window_url(self):
 		'''
-			Returns the Main Window URL for the Patient which allows editing of Patient details, visits, admission.
+			Returns the Main Window URL for the Patient which allows editing of 
+			Patient details, visits, admission.
 		'''
 		return '/AuShadha/pat/main_window/%s/' %self.id
 
@@ -153,33 +156,38 @@ class PatientDetail(models.Model):
 
 	def get_patient_detail_list_url(self):
 		'''
-			Returns the Listing URL for the Patient which allows editing of Patient Contacts, Phone, Guardian etc..
+			Returns the Listing URL for the Patient which allows editing of 
+			Patient Contacts, Phone, Guardian etc..
 		'''
 		return '/AuShadha/pat/detail/list/%s/' %self.id
 
 	def get_patient_detail_edit_url(self):
 		'''
-			Returns the Editing URL for the Patient which allows editing of Patient Contacts, Phone, Guardian etc..
+			Returns the Editing URL for the Patient which allows editing of 
+			Patient Contacts, Phone, Guardian etc..
 		'''
 		return self.get_edit_url()
 
 	def get_edit_url(self):
 		'''
-			Returns the Editing URL for the Patient which allows editing of Patient Contacts, Phone, Guardian etc..
+			Returns the Editing URL for the Patient which allows editing of 
+			Patient Contacts, Phone, Guardian etc..
 		'''
 		return '/AuShadha/pat/detail/edit/%s/' %self.id
 
 	def get_patient_detail_del_url(self):
 		'''
 			Returns the Deleting URL for the Patient.
-			This action will delete all details of the patient including the admission, visits, phy-exam records, media etc..
+			This action will delete all details of the patient including the 
+			admission, visits, phy-exam records, media etc..
 		'''
 		return self.get_del_url()
 
 	def get_del_url(self):
 		'''
 			Returns the Deleting URL for the Patient.
-			This action will delete all details of the patient including the admission, visits, phy-exam records, media etc..
+			This action will delete all details of the patient including the 
+			admission, visits, phy-exam records, media etc..
 		'''
 		return '/AuShadha/pat/detail/del/%s/' %self.id
 
@@ -309,8 +317,8 @@ class PatientDetail(models.Model):
 		'''
 		return '/AuShadha/pat/medical_history/add/%s/' %self.id
 
-	################################################################################
-	################################################################################
+################################################################################
+################################################################################
 
 	def get_patient_surgical_history_list_url(self):
 		'''
@@ -429,7 +437,8 @@ class PatientDetail(models.Model):
 
 	def check_before_you_add(self):
 		'''
-			Checks whether the patient has already been registered in the database before adding.
+			Checks whether the patient has already been registered 
+			in the database before adding.
 		'''
 		all_pat = PatientDetail.objects.all()
 		hosp_id = self.patient_hospital_id
@@ -480,9 +489,10 @@ class PatientDetail(models.Model):
 		return adm_count
 
 	def adm_for_pat(self): 
-		''' Returns the number of admissions for a patient after calling has_active_admission.
-				If no admission it returns the None.
-				Useful for Templates manipulation.
+		''' Returns the number of admissions for a patient 
+            after calling has_active_admission.
+			If no admission it returns the None.
+			Useful for Templates manipulation.
 		'''
 		from admission.models import Admission
 		id = self.id
@@ -595,10 +605,26 @@ class PatientGuardian(models.Model):
 
 	__model_label__ = "guardian"
 
-	guardian_name 		= models.CharField(max_length = 20, blank = True, null 	= True, help_text ="Enter Guardian Name if Patient is a minor" )
-	relation_to_guardian 	= models.CharField('Relation',max_length =20, blank= True, null	= True, help_text = "Enter relationship to Guardian if Patient is a Minor", choices =(("Father","Father"),("Mother","Mother"),("Local Guardian","LocalGuardian") ))
-	guardian_phone 		= models.PositiveIntegerField('Phone',max_length= 20, blank = True, null= True)
-	patient_detail 		= models.ForeignKey(PatientDetail, null = True, blank = True)
+	guardian_name 		 = models.CharField(max_length = 20, blank = True, 
+	                                        null = True, 
+	                                        help_text ="Enter Guardian Name if Patient is a minor" 
+	                                        )
+	relation_to_guardian = models.CharField('Relation',
+	                                        max_length =20, 
+	                                        blank= True, 
+	                                        null	= True, 
+	                                        help_text = "Enter relationship to Guardian if Patient is a Minor", 
+	                                        choices =(("Father","Father"),
+	                                                  ("Mother","Mother"),
+	                                                  ("Local Guardian","LocalGuardian") 
+                                                     )
+	                                        )
+	guardian_phone 		 = models.PositiveIntegerField('Phone',
+                                                       max_length= 20, 
+                                                       blank = True, 
+                                                       null= True
+                                                       )
+	patient_detail 		 = models.ForeignKey(PatientDetail, null = True, blank = True)
 
 	def __unicode__(self):
 		if self.guardian_name:
@@ -643,24 +669,53 @@ class PatientContact(models.Model):
 
 	__model_label__ = "contact"
 	
-	address_type 	= models.CharField('Type',max_length = 10, choices =(("Home", "Home"),("Office","Office"), ("Others","Others") ), default = "Home")
-	address 	= models.TextField(max_length = 100, help_text = 'limit to 100 words')
-	city 		= models.CharField(max_length = 20,default = 'Coimbatore')
-	state 		= models.CharField(max_length =20, default= "Tamil Nadu")
-	country 	= models.CharField(max_length =20, default = "India")
-	pincode 	= models.PositiveIntegerField(max_length =8, null = True, blank = True)
-	patient_detail 	= models.ForeignKey(PatientDetail, null = True, blank = True)
+	address_type 	= models.CharField('Type',
+                                       max_length = 10, 
+                                       choices =( ("Home", "Home"),
+                                                  ("Office","Office"), 
+                                                  ("Others","Others") 
+                                       ), 
+                                       default = "Home")
+	address 	= models.TextField(max_length = 100, 
+                                   help_text = 'limit to 100 words'
+                                   )
+	city 		= models.CharField(max_length = 20,
+                                  default = 'Coimbatore'
+                                  )
+	state 		= models.CharField(max_length =20, 
+                                   default= "Tamil Nadu"
+                                   )
+	country 	= models.CharField(max_length =20, 
+                                   default = "India"
+                                   )
+	pincode 	= models.PositiveIntegerField(max_length =8, 
+                                              null = True, 
+                                              blank = True
+                                              )
+	patient_detail 	= models.ForeignKey(PatientDetail, 
+                                        null = True, 
+                                        blank = True
+                                        )
 
 	def __unicode__(self):
 		if self.pincode:
-			return "%s, %s, %s, %s - %s"%( self.address , self.city    ,self.state   , self.country , self.pincode )
+			return "%s, %s, %s, %s - %s"%( self.address , 
+                                           self.city    ,
+                                           self.state   , 
+                                           self.country , 
+                                           self.pincode 
+                                           )
 		else:
-			return "%s, %s, %s, %s"%( self.address, self.city   , self.state  ,self.country)
+			return "%s, %s, %s, %s"%( self.address, 
+                                      self.city   , 
+                                      self.state  ,
+                                      self.country
+                                     )
 
 	class Meta:
 		verbose_name 	    = "Address"
 		verbose_name_plural = "Address"
-		ordering 	    = ('patient_detail','city','state')
+		ordering 	        = ('patient_detail','city','state')
 
 
 	def get_edit_url(self):
@@ -695,16 +750,44 @@ class PatientPhone(models.Model):
 	
 	__model_label__ = "phone"
 		
-	phone_type 	= models.CharField('Type',max_length = 10, choices =(("Home", "Home"),("Office","Office"),("Mobile","Mobile"),("Fax","Fax"),("Others","Others") ), default = "Home")
-	ISD_Code 	= models.PositiveIntegerField('ISD',max_length = 4, null = True, blank = True, default = "0091")
-	STD_Code 	= models.PositiveIntegerField('STD',max_length = 4, null = True, blank = True, default = "0422")
-	phone 		= models.PositiveIntegerField(max_length = 10, null = True, blank = True)
-	patient_detail 	= models.ForeignKey(PatientDetail, null = True, blank = True)
+	phone_type 	= models.CharField('Type',
+                                   max_length = 10, 
+                                   choices =(("Home", "Home"),
+                                             ("Office","Office"),
+                                             ("Mobile","Mobile"),
+                                             ("Fax","Fax"),
+                                             ("Others","Others") 
+                                    ), 
+                                    default = "Home")
+	ISD_Code 	= models.PositiveIntegerField('ISD',
+                                              max_length = 4, 
+                                              null = True, 
+                                              blank = True, 
+                                              default = "0091"
+                                              )
+	STD_Code 	= models.PositiveIntegerField('STD',
+                                               max_length = 4, 
+                                               null = True, 
+                                               blank = True, 
+                                               default = "0422"
+                                               )
+	phone 		= models.PositiveIntegerField(max_length = 10, 
+                                              null = True, 
+                                              blank = True
+                                              )
+	patient_detail 	= models.ForeignKey(PatientDetail, 
+                                        null = True, 
+                                        blank = True
+                                        )
 
 	class Meta:
 		verbose_name 	    = "Phone"
 		verbose_name_plural = "Phone"
-		ordering 	    = ('patient_detail','phone_type','ISD_Code','STD_Code')
+		ordering 	        = ('patient_detail',
+		                       'phone_type',
+		                       'ISD_Code',
+		                       'STD_Code'
+		                       )
 
 	def __unicode__(self):
 		if self.phone:
@@ -738,11 +821,11 @@ class PatientEmailFax(models.Model):
 	'''
 	__model_label__ = "email_and_fax"
 		
-	date_entered 		= models.DateTimeField(auto_now_add = True)
+	date_entered 	= models.DateTimeField(auto_now_add = True)
 	email 			= models.EmailField(max_length = 75, blank = True, null = True)
 	fax 			= models.PositiveIntegerField(max_length = 20, null = True, blank = True)
 	web 			= models.URLField(max_length = 50, null = True, blank = True)
-	patient_detail 	        = models.ForeignKey(PatientDetail, null = True, blank = True)
+	patient_detail  = models.ForeignKey(PatientDetail, null = True, blank = True)
 
 	def __unicode__(self):
 		return "%s- %s -%s" %(self.email, self.fax, self.web)
@@ -789,32 +872,38 @@ class PatientDemographicsData(models.Model):
 
     __model_label__ = "demographics"
 
-    date_of_birth     = models.DateField(auto_now_add = False, null = True, blank = True)
+    date_of_birth     = models.DateField(auto_now_add = False, 
+                                         null = True, 
+                                         blank = True
+                                         )
     socioeconomics    = models.CharField(max_length = 100, default="Middle", 
                                          choices = (("low", "Low"), 
                                                     ("middle", "Middle" ),
                                                     ("high","High")
                                                    )
                                         )
-    education         = models.CharField(max_length = 100, default = "Graduate",              choices = (('pg','Post-Graduate'),
-               ('g','Graduate'),
-               ('hs','High School'),
-               ('lg',"Lower Grade School"),
-               ('i', "Iliterate")
-              )
-    )
+    education         = models.CharField(max_length = 100, 
+                                         default = "Graduate",
+                                         choices = (('pg','Post-Graduate'),
+                                                    ('g','Graduate'),
+                                                    ('hs','High School'),
+                                                    ('lg',"Lower Grade School"),
+                                                    ('i', "Iliterate")
+                                                    )
+                                          )
     housing_conditions = models.TextField(max_length = 250,
                                          default = "Comfortable, with good sanitary conditions"
                          )
     religion           = models.CharField(max_length = 200)    
     religion_notes     = models.CharField(max_length = 100,
-                                          null=True, blank=True
+                                          null=True, 
+                                          blank=True
                          )
     race               = models.CharField(max_length = 200)
     languages_known    = models.TextField(max_length = 300)
     patient_detail     = models.ForeignKey(PatientDetail,
-                                           null = True,
-                                           blank = True,
+                                           null = True  ,
+                                           blank = True ,
                                            unique = True
                          )
 
@@ -856,7 +945,7 @@ class PatientAllergies(AuShadhaBaseModel):
                                        choices = (("rash",'Rash'),
                                                   ('angioedema','Angioedema'), 
                                                   ("anaphylaxis", "Anaphylaxis")
-                                                  ), 
+                                       ), 
                                        default = "Rash"
                                       )
   patient_detail = models.ForeignKey(PatientDetail,null = True,blank = True)
@@ -950,7 +1039,9 @@ class VaccineRegistry(models.Model):
   manufacturing_date  = models.DateField(auto_now_add = False)
   expiry_date         = models.DateField(auto_now_add = False)
   vis                 = models.TextField("Vaccine Information Statement", 
-                                         max_length = 1000, blank = True, null = True
+                                         max_length = 1000, 
+                                         blank = True, 
+                                         null = True
                         )
 
   def __unicode__(self):
@@ -985,9 +1076,13 @@ class PatientMedicationList(AuShadhaBaseModel):
 
   __model_label__ = "medication_list"
 
-  medication        = models.CharField(max_length = 100, help_text = "Only Generic Names..")
+  medication        = models.CharField(max_length = 100, 
+                                       help_text = "Only Generic Names.."
+                                       )
   strength          = models.CharField(max_length = 100)
-  dosage            = models.CharField(max_length = 100, help_text = "OD, BD, TDS, QID, HS, SOS, PID etc..")
+  dosage            = models.CharField(max_length = 100, 
+                                       help_text = "OD, BD, TDS, QID, HS, SOS, PID etc.."
+                                       )
   prescription_date = models.DateField(auto_now_add = False)
   prescribed_by     = models.CharField(max_length = 100, 
                                       choices = (("internal", "Internal"),
@@ -1026,12 +1121,19 @@ class PatientFamilyHistory(AuShadhaBaseModel):
 
   __model_label__ = "family_history"
 
-  family_member = models.CharField(max_length = 100, help_text = "mention only relationship..") 
+  family_member = models.CharField(max_length = 100, 
+                                   help_text = "mention only relationship.."
+                                   ) 
   deceased      = models.BooleanField(default = False)
   age           = models.PositiveIntegerField()
-  disease       = models.CharField(max_length = 100, help_text = "mention diagnosis as stated by patient / as per reports")
-  age_at_onset  = models.PositiveIntegerField()
-  patient_detail    = models.ForeignKey(PatientDetail,null = True,blank = True)
+  disease       = models.CharField(max_length = 100, 
+                                   help_text = "mention diagnosis as stated by patient / as per reports"
+                                   )
+  age_at_onset      = models.PositiveIntegerField()
+  patient_detail    = models.ForeignKey(PatientDetail,
+                                        null = True,
+                                        blank = True
+                                        )
 
   def __unicode__(self):
     return "%s" %(self.family_member)
@@ -1078,7 +1180,9 @@ class PatientSocialHistory(AuShadhaBaseModel):
                             ('living with partner','Living with Partner')
                            )
 
-  abuse_frequency = (('none',"None"),('former',"Former"),('everyday',"Everyday"),("periodic","Periodic"))
+  abuse_frequency = (('none',"None"),('former',"Former"),
+                     ('everyday',"Everyday"),("periodic","Periodic")
+                    )
 
   diet_choices = (
                   ('well_balanced',"Well Balanced"),
@@ -1090,27 +1194,63 @@ class PatientSocialHistory(AuShadhaBaseModel):
                   ("others","Others")
                  )
 
-  marital_status        = models.CharField(max_length = 250, choices=marital_status_choices, default="Single")
-  marital_status_notes  = models.CharField(max_length = 250, null=True, blank=True)
+  marital_status        = models.CharField(max_length = 250, 
+                                           choices=marital_status_choices, 
+                                           default="Single"
+                                           )
+  marital_status_notes  = models.CharField(max_length = 250, 
+                                           null=True, 
+                                           blank=True
+                                           )
   occupation            = models.CharField(max_length = 100)
-  occupation_notes      = models.CharField(max_length = 100, null=True, blank=True)
-  exercise              = models.CharField(max_length = 100, choices=exercise_choices, default="Active but no Exercise")
-  exercise_notes        = models.CharField(max_length = 100, null=True, blank=True)
-  diet                  = models.CharField(max_length = 100, choices=diet_choices, default="Well Balanced")
+  occupation_notes      = models.CharField(max_length = 100, 
+                                           null=True, 
+                                           blank=True
+                                           )
+  exercise              = models.CharField(max_length = 100, 
+                                           choices=exercise_choices, 
+                                           default="Active but no Exercise"
+                                           )
+  exercise_notes        = models.CharField(max_length = 100, 
+                                           null=True, 
+                                           blank=True
+                                           )
+  diet                  = models.CharField(max_length = 100, 
+                                           choices=diet_choices, 
+                                           default="Well Balanced"
+                                           )
   diet_notes            = models.CharField(max_length = 100, null=True, blank=True)
   home_occupants        = models.CharField(max_length = 300)
-  home_occupants_notes  = models.CharField(max_length = 100, null=True, blank=True)  
+  home_occupants_notes  = models.CharField(max_length = 100, 
+                                           null=True, 
+                                           blank=True
+                                           )  
   pets                  = models.CharField(max_length = 300, default = "None")
-  pets_notes            = models.CharField(max_length = 300, null=True, blank=True)
-  alcohol               = models.CharField(max_length = 250, choices=abuse_frequency, default="None")
+  pets_notes            = models.CharField(max_length = 300, 
+                                           null=True, 
+                                           blank=True
+                                           )
+  alcohol               = models.CharField(max_length = 250, 
+                                           choices=abuse_frequency, 
+                                           default="None"
+                                           )
   alcohol_no            = models.CharField(max_length = 100, null=True, blank=True)
   alcohol_notes         = models.CharField(max_length = 250, null=True, blank=True)  
-  tobacco               = models.CharField(max_length = 250, choices=abuse_frequency, default="None")
+  tobacco               = models.CharField(max_length = 250, 
+                                           choices=abuse_frequency, 
+                                           default="None"
+                                           )
   tobacco_no            = models.CharField(max_length = 250, null=True, blank=True)
   tobacco_notes         = models.CharField(max_length = 250, null=True, blank=True)
-  drug_abuse            = models.CharField(max_length = 250, choices=abuse_frequency, default="None")
+  drug_abuse            = models.CharField(max_length = 250, 
+                                           choices=abuse_frequency, 
+                                           default="None"
+                                           )
   drug_abuse_notes      = models.CharField(max_length = 250, null=True, blank=True)
-  sexual_preference     = models.CharField(max_length = 100, choices= sexual_preference_choices, default="Opposite Sex")
+  sexual_preference     = models.CharField(max_length = 100, 
+                                           choices= sexual_preference_choices, 
+                                           default="Opposite Sex"
+                                           )
   sexual_preference_notes = models.CharField(max_length = 100, null=True, blank=True)
   current_events          = models.TextField(max_length = 300, 
                                      help_text = "Any ongoing / coming up issues in family having a bearing on treatment",
@@ -1156,8 +1296,8 @@ class PatientMedicalHistory(AuShadhaBaseModel):
   This defines the Medical History that the patient has had.
   The patient automatically belongs to a Clinic and has some add, edit, del
   methods defined on him.
-
   """
+  
   from obs_and_gyn.models import ObstetricHistoryDetail
 
   __model_label__ = "medical_history"
@@ -1183,11 +1323,11 @@ class PatientMedicalHistory(AuShadhaBaseModel):
                           )
   healed                = models.BooleanField()
   remarks               = models.TextField(max_length = 300,
-                                            help_text = "Any Other Remarks",
-                                          default = "None"
+                                           help_text  = "Any Other Remarks",
+                                           default    = "None"
                           )
   patient_detail  = models.ForeignKey(PatientDetail,
-                                      null = True,
+                                      null  = True,
                                       blank = True,
                     )
 
@@ -1229,25 +1369,25 @@ class PatientSurgicalHistory(AuShadhaBaseModel):
   cpc_code        = models.ForeignKey("PatientCPC",null=True, blank=True)
   base_condition  = models.CharField("Base Condition",
                                     max_length = 250,
-                                    null=True,
-                                    blank=True
+                                    null       = True,
+                                    blank      = True
                     )
   med_condition    = models.ForeignKey("PatientMedicalHistory",
-                                        null=True,
-                                        blank=True
+                                        null  = True,
+                                        blank = True
                      )
   classification   = models.CharField(max_length = 250, null=True, blank = True)
   healed           = models.BooleanField()
   date_of_surgery  = models.DateField(auto_now_add = False,
-                                       null = True,
+                                       null  = True,
                                        blank = True
                        )
   remarks          = models.TextField(max_length = 300,
-                                          help_text = "Any Other Remarks",
-                                          default = "None"
+                                      help_text  = "Any Other Remarks",
+                                      default    = "None"
                      )
   patient_detail  = models.ForeignKey(PatientDetail,
-                                      null = True,
+                                      null  = True,
                                       blank = True,
                     )
 
@@ -1273,8 +1413,6 @@ class PatientSurgicalHistory(AuShadhaBaseModel):
 
     
 
-
-
 ## Modelform definition of Patients.
 
 class PatientSocialHistoryForm(ModelForm):
@@ -1295,120 +1433,121 @@ class PatientSocialHistoryForm(ModelForm):
 
 	def __init__(self, *args, **kwargs):
 		super(PatientSocialHistoryForm, self).__init__(*args, **kwargs)
-		text_fields = [{"field"         : 'marital_status',
-		                'max_length'    :  100         ,
-		                "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' :true"
-		                },
-                  {"field"         : 'marital_status_notes',
-		                'max_length'    :  100         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :false ,placeHolder:'Any Other Notes...'"
-		                },
-		               {"field": 'occupation',
-		                'max_length'    :  100         ,
-		               "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : true"
-		               },
-                    {"field"         : 'occupation_notes',
-		                'max_length'    :  100         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :false,placeHolder:'Others '"
-		                },
-                   {"field": 'exercise',
-                   'max_length':100,
-                   "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : true"
+		text_fields = [
+                  {"field"           : 'marital_status',
+		           'max_length'      :  100         ,
+		           "data-dojo-type"  : "dijit.form.Select",
+		           "data-dojo-props" : r"'required' :true"
+		          },
+                  {"field"           : 'marital_status_notes',
+		           'max_length'      :  100         ,
+		           "data-dojo-type"  : "dijit.form.ValidationTextBox",
+		           "data-dojo-props" : r"'required' :false ,placeHolder:'Any Other Notes...'"
+		          },
+		          {"field"           : 'occupation',
+		           'max_length'      :  100         ,
+		           "data-dojo-type"  :  "dijit.form.Select",
+		           "data-dojo-props" :  r"'required' : true"
+		          },
+                  {"field"           : 'occupation_notes',
+                   'max_length'      :  100         ,
+                   "data-dojo-type"  : "dijit.form.ValidationTextBox",
+                   "data-dojo-props" : r"'required' :false,placeHolder:'Others '"
+                  },
+                  {"field"           : 'exercise',
+                   'max_length'      : 100,
+                   "data-dojo-type"  : "dijit.form.Select",
+		           "data-dojo-props" : r"'required' : true"
+                  },
+                  {"field"           : 'exercise_notes',
+                   'max_length'      :  100         ,
+                   "data-dojo-type"  : "dijit.form.ValidationTextBox",
+                   "data-dojo-props" : r"'required' :false,placeHolder:'Other Notes...'"
+		          },
+                  {"field"           : 'diet',
+                   'max_length'      : 100,
+                   "data-dojo-type"  : "dijit.form.Select",
+		           "data-dojo-props" : r"'required' : true"
+                  },
+                  {"field"           : 'diet_notes',
+		           'max_length'      :  100         ,
+		           "data-dojo-type"  : "dijit.form.ValidationTextBox",
+		           "data-dojo-props" : r"'required' :false,placeHolder:'Specify'"
+		          },
+                  {"field"           : 'home_occupants',
+                   'max_length'      : 150,
+                   "data-dojo-type"  : "dijit.form.MultiSelect",
+		           "data-dojo-props" : r"'required' : true"
+                  },
+                  {"field"           : 'home_occupants_notes',
+		           'max_length'      :  100         ,
+		           "data-dojo-type"  : "dijit.form.ValidationTextBox",
+		           "data-dojo-props" : r"'required' :false,placeHolder:'Other details ?'"
+		          },
+                  {"field"           : 'pets',
+                   'max_length'      : 150,
+                   "data-dojo-type"  : "dijit.form.MultiSelect",
+		           "data-dojo-props" : r"'required' : true"
+                  },
+                  {"field"            : 'pets_notes',
+                    'max_length'      : 100         ,
+                    "data-dojo-type"  : "dijit.form.ValidationTextBox",
+                    "data-dojo-props" : r"'required' :false,placeHolder:'Notes'"
+		          },
+                  {"field"           : 'alcohol',
+                   'max_length'      : 150,
+                   "data-dojo-type"  : "dijit.form.Select",
+		           "data-dojo-props" : r"'required' : true"
+                  },
+                  {"field"            : 'alcohol_no',
+                    'max_length'      :  ""         ,
+                    "data-dojo-type"  : "dijit.form.Select",
+                    "data-dojo-props" : r"'required' :false"
+		          },
+                  {"field"            : 'alcohol_notes',
+		           'max_length'       :  100         ,
+		           "data-dojo-type"   : "dijit.form.ValidationTextBox",
+		           "data-dojo-props"  : r"'required' :false,placeHolder:'Any Other Notes...'"
+		           },
+                   {"field"            : 'tobacco',
+                    'max_length'       : 150,
+                    "data-dojo-type"   : "dijit.form.Select",
+		            "data-dojo-props"  : r"'required' : true"
                    },
-                  {"field"         : 'exercise_notes',
-		                'max_length'    :  100         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :false,placeHolder:'Other Notes...'"
-		                },
-                   {"field": 'diet',
-                   'max_length':100,
-                   "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : true"
+                   { "field"           : 'tobacco_no',
+                    'max_length'       :  ""         ,
+                    "data-dojo-type"   : "dijit.form.Select",
+                    "data-dojo-props"  : r"'required' :false"
+		           },
+                   {"field"            : 'tobacco_notes',
+		            'max_length'       :  200         ,
+		            "data-dojo-type"   : "dijit.form.ValidationTextBox",
+		            "data-dojo-props"  : r"'required' :false,placeHolder:'Any Other Notes...'"
+		           },
+                   { "field"           : 'drug_abuse',
+                     'max_length'      : 100,
+                     "data-dojo-type"  : "dijit.form.Select",
+		             "data-dojo-props" : r"'required' : true"
                    },
-                  {"field"         : 'diet_notes',
-		                'max_length'    :  100         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :false,placeHolder:'Specify'"
-		                },
-                   {"field": 'home_occupants',
-                   'max_length':150,
-                   "data-dojo-type": "dijit.form.MultiSelect",
-		                "data-dojo-props": r"'required' : true"
+                   {"field"           : 'drug_abuse_notes',
+                    'max_length'      : 150,
+                    "data-dojo-type"  : "dijit.form.ValidationTextBox",
+		            "data-dojo-props" : r"'required' : false,placeHolder:'Details..'"
                    },
-                  {"field"         : 'home_occupants_notes',
-		                'max_length'    :  100         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :false,placeHolder:'Other details ?'"
-		                },
-                   {"field": 'pets',
-                   'max_length':150,
-                   "data-dojo-type": "dijit.form.MultiSelect",
-		                "data-dojo-props": r"'required' : true"
+                   {"field"           : 'sexual_preference',
+                    'max_length'      : 100,
+                    "data-dojo-type"  : "dijit.form.Select",
+		            "data-dojo-props" : r"'required' : true"
                    },
-                  {"field"         : 'pets_notes',
-		                'max_length'    :  100         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :false,placeHolder:'Notes'"
-		                },
-                   {"field": 'alcohol',
-                   'max_length':150,
-                   "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : true"
+                   {"field"           : 'sexual_preference_notes',
+                    'max_length'      : 250,
+                    "data-dojo-type"  : "dijit.form.ValidationTextBox",
+		            "data-dojo-props" : r"'required' : false,placeHolder:'Other details'"
                    },
-                  {"field"         : 'alcohol_no',
-		                'max_length'    :  ""         ,
-		                "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' :false"
-		                },
-                  {"field"         : 'alcohol_notes',
-		                'max_length'    :  100         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :false,placeHolder:'Any Other Notes...'"
-		                },
-                   {"field": 'tobacco',
-                   'max_length':150,
-                   "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : true"
-                   },
-                  {"field"         : 'tobacco_no',
-		                'max_length'    :  ""         ,
-		                "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' :false"
-		                },
-                  {"field"         : 'tobacco_notes',
-		                'max_length'    :  200         ,
-		                "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' :false,placeHolder:'Any Other Notes...'"
-		                },
-                   {"field": 'drug_abuse',
-                   'max_length':100,
-                   "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : true"
-                   },
-                   {"field": 'drug_abuse_notes',
-                   'max_length':150,
-                   "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : false,placeHolder:'Details..'"
-                   },
-                   {"field": 'sexual_preference',
-                   'max_length':100,
-                   "data-dojo-type": "dijit.form.Select",
-		                "data-dojo-props": r"'required' : true"
-                   },
-                   {"field": 'sexual_preference_notes',
-                   'max_length':250,
-                   "data-dojo-type": "dijit.form.ValidationTextBox",
-		                "data-dojo-props": r"'required' : false,placeHolder:'Other details'"
-                   },
-                   {"field": 'current_events',
-                   'max_length':250,
-                   "data-dojo-type": "dijit.form.Textarea",
-		                "data-dojo-props": r"'required' : false,placeHolder:'Notes about specific events in family that has bearing on treatment'"
+                   {"field"           : 'current_events',
+                    'max_length'      : 250,
+                    "data-dojo-type"  : "dijit.form.Textarea",
+		            "data-dojo-props" : r"'required' : false,placeHolder:'Notes about specific events in family that has bearing on treatment'"
                    }
 	        ]
 		for field in text_fields:

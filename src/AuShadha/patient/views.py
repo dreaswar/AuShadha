@@ -44,11 +44,11 @@ from datetime import datetime, date, time
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 
-from patient.models   import *
-from admission.models import *
-#from discharge.models import *
-from visit.models     import *
-
+from patient.models     import *
+from admission.models   import *
+#from discharge.models  import *
+from visit.models       import *
+from obs_and_gyn.models import ObstetricHistoryDetail
 
 
 from patient.medication_list import patient_medication_list_add, patient_medication_list_edit
@@ -529,23 +529,47 @@ def render_patient_summary(request,id=None):
         pat_contact_obj   = PatientContact.objects.filter(patient_detail  = pat_obj)
         pat_phone_obj     = PatientPhone.objects.filter(patient_detail = pat_obj)
         pat_guardian_obj  = PatientGuardian.objects.filter(patient_detail = pat_obj)
-        pat_admission_obj = None
-        pat_visit_obj     = None
-        pat_allergy_obj   = PatientAllergies.objects.filter(patient_detail = pat_obj)
+        
+        pat_medical_history_obj  = PatientMedicalHistory.objects.filter(patient_detail  = pat_obj)
+        pat_surgical_history_obj = PatientSurgicalHistory.objects.filter(patient_detail  = pat_obj)
+        pat_social_history_obj   = PatientSocialHistory.filter(patient_detail  = pat_obj)
+        pat_family_history_obj   = PatientFamilyHistory.objects.filter(patient_detail  = pat_obj)
+        pat_demographics_obj     = PatientDemographicsData.objects.filter(patient_detail =pat_obj)
+        
+        pat_allergy_obj           = PatientAllergies.objects.filter(patient_detail = pat_obj)
         pat_medication_list_obj   = PatientMedicationList.objects.filter(patient_detail = pat_obj)
+        
+        pat_immunisation_obj               = PatientImmunisation.objects.filter(patient_detail = pat_obj)
+        pat_obstetric_history_detail_obj   = ObstetricHistoryDetail.objects.filter(patient_detail = pat_obj)
+
+        pat_admission_obj = Admission.objects.filter(patient_detail  = pat_obj)
+        pat_visit_obj     = VisitDetail.objects.filter(patient_detail = pat_obj)
+        
       except(AttributeError, NameError, KeyError, TypeError,ValueError):
         raise Http404("ERROR! Bad Request Parameters")
       except(AttributeError, NameError, KeyError, TypeError,ValueError):
         raise Http404("ERROR! Requested Patient Data Does not exist")
-      variable = RequestContext(request,{'user'            : user,
+      variable = RequestContext(request,{
+                                        'user'            : user,
                                         'pat_obj'          : pat_obj,
                                         'pat_contact_obj'  : pat_contact_obj,
                                         'pat_phone_obj'    : pat_phone_obj,
                                         'pat_guardian_obj' : pat_guardian_obj,
+                                        
+                                        'pat_allergy_obj'         : pat_allergy_obj,
+                                        'pat_medication_list_obj' : pat_medication_list_obj,
+                                        'pat_medical_history_obj' : pat_medical_history_obj,
+                                        'pat_surgical_history_obj': pat_surgical_history_obj,
+                                        'pat_social_history_obj'  : pat_social_history_obj,
+                                        'pat_family_history_obj'  : pat_family_history_obj,
+                                        'pat_demographics_obj'    : pat_demographics_obj,
+                                        
+                                        'pat_obstetric_history_detail_obj': pat_obstetric_history_detail_obj,
+                                        'pat_immunisation_obj'            : pat_immunisation_obj,
+                                        
                                         'pat_admission_obj': pat_admission_obj,
                                         'pat_visit_obj'    : pat_visit_obj,
-                                        'pat_allergy_obj'  : pat_allergy_obj,
-                                        'pat_medication_list_obj': pat_medication_list_obj
+                                        
                                         })
       return render_to_response('patient/summary.html', variable)
   else:

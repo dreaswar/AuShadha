@@ -2,11 +2,11 @@ from django.conf.urls.defaults import *
 
 import AuShadha.settings
 
-from patient.views import *
+from patient.views           import *
 from patient.medication_list import *
-from patient.family_history import *
-from patient.immunisation import *
-from obs_and_gyn.views import *
+from patient.family_history  import *
+from patient.immunisation    import *
+from obs_and_gyn.views       import *
 
 
 # Uncomment the next two lines to enable the admin:
@@ -15,42 +15,41 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-
 #################### PATIENT ###############################
 
   url(r'list/$',
-	'patient.views.render_patient_list'	,
-	name = 'render_patient_list'
+	  'patient.views.render_patient_list'	,
+	  name = 'render_patient_list'
   ),
 
   url(r'tree/(?P<id>\d+)/$',
-  'patient.views.render_patient_tree' ,
-  name = 'render_patient_tree_with_id'
+      'patient.views.render_patient_tree' ,
+      name = 'render_patient_tree_with_id'
   ),
 
   url(r'tree/$',
-  'patient.views.render_patient_tree' ,
-  name = 'render_patient_tree_without_id'
+      'patient.views.render_patient_tree' ,
+      name = 'render_patient_tree_without_id'
   ),
   
   url(r'summary/$',
-  'patient.views.render_patient_summary' ,
-  name = 'render_patient_summary_without_id'
+      'patient.views.render_patient_summary' ,
+      name = 'render_patient_summary_without_id'
   ),
 
   url(r'summary/(?P<id>\d+)/$',
-  'patient.views.render_patient_summary' ,
-  name = 'render_patient_summary_with_id'
+      'patient.views.render_patient_summary' ,
+      name = 'render_patient_summary_with_id'
   ),
 
   url(r'sidebar_contact_tab/$',
-  'patient.views.render_patient_sidebar_contact_tab' ,
-  name = 'render_patient_sidebar_contact_tab_without_id'
+      'patient.views.render_patient_sidebar_contact_tab' ,
+      name = 'render_patient_sidebar_contact_tab_without_id'
   ),
 
   url(r'sidebar_contact_tab/(?P<id>\d+)/$',
-  'patient.views.render_patient_sidebar_contact_tab' ,
-  name = 'render_patient_sidebar_contact_tab_with_id'
+      'patient.views.render_patient_sidebar_contact_tab' ,
+      name = 'render_patient_sidebar_contact_tab_with_id'
   ),
 
   url(r'search/$'	, 
@@ -60,10 +59,11 @@ urlpatterns = patterns('',
   (r'search/(?P<search_by>\w+)/(?P<search_for>\w+)/$'	, 
    'patient.views.patient_search'	
   ),
+  
   url(r'new/add/$'								,
       'patient.views.patient_new_add',
       name = 'patient_new_add'	
-   ),
+  ),
 
   url(r'patient_filtering_search_json/$'	, 
       'patient.views.patient_filtering_search_json',
@@ -75,7 +75,7 @@ urlpatterns = patterns('',
       name = "patient_filtering_search_json_with_id"
   ),
 
-###########################################################################################
+################################################################################
 
     url(r'contact/json/$',
     		'patient.views.contact_json',
@@ -100,7 +100,7 @@ urlpatterns = patterns('',
     		name = 'patient_contact_del'
     ),
 
-###########################################################################################
+################################################################################
 
     url(r'phone/json/$',
     		'patient.views.phone_json',
@@ -125,7 +125,7 @@ urlpatterns = patterns('',
     		name = 'patient_phone_del'
     ),
 
-###########################################################################################
+################################################################################
 
 #    url( r'email_and_fax/list/(?P<id>\d+)/$'           ,
 #         'patient.views.patient_email_and_fax_list' ,
@@ -145,69 +145,81 @@ urlpatterns = patterns('',
          name = 'patient_email_and_fax_del'
     ),
 
-###########################################################################################
+################################################################################
 
-    url(r'guardian/json/$','patient.views.guardian_json',name = 'guardian_json' ),
+    url(r'guardian/json/$',
+        'patient.views.guardian_json',
+        name = 'guardian_json' 
+    ),
 
 #   url(r'guardian/list/(?P<id>\d+)/$', 'patient.views.patient_guardian_list',name = 'patient_guardian_list' ),
 
-    url(r'guardian/add/(?P<id>\d+)/$','patient.views.patient_guardian_add',name = 'patient_guardian_add'   ),
-    url(r'guardian/edit/(?P<id>\d+)/$','patient.views.patient_guardian_edit',name = 'patient_guardian_edit' ),
-    url(r'guardian/del/(?P<id>\d+)/$','patient.views.patient_guardian_del',name = 'patient_guardian_del' ),
+    url(r'guardian/add/(?P<id>\d+)/$',
+        'patient.views.patient_guardian_add',
+        name = 'patient_guardian_add'   
+    ),
+    url(r'guardian/edit/(?P<id>\d+)/$',
+       'patient.views.patient_guardian_edit',
+       name = 'patient_guardian_edit' 
+    ),
+    url(r'guardian/del/(?P<id>\d+)/$',
+        'patient.views.patient_guardian_del',
+        name = 'patient_guardian_del' 
+    ),
 
 
-###########################################################################################
+################################################################################
 
     url(r'demographics/json/$',
-    		'patient.views.demographics_json',
-    		name = 'demographics_json'
+    	'patient.views.demographics_json',
+    	name = 'demographics_json'
     ),
 
 #    url(r'demographics/list/(?P<id>\d+)/$',
-#    		'patient.views.patient_demographics_list',
-#    		name = 'patient_demographics_list'
+#    	 'patient.views.patient_demographics_list',
+#    	 name = 'patient_demographics_list'
 #    ),
 
     url(r'demographics/add/(?P<id>\d+)/$',
-    		'patient.views.patient_demographics_add',
-   		  name = 'patient_demographics_add'
+   		'patient.views.patient_demographics_add',
+  	    name = 'patient_demographics_add'
     ),
     url(r'demographics/edit/(?P<id>\d+)/$',
-    		'patient.views.patient_demographics_edit',
-    		name = 'patient_demographics_edit'
+   		'patient.views.patient_demographics_edit',
+   		name = 'patient_demographics_edit'
     ),
     url(r'demographics/del/(?P<id>\d+)/$',
-    		'patient.views.patient_demographics_del',
-    		name = 'patient_demographics_del'
+  		'patient.views.patient_demographics_del',
+   		name = 'patient_demographics_del'
     ),
 
-###########################################################################################
+################################################################################
 
 
     url(r'social_history/json/$',
-    		'patient.views.social_history_json',
-    		name = 'social_history_json'
+    	'patient.views.social_history_json',
+    	name = 'social_history_json'
     ),
 
 #    url(r'social_history/list/(?P<id>\d+)/$',
-#    		'patient.social_history.patient_social_history_list',
-#    		name = 'patient_social_history_list'
+#    	 'patient.social_history.patient_social_history_list',
+#    	 name = 'patient_social_history_list'
 #    ),
 
     url(r'social_history/add/(?P<id>\d+)/$',
-    		'patient.social_history.patient_social_history_add',
-   		  name = 'patient_social_history_add'
+    	'patient.social_history.patient_social_history_add',
+   		 name = 'patient_social_history_add'
     ),
     url(r'social_history/edit/(?P<id>\d+)/$',
-    		'patient.social_history.patient_social_history_edit',
-    		name = 'patient_social_history_edit'
+    	'patient.social_history.patient_social_history_edit',
+    	name = 'patient_social_history_edit'
     ),
     url(r'social_history/del/(?P<id>\d+)/$',
-    		'patient.social_history.patient_social_history_del',
-    		name = 'patient_social_history_del'
+    	'patient.social_history.patient_social_history_del',
+    	name = 'patient_social_history_del'
     ),
 
-###########################################################################################
+################################################################################
 
    url(r'surgical_history/json/$',
       'patient.surgical_history.surgical_history_json',
@@ -233,7 +245,7 @@ urlpatterns = patterns('',
       name = 'surgical_history_del'
    ),
 
-###########################################################################################
+################################################################################
 
    url(r'medical_history/json/$',
       'patient.medical_history.medical_history_json',
@@ -259,7 +271,7 @@ urlpatterns = patterns('',
       name = 'medical_history_del'
    ),
 
-###########################################################################################
+################################################################################
 
 #    url(r'obstetric_history_detail/json/$',
 #    		'obs_and_gyn.views.obstetric_history_detail_json',
@@ -285,7 +297,7 @@ urlpatterns = patterns('',
     		name = 'obstetric_history_detail_del'
     ),
 
-###########################################################################################
+################################################################################
 
     url(r'allergies/json/$',
     		'patient.views.allergies_json',
@@ -310,7 +322,7 @@ urlpatterns = patterns('',
     		name = 'patient_allergies_del'
     ),
 
-###########################################################################################
+################################################################################
 
     url(r'family_history/json/$',
     		'patient.views.family_history_json',
@@ -335,7 +347,7 @@ urlpatterns = patterns('',
     		name = 'patient_family_history_del'
     ),
 
-###########################################################################################
+################################################################################
 
 
     url(r'social_history/json/$',
@@ -361,7 +373,7 @@ urlpatterns = patterns('',
 #    		name = 'patient_social_history_del'
 #    ),
 
-###########################################################################################
+################################################################################
 
     url(r'immunisation/json/$',
     		'patient.views.immunisation_json',
@@ -387,7 +399,7 @@ urlpatterns = patterns('',
     ),
 
 
-###########################################################################################
+################################################################################
 
     url(r'medication_list/json/$',
     		'patient.views.medication_list_json',
@@ -413,7 +425,7 @@ urlpatterns = patterns('',
     ),
 
 
-###########################################################################################
+################################################################################
 
 #    url(r'detail/(?P<id>\d+)/$',
 #    		'patient.views.patient_detail_list',
@@ -429,24 +441,55 @@ urlpatterns = patterns('',
     		name = 'patient_detail_del'
     ),
 
-###########################################################################################
+################################################################################
 
 
-    url(r'admission/json/$','patient.views.admission_json',name = 'admission_json'  ),
+    url(r'admission/json/$',
+        'patient.views.admission_json',
+        name = 'admission_json'  
+    ),
 
-#   url(r'admission/list/(?P<id>\d+)/$','patient.views.patient_admission_list', name = 'get_patient_admission_list'	 ),
-    url( r'admission/add/(?P<id>\d+)/$'	,'patient.views.patient_admission_add',	name ='patient_admission_add'),
-    url( r'admission/add/$','patient.views.patient_admission_add',name ='patient_admission_add'	),
+#   url(r'admission/list/(?P<id>\d+)/$',
+       #'patient.views.patient_admission_list', 
+       #name = 'get_patient_admission_list'	 
+    #),
+    
+    url( r'admission/add/(?P<id>\d+)/$'	,
+         'patient.views.patient_admission_add',	
+         name ='patient_admission_add'
+    ),
+    
+    url( r'admission/add/$',
+         'patient.views.patient_admission_add',
+         name ='patient_admission_add'	
+    ),
 
 
-    url(r'visit/json/$','patient.views.visit_json',name = 'visit_json' ),
+    url(r'visit/json/$',
+        'patient.views.visit_json',
+        name = 'visit_json' 
+    ),
 
 
-    url(r'index/$', 'patient.views.patient_index', name='patient_index'),
+    url(r'index/$', 
+        'patient.views.patient_index', 
+        name='patient_index'
+    ),
 
-    url(r'patient_id/autocompleter/$',	'patient.views.patient_id_autocompleter',name = 'patient_id_autocompleter'),
-    url(r'patient_hospital_id/autocompleter/$',	'patient.views.hospital_id_autocompleter',name = 'patient_hospital_id_autocompleter'),
-    url(r'patient_name/autocompleter/$'	,'patient.views.patient_name_autocompleter',name = 'patient_name_autocompleter'	),
+    url(r'patient_id/autocompleter/$',	
+        'patient.views.patient_id_autocompleter',
+        name = 'patient_id_autocompleter'
+    ),
+    
+    url(r'patient_hospital_id/autocompleter/$',	
+        'patient.views.hospital_id_autocompleter',
+        name = 'patient_hospital_id_autocompleter'
+    ),
+    
+    url(r'patient_name/autocompleter/$'	,
+        'patient.views.patient_name_autocompleter',
+        name = 'patient_name_autocompleter'	
+    ),
 
 )
 
