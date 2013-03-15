@@ -143,7 +143,23 @@ class AuShadhaBaseModel(models.Model):
 
   def get_object_json_url(self):
     return "/AuShadha/%s_json/%s/" %(self.__model_label__, self.id)
-
+  
+  def _field_list(self):
+        self.field_list = []
+        print self._meta.fields
+        for field in self._meta.fields:
+          self.field_list.append(field)
+        return self.field_list
+        
+  def _formatted_obj_data(self):
+    if not self.field_list:
+      _field_list()
+    str_obj = "<ul>"
+    for obj in self._field_list:
+      _str += "<li>"+ obj+"<li>"
+      str_obj += _str
+    str_obj += "</ul>"
+    return str_obj
 
   def generic_url_maker(self,action,id, root_object = False):
     """

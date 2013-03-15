@@ -282,6 +282,7 @@ function buildPatientTree(){
                                 request(CHOSEN_PATIENT.patientsummary).
                                 then(
                                   function(html){
+                                    
                                     if(dom.byId('patientSynopsisContainer')){
                                       dom.byId('patientSynopsisContainer').remove();
                                     }
@@ -289,73 +290,75 @@ function buildPatientTree(){
                                                         {id: 'patientSynopsisContainer'},
                                                         'patientSynopsisTopContentPane',
                                                         'first');
-                                    domConstruct.create('div',
-                                                        {id: 'patientHistoryContainer'},
-                                                        'patientSynopsisContainer',
-                                                        0);
-                                      domConstruct.create('div',
-                                                          {id: 'patientMedicalHistoryContainer'},
-                                                          'patientHistoryContainer',
-                                                          0);
-                                      domConstruct.create('div',
-                                                          {id: 'patientSurgicalHistoryContainer'},
-                                                          'patientHistoryContainer',
-                                                          1);
-                                      domConstruct.create('div',
-                                                          {id: 'patientFamilyHistoryContainer'},
-                                                          'patientHistoryContainer',
-                                                          2);
-                                      domConstruct.create('div',
-                                                          {id: 'patientSocialHistoryContainer'},
-                                                          'patientHistoryContainer',
-                                                          3);
-                                      domConstruct.create('div',
-                                                          {id: 'patientDemographicsContainer'},
-                                                          'patientHistoryContainer',
-                                                          4);
+                                    dom.byId('patientSynopsisContainer').innerHTML = html;
 
-                                    domConstruct.create('div',
-                                                        {id: 'patientPreventivesContainer'},
-                                                        'patientSynopsisContainer',
-                                                        2);
-                                      domConstruct.create('div',
-                                                            {id: 'patientImmunisationContainer'},
-                                                            'patientPreventivesContainer',
-                                                            0);
-                                      domConstruct.create('div',
-                                                            {id: 'patientObstetricHistoryDetailContainer'},
-                                                            'patientPreventivesContainer',
-                                                            1);
-                                      domConstruct.create('div',
-                                                            {id: 'patientMedicalPreventivesContainer'},
-                                                            'patientPreventivesContainer',
-                                                            2);
-
-                                    domConstruct.create('div',
-                                                        {id: 'patientMedicationListContainer'},
-                                                        'patientSynopsisContainer',
-                                                        3);
-                                    domConstruct.create('div',
-                                                        {id: 'patientAllergyContainer'},
-                                                        'patientSynopsisContainer',
-                                                        4);
-                                    domConstruct.create('div',
-                                                        {id: 'patientInvContainer'},
-                                                        'patientSynopsisContainer',
-                                                        5);
-                                    domConstruct.create('div',
-                                                        {id: 'patientImagingContainer'},
-                                                        'patientSynopsisContainer',
-                                                        6);
-                                    domConstruct.create('div',
-                                                        {id: 'patientDiagnosisContainer'},
-                                                        'patientSynopsisContainer',
-                                                        7);
-                                    domConstruct.create('div',
-                                                        {id: 'patientProceduresContainer'},
-                                                        'patientSynopsisContainer',
-                                                        8);
-                                    query('#patientSynopsisContainer > div').
+//                                     domConstruct.create('div',
+//                                                         {id: 'patientHistoryContainer'},
+//                                                         'patientSynopsisContainer',
+//                                                         0);
+//                                       domConstruct.create('div',
+//                                                           {id: 'patientMedicalHistoryContainer'},
+//                                                           'patientHistoryContainer',
+//                                                           0);
+//                                       domConstruct.create('div',
+//                                                           {id: 'patientSurgicalHistoryContainer'},
+//                                                           'patientHistoryContainer',
+//                                                           1);
+//                                       domConstruct.create('div',
+//                                                           {id: 'patientFamilyHistoryContainer'},
+//                                                           'patientHistoryContainer',
+//                                                           2);
+//                                       domConstruct.create('div',
+//                                                           {id: 'patientSocialHistoryContainer'},
+//                                                           'patientHistoryContainer',
+//                                                           3);
+//                                       domConstruct.create('div',
+//                                                           {id: 'patientDemographicsContainer'},
+//                                                           'patientHistoryContainer',
+//                                                           4);
+// 
+//                                     domConstruct.create('div',
+//                                                         {id: 'patientPreventivesContainer'},
+//                                                         'patientSynopsisContainer',
+//                                                         2);
+//                                       domConstruct.create('div',
+//                                                             {id: 'patientImmunisationContainer'},
+//                                                             'patientPreventivesContainer',
+//                                                             0);
+//                                       domConstruct.create('div',
+//                                                             {id: 'patientObstetricHistoryDetailContainer'},
+//                                                             'patientPreventivesContainer',
+//                                                             1);
+//                                       domConstruct.create('div',
+//                                                             {id: 'patientMedicalPreventivesContainer'},
+//                                                             'patientPreventivesContainer',
+//                                                             2);
+// 
+//                                     domConstruct.create('div',
+//                                                         {id: 'patientMedicationListContainer'},
+//                                                         'patientSynopsisContainer',
+//                                                         3);
+//                                     domConstruct.create('div',
+//                                                         {id: 'patientAllergyContainer'},
+//                                                         'patientSynopsisContainer',
+//                                                         4);
+//                                     domConstruct.create('div',
+//                                                         {id: 'patientInvContainer'},
+//                                                         'patientSynopsisContainer',
+//                                                         5);
+//                                     domConstruct.create('div',
+//                                                         {id: 'patientImagingContainer'},
+//                                                         'patientSynopsisContainer',
+//                                                         6);
+//                                     domConstruct.create('div',
+//                                                         {id: 'patientDiagnosisContainer'},
+//                                                         'patientSynopsisContainer',
+//                                                         7);
+//                                     domConstruct.create('div',
+//                                                         {id: 'patientProceduresContainer'},
+//                                                         'patientSynopsisContainer',
+//                                                         8);
+                                      query('#patientSynopsisContainer > div').
                                       forEach( function(node, index, nodeList){
                                         console.log("setting styles...")
                                         domStyle.set(node,
@@ -368,7 +371,7 @@ function buildPatientTree(){
                                                      }
                                         );
                                       });
-                                      query('#patientSynopsisContainer > div:focus').
+                                      query('#patientSynopsisContainer > div :hover').
                                       forEach( function(node, index, nodeList){
                                         console.log("setting styles...")
                                         domStyle.set(node,
