@@ -170,6 +170,11 @@ body{
   margin-top : 5px;
 }
 
+#demographics_add_or_edit_form,
+#newDemographicsDataAddOrEditForm{
+  max-height: 30em;
+}
+
 #patientSynopsisBottomContentPane{
 	//width: 70em;
 	height:18em;

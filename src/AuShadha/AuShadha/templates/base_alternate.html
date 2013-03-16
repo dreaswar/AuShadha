@@ -60,11 +60,24 @@
 	<script type="text/javascript">
 
 		{% if perms.patient %}
+
+      /*
+        Contains the Code for creating tabs .
+      */
+
+      var genericTabMaker  = {% include 'generic_tab_maker.js' %}
+
 			/*
 				Contains the Patient Demographics Tab Setup.
 			*/
 
 			var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
+
+      /*
+        Contains the Patient Social History Tab Setup.
+      */
+
+      var makeSocialHistoryTab  = {% include 'social_history_tab.js' %}
 
 			/*
         Contains the Patient History Tab Setup.

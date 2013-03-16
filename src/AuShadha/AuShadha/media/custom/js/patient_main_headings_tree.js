@@ -415,6 +415,30 @@ function buildPatientTree(){
                                       );
                                     }
                             }
+                            if(item.name =="Social History" || item.type=="social_history_module"){
+                                    if(!registry.byId('socialHistoryTab') ){
+                                        console.log(CHOSEN_PATIENT);
+                                        makeSocialHistoryTab(CHOSEN_PATIENT.socialhistoryadd);
+                                    }
+                                    else{
+                                      registry.byId("patientContextTabs").selectChild(
+                                        registry.byId("socialHistoryTab")
+                                      );
+                                    }
+                            }
+                            /*
+                            if(item.name =="Family History" || item.type=="family_history_module"){
+                                    if(!registry.byId('familyHistoryTab') ){
+                                        console.log(CHOSEN_PATIENT);
+                                        makeSocialHistoryTab(CHOSEN_PATIENT.socialhistoryadd);
+                                    }
+                                    else{
+                                      registry.byId("patientContextTabs").selectChild(
+                                        registry.byId("socialHistoryTab")
+                                      );
+                                    }
+                            }
+                            */
 
 //                             if(item.type == "family_history_module"   ||
 //                                item.type == "medical_history_module"  || 
