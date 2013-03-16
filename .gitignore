@@ -1,17 +1,30 @@
 *.py[co]
+*.db
+
+.Python
+.DS_Store
+
+local_settings.py
 
 # Packages
 *.egg
 *.egg-info
+
+
 dist
 build
 eggs
 parts
 bin
+include
+lib
+share
 var
 sdist
 develop-eggs
 .installed.cfg
+
+*~
 
 # Installer logs
 pip-log.txt
