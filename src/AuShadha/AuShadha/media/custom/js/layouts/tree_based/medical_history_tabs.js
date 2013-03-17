@@ -72,10 +72,7 @@ function createMedicalHistoryTab(){
                                                                   ["dojo/_base/xhr", "dojo/_base/array"],
                                                                   function(xhr, array){
                                                                     xhr.get({
-                                                                      url: "{%url medical_history_json %}"+
-                                                                          "?patient_id="+
-                                                                          dom.byId("selected_patient_id_info").innerHTML +
-                                                                          "&action=add",
+                                                                      url: CHOSEN_PATIENT.medicalhistoryadd,
                                                                       load: function(html){
                                                                                 var myDialog = dijit.byId("editPatientDialog");
                                                                                 myDialog.set('content', html);

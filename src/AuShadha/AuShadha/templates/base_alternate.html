@@ -67,11 +67,11 @@
 
       var genericTabMaker  = {% include 'generic_tab_maker.js' %}
 
-			/*
-				Contains the Patient Demographics Tab Setup.
-			*/
+      /*
+          Contains the Patient Demographics Tab Setup.
+      */
 
-			var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
+      var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
 
       /*
         Contains the Patient Social History Tab Setup.
@@ -79,13 +79,20 @@
 
       var makeSocialHistoryTab  = {% include 'social_history_tab.js' %}
 
-			/*
-        Contains the Patient History Tab Setup.
+      /*
+        Contains the Patient Family History Tab Setup.
+      */
+
+      var makeFamilyHistoryTab  = {% include 'family_history_tab.js' %}
+      
+      /*
+        Contains the Patient Medical and Surgical History Tab Setup.
       */
 
       var createHistoryTabs  = {% include 'layouts/tree_based/history_tabs.js' %}
-
-      var createMedicalHistoryTab  = {% include 'layouts/tree_based/medical_history_tabs.js' %}
+      
+      var makeMedicalHistoryTab  = {% include 'layouts/tree_based/medical_history_tabs.js' %}
+      var makeSurgicalHistoryTab  = {% include 'layouts/tree_based/surgical_history_tab.js' %}
   
     /*
        Contains the Patient Medical Preventives Tab Setup.
@@ -1094,4 +1101,5 @@
 
 </body>
 </html>
+
 

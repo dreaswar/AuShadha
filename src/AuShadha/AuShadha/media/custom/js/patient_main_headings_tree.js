@@ -426,19 +426,43 @@ function buildPatientTree(){
                                       );
                                     }
                             }
-                            /*
+                            
                             if(item.name =="Family History" || item.type=="family_history_module"){
                                     if(!registry.byId('familyHistoryTab') ){
                                         console.log(CHOSEN_PATIENT);
-                                        makeSocialHistoryTab(CHOSEN_PATIENT.socialhistoryadd);
+                                        makeFamilyHistoryTab(CHOSEN_PATIENT.familyhistoryjson);
                                     }
                                     else{
                                       registry.byId("patientContextTabs").selectChild(
-                                        registry.byId("socialHistoryTab")
+                                        registry.byId("familyHistoryTab")
                                       );
                                     }
                             }
-                            */
+                            
+                            if(item.name =="Medical History" || item.type=="medical_history_module"){
+                                    if(!registry.byId('patientMedicalHistoryTab') ){
+                                        console.log(CHOSEN_PATIENT);
+                                        makeMedicalHistoryTab(CHOSEN_PATIENT.medicalhistoryjson);
+                                    }
+                                    else{
+                                      registry.byId("patientContextTabs").selectChild(
+                                        registry.byId("patientMedicalHistoryTab")
+                                      );
+                                    }
+                            }
+                            
+                            if(item.name =="Surgical History" || item.type=="surgical_history_module"){
+                                    if(!registry.byId('patientSurgicalHistoryTab') ){
+                                        console.log(CHOSEN_PATIENT);
+                                        makeSurgicalHistoryTab(CHOSEN_PATIENT.surgicalhistoryjson);
+                                    }
+                                    else{
+                                      registry.byId("patientContextTabs").selectChild(
+                                        registry.byId("patientSurgicalHistoryTab")
+                                      );
+                                    }
+                            }
+                            
 
 //                             if(item.type == "family_history_module"   ||
 //                                item.type == "medical_history_module"  || 
