@@ -152,10 +152,10 @@ var renderGridsFormsAndTrees = function (addData/*Data Object Containing all URL
 
 				console.log("Setting up the Grids Now...");
 // 					setupFamilyHistoryGrid(familyHistoryUrl);
-					setupImmunisationGrid(immunisationUrl);
+					//setupImmunisationGrid(immunisationUrl);
 
-					setupMedicationListGrid(medicationListUrl);
-					setupAllergiesGrid(allergiesUrl);
+					//setupMedicationListGrid(medicationListUrl);
+					//setupAllergiesGrid(allergiesUrl);
 
 // 					setupMedicalHistoryGrid(medicalHistoryUrl);
 // 					setupSurgicalHistoryGrid(surgicalHistoryUrl);

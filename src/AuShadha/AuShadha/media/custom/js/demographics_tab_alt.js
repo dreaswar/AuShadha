@@ -24,15 +24,15 @@ function (urlObj/* URL DICT */){
 		function makeDoms(){
 
 			domConstruct.create('div',
-													{id:"contactAndDemographicsTab"},
-													'patientPreventiveTabs',
-													"after"
+                                {id:"contactAndDemographicsTab"},
+                                'patientSummaryTab',
+                                "after"
 			);
 			domStyle.set('contactAndDemographicsTab',{"height":"auto","overflow":"auto"});
 					domConstruct.create('div',
-															{id: "demographics_add_or_edit_form"},
-															"contactAndDemographicsTab",
-															"first"
+                                        {id: "demographics_add_or_edit_form"},
+                                        "contactAndDemographicsTab",
+                                        "first"
 					);
 
           domStyle.set('demographics_add_or_edit_form',{height:"30em"});
@@ -45,59 +45,59 @@ function (urlObj/* URL DICT */){
           );
 */
 					domConstruct.create("div",
-															{"id":"contact_tab_container"},
-														'demographics_add_or_edit_form',
-														"after"
+                                          {"id":"contact_tab_container"},
+                                      'demographics_add_or_edit_form',
+                                      "after"
 					);
 
 					domConstruct.create("div",
-																{"id":"contact_list_container"},
-															'contact_tab_container',
-															"first"
+                                        {"id":"contact_list_container"},
+                                      'contact_tab_container',
+                                      "first"
 						);
 						domConstruct.create("div",
-																	{"id":"contact_list"},
-																'contact_list_container',
-																"first"
+                                            {"id":"contact_list"},
+                                          'contact_list_container',
+                                          "first"
 							);
 					domConstruct.create("div",
-																{"id":"phone_list_container"},
-															'contact_list_container',
-															'after'
+                                        {"id":"phone_list_container"},
+                                      'contact_list_container',
+                                      'after'
 						);
 						domConstruct.create("div",
-																{"id":"phone_list"},
-															'phone_list_container',
-															'first'
+                                            {"id":"phone_list"},
+                                          'phone_list_container',
+                                          'first'
 						);
 					domConstruct.create('div',
-																{id: "guardian_list_container"},
-																"phone_list_container",
-																"after"
+                                        {id: "guardian_list_container"},
+                                        "phone_list_container",
+                                        "after"
 						);
 						domConstruct.create('div',
-																{id: "guardian_list"},
-																"guardian_list_container",
-																"first"
+                                            {id: "guardian_list"},
+                                            "guardian_list_container",
+                                            "first"
 						);
 		}
 
 		function makeDijits(){
 			
 			var demographicsTab = new ContentPane({ title     : "Demographics",
-																							closable  : true,
-																							iconClass : "contactIcon"
-																						},
-																						"contactAndDemographicsTab"
+                                                    closable  : true,
+                                                    iconClass : "contactIcon"
+                                                },
+                                                "contactAndDemographicsTab"
 			);
 			registry.byId('patientContextTabs').addChild(demographicsTab);
 
 			var demographicsAddOrEditForm = new ContentPane({
-																							id:"demographics_add_or_edit_form",
-																							href: urlObj.demographicsUrl
-																			},	
-																			"demographics_add_or_edit_form"
-																			);
+                                                              id:"demographics_add_or_edit_form",
+                                                              href: urlObj.demographicsUrl
+                                              },	
+                                              "demographics_add_or_edit_form"
+                                              );
 			demographicsTab.addChild(demographicsAddOrEditForm);
 			var contactTabs = new TabContainer({
 														id: "contact_tab_container",
@@ -125,10 +125,10 @@ function (urlObj/* URL DICT */){
 			contactTabs.addChild(phoneListPane);
 			setupPhoneGrid(urlObj.phoneUrl,'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
 			var guardianListPane    = new ContentPane({id:"guardian_list_container",
-																									title : "Guardian"
-																			},
-																			"guardian_list_container"
-																			);
+													  title : "Guardian"
+                                                      },
+                                                      "guardian_list_container"
+										);
 			contactTabs.addChild(guardianListPane);
 			setupGuardianGrid(urlObj.guardianUrl);
 

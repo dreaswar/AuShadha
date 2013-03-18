@@ -195,7 +195,7 @@ require(
                             "first"
           );
 //           domStyle.set('patientSynopsisTopContentPane',{height:"auto", overflow:"auto"});
-
+/*
           domConstruct.create('div',
                               {id: "patientSynopsisBottomContentPane"},
                             "patientSynopsisTopContentPane",
@@ -262,7 +262,7 @@ require(
                                       "patient_allergyGridContainer",
                                       "first"
                 );
-
+*/
 
 // 
 //             domConstruct.create('div',
@@ -356,7 +356,7 @@ require(
 //                                 "patientMedicalAndSurgicalHistoryTab",
 //                                 "last"
 //              );
-
+/*
     domConstruct.create('div',
                           {id: "patientPreventiveHealthTab"},
                           "patientContextTabs",
@@ -377,7 +377,7 @@ require(
                                 "patientImmunisationTab",
                                 "first"
             );
-
+*/
       console.log("Created all the necessary DOM ELements.. Creating Dijits")
 
      console.log("Building Patient Tree..")
@@ -701,13 +701,13 @@ require(
             var patientSynopsisTopContentPane = new ContentPane({
                                                   id        : "patientSynopsisTopContentPane",
                                                   region    : "center",
-                                                  splitter  : true,
-                                                  gutters   : true
+                                                  splitter  : false,
+                                                  gutters   : false
                                                   },
                                               "patientSynopsisTopContentPane"
             );
             patientSynopsisBorderContainer.addChild(patientSynopsisTopContentPane);
-
+/*
             var patientSynopsisBottomContentPane = new ContentPane({
                                                             id        : "patientSynopsisBottomContentPane",
                                                             region    : "bottom",
@@ -717,7 +717,7 @@ require(
                                             "patientSynopsisBottomContentPane"
             );
             patientSynopsisBorderContainer.addChild(patientSynopsisBottomContentPane);
-
+*/
             //{% comment %}
             /*						
               var patientSynopsisBottomTabContainer = new TabContainer({
@@ -812,7 +812,7 @@ require(
 //                                               "patientMedicalAndSurgicalHistoryTab"
 //                                               );
 //             historyTabs.addChild(medicalAndSurgicalHistoryTab);
-  
+  /*
         var preventiveHealthTab = new ContentPane({id:"patientPreventiveHealthTab",
                                                   title:"Preventives"
                                                   },
@@ -835,6 +835,7 @@ require(
                                                       "patientImmunisationTab"
                                                       );
             preventiveHealthTabs.addChild(patientImmunisationTab);
+*/
 /*
             var patientObstetricsPreventivesTab = new ContentPane({id:"patientObstetricsPreventivesTab",
                                                         title:"Obstetrics"
@@ -1028,6 +1029,8 @@ require(
 
 //{% endcomment %}
 
+//{% comment %}
+/*
 //{% if perms.patient %}
     var addAllergyButton =  new Button({
                                       label: "Add",
@@ -1132,8 +1135,11 @@ require(
                         )
 );
 //{% endif %}
+*/
+//{% endcomment %}
 
 //{% comment %}
+/*
 //{% if perms.patient %}
     var addPatientMediaButton =  new Button({
                                           label: "Add",
@@ -1167,6 +1173,7 @@ require(
                                   )
 );
 //{% endif %}
+*/
 //{% endcomment %}
     }
 

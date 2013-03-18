@@ -319,15 +319,19 @@ def render_patient_tree(request,id = None):
                                           'len'   : len(demographics_obj),
                                           "addUrl": None,
                                         }
-                                        #,
-                                        #{"name"  : "Medications"   , "type":"application", "id":"MEDICATIONS",
-                                         #'len'   : len(medication_list_obj),
-                                          #"addUrl": None,
-                                        #},
-                                        #{"name"  : "Allergies"   , "type":"application", "id":"ALLERGIES",
-                                         #'len'   : len(allergies_obj),
-                                          #"addUrl": None,
-                                        #}
+                                        ,
+                                        {"name"    : "Medications"   , 
+                                         "type"    : "medication_list_module", 
+                                          "id"     : "MEDICATIONS",
+                                         'len'     : len(medication_list_obj),
+                                          "addUrl" : None,
+                                        },
+                                        {"name"    : "Allergies"   , 
+                                         "type"    : "allergies_module", 
+                                          "id"     : "ALLERGIES",
+                                         'len'     : len(allergies_obj),
+                                          "addUrl" : None,
+                                        }
                                       ]
                           },
                           {"name"    : "Preventives"   ,
