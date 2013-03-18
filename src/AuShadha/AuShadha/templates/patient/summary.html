@@ -1,6 +1,8 @@
 <div id="patientHistoryContainer">
 
+{%comment %}
   <div id="patientDemographicsContainer"> 
+    <div>
     {% if pat_demographics_obj %}
       <ul>
       {% for obj in pat_demographics_obj %}
@@ -9,6 +11,8 @@
     {% else %}
       No Demographics data
     {% endif %}
+    </div>
+    <div>
     {% if pat_contact_obj %}
       <ul>
       {% for obj in pat_contact_obj %}
@@ -17,6 +21,8 @@
     {% else %}
       No Contact data
     {% endif %}
+    </div>
+    <div>
     {% if pat_guardian_obj %}
       <ul>
       {% for obj in pat_guardian_obj %}
@@ -25,7 +31,10 @@
     {% else %}
       No Guardian data
     {% endif %}
+    </div>
   </div>
+{% endcomment %}
+
   <div id="patientFamilyHistoryContainer"> 
     {% if pat_family_history_obj %}
       <ul>
@@ -36,6 +45,7 @@
       No Family History Recorded
     {% endif %}
   </div>
+
   <div id="patientSocialHistoryContainer"> 
     {% if pat_social_history_obj %}
       <ul>
@@ -46,6 +56,7 @@
       No Social History data
     {% endif %}
   </div>
+
   <div id="patientMedicalHistoryContainer"> 
     {% if pat_medical_history_obj %}
       <ul>
@@ -56,6 +67,7 @@
       No Medical History data
     {% endif %}
   </div>
+
   <div id="patientSurgicalHistoryContainer"> 
   {% if pat_surgical_history_obj %}
       <ul>
@@ -69,6 +81,32 @@
 
 </div>
 
+<div id="patientMedicationsContainer">
+  
+  <div id="patientMedicationListContainer"> 
+    {% if pat_medication_list_obj %}
+      <ul>
+      {% for obj in pat_medication_list_obj %}
+        <li> {{obj.formatted_obj_data}} </li>
+      {% endfor %}
+    {% else %}
+      No Medication
+    {% endif %}
+  </div>
+  
+    <div id="patientAllergyListContainer"> 
+    {% if pat_allergy_obj %}
+      <ul>
+      {% for obj in pat_allergy_obj %}
+        <li> {{obj.formatted_obj_data}} </li>
+      {% endfor %}
+    {% else %}
+      No Recorded Allergies
+    {% endif %}
+  </div>
+</div>
+
+
 <div id="patientPreventivesContainer">
   
   <div id="patientImmunisationContainer"> 
@@ -81,6 +119,7 @@
       No Immunisation data
     {% endif %}
   </div>
+
   <div id="patientObstetricHistoryDetailContainer"> 
     {% if pat_obstetric_history_detail_obj %}
       <ul>
@@ -91,6 +130,7 @@
       No Obstetric History data
     {% endif %}
   </div>
+
   <div id="patientMedicalPreventivesContainer"> 
   
   </div>

@@ -462,6 +462,17 @@ function buildPatientTree(){
                                       );
                                     }
                             }
+                            if(item.name =="Medications" || item.type=="medication_list_module"){
+                                    if(!registry.byId('medicationListTab') ){
+                                        console.log(CHOSEN_PATIENT);
+                                        makeMedicationListTab(CHOSEN_PATIENT.medicationlistjson);
+                                    }
+                                    else{
+                                      registry.byId("patientContextTabs").selectChild(
+                                        registry.byId("medicationListTab")
+                                      );
+                                    }
+                            }
                             
 
 //                             if(item.type == "family_history_module"   ||

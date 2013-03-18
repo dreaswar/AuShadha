@@ -93,23 +93,27 @@
       
       var makeMedicalHistoryTab  = {% include 'layouts/tree_based/medical_history_tabs.js' %}
       var makeSurgicalHistoryTab  = {% include 'layouts/tree_based/surgical_history_tab.js' %}
+      
+      var makeMedicationListTab  = {% include 'layouts/tree_based/medication_list_tab.js' %}
+      
   
     /*
        Contains the Patient Medical Preventives Tab Setup.
     */
 
-			var makeMedicalPreventivesTab  = {% include 'medical_preventives_tab.js' %}
+	  var makeMedicalPreventivesTab  = {% include 'medical_preventives_tab.js' %}
 
 
     /*
        Contains the Patient Surgical Preventives Tab Setup.
     */
 
-			var makeSurgicalPreventivesTab  = {% include 'surgical_preventives_tab.js' %}
-		{% endif %}		
+	  var makeSurgicalPreventivesTab  = {% include 'surgical_preventives_tab.js' %}
+	
+	{% endif %}		
 		
-		{% if perms.obs_and_gyn %}
-		/*
+	{% if perms.obs_and_gyn %}
+	/*
        Contains the Patient Obstetric History Tab Setup.
     */
 
