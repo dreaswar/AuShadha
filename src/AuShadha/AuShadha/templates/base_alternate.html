@@ -33,6 +33,9 @@
        Global Variables
     */
     var CHOSEN_PATIENT;
+    
+    var PATIENT_PANE;
+    
     var ADD_MORE_PATIENTS,
         ADD_MORE_PATIENT_CONTACT,
         ADD_MORE_PATIENT_PHONE   ,
@@ -59,117 +62,105 @@
 
 	<script type="text/javascript">
 
-		{% if perms.patient %}
-
-      /*
-        Contains the Code for creating tabs .
-      */
-
+  {% if perms.patient %}
+    /*
+      Contains the Code for creating tabs .
+    */
       var genericTabMaker  = {% include 'generic_tab_maker.js' %}
-
-      /*
-          Contains the Patient Demographics Tab Setup.
-      */
-
+    /*
+        Contains the Patient Demographics Tab Setup.
+    */
       var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
-
-      /*
-        Contains the Patient Social History Tab Setup.
-      */
-
+    /*
+      Contains the Patient Social History Tab Setup.
+    */
       var makeSocialHistoryTab  = {% include 'social_history_tab.js' %}
-
-      /*
-        Contains the Patient Family History Tab Setup.
-      */
-
+    /*
+      Contains the Patient Family History Tab Setup.
+    */
       var makeFamilyHistoryTab  = {% include 'family_history_tab.js' %}
-      
-      /*
-        Contains the Patient Medical and Surgical History Tab Setup.
-      */
-
+    /*
+      Contains the Patient Medical and Surgical History Tab Setup.
+    */
       var createHistoryTabs  = {% include 'layouts/tree_based/history_tabs.js' %}
-      
       var makeMedicalHistoryTab  = {% include 'layouts/tree_based/medical_history_tabs.js' %}
       var makeSurgicalHistoryTab  = {% include 'layouts/tree_based/surgical_history_tab.js' %}
-      
       var makeMedicationListTab  = {% include 'layouts/tree_based/medication_list_tab.js' %}
-      
-  
     /*
        Contains the Patient Medical Preventives Tab Setup.
     */
-
 	  var makeMedicalPreventivesTab  = {% include 'medical_preventives_tab.js' %}
-
-
     /*
        Contains the Patient Surgical Preventives Tab Setup.
     */
-
 	  var makeSurgicalPreventivesTab  = {% include 'surgical_preventives_tab.js' %}
-	
-	{% endif %}		
-		
-	{% if perms.obs_and_gyn %}
-	/*
-       Contains the Patient Obstetric History Tab Setup.
+  {% endif %}		
+
+  {% if perms.obs_and_gyn %}
+    /*
+      Contains the Patient Obstetric History Tab Setup.
     */
+    var	makeObstetricHistoryDetailTab  = {% include 'obstetric_history_tab.js' %}
+  {% endif %}
 
-			var	makeObstetricHistoryDetailTab  = {% include 'obstetric_history_tab.js' %}
-		{% endif %}
-
-		{% if perms.obs_and_gyn %}
-   /*
-       Contains the Patient Gynaecology History Tab Setup.
+  {% if perms.obs_and_gyn %}
+    /*
+      Contains the Patient Gynaecology History Tab Setup.
     */
+    var makeGynaecologyHistoryDetailTab  = {% include 'gynaecology_history_tab.js' %}
+  {% endif %}
 
-			var makeGynaecologyHistoryDetailTab  = {% include 'gynaecology_history_tab.js' %}
-		
-		{% endif %}
-		
-		{% if perms.patient %}
-			/*
-				Contains the Patient Paediatric / Neonatal Exam Tab Setup.
-			*/
-
-				var makeNeonatalAndPaediatricExamTab  = {% include 'neonatal_and_paediatric_exam_tab.js' %}
+  {% if perms.patient %}
+    /*
+        Contains the Patient Paediatric / Neonatal Exam Tab Setup.
+    */
+    var makeNeonatalAndPaediatricExamTab  = {% include 'neonatal_and_paediatric_exam_tab.js' %}
+  {% endif %}
+    
+  </script>
    
-		{% endif %}
-    /*
-       Contains the Patient Context Tabs set up
-    */
-
-   {% include 'patient_context_tab_setup_alt.js' %}
+  <script type = 'text/javascript' 
+           src  = "{{STATIC_URL}}custom/js/panes/patient_pane.js">
   
   </script>
   
+  <script type = 'text/javascript' 
+           src  = "{{STATIC_URL}}custom/js/menu/patient_menu.js">
   
-
-  <script type="text/javascript">
-    /*
-       Contains the Logic of eventing in Patient Search Form Partly.
-       Some of it is implemented in the HTML declaratively.
-       Triggered when the patient search text is entered
-       A separate trigger is present in search/patient.html
-       for handling the click event of the Filter button
-    */
-
-   {% include 'events_alt.js' %}
   </script>
-
- <script type="text/javascript">
+ 
+  <script type = "text/javascript" 
+         src  = "{{STATIC_URL}}custom/js/patient_tree.js">
     /*
        Contains the Patient Tree Set Up.
     */
+  </script> 
+  
+  <script type="text/javascript">
+    /*
+      Contains the Logic of eventing in Patient Search Form Partly.
+      Some of it is implemented in the HTML declaratively.
+      Triggered when the patient search text is entered
+      A separate trigger is present in search/patient.html
+      for handling the click event of the Filter button
+    */
 
-   {% include 'patient_main_headings_tree.js' %}
+    {% include 'events_alt.js' %}
+   </script>
+
+  <script type="text/javascript">
+   require(['aushadha'],
+    function(aushadha){
+      console.log("Dojo code has loaded");
+      return true;
+   });
   </script>
-
+  
+{% comment %}
   <script type="text/javascript">
    {% include 'script_alt.js' %}
   </script>
+{% endcomment %}
 
   <script type="text/javascript">
    {% include 'notifications.js' %}
@@ -395,9 +386,9 @@
                               <!--  END OF patientTreeContainer  -->
 
                               <!--  START OF patientContextContainer  -->
-                                <div id              = "patientContextContainer"
+                                <!--<div id              = "patientContextContainer"
                                 >
-                                </div>
+                                </div>-->
                               <!--  END OF patientContextContainer  -->
 
                             </div>

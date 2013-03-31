@@ -1,36 +1,23 @@
 <!-- Dojo library -->
 
+    <script type="text/javascript">
+    
+      var dojoConfig = {
+          baseUrl           : "{{STATIC_URL}}",
+          tlmSiblingOfDojo  : false,
+          packages: [
+              { name: "dojo"    , location: "{{STATIC_URL}}plugins/dojo-1.8.0/dojo" },
+              { name: "dijit"   , location: "{{STATIC_URL}}plugins/dojo-1.8.0/dijit" },
+              { name: "dojox"   , location: "{{STATIC_URL}}plugins/dojo-1.8.0/dojox" },
+              { name: "aushadha", location: "{{STATIC_URL}}custom/js"  , main: "main" }
+          ]
+      };
+    
+    </script>
+
     <script type="text/javascript"
             src="{{STATIC_URL}}plugins/dojo-1.8.0/dojo/dojo.js"    
             data-dojo-config="async: true, parseOnLoad: true, executeScripts:true, isDebug:true">
     </script>
 
-
 <!-- end of Dojo library links -->
-
-<!-- Custom Scripts     -->
-
-<!--    <script type="text/javascript" -->
-<!--	    src="{{STATIC_URL}}custom/js/script.js"> -->
-<!--    </script>-->
-
-    <script type	=	"text/javascript"
-	    src		=	"{{STATIC_URL}}custom/js/complaints.js">
-    </script>
-
-    <script type	=	"text/javascript"
-	    src		=	"{{STATIC_URL}}custom/js/durations.js">
-    </script>
-
-    <script type	=	"text/javascript"
-	    src		=	"{{STATIC_URL}}custom/js/patient_list.js">
-    </script>
-
-{% comment %}
-    <script type	=	"text/javascript"
-	    src		=	"{{STATIC_URL}}custom/js/events.js">
-    </script>
-{% endcomment %}
-
-
-<!-- end Custom Scripts     -->

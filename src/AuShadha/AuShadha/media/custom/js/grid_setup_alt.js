@@ -503,250 +503,43 @@ function setupVisitGrid(url){
  };
 
 function reInitBottomPanels(){
-  console.log("Running function to destroy existing widgets...");
-  require(["dijit/registry","dojo/dom","dojo/dom-construct","dojo/dom-style"],
-  function(registry, dom, domConstruct, domStyle){
-      var contactTable        = registry.byId("contact_list"),
-          phoneTable          = registry.byId("phone_list"),
-          guardianTable       = registry.byId("guardian_list"),
-          demographicsTab     = registry.byId("contactAndDemographicsTab"),
+  require(["dijit/registry",
+           "dojo/dom",
+           "dojo/dom-construct",
+           "dojo/dom-style",
+           "dojo/_base/array",
 
-          immunizationTable               = registry.byId("immunisation_list"),
-          neonatalAndPaediatricExamTab    = registry.byId("patientNeonatalAndPaediatricExamTab"),
-          medicalPreventivesTab           = registry.byId("patientSurgicalPreventivesTab"),
-          surgicalPreventivesTab          = registry.byId("patientMedicalPreventivesTab"),
-          obstetricsHistoryDetailTab      = registry.byId("patientObstetricsPreventivesTab"),
-          gynaecologyHistoryDetailTab     = registry.byId("patientGynaecologyPreventivesTab"),
+            "dijit/layout/BorderContainer",
+            "dojox/layout/ContentPane",
+            "dijit/layout/TabContainer",
+          ],
+  function(registry, 
+           dom, 
+           domConstruct, 
+           domStyle, 
+           array,
+           BorderContainer,
+           ContentPane,
+           TabContainer
+          ){
 
-          allergyTable        = registry.byId("allergy_list"),
-          medicationListTable = registry.byId("medication_list"),
+    console.log("Running reInitBottomPanels at grid_setup_alt.js");
 
-          familyHistoryTable  = registry.byId("family_history_list"),
-          medicalHistoryTable = registry.byId("medical_history_list"),
-          surgicalHistoryTable = registry.byId("surgical_history_list"),
+    console.log("PATIENT_PANE variable is");
+    console.log(PATIENT_PANE);
+    
+    PATIENT_PANE.constructor();
 
-//        socialHistoryTable  = registry.byId("social_history_list"),
+    registry.byId('admissionHomeContentPane').set('disabled',false);
+    buildAdmissionTree();
+    
+    registry.byId('visitHomeContentPane').set('disabled',false);
+    buildVisitTree();
 
-          admissionTable      = registry.byId("admission_list"),
-          visitTable          = registry.byId("visit_list"),
-
-          patientMediaTable   = registry.byId("patient_media_list");
-
-      if(demographicsTab){
-				registry.byId("patientContextTabs").
-					selectChild(
-						registry.byId('patientSummaryTab')
-					);
-				registry.byId('patientContextTabs').
-					removeChild( 
-							registry.byId('contactAndDemographicsTab') 
-					);
-				registry.byId("contactAndDemographicsTab").
-					destroyRecursive();
-      }
-
-      if(medicalPreventivesTab){
-        registry.byId('patientPreventiveTabs').
-          removeChild(
-              registry.byId('patientMedicalPreventivesTab')
-          );
-        registry.byId("patientMedicalPreventivesTab").
-          destroyRecursive();
-        registry.byId("patientContextTabs").
-          selectChild(
-            registry.byId('patientSummaryTab')
-          );
-      }
-
-      if(surgicalPreventivesTab){
-        registry.byId('patientPreventiveTabs').
-          removeChild(
-              registry.byId('patientSurgicalPreventivesTab')
-          );
-        registry.byId("patientSurgicalPreventivesTab").
-          destroyRecursive();
-
-        registry.byId("patientContextTabs").
-          selectChild(
-            registry.byId('patientSummaryTab')
-          );
-      }
-
-
-      if(neonatalAndPaediatricExamTab){
-        registry.byId("patientContextTabs").
-          selectChild(
-            registry.byId('patientSummaryTab')
-          );
-        registry.byId('patientPreventiveTabs').
-          removeChild(
-              registry.byId('patientNeonatalAndPaediatricExamTab')
-          );
-        registry.byId("patientNeonatalAndPaediatricExamTab").
-          destroyRecursive();
-      }
-      
-      if(obstetricsHistoryDetailTab){
-				registry.byId("patientContextTabs").
-					selectChild(
-						registry.byId('patientSummaryTab')
-					);
-				registry.byId('patientPreventiveTabs').
-					removeChild( 
-							registry.byId('patientObstetricsPreventivesTab') 
-					);
-				registry.byId("patientObstetricsPreventivesTab").
-					destroyRecursive();
-      }
-
-      if(gynaecologyHistoryDetailTab){
-        registry.byId("patientContextTabs").
-          selectChild(
-            registry.byId('patientSummaryTab')
-          );
-        registry.byId('patientPreventiveTabs').
-          removeChild(
-              registry.byId('patientGynaecologyPreventivesTab')
-          );
-        registry.byId("patientGynaecologyPreventivesTab").
-          destroyRecursive();
-      }
-
-/*
-			if(contactTable){
-        contactTable.destroyRecursive();
-        console.log("Recreating Contact tab");
-        domConstruct.create("div",{id:'contact_list'},
-                           "contact_list_container",
-                           1
-        );
-      }
-
-      if(phoneTable){
-        phoneTable.destroyRecursive();
-        console.log("Recreating Phone tab");
-        domConstruct.create("div",{id:'phone_list'},
-                           "phone_list_container",
-                           1
-        );
-      }
-
-      if(guardianTable){
-        guardianTable.destroyRecursive();
-        console.log("Recreating Guardian tab");
-        domConstruct.create("div",{ id:'guardian_list'},
-                           "guardian_list_container",
-                           1
-        );
-        //domStyle.set( dom.byId('guardian_list'),{"height" : "15em", "overflow":"auto", "width": "35em"});
-      }
-*/
-      if(medicationListTable){
-        medicationListTable.destroyRecursive();
-        console.log("Recreating Medication List tab");
-        domConstruct.create("div",
-                           { id:'medication_list', class:'patientContextTabs'},
-                           "patientSynopsisTopContentPane",
-                           1
-        );
-				domStyle.set( dom.byId('medication_list'),{"height" : "15em", "overflow":"auto", "width": "57em"});
-      }
-
-      if(allergyTable){
-        allergyTable.destroyRecursive();
-        console.log("Recreating allergy tab");
-        domConstruct.create("div",
-                            {id:'allergy_list', class:'patientContextTabs'},
-                           "patientSidebarDiv_allergyGridContainer",
-                           1
-        );
-				domStyle.set( dom.byId('allergy_list'),{ "height" : "15em", 
-																									"width": "15",
-																									"position":"relative",
-																									"top":"0",
-																									"left":"0",
-																									"overflow":"hidden", });
-      }
-
-      if(immunizationTable){
-        immunizationTable.destroyRecursive();
-        console.log("Recreating immunisation tab");
-        domConstruct.create("div",
-                           { id:'immunisation_list',
-                            class:'patientContextTabs'
-                          },
-                           "patientImmunisationTab",
-                           1
-        );
-      }
-
-      if(familyHistoryTable){
-        familyHistoryTable.destroyRecursive();
-        console.log("Recreating Family History tab");
-        domConstruct.create("div",
-                            { id:'family_history_list',
-                             class:'patientContextTabs'
-                            },
-                           "patientFamilyHistoryTab",
-                           1
-        );
-      }
-
-      if(medicalHistoryTable){
-        medicalHistoryTable.destroyRecursive();
-        console.log("Recreating History tab");
-        domConstruct.create("div",
-                            { id:'medical_history_list'},
-                            "patientMedicalAndSurgicalHistoryTab",
-                            1
-        );
-      }
-
-      if(surgicalHistoryTable){
-        surgicalHistoryTable.destroyRecursive();
-        console.log("Recreating History tab");
-        domConstruct.create("div",
-                            {id:'surgical_history_list'},
-                           "patientMedicalAndSurgicalHistoryTab",
-                           "last"
-        );
-      }
-
-
-      if(patientMediaTable){
-        patientMediaTable.destroyRecursive();
-        console.log("Recreating Patient Media tab");
-        domConstruct.create("div",
-                            {id:'patient_media_list', class:'patientContextTabs'},
-                           "patientMediaTab",
-                           1
-        );
-
-      }
-
-      if(admissionTable){
-        admissionTable.destroyRecursive();
-        console.log("Recreating Admission tab");
-        domConstruct.create("div",
-                            {id:'admission_list', class:'patientContextTabs'},
-                           "patientAdmissionAndVisitsTab",
-                           1
-        );
-
-      }
-
-      if(visitTable){
-        visitTable.destroyRecursive();
-        console.log("Recreating Visit tab tab");
-        domConstruct.create("div",
-                            {id:'visit_list', class:'patientContextTabs'},
-                           "patientAdmissionAndVisitsTab",
-                           3
-        );
-      }
-
-   });
+    registry.byId("centerMainPane").resize();  
+  });
 }
+
 
 function cleanUpAdmissionPane(){
   var center_top_pane = dijit.byId('centerTopTabPane');

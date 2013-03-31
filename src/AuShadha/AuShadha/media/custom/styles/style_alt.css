@@ -508,6 +508,54 @@ body{
 
 /*TABLES*/
 
+table.content_pane_table{
+  text-align: center;
+  border: solid 1px #aaa;
+  border-radius: 2px;
+  border-collapse: collapse;
+  margin: 10px;
+  padding: 5px;
+}
+
+table.content_pane_table thead th {
+  border: solid 1px #aaa;
+  padding : 3px;
+  background: whitesmoke;
+  text-align: center;
+}
+
+table.content_pane_table tbody tr.even_row {
+  border: solid 1px #ddd;
+  padding : 10px;
+  background: white;
+  text-align: center;
+}
+
+table.content_pane_table tbody tr td {
+  padding : 10px;
+  text-align: center;
+}
+
+table.content_pane_table tbody tr.odd_row {
+  border: solid 1px white;
+  padding : 3px;
+  background: whitesmoke;
+  text-align: center;
+}
+
+.normal_value_indicator_text{
+  color: green;
+  background:oldlace;
+  font-weight: bold;
+}
+
+.abnormal_value_indicator_text{
+  color: red;
+  background: lightyellow;
+  font-weight: bold;
+}
+
+
 .examTable{
   border:solid 1pt #759DC0; 
   border-collapse:collapse; 

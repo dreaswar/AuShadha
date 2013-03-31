@@ -18,6 +18,7 @@
               "dojo/store/Memory",
               "dojo/dom-geometry",
               "dojo/request",
+//               "../../custom/js/stores.js",
 
               "dojo/_base/connect",
               "dojo/on",
@@ -61,119 +62,34 @@
 
               "dojo/domReady!"
       ],
-      function(dom, xhr, parser      , DataGrid,
-               JsonRest, JsonRestStore, ObjectStore , on,
-               registry, Dialog      , ready,
-               array   , domConstruct,
-               domStyle, ContentPane,
-               behaviour, Memory, domGeom, request
-               )
+      function(dom, 
+               xhr, 
+               parser      , 
+               DataGrid,
+               JsonRest, 
+               JsonRestStore, 
+               ObjectStore , 
+               on,
+               registry, 
+               Dialog      , 
+               ready,
+               array   , 
+               domConstruct,
+               domStyle, 
+               ContentPane,
+               behaviour, 
+               Memory, 
+               domGeom, 
+               request //,
+//                storesModule
+              )
       {
 
-        // Define Variables to be used later in the app..
-        console.log("Starting script script.js");
-        // STORES;
-        var myStore;
-//        var phoneStore;
-//        var contactStore;
-//        var guardianStore;
-//        var admissionStore;
-//        var visitStore;
-
-       // Define Behaviours for the Application.
-       genericFormBehaviour = function(){
-        var FormBehaviour = {
-             "#id_patient_detail":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_patient_detail]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "#id_admission_detail":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_admission_detail]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "#id_visit_detail":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_visit_detail]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "#id_phy_exam_detail":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_phy_exam_detail]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-            "#id_consult_nature":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_consult_nature]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "span[class= helptext]":{
-                found:   function(el){
-                                   domStyle.set(el, 'font-size','8px');
-                                   domStyle.set(el, 'color','RoyalBlue');
-                                   domStyle.set(el, 'font-style','italic');
-                         }
-             }
-         }
-          behaviour.add(FormBehaviour)
-          behaviour.apply()
-       }
-
-      //Define Admission Trees
-        var admissionTree;
-        var admissionTreeStore;
-        var admissionTreeModel;
-
-       // Define Global URL variables
-        var AdmissionPhyExamAddFormUrl;
-
-       // Define Events:
-
-       // Define Generic PopUpDialog Widgets
-        var jsonMessageDialog = new dijit.Dialog({ title   : "Login",
-                                                    style   : "color: black; text-align: center;",
-                                                  },
-                                         "dialogJsonMessage");
-        jsonMessageDialog.startup();
-
-        var loginDialog = new dijit.Dialog({ title        : "Login",
-                                         style             : "width: 500px; height:500px; background:white;",
-                                         href              : '/AuShadha/login/',
-                                         onClose           : function(){ return false;},
-                                         doSetUpAndStartUp : function(){
-                                                   this.closeButtonNode.style.display ='none';
-                                                   this._onKey = function(evt){
-                                                                  key = evt.keyCode;
-                                                                  if(key == dojo.keys.ESCAPE){
-                                                                    dojo.stopEvent(evt)
-                                                                  }
-                                                                 }
-                                                   this.startup();
-                                                 }
-                                         },
-                                         "loginDialog");
-        loginDialog.doSetUpAndStartUp();
-//   {% if not user.is_authenticated %}
-        loginDialog.show();
-//   {% else %}
-        var patientDialog = new dijit.Dialog({ title : "Add Patient",
-                                                style : "width: 500px; height:350px; background:white;"
-                                         },
-                                         "editPatientDialog");
-        patientDialog.startup();
-
-        complaintsStore = new Memory({data:COMPLAINTS});
-        console.log(complaintsStore)
-
-        complaintDurationsStore = new Memory({data:COMPLAINT_DURATIONS});
-        console.log(complaintDurationsStore)
-
+    // Define Variables to be used later in the app..
+    console.log("Starting script script.js");
+    
+    // STORES;
+    var myStore;
 
     function setupPatientGrid(){
         patientStore = new JsonRest({target:"/AuShadha/pat/list/", idProperty: 'id'});
@@ -204,43 +120,16 @@
                                 CHOSEN_PATIENT = item.addData;
                                 var addData  = item.addData;
                                 renderGridsFormsAndTrees(addData);
-																/*
+								/*
                                    Clear the current Grid selection
                                    Set the new selected Row
                                 */
                                 grid.selection.clear();
                                 grid.selection.setSelected(item, true);
 
-																	var mainTabContainer = registry.byId('centerTopTabPane');
-                                 var patientListTab   = registry.byId('patientHomeContentPane');
-                                 mainTabContainer.selectChild(patientListTab);
-
-/*
-                    function cleanUpAdmissionPane(){
-                      var center_top_pane = dijit.byId('centerTopTabPane');
-                //      var admission_pane  = dijit.findWidgets("admissionHomeContentPane")
-                      center_top_pane.selectChild(patientHomeContentPane);
-                      dojo.forEach(admissionHomeContentPane, function(e){e.destroyRecursive(true)})
-                      admissionHomeContentPane.domNode.innerHTML =
-                          "Please select an admission to display details here."
-                    }
-
-                    function cleanUpVisitPane(){
-                      var center_top_pane = dijit.byId('centerTopTabPane');
-                //      var visit_pane  = dijit.findWidgets("centerBottomPaneTab3")
-                      center_top_pane.selectChild(patientHomeContentPane);
-                      dojo.forEach(visitHomeContentPane, function(e){e.destroyRecursive(true)})
-                      visitHomeContentPane.domNode.innerHTML =
-                           "Please select a visit to display details here."
-                    }
-
-                    doPostDelCleanup = function (){
-                      //TODO// This should update all the grid when a patient is deleted
-                      cleanUpAdmissionPane();
-                      cleanUpVisitPane();
-                      reInitBottomPanels();
-                    }
-*/
+								var mainTabContainer = registry.byId('centerTopTabPane');
+                                var patientListTab   = registry.byId('patientHomeContentPane');
+                                mainTabContainer.selectChild(patientListTab);
                 return false;
         };
 
@@ -331,11 +220,10 @@
   );
 //{% endif %}
 
-// {% endif %}
 
-  genericFormBehaviour();
+  //genericFormBehaviour();
 
-  var patientIdStore = new JsonRest({
+    var patientIdStore = new JsonRest({
             target     : "{%url patient_id_autocompleter %}",
             idProperty : 'patient_id'
         });
@@ -436,9 +324,6 @@
 
   patientNameSelect.startup();
 
-// Setting Focus on Page Load;;
-//    dijit.byId('filterPatGridTextBox').focus();
-
   console.log("Finished running script script.js");
 
 });
@@ -447,7 +332,6 @@
 
 
 /* GENERIC CRUD FUNCTION FOR FORM SUBMISSION - ADDING, EDITING, DELETING */
-
 
 
 /*
@@ -460,6 +344,7 @@ function raiseInvalidFormSubmission(){
          });
   return false;
 }
+
 
 /*
 Raise an Permission Denied Dialog and return false
@@ -622,108 +507,3 @@ function delItem(url,grid_id){
     );
   });
 }
-
-/* Function to Hide, Show, Create and Destroy tabs and sub-tabs */
-var MAIN_AND_SUB_TABS;
-
-function keepTabs(){
-  require(["dijit/registry",
-
-           "dojo/dom",
-           "dojo/dom-construct",
-           "dojo/dom-style",
-           "dojo/dom-attr",
-
-           "dijit/layout/TabContainer",
-           "dojox/layout/ContentPane",
-           "dojox/grid/DataGrid",
-           "dijit/form/Button",
-
-           "dojo/_base/array", "dojo/domReady!"
-  ],
-  function(registry,
-           dom,
-           domConstruct,
-           domStyle,
-           domAttr,
-           TabContainer,
-           ContentPane,
-           DataGrid,
-           Button,
-           array
-          )
-   {
-      var childrenTabs = registry.byId("patientContextTabs");
-//      MAIN_AND_SUB_TABS = childrenTabs;
-      console.log(childrenTabs);
-/*
-      array.forEach(childrenTabs,
-                    function(item){ item.destroyRecursive(); },
-                    this
-      );
-*/
-      var ContextTabList =  {
-                              patientContactTab:{
-                                  "divs" : [ "contact_list","phone_list"]
-                              },
-                              patientHistoryTab:{
-                                  patientDemographicsTab:{
-                                    "ContentPane": ["demographics_add_or_edit_form"],
-                                    "divs": ["guardian_list"]
-                                  },
-                                  patientSocialHistoryTab:{
-                                    "ContentPane": ["patientSocialHistoryTab"]
-                                  },
-                                  patientFamilyHistoryTab:{
-                                    "divs":["family_history_list"]
-                                  },
-                                  patientMedicalAndSurgicalHistoryTab:{
-                                    "divs":["medical_and_surgical_history_list"]
-                                  }
-                              },
-                              patientPreventiveHealthTab:{
-                                  patientNeonatalAndPaediatricExamTab:{
-                                    "div": ["neonatal_and_paediatric_exam_list"]
-                                  },
-                                  patientImmunisationTab:{
-                                    "div": ["immunisation_list"]
-                                  },
-                                  patientObstetricsPreventivesTab:{
-                                    "divs": ["obstetrics_preventives_list"]
-                                  },
-                                  patientGynaecologyPreventivesTab:{
-                                    "divs" : ["gynaecology_preventives_list"]
-                                  },
-                                  patientMedicalPreventivesTab:{
-                                    "divs": ["medical_preventives_list"]
-                                  }
-                              },
-                              patientMedicationListAndAllergiesTab:{
-                                  "divs" : ["medication_list","allergy_list"]
-                              },
-                              patientAdmissionAndVisitsTab:{
-                                  "divs": ["admission_list","visit_list"]
-                              },
-                              patientMediaTab:{
-                                  "divs": ["patient_media_list"]
-                              }
-                           };
-  });
-}
-
-
-
-
-/*
-require(["dojo/ready","dojo/parser","dijit/registry","dojo/domReady!"],
-function(ready){
-  ready(
-    function(){
-      //keepTabs();
-      patientContextTabSetup();
-    }
-  );
-});
-*/
-
-
