@@ -1,7 +1,6 @@
       require([
               "dojo/dom",
               "dojo/_base/xhr",
-              "dojo/parser",
               "dojox/grid/DataGrid",
               "dojo/store/JsonRest",
               "dojox/data/JsonRestStore",
@@ -13,22 +12,24 @@
               "dojo/_base/array",
               "dojo/dom-construct",
               "dojo/dom-style",
-              "dojox/layout/ContentPane", 
+              "dojox/layout/ContentPane",
               "dojo/behavior",
               "dojo/store/Memory",
               "dojo/dom-geometry",
               "dojo/request",
+              'aushadha/main',
 
               "dojo/_base/connect",
               "dojo/on",
               "dijit/TitlePane",
-              "dijit/layout/TabContainer", 
+              "dijit/layout/TabContainer",
               "dijit/layout/BorderContainer",
               "dijit/layout/SplitContainer",
+              "dijit/Editor",
               "dijit/form/Form",
               "dijit/form/Button",
-              "dijit/form/TextBox", 		         
-              "dijit/form/ValidationTextBox", 
+              "dijit/form/TextBox",
+              "dijit/form/ValidationTextBox",
               "dijit/form/Textarea",
               "dijit/form/SimpleTextarea",
               "dijit/form/DateTextBox",
@@ -37,7 +38,7 @@
               "dijit/form/Select",
               "dijit/form/MultiSelect",
               "dijit/form/FilteringSelect",
-              "dojox/form/Manager", 
+              "dojox/form/Manager",
               "dojox/validate/web",
               "dijit/Menu",
               "dijit/Tooltip",
@@ -49,345 +50,51 @@
               "dojox/data/QueryReadStore",
               "dijit/Tree",
               "dojo/store/Observable",
+              "dojox/layout/GridContainer",
+              "dojox/widget/Portlet",
+              "dojox/widget/FeedPortlet",
+              //"dojox/widget/ExpandableFeedPortlet",
+              "dojox/widget/PortletSettings",
+              "dojox/widget/Calendar",
+              "dijit/dijit",
+              "dojox/widget/Toaster",
 
               "dojo/domReady!"
-      ], 
-      function(dom, xhr, parser      , DataGrid, 
-               JsonRest, JsonRestStore, ObjectStore , on, 
-               registry, Dialog      , ready, 
-               array   , domConstruct, 
-               domStyle, ContentPane,
-               behaviour, Memory, domGeom, request
-               )
+      ],
+      function(dom, 
+               xhr, 
+               DataGrid,
+               JsonRest, 
+               JsonRestStore, 
+               ObjectStore , 
+               on,
+               registry, 
+               Dialog      , 
+               ready,
+               array   , 
+               domConstruct,
+               domStyle, 
+               ContentPane,
+               behaviour, 
+               Memory, 
+               domGeom, 
+               request,
+               aushadha
+              )
       {
-        // Define Variables to be used later in the app..
-        console.log("Starting script script.js");
-        // STORES;
-        var myStore;
-//        var phoneStore;
-//        var contactStore;
-//        var guardianStore;
-//        var admissionStore;
-//        var visitStore;
 
-       // Define Behaviours for the Application.
-       genericFormBehaviour = function(){
-        var FormBehaviour = {
-             "#id_patient_detail":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_patient_detail]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "#id_admission_detail":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_admission_detail]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "#id_visit_detail":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_visit_detail]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "#id_phy_exam_detail":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_phy_exam_detail]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-            "#id_consult_nature":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "label[for=id_consult_nature]":{
-                found:   function(el){ domStyle.set(el, 'display','none')}
-             },
-             "span[class= helptext]":{
-                found:   function(el){ 
-                                   domStyle.set(el, 'font-size','8px');
-                                   domStyle.set(el, 'color','RoyalBlue');
-                                   domStyle.set(el, 'font-style','italic');
-                         }
-             }
-         }
-          behaviour.add(FormBehaviour)
-          behaviour.apply()
-       }
-
-      //Define Admission Trees
-        var admissionTree;
-        var admissionTreeStore;
-        var admissionTreeModel;
-
-       // Define Global URL variables
-        var AdmissionPhyExamAddFormUrl;
-
-       // Define Events:
-
-       // Define Generic PopUpDialog Widgets
-        var jsonMessageDialog = new dijit.Dialog({ title   : "Login", 
-                                                    style   : "color: black; text-align: center;",
-                                                  }, 
-                                         "dialogJsonMessage");
-        jsonMessageDialog.startup();
-
-        var loginDialog = new dijit.Dialog({ title        : "Login", 
-                                         style             : "width: 500px; height:500px; background:white;",
-                                         href              : '/AuShadha/login/',
-                                         onClose           : function(){ return false;},
-                                         doSetUpAndStartUp : function(){
-                                                   this.closeButtonNode.style.display ='none';
-                                                   this._onKey = function(evt){
-                                                                  key = evt.keyCode;
-                                                                  if(key == dojo.keys.ESCAPE){
-                                                                    dojo.stopEvent(evt)
-                                                                  }
-                                                                 }
-                                                   this.startup();
-                                                 }
-                                         }, 
-                                         "loginDialog");
-        loginDialog.doSetUpAndStartUp();
-//   {% if not user.is_authenticated %}
-        loginDialog.show();
-//   {% else %}
-        var patientDialog = new dijit.Dialog({ title : "Add Patient", 
-                                                style : "width: 500px; height:350px; background:white;"
-                                         }, 
-                                         "editPatientDialog");
-        patientDialog.startup();
-
-        complaintsStore = new Memory({data:COMPLAINTS});
-        console.log(complaintsStore)
-
-        complaintDurationsStore = new Memory({data:COMPLAINT_DURATIONS});
-        console.log(complaintDurationsStore)
-
-
-    function setupPatientGrid(){
-        patientStore = new JsonRest({target:"/AuShadha/pat/list/", idProperty: 'id'});
-        grid    = new DataGrid({
-                  store         : dataStore = ObjectStore({objectStore: patientStore}),
-                  query         : { search_field: 'id', search_for: "*" },
-                  clientSort    : true,
-                  autoWidth     : true,
-                  selectionMode : "single",
-                  rowSelector   : "20px",
-                  structure     : GRID_STRUCTURES.PATIENT_GRID,
-                  noDataMessage: "<span class='dojoxGridNoData'>No Matching Patients</span>"
-                  }, 
-                "patient_grid"
-        ); 
-        grid.startup();
-        grid.canSort = function(){ return true;};
-        grid.onRowClick = function(e) { 
-                                /* 
-                                   Get the Clicked Rows index and the Grid item from that
-                                   Fetch the Item in the Store so that the patient ID is
-                                   retrieved. 
-                                */
-                                var idx    = e.rowIndex,
-                                    item   = this.getItem(idx);
-
-                                console.log(item);
-
-                                var patid  = this.store.getValue(item, "id");
-                                var full_name  = this.store.getValue(item, "full_name");
-                                var hosp_id  = this.store.getValue(item, "patient_hospital_id");
-                                var sex  = this.store.getValue(item, "sex");
-                                var age  = this.store.getValue(item, "age");
-                                var patient_ticker_content = full_name + "&nbsp;" + sex + "/" + age + "&nbsp" +hosp_id;
-                                /* 
-                                   Clear the current Grid selection
-                                   Set the new selected Row
-                                */
-                                grid.selection.clear();
-                                grid.selection.setSelected(item, true);
-
-                              /* 
-                                 Construct the URLs to retreive the info
-                                 from the Patient ID generated. 
-                              */
-
-                               
-
-                                  var contactUrl  = "{%url contact_json %}" + 
-                                                    "?patient_id=" 
-                                                    + patid,
-                                      phoneUrl    = "{%url phone_json %}" + 
-                                                    "?patient_id=" 
-                                                    + patid,
-                                      guardianUrl = "{%url guardian_json %}" + 
-                                                    "?patient_id=" 
-                                                    + patid,
-
-                                      demographicsUrl = "/AuShadha/pat/demographics/add/" + patid +"/",
-                                      socialHistoryUrl = "/AuShadha/pat/social_history/add/" + patid +"/",
-
-                                      obstetricHistoryUrl = "/AuShadha/pat/obstetric_history_detail/add/" + patid +"/",
-
-                                      allergiesUrl = "{%url allergies_json %}" +
-                                                    "?patient_id=" 
-                                                    + patid,
-
-                                      familyHistoryUrl = "{%url family_history_json %}" + 
-                                                    "?patient_id=" 
-                                                    + patid,
-
-                                      medicalHistoryUrl = "{%url medical_history_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-                                      surgicalHistoryUrl = "{%url surgical_history_json %}" +
-                                                    "?patient_id="
-                                                    + patid,
-
-                                      immunisationUrl = "{%url immunisation_json %}" +
-                                                    "?patient_id=" 
-                                                    + patid,
-
-                                      medicationListUrl = "{%url medication_list_json %}" + 
-                                                    "?patient_id=" 
-                                                    + patid;
-
-            // {% comment %}
-            /*
-                                     var admissionUrl = "{%url admission_json %}" + 
-                                                     "?patient_id=" 
-                                                     + patid;
-            */
-
-            /*
-                                     var visitUrl     = "{%url visit_json %}" + 
-                                                       "?patient_id=" 
-                                                       + patid;
-            */
-            // {% endcomment %}
-
-                                  /*
-                                    Set the patient information bar
-                                  */
-                                    if (dom.byId("selected_patient_info")){
-                                      domStyle.set( dom.byId('selected_patient_info'),{'display':"","padding":"0px"});
-                                      registry.byId('selected_patient_info').set('content', patient_ticker_content);
-                                      var patientInfo = dom.byId('selected_patient_info');
-                                      domConstruct.
-                                        create("div",{innerHTML: patid, 
-                                                      id       :"selected_patient_id_info",
-                                                      style    :{display:"none"} 
-                                                     },
-                                                patientInfo
-                                        );
-                                      console.log(dom.byId('selected_patient_id_info').innerHTML )
-                                    }
-
-                                  console.log("Destroying the Grids and Forms...");
-                                    reInitBottomPanels();
-                                  console.log("Finished Destroying the existing Widgets..");
-
-                                  patientContextTabSetup();
-
-                                  console.log("Setting up the Forms...");
-                                    registry.byId("patientSocialHistoryTab").set('href', socialHistoryUrl);
-                                    registry.byId("demographics_add_or_edit_form").set('href', demographicsUrl);
-                                    registry.byId("obstetric_history_detail").set('href', obstetricHistoryUrl);
-                                  console.log("Finished setting up the Forms...");
-
-                                  console.log("Setting up the Grids Now...");
-                                    setupContactGrid(contactUrl);
-                                    setupPhoneGrid(phoneUrl);
-
-                                    setupGuardianGrid(guardianUrl);
-                                    setupFamilyHistoryGrid(familyHistoryUrl);
-
-                                    setupImmunisationGrid(immunisationUrl);
-
-                                    setupAllergiesGrid(allergiesUrl);
-                                    setupMedicationListGrid(medicationListUrl);
-
-                                    setupMedicalHistoryGrid(medicalHistoryUrl);
-                                    setupSurgicalHistoryGrid(surgicalHistoryUrl);
-
-                        //            setupAdmissionGrid(admissionUrl);
-                        //            setupVisitGrid(visitUrl);
-                                 console.log("Finished setting up the grids....");
-                                 var mainTabContainer = registry.byId('centerTopTabPane');
-                                 var patientListTab   = registry.byId('patientHomeContentPane');
-                                 mainTabContainer.selectChild(patientListTab);
+  // Define Variables to be used later in the app..
+ready(function(){
+  console.log("Starting script script.js");
+  var auMain = aushadha;
+  console.log(auMain);
+  
 /*
-                    function cleanUpAdmissionPane(){
-                      var center_top_pane = dijit.byId('centerTopTabPane');
-                //      var admission_pane  = dijit.findWidgets("admissionHomeContentPane")
-                      center_top_pane.selectChild(patientHomeContentPane);
-                      dojo.forEach(admissionHomeContentPane, function(e){e.destroyRecursive(true)})
-                      admissionHomeContentPane.domNode.innerHTML = 
-                          "Please select an admission to display details here."
-                    }
 
-                    function cleanUpVisitPane(){
-                      var center_top_pane = dijit.byId('centerTopTabPane');
-                //      var visit_pane  = dijit.findWidgets("centerBottomPaneTab3")
-                      center_top_pane.selectChild(patientHomeContentPane);
-                      dojo.forEach(visitHomeContentPane, function(e){e.destroyRecursive(true)})
-                      visitHomeContentPane.domNode.innerHTML = 
-                           "Please select a visit to display details here."
-                    }
-
-                    doPostDelCleanup = function (){
-                      //TODO// This should update all the grid when a patient is deleted 
-                      cleanUpAdmissionPane();
-                      cleanUpVisitPane();
-                      reInitBottomPanels();
-                    }
+        //Run binders
+      registry.byId('filteringSelectPatSearch').onChange      = auMain.auEventBinders.auPaneEventController.onPatientChoice;
+      registry.byId('filteringSelectPatSearchSmall').onChange = auMain.auEventBinders.auPaneEventController.onPatientChoice;
 */
-                return false; 
-        };
-
-    grid.onRowDblClick = function(e){ 
-            //{% if perms.patient.change_patientdetail or perms.patient.delete_patientdetail %}
-                          var idx = e.rowIndex,
-                              item = this.getItem(idx);
-                          var patid = this.store.getValue(item, "id");
-                          var edit  = this.store.getValue(item, "edit");
-                          var del   = this.store.getValue(item, "del");
-                          var visitadd      = this.store.getValue(item, "visitadd");
-                          var admissionadd  = this.store.getValue(item, "admissionadd");
-                          if( e.cell.field == 'home'){
-                              e.cell.loadTab();
-                          }
-                          else{
-                              grid.selection.clear();
-                              grid.selection.setSelected(item, true);
-                              xhr.get({
-                                      url  : edit,
-                                      load : function(html, idx){
-                                                var myDialog = dijit.byId("editPatientDialog");
-                                                if(myDialog == undefined || myDialog == null){
-                                                  myDialog = new dijit.Dialog({
-                                                                      title: "Edit Patient",
-                                                                      content: html,
-                                                                      style: "width: 500px; height:500px;"
-                                                                      }, 
-                                                                      "editPatientDialog"
-                                                  );
-                                                  myDialog.startup();
-                                                }
-                                                else{
-                                                  myDialog.set('content', html);
-                                                  myDialog.set('title', "Edit Patient"); 
-                                                }
-                                                myDialog.show();
-                                      }
-                            })
-                          }
-          //{% endif %}
-                         return false; 
-            };
-    }
-
-  console.log("Calling setupPatientGrid");
-  setupPatientGrid();
-  console.log("setupPatientGrid Returned");
 
   function addNewPatient(){
     require(["dojo/_base/xhr",
@@ -395,9 +102,9 @@
             "dijit/Dialog"
     ],
     function(xhr, registry, Dialog){
-      var myDialog = dijit.byId("editPatientDialog");
+      var myDialog = registry.byId("editPatientDialog");
       xhr.get({
-              url: "{%url patient_new_add %}",
+              url: PAT_NEW_ADD_URL,
               load: function(html){
                       myDialog.set('content', html);
                       myDialog.set('title', "Enroll New Patient to the Clinic");
@@ -409,12 +116,12 @@
 
 //{% if perms.patient.add_patientdetail %}
     var addPatientButton =  new dijit.form.Button({
-                                              label: "New", 
+                                              label: "New",
                                               iconClass:"addPatientIcon_32",
                                               onClick: function(){
                                                             addNewPatient();
                                               }
-                                            }, 
+                                            },
                                             "addPatientButton"
     );
 
@@ -431,34 +138,9 @@
 //{% endif %}
 
 
-	  var addPatientSocialHistoryButton =  new dijit.form.Button({
-                                          label: "Add Social History",
-                                          iconClass: "dijitIconNewTask",
-                                          onClick: function(){
-                                                 require(
-                                                  ["dojo/_base/xhr", "dojo/_base/array"],
-                                                  function(xhr, array){
-                                                    var gridRow    = grid.selection.getSelected();
-                                                    var id = grid.store.getValue(gridRow[0], 'id');
-                                                    xhr.get({
-                                                      url: "{%url social_history_json %}"+"?patient_id="+ id +"&action=add",
-                                                      load: function(html){
-                                                                 var myDialog = dijit.byId("editPatientDialog");
-                                                                 myDialog.set('content', html);
-                                                                 myDialog.set('title', "Record New Social History Details");
-                                                                 myDialog.show();
-                                                            }
-                                                   });
-                                                 })
-                                          }
-                         }, "addPatientSocialHistoryButton");
+  //genericFormBehaviour();
 
-// {% endif %} 
-
-
-  genericFormBehaviour();
-
-  var patientIdStore = new JsonRest({
+    var patientIdStore = new JsonRest({
             target     : "{%url patient_id_autocompleter %}",
             idProperty : 'patient_id'
         });
@@ -499,13 +181,13 @@
                           console.log(patientHospitalIdStore)
                           console.log(this.item.patient_hospital_id)
                           var queryItem = patientHospitalIdStore.
-                                               query({"patient_hospital_id": 
+                                               query({"patient_hospital_id":
                                                        this.item.patient_hospital_id}
                                                )
                           var get_name    = this.item.patient_name+""
                           var patNameItem = patientNameStore.
                                                query({"patient_name" : this.item.patient_name ,
-                                                      "patient_id"   : this.item.patient_id 
+                                                      "patient_id"   : this.item.patient_id
                                                });
                           dijit.byId("patientNameSelection").
                                 set('displayedValue', this.item.patient_name);
@@ -556,21 +238,17 @@
   },
   "patientNameSelection"
   );
-  
-  patientNameSelect.startup();
 
-// Setting Focus on Page Load;;
-//    dijit.byId('filterPatGridTextBox').focus();
+  patientNameSelect.startup();
 
   console.log("Finished running script script.js");
 
 });
-
-
+  
+});
 
 
 /* GENERIC CRUD FUNCTION FOR FORM SUBMISSION - ADDING, EDITING, DELETING */
-
 
 
 /*
@@ -583,6 +261,7 @@ function raiseInvalidFormSubmission(){
          });
   return false;
 }
+
 
 /*
 Raise an Permission Denied Dialog and return false
@@ -601,17 +280,17 @@ function raisePermissionDenied(){
 /*
   A generic function to do an adding of all Items and update the div / grid accordingly
   to call it with the URL , the Form's dojo-id and the grid to update and add the row to
-  We are assuming that the server returns a JSON with json.addData so that the row can be 
-  updated. 
+  We are assuming that the server returns a JSON with json.addData so that the row can be
+  updated.
 */
 function addItem(url,form_id,grid_id){
   require(["dojo/dom",
-           "dojo/request/xhr", 
-           "dijit/registry"  , 
+           "dojo/request/xhr",
+           "dijit/registry"  ,
            "dojo/json"       ,
-           "dojo/dom-form"   , 
+           "dojo/dom-form"   ,
            "dijit/Dialog"
-  ], 
+  ],
   function(dom, xhr, registry, JSON, domForm, Dialog){
     var editDialog  = registry.byId("editPatientDialog");
     var errorDialog = registry.byId("dialogJsonMessage");
@@ -620,13 +299,14 @@ function addItem(url,form_id,grid_id){
          method  : "POST",
          data    : domForm.toObject(form_id)
     }).then(
-       function(json){ 
+       function(json){
           var jsondata = JSON.parse(json)
           console.log(jsondata);
           if(jsondata.success == true){
             dom.byId(form_id).reset();
             var data = jsondata.addData;
-            dijit.byId(grid_id).store.newItem(data);
+            registry.byId(grid_id).store.newItem(data);
+            publishInfo("Saved Successfully" );
             if(ADD_MORE_ITEMS == false){
               editDialog.hide();
             }
@@ -634,12 +314,19 @@ function addItem(url,form_id,grid_id){
               registry.byId(form_id).focus();
             }
           }
-       }, 
-       function(json){ 
+          else{
+            errorDialog.set("title", "ERROR");
+            errorDialog.set("content", jsondata.error_message);
+            errorDialog.show();
+            publishError("ERROR ! :" + jsondata.error_message );
+          }
+       },
+       function(json){
             var jsondata = JSON.parse(json);
             errorDialog.set("title", "ERROR");
             errorDialog.set("content", jsondata.error_message);
             errorDialog.show();
+            publishError("ERROR!: "+ jsondata.error_message );
        },
        function(evt){console.log("Adding Data Finished Successfully...")}
     );
@@ -653,12 +340,12 @@ function addItem(url,form_id,grid_id){
   to call it with the URL , the Form's dojo-id and the grid to update and re-render
 */
 function editItem(url,form_id,grid_id){
-  require(["dojo/request/xhr", 
-           "dijit/registry"  , 
+  require(["dojo/request/xhr",
+           "dijit/registry"  ,
            "dojo/json"       ,
-           "dojo/dom-form"   , 
+           "dojo/dom-form"   ,
            "dijit/Dialog"
-  ], 
+  ],
   function(xhr,registry,JSON, domForm, Dialog){
     var editDialog  = registry.byId("editPatientDialog");
     var errorDialog = registry.byId("dialogJsonMessage");
@@ -668,44 +355,47 @@ function editItem(url,form_id,grid_id){
          data    : domForm.toObject(form_id)
     }).
     then(
-       function(json){ 
+       function(json){
           var jsondata = JSON.parse(json)
           console.log(jsondata);
           if(jsondata.success == true){
             registry.byId(grid_id).render();
             editDialog.hide();
+            publishInfo(jsondata.error_message);
           }
           else{
             errorDialog.set("title", "ERROR");
             errorDialog.set("content", jsondata.error_message);
             errorDialog.show();
           }
-       }, 
-       function(json){ 
+       },
+       function(json){
             var jsondata = JSON.parse(json);
             errorDialog.set("title", "ERROR");
             errorDialog.set("content", jsondata.error_message);
             errorDialog.show();
+            publishError("ERROR in Server.. Please retry.");
        },
        function(evt){
             console.log("Update Actions Finished Successfully...")
+            publishInfo("Update Actions Finished Successfully...");
        }
     );
   });
 }
 
 /*
- Generic Delete Function 
- Gets the URL to call and the Grid to update as the arguments. 
+ Generic Delete Function
+ Gets the URL to call and the Grid to update as the arguments.
 */
 
 function delItem(url,grid_id){
-  require(["dojo/dom", 
-		         "dojo/request/xhr",
-		         "dojo/json",
-		         "dijit/registry",
-		         "dijit/Dialog"
-	],
+  require(["dojo/dom",
+             "dojo/request/xhr",
+             "dojo/json",
+             "dijit/registry",
+             "dijit/Dialog"
+  ],
   function(dom, xhr, JSON, registry, Dialog){
     xhr(url,{method: "GET", handleAs:"text" }).
     then(
@@ -715,6 +405,7 @@ function delItem(url,grid_id){
           registry.byId("editPatientDialog").hide();
           registry.byId(grid_id).render();
           registry.byId(grid_id).selection.clear();
+          publishInfo("Successfully Deleted ..");
         }
         else{
          var errorDialog = registry.byId('dialogJsonMessage');
@@ -722,9 +413,10 @@ function delItem(url,grid_id){
          errorDialog.set('content', jsondata.error_message);
          errorDialog.show();
         }
-      }, 
-      function(json){  
+      },
+      function(json){
         console.log("ERROR in Server.. Please retry.");
+        publishError("ERROR in Server.. Please retry.");
       },
       function(evt){
         console.log("Deleting Item Complete")
@@ -732,108 +424,4 @@ function delItem(url,grid_id){
     );
   });
 }
-
-/* Function to Hide, Show, Create and Destroy tabs and sub-tabs */
-var MAIN_AND_SUB_TABS;
-
-function keepTabs(){
-  require(["dijit/registry",
-
-           "dojo/dom",
-           "dojo/dom-construct",
-           "dojo/dom-style",
-           "dojo/dom-attr",
-
-           "dijit/layout/TabContainer",
-           "dojox/layout/ContentPane",
-           "dojox/grid/DataGrid",
-           "dijit/form/Button",
-
-           "dojo/_base/array", "dojo/domReady!"
-  ], 
-  function(registry, 
-           dom, 
-           domConstruct, 
-           domStyle, 
-           domAttr, 
-           TabContainer, 
-           ContentPane, 
-           DataGrid, 
-           Button,
-           array
-          )
-   {
-      var childrenTabs = registry.byId("patientContextTabs");
-//      MAIN_AND_SUB_TABS = childrenTabs;
-      console.log(childrenTabs);
-/*
-      array.forEach(childrenTabs,
-                    function(item){ item.destroyRecursive(); },
-                    this
-      );
-*/
-      var ContextTabList =  {
-                              patientContactTab:{
-                                  "divs" : [ "contact_list","phone_list"]
-                              },
-                              patientHistoryTab:{
-                                  patientDemographicsTab:{
-                                    "ContentPane": ["demographics_add_or_edit_form"],
-                                    "divs": ["guardian_list"]
-                                  },
-                                  patientSocialHistoryTab:{
-                                    "ContentPane": ["patientSocialHistoryTab"]
-                                  },
-                                  patientFamilyHistoryTab:{
-                                    "divs":["family_history_list"]
-                                  },
-                                  patientMedicalAndSurgicalHistoryTab:{
-                                    "divs":["medical_and_surgical_history_list"]
-                                  }
-                              },
-                              patientPreventiveHealthTab:{
-                                  patientNeonatalAndPaediatricExamTab:{
-                                    "div": ["neonatal_and_paediatric_exam_list"]
-                                  },
-                                  patientImmunisationTab:{
-                                    "div": ["immunisation_list"]
-                                  },
-                                  patientObstetricsPreventivesTab:{
-                                    "divs": ["obstetrics_preventives_list"]
-                                  },
-                                  patientGynaecologyPreventivesTab:{
-                                    "divs" : ["gynaecology_preventives_list"]
-                                  },
-                                  patientMedicalPreventivesTab:{
-                                    "divs": ["medical_preventives_list"]
-                                  }
-                              },
-                              patientMedicationListAndAllergiesTab:{
-                                  "divs" : ["medication_list","allergy_list"]
-                              },
-                              patientAdmissionAndVisitsTab:{
-                                  "divs": ["admission_list","visit_list"]
-                              },
-                              patientMediaTab:{
-                                  "divs": ["patient_media_list"]
-                              }
-                           };
-  });
-}
-
-
-
- 
-/*
-require(["dojo/ready","dojo/parser","dijit/registry","dojo/domReady!"], 
-function(ready){
-  ready(
-    function(){
-      //keepTabs();
-      patientContextTabSetup();
-    }
-  );
-});
-*/
-
 

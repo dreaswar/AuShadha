@@ -18,7 +18,7 @@
 
   {% block style_bits %}
     <style  type="text/css">
-      {% include "style_alt.css" %}
+      {% include "style.css" %}
     </style>
   {% endblock style_bits %}
 
@@ -44,147 +44,12 @@
         ADD_MORE_PATIENT_VISIT,
         ADD_MORE_ITEMS;
 
+    var PAT_SEARCH_JSON_URL = '{%url patient_filtering_search_json_without_id %}';
+    var PAT_NEW_ADD_URL     = '{%url patient_new_add %}';
+
   </script>
 
-  <script type="text/javascript">
-    /*
-       Global Variables for Grid Structures
-    */
-       {% include 'grid_structures.js' %}
-  </script>
-
-  <script type="text/javascript">
-    /*
-       Global Functions for Grid Setup
-    */
-       {% include 'grid_setup_alt.js' %}
-  </script>
-
-    <script type="text/javascript">
-
-  {% if perms.patient %}
-    /*
-      Contains the Code for creating tabs .
-    */
-      var genericTabMaker  = {% include 'generic_tab_maker.js' %}
-    /*
-        Contains the Patient Demographics Tab Setup.
-    */
-      var makeDemographicsTab  = {% include 'demographics_tab_alt.js' %}
-    /*
-      Contains the Patient Social History Tab Setup.
-    */
-      var makeSocialHistoryTab  = {% include 'social_history_tab.js' %}
-    /*
-      Contains the Patient Family History Tab Setup.
-    */
-      var makeFamilyHistoryTab  = {% include 'family_history_tab.js' %}
-    /*
-      Contains the Patient Medical and Surgical History Tab Setup.
-    */
-      var createHistoryTabs  = {% include 'layouts/tree_based/history_tabs.js' %}
-      var makeMedicalHistoryTab  = {% include 'layouts/tree_based/medical_history_tabs.js' %}
-      var makeSurgicalHistoryTab  = {% include 'layouts/tree_based/surgical_history_tab.js' %}
-      var makeMedicationListTab  = {% include 'layouts/tree_based/medication_list_tab.js' %}
-    /*
-       Contains the Patient Medical Preventives Tab Setup.
-    */
-      var makeMedicalPreventivesTab  = {% include 'medical_preventives_tab.js' %}
-    /*
-       Contains the Patient Surgical Preventives Tab Setup.
-    */
-      var makeSurgicalPreventivesTab  = {% include 'surgical_preventives_tab.js' %}
-  {% endif %}       
-
-  {% if perms.obs_and_gyn %}
-    /*
-      Contains the Patient Obstetric History Tab Setup.
-    */
-    var makeObstetricHistoryDetailTab  = {% include 'obstetric_history_tab.js' %}
-  {% endif %}
-
-  {% if perms.obs_and_gyn %}
-    /*
-      Contains the Patient Gynaecology History Tab Setup.
-    */
-    var makeGynaecologyHistoryDetailTab  = {% include 'gynaecology_history_tab.js' %}
-  {% endif %}
-
-  {% if perms.patient %}
-    /*
-        Contains the Patient Paediatric / Neonatal Exam Tab Setup.
-    */
-    var makeNeonatalAndPaediatricExamTab  = {% include 'neonatal_and_paediatric_exam_tab.js' %}
-  {% endif %}
-    
-  </script>
-   
-  <script type = 'text/javascript' 
-           src  = "{{STATIC_URL}}custom/js/panes/patient_pane.js">
-  
-  </script>
-  
-  <script type = 'text/javascript' 
-           src  = "{{STATIC_URL}}custom/js/menu/patient_menu.js">
-  
-  </script>
- 
-  <script type = "text/javascript" 
-         src  = "{{STATIC_URL}}custom/js/patient_tree.js">
-    /*
-       Contains the Patient Tree Set Up.
-    */
-  </script> 
-  
-  <script type="text/javascript">
-    /*
-      Contains the Logic of eventing in Patient Search Form Partly.
-      Some of it is implemented in the HTML declaratively.
-      Triggered when the patient search text is entered
-      A separate trigger is present in search/patient.html
-      for handling the click event of the Filter button
-    */
-
-    {% include 'events_alt.js' %}
-   </script>
-
-  <script type="text/javascript">
-   require(['aushadha'],
-    function(aushadha){
-      console.log("Dojo code has loaded");
-      return true;
-   });
-  </script>
-  
-{% comment %}
-  <script type="text/javascript">
-   {% include 'script_alt.js' %}
-  </script>
-{% endcomment %}
-
-  <script type="text/javascript">
-   {% include 'notifications.js' %}
-  </script>
-
-  <script type="text/javascript">
-   {% include 'visit_tree.js' %}
-  </script>
-
-  <script type="text/javascript">
-   {% include 'admission_tree.js' %}
-  </script>
-
-  <script type="text/javascript">
-   {% include 'visit_tab.js' %}
-  </script>
-
-  <script type="text/javascript">
-   {% include 'admission_tab.js' %}
-  </script>
-
-  <script type="text/javascript">
-   {% include 'key_bindings.js' %}
-  </script>
+<!--   <script type="text/javascript" src="{{STATIC_URL}}custom/js/main.js"> </script>   -->
 
   {% block js_bits %}
 
@@ -439,7 +304,9 @@
           {% endif %}
           <!--  END OF ADMISSIONHOMECONTENTPANE  -->
 
+
           <!--  START OF ADMISSIONHOMECONTENTPANE  -->
+          <!--
           {% if perms.admission %}
           <div  id              =  "admissionHomeContentPane"
                 data-dojo-id    =  "admissionHomeContentPane"
@@ -680,14 +547,15 @@
 
               </div>
 
-            <!--<span class="dojoxGridNoData">
-              Choose an Admission to display details here.
-           </span>-->
-          </div>
-          {% endif %}
-          <!--  END OF ADMISSIONHOMECONTENTPANE  -->
 
+          </div>
+
+          {% endif %}
+          -->
+          <!--  END OF ADMISSIONHOMECONTENTPANE  -->
+          
           <!--  START OF VISITHOMECONTENTPANE  -->
+          <!--
           {% if perms.visit %}
           <div  id              =  "visitHomeContentPane"
                 data-dojo-id    = "visitHomeContentPane"
@@ -699,9 +567,7 @@
                                     disabled :true,
                                    "
           >
-            <!--<span class="dojoxGridNoData">
-              Choose an OPD visit to display details here.
-            </span>-->
+
 
             <div  id            =  "visitPaneTopbar"
                 data-dojo-id    = "visitPaneTopbar"
@@ -934,6 +800,7 @@
 
           </div>
           {% endif %}
+          -->
           <!--  END OF VISITHOMECONTENTPANE  -->
 
     </div>

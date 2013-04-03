@@ -1,4 +1,4 @@
-require(['dojo/dom',
+define(['dojo/dom',
          'dojo/dom-construct',
          'dojo/dom-style',
          'dojo/on',
@@ -8,9 +8,15 @@ require(['dojo/dom',
          'dijit/layout/BorderContainer',
          'dojox/layout/ContentPane',
          'dijit/layout/TabContainer',
-         'dojo/ready',
          "dojo/parser",
-         'dojo/domReady!'
+        
+        "dojox/grid/DataGrid",
+        "dojo/store/JsonRest",
+        "dojo/data/ObjectStore",
+        "dojo/request/xhr", 
+        "dojo/json",
+
+        'dojo/domReady!'
 ],
 function(dom,
          domConstruct,
@@ -22,16 +28,20 @@ function(dom,
          BorderContainer,
          ContentPane,
          TabContainer,
-         ready, 
-         parser){
+         parser,
+         DataGrid,
+         JsonRest,
+         ObjectStore,
+         xhr,
+         JSON
+        ){
 
-  ready(
+      var PATIENT_PANE = {
 
-    function(){
-
-      PATIENT_PANE = {
         initialized: false,
+
         repositioned: false,
+
         repositionSearchBar: function(){
                   if(! this.repositioned){
                     domConstruct.destroy('frontPageSearchPatientAuShadhaLogo');
@@ -198,7 +208,9 @@ function(dom,
                 });
                 console.log("Styling of Patient Pane DOMS done");
         },
+
         menuBar: false,
+
         dijits: function(){
 
                     console.log("Setting Patient Pane Dijits");
@@ -338,7 +350,7 @@ function(dom,
                         }
                         console.log("Patient Menu done ..")
                         */
-                        return PATIENT_PANE;
+                          return PATIENT_PANE;
                       }
                       else{
                         console.log("Patient Pane is already initialized..");
@@ -366,8 +378,38 @@ function(dom,
 
         onPatientSwitch : function(){
           this.constructor();
-        }
+        },
+        
+        setupPatientSummary: function (DivId, url){
 
-      }
-    });
+                console.log("Filling DOM: " + DivId + " with URL: " + url);
+                registry.byId(DivId).set('href',url);
+
+               /*
+                xhr(url,{
+                    handleAs: "text",
+                    method  : "GET",
+                }).then(
+                  function(json){
+                      var jsondata = JSON.parse(json)
+                      console.log(jsondata);
+                      if(jsondata.success == true){
+                        registry.byId("patientSummaryTab").set('href',url)        
+                      }
+                  },
+                  function(json){
+                        var jsondata = JSON.parse(json);
+                        errorDialog.set("title", "ERROR");
+                        errorDialog.set("content", jsondata.error_message);
+                        errorDialog.show();
+                  },
+                  function(evt){console.log("Adding Data Finished Successfully...")}
+                );
+                console.log("Finished creating Patient Summary");
+              });
+              */
+              }
+      };
+
+      return PATIENT_PANE;
 });

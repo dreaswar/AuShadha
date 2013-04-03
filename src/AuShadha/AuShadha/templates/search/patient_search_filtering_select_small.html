@@ -1,84 +1,36 @@
+  <div style="position : relative; 
+               top      : 0em; ">
     {%if perms.patient.add_patientdetail %}
-    <table>
-    <tr>
-      <td>
-        <!--<button id             = "addPatientButtonSmall"
-                type           = "button"
-                data-dojo-type  = "dijit/form/Button"
-                data-dojo-props= "iconClass: 'addPatientIcon_16'"
-                data-dojo-id   = "addPatientButtonSmall"
-                style          = "display:inline;
-                                  position:relative;
-                                  top:-0.6em;
-                                  height: 0.6em;
-                                 "
-        >
-            New
-        </button>-->
-
-        <div href="#" id="addPatientMenuBarIcon">
-          <img id             = "addPatientButtonSmall"
+        <img id             = "addPatientButtonSmall"
               src            = "{{MEDIA_URL}}images/patient/patient_add.svg"
               style          = " position     : relative;
-                                 top          : -0.40em;
-                                 width        : 16px;
-                                 height       : 16px;
-                                 margin-right : 10px;
-                                 cursor       : pointer;
+                                  width        : 16px;
+                                  height       : 16px;
+                                  margin-right : 20px;
+                                  cursor       : pointer;
                                 "
-          >
-        </div>
+        >
+     {% endif %}
 
-        <div  data-dojo-type  = "dojo/store/JsonRest"
-              data-dojo-id    = "patSearchForJsonRestStoreSmall"
-              data-dojo-props = "target: '{%url patient_filtering_search_json_without_id %}'">
-        </div>
+      <img id            = "searchPatientMenuBarIcon"
+          src            = "{{MEDIA_URL}}images/patient/search_small.svg"
+          style          = " position    : relative;
+                             width       : 16px; 
+                             height      : 16px;
+                             margin-left : 10px;
+                            "
+      >
+      <span  id             = "filteringSelectPatSearchSmall"
+            style          = " position    : relative;
+                               margin-left : 20px;
+                             "
+      >
 
-        </td>
-
-        <td id="searchPatientMenuBarTd">
-          <img id             = "searchPatientMenuBarIcon"
-              src            = "{{MEDIA_URL}}images/patient/search_small.svg"
-              style          = " position:relative;
-                                 top:-0.35em;
-                                 width: 16px; height: 16px;
-                                 margin-left: 10px;
-                                "
-          >
-          <div  data-dojo-type  = "dijit/form/FilteringSelect"
-                class           = "search_form_div"
-                data-dojo-id    = "filteringSelectPatSearchSmall"
-                data-dojo-props = "regExp         : '[a-zA-Z0-9 -]+',
-                                   required       : true,
-                                   invalidMessage : 'No Results',
-                                   store          : patSearchForJsonRestStoreSmall,
-                                   searchAttr     : 'name',
-                                   labelAttr      : 'label',
-                                   labelType      : 'html',
-                                   autoComplete   : false,
-                                   placeHolder    : 'Patient\'s Name',
-                                   hasDownArrow   : false
-                                  "
-                id              = "filteringSelectPatSearchSmall"
-                onChange        = "patFilteringSearchOnKeyUp(this);"
-                style           = "width       : 250px;
-                                   height:18px;
-                                   margin:none;
-                                   padding:none;
-                                   position: relative;
-                                   top: -0.65em;
-                                   margin-left: 10px;
-                                   "
-           >
-          </div>
-      </td>
-    </tr>
-    </table>
-    {% else %}
-      <p class="suggestion_text"> No Permission to add </p>
-    {% endif %}
+      </span>
+  </div>
 
   <!-- TOOLTIPS -->
+
     <div  data-dojo-type="dijit/Tooltip"
           data-dojo-props="connectId:'addPatientMenuBarIcon',position:['below']"
           style="display:none;"
