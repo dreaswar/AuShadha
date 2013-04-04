@@ -19,7 +19,16 @@
             src="{{STATIC_URL}}plugins/dojo-1.8.0/dojo/dojo.js"    
             data-dojo-config="async: true, parseOnLoad: true, executeScripts:true, isDebug:true">
     </script>
-
-    <script type="text/javascript" src="{{STATIC_URL}}custom/js/script.js"> </script>  
-
 <!-- end of Dojo library links -->
+
+{% if user.is_authenticated %}
+    <script type    =   "text/javascript" 
+            src     =   "{{STATIC_URL}}custom/js/script.js"> 
+    </script>  
+{% else %}
+    <script type=   "text/javascript" 
+            src =   "{{STATIC_URL}}custom/js/login.js"> 
+    </script>  
+{% endif %}
+
+

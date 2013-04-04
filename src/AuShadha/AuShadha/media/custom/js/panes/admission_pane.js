@@ -30,7 +30,7 @@ define(
            xhr
   ){
 
-    var main_tab_container = registry.byId("centerTopTabPane");
+//     var main_tab_container = registry.byId("centerTopTabPane");
 
     var ADMISSION_PANE     = {
 
@@ -53,12 +53,14 @@ define(
 
                           if(!this.initialized){
                             console.log("Admission Pane is not initialized..");
+
                             /*
-                            if(!this.repositioned){
-                              this.repositionSearchBar();
-                            }
+                              if(!this.repositioned){
+                                this.repositionSearchBar();
+                              }
                             */
-                            this.displayPatientName();
+//                          this.displayPatientName();
+
                             this.doms();
                             this.dijits();
                             this.initialized = true;
@@ -115,7 +117,7 @@ define(
                   if(! dom.byId('admissionHomeContentPane')){
                       domConstruct.create('div',
                                           {id:'admissionHomeContentPane'},
-                                          registry.byId('centerTopTabPane').domNode,
+                                          'centerTopTabPane',
                                           'last');
 
                       domConstruct.create('div',
@@ -147,16 +149,18 @@ define(
         },
 
         dijits: function(){
-//                      var main_admission_tab = registry.byId('admissionHomeContentPane');
-                      var admissionHomeContentPane = new ContentPane({title     : 'Admissions',
-                                                                      disabled  : false, 
-                                                                      closable  : false
+                      var centerTopTabPane = registry.byId('centerTopTabPane');
+                      var admissionHomeContentPane = new ContentPane({id        : 'admissionHomeContentPane',
+                                                                      title     : 'Admissions'
                                                                       },
                                                                      'admissionHomeContentPane'
                                                      );
 
+                      centerTopTabPane.addChild(admissionHomeContentPane);
+
                       var admissionPaneContentBorderContainer = new BorderContainer({id:"admissionPaneContentBorderContainer"}, 
                                                                                     'admissionPaneContentBorderContainer');
+                      admissionHomeContentPane.addChild(admissionPaneContentBorderContainer);
 
                       var admissionLSidebar    = new ContentPane({id       : "admissionLSidebar",
                                                                 region    : 'leading', 
@@ -164,6 +168,8 @@ define(
                                                                 },
                                                                 'admissionLSidebar'
                                                 );
+                      admissionPaneContentBorderContainer.addChild(admissionLSidebar);
+
                       var admissionContentArea = new ContentPane({id     : "admissionContentArea", 
                                                                   region : 'center',
                                                                  splitter  : true,
@@ -171,14 +177,10 @@ define(
                                                                 },
                                                                 'admissionContentArea'
                                                       );
+                      admissionPaneContentBorderContainer.addChild(admissionContentArea);
                       console.log("created the Dijits");
 
-                      main_tab_container.addChild(admissionHomeContentPane);
-
-                      admissionHomeContentPane.addChild(admissionPaneContentBorderContainer);
-                        admissionPaneContentBorderContainer.addChild(admissionLSidebar);
-                        admissionPaneContentBorderContainer.addChild(admissionContentArea);
-                      admissionHomeContentPane.startup();
+//                       main_tab_container.startup();
 
                       console.log("added the Dijits");
 

@@ -8,52 +8,64 @@
         content = "HTML Tidy for Linux (vers 6 November 2007), see www.w3.org"
   >
   {% block title %}
+  
     <title> AuShadha </title>
+
   {% endblock title %}
 
 <!--The global non template tagged style sheet and Dojo specific Style sheets from here-->
+
   {% block media %}
+
     {% include 'style_links.html' %}
+
   {% endblock media %}
 
   {% block style_bits %}
+
     <style  type="text/css">
+
       {% include "style.css" %}
+
     </style>
+
   {% endblock style_bits %}
 
   {% block js %}
+
     {% include 'script_links.html' %}
+
   {% endblock js %}
 
  <!-- Defining Global Events in Jasvascript -->
 
   <script type="text/javascript">
+
     /*
        Global Variables
     */
+
     var CHOSEN_PATIENT;
-    
-    var PATIENT_PANE;
-    
-    var ADD_MORE_PATIENTS,
-        ADD_MORE_PATIENT_CONTACT,
-        ADD_MORE_PATIENT_PHONE   ,
-        ADD_MORE_PATIENT_GUARDIAN ,
+
+    var ADD_MORE_PATIENTS          ,
+        ADD_MORE_PATIENT_CONTACT   ,
+        ADD_MORE_PATIENT_PHONE     ,
+        ADD_MORE_PATIENT_GUARDIAN  ,
         ADD_MORE_PATIENT_ADMISSION ,
-        ADD_MORE_PATIENT_VISIT,
-        ADD_MORE_ITEMS;
+        ADD_MORE_PATIENT_VISIT     ,
+        ADD_MORE_ITEMS ;
 
     var PAT_SEARCH_JSON_URL = '{%url patient_filtering_search_json_without_id %}';
     var PAT_NEW_ADD_URL     = '{%url patient_new_add %}';
 
+
+    {% include 'key_bindings.js' %}
   </script>
-
-<!--   <script type="text/javascript" src="{{STATIC_URL}}custom/js/main.js"> </script>   -->
-
+  
   {% block js_bits %}
 
   {% endblock js_bits %}
+
 </head>
 
 <body class="claro">

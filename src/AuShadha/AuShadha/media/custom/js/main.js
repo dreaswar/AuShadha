@@ -12,7 +12,6 @@ define(['dojo/dom',
         'aushadha/event_binders/main',
 
         'notifications',
-        'key_bindings',
         
         'dojo/domReady!'
        ],
@@ -26,8 +25,7 @@ function(dom,
          auBehaviours,
          auGridSetup,
          auEventBinders,
-         auNotifications,
-         auKeyBindings
+         auNotifications
         ){
   
     console.log("Returning Main.js");
@@ -44,8 +42,7 @@ function(dom,
             auGridSetup     : auGridSetup,
             auBehaviours    : auBehaviours,
             auEventBinders  : auEventBinders,
-            auNotifications : auNotifications,
-            auKeyBindings   : auKeyBindings
+            auNotifications : auNotifications
     };
     return auMain;
 });
