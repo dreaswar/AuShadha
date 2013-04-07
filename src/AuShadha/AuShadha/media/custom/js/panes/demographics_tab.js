@@ -1,25 +1,24 @@
-function (urlObj/* URL DICT */){
-	require([
-					"dojo/dom",
-					"dojo/dom-style",
-          "dojo/query",
-					"dojo/dom-construct",
+define([
+                "dojo/dom",
+                "dojo/dom-style",
+      "dojo/query",
+                "dojo/dom-construct",
 
-					"dijit/registry",
-					"dijit/form/Button",
-					"dojox/layout/ContentPane",
-					"dijit/layout/TabContainer",
-					"dijit/layout/BorderContainer",
-	], 
-	function(dom, 
-					 domStyle,
-           query,
-					 domConstruct, 
-					 registry, 
-					 Button,
-					 ContentPane, 
-					 TabContainer, 
-					 BorderContainer){
+                "dijit/registry",
+                "dijit/form/Button",
+                "dojox/layout/ContentPane",
+                "dijit/layout/TabContainer",
+                "dijit/layout/BorderContainer",
+], 
+function(dom, 
+        domStyle,
+        query,
+        domConstruct, 
+        registry, 
+        Button,
+        ContentPane, 
+        TabContainer, 
+        BorderContainer){
 
 		function makeDoms(){
 
@@ -36,14 +35,7 @@ function (urlObj/* URL DICT */){
 					);
 
           domStyle.set('demographics_add_or_edit_form',{height:"30em"});
-/*
-          query('demographics_add_or_edit_form > form').
-           forEach(
-             function(node, index, arr){
-                
-             }
-          );
-*/
+
 					domConstruct.create("div",
                                           {"id":"contact_tab_container"},
                                       'demographics_add_or_edit_form',
@@ -82,7 +74,7 @@ function (urlObj/* URL DICT */){
 						);
 		}
 
-		function makeDijits(){
+		function makeDijits(urlObj){
 			
 			var demographicsTab = new ContentPane({ title     : "Demographics",
                                                     closable  : true,
@@ -242,13 +234,14 @@ function (urlObj/* URL DICT */){
     );
 		//{% endif %}
 
-		}
+	}
 
-	makeDoms();
-	makeDijits();
-	makeButtons();
+    return {
+        constructor: function (urlObj){
+                        makeDoms();
+                        makeDijits(urlObj);
+                        makeButtons();
+                     };
+    }
 
-	});
-
-
-}
+});

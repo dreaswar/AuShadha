@@ -13,7 +13,7 @@ function buildPatientTree(){
       "dojo/dom-construct",
       "dojo/dom-style",
       "dojo/json",
-      
+/*
       'aushadha/panes/medical_history_tab',
       'aushadha/panes/surgical_history_tab',
       'aushadha/panes/obstetric_history_tab',
@@ -23,6 +23,8 @@ function buildPatientTree(){
       'aushadha/panes/gynaecology_history_tab',
       'aushadha/panes/demographics_tab',
       'aushadha/panes/medication_list_tab'
+*/
+
   ], 
   function(win,
           Memory, 

@@ -201,78 +201,65 @@
                             style           = "height: 900px;"
                       >
 
-                          <div data-dojo-type   = "dojox/layout/ContentPane"
-                               data-dojo-props  = "region:'top'"
-                               id               = "searchPatientContainerDiv"
-                               style  = "position:relative;
-                                         top: 100px;
-                                         "
-                           >
-                            <div id="searchTitle"
-                                  style="color:navy;
-                                        font-size: 16px;
-                                        text-align:center;
-                                        vertical-align:middle;
-                                        font-family: Droid-Sans, Sans-Serif;
-                                        position: relative;
-                                        top:0px;
-                                       "
-                             >
-
-                             {% include 'search/patient_search_filtering_select.html' %}
-                            </div>
-
-                          </div>
-
-                          <div id              = "selected_patient_info"
-                               data-dojo-type  = "dojox/layout/ContentPane"
-                               data-dojo-props = "region:'center'"
-                               style = " color         : #252525;
-                                         font-size     : 12px;
-                                         font-style    : italics;
-                                         font-weight   : bold;
-                                         border        : solid 1pt #cecece;
-                                         border-radius : 3px;
-                                         background    : #D0DFEA;
-                                         box-shadow    : 1px 1px 2px #ddd;
-                                         text-align    : center;
-                                         display       : none;
+                        <div data-dojo-type    = "dojox/layout/ContentPane"
+                              data-dojo-props  = "region:'top'"
+                              id               = "searchPatientContainerDiv"
+                              style  = "position:relative;
+                                        top: 100px;
+                                        "
+                          >
+                          <div id   = "searchTitle"
+                               style= "color      : navy;
+                                       font-size  : 16px;
+                                       text-align:center;
+                                       vertical-align:middle;
+                                       font-family: Droid-Sans, Sans-Serif;
+                                       position: relative;
+                                       top:0px;
                                       "
-                          >
-
-                          </div>
-
-                          <div id            = "patientMainContainer"
-                              data-dojo-type = "dojox/layout/ContentPane"
-                              data-dojo-id   = "patientMainContainer"
-                              data-dojo-props= "region: 'bottom'"
-                          >
-
-                            <!--  START OF patientTabsBorderContainerr  -->
-                            <div id             = "patientTabsBorderContainer"
-                                data-dojo-type = "dijit/layout/BorderContainer"
-                                data-dojo-id   = "patientTabsBorderContainer"
                             >
 
-                              <!--  START OF patientTreeContainer  -->
-                                <!--<div id              = "patientTreeContainer"
-                                    data-dojo-props  = "region: 'left', splitter: true"
-                                    style            = "width:200px;overflow:auto;"
-                                >
-                                </div>-->
-                              <!--  END OF patientTreeContainer  -->
+                            {% include 'search/patient_search_filtering_select.html' %}
+                          </div>
 
-                              <!--  START OF patientContextContainer  -->
-                                <!--<div id              = "patientContextContainer"
-                                >
-                                </div>-->
-                              <!--  END OF patientContextContainer  -->
+                        </div>
 
-                            </div>
-                            <!--  END OF patientTabsBorderContainerr  -->
+                        <div id              = "selected_patient_info"
+                              data-dojo-type  = "dojox/layout/ContentPane"
+                              data-dojo-props = "region:'center'"
+                              style = " color         : #252525;
+                                        font-size     : 12px;
+                                        font-style    : italics;
+                                        font-weight   : bold;
+                                        border        : solid 1pt #cecece;
+                                        border-radius : 3px;
+                                        background    : #D0DFEA;
+                                        box-shadow    : 1px 1px 2px #ddd;
+                                        text-align    : center;
+                                        display       : none;
+                                    "
+                        >
+
+                        </div>
+
+                        <div id            = "patientMainContainer"
+                            data-dojo-type = "dojox/layout/ContentPane"
+                            data-dojo-id   = "patientMainContainer"
+                            data-dojo-props= "region: 'bottom'"
+                        >
+
+                          <!--  START OF patientTabsBorderContainerr  -->
+                          <div id             = "patientTabsBorderContainer"
+                              data-dojo-type = "dijit/layout/BorderContainer"
+                              data-dojo-id   = "patientTabsBorderContainer"
+                          >
 
                           </div>
-                          <!--  END OF patientMainContainer  -->
+                          <!--  END OF patientTabsBorderContainerr  -->
+
+                        </div>
+                        <!--  END OF patientMainContainer  -->
+
                      </div>
                     <!--  END OF PATIENTLISTCONTENTPANE  -->
                     {% endif %}
@@ -297,26 +284,32 @@
              <div id              = "SearchPaneBorderContainer"
                   data-dojo-type  = "dijit/layout/BorderContainer"
              >
+
                <div id              = "patientGridContentPane"
                     data-dojo-type  = "dijit/layout/ContentPane"
                     data-dojo-props = "region: 'center'"
                >
+
                  <div id              = "patient_grid"
                  >
                  </div>
+
                </div>
+
                <div id              = "patientSearchContentPane"
                     data-dojo-type  = "dijit/layout/ContentPane"
                     data-dojo-props = "region: 'right',splitter:true, gutter:true"
                >
                  {% include 'search/patients.html' %}
               </div>
+
             </div>
+
           </div>
           {% endif %}
           <!--  END OF ADMISSIONHOMECONTENTPANE  -->
 
-
+          {% comment %}
           <!--  START OF ADMISSIONHOMECONTENTPANE  -->
           <!--
           {% if perms.admission %}
@@ -814,6 +807,7 @@
           {% endif %}
           -->
           <!--  END OF VISITHOMECONTENTPANE  -->
+          {% endcomment %}
 
     </div>
     <!--  END OF CENTERTOPTABPANE  -->

@@ -10,6 +10,7 @@ define(
    "dojo/dom",
    "dojo/dom-construct",
    "dojo/dom-style",
+   'dojo/dom-attr',
    "dojo/ready",
    "dojo/_base/array",
    "dojo/request/xhr"
@@ -25,6 +26,7 @@ define(
            dom, 
            domConstruct, 
            domStyle, 
+           domAttr,
            ready,
            array,
            xhr
@@ -41,17 +43,22 @@ define(
         repositioned : false,
        
         displayPatientName : function(){
+
                                   var topBarHTML = dom.byId('selected_patient_info').innerHTML;
+                                  var topBarStyle = domAttr.get( dom.byId('selected_patient_info'), 'style' ); 
+
                                   dom.byId('admissionPaneTopbar').innerHTML = topBarHTML;
+                                  domAttr.set( dom.byId('admissionPaneTopbar'), 'style' , topBarStyle);
+
         },
 
         menuBar      : false,
 
         constructor  : function(){
 
-                          console.log("Starting to create / select admission tab as necessary...");
+                          console.log("Entering constructor function: Starting to create / select admission tab as necessary...");
 
-                          if(!this.initialized){
+                          if(! this.initialized){
                             console.log("Admission Pane is not initialized..");
 
                             /*
@@ -59,15 +66,14 @@ define(
                                 this.repositionSearchBar();
                               }
                             */
-//                          this.displayPatientName();
 
                             this.doms();
                             this.dijits();
+                            this.displayPatientName();                            
                             this.initialized = true;
-                            new buildAdmissionTree();
 
-                            console.log("Admission Sidebar Tree Done..");
-
+//                             new buildAdmissionTree();
+//                             console.log("Admission Sidebar Tree Done..");
                             /*
                               if(!this.menuBar){
                                 this.menuBar = new buildAdmissionMenu();
@@ -80,14 +86,22 @@ define(
 
                           }
                           else{
+
                             console.log("Admission Pane is already initialized..");
                             this.destroyPane();
+
                           }
         },
 
         destroyPane : function(){
                           console.log("Entering function to destroy Admission Pane");
-                          registry.byId('admissionHomeContentPane').destroyRecursive();
+                          if( registry.byId('centerTopTabPane').
+                                  getIndexOfChild(registry.byId('admissionHomeContentPane')) != -1 
+                            ){
+                            registry.byId('centerTopTabPane').
+                                        removeChild( registry.byId('admissionHomeContentPane') );
+                            registry.byId('admissionHomeContentPane').destroyRecursive(false);
+                            }
                           console.log("Destroyed Admission Pane");                  
                           //this.menuBar = false;
                           this.initialized = false;
@@ -113,8 +127,10 @@ define(
 
         doms: function(){ 
               // Fill the Tab with appropriate DOMS
-                  console.log("Starting to fill contents into admission tab....");
+                  console.log("Entering Function to create Admision Tab DOMS ");
+
                   if(! dom.byId('admissionHomeContentPane')){
+                      console.log("No DOMS in place. Creating the same...");
                       domConstruct.create('div',
                                           {id:'admissionHomeContentPane'},
                                           'centerTopTabPane',
@@ -125,68 +141,102 @@ define(
                                             style : "height: 100%; width: 100%"
                                           },
                                           'admissionHomeContentPane',
-                                          'first');
-
-                      domConstruct.create('div',
-                                          {id    : "admissionPaneLSidebar", 
-                                            style : "height: 100%; width: 20em"
-                                          },
-                                          'admissionPaneContentBorderContainer',
                                           0);
 
-                      domConstruct.create('div',
-                                          {id: "admissionPaneContentArea" 
-                                          /*, style: "height: 100%; width: 100em"*/
-                                          },
-                                          'admissionPaneContentBorderContainer',
-                                          1);
+                        domConstruct.create('div',      
+                                            {id    : "admissionPaneTopbar"
+                                            },
+                                            'admissionPaneContentBorderContainer',
+                                            0);
+
+                        domConstruct.create('div',
+                                            {id    : "admissionPaneLSidebar", 
+                                              style : "height: 100%; width: 20em"
+                                            },
+                                            'admissionPaneContentBorderContainer',
+                                            1);
+
+                        domConstruct.create('div',
+                                            {id: "admissionPaneContentArea" 
+                                            },
+                                            'admissionPaneContentBorderContainer',
+                                            2);
 
                       console.log("created the DOMS");
-                  }
-                  else{
-                    console.log("DOMS already Present...");
+                      return dom.byId('admissionHomeContentPane');
+                  }else{
+                    console.log("DOMS already Present. Not creating them.");
+                    return dom.byId('admissionHomeContentPane');
                   }
         },
 
         dijits: function(){
-                      var centerTopTabPane = registry.byId('centerTopTabPane');
-                      var admissionHomeContentPane = new ContentPane({id        : 'admissionHomeContentPane',
-                                                                      title     : 'Admissions'
-                                                                      },
-                                                                     'admissionHomeContentPane'
-                                                     );
+                      console.log("Entering function to create Admission pane Dijits");
+                      
+                      if(! registry.byId('admissionHomeContentPane')){
+                        console.log("No Admission pane dijits present, creating the same");
+                        var centerTopTabPane = registry.byId('centerTopTabPane');
+                        console.log(centerTopTabPane);
 
-                      centerTopTabPane.addChild(admissionHomeContentPane);
-
-                      var admissionPaneContentBorderContainer = new BorderContainer({id:"admissionPaneContentBorderContainer"}, 
-                                                                                    'admissionPaneContentBorderContainer');
-                      admissionHomeContentPane.addChild(admissionPaneContentBorderContainer);
-
-                      var admissionLSidebar    = new ContentPane({id       : "admissionLSidebar",
-                                                                region    : 'leading', 
-                                                                splitter  : true
-                                                                },
-                                                                'admissionLSidebar'
-                                                );
-                      admissionPaneContentBorderContainer.addChild(admissionLSidebar);
-
-                      var admissionContentArea = new ContentPane({id     : "admissionContentArea", 
-                                                                  region : 'center',
-                                                                 splitter  : true,
-                                                                 gutters : true
-                                                                },
-                                                                'admissionContentArea'
+                        var admissionHomeContentPane = new ContentPane({id        : 'admissionHomeContentPane',
+                                                                        title     : 'Admissions',
+                                                                        closable : false
+                                                                       },
+                                                                       'admissionHomeContentPane'
                                                       );
-                      admissionPaneContentBorderContainer.addChild(admissionContentArea);
-                      console.log("created the Dijits");
+                        console.log("Trying to add AdmissionHomePane");
+//                         debugger
+                        centerTopTabPane.addChild(admissionHomeContentPane);
+//                         debugger
+                        console.log(admissionHomeContentPane);
+//                         debugger
+                        var admissionPaneContentBorderContainer = new BorderContainer({id:"admissionPaneContentBorderContainer"
+                                                                                      }, 
+                                                                                      'admissionPaneContentBorderContainer');
+                        admissionHomeContentPane.addChild(admissionPaneContentBorderContainer);
+                        console.log(admissionPaneContentBorderContainer);
+                        
+                        var admissionPaneTopbar    = new ContentPane({id        : "admissionPaneTopbar",
+                                                                      region    : 'top', 
+                                                                      splitter  : false
+                                                                    },
+                                                                    'admissionPaneTopbar'
+                                                        );
+                        admissionPaneContentBorderContainer.addChild(admissionPaneTopbar);
+                        console.log(admissionPaneTopbar);
 
-//                       main_tab_container.startup();
+                        var admissionPaneLSidebar    = new ContentPane({id        : "admissionPaneLSidebar",
+                                                                        region    : 'leading', 
+                                                                        splitter  : true
+                                                                        },
+                                                                        'admissionPaneLSidebar'
+                                                  );
+                        admissionPaneContentBorderContainer.addChild(admissionPaneLSidebar);
+                        console.log(admissionPaneLSidebar);
 
-                      console.log("added the Dijits");
+                        var admissionPaneContentArea = new ContentPane({id        : "admissionPaneContentArea", 
+                                                                        region    : 'center',
+                                                                        splitter  : true,
+                                                                        gutters   : true
+                                                                  },
+                                                                  'admissionPaneContentArea'
+                                                        );
+                        admissionPaneContentBorderContainer.addChild(admissionPaneContentArea);
+                        console.log(admissionPaneContentArea);
 
-//                    admissionPaneContentBorderContainer.placeAt(dom.byId('admissionPaneContentBorderContainer'));
-//                    admissionPaneContentBorderContainer.startup();
-                      console.log("Dijits Started...");
+                        console.log("created the Dijits");
+                        console.log("added the Dijits");
+
+                        admissionHomeContentPane.startup();
+                        centerTopTabPane.resize();
+
+                        console.log("Dijits Started...");
+                        return registry.byId('admissionHomeContentPane');
+
+                      }else{
+                        console.log("Admission Pane dijits already present. No recreating");
+                        return registry.byId('admissionHomeContentPane');
+                      }
         }
 
   };

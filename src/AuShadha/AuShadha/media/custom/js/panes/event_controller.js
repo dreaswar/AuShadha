@@ -46,8 +46,12 @@ function(registry,
                         PATIENT_PANE.constructor();
 
                         console.log("ADMISSION_PANE variable is");
-                        console.log(ADMISSION_PANE);
-                        ADMISSION_PANE.constructor();
+                        try{
+                          console.log(ADMISSION_PANE);
+                          ADMISSION_PANE.constructor();
+                        }catch(err){
+                          console.error(err.message);
+                        }
 
 //                         this._reInitAdmissionPane();
                         this._reInitVisitPane();
