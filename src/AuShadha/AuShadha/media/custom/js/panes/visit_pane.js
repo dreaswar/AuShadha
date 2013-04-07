@@ -10,6 +10,7 @@ define(
    "dojo/dom",
    "dojo/dom-construct",
    "dojo/dom-style",
+   'dojo/dom-attr',
    "dojo/ready",
    "dojo/_base/array",
    "dojo/request/xhr"
@@ -25,12 +26,13 @@ define(
            dom, 
            domConstruct, 
            domStyle, 
+           domAttr,
            ready,
            array,
            xhr
   ){
 
-    var main_tab_container = registry.byId("centerTopTabPane");
+//     var main_tab_container = registry.byId("centerTopTabPane");
 
     var VISIT_PANE     = {
 
@@ -41,31 +43,37 @@ define(
         repositioned : false,
        
         displayPatientName : function(){
+
                                   var topBarHTML = dom.byId('selected_patient_info').innerHTML;
+                                  var topBarStyle = domAttr.get( dom.byId('selected_patient_info'), 'style' ); 
+
                                   dom.byId('visitPaneTopbar').innerHTML = topBarHTML;
+                                  domAttr.set( dom.byId('visitPaneTopbar'), 'style' , topBarStyle);
+
         },
 
         menuBar      : false,
 
         constructor  : function(){
 
-                          console.log("Starting to create / select visit tab as necessary...");
+                          console.log("Entering constructor function: Starting to create / select visit tab as necessary...");
 
-                          if(!this.initialized){
+                          if(! this.initialized){
                             console.log("Visit Pane is not initialized..");
+
                             /*
-                            if(!this.repositioned){
-                              this.repositionSearchBar();
-                            }
+                              if(!this.repositioned){
+                                this.repositionSearchBar();
+                              }
                             */
-                            this.displayPatientName();
+
                             this.doms();
                             this.dijits();
+                            this.displayPatientName();                            
                             this.initialized = true;
-                            new buildVisitTree();
 
-                            console.log("Visit Sidebar Tree Done..");
-
+//                             new buildVisitTree();
+//                             console.log("Visit Sidebar Tree Done..");
                             /*
                               if(!this.menuBar){
                                 this.menuBar = new buildVisitMenu();
@@ -78,14 +86,22 @@ define(
 
                           }
                           else{
+
                             console.log("Visit Pane is already initialized..");
                             this.destroyPane();
+
                           }
         },
 
         destroyPane : function(){
                           console.log("Entering function to destroy Visit Pane");
-                          registry.byId('visitHomeContentPane').destroyRecursive();
+                          if( registry.byId('centerTopTabPane').
+                                  getIndexOfChild(registry.byId('visitHomeContentPane')) != -1 
+                            ){
+                            registry.byId('centerTopTabPane').
+                                        removeChild( registry.byId('visitHomeContentPane') );
+                            registry.byId('visitHomeContentPane').destroyRecursive(false);
+                            }
                           console.log("Destroyed Visit Pane");                  
                           //this.menuBar = false;
                           this.initialized = false;
@@ -111,11 +127,13 @@ define(
 
         doms: function(){ 
               // Fill the Tab with appropriate DOMS
-                    console.log("Starting to fill contents into visit tab....");
+                  console.log("Entering Function to create Visit Tab DOMS ");
+
                   if(! dom.byId('visitHomeContentPane')){
+                      console.log("No DOMS in place. Creating the same...");
                       domConstruct.create('div',
                                           {id:'visitHomeContentPane'},
-                                          registry.byId('centerTopTabPane').domNode,
+                                          'centerTopTabPane',
                                           'last');
 
                       domConstruct.create('div',
@@ -123,66 +141,102 @@ define(
                                             style : "height: 100%; width: 100%"
                                           },
                                           'visitHomeContentPane',
-                                          'first');
-                      domConstruct.create('div',
-                                          {id    : "visitPaneLSidebar", 
-                                            style : "height: 100%; width: 20em"
-                                          },
-                                          'visitPaneContentBorderContainer',
                                           0);
-                      domConstruct.create('div',
-                                          {id: "visitPaneContentArea" 
-                                          /*, style: "height: 100%; width: 100em"*/
-                                          },
-                                          'visitPaneContentBorderContainer',
-                                          1);
+
+                        domConstruct.create('div',      
+                                            {id    : "visitPaneTopbar"
+                                            },
+                                            'visitPaneContentBorderContainer',
+                                            0);
+
+                        domConstruct.create('div',
+                                            {id    : "visitPaneLSidebar", 
+                                              style : "height: 100%; width: 20em"
+                                            },
+                                            'visitPaneContentBorderContainer',
+                                            1);
+
+                        domConstruct.create('div',
+                                            {id: "visitPaneContentArea" 
+                                            },
+                                            'visitPaneContentBorderContainer',
+                                            2);
 
                       console.log("created the DOMS");
-                  }
-                  else{
-                    console.log("DOMS already Present...");
+                      return dom.byId('visitHomeContentPane');
+                  }else{
+                    console.log("DOMS already Present. Not creating them.");
+                    return dom.byId('visitHomeContentPane');
                   }
         },
 
         dijits: function(){
-//                      var main_visit_tab = registry.byId('visitHomeContentPane');
-                      var visitHomeContentPane = new ContentPane({title     : 'Visits',
-                                                                      disabled  : false, 
-                                                                      closable  : false
-                                                                      },
-                                                                     'visitHomeContentPane'
-                                                     );
+                      console.log("Entering function to create Visit pane Dijits");
+                      
+                      if(! registry.byId('visitHomeContentPane')){
+                        console.log("No Visit pane dijits present, creating the same");
+                        var centerTopTabPane = registry.byId('centerTopTabPane');
+                        console.log(centerTopTabPane);
 
-                      var visitPaneContentBorderContainer = new BorderContainer({id:"visitPaneContentBorderContainer"}, 
-                                                                                    'visitPaneContentBorderContainer');
-
-                      var visitLSidebar    = new ContentPane({id       : "visitLSidebar",
-                                                                region    : 'leading', 
-                                                                splitter  : true
-                                                                },
-                                                                'visitLSidebar'
-                                                );
-                      var visitContentArea = new ContentPane({id     : "visitContentArea", 
-                                                                  region : 'center',
-                                                                 splitter  : true,
-                                                                 gutters : true
-                                                                },
-                                                                'visitContentArea'
+                        var visitHomeContentPane = new ContentPane({id        : 'visitHomeContentPane',
+                                                                        title     : 'Visits',
+                                                                        closable : false
+                                                                       },
+                                                                       'visitHomeContentPane'
                                                       );
-                      console.log("created the Dijits");
+                        console.log("Trying to add VisitHomePane");
+//                         debugger
+                        centerTopTabPane.addChild(visitHomeContentPane);
+//                         debugger
+                        console.log(visitHomeContentPane);
+//                         debugger
+                        var visitPaneContentBorderContainer = new BorderContainer({id:"visitPaneContentBorderContainer"
+                                                                                      }, 
+                                                                                      'visitPaneContentBorderContainer');
+                        visitHomeContentPane.addChild(visitPaneContentBorderContainer);
+                        console.log(visitPaneContentBorderContainer);
+                        
+                        var visitPaneTopbar    = new ContentPane({id        : "visitPaneTopbar",
+                                                                      region    : 'top', 
+                                                                      splitter  : false
+                                                                    },
+                                                                    'visitPaneTopbar'
+                                                        );
+                        visitPaneContentBorderContainer.addChild(visitPaneTopbar);
+                        console.log(visitPaneTopbar);
 
-                      main_tab_container.addChild(visitHomeContentPane);
+                        var visitPaneLSidebar    = new ContentPane({id        : "visitPaneLSidebar",
+                                                                        region    : 'leading', 
+                                                                        splitter  : true
+                                                                        },
+                                                                        'visitPaneLSidebar'
+                                                  );
+                        visitPaneContentBorderContainer.addChild(visitPaneLSidebar);
+                        console.log(visitPaneLSidebar);
 
-                      visitHomeContentPane.addChild(visitPaneContentBorderContainer);
-                        visitPaneContentBorderContainer.addChild(visitLSidebar);
-                        visitPaneContentBorderContainer.addChild(visitContentArea);
-                      visitHomeContentPane.startup();
+                        var visitPaneContentArea = new ContentPane({id        : "visitPaneContentArea", 
+                                                                        region    : 'center',
+                                                                        splitter  : true,
+                                                                        gutters   : true
+                                                                  },
+                                                                  'visitPaneContentArea'
+                                                        );
+                        visitPaneContentBorderContainer.addChild(visitPaneContentArea);
+                        console.log(visitPaneContentArea);
 
-                      console.log("added the Dijits");
+                        console.log("created the Dijits");
+                        console.log("added the Dijits");
 
-//                    visitPaneContentBorderContainer.placeAt(dom.byId('visitPaneContentBorderContainer'));
-//                    visitPaneContentBorderContainer.startup();
-                      console.log("Dijits Started...");
+                        visitHomeContentPane.startup();
+                        centerTopTabPane.resize();
+
+                        console.log("Dijits Started...");
+                        return registry.byId('visitHomeContentPane');
+
+                      }else{
+                        console.log("Visit Pane dijits already present. No recreating");
+                        return registry.byId('visitHomeContentPane');
+                      }
         }
 
   };

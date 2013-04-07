@@ -46,15 +46,13 @@ function(registry,
                         PATIENT_PANE.constructor();
 
                         console.log("ADMISSION_PANE variable is");
-                        try{
-                          console.log(ADMISSION_PANE);
-                          ADMISSION_PANE.constructor();
-                        }catch(err){
-                          console.error(err.message);
-                        }
+                        console.log(ADMISSION_PANE);
 
-//                         this._reInitAdmissionPane();
-                        this._reInitVisitPane();
+                        ADMISSION_PANE.constructor();
+                        VISIT_PANE.constructor();
+
+//                        this._reInitAdmissionPane();
+//                        this._reInitVisitPane();
 
                         registry.byId("centerMainPane").resize();  
       },
