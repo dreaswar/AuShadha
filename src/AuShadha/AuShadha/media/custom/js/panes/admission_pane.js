@@ -186,7 +186,7 @@ define(
                                                       );
                         console.log("Trying to add AdmissionHomePane");
 //                         debugger
-                        centerTopTabPane.addChild(admissionHomeContentPane);
+                        centerTopTabPane.addChild(admissionHomeContentPane,1);
 //                         debugger
                         console.log(admissionHomeContentPane);
 //                         debugger

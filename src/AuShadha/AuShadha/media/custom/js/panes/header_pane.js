@@ -64,6 +64,7 @@ function(timing,
             },
             searchWidget : function(){
                             var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL});
+
                             /*
                             domStyle.set('filteringSelectPatSearchSmall',
                                          {width      : '250px',
@@ -75,6 +76,7 @@ function(timing,
                                           marginLeft : '10px'
                             });
                             */
+
                             var searchBox = new FilteringSelect({regExp        : '[a-zA-Z0-9 -]+',
                                                                 required       : true,
                                                                 invalidMessage : 'No Results',
@@ -90,6 +92,7 @@ function(timing,
                                                                                 }
                                                                 },
                                                                 'filteringSelectPatSearchSmall');
+
                             searchBox.startup();
             }
             

@@ -186,6 +186,7 @@ function buildPatientTree(){
                                   );
                                 }
                         }
+
                         if(item.name =="Social History" || item.type=="social_history_module"){
                                 if(!registry.byId('socialHistoryTab') ){
                                     console.log(CHOSEN_PATIENT);
@@ -197,7 +198,7 @@ function buildPatientTree(){
                                   );
                                 }
                         }
-                        
+
                         if(item.name =="Family History" || item.type=="family_history_module"){
                                 if(!registry.byId('familyHistoryTab') ){
                                     console.log(CHOSEN_PATIENT);
@@ -209,7 +210,7 @@ function buildPatientTree(){
                                   );
                                 }
                         }
-                        
+
                         if(item.name =="Medical History" || item.type=="medical_history_module"){
                                 if(!registry.byId('patientMedicalHistoryTab') ){
                                     console.log(CHOSEN_PATIENT);
@@ -221,7 +222,7 @@ function buildPatientTree(){
                                   );
                                 }
                         }
-                        
+
                         if(item.name =="Surgical History" || item.type=="surgical_history_module"){
                                 if(!registry.byId('patientSurgicalHistoryTab') ){
                                     console.log(CHOSEN_PATIENT);
@@ -233,6 +234,7 @@ function buildPatientTree(){
                                   );
                                 }
                         }
+
                         if(item.name =="Medications" || item.type=="medication_list_module"){
                                 if(!registry.byId('medicationListTab') ){
                                     console.log(CHOSEN_PATIENT);

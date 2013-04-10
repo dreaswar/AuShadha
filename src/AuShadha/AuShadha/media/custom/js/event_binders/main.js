@@ -8,7 +8,13 @@ define([
   'dijit/registry',
   'dojo/request',
   'dojo/json',
-  
+  "dojo/parser",
+  'dijit/form/FilteringSelect',
+
+  "dojox/grid/DataGrid",
+  "dojo/store/JsonRest",
+  "dojo/data/ObjectStore",
+
   'aushadha/panes/main',
   'aushadha/panes/event_controller',
   'aushadha/grid/grid_setup',
@@ -24,6 +30,12 @@ define([
            registry,
            request,
            JSON,
+           parser,
+
+           FilteringSelect,
+           DataGrid,
+           JsonRest,
+           ObjectStore,
            
            auPanes,
            auPaneEventController,
@@ -51,14 +63,36 @@ define([
         setEvent: function(/*String | domId*/id, /*String | eventType*/evt){
           
         },
-        auPaneEventController : auPaneEventController
+        auPaneEventController : auPaneEventController,
+
+       searchWidget : function(){
+                        var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL});
+
+                        var searchBox = new FilteringSelect({regExp        : '[a-zA-Z0-9 -]+'  ,
+                                                            required       : true              ,
+                                                            invalidMessage : 'No Results'      ,
+                                                            store          : widgetStore       ,
+                                                            searchAttr     : 'name'            ,
+                                                            labelAttr      : 'label'           ,
+                                                            labelType      : 'html'            ,
+                                                            autoComplete   : false             ,
+                                                            placeHolder    : 'Patient\'s Name' ,
+                                                            hasDownArrow   : false             ,
+                                                            onChange       : function(e){
+                                                                                try{
+                                                                                  auPaneEventController.onPatientChoice(this);
+                                                                                }catch(err){
+                                                                                  console.error(err.message);
+                                                                                }
+                                                                              },
+                                                            style          : 'width:160%; textAlign:center;'
+                                                            },
+                                                            'filteringSelectPatSearch');
+
+                        searchBox.startup();
+        }
     };
-/*
-    ready( function(){ 
-          // Call all the Pane event binders. 
-           auPaneEventController.events(); 
-    }); 
-*/
+
     return auEvents;
 
 });  

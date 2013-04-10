@@ -8,13 +8,17 @@ define(['dojo/dom',
          'dijit/layout/BorderContainer',
          'dojox/layout/ContentPane',
          'dijit/layout/TabContainer',
+         'dijit/form/FilteringSelect',
+
          "dojo/parser",
-        
+
         "dojox/grid/DataGrid",
         "dojo/store/JsonRest",
         "dojo/data/ObjectStore",
         "dojo/request/xhr", 
         "dojo/json",
+
+       'aushadha/panes/event_controller',
 
         'dojo/domReady!'
 ],
@@ -28,12 +32,16 @@ function(dom,
          BorderContainer,
          ContentPane,
          TabContainer,
+         FilteringSelect,
+         
          parser,
          DataGrid,
          JsonRest,
          ObjectStore,
          xhr,
-         JSON
+         JSON,
+         auPaneEventController
+         
         ){
 
       var PATIENT_PANE = {
@@ -344,11 +352,11 @@ function(dom,
                         new buildPatientTree();
                         console.log("Patient Sidebar Tree Done..")
                         /*
-                        if(!this.menuBar){
-                          this.menuBar = new buildPatientMenu();
-                          console.log(this.menuBar);
-                        }
-                        console.log("Patient Menu done ..")
+                          if(!this.menuBar){
+                            this.menuBar = new buildPatientMenu();
+                            console.log(this.menuBar);
+                          }
+                          console.log("Patient Menu done ..")
                         */
                           return PATIENT_PANE;
                       }
@@ -386,30 +394,69 @@ function(dom,
                 registry.byId(DivId).set('href',url);
 
                /*
-                xhr(url,{
-                    handleAs: "text",
-                    method  : "GET",
-                }).then(
-                  function(json){
-                      var jsondata = JSON.parse(json)
-                      console.log(jsondata);
-                      if(jsondata.success == true){
-                        registry.byId("patientSummaryTab").set('href',url)        
-                      }
-                  },
-                  function(json){
-                        var jsondata = JSON.parse(json);
-                        errorDialog.set("title", "ERROR");
-                        errorDialog.set("content", jsondata.error_message);
-                        errorDialog.show();
-                  },
-                  function(evt){console.log("Adding Data Finished Successfully...")}
-                );
-                console.log("Finished creating Patient Summary");
-              });
+                  xhr(url,{
+                      handleAs: "text",
+                      method  : "GET",
+                  }).then(
+                    function(json){
+                        var jsondata = JSON.parse(json)
+                        console.log(jsondata);
+                        if(jsondata.success == true){
+                          registry.byId("patientSummaryTab").set('href',url)        
+                        }
+                    },
+                    function(json){
+                          var jsondata = JSON.parse(json);
+                          errorDialog.set("title", "ERROR");
+                          errorDialog.set("content", jsondata.error_message);
+                          errorDialog.show();
+                    },
+                    function(evt){console.log("Adding Data Finished Successfully...")}
+                  );
+                  console.log("Finished creating Patient Summary");
+                  });
               */
-              }
+              },
+            searchWidget : function(){
+                            var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL});
+
+                            /*
+                              domStyle.set('filteringSelectPatSearchSmall',
+                                          {width      : '250px'     ,
+                                            height     : '18px'     ,
+                                            margin     : 'none'     ,
+                                            padding    : 'none'     ,
+                                            position   : 'relative' ,
+                                            top        : '-3.0em'   ,
+                                            marginLeft : '10px'
+                              });
+                            */
+
+                            var searchBox = new FilteringSelect({regExp        : '[a-zA-Z0-9 -]+'  ,
+                                                                required       : true              ,
+                                                                invalidMessage : 'No Results'      ,
+                                                                store          : widgetStore       ,
+                                                                searchAttr     : 'name'            ,
+                                                                labelAttr      : 'label'           ,
+                                                                labelType      : 'html'            ,
+                                                                autoComplete   : false             ,
+                                                                placeHolder    : 'Patient\'s Name' ,
+                                                                hasDownArrow   : false             ,
+                                                                onChange       : function(e){
+                                                                                    try{
+                                                                                      auPaneEventController.onPatientChoice(e);
+                                                                                    }catch(err){
+                                                                                      console.error(err.message);
+                                                                                    }
+                                                                                 },
+                                                                style          : 'width:160%; textAlign:center;'
+                                                                },
+                                                                'filteringSelectPatSearch');
+
+                            searchBox.startup();
+            }
       };
 
+//       PATIENT_PANE.searchWidget();
       return PATIENT_PANE;
 });

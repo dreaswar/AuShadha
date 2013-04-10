@@ -89,7 +89,9 @@ ready(function(){
   var auMain = aushadha;
   console.log(auMain);
   
-/*
+  auMain.auEventBinders.searchWidget();
+
+  /*
 
         //Run binders
       registry.byId('filteringSelectPatSearch').onChange      = auMain.auEventBinders.auPaneEventController.onPatientChoice;

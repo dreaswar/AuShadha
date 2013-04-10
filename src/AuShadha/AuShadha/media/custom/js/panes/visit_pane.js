@@ -186,7 +186,7 @@ define(
                                                       );
                         console.log("Trying to add VisitHomePane");
 //                         debugger
-                        centerTopTabPane.addChild(visitHomeContentPane);
+                        centerTopTabPane.addChild(visitHomeContentPane,2);
 //                         debugger
                         console.log(visitHomeContentPane);
 //                         debugger
