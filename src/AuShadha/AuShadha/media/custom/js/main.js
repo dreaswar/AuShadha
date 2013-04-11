@@ -10,6 +10,7 @@ define(['dojo/dom',
         'aushadha/behaviours/global_behaviours',
         "aushadha/grid/grid_setup",
         'aushadha/event_binders/main',
+        'aushadha/panes/main',
 
         'notifications',
         
@@ -25,6 +26,7 @@ function(dom,
          auBehaviours,
          auGridSetup,
          auEventBinders,
+         auPanes,
          auNotifications
         ){
   
@@ -34,14 +36,11 @@ function(dom,
       auGridSetup.setupPatientGrid();
     console.log("setupPatientGrid Returned");
     
-    console.log("Dojo code has loaded");
-    
-    console.log(auEventBinders);
-
     var auMain= {auStore         : auStore,
             auGridSetup     : auGridSetup,
             auBehaviours    : auBehaviours,
             auEventBinders  : auEventBinders,
+            auPanes         : auPanes,
             auNotifications : auNotifications
     };
     return auMain;

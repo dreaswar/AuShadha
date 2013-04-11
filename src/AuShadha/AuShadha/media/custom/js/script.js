@@ -79,24 +79,17 @@
                Memory, 
                domGeom, 
                request,
-               aushadha
+
+               auMain
               )
       {
 
   // Define Variables to be used later in the app..
 ready(function(){
   console.log("Starting script script.js");
-  var auMain = aushadha;
-  console.log(auMain);
   
   auMain.auEventBinders.searchWidget();
-
-  /*
-
-        //Run binders
-      registry.byId('filteringSelectPatSearch').onChange      = auMain.auEventBinders.auPaneEventController.onPatientChoice;
-      registry.byId('filteringSelectPatSearchSmall').onChange = auMain.auEventBinders.auPaneEventController.onPatientChoice;
-*/
+  auMain.auEventBinders.headerPaneSearchWidget();
 
   function addNewPatient(){
     require(["dojo/_base/xhr",

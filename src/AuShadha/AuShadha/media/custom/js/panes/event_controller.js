@@ -103,6 +103,7 @@ function(registry,
                                   }
                                 );
       },
+
       onPatientGridSelect:function (item/* on widget obj */){
                                         console.log(item);
                                         var addData = item.addData;

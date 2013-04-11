@@ -13,11 +13,11 @@ define (["dojox/timing",
         "dijit/registry",
         "dojo/date/locale",
         "dojo/ready",
+
         'dijit/form/FilteringSelect',
         "dojo/store/JsonRest",
-//         "aushadha/grid_setup_alt.js",
-        'aushadha/panes/main',
-        'aushadha/panes/event_controller',
+
+
         "dojo/domReady!"
 ],
 function(timing,
@@ -27,10 +27,9 @@ function(timing,
          registry,
          dateLocale,
          ready, 
+
          FilteringSelect,
-         JsonRest,
-         auPaneMain,
-         auPaneEventController
+         JsonRest
         ){
 
     var headerPane= {
@@ -61,44 +60,9 @@ function(timing,
                               }
                               t.start();
                             });
-            },
-            searchWidget : function(){
-                            var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL});
-
-                            /*
-                            domStyle.set('filteringSelectPatSearchSmall',
-                                         {width      : '250px',
-                                          height     : '18px',
-                                          margin     : 'none',
-                                          padding    : 'none',
-                                          position   : 'relative',
-                                          top        : '-3.0em',
-                                          marginLeft : '10px'
-                            });
-                            */
-
-                            var searchBox = new FilteringSelect({regExp        : '[a-zA-Z0-9 -]+',
-                                                                required       : true,
-                                                                invalidMessage : 'No Results',
-                                                                store          : widgetStore,
-                                                                searchAttr     : 'name',
-                                                                labelAttr      : 'label',
-                                                                labelType      : 'html',
-                                                                autoComplete   : false,
-                                                                placeHolder    : 'Patient\'s Name',
-                                                                hasDownArrow   : false,
-                                                                onChange       : function(e){ 
-                                                                                    auPaneEventController.onPatientChoice(this);
-                                                                                }
-                                                                },
-                                                                'filteringSelectPatSearchSmall');
-
-                            searchBox.startup();
             }
-            
     }
+
     headerPane.headerTimer();
-    headerPane.searchWidget();
-    
     return headerPane;
  });                      

@@ -63,7 +63,8 @@ define([
         setEvent: function(/*String | domId*/id, /*String | eventType*/evt){
           
         },
-        auPaneEventController : auPaneEventController,
+
+       auPaneEventController : auPaneEventController,
 
        searchWidget : function(){
                         var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL});
@@ -90,7 +91,47 @@ define([
                                                             'filteringSelectPatSearch');
 
                         searchBox.startup();
+        },
+
+        headerPaneSearchWidget : function(){
+                            var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL});
+
+                            /*
+                            domStyle.set('filteringSelectPatSearchSmall',
+                                         {width      : '250px',
+                                          height     : '18px',
+                                          margin     : 'none',
+                                          padding    : 'none',
+                                          position   : 'relative',
+                                          top        : '-3.0em',
+                                          marginLeft : '10px'
+                            });
+                            */
+
+                            var searchBox = new FilteringSelect({regExp        : '[a-zA-Z0-9 -]+',
+                                                                required       : true,
+                                                                invalidMessage : 'No Results',
+                                                                store          : widgetStore,
+                                                                searchAttr     : 'name',
+                                                                labelAttr      : 'label',
+                                                                labelType      : 'html',
+                                                                autoComplete   : false,
+                                                                placeHolder    : 'Patient\'s Name',
+                                                                hasDownArrow   : false,
+                                                                onChange       : function(e){ 
+                                                                                    console.log(auPaneEventController);
+                                                                                    try{
+                                                                                      auPaneEventController.onPatientChoice(this);
+                                                                                    }catch(err){
+                                                                                      console.error(err.message);
+                                                                                    }
+                                                                                }
+                                                                },
+                                                                'filteringSelectPatSearchSmall');
+
+                            searchBox.startup();
         }
+
     };
 
     return auEvents;

@@ -35,7 +35,6 @@ define([
            auPaneEventController
           ){
 
-    //Run All Bound Pane Events
     return {auHeaderPane          : auHeaderPane,
             auPatientPane         : auPatientPane,
             auAdmissionPane       : auAdmissionPane,
