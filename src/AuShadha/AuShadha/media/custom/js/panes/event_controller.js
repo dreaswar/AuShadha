@@ -103,6 +103,13 @@ function(registry,
                                   }
                                 );
       },
+      onPatientGridSelect:function (item/* on widget obj */){
+                                        console.log(item);
+                                        var addData = item.addData;
+                                        // This will update all Panes;
+                                        paneEventController._reInitAllPanes(addData);
+                                        console.log("Called _reInitAllPanes from function onPatientGridSelect ");
+      },
 
       onPatientDelete:function (){
                     //TODO

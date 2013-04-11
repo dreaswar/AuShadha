@@ -14,6 +14,7 @@ define(["dojox/grid/DataGrid",
 
         "aushadha/stores",
         "aushadha/grid/grid_structures",
+        "aushadha/panes/event_controller",
 
         "dojo/domReady!"
   ],
@@ -26,7 +27,8 @@ function(DataGrid,
          xhr,
 
          aushadhaStores,
-         GRID_STRUCTURES
+         GRID_STRUCTURES,
+         auEventController
         ){
 
     return {
@@ -57,16 +59,18 @@ function(DataGrid,
                                       var idx    = e.rowIndex,
                                           item   = this.getItem(idx);
 
+                                      grid.selection.clear();
+                                      grid.selection.setSelected(item, true);
+
                                       console.log(item);
                                       CHOSEN_PATIENT = item.addData;
                                       var addData  = item.addData;
-                                      renderGridsFormsAndTrees(addData);
+                                      auEventController.onPatientGridSelect(item);                                      
+
                                       /*
                                         Clear the current Grid selection
                                         Set the new selected Row
                                       */
-                                      grid.selection.clear();
-                                      grid.selection.setSelected(item, true);
 
                                       var mainTabContainer = registry.byId('centerTopTabPane');
                                       var patientListTab   = registry.byId('patientHomeContentPane');
