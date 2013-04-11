@@ -1,21 +1,24 @@
-function createMedicalHistoryTab(){
-    require([
-            "dojo/dom",
-            'dojo/dom-class',
-            'dojo/dom-style',
-            'dojo/dom-construct',
-            'dojo/on',
+define([
+        "dojo/dom",
+        'dojo/dom-class',
+        'dojo/dom-style',
+        'dojo/dom-construct',
+        'dojo/on',
 
-            'dijit/registry',
-            'dijit/layout/BorderContainer',
-            'dojox/layout/ContentPane',
-            'dijit/layout/TabContainer',
-            'dijit/form/Button',
-            "dijit/Dialog",
-            "dojo/request",
-            "dojo/json",
-            "dojo/domReady!"
-            ],
+        'dijit/registry',
+        'dijit/layout/BorderContainer',
+        'dojox/layout/ContentPane',
+        'dijit/layout/TabContainer',
+        'dijit/form/Button',
+        "dijit/Dialog",
+        "dojo/request",
+        "dojo/json",
+
+       'aushadha/grid/grid_structures',
+       'aushadha/grid/grid_setup',
+
+        "dojo/domReady!",
+    ],
     function(dom,
              domClass,
              domStyle,
@@ -28,7 +31,10 @@ function createMedicalHistoryTab(){
              Button,
              Dialog,
              request,
-             JSON
+             JSON,
+
+             GRID_STRUCTURES,
+             auGridSetup
     ){
 
           function createHistoryDoms(){
@@ -97,15 +103,17 @@ function createMedicalHistoryTab(){
           function fillData(){
             //{% if perms.patient %}
               var medicalHistoryUrl   = CHOSEN_PATIENT.medicalhistoryjson;
-              setupMedicalHistoryGrid(medicalHistoryUrl);
+              auGridSetup.setupMedicalHistoryGrid(medicalHistoryUrl);
               registry.byId("patientContextTabs").selectChild('patientMedicalHistoryTab');
             //{% endif %}
           }
 
-           createHistoryDoms();
-           createHistoryDijits();
-           createButtons();
-           fillData();
-
+          return {
+            constructor: function(){
+                              createHistoryDoms();
+                              createHistoryDijits();
+                              createButtons();
+                              fillData();
+                          }
+          }
     });
-}

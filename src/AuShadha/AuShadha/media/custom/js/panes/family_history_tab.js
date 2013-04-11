@@ -1,15 +1,17 @@
-function (urlObj/* URL DICT */){
-    require([
-                    "dojo/dom",
-                    "dojo/dom-style",
-          "dojo/query",
-                    "dojo/dom-construct",
+define([
+        "dojo/dom",
+        "dojo/dom-style",
+        "dojo/query",
+        "dojo/dom-construct",
 
-                    "dijit/registry",
-                    "dijit/form/Button",
-                    "dojox/layout/ContentPane",
-                    "dijit/layout/TabContainer",
-                    "dijit/layout/BorderContainer",
+        "dijit/registry",
+        "dijit/form/Button",
+        "dojox/layout/ContentPane",
+        "dijit/layout/TabContainer",
+        "dijit/layout/BorderContainer",
+       
+       'aushadha/grid/grid_structures',
+       'aushadha/grid/grid_setup'
     ], 
     function(dom, 
              domStyle,
@@ -19,7 +21,10 @@ function (urlObj/* URL DICT */){
             Button,
             ContentPane, 
             TabContainer, 
-            BorderContainer){
+            BorderContainer,
+            GRID_STRUCTURES,
+            auGridSetup
+            ){
 
         function makeDoms(){
 
@@ -52,7 +57,7 @@ function (urlObj/* URL DICT */){
             );
             registry.byId('patientContextTabs').addChild(familyHistoryTab);
 
-            setupFamilyHistoryGrid(CHOSEN_PATIENT.familyhistoryjson);
+            auGridSetup.setupFamilyHistoryGrid(CHOSEN_PATIENT.familyhistoryjson);
 
             familyHistoryTab.startup();
 
@@ -95,11 +100,11 @@ function (urlObj/* URL DICT */){
 
         }
 
-    makeDoms();
-    makeDijits();
-    makeButtons();
+    return { constructor: function(urlObj){
+                                      makeDoms();
+                                      makeDijits();
+                                      makeButtons();
+                          }
+    }
 
-    });
-
-
-}
+});

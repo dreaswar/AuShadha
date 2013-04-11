@@ -13,15 +13,16 @@ function buildPatientTree(){
       "dojo/dom-construct",
       "dojo/dom-style",
       "dojo/json",
-/*
+
+      'aushadha/panes/demographics_tab',
+      'aushadha/panes/family_history_tab',
       'aushadha/panes/medical_history_tab',
+      /*
       'aushadha/panes/surgical_history_tab',
       'aushadha/panes/obstetric_history_tab',
       'aushadha/panes/neonatal_and_paediatric_exam_tab',
       'aushadha/panes/social_history_tab',
-      'aushadha/panes/family_history_tab',
       'aushadha/panes/gynaecology_history_tab',
-      'aushadha/panes/demographics_tab',
       'aushadha/panes/medication_list_tab'
 */
 
@@ -36,7 +37,11 @@ function buildPatientTree(){
           registry,
           domConstruct, 
           domStyle, 
-          JSON){
+          JSON,
+          demographicsTab,
+          familyHistoryTab,
+          medicalHistoryTab
+          ){
 
     // Create store 
     var patientTreeStore = new ItemFileReadStore({url: CHOSEN_PATIENT.patientTreeUrl,
@@ -178,7 +183,8 @@ function buildPatientTree(){
                         if(item.name =="Demographics" || item.type=="demographics_module"){
                                 if(!registry.byId('contactAndDemographicsTab') ){
                                     console.log(CHOSEN_PATIENT);
-                                    makeDemographicsTab(demographicsUrlDict);
+                                    console.log(demographicsTab);
+                                    demographicsTab.constructor(demographicsUrlDict);
                                 }
                                 else{
                                   registry.byId("patientContextTabs").selectChild(
@@ -202,7 +208,7 @@ function buildPatientTree(){
                         if(item.name =="Family History" || item.type=="family_history_module"){
                                 if(!registry.byId('familyHistoryTab') ){
                                     console.log(CHOSEN_PATIENT);
-                                    makeFamilyHistoryTab(CHOSEN_PATIENT.familyhistoryjson);
+                                    familyHistoryTab.constructor();
                                 }
                                 else{
                                   registry.byId("patientContextTabs").selectChild(
@@ -214,7 +220,7 @@ function buildPatientTree(){
                         if(item.name =="Medical History" || item.type=="medical_history_module"){
                                 if(!registry.byId('patientMedicalHistoryTab') ){
                                     console.log(CHOSEN_PATIENT);
-                                    makeMedicalHistoryTab(CHOSEN_PATIENT.medicalhistoryjson);
+                                    medicalHistoryTab.constructor();
                                 }
                                 else{
                                   registry.byId("patientContextTabs").selectChild(

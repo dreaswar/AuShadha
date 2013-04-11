@@ -1,14 +1,17 @@
 define([
-                "dojo/dom",
-                "dojo/dom-style",
+      "dojo/dom",
+      "dojo/dom-style",
       "dojo/query",
-                "dojo/dom-construct",
+      "dojo/dom-construct",
 
-                "dijit/registry",
-                "dijit/form/Button",
-                "dojox/layout/ContentPane",
-                "dijit/layout/TabContainer",
-                "dijit/layout/BorderContainer",
+      "dijit/registry",
+      "dijit/form/Button",
+      "dojox/layout/ContentPane",
+      "dijit/layout/TabContainer",
+      "dijit/layout/BorderContainer",
+
+      'aushadha/grid/grid_structures',
+      'aushadha/grid/grid_setup'
 ], 
 function(dom, 
         domStyle,
@@ -18,7 +21,11 @@ function(dom,
         Button,
         ContentPane, 
         TabContainer, 
-        BorderContainer){
+        BorderContainer,
+        
+        GRID_STRUCTURES,
+        auGridSetup
+        ){
 
 		function makeDoms(){
 
@@ -108,21 +115,21 @@ function(dom,
 																			"contact_list_container"
 																			);
 			contactTabs.addChild(contactListPane);
-			setupContactGrid(urlObj.contactUrl);
+			auGridSetup.setupContactGrid(urlObj.contactUrl);
 			var phoneListPane   = new ContentPane({id:"phone_list_container",
 																							title : "Phone"
 																			},
 																			"phone_list_container"
 																			);
 			contactTabs.addChild(phoneListPane);
-			setupPhoneGrid(urlObj.phoneUrl,'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
+			auGridSetup.setupPhoneGrid(urlObj.phoneUrl,'phone_list',GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE);
 			var guardianListPane    = new ContentPane({id:"guardian_list_container",
 													  title : "Guardian"
                                                       },
                                                       "guardian_list_container"
 										);
 			contactTabs.addChild(guardianListPane);
-			setupGuardianGrid(urlObj.guardianUrl);
+			auGridSetup.setupGuardianGrid(urlObj.guardianUrl);
 
 			demographicsTab.startup();
 
@@ -133,115 +140,108 @@ function(dom,
 
 		function makeButtons(){
 		//{% if perms.patient.add_patientcontact %}
-    var addContactButton =  new Button({
-                                  label: "Add",
-                                  title: "Add New Contact Details",
-                                  iconClass: "addPatientContactIcon_16",
-                                  onClick: function(){
-                                            require(["dojo/_base/xhr", "dojo/_base/array"],
-                                            function(xhr, array){
-                                                xhr.get({
-                                                        url: "{%url contact_json %}"+
-                                                             "?patient_id="+
-                                                             dom.byId("selected_patient_id_info").innerHTML +
-                                                             "&action=add",
-                                                        load: function(html){
-                                                                      var myDialog = dijit.byId("editPatientDialog");
-                                                                      myDialog.set('content', html);
-                                                                      myDialog.set('title', "Add Postal Address Information");
-                                                                      myDialog.show();
-                                                              }
-                                                 });
-                                            });
-                                 }
+          var addContactButton =  new Button({
+                                        label: "Add",
+                                        title: "Add New Contact Details",
+                                        iconClass: "addPatientContactIcon_16",
+                                        onClick: function(){
+                                                  require(["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                      xhr.get({
+                                                              url: CHOSEN_PATIENT.contactadd,
+                                                              load: function(html){
+                                                                            var myDialog = dijit.byId("editPatientDialog");
+                                                                            myDialog.set('content', html);
+                                                                            myDialog.set('title', "Add Postal Address Information");
+                                                                            myDialog.show();
+                                                                    }
+                                                      });
+                                                  });
+                                      }
+                                    },
+                                    domConstruct.create('button',
+                                                        {type : "button",
+                                                        id   : "addContactButton"
+                                                        },
+                                                        "contact_list",
+                                                        "before"
+                                    )
+          );
+
+              //{% endif %}
+
+
+              //{% if perms.patient.add_patientphone %}
+
+          var addPhoneButton =  new Button({
+                                          label: "Add",
+                                          title: "Add New Phone Numbers",
+                                          iconClass: "addPatientPhoneIcon_16",
+                                          onClick: function(){
+                                                require(
+                                                  ["dojo/_base/xhr", "dojo/_base/array"],
+                                                  function(xhr, array){
+                                                    xhr.get({
+                                                      url: CHOSEN_PATIENT.phoneadd,
+                                                      load: function(html){
+                                                                  var myDialog = dijit.byId("editPatientDialog");
+                                                                  myDialog.set('content', html);
+                                                                  myDialog.set('title', "Add Phone Numbers");
+                                                                  myDialog.show();
+                                                            }
+                                                  });
+                                                })
+                                          }
                               },
                               domConstruct.create('button',
-                                                  {type : "button",
-                                                   id   : "addContactButton"
+                                                  {type :"button",
+                                                  id   :"addPhoneButton"
                                                   },
-                                                  "contact_list",
+                                                  "phone_list",
                                                   "before"
                               )
-    );
+              );
 
-		//{% endif %}
+              //{% endif %}
 
-
-		//{% if perms.patient.add_patientphone %}
-
-    var addPhoneButton =  new Button({
-                                    label: "Add",
-                                    title: "Add New Phone Numbers",
-                                    iconClass: "addPatientPhoneIcon_16",
-                                    onClick: function(){
-                                           require(
-                                            ["dojo/_base/xhr", "dojo/_base/array"],
-                                            function(xhr, array){
-                                              xhr.get({
-                                                url: "{%url phone_json %}"+"?patient_id="+
-                                                       dom.byId("selected_patient_id_info").innerHTML +
-                                                      "&action=add",
-                                                load: function(html){
-                                                             var myDialog = dijit.byId("editPatientDialog");
-                                                             myDialog.set('content', html);
-                                                             myDialog.set('title', "Add Phone Numbers");
-                                                             myDialog.show();
-                                                       }
-                                             });
-                                           })
-                                    }
-                         },
-                         domConstruct.create('button',
-                                            {type :"button",
-                                             id   :"addPhoneButton"
-                                            },
-                                            "phone_list",
-                                            "before"
-                         )
-		);
-
-		//{% endif %}
-
-		//{%if perms.patient.add_patientguardian %}
-    var addGuardianButton =  new Button({
-                                        label: "Add",
-                                        title:"Add Guardian Details",
-                                        iconClass: "dijitIconNewTask",
-                                        onClick: function(){
-                                               require(
-                                                ["dojo/_base/xhr", "dojo/_base/array"],
-                                                function(xhr, array){
-                                                  xhr.get({
-                                                    url: "{%url guardian_json %}"+"?patient_id="+
-                                                          dom.byId("selected_patient_id_info").innerHTML +
-                                                          "&action=add",
-                                                    load: function(html){
-                                                             var myDialog = dijit.byId("editPatientDialog");
-                                                             myDialog.set('content', html);
-                                                             myDialog.set('title', "Add Guardian Information ");
-                                                             myDialog.show();
-                                                          }
-                                                 });
-                                               })
-                                        }
-                         },
-                         domConstruct.create('button',
-                                              {type : "button",
-                                               id   : "addGuardianButton"
-                                              },
-                                              "guardian_list",
-                                              "before")
-    );
-		//{% endif %}
+              //{%if perms.patient.add_patientguardian %}
+          var addGuardianButton =  new Button({
+                                              label: "Add",
+                                              title:"Add Guardian Details",
+                                              iconClass: "dijitIconNewTask",
+                                              onClick: function(){
+                                                    require(
+                                                      ["dojo/_base/xhr", "dojo/_base/array"],
+                                                      function(xhr, array){
+                                                        xhr.get({
+                                                          url: CHOSEN_PATIENT.guardianadd,
+                                                          load: function(html){
+                                                                  var myDialog = dijit.byId("editPatientDialog");
+                                                                  myDialog.set('content', html);
+                                                                  myDialog.set('title', "Add Guardian Information ");
+                                                                  myDialog.show();
+                                                                }
+                                                      });
+                                                    })
+                                              }
+                              },
+                              domConstruct.create('button',
+                                                    {type : "button",
+                                                    id   : "addGuardianButton"
+                                                    },
+                                                    "guardian_list",
+                                                    "before")
+          );
+              //{% endif %}
 
 	}
 
     return {
         constructor: function (urlObj){
-                        makeDoms();
-                        makeDijits(urlObj);
-                        makeButtons();
-                     };
+                          makeDoms();
+                          makeDijits(urlObj);
+                          makeButtons();
+                     }
     }
 
 });
