@@ -1,15 +1,17 @@
-function (urlObj/* URL DICT */){
-    require([
-            "dojo/dom",
-            "dojo/dom-style",
-            "dojo/query",
-            "dojo/dom-construct",
+define([
+      "dojo/dom",
+      "dojo/dom-style",
+      "dojo/query",
+      "dojo/dom-construct",
 
-            "dijit/registry",
-            "dijit/form/Button",
-            "dojox/layout/ContentPane",
-            "dijit/layout/TabContainer",
-            "dijit/layout/BorderContainer",
+      "dijit/registry",
+      "dijit/form/Button",
+      "dojox/layout/ContentPane",
+      "dijit/layout/TabContainer",
+      "dijit/layout/BorderContainer",
+      
+      'aushadha/grid/grid_structures',
+      'aushadha/grid/grid_setup'
     ], 
     function(dom, 
              domStyle,
@@ -19,7 +21,11 @@ function (urlObj/* URL DICT */){
             Button,
             ContentPane, 
             TabContainer, 
-            BorderContainer){
+            BorderContainer,
+
+            GRID_STRUCTURES,
+            auGridSetup
+            ){
 
         function makeDoms(){
             domConstruct.create('div',
@@ -108,8 +114,8 @@ function (urlObj/* URL DICT */){
             );
             registry.byId('patientContextTabs').addChild(medicationListTab);
 
-            setupMedicationListGrid(CHOSEN_PATIENT.medicationlistjson);
-            setupAllergiesGrid(CHOSEN_PATIENT.allergiesjson);
+            auGridSetup.setupMedicationListGrid(CHOSEN_PATIENT.medicationlistjson);
+            auGridSetup.setupAllergiesGrid(CHOSEN_PATIENT.allergiesjson);
 
             medicationListTab.startup();
 
@@ -181,11 +187,12 @@ function (urlObj/* URL DICT */){
 
         }
 
-    makeDoms();
-    makeDijits();
-    makeButtons();
+    return {
+     constructor: function(){
+                      makeDoms();
+                      makeDijits();
+                      makeButtons();
+                  }
+    }
 
-    });
-
-
-}
+});

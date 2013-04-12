@@ -1,5 +1,4 @@
-function (urlToCall){
-  require([
+define([
           "dojo/dom",
           "dojo/dom-style",
           "dojo/query",
@@ -9,7 +8,7 @@ function (urlToCall){
           "dijit/form/Button",
           "dojox/layout/ContentPane",
           "dijit/layout/TabContainer",
-          "dijit/layout/BorderContainer",
+          "dijit/layout/BorderContainer"
   ],
   function(dom,
            domStyle,
@@ -40,7 +39,7 @@ function (urlToCall){
 
     }
 
-    function makeDijits(){
+    function makeDijits(urlToCall){
       console.log("Making Dijits for Social History Form..");
       var socialHistoryTab = new ContentPane({ title     : "Social History",
                                               closable  : true,
@@ -65,10 +64,11 @@ function (urlToCall){
 
     }
 
-  makeDoms();
-  makeDijits();
+    return{
+      constructor: function(urlToCall){
+                        makeDoms();
+                        makeDijits(urlToCall);
+      }
+    }
 
-  });
-
-
-}
+});

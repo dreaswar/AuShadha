@@ -1,5 +1,4 @@
-declare(
-  'aushadha.Resources',
+define(
   function(){
     return{
       icons:{

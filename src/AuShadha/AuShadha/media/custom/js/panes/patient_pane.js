@@ -326,6 +326,7 @@ function(dom,
                                                     'patientSynopsisTopContentPane'
                                                   );
                             topBorderContainer.addChild(topContentPane);
+
                             console.log("Added topContentPane");
                             console.log(topContentPane);
 

@@ -1,5 +1,4 @@
-function createSurgicalHistoryTab(){
-    require([
+define([
             "dojo/dom",
             'dojo/dom-class',
             'dojo/dom-style',
@@ -14,6 +13,10 @@ function createSurgicalHistoryTab(){
             "dijit/Dialog",
             "dojo/request",
             "dojo/json",
+
+            'aushadha/grid/grid_structures',
+            'aushadha/grid/grid_setup',
+
             "dojo/domReady!"
             ],
     function(dom,
@@ -21,6 +24,7 @@ function createSurgicalHistoryTab(){
              domStyle,
              domConstruct,
              on,
+
              registry,
              BorderContainer,
              ContentPane,
@@ -28,7 +32,10 @@ function createSurgicalHistoryTab(){
              Button,
              Dialog,
              request,
-             JSON
+             JSON,
+
+             GRID_STRUCTURES,
+             auGridSetup
     ){
 
           function createHistoryDoms(){
@@ -97,15 +104,17 @@ function createSurgicalHistoryTab(){
           function fillData(){
             //{% if perms.patient %}
               var surgicalHistoryUrl   = CHOSEN_PATIENT.surgicalhistoryjson;
-              setupSurgicalHistoryGrid(surgicalHistoryUrl);
+              auGridSetup.setupSurgicalHistoryGrid(surgicalHistoryUrl);
               registry.byId("patientContextTabs").selectChild('patientSurgicalHistoryTab');
             //{% endif %}
           }
 
-           createHistoryDoms();
-           createHistoryDijits();
-           createButtons();
-           fillData();
-
+        return {
+                  constructor: function(){
+                                  createHistoryDoms();
+                                  createHistoryDijits();
+                                  createButtons();
+                                  fillData();
+                  }
+          }
     });
-}

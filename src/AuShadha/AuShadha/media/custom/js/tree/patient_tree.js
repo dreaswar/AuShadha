@@ -14,17 +14,21 @@ function buildPatientTree(){
       "dojo/dom-style",
       "dojo/json",
 
+      'dojox/fx/scroll',
+      'dojo/query',
+
       'aushadha/panes/demographics_tab',
       'aushadha/panes/family_history_tab',
       'aushadha/panes/medical_history_tab',
-      /*
       'aushadha/panes/surgical_history_tab',
+      'aushadha/panes/social_history_tab',
+      'aushadha/panes/medication_list_tab'      
+      
+      /*
       'aushadha/panes/obstetric_history_tab',
       'aushadha/panes/neonatal_and_paediatric_exam_tab',
-      'aushadha/panes/social_history_tab',
       'aushadha/panes/gynaecology_history_tab',
-      'aushadha/panes/medication_list_tab'
-*/
+      */
 
   ], 
   function(win,
@@ -38,9 +42,15 @@ function buildPatientTree(){
           domConstruct, 
           domStyle, 
           JSON,
+          scroll,
+          query,
+
           demographicsTab,
           familyHistoryTab,
-          medicalHistoryTab
+          medicalHistoryTab,
+          surgicalHistoryTab,
+          socialHistoryTab,
+          medicationListTab
           ){
 
     // Create store 
@@ -85,12 +95,7 @@ function buildPatientTree(){
       var patientTree = new Tree({
           model   : patientTreeModel,
           showRoot: false,
-          onClick : function(item){
-
-                      var allowed_items     = ['Visits','Admissions',"Investigations","Imaging"];
-                      var centerTopTabPane  = registry.byId("centerTopTabPane");
-
-                      if (item.name == "Synopsis" || item.id == 'SYNOPSIS'){
+          startup : function(){
                         require(['dojo/dom',
                                 'dijit/registry',
                                 'dojo/dom-style',
@@ -117,16 +122,21 @@ function buildPatientTree(){
                             request(CHOSEN_PATIENT.patientsummary).
                             then(
                               function(html){
-                                if(dom.byId('patientSynopsisContainer')){
-                                  dom.byId('patientSynopsisContainer').remove();
-                                }
-                                domConstruct.create('div',
-                                                    {id: 'patientSynopsisContainer'},
-                                                    'patientSynopsisTopContentPane',
-                                                    'first');
-                                dom.byId('patientSynopsisContainer').innerHTML = html;
 
-                                query('#patientSynopsisContainer > div').
+                                var centerTopTabPane  = registry.byId("centerTopTabPane");
+
+//                                 if(dom.byId('patientSynopsisContainer')){
+//                                   dom.byId('patientSynopsisContainer').remove();
+//                                 }
+//                                 if(! dom.byId('patientSynopsisSynopsisContainer')){
+//                                   domConstruct.create('div',
+//                                                       {id: 'patientSynopsisContainer'},
+//                                                       'patientSynopsisTopContentPane',
+//                                                       'first');
+//                                 }
+                                registry.byId('patientSynopsisTopContentPane').set('content',html);
+
+                                query('#patientSynopsisTopContentPane > div').
                                   forEach( function(node, index, nodeList){
                                     console.log("setting styles...")
                                     domStyle.set(node,
@@ -141,41 +151,72 @@ function buildPatientTree(){
                                   }
                                 );
 
-                                query('#patientSynopsisContainer > div :hover').
-                                  forEach( function(node, index, nodeList){
-                                    console.log("setting styles...")
-                                    domStyle.set(node,
-                                                {
-                                                  background   : "#faf9ff",
-                                                }
-                                    );
-                                  }
-                                );
+//                                 query('#patientSynopsisContainer > div :hover').
+//                                   forEach( function(node, index, nodeList){
+//                                     console.log("setting styles...")
+//                                     domStyle.set(node,
+//                                                 {
+//                                                   background   : "#faf9ff",
+//                                                 }
+//                                     );
+//                                   }
+//                                 );
 
                               },
                               function(error){
                                   publishError("ERROR!: " + error);
                               }
                             );
-                          }
+                           }
                         )
+          },
+          onClick : function(item){
+
+                      var allowed_items     = ['Visits','Admissions',"Investigations","Imaging"];
+                      var centerTopTabPane  = registry.byId("centerTopTabPane");
+
+                      function scrollToSynopsis(domId /* Id of the DOM */) {
+                          scroll({
+                              node : query("#patientSynopsisTopContentPane #"+ domId),
+                              win  : dom.byId('patientSynopsisTopContentPane')
+                          }).play();
+                      }
+
+                      if (item.name == "History" ){
+                          scrollToSynopsis('patientHistoryContainer');
                       }
 
                       if (item.name == "Medical History" || 
                           item.type == 'medical_history_module'){
-//                             setUpVisitTab();
-//                               createHistoryTabs();
+                          scrollToSynopsis('patientMedicalHistoryContainer');
                       }
 
                       if (item.name == "Surgical History" || 
                           item.type == 'surgical_history_module'){
-//                             setUpVisitTab();
+                          scrollToSynopsis('patientSurgicalHistoryContainer');
                       }
 
                       if (item.name == "Demographics" || 
                           item.type == 'demographics_module'){
-
+                          scrollToSynopsis('patientDemographicsContainer');
                       }
+
+                      if (item.name == "Social History" || 
+                          item.type == 'social_history_module'){
+                          scrollToSynopsis('patientSocialHistoryContainer');
+                      }
+
+                      if (item.name == "Family History" || 
+                          item.type == 'family_history_module'){
+                          scrollToSynopsis('patientFamilyHistoryContainer');
+                      }
+
+                      if (item.name == "Medications" || 
+                          item.type == 'medication_list_module'){
+                          scrollToSynopsis('patientMedicationsContainer');
+                      }
+
+                      
 
           },
           onDblClick: function(item,node,evt){
@@ -196,7 +237,7 @@ function buildPatientTree(){
                         if(item.name =="Social History" || item.type=="social_history_module"){
                                 if(!registry.byId('socialHistoryTab') ){
                                     console.log(CHOSEN_PATIENT);
-                                    makeSocialHistoryTab(CHOSEN_PATIENT.socialhistoryadd);
+                                    socialHistoryTab.constructor(CHOSEN_PATIENT.socialhistoryadd);
                                 }
                                 else{
                                   registry.byId("patientContextTabs").selectChild(
@@ -232,7 +273,7 @@ function buildPatientTree(){
                         if(item.name =="Surgical History" || item.type=="surgical_history_module"){
                                 if(!registry.byId('patientSurgicalHistoryTab') ){
                                     console.log(CHOSEN_PATIENT);
-                                    makeSurgicalHistoryTab(CHOSEN_PATIENT.surgicalhistoryjson);
+                                    surgicalHistoryTab.constructor();
                                 }
                                 else{
                                   registry.byId("patientContextTabs").selectChild(
@@ -244,7 +285,7 @@ function buildPatientTree(){
                         if(item.name =="Medications" || item.type=="medication_list_module"){
                                 if(!registry.byId('medicationListTab') ){
                                     console.log(CHOSEN_PATIENT);
-                                    makeMedicationListTab(CHOSEN_PATIENT.medicationlistjson);
+                                    medicationListTab.constructor();
                                 }
                                 else{
                                   registry.byId("patientContextTabs").selectChild(

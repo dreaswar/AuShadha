@@ -283,9 +283,9 @@ def render_patient_tree(request,id = None):
          "identifier": "id"   ,
          "label"     : "name" ,
          "items"     : [
-                          {"name"    : "Synopsis"   ,
+                          {"name"    : "History"   ,
                            "type"    : "application",
-                           "id"      : "SYNOPSIS",
+                           "id"      : "HISTORY",
                            'len'     : 1,
                            "addUrl"  : None,
                            'children':[ 
