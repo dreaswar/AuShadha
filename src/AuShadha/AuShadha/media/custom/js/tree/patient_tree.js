@@ -1,7 +1,6 @@
 function buildPatientTree(){
   require([
-      "dojo/_base/window",
-
+      'dojo/window',
       "dojo/store/Memory",
       "dijit/tree/ObjectStoreModel",
       "dijit/Tree",
@@ -15,6 +14,7 @@ function buildPatientTree(){
       "dojo/json",
 
       'dojox/fx/scroll',
+
       'dojo/query',
 
       'aushadha/panes/demographics_tab',
@@ -176,16 +176,30 @@ function buildPatientTree(){
                       var centerTopTabPane  = registry.byId("centerTopTabPane");
 
                       function scrollToSynopsis(domId /* Id of the DOM */) {
+                          /*
                           scroll({
                               node : query("#patientSynopsisTopContentPane #"+ domId),
                               win  : dom.byId('patientSynopsisTopContentPane')
                           }).play();
+                          */
+                          win.scrollIntoView(domId);
                       }
 
-                      if (item.name == "History" ){
-                          scrollToSynopsis('patientHistoryContainer');
+                      var treeItemDivMap={
+                        'History'           : 'patientHistoryContainer',
+                        'Medical History'   : 'patientMedicalHistoryContainer',
+                        'Surgical History'  : 'patientSurgicalHistoryContainer',
+                        'Family History'    : 'patientFamilyHistoryContainer',
+                        'Social History'    : 'patientSocialHistoryContainer',
+                        'Medications'       : 'patientMedicationsContainer',
+                        'Demographics'      : 'patientDemographicsContainer'
                       }
 
+                      if ( treeItemDivMap[item.name]){
+                          scrollToSynopsis(treeItemDivMap[item.name]);
+                      }
+
+                      /*
                       if (item.name == "Medical History" || 
                           item.type == 'medical_history_module'){
                           scrollToSynopsis('patientMedicalHistoryContainer');
@@ -215,8 +229,8 @@ function buildPatientTree(){
                           item.type == 'medication_list_module'){
                           scrollToSynopsis('patientMedicationsContainer');
                       }
+                      */
 
-                      
 
           },
           onDblClick: function(item,node,evt){
