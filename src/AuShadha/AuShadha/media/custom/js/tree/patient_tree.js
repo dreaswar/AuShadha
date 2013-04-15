@@ -191,8 +191,7 @@ function buildPatientTree(){
                         'Surgical History'  : 'patientSurgicalHistoryContainer',
                         'Family History'    : 'patientFamilyHistoryContainer',
                         'Social History'    : 'patientSocialHistoryContainer',
-                        'Medications'       : 'patientMedicationsContainer',
-                        'Demographics'      : 'patientDemographicsContainer'
+                        'Medications'       : 'patientMedicationsContainer'
                       }
 
                       if ( treeItemDivMap[item.name]){

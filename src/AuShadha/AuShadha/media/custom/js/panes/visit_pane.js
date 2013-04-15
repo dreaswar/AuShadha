@@ -72,7 +72,7 @@ define(
                             this.displayPatientName();                            
                             this.initialized = true;
 
-//                             new buildVisitTree();
+                            new buildVisitTree();
 //                             console.log("Visit Sidebar Tree Done..");
                             /*
                               if(!this.menuBar){
@@ -99,7 +99,7 @@ define(
                                   getIndexOfChild(registry.byId('visitHomeContentPane')) != -1 
                             ){
                             registry.byId('centerTopTabPane').
-                                        removeChild( registry.byId('visitHomeContentPane') );
+                                  removeChild( registry.byId('visitHomeContentPane') );
                             registry.byId('visitHomeContentPane').destroyRecursive(false);
                             }
                           console.log("Destroyed Visit Pane");                  
@@ -155,6 +155,18 @@ define(
                                             },
                                             'visitPaneContentBorderContainer',
                                             1);
+                          domConstruct.create('div',
+                                              {id    : "visitLSidebarTreeContainer", 
+                                                style : "height: 100%; width: 20em"
+                                              },
+                                              'visitPaneLSidebar',
+                                              0);
+                          domConstruct.create('div',
+                                            {id    : "visitLSidebarTreeDiv", 
+                                              style : "height: 100%; width: 20em"
+                                            },
+                                            'visitLSidebarTreeContainer',
+                                            0);
 
                         domConstruct.create('div',
                                             {id: "visitPaneContentArea" 

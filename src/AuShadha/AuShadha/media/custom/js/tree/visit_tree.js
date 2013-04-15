@@ -20,33 +20,34 @@ function buildVisitTree(){
               dom, registry,
               domConstruct, domStyle, JSON){
 
-    var existingTree = registry.byId('patientVisitTreeDiv');
+    var existingTree = registry.byId('visitLSidebarTreeDiv');
 
      if(existingTree){
        console.log("Tree exists.. proceeding to destroy it..")
        existingTree.destroyRecursive();
      }
 
-     console.log(registry.byId("patientVisitTreeDiv"));
-     if(!dom.byId("patientVisitTreeDiv")){
+     console.log(registry.byId("visitLSidebarTreeDiv"));
+     if(!dom.byId("visitLSidebarTreeDiv")){
         domConstruct.create('div',
                             {id: "patientVisitTreeDiv"},
-                            "patientVisitTreeContainer",
+                            "visitLSidebarTreeContainer",
                             "first"
         );
-        domStyle.set( dom.byId('patientVisitTreeDiv'),{'minWidth':'200px',
-                                                  'maxWidth':'300px',
-                                                  'minHeight':"400px",
-                                                  'overflow':"auto"
+        domStyle.set( dom.byId('visitLSidebarTreeDiv'),
+                      {'minWidth' : '200px',
+                       'maxWidth' : '300px',
+                       'minHeight': "400px",
+                       'overflow' : "auto"
         });
-    }
+     }
 
      // Create store
      var patientVisitTreeStore = new ItemFileReadStore({url: CHOSEN_PATIENT.visittree,
                                                         clearOnClose:true,
                                                         heirarchial:false
-    });
-    console.log(patientVisitTreeStore);
+     });
+     console.log(patientVisitTreeStore);
 
 
     // Create the model
@@ -139,33 +140,15 @@ function buildVisitTree(){
               model   : patientVisitTreeModel,
               showRoot: false,
               onClick: function(item){
-
-												if (item.id == "NEW_OPD_VISIT"){
-													var addVisitUrl = CHOSEN_PATIENT.visitadd;
-													if( registry.byId("newVisitAddForm") != undefined){
-														registry.byId("newVisitAddForm").destroyRecursive();
-													}
-													registry.byId("editPatientDialog").set('href' , CHOSEN_PATIENT.visitadd);
-													registry.byId("editPatientDialog").set('title', "Record New Visit");
-													registry.byId('editPatientDialog').show();
-                        }
-
-												if (item.name == "Visits"){
-                          setUpVisitTab();
-                        }
-
-                        if (item.name == "Admissions"){
-                          setUpAdmissionTab();
-                        }
-
+                        
               }
           },
-          'patientVisitTreeDiv');
+          'visitLSidebarTreeDiv');
 
           //patientVisitTree.getIconClass = setVisitTreeIcons;
           console.log("Setting Tree icons complete");
 
-         //patientVisitTree.placeAt('patientVisitTreeDiv')
+         //patientVisitTree.placeAt('visitLSidebarTreeDiv')
           patientVisitTree.startup();
          //patientVisitTree.expandAll();
          //patientVisitTree.collapseAll();

@@ -31,7 +31,7 @@ from datetime                        import datetime, date, time
 from aushadha_users.models            import AuShadhaUser
 from clinic.models                   import Clinic, Staff
 from visit.models                    import *
-from patient.models                  import PatientDetail, PatientDemographicsData
+from patient.models                  import *
 from admission.models                import Admission
 from physician.models                import PhysicianDetail
 from inv_and_imaging.models          import LabInvestigationRegistry, ImagingInvestigationRegistry
@@ -84,7 +84,7 @@ def render_visit_tree(request,id = None):
 
       demographics_obj      = PatientDemographicsData.objects.filter(patient_detail = pat_obj)
       social_history_obj    = PatientSocialHistory.objects.filter(patient_detail = pat_obj)
-      family_history_obj    = PatientFamilylHistory.objects.filter(patient_detail = pat_obj)
+      family_history_obj    = PatientFamilyHistory.objects.filter(patient_detail = pat_obj)
       medical_history_obj   = PatientMedicalHistory.objects.filter(patient_detail = pat_obj)
       surgical_history_obj  = PatientSurgicalHistory.objects.filter(patient_detail = pat_obj)
 
@@ -98,55 +98,55 @@ def render_visit_tree(request,id = None):
          "identifier": "id"   ,
          "label"     : "name" ,
          "items"     : [None,
-												{"name"  : "Visits"    , "type":"application", "id":"VISITS",
-													"len"   : len(visit_obj),
-													"addUrl": pat_obj.get_patient_visit_add_url(),
-													'children':[
-																		{"name"  : "SOAP Notes" , "type":"application", "id":"SOAP_NOTES" ,
-																		"len"   : 1,
-																		"addUrl": None,
-																		},
+                        {"name"  : "Visits"    , "type":"application", "id":"VISITS",
+                            "len"   : len(visit_obj),
+                            "addUrl": pat_obj.get_patient_visit_add_url(),
+                            'children':[
+                                {"name"  : "SOAP Notes" , "type":"application", "id":"SOAP_NOTES" ,
+                                "len"   : 1,
+                                "addUrl": None,
+                                },
 
-																		#{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
-																		#"len"   : 1,
-																		#"addUrl": None,
-																		#},
+                                #{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
+                                #"len"   : 1,
+                                #"addUrl": None,
+                                #},
 
-																		{"name"  : "Advice" , "type":"application","id":"ADVICE" ,
-																		"len"   : 1,
-																		"addUrl": None,
-																		},
+                                {"name"  : "Advice" , "type":"application","id":"ADVICE" ,
+                                "len"   : 1,
+                                "addUrl": None,
+                                },
 
-																		{"name"  : "Procedure" , "type":"application", "id":"PROC" ,
-																		"len"   : 1,
-																		"addUrl": None,
-																		},
+                                {"name"  : "Procedure" , "type":"application", "id":"PROC" ,
+                                "len"   : 1,
+                                "addUrl": None,
+                                },
 
-																		#{"name"  : "Investigation" , "type":"application", "id":"INV" ,
-																		#"len"   : 1,
-																		#"addUrl": None,
-																		#},
-																		#{"name"  : "Imaging"      , "type":"application", "id":"IMAG" ,
-																		#"len"   : 1,
-																		#"addUrl": None,
-																		#},
+                                {"name"  : "Investigation" , "type":"application", "id":"INV" ,
+                                "len"   : 1,
+                                "addUrl": None,
+                                },
+                                {"name"  : "Imaging"      , "type":"application", "id":"IMAG" ,
+                                "len"   : 1,
+                                "addUrl": None,
+                                },
 
-																		#{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
-																		#"len"   : 1,
-																		#"addUrl": None,
-																		#},
+                                #{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
+                                #"len"   : 1,
+                                #"addUrl": None,
+                                #},
 
-																		#{"name"  : "Media" , "type":"application", "id":"MEDIA" ,
-																		#"len"   : 1,
-																		#"addUrl": None,
-																		#},
+                                {"name"  : "Media" , "type":"application", "id":"MEDIA" ,
+                                "len"   : 1,
+                                "addUrl": None,
+                                },
 
-																		{"name"  : "Documents" , "type":"application", "id":"DOCS" ,
-																		"len"   : 1,
-																		"addUrl": None,
-																		}
-													]
-												}
+                                {"name"  : "Documents" , "type":"application", "id":"DOCS" ,
+                                "len"   : 1,
+                                "addUrl": None,
+                                }
+                            ]
+                        }
                     ],
       }
 
@@ -158,7 +158,7 @@ def render_visit_tree(request,id = None):
 													  "addUrl": pat_obj.get_patient_visit_add_url()
                            }
       if visit_obj:
-        data['items'][1]['children'] = []
+        data['items'][0]['children'] = []
         children_list  = data['items'][1]['children']
         sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
         for visit in visit_obj:

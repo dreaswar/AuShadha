@@ -19,6 +19,8 @@ define([
   'aushadha/panes/event_controller',
   'aushadha/grid/grid_setup',
   'aushadha/tree/patient_tree',
+  'aushadha/tree/admission_tree',
+  'aushadha/tree/visit_tree',
   'aushadha/menu/patient_menu'
   ],
   function(on,
@@ -40,13 +42,19 @@ define([
            auPanes,
            auPaneEventController,
            auGrids,
-           auTrees,
+           auPatientTree,
+           auAdmissionTree,
+           auVisitTree,
            auMenu
           ){
 
     var auEvents={
-        treeEvents: function(auTrees){
-          
+        treeEvents: function(obj){
+          return {auPatientTree   : auPatientTree, 
+                  auAdmissionTree : auAdmissionTree, 
+                  auVisitTree     : auVisitTree
+            
+          }
         },
         gridEvents: function(auGrids){
           

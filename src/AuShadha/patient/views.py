@@ -191,6 +191,7 @@ def return_patient_json(patient, success = True):
         data_to_append['admissionlist']   = patient.get_patient_admission_list_url()
         data_to_append['admissionjson']   = patient.get_patient_admission_list_url()
 #        data_to_append['admissionjson']  = APP_ROOT_URL+"pat/admission_json/"+ patient_id
+#        data_to_append['admissiontree']   = APP_ROOT_URL+"admission/render_admission_tree/?patient_id="+ patient_id
 
         data_to_append['visitadd']      = patient.get_patient_visit_add_url()
         data_to_append['visitlist']     = patient.get_patient_visit_list_url()
@@ -987,10 +988,12 @@ def render_patient_list(request):
       addData['admissionadd']    = patient.get_patient_admission_add_url()
       addData['admissionlist']   = patient.get_patient_admission_list_url()
     #        addData['admissionjson']  = APP_ROOT_URL+"pat/admission_json/"+ patient_id
+      #addData['admissiontree']   = APP_ROOT_URL+"admission/render_admission_tree/?patient_id="+ patient_id
 
       addData['visitadd']      = patient.get_patient_visit_add_url()
       addData['visitlist']     = patient.get_patient_visit_list_url()
       addData['visitjson']     = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
+      addData['visittree']     = APP_ROOT_URL+"visit/render_visit_tree/?patient_id="+ patient_id
 
       addData['demographicsadd']   = patient.get_patient_demographics_data_add_url()
       addData['demographicslist']  = patient.get_patient_demographics_data_list_url()

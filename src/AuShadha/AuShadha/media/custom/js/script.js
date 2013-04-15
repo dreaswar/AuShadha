@@ -81,16 +81,17 @@
                request,
 
                auMain
-              )
-      {
+              ){
 
-  // Define Variables to be used later in the app..
+// Define Variables to be used later in the app..
 ready(function(){
   console.log("Starting script script.js");
   
+  /* Run the binders for the Widgets */
   auMain.auEventBinders.searchWidget();
   auMain.auEventBinders.headerPaneSearchWidget();
 
+  /* Attach Basic CRUD functions for Patient Addition */
   function addNewPatient(){
     require(["dojo/_base/xhr",
             "dijit/registry",
@@ -132,8 +133,6 @@ ready(function(){
   );
 //{% endif %}
 
-
-  //genericFormBehaviour();
 
     var patientIdStore = new JsonRest({
             target     : "{%url patient_id_autocompleter %}",
@@ -247,7 +246,7 @@ ready(function(){
 
 
 /*
-Raise an Invalid Form Submission Dialog and return false
+  Raise an Invalid Form Submission Dialog and return false
 */
 function raiseInvalidFormSubmission(){
   require(["dijit/registry"], function(registry){

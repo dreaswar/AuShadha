@@ -32,21 +32,21 @@ function buildAdmissionTree(){
 
            JSON ){
 
-    var existingTree = registry.byId('patientAdmissionTreeDiv');
+    var existingTree = registry.byId('admissionLSidebarTreeDiv');
 
      if(existingTree){
        console.log("Tree exists.. proceeding to destroy it..")
        existingTree.destroyRecursive();
      }
 
-     console.log(registry.byId("patientAdmissionTreeDiv"));
-     if(!dom.byId("patientAdmissionTreeDiv")){
+     console.log(registry.byId("admissionLSidebarTreeDiv"));
+     if(!dom.byId("admissionLSidebarTreeDiv")){
         domConstruct.create('div',
-                            {id: "patientAdmissionTreeDiv"},
-                            "patientAdmissionTreeContainer",
+                            {id: "admissionLSidebarTreeDiv"},
+                            "admissionLSidebarTreeContainer",
                             "first"
         );
-        domStyle.set( dom.byId('patientAdmissionTreeDiv'),{'minWidth':'200px',
+        domStyle.set( dom.byId('admissionLSidebarTreeDiv'),{'minWidth':'200px',
                                                   'maxWidth':'300px',
                                                   'minHeight':"400px",
                                                   'overflow':"auto"
@@ -158,7 +158,7 @@ function buildAdmissionTree(){
 
               }
           },
-          'patientAdmissionTreeDiv');
+          'admissionLSidebarTreeDiv');
 
 //           patientAdmissionTree.getIconClass = setAdmissionTreeIcons;
           console.log("Setting Tree icons complete");

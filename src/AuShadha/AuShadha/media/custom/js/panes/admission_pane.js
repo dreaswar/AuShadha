@@ -72,7 +72,7 @@ define(
                             this.displayPatientName();                            
                             this.initialized = true;
 
-//                             new buildAdmissionTree();
+                            new buildAdmissionTree();
 //                             console.log("Admission Sidebar Tree Done..");
                             /*
                               if(!this.menuBar){
@@ -155,6 +155,18 @@ define(
                                             },
                                             'admissionPaneContentBorderContainer',
                                             1);
+                          domConstruct.create('div',
+                                              {id    : "admissionLSidebarTreeContainer", 
+                                                style : "height: 100%; width: 20em"
+                                              },
+                                              'admissionPaneLSidebar',
+                                              0);
+                            domConstruct.create('div',
+                                              {id    : "admissionLSidebarTreeDiv", 
+                                                style : "height: 100%; width: 20em"
+                                              },
+                                              'admissionLSidebarTreeContainer',
+                                              0);
 
                         domConstruct.create('div',
                                             {id: "admissionPaneContentArea" 
@@ -185,17 +197,15 @@ define(
                                                                        'admissionHomeContentPane'
                                                       );
                         console.log("Trying to add AdmissionHomePane");
-//                         debugger
                         centerTopTabPane.addChild(admissionHomeContentPane,1);
-//                         debugger
                         console.log(admissionHomeContentPane);
-//                         debugger
+
                         var admissionPaneContentBorderContainer = new BorderContainer({id:"admissionPaneContentBorderContainer"
                                                                                       }, 
                                                                                       'admissionPaneContentBorderContainer');
                         admissionHomeContentPane.addChild(admissionPaneContentBorderContainer);
                         console.log(admissionPaneContentBorderContainer);
-                        
+
                         var admissionPaneTopbar    = new ContentPane({id        : "admissionPaneTopbar",
                                                                       region    : 'top', 
                                                                       splitter  : false
