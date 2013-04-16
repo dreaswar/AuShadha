@@ -65,13 +65,37 @@ define([
         menuEvents: function(auMenu){
           
         },
+        formEvents : function(){
+                        /*
+                        (function (){ // A Visit Pane Event Binder . Allow autoscrolling to the ROS section//
+                            require(['dojo/window',
+                                      'dojo/_base/window',
+                                      'dojo/dom', 
+                                      'dojo/on', 
+                                      'dojo/topic'], 
+                            function(win, w,dom, on){
+                              on( w.body(), 
+                                  'click', 
+                                  function(evt){
+                                    if(evt.target.id == 'visitRosAddFormTable'){
+                                      evt.target.open ? win.scrollIntoView('visitRosAddFormTable'):null;
+                                    }
+                                  }
+                              );
+                            });
+                        })();
+                        */
+        },
         getEvent : function(/*String | domId*/id, /*String | eventType*/evt){
           
         },
         setEvent: function(/*String | domId*/id, /*String | eventType*/evt){
           
         },
-
+        startup : function(){
+                      auEvents.formEvents();
+        },
+        
        auPaneEventController : auPaneEventController,
 
        searchWidget : function(){
@@ -142,6 +166,7 @@ define([
 
     };
 
+    auEvents.startup();
     return auEvents;
 
 });  

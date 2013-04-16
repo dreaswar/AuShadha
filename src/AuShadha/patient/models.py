@@ -490,9 +490,6 @@ class PatientDetail(models.Model):
 
     def has_active_admission(self):
         ''' Queries whether a given patient has an active admission
-                returns the string representation of the number of active admissions
-                #FIXME:: May be it is better to make it return a Boolean,
-                          but some feature in Template forced me to do this. 
         '''
         from admission.models import Admission
         id = self.id
@@ -501,8 +498,10 @@ class PatientDetail(models.Model):
         except(TypeError, ValueError, PatientDetail.DoesNotExist):
             return False
         adm_obj = Admission.objects.filter(patient_detail = pat_obj).filter(admission_closed = False)
-        adm_count = unicode(len(adm_obj))
-        return adm_count
+        if adm_obj:
+          return True
+        else:
+          return False
 
     def adm_for_pat(self): 
         ''' Returns the number of admissions for a patient 
@@ -541,6 +540,23 @@ class PatientDetail(models.Model):
             return True
         else:
             return False
+
+    def can_add_new_visit(self):
+      from visit.models     import VisitDetail
+      from admission.models import Admission
+      id = self.id
+      try:
+        pat_obj = PatientDetail.objects.get(pk = id)
+      except(TypeError, ValueError, AttributeError, PatientDetail.DoesNotExist):
+        return False
+      if not self.has_active_visit():
+        if not self.has_active_admission():
+          return True
+        else:
+          return False
+      else:
+        return False
+        
 
 
     def visit_for_pat(self):

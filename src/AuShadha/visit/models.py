@@ -243,6 +243,65 @@ class VisitImaging(AuShadhaBaseModel):
 
 
 
+class VisitROS(AuShadhaBaseModel):
+  __model_label__ = 'visit_ros'
+  
+  const_symp       = models.TextField('Constitutional', max_length = 500, default = "Nil")
+  eye_symp         = models.TextField('Eyes', max_length = 500, default = "Nil")
+  ent_symp         = models.TextField('Ear, Nose, Throat', max_length = 500, default = "Nil")
+  cvs_symp         = models.TextField('Cardiovascular', max_length = 500, default = "Nil")
+  resp_symp        = models.TextField('Respiratory', max_length = 500, default = "Nil")
+  gi_symp          = models.TextField('Gastrointestinal', max_length = 500, default = "Nil")
+  gu_symp          = models.TextField('Genitourinary', max_length = 500, default = "Nil")
+  ms_symp          = models.TextField('Musculoskeletal', max_length = 500, default = "Nil")
+  integ_symp       = models.TextField('Integumentary/ Breast', max_length = 500, default = "Nil")
+  neuro_symp       = models.TextField('Neurological', max_length = 500, default = "Nil")
+  psych_symp       = models.TextField('Psychiatric', max_length = 500, default = "Nil")
+  endocr_symp      = models.TextField('Endocrine', max_length = 500, default = "Nil")
+  hemat_symp       = models.TextField('Haematological', max_length = 500, default = "Nil")
+  immuno_symp      = models.TextField('Immunologic/ Allergic', max_length = 500, default = "Nil")
+  
+  visit_detail              = models.ForeignKey(VisitDetail)
+  created_at                = models.DateTimeField(auto_now_add = True, editable = True)
+
+  def __unicode__(self):
+    return '''%s \n %s \n 
+              %s \n %s \n %s \n 
+              %s \n %s \n %s \n 
+              %s \n %s \n %s \n
+              %s \n %s \n %s \n %s
+           ''' %(self.const_symp, 
+                 self.eye_symp,
+                 self.ent_symp,
+                 self.cvs_symp,
+                 self.resp_symp,
+                 self.gi_symp,
+                 self.gu_symp,
+                 self.ms_symp,
+                 self.integ_symp,
+                 self.neuro_symp,
+                 self.psych_symp,
+                 self.endocr_symp,
+                 self.hemat_symp,
+                 self.immuno_symp,
+                 self.created_at.date().isoformat())
+
+  #def get_edit_url(self):
+    #return '/AuShadha/visit/inv/edit/%s/' %(self.id)
+
+  #def get_del_url(self):
+    #return '/AuShadha/visit/inv/del/%s/' %(self.id)
+
+  def save(self, *args, **kwargs):
+    self.__model_label__ = 'visit_ros'
+    super(VisitROS, self).save(*args, **kwargs)
+
+  class Meta:
+    verbose_name         = "Visit Review of Systems"
+    verbose_name_plural    = "Visit Review of Systems"
+
+
+
 class VisitInv(AuShadhaBaseModel):
 
   __model_label__ = "inv"
@@ -269,10 +328,6 @@ class VisitInv(AuShadhaBaseModel):
     verbose_name         = "Lab Investigation"
     verbose_name_plural    = "Lab Investigation"
     ordering         = ('visit_detail', 'created_at', 'investigation')
-
-
-
-
 
 
 
@@ -346,9 +401,9 @@ class VisitComplaintForm(ModelForm):
                     },
                     {"field"         : 'duration',
                     'max_length'     :  '100'         ,
-                    "data-dojo-type" : "dijit.form.FilteringSelect",
+                    "data-dojo-type" : "dijit.form.ValidationTextBox",
                     "data-dojo-id"   : "visit_complaint_duration",
-                    "data-dojo-props": r" name: 'duration',searchAttr:'id',store:complaintDurationsStore,required:'true', autoComplete:'false'"
+                    "data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
                     },
     ]
 
@@ -370,7 +425,7 @@ class VisitHPIForm(ModelForm):
     text_fields = [
                     {"field"          : 'hpi',
                     'max_length'      : '1000'         ,
-                    "data-dojo-type"  : "dijit.form.SimpleTextarea",
+                    "data-dojo-type"  : "dijit.Editor",
                     "data-dojo-id"    : "visit_hpi",
                     "data-dojo-props" : r"'required' : 'true' ,'regExp':'[a-zA-Z /-_:0-9#]+','invalidMessage' : 'Invalid Character'"
                     },
@@ -468,3 +523,40 @@ class VisitInvForm(ModelForm):
       self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
       self.fields[field['field']].widget.attrs['data-dojo-id'] = field['data-dojo-id']
       self.fields[field['field']].widget.attrs['max_length']      = field['max_length']
+
+
+class VisitROSForm(ModelForm):
+  class Meta:
+    model = VisitROS
+    exclude = ('visit_detail','parent_clinic','created_at')
+  def __init__(self, *args, **kwargs):
+    super(VisitROSForm, self).__init__(*args, **kwargs)
+    form_field_list = ['const_symp',
+                       'eye_symp',
+                       'ent_symp',
+                       'cvs_symp',
+                       'resp_symp',
+                       'gi_symp', 
+                       'gu_symp',
+                       'ms_symp',
+                       'integ_symp',
+                       'neuro_symp',
+                       'psych_symp',
+                       'endocr_symp',
+                       'immuno_symp',
+                       'hemat_symp'
+                       ]
+    for model_field in form_field_list:
+      text_fields = [{"field"           : model_field,
+                      'max_length'      :  '500'         ,
+                      "data-dojo-type"  : "dijit.form.SimpleTextarea",
+                      "data-dojo-id"    : "visit_ros_" + model_field,
+                      "data-dojo-props" : r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
+                      },
+                    ]
+      for field in text_fields:
+        print(self.fields[field['field']].widget);
+        self.fields[field['field']].widget.attrs['data-dojo-type']  = field['data-dojo-type']
+        self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+        self.fields[field['field']].widget.attrs['data-dojo-id'] = field['data-dojo-id']
+        self.fields[field['field']].widget.attrs['max_length']      = field['max_length']

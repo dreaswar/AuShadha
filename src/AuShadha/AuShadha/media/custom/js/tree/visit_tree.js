@@ -11,148 +11,117 @@ function buildVisitTree(){
 
       "dojo/dom",
       "dijit/registry",
-      "dojo/dom-construct","dojo/dom-style","dojo/json"
-  ], function(ready, win,
-              Memory, ObjectStoreModel,
+      "dojo/dom-construct",
+      "dojo/dom-style",
+      "dojo/json",
+      'dojo/request'
+  ], function(ready, 
+              win,
+              Memory, 
+              ObjectStoreModel,
               Tree,
               ForestStoreModel,
               ItemFileReadStore,
-              dom, registry,
-              domConstruct, domStyle, JSON){
+              dom, 
+              registry,
+              domConstruct, 
+              domStyle, 
+              JSON,
+              request
+             ){
 
-    var existingTree = registry.byId('visitLSidebarTreeDiv');
+      var existingTree = registry.byId('visitLSidebarTreeDiv');
 
-     if(existingTree){
-       console.log("Tree exists.. proceeding to destroy it..")
-       existingTree.destroyRecursive();
-     }
+      if(existingTree){
+        console.log("Tree exists.. proceeding to destroy it..")
+        existingTree.destroyRecursive();
+      }
 
-     console.log(registry.byId("visitLSidebarTreeDiv"));
-     if(!dom.byId("visitLSidebarTreeDiv")){
-        domConstruct.create('div',
-                            {id: "patientVisitTreeDiv"},
-                            "visitLSidebarTreeContainer",
-                            "first"
-        );
-        domStyle.set( dom.byId('visitLSidebarTreeDiv'),
-                      {'minWidth' : '200px',
-                       'maxWidth' : '300px',
-                       'minHeight': "400px",
-                       'overflow' : "auto"
-        });
-     }
+      console.log(registry.byId("visitLSidebarTreeDiv"));
+      if(!dom.byId("visitLSidebarTreeDiv")){
+          domConstruct.create('div',
+                              {id: "visitLSidebarTreeDiv"},
+                              "visitLSidebarTreeContainer",
+                              "first"
+          );
+          domStyle.set( dom.byId('visitLSidebarTreeDiv'),
+                        {'minWidth' : '200px',
+                        'maxWidth' : '300px',
+                        'minHeight': "400px",
+                        'overflow' : "auto"
+          });
+      }
 
-     // Create store
-     var patientVisitTreeStore = new ItemFileReadStore({url: CHOSEN_PATIENT.visittree,
-                                                        clearOnClose:true,
-                                                        heirarchial:false
-     });
-     console.log(patientVisitTreeStore);
-
-
-    // Create the model
-      var patientVisitTreeModel = new ForestStoreModel({
-          store: patientVisitTreeStore,
-          query: {type: 'application'},
-          rootId: 'root',
-          rootLabel:"OPD Visits",
-          childrenAttrs:["children"]
+      // Create store
+      var patientVisitTreeStore = new ItemFileReadStore({url: CHOSEN_PATIENT.visittree,
+                                                          clearOnClose:true,
+                                                          heirarchial:false
       });
-
-//       var patientVisitTreeStore = new Memory({
-//           data: [
-//               { id: 'visit',
-//                 name:'Visit 2013-02-01',
-//                 type:'trunk'
-//               },
-//                 { id: 'synopsis',
-//                   name:'Synopsis',
-//                   type:'main_branch',
-//                   parent: 'visit'
-//                 },
-//                 { id: 'investigations',
-//                   name:'Investigations',
-//                   type:'main_branch',
-//                   parent: 'visit'
-//                 },
-//                 { id: 'imaging',
-//                   name:'Imaging',
-//                   type:'main_branch',
-//                   parent: 'visit'
-//                 },
-// 
-//                 { id: 'patient_media',
-//                   name:'Media',
-//                   type:'main_branch',
-//                   parent: 'visit'
-//                 },
-// 
-//                     { id: 'patient_documents',
-//                       name:'Documents',
-//                       type:'second_branch',
-//                       parent: 'patient_media'
-//                     },
-//                     { id: 'patient_images',
-//                       name:'Images',
-//                       type:'second_branch',
-//                       parent: 'patient_media'
-//                     },
-//                     { id: 'patient_videos',
-//                       name:'Videos',
-//                       type:'second_branch',
-//                       parent: 'patient_media'
-//                     }
-// 
-// 
-//           ],
-//           getChildren: function(object){
-//               return this.query({parent: object.id});
-//           }
-// 
-//       });
+      console.log(patientVisitTreeStore);
 
       // Create the model
-//       var patientVisitTreeModel = new ObjectStoreModel({
-//           store: patientVisitTreeStore,
-//           query: {id: 'visit'},
-//           labelAttr: "name"
-//       });
-
+      var patientVisitTreeModel = new ForestStoreModel({
+          store          : patientVisitTreeStore,
+          query          : {type: 'application'},
+          rootId         : 'root',
+          rootLabel      : "OPD Visits",
+          childrenAttrs  : ["children"]
+      });
 
       // Create the Tree.
-      ready(function(){
+      function setVisitTreeIcons(item, opened){
+        //console.log(item.tree.rootNode || "Not defined");
+        if(item.id=='root'){
+          console.log(item.id)
+          console.log("Returning iconclass for tree root..")
+          return 'patientIcon'
+        }
+        else{
+          console.log(item.id)
+          console.log("Returning iconclass for tree root..")
+          return (opened ? "dijitFolderOpened" : "dijitFolderClosed")
+        }
+      }
 
-          function setVisitTreeIcons(item, opened){
-            //console.log(item.tree.rootNode || "Not defined");
-            if(item.id=='root'){
-              console.log(item.id)
-              console.log("Returning iconclass for tree root..")
-              return 'patientIcon'
-            }
-            else{
-              console.log(item.id)
-              console.log("Returning iconclass for tree root..")
-              return (opened ? "dijitFolderOpened" : "dijitFolderClosed")
-            }
+      var patientVisitTree = new Tree({
+          model   : patientVisitTreeModel,
+          showRoot: false,
+          onDblClick: function(item){
+                    if (item.id=='NEW_OPD_VISIT'){
+                      request(item.addUrl).then(
+                        function(html){
+                          registry.byId('editPatientDialog').set('content',html);
+                          registry.byId('editPatientDialog').set('style',{width: 'auto',height:'auto'});
+                          registry.byId('editPatientDialog').set('title',"New Visit: " + CHOSEN_PATIENT.full_name);
+                          registry.byId('editPatientDialog').show();
+                        },
+                        function(err){
+                          publishError(err);
+                        }
+                      );
+                    }
+                    if (item.type=='visit'){
+                      request(item.editUrl).then(
+                        function(html){
+                          registry.byId('editPatientDialog').set('content',html);
+                          registry.byId('editPatientDialog').set('style',{width: 'auto',height:'auto'});
+                          registry.byId('editPatientDialog').set('title',"Edit Visit: " + CHOSEN_PATIENT.full_name);
+                          registry.byId('editPatientDialog').show();
+                        },
+                        function(err){
+                          publishError(err);
+                        }
+                      );
+                    }
           }
+      },
+      'visitLSidebarTreeDiv');
 
-          var patientVisitTree = new Tree({
-              model   : patientVisitTreeModel,
-              showRoot: false,
-              onClick: function(item){
-                        
-              }
-          },
-          'visitLSidebarTreeDiv');
+      //patientVisitTree.getIconClass = setVisitTreeIcons;
+      console.log("Setting Visit Tree icons complete");
 
-          //patientVisitTree.getIconClass = setVisitTreeIcons;
-          console.log("Setting Tree icons complete");
-
-         //patientVisitTree.placeAt('visitLSidebarTreeDiv')
-          patientVisitTree.startup();
-         //patientVisitTree.expandAll();
-         //patientVisitTree.collapseAll();
-      });
+      patientVisitTree.startup();
+      patientVisitTree.expandAll();
 
   });
 }

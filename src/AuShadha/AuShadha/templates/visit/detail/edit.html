@@ -3,8 +3,10 @@
      id             = "newVisitEditForm"
      data-dojo-id   = "newVisitEditForm"
      encType        = "multipart/form-data" 
-		  action 	 =  "" 
-     method    =  "">
+     action 	    =  "" 
+     method         =  ""
+     style          = "overflow: auto;"
+     >
 
 
     <script type="dojo/method" data-dojo-event="onSubmit">
@@ -12,15 +14,24 @@
       require(["dojo/_base/xhr", 
                "dojo/dom", 
                "dojo/json", 
-              "dojo/_base/fx",
-		          "dijit/Dialog",
-		          "dijit/form/Form",
-		          "dijit/form/Button",
+               "dojo/_base/fx",
+		       "dijit/Dialog",
+		       "dijit/form/Form",
+		       "dijit/form/Button",
               "dijit/form/ValidationTextBox", 
               "dijit/form/Select",
               "dijit/registry"
        ],
-       function(xhr, dom, JSON,fx, Dialog, Form, Button, TextBox, Select, registry){
+       function(xhr, 
+                dom, 
+                JSON,
+                fx, 
+                Dialog, 
+                Form, 
+                Button, 
+                TextBox, 
+                Select, 
+                registry){
  							var hasBeenSent = false;
 //						 {% if perms.visit.change_visitdetail %}
 							xhr.post({
@@ -29,85 +40,99 @@
 									load : function(json) {
 											var jsondata = JSON.parse(json)
 											if(jsondata.success == true){
-                        var dialog = dijit.byId("editPatientDialog").hide();
-												buildPatientTree();
-                        buildVisitTree();
-
-/*
-												console.log(jsondata)
-												var data = {
-												 'id'                 : jsondata.id, 
-												 'first_name'         : jsondata.first_name,
-												 'middle_name'        : jsondata.middle_name,
-												 'last_name'          : jsondata.last_name,
-												 'age'                : jsondata.age,
-												 'sex'                : jsondata.sex,
-												 'visit_hospital_id': jsondata.visit_hospital_id,
-												 'home'               : jsondata.home,
-												 'edit'               : jsondata.edit,
-												 'del'                : jsondata.del,
-												 'contactadd'         : jsondata.contactadd,
-												 'contactlist'        : jsondata.contactlist,
-												 'phoneadd'           : jsondata.phoneadd,
-												 'phonelist'          : jsondata.phonelist,
-												 'guardianadd'        : jsondata.guardianadd,
-												 'guardianlist'       : jsondata.guardianlist,
-												 'emailadd'           : jsondata.emailadd,
-												 'emaillist'          : jsondata.emaillist,
-												 'admissionadd'       : jsondata.admissionadd,
-												 'admissionlist'      : jsondata.admissionlist,
-												 'visitadd'           : jsondata.visitadd,
-												 'visitlist'          : jsondata.visitlist,
-												}
-												  var selectedRow = grid.selection.getSelected()
-                          var selIndex = grid.selection.selectedIndex,
-                              selItem  = grid.getItem(selIndex)
-                          console.log(selItem)
-                          console.log(data)
-                          myStore.query();
-*/
-                          grid.render();
-//                          var item = myStore.fetchItemByIdentity({"id": jsondata.id});
-//                          myStore.put()
-//                          var chosenRow = myStore.getIdentity(selItem);
-//                          console.log(chosenRow)
-//                          myStore.setValue(jsondata);
-//                          myStore.save();
-//                        console.log(selectedRow.getItem(this.rowIndex));
-//												grid.store.newItem(data);
-//												dom.byId("newVisitEditForm").reset();
+                                              registry.byId("editPatientDialog").hide();
+                                              buildVisitTree();
 											}
 											else{
-							        dijit.byId('dialogJsonMessage').set('title', "ERROR!");
-							        dijit.byId('dialogJsonMessage').set('content', jsondata.error_message);
-							        dijit.byId('dialogJsonMessage').show();
+                                               publishError("ERROR! " + jsondata.error_message);
 											}
 									},
 									error: function(response) {
-							        dijit.byId('dialogJsonMessage').set('title', "ERROR!");
-							        dijit.byId('dialogJsonMessage').set('content', jsondata.error_message);
-							        dijit.byId('dialogJsonMessage').show();
+                                                publishError("ERROR! " + response);
 									},
 									handle: function() {
 											hasBeenSent = true;
 									}
 							});
 //{% else %}							
-    dijit.byId("permissionDeniedErrorDialog").show();
+    registry.byId("permissionDeniedErrorDialog").show();
 //{%endif %}
      });
     return false;
     }
     else{
-     dijit.byId("invalidFormSubmissionErrorDialog").show();
+     registry.byId("invalidFormSubmissionErrorDialog").show();
      return false;
     }
   </script>
 
-		<table id		=	"visit_detail_edit_form_table">
-					{{visit_detail_form}}
-		</table>
+{% if perms.visit.change_visitdetail %}
 
+      <table id ="visitDetailEditFormTable">
+          <tr> 
+            <td> Date        </td> <td>  {{visit_detail_form.visit_date}}      </td> 
+          </tr> 
+          <tr>
+            <td> Physician   </td> <td>   {{visit_detail_form.op_surgeon}}       </td>
+          </tr>
+          <tr>
+            <td> Referred    </td> <td>   {{visit_detail_form.referring_doctor}} </td> 
+          </tr>
+          <tr>
+            <td> Nature   </td> <td>   {{visit_detail_form.consult_nature}} </td> 
+          </tr>
+          <tr>
+            <td> Status   </td> <td>   {{visit_detail_form.status}}         </td> 
+          </tr>
+      </table>
+
+      <hr class="shadow_line">
+
+      <table id       =   "visitComplaintEditFormTable">
+        <tr>
+          <td> Complaint </td> <td>   {{visit_complaint_form.complaint}} </td>
+          <td> Duration  </td> <td>   {{visit_complaint_form.duration}}  </td>
+          <td>  
+              <img src   = "{{STATIC_URL}}images/add.png" 
+                   style = "width: 16px; height: 16px; cursor: pointer; "
+                   id    = "addMoreVisitComplaint"
+                  > 
+          </td> 
+          {% comment %}
+          <td>
+            <img src   = "{{STATIC_URL}}images/minus.png" 
+                style = "width: 16px; height: 16px; cursor: pointer; "
+                id    = "removeVisitComplaint"
+              >  
+          </td>
+          {% endcomment %}
+        </tr>
+      </table>
+
+      <hr >
+
+      <div id                =   "visitHpiEditFormDiv"
+             data-dojo-type  = "dijit/TitlePane"
+             data-dojo-id    = "visitHpiAddFormDiv" 
+             data-dojo-props = "open:true,  title: 'History of Presenting Illness' "
+             style           = "margin: 10px;"
+      >
+          <table id="visit_hpi_form_table"> {{visit_hpi_form.hpi}}</table> 
+      </div>
+
+      <hr >
+
+      <div id              = "visitRosEditFormDiv" 
+             data-dojo-type  = "dijit/TitlePane"
+             data-dojo-id    = "visitRosEditFormDiv" 
+             data-dojo-props = "open:false,  title: 'Review of Systems' "
+             style           = "margin: 10px;"
+             >
+           <table id="visit_ros_form_table"> {{visit_ros_form}} </table>
+      </div>
+
+{% endif %} 
+    
     {% if perms.visit.change_visitdetail %}
     <button data-dojo-type = "dijit/form/Button" 
             data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"

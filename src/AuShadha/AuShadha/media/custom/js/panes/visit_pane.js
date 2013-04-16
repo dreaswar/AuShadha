@@ -173,6 +173,11 @@ define(
                                             },
                                             'visitPaneContentBorderContainer',
                                             2);
+                        domConstruct.create('div',
+                                            {id: "visitPaneRSidebar" 
+                                            },
+                                            'visitPaneContentBorderContainer',
+                                            3);
 
                       console.log("created the DOMS");
                       return dom.byId('visitHomeContentPane');
@@ -207,34 +212,44 @@ define(
                                                                                       'visitPaneContentBorderContainer');
                         visitHomeContentPane.addChild(visitPaneContentBorderContainer);
                         console.log(visitPaneContentBorderContainer);
-                        
+
                         var visitPaneTopbar    = new ContentPane({id        : "visitPaneTopbar",
-                                                                      region    : 'top', 
-                                                                      splitter  : false
-                                                                    },
-                                                                    'visitPaneTopbar'
+                                                                  region    : 'top', 
+                                                                  splitter  : false
+                                                                 },
+                                                                 'visitPaneTopbar'
                                                         );
                         visitPaneContentBorderContainer.addChild(visitPaneTopbar);
                         console.log(visitPaneTopbar);
 
                         var visitPaneLSidebar    = new ContentPane({id        : "visitPaneLSidebar",
-                                                                        region    : 'leading', 
-                                                                        splitter  : true
-                                                                        },
-                                                                        'visitPaneLSidebar'
+                                                                    region    : 'leading', 
+                                                                    splitter  : true
+                                                                   },
+                                                                   'visitPaneLSidebar'
                                                   );
                         visitPaneContentBorderContainer.addChild(visitPaneLSidebar);
                         console.log(visitPaneLSidebar);
 
                         var visitPaneContentArea = new ContentPane({id        : "visitPaneContentArea", 
-                                                                        region    : 'center',
-                                                                        splitter  : true,
-                                                                        gutters   : true
+                                                                    region    : 'center',
+                                                                    splitter  : true,
+                                                                    gutters   : true
                                                                   },
                                                                   'visitPaneContentArea'
                                                         );
                         visitPaneContentBorderContainer.addChild(visitPaneContentArea);
                         console.log(visitPaneContentArea);
+
+                        var visitPaneRSidebar = new ContentPane({id         : "visitPaneRSidebar", 
+                                                                 region    : 'trailing',
+                                                                 splitter  : true,
+                                                                 gutters   : true,
+                                                                 style     : "width: 35em;background:#eef7d6;"
+                                                                 },
+                                                                 'visitPaneRSidebar'
+                                                        );
+                        visitPaneContentBorderContainer.addChild(visitPaneRSidebar);
 
                         console.log("created the Dijits");
                         console.log("added the Dijits");
