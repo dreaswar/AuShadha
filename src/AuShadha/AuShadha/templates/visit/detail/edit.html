@@ -144,34 +144,32 @@
             type            = "button"
             name            = "delVisit"
             id              = "delVisitBtn">
-       Delete
-   <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
-			  require(
-			    ["dojo/dom", 
-			     "dojo/_base/xhr",
-			     "dojo/json",
-			     "dijit/registry",
-			     "dijit/Dialog"
-			    ],
-			  function(dom, xhr, JSON, registry, Dialog){
-					xhr.get({
-					  url: "{{visit_detail_obj.get_del_url}}",
-					  load: function(json){
-					          var jsondata = JSON.parse(json)
-					          if (jsondata.success == true){
-                       dijit.byId("editPatientDialog").hide();
-                       //grid.render();
-                       //grid.selection.clear();
-                       //doPostDelCleanup();
-							      }
-							      else{
-                      dijit.byId("dialogJsonMessage").set('title', "ERROR!");
-                      dijit.byId("dialogJsonMessage").set('content', jsondata.error_message);
-							        dijit.byId('dialogJsonMessage').show();
-							      }
-					        }
-					});
-			  });
+      Delete
+      <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
+        require(
+          ["dojo/dom", 
+            "dojo/_base/xhr",
+            "dojo/json",
+            "dijit/registry",
+            "dijit/Dialog"
+          ],
+        function(dom, xhr, JSON, registry, Dialog){
+            xhr.get({
+              url: "{{visit_detail_obj.get_del_url}}",
+              load: function(json){
+                      var jsondata = JSON.parse(json)
+                      if (jsondata.success == true){
+                        publishInfo(jsondata.error_message);
+                        registry.byId("editPatientDialog").hide();
+                        new buildVisitTree();
+                        new buildPatientTree();
+                        new buildAdmissionTree();
+                      }else{
+                         publishError(jsondata.error_message);
+                      }
+                    }
+            });
+        });
     </script>
     </button>
     {% endif %}
