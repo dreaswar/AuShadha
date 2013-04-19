@@ -5,70 +5,120 @@
      encType        = "multipart/form-data" 
      action         = "" 
      method         = ""
-     style          = "overflow:auto;"
+     style          = "height: 60em; min-width: 50em; overflow:auto;"
      >
 
     <script type="dojo/method" data-dojo-event="onReset">
         return true;
     </script>
+    
+    <script type="dojo/method" data-dojo-event="onSubmit">
+      if( this.validate() ){
+        require(["dojo/dom",
+                "dojo/request/xhr",
+                "dijit/registry"  ,
+                "dojo/json"       ,
+                "dojo/dom-form"   ,
+                "dijit/Dialog"    ,
 
+                'aushadha/panes/visit_edit_pane'
+        ],
+        function(dom, 
+                 xhr, 
+                 registry, 
+                 JSON, 
+                 domForm, 
+                 Dialog, 
+                 VISIT_EDIT_PANE ){
+          var editDialog  = registry.byId("editPatientDialog");
+          var errorDialog = registry.byId("dialogJsonMessage");
+
+          xhr(CHOSEN_PATIENT.visitadd ? CHOSEN_PATIENT.visitadd :"{{patient_detail_obj.get_patient_visit_add_url}}",{
+              handleAs: "text",
+              method  : "POST",
+              data    : domForm.toObject("newVisitAddForm")
+          }).then(
+            function(json){
+                var jsondata = JSON.parse(json);
+                console.log(jsondata);
+                if(jsondata.success == true){
+                  publishInfo("Saved Successfully" );
+                  editDialog.hide();
+                  new buildVisitTree();
+                  new buildPatientTree();
+                  new buildAdmissionTree();
+                }
+                else{
+                  publishError("ERROR ! :" + jsondata.error_message );
+                }
+            },
+            function(json){
+                  var jsondata = JSON.parse(json); 
+                  publishError("ERROR!: "+ jsondata.error_message );
+            },
+            function(evt){console.log("Adding Data Finished Successfully...")}
+          );
+        });
+        return false;
+      }
+      else{
+        return false;
+      }
+    </script>
+
+{% comment %}
     <script type="dojo/method" data-dojo-event="onSubmit">
      if(this.validate()){
-      require(["dojo/_base/xhr", 
-               "dojo/dom", 
-               "dojo/json", 
-               "dijit/registry", 
-               "dijit/Dialog",
-               "dojo/domReady!"
-      ],
-      function(xhr, dom, JSON, registry, Dialog){
-                  var hasBeenSent = false;
-                  var editDialog = registry.byId("editPatientDialog");
-                  var errorDialog = registry.byId("dialogJsonMessage");
-// {% if perms.visit.add_visitdetail %}
-                  xhr.post({
-                          url  : CHOSEN_PATIENT.visitadd,
-                          form : dom.byId("newVisitAddForm"),
-                          load : function(json) {
-                                  var jsondata = JSON.parse(json)
-                                  console.log(jsondata);
-                                  if(jsondata.success == true){
-                                      dom.byId("newVisitAddForm").reset();
-                                      publishInfo("Visit Added Successfully.")
-                                      registry.byId("editPatientDialog").hide();
-                                      new buildVisitTree();
-                                  }
-                                  else{
-                                      var content = jsondata.error_message ;
-                                      registry.byId("dialogJsonMessage").set('title', "ERROR!")
-                                      registry.byId("dialogJsonMessage").set('content',content)
-                                      registry.byId("dialogJsonMessage").show();
-                                      publishError("ERROR! " + jsondata.error_message);
-                                  }
-                          },
-                          error: function(json) {
-                                    var jsondata = JSON.parse(json)
-                                    registry.byId("dialogJsonMessage").set('title', "ERROR!")
-                                    registry.byId("dialogJsonMessage").set('content', jsondata.error_message)
-                                    registry.byId("dialogJsonMessage").show();
-                                    publishError("ERROR! " + jsondata.error_message);
-                          },
-                          handle: function() {
-                                  hasBeenSent = true;
-                          }
-                  });
-//{% else %}
-          registry.byId("permissionDeniedErrorDialog").show();
-          return false;
-//        {% endif %}
-     });
-    return false;
+          require(["dojo/_base/xhr", 
+                  "dojo/dom", 
+                  "dojo/json", 
+                  "dijit/registry", 
+                  "dijit/Dialog",
+                  "dojo/domReady!"
+          ],
+          function(xhr, dom, JSON, registry, Dialog){
+                      var hasBeenSent = false;
+                  // {% if perms.visit.add_visitdetail %}
+                      xhr.post({
+                              url  : CHOSEN_PATIENT.visitadd,
+                              form : dom.byId("newVisitAddForm"),
+                              load : function(json) {
+                                      var jsondata = JSON.parse(json);
+                                      console.log(jsondata);
+                                      debugger;
+                                      if(jsondata.success == true){
+                                          publishInfo("Visit Added Successfully.");
+                                          registry.byId("editPatientDialog").hide();
+                                          new buildVisitTree();
+                                      }
+                                      else{
+                                          var content = jsondata.error_message ;
+                                          publishError("ERROR! " + content);
+                                      }
+                              },
+                              error: function(json) {
+                                        var jsondata = JSON.parse(json)
+                                        publishError("ERROR! " + jsondata.error_message);
+                              },
+                              handle: function() {
+                                      hasBeenSent = true;
+                              }
+                      });
+                      return false;
+              //{% else %}
+                      registry.byId("permissionDeniedErrorDialog").show();
+                      return false;
+              //{% endif %}
+        });
     }else{
-     registry.byId("invalidFormSubmissionErrorDialog").show();
-     return false;
+     require(['dijit/registry'],
+      function(registry){
+        registry.byId("invalidFormSubmissionErrorDialog").show();
+        return false;
+      });
     }
-    return false;
   </script>
+{% endcomment %}
 
   {% if perms.visit.add_visitdetail %}
 
@@ -87,6 +137,9 @@
           </tr>
           <tr>
             <td> Status   </td> <td>   {{visit_detail_form.status}}         </td> 
+          </tr>
+          <tr>
+            <td> Remarks   </td> <td>   {{visit_detail_form.remarks}}         </td> 
           </tr>
       </table>
 
@@ -115,27 +168,22 @@
 
       <hr >
 
-      <div id                =   "visitHpiAddFormDiv"
-             data-dojo-type  = "dijit/TitlePane"
-             data-dojo-id    = "visitHpiAddFormDiv" 
-             data-dojo-props = "open:true,  title: 'History of Presenting Illness' "
+      <table id                =   "visitHpiAddFormDiv"
              style           = "margin: 10px;"
       >
-          <table id="visit_hpi_form_table"> {{visit_hpi_form.hpi}}</table> 
-      </div>
+         <legend> History of Present Illness </legend>
+          <tr> <td> {{visit_hpi_form.hpi}} </td> </tr>
+      </table>
 
-      <hr >
 
-      <div id              = "visitRosAddFormDiv" 
+      <table id              = "visitRosAddFormDiv" 
              data-dojo-type  = "dijit/TitlePane"
              data-dojo-id    = "visitRosAddFormDiv" 
              data-dojo-props = "open:false,  title: 'Review of Systems' "
              style           = "margin: 10px;"
              >
-           <table id="visit_ros_form_table"> {{visit_ros_form}} </table>
-      </div>
-
-     <div >
+          {{visit_ros_form.as_table}} 
+      </table>
 
       <button data-dojo-type = "dijit/form/Button" 
             data-dojo-props="iconClass: 'dijitIconSave'"
@@ -143,16 +191,9 @@
             name           = "submitButton" 
             value          = "Add">
         Save
-       <script type            = "dojo/connect" 
-               data-dojo-event = "onClick" 
-               data-dojo-args  = "evt"
-       >
-         //ADD_MORE_PATIENTS = false;
-         ADD_MORE_ITEMS    = false;
-       </script>
      </button>
 
-
+      {% comment %}
       <button data-dojo-type = "dijit/form/Button" 
               type           = "submit" 
               name           = "submit_and_add_more_visits"
@@ -169,19 +210,17 @@
           //ADD_AND_OPEN_CHAR = true
         </script>
       </button>
+      {% endcomment %}
 
       <button data-dojo-type  = "dijit/form/Button" 
               data-dojo-props="iconClass: 'dijitIconClear'"
               type            = "reset">
         Reset
       </button>
-
-    </div>
   
   {% endif %}
 
 </div>
 {% else %}
 <p class="suggestion_text"> Insufficient Permissions</p>
-{% endif %} 
-
+{% endif %}

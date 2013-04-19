@@ -15,6 +15,8 @@ function buildVisitTree(){
       "dojo/dom-style",
       "dojo/json",
       'dojo/request'
+      
+//       ,'aushadha/panes/visit_edit_pane',
   ], function(ready, 
               win,
               Memory, 
@@ -28,6 +30,7 @@ function buildVisitTree(){
               domStyle, 
               JSON,
               request
+//               ,VISIT_EDIT_PANE
              ){
 
       var existingTree = registry.byId('visitLSidebarTreeDiv');
@@ -91,7 +94,6 @@ function buildVisitTree(){
                       request(item.addUrl).then(
                         function(html){
                           registry.byId('editPatientDialog').set('content',html);
-                          registry.byId('editPatientDialog').set('style',{width: 'auto',height:'auto'});
                           registry.byId('editPatientDialog').set('title',"New Visit: " + CHOSEN_PATIENT.full_name);
                           registry.byId('editPatientDialog').show();
                         },
@@ -104,9 +106,10 @@ function buildVisitTree(){
                       request(item.editUrl).then(
                         function(html){
                           registry.byId('editPatientDialog').set('content',html);
-                          registry.byId('editPatientDialog').set('style',{width: 'auto',height:'auto'});
                           registry.byId('editPatientDialog').set('title',"Edit Visit: " + CHOSEN_PATIENT.full_name);
                           registry.byId('editPatientDialog').show();
+//                           console.log(VISIT_EDIT_PANE);
+//                           VISIT_EDIT_PANE.constructor(html);
                         },
                         function(err){
                           publishError(err);

@@ -174,7 +174,7 @@ class VisitHPI(AuShadhaBaseModel):
     #return '/AuShadha/visit/hpi/del/%s/' %(self.id)
 
   class Meta:
-    unique_together   = ('hpi', 'visit_detail')
+    #unique_together   = ('hpi', 'visit_detail')
     verbose_name    = "History of Presenting Illness"
     verbose_name_plural = "History of Presenting Illness"
     ordering    = ('visit_detail', 'created_at', 'hpi')
@@ -202,7 +202,7 @@ class VisitPastHistory(AuShadhaBaseModel):
     #return '/AuShadha/visit/past_history/del/%s/' %(self.id)
 
   class Meta:
-    unique_together   = ('past_history', 'visit_detail')
+    #unique_together   = ('past_history', 'visit_detail')
     verbose_name    = "Past History"
     verbose_name_plural     = "Past History"
     ordering    = ('visit_detail', 'created_at', 'past_history')
@@ -373,7 +373,7 @@ class VisitDetailForm(ModelForm):
                     {"field"         : 'remarks',
                       'max_length'    :  150         ,
                       "data-dojo-type": "dijit.form.Textarea",
-                      "data-dojo-props": r"'required' :false,placeHolder:'Other Notes...'"
+                      "data-dojo-props": r"'required' :false"
                       }
             ]
       for field in text_fields:
@@ -425,9 +425,9 @@ class VisitHPIForm(ModelForm):
     text_fields = [
                     {"field"          : 'hpi',
                     'max_length'      : '1000'         ,
-                    "data-dojo-type"  : "dijit.Editor",
+                    "data-dojo-type"  : "dijit/form/SimpleTextarea",
                     "data-dojo-id"    : "visit_hpi",
-                    "data-dojo-props" : r"'required' : 'true' ,'regExp':'[a-zA-Z /-_:0-9#]+','invalidMessage' : 'Invalid Character'"
+                    "data-dojo-props" : r"'required' : true ,'regExp':'[a-zA-Z /-_:0-9#]+','invalidMessage' : 'Invalid Character'"
                     },
     ]
 
@@ -549,14 +549,14 @@ class VisitROSForm(ModelForm):
     for model_field in form_field_list:
       text_fields = [{"field"           : model_field,
                       'max_length'      :  '500'         ,
-                      "data-dojo-type"  : "dijit.form.SimpleTextarea",
+                      "data-dojo-type"  : "dijit.form.Textarea",
                       "data-dojo-id"    : "visit_ros_" + model_field,
-                      "data-dojo-props" : r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
+                      "data-dojo-props" : r"'required' : true ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
                       },
                     ]
       for field in text_fields:
         print(self.fields[field['field']].widget);
         self.fields[field['field']].widget.attrs['data-dojo-type']  = field['data-dojo-type']
         self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
-        self.fields[field['field']].widget.attrs['data-dojo-id'] = field['data-dojo-id']
+        self.fields[field['field']].widget.attrs['data-dojo-id']    = field['data-dojo-id']
         self.fields[field['field']].widget.attrs['max_length']      = field['max_length']

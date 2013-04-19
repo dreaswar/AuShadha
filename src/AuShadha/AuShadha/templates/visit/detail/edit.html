@@ -10,61 +10,52 @@
 
 
     <script type="dojo/method" data-dojo-event="onSubmit">
-     if(this.validate()){
-      require(["dojo/_base/xhr", 
-               "dojo/dom", 
-               "dojo/json", 
-               "dojo/_base/fx",
-		       "dijit/Dialog",
-		       "dijit/form/Form",
-		       "dijit/form/Button",
-              "dijit/form/ValidationTextBox", 
-              "dijit/form/Select",
-              "dijit/registry"
-       ],
-       function(xhr, 
-                dom, 
-                JSON,
-                fx, 
-                Dialog, 
-                Form, 
-                Button, 
-                TextBox, 
-                Select, 
-                registry){
- 							var hasBeenSent = false;
-//						 {% if perms.visit.change_visitdetail %}
-							xhr.post({
-									url  : "{{visit_detail_obj.get_edit_url}}",
-									form : dom.byId("newVisitEditForm"),
-									load : function(json) {
-											var jsondata = JSON.parse(json)
-											if(jsondata.success == true){
-                                              registry.byId("editPatientDialog").hide();
-                                              buildVisitTree();
-											}
-											else{
-                                               publishError("ERROR! " + jsondata.error_message);
-											}
-									},
-									error: function(response) {
-                                                publishError("ERROR! " + response);
-									},
-									handle: function() {
-											hasBeenSent = true;
-									}
-							});
-//{% else %}							
-    registry.byId("permissionDeniedErrorDialog").show();
-//{%endif %}
-     });
-    return false;
-    }
-    else{
-     registry.byId("invalidFormSubmissionErrorDialog").show();
-     return false;
-    }
-  </script>
+      if( this.validate() ){
+        require(["dojo/dom",
+                "dojo/request/xhr",
+                "dijit/registry"  ,
+                "dojo/json"       ,
+                "dojo/dom-form"   ,
+                "dijit/Dialog"
+        ],
+        function(dom, xhr, registry, JSON, domForm, Dialog){
+          var editDialog  = registry.byId("editPatientDialog");
+          var errorDialog = registry.byId("dialogJsonMessage");
+
+          xhr(CHOSEN_PATIENT.visitedit ? CHOSEN_PATIENT.visitedit :"{{visit_detail_obj.get_edit_url}}",{
+              handleAs: "text",
+              method  : "POST",
+              data    : domForm.toObject("newVisitEditForm")
+          }).then(
+            function(json){
+                var jsondata = JSON.parse(json);
+                console.log(jsondata);
+                if(jsondata.success == true){
+                  publishInfo("Saved Successfully" );
+                  editDialog.hide();
+                  new buildVisitTree();
+                  new buildPatientTree();
+                  new buildAdmissionTree();
+                }
+                else{
+                  publishError("ERROR ! :" + jsondata.error_message );
+                }
+            },
+            function(json){
+                  var jsondata = JSON.parse(json); 
+                  publishError("ERROR!: "+ jsondata.error_message );
+            },
+            function(evt){console.log("Edited Visit Successfully...")}
+          );
+        });
+        return false;
+      }
+      else{
+        return false;
+      }
+    </script>
+
+
 
 {% if perms.visit.change_visitdetail %}
 
@@ -83,6 +74,9 @@
           </tr>
           <tr>
             <td> Status   </td> <td>   {{visit_detail_form.status}}         </td> 
+          </tr>
+          <tr>
+            <td> Remarks   </td> <td>   {{visit_detail_form.remarks}}         </td> 
           </tr>
       </table>
 
@@ -117,6 +111,7 @@
              data-dojo-props = "open:true,  title: 'History of Presenting Illness' "
              style           = "margin: 10px;"
       >
+          <legend> History of Present Illness </legend>
           <table id="visit_hpi_form_table"> {{visit_hpi_form.hpi}}</table> 
       </div>
 

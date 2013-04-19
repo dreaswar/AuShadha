@@ -437,13 +437,17 @@ def visit_detail_edit(request, id):
       visit_ros_form = VisitROSForm(instance = visit_ros_obj)
     else:
       visit_ros_form = None
-    
+    #print visit_complaint_obj
+    #print visit_hpi_obj
+    #print visit_ros_obj
+    print visit_ros_form
+    print visit_hpi_form
     variable = RequestContext(request, {'user'                  : user                  ,
                                         'visit_detail_obj'      : visit_detail_obj      ,
                                         'visit_detail_form'     : visit_detail_form     ,
                                         'visit_complaint_form'  : visit_complaint_form  ,
-                                        'visit_hpi_form '       : visit_hpi_form        ,
-                                        'visit_ros_form '       : visit_ros_form        ,
+                                        'visit_hpi_form'       : visit_hpi_form        ,
+                                        'visit_ros_form'       : visit_ros_form        ,
                                         'patient_detail_obj'    : visit_detail_obj.patient_detail   ,
                                         'error_message'         : error_message         ,
                                         })
@@ -451,65 +455,110 @@ def visit_detail_edit(request, id):
 
   if request.method == "POST" and request.is_ajax():
     try:
-      id = int(id)
-      visit_detail_obj = VisitDetail.objects.get(pk = id)
+      id                  = int(id)
+      visit_detail_obj    = VisitDetail.objects.get(pk = id)
+      visit_complaint_obj = VisitComplaint.objects.filter(visit_detail = visit_detail_obj)
+      visit_hpi_obj       = VisitHPI.objects.filter(visit_detail = visit_detail_obj)
+      visit_ros_obj       = VisitROS.objects.filter(visit_detail = visit_detail_obj)
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Error ! Invalid Request Parameters. ")
     except (VisitDetail.DoesNotExist):
       raise Http404("Requested Visit Does not exist.")
     success                = False
-    form_errors            = []
     error_message          = None
-    visit_detail_edit_form = VisitDetailForm(request.POST, instance = visit_detail_obj)
 
-    if visit_detail_edit_form.is_valid():
-      saved_visit   = visit_detail_edit_form.save()
-      saved_visit.visit_status_change(unicode(saved_visit.status))
-      success       = True
-      error_message = "Visit Edited Successfully"
-      form_errors   = None
+    if visit_complaint_obj and visit_hpi_obj and visit_ros_obj:
+      visit_detail_edit_form = VisitDetailForm(request.POST, instance = visit_detail_obj)
+      visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
+      visit_hpi_form         = VisitHPIForm(request.POST, instance = visit_hpi_obj[0])
+      visit_ros_form         = VisitROSForm(request.POST, instance = visit_ros_obj[0])
+
+      if visit_detail_edit_form.is_valid() and \
+        visit_complaint_form.is_valid()   and \
+        visit_hpi_form.is_valid()         and \
+        visit_ros_form.is_valid():
+
+        saved_visit   = visit_detail_edit_form.save()
+
+        saved_visit_complaint = visit_complaint_form.save(commit = False)
+        saved_visit_complaint.visit_detail = saved_visit
+        saved_visit_complaint.save()
+
+        saved_visit_hpi = visit_hpi_form.save(commit = False)
+        saved_visit_hpi.visit_detail = saved_visit
+        saved_visit_hpi.save()
+
+        saved_visit_ros = visit_ros_form.save(commit = False)
+        saved_visit_ros.visit_detail = saved_visit
+        saved_visit_ros.save()
+
+        #saved_visit.visit_status_change(unicode(saved_visit.status))
+
+        success       = True
+        error_message = "Visit Edited Successfully"
+      else:
+        success       = False
+        
+        def form_error_formatter(error_list):
+          error_string = ''
+          if error_list:
+            for error in error_list:
+              error_string_to_join    = error + "\n"
+              error_string += error_string_to_join
+            return error_string
+          else:
+            return ''
+
+        visit_detail_form_error    = form_error_formatter(visit_detail_edit_form.errors)
+        visit_complaint_form_error = form_error_formatter(visit_complaint_form.errors)
+        visit_hpi_form_error       = form_error_formatter(visit_hpi_form.errors)
+        visit_ros_form_error       = form_error_formatter(visit_ros_form.errors)
+
+        error_message = "Error! Visit Could not be edited" + "\n" +\
+                        visit_detail_form_error    + "\n" + \
+                        visit_complaint_form_error + "\n" + \
+                        visit_hpi_form_error       + "\n" + \
+                        visit_ros_form_error       + "\n" 
+
+      data = { 'success'      : success      ,
+              'error_message': error_message
+            }
+      json = simplejson.dumps(data)
+      return HttpResponse(json, content_type = 'application/json')
     else:
-      success       = False
-      error_message = "Error! Visit Could not be edited"
-      for error in visit_detail_edit_form.errors:
-        form_errors.append('<p>' + error +'<p>')
-    data = { 'success'      : success      ,
-             'error_message': error_message,
-             'form_errors': form_errors
-           }
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type = 'application/json')
+      raise Http404("ERROR!  The visit has not associated comlaints, HPI or ROS to edit")
   else:
     raise Http404(" Error ! Unsupported Request..")
 
+
+
 @login_required
 def visit_detail_del(request, id):
-  user = request.user
   if request.method == "GET" and request.is_ajax():
-    try:
-      id = int(id)
-      visit_detail_obj = VisitDetail.objects.get(pk = id)
-    except (TypeError, NameError, ValueError, AttributeError, KeyError):
-      raise Http404("Error ! Invalid Request Parameters. ")
-    except (VisitDetail.DoesNotExist):
-      raise Http404("Requested Patient Does not exist.")
-    error_message = None
-    if user.is_superuser:
-      visit_detail_obj.delete()
-      success = True
-      error_message = "Successfully Deleted Visit."
+    user = request.user
+    if user.has_perm('visit.delete_visitdetail'):
+        try:
+          id = int(id)
+          visit_detail_obj = VisitDetail.objects.get(pk = id)
+        except (TypeError, NameError, ValueError, AttributeError, KeyError):
+          raise Http404("Error ! Invalid Request Parameters. ")
+        except (VisitDetail.DoesNotExist):
+          raise Http404("Requested Patient Does not exist.")
+        error_message = None
+        visit_detail_obj.delete()
+        success = True
+        error_message = "Successfully Deleted Visit."
+        data = {'success': success, 'error_message': error_message}
+        json = simplejson.dumps(data)
+        return HttpResponse(json, content_type = 'application/json')
     else:
       success = False
       error_message = "Insufficient Permission. Could not delete."
-    data = {'success': success, 'error_message': error_message}
-    if request.GET.get('redirect'):
-      return HttpResponseRedirect('visit/list/')
-    else:
+      data = {'success': success, 'error_message': error_message}
       json = simplejson.dumps(data)
       return HttpResponse(json, content_type = 'application/json')
   else:
     raise Http404(" Error ! Unsupported Request..")
-
 
 ################################################################################
 

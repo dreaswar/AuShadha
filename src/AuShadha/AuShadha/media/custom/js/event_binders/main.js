@@ -93,7 +93,7 @@ define([
           
         },
         startup : function(){
-                      auEvents.formEvents();
+//                       auEvents.formEvents();
         },
         
        auPaneEventController : auPaneEventController,
@@ -166,7 +166,7 @@ define([
 
     };
 
-    auEvents.startup();
+//     auEvents.startup();
     return auEvents;
 
 });  
