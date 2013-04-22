@@ -352,14 +352,7 @@ function(dom,
                         this.initialized = true;
                         new buildPatientTree();
                         console.log("Patient Sidebar Tree Done..")
-                        /*
-                          if(!this.menuBar){
-                            this.menuBar = new buildPatientMenu();
-                            console.log(this.menuBar);
-                          }
-                          console.log("Patient Menu done ..")
-                        */
-                          return PATIENT_PANE;
+                        return PATIENT_PANE;
                       }
                       else{
                         console.log("Patient Pane is already initialized..");

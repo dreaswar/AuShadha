@@ -105,9 +105,9 @@
 
       <hr >
 
-      <div id                =   "visitHpiEditFormDiv_{{visit_detail_obj.id}}"
+      <div id                = "visitHpiEditFormDiv_{{visit_detail_obj.id}}"
              data-dojo-type  = "dijit/TitlePane"
-             data-dojo-id    = "visitHpiAddFormDiv_{{visit_detail_obj.id}}" 
+             data-dojo-id    = "visitHpiEditFormDiv_{{visit_detail_obj.id}}" 
              data-dojo-props = "open:true,  title: 'History of Presenting Illness' "
              style           = "margin: 10px;"
       >
@@ -118,11 +118,11 @@
       <hr >
 
       <div id              = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
-             data-dojo-type  = "dijit/TitlePane"
-             data-dojo-id    = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
-             data-dojo-props = "open:false,  title: 'Review of Systems' "
-             style           = "margin: 10px;"
-             >
+           data-dojo-type  = "dijit/TitlePane"
+           data-dojo-id    = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
+           data-dojo-props = "open:false,  title: 'Review of Systems' "
+           style           = "margin: 10px;"
+      >
            <table id="visit_ros_form_table_{{visit_detail_obj.id}}"> {{visit_ros_form}} </table>
       </div>
 
@@ -161,6 +161,9 @@
                       if (jsondata.success == true){
                         publishInfo(jsondata.error_message);
                         registry.byId("editPatientDialog").hide();
+                        if( registry.byId('VISIT_{{visit_detail_obj.id}}') ){
+                          registry.byId('VISIT_{{visit_detail_obj.id}}').destroyRecursive(false);
+                        }
                         new buildVisitTree();
                         new buildPatientTree();
                         new buildAdmissionTree();

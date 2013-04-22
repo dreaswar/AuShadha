@@ -114,22 +114,82 @@
 
       <hr >
 
-      <table id                =   "visitHpiAddFormDiv"
-             style           = "margin: 10px;"
-      >
-         <legend> History of Present Illness </legend>
-          <tr> <td> {{visit_hpi_form.hpi}} </td> </tr>
-      </table>
 
+<div id             = "visitHistoryAndPhysicalExamBorderContainer"
+     data-dojo-id   = "visitHistoryAndPhysicalExamBorderContainer"
+     data-dojo-type = "dojox/layout/ContentPane"
+     style          = "height: 30em; overflow:auto;"
+  >
+     <div id             = "visitHistoryAndPhysicalExamTabContainer"
+          data-dojo-id   = "visitHistoryAndPhysicalExamTabContainer"
+          data-dojo-type = "dijit/layout/TabContainer"
+          data-dojo-props = "tabPosition:'top',tabStrip: true"
+     >
+     
+        <div id             = "visitHPIFormContentPane"
+              data-dojo-id   = "visitHPIFormContentPane"
+              data-dojo-type = "dojox/layout/ContentPane"
+              data-dojo-props = "title:'HPI'"
+        >
+          <table id                =   "visitHpiAddFormDiv"
+                  style           = "margin: 10px;"
+            >
+              {{visit_hpi_form.hpi}}
+          </table>
+      </div>
+      
+      <div id             = "visitROSFormContentPane"
+              data-dojo-id   = "visitROSFormContentPane"
+              data-dojo-type = "dojox/layout/ContentPane"
+              data-dojo-props = "title:'ROS'"
+        >
+          <table id              = "visitRosAddFormDiv" 
+                  style           = "margin: 10px;"
+                  >
+                {{visit_ros_form.as_table}} 
+            </table>     
+        </div>
+        
+        <div id             = "visitVitalsGenAndHEENTExamFormContentPane"
+              data-dojo-id   = "visitVitalsGenAndHEENTExamFormContentPane"
+              data-dojo-type = "dojox/layout/ContentPane"
+              data-dojo-props = "title:'Vitals, GE, HEENT'"
+        >
+            <table id              = "visitVitalsGenAndHEENTExamAddFormDiv" 
+                  style           = "margin: 10px;"
+                  >
 
-      <table id              = "visitRosAddFormDiv" 
-             data-dojo-type  = "dijit/TitlePane"
-             data-dojo-id    = "visitRosAddFormDiv" 
-             data-dojo-props = "open:false,  title: 'Review of Systems' "
-             style           = "margin: 10px;"
-             >
-          {{visit_ros_form.as_table}} 
-      </table>
+            </table>     
+        </div>
+
+        <div id             = "visitRespCVSExamFromContentPane"
+              data-dojo-id   = "visitRespCVSExamFromContentPane"
+              data-dojo-type = "dojox/layout/ContentPane"
+              data-dojo-props = "title:'Resp, CVS &amp; Abd'"
+        >
+          <table id              = "visitRespCVSAdbExamAddFromDiv" 
+                  style           = "margin: 10px;"
+                  >
+
+            </table>     
+        </div>
+
+        <div id             = "visitMSAndNeuroExamFromContentPane"
+              data-dojo-id   = "visitMSAndNeuroExamFromContentPane"
+              data-dojo-type = "dojox/layout/ContentPane"
+              data-dojo-props = "title:'Extremity &amp; Neuro'"
+        >
+          <table id              = "visitMSAndNeuroExamAddFromDiv" 
+                  style           = "margin: 10px;"
+                  >
+
+            </table>     
+        </div>
+
+      </div>
+
+</div>
+
 
       <button data-dojo-type = "dijit/form/Button" 
             data-dojo-props="iconClass: 'dijitIconSave'"
