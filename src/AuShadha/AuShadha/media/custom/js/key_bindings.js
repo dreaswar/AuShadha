@@ -9,6 +9,10 @@ require(["dojo/on",
          "dojo/request",
          "dojo/dom",
          "dojo/json",
+
+         "aushadha/grid/grid_setup",
+         'aushadha/grid/grid_structures',
+
          "dojo/domReady!"
         ],
 function(on,
@@ -21,10 +25,16 @@ function(on,
          domConstruct,
          request,
          dom,
-         JSON){
+         JSON, 
+         GRID_SETUP, 
+         GRID_STRUCTURES){
+
     on(document.body, "keyup", function (e) {
+
         console.log(e);
         console.log(keys);
+
+        var setupPopUpGrid = GRID_SETUP.setupPopUpGrid;
 
         function createDomsAndDijits(action, urlStore){
 
@@ -117,70 +127,75 @@ function(on,
         }
 
         if(e.altKey && e.keyCode==76 ){
+
           if (CHOSEN_PATIENT){
-            if( registry.byId('patientHomeContentPane').get('selected')){
-                  var listUrlStore = new Memory({ data: [
 
-                                                    //{% if perms.patient.add_patientcontact %} //
-                                                    {name:"Contact"              , id:CHOSEN_PATIENT.contactjson, gridFn: setupPopUpGrid , gridStr: GRID_STRUCTURES.PATIENT_CONTACT_GRID_STRUCTURE},
-                                                    //{% endif %}//
+            if( registry.byId('patientHomeContentPane').get('selected')   || 
+                registry.byId('admissionHomeContentPane').get('selected') ||
+                registry.byId('visitHomeContentPane').get('selected') ){
 
-                                                    //{% if perms.patient.add_patientphone %}
-                                                    {name:"Phone"                , id:CHOSEN_PATIENT.phonejson,  gridFn: setupPopUpGrid,  gridStr: GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE},
-                                                    //{% endif %}
+                var listUrlStore = new Memory({ data: [
 
-                                                    //{% if perms.patient.add_patientguardian %}
-                                                    {name:"Guardian"             , id:CHOSEN_PATIENT.guardianjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_GUARDIAN_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientcontact %} //
+                                                {name:"Contact"              , id:CHOSEN_PATIENT.contactjson, gridFn: setupPopUpGrid , gridStr: GRID_STRUCTURES.PATIENT_CONTACT_GRID_STRUCTURE},
+                                                //{% endif %}//
 
-                                                    //{% if perms.admission.add_admission %}
-                                                    {name:"Admission"            , id:CHOSEN_PATIENT.admissionjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_ADMISSION_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientphone %}
+                                                {name:"Phone"                , id:CHOSEN_PATIENT.phonejson,  gridFn: setupPopUpGrid,  gridStr: GRID_STRUCTURES.PATIENT_PHONE_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.visit.add_visitdetail %}
-                                                    {name:"Visit"                , id:CHOSEN_PATIENT.visitjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_VISIT_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientguardian %}
+                                                {name:"Guardian"             , id:CHOSEN_PATIENT.guardianjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_GUARDIAN_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.patient.add_patientmedicationlist %}
-                                                    {name:"Medication List"      , id:CHOSEN_PATIENT.medicationlistjson, gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_MEDICATION_LIST_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.admission.add_admission %}
+                                                {name:"Admission"            , id:CHOSEN_PATIENT.admissionjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_ADMISSION_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.patient.add_patientallergy %}
-                                                    {name:"Allergy"              , id:CHOSEN_PATIENT.allergiesjson, gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_ALLERGIES_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.visit.add_visitdetail %}
+                                                {name:"Visit"                , id:CHOSEN_PATIENT.visitjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_VISIT_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.patient.add_patientmedia %}
-                                                    {name:"Media"                , id:"/", gridFn: setupPopUpGrid , gridStr: null },
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientmedicationlist %}
+                                                {name:"Medication List"      , id:CHOSEN_PATIENT.medicationlistjson, gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_MEDICATION_LIST_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.patient.add_patientfamilyhistory %}
-                                                    {name:"Family History"       , id:CHOSEN_PATIENT.familyhistoryjson, gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_FAMILY_HISTORY_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientallergy %}
+                                                {name:"Allergy"              , id:CHOSEN_PATIENT.allergiesjson, gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_ALLERGIES_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.patient.add_patientsocialhistory %}
-                                                    {name:"Social History"       , id:CHOSEN_PATIENT.socialhistoryjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_SOCIAL_HISTORY_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientmedia %}
+                                                {name:"Media"                , id:"/", gridFn: setupPopUpGrid , gridStr: null },
+                                                //{% endif %}
 
-                                                    //{% if perms.patient.add_patientmedicalhistory %}
-                                                    {name:"Medical History"      , id:CHOSEN_PATIENT.medicalhistoryjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_MEDICAL_HISTORY_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientfamilyhistory %}
+                                                {name:"Family History"       , id:CHOSEN_PATIENT.familyhistoryjson, gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_FAMILY_HISTORY_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.patient.add_patientimmunisation %}
-                                                    {name:"Immunisation History" , id:CHOSEN_PATIENT.immunisationjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_IMMUNIZATION_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientsocialhistory %}
+                                                {name:"Social History"       , id:CHOSEN_PATIENT.socialhistoryjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_SOCIAL_HISTORY_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.patient.add_patientsurgicalhistory %}
-                                                    {name:"Surgical History"     , id:CHOSEN_PATIENT.surgicalhistoryjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_SURGICAL_HISTORY_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientmedicalhistory %}
+                                                {name:"Medical History"      , id:CHOSEN_PATIENT.medicalhistoryjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_MEDICAL_HISTORY_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.obs_and_gyn.add_obstetrichistorydetail %}
-                                                    {name:"Obstetric History"    , id:CHOSEN_PATIENT.obstetrichistorydetailjson , gridFn: setupPopUpGrid , gridStr: GRID_STRUCTURES.PATIENT_OBSTETRIC_HISTORY_DETAIL_GRID_STRUCTURE},
-                                                    //{% endif %}
+                                                //{% if perms.patient.add_patientimmunisation %}
+                                                {name:"Immunisation History" , id:CHOSEN_PATIENT.immunisationjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_IMMUNIZATION_GRID_STRUCTURE},
+                                                //{% endif %}
 
-                                                    //{% if perms.patient.patientdemographics %}
-                                                    {name:"Demographics"         , id:CHOSEN_PATIENT.demographicsjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_DEMOGRAPHICS_GRID_STRUCTURE}
-                                                    //{% endif %}
-                                                ]
+                                                //{% if perms.patient.add_patientsurgicalhistory %}
+                                                {name:"Surgical History"     , id:CHOSEN_PATIENT.surgicalhistoryjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_SURGICAL_HISTORY_GRID_STRUCTURE},
+                                                //{% endif %}
+
+                                                //{% if perms.obs_and_gyn.add_obstetrichistorydetail %}
+                                                {name:"Obstetric History"    , id:CHOSEN_PATIENT.obstetrichistorydetailjson , gridFn: setupPopUpGrid , gridStr: GRID_STRUCTURES.PATIENT_OBSTETRIC_HISTORY_DETAIL_GRID_STRUCTURE},
+                                                //{% endif %}
+
+                                                //{% if perms.patient.patientdemographics %}
+                                                {name:"Demographics"         , id:CHOSEN_PATIENT.demographicsjson , gridFn: setupPopUpGrid ,  gridStr: GRID_STRUCTURES.PATIENT_DEMOGRAPHICS_GRID_STRUCTURE}
+                                                //{% endif %}
+                                         ]
                                     });
               createDomsAndDijits('List',listUrlStore);
             }
@@ -190,7 +205,11 @@ function(on,
 
         if(e.keyCode == keys.INSERT || (e.altKey && e.keyCode==73) ){
           if (CHOSEN_PATIENT){
-            if( registry.byId('patientHomeContentPane').get('selected')){
+
+            if( registry.byId('patientHomeContentPane').get('selected')   || 
+                registry.byId('admissionHomeContentPane').get('selected') ||
+                registry.byId('visitHomeContentPane').get('selected') ){
+
               var addUrlStore = new Memory({ data: [
                                                 //{% if perms.patient.add_patientcontact %} //
                                                 {name:"Patient"              , id:"{%url patient_new_add %}"},

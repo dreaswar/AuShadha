@@ -66,60 +66,6 @@
       }
     </script>
 
-{% comment %}
-    <script type="dojo/method" data-dojo-event="onSubmit">
-     if(this.validate()){
-          require(["dojo/_base/xhr", 
-                  "dojo/dom", 
-                  "dojo/json", 
-                  "dijit/registry", 
-                  "dijit/Dialog",
-                  "dojo/domReady!"
-          ],
-          function(xhr, dom, JSON, registry, Dialog){
-                      var hasBeenSent = false;
-                  // {% if perms.visit.add_visitdetail %}
-                      xhr.post({
-                              url  : CHOSEN_PATIENT.visitadd,
-                              form : dom.byId("newVisitAddForm"),
-                              load : function(json) {
-                                      var jsondata = JSON.parse(json);
-                                      console.log(jsondata);
-                                      debugger;
-                                      if(jsondata.success == true){
-                                          publishInfo("Visit Added Successfully.");
-                                          registry.byId("editPatientDialog").hide();
-                                          new buildVisitTree();
-                                      }
-                                      else{
-                                          var content = jsondata.error_message ;
-                                          publishError("ERROR! " + content);
-                                      }
-                              },
-                              error: function(json) {
-                                        var jsondata = JSON.parse(json)
-                                        publishError("ERROR! " + jsondata.error_message);
-                              },
-                              handle: function() {
-                                      hasBeenSent = true;
-                              }
-                      });
-                      return false;
-              //{% else %}
-                      registry.byId("permissionDeniedErrorDialog").show();
-                      return false;
-              //{% endif %}
-        });
-    }else{
-     require(['dijit/registry'],
-      function(registry){
-        registry.byId("invalidFormSubmissionErrorDialog").show();
-        return false;
-      });
-    }
-  </script>
-{% endcomment %}
-
   {% if perms.visit.add_visitdetail %}
 
       <table id	="visitDetailAddFormTable">

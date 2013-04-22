@@ -125,6 +125,114 @@ define(
                                 this.destroyPane();
         },
 
+        addPane : {
+
+          doms: function(nodeId){
+                      if(!dom.byId(this.nodeId)){
+                        domConstruct.create('div',
+                                          {id:this.nodeId},
+                                          'visitEditPaneTabContainer',
+                                          'last');
+                      }
+          },
+
+          dijits: function(nodeId){
+                      var visitAddTab = new ContentPane({id      : this.nodeId,
+                                                        closable : true},
+                                                        nodeId);
+                      registry.byId('visitEditPaneTabContainer').addChild(visitAddTab);
+                      visitAddTab.startup();
+          },
+
+          destroyPane: function(nodeId){
+                        if(this.initialized(this.nodeId)){
+                          registry.byId(this.nodeId).destroyRecursive();
+                        }
+                        this.constructor({id: this.nodeId, 
+                                         title: this.nodeTitle,
+                                         content:this.nodeContent});
+          },
+
+          constructor : function(obj){
+                          console.log("Calling constructor method to addVisitPane");
+                          this.nodeId      = obj.id;
+                          this.nodeTitle   = obj.title;
+                          this.nodeContent = obj.content;
+                          console.log(obj);
+                          if(! this.initialized(this.nodeId)){
+                            this.doms(this.nodeId);
+                            this.dijits(this.nodeId);
+                          }
+                          this.widget      = registry.byId(this.nodeId);
+                          registry.byId('visitEditPaneTabContainer').selectChild(this.widget);
+                          this.widget.set('title',this.nodeTitle);
+                          this.widget.set('content',this.nodeContent);
+                          return this.widget;
+          },
+
+          initialized : function(nodeId){
+                        if(registry.byId(this.nodeId)){
+                          return true;
+                        }
+                        else{
+                          return false;
+                        }
+          }
+
+        },
+
+       editPane : {
+
+          doms: function(nodeId){
+                      if(!dom.byId(nodeId) ){
+                        domConstruct.create('div',
+                                            {id:nodeId},
+                                            'visitEditPaneTabContainer',
+                                            'last');
+                      }
+          },
+
+          dijits: function(nodeId){
+                      var visitEditTab = new ContentPane({id     : nodeId,
+                                                        closable : true},
+                                                        nodeId);
+                      registry.byId('visitEditPaneTabContainer').addChild(visitEditTab);
+                      visitEditTab.startup();
+          },
+
+          destroyPane: function(nodeId){
+                        if(this.initialized(nodeId)){
+                          registry.byId(nodeId).destroyRecursive();
+                        }
+                        this.constructor(nodeId);
+          },
+
+          constructor : function(obj){
+                          var nodeId      = "visitEditTab_"+ obj.id;
+                          var nodeTitle   = obj.title;
+                          var nodeContent = obj.content;
+
+                          if(! this.initialized(nodeId)){
+                            this.doms(nodeId);
+                            this.dijits(nodeId);
+                          }
+                          registry.byId('visitEditPaneTabContainer').selectChild(nodeId);
+                          registry.byId(nodeId).set('title',nodeTitle);
+                          registry.byId(nodeId).set('content',nodeContent);
+                          return registry.byId(nodeId);
+          },
+
+          initialized : function(nodeId){
+                        if( registry.byId(nodeId) ){
+                          return true;
+                        }
+                        else{
+                          return false;
+                        }
+          }
+
+        },
+
         doms: function(){ 
               // Fill the Tab with appropriate DOMS
                   console.log("Entering Function to create Visit Tab DOMS ");
@@ -173,12 +281,24 @@ define(
                                             },
                                             'visitPaneContentBorderContainer',
                                             2);
+
+                          domConstruct.create('div',
+                                                      {id: 'visitEditPaneTabContainer'},
+                                                      'visitPaneContentArea',
+                                                      'first');
+                        /*                          
+                            domConstruct.create('div',
+                                                {id: 'visitEditPane'},
+                                                'visitEditPaneTabContainer',
+                                                'first');
+                        */
+
                         domConstruct.create('div',
                                             {id: "visitPaneRSidebar" 
                                             },
                                             'visitPaneContentBorderContainer',
                                             3);
-
+                        
                       console.log("created the DOMS");
                       return dom.byId('visitHomeContentPane');
                   }else{
@@ -240,6 +360,28 @@ define(
                                                         );
                         visitPaneContentBorderContainer.addChild(visitPaneContentArea);
                         console.log(visitPaneContentArea);
+
+
+                        var visitEditPaneTabContainer = new TabContainer({id         : 'visitEditPaneTabContainer', 
+                                                                                 tabStrip    : true, 
+                                                                                 tabPosition : 'top'},
+                                                                                 'visitEditPaneTabContainer'
+                                                                                );
+                        visitPaneContentArea.addChild(visitEditPaneTabContainer);
+                        visitEditPaneTabContainer.startup();                        
+
+                        /*                        
+                        var visitEditPane             = new ContentPane({id      : 'visitEditPane',
+                                                                        title    : "Edit Visit",
+                                                                        content  : "Click a visit on tree to load it"
+                                                                        },
+                                                                        'visitEditPane');
+                        visitEditPaneTabContainer.addChild(visitEditPane);                                
+
+//                         console.log(visitEditPane);
+//                         visitEditPane.startup();
+
+                        */
 
                         var visitPaneRSidebar = new ContentPane({id         : "visitPaneRSidebar", 
                                                                  region    : 'trailing',

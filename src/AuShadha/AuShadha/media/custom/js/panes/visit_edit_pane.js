@@ -24,18 +24,25 @@ define(['dojo/dom'           ,
 
       visitPaneContentArea : registry.byId('visitPaneContentArea'),
 
-      initialized          : false,
+      initialized          : function(){
+                              if(registry.byId('visitEditPaneTabContainer')){
+                                return true
+                              }
+                              else{
+                                return false;
+                              }
+      },
 
       doms                 : function(){
                               if(!dom.byId('visitEditPaneTabContainer')){
                                 domConstruct.create('div',
                                                     {id: 'visitEditPaneTabContainer'},
                                                     'visitPaneContentArea',
-                                                    0);
+                                                    'first');
                                   domConstruct.create('div',
                                                       {id: 'visitEditPane'},
                                                       'visitEditPaneTabContainer',
-                                                      0);
+                                                      'first');
                               }
       },
 
@@ -45,23 +52,24 @@ define(['dojo/dom'           ,
                                                                                  tabPosition : 'top'},
                                                                                  'visitEditPaneTabContainer'
                                                                                 );
-                                this.visitPaneContentArea.addChild(visitEditPaneTabContainer);
+                                var mainContentArea = registry.byId('visitPaneContentArea');
+                                mainContentArea.addChild(visitEditPaneTabContainer);
                                 var visitEditPane             = new ContentPane({id      : 'visitEditPane',
-                                                                                title    : 'Edit Visit',
-                                                                                content  : html,
-                                                                                closable : true},
+                                                                                title    : "Edit Visit"},
                                                                                 'visitEditPane');
                                 console.log(visitEditPane);
-                                visitEditPaneTabContainer.addChild(visitEditPane);
+                                visitEditPane.startup();
+                                visitEditPaneTabContainer.addChild(visitEditPane);                                
                                 visitEditPaneTabContainer.startup();
+//                                 visitEditPane.startup();
 //                                 this.visitPaneContentArea.startup();
       },
 
       constructor          : function(html){
-                                if (!this.initialized){
+                                if (!this.initialized()){
                                   this.doms();
                                   this.dijits(html);
-                                  this.initialized = true;
+                                  this.initialized();
                                 }
                                 else{
                                   this.destroyPane();
@@ -76,7 +84,7 @@ define(['dojo/dom'           ,
                                   }
                                   visitEditPaneTabContainer.destroyRecursive();
                                 }
-                                this.initialized = false;
+                                this.initialized();
                                 this.constructor();
       }
 

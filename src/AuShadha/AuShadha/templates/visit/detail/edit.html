@@ -1,7 +1,7 @@
 {% if user and user.is_authenticated %}
 <div data-dojo-type = "dijit/form/Form" 
-     id             = "newVisitEditForm"
-     data-dojo-id   = "newVisitEditForm"
+     id             = "newVisitEditForm_{{visit_detail_obj.id}}"
+     data-dojo-id   = "newVisitEditForm_{{visit_detail_obj.id}}"
      encType        = "multipart/form-data" 
      action 	    =  "" 
      method         =  ""
@@ -25,7 +25,7 @@
           xhr(CHOSEN_PATIENT.visitedit ? CHOSEN_PATIENT.visitedit :"{{visit_detail_obj.get_edit_url}}",{
               handleAs: "text",
               method  : "POST",
-              data    : domForm.toObject("newVisitEditForm")
+              data    : domForm.toObject("newVisitEditForm_{{visit_detail_obj.id}}")
           }).then(
             function(json){
                 var jsondata = JSON.parse(json);
@@ -59,7 +59,7 @@
 
 {% if perms.visit.change_visitdetail %}
 
-      <table id ="visitDetailEditFormTable">
+      <table id ="visitDetailEditFormTable_{{visit_detail_obj.id}}">
           <tr> 
             <td> Date        </td> <td>  {{visit_detail_form.visit_date}}      </td> 
           </tr> 
@@ -82,21 +82,21 @@
 
       <hr class="shadow_line">
 
-      <table id       =   "visitComplaintEditFormTable">
+      <table id       =   "visitComplaintEditFormTable_{{visit_detail_obj.id}}">
         <tr>
           <td> Complaint </td> <td>   {{visit_complaint_form.complaint}} </td>
           <td> Duration  </td> <td>   {{visit_complaint_form.duration}}  </td>
           <td>  
               <img src   = "{{STATIC_URL}}images/add.png" 
                    style = "width: 16px; height: 16px; cursor: pointer; "
-                   id    = "addMoreVisitComplaint"
+                   id    = "addMoreVisitComplaint_{{visit_detail_obj.id}}"
                   > 
           </td> 
           {% comment %}
           <td>
             <img src   = "{{STATIC_URL}}images/minus.png" 
                 style = "width: 16px; height: 16px; cursor: pointer; "
-                id    = "removeVisitComplaint"
+                id    = "removeVisitComplaint_{{visit_detail_obj.id}}"
               >  
           </td>
           {% endcomment %}
@@ -105,25 +105,25 @@
 
       <hr >
 
-      <div id                =   "visitHpiEditFormDiv"
+      <div id                =   "visitHpiEditFormDiv_{{visit_detail_obj.id}}"
              data-dojo-type  = "dijit/TitlePane"
-             data-dojo-id    = "visitHpiAddFormDiv" 
+             data-dojo-id    = "visitHpiAddFormDiv_{{visit_detail_obj.id}}" 
              data-dojo-props = "open:true,  title: 'History of Presenting Illness' "
              style           = "margin: 10px;"
       >
           <legend> History of Present Illness </legend>
-          <table id="visit_hpi_form_table"> {{visit_hpi_form.hpi}}</table> 
+          <table id="visit_hpi_form_table_{{visit_detail_obj.id}}"> {{visit_hpi_form.hpi}}</table> 
       </div>
 
       <hr >
 
-      <div id              = "visitRosEditFormDiv" 
+      <div id              = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
              data-dojo-type  = "dijit/TitlePane"
-             data-dojo-id    = "visitRosEditFormDiv" 
+             data-dojo-id    = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
              data-dojo-props = "open:false,  title: 'Review of Systems' "
              style           = "margin: 10px;"
              >
-           <table id="visit_ros_form_table"> {{visit_ros_form}} </table>
+           <table id="visit_ros_form_table_{{visit_detail_obj.id}}"> {{visit_ros_form}} </table>
       </div>
 
 {% endif %} 
@@ -140,10 +140,10 @@
 
     {% if perms.visit.delete_visitdetail %}
     <button data-dojo-type  = "dijit/form/Button" 
-						data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
+			data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
             type            = "button"
             name            = "delVisit"
-            id              = "delVisitBtn">
+            id              = "delVisitBtn_{{visit_detail_obj.id}}">
       Delete
       <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
         require(

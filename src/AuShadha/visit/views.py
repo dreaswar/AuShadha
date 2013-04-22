@@ -323,10 +323,14 @@ def visit_detail_add(request, id):
       visit_hpi_obj = VisitHPI(visit_detail = visit_detail_obj)
       visit_ros_obj = VisitROS(visit_detail = visit_detail_obj)
       
-      visit_detail_form = VisitDetailForm(instance = visit_detail_obj)
-      visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj)
-      visit_hpi_form = VisitHPIForm(instance = visit_hpi_obj)
-      visit_ros_form = VisitROSForm(instance = visit_ros_obj)
+      visit_detail_form = VisitDetailForm(instance = visit_detail_obj, 
+                                          auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
+      visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
+                                                auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
+      visit_hpi_form = VisitHPIForm(instance = visit_hpi_obj,
+                                    auto_id  = "id_new_visit_hpi"+ str(id)+"_%s")
+      visit_ros_form = VisitROSForm(instance = visit_ros_obj,
+                                    auto_id  = "id_new_visit_ros"+ str(id)+"_%s")
 
     variable = RequestContext(request, {'user'                  : user                  ,
                                         'visit_detail_obj'      : visit_detail_obj      ,
@@ -417,31 +421,30 @@ def visit_detail_edit(request, id):
     except (VisitDetail.DoesNotExist):
       raise Http404("Requested Patient Does not exist.")
     error_message = None
-
-    visit_detail_form = VisitDetailForm(instance = visit_detail_obj)
+    form_field_auto_id = 'id_edit_visit_detail_'+str(id)
+    visit_detail_form = VisitDetailForm(instance = visit_detail_obj, auto_id= form_field_auto_id+"_%s")
 
     if visit_complaint_obj:
       visit_complaint_obj = visit_complaint_obj[0]
-      visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj)
+      c_auto_id = 'id_edit_visit_complaint_'+str(visit_complaint_obj.id)
+      visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj, auto_id = c_auto_id +"_%s")
     else:
       visit_complaint_form = None
     
     if visit_hpi_obj:
       visit_hpi_obj = visit_hpi_obj[0]
-      visit_hpi_form = VisitHPIForm(instance = visit_hpi_obj)
+      h_auto_id = 'id_edit_visit_hpi_'+ str(visit_hpi_obj.id)
+      visit_hpi_form = VisitHPIForm(instance = visit_hpi_obj, auto_id = h_auto_id+"_%s")
     else:
       visit_hpi_form = None
     
     if visit_ros_obj:
       visit_ros_obj = visit_ros_obj[0]
-      visit_ros_form = VisitROSForm(instance = visit_ros_obj)
+      r_auto_id     = 'id_edit_visit_ros_' + str(visit_ros_obj.id)
+      visit_ros_form = VisitROSForm(instance = visit_ros_obj, auto_id= r_auto_id+"_%s")
     else:
       visit_ros_form = None
-    #print visit_complaint_obj
-    #print visit_hpi_obj
-    #print visit_ros_obj
-    print visit_ros_form
-    print visit_hpi_form
+
     variable = RequestContext(request, {'user'                  : user                  ,
                                         'visit_detail_obj'      : visit_detail_obj      ,
                                         'visit_detail_form'     : visit_detail_form     ,

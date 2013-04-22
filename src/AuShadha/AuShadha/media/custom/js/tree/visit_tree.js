@@ -14,24 +14,28 @@ function buildVisitTree(){
       "dojo/dom-construct",
       "dojo/dom-style",
       "dojo/json",
-      'dojo/request'
-      
-//       ,'aushadha/panes/visit_edit_pane',
-  ], function(ready, 
-              win,
-              Memory, 
-              ObjectStoreModel,
-              Tree,
-              ForestStoreModel,
-              ItemFileReadStore,
-              dom, 
-              registry,
-              domConstruct, 
-              domStyle, 
-              JSON,
-              request
-//               ,VISIT_EDIT_PANE
-             ){
+      'dojo/request',
+
+      'aushadha/panes/visit_pane',
+      'aushadha/panes/visit_edit_pane'
+  ], 
+  function(ready, 
+            win,
+            Memory, 
+            ObjectStoreModel,
+            Tree,
+            ForestStoreModel,
+            ItemFileReadStore,
+            dom, 
+            registry,
+            domConstruct, 
+            domStyle, 
+            JSON,
+            request,
+
+            VISIT_PANE,
+            VISIT_EDIT_PANE
+           ){
 
       var existingTree = registry.byId('visitLSidebarTreeDiv');
 
@@ -108,8 +112,37 @@ function buildVisitTree(){
                           registry.byId('editPatientDialog').set('content',html);
                           registry.byId('editPatientDialog').set('title',"Edit Visit: " + CHOSEN_PATIENT.full_name);
                           registry.byId('editPatientDialog').show();
-//                           console.log(VISIT_EDIT_PANE);
-//                           VISIT_EDIT_PANE.constructor(html);
+                        },
+                        function(err){
+                          publishError(err);
+                        }
+                      );
+                    }
+          },
+          onClick: function(item){
+                    if (item.type=='visit'){
+                      request(item.editUrl).then(
+                        function(html){
+                          VISIT_PANE.editPane.constructor({id     : item.id, 
+                                                          title   : "Edit: " + item.name, 
+                                                          content : html}
+                                                         );
+                        },
+                        function(err){
+                          publishError(err);
+                        }
+                      );
+                    }
+                    if (item.id =='NEW_OPD_VISIT'){
+                      request(item.addUrl).then(
+                        function(html){
+                          try{
+                            VISIT_PANE.addPane.constructor({id    : "NEW_VISIT_TAB", 
+                                                         title  : "Add Visit",
+                                                         content: html});
+                          }catch(err){
+                            console.error(err.message);
+                          }
                         },
                         function(err){
                           publishError(err);
