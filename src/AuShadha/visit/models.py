@@ -425,7 +425,7 @@ class VisitHPIForm(ModelForm):
     text_fields = [
                     {"field"          : 'hpi',
                     'max_length'      : '1000'         ,
-                    "data-dojo-type"  : "dijit/Editor",
+                    "data-dojo-type"  : "dijit/form/SimpleTextarea",
                     "data-dojo-id"    : "visit_hpi",
                     "data-dojo-props" : r"'required' : true ,'regExp':'[a-zA-Z /-_:0-9#]+','invalidMessage' : 'Invalid Character'"
                     },

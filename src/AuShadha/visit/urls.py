@@ -13,6 +13,8 @@ urlpatterns = patterns('',
     url(r'render_visit_tree/$'  , render_visit_tree  , name="render_visit_tree"),
     #url(r'render_visit_json/(?P<id>\d+)/$'  , render_visit_json  , name="render_visit_json"),
 
+    url(r'summary/(?P<id>\d+)/$'    ,  visit_summary     , name="visit_summary"),
+    
     url(r'detail/add/(?P<id>\d+)/$'  , visit_detail_add  , name="visit_detail_add"),
     url(r'add/(?P<id>\d+)/$'         , visit_detail_add  , name="visit_detail_add"),
     

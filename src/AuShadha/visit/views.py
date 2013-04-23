@@ -117,20 +117,20 @@ def render_visit_tree(request,id = None):
                         "addUrl": None,
                         },
 
-                        {"name"  : "Media" , "type":"application", "id":"MEDIA" ,
-                        "len"   : 1,
-                        "addUrl": None,
-                        'children':[
-                            {"name"  : "Documents" , "type":"patient_documents_module", "id":"DOCS" ,
-                            "len"   : 1,
-                            "addUrl": None,
-                            },
-                            {"name"  : "Images" , "type":"patient_images_module", "id":"IMAGES" ,
-                            "len"   : 1,
-                            "addUrl": None,
-                            }
-                         ]
-                        }
+                        #{"name"  : "Media" , "type":"application", "id":"MEDIA" ,
+                        #"len"   : 1,
+                        #"addUrl": None,
+                        #'children':[
+                            #{"name"  : "Documents" , "type":"patient_documents_module", "id":"DOCS" ,
+                            #"len"   : 1,
+                            #"addUrl": None,
+                            #},
+                            #{"name"  : "Images" , "type":"patient_images_module", "id":"IMAGES" ,
+                            #"len"   : 1,
+                            #"addUrl": None,
+                            #}
+                         #]
+                        #}
                     ]
       }
 
@@ -246,15 +246,14 @@ def render_visit_list(request):
       data_to_append = {}
       data_to_append['id']         = visit.id
       data_to_append['date_of_visit']   = visit.visit_date.strftime("%d/%m/%Y %H:%M:%S")
-      data_to_append['surgeon']   = visit.op_surgeon.__unicode__()
+      data_to_append['surgeon']    = visit.op_surgeon.__unicode__()
       data_to_append['patient_hospital_id']   = visit.patient_detail.patient_hospital_id
       data_to_append['patient']    = visit.patient_detail.__unicode__()
       data_to_append['age']        = visit.patient_detail.age
       data_to_append['sex']        = visit.patient_detail.sex
       data_to_append['active']     = visit.is_active
-      #data_to_append['home']       = visit.get_visit_main_window_url()
-      data_to_append['del']       = visit.get_visit_main_window_url()
-      data_to_append['edit']       = visit.get_visit_main_window_url()
+      data_to_append['del']        = visit.get_edit_url()
+      data_to_append['edit']       = visit.get_del_url()
       data.append(data_to_append)
     json = simplejson.dumps(data)
     print json
@@ -293,6 +292,78 @@ def visit_detail_list(request, id):
     return render_to_response('visit/detail/list.html', variable)
   else:
     raise Http404(" Error ! Unsupported Request..")
+
+
+@login_required
+def visit_summary(request, id):
+  print "Listing Summary for patient with ID: " + str(id)
+  user = request.user
+
+  def format_ros(ros_obj):
+    ros_str  = ''
+    ros_list = [
+                ros_obj.const_symp , 
+                ros_obj.eye_symp   , 
+                ros_obj.ent_symp   , 
+                ros_obj.resp_symp  , 
+                ros_obj.gi_symp    , 
+                ros_obj.gu_symp    ,
+                ros_obj.ms_symp    ,
+                ros_obj.integ_symp ,
+                ros_obj.psych_symp ,
+                ros_obj.endocr_symp, 
+                ros_obj.hemat_symp , 
+                ros_obj.immuno_symp
+               ]
+    
+    not_nil_count = 0
+    for obj in ros_list:
+      if obj != 'Nil':
+        not_nil_count += 1
+        ros_str += obj.capitalize() +'\n'
+
+    if not_nil_count == 0:
+      return "NAD"
+    else:
+      return ros_str
+
+  if request.method == "GET" and request.is_ajax():
+    try:
+      id = int(id)
+      patient_detail_obj = PatientDetail.objects.get(pk = id)
+      visit_detail_obj   = VisitDetail.objects.filter(patient_detail = patient_detail_obj).order_by('visit_date')
+    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+      raise Http404("Error ! Invalid Request Parameters. ")
+    except (PatientDetail.DoesNotExist):
+      raise Http404("Requested Patient Does not exist.")
+  
+    visit_obj_list=[]
+    if visit_detail_obj:
+      error_message = "Listing the Visits"
+      for visit in visit_detail_obj:
+        dict_to_append      = {}
+        visit_complaint_obj = VisitComplaint.objects.filter(visit_detail = visit)
+        visit_hpi_obj       = VisitHPI.objects.filter(visit_detail = visit)
+        visit_ros_obj       = VisitROS.objects.filter(visit_detail = visit)
+        if visit_ros_obj:
+          visit_ros_obj = visit_ros_obj[0]
+        dict_to_append[visit] = {'complaint': visit_complaint_obj,
+                                 'hpi'      : visit_hpi_obj,
+                                 'ros'      : format_ros(visit_ros_obj)
+                                }
+        visit_obj_list.append(dict_to_append)
+    else:
+      error_message = "No Visits Recorded"
+    variable = RequestContext(request, {'user'               : user              ,
+                                        'visit_detail_obj'   : visit_detail_obj  ,
+                                        'visit_obj_list'     : visit_obj_list    ,
+                                        'patient_detail_obj' : patient_detail_obj,
+                                        'error_message'      : error_message
+                                        })
+    return render_to_response('visit/summary.html', variable)
+  else:
+    raise Http404(" Error ! Unsupported Request..")
+
 
 
 @login_required

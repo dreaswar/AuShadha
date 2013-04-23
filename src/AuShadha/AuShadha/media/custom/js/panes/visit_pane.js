@@ -13,7 +13,7 @@ define(
    'dojo/dom-attr',
    "dojo/ready",
    "dojo/_base/array",
-   "dojo/request/xhr"
+   "dojo/request"
   ],
   function(registry,
            parser, 
@@ -29,7 +29,7 @@ define(
            domAttr,
            ready,
            array,
-           xhr
+           request
   ){
 
 //     var main_tab_container = registry.byId("centerTopTabPane");
@@ -81,7 +81,14 @@ define(
                               }
                               console.log("Visit Menu done ..");
                             */
-
+                            request(CHOSEN_PATIENT.visitsummary).then(
+                              function(html){
+                                registry.byId('visitPaneRSidebar').set('content',html);
+                              },
+                              function(err){
+                                publishError(err);
+                              }
+                            );
                             return VISIT_PANE;
 
                           }
@@ -118,11 +125,16 @@ define(
         },
 
         onVisitChange: function(){
-                                this.destroyPane();
+                          registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+                          new buildVisitTree();
+                          new buildPatientTree();
+                          new buildAdmissionTree();
+                          this.destroyPane();
         },
 
         onVisitDelete: function(){
-                                this.destroyPane();
+                          registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);                
+                          this.destroyPane();
         },
 
         addPane : {
@@ -283,9 +295,9 @@ define(
                                             2);
 
                           domConstruct.create('div',
-                                                      {id: 'visitEditPaneTabContainer'},
-                                                      'visitPaneContentArea',
-                                                      'first');
+                                              {id: 'visitEditPaneTabContainer'},
+                                              'visitPaneContentArea',
+                                              'first');
                         /*                          
                             domConstruct.create('div',
                                                 {id: 'visitEditPane'},
@@ -316,11 +328,11 @@ define(
                         console.log(centerTopTabPane);
 
                         var visitHomeContentPane = new ContentPane({id        : 'visitHomeContentPane',
-                                                                        title     : 'Visits',
-                                                                        closable : false
-                                                                       },
-                                                                       'visitHomeContentPane'
-                                                      );
+                                                                    title     : 'Visits',
+                                                                    closable : false
+                                                                    },
+                                                                    'visitHomeContentPane'
+                                                                  );
                         console.log("Trying to add VisitHomePane");
 //                         debugger
                         centerTopTabPane.addChild(visitHomeContentPane,2);
@@ -362,11 +374,11 @@ define(
                         console.log(visitPaneContentArea);
 
 
-                        var visitEditPaneTabContainer = new TabContainer({id         : 'visitEditPaneTabContainer', 
-                                                                                 tabStrip    : true, 
-                                                                                 tabPosition : 'top'},
-                                                                                 'visitEditPaneTabContainer'
-                                                                                );
+                        var visitEditPaneTabContainer = new TabContainer({id  : 'visitEditPaneTabContainer', 
+                                                                          tabStrip    : true, 
+                                                                          tabPosition : 'top'},
+                                                                          'visitEditPaneTabContainer'
+                                                                        );
                         visitPaneContentArea.addChild(visitEditPaneTabContainer);
                         visitEditPaneTabContainer.startup();                        
 
@@ -387,7 +399,10 @@ define(
                                                                  region    : 'trailing',
                                                                  splitter  : true,
                                                                  gutters   : true,
-                                                                 style     : "width: 35em;background:#eef7d6;"
+                                                                 style     : "width      : 35em;    \
+                                                                              background : #F5F9F4; \
+                                                                              borders    : none;    \
+                                                                              "
                                                                  },
                                                                  'visitPaneRSidebar'
                                                         );

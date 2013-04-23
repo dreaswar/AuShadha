@@ -1,0 +1,73 @@
+{% if user.is_authenticated %}
+
+  <div id="visitSummaryDiv_{{patient_detail_obj.id}}">
+
+    {%if visit_obj_list %}
+
+      {% for visit_obj in visit_obj_list %}
+
+        {% for visit_detail, visit_rel in visit_obj.iteritems %}
+
+          <div id="visit_detail_summary_{{visit_detail.id}}">
+            <p>
+                <span style="color : navy;
+                             font-weight : bold;"> 
+                    Date:
+                </span> 
+                {{visit_detail.visit_date.date}}  - {{visit_detail.op_surgeon}}
+            </p>
+            <p> {{visit_detail.visit_nature}} ( {{visit_detail.visit_status}} ) </p>
+            {% if visit_detail.remarks != 'NAD' %}
+              <p style="font-weight: bold;">
+                Remarks:
+              </p>  
+              <p style="padding-left : 15px; 
+                        line-height  : 1.6em; 
+                        text-align   : justify;
+                        ">
+                  {{visit_detail.remarks.capitalize}} 
+              </p>
+            {% endif %}
+          </div>
+
+          <div> 
+            {% for obj, obj_list in visit_rel.iteritems %}
+              <table>
+                  <thead>
+                    <tr>
+                      <th style="font-weight: bold;"> {{obj.upper}}</th> 
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="padding-left : 15px; 
+                               line-height  : 1.6em; 
+                               text-align   : justify;
+                               ">
+                      {% for item in obj_list %}
+                            {{item}}
+                      {% endfor %}
+                    </td>
+                  </tr>
+                  </tbody>
+              </table>
+            {% endfor %}
+          </div>
+          <hr class="shadow_line">
+
+        {% endfor %}
+
+      {% endfor %}
+
+    {% else %}
+      <p> No OPD visits recorded for this Patient </p>
+      <hr>      
+    {% endif %}
+
+  </div>
+
+{% else %}
+  <hr>
+  <p> Please login to view </p>
+  <hr>
+{% endif %}

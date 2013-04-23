@@ -16,7 +16,7 @@
                 "dijit/registry"  ,
                 "dojo/json"       ,
                 "dojo/dom-form"   ,
-                "dijit/Dialog"
+                "dijit/Dialog" 
         ],
         function(dom, xhr, registry, JSON, domForm, Dialog){
           var editDialog  = registry.byId("editPatientDialog");
@@ -34,6 +34,7 @@
                   publishInfo("Saved Successfully" );
                   editDialog.hide();
                   new buildVisitTree();
+                  registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
                   new buildPatientTree();
                   new buildAdmissionTree();
                 }
@@ -105,26 +106,78 @@
 
       <hr >
 
-      <div id                = "visitHpiEditFormDiv_{{visit_detail_obj.id}}"
-             data-dojo-type  = "dijit/TitlePane"
-             data-dojo-id    = "visitHpiEditFormDiv_{{visit_detail_obj.id}}" 
-             data-dojo-props = "open:true,  title: 'History of Presenting Illness' "
-             style           = "margin: 10px;"
-      >
-          <legend> History of Present Illness </legend>
-          <table id="visit_hpi_form_table_{{visit_detail_obj.id}}"> {{visit_hpi_form.hpi}}</table> 
-      </div>
 
-      <hr >
-
-      <div id              = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
-           data-dojo-type  = "dijit/TitlePane"
-           data-dojo-id    = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
-           data-dojo-props = "open:false,  title: 'Review of Systems' "
-           style           = "margin: 10px;"
+      <div id            = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
+          data-dojo-id   = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
+          data-dojo-type = "dojox/layout/ContentPane"
+          style          = "height: 30em; overflow:auto;"
       >
-           <table id="visit_ros_form_table_{{visit_detail_obj.id}}"> {{visit_ros_form}} </table>
-      </div>
+          <div id             = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
+              data-dojo-id    = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
+              data-dojo-type  = "dijit/layout/TabContainer"
+              data-dojo-props = "tabPosition:'top',tabStrip: true"
+          >
+            <div id              = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
+                 data-dojo-id    = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
+                 data-dojo-type  = "dojox/layout/ContentPane"
+                 data-dojo-props = "title:'HPI'"
+            >
+              <table id="visit_hpi_edit_form_table_{{visit_detail_obj.id}}"> 
+                {{visit_hpi_form.hpi}}
+              </table> 
+            </div>
+
+            <div id             = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-id   = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-type = "dojox/layout/ContentPane"
+                    data-dojo-props = "title:'ROS'"
+              >
+                <table id              = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
+                        style           = "margin: 10px;"
+                        >
+                      {{visit_ros_form.as_table}} 
+                  </table>     
+            </div>
+            
+            <div id             = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id   = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-type = "dojox/layout/ContentPane"
+                  data-dojo-props = "title:'Vitals, GE, HEENT'"
+            >
+                <table id              = "visitVitalsGenAndHEENTExamEditFormDiv_{{visit_detail_obj.id}}" 
+                      style           = "margin: 10px;"
+                      >
+
+                </table>     
+            </div>
+
+            <div id             = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id   = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-type = "dojox/layout/ContentPane"
+                  data-dojo-props = "title:'Resp, CVS &amp; Abd'"
+            >
+              <table id              = "visitRespCVSAdbExamEditFromDiv_{{visit_detail_obj.id}}" 
+                      style           = "margin: 10px;"
+                      >
+
+                </table>     
+            </div>
+
+            <div id             = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id   = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-type = "dojox/layout/ContentPane"
+                  data-dojo-props = "title:'Extremity &amp; Neuro'"
+            >
+              <table id              = "visitMSAndNeuroExamEditFromDiv_{{visit_detail_obj.id}}" 
+                      style           = "margin: 10px;"
+                      >
+
+                </table>     
+            </div>
+
+    </div>
+
+  </div>
 
 {% endif %} 
     
@@ -165,6 +218,7 @@
                           registry.byId('VISIT_{{visit_detail_obj.id}}').destroyRecursive(false);
                         }
                         new buildVisitTree();
+                        registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
                         new buildPatientTree();
                         new buildAdmissionTree();
                       }else{

@@ -93,33 +93,42 @@ function buildVisitTree(){
       var patientVisitTree = new Tree({
           model   : patientVisitTreeModel,
           showRoot: false,
-          onDblClick: function(item){
-                    if (item.id=='NEW_OPD_VISIT'){
-                      request(item.addUrl).then(
-                        function(html){
-                          registry.byId('editPatientDialog').set('content',html);
-                          registry.byId('editPatientDialog').set('title',"New Visit: " + CHOSEN_PATIENT.full_name);
-                          registry.byId('editPatientDialog').show();
-                        },
-                        function(err){
-                          publishError(err);
-                        }
-                      );
+          onClick: function(item){
+                    if (item.id == 'NEW_OPD_VISIT'){
+                      
                     }
-                    if (item.type=='visit'){
-                      request(item.editUrl).then(
-                        function(html){
-                          registry.byId('editPatientDialog').set('content',html);
-                          registry.byId('editPatientDialog').set('title',"Edit Visit: " + CHOSEN_PATIENT.full_name);
-                          registry.byId('editPatientDialog').show();
-                        },
-                        function(err){
-                          publishError(err);
-                        }
-                      );
+                    if (item.type == 'visit'){
+                      
+                    }
+                    if (item.id == 'MEDICATION_LIST'){
+                      
+                    }
+                    if (item.id == 'INV'){
+                      
+                    }
+                    if (item.id =='IMAG'){
+                      
                     }
           },
-          onClick: function(item){
+          onDblClick: function(item){
+
+                    if (item.id =='NEW_OPD_VISIT'){
+                      request(item.addUrl).then(
+                        function(html){
+                          try{
+                            VISIT_PANE.addPane.constructor({id    : "NEW_VISIT_TAB", 
+                                                         title  : "Add Visit",
+                                                         content: html});
+                          }catch(err){
+                            console.error(err.message);
+                          }
+                        },
+                        function(err){
+                          publishError(err);
+                        }
+                      );
+                    }
+
                     if (item.type=='visit'){
                       request(item.editUrl).then(
                         function(html){
@@ -133,16 +142,22 @@ function buildVisitTree(){
                         }
                       );
                     }
-                    if (item.id =='NEW_OPD_VISIT'){
-                      request(item.addUrl).then(
+
+                    if (item.id =='MEDICATION_LIST'){
+                      request(CHOSEN_PATIENT.visitsummary).then(
                         function(html){
-                          try{
-                            VISIT_PANE.addPane.constructor({id    : "NEW_VISIT_TAB", 
-                                                         title  : "Add Visit",
-                                                         content: html});
-                          }catch(err){
-                            console.error(err.message);
-                          }
+                          alert("Feature Not Implemented yet. When its done, Medication List will load in a new tab");
+                        },
+                        function(err){
+                          publishError(err);
+                        }
+                      );
+                    }
+
+                    if (item.id =='INV' || item.id == 'IMAG'){
+                      request(CHOSEN_PATIENT.visitsummary).then(
+                        function(html){
+                          alert("Feature Not Implemented yet. When its done, Labs will load in a new tab");
                         },
                         function(err){
                           publishError(err);

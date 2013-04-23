@@ -43,8 +43,11 @@
                 console.log(jsondata);
                 if(jsondata.success == true){
                   publishInfo("Saved Successfully" );
-                  editDialog.hide();
+                  if(editDialog){
+                    editDialog.hide();
+                  }
                   new buildVisitTree();
+                  registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
                   new buildPatientTree();
                   new buildAdmissionTree();
                 }
