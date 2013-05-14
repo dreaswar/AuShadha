@@ -10,6 +10,19 @@
 
           <div id="visit_detail_summary_{{visit_detail.id}}">
             <p>
+            {% if visit_detail.is_active %}
+              <img src   = "{{STATIC_URL}}images/flag_blue.png" 
+                   alt   = "ACTIVE VISIT" 
+                   title = "Active Visit"
+                   >
+            {%else%}
+              <img src  = "{{STATIC_URL}}images/flag_red.png" 
+                   alt  = "INACTIVE VISIT" 
+                   title = "Visit Closed"
+                   >
+            {%endif%}
+            </p>
+            <p>
                 <span style="color : navy;
                              font-weight : bold;"> 
                     Date:

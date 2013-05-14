@@ -39,6 +39,7 @@ CONSULT_STATUS_CHOICES =(
                         ('review_awaited'          , 'Review Awaited'),
                         ('inv_awaited'             , 'Investigations Awaited'),
                         ('consults_awaited'        , 'Consults Awaited'),
+
                         ('admission'               , 'Admission'),
                         ('discharged'              , 'Discharged'),
                         ('no_show'                 , 'No Show'),
@@ -71,6 +72,35 @@ class VisitDetail(AuShadhaBaseModel):
 
   def get_absolute_url(self):
     return '/AuShadha/visit/detail/%d/' %(self.id)
+  
+  def get_active_visit_close_url(self):
+    if self.is_active:
+      return '/AuShadha/visit/close/%d/' %(self.id)
+    else:
+      if self.patient_detail.can_add_new_visit():
+        return self.patient_detail.get_patient_visit_add_url()
+      else:
+        return False
+  
+  def get_visit_detail_visit_follow_up_add_url(self):
+    #if self.patient_detail.has_active_visit():
+      #return self.patient_detail.get_patient_visit_add_url()
+    #else:
+      #return False
+    return '/AuShadha/visit/follow_up/add/%s' %(self.id)
+
+  def has_fu_visits(self):
+    id = self.id
+    try:
+      visit_obj = VisitDetail.objects.get(pk = id)
+      fu = VisitFollowUp.objects.filter(visit_detail= visit_obj)
+      if fu:
+        return fu
+      else:
+        return None
+    except(VisitDetail.DoesNotExist):
+      raise Exception("Not Visit Detail with ID:", str(id) )
+
 
   def visit_nature(self):
     return unicode(self.consult_nature)
@@ -111,16 +141,36 @@ class VisitDetail(AuShadhaBaseModel):
 
   def _close_visit(self):
     self.is_active = False
-    self.save()
+    self.save(dont_check_status= True)
+
+  def _close_all_active_visits(self):
+    pat_obj = self.patient_detail
+    visit_obj = VisitDetail.objects.filter(patient_detail = pat_obj).filter(is_active = True)
+    if visit_obj:
+      for visit in visit_obj:
+        visit._close_visit()
+      return True
+    else:
+      return False
 
   def save(self, *args, **kwargs):
     self.__model_label__ = 'detail'
     #if self.op_surgeon.clinic_staff_role == 'doctor':
-    if not self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
-      self.is_active = False
+
+    consult_nature = self.consult_nature
+
+    if not self.patient_detail.has_active_visit:      
+      self.consult_nature = 'initial'
+
+    if kwargs.get('dont_check_status') is True:
+      super(VisitDetail, self).save(*args, **kwargs)
     else:
-      self.is_active = True
-    super(VisitDetail, self).save(*args, **kwargs)
+      if self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
+        self.is_active = False
+      else:
+        self.is_active = True
+      super(VisitDetail, self).save(*args, **kwargs)
+
     #else:
       #raise Exception("User is not a Provider. Only Doctors can save Visits. ")
 
@@ -151,6 +201,85 @@ class VisitComplaint(AuShadhaBaseModel):
     verbose_name        = "Presenting Complaint"
     verbose_name_plural = "Presenting Complaint"
     ordering    = ('visit_detail', 'created_at', 'complaint')
+
+
+class VisitFollowUp(AuShadhaBaseModel):
+
+  """
+
+    Model to describe the Follow up OPD Visit Notes  or SOAP notes
+
+  """
+  __model_label__ = "visit_follow_up"
+  
+  visit_date       = models.DateTimeField(auto_now = False, default = datetime.now())
+  op_surgeon       = models.ForeignKey('clinic.Staff')
+
+  consult_nature   = models.CharField(max_length = 30, choices = CONSULT_NATURE_CHOICES)
+  status           = models.CharField(max_length = 30, choices = CONSULT_STATUS_CHOICES)
+  subjective   = models.TextField("Subjective",max_length = 1000, help_text="Restrict to 1000 words")
+  objective    = models.TextField("Objective",max_length = 1000, help_text="Restrict to 1000 words")
+  assessment   = models.TextField("Assessment",max_length = 1000, help_text="Restrict to 1000 words")
+  plan         = models.TextField("Plan",max_length = 1000, help_text="Restrict to 1000 words")
+  
+  visit_detail = models.ForeignKey(VisitDetail)
+  created_at   = models.DateTimeField(auto_now_add = True, editable = False)
+
+  def __unicode__(self):
+    return '%s\n%s\n%s\n%s\n%s\nSeen by: %s\nSeen On: %s' %(
+                                                            self.subjective     ,
+                                                            self.objective      , 
+                                                            self.assessment     , 
+                                                            self.plan           , 
+                                                            self.visit_detail   , 
+                                                            self.op_surgeon     ,
+                                                            self.visit_date.date().isoformat()
+                                                            )
+
+  def save(self, *args, **kwargs):
+    self.__model_label__        = 'visit_follow_up'
+    if self.visit_detail.is_active:
+      if self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
+        self.visit_detail._close_visit()
+      else:
+        self.visit_detail.is_active = True
+      super(VisitFollowUp, self).save(*args, **kwargs)
+    else:
+      raise Exception("Related VisitDetail is not active.Cannot add VisitFollowUp")
+
+
+
+class VisitSOAP(AuShadhaBaseModel):
+
+  """
+
+    Model to describe the Follow up OPD Visit Notes  or SOAP notes
+
+  """
+  __model_label__ = "visit_soap"
+
+  subjective   = models.TextField("Subjective", max_length = 1000, help_text="Restrict to 1000 words")
+  objective    = models.TextField("Objective" , max_length = 1000, help_text="Restrict to 1000 words")
+  assessment   = models.TextField("Assessment", max_length = 1000, help_text="Restrict to 1000 words")
+  plan         = models.TextField("Plan"      , max_length = 1000, help_text="Restrict to 1000 words")
+
+  visit_detail = models.ForeignKey(VisitDetail)
+  created_at   = models.DateTimeField(auto_now_add = True, editable = False)
+
+  def __unicode__(self):
+    return '%s\n%s\n%s\n%s\n%s\nSeen by: %s\nCreated On: %s' %(
+                                                              self.subjective     ,
+                                                              self.objective      , 
+                                                              self.assessment     , 
+                                                              self.plan           , 
+                                                              self.visit_detail   , 
+                                                              self.visit_detail.op_surgeon,
+                                                              self.created_at.date().isoformat()
+                                                            )
+
+  def save(self, *args, **kwargs):
+    self.__model_label__        = 'visit_soap'
+    super(VisitSOAP, self).save(*args, **kwargs)
 
 
 class VisitHPI(AuShadhaBaseModel):
@@ -545,6 +674,59 @@ class VisitROSForm(ModelForm):
                        'endocr_symp',
                        'immuno_symp',
                        'hemat_symp'
+                       ]
+    for model_field in form_field_list:
+      text_fields = [{"field"           : model_field,
+                      'max_length'      :  '500'         ,
+                      "data-dojo-type"  : "dijit.form.Textarea",
+                      "data-dojo-id"    : "visit_ros_" + model_field,
+                      "data-dojo-props" : r"'required' : true ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
+                      },
+                    ]
+      for field in text_fields:
+        print(self.fields[field['field']].widget);
+        self.fields[field['field']].widget.attrs['data-dojo-type']  = field['data-dojo-type']
+        self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+        self.fields[field['field']].widget.attrs['data-dojo-id']    = field['data-dojo-id']
+        self.fields[field['field']].widget.attrs['max_length']      = field['max_length']
+
+
+class VisitFollowUpForm(ModelForm):
+  class Meta:
+    model = VisitFollowUp
+    exclude = ('visit_detail','parent_clinic','created_at')
+  def __init__(self, *args, **kwargs):
+    super(VisitFollowUpForm, self).__init__(*args, **kwargs)
+    form_field_list = ['subjective',
+                       'objective',
+                       'assessment',
+                       'plan'
+                       ]
+    for model_field in form_field_list:
+      text_fields = [{"field"           : model_field,
+                      'max_length'      :  '500'         ,
+                      "data-dojo-type"  : "dijit.form.Textarea",
+                      "data-dojo-id"    : "visit_ros_" + model_field,
+                      "data-dojo-props" : r"'required' : true ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
+                      },
+                    ]
+      for field in text_fields:
+        print(self.fields[field['field']].widget);
+        self.fields[field['field']].widget.attrs['data-dojo-type']  = field['data-dojo-type']
+        self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+        self.fields[field['field']].widget.attrs['data-dojo-id']    = field['data-dojo-id']
+        self.fields[field['field']].widget.attrs['max_length']      = field['max_length']
+
+class VisitSOAPForm(ModelForm):
+  class Meta:
+    model = VisitSOAP
+    exclude = ('visit_detail','parent_clinic','created_at')
+  def __init__(self, *args, **kwargs):
+    super(VisitSOAPForm, self).__init__(*args, **kwargs)
+    form_field_list = ['subjective',
+                       'objective',
+                       'assessment',
+                       'plan'
                        ]
     for model_field in form_field_list:
       text_fields = [{"field"           : model_field,

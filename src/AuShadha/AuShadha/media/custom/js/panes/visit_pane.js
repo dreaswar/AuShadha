@@ -146,9 +146,11 @@ define(
                                           'visitEditPaneTabContainer',
                                           'last');
                       }
+                      console.log("Created a Add pane DOMS");
           },
 
           dijits: function(nodeId){
+                      console.log("Creating a Add pane Dijit");
                       var visitAddTab = new ContentPane({id      : this.nodeId,
                                                         closable : true},
                                                         nodeId);
@@ -167,7 +169,7 @@ define(
 
           constructor : function(obj){
                           console.log("Calling constructor method to addVisitPane");
-                          this.nodeId      = obj.id;
+                          this.nodeId      = obj.id[0];
                           this.nodeTitle   = obj.title;
                           this.nodeContent = obj.content;
                           console.log(obj);

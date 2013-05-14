@@ -137,7 +137,7 @@ def render_visit_tree(request,id = None):
       tree_item_list = data['items']
 
       if pat_obj.can_add_new_visit():
-        dict_to_append = {"name"  : "New OPD Visit" ,
+        dict_to_append = {"name"    : "New OPD Visit" ,
                             "type"  : "application"   ,
                             "id"    : "NEW_OPD_VISIT" ,
                             "len"   : len(visit_obj)  ,
@@ -145,52 +145,55 @@ def render_visit_tree(request,id = None):
                     }
         tree_item_list.insert(0, dict_to_append)
 
-      if visit_obj:
-        if not visit_obj == active_visit_obj:
-          base_dict     = {"name"  : "Previous Visits"  , "type":"application", "id":"PREV_VISITS"}
-          base_dict['children'] = []
-          children_list  = base_dict['children']
-          sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
-          for visit in visit_obj:
-            dict_to_append = sub_dict.copy()
-            dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
-            dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
-            dict_to_append['absoluteUrl'] = visit.get_absolute_url()
-            dict_to_append['editUrl']     = visit.get_edit_url()
-            dict_to_append['editUrl']     = visit.get_edit_url()
-            dict_to_append['delUrl']      = visit.get_del_url()
-            children_list.append(dict_to_append)
-          tree_item_list.insert(1, base_dict)
-
       if active_visit_obj:
         active_visit = VisitDetail.objects.filter(patient_detail=pat_obj).filter(is_active = True)[0]
-        base_dict = {"name"  : "Current Visit"    , 
-                      "type"  : "application", 
-                      "id":"CURR_VISIT",
-                      "len"   : len(active_visit),
-                      "addUrl": None,
+        base_dict = {"name"     : "Active Visit: " + active_visit.visit_date.date().isoformat()    , 
+                      "type"    : "application", 
+                      "id"      : "ACTIVE_VISIT",
+                      "len"     : True,
+                      "addUrl"  : None,
                       'editUrl' : active_visit.get_edit_url(),
-                      'delUrl' : active_visit.get_del_url(),
+                      'delUrl'  : active_visit.get_del_url(),
                       'children':[
-                        {"name"  : "SOAP Notes" , "type":"soap_notes", "id":"SOAP_NOTES" ,
+                        {"name" : "Add Follow-Up" , 
+                        "type"  : "visit_follow_up_add", 
+                        "id"    : "VISIT_FOLLOW_UP_ADD_"+ str(active_visit.id),
                         "len"   : 1,
-                        "addUrl": None,
+                        "addUrl": active_visit.get_visit_detail_visit_follow_up_add_url(),
                         },
+
+                        {"name" : "Close Visit" , 
+                        "type"  : "close_visit", 
+                        "id"    : "VISIT_CLOSE_"+ str(active_visit.id) ,
+                        "len"   : 1,
+                        "addUrl": active_visit.get_active_visit_close_url(),
+                        },
+
+                        {"name"   : "Edit Active Visit" , 
+                         "type"   : "visit", 
+                         "id"     : "ACTIVE_VISIT_" + str(active_visit.id) ,
+                        "len"     : 1,
+                        "addUrl"  : None,
+                        "absoluteUrl": active_visit.get_absolute_url(),
+                        "editUrl" : active_visit.get_edit_url(),
+                        "deUrl"   : active_visit.get_del_url()
+                        },
+
 
                         #{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
                         #"len"   : 1,
                         #"addUrl": None,
                         #},
 
-                        {"name"  : "Advice" , "type":"advice","id":"ADVICE" ,
-                        "len"   : 1,
-                        "addUrl": None,
-                        },
+                        #{"name"  : "Advice" , "type":"advice","id":"ADVICE" ,
+                        #"len"   : 1,
+                        #"addUrl": None,
+                        #},
 
-                        {"name"  : "Procedure" , "type":"procedure", "id":"PROC" ,
-                        "len"   : 1,
-                        "addUrl": None,
-                        },
+                        #{"name"  : "Procedure" , "type":"procedure", "id":"PROC" ,
+                        #"len"   : 1,
+                        #"addUrl": None,
+                        #},
 
                         #{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
                         #"len"   : 1,
@@ -198,8 +201,51 @@ def render_visit_tree(request,id = None):
                         #},
                     ]
                   }
-        tree_item_list.insert(2, base_dict)
 
+        if active_visit.has_fu_visits():
+          fu_visit = active_visit.has_fu_visits()
+          fu_base_dict = {"name"        : "Follow-ups" , 
+                          "type"        : "fu_visits", 
+                          "id"          : "",
+                          "len"         : 1,
+                          "addUrl"      : None,
+                          "absoluteUrl" : None,
+                          "children"    : []
+                        }
+          fu_sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+          base_dict['children'][3] = fu_base_dict
+          
+          for fu in fu_visit:
+            fu_dict_to_append = fu_sub_dict.copy()
+            fu_dict_to_append = {"name"   : fu.visit_date.date().isoformat(), 
+                                "type"    : "fu_visit", 
+                                "id"      : "FU_VISIT_"+ str(fu.id),
+                                "editUrl" : fu.get_visit_fu_edit_url(),
+                                "delUrl"  : fu.get_visit_fu_del_url()
+                                }
+            fu_base_dict['children'].append(fu_dict_to_append)
+
+        tree_item_list.insert(1, base_dict)
+
+      if visit_obj:
+        if not visit_obj:
+          base_dict     = {"name"  : "Closed Visits"  , "type":"application", "id":"INACTIVE_VISITS"}
+          base_dict['children'] = []
+          children_list  = base_dict['children']
+          sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+          for visit in visit_obj:
+            if not visit.is_active:
+              dict_to_append = sub_dict.copy()
+              dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
+              dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
+              dict_to_append['absoluteUrl'] = visit.get_absolute_url()
+              dict_to_append['editUrl']     = visit.get_edit_url()
+              dict_to_append['editUrl']     = visit.get_edit_url()
+              dict_to_append['delUrl']      = visit.get_del_url()
+              children_list.append(dict_to_append)
+          tree_item_list.insert(2, base_dict)
+
+      
       #if visit_obj:
         #data['items'][1]['children'] = []
         #children_list  = data['items'][1]['children']
@@ -367,7 +413,7 @@ def visit_summary(request, id):
 
 
 @login_required
-def visit_detail_add(request, id):
+def visit_detail_add(request,  id, nature = 'initial'):
   user = request.user
   if request.method == "GET" and request.is_ajax():
     try:
@@ -390,29 +436,35 @@ def visit_detail_add(request, id):
       success = True
 
       visit_detail_obj = VisitDetail(patient_detail = patient_detail_obj)
-      visit_complaint_obj = VisitComplaint(visit_detail = visit_detail_obj)
-      visit_hpi_obj = VisitHPI(visit_detail = visit_detail_obj)
-      visit_ros_obj = VisitROS(visit_detail = visit_detail_obj)
-      
-      visit_detail_form = VisitDetailForm(instance = visit_detail_obj, 
-                                          auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
-      visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
-                                                auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
-      visit_hpi_form = VisitHPIForm(instance = visit_hpi_obj,
-                                    auto_id  = "id_new_visit_hpi"+ str(id)+"_%s")
-      visit_ros_form = VisitROSForm(instance = visit_ros_obj,
-                                    auto_id  = "id_new_visit_ros"+ str(id)+"_%s")
 
-    variable = RequestContext(request, {'user'                  : user                  ,
-                                        'visit_detail_obj'      : visit_detail_obj      ,
-                                        'visit_detail_form'     : visit_detail_form     ,
-                                        'visit_complaint_form'  : visit_complaint_form  ,
-                                        'visit_hpi_form'        : visit_hpi_form        ,
-                                        'visit_ros_form'        : visit_ros_form        ,
-                                        'patient_detail_obj'    : patient_detail_obj    ,
-                                        'error_message'         : error_message         ,
-                                        'success'               : success,
-                                        })
+      if nature == 'initial':
+        visit_complaint_obj = VisitComplaint(visit_detail = visit_detail_obj)
+        visit_hpi_obj       = VisitHPI(visit_detail = visit_detail_obj)
+        visit_ros_obj       = VisitROS(visit_detail = visit_detail_obj)
+      
+        visit_detail_form    = VisitDetailForm(instance = visit_detail_obj, 
+                                               auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
+        visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
+                                                  auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
+        visit_hpi_form       = VisitHPIForm(instance = visit_hpi_obj,
+                                            auto_id  = "id_new_visit_hpi"+ str(id)+"_%s")
+        visit_ros_form       = VisitROSForm(instance = visit_ros_obj,
+                                            auto_id  = "id_new_visit_ros"+ str(id)+"_%s")
+
+        variable = RequestContext(request, {'user'                  : user                  ,
+                                            'visit_detail_obj'      : visit_detail_obj      ,
+                                            'visit_detail_form'     : visit_detail_form     ,
+                                            'visit_complaint_form'  : visit_complaint_form  ,
+                                            'visit_hpi_form'        : visit_hpi_form        ,
+                                            'visit_ros_form'        : visit_ros_form        ,
+                                            'patient_detail_obj'    : patient_detail_obj    ,
+                                            'error_message'         : error_message         ,
+                                            'success'               : success,
+                                            })
+      elif nature == 'fu':
+        #TODO
+        pass
+
     return render_to_response('visit/detail/add.html', variable)
   if request.method == "POST" and request.is_ajax():
     print "Received request to add visit..."
@@ -468,6 +520,63 @@ def visit_detail_add(request, id):
         error_message = '''Error! Visit Could not be added. 
                            Please check the forms for errors
                         '''
+    data = { 'success'       : success      ,
+             'error_message' : error_message
+           }
+    json = simplejson.dumps(data)
+    return HttpResponse(json, content_type = 'application/json')
+  else:
+    raise Http404(" Error ! Unsupported Request..")
+
+
+@login_required
+def visit_follow_up_add(request, id):
+
+  user = request.user
+  print "Received Request to add a follow up visit from ", user
+  if request.method == "GET" and request.is_ajax():
+    try:
+      id = int(id)
+      visit_detail_obj  = VisitDetail.objects.get(pk = id)
+    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+      raise Http404("Error ! Invalid Request Parameters. ")
+    except (VisitDetail.DoesNotExist):
+      raise Http404("Requested Visit Does not exist.")
+    except(visit_detail_obj.is_active == False):
+      raise Http404("The Visit is Closed. Cannot add Followup Visits")
+
+    visit_follow_up_obj = VisitFollowUp(visit_detail = visit_detail_obj)
+    visit_follow_up_form = VisitFollowUpForm(instance = visit_follow_up_obj, 
+                                             auto_id  = 'id_visit_follow_up_'+ str(visit_detail_obj.id)+"_%s"
+                                             )
+    variable = RequestContext(request, {'user'                  : user                  ,
+                                        'visit_detail_obj'      : visit_detail_obj      ,
+                                        'visit_follow_up_obj'   : visit_follow_up_obj   ,
+                                        'visit_follow_up_form'  : visit_follow_up_form  ,
+                                        'patient_detail_obj'    : visit_detail_obj.patient_detail    
+                                        })
+    return render_to_response('visit/follow_up/add.html', variable)
+
+  if request.method == "POST" and request.is_ajax():
+    print "Received request to add a Follow-Up OPD Visit..."
+    try:
+      id = int(id)
+      visit_detail_obj  = VisitDetail.objects.get(pk = id)
+    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+      raise Http404("Error ! Invalid Request Parameters. ")
+    except (VisitDetail.DoesNotExist):
+      raise Http404("Requested Visit Does not exist.")
+
+    visit_follow_up_obj  = VisitFollowUp(visit_detail  = visit_detail_obj)
+    visit_follow_up_form = VisitFollowUpForm(request.POST, instance = visit_follow_up_obj)
+
+    if visit_follow_up_form.is_valid():
+       saved_follow_up = visit_follow_up_form.save()
+       success = True
+       error_message = "Follow Up Visit Added Successfully"
+    else:
+      success = False
+      error_message = "Error! Follow-up visit Could not be added"
     data = { 'success'       : success      ,
              'error_message' : error_message
            }

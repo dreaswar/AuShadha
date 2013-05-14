@@ -15,8 +15,11 @@ urlpatterns = patterns('',
 
     url(r'summary/(?P<id>\d+)/$'    ,  visit_summary     , name="visit_summary"),
     
+    url(r'follow_up/add/(?P<id>\d+)/$' , visit_follow_up_add  , name="visit_follow_up_add"),
     url(r'detail/add/(?P<id>\d+)/$'  , visit_detail_add  , name="visit_detail_add"),
     url(r'add/(?P<id>\d+)/$'         , visit_detail_add  , name="visit_detail_add"),
+    
+    url(r'close/(?P<id>\d+)/$'          , visit_close             , name="visit_close"),
     
     url(r'detail/list/(?P<id>\d+)/$' , visit_detail_list , name="visit_detail_list"),
     url(r'list/(?P<id>\d+)/$'        , visit_detail_list , name="visit_detail_list"),

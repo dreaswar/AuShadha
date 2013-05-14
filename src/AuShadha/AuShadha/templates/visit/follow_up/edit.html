@@ -1,0 +1,240 @@
+{% if user and user.is_authenticated %}
+<div data-dojo-type = "dijit/form/Form" 
+     id             = "newVisitEditForm_{{visit_detail_obj.id}}"
+     data-dojo-id   = "newVisitEditForm_{{visit_detail_obj.id}}"
+     encType        = "multipart/form-data" 
+     action 	    =  "" 
+     method         =  ""
+     style          = "overflow: auto;"
+     >
+
+
+    <script type="dojo/method" data-dojo-event="onSubmit">
+      if( this.validate() ){
+        require(["dojo/dom",
+                "dojo/request/xhr",
+                "dijit/registry"  ,
+                "dojo/json"       ,
+                "dojo/dom-form"   ,
+                "dijit/Dialog" 
+        ],
+        function(dom, xhr, registry, JSON, domForm, Dialog){
+          var editDialog  = registry.byId("editPatientDialog");
+          var errorDialog = registry.byId("dialogJsonMessage");
+
+          xhr(CHOSEN_PATIENT.visitedit ? CHOSEN_PATIENT.visitedit :"{{visit_detail_obj.get_edit_url}}",{
+              handleAs: "text",
+              method  : "POST",
+              data    : domForm.toObject("newVisitEditForm_{{visit_detail_obj.id}}")
+          }).then(
+            function(json){
+                var jsondata = JSON.parse(json);
+                console.log(jsondata);
+                if(jsondata.success == true){
+                  publishInfo("Saved Successfully" );
+                  editDialog.hide();
+                  new buildVisitTree();
+                  registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+                  new buildPatientTree();
+                  new buildAdmissionTree();
+                }
+                else{
+                  publishError("ERROR ! :" + jsondata.error_message );
+                }
+            },
+            function(json){
+                  var jsondata = JSON.parse(json); 
+                  publishError("ERROR!: "+ jsondata.error_message );
+            },
+            function(evt){console.log("Edited Visit Successfully...")}
+          );
+        });
+        return false;
+      }
+      else{
+        return false;
+      }
+    </script>
+
+
+
+{% if perms.visit.change_visitdetail %}
+
+      <table id ="visitDetailEditFormTable_{{visit_detail_obj.id}}">
+          <tr> 
+            <td> Date        </td> <td>  {{visit_detail_form.visit_date}}      </td> 
+          </tr> 
+          <tr>
+            <td> Physician   </td> <td>   {{visit_detail_form.op_surgeon}}       </td>
+          </tr>
+          <tr>
+            <td> Referred    </td> <td>   {{visit_detail_form.referring_doctor}} </td> 
+          </tr>
+          <tr>
+            <td> Nature   </td> <td>   {{visit_detail_form.consult_nature}} </td> 
+          </tr>
+          <tr>
+            <td> Status   </td> <td>   {{visit_detail_form.status}}         </td> 
+          </tr>
+          <tr>
+            <td> Remarks   </td> <td>   {{visit_detail_form.remarks}}         </td> 
+          </tr>
+      </table>
+
+      <hr class="shadow_line">
+
+      <table id       =   "visitComplaintEditFormTable_{{visit_detail_obj.id}}">
+        <tr>
+          <td> Complaint </td> <td>   {{visit_complaint_form.complaint}} </td>
+          <td> Duration  </td> <td>   {{visit_complaint_form.duration}}  </td>
+          <td>  
+              <img src   = "{{STATIC_URL}}images/add.png" 
+                   style = "width: 16px; height: 16px; cursor: pointer; "
+                   id    = "addMoreVisitComplaint_{{visit_detail_obj.id}}"
+                  > 
+          </td> 
+          {% comment %}
+          <td>
+            <img src   = "{{STATIC_URL}}images/minus.png" 
+                style = "width: 16px; height: 16px; cursor: pointer; "
+                id    = "removeVisitComplaint_{{visit_detail_obj.id}}"
+              >  
+          </td>
+          {% endcomment %}
+        </tr>
+      </table>
+
+      <hr >
+
+
+      <div id            = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
+          data-dojo-id   = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
+          data-dojo-type = "dojox/layout/ContentPane"
+          style          = "height: 30em; overflow:auto;"
+      >
+          <div id             = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
+              data-dojo-id    = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
+              data-dojo-type  = "dijit/layout/TabContainer"
+              data-dojo-props = "tabPosition:'top',tabStrip: true"
+          >
+            <div id              = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
+                 data-dojo-id    = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
+                 data-dojo-type  = "dojox/layout/ContentPane"
+                 data-dojo-props = "title:'HPI'"
+            >
+              <table id="visit_hpi_edit_form_table_{{visit_detail_obj.id}}"> 
+                {{visit_hpi_form.hpi}}
+              </table> 
+            </div>
+
+            <div id             = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-id   = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-type = "dojox/layout/ContentPane"
+                    data-dojo-props = "title:'ROS'"
+              >
+                <table id              = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
+                        style           = "margin: 10px;"
+                        >
+                      {{visit_ros_form.as_table}} 
+                  </table>     
+            </div>
+            
+            <div id             = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id   = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-type = "dojox/layout/ContentPane"
+                  data-dojo-props = "title:'Vitals, GE, HEENT'"
+            >
+                <table id              = "visitVitalsGenAndHEENTExamEditFormDiv_{{visit_detail_obj.id}}" 
+                      style           = "margin: 10px;"
+                      >
+
+                </table>     
+            </div>
+
+            <div id             = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id   = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-type = "dojox/layout/ContentPane"
+                  data-dojo-props = "title:'Resp, CVS &amp; Abd'"
+            >
+              <table id              = "visitRespCVSAdbExamEditFromDiv_{{visit_detail_obj.id}}" 
+                      style           = "margin: 10px;"
+                      >
+
+                </table>     
+            </div>
+
+            <div id             = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id   = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-type = "dojox/layout/ContentPane"
+                  data-dojo-props = "title:'Extremity &amp; Neuro'"
+            >
+              <table id              = "visitMSAndNeuroExamEditFromDiv_{{visit_detail_obj.id}}" 
+                      style           = "margin: 10px;"
+                      >
+
+                </table>     
+            </div>
+
+    </div>
+
+  </div>
+
+{% endif %} 
+    
+    {% if perms.visit.change_visitdetail %}
+    <button data-dojo-type = "dijit/form/Button" 
+            data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+            type           = "submit" 
+            name           = "editButton" 
+            value          = "Edit">
+      Edit
+     </button>
+    {%endif%}
+
+    {% if perms.visit.delete_visitdetail %}
+    <button data-dojo-type  = "dijit/form/Button" 
+			data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
+            type            = "button"
+            name            = "delVisit"
+            id              = "delVisitBtn_{{visit_detail_obj.id}}">
+      Delete
+      <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
+        require(
+          ["dojo/dom", 
+            "dojo/_base/xhr",
+            "dojo/json",
+            "dijit/registry",
+            "dijit/Dialog"
+          ],
+        function(dom, xhr, JSON, registry, Dialog){
+            xhr.get({
+              url: "{{visit_detail_obj.get_del_url}}",
+              load: function(json){
+                      var jsondata = JSON.parse(json)
+                      if (jsondata.success == true){
+                        publishInfo(jsondata.error_message);
+                        registry.byId("editPatientDialog").hide();
+                        if( registry.byId('VISIT_{{visit_detail_obj.id}}') ){
+                          registry.byId('VISIT_{{visit_detail_obj.id}}').destroyRecursive(false);
+                        }
+                        new buildVisitTree();
+                        registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+                        new buildPatientTree();
+                        new buildAdmissionTree();
+                      }else{
+                         publishError(jsondata.error_message);
+                      }
+                    }
+            });
+        });
+    </script>
+    </button>
+    {% endif %}
+
+
+</div>
+{% else %}
+<p class="suggestion_text"> Please Login </p>
+{% endif %}
+
+

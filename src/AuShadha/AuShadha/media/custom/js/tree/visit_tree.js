@@ -143,6 +143,21 @@ function buildVisitTree(){
                       );
                     }
 
+                    if (item.type=='visit_follow_up_add'){
+                      request(item.addUrl).then(
+                        function(html){
+                          alert(item.id);
+                          VISIT_PANE.addPane.constructor({id     : item.id, 
+                                                          title   : "Add: " + item.name, 
+                                                          content : html}
+                                                         );
+                        },
+                        function(err){
+                          publishError(err);
+                        }
+                      );
+                    }
+
                     if (item.id =='MEDICATION_LIST'){
                       request(CHOSEN_PATIENT.visitsummary).then(
                         function(html){
