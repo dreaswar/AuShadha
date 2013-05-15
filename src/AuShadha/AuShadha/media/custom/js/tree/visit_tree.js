@@ -129,7 +129,7 @@ function buildVisitTree(){
                       );
                     }
 
-                    if (item.type=='visit'){
+                    if (item.type=='visit' || item.type == 'fu_visit'){
                       request(item.editUrl).then(
                         function(html){
                           VISIT_PANE.editPane.constructor({id     : item.id, 

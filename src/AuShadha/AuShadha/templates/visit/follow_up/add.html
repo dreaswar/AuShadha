@@ -33,7 +33,7 @@
           var editDialog  = registry.byId("editPatientDialog");
           var errorDialog = registry.byId("dialogJsonMessage");
 
-          xhr("{{visit_detail_obj.get_visit_follow_up_add_url}}",{
+          xhr("{{visit_detail_obj.get_visit_detail_visit_follow_up_add_url}}",{
               handleAs: "text",
               method  : "POST",
               data    : domForm.toObject("visitFollowUpAddForm")
@@ -79,14 +79,12 @@
             <td> Physician   </td> <td>   {{visit_follow_up_form.op_surgeon}}       </td>
           </tr>
           <tr>
-            <td> Referred    </td> <td>   {{visit_follow_up_form.referring_doctor}} </td> 
-          </tr>
-          <tr>
             <td> Nature   </td> <td>   {{visit_follow_up_form.consult_nature}} </td> 
           </tr>
           <tr>
             <td> Status   </td> <td>   {{visit_follow_up_form.status}}         </td> 
           </tr>
+           <hr>
           <tr>
             <td> Subjective   </td> <td>   {{visit_follow_up_form.subjective}}         </td> 
           </tr>

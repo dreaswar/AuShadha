@@ -213,15 +213,15 @@ def render_visit_tree(request,id = None):
                           "children"    : []
                         }
           fu_sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
-          base_dict['children'][3] = fu_base_dict
+          base_dict['children'].append(fu_base_dict)
           
           for fu in fu_visit:
             fu_dict_to_append = fu_sub_dict.copy()
             fu_dict_to_append = {"name"   : fu.visit_date.date().isoformat(), 
                                 "type"    : "fu_visit", 
                                 "id"      : "FU_VISIT_"+ str(fu.id),
-                                "editUrl" : fu.get_visit_fu_edit_url(),
-                                "delUrl"  : fu.get_visit_fu_del_url()
+                                "editUrl" : fu.get_edit_url(),
+                                "delUrl"  : fu.get_del_url()
                                 }
             fu_base_dict['children'].append(fu_dict_to_append)
 

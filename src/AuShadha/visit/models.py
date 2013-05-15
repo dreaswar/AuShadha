@@ -87,7 +87,7 @@ class VisitDetail(AuShadhaBaseModel):
       #return self.patient_detail.get_patient_visit_add_url()
     #else:
       #return False
-    return '/AuShadha/visit/follow_up/add/%s' %(self.id)
+    return '/AuShadha/visit/follow_up/add/%s/' %(self.id)
 
   def has_fu_visits(self):
     id = self.id
@@ -697,20 +697,48 @@ class VisitFollowUpForm(ModelForm):
     exclude = ('visit_detail','parent_clinic','created_at')
   def __init__(self, *args, **kwargs):
     super(VisitFollowUpForm, self).__init__(*args, **kwargs)
+    
+    text_fields = [{"field"         : 'visit_date',
+                      'max_length'    :  100         ,
+                      "data-dojo-type": "dijit.form.DateTextBox",
+                      "data-dojo-props": r"'required' :true"
+                    },
+                    {"field"            : 'op_surgeon',
+                      'max_length'      :  100         ,
+                    "data-dojo-type"    : "dijit.form.Select",
+                      "data-dojo-props" : r"'required' : true"
+                    },
+                    {"field"          : 'consult_nature',
+                      'max_length'    :  100         ,
+                      "data-dojo-type": "dijit.form.Select",
+                      "data-dojo-props": r"'required' :true"
+                      },
+                    {"field"          : 'status',
+                      'max_length'    :  100         ,
+                      "data-dojo-type": "dijit.form.Select",
+                      "data-dojo-props": r"'required' :true"
+                    }
+            ]
+    for field in text_fields:
+      print(self.fields[field['field']].widget);
+      self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+      self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+      self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+    
     form_field_list = ['subjective',
                        'objective',
                        'assessment',
                        'plan'
                        ]
     for model_field in form_field_list:
-      text_fields = [{"field"           : model_field,
+      textarea_text_fields = [{"field"           : model_field,
                       'max_length'      :  '500'         ,
                       "data-dojo-type"  : "dijit.form.Textarea",
                       "data-dojo-id"    : "visit_ros_" + model_field,
                       "data-dojo-props" : r"'required' : true ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
                       },
                     ]
-      for field in text_fields:
+      for field in textarea_text_fields:
         print(self.fields[field['field']].widget);
         self.fields[field['field']].widget.attrs['data-dojo-type']  = field['data-dojo-type']
         self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
