@@ -210,7 +210,7 @@ class VisitFollowUp(AuShadhaBaseModel):
     Model to describe the Follow up OPD Visit Notes  or SOAP notes
 
   """
-  __model_label__ = "visit_follow_up"
+  #__model_label__ = "follow_up"
   
   visit_date       = models.DateTimeField(auto_now = False, default = datetime.now())
   op_surgeon       = models.ForeignKey('clinic.Staff')
@@ -236,8 +236,12 @@ class VisitFollowUp(AuShadhaBaseModel):
                                                             self.visit_date.date().isoformat()
                                                             )
 
+  def __init__(self, *args, **kwargs):
+    self.__model_label__        = 'follow_up'
+    super(VisitFollowUp, self).__init__(*args, **kwargs)
+
   def save(self, *args, **kwargs):
-    self.__model_label__        = 'visit_follow_up'
+    #self.__model_label__        = 'follow_up'
     if self.visit_detail.is_active:
       if self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
         self.visit_detail._close_visit()

@@ -34,7 +34,11 @@ def generic_url_maker(instance,action,id, root_object = False):
   #FIXME:: may be better to rely on django.contrib.contenttypes.ContentType to do a similar thing rather than using _meta  
   from AuShadha.settings import APP_ROOT_URL
   if not root_object:
-    url = unicode(APP_ROOT_URL) + unicode(instance._meta.app_label)+ "/" + unicode(action) +"/" + unicode(id) +"/"
+    #url = unicode(APP_ROOT_URL) + unicode(instance._meta.app_label)+ "/" + unicode(action) +"/" + unicode(id) +"/"
+    url = unicode(APP_ROOT_URL)              + \
+          unicode(instance._meta.app_label)  + "/" + \
+          unicode(instance.__model_label__)  + "/" + \
+          unicode(action) +"/" + unicode(id) + "/"
   if root_object:
     url = unicode(APP_ROOT_URL) + unicode(instance._meta.app_label)+ "/" + unicode(action) +"/"
   return url

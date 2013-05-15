@@ -146,7 +146,6 @@ function buildVisitTree(){
                     if (item.type=='visit_follow_up_add'){
                       request(item.addUrl).then(
                         function(html){
-                          alert(item.id);
                           VISIT_PANE.addPane.constructor({id     : item.id, 
                                                           title   : "Add: " + item.name, 
                                                           content : html}

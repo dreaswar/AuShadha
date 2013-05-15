@@ -1,7 +1,7 @@
 {% if user and user.is_authenticated %}
 <div data-dojo-type = "dijit/form/Form" 
-     id             = "newVisitEditForm_{{visit_detail_obj.id}}"
-     data-dojo-id   = "newVisitEditForm_{{visit_detail_obj.id}}"
+     id             = "visitFUEditForm_{{visit_follow_up_obj.id}}"
+     data-dojo-id   = "visitFUEditForm_{{visit_follow_up_obj.id}}"
      encType        = "multipart/form-data" 
      action 	    =  "" 
      method         =  ""
@@ -22,10 +22,10 @@
           var editDialog  = registry.byId("editPatientDialog");
           var errorDialog = registry.byId("dialogJsonMessage");
 
-          xhr(CHOSEN_PATIENT.visitedit ? CHOSEN_PATIENT.visitedit :"{{visit_detail_obj.get_edit_url}}",{
+          xhr("{{visit_follow_up_obj.get_edit_url}}",{
               handleAs: "text",
               method  : "POST",
-              data    : domForm.toObject("newVisitEditForm_{{visit_detail_obj.id}}")
+              data    : domForm.toObject("visitFUEditForm_{{visit_follow_up_obj.id}}")
           }).then(
             function(json){
                 var jsondata = JSON.parse(json);
@@ -58,31 +58,37 @@
 
 
 
-{% if perms.visit.change_visitdetail %}
+{% if perms.visit.change_visitfollowup %}
 
-      <table id ="visitDetailEditFormTable_{{visit_detail_obj.id}}">
+      <table id ="visitFUEditFormTable_{{visit_follow_up_obj.id}}">
           <tr> 
-            <td> Date        </td> <td>  {{visit_detail_form.visit_date}}      </td> 
+            <td> Date        </td> <td>  {{visit_follow_up_form.visit_date}}      </td> 
           </tr> 
           <tr>
-            <td> Physician   </td> <td>   {{visit_detail_form.op_surgeon}}       </td>
+            <td> Physician   </td> <td>   {{visit_follow_up_form.op_surgeon}}       </td>
           </tr>
           <tr>
-            <td> Referred    </td> <td>   {{visit_detail_form.referring_doctor}} </td> 
+            <td> Nature   </td> <td>   {{visit_follow_up_form.consult_nature}} </td> 
           </tr>
           <tr>
-            <td> Nature   </td> <td>   {{visit_detail_form.consult_nature}} </td> 
+            <td> Status   </td> <td>   {{visit_follow_up_form.status}}         </td> 
           </tr>
           <tr>
-            <td> Status   </td> <td>   {{visit_detail_form.status}}         </td> 
+            <td> Subjective   </td> <td>   {{visit_follow_up_form.subjective}}         </td> 
           </tr>
           <tr>
-            <td> Remarks   </td> <td>   {{visit_detail_form.remarks}}         </td> 
+            <td> Objective   </td> <td>   {{visit_follow_up_form.objective}}         </td> 
+          </tr>
+          <tr>
+            <td> Assessment   </td> <td>   {{visit_follow_up_form.assessment}}         </td> 
+          </tr>
+          <tr>
+            <td> Plan   </td> <td>   {{visit_follow_up_form.plan}}         </td> 
           </tr>
       </table>
 
       <hr class="shadow_line">
-
+      {% comment %}
       <table id       =   "visitComplaintEditFormTable_{{visit_detail_obj.id}}">
         <tr>
           <td> Complaint </td> <td>   {{visit_complaint_form.complaint}} </td>
@@ -93,95 +99,97 @@
                    id    = "addMoreVisitComplaint_{{visit_detail_obj.id}}"
                   > 
           </td> 
-          {% comment %}
+
           <td>
             <img src   = "{{STATIC_URL}}images/minus.png" 
                 style = "width: 16px; height: 16px; cursor: pointer; "
                 id    = "removeVisitComplaint_{{visit_detail_obj.id}}"
               >  
           </td>
-          {% endcomment %}
+
         </tr>
       </table>
-
+      
       <hr >
 
-
-      <div id            = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
-          data-dojo-id   = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
+      <div id            = "visitFUHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
+          data-dojo-id   = "visitFUHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
           data-dojo-type = "dojox/layout/ContentPane"
           style          = "height: 30em; overflow:auto;"
       >
-          <div id             = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
-              data-dojo-id    = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
+          <div id             = "visitFUHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
+              data-dojo-id    = "visitFUHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
               data-dojo-type  = "dijit/layout/TabContainer"
               data-dojo-props = "tabPosition:'top',tabStrip: true"
           >
-            <div id              = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
-                 data-dojo-id    = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
+            <div id              = "visitFUHPIEditFormContentPane_{{visit_detail_obj.id}}"
+                 data-dojo-id    = "visitFUHPIEditFormContentPane_{{visit_detail_obj.id}}"
                  data-dojo-type  = "dojox/layout/ContentPane"
                  data-dojo-props = "title:'HPI'"
             >
-              <table id="visit_hpi_edit_form_table_{{visit_detail_obj.id}}"> 
+              <table id="visit_fu_hpi_edit_form_table_{{visit_detail_obj.id}}"> 
                 {{visit_hpi_form.hpi}}
               </table> 
             </div>
 
-            <div id             = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
-                    data-dojo-id   = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
+            <div id             = "visitFUROSEditFormContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-id   = "visitFUROSEditFormContentPane_{{visit_detail_obj.id}}"
                     data-dojo-type = "dojox/layout/ContentPane"
                     data-dojo-props = "title:'ROS'"
               >
-                <table id              = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
+                <table id              = "visitFuRosEditFormDiv_{{visit_detail_obj.id}}" 
                         style           = "margin: 10px;"
                         >
                       {{visit_ros_form.as_table}} 
                   </table>     
             </div>
             
-            <div id             = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
-                  data-dojo-id   = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
+            <div id             = "visitFUVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id   = "visitFUVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
                   data-dojo-type = "dojox/layout/ContentPane"
                   data-dojo-props = "title:'Vitals, GE, HEENT'"
             >
-                <table id              = "visitVitalsGenAndHEENTExamEditFormDiv_{{visit_detail_obj.id}}" 
+                <table id              = "visitFUVitalsGenAndHEENTExamEditFormDiv_{{visit_detail_obj.id}}" 
                       style           = "margin: 10px;"
                       >
 
                 </table>     
             </div>
 
-            <div id             = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
-                  data-dojo-id   = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
+            <div id             = "visitFURespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id   = "visitFURespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
                   data-dojo-type = "dojox/layout/ContentPane"
                   data-dojo-props = "title:'Resp, CVS &amp; Abd'"
             >
-              <table id              = "visitRespCVSAdbExamEditFromDiv_{{visit_detail_obj.id}}" 
+              <table id              = "visitFURespCVSAdbExamEditFromDiv_{{visit_detail_obj.id}}" 
                       style           = "margin: 10px;"
                       >
 
                 </table>     
             </div>
 
-            <div id             = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
-                  data-dojo-id   = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
+            <div id             = "visitFUMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id   = "visitFUMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
                   data-dojo-type = "dojox/layout/ContentPane"
                   data-dojo-props = "title:'Extremity &amp; Neuro'"
             >
-              <table id              = "visitMSAndNeuroExamEditFromDiv_{{visit_detail_obj.id}}" 
+              <table id              = "visitFUMSAndNeuroExamEditFromDiv_{{visit_detail_obj.id}}" 
                       style           = "margin: 10px;"
                       >
 
                 </table>     
             </div>
 
+
     </div>
+    {%endcomment%}
+
 
   </div>
 
 {% endif %} 
     
-    {% if perms.visit.change_visitdetail %}
+    {% if perms.visit.change_visitfollowup %}
     <button data-dojo-type = "dijit/form/Button" 
             data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
             type           = "submit" 
@@ -191,7 +199,7 @@
      </button>
     {%endif%}
 
-    {% if perms.visit.delete_visitdetail %}
+    {% if perms.visit.delete_visitfollowup %}
     <button data-dojo-type  = "dijit/form/Button" 
 			data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
             type            = "button"
@@ -208,14 +216,14 @@
           ],
         function(dom, xhr, JSON, registry, Dialog){
             xhr.get({
-              url: "{{visit_detail_obj.get_del_url}}",
+              url: "{{visit_follow_up_obj.get_del_url}}",
               load: function(json){
                       var jsondata = JSON.parse(json)
                       if (jsondata.success == true){
                         publishInfo(jsondata.error_message);
                         registry.byId("editPatientDialog").hide();
-                        if( registry.byId('VISIT_{{visit_detail_obj.id}}') ){
-                          registry.byId('VISIT_{{visit_detail_obj.id}}').destroyRecursive(false);
+                        if( registry.byId('VISIT_{{visit_follow_up_obj.id}}') ){
+                          registry.byId('VISIT_{{visit_follow_up_obj.id}}').destroyRecursive(false);
                         }
                         new buildVisitTree();
                         registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);

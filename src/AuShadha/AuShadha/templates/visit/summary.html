@@ -1,5 +1,49 @@
 {% if user.is_authenticated %}
 
+  {% if perms.visit %}
+    {%if visit_obj_list %}
+      <div style="background    : white; 
+                  height        : 2.5em; 
+                  border        : solid 1px #aaa;
+                  border-radius : 5px;">
+
+        <div style="position:relative; left: 1.5em; max-width:90%;">
+          <span style = "position    : relative; 
+                        float       : left; 
+                        display     : inline-block; 
+                        white-space : nowrap; 
+                        margin      : 4px;
+                        " 
+                class = "dijitIconFilter">
+          </span>
+          Filter By : 
+          <span id              = "visitSummaryFilterSelector"
+                data-dojo-type  = "dijit/form/Select"
+                data-dojo-id    = "visitSummaryFilterSelector"
+                data-dojo-props = "required:true"
+                class           = "visitSummaryFilterSelector"
+            >
+            <option name="All"                   value="all"    > All Visits           </option>
+            <option name="Via Appointments"      value="appts"  > Via Appointments     </option>
+            <option name="Non Emergency Walkins" value="walkins"> Non Emergency Walkins </option>
+            <option name="Emergency"             value="emer"   > Emergency            </option>
+            <option name="Telephonic"            value="tele"   > Telephonic           </option>
+            <option name="Diagnosis"             value="diag"   > Diagnosis            </option>
+          </span>
+          
+          <span id              = "visitShowTimeLineCheckBox"
+                data-dojo-type  = "dijit/form/CheckBox"
+                data-dojo-id    = "visitShowTimeLineCheckBox"
+                class           = "visitShowTimeLineCheckBox"
+          >
+          </span>
+          Show Time Line
+        </div>
+
+      </div>
+    {% endif %}
+  {% endif %}
+
   <div id="visitSummaryDiv_{{patient_detail_obj.id}}">
 
     {%if visit_obj_list %}

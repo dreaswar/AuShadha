@@ -16,6 +16,9 @@ urlpatterns = patterns('',
     url(r'summary/(?P<id>\d+)/$'    ,  visit_summary     , name="visit_summary"),
     
     url(r'follow_up/add/(?P<id>\d+)/$' , visit_follow_up_add  , name="visit_follow_up_add"),
+    url(r'follow_up/edit/(?P<id>\d+)/$' , visit_follow_up_edit  , name="visit_follow_up_edit"),
+    url(r'follow_up/del/(?P<id>\d+)/$' , visit_follow_up_del  , name="visit_follow_up_del"),
+
     url(r'detail/add/(?P<id>\d+)/$'  , visit_detail_add  , name="visit_detail_add"),
     url(r'add/(?P<id>\d+)/$'         , visit_detail_add  , name="visit_detail_add"),
     
