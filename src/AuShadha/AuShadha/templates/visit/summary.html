@@ -2,17 +2,27 @@
 
   {% if perms.visit %}
     {%if visit_obj_list %}
-      <div style="background    : white; 
-                  height        : 2.5em; 
-                  border        : solid 1px #aaa;
-                  border-radius : 5px;">
+      <div style = "background    : white; 
+                    height        : 2.5em; 
+                    border        : solid 1px #aaa;
+                    border-radius : 5px;
+                    width         : 100%;
+                    margin-bottom : 10px;
+                   "
+           id   = "visitSummaryNotesContainer">
 
-        <div style="position:relative; left: 1.5em; max-width:90%;">
+        <div style = "position      : relative; 
+                      left          : .5em; 
+                      display       : inline-block;
+                      white-space   : nowrap;
+                      width         : 90%;
+                     "
+             id    = "visitSummaryNotesSettingsContainer">
           <span style = "position    : relative; 
-                        float       : left; 
-                        display     : inline-block; 
-                        white-space : nowrap; 
-                        margin      : 4px;
+                         float       : left; 
+                         display     : inline-block; 
+                         white-space : nowrap; 
+                         margin      : 4px;
                         " 
                 class = "dijitIconFilter">
           </span>
@@ -30,91 +40,408 @@
             <option name="Telephonic"            value="tele"   > Telephonic           </option>
             <option name="Diagnosis"             value="diag"   > Diagnosis            </option>
           </span>
-          
-          <span id              = "visitShowTimeLineCheckBox"
-                data-dojo-type  = "dijit/form/CheckBox"
-                data-dojo-id    = "visitShowTimeLineCheckBox"
-                class           = "visitShowTimeLineCheckBox"
-          >
-          </span>
-          Show Time Line
-        </div>
 
+          <span style = "background       : white;
+                         background-image : url('{{STATIC_URL}}images/generic/dashboard_and_settings/settings_16.png');
+                         position         : relative;
+                         top              : -16px;
+                         float            : right;
+                         cursor           : pointer;
+                         width            : 16px;
+                         height           : 16px;
+                        " 
+                title = "Show Settings"
+                onClick="showVisitNotesSettingsDiv(this);"
+                >
+
+                <script type           = "dojo/method" >
+                  function showVisitNotesSettingsDiv(e){
+                    require(['dojo/dom',
+                             'dojo/on',
+                             'dojo/dom-style',
+                             'dojo/dom-attr'
+                           ],
+                    function(dom,on,domStyle,domAttr){
+                             if(domStyle.get('visitSummaryNotesSettings','display')== 'none'){
+                              domStyle.set('visitSummaryNotesSettings',
+                                            {display      : 'block',
+                                             marginBottom : '10px'
+                                            }
+                              );
+                             }else{
+                              domStyle.set('visitSummaryNotesSettings',
+                                            {display:'none'}
+                              );
+                             }
+                    });
+                  }
+                </script>
+
+          </span>
+          <span style = "background       : white;
+                         background-image : url('{{STATIC_URL}}images/silk/icons/application_get.png');
+                         position         : relative;
+                         top              : -16px;
+                         float            : right;
+                         cursor           : pointer;
+                         width            : 16px;
+                         height           : 16px;
+                        " 
+                title   = "Show All Visit Notes in a Popup"
+                id      = "showVisitSummaryNotes"
+                onClick = 'showVisitNotesDialog();'
+                >
+                <script type           = "dojo/method" >
+                  function showVisitNotesDialog(){
+                    require(['dijit/registry',
+                           'dojo/dom',
+                           'dojo/on',
+                           'dijit/Dialog'
+                           ],
+                    function(registry,dom,on,Dialog){
+                              registry.byId('visitSummaryHiddenDiv').show();
+                    });
+                  }
+                </script>
+          </span>
+        </div>
       </div>
+      
     {% endif %}
   {% endif %}
 
-  <div id="visitSummaryDiv_{{patient_detail_obj.id}}">
+  <div id="visitSummaryNotesSettings" 
+       style="display       : none;
+              position      : relative;
+              top           : 0;
+              background    : white;
+              border        : solid 1px #aaa;
+              border-radius : 5px;
+              padding       : 0px 5px 0px 10px;
+              "
+              >
+    <span id              = "visitShowTimeLineCheckBox"
+          data-dojo-type  = "dijit/form/CheckBox"
+          data-dojo-id    = "visitShowTimeLineCheckBox"
+          class           = "visitShowTimeLineCheckBox"
+    >
+    </span>
+    Show Time Line
 
+    <button id              = "visitNotesCollapseExpandAllButton"
+            data-dojo-type  = "dijit/form/Button"
+            data-dojo-props = "label: 'Expand All'"
+            data-dojo-id    = "visitNotesCollapseExpandAllButton"
+            class           = "visitNotesCollapseExpandAllButton"
+    >
+      Expand
+      <script type="dojo/on" data-dojo-args="evt" data-dojo-event="click">
+            require(['dijit/registry'       ,
+                    'dojo/dom'              ,
+                    'dojo/on'               ,
+                    'dojo/dom-style'        ,
+                    "dojo/dom-attr"         ,
+                    "dijit/TitlePane"       ,
+                    "dojo/query"            ,
+                    "dojo/NodeList-traverse",
+                    "dojo/NodeList-data"
+                    ],
+            function(registry ,
+                     dom      ,
+                     on       ,
+                     domStyle ,
+                     domAttr  ,
+                     TitlePane,
+                     query){
+
+               var btn     = registry.byId("visitNotesCollapseExpandAllButton");
+               var btnLabl = registry.byId("visitNotesCollapseExpandAllButton").get('label');
+
+               if ( btnLabl == "Expand All"){
+                btn.set('label', "Collapse All");
+                query('.visitSummaryTitlePane').
+                forEach(function(node){
+                          var nodeId = domAttr.get(node, 'id');
+                          var tP     = registry.byId(nodeId);
+                          if(!tP.open){ tP.toggle(); }
+                       });
+               }else{
+                btn.set('label',"Expand All");
+                query('.visitSummaryTitlePane').
+                forEach(function(node){
+                          var nodeId = domAttr.get(node, 'id');
+                          var tP     = registry.byId(nodeId);
+                          if(tP.open){ tP.toggle(); }
+                       });
+               }
+            });
+      </script>
+    </button>
+
+  </div>
+
+  <div id="visitSummaryDiv_{{patient_detail_obj.id}}">
+  
     {%if visit_obj_list %}
 
       {% for visit_obj in visit_obj_list %}
 
         {% for visit_detail, visit_rel in visit_obj.iteritems %}
 
-          <div id="visit_detail_summary_{{visit_detail.id}}">
-            <p>
-            {% if visit_detail.is_active %}
-              <img src   = "{{STATIC_URL}}images/flag_blue.png" 
-                   alt   = "ACTIVE VISIT" 
-                   title = "Active Visit"
-                   >
-            {%else%}
-              <img src  = "{{STATIC_URL}}images/flag_red.png" 
-                   alt  = "INACTIVE VISIT" 
-                   title = "Visit Closed"
-                   >
-            {%endif%}
-            </p>
-            <p>
-                <span style="color : navy;
-                             font-weight : bold;"> 
-                    Date:
-                </span> 
-                {{visit_detail.visit_date.date}}  - {{visit_detail.op_surgeon}}
-            </p>
-            <p> {{visit_detail.visit_nature}} ( {{visit_detail.visit_status}} ) </p>
-            {% if visit_detail.remarks != 'NAD' %}
-              <p style="font-weight: bold;">
-                Remarks:
-              </p>  
-              <p style="padding-left : 15px; 
-                        line-height  : 1.6em; 
-                        text-align   : justify;
-                        ">
-                  {{visit_detail.remarks.capitalize}} 
+          <div data-dojo-type  = "dijit/TitlePane" 
+               data-dojo-props = "title: '{{visit_detail.visit_date.date}}-{{visit_detail.op_surgeon}}', open:false"
+               id              = "visitSummaryTitlePane_{{visit_detail.id}}"
+               class           = "visitSummaryTitlePane"
+               >
+            <div>
+              <p>
+              {% if visit_detail.is_active %}
+                <img src   = "{{STATIC_URL}}images/flag_blue.png" 
+                    alt   = "ACTIVE VISIT" 
+                    title = "Active Visit"
+                    style = 'float:left;'
+                    >
+              {%else%}
+                <img src  = "{{STATIC_URL}}images/flag_red.png" 
+                    alt  = "INACTIVE VISIT" 
+                    title = "Visit Closed"
+                    style = 'float:left;'
+                    >
+              {%endif%}
+              {% if visit_detail.has_fu_visits %}
+              <img src   = "{{STATIC_URL}}images/flag_orange.png" 
+                  alt   = "Has Follow Up Visit" 
+                  title = "Has Follow Up Visit"
+                  style = 'float:right;'
+                  >
+              {% else %}
+              <img src   = "{{STATIC_URL}}images/flag_pink.png" 
+                  alt   = "No Follow Up Visit" 
+                  title = "No Follow Up Visit"
+                  style = 'float:right;'
+                  >
+              {% endif %}
               </p>
+              <p>
+                  <span style="color : navy;
+                              font-weight : bold;"> 
+                      Date:
+                  </span> 
+                  {{visit_detail.visit_date.date}}  - {{visit_detail.op_surgeon}}
+              </p>
+              <p> {{visit_detail.visit_nature}} ( {{visit_detail.visit_status}} ) </p>
+              {% if visit_detail.remarks != 'NAD' %}
+                <p style="font-weight: bold;">
+                  Remarks:
+                </p>  
+                <p style="padding-left : 15px; 
+                          line-height  : 1.6em; 
+                          text-align   : justify;
+                          ">
+                    {{visit_detail.remarks.capitalize}} 
+                </p>
+              {% endif %}
+            </div>
+
+            <div> 
+              {% for obj, obj_list in visit_rel.iteritems %}
+                <table>
+                    <thead>
+                      <tr>
+                        <th style="font-weight: bold;"> {{obj.upper}}</th> 
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td style="padding-left : 15px; 
+                                line-height  : 1.6em; 
+                                text-align   : justify;
+                                ">
+                        {% for item in obj_list %}
+                              {{item}}
+                        {% endfor %}
+                      </td>
+                    </tr>
+                    </tbody>
+                </table>
+              {% endfor %}
+            </div>
+
+            {% if visit_detail.has_fu_visits %}
+              <span style="font-weight : bold; 
+                          background   : #fff; 
+                          width        : 100%; 
+                          text-align   : center;
+                          "> 
+                Follow Ups 
+              </span>
+              {% for fu in visit_detail.has_fu_visits %}
+                <div class="follow_up" style="background    : white; 
+                                              border        : solid 1px #aaa; 
+                                              border-radius : 5px; 
+                                              position      : relative; 
+                                              left          : .4em;
+                                              padding       : .2em;
+                                              margin        : .2em;
+                                              line-height   : 2.1em;
+                                              ">
+
+                    {{fu.formatted_obj|safe}}  
+
+                  {% comment %} 
+                  <table >
+                    <tr><th>Seen On    </th><td> {{fu.visit_date.date.isoformat}} </td></tr>
+                    <tr><th>Seen By    </th><td> {{fu.op_surgeon}}                </td></tr>
+                    <tr><th>Subjective </th><td> {{fu.subjective|safe}}           </td></tr>
+                    <tr><th>Objective  </th><td> {{fu.objective|safe}}            </td></tr>
+                    <tr><th>Assessment </th><td> {{fu.assessment|safe}}           </td></tr>
+                    <tr><th>Plan       </th><td> {{fu.plan|safe}}                 </td></tr>
+                  </table>
+                  {% endcomment %}
+
+                </div>
+              {% endfor %}
             {% endif %}
           </div>
-
-          <div> 
-            {% for obj, obj_list in visit_rel.iteritems %}
-              <table>
-                  <thead>
-                    <tr>
-                      <th style="font-weight: bold;"> {{obj.upper}}</th> 
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td style="padding-left : 15px; 
-                               line-height  : 1.6em; 
-                               text-align   : justify;
-                               ">
-                      {% for item in obj_list %}
-                            {{item}}
-                      {% endfor %}
-                    </td>
-                  </tr>
-                  </tbody>
-              </table>
-            {% endfor %}
-          </div>
-          <hr class="shadow_line">
-
-        {% endfor %}
-
+<!--           <hr class="shadow_line"> -->
       {% endfor %}
+
+    {% endfor %}
+
+    {% else %}
+      <p> No OPD visits recorded for this Patient </p>
+      <hr>      
+    {% endif %}
+
+  </div>
+
+  <div data-dojo-id   = "visitSummaryHiddenDiv" 
+       data-dojo-type = "dijit/Dialog"
+       data-dojo-props = "title:'Visit Notes for: {{patient_detail_obj}}'"
+       id             = "visitSummaryHiddenDiv" 
+       class          = "hiddenVisitNotes" style="display:none;">
+  
+    {%if visit_obj_list %}
+
+      {% for visit_obj in visit_obj_list %}
+
+        {% for visit_detail, visit_rel in visit_obj.iteritems %}
+
+          <div >
+            <div>
+              <p>
+              {% if visit_detail.is_active %}
+                <img src   = "{{STATIC_URL}}images/flag_blue.png" 
+                    alt   = "ACTIVE VISIT" 
+                    title = "Active Visit"
+                    style = 'float:left;'
+                    >
+              {%else%}
+                <img src  = "{{STATIC_URL}}images/flag_red.png" 
+                    alt  = "INACTIVE VISIT" 
+                    title = "Visit Closed"
+                    style = 'float:left;'
+                    >
+              {%endif%}
+              {% if visit_detail.has_fu_visits %}
+              <img src   = "{{STATIC_URL}}images/flag_orange.png" 
+                  alt   = "Has Follow Up Visit" 
+                  title = "Has Follow Up Visit"
+                  style = 'float:right;'
+                  >
+              {% else %}
+              <img src   = "{{STATIC_URL}}images/flag_pink.png" 
+                  alt   = "No Follow Up Visit" 
+                  title = "No Follow Up Visit"
+                  style = 'float:right;'
+                  >
+              {% endif %}
+              </p>
+              <p>
+                  <span style="color : navy;
+                              font-weight : bold;"> 
+                      Date:
+                  </span> 
+                  {{visit_detail.visit_date.date}}  - {{visit_detail.op_surgeon}}
+              </p>
+              <p> {{visit_detail.visit_nature}} ( {{visit_detail.visit_status}} ) </p>
+              {% if visit_detail.remarks != 'NAD' %}
+                <p style="font-weight: bold;">
+                  Remarks:
+                </p>  
+                <p style="padding-left : 15px; 
+                          line-height  : 1.6em; 
+                          text-align   : justify;
+                          ">
+                    {{visit_detail.remarks.capitalize}} 
+                </p>
+              {% endif %}
+            </div>
+
+            <div> 
+              {% for obj, obj_list in visit_rel.iteritems %}
+                <table>
+                    <thead>
+                      <tr>
+                        <th style="font-weight: bold;"> {{obj.upper}}</th> 
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td style="padding-left : 15px; 
+                                line-height  : 1.6em; 
+                                text-align   : justify;
+                                ">
+                        {% for item in obj_list %}
+                              {{item}}
+                        {% endfor %}
+                      </td>
+                    </tr>
+                    </tbody>
+                </table>
+              {% endfor %}
+            </div>
+
+            {% if visit_detail.has_fu_visits %}
+              <span style="font-weight : bold; 
+                          background   : #fff; 
+                          width        : 100%; 
+                          text-align   : center;
+                          "> 
+                Follow Ups 
+              </span>
+              {% for fu in visit_detail.has_fu_visits %}
+                <div class="follow_up" style="background    : white; 
+                                              border        : solid 1px #aaa; 
+                                              border-radius : 5px; 
+                                              position      : relative; 
+                                              left          : .4em;
+                                              padding       : .2em;
+                                              margin        : .2em;
+                                              line-height   : 2.1em;
+                                              ">
+
+                    {{fu.formatted_obj|safe}}  
+
+                  {% comment %} 
+                  <table >
+                    <tr><th>Seen On    </th><td> {{fu.visit_date.date.isoformat}} </td></tr>
+                    <tr><th>Seen By    </th><td> {{fu.op_surgeon}}                </td></tr>
+                    <tr><th>Subjective </th><td> {{fu.subjective|safe}}           </td></tr>
+                    <tr><th>Objective  </th><td> {{fu.objective|safe}}            </td></tr>
+                    <tr><th>Assessment </th><td> {{fu.assessment|safe}}           </td></tr>
+                    <tr><th>Plan       </th><td> {{fu.plan|safe}}                 </td></tr>
+                  </table>
+                  {% endcomment %}
+
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+<!--           <hr class="shadow_line"> -->
+      {% endfor %}
+
+    {% endfor %}
 
     {% else %}
       <p> No OPD visits recorded for this Patient </p>

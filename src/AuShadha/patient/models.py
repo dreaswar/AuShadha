@@ -549,14 +549,14 @@ class PatientDetail(models.Model):
         pat_obj = PatientDetail.objects.get(pk = id)
       except(TypeError, ValueError, AttributeError, PatientDetail.DoesNotExist):
         return False
-      if not self.has_active_visit():
-        if not self.has_active_admission():
-          return True
-        else:
-          return False
+      #if not self.has_active_visit():
+      if not self.has_active_admission():
+        return True
       else:
-        return False
-        
+          return False
+      #else:
+        #return False
+
 
 
     def visit_for_pat(self):

@@ -15,6 +15,8 @@ function buildVisitTree(){
       "dojo/dom-style",
       "dojo/json",
       'dojo/request',
+      
+      "dijit/Tooltip",
 
       'aushadha/panes/visit_pane',
       'aushadha/panes/visit_edit_pane'
@@ -32,6 +34,7 @@ function buildVisitTree(){
             domStyle, 
             JSON,
             request,
+            Tooltip,
 
             VISIT_PANE,
             VISIT_EDIT_PANE
@@ -93,6 +96,14 @@ function buildVisitTree(){
       var patientVisitTree = new Tree({
           model   : patientVisitTreeModel,
           showRoot: false,
+          /*
+          onMouseEnter: function (item,evt) {
+                                dijit.showTooltip(item.name,item.domNode)
+                             },
+          onMouseLeave: function (item,evt) {
+                                dijit.hideTooltip(item.domNode);
+                             },
+          */
           onClick: function(item){
                     if (item.id == 'NEW_OPD_VISIT'){
                       
@@ -116,9 +127,9 @@ function buildVisitTree(){
                       request(item.addUrl).then(
                         function(html){
                           try{
-                            VISIT_PANE.addPane.constructor({id    : "NEW_VISIT_TAB", 
-                                                         title  : "Add Visit",
-                                                         content: html});
+                            VISIT_PANE.addPane.constructor({id     : "NEW_VISIT_TAB", 
+                                                            title  : "Add Visit",
+                                                            content: html});
                           }catch(err){
                             console.error(err.message);
                           }
@@ -146,10 +157,27 @@ function buildVisitTree(){
                     if (item.type=='visit_follow_up_add'){
                       request(item.addUrl).then(
                         function(html){
-                          VISIT_PANE.addPane.constructor({id     : item.id, 
+                          VISIT_PANE.addPane.constructor({id      : item.id, 
                                                           title   : "Add: " + item.name, 
                                                           content : html}
                                                          );
+                        },
+                        function(err){
+                          publishError(err);
+                        }
+                      );
+                    }
+
+                    if (item.type=='close_visit'){
+                      request(item.addUrl).then(
+                        function(json){
+                          var jsondata = JSON.parse(json);
+                          if (jsondata.success = true){
+                            VISIT_PANE.onVisitChange();
+                            publishInfo(jsondata.error_message);
+                          }else{
+                            publishError(jsondata.error_message);
+                          }
                         },
                         function(err){
                           publishError(err);
@@ -186,7 +214,8 @@ function buildVisitTree(){
       console.log("Setting Visit Tree icons complete");
 
       patientVisitTree.startup();
-      patientVisitTree.expandAll();
+      patientVisitTree.collapseAll();
+//       patientVisitTree.expandAll();
 
   });
 }

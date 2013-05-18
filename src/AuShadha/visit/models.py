@@ -73,14 +73,11 @@ class VisitDetail(AuShadhaBaseModel):
   def get_absolute_url(self):
     return '/AuShadha/visit/detail/%d/' %(self.id)
   
-  def get_active_visit_close_url(self):
+  def get_visit_detail_close_url(self):
     if self.is_active:
-      return '/AuShadha/visit/close/%d/' %(self.id)
+      return '/AuShadha/visit/detail/close/%d/' %(self.id)
     else:
-      if self.patient_detail.can_add_new_visit():
-        return self.patient_detail.get_patient_visit_add_url()
-      else:
-        return False
+      raise Exception("Visit is already not active. Cannot Close")
   
   def get_visit_detail_visit_follow_up_add_url(self):
     #if self.patient_detail.has_active_visit():
@@ -140,8 +137,18 @@ class VisitDetail(AuShadhaBaseModel):
       return False
 
   def _close_visit(self):
+    #id = self.id
+    #visit_obj      = VisitDetail.objects.get(pk = id)
+    #visit_followup = VisitFollowUp.objects.filter(visit_detail = visit_obj)
+    #if visit_followup:
+      #for fu in visit_followup:
+        #fu.status = 'discharged'
+        #fu.save()
+    print "Trying to Close a visit with ID"
+    print self.id
     self.is_active = False
-    self.save(dont_check_status= True)
+    kwargs = {'dont_check_status':"yes"}
+    self.save(**kwargs)    
 
   def _close_all_active_visits(self):
     pat_obj = self.patient_detail
@@ -156,19 +163,24 @@ class VisitDetail(AuShadhaBaseModel):
   def save(self, *args, **kwargs):
     self.__model_label__ = 'detail'
     #if self.op_surgeon.clinic_staff_role == 'doctor':
-
     consult_nature = self.consult_nature
+    print "Calling save method with args"
+    print "kwargs dont_check_status is set to: ", kwargs.get('dont_check_status')
 
-    if not self.patient_detail.has_active_visit:      
-      self.consult_nature = 'initial'
-
-    if kwargs.get('dont_check_status') is True:
-      super(VisitDetail, self).save(*args, **kwargs)
-    else:
-      if self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
+    if self.pk is not None:
+      if kwargs.get('dont_check_status') is 'yes':
+        kwargs         = kwargs.pop('dont_check_status')
+        self.status    = 'discharged'
         self.is_active = False
+        print "Closing the visit and saving the changes"
+        super(VisitDetail, self).save(force_update = True)
       else:
-        self.is_active = True
+        if self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
+          self.is_active = False
+    else:
+      #if not self.patient_detail.has_active_visit():      
+        #self.consult_nature = 'initial'
+      self.is_active = True
       super(VisitDetail, self).save(*args, **kwargs)
 
     #else:
@@ -236,6 +248,22 @@ class VisitFollowUp(AuShadhaBaseModel):
                                                             self.visit_date.date().isoformat()
                                                             )
 
+  def formatted_obj(self):
+    return '''<b> Seen On   :</b> %s\n</br>
+              <b> Seen by   :</b> %s\n</br>
+              <b> Subjective:</b> %s\n</br>
+              <b> Objective :</b> %s\n</br>
+              <b> Assessment:</b> %s\n</br>
+              <b> Plan      :</b> %s\n</br>
+            ''' %(self.visit_date.date().isoformat(),
+                  self.op_surgeon     ,
+                  self.subjective     ,
+                  self.objective      , 
+                  self.assessment     , 
+                  self.plan           
+                 )
+  
+  
   def __init__(self, *args, **kwargs):
     self.__model_label__        = 'follow_up'
     super(VisitFollowUp, self).__init__(*args, **kwargs)
@@ -244,7 +272,7 @@ class VisitFollowUp(AuShadhaBaseModel):
     #self.__model_label__        = 'follow_up'
     if self.visit_detail.is_active:
       if self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
-        self.visit_detail._close_visit()
+        self.visit_detail._close_all_active_visits()
       else:
         self.visit_detail.is_active = True
       super(VisitFollowUp, self).save(*args, **kwargs)

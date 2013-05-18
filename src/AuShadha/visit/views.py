@@ -146,110 +146,141 @@ def render_visit_tree(request,id = None):
         tree_item_list.insert(0, dict_to_append)
 
       if active_visit_obj:
-        active_visit = VisitDetail.objects.filter(patient_detail=pat_obj).filter(is_active = True)[0]
-        base_dict = {"name"     : "Active Visit: " + active_visit.visit_date.date().isoformat()    , 
-                      "type"    : "application", 
-                      "id"      : "ACTIVE_VISIT",
-                      "len"     : True,
-                      "addUrl"  : None,
-                      'editUrl' : active_visit.get_edit_url(),
-                      'delUrl'  : active_visit.get_del_url(),
-                      'children':[
-                        {"name" : "Add Follow-Up" , 
-                        "type"  : "visit_follow_up_add", 
-                        "id"    : "VISIT_FOLLOW_UP_ADD_"+ str(active_visit.id),
-                        "len"   : 1,
-                        "addUrl": active_visit.get_visit_detail_visit_follow_up_add_url(),
-                        },
-
-                        {"name" : "Close Visit" , 
-                        "type"  : "close_visit", 
-                        "id"    : "VISIT_CLOSE_"+ str(active_visit.id) ,
-                        "len"   : 1,
-                        "addUrl": active_visit.get_active_visit_close_url(),
-                        },
-
-                        {"name"   : "Edit Active Visit" , 
-                         "type"   : "visit", 
-                         "id"     : "ACTIVE_VISIT_" + str(active_visit.id) ,
-                        "len"     : 1,
+        active_visits = VisitDetail.objects.filter(patient_detail=pat_obj).filter(is_active = True)
+        active_visits_base_dict = {"name"   : "Active Visits",
+                                  "type"    : "application", 
+                                  "id"      : "ACTIVE_VISITS",
+                                  "len"     : True,
+                                  "addUrl"  : None,
+                                  'editUrl' : None,
+                                  'delUrl'  : None,
+                                  'children':[]
+                                  }
+        for active_visit in active_visits:
+          base_dict = {"name"     : active_visit.visit_date.date().isoformat()    , 
+                        "type"    : "active_visit", 
+                        "id"      : "ACTIVE_VISITS_"+ str(active_visit.id),
+                        "len"     : True,
                         "addUrl"  : None,
-                        "absoluteUrl": active_visit.get_absolute_url(),
-                        "editUrl" : active_visit.get_edit_url(),
-                        "deUrl"   : active_visit.get_del_url()
-                        },
+                        'editUrl' : active_visit.get_edit_url(),
+                        'delUrl'  : active_visit.get_del_url(),
+                        'children':[
+                          {"name" : "Add Follow-Up" , 
+                          "type"  : "visit_follow_up_add", 
+                          "id"    : "VISIT_FOLLOW_UP_ADD_"+ str(active_visit.id),
+                          "len"   : 1,
+                          "addUrl": active_visit.get_visit_detail_visit_follow_up_add_url(),
+                          },
+
+                          {"name" : "Close" , 
+                          "type"  : "close_visit", 
+                          "id"    : "VISIT_CLOSE_"+ str(active_visit.id) ,
+                          "len"   : 1,
+                          "addUrl": active_visit.get_visit_detail_close_url(),
+                          },
+
+                          {"name"      : "Edit" , 
+                          "type"       : "visit", 
+                          "id"         : "ACTIVE_VISIT_" + str(active_visit.id) ,
+                          "len"        : 1,
+                          "addUrl"     : None,
+                          "absoluteUrl": active_visit.get_absolute_url(),
+                          "editUrl"    : active_visit.get_edit_url(),
+                          "deUrl"      : active_visit.get_del_url()
+                          },
 
 
-                        #{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
-                        #"len"   : 1,
-                        #"addUrl": None,
-                        #},
+                          #{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
+                          #"len"   : 1,
+                          #"addUrl": None,
+                          #},
 
-                        #{"name"  : "Advice" , "type":"advice","id":"ADVICE" ,
-                        #"len"   : 1,
-                        #"addUrl": None,
-                        #},
+                          #{"name"  : "Advice" , "type":"advice","id":"ADVICE" ,
+                          #"len"   : 1,
+                          #"addUrl": None,
+                          #},
 
-                        #{"name"  : "Procedure" , "type":"procedure", "id":"PROC" ,
-                        #"len"   : 1,
-                        #"addUrl": None,
-                        #},
+                          #{"name"  : "Procedure" , "type":"procedure", "id":"PROC" ,
+                          #"len"   : 1,
+                          #"addUrl": None,
+                          #},
 
-                        #{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
-                        #"len"   : 1,
-                        #"addUrl": None,
-                        #},
-                    ]
-                  }
+                          #{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
+                          #"len"   : 1,
+                          #"addUrl": None,
+                          #},
+                      ]
+                    }
+          active_visits_base_dict['children'].append(base_dict)
 
-        if active_visit.has_fu_visits():
-          fu_visit = active_visit.has_fu_visits()
-          fu_base_dict = {"name"        : "Follow-ups" , 
-                          "type"        : "fu_visits", 
-                          "id"          : "",
-                          "len"         : 1,
-                          "addUrl"      : None,
-                          "absoluteUrl" : None,
-                          "children"    : []
-                        }
-          fu_sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
-          base_dict['children'].append(fu_base_dict)
-          
-          for fu in fu_visit:
-            fu_dict_to_append = fu_sub_dict.copy()
-            print fu.__class__
-            print "Edit URL for FU is: ", fu.get_edit_url()
-            print "Del URL for FU is: ", fu.get_del_url()
+          if active_visit.has_fu_visits():
+            fu_visit = active_visit.has_fu_visits()
+            fu_base_dict = {"name"        : "Follow-ups" , 
+                            "type"        : "fu_visits", 
+                            "id"          : "",
+                            "len"         : 1,
+                            "addUrl"      : None,
+                            "absoluteUrl" : None,
+                            "children"    : []
+                          }
+            fu_sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+            base_dict['children'].append(fu_base_dict)
+            
+            for fu in fu_visit:
+              fu_dict_to_append = fu_sub_dict.copy()
+              print fu.__class__
+              print "Edit URL for FU is: ", fu.get_edit_url()
+              print "Del URL for FU is: ", fu.get_del_url()
 
-            fu_dict_to_append = {"name"   : fu.visit_date.date().isoformat(), 
-                                "type"    : "fu_visit", 
-                                "id"      : "FU_VISIT_"+ str(fu.id),
-                                "editUrl" : fu.get_edit_url(),
-                                "delUrl"  : fu.get_del_url()
-                                }
-            fu_base_dict['children'].append(fu_dict_to_append)
+              fu_dict_to_append = {"name"   : fu.visit_date.date().isoformat(), 
+                                  "type"    : "fu_visit", 
+                                  "id"      : "FU_VISIT_"+ str(fu.id),
+                                  "editUrl" : fu.get_edit_url(),
+                                  "delUrl"  : fu.get_del_url()
+                                  }
+              fu_base_dict['children'].append(fu_dict_to_append)
 
-        tree_item_list.insert(1, base_dict)
+        tree_item_list.insert(1, active_visits_base_dict)
+        #tree_item_list.insert(1, base_dict)
 
-      if visit_obj:
-        if not visit_obj:
-          base_dict     = {"name"  : "Closed Visits"  , "type":"application", "id":"INACTIVE_VISITS"}
-          base_dict['children'] = []
-          children_list  = base_dict['children']
-          sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
-          for visit in visit_obj:
-            if not visit.is_active:
-              dict_to_append = sub_dict.copy()
-              dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
-              dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
-              dict_to_append['absoluteUrl'] = visit.get_absolute_url()
-              dict_to_append['editUrl']     = visit.get_edit_url()
-              dict_to_append['editUrl']     = visit.get_edit_url()
-              dict_to_append['delUrl']      = visit.get_del_url()
-              children_list.append(dict_to_append)
-          tree_item_list.insert(2, base_dict)
+      if prev_visit_obj:
+        base_dict     = {"name"  : "Closed Visits"  , "type":"application", "id":"CLOSED_VISITS", 'children':[]}
+        sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+        for visit in prev_visit_obj:
+          dict_to_append = sub_dict.copy()
+          dict_to_append['name']        = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
+          dict_to_append['id']          = "CLOSED_VISIT_"+ unicode(visit.id)
+          dict_to_append['absoluteUrl'] = visit.get_absolute_url()
+          dict_to_append['editUrl']     = visit.get_edit_url()
+          dict_to_append['editUrl']     = visit.get_edit_url()
+          dict_to_append['delUrl']      = visit.get_del_url()
+          dict_to_append['children']    = []
+          base_dict['children'].append(dict_to_append)
+          if visit.has_fu_visits():
+            fu_visit = visit.has_fu_visits()
+            fu_base_dict = {"name"        : "Follow-ups" , 
+                            "type"        : "fu_visits", 
+                            "id"          : "CLOSED_FOLLOW_UP_VISITS",
+                            "len"         : 1,
+                            "addUrl"      : None,
+                            "absoluteUrl" : None,
+                            "children"    : []
+                          }
+            fu_sub_dict = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+            dict_to_append['children'].append(fu_base_dict)
+            
+            for fu in fu_visit:
+              fu_dict_to_append = fu_sub_dict.copy()
+              fu_dict_to_append = {"name"   : fu.visit_date.date().isoformat(), 
+                                  "type"    : "fu_visit", 
+                                  "id"      : "CLOSED_FU_VISIT_"+ str(fu.id),
+                                  "editUrl" : fu.get_edit_url(),
+                                  "delUrl"  : fu.get_del_url()
+                                  }
+              fu_base_dict['children'].append(fu_dict_to_append)
 
-      
+        tree_item_list.insert(2, base_dict)
+
       #if visit_obj:
         #data['items'][1]['children'] = []
         #children_list  = data['items'][1]['children']
@@ -693,6 +724,34 @@ def visit_detail_del(request, id):
 
 
 
+@login_required
+def visit_detail_close(request, id):
+  if request.method == "GET" and request.is_ajax():
+    user = request.user
+    if user.has_perm('visit.change_visitdetail'):
+      try:
+        id = int(id)
+        visit_detail_obj = VisitDetail.objects.get(pk = id)
+      except (TypeError, NameError, ValueError, AttributeError, KeyError):
+        raise Http404("Error ! Invalid Request Parameters. ")
+      except (VisitDetail.DoesNotExist):
+        raise Http404("Requested Visit Does not exist.")
+      #visit_detail_obj._close_all_active_visits()
+      visit_detail_obj._close_visit()
+      error_message = None
+      success       = True
+      error_message = "Successfully Deleted Visit."
+      data          = {'success': success, 'error_message': error_message}
+      json          = simplejson.dumps(data)
+      return HttpResponse(json, content_type = 'application/json')
+    else:
+      success       = False
+      error_message = "Insufficient Permissions to Change Visit"
+      data          = {'success': success, 'error_message': error_message}
+      json          = simplejson.dumps(data)
+      return HttpResponse(json, content_type = 'application/json')
+  else:
+    raise Http404(" Error ! Unsupported Request..")
 
 
 @login_required

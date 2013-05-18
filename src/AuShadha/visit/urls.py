@@ -14,16 +14,16 @@ urlpatterns = patterns('',
     #url(r'render_visit_json/(?P<id>\d+)/$'  , render_visit_json  , name="render_visit_json"),
 
     url(r'summary/(?P<id>\d+)/$'    ,  visit_summary     , name="visit_summary"),
-    
+
     url(r'follow_up/add/(?P<id>\d+)/$' , visit_follow_up_add  , name="visit_follow_up_add"),
     url(r'follow_up/edit/(?P<id>\d+)/$' , visit_follow_up_edit  , name="visit_follow_up_edit"),
     url(r'follow_up/del/(?P<id>\d+)/$' , visit_follow_up_del  , name="visit_follow_up_del"),
 
-    url(r'detail/add/(?P<id>\d+)/$'  , visit_detail_add  , name="visit_detail_add"),
-    url(r'add/(?P<id>\d+)/$'         , visit_detail_add  , name="visit_detail_add"),
-    
-    url(r'close/(?P<id>\d+)/$'          , visit_close             , name="visit_close"),
-    
+    url(r'detail/add/(?P<id>\d+)/$'    , visit_detail_add    , name="visit_detail_add"),
+    url(r'add/(?P<id>\d+)/$'           , visit_detail_add    , name="visit_detail_add"),
+
+    url(r'detail/close/(?P<id>\d+)/$'  , visit_detail_close  , name="visit_detail_close"),
+
     url(r'detail/list/(?P<id>\d+)/$' , visit_detail_list , name="visit_detail_list"),
     url(r'list/(?P<id>\d+)/$'        , visit_detail_list , name="visit_detail_list"),
     
