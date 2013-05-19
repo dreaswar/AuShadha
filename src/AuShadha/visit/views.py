@@ -321,7 +321,7 @@ def render_visit_list(request):
         sort = key_sort_map[key]
         all_visits = VisitDetail.objects.all().order_by(sort)
       else:
-        all_visits = VisitDetail.objects.all().order_by('visit_date')
+        all_visits = VisitDetail.objects.all().order_by('-visit_date')
     data         = []
     for visit in all_visits:
       data_to_append = {}
@@ -350,7 +350,7 @@ def visit_detail_list(request, id):
     try:
       id = int(id)
       patient_detail_obj = PatientDetail.objects.get(pk = id)
-      visit_detail_obj   = VisitDetail.objects.filter(patient_detail = patient_detail_obj).order_by('visit_date')
+      visit_detail_obj   = VisitDetail.objects.filter(patient_detail = patient_detail_obj).order_by('-visit_date')
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Error ! Invalid Request Parameters. ")
     except (PatientDetail.DoesNotExist):
@@ -412,7 +412,7 @@ def visit_summary(request, id):
     try:
       id = int(id)
       patient_detail_obj = PatientDetail.objects.get(pk = id)
-      visit_detail_obj   = VisitDetail.objects.filter(patient_detail = patient_detail_obj).order_by('visit_date')
+      visit_detail_obj   = VisitDetail.objects.filter(patient_detail = patient_detail_obj).order_by('-visit_date')
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Error ! Invalid Request Parameters. ")
     except (PatientDetail.DoesNotExist):

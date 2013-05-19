@@ -189,7 +189,7 @@
         {% for visit_detail, visit_rel in visit_obj.iteritems %}
 
           <div data-dojo-type  = "dijit/TitlePane" 
-               data-dojo-props = "title: '{{visit_detail.visit_date.date}}-{{visit_detail.op_surgeon}}', open:false"
+               data-dojo-props = "title: '{{visit_detail.visit_date.date}}-{{visit_detail.op_surgeon}}', {% if not visit_detail.is_active%}open:false{%else%}open:true{%endif%}"
                id              = "visitSummaryTitlePane_{{visit_detail.id}}"
                class           = "visitSummaryTitlePane"
                >
