@@ -186,6 +186,31 @@ class VisitDetail(AuShadhaBaseModel):
     #else:
       #raise Exception("User is not a Provider. Only Doctors can save Visits. ")
 
+  def get_visit_complaints(self):
+    from django.utils import simplejson
+    v_id = self.id
+    try:
+      visit_obj = VisitDetail.objects.get(pk = id)
+      pat_obj   = visit_obj.patient_detail
+    except(TypeError,AttributeError,NameError):
+      raise Exception("Invalid ID. Raised Error")
+    except(VisitDetail.DoesNotExist):
+      raise Exception("Invalid Visit. No Such Visit recorded")
+    #visit_fu            = VisitFollowUp.objects.filter(visit_detail = visit_obj)
+    visit_complaints     = VisitComplaint.objects.filter(visit_detail = visit_obj)
+    visit_complaint_list = []
+    if visit_complaints:
+      for complaint in visit_complaints:
+        dict_to_append                 = {}
+        dict_to_append['complaint']    = complaint.complaint
+        dict_to_append['duration']     = complaint.duration
+        dict_to_append['visit_date']   = complaint.visit_detail.visit_date.date().isoformat()
+        dict_to_append['visit_active'] = complaint.visit_detail.is_active
+        visit_complaint_list.append(dict_to_append)
+    #json = simplejson.dumps(visit_complaint_list)
+    #return json
+    return visit_complaint_list
+
 
 
 class VisitComplaint(AuShadhaBaseModel):

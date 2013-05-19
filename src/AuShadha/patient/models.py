@@ -580,6 +580,34 @@ class PatientDetail(models.Model):
         else:
             return visit_obj
 
+    def get_patient_complaints(self):
+      #from django.utils import simplejson
+      from visit.models import VisitDetail, VisitComplaint
+      p_id = self.id
+      try:
+        pat_obj   = PatientDetail.objects.get(pk = p_id)
+      except(TypeError,AttributeError,NameError):
+        raise Exception("Invalid ID. Raised Error")
+      except(PatientDetail.DoesNotExist):
+        raise Exception("Invalid Patient. No Such Patient on record")
+      visit_obj            = VisitDetail.objects.filter(patient_detail = pat_obj)
+      visit_complaint_list = []
+      if visit_obj:
+        for visit in visit_obj:
+          visit_complaints     = VisitComplaint.objects.filter(visit_detail = visit)
+          if visit_complaints:
+            for complaint in visit_complaints:
+              dict_to_append                 = {}
+              dict_to_append['complaint']    = complaint.complaint
+              dict_to_append['duration']     = complaint.duration
+              dict_to_append['visit_date']   = complaint.visit_detail.visit_date.date().isoformat()
+              dict_to_append['is_active']    = complaint.visit_detail.is_active
+              dict_to_append['visit_detail'] = complaint.visit_detail
+              visit_complaint_list.append(dict_to_append)
+      #json = simplejson.dumps(visit_complaint_list)
+      #return json
+      return visit_complaint_list
+
     def has_contact(self):
         ''' Returns a Boolean whether a particular patient has a contact or not in Database.
         '''
