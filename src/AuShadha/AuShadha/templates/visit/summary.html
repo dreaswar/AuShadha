@@ -86,11 +86,12 @@
                             'dijit/TitlePane',
                             'dojo/on',
                             'dojo/dom',
-                            'dojo/dom-attr',
-                            'dojo/dom-style',
-                            'dojo/query',
-                            'dojo/NodeList-traverse',
-                            'dojo/NodeList-data'
+                            "dojo/dom-attr",
+                            "dojo/dom-style",
+                            "dojo/query",
+                            "dojo/window",
+                            "dojo/NodeList-traverse",
+                            "dojo/NodeList-data"
                             ], 
                     function(registry,
                               TitlePane,
@@ -98,18 +99,25 @@
                               dom,
                               domAttr,
                               domStyle,
-                              query){
-                      var thisId = domAttr.get(evt,'id');
+                              query,
+                              win){
+                      var thisId = domAttr.get(evt,'titlePaneId');
+                      var tP     = registry.byId(thisId);
+                      if(!tP.open){ 
+                         tP.toggle();
+                      }
+                      win.scrollIntoView(dom.byId(thisId));
                       query('.visitSummaryTitlePane').
                       forEach(
                         function(node){
-                          if(domAttr.get(node,'id') == thisId){
-                            var tP = registry.byId(thisId);
-                            domStyle.set(thisId,{display:'block'});
-                            tP.open();
+                          var nodeId = domAttr.get(node,'id');
+                          if(nodeId != thisId){
+                            var notTP = registry.byId(nodeId);
+                            if(notTP.open){
+                              notTP.toggle();
+                            }
                           }
-                        }
-                      );
+                        });
                     });
                   }
 
@@ -429,9 +437,12 @@
           <thead >
             <tr > 
               <th> No               </th> 
-              <th> Date             </th> 
+              <th> Date             </th>
+              <th> Nature           </th> 
+              <th> Status           </th> 
               <th> Complaint        </th> 
-              <th> Duration         </th> 
+              <th> Duration         </th>
+              <th> Follow-ups       </th> 
               <th> Active ?         </th> 
             </tr>
           </thead>
@@ -443,13 +454,36 @@
                   <div id      = "openVisitNotes_{{complaint.visit_detail.id}}"
                        title   = "Open Visit Notes on Sidebar"
                        style   = "color:blue; cursor:pointer;"
+                       class   = "openVisitNotesLink"
                        onClick = "openVisitNotesTitlePane(this);"
+                       titlePaneId = "visitSummaryTitlePane_{{complaint.visit_detail.id}}"
                     > 
                     {{complaint.visit_date}} 
                   </div>
                 </td>
+                <td> {{complaint.visit_detail.consult_nature}} </td>
+                <td> {{complaint.visit_detail.status}} </td>
                 <td> {{complaint.complaint}} </td>
                 <td> {{complaint.duration}} </td>
+                <td> 
+                  {% if complaint.visit_fu %} 
+                    {% for fu in complaint.visit_fu %}
+                      <div id="visitComplaintsHiddenDiv_FU_details_{{fu.id}}" style="margin:3px;padding:2px;"> 
+                        <span style="color:navy;">
+                          {{fu.visit_date.date.isoformat }}
+                        </span>
+                      </div>
+
+                      <div data-dojo-type  = "dijit/Tooltip"
+                            data-dojo-props= "connectId : 'visitComplaintsHiddenDiv_FU_details_{{fu.id}}',
+                                              position  : ['below']">
+                          {{fu.formatted_obj|safe}}
+                      </div>
+                    {% endfor %}
+                  {%else %}
+                    No Follow ups.
+                  {% endif %}
+                </td>
                 <td> {%if complaint.is_active %}  
                            Active
                     {% else %}  

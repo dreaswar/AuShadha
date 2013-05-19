@@ -90,7 +90,7 @@ class VisitDetail(AuShadhaBaseModel):
     id = self.id
     try:
       visit_obj = VisitDetail.objects.get(pk = id)
-      fu = VisitFollowUp.objects.filter(visit_detail= visit_obj)
+      fu = VisitFollowUp.objects.filter(visit_detail= visit_obj).order_by('-visit_date')
       if fu:
         return fu
       else:

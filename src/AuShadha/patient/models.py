@@ -590,7 +590,7 @@ class PatientDetail(models.Model):
         raise Exception("Invalid ID. Raised Error")
       except(PatientDetail.DoesNotExist):
         raise Exception("Invalid Patient. No Such Patient on record")
-      visit_obj            = VisitDetail.objects.filter(patient_detail = pat_obj)
+      visit_obj            = VisitDetail.objects.filter(patient_detail = pat_obj).order_by('-visit_date')
       visit_complaint_list = []
       if visit_obj:
         for visit in visit_obj:
@@ -603,6 +603,7 @@ class PatientDetail(models.Model):
               dict_to_append['visit_date']   = complaint.visit_detail.visit_date.date().isoformat()
               dict_to_append['is_active']    = complaint.visit_detail.is_active
               dict_to_append['visit_detail'] = complaint.visit_detail
+              dict_to_append['visit_fu']     = complaint.visit_detail.has_fu_visits()
               visit_complaint_list.append(dict_to_append)
       #json = simplejson.dumps(visit_complaint_list)
       #return json
