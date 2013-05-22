@@ -785,7 +785,7 @@ def visit_follow_up_add(request, id):
   if request.method == "POST" and request.is_ajax():
     print "Received request to add a Follow-Up OPD Visit..."
     try:
-      id = int(id)
+      id                = int(id)
       visit_detail_obj  = VisitDetail.objects.get(pk = id)
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Error ! Invalid Request Parameters. ")
@@ -797,8 +797,8 @@ def visit_follow_up_add(request, id):
 
     if visit_follow_up_form.is_valid():
        saved_follow_up = visit_follow_up_form.save()
-       success = True
-       error_message = "Follow Up Visit Added Successfully"
+       success         = True
+       error_message   = "Follow Up Visit Added Successfully"
     else:
       success = False
       error_message = "Error! Follow-up visit Could not be added"

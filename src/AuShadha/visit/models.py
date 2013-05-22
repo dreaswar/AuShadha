@@ -190,7 +190,7 @@ class VisitDetail(AuShadhaBaseModel):
     from django.utils import simplejson
     v_id = self.id
     try:
-      visit_obj = VisitDetail.objects.get(pk = id)
+      visit_obj = VisitDetail.objects.get(pk = v_id)
       pat_obj   = visit_obj.patient_detail
     except(TypeError,AttributeError,NameError):
       raise Exception("Invalid ID. Raised Error")
