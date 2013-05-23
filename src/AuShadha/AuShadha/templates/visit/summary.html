@@ -42,7 +42,7 @@
             <option name="Telephonic"            value="tele"     > Telephonic           </option>
             <option name="Complaints"            value="complaint"> Complaints           </option>
             <option name="Visit Status"          value="visit_status"> Visit Status      </option>
-            <option name="Physician Consulted"   value="op_surgeon"> Physician Consulted </option>
+            <option name="Physician"             value="op_surgeon"> Physician  </option>
 
             <script type="dojo/on" data-dojo-event="change" data-dojo-args="evt">
                     require(['dojo/dom',
@@ -170,7 +170,6 @@
 
           </span>
 
-        {%if visit_obj_list %}
           <span id              = "visitComplaintFilterSelector"
                 data-dojo-type  = "dijit/form/Select"
                 data-dojo-id    = "visitComplaintFilterSelector"
@@ -225,10 +224,8 @@
 
           
           </span>
-        {% endif %}
 
 
-        {%if visit_obj_list %}
           <span id              = "visitStatusFilterSelector"
                 data-dojo-type  = "dijit/form/Select"
                 data-dojo-id    = "visitStatusFilterSelector"
@@ -277,12 +274,8 @@
                     });
             </script>
           </span>
-        {% endif %}
 
 
-
-
-        {%if visit_obj_list %}
           <span id              = "visitOpSurgeonFilterSelector"
                 data-dojo-type  = "dijit/form/Select"
                 data-dojo-id    = "visitOpSurgeonFilterSelector"
@@ -341,7 +334,6 @@
                     });
             </script>
           </span>
-        {% endif %}
 
 
           <span style = "background-color : white;
@@ -484,12 +476,11 @@
                 <script type           = "dojo/method" >
                   function showVisitComplaints(){
                     require(['dijit/registry',
-                           'dojo/dom',
-                           'dojo/on',
-                           'dijit/Dialog',
-                           "aushadha/dialog/NonModalDialog"
+                            'dojo/dom',
+                            'dojo/on',
+                            'dijit/Dialog'
                            ],
-                    function(registry,dom,on,Dialog,NonModalDialog){
+                    function(registry,dom,on,Dialog){
                               registry.byId('visitComplaintsHiddenDiv').show();
                               console.log(registry.byId('visitComplaintsHiddenDiv'));
                     });
@@ -767,100 +758,9 @@
 
   </div>
 
-  <div data-dojo-id   = "visitComplaintsHiddenDiv" 
-       data-dojo-type = "dijit/Dialog"
-       data-dojo-props = "title:'Problem List for: {{patient_detail_obj}}'"
-       id             = "visitComplaintsHiddenDiv" 
-       class          = "hiddenVisitNotes" style="display:none;">
-       {%if visit_obj_list %}
-        <table class="content_pane_table"
-          >
-          <thead >
-            <tr > 
-              <th> No               </th> 
-              <th> Date             </th>
-              <th> Nature           </th> 
-              <th> Status           </th> 
-              <th> Complaint        </th> 
-              <th> Duration         </th>
-              <th> Follow-ups       </th> 
-              <th> Active ?         </th> 
-            </tr>
-          </thead>
-          <tbody>
-          {% for complaint in patient_detail_obj.get_patient_complaints %}
-              <tr class="{%cycle even_row,odd_row %} 
-                         {%if complaint.visit_detail.is_active%}
-                           visit_isActive
-                         {%else%}
-                           visit_isNotActive
-                         {%endif%}
-                         visitStatus_{{complaint.visit_detail.status}}
-                         visitNature_{{complaint.visit_detail.consult_nature}}
-                         visitComplaint_{{complaint.complaint}}
-                         {% if complaint.visit_detail.has_fu_visits %}
-                           visit_hasFu
-                         {%else%}
-                           visit_hasNoFu
-                         {%endif%}
-                         ">
-                <td> {{forloop.counter}} </td>
-                <td> 
-                  <div id      = "openVisitNotes_{{complaint.visit_detail.id}}"
-                       title       = "Open Visit Notes on Sidebar"
-                       style       = "color:blue; cursor:pointer;"
-                       class       = "openVisitNotesLink"
-                       onClick     = "openVisitNotesTitlePane(this);"
-                       titlePaneId = "visitSummaryTitlePane_{{complaint.visit_detail.id}}"
-                    > 
-                    {{complaint.visit_date}} 
-                  </div>
-                </td>
-                <td> {{complaint.visit_detail.consult_nature}} </td>
-                <td> {{complaint.visit_detail.status}} </td>
-                <td> {{complaint.complaint}} </td>
-                <td> {{complaint.duration}} </td>
-                <td> 
-                  {% if complaint.visit_fu %} 
-                    {% for fu in complaint.visit_fu %}
-                      <div id    = "visitComplaintsHiddenDiv_FU_details_{{fu.id}}" 
-                           style = "margin:3px;padding:2px;"> 
+{% include 'visit/problem_list.html' %}
 
-                        <span title       = "Open Visit Notes on Sidebar"
-                              style       = "color:blue; cursor:pointer;"
-                              class       = "openVisitNotesLink"
-                              onClick     = "openVisitNotesTitlePane(this);"
-                              titlePaneId = "visitSummaryTitlePane_{{complaint.visit_detail.id}}"
-                        >
-                          {{fu.visit_date.date.isoformat }}
-                        </span>
-
-                      </div>
-
-                      <div data-dojo-type  = "dijit/Tooltip"
-                            data-dojo-props= "connectId : 'visitComplaintsHiddenDiv_FU_details_{{fu.id}}',
-                                              position  : ['below']">
-                          {{fu.formatted_obj|safe}}
-                      </div>
-                    {% endfor %}
-                  {%else %}
-                    No Follow ups.
-                  {% endif %}
-                </td>
-                <td> {%if complaint.is_active %}  
-                           Active
-                    {% else %}  
-                           Inactive
-                    {% endif %} 
-                </td>
-              </tr>
-          {% endfor %}
-          </tbody>
-        </table>
-      {% else %}
-        <p> No OPD Visits Recorded</p>
-      {% endif %}
-  </div>
+  
   
   <div data-dojo-id   = "visitSummaryHiddenDiv" 
        data-dojo-type = "dijit/Dialog"

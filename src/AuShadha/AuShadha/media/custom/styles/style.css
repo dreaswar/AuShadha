@@ -643,3 +643,10 @@ table.content_pane_table tbody tr.odd_row {
     text-align:center;
     vertical-align:middle;
 }
+
+
+/* Custom CSS for Non-modal Dijit Dialogs */
+
+.nonModalDialog_underlay{
+  display:none;
+}
