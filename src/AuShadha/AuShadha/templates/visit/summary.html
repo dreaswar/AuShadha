@@ -1,3 +1,40 @@
+{% comment %}
+  <button data-dojo-type  = 'dijit/form/Button'
+          data-dojo-id    = "collapseVisitPaneRSidebar"
+          data-dojo-props = "label:'Collapse Pane',iconClass:'collapsePane'"
+          onClick         = "onVisitRSidebarExpandButtonClick(this);"
+        > 
+
+        Collapse Pane
+
+        <script type            = "dojo/on" 
+                data-dojo-event = "click" 
+                data-dojo-args  = "evt"
+          >
+          function onVisitRSidebarExpandButtonClick(){
+            require([ 'dojo/dom'      ,
+                      'dojo/on'       ,
+                      'dijit/registry',
+                      'dojo/dom-class',
+                      'dojo/dom-style'
+                    ],
+            function(dom      ,
+                      on      ,
+                      registry,
+                      domClass,
+                      domStyle){
+                domClass.remove('collapseVisitPaneRSidebar','collapsePane');
+                domClass.add('collapseVisitPaneRSidebar', 'expandPane');
+                registry.byId('collapseVisitPaneRSidebar').set('label','Expand Pane');
+                domStyle.set('visitPaneRSidebar',{width:'1em'});
+  //               registry.byId('visitPaneRSidebar').resize();
+            });
+          }
+        </script>
+
+  </button>
+{% endcomment %}
+
 {% if user.is_authenticated %}
 
   {% if perms.visit %}

@@ -74,7 +74,6 @@
                     case 'active':
                       tableRows.forEach(function(node){
                         if( domClass.contains(node, "visit_isActive") ){
-                          alert("Its active");
                           domStyle.set(node,{display:"table-row"});
                         }else{
                           domStyle.set(node,{display:'none'});
@@ -331,12 +330,48 @@
       </script>
     </span>
 
+    <div data-dojo-type  = "dijit/form/Button"
+         data-dojo-props = "label: 'Compare Notes', iconClass: 'dijitIconCopy'"
+         id              = "compareVisitNotesButton_{{patient_detail_obj.id}}"
+         onClick         = "onCompareVisitNotesButtonClick(this);"
+         style           = "position:relative; float:right;"
+      >
+        <script type="dojo/on" data-dojo-type="click" data-dojo-args="evt">
+          
+          function onCompareVisitNotesButtonClick(evt){
+            
+            require(['dijit/registry',
+                     'dojo/dom',
+                     'dojo/dom-style',
+                     'dojo/dom-attr',
+                     'dojo/dom-class',
+                     'dijit/Dialog',
+                     'dojo/on',
+                     'dojo/query',
+                     'dojo/NodeList-traverse',
+                     'dojo/NodeList-data'],
+            
+            function(registry,
+                     dom,
+                     domStyle,
+                     domAttr,
+                     domClass,
+                     Dialog,
+                     on,
+                     query){
+                  
+                  
+            });
+          }
+        </script>
+    </div>
+    
     <table class = "content_pane_table visitProblemListTable"
             id    = "visitProblemListTable"
       >
       <thead >
         <tr > 
-          <th> No               </th> 
+          <th> No. / Choose     </th> 
           <th> Date             </th>
           <th> Nature           </th> 
           <th> Status           </th> 
@@ -350,7 +385,17 @@
       {% for complaint in patient_detail_obj.get_patient_complaints %}
           <tr class="{%cycle 'even_row' 'odd_row' %}{%if complaint.visit_detail.is_active%} visit_isActive{%else%} visit_isNotActive{%endif%} visitStatus_{{complaint.visit_detail.status}} visitNature_{{complaint.visit_detail.consult_nature}}{%if complaint.visit_detail.get_visit_complaints%}{%for visitComplaint in complaint.visit_detail.get_visit_complaints %} visitComplaint_{{visitComplaint.complaint}}{%endfor%}{%endif%}{%if complaint.visit_detail.has_fu_visits %} visit_hasFu{%else%} visit_hasNoFu{%endif%} visitOPSurgeon_{{complaint.visit_detail.op_surgeon}}"
             >
-            <td> {{forloop.counter}} </td>
+            <td> 
+              {{forloop.counter}} 
+              <input type            = "checkbox" 
+                     data-dojo-type  = "dijit/form/CheckBox" 
+                     data-dojo-props = "required:false"
+                     data-dojo-id    = "chooseVisit_{{complaint.visit_detail.id}}"
+                     id              = "chooseVisit_{{complaint.visit_detail.id}}"
+                     title           = "Choose to compare notes"
+                     class           = "compareVisitNotesCheckBox"
+                     >
+            </td>
             <td> 
               <div id           = "openVisitNotes_{{complaint.visit_detail.id}}"
                     title       = "Open Visit Notes on Sidebar"
