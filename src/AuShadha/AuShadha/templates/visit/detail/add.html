@@ -1,4 +1,81 @@
 {% if perms.visit.add_visitdetail %}
+    
+    <script type="text/javscript">
+        function showNextComplaint(evt){
+            require(["dojo/dom",
+                    "dojo/request/xhr",
+                    "dijit/registry"  ,
+                    "dojo/json"       ,
+                    "dojo/dom-form"   ,
+                    "dijit/Dialog"    ,
+                    'dojo/dom-class',
+                    'dojo/dom-style',
+                    'dojo/dom',
+                    'dojo/query',
+                    'dojo/NodeList-traverse',
+                    'dojo/NodeList-data',
+            ],
+            function(dom, 
+                    xhr, 
+                    registry, 
+                    JSON, 
+                    domForm, 
+                    Dialog, 
+                    domClass,
+                    domStyle,
+                    dom,
+                    query){
+                var tableRows = query('.visitComplaintAddFormTable tbody tr');
+                for(var i=0; i<=tableRows.length; i++){
+                   var row = tableRows[i];
+                   if (domStyle.get(row,'display') == 'none'){
+                      domStyle.set(row, 'display','table-row');
+//                       domStyle.set(query(row).children('span.showNextComplaint')[0],'display','none');
+                      domClass.add(row,'shownVisitComplaintTableRow');
+                      domClass.remove(row, 'hiddenVisitComplaintTableRow');
+                      break;
+                   }
+                };
+//                 alert("this will add a new complaint");
+            });
+        }
+
+        function removeThisComplaint(evt){
+            require(["dojo/dom",
+                    "dojo/request/xhr",
+                    "dijit/registry"  ,
+                    "dojo/json"       ,
+                    "dojo/dom-form"   ,
+                    "dijit/Dialog"    ,
+                    'dojo/dom-class',
+                    'dojo/dom-style',
+                    'dojo/dom',
+                    'dojo/query',
+                    'dojo/NodeList-traverse',
+                    'dojo/NodeList-data',
+            ],
+            function(dom, 
+                    xhr, 
+                    registry, 
+                    JSON, 
+                    domForm, 
+                    Dialog, 
+                    domClass,
+                    domStyle,
+                    dom,
+                    query){
+
+                var row = query(evt).closest('tr.shownVisitComplaintTableRow')[0];
+                if(row && domStyle.get(row,'display') == 'table-row'){
+                  domStyle.set(row, 'display','none');
+                  domClass.remove(row,'shownVisitComplaintTableRow');
+                  domClass.add(row, 'hiddenVisitComplaintTableRow');
+                }
+
+            });
+        }
+    </script>
+
 <div data-dojo-type = "dijit/form/Form" 
      id             = "newVisitAddForm"
      data-dojo-id   = "newVisitAddForm"
@@ -92,9 +169,93 @@
           </tr>
       </table>
 
+      {% comment %}
       <hr class="shadow_line">
+      {%endcomment%}
 
-      <table id       =   "visitComplaintAddFormTable">
+      <table id       =   "visitComplaintAddFormTable" 
+             class="content_pane_table visitComplaintAddFormTable">
+      {{ visit_complaint_formset.management_form }}
+
+        <thead> 
+          <tr> 
+                <th> No. </th> 
+                <th> Complaint </th> 
+                <th> Duration  </th> 
+                <th>     &nbsp;&nbsp;      </th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for form in visit_complaint_formset %}
+            {{ form.id }}
+            <tr id    = "visitComplaintFormsetRow_{{forloop.counter}}"
+                style = "display: {% if forloop.counter = 1 %} table-row {%else%} none {% endif %};"
+                class = "{% if forloop.counter = 1 %} 
+                           shownVisitComplaintTableRow 
+                         {%else%} 
+                           hiddenVisitComplaintTableRow 
+                         {% endif %};"
+            >
+                <td>{{ forloop.counter }}</td>
+                <td>{{ form.complaint }}</td>
+                <td>{{ form.duration }}</td>
+                <td> 
+                    {% if forloop.counter = 1 %}
+                      <span style  = "background-image: url({{STATIC_URL}}images/add.png);
+                                      background-repeat: no-repeat;
+                                      background-size  : 16px 16px;
+                                      background-color : white;
+                                      width: 16px; 
+                                      height: 16px; 
+                                      cursor: pointer; 
+                                      display:table-cell;
+                                      "
+                            id     = "addMoreVisitComplaint_{{form.id}}"
+                            class  = "showNextComplaint"
+                            title  = "Add more complaints"
+                            onclick = "showNextComplaint(this);"
+                          >
+
+                      </span>
+                    {%else%}
+                      <span style  = "background-image: url({{STATIC_URL}}images/absent.png );
+                                      background-repeat: no-repeat;
+                                      background-size  : 16px 16px;
+                                      background-color : white;
+                                      width: 16px; 
+                                      height: 16px; 
+                                      cursor: pointer; 
+                                      display:table-cell;
+                                      "
+                            id     = "removeVisitComplaint_{{form.id}}"
+                            class  = "removeThisComplaint"
+                            title  = "Remove this Complaint"
+                            onclick = "removeThisComplaint(this);"
+                        >
+                      </span>
+
+                      <span style  = "background-image: url({{STATIC_URL}}images/add.png);
+                                      background-repeat: no-repeat;
+                                      background-size  : 16px 16px;
+                                      background-color : white;
+                                      width: 16px; 
+                                      height: 16px; 
+                                      cursor: pointer; 
+                                      display:table-cell;
+                                      "
+                            id     = "addMoreVisitComplaint_{{form.id}}"
+                            class  = "showNextComplaint"
+                            title  = "Add more complaints"
+                            onclick = "showNextComplaint(this);"
+                          >
+                          </span>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+      {%comment%}
         <tr>
           <td> Complaint </td> <td>   {{visit_complaint_form.complaint}} </td>
           <td> Duration  </td> <td>   {{visit_complaint_form.duration}}  </td>
@@ -104,15 +265,16 @@
                    id    = "addMoreVisitComplaint"
                   > 
           </td> 
-          {% comment %}
+
           <td>
             <img src   = "{{STATIC_URL}}images/minus.png" 
                 style = "width: 16px; height: 16px; cursor: pointer; "
                 id    = "removeVisitComplaint"
               >  
           </td>
-          {% endcomment %}
+
         </tr>
+        {%endcomment%}
       </table>
 
       <hr >

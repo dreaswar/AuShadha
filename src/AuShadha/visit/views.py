@@ -479,22 +479,26 @@ def visit_detail_add(request,  id, nature = 'initial'):
       
         visit_detail_form    = VisitDetailForm(instance = visit_detail_obj, 
                                                auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
-        visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
-                                                  auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
+        #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
+                                                  #auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
+
+        VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
+        visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
+        
         visit_hpi_form       = VisitHPIForm(instance = visit_hpi_obj,
                                             auto_id  = "id_new_visit_hpi"+ str(id)+"_%s")
         visit_ros_form       = VisitROSForm(instance = visit_ros_obj,
                                             auto_id  = "id_new_visit_ros"+ str(id)+"_%s")
 
-        variable = RequestContext(request, {'user'                  : user                  ,
-                                            'visit_detail_obj'      : visit_detail_obj      ,
-                                            'visit_detail_form'     : visit_detail_form     ,
-                                            'visit_complaint_form'  : visit_complaint_form  ,
-                                            'visit_hpi_form'        : visit_hpi_form        ,
-                                            'visit_ros_form'        : visit_ros_form        ,
-                                            'patient_detail_obj'    : patient_detail_obj    ,
-                                            'error_message'         : error_message         ,
-                                            'success'               : success,
+        variable = RequestContext(request, {'user'                     : user                  ,
+                                            'visit_detail_obj'         : visit_detail_obj      ,
+                                            'visit_detail_form'        : visit_detail_form     ,
+                                            'visit_complaint_formset'  : visit_complaint_formset  ,
+                                            'visit_hpi_form'           : visit_hpi_form        ,
+                                            'visit_ros_form'           : visit_ros_form        ,
+                                            'patient_detail_obj'       : patient_detail_obj    ,
+                                            'error_message'            : error_message         ,
+                                            'success'                  : success,
                                             })
       elif nature == 'fu':
         #TODO
@@ -525,20 +529,25 @@ def visit_detail_add(request,  id, nature = 'initial'):
       visit_ros_obj        = VisitROS(visit_detail = visit_detail_obj)
  
       visit_detail_form    = VisitDetailForm(request.POST, instance = visit_detail_obj)
-      visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
+
+      #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
+      VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
+      visit_complaint_formset = VisitComplaintFormset(request.POST)
+
       visit_hpi_form       = VisitHPIForm(request.POST, instance = visit_hpi_obj)
       visit_ros_form       = VisitROSForm(request.POST, instance = visit_ros_obj)
 
       if visit_detail_form.is_valid()    and \
-         visit_complaint_form.is_valid() and \
+         visit_complaint_formset.is_valid() and \
          visit_hpi_form.is_valid()       and \
          visit_ros_form.is_valid():
 
         saved_visit     = visit_detail_form.save()
 
-        saved_visit_complaint = visit_complaint_form.save(commit=False)
-        saved_visit_complaint.visit_detail = saved_visit
-        saved_visit_complaint.save()
+        saved_visit_complaint = visit_complaint_formset.save(commit=False)
+        for complaint in saved_visit_complaint:
+          complaint.visit_detail = saved_visit
+          complaint.save()
 
         saved_visit_hpi = visit_hpi_form.save(commit=False)
         saved_visit_hpi.visit_detail = saved_visit
