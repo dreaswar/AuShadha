@@ -523,7 +523,7 @@ def visit_detail_add(request,  id, nature = 'initial'):
       visit_complaint_obj  = VisitComplaint(visit_detail = visit_detail_obj)
       visit_hpi_obj        = VisitHPI(visit_detail = visit_detail_obj)
       visit_ros_obj        = VisitROS(visit_detail = visit_detail_obj)
-
+ 
       visit_detail_form    = VisitDetailForm(request.POST, instance = visit_detail_obj)
       visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
       visit_hpi_form       = VisitHPIForm(request.POST, instance = visit_hpi_obj)

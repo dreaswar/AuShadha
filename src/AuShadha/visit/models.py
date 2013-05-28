@@ -173,10 +173,10 @@ class VisitDetail(AuShadhaBaseModel):
         self.status    = 'discharged'
         self.is_active = False
         print "Closing the visit and saving the changes"
-        super(VisitDetail, self).save(force_update = True)
       else:
         if self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
           self.is_active = False
+      super(VisitDetail, self).save(force_update = True)
     else:
       #if not self.patient_detail.has_active_visit():      
         #self.consult_nature = 'initial'
