@@ -26,6 +26,7 @@
                     dom,
                     query){
                 var tableRows = query('.visitComplaintAddFormTable tbody tr');
+                
                 for(var i=0; i<=tableRows.length; i++){
                    var row = tableRows[i];
                    if (domStyle.get(row,'display') == 'none'){
@@ -179,7 +180,6 @@
 
         <thead> 
           <tr> 
-                <th> No. </th> 
                 <th> Complaint </th> 
                 <th> Duration  </th> 
                 <th>     &nbsp;&nbsp;      </th>
@@ -197,7 +197,6 @@
                            hiddenVisitComplaintTableRow 
                          {% endif %};"
             >
-                <td>{{ forloop.counter }}</td>
                 <td>{{ form.complaint }}</td>
                 <td>{{ form.duration }}</td>
                 <td> 

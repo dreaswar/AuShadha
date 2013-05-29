@@ -583,13 +583,13 @@ class VisitComplaintForm(ModelForm):
                     'max_length'     :  '100'         ,
                     "data-dojo-type" : "dijit.form.ValidationTextBox",
                     "data-dojo-id"   : "visit_complaint_complaint",
-                    "data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
+                    "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
                     },
                     {"field"         : 'duration',
                     'max_length'     :  '100'         ,
                     "data-dojo-type" : "dijit.form.ValidationTextBox",
                     "data-dojo-id"   : "visit_complaint_duration",
-                    "data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
+                    "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
                     },
     ]
 
