@@ -31,6 +31,34 @@
 
   {% endblock style_bits %}
 
+
+  <script type="text/javascript">
+
+    var LOADER_STATUS_INDEX = 0;
+
+    var LOADER_TIMER = window.setInterval(setLoaderMessage,1000);
+
+    var loaderStatusMessages=[ "Starting to load the scripts...",
+                              "Finished the header pane and search widgets ...",
+                              "Finished adding the Patient Registration UI elements ...",
+                              "Added Autofiltering to patient search..",
+                              "Getting ready to load page.."
+                            ];
+
+    function setLoaderMessage(){
+      if(LOADER_STATUS_INDEX<loaderStatusMessages.length){
+        document.getElementById('aushadhaLoaderStatusMessage').innerHTML = loaderStatusMessages[LOADER_STATUS_INDEX];
+
+        console.log(document.getElementById('aushadhaLoaderStatusMessage').innerHTML);
+        LOADER_STATUS_INDEX ++;
+      }else {
+        window.clearInterval(LOADER_TIMER);
+      }
+
+    }
+
+  </script>
+  
   {% block js %}
 
     {% include 'script_links.html' %}
@@ -64,6 +92,7 @@
   </script>
   
   {% block js_bits %}
+ 
 
   {% endblock js_bits %}
 
@@ -75,6 +104,17 @@
 <div    id              = "appLayout"
         class           = "demoLayout"
         data-dojo-type  = "dijit/layout/BorderContainer">
+
+<div id="aushadhaLoaderIndicator">
+
+  <div class="loadingOverlayLogo">        </div>  
+  <div class="loadingOverlay">            </div>  
+  <div class="loadingMessage"> 
+      <div> Loading...                       </div>
+      <div id="aushadhaLoaderStatusMessage"> </div>
+  </div>
+
+</div>
 
 {% block topbar %}
   <!--  START OF TOPPANE  -->

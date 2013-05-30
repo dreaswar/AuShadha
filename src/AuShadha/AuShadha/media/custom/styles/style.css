@@ -13,6 +13,67 @@ body{
 }
 
 
+/* Loader */
+
+#aushadhaLoaderIndicator {
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100000;
+    opacity: 1;
+    background: #fff;
+}
+
+.loadingOverlayLogo {
+    background:  #fff url('{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_256.png') no-repeat 0% 0%;
+    position:relative;
+    width : 256px;
+    height: 256px;
+    top   : 3%;
+    left  : 40%;
+}
+ 
+.loadingOverlay {
+    background:  #fff url('{{STATIC_URL}}plugins/dojo-1.8.0/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
+    position : relative;
+    top      : 10px;
+    width    : 200px;
+    height   : 200px;
+    left     : 40%;
+}
+ 
+
+.loadingMessage {
+    background:  #fff;
+    color: navy;
+    position:relative;
+    top  : -200px;
+    width : 200px;
+    height: 200px;
+    left  : 45%;
+    padding-top:35px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.loadingMessage>div{
+  position:relative;
+  top:0;
+}
+
+#aushadhaLoaderStatusMessage{
+  font-style: italic;
+  color: black;
+  position:relative;
+  top:10px;
+}
+
+
+/* End of Loader */
+
+
 hr {
     border    : 0;
     height    : 1px;

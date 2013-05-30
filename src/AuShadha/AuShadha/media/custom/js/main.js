@@ -5,6 +5,7 @@ define(['dojo/dom',
         'dijit/registry',
         'dojo/parser',
         'dojo/ready',
+        'dojo/dom-style',
         
         'aushadha/stores',
         'aushadha/behaviours/global_behaviours',
@@ -21,6 +22,7 @@ function(dom,
          registry,
          parser,
          ready,
+         domStyle,
 
          auStore, 
          auBehaviours,
@@ -43,5 +45,6 @@ function(dom,
             auPanes         : auPanes,
             auNotifications : auNotifications
     };
+
     return auMain;
 });

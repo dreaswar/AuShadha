@@ -17,6 +17,7 @@
               "dojo/store/Memory",
               "dojo/dom-geometry",
               "dojo/request",
+              "dojo/_base/fx",
               'aushadha/main',
 
               "dojo/_base/connect",
@@ -79,11 +80,14 @@
                Memory, 
                domGeom, 
                request,
+               fx,
 
                auMain
               ){
 
+
 // Define Variables to be used later in the app..
+
 ready(function(){
   console.log("Starting script script.js");
   
@@ -91,6 +95,8 @@ ready(function(){
   auMain.auEventBinders.searchWidget();
   auMain.auEventBinders.headerPaneSearchWidget();
 
+
+  
   /* Attach Basic CRUD functions for Patient Addition */
   function addNewPatient(){
     require(["dojo/_base/xhr",
@@ -132,7 +138,6 @@ ready(function(){
           }
   );
 //{% endif %}
-
 
     var patientIdStore = new JsonRest({
             target     : "{%url patient_id_autocompleter %}",
@@ -200,7 +205,6 @@ ready(function(){
 
   patientHospitalIdSelect.startup();
 
-
   var patientNameSelect = new dijit.form.FilteringSelect({
       label        : "Search Patient Name ",
       name         : "patientNameAutoCompleter",
@@ -234,6 +238,15 @@ ready(function(){
   );
 
   patientNameSelect.startup();
+  
+  /* Hide the Loader */
+  var fadeAwayLoader = fx.fadeOut({node: dom.byId('aushadhaLoaderIndicator'),duration: 3300});
+  on(fadeAwayLoader,
+     "End",
+     function(){
+        domStyle.set(dom.byId('aushadhaLoaderIndicator'),{display:'none'});
+     },true);
+  fadeAwayLoader.play();
 
   console.log("Finished running script script.js");
 
