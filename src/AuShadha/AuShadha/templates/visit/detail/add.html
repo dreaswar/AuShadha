@@ -53,6 +53,7 @@
                     'dojo/dom',
                     'dojo/query',
                     'dojo/dom-attr',
+                    'dojo/dom-construct',
                     'dojo/NodeList-traverse',
                     'dojo/NodeList-data'
             ],
@@ -66,7 +67,8 @@
                     domStyle,
                     dom,
                     query,
-                    domAttr){
+                    domAttr,
+                    domConstruct){
 
                 var rowQuery  = query(evt).closest('tr.shownVisitComplaintTableRow');
                 var row       = rowQuery[0];
@@ -80,6 +82,7 @@
                   domStyle.set(row, 'display','none');
                   domClass.remove(row,'shownVisitComplaintTableRow');
                   domClass.add(row, 'hiddenVisitComplaintTableRow');
+                  domConstruct.place(row,'visitComplaintAddFormTable','last');
                 }
 
                 allInputs.forEach(
