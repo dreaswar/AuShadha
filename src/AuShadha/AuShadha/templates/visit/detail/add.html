@@ -52,8 +52,9 @@
                     'dojo/dom-style',
                     'dojo/dom',
                     'dojo/query',
+                    'dojo/dom-attr',
                     'dojo/NodeList-traverse',
-                    'dojo/NodeList-data',
+                    'dojo/NodeList-data'
             ],
             function(dom, 
                     xhr, 
@@ -64,14 +65,29 @@
                     domClass,
                     domStyle,
                     dom,
-                    query){
+                    query,
+                    domAttr){
 
-                var row = query(evt).closest('tr.shownVisitComplaintTableRow')[0];
+                var rowQuery  = query(evt).closest('tr.shownVisitComplaintTableRow');
+                var row       = rowQuery[0];
+                var allInputs = query(rowQuery).
+                                  children('td').
+                                  children('.dijitReset').
+                                  children('.dijitInputContainer').
+                                  children('input[type=text]');
+
                 if(row && domStyle.get(row,'display') == 'table-row'){
                   domStyle.set(row, 'display','none');
                   domClass.remove(row,'shownVisitComplaintTableRow');
                   domClass.add(row, 'hiddenVisitComplaintTableRow');
                 }
+
+                allInputs.forEach(
+                  function(input){
+                    console.log(input);
+                    domAttr.set(input,'value','');
+                  }
+                );
 
             });
         }
@@ -197,6 +213,7 @@
                            hiddenVisitComplaintTableRow 
                          {% endif %};"
             >
+
                 <td>{{ form.complaint }}</td>
                 <td>{{ form.duration }}</td>
                 <td> 
