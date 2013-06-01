@@ -11,6 +11,8 @@
 from django.shortcuts                import render_to_response
 from django.http                     import Http404, HttpResponse, HttpResponseRedirect
 from django.template                 import RequestContext
+from django.template.loader          import get_template
+from django.template                 import Context
 #from django.core.context_processors import csrf
 from django.contrib.auth.models      import User
 #from django.views.decorators.csrf   import csrf_exempt
@@ -23,6 +25,8 @@ from django.utils                    import simplejson
 
 # General Module imports-----------------------------------
 from datetime                        import datetime, date, time
+import ho.pisa                       as pisa
+import cStringIO                     as StringIO
 
 
 
@@ -375,12 +379,7 @@ def visit_detail_list(request, id):
     raise Http404(" Error ! Unsupported Request..")
 
 
-@login_required
-def visit_summary(request, id):
-  print "Listing Summary for patient with ID: " + str(id)
-  user = request.user
-
-  def format_ros(ros_obj):
+def format_ros(ros_obj):
     ros_str  = ''
     ros_list = [
                 ros_obj.const_symp , 
@@ -407,6 +406,12 @@ def visit_summary(request, id):
       return "NAD"
     else:
       return ros_str
+
+
+@login_required
+def visit_summary(request, id):
+  print "Listing Summary for patient with ID: " + str(id)
+  user = request.user
 
   if request.method == "GET" and request.is_ajax():
     try:
@@ -1223,5 +1228,82 @@ def visit_home(request, id = id):
     return HttpResponseRedirect('/login')
 
 
+@login_required
+def render_visit_pdf(request, id):
+  if request.user:
+    user = request.user
+    try:
+      id = int(id)
+      visit_detail_obj = VisitDetail.objects.get(pk = id)
+    except(ValueError, AttributeError, TypeError, VisitDetail.DoesNotExist):
+      raise Http404('Error!!:: AttributeError/ ValueError/ TypeError/ DoesNotExist')
+    pat_detail_obj       = visit_detail_obj.patient_detail
+    if request.method == 'GET':
+      variable = RequestContext(request, 
+                                {'user'            : user,
+                                'pat_detail_obj'  : pat_detail_obj,
+                                'visit_detail_obj': visit_detail_obj,
+                                }
+      )
+      return render_to_response('visit/visit_pdf_template.html', variable)
+    elif request.method == 'POST':
+      pass
+    else:
+      raise Http404("Bad Request.." + str(request.method))
+  else:
+    return HttpResponseRedirect('/login')
 
 
+
+@login_required
+def render_patient_visits_pdf(request, id):
+  if request.user:
+    user = request.user
+    try:
+      id             = int(id)
+      patient_detail_obj = PatientDetail.objects.get(pk = id)
+    except(ValueError, AttributeError, TypeError, PatientDetail.DoesNotExist):
+      raise Http404('Error!!:: AttributeError/ ValueError/ TypeError/ DoesNotExist')
+    visit_detail_obj    = VisitDetail.objects.filter(patient_detail = patient_detail_obj)
+    visit_obj_list=[]
+
+
+    if visit_detail_obj:
+      error_message = "Listing the Visits"
+      for visit in visit_detail_obj:
+        dict_to_append      = {}
+        visit_complaint_obj = VisitComplaint.objects.filter(visit_detail = visit)
+        visit_hpi_obj       = VisitHPI.objects.filter(visit_detail = visit)
+        visit_ros_obj       = VisitROS.objects.filter(visit_detail = visit)
+        if visit_ros_obj:
+          visit_ros_obj = visit_ros_obj[0]
+        dict_to_append[visit] = {'complaint': visit_complaint_obj,
+                                 'hpi'      : visit_hpi_obj,
+                                 'ros'      : format_ros(visit_ros_obj)
+                                }
+        visit_obj_list.append(dict_to_append)
+    else:
+      error_message = "No Visits Recorded"
+
+    if request.method == 'GET':
+      variable = RequestContext(request, {'user'               : user              ,
+                                          'visit_detail_obj'   : visit_detail_obj  ,
+                                          'visit_obj_list'     : visit_obj_list    ,
+                                          'patient_detail_obj' : patient_detail_obj,
+                                          'error_message'      : error_message     ,
+                                          'pagesize'           : "A4"
+                                        })
+
+      template     = get_template('visit/patient_visit_pdf_template.html')
+      html         = template.render(variable)
+      result       = StringIO.StringIO()
+      pdf          = pisa.pisaDocument(StringIO.StringIO( html.encode("UTF-8") ), result)
+
+      if not pdf.err:
+          return HttpResponse(result.getvalue(),mimetype='application/pdf')
+      return HttpResponse("Error Generating PDF.. %s" %(html) )
+
+    else:
+      raise Http404("Bad Request.." + str(request.method))
+  else:
+    return HttpResponseRedirect('/login')

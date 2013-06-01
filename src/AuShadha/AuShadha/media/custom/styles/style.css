@@ -23,11 +23,11 @@ body{
     width: 100%;
     z-index: 100000;
     opacity: 1;
-    background: #fff;
+    background: #D0DFEA;
 }
 
 .loadingOverlayLogo {
-    background:  #fff url('{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_256.png') no-repeat 0% 0%;
+    background:  #D0DFEA url('{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_256.png') no-repeat 0% 0%;
     position:relative;
     width : 256px;
     height: 256px;
@@ -36,7 +36,7 @@ body{
 }
  
 .loadingOverlay {
-    background:  #fff url('{{STATIC_URL}}plugins/dojo-1.8.0/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
+    background:  #D0DFEA url('{{STATIC_URL}}plugins/dojo-1.8.0/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
     position : relative;
     top      : 10px;
     width    : 200px;
@@ -46,16 +46,16 @@ body{
  
 
 .loadingMessage {
-    background:  #fff;
-    color: navy;
-    position:relative;
-    top  : -200px;
-    width : 200px;
-    height: 200px;
-    left  : 45%;
-    padding-top:35px;
-    font-weight: bold;
-    font-size: 20px;
+    background  : #D0DFEA;
+    color       : navy;
+    position    : relative;
+    top         : -200px;
+    width       : 200px;
+    height      : 200px;
+    left        : 45%;
+    padding-top : 35px;
+    font-weight : bold;
+    font-size   : 20px;
 }
 
 .loadingMessage>div{

@@ -556,7 +556,63 @@
                   }
                 </script>
           </span>
-          
+
+          <a style = "background-color : white;
+                         background-image : url('{{STATIC_URL}}images/pdf.png');
+                         background-size  : 16px 16px;
+                         background-repeat: no-repeat;
+                         position         : relative;
+                         top              : -16px;
+                         float            : right;
+                         cursor           : pointer;
+                         width            : 16px;
+                         height           : 16px;
+                         margin           : 0px 3px 0px 3px;
+                        " 
+                href    = ""
+                title   = "Generate Report pdf"
+                onClick = "generateVisitPdf(this);"
+                id      = "generateVisitPdf_{{patient_detail_obj}}"
+                >
+                <script type           = "dojo/method" >
+                  function generateVisitPdf(){
+                    require(['dijit/registry',
+                             'dojo/dom'      ,
+                             'dojo/on'       ,
+                             'dijit/Dialog'  ,
+                             'dojo/request'  ,
+                             'dojo/dom-attr'
+                            ],
+                    function(registry,
+                             dom     ,
+                             on      ,
+                             Dialog  , 
+                             request , 
+                             domAttr){
+                        /*
+                         request(CHOSEN_PATIENT.patientvisitspdf).
+                         then(
+                           function(pdf){
+                            console.log("Generated PDF");
+                            console.log(pdf);
+                            new Dialog({content:pdf, title:"Visit Report"}).show();
+                            publishInfo("Generated PDF");
+                            return true;
+                         },function(err){
+                            console.err("ERROR!" + err);
+                            publishError(err);
+                            return true;
+                         });
+                         */
+                         domAttr.set(dom.byId("generateVisitPdf_{{patient_detail_obj}}"),
+                                     {href: CHOSEN_PATIENT.patientvisitspdf,target: '_blank'});
+                         publishInfo("Generated PDF");
+                         return true;
+                    });
+                  }
+                </script>
+          </a>
+
         </div>
       </div>
       

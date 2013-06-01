@@ -22,6 +22,7 @@ urlpatterns = patterns('',
 	  name = 'render_patient_list'
   ),
 
+
   url(r'tree/(?P<id>\d+)/$',
       'patient.views.render_patient_tree' ,
       name = 'render_patient_tree_with_id'

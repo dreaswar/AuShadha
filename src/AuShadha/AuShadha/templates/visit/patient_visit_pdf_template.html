@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+
+<style type="text/css">
+    @page {
+        size: ;
+        margin: 1cm;
+    }
+
+    @frame footer {
+          -pdf-frame-content: footerblock;
+          bottom: 1cm;
+          margin-left: 1cm;
+          margin-right: 1cm;
+          margin-top: 1cm;
+          height: 1cm;
+    }
+</style>
+</head>
+
+<body>
+
+<div> 
+  <hr>
+    <h2> {{patient_detail_obj}} </h2>
+  <hr>
+</div>
+
+<div>
+
+    {%if visit_obj_list %}
+    <h3> Visits </h3>
+      {% for visit_obj in visit_obj_list %}
+
+        {% for visit_detail, visit_rel in visit_obj.iteritems %}
+
+          <div id              = "visitSummaryPDFTemplateDiv_{{visit_detail.id}}"
+               class           = "visitSummaryPDFTemplateDiv
+
+                                  {%if visit_detail.is_active%}
+                                     visit_isActive
+                                  {%else%}
+                                     visit_isNotActive
+                                  {%endif%}
+
+                                  visitStatus_{{visit_detail.status}}
+                                  visitNature_{{visit_detail.consult_nature}}
+
+                                  {% if visit_detail.get_visit_complaints%}
+                                    {% for visitComplaint in visit_detail.get_visit_complaints%}
+                                      visitComplaint_{{visitComplaint.complaint}}
+                                    {%endfor%}
+                                  {%endif%}
+
+                                  {% if visit_detail.has_fu_visits %}
+                                    visit_hasFu
+                                  {%else%}
+                                    visit_hasNoFu
+                                  {%endif%}
+                                  
+                                  visitOPSurgeon_{{visit_detail.op_surgeon}}
+                                  "
+               >
+            <div>
+              <p>
+                  <span style="color : navy;
+                              font-weight : bold;"> 
+                      Date:
+                  </span> 
+                  {{visit_detail.visit_date.date}}  - {{visit_detail.op_surgeon}}
+              </p>
+              <p> {{visit_detail.visit_nature}} ( {{visit_detail.visit_status}} ) </p>
+              {% if visit_detail.remarks != 'NAD' %}
+                <p style="font-weight: bold;">
+                  Remarks:
+                </p>  
+                <p style="padding-left : 15px; 
+                          line-height  : 1.6em; 
+                          text-align   : justify;
+                          ">
+                    {{visit_detail.remarks.capitalize}} 
+                </p>
+              {% endif %}
+            </div>
+
+            <div> 
+              {% for obj, obj_list in visit_rel.iteritems %}
+                <table>
+                    <thead>
+                      <tr>
+                        <th style="font-weight: bold;"> {{obj.upper}}</th> 
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td style="padding-left : 15px; 
+                                line-height  : 1.6em; 
+                                text-align   : justify;
+                                ">
+                        {% for item in obj_list %}
+                              {{item}}
+                        {% endfor %}
+                      </td>
+                    </tr>
+                    </tbody>
+                </table>
+              {% endfor %}
+            </div>
+
+            {% if visit_detail.has_fu_visits %}
+              <span style="font-weight : bold; 
+                          background   : #fff; 
+                          width        : 100%; 
+                          text-align   : center;
+                          "> 
+                Follow Ups 
+              </span>
+              {% for fu in visit_detail.has_fu_visits %}
+                <div class = "follow_up" 
+                     style = "background    : white; 
+                              border        : solid 1px #aaa; 
+                              border-radius : 5px; 
+                              position      : relative; 
+                              left          : .4em;
+                              padding       : .2em;
+                              margin        : .2em;
+                              line-height   : 2.1em;
+                              word-wrap     : break-word;
+                              white-space   : pre-line;
+                              "
+                   >
+
+                      {{fu.formatted_obj|safe}}  
+
+                  {% comment %} 
+                  <table >
+                    <tr><th>Seen On    </th><td> {{fu.visit_date.date.isoformat}} </td></tr>
+                    <tr><th>Seen By    </th><td> {{fu.op_surgeon}}                </td></tr>
+                    <tr><th>Subjective </th><td> {{fu.subjective|safe}}           </td></tr>
+                    <tr><th>Objective  </th><td> {{fu.objective|safe}}            </td></tr>
+                    <tr><th>Assessment </th><td> {{fu.assessment|safe}}           </td></tr>
+                    <tr><th>Plan       </th><td> {{fu.plan|safe}}                 </td></tr>
+                  </table>
+                  {% endcomment %}
+
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+<!--           <hr class="shadow_line"> -->
+      {% endfor %}
+
+    {% endfor %}
+
+    {% else %}
+      <p> No OPD visits recorded for this Patient </p>
+      <hr>      
+    {% endif %}
+
+</div>
+
+<div id="footerblock">
+  <hr>
+    <div class="footer" style="font-size:10px;"> 
+      Report Generated on {% now "jS F Y H:i" %} by {{user.username}} 
+    </div>
+  <hr>
+  <pdf:pagenumber>
+</div>
+</body>
+</html>

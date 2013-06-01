@@ -39,10 +39,13 @@
     var LOADER_TIMER = window.setInterval(setLoaderMessage,1000);
 
     var loaderStatusMessages=[ "Starting to load the scripts...",
-                              "Finished the header pane and search widgets ...",
-                              "Finished adding the Patient Registration UI elements ...",
-                              "Added Autofiltering to patient search..",
-                              "Getting ready to load page.."
+                               "Finished the header pane and search widgets ...",
+                               "Finished adding the Patient Registration UI elements ...",
+                               "Added Autofiltering to patient search..",
+                               //{% if user.is_authenticated %}
+                               "Customising UI for {{user.username}}",
+                               //{% endif %}
+                               "Getting ready to load page.."
                             ];
 
     function setLoaderMessage(){
@@ -51,7 +54,9 @@
 
         console.log(document.getElementById('aushadhaLoaderStatusMessage').innerHTML);
         LOADER_STATUS_INDEX ++;
-      }else {
+      }
+
+      window.onload = function(){
         window.clearInterval(LOADER_TIMER);
       }
 

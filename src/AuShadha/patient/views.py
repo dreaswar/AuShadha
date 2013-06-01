@@ -197,8 +197,9 @@ def return_patient_json(patient, success = True):
         data_to_append['visitlist']     = patient.get_patient_visit_list_url()
         data_to_append['visitjson']     = patient.get_patient_visit_list_url()
 #        data_to_append['visitjson']    = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
-        data_to_append['visittree']     = APP_ROOT_URL+"visit/render_visit_tree/?patient_id="+ patient_id
+        data_to_append['visittree']        = APP_ROOT_URL+"visit/render_visit_tree/?patient_id="+ patient_id
         data_to_append['visitsummary']     = APP_ROOT_URL+"visit/summary/"+ patient_id + "/"
+        data_to_append['patientvisitspdf']  = APP_ROOT_URL+"visit/render_patient_visits_pdf/"+ patient_id + "/"
 
         data_to_append['demographicsadd']   = patient.get_patient_demographics_data_add_url()
         data_to_append['demographicslist']  = patient.get_patient_demographics_data_list_url()
@@ -991,11 +992,12 @@ def render_patient_list(request):
     #        addData['admissionjson']  = APP_ROOT_URL+"pat/admission_json/"+ patient_id
       #addData['admissiontree']   = APP_ROOT_URL+"admission/render_admission_tree/?patient_id="+ patient_id
 
-      addData['visitadd']      = patient.get_patient_visit_add_url()
-      addData['visitlist']     = patient.get_patient_visit_list_url()
-      addData['visitjson']     = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
-      addData['visittree']     = APP_ROOT_URL+"visit/render_visit_tree/?patient_id="+ patient_id
-      addData['visitsummary']  = APP_ROOT_URL+"visit/summary/"+ patient_id + "/"
+      addData['visitadd']          = patient.get_patient_visit_add_url()
+      addData['visitlist']         = patient.get_patient_visit_list_url()
+      addData['visitjson']         = APP_ROOT_URL+"pat/visit/json/?patient_id="+ patient_id
+      addData['visittree']         = APP_ROOT_URL+"visit/render_visit_tree/?patient_id="+ patient_id
+      addData['visitsummary']      = APP_ROOT_URL+"visit/summary/"+ patient_id + "/"
+      addData['patientvisitspdf']  = APP_ROOT_URL+"visit/render_patient_visits_pdf/"+ patient_id + "/"
 
       addData['demographicsadd']   = patient.get_patient_demographics_data_add_url()
       addData['demographicslist']  = patient.get_patient_demographics_data_list_url()
