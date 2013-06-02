@@ -25,7 +25,8 @@ from django.utils                    import simplejson
 
 # General Module imports-----------------------------------
 from datetime                        import datetime, date, time
-import ho.pisa                       as pisa
+#import ho.pisa                      as pisa
+import xhtml2pdf.pisa                as pisa 
 import cStringIO                     as StringIO
 
 

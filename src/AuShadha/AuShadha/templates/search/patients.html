@@ -155,7 +155,7 @@
     function(xhr, dom, JSON, registry, Dialog){
 						var hasBeenSent = false;
 						xhr.post({
-								url  : "{%url patient_search %}",
+								url  : "{%url 'patient_search' %}",
 								form : dom.byId("patient_search_form"),
 								load : function(json) {
 										var jsondata = JSON.parse(json)

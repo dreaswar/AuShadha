@@ -212,7 +212,7 @@ function(on,
 
               var addUrlStore = new Memory({ data: [
                                                 //{% if perms.patient.add_patientcontact %} //
-                                                {name:"Patient"              , id:"{%url patient_new_add %}"},
+                                                {name:"Patient"              , id:"{%url 'patient_new_add' %}"},
                                                 //{% endif %}//
 
                                                 //{% if perms.patient.add_patientcontact %} //
@@ -281,7 +281,7 @@ function(on,
           }
           else{
             //{% if perms.patient and perms.add_patientdetails %}
-            request("{%url patient_new_add %}").then(
+            request("{%url 'patient_new_add' %}").then(
               function(html){
                 registry.byId('editPatientDialog').set('content',html);
                 registry.byId('editPatientDialog').set('title',"Add New Patient");

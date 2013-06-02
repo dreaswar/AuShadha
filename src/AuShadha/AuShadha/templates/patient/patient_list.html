@@ -9,7 +9,7 @@
      			function(dom,xhr){
 /*
 				 				xhr.get({
-										url: "{%url render_patient_list %}",
+										url: "{%url 'render_patient_list' %}",
 										load: function(html){
 												dom.
 												 byId("centerPaneTab1").
@@ -18,7 +18,7 @@
 								});
 
 				        xhr.get({
-										url: "{%url patient_new_add %}",
+										url: "{%url 'patient_new_add' %}",
 										load: function(html){
 												 dom.
 												  byId("centerPaneTab2").
