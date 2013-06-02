@@ -30,10 +30,7 @@
                 height: 1cm;
                 background:#ddd;
             }
-            h1,h2,h3,h4,h5,h6{
-             -pdf-outline:true;
-             -pdf-open:false;
-            }
+
     }
             pdftoc {
                 color: #666;
@@ -61,58 +58,20 @@
       <hr>
   </div>
 
+{%if visit_obj_list %}
+<div>  
   <div> 
     <pdf:toc/> 
   </div>
 
-
-  <div> 
-    <hr>
-      <h1> Visit Report for {{patient_detail_obj}} </h1>
-    <hr>
-  </div>
-
-
-  <div>
-
-    {%if visit_obj_list %}
-    <h2> Visits </h2> 
-
+  <h1> Visit Report for {{patient_detail_obj}} </h1>
       {% for visit_obj in visit_obj_list %}
 
         {% for visit_detail, visit_rel in visit_obj.iteritems %}
 
-          <div id              = "visitSummaryPDFTemplateDiv_{{visit_detail.id}}"
-               class           = "visitSummaryPDFTemplateDiv
-
-                                  {%if visit_detail.is_active%}
-                                     visit_isActive
-                                  {%else%}
-                                     visit_isNotActive
-                                  {%endif%}
-
-                                  visitStatus_{{visit_detail.status}}
-                                  visitNature_{{visit_detail.consult_nature}}
-
-                                  {% if visit_detail.get_visit_complaints%}
-                                    {% for visitComplaint in visit_detail.get_visit_complaints%}
-                                      visitComplaint_{{visitComplaint.complaint}}
-                                    {%endfor%}
-                                  {%endif%}
-
-                                  {% if visit_detail.has_fu_visits %}
-                                    visit_hasFu
-                                  {%else%}
-                                    visit_hasNoFu
-                                  {%endif%}
-                                  
-                                  visitOPSurgeon_{{visit_detail.op_surgeon}}
-                                  "
-               >
+          <div >
             <div>
-              <h3>
-                  Date : {{visit_detail.visit_date.date}}  - {{visit_detail.op_surgeon}}
-              </h3>
+              <h2> Date : {{visit_detail.visit_date.date}}  - {{visit_detail.op_surgeon}} </h2>
               <p> {{visit_detail.visit_nature}} ( {{visit_detail.visit_status}} ) </p>
               {% if visit_detail.remarks != 'NAD' %}
                 <p style="font-weight: bold;">
@@ -153,28 +112,24 @@
             </div>
 
             {% if visit_detail.has_fu_visits %}
-              <h4 style="font-weight : bold; 
-                          background   : #fff; 
-                          width        : 100%; 
-                          text-align   : center;
-                          "> 
-                Follow Ups 
-              </h4>
+              <p style="text-align:center; font-size: 16px; font-weight: bold;"> 
+               Follow Ups 
+              </p>
               {% for fu in visit_detail.has_fu_visits %}
+                <h3> Date : {{fu.visit_date.date.isoformat}} </h3>
                 <div class = "follow_up" 
                      style = "background    : white; 
                               border        : solid 1px #aaa; 
                               border-radius : 5px; 
                               position      : relative; 
-                              left          : .4em;
-                              padding       : .2em;
-                              margin        : .2em;
+                              left          : .1em;
+                              padding       : .1em;
+                              margin        : .1em;
                               line-height   : 2.1em;
                               word-wrap     : break-word;
                               white-space   : pre-line;
                               "
                    >
-
                       {{fu.formatted_obj|safe}}  
                 </div>
               {% endfor %}
@@ -183,17 +138,13 @@
 <!--           <hr class="shadow_line"> -->
       {% endfor %}
 
-      {% comment %}
-      <div style="float:right;"> 
-        XXX<pdf:barcode/>
-      </div>
-      {% endcomment %}
+      <div style="font-size:8px; font-style:italic; text-align:right; margin-top:10px;"> 
 
-      <div id="footerContent"  style="font-size:8px; font-style:italic; text-align:right;"> 
-        <hr>
         Report Generated on {% now "jS F Y H:i" %} by {{user.username}} 
-        <div> Page No. 00<pdf:pagenumber> </div>
+        <hr>
       </div>
+
+      <div id="footerContent"> Page #<pdf:pagenumber/> of <pdf:pagecount/> </div>
 
       <div>
         <pdf:nextpage />
@@ -201,13 +152,12 @@
 
     {% endfor %}
 
-    {% else %}
-      <h2> No OPD visits recorded for this Patient </h2>
-      <hr>      
-    {% endif %}
-
-  </div>
-
+</div>
+{% else %}
+<div>
+  No OPD visits recorded for this Patient
+</div>
+{% endif %}
 
 </body>
 </html>
