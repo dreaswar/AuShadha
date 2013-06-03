@@ -265,7 +265,7 @@ def render_visit_tree(request,id = None):
             fu_visit = visit.has_fu_visits()
             fu_base_dict = {"name"        : "Follow-ups" , 
                             "type"        : "fu_visits", 
-                            "id"          : "CLOSED_FOLLOW_UP_VISITS",
+                            "id"          : "CLOSED_FOLLOW_UP_VISITS_"+str(visit.id),
                             "len"         : 1,
                             "addUrl"      : None,
                             "absoluteUrl" : None,

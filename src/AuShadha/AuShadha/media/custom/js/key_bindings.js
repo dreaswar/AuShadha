@@ -1,6 +1,7 @@
 require(["dojo/on",
          "dijit/registry",
          "dojo/keys",
+         "dijit/Dialog",
          "dijit/form/ComboBox",
          "dijit/form/FilteringSelect",
          "dijit/form/Button",
@@ -18,6 +19,7 @@ require(["dojo/on",
 function(on,
          registry,
          keys,
+         Dialog,
          ComboBox,
          FilteringSelect,
          Button,
@@ -101,9 +103,19 @@ function(on,
                                                                 registry.byId('gridDialog').show();
                                                               }
                                                               else{
+                                                                var thisDialog = new Dialog({content: html, title: action});
+                                                                thisDialog.onClose = function(){
+                                                                this.destroyRecursive();
+                                                                }
+                                                                thisDialog.onHide = function(){
+                                                                  this.destroyRecursive();
+                                                                }
+                                                                thisDialog.show();
+                                                                /*
                                                                 registry.byId('editPatientDialog').set('content',html);
                                                                 registry.byId('editPatientDialog').set('title',action);
                                                                 registry.byId('editPatientDialog').show();
+                                                                */
                                                               }
                                                             },
                                                             function(error){
@@ -283,9 +295,19 @@ function(on,
             //{% if perms.patient and perms.add_patientdetails %}
             request("{%url 'patient_new_add' %}").then(
               function(html){
+                var thisDialog = new Dialog({content: html, title: 'Add'});
+                thisDialog.onClose = function(){
+                  this.destroyRecursive();
+                }
+                thisDialog.onHide = function(){
+                  this.destroyRecursive();
+                }
+                thisDialog.show();
+                /*
                 registry.byId('editPatientDialog').set('content',html);
                 registry.byId('editPatientDialog').set('title',"Add New Patient");
                 registry.byId('editPatientDialog').show();
+                */
               },
               function(error){
                 publishError("ERROR! " + error);
