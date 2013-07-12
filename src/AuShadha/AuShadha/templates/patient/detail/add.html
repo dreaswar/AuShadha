@@ -25,7 +25,7 @@
 							var errorDialog = dijit.byId("dialogJsonMessage");
 //            {% if perms.patient.add_patientdetail %}
 							xhr.post({
-									url  : "{%url patient_new_add %}",
+									url  : "{%url 'patient_new_add' %}",
 									form : dom.byId("newPatientAddForm"),
 									load : function(json) {
 											var jsondata = JSON.parse(json);

@@ -343,260 +343,535 @@ class VascExam(AuShadhaBaseModel):
     ordering            = ['location','side','phyexam','date_time']
 
 
+
+
+################################################################################
+#
+# Dijitsed Examination Forms
+#
+################################################################################
+
+class VascExamForm(ModelForm):
+  class Meta:
+    model = VascExam
+    exclude = ('parent_clinic','phyexam')
+
+  def __init__(self, *args, **kwargs):
+    super(VascExamForm, self).__init__(*args, **kwargs)
+    text_fields = [{"field"         : 'location',
+                    'max_length'    :  30         ,
+                    "data-dojo-type": "dijit.form.Select",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                  {"field"         : 'side',
+                    'max_length'    :  30,
+                    "data-dojo-type": "dijit.form.Select",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'character',
+                    'max_length'    :  30,
+                   "data-dojo-type": "dijit.form.Select",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                    {"field"         : 'remarks',
+                    'max_length'    :  1000,
+                    "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field"         : 'date_time',
+                   'max_length'     : 100,
+                   "data-dojo-type" : "dijit.form.ValidationTextBox",
+                   "data-dojo-props": r"'required' : false, 'disabled': true"
+                   }
+          ]
+    for field in text_fields:
+      print(self.fields[field['field']].widget);
+      self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+      self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+      self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+
+
+class PeriNeuroExamForm(ModelForm):
+  class Meta:
+    model = PeriNeuroExam
+    exclude = ('parent_clinic','phyexam')
+
+  def __init__(self, *args, **kwargs):
+    super(PeriNeuroExamForm, self).__init__(*args, **kwargs)
+    text_fields = [{"field"         : 'plantar',
+                    'max_length'    :  30         ,
+                    "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                  {"field"         : 'abdominal',
+                    'max_length'    :  30,
+                    "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'cremasteric',
+                    'max_length'    :  30,
+                   "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                    {"field"         : 'anal_wink',
+                    'max_length'    :  30,
+                    "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'motor',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                   {"field": 'sensory',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                   {"field": 'dtr',
+                   'max_length':50,
+                   "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                   {"field": 'remarks',
+                   'max_length':75,
+                   "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                   {"field"         : 'date_time',
+                   'max_length'     : 100,
+                   "data-dojo-type" : "dijit.form.ValidationTextBox",
+                   "data-dojo-props": r"'required' : false, 'disabled': true"
+                   }
+          ]
+    for field in text_fields:
+      print(self.fields[field['field']].widget);
+      self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+      self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+      self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+
+
+
+class SysExamForm(ModelForm):
+  class Meta:
+    model = SysExam
+    exclude = ('parent_clinic','phyexam')
+
+  def __init__(self, *args, **kwargs):
+    super(SysExamForm, self).__init__(*args, **kwargs)
+    text_fields = [{"field"         : 'heent',
+                    'max_length'    :  1000         ,
+                    "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                  {"field"         : 'cns',
+                    'max_length'    :  1000         ,
+                    "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'cvs',
+                    'max_length'    :  1000         ,
+                   "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                    {"field"         : 'respiratory_system',
+                    'max_length'    :  1000         ,
+                    "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'git_and_gut',
+                   'max_length':1000,
+                   "data-dojo-type": "dijit.form.Textarea",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                   {"field"         : 'date_time',
+                   'max_length'     : 100,
+                   "data-dojo-type" : "dijit.form.ValidationTextBox",
+                   "data-dojo-props": r"'required' : false, 'disabled': true"
+                   }
+          ]
+    for field in text_fields:
+      print(self.fields[field['field']].widget);
+      self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+      self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+      self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+
+class GenExamForm(ModelForm):
+  class Meta:
+    model = GenExam
+    exclude = ('parent_clinic','phyexam')
+
+  def __init__(self, *args, **kwargs):
+    super(GenExamForm, self).__init__(*args, **kwargs)
+    text_fields = [{"field"         : 'pallor',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                  {"field"         : 'icterus',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'cyanosis',
+                    'max_length'    :  100         ,
+                   "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                    {"field"         : 'clubbing',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'lymphadenopathy',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                  {"field"         : 'edema',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field"           : 'remarks',
+                   'max_length'       : 100,
+                   "data-dojo-type"   : "dijit.form.Textarea",
+                    "data-dojo-props" : r"'required' : false"
+                   },
+                   {"field"         : 'date_time',
+                   'max_length'     : 100,
+                   "data-dojo-type" : "dijit.form.ValidationTextBox",
+                   "data-dojo-props": r"'required' : false, 'disabled': true"
+                   }
+          ]
+    for field in text_fields:
+      print(self.fields[field['field']].widget);
+      self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+      self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+      self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+
+class VitalExamForm(ModelForm):
+  class Meta:
+    model = VitalExam
+    exclude = ('parent_clinic','phyexam')
+
+  def __init__(self, *args, **kwargs):
+    super(VitalExamForm, self).__init__(*args, **kwargs)
+    text_fields = [{"field"         : 'sys_bp',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' :true"
+                    },
+                  {"field"         : 'dia_bp',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' :true"
+                    },
+                   {"field": 'pulse_rate',
+                    'max_length'    :  100         ,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                    {"field"         : 'resp_rate',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                   {"field": 'gcs',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' : false"
+                   },
+                  {"field"         : 'height',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.CheckBox",
+                    "data-dojo-props": r"'required' :false"
+                    },
+                  {"field"         : 'weight',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' :false,placeHolder:'Any other Classification..'"
+                    },
+                   {"field"           : 'remarks',
+                   'max_length'       : 100,
+                   "data-dojo-type"   : "dijit.form.Textarea",
+                    "data-dojo-props" : r"'required' : false"
+                   },
+                   {"field"         : 'date_time',
+                   'max_length'     : 100,
+                   "data-dojo-type" : "dijit.form.ValidationTextBox",
+                   "data-dojo-props": r"'required' : false, 'disabled': true"
+                   }
+          ]
+    for field in text_fields:
+      print(self.fields[field['field']].widget);
+      self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+      self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+      self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+
+
+## OLD FORMS ##
 ################################################################################
 # Forms definition starts here:::
 ################################################################################
 
 
-def set_up_phyexam_form(form_instance):
-  text_fields = [
-           {"field"         : 'admission_detail',
-            'max_length'    :  ''         ,
-            "data-dojo-type": "dijit.form.Select",
-            "data-dojo-id"  : "admission_phyexam_admission_detail",
-            "data-dojo-props": r" 'required':'true', 'readOnly':'true'"
-            },
+#def set_up_phyexam_form(form_instance):
+  #text_fields = [
+           #{"field"         : 'admission_detail',
+            #'max_length'    :  ''         ,
+            #"data-dojo-type": "dijit.form.Select",
+            #"data-dojo-id"  : "admission_phyexam_admission_detail",
+            #"data-dojo-props": r" 'required':'true', 'readOnly':'true'"
+            #},
 
-           {"field"         : 'physician',
-            'max_length'    :  '100'         ,
-            "data-dojo-type": "dijit.form.Select",
-            "data-dojo-id"  : "admission_phyexam_physician",
-            "data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
-            },
+           #{"field"         : 'physician',
+            #'max_length'    :  '100'         ,
+            #"data-dojo-type": "dijit.form.Select",
+            #"data-dojo-id"  : "admission_phyexam_physician",
+            #"data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
+            #},
 
-            {"field"         : 'consult_nature',
-            'max_length'    :  '100'         ,
-            "data-dojo-type": "dijit.form.Select",
-            "data-dojo-id"  : "admission_phyexam_consult_nature",
-            "data-dojo-props": r"'required' : 'true' , 'readOnly':'true'"
-            },
-      ]
+            #{"field"         : 'consult_nature',
+            #'max_length'    :  '100'         ,
+            #"data-dojo-type": "dijit.form.Select",
+            #"data-dojo-id"  : "admission_phyexam_consult_nature",
+            #"data-dojo-props": r"'required' : 'true' , 'readOnly':'true'"
+            #},
+      #]
 
-  for field in text_fields:
-    print(form_instance.fields[field['field']].widget);
-    form_instance.fields[field['field']].widget.attrs['data-dojo-type']  = field['data-dojo-type']
-    form_instance.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
-    form_instance.fields[field['field']].widget.attrs['data-dojo-id'] = field['data-dojo-id']
-    form_instance.fields[field['field']].widget.attrs['max_length']      = field['max_length']
+  #for field in text_fields:
+    #print(form_instance.fields[field['field']].widget);
+    #form_instance.fields[field['field']].widget.attrs['data-dojo-type']  = field['data-dojo-type']
+    #form_instance.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+    #form_instance.fields[field['field']].widget.attrs['data-dojo-id'] = field['data-dojo-id']
+    #form_instance.fields[field['field']].widget.attrs['max_length']      = field['max_length']
 
 
 ################################################################################
 # IP Physical Exam forms..
 ################################################################################
 
-class PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('visit_detail')
+#class PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('visit_detail')
 
-  def __init__(self, *args, **kwargs):
-    super(PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
+  #def __init__(self, *args, **kwargs):
+    #super(PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
 
 
-class IP_Initial_PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('visit_detail')
+#class IP_Initial_PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('visit_detail')
 
-  def __init__(self, *args, **kwargs):
-    super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
+  #def __init__(self, *args, **kwargs):
+    #super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
 
-class IP_Fu_PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('visit_detail')
+#class IP_Fu_PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('visit_detail')
 
-  def __init__(self, *args, **kwargs):
-    super(IP_Fu_PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
+  #def __init__(self, *args, **kwargs):
+    #super(IP_Fu_PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
 
-class IP_Pre_Op_PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('visit_detail')
+#class IP_Pre_Op_PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('visit_detail')
 
-  def __init__(self, *args, **kwargs):
-    super(IP_Pre_Op_PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
+  #def __init__(self, *args, **kwargs):
+    #super(IP_Pre_Op_PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
 
-class IP_Post_Op_PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('visit_detail')
+#class IP_Post_Op_PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('visit_detail')
 
-  def __init__(self, *args, **kwargs):
-    super(IP_Post_Op_PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
+  #def __init__(self, *args, **kwargs):
+    #super(IP_Post_Op_PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
 
-class IP_Discharge_PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('visit_detail')
+#class IP_Discharge_PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('visit_detail')
 
-  def __init__(self, *args, **kwargs):
-    super(IP_Discharge_PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
+  #def __init__(self, *args, **kwargs):
+    #super(IP_Discharge_PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
 
 
 ################################################################################
 # OP Physical Exam forms..
 ################################################################################
 
-class OP_PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('admission_detail')
+#class OP_PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('admission_detail')
 
-  def __init__(self, *args, **kwargs):
-    super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
-
-
-class OP_Initial_PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('admission_detail')
-
-  def __init__(self, *args, **kwargs):
-    super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
-
-class OP_Fu_PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('admission_detail')
-
-  def __init__(self, *args, **kwargs):
-    super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
+  #def __init__(self, *args, **kwargs):
+    #super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
 
 
-class OP_Dis_PhyExamForm(ModelForm):
-  physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
-  class Meta:
-    model   = PhyExam
-    exclude = ('admission_detail')
+#class OP_Initial_PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('admission_detail')
 
-  def __init__(self, *args, **kwargs):
-    super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
-    self.set_up = set_up_phyexam_form(self)
+  #def __init__(self, *args, **kwargs):
+    #super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
+
+#class OP_Fu_PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('admission_detail')
+
+  #def __init__(self, *args, **kwargs):
+    #super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
+
+
+#class OP_Dis_PhyExamForm(ModelForm):
+  #physician = ModelChoiceField(queryset = Staff.objects.filter(clinic_staff_role ='doctor'))
+  #class Meta:
+    #model   = PhyExam
+    #exclude = ('admission_detail')
+
+  #def __init__(self, *args, **kwargs):
+    #super(IP_Initial_PhyExamForm, self).__init__(*args, **kwargs)
+    #self.set_up = set_up_phyexam_form(self)
 
 
 ################################################################################
 # Other Exam Forms - In Patient
 ################################################################################
 
-class VitalForm(ModelForm):
+#class VitalForm(ModelForm):
 
- class Meta:
-   model  = VitalExam
-   exclude =('phyexam','visit_detail')
+ #class Meta:
+   #model  = VitalExam
+   #exclude =('phyexam','visit_detail')
 
-class GenExamForm(ModelForm):
+#class GenExamForm(ModelForm):
 
- class Meta:
-   model  = GenExam
-   exclude = ('phyexam','visit_detail')
-   widgets = {'remarks':Textarea(attrs={'cols':80, 'rows':5})}
+ #class Meta:
+   #model  = GenExam
+   #exclude = ('phyexam','visit_detail')
+   #widgets = {'remarks':Textarea(attrs={'cols':80, 'rows':5})}
 
 
-class SysExamForm(ModelForm):
+#class SysExamForm(ModelForm):
 
- class Meta:
-   model  = SysExam
-   exclude = ('phyexam','visit_detail')
-   widgets = {'remarks'         :Textarea(attrs={'cols':80, 'rows':5}),
-            'heent'             :Textarea(attrs={'cols':80, 'rows':5}),
-            'cns'               :Textarea(attrs={'cols':80, 'rows':5}),
-            'cvs'               :Textarea(attrs={'cols':80, 'rows':5}),
-            'respiratory_system':Textarea(attrs={'cols':80, 'rows':5}),
-            'git_and_gut'       :Textarea(attrs={'cols':80, 'rows':5}),
-            }
+ #class Meta:
+   #model  = SysExam
+   #exclude = ('phyexam','visit_detail')
+   #widgets = {'remarks'         :Textarea(attrs={'cols':80, 'rows':5}),
+            #'heent'             :Textarea(attrs={'cols':80, 'rows':5}),
+            #'cns'               :Textarea(attrs={'cols':80, 'rows':5}),
+            #'cvs'               :Textarea(attrs={'cols':80, 'rows':5}),
+            #'respiratory_system':Textarea(attrs={'cols':80, 'rows':5}),
+            #'git_and_gut'       :Textarea(attrs={'cols':80, 'rows':5}),
+            #}
 
-class PeriNeuroExamForm(ModelForm):
+#class PeriNeuroExamForm(ModelForm):
 
-  class Meta:
-    model   = PeriNeuroExam
-    exclude = ('phyexam','visit_detail')
-    widgets = {'remarks'      :Textarea(attrs={'cols':80, 'rows':5}),
-              'motor'         :Textarea(attrs={'cols':80, 'rows':5}),
-              'sensory'       :Textarea(attrs={'cols':80, 'rows':5}),
-              'dtr'           :Textarea(attrs={'cols':80, 'rows':5}),
-              'plantar'       :Textarea(attrs={'cols':80, 'rows':5}),
-              'abdominal'     :Textarea(attrs={'cols':80, 'rows':5}),
-              'cremasteric'   :Textarea(attrs={'cols':80, 'rows':5}),
-              'anal_wink'     :Textarea(attrs={'cols':80, 'rows':5}),
-              'cranial_nerve' :Textarea(attrs={'cols':80, 'rows':5}),
-              }
+  #class Meta:
+    #model   = PeriNeuroExam
+    #exclude = ('phyexam','visit_detail')
+    #widgets = {'remarks'      :Textarea(attrs={'cols':80, 'rows':5}),
+              #'motor'         :Textarea(attrs={'cols':80, 'rows':5}),
+              #'sensory'       :Textarea(attrs={'cols':80, 'rows':5}),
+              #'dtr'           :Textarea(attrs={'cols':80, 'rows':5}),
+              #'plantar'       :Textarea(attrs={'cols':80, 'rows':5}),
+              #'abdominal'     :Textarea(attrs={'cols':80, 'rows':5}),
+              #'cremasteric'   :Textarea(attrs={'cols':80, 'rows':5}),
+              #'anal_wink'     :Textarea(attrs={'cols':80, 'rows':5}),
+              #'cranial_nerve' :Textarea(attrs={'cols':80, 'rows':5}),
+              #}
 
-class VascExamForm(ModelForm):
+#class VascExamForm(ModelForm):
 
-  class Meta:
-    model   = VascExam
-    exclude = ('phyexam','visit_detail')
-    widgets = {'remarks':Textarea(attrs={'cols':80, 'rows':5}),}
+  #class Meta:
+    #model   = VascExam
+    #exclude = ('phyexam','visit_detail')
+    #widgets = {'remarks':Textarea(attrs={'cols':80, 'rows':5}),}
+
 
 ################################################################################
 # Other Exam Forms - Out Patient
 ################################################################################
 
-class OP_VitalForm(ModelForm):
+#class OP_VitalForm(ModelForm):
 
- class Meta:
-   model  = VitalExam
-   exclude =('phyexam','admission_detail')
-
-class OP_GenExamForm(ModelForm):
-
- class Meta:
-   model  = GenExam
-   exclude = ('phyexam','admission_detail')
-   widgets = {'remarks':Textarea(attrs={'cols':80, 'rows':5}),}
+ #class Meta:
+   #model  = VitalExam
+   #exclude =('phyexam','admission_detail')
 
 
-class OP_SysExamForm(ModelForm):
+#class OP_GenExamForm(ModelForm):
 
- class Meta:
-   model  = SysExam
-   exclude = ('phyexam','admission_detail')
-   widgets = {'remarks'           :Textarea(attrs={'cols':80, 'rows':5}),
-             'heent'              :Textarea(attrs={'cols':80, 'rows':5}),
-             'cns'                :Textarea(attrs={'cols':80, 'rows':5}),
-             'cvs'                :Textarea(attrs={'cols':80, 'rows':5}),
-             'respiratory_system' :Textarea(attrs={'cols':80, 'rows':5}),
-             'git_and_gut'        :Textarea(attrs={'cols':80, 'rows':5}),
-            }
+ #class Meta:
+   #model  = GenExam
+   #exclude = ('phyexam','admission_detail')
+   #widgets = {'remarks':Textarea(attrs={'cols':80, 'rows':5}),}
 
-class OP_PeriNeuroExamForm(ModelForm):
 
-  class Meta:
-    model   = PeriNeuroExam
-    exclude = ('phyexam','admission_detail')
-    widgets = {'remarks'        :Textarea(attrs={'cols':80, 'rows':5}),
-               'motor'          :Textarea(attrs={'cols':80, 'rows':5}),
-               'sensory'        :Textarea(attrs={'cols':80, 'rows':5}),
-               'dtr'            :Textarea(attrs={'cols':80, 'rows':5}),
-               'plantar'        :Textarea(attrs={'cols':80, 'rows':5}),
-               'abdominal'      :Textarea(attrs={'cols':80, 'rows':5}),
-               'cremasteric'    :Textarea(attrs={'cols':80, 'rows':5}),
-               'anal_wink'      :Textarea(attrs={'cols':80, 'rows':5}),
-               'cranial_nerve'  :Textarea(attrs={'cols':80, 'rows':5}),
-              }
+#class OP_SysExamForm(ModelForm):
 
-class OP_VascExamForm(ModelForm):
+ #class Meta:
+   #model  = SysExam
+   #exclude = ('phyexam','admission_detail')
+   #widgets = {'remarks'           :Textarea(attrs={'cols':80, 'rows':5}),
+             #'heent'              :Textarea(attrs={'cols':80, 'rows':5}),
+             #'cns'                :Textarea(attrs={'cols':80, 'rows':5}),
+             #'cvs'                :Textarea(attrs={'cols':80, 'rows':5}),
+             #'respiratory_system' :Textarea(attrs={'cols':80, 'rows':5}),
+             #'git_and_gut'        :Textarea(attrs={'cols':80, 'rows':5}),
+            #}
 
-  class Meta:
-    model   = VascExam
-    exclude = ('phyexam','admission_detail')
-    widgets = {'remarks':Textarea(attrs={'cols':80, 'rows':5})}
+#class OP_PeriNeuroExamForm(ModelForm):
+
+  #class Meta:
+    #model   = PeriNeuroExam
+    #exclude = ('phyexam','admission_detail')
+    #widgets = {'remarks'        :Textarea(attrs={'cols':80, 'rows':5}),
+               #'motor'          :Textarea(attrs={'cols':80, 'rows':5}),
+               #'sensory'        :Textarea(attrs={'cols':80, 'rows':5}),
+               #'dtr'            :Textarea(attrs={'cols':80, 'rows':5}),
+               #'plantar'        :Textarea(attrs={'cols':80, 'rows':5}),
+               #'abdominal'      :Textarea(attrs={'cols':80, 'rows':5}),
+               #'cremasteric'    :Textarea(attrs={'cols':80, 'rows':5}),
+               #'anal_wink'      :Textarea(attrs={'cols':80, 'rows':5}),
+               #'cranial_nerve'  :Textarea(attrs={'cols':80, 'rows':5}),
+              #}
+
+#class OP_VascExamForm(ModelForm):
+
+  #class Meta:
+    #model   = VascExam
+    #exclude = ('phyexam','admission_detail')
+    #widgets = {'remarks':Textarea(attrs={'cols':80, 'rows':5})}

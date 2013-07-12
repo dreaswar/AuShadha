@@ -79,7 +79,8 @@ function(on,
               var submitButton = new Button({id     : 'addChoiceSubmitButton',
                                              label  : "Go >> ",
                                              onClick: function(e){
-                                                        var urlToCall = registry.byId('addChoiceFilteringSelect').get('value');
+                                                        var urlToCall   = registry.byId('addChoiceFilteringSelect').get('value');
+                                                        var chosenValue = registry.byId('addChoiceFilteringSelect').get('displayedValue');
                                                         if(urlToCall){
                                                           request(urlToCall).then(
                                                             function(html){
@@ -103,6 +104,11 @@ function(on,
                                                                 registry.byId('gridDialog').show();
                                                               }
                                                               else{
+                                                                if(chosenValue == 'Visit' && action == 'Add'){
+                                                                  if(registry.byId('newVisitAddForm')){
+                                                                    registry.byId('newVisitAddForm').destroyRecursive();
+                                                                  }
+                                                                }
                                                                 var thisDialog = new Dialog({content: html, title: action});
                                                                 thisDialog.onClose = function(){
                                                                 this.destroyRecursive();
