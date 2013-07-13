@@ -34,7 +34,8 @@
                   publishInfo("Saved Successfully" );
                   editDialog.hide();
                   new buildVisitTree();
-                  registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+//                   registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+                  registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
                   new buildPatientTree();
                   new buildAdmissionTree();
                 }
@@ -226,7 +227,8 @@
                           registry.byId('VISIT_{{visit_follow_up_obj.id}}').destroyRecursive(false);
                         }
                         new buildVisitTree();
-                        registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+//                      registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+                        registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
                         new buildPatientTree();
                         new buildAdmissionTree();
                       }else{

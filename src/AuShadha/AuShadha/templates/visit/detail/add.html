@@ -144,7 +144,8 @@
                     editDialog.hide();
                   }
                   new buildVisitTree();
-                  registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+//                registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+                  registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
                   new buildPatientTree();
                   new buildAdmissionTree();
                 }

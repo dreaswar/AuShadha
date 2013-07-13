@@ -83,7 +83,8 @@ define(
                             */
                             request(CHOSEN_PATIENT.visitsummary).then(
                               function(html){
-                                registry.byId('visitPaneRSidebar').set('content',html);
+//                                 registry.byId('visitPaneRSidebar').set('content',html);
+                                registry.byId('visitSummaryTab').set('content',html);
                               },
                               function(err){
                                 publishError(err);
@@ -93,7 +94,6 @@ define(
 
                           }
                           else{
-
                             console.log("Visit Pane is already initialized..");
                             this.destroyPane();
 
@@ -125,7 +125,8 @@ define(
         },
 
         onVisitChange: function(){
-                          registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+//                           registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+                          registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
                           new buildVisitTree();
                           new buildPatientTree();
                           new buildAdmissionTree();
@@ -133,7 +134,8 @@ define(
         },
 
         onVisitDelete: function(){
-                          registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);                
+                          registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);                
+//                           registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);                
                           this.destroyPane();
         },
 
@@ -278,17 +280,30 @@ define(
                                             'visitPaneContentBorderContainer',
                                             1);
                           domConstruct.create('div',
-                                              {id    : "visitLSidebarTreeContainer", 
+                                              {id    : "visitLSidebarTabContainer", 
                                                 style : "height: 100%; width: 20em"
                                               },
                                               'visitPaneLSidebar',
                                               0);
-                          domConstruct.create('div',
-                                            {id    : "visitLSidebarTreeDiv", 
-                                              style : "height: 100%; width: 20em"
-                                            },
-                                            'visitLSidebarTreeContainer',
-                                            0);
+                            domConstruct.create('div',
+                                                {id    : "visitLSidebarTreeContainer", 
+                                                  style : "height: 100%; width: 20em"
+                                                },
+                                                'visitLSidebarTabContainer',
+                                                0);
+                              domConstruct.create('div',
+                                                {id    : "visitLSidebarTreeDiv", 
+                                                  style : "height: 100%; width: 20em"
+                                                },
+                                                'visitLSidebarTreeContainer',
+                                                0);
+                              
+                            domConstruct.create('div',
+                                              {id    : "visitSummaryContainer", 
+                                                style : "height: 100%; width: 20em"
+                                              },
+                                              'visitLSidebarTabContainer',
+                                              1);
 
                         domConstruct.create('div',
                                             {id: "visitPaneContentArea" 
@@ -300,6 +315,11 @@ define(
                                               {id: 'visitEditPaneTabContainer'},
                                               'visitPaneContentArea',
                                               'first');
+                            domConstruct.create('div',
+                                                {id: 'visitSummaryTab'},
+                                                'visitEditPaneTabContainer',
+                                                0);
+
                         /*                          
                             domConstruct.create('div',
                                                 {id: 'visitEditPane'},
@@ -307,12 +327,13 @@ define(
                                                 'first');
                         */
 
+                        /*
                         domConstruct.create('div',
                                             {id: "visitPaneRSidebar" 
                                             },
                                             'visitPaneContentBorderContainer',
                                             3);
-                        
+                        */
                       console.log("created the DOMS");
                       return dom.byId('visitHomeContentPane');
                   }else{
@@ -365,6 +386,40 @@ define(
                         visitPaneContentBorderContainer.addChild(visitPaneLSidebar);
                         console.log(visitPaneLSidebar);
 
+                          var visitLSidebarTabContainer = new TabContainer({id    : "visitLSidebarTabContainer",
+                                                                tabStrip    : true,
+                                                                tabPosition :'bottom',
+                                                                },
+                                                              "visitLSidebarTabContainer"
+                          );
+                          visitPaneLSidebar.addChild(visitLSidebarTabContainer)
+                          console.log("Added Sidebar Tab Container");
+                          console.log(visitLSidebarTabContainer);
+
+                            var visitLSidebarTreeContainer = new ContentPane({id      : "visitLSidebarTreeContainer",
+                                                                      title     : "Tree",
+                                                                      iconClass : "navigationIcon",
+                                                                      showTitle : false,
+                                                                      toolTip   : "OPD Visit Tree"
+                                                                  },
+                                                                "visitLSidebarTreeContainer"
+                            );
+                            visitLSidebarTabContainer.addChild(visitLSidebarTreeContainer);
+                            console.log("Added Sidebar Tree Container");
+                            console.log(visitLSidebarTreeContainer);
+
+                            var visitSummaryContainer = new ContentPane({id       : "visitSummaryContainer",
+                                                                      title     : "Visit Notes",
+                                                                      iconClass : "mediaIcon",
+                                                                      showTitle : false,
+                                                                },
+                                                              "visitSummaryContainer"
+                            );
+                            visitLSidebarTabContainer.addChild(visitSummaryContainer);  
+                            console.log("Added Visit Summary Container");
+                            console.log(visitSummaryContainer);
+
+
                         var visitPaneContentArea = new ContentPane({id        : "visitPaneContentArea", 
                                                                     region    : 'center',
                                                                     splitter  : true,
@@ -382,6 +437,15 @@ define(
                                                                           'visitEditPaneTabContainer'
                                                                         );
                         visitPaneContentArea.addChild(visitEditPaneTabContainer);
+
+                        var visitSummaryTab = new ContentPane({id  : 'visitSummaryTab', 
+                                                              title: "Synopsis", 
+                                                              closable: false,
+                                                              tabPosition : 'top'},
+                                                              'visitSummaryTab'
+                                                            );
+                        visitEditPaneTabContainer.addChild(visitSummaryTab);
+
                         visitEditPaneTabContainer.startup();                        
 
                         /*                        
@@ -397,6 +461,7 @@ define(
 
                         */
 
+                        /*
                         var visitPaneRSidebar = new ContentPane({id         : "visitPaneRSidebar", 
                                                                  region    : 'trailing',
                                                                  splitter  : true,
@@ -409,6 +474,7 @@ define(
                                                                  'visitPaneRSidebar'
                                                         );
                         visitPaneContentBorderContainer.addChild(visitPaneRSidebar);
+                        */
 
                         console.log("created the Dijits");
                         console.log("added the Dijits");

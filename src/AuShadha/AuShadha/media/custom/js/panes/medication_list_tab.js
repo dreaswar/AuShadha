@@ -16,15 +16,15 @@ define([
     function(dom, 
              domStyle,
              query,
-            domConstruct, 
-            registry, 
-            Button,
-            ContentPane, 
-            TabContainer, 
-            BorderContainer,
+             domConstruct, 
+             registry, 
+             Button,
+             ContentPane, 
+             TabContainer, 
+             BorderContainer,
 
-            GRID_STRUCTURES,
-            auGridSetup
+             GRID_STRUCTURES,
+             auGridSetup
             ){
 
         function makeDoms(){

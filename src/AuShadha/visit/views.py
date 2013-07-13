@@ -107,6 +107,16 @@ def render_visit_tree(request,id = None):
          "identifier": "id"   ,
          "label"     : "name" ,
          "items"     : [
+                        {"name"  : "Procedures"      , "type":"application", "id":"PROC" ,
+                        "len"   : 1,
+                        "addUrl": None,
+                        },
+
+                        {"name"  : "History"      , "type":"application", "id":"HISTORY" ,
+                        "len"   : 1,
+                        "addUrl": None,
+                        },
+
                         {"name"  : "Medication" , "type":"application", "id":"MEDICATION_LIST" ,
                         "len"   : 1,
                         "addUrl": None,
@@ -177,6 +187,13 @@ def render_visit_tree(request,id = None):
                           "addUrl": active_visit.get_visit_detail_visit_follow_up_add_url(),
                           },
 
+                          {"name"  : "Orders" , 
+                           "type"  : "application", 
+                           "id"    : "ACTIVE_VISIT_" + str(active_visit.id) +"_ORDERS_AND_PRESCRIPTION" ,
+                           "len"   : 1,
+                           "addUrl": None,
+                          },
+
                           {"name" : "Close" , 
                           "type"  : "close_visit", 
                           "id"    : "VISIT_CLOSE_"+ str(active_visit.id) ,
@@ -184,16 +201,15 @@ def render_visit_tree(request,id = None):
                           "addUrl": active_visit.get_visit_detail_close_url(),
                           },
 
-                          {"name"      : "Edit" , 
-                          "type"       : "visit", 
-                          "id"         : "ACTIVE_VISIT_" + str(active_visit.id) ,
-                          "len"        : 1,
-                          "addUrl"     : None,
-                          "absoluteUrl": active_visit.get_absolute_url(),
-                          "editUrl"    : active_visit.get_edit_url(),
-                          "deUrl"      : active_visit.get_del_url()
-                          },
-
+                          #{"name"      : "Edit" , 
+                          #"type"       : "visit", 
+                          #"id"         : "ACTIVE_VISIT_" + str(active_visit.id) ,
+                          #"len"        : 1,
+                          #"addUrl"     : None,
+                          #"absoluteUrl": active_visit.get_absolute_url(),
+                          #"editUrl"    : active_visit.get_edit_url(),
+                          #"deUrl"      : active_visit.get_del_url()
+                          #},
 
                           #{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
                           #"len"   : 1,
@@ -241,7 +257,13 @@ def render_visit_tree(request,id = None):
                                   "type"    : "fu_visit", 
                                   "id"      : "FU_VISIT_"+ str(fu.id),
                                   "editUrl" : fu.get_edit_url(),
-                                  "delUrl"  : fu.get_del_url()
+                                  "delUrl"  : fu.get_del_url(),
+                                  "children": [{"name"  : "Orders"   , 
+                                                "type"  : "application"             , 
+                                                "id"    : "FU_VISIT_" + str(fu.id) +"_ORDERS_AND_PRESCRIPTION" ,
+                                                "len"   : 1                         ,
+                                                "addUrl": None,
+                                               }]
                                   }
               fu_base_dict['children'].append(fu_dict_to_append)
 
@@ -259,7 +281,12 @@ def render_visit_tree(request,id = None):
           dict_to_append['editUrl']     = visit.get_edit_url()
           dict_to_append['editUrl']     = visit.get_edit_url()
           dict_to_append['delUrl']      = visit.get_del_url()
-          dict_to_append['children']    = []
+          dict_to_append['children']    = [{"name"  : "Orders"  , 
+                                            "type"  : "application"            , 
+                                            "id"    : "CLOSED_VISIT_" + str(visit.id) +"_ORDERS_AND_PRESCRIPTION" ,
+                                            "len"   : 1,
+                                            "addUrl": None,
+                                           }]
           base_dict['children'].append(dict_to_append)
           if visit.has_fu_visits():
             fu_visit = visit.has_fu_visits()
@@ -280,7 +307,13 @@ def render_visit_tree(request,id = None):
                                   "type"    : "fu_visit", 
                                   "id"      : "CLOSED_FU_VISIT_"+ str(fu.id),
                                   "editUrl" : fu.get_edit_url(),
-                                  "delUrl"  : fu.get_del_url()
+                                  "delUrl"  : fu.get_del_url(),
+                                  "children": [{"name"  : "Orders"  , 
+                                              "type"  : "application"            , 
+                                              "id"    : "CLOSED_FU_VISIT_" + str(fu.id) +"_ORDERS_AND_PRESCRIPTION" ,
+                                              "len"   : 1,
+                                              "addUrl": None,
+                                             }]
                                   }
               fu_base_dict['children'].append(fu_dict_to_append)
 
