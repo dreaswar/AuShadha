@@ -171,24 +171,74 @@
 
       <table id ="visitDetailAddFormTable">
           <tr> 
-            <td> Date        </td> <td>  {{visit_detail_form.visit_date}}      </td> 
-          </tr> 
-          <tr>
-            <td> Physician   </td> <td>   {{visit_detail_form.op_surgeon}}       </td>
+            <th> <label for="id_visit_date"> Date</label></th>
+            <td> {{visit_detail_form.visit_date}} </td>
           </tr>
-          <tr>
-            <td> Referred    </td> <td>   {{visit_detail_form.referring_doctor}} </td> 
+          <tr>           
+            <th> <label for="id_op_surgeon">Physician</label>
+            <td> {{visit_detail_form.op_surgeon}} </td>
           </tr>
-          <tr>
-            <td> Nature   </td> <td>   {{visit_detail_form.consult_nature}} </td> 
+          <tr>           
+            <th> <label for="id_refering_doctor">Referred</label> </th>
+            <td> {{visit_detail_form.referring_doctor}}</td>
           </tr>
-          <tr>
-            <td> Status   </td> <td>   {{visit_detail_form.status}}         </td> 
+          <tr>           
+            <th> <label for="id_consult_nature"> Nature</label>
+            <td> {{visit_detail_form.consult_nature}} </td>
           </tr>
-          <tr>
-            <td> Remarks   </td> <td>   {{visit_detail_form.remarks}}         </td> 
+          <tr>           
+            <th> <label for="id_status"> Status</label></th>
+            <td> {{visit_detail_form.status}} </td>
           </tr>
-      </table>
+
+           <tr>
+            <td>
+              <button data-dojo-type="dijit/form/Button" 
+                      type="button" 
+                      data-dojo-id="showVisitRemarks"
+                      data-dojo-props="iconClass:'attachment_small'"
+                      onClick="showOrHideRemarks();"
+                      >
+              Remarks
+              <script type="text/javascript">
+                  function showOrHideRemarks(){
+                    require(['dojo/on',
+                            'dojo/dom',
+                            'dijit/registry',
+                            'dojo/dom-style',
+                            'dojo/dom-class',
+                            'dojo/dom-attr'
+                          ], 
+                    function(on,
+                              dom,
+                              registry,
+                              domStyle,
+                              domClass,
+                              domAttr
+                              ){
+                      if (domStyle.get(dom.byId("visitRemarksCell"),'display') == 'none'){
+                        domStyle.set(dom.byId("visitRemarksCell"), {display:'table-cell'});
+    //                     domAttr.set(this,{'label':'Hide Remarks'});
+                      }else{
+                        domStyle.set(dom.byId("visitRemarksCell"), {display:'none'});
+    //                     domAttr.set(this,{'label':'Show Remarks'});
+                      }
+                    });
+                  }
+              </script>
+              </button>
+            </td>
+           </tr>
+           </table>
+           
+           <table>
+            <tr>
+  <!--             <th> <label for="id_remarks"> Remarks</label> </th> -->
+              <td style="display:none;" id="visitRemarksCell">
+                {{visit_detail_form.remarks}}
+              </td>
+            </tr>
+           </table>
 
       {% comment %}
       <hr class="shadow_line">
@@ -254,7 +304,7 @@
                             onclick = "removeThisComplaint(this);"
                         >
                       </span>
-
+                      {% comment %}
                       <span style  = "background-image: url({{STATIC_URL}}images/add.png);
                                       background-repeat: no-repeat;
                                       background-size  : 16px 16px;
@@ -270,6 +320,7 @@
                             onclick = "showNextComplaint(this);"
                           >
                           </span>
+                      {% endcomment %}
                     {% endif %}
                 </td>
             </tr>
@@ -334,7 +385,7 @@
                 {{visit_ros_form.as_table}} 
             </table>     
         </div>
-        
+
         <div id             = "visitVitalsGenAndHEENTExamFormContentPane"
               data-dojo-id   = "visitVitalsGenAndHEENTExamFormContentPane"
               data-dojo-type = "dojox/layout/ContentPane"
@@ -384,14 +435,13 @@
         Save
      </button>
 
-      {% comment %}
       <button data-dojo-type = "dijit/form/Button" 
               type           = "submit" 
-              name           = "submit_and_add_more_visits"
-              value          = "Add &amp;Open Chart"
-              data-dojo-props="iconClass: 'dijitIconSave'"
+              name           = "save_and_attach_examinations"
+              value          = "Save &amp; Attach Examinations"
+              data-dojo-props= "iconClass: 'dijitIconSave'"
               >
-        Save &amp; Open Chart
+        Save &amp; Attach Examinations
         <script type            = "dojo/connect" 
                 data-dojo-event = "onClick" 
                 data-dojo-args  = "evt"
@@ -401,7 +451,6 @@
           //ADD_AND_OPEN_CHAR = true
         </script>
       </button>
-      {% endcomment %}
 
       <button data-dojo-type  = "dijit/form/Button" 
               data-dojo-props="iconClass: 'dijitIconClear'"

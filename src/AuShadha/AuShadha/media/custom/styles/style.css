@@ -403,6 +403,7 @@ hr.shadow_line {
    margin: 10px 0px 20px 0px;
    }
 
+
    .error_text
    {
      font-size  : 12px;
@@ -499,7 +500,14 @@ hr.shadow_line {
       margin:0px;
   }
 
-
+   .attachment_small
+  {
+    background-image: url('{{STATIC_URL}}images/attachment_small.png');
+    background-repeat: no-repeat;     
+    height: 16px;
+    width:16px;
+    text-align:center;
+   }
 
 
   .addPatientIcon_32
