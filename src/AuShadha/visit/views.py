@@ -692,7 +692,7 @@ def visit_detail_edit(request, id):
       visit_detail_edit_form = VisitDetailForm(request.POST, instance = visit_detail_obj)
       #visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
       VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
-      visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
+      visit_complaint_formset = VisitComplaintFormset(request.POST)
 
       visit_hpi_form         = VisitHPIForm(request.POST, instance = visit_hpi_obj[0])
       visit_ros_form         = VisitROSForm(request.POST, instance = visit_ros_obj[0])
@@ -707,8 +707,12 @@ def visit_detail_edit(request, id):
         saved_visit   = visit_detail_edit_form.save()
 
         saved_visit_complaint = visit_complaint_formset.save(commit = False)
-        saved_visit_complaint.visit_detail = saved_visit
-        saved_visit_complaint.save()
+        for complaint in saved_visit_complaint:
+          complaint.visit_detail = saved_visit
+          complaint.save()
+
+        #saved_visit_complaint.visit_detail = saved_visit
+        #saved_visit_complaint.save()
 
         saved_visit_hpi = visit_hpi_form.save(commit = False)
         saved_visit_hpi.visit_detail = saved_visit
@@ -725,34 +729,34 @@ def visit_detail_edit(request, id):
       else:
         success       = False
         
-        def form_error_formatter(error_list):
-          error_string = ''
-          if error_list:
-            for error in error_list:
-              error_string_to_join    = error + "\n"
-              error_string += error_string_to_join
-            return error_string
-          else:
-            return ''
+        #def form_error_formatter(error_list):
+          #error_string = ''
+          #if error_list:
+            #for error in error_list:
+              #error_string_to_join    = error + "\n"
+              #error_string += error_string_to_join
+            #return error_string
+          #else:
+            #return ''
 
-        visit_detail_form_error    = form_error_formatter(visit_detail_edit_form.errors)
-        visit_complaint_form_error = form_error_formatter(visit_complaint_form.errors)
-        visit_hpi_form_error       = form_error_formatter(visit_hpi_form.errors)
-        visit_ros_form_error       = form_error_formatter(visit_ros_form.errors)
+        #visit_detail_form_error    = form_error_formatter(visit_detail_edit_form.errors)
+        ##visit_complaint_form_error = form_error_formatter(visit_complaint_form.errors)
+        #visit_hpi_form_error       = form_error_formatter(visit_hpi_form.errors)
+        #visit_ros_form_error       = form_error_formatter(visit_ros_form.errors)
 
-        error_message = "Error! Visit Could not be edited" + "\n" +\
-                        visit_detail_form_error    + "\n" + \
-                        visit_complaint_form_error + "\n" + \
-                        visit_hpi_form_error       + "\n" + \
-                        visit_ros_form_error       + "\n" 
+        #error_message = "Error! Visit Could not be edited" + "\n" +\
+                        #visit_detail_form_error    + "\n" + \
+                        ##visit_complaint_form_error + "\n" + \
+                        #visit_hpi_form_error       + "\n" + \
+                        #visit_ros_form_error       + "\n" 
 
       data = { 'success'      : success      ,
-              'error_message': error_message
+              'error_message': None
             }
       json = simplejson.dumps(data)
       return HttpResponse(json, content_type = 'application/json')
     else:
-      raise Http404("ERROR!  The visit has not associated comlaints, HPI or ROS to edit")
+      raise Http404("ERROR!  The visit has not associated complaints, HPI or ROS to edit")
   else:
     raise Http404(" Error ! Unsupported Request..")
 

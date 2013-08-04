@@ -72,6 +72,7 @@
                 var _delete = confirm("This will delete the complaint.. Proceed ?");
                 if (_delete){
                   var rowQuery  = query(evt).closest('tr.shownVisitComplaintTableRow');
+                  var delBtn    = query(evt).closest('.removeThisComplaint')[0];
                   var row       = rowQuery[0];
                   var allInputs = query(rowQuery).
                                     children('td').
@@ -213,24 +214,6 @@
                 <td>{{ form.complaint }}</td>
                 <td>{{ form.duration }}</td>
                 <td> 
-                    {% if forloop.counter = 1 %}
-                      <span style  = "background-image: url({{STATIC_URL}}images/add.png);
-                                      background-repeat: no-repeat;
-                                      background-size  : 16px 16px;
-                                      background-color : white;
-                                      width: 16px; 
-                                      height: 16px; 
-                                      cursor: pointer; 
-                                      display:table-cell;
-                                      "
-                            id     = "addMoreVisitComplaint_{{form.id}}"
-                            class  = "showNextComplaint"
-                            title  = "Add more complaints"
-                            onclick = "showNextComplaint(this);"
-                          >
-
-                      </span>
-                    {%endif%}
                       <span style  = "background-image: url({{STATIC_URL}}images/absent.png );
                                       background-repeat: no-repeat;
                                       background-size  : 16px 16px;
@@ -241,11 +224,32 @@
                                       display:table-cell;
                                       "
                             id     = "removeVisitComplaint_{{form.id}}"
+                            complaintid = "{{form.id}}"
                             class  = "removeThisComplaint"
                             title  = "Remove this Complaint"
                             onclick = "removeThisComplaint(this);"
                         >
                       </span>
+
+                      {% if forloop.counter == complaint_count %}
+                        <span style  = "background-image: url({{STATIC_URL}}images/add.png);
+                                        background-repeat: no-repeat;
+                                        background-size  : 16px 16px;
+                                        background-color : white;
+                                        width: 16px; 
+                                        height: 16px; 
+                                        cursor: pointer; 
+                                        display:table-cell;
+                                        "
+                              id     = "addMoreVisitComplaint_{{form.id}}"
+                              class  = "showNextComplaint"
+                              title  = "Add more complaints"
+                              onclick = "showNextComplaint(this);"
+                            >
+
+                        </span>
+                      {%endif%}
+
                 </td>
             </tr>
         {% endfor %}
