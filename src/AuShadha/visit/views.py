@@ -570,15 +570,19 @@ def visit_detail_add(request,  id, nature = 'initial'):
       visit_detail_form    = VisitDetailForm(request.POST, instance = visit_detail_obj)
 
       #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
-      VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
+      VisitComplaintFormset = modelformset_factory(VisitComplaint, 
+                                                   form = VisitComplaintForm,
+                                                   max_num = 10, 
+                                                   extra = 9
+                                                   )        
       visit_complaint_formset = VisitComplaintFormset(request.POST)
 
       visit_hpi_form       = VisitHPIForm(request.POST, instance = visit_hpi_obj)
       visit_ros_form       = VisitROSForm(request.POST, instance = visit_ros_obj)
 
-      if visit_detail_form.is_valid()    and \
+      if visit_detail_form.is_valid()       and \
          visit_complaint_formset.is_valid() and \
-         visit_hpi_form.is_valid()       and \
+         visit_hpi_form.is_valid()          and \
          visit_ros_form.is_valid():
 
         saved_visit     = visit_detail_form.save()
@@ -631,12 +635,17 @@ def visit_detail_edit(request, id):
     form_field_auto_id = 'id_edit_visit_detail_'+str(id)
     visit_detail_form = VisitDetailForm(instance = visit_detail_obj, auto_id= form_field_auto_id+"_%s")
 
-    if visit_complaint_obj:
-      visit_complaint_obj = visit_complaint_obj[0]
-      c_auto_id = 'id_edit_visit_complaint_'+str(visit_complaint_obj.id)
-      visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj, auto_id = c_auto_id +"_%s")
-    else:
-      visit_complaint_form = None
+    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
+    visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
+    complaint_count = len(visit_complaint_obj)
+
+    #if visit_complaint_obj:
+      #visit_complaint_obj = visit_complaint_obj[0]
+      #c_auto_id = 'id_edit_visit_complaint_'+str(visit_complaint_obj.id)
+      #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj, auto_id = c_auto_id +"_%s")
+    #else:
+      #visit_complaint_form = None
+      #visit_complaint_formset  = None
     
     if visit_hpi_obj:
       visit_hpi_obj = visit_hpi_obj[0]
@@ -655,7 +664,9 @@ def visit_detail_edit(request, id):
     variable = RequestContext(request, {'user'                  : user                  ,
                                         'visit_detail_obj'      : visit_detail_obj      ,
                                         'visit_detail_form'     : visit_detail_form     ,
-                                        'visit_complaint_form'  : visit_complaint_form  ,
+                                        #'visit_complaint_form'  : visit_complaint_form  ,
+                                        'visit_complaint_formset': visit_complaint_formset,
+                                        'complaint_count'       : complaint_count,
                                         'visit_hpi_form'       : visit_hpi_form        ,
                                         'visit_ros_form'       : visit_ros_form        ,
                                         'patient_detail_obj'    : visit_detail_obj.patient_detail   ,
@@ -679,18 +690,23 @@ def visit_detail_edit(request, id):
 
     if visit_complaint_obj and visit_hpi_obj and visit_ros_obj:
       visit_detail_edit_form = VisitDetailForm(request.POST, instance = visit_detail_obj)
-      visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
+      #visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
+      VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
+      visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
+
       visit_hpi_form         = VisitHPIForm(request.POST, instance = visit_hpi_obj[0])
       visit_ros_form         = VisitROSForm(request.POST, instance = visit_ros_obj[0])
+      
 
+      
       if visit_detail_edit_form.is_valid() and \
-        visit_complaint_form.is_valid()   and \
+        visit_complaint_formset.is_valid()   and \
         visit_hpi_form.is_valid()         and \
         visit_ros_form.is_valid():
 
         saved_visit   = visit_detail_edit_form.save()
 
-        saved_visit_complaint = visit_complaint_form.save(commit = False)
+        saved_visit_complaint = visit_complaint_formset.save(commit = False)
         saved_visit_complaint.visit_detail = saved_visit
         saved_visit_complaint.save()
 

@@ -1,4 +1,105 @@
 {% if user and user.is_authenticated %}
+    <script type="text/javscript">
+        function showNextComplaint(evt){
+            require(["dojo/dom",
+                    "dojo/request/xhr",
+                    "dijit/registry"  ,
+                    "dojo/json"       ,
+                    "dojo/dom-form"   ,
+                    "dijit/Dialog"    ,
+                    'dojo/dom-class',
+                    'dojo/dom-style',
+                    'dojo/dom',
+                    'dojo/query',
+                    'dojo/NodeList-traverse',
+                    'dojo/NodeList-data',
+            ],
+            function(dom, 
+                    xhr, 
+                    registry, 
+                    JSON, 
+                    domForm, 
+                    Dialog, 
+                    domClass,
+                    domStyle,
+                    dom,
+                    query){
+                var tableRows = query('.visitComplaintEditFormTable tbody tr');
+                
+                for(var i=0; i<=tableRows.length; i++){
+                   var row = tableRows[i];
+                   if (domStyle.get(row,'display') == 'none'){
+                      domStyle.set(row, 'display','table-row');
+//                       domStyle.set(query(row).children('span.showNextComplaint')[0],'display','none');
+                      domClass.add(row,'shownVisitComplaintTableRow');
+                      domClass.remove(row, 'hiddenVisitComplaintTableRow');
+                      break;
+                   }
+                };
+//                 alert("this will add a new complaint");
+            });
+        }
+
+        function removeThisComplaint(evt){
+            require(["dojo/dom",
+                    "dojo/request/xhr",
+                    "dijit/registry"  ,
+                    "dojo/json"       ,
+                    "dojo/dom-form"   ,
+                    "dijit/Dialog"    ,
+                    'dojo/dom-class',
+                    'dojo/dom-style',
+                    'dojo/dom',
+                    'dojo/query',
+                    'dojo/dom-attr',
+                    'dojo/dom-construct',
+                    'dojo/NodeList-traverse',
+                    'dojo/NodeList-data'
+            ],
+            function(dom, 
+                    xhr, 
+                    registry, 
+                    JSON, 
+                    domForm, 
+                    Dialog, 
+                    domClass,
+                    domStyle,
+                    dom,
+                    query,
+                    domAttr,
+                    domConstruct){
+
+                var _delete = confirm("This will delete the complaint.. Proceed ?");
+                if (_delete){
+                  var rowQuery  = query(evt).closest('tr.shownVisitComplaintTableRow');
+                  var row       = rowQuery[0];
+                  var allInputs = query(rowQuery).
+                                    children('td').
+                                    children('.dijitReset').
+                                    children('.dijitInputContainer').
+                                    children('input[type=text]');
+
+                  if(row && domStyle.get(row,'display') == 'table-row'){
+                    domStyle.set(row, 'display','none');
+                    domClass.remove(row,'shownVisitComplaintTableRow');
+                    domClass.add(row, 'hiddenVisitComplaintTableRow');
+                    domConstruct.place(row,'visitComplaintEditFormTable','last');
+                  }
+
+                  allInputs.forEach(
+                    function(input){
+                      console.log(input);
+                      domAttr.set(input,'value','');
+                    }
+                  );
+                }else{
+                  return false;
+                }
+
+            });
+        }
+    </script>
+
 <div data-dojo-type = "dijit/form/Form" 
      id             = "newVisitEditForm_{{visit_detail_obj.id}}"
      data-dojo-id   = "newVisitEditForm_{{visit_detail_obj.id}}"
@@ -84,7 +185,6 @@
 
       <hr class="shadow_line">
     
-      {%comment%}
 
       <table id       =   "visitComplaintEditFormTable" 
              class="content_pane_table visitComplaintEditFormTable">
@@ -102,8 +202,8 @@
         {% for form in visit_complaint_formset %}
             {{ form.id }}
             <tr id    = "visitComplaintEditFormsetRow_{{forloop.counter}}"
-                style = "display: {% if forloop.counter = 1 %} table-row {%else%} none {% endif %};"
-                class = "{% if forloop.counter = 1 %} 
+                style = "display:{% if forloop.counter > complaint_count %}none{%else%}table-row{%endif%}"
+                class = "{% if forloop.counter <= complaint_count %} 
                            shownVisitComplaintTableRow 
                          {%else%} 
                            hiddenVisitComplaintTableRow 
@@ -130,7 +230,7 @@
                           >
 
                       </span>
-                    {%else%}
+                    {%endif%}
                       <span style  = "background-image: url({{STATIC_URL}}images/absent.png );
                                       background-repeat: no-repeat;
                                       background-size  : 16px 16px;
@@ -146,39 +246,11 @@
                             onclick = "removeThisComplaint(this);"
                         >
                       </span>
-                    {% endif %}
                 </td>
             </tr>
         {% endfor %}
         </tbody>
       </table>
-
-      {%endcomment%}
-
-
-      <table id       =   "visitComplaintEditFormTable_{{visit_detail_obj.id}}">
-        <tr>
-          <td> Complaint </td> <td>   {{visit_complaint_form.complaint}} </td>
-          <td> Duration  </td> <td>   {{visit_complaint_form.duration}}  </td>
-          <td>  
-              <img src   = "{{STATIC_URL}}images/add.png" 
-                   style = "width: 16px; height: 16px; cursor: pointer; "
-                   id    = "addMoreVisitComplaint_{{visit_detail_obj.id}}"
-                  > 
-          </td> 
-          {% comment %}
-          <td>
-            <img src   = "{{STATIC_URL}}images/minus.png" 
-                style = "width: 16px; height: 16px; cursor: pointer; "
-                id    = "removeVisitComplaint_{{visit_detail_obj.id}}"
-              >  
-          </td>
-          {% endcomment %}
-        </tr>
-      </table>
-
-      <hr >
-
 
       <div id            = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
           data-dojo-id   = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
