@@ -582,13 +582,11 @@ class VisitComplaintForm(ModelForm):
                   {"field"           : 'complaint',
                     'max_length'     :  '100'         ,
                     "data-dojo-type" : "dijit.form.ValidationTextBox",
-                    "data-dojo-id"   : "visit_complaint_complaint",
                     "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
                     },
                     {"field"         : 'duration',
                     'max_length'     :  '100'         ,
                     "data-dojo-type" : "dijit.form.ValidationTextBox",
-                    "data-dojo-id"   : "visit_complaint_duration",
                     "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
                     },
     ]
@@ -597,7 +595,6 @@ class VisitComplaintForm(ModelForm):
       print(self.fields[field['field']].widget);
       self.fields[field['field']].widget.attrs['data-dojo-type']  = field['data-dojo-type']
       self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
-      self.fields[field['field']].widget.attrs['data-dojo-id'] = field['data-dojo-id']
       self.fields[field['field']].widget.attrs['max_length']      = field['max_length']
 
 class VisitHPIForm(ModelForm):

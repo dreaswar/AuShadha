@@ -30,23 +30,16 @@ urlpatterns = patterns('',
     url(r'follow_up/del/(?P<id>\d+)/$' , visit_follow_up_del  , name="visit_follow_up_del"),
 
     url(r'detail/add/(?P<id>\d+)/$'    , visit_detail_add    , name="visit_detail_add"),
-    url(r'add/(?P<id>\d+)/$'           , visit_detail_add    , name="visit_detail_add"),
-
     url(r'detail/close/(?P<id>\d+)/$'  , visit_detail_close  , name="visit_detail_close"),
-
     url(r'detail/list/(?P<id>\d+)/$' , visit_detail_list , name="visit_detail_list"),
-    url(r'list/(?P<id>\d+)/$'        , visit_detail_list , name="visit_detail_list"),
-    
     url(r'detail/edit/(?P<id>\d+)/$' , visit_detail_edit , name="visit_detail_edit"),
-    url(r'edit/(?P<id>\d+)/$'        , visit_detail_edit , name="visit_detail_edit"),
-    
     url(r'detail/del/(?P<id>\d+)/$'  , visit_detail_del  , name="visit_detail_del"),
-    url(r'del/(?P<id>\d+)/$'         , visit_detail_del  , name="visit_detail_del"),
+
 
     #url(r'complaint/add/(?P<id>\d+)/$'  , visit_complaint_add  , name="visit_complaint_add"),
     #url(r'complaint/list/(?P<id>\d+)/$' , visit_complaint_list , name="visit_complaint_list"),
-    #url(r'complaint/edit/(?P<id>\d+)/$' , visit_complaint_edit , name="visit_complaint_edit"),
-    #url(r'complaint/del/(?P<id>\d+)/$'  , visit_complaint_del  , name="visit_complaint_del"),
+    url(r'complaint/edit/(?P<id>\d+)/$' , visit_complaint_edit , name="visit_complaint_edit"),
+    url(r'complaint/del/(?P<id>\d+)/$'  , visit_complaint_del  , name="visit_complaint_del"),
 
     #url(r'hpi/add/(?P<id>\d+)/$'  , visit_hpi_add  , name="visit_hpi_add"),
     #url(r'hpi/list/(?P<id>\d+)/$' , visit_hpi_list , name="visit_hpi_list"),
@@ -83,6 +76,11 @@ urlpatterns = patterns('',
 
 
     #url(r'close/(?P<id>\d+)/$'       , visit_close       , name="visit_close"),
+    
+    url(r'add/(?P<id>\d+)/$'           , visit_detail_add    , name="visit_detail_add"),
+    url(r'list/(?P<id>\d+)/$'        , visit_detail_list , name="visit_detail_list"),    
+    url(r'edit/(?P<id>\d+)/$'        , visit_detail_edit , name="visit_detail_edit"),
+    url(r'del/(?P<id>\d+)/$'         , visit_detail_del  , name="visit_detail_del"),
 
 )
 

@@ -520,10 +520,10 @@ def visit_detail_add(request,  id, nature = 'initial'):
                                                auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
         #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
                                                   #auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
+        #VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
+        #visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
+        visit_complaint_form_html = visit_complaint_add(request,id=id)
 
-        VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
-        visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
-        
         visit_hpi_form       = VisitHPIForm(instance = visit_hpi_obj,
                                             auto_id  = "id_new_visit_hpi"+ str(id)+"_%s")
         visit_ros_form       = VisitROSForm(instance = visit_ros_obj,
@@ -532,7 +532,8 @@ def visit_detail_add(request,  id, nature = 'initial'):
         variable = RequestContext(request, {'user'                     : user                  ,
                                             'visit_detail_obj'         : visit_detail_obj      ,
                                             'visit_detail_form'        : visit_detail_form     ,
-                                            'visit_complaint_formset'  : visit_complaint_formset  ,
+                                            #'visit_complaint_formset'  : visit_complaint_formset  ,
+                                            'visit_complaint_form_html'     : visit_complaint_form_html,
                                             'visit_hpi_form'           : visit_hpi_form        ,
                                             'visit_ros_form'           : visit_ros_form        ,
                                             'patient_detail_obj'       : patient_detail_obj    ,
@@ -635,9 +636,14 @@ def visit_detail_edit(request, id):
     form_field_auto_id = 'id_edit_visit_detail_'+str(id)
     visit_detail_form = VisitDetailForm(instance = visit_detail_obj, auto_id= form_field_auto_id+"_%s")
 
-    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
+    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,extra = 0)        
     visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
     complaint_count = len(visit_complaint_obj)
+    complaint_add_icon_template     = get_template('visit/snippets/icons/complaints_add.html')
+    complaint_remove_icon_template = get_template('visit/snippets/icons/complaints_remove.html')
+    complaint_add_icon_html      = complaint_add_icon_template.render(RequestContext(request,{'user':user}))
+    complaint_remove_icon_html  = complaint_remove_icon_template.render(RequestContext(request,{'user':user}))
+
 
     #if visit_complaint_obj:
       #visit_complaint_obj = visit_complaint_obj[0]
@@ -671,6 +677,8 @@ def visit_detail_edit(request, id):
                                         'visit_ros_form'       : visit_ros_form        ,
                                         'patient_detail_obj'    : visit_detail_obj.patient_detail   ,
                                         'error_message'         : error_message         ,
+                                        'complaint_add_icon_html': complaint_add_icon_html,
+                                        'complaint_remove_icon_html': complaint_remove_icon_html
                                         })
     return render_to_response('visit/detail/edit.html', variable)
 
@@ -950,6 +958,95 @@ def visit_follow_up_del(request, id):
     raise Http404(" Error ! Unsupported Request..")
 
 
+################################################################################
+
+@login_required
+def visit_complaint_add(request,id=None):
+  user = request.user
+  success = False
+  error_message = "Complaint Added Successfully"
+  form_errors   = []  
+  try:
+    id = int(id)
+    visit_detail_obj  = VisitDetail.objects.get(pk = id)
+    patient_detail_obj = visit_detail_obj.patient_detail
+    visit_complaint_objs = VisitComplaint.objects.filter(visit_detail = visit_detail_obj)
+    visit_complaint_obj = VisitComplaint(visit_detail = visit_detail_obj)  
+    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,extra=0)
+  except (TypeError, NameError, ValueError, AttributeError, KeyError):
+    raise Http404("Error ! Invalid Request Parameters. ")
+  except (VisitDetail.DoesNotExist):
+    raise Http404("Requested Visit Does not exist.")    
+  
+  if request.method == "GET" and request.is_ajax():
+  #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
+                                              #auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
+    visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
+    variable = RequestContext(request, {'user'                     : user                  ,
+                                        'visit_detail_obj'         : visit_detail_obj      ,
+                                        'visit_complaint_formset'  : visit_complaint_formset  ,
+                                        'patient_detail_obj'       : patient_detail_obj    
+                                       })
+    return render_to_response('visit/complaints/add.html', variable)
+
+  if request.method == "POST" and request.is_ajax():
+    print "Received request to add visit complaints ..."
+    #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
+    visit_complaint_formset = VisitComplaintFormset(request.POST)
+
+    if visit_complaint_formset.is_valid():
+      saved_visit_complaint = visit_complaint_formset.save(commit=False)
+      for complaint in saved_visit_complaint:
+        complaint.visit_detail = saved_visit
+        complaint.save()
+
+      success       = True
+    else:
+      success       = False
+      error_message = '''Error! Complaint Could not be added. 
+                          Please check the forms for errors
+                      '''
+    data = { 'success'       : success      ,
+             'error_message' : error_message
+           }
+    json = simplejson.dumps(data)
+    return HttpResponse(json, content_type = 'application/json')
+  else:
+    raise Http404(" Error ! Unsupported Request..")
+
+
+
+@login_required
+def visit_complaint_edit(request,id=None):
+  pass
+
+@login_required
+def visit_complaint_del(request,id=None):
+  if request.method == "GET" and request.is_ajax():
+    user = request.user
+    if user.has_perm('visit.delete_visitcomplaint'):
+        try:
+          id = int(id)
+          visit_complaint_obj = VisitComplaint.objects.get(pk = id)
+        except (TypeError, NameError, ValueError, AttributeError, KeyError):
+          raise Http404("Error ! Invalid Request Parameters. ")
+        except (VisitComplaint.DoesNotExist):
+          raise Http404("Requested Complaint Does not exist.")
+        error_message = None
+        visit_complaint_obj.delete()
+        success = True
+        error_message = "Successfully Deleted Visit Complaint"
+        data = {'success': success, 'error_message': error_message}
+        json = simplejson.dumps(data)
+        return HttpResponse(json, content_type = 'application/json')
+    else:
+      success = False
+      error_message = "Insufficient Permission. Could not delete."
+      data = {'success': success, 'error_message': error_message}
+      json = simplejson.dumps(data)
+      return HttpResponse(json, content_type = 'application/json')
+  else:
+    raise Http404(" Error ! Unsupported Request..")
 
 
 ################################################################################

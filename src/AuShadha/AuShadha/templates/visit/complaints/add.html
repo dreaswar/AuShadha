@@ -1,0 +1,57 @@
+<table id  = "visitComplaintAddFormTable_{{visit_detail_obj.id}}" 
+       class="content_pane_table visitComplaintAddFormTable">
+  {{ visit_complaint_formset.management_form }}
+  <thead> 
+    <tr> 
+          <th> Complaint </th> 
+          <th> Duration  </th> 
+          <th>     &nbsp;&nbsp;      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% for form in visit_complaint_formset %}
+      <tr id    = "visitComplaintFormsetRow_{{forloop.counter}}"
+          class = "visitComplaintsAddFormRow"
+      >
+          <td>{{ form.complaint }}</td>
+          <td>{{ form.duration }}</td>
+          <td> 
+              {% if forloop.counter == 1 %}
+                <span style  = "background-image: url({{STATIC_URL}}images/add.png);
+                                background-repeat: no-repeat;
+                                background-size  : 16px 16px;
+                                background-color : white;
+                                width: 16px; 
+                                height: 16px; 
+                                cursor: pointer; 
+                                display:table-cell;
+                                "
+                      class  = "showNextComplaint"
+                      title  = "Add more complaints"
+                    >
+
+                </span>
+              {%else%}
+                <span style  = "background-image: url({{STATIC_URL}}images/absent.png );
+                                background-repeat: no-repeat;
+                                background-size  : 16px 16px;
+                                background-color : white;
+                                width: 16px; 
+                                height: 16px; 
+                                cursor: pointer; 
+                                display:table-cell;
+                                "
+                      data-url="{{form.instance.get_del_url}}"
+                      class  = "removeThisComplaint"
+                      title  = "Remove this Complaint"
+                      onclick = "removeThisComplaint(this);"
+                  >
+                </span>
+              {% endif %}
+          </td>
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
