@@ -380,6 +380,72 @@ def render_visit_list(request):
 
 ################################################################################
 
+def get_visit_related_obj_urls(request,id=None):
+  """ Receives request and generates URLS for adding/editing a particular 
+      VisitDetail and its related Objects (VisitComplaint, VisitHPI, VisitROS). 
+
+      If a VisitDetail has no corresponding related object it returns its addUrl else 
+      its editUrl. If like in case of VisitComplaint object it returns a list, 
+      the aggregated URL is sent as List.
+
+      if a VisitDetail itsels DoesNotExist, it returns a success=False in JSON.
+      
+      This is needed for other chained AJAX requests to populate HTML into
+      DIV tags in visit/base_add.html or visit/base_edit.html templates
+      This return a JSON for the use of calling an AJAX
+  """
+  
+  print "Returning URL for Visit Related Objected with Visit ID of : " + str(id)
+  user = request.user
+  success = False
+  error_message = "No Visits Recorded"
+  data = {'visitDetailUrl':'',
+          'visitComplaintUrl':'',
+          'visitHPIUrl':'',
+          'visitROSUrl':''
+          }  
+  if request.method == "GET" and request.is_ajax():
+    try:
+      id = int(id)
+      visit_detail_obj = VisitDetail.objects.get(pk = id)
+      visit_complaint_obj = VisitComplaint.objects.filter(visit_detail = visit_detail_obj)
+      visit_hpi_obj = VisitHPI.objects.filter(visit_detail = visit_detail_obj)
+      visit_ros_obj = VisitROS.objects.filter(visit_detail = visit_detail_obj)      
+    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+      raise Http404("Error ! Invalid Request Parameters. ")
+    except (VisitDetail.DoesNotExist):
+      json = simplejson.dumps(data)
+      return render_to_response('application/json',json)
+
+
+    json = simplejson.dumps(data)
+    return render_to_response('application/json',json)
+
+  else:
+    raise Http404(" Error ! Unsupported Request..")
+
+
+
+def visit_add(request,id=None):
+  """ Receives request to Add VisitDetail, VisitComplaints, 
+      VisitHPI, VisitROS and Physical Examination and routes it
+  """
+  pass
+
+def visit_edit(request,id=None):
+  """ Receives request to Edit VisitDetail, VisitComplaints, 
+      VisitHPI, VisitROS and Physical Examination and routes it
+  """
+  pass
+
+def visit_del(request,id=None):
+  """ Receives request to Edit VisitDetail, VisitComplaints, 
+      VisitHPI, VisitROS and Physical Examination and routes it
+  """
+  pass
+
+################################################################################
+
 @login_required
 def visit_detail_list(request, id):
   print "Listing Visit Detail for patient with ID: " + str(id)
@@ -488,11 +554,14 @@ def visit_summary(request, id):
 
 @login_required
 def visit_detail_add(request,  id, nature = 'initial'):
+  print "Received request to add VisitDetail"
+  print "Request nature is: ", request.method
   user = request.user
   if request.method == "GET" and request.is_ajax():
     try:
       id = int(id)
       patient_detail_obj  = PatientDetail.objects.get(pk = id)
+      print "Patient is: ", patient_detail_obj
       visit_detail_objs   = VisitDetail.objects.filter(patient_detail = patient_detail_obj).filter(is_active = True)
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Error ! Invalid Request Parameters. ")
@@ -505,13 +574,16 @@ def visit_detail_add(request,  id, nature = 'initial'):
                          There may be a active admission / visit. 
                          Please close that and try again
                       '''
+      print error_message
       raise Http404(error_message)
     else:
+      print patient_detail_obj, " can add VisitDetail"
       success = True
 
       visit_detail_obj = VisitDetail(patient_detail = patient_detail_obj)
 
       if nature == 'initial':
+        print "Adding an Initial Visit for ", patient_detail_obj
         visit_complaint_obj = VisitComplaint(visit_detail = visit_detail_obj)
         visit_hpi_obj       = VisitHPI(visit_detail = visit_detail_obj)
         visit_ros_obj       = VisitROS(visit_detail = visit_detail_obj)
@@ -520,9 +592,9 @@ def visit_detail_add(request,  id, nature = 'initial'):
                                                auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
         #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
                                                   #auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
-        #VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
-        #visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
-        visit_complaint_form_html = visit_complaint_add(request,id=id)
+        VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
+        visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
+        #visit_complaint_form_html = visit_complaint_add(request,id=id)
 
         visit_hpi_form       = VisitHPIForm(instance = visit_hpi_obj,
                                             auto_id  = "id_new_visit_hpi"+ str(id)+"_%s")
@@ -532,19 +604,20 @@ def visit_detail_add(request,  id, nature = 'initial'):
         variable = RequestContext(request, {'user'                     : user                  ,
                                             'visit_detail_obj'         : visit_detail_obj      ,
                                             'visit_detail_form'        : visit_detail_form     ,
-                                            #'visit_complaint_formset'  : visit_complaint_formset  ,
-                                            'visit_complaint_form_html'     : visit_complaint_form_html,
+                                            'visit_complaint_formset'  : visit_complaint_formset  ,
+                                            #'visit_complaint_form_html'     : visit_complaint_form_html,
                                             'visit_hpi_form'           : visit_hpi_form        ,
                                             'visit_ros_form'           : visit_ros_form        ,
                                             'patient_detail_obj'       : patient_detail_obj    ,
                                             'error_message'            : error_message         ,
                                             'success'                  : success,
                                             })
+        return render_to_response('visit/detail/add.html', variable)
       elif nature == 'fu':
         #TODO
         pass
+      
 
-    return render_to_response('visit/detail/add.html', variable)
   if request.method == "POST" and request.is_ajax():
     print "Received request to add visit..."
     success       = False
@@ -972,16 +1045,18 @@ def visit_complaint_add(request,id=None):
     patient_detail_obj = visit_detail_obj.patient_detail
     visit_complaint_objs = VisitComplaint.objects.filter(visit_detail = visit_detail_obj)
     visit_complaint_obj = VisitComplaint(visit_detail = visit_detail_obj)  
-    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,extra=0)
+    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,extra=1)
   except (TypeError, NameError, ValueError, AttributeError, KeyError):
     raise Http404("Error ! Invalid Request Parameters. ")
   except (VisitDetail.DoesNotExist):
     raise Http404("Requested Visit Does not exist.")    
-  
+
   if request.method == "GET" and request.is_ajax():
+    print "Received GET request to add Visit Complaints "
   #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
                                               #auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
-    visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
+    visit_complaint_formset = VisitComplaintFormset(queryset = visit_complaint_objs)
+    print visit_complaint_formset
     variable = RequestContext(request, {'user'                     : user                  ,
                                         'visit_detail_obj'         : visit_detail_obj      ,
                                         'visit_complaint_formset'  : visit_complaint_formset  ,
@@ -990,7 +1065,7 @@ def visit_complaint_add(request,id=None):
     return render_to_response('visit/complaints/add.html', variable)
 
   if request.method == "POST" and request.is_ajax():
-    print "Received request to add visit complaints ..."
+    print "Received POST request to add Visit complaints ..."
     #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
     visit_complaint_formset = VisitComplaintFormset(request.POST)
 
