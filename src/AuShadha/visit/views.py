@@ -48,6 +48,11 @@ from inv_and_imaging.models          import LabInvestigationRegistry, ImagingInv
 #TOTAL_COMPLAINTS_FORM = 1
 #VisitComplaintsFormset = modelformset_factory(VisitComplaints, VisitComplaintsForm, extra  = TOTAL_COMPLAINTS_FORM +2, max_num = 10)
 
+# Module Vars:
+complaint_add_icon_template     = get_template('visit/snippets/icons/complaints_add.html')
+complaint_remove_icon_template = get_template('visit/snippets/icons/complaints_remove.html')
+
+
 # views start here;;
 
 @login_required
@@ -554,53 +559,61 @@ def visit_summary(request, id):
 
 @login_required
 def visit_detail_add(request,  id, nature = 'initial'):
+  """ Adds a new VisitDetail Object and related Objects: VisitComplaint,VisitROS, VisitHPI
+      Takes request and id of PatientDetail object
+      the nature of visit is defaulted to 'initial'.
+      Implementation of separate visits for 'initial' , 'fu' etc.. can be implemented later.
+  """
   print "Received request to add VisitDetail"
   print "Request nature is: ", request.method
-  user = request.user
-  if request.method == "GET" and request.is_ajax():
-    try:
-      id = int(id)
-      patient_detail_obj  = PatientDetail.objects.get(pk = id)
-      print "Patient is: ", patient_detail_obj
-      visit_detail_objs   = VisitDetail.objects.filter(patient_detail = patient_detail_obj).filter(is_active = True)
-    except (TypeError, NameError, ValueError, AttributeError, KeyError):
-      raise Http404("Error ! Invalid Request Parameters. ")
-    except (PatientDetail.DoesNotExist):
-      raise Http404("Requested Patient Does not exist.")
-    success = False
-    error_message         = None
-    if not patient_detail_obj.can_add_new_visit():
-      error_message = '''Cannot add new visit now. 
-                         There may be a active admission / visit. 
-                         Please close that and try again
-                      '''
-      print error_message
-      raise Http404(error_message)
-    else:
-      print patient_detail_obj, " can add VisitDetail"
-      success = True
 
-      visit_detail_obj = VisitDetail(patient_detail = patient_detail_obj)
+  user = request.user
+  success = False
+  error_message= None
+  form_errors=[]
+
+  try:
+    id = int(id)
+    patient_detail_obj  = PatientDetail.objects.get(pk = id)
+    print "Patient is: ", patient_detail_obj
+    visit_detail_objs   = VisitDetail.objects.filter(patient_detail = patient_detail_obj).filter(is_active = True)
+  except (TypeError, NameError, ValueError, AttributeError, KeyError):
+    raise Http404("Error ! Invalid Request Parameters. ")
+  except (PatientDetail.DoesNotExist):
+    raise Http404("Requested Patient Does not exist.")
+  
+  if not patient_detail_obj.can_add_new_visit():
+    error_message = '''Cannot add new visit now. 
+                        There may be a active admission / visit. 
+                        Please close that and try again
+                    '''
+    print error_message
+    raise Http404(error_message)
+  
+  else:
+    print patient_detail_obj, " can add VisitDetail"
+    visit_detail_obj = VisitDetail(patient_detail = patient_detail_obj)
+    visit_complaint_obj = VisitComplaint(visit_detail = visit_detail_obj)
+    visit_hpi_obj       = VisitHPI(visit_detail = visit_detail_obj)
+    visit_ros_obj       = VisitROS(visit_detail = visit_detail_obj)
+    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,extra=1)        
+    complaint_add_icon_html      = complaint_add_icon_template.render(RequestContext(request,{'user':user}))
+    complaint_remove_icon_html  = complaint_remove_icon_template.render(RequestContext(request,{'user':user}))
+
+    if request.method == "GET" and request.is_ajax():
 
       if nature == 'initial':
         print "Adding an Initial Visit for ", patient_detail_obj
-        visit_complaint_obj = VisitComplaint(visit_detail = visit_detail_obj)
-        visit_hpi_obj       = VisitHPI(visit_detail = visit_detail_obj)
-        visit_ros_obj       = VisitROS(visit_detail = visit_detail_obj)
-      
         visit_detail_form    = VisitDetailForm(instance = visit_detail_obj, 
                                                auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
         #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
                                                   #auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
-        VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
         visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
         #visit_complaint_form_html = visit_complaint_add(request,id=id)
-
         visit_hpi_form       = VisitHPIForm(instance = visit_hpi_obj,
                                             auto_id  = "id_new_visit_hpi"+ str(id)+"_%s")
         visit_ros_form       = VisitROSForm(instance = visit_ros_obj,
                                             auto_id  = "id_new_visit_ros"+ str(id)+"_%s")
-
         variable = RequestContext(request, {'user'                     : user                  ,
                                             'visit_detail_obj'         : visit_detail_obj      ,
                                             'visit_detail_form'        : visit_detail_form     ,
@@ -610,57 +623,30 @@ def visit_detail_add(request,  id, nature = 'initial'):
                                             'visit_ros_form'           : visit_ros_form        ,
                                             'patient_detail_obj'       : patient_detail_obj    ,
                                             'error_message'            : error_message         ,
+                                            'complaint_add_icon_html'  : complaint_add_icon_html,
+                                            'complaint_remove_icon_html':complaint_remove_icon_html,
                                             'success'                  : success,
                                             })
         return render_to_response('visit/detail/add.html', variable)
+
       elif nature == 'fu':
         #TODO
         pass
-      
 
-  if request.method == "POST" and request.is_ajax():
-    print "Received request to add visit..."
-    success       = False
-    form_errors   = []
-    error_message = None
-    try:
-      id = int(id)
-      patient_detail_obj  = PatientDetail.objects.get(pk = id)
-    except (TypeError, NameError, ValueError, AttributeError, KeyError):
-      raise Http404("Error ! Invalid Request Parameters. ")
-    except (PatientDetail.DoesNotExist):
-      raise Http404("Requested Patient Does not exist.")
-    if not patient_detail_obj.can_add_new_visit():
-      error_message = '''Cannot add new visit now. 
-                         There may be a active admission / visit. 
-                         Please close that and try again
-                      '''
-    else:
-      visit_detail_obj     = VisitDetail(patient_detail = patient_detail_obj)
-      visit_complaint_obj  = VisitComplaint(visit_detail = visit_detail_obj)
-      visit_hpi_obj        = VisitHPI(visit_detail = visit_detail_obj)
-      visit_ros_obj        = VisitROS(visit_detail = visit_detail_obj)
- 
+    elif request.method == "POST" and request.is_ajax():
+      print "Received request to add visit..."
       visit_detail_form    = VisitDetailForm(request.POST, instance = visit_detail_obj)
-
       #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
-      VisitComplaintFormset = modelformset_factory(VisitComplaint, 
-                                                   form = VisitComplaintForm,
-                                                   max_num = 10, 
-                                                   extra = 9
-                                                   )        
       visit_complaint_formset = VisitComplaintFormset(request.POST)
-
       visit_hpi_form       = VisitHPIForm(request.POST, instance = visit_hpi_obj)
       visit_ros_form       = VisitROSForm(request.POST, instance = visit_ros_obj)
 
       if visit_detail_form.is_valid()       and \
-         visit_complaint_formset.is_valid() and \
-         visit_hpi_form.is_valid()          and \
-         visit_ros_form.is_valid():
-
+        visit_complaint_formset.is_valid() and \
+        visit_hpi_form.is_valid()          and \
+        visit_ros_form.is_valid():
+        
         saved_visit     = visit_detail_form.save()
-
         saved_visit_complaint = visit_complaint_formset.save(commit=False)
         for complaint in saved_visit_complaint:
           complaint.visit_detail = saved_visit
@@ -669,25 +655,25 @@ def visit_detail_add(request,  id, nature = 'initial'):
         saved_visit_hpi = visit_hpi_form.save(commit=False)
         saved_visit_hpi.visit_detail = saved_visit
         saved_visit_hpi.save()
-
         saved_visit_ros = visit_ros_form.save(commit=False)
         saved_visit_ros.visit_detail = saved_visit
         saved_visit_ros.save()
-
         success       = True
         error_message = "Visit Added Successfully"
+
       else:
         success       = False
         error_message = '''Error! Visit Could not be added. 
-                           Please check the forms for errors
+                          Please check the forms for errors
                         '''
-    data = { 'success'       : success      ,
-             'error_message' : error_message
-           }
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type = 'application/json')
-  else:
-    raise Http404(" Error ! Unsupported Request..")
+      data = { 'success'       : success      ,
+              'error_message' : error_message
+            }
+      json = simplejson.dumps(data)
+      return HttpResponse(json, content_type = 'application/json')
+
+    else:
+      raise Http404(" Error ! Unsupported Request..")
 
 
 
@@ -772,7 +758,7 @@ def visit_detail_edit(request, id):
     if visit_complaint_obj and visit_hpi_obj and visit_ros_obj:
       visit_detail_edit_form = VisitDetailForm(request.POST, instance = visit_detail_obj)
       #visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
-      VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm,max_num = 10, extra = 9)        
+      VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm, extra = 0)
       visit_complaint_formset = VisitComplaintFormset(request.POST)
 
       visit_hpi_form         = VisitHPIForm(request.POST, instance = visit_hpi_obj[0])

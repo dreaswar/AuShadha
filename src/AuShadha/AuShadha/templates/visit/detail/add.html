@@ -1,6 +1,83 @@
 {% if perms.visit.add_visitdetail %}
     
+    <script type="text/javascript">
+
+      var totalVisitComplaintForms = "{{visit_complaint_formset.total_form_count}}";
+
+      var rowStart = '<tr>';
+      var rowEnd   = '</tr>';
+
+      var addComplaintsSnippet    = "{{complaint_add_icon_html|escapejs}}";      
+      var removeComplaintsSnippet = "{{complaint_remove_icon_html|escapejs}}";      
+      var actionButtonCells       = "<td class='actionCell'>"+removeComplaintsSnippet + addComplaintsSnippet+"</td>";
+
+      var emptyVisitComplaintForm  = "{{visit_complaint_formset.empty_form|escapejs}}";
+      var complaintHTML = "<td>{{visit_complaint_formset.empty_form.complaint|escapejs}}</td>";
+      var durationHTML  = "<td>{{visit_complaint_formset.empty_form.duration|escapejs}}</td>";
+
+//    var emptyVisitComplaintForm  = emptyVisitComplaintForm.replace(/__prefix__/g, totalVisitComplaintForms);
+
+      require(["dojo/dom",
+              'dojo/dom-construct',
+              'dojo/dom-style',
+              'dojo/query',
+              "dojo/on",
+              "dojo/parser",
+              "dojo/dom-attr",
+              'dojo/NodeList-traverse',
+              'dojo/NodeList-data'              
+      ],
+      function(dom, 
+              domConstruct,
+              domStyle,
+              query,
+              on,
+              parser,
+              domAttr){
+
+          bindAddMoreComplaintsClick();
+
+          function bindAddMoreComplaintsClick(){
+            query('.showNextComplaint').forEach(
+            function(node){
+              on(node,'click',onAddMoreComplaintsClick);
+            });
+          }
+
+          function onAddMoreComplaintsClick(){
+              totalVisitComplaintForms ++;
+
+              var escapedComplaintHTML = complaintHTML.replace(/__prefix__/g,totalVisitComplaintForms);
+              var escapedDurationHTML = durationHTML.replace(/__prefix__/g,totalVisitComplaintForms);
+              var HTMLToInsert = rowStart + escapedComplaintHTML + escapedDurationHTML + actionButtonCells + rowEnd;
+              var rowInserted = domConstruct.place(HTMLToInsert,query("#visitComplaintAddFormTable tbody")[0] );
+              parser.parse(rowInserted);
+              bindAddMoreComplaintsClick();
+
+              var allRows = query("#visitComplaintAddFormTable tbody tr");
+              var numRows = allRows.length;
+
+              allRows.forEach(function(row){
+                  var showComplaintIcon = query(row).
+                                            children("td.actionCell").
+                                            children("span.showNextComplaint");                  
+                  if (showComplaintIcon){
+                    if(allRows.indexOf(row)+1<numRows){
+                      domStyle.set(showComplaintIcon[0], {'display':'none'});
+                    }else if(allRows.indexOf(row)+1 ==numRows){
+                      domStyle.set(showComplaintIcon[0], {'display':'table-cell'});
+                    }
+                  }
+                });
+
+              domAttr.set("id_form-TOTAL_FORMS",{'value':totalVisitComplaintForms});
+          }
+
+       });
+    </script>
+
     <script type="text/javscript">
+    /*
         function showNextComplaint(evt){
             require(["dojo/dom",
                     "dojo/request/xhr",
@@ -40,6 +117,7 @@
 //                 alert("this will add a new complaint");
             });
         }
+        */
 
         function removeThisComplaint(evt){
             require(["dojo/dom",

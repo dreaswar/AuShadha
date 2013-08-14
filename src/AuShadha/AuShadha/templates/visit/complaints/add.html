@@ -1,4 +1,4 @@
-<table id  = "visitComplaintAddFormTable_{{visit_detail_obj.id}}" 
+<table id  = "visitComplaintAddFormTable" 
        class="content_pane_table visitComplaintAddFormTable">
   {{ visit_complaint_formset.management_form }}
   <thead> 
@@ -17,7 +17,7 @@
           <td>{{ form.complaint }}</td>
           <td>{{ form.duration }}</td>
           <td> 
-              {% if forloop.counter == 1 %}
+              {% if forloop.last %}
                 <span style  = "background-image: url({{STATIC_URL}}images/add.png);
                                 background-repeat: no-repeat;
                                 background-size  : 16px 16px;
