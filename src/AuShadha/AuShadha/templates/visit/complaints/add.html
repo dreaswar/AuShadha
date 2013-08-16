@@ -12,12 +12,11 @@
   <tbody>
   {% for form in visit_complaint_formset %}
       <tr id    = "visitComplaintFormsetRow_{{forloop.counter}}"
-          class = "visitComplaintsAddFormRow"
+          class = "visitComplaintsAddFormRow complaintFormRow"
       >
           <td>{{ form.complaint }}</td>
           <td>{{ form.duration }}</td>
-          <td> 
-              {% if forloop.last %}
+          <td class="actionCell"> 
                 <span style  = "background-image: url({{STATIC_URL}}images/add.png);
                                 background-repeat: no-repeat;
                                 background-size  : 16px 16px;
@@ -25,14 +24,14 @@
                                 width: 16px; 
                                 height: 16px; 
                                 cursor: pointer; 
-                                display:table-cell;
+                                display: {% if forloop.last %}table-cell{%else%}none{%endif%};
                                 "
                       class  = "showNextComplaint"
                       title  = "Add more complaints"
                     >
 
                 </span>
-              {%else%}
+
                 <span style  = "background-image: url({{STATIC_URL}}images/absent.png );
                                 background-repeat: no-repeat;
                                 background-size  : 16px 16px;
@@ -40,7 +39,7 @@
                                 width: 16px; 
                                 height: 16px; 
                                 cursor: pointer; 
-                                display:table-cell;
+                                display:{% if forloop.counter == 1 %} none {% else %} table-cell {%endif %};
                                 "
                       data-url="{{form.instance.get_del_url}}"
                       class  = "removeThisComplaint"
@@ -48,7 +47,6 @@
                       onclick = "removeThisComplaint(this);"
                   >
                 </span>
-              {% endif %}
           </td>
       </tr>
   {% endfor %}
