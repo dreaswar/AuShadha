@@ -58,8 +58,6 @@
 
           function onAddMoreComplaintsClick(){
 
-              totalVisitComplaintForms ++;
-              
               var prefix= returnUnusedPrefix();
               var escapedComplaintHTML = complaintHTML.replace(/__prefix__/g,prefix);
               var escapedDurationHTML = durationHTML.replace(/__prefix__/g,prefix);
@@ -67,6 +65,7 @@
               var rowInserted = domConstruct.place(HTMLToInsert,query("#visitComplaintAddFormTable tbody")[0] );
 //               domAttr.set(rowInserted,{'data-prefix':totalVisitComplaintForms});
               parser.parse(rowInserted);
+              totalVisitComplaintForms ++;              
               available_prefix = undefined;              
               bindAddMoreComplaintsClick();
               var allRows = query("#visitComplaintAddFormTable tbody tr");
