@@ -4,7 +4,7 @@
 
       var totalVisitComplaintForms = "{{visit_complaint_formset.total_form_count}}";
       
-      var available_prefix = "{{visit_complaint_formset.total_form_count}}";
+      var available_prefix;
 
       var rowStart = '<tr>';
       var rowEnd   = '</tr>';
@@ -92,7 +92,7 @@
                   }
                 });
 
-              domAttr.set("id_form-TOTAL_FORMS",{'value':totalVisitComplaintForms});
+              domAttr.set("{{total_form_auto_id}}",{'value':totalVisitComplaintForms});
           }
 
        });
@@ -203,11 +203,13 @@
                                   var n_id= domAttr.get(n.domNode,'id');
                                   available_prefix= parseInt(n_id.match(/\d+/g)[0]);
                                   n.destroyRecursive(false);
+//                                   alert(available_prefix);
+//                                   alert(n_id);
                                 });
                   domConstruct.destroy(row);
                   numRows --;                  
                   totalVisitComplaintForms --;
-                  domAttr.set("id_form-TOTAL_FORMS",{'value':totalVisitComplaintForms});                  
+                  domAttr.set("{{total_form_auto_id}}",{'value':totalVisitComplaintForms});                  
                   var lastRowShowIcon = query("#visitComplaintAddFormTable tbody tr").
                                             children('td.actionCell').
                                             children('span.showNextComplaint');

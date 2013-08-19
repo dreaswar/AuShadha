@@ -600,6 +600,8 @@ def visit_detail_add(request,  id, nature = 'initial'):
     VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm, can_delete=True, can_order=True)        
     complaint_add_icon_html      = complaint_add_icon_template.render(RequestContext(request,{'user':user}))
     complaint_remove_icon_html  = complaint_remove_icon_template.render(RequestContext(request,{'user':user}))
+    form_auto_id = "id_%s"+"_new_visit_"+ str(id)
+    total_form_auto_id = "id_form-TOTAL_FORMS_new_visit_"+str(id)
 
     if request.method == "GET" and request.is_ajax():
 
@@ -609,7 +611,8 @@ def visit_detail_add(request,  id, nature = 'initial'):
                                                auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
         #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
                                                   #auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
-        visit_complaint_formset = VisitComplaintFormset(queryset=VisitComplaint.objects.none())
+        visit_complaint_formset = VisitComplaintFormset(queryset=VisitComplaint.objects.none(),
+                                                        auto_id= form_auto_id)
         #visit_complaint_form_html = visit_complaint_add(request,id=id)
         visit_hpi_form       = VisitHPIForm(instance = visit_hpi_obj,
                                             auto_id  = "id_new_visit_hpi"+ str(id)+"_%s")
@@ -627,6 +630,8 @@ def visit_detail_add(request,  id, nature = 'initial'):
                                             'complaint_add_icon_html'  : complaint_add_icon_html,
                                             'complaint_remove_icon_html':complaint_remove_icon_html,
                                             'success'                  : success,
+                                            'form_auto_id'             : form_auto_id,
+                                            'total_form_auto_id'       : total_form_auto_id
                                             })
         return render_to_response('visit/detail/add.html', variable)
 
@@ -641,7 +646,7 @@ def visit_detail_add(request,  id, nature = 'initial'):
       visit_detail_form    = VisitDetailForm(request.POST, instance = visit_detail_obj)
       #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
       #VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)              
-      visit_complaint_formset = VisitComplaintFormset(request.POST)
+      visit_complaint_formset = VisitComplaintFormset(request.POST,auto_id= form_auto_id)
       visit_hpi_form       = VisitHPIForm(request.POST, instance = visit_hpi_obj)
       visit_ros_form       = VisitROSForm(request.POST, instance = visit_ros_obj)
 
@@ -704,8 +709,12 @@ def visit_detail_edit(request, id):
     form_field_auto_id = 'id_edit_visit_detail_'+str(id)
     visit_detail_form = VisitDetailForm(instance = visit_detail_obj, auto_id= form_field_auto_id+"_%s")
 
+    complaint_formset_auto_id = "id_%s"+"_edit_visit_complaint_"+ str(id)
+    complaint_total_form_auto_id = "id_form-TOTAL_FORMS_edit_visit_complaint_"+str(id)
     VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)        
-    visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj))
+    visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj),
+                                                    auto_id=complaint_formset_auto_id
+                                                    )
     complaint_count = len(visit_complaint_obj)
     complaint_add_icon_template     = get_template('visit/snippets/icons/complaints_add.html')
     complaint_remove_icon_template = get_template('visit/snippets/icons/complaints_remove.html')
@@ -746,7 +755,9 @@ def visit_detail_edit(request, id):
                                         'patient_detail_obj'    : visit_detail_obj.patient_detail   ,
                                         'error_message'         : error_message         ,
                                         'complaint_add_icon_html': complaint_add_icon_html,
-                                        'complaint_remove_icon_html': complaint_remove_icon_html
+                                        'complaint_remove_icon_html': complaint_remove_icon_html,
+                                        'complaint_formset_auto_id':complaint_formset_auto_id,
+                                        'complaint_total_form_auto_id': complaint_total_form_auto_id
                                         })
     return render_to_response('visit/detail/edit.html', variable)
 
@@ -767,8 +778,13 @@ def visit_detail_edit(request, id):
     if visit_complaint_obj and visit_hpi_obj and visit_ros_obj:
       visit_detail_edit_form = VisitDetailForm(request.POST, instance = visit_detail_obj)
       #visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
+      complaint_formset_auto_id = "id_%s"+"_edit_visit_complaint_"+ str(id)
+      complaint_total_form_auto_id = "id_form-TOTAL_FORMS_edit_visit_complaint_"+str(id)      
       VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)
-      visit_complaint_formset = VisitComplaintFormset(request.POST,queryset = visit_complaint_obj)
+      visit_complaint_formset = VisitComplaintFormset(request.POST,
+                                                      queryset = visit_complaint_obj,
+                                                      auto_id= complaint_formset_auto_id
+                                                      )
 
       visit_hpi_form         = VisitHPIForm(request.POST, instance = visit_hpi_obj[0])
       visit_ros_form         = VisitROSForm(request.POST, instance = visit_ros_obj[0])

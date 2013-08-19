@@ -70,7 +70,7 @@
                   }
                 });
 
-              domAttr.set("id_form-TOTAL_FORMS",{'value':totalVisitComplaintForms});
+              domAttr.set("{{complaint_total_form_auto_id}}",{'value':totalVisitComplaintForms});
           }
 
        });
@@ -138,7 +138,7 @@
                                     });
                       domConstruct.destroy(r);
                       totalVisitComplaintForms --;
-                      domAttr.set("id_form-TOTAL_FORMS",{'value':totalVisitComplaintForms});
+                      domAttr.set("{{complaint_total_form_auto_id}}",{'value':totalVisitComplaintForms});
                       var rowsLeft = parentTable.children('tbody').children('tr').length;
                       var actionCell = parentTable.
                                           children('tbody').
