@@ -42,8 +42,8 @@
           function returnUnusedPrefix(){
 //             var allRows = query("#visitComplaintAddFormTable tbody tr");
 //             var numRows = parseInt(allRows.length); 
-            if(available_prefix){
-              return available_prefix.toString();
+            if(available_prefix != 'undefined'){
+              return available_prefix;
             }else{
               return totalVisitComplaintForms;
             }
@@ -59,6 +59,7 @@
           function onAddMoreComplaintsClick(){
 
               var prefix= returnUnusedPrefix();
+              console.log("Setting Prefix of: " + prefix );
               var escapedComplaintHTML = complaintHTML.replace(/__prefix__/g,prefix);
               var escapedDurationHTML = durationHTML.replace(/__prefix__/g,prefix);
               var HTMLToInsert = rowStart + escapedComplaintHTML + escapedDurationHTML + actionButtonCells + rowEnd;
@@ -161,6 +162,8 @@
                                   var n_id= domAttr.get(n.domNode,'id');
                                   available_prefix= parseInt(n_id.match(/\d+/g)[0]);
                                   n.destroyRecursive(false);
+                                  domConstruct.destroy(n);
+                                  console.log(available_prefix);
                                 });
                   domConstruct.destroy(row);
                   numRows --;                  
