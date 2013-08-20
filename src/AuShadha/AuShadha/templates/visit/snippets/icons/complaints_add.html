@@ -1,3 +1,4 @@
+{% if perms.visit.add_visitcomplaint %}
 <span style  = "background-image: url({{STATIC_URL}}images/add.png);
                 background-repeat: no-repeat;
                 background-size  : 16px 16px;
@@ -12,3 +13,4 @@
     >
 
 </span>
+{% endif %}

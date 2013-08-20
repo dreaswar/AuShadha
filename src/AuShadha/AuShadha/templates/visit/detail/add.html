@@ -97,48 +97,6 @@
 
        });
 
-    /*
-        function showNextComplaint(evt){
-            require(["dojo/dom",
-                    "dojo/request/xhr",
-                    "dijit/registry"  ,
-                    "dojo/json"       ,
-                    "dojo/dom-form"   ,
-                    "dijit/Dialog"    ,
-                    'dojo/dom-class',
-                    'dojo/dom-style',
-                    'dojo/dom',
-                    'dojo/query',
-                    'dojo/NodeList-traverse',
-                    'dojo/NodeList-data',
-            ],
-            function(dom, 
-                    xhr, 
-                    registry, 
-                    JSON, 
-                    domForm, 
-                    Dialog, 
-                    domClass,
-                    domStyle,
-                    dom,
-                    query){
-                var tableRows = query('.visitComplaintAddFormTable tbody tr');
-                
-                for(var i=0; i<=tableRows.length; i++){
-                   var row = tableRows[i];
-                   if (domStyle.get(row,'display') == 'none'){
-                      domStyle.set(row, 'display','table-row');
-//                       domStyle.set(query(row).children('span.showNextComplaint')[0],'display','none');
-                      domClass.add(row,'shownVisitComplaintTableRow');
-                      domClass.remove(row, 'hiddenVisitComplaintTableRow');
-                      break;
-                   }
-                };
-//                 alert("this will add a new complaint");
-            });
-        }
-        */
-
         function removeThisComplaint(evt){
             require(["dojo/dom",
                     "dojo/request/xhr",
@@ -203,8 +161,6 @@
                                   var n_id= domAttr.get(n.domNode,'id');
                                   available_prefix= parseInt(n_id.match(/\d+/g)[0]);
                                   n.destroyRecursive(false);
-//                                   alert(available_prefix);
-//                                   alert(n_id);
                                 });
                   domConstruct.destroy(row);
                   numRows --;                  
