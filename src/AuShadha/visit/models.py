@@ -25,9 +25,9 @@ from inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigatio
 
 
 CONSULT_NATURE_CHOICES = (
-                            ('initial','Intial'),
+                            ('initial','Initial'),
                             ('fu'     ,'Follow-Up'),
-                            ('na'     ,'Non-Appointment'),
+                            ('na'     ,'Non-Appointment / Walk-in'),
                             ('emer'   ,'Emergency'),
                             ('pre_op' ,'Pre-OP Counsel'),
                             ('post_op','Post-OP Review'),

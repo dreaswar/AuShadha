@@ -603,11 +603,17 @@ def visit_detail_add(request,  id, nature = 'initial'):
     form_auto_id = "id_%s"+"_new_visit_"+ str(id)
     total_form_auto_id = "id_form-TOTAL_FORMS_new_visit_"+str(id)
 
+
     if request.method == "GET" and request.is_ajax():
 
       if nature == 'initial':
         print "Adding an Initial Visit for ", patient_detail_obj
-        visit_detail_form    = VisitDetailForm(instance = visit_detail_obj, 
+        visit_detail_form    = VisitDetailForm(initial={'visit_date': datetime.now().date().isoformat(),
+                                                        'consult_nature':'initial',
+                                                        'status':'examining',
+                                                        'op_surgeon':user
+                                                        },
+                                               instance = visit_detail_obj, 
                                                auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
         #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
                                                   #auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
@@ -707,11 +713,12 @@ def visit_detail_edit(request, id):
       raise Http404("Requested Patient Does not exist.")
     error_message = None
     form_field_auto_id = 'id_edit_visit_detail_'+str(id)
-    visit_detail_form = VisitDetailForm(instance = visit_detail_obj, auto_id= form_field_auto_id+"_%s")
+    data = {'visit_date': visit_detail_obj.visit_date.date().isoformat()}
+    visit_detail_form = VisitDetailForm(initial=data,instance = visit_detail_obj, auto_id= form_field_auto_id+"_%s")
 
     complaint_formset_auto_id = "id_%s"+"_edit_visit_complaint_"+ str(id)
     complaint_total_form_auto_id = "id_form-TOTAL_FORMS_edit_visit_complaint_"+str(id)
-    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)        
+    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm, extra=0, can_delete=True,can_order=True)        
     visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj),
                                                     auto_id=complaint_formset_auto_id
                                                     )

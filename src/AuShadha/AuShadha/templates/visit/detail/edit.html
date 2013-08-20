@@ -40,6 +40,9 @@
           function bindAddMoreComplaintsClick(){
             query('.showNextComplaint').forEach(
             function(node){
+              var table = query(node).parents('table');
+              console.log(table);
+              console.log(table.children('tbody'))
               on(node,'click',onAddMoreComplaintsClick);
             });
           }
