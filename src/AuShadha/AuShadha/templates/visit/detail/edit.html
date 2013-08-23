@@ -2,84 +2,7 @@
 
     <script type="text/javascript">
 
-      var totalVisitComplaintForms = "{{visit_complaint_formset.total_form_count}}";
-
-      var rowStart = '<tr>';
-      var rowEnd   = '</tr>';
-
-      var addComplaintsSnippet    = "{{complaint_add_icon_html|escapejs}}";      
-      var removeComplaintsSnippet = "{{complaint_remove_icon_html|escapejs}}";      
-      var actionButtonCells       = "<td class='actionCell'>"+removeComplaintsSnippet + addComplaintsSnippet+"</td>";
-
-      var emptyVisitComplaintForm  = "{{visit_complaint_formset.empty_form|escapejs}}";
-      var complaintHTML = "<td>{{visit_complaint_formset.empty_form.complaint|escapejs}}</td>";
-      var durationHTML  = "<td>{{visit_complaint_formset.empty_form.duration|escapejs}}</td>";
-
-//    var emptyVisitComplaintForm  = emptyVisitComplaintForm.replace(/__prefix__/g, totalVisitComplaintForms);
-
       require(["dojo/dom",
-              'dojo/dom-construct',
-              'dojo/dom-style',
-              'dojo/query',
-              "dojo/on",
-              "dojo/parser",
-              "dojo/dom-attr",
-              'dojo/NodeList-traverse',
-              'dojo/NodeList-data'              
-      ],
-      function(dom, 
-              domConstruct,
-              domStyle,
-              query,
-              on,
-              parser,
-              domAttr){
-
-          bindAddMoreComplaintsClick();
-
-          function bindAddMoreComplaintsClick(){
-            query('.showNextComplaint').forEach(
-            function(node){
-              var table = query(node).parents('table');
-              console.log(table);
-              console.log(table.children('tbody'))
-              on(node,'click',onAddMoreComplaintsClick);
-            });
-          }
-
-          function onAddMoreComplaintsClick(){
-              totalVisitComplaintForms ++;
-
-              var escapedComplaintHTML = complaintHTML.replace(/__prefix__/g,totalVisitComplaintForms);
-              var escapedDurationHTML = durationHTML.replace(/__prefix__/g,totalVisitComplaintForms);
-              var HTMLToInsert = rowStart + escapedComplaintHTML + escapedDurationHTML + actionButtonCells + rowEnd;
-              var rowInserted = domConstruct.place(HTMLToInsert,query("#visitComplaintEditFormTable_{{visit_detail_obj.id}} tbody")[0] );
-              parser.parse(rowInserted);
-              bindAddMoreComplaintsClick();
-
-              var allRows = query("#visitComplaintEditFormTable_{{visit_detail_obj.id}} tbody tr");
-              var numRows = allRows.length;
-
-              allRows.forEach(function(row){
-                  var showComplaintIcon = query(row).
-                                            children("td.actionCell").
-                                            children("span.showNextComplaint");                  
-                  if (showComplaintIcon){
-                    if(allRows.indexOf(row)+1<numRows){
-                      domStyle.set(showComplaintIcon[0], {'display':'none'});
-                    }else if(allRows.indexOf(row)+1 ==numRows){
-                      domStyle.set(showComplaintIcon[0], {'display':'table-cell'});
-                    }
-                  }
-                });
-
-              domAttr.set("{{complaint_total_form_auto_id}}",{'value':totalVisitComplaintForms});
-          }
-
-       });
-
-        function removeThisComplaint(evt){
-            require(["dojo/dom",
                     "dojo/request",
                     "dijit/registry"  ,
                     "dojo/json"       ,
@@ -92,6 +15,8 @@
                     'dojo/dom-attr',
                     'dojo/dom-construct',
                     'dojo/_base/lang',
+                    "dojo/on",
+                    'dojo/parser',
                     'dojo/NodeList-traverse',
                     'dojo/NodeList-data'
             ],
@@ -107,94 +32,258 @@
                     query,
                     domAttr,
                     domConstruct,
-                    lang){
+                    lang,
+                    on,
+                    parser){
 
-                var _delete = confirm("This will delete the complaint.. Proceed ?");
-                if (_delete){
-                  var rowQuery    = query(evt).closest('tr');
-                  var parentTable = rowQuery.parents('table');
-                  var delBtn    = query(evt).closest('.removeThisComplaint')[0];
-                  var addBtn    = query(evt).closest('.showNextComplaint')[0];
-                  var delBtnClone = lang.clone(delBtn);
-                  var addBtnClone = lang.clone(addBtn);
-                  var urlToCall = domAttr.get(delBtn,'data-url')                  
-                  var row       = rowQuery[0];
-                  var allInputs = query(rowQuery).
-                                    children('td').
-                                    children('.dijitReset').
-                                    children('.dijitInputContainer').
-                                    children('input[type=text]');
+        var totalVisitComplaintForms = "{{visit_complaint_formset.total_form_count}}";
+        var available_prefix;
 
-                  function rollBackRows(r){
-                    var numRows = parentTable.children('tbody').children('tr').length;
-                    if(numRows >1){
-                      allInputs.forEach(
-                        function(input){
-                          domAttr.set(input,'value','');
-                        }
-                      );
+        var rowStart = '<tr>';
+        var rowEnd   = '</tr>';
 
-                      registry.
-                          findWidgets(r).
-                            forEach(function(n){
-                                      n.destroyRecursive(false);
-                                    });
-                      domConstruct.destroy(r);
-                      totalVisitComplaintForms --;
-                      domAttr.set("{{complaint_total_form_auto_id}}",{'value':totalVisitComplaintForms});
-                      var rowsLeft = parentTable.children('tbody').children('tr').length;
-                      var actionCell = parentTable.
-                                          children('tbody').
-                                          children('tr:last').
-                                          children('td.actionCell')[0];
-                      var removeIcon = parentTable.
-                                          children('tbody').
-                                          children('tr:last').
-                                          children('td.actionCell').
-                                          children('.removeThisComplaint')[0];
-                      if(rowsLeft==1){
-                        domStyle.set(removeIcon,{'display':'none'});
-                        domConstruct.place(addBtnClone,actionCell,'first');
-                      }
-                    }else{
-                      return false;
-                    }
-                  }
+        var addComplaintsSnippet    = "{{complaint_add_icon_html|escapejs}}";      
+        var removeComplaintsSnippet = "{{complaint_remove_icon_html|escapejs}}";      
+        var actionButtonCells       = "<td class='actionCell'>"+removeComplaintsSnippet + addComplaintsSnippet+"</td>";
 
-                  if(row && domStyle.get(row,'display') == 'table-row'){
-                     if(urlToCall != null){
-                       console.log("Requesting delete of the complaint");
-                       request(urlToCall).then(
-                        function(json){
-                          var jsondata = JSON.parse(json);
-                          if(jsondata.success == true){
-                            publishInfo("Successfully Deleted Complaint");
-                            rollBackRows(row);
-                          }else{
-                            publishError("ERROR! "+ jsondata.error_message);
-                          }
-                        },
-                        function(){
-                          publishError("ERROR! Server Error");
-                        }
-                       );
-                     }else{
-                       console.log("Deleting the Complaint forms");
-                       rollBackRows(row);
-                       return console.log("Destroyed Empty forms");
-                     }
+        var emptyVisitComplaintForm  = "{{visit_complaint_formset.empty_form|escapejs}}";
+        var complaintHTML = "<td>{{visit_complaint_formset.empty_form.complaint|escapejs}}</td>";
+        var durationHTML  = "<td>{{visit_complaint_formset.empty_form.duration|escapejs}}</td>";
 
-//                     domStyle.set(row, 'display','none');
-//                     domClass.remove(row,'shownVisitComplaintTableRow');
-//                     domClass.add(row, 'hiddenVisitComplaintTableRow');
-//                     domConstruct.place(row,'visitComplaintEditFormTable','last');
-                  }
-                }else{
-                  return false;
-                }
+  //    var emptyVisitComplaintForm  = emptyVisitComplaintForm.replace(/__prefix__/g, totalVisitComplaintForms);
 
-            });
+        function getAllRows(node /*String | domNode */){
+          console.log(node);
+          var n = query("#"+node)[0];
+          console.log(n);
+          if (n.tagName == 'TABLE'){
+            var allRows = query(n).children('tbody').children('tr');
+          }else if(n.tagName != "TABLE"){
+            var allRows = query(n).parents('table').children('tbody').children('tr');
+          }else{
+            console.log("Query fetched nothing");
+            return;
+          }
+          console.log(allRows);
+          return allRows;
         }
+
+        function getNumRows(table_id/*String | domNode */){
+          var allRows = getAllRows(table_id);
+          return allRows.length;
+        }
+
+        function getLastRow(table_id/*String | domNode */){
+          console.log(table_id);
+          var allRows = getAllRows(table_id);
+          console.log(allRows.length)
+          if (allRows.length>0){
+            console.log("Returning Last row...");
+            console.log( query(allRows[allRows.length-1]) );
+            return query(allRows[allRows.length-1]);
+          }else{
+            console.log("No Rows !. Cannot get the last row");                            
+            return null;
+          }
+        }
+
+        function getFirstRow(table_id/*String | domNode */){
+          var allRows = getAllRows(table_id);
+          if (allRows.length>0){
+            return query(allRows[0]);
+          }else{
+            console.log("No Rows !. Cannot get the first row");
+            return null;
+          }
+        }
+
+        function getRowIndex(row/*query obj */){
+          if(getAllRows >0){
+            var allRows = getAllRows();
+            try{
+              return allRows.indexOf(row[0]);
+            }catch(err){
+              console.log(err.message);
+              return
+            }
+          }else{
+            console.log("No Rows to the number for !");
+          }
+        }
+
+        function getRowFromTable(rowNumber /*String*/,table_id /* String | domNode */){
+          require(['dojo/dom',
+                    'dojo/query',
+                    'dojo/NodeList-data',
+                    'dojo/NodeList-traverse'],
+          function(dom,query){
+            try{
+              var rowNumber = parseInt(rowNumber);
+              var table = dom.byId(table_id);
+              var row = query(table).chidlren('tbody').children('tr')[rowNumber];
+              if(row){
+                return row;
+              }else{
+                return null;
+              }
+            }catch(err){
+              console.log(err.message);
+              return;
+            }
+          });
+        }
+
+
+        function returnUnusedPrefix(){
+          if(available_prefix != undefined){
+            console.log("AVAILABLE_PREFIX" + available_prefix);
+            return available_prefix;
+          }else{
+            console.log("TOTAL_FORMS: " + totalVisitComplaintForms);
+            return totalVisitComplaintForms;
+          }
+        }
+
+        function lastButOneRowActionCellStyling(){
+            var table_id="visitComplaintEditFormTable_{{visit_detail_obj.id}}";
+            var lastRow = getLastRow(table_id);
+            var addIcon = lastRow.children('td.actionCell').children('span.showNextComplaint')[0];
+            var removeIcon = lastRow.children('td.actionCell').children('span.removeThisComplaint')[0];
+            domStyle.set(addIcon, {'display':'none'});
+            domStyle.set(removeIcon,{'display':'table-cell'});
+        }
+
+        function lastRowActionCellStyling(){
+            var table_id="visitComplaintEditFormTable_{{visit_detail_obj.id}}";
+            var lastRow = getLastRow(table_id);
+            var addIcon = lastRow.children('td.actionCell').children('span.showNextComplaint')[0];
+            var removeIcon = lastRow.children('td.actionCell').children('span.removeThisComplaint')[0];
+            domStyle.set(addIcon, {'display':'table-cell'});
+            domStyle.set(removeIcon,{'display':'table-cell'});
+        }
+
+        function setTotalFormInputNumber(){
+          var table_id='visitComplaintEditFormTable_{{visit_detail_obj.id}}';
+          var numberOfRows = getNumRows(table_id);
+          totalVisitComplaintForms = numberOfRows;
+          domAttr.set("{{complaint_total_form_auto_id}}",{'value':totalVisitComplaintForms});
+        }
+
+        function incrementTotalFormInput(){
+            totalVisitComplaintForms ++;
+            domAttr.set("{{complaint_total_form_auto_id}}",{'value':totalVisitComplaintForms});
+        }
+
+        function decrementTotalFormInput(){
+            totalVisitComplaintForms --;
+            domAttr.set("{{complaint_total_form_auto_id}}",{'value':totalVisitComplaintForms});
+        }
+
+
+        function placeAndDijitiseRows(){
+          var prefix = returnUnusedPrefix();
+          var escapedComplaintHTML = complaintHTML.replace( /__prefix__/g,  prefix);
+          var escapedDurationHTML = durationHTML.replace( /__prefix__/g, prefix );
+          var HTMLToInsert = rowStart + escapedComplaintHTML + escapedDurationHTML + actionButtonCells + rowEnd;
+          var rowInserted = domConstruct.place(HTMLToInsert,query("#visitComplaintEditFormTable_{{visit_detail_obj.id}} tbody")[0] );
+          parser.parse(rowInserted);
+//           bindAddMoreComplaintsClick();
+//           bindRemoveComplaintsClick();
+          var addIcon = query(rowInserted).children('td.actionCell').children('span.showNextComplaint')[0];
+          var removeIcon = query(rowInserted).children('td.actionCell').children('span.removeThisComplaint')[0];
+          on(addIcon,'click',onAddMoreComplaintsClick);
+          on(removeIcon,'click',function(){onRemoveComplaintClick(removeIcon);});
+           available_prefix= undefined;
+          setTotalFormInputNumber();
+        }
+
+        function onAddMoreComplaintsClick(){
+
+              lastButOneRowActionCellStyling();
+
+              placeAndDijitiseRows();
+
+              lastRowActionCellStyling();
+
+//               incrementTotalFormInput();
+        }
+
+        function rollBackRows(r){
+          var totalRowsInTable = getNumRows("visitComplaintEditFormTable_{{visit_detail_obj.id}}");
+
+          if(totalRowsInTable >1){
+            registry.
+                findWidgets(r).
+                  forEach(function(n){
+                            var n_id= domAttr.get(n.domNode,'id');
+                            available_prefix = n_id.match(/\d+/g)[0];
+                            console.log("AVAILABLE_PREFIX :" + available_prefix);
+                            n.destroyRecursive(false);
+                          });
+
+            domConstruct.destroy(r);
+            lastButOneRowActionCellStyling();
+            lastRowActionCellStyling();
+            setTotalFormInputNumber();
+          }
+
+        }
+
+        function onRemoveComplaintClick(evt){
+
+                if (confirm("This will delete the complaint.. Proceed ?")){
+                  var closestRow    = query(evt).closest('tr');
+                  var rowToDelete   = closestRow[0];
+                  var delBtn        = closestRow.
+                                        children('td.actionCell').
+                                        children('span.removeThisComplaint');
+                  var parentTable = closestRow.parents('table');
+                  var urlToCall   = domAttr.get(delBtn,'data-url');
+
+                  if(urlToCall !== null){
+                    console.log("Requesting delete of the complaint");
+                    request(urlToCall).then(
+                    function(json){
+                      var jsondata = JSON.parse(json);
+                      if(jsondata.success == true){
+                        publishInfo("Successfully Deleted Complaint");
+                        rollBackRows(rowToDelete);
+                      }else{
+                        publishError("ERROR! "+ jsondata.error_message);
+                      }
+                    },
+                    function(){
+                      publishError("ERROR! Server Error");
+                    }
+                    );
+                  }else{
+                    console.log("Deleting the Complaint forms");
+                    rollBackRows(rowToDelete);
+                    console.log("Destroyed Empty forms");
+                  }
+
+                }
+                console.log("CONFIRM_DIALOG_CLOSED");
+            }
+
+        function bindAddMoreComplaintsClick(){
+          query('.showNextComplaint').forEach(
+          function(node){
+            on(node,'click',onAddMoreComplaintsClick);
+          });
+        }
+
+        function bindRemoveComplaintsClick(){
+          query('.removeThisComplaint').forEach(
+          function(node){
+              on(node,'click',function(evt){onRemoveComplaintClick(evt.target);});
+          });
+        }
+
+        bindAddMoreComplaintsClick();
+        bindRemoveComplaintsClick();
+
+     });
     </script>
 
 <div data-dojo-type = "dijit/form/Form" 

@@ -2,23 +2,6 @@
     
     <script type="text/javascript">
 
-      var totalVisitComplaintForms = "{{visit_complaint_formset.total_form_count}}";
-      
-      var available_prefix;
-
-      var rowStart = '<tr>';
-      var rowEnd   = '</tr>';
-
-      var addComplaintsSnippet    = "{{complaint_add_icon_html|escapejs}}";      
-      var removeComplaintsSnippet = "{{complaint_remove_icon_html|escapejs}}";      
-      var actionButtonCells       = "<td class='actionCell'>"+removeComplaintsSnippet + addComplaintsSnippet+"</td>";
-
-      var emptyVisitComplaintForm  = "{{visit_complaint_formset.empty_form|escapejs}}";
-      var complaintHTML = "<td>{{visit_complaint_formset.empty_form.complaint|escapejs}}</td>";
-      var durationHTML  = "<td>{{visit_complaint_formset.empty_form.duration|escapejs}}</td>";
-
-//    var emptyVisitComplaintForm  = emptyVisitComplaintForm.replace(/__prefix__/g, totalVisitComplaintForms);
-
       require(["dojo/dom",
               'dojo/dom-construct',
               'dojo/dom-style',
@@ -37,157 +20,174 @@
               parser,
               domAttr){
 
-          bindAddMoreComplaintsClick();
+        var totalVisitComplaintForms = "{{visit_complaint_formset.total_form_count}}";
+        
+        var available_prefix;
 
-          function returnUnusedPrefix(){
+        var rowStart = '<tr>';
+        var rowEnd   = '</tr>';
+
+        var addComplaintsSnippet    = "{{complaint_add_icon_html|escapejs}}";      
+        var removeComplaintsSnippet = "{{complaint_remove_icon_html|escapejs}}";      
+        var actionButtonCells       = "<td class='actionCell'>"+removeComplaintsSnippet + addComplaintsSnippet+"</td>";
+
+        var emptyVisitComplaintForm  = "{{visit_complaint_formset.empty_form|escapejs}}";
+        var complaintHTML = "<td>{{visit_complaint_formset.empty_form.complaint|escapejs}}</td>";
+        var durationHTML  = "<td>{{visit_complaint_formset.empty_form.duration|escapejs}}</td>";
+
+  //    var emptyVisitComplaintForm  = emptyVisitComplaintForm.replace(/__prefix__/g, totalVisitComplaintForms);
+
+        bindAddMoreComplaintsClick();
+
+        function returnUnusedPrefix(){
 //             var allRows = query("#visitComplaintAddFormTable tbody tr");
 //             var numRows = parseInt(allRows.length); 
-            if(available_prefix != 'undefined'){
-              return available_prefix;
-            }else{
-              return totalVisitComplaintForms;
-            }
+          if(available_prefix != 'undefined'){
+            return available_prefix;
+          }else{
+            return totalVisitComplaintForms;
           }
+        }
 
-          function bindAddMoreComplaintsClick(){
-            query('.showNextComplaint').forEach(
-            function(node){
-              on(node,'click',onAddMoreComplaintsClick);
-            });
-          }
+        function bindAddMoreComplaintsClick(){
+          query('.showNextComplaint').forEach(
+          function(node){
+            on(node,'click',onAddMoreComplaintsClick);
+          });
+        }
 
-          function onAddMoreComplaintsClick(){
+        function onAddMoreComplaintsClick(){
 
-              var prefix= returnUnusedPrefix();
-              console.log("Setting Prefix of: " + prefix );
-              var escapedComplaintHTML = complaintHTML.replace(/__prefix__/g,prefix);
-              var escapedDurationHTML = durationHTML.replace(/__prefix__/g,prefix);
-              var HTMLToInsert = rowStart + escapedComplaintHTML + escapedDurationHTML + actionButtonCells + rowEnd;
-              var rowInserted = domConstruct.place(HTMLToInsert,query("#visitComplaintAddFormTable tbody")[0] );
+            var prefix= returnUnusedPrefix();
+            console.log("Setting Prefix of: " + prefix );
+            var escapedComplaintHTML = complaintHTML.replace(/__prefix__/g,prefix);
+            var escapedDurationHTML = durationHTML.replace(/__prefix__/g,prefix);
+            var HTMLToInsert = rowStart + escapedComplaintHTML + escapedDurationHTML + actionButtonCells + rowEnd;
+            var rowInserted = domConstruct.place(HTMLToInsert,query("#visitComplaintAddFormTable tbody")[0] );
 //               domAttr.set(rowInserted,{'data-prefix':totalVisitComplaintForms});
-              parser.parse(rowInserted);
-              totalVisitComplaintForms ++;              
-              available_prefix = undefined;              
-              bindAddMoreComplaintsClick();
+            parser.parse(rowInserted);
+            totalVisitComplaintForms ++;              
+            available_prefix = undefined;              
+            bindAddMoreComplaintsClick();
+            var allRows = query("#visitComplaintAddFormTable tbody tr");
+            var numRows = allRows.length;
+
+            allRows.forEach(function(row){
+                var thisRowNum = allRows.indexOf(row)+1;
+                var showComplaintIcon = query(row).
+                                          children("td.actionCell").
+                                          children("span.showNextComplaint");
+                var removeComplaintIcon = query(row).
+                                          children("td.actionCell").
+                                          children("span.removeThisComplaint");                                                              
+                if (showComplaintIcon){
+                    if( thisRowNum<numRows ){
+                      domStyle.set( showComplaintIcon[0], {'display':'none'} );
+                    }else if( thisRowNum == numRows ){
+                      domStyle.set( showComplaintIcon[0], {'display':'table-cell'} );
+                    }
+                    domStyle.set( row,{'display':'table-row'});
+                    domStyle.set( removeComplaintIcon[0],{'display':'table-cell'});
+                }else{
+                  console.log("No action button !");
+                }
+              });
+
+            domAttr.set("{{total_form_auto_id}}",{'value':totalVisitComplaintForms});
+        }
+
+      });
+
+      function removeThisComplaint(evt){
+          require(["dojo/dom",
+                  "dojo/request/xhr",
+                  "dijit/registry"  ,
+                  "dojo/json"       ,
+                  "dojo/dom-form"   ,
+                  "dijit/Dialog"    ,
+                  'dojo/dom-class',
+                  'dojo/dom-style',
+                  'dojo/dom',
+                  'dojo/query',
+                  'dojo/dom-attr',
+                  'dojo/dom-construct',
+                  'dojo/NodeList-traverse',
+                  'dojo/NodeList-data'
+          ],
+          function(dom, 
+                  xhr, 
+                  registry, 
+                  JSON, 
+                  domForm, 
+                  Dialog, 
+                  domClass,
+                  domStyle,
+                  dom,
+                  query,
+                  domAttr,
+                  domConstruct){
+
+              var rowQuery  = query(evt).closest('tr');
+              var row       = rowQuery[0];
+
               var allRows = query("#visitComplaintAddFormTable tbody tr");
               var numRows = allRows.length;
 
-              allRows.forEach(function(row){
-                  var thisRowNum = allRows.indexOf(row)+1;
-                  var showComplaintIcon = query(row).
-                                            children("td.actionCell").
-                                            children("span.showNextComplaint");
-                  var removeComplaintIcon = query(row).
-                                            children("td.actionCell").
-                                            children("span.removeThisComplaint");                                                              
-                  if (showComplaintIcon){
-                      if( thisRowNum<numRows ){
-                        domStyle.set( showComplaintIcon[0], {'display':'none'} );
-                      }else if( thisRowNum == numRows ){
-                        domStyle.set( showComplaintIcon[0], {'display':'table-cell'} );
-                      }
-                      domStyle.set( row,{'display':'table-row'});
-                      domStyle.set( removeComplaintIcon[0],{'display':'table-cell'});
-                  }else{
-                    console.log("No action button !");
-                  }
-                });
+              var removeComplaintIcon= query(evt);
+              var showComplaintIcon = rowQuery.
+                                        children('td.actionCell').
+                                        children('span.showComplaintIcon');
 
-              domAttr.set("{{total_form_auto_id}}",{'value':totalVisitComplaintForms});
-          }
-
-       });
-
-        function removeThisComplaint(evt){
-            require(["dojo/dom",
-                    "dojo/request/xhr",
-                    "dijit/registry"  ,
-                    "dojo/json"       ,
-                    "dojo/dom-form"   ,
-                    "dijit/Dialog"    ,
-                    'dojo/dom-class',
-                    'dojo/dom-style',
-                    'dojo/dom',
-                    'dojo/query',
-                    'dojo/dom-attr',
-                    'dojo/dom-construct',
-                    'dojo/NodeList-traverse',
-                    'dojo/NodeList-data'
-            ],
-            function(dom, 
-                    xhr, 
-                    registry, 
-                    JSON, 
-                    domForm, 
-                    Dialog, 
-                    domClass,
-                    domStyle,
-                    dom,
-                    query,
-                    domAttr,
-                    domConstruct){
-
-                var rowQuery  = query(evt).closest('tr');
-                var row       = rowQuery[0];
-
-                var allRows = query("#visitComplaintAddFormTable tbody tr");
-                var numRows = allRows.length;
-
-                var removeComplaintIcon= query(evt);
-                var showComplaintIcon = rowQuery.
-                                          children('td.actionCell').
-                                          children('span.showComplaintIcon');
-
-                var allInputs = query(rowQuery).
-                                  children('td').
-                                  children('.dijitReset').
-                                  children('.dijitInputContainer').
-                                  children('input[type=text]');
-              /*
-                allInputs.forEach(
-                  function(input){
-                    console.log(input);
-                    domAttr.set(input,'value','');
-                  }
-                );
-
-                domStyle.set(row, 'display','none');
-                domStyle.set(removeComplaintIcon[0],{'display':'none'});
-                domStyle.set(showComplaintIcon[0],{'display':'none'});
-              */
-                if (numRows>1){
-                  registry.
-                      findWidgets(row).
-                        forEach(function(n){
-                                  var n_id= domAttr.get(n.domNode,'id');
-                                  available_prefix= parseInt(n_id.match(/\d+/g)[0]);
-                                  n.destroyRecursive(false);
-                                  domConstruct.destroy(n);
-                                  console.log(available_prefix);
-                                });
-                  domConstruct.destroy(row);
-                  numRows --;                  
-                  totalVisitComplaintForms --;
-                  domAttr.set("{{total_form_auto_id}}",{'value':totalVisitComplaintForms});                  
-                  var lastRowShowIcon = query("#visitComplaintAddFormTable tbody tr").
-                                            children('td.actionCell').
-                                            children('span.showNextComplaint');
-                  var lastRowRemoveIcon = query("#visitComplaintAddFormTable tbody tr").
-                                            children('td.actionCell').
-                                            children('span.removeThisComplaint');                  
-                  if(numRows==1){
-                    domStyle.set(lastRowRemoveIcon[0],{'display':'none'});
-                    domStyle.set(lastRowShowIcon[0],{'display':'table-cell'});                                              
-                  }
-                }else if(numRows==1){
-                  domStyle.set(removeComplaintIcon[0],{'display':'none'});
-                  domStyle.set(showComplaintIcon[0],{'display':'table-cell'});
-                }else{
-                  console.log("No More Rows !")
+              var allInputs = query(rowQuery).
+                                children('td').
+                                children('.dijitReset').
+                                children('.dijitInputContainer').
+                                children('input[type=text]');
+            /*
+              allInputs.forEach(
+                function(input){
+                  console.log(input);
+                  domAttr.set(input,'value','');
                 }
+              );
 
-            });
-        }
+              domStyle.set(row, 'display','none');
+              domStyle.set(removeComplaintIcon[0],{'display':'none'});
+              domStyle.set(showComplaintIcon[0],{'display':'none'});
+            */
+              if (numRows>1){
+                registry.
+                    findWidgets(row).
+                      forEach(function(n){
+                                var n_id= domAttr.get(n.domNode,'id');
+                                available_prefix= parseInt(n_id.match(/\d+/g)[0]);
+                                n.destroyRecursive(false);
+                                domConstruct.destroy(n);
+                                console.log(available_prefix);
+                              });
+                domConstruct.destroy(row);
+                numRows --;                  
+                totalVisitComplaintForms --;
+                domAttr.set("{{total_form_auto_id}}",{'value':totalVisitComplaintForms});                  
+                var lastRowShowIcon = query("#visitComplaintAddFormTable tbody tr").
+                                          children('td.actionCell').
+                                          children('span.showNextComplaint');
+                var lastRowRemoveIcon = query("#visitComplaintAddFormTable tbody tr").
+                                          children('td.actionCell').
+                                          children('span.removeThisComplaint');                  
+                if(numRows==1){
+                  domStyle.set(lastRowRemoveIcon[0],{'display':'none'});
+                  domStyle.set(lastRowShowIcon[0],{'display':'table-cell'});                                              
+                }
+              }else if(numRows==1){
+                domStyle.set(removeComplaintIcon[0],{'display':'none'});
+                domStyle.set(showComplaintIcon[0],{'display':'table-cell'});
+              }else{
+                console.log("No More Rows !")
+              }
+
+          });
+       }
     </script>
 
 <div data-dojo-type = "dijit/form/Form" 
