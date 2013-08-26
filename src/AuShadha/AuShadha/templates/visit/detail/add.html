@@ -9,6 +9,11 @@
               "dojo/on",
               "dojo/parser",
               "dojo/dom-attr",
+              'dijit/registry',
+              'dojo/request/xhr',
+              'dojo/json',
+              'dojo/dom-form',
+              'dijit/Dialog',
               'dojo/NodeList-traverse',
               'dojo/NodeList-data'              
       ],
@@ -18,7 +23,12 @@
               query,
               on,
               parser,
-              domAttr){
+              domAttr,
+              registry,
+              request,
+              JSON,
+              domForm,
+              Dialog){
 
         var totalVisitComplaintForms = "{{visit_complaint_formset.total_form_count}}";
         
@@ -42,7 +52,7 @@
         function returnUnusedPrefix(){
 //             var allRows = query("#visitComplaintAddFormTable tbody tr");
 //             var numRows = parseInt(allRows.length); 
-          if(available_prefix != 'undefined'){
+          if(available_prefix){
             return available_prefix;
           }else{
             return totalVisitComplaintForms;
@@ -67,7 +77,7 @@
 //               domAttr.set(rowInserted,{'data-prefix':totalVisitComplaintForms});
             parser.parse(rowInserted);
             totalVisitComplaintForms ++;              
-            available_prefix = undefined;              
+            if(available_prefix){available_prefix = !available_prefix};              
             bindAddMoreComplaintsClick();
             var allRows = query("#visitComplaintAddFormTable tbody tr");
             var numRows = allRows.length;
@@ -96,36 +106,8 @@
             domAttr.set("{{total_form_auto_id}}",{'value':totalVisitComplaintForms});
         }
 
-      });
 
       function removeThisComplaint(evt){
-          require(["dojo/dom",
-                  "dojo/request/xhr",
-                  "dijit/registry"  ,
-                  "dojo/json"       ,
-                  "dojo/dom-form"   ,
-                  "dijit/Dialog"    ,
-                  'dojo/dom-class',
-                  'dojo/dom-style',
-                  'dojo/dom',
-                  'dojo/query',
-                  'dojo/dom-attr',
-                  'dojo/dom-construct',
-                  'dojo/NodeList-traverse',
-                  'dojo/NodeList-data'
-          ],
-          function(dom, 
-                  xhr, 
-                  registry, 
-                  JSON, 
-                  domForm, 
-                  Dialog, 
-                  domClass,
-                  domStyle,
-                  dom,
-                  query,
-                  domAttr,
-                  domConstruct){
 
               var rowQuery  = query(evt).closest('tr');
               var row       = rowQuery[0];
@@ -186,8 +168,9 @@
                 console.log("No More Rows !")
               }
 
-          });
        }
+    
+    });              
     </script>
 
 <div data-dojo-type = "dijit/form/Form" 
@@ -264,7 +247,7 @@
   {% if perms.visit.add_visitdetail %}
 
       <div data-dojo-type="dijit/TitlePane" id="visitDetailAddForm_TitlePane"
-           data-dojo-props="'title':'Visit Details'">
+           data-dojo-props="'title':'Visit Details &amp; Basic Data','open':false">
         <table id ="visitDetailAddFormTable">
             <tr> 
               <th> <label for="id_visit_date"> Date</label></th>
@@ -291,7 +274,7 @@
               <td>
                 <button data-dojo-type="dijit/form/Button" 
                         type="button" 
-                        data-dojo-id="showVisitRemarks"
+                        data-dojo-id="showNewVisitRemarks"
                         data-dojo-props="iconClass:'attachment_small'"
                         onClick="showOrHideRemarks();"
                         >
@@ -312,11 +295,11 @@
                                 domClass,
                                 domAttr
                                 ){
-                        if (domStyle.get(dom.byId("visitRemarksCell"),'display') == 'none'){
-                          domStyle.set(dom.byId("visitRemarksCell"), {display:'table-cell'});
+                        if (domStyle.get(dom.byId("newVisitRemarksCell"),'display') == 'none'){
+                          domStyle.set(dom.byId("newVisitRemarksCell"), {display:'table-cell'});
       //                     domAttr.set(this,{'label':'Hide Remarks'});
                         }else{
-                          domStyle.set(dom.byId("visitRemarksCell"), {display:'none'});
+                          domStyle.set(dom.byId("newVisitRemarksCell"), {display:'none'});
       //                     domAttr.set(this,{'label':'Show Remarks'});
                         }
                       });
@@ -330,85 +313,84 @@
             <table>
               <tr>
     <!--             <th> <label for="id_remarks"> Remarks</label> </th> -->
-                <td style="display:none;" id="visitRemarksCell">
+                <td style="display:none;" id="newVisitRemarksCell">
                   {{visit_detail_form.remarks}}
                 </td>
               </tr>
             </table>
-
-      <div>
-        {% include 'visit/complaints/add.html' %}
-      </div>
-      <hr >
-
 </div>
+
+<div data-dojo-type="dijit/TitlePane" data-dojo-props="'title':'Complaints','open': true">
+  {% include 'visit/complaints/add.html' %}
+</div>
+
 <div data-dojo-type="dijit/TitlePane" data-dojo-props="'title':'History &amp; Examinations','open': false">
 
-<div id             = "visitHistoryAndPhysicalExamBorderContainer"
-     data-dojo-id   = "visitHistoryAndPhysicalExamBorderContainer"
+<div id             = "newVisitHistoryAndPhysicalExamBorderContainer"
+     data-dojo-id   = "newVisitHistoryAndPhysicalExamBorderContainer"
      data-dojo-type = "dojox/layout/ContentPane"
      style          = "height: 30em; overflow:auto;"
   >
-     <div id             = "visitHistoryAndPhysicalExamTabContainer"
-          data-dojo-id   = "visitHistoryAndPhysicalExamTabContainer"
+     <div id             = "newVisitHistoryAndPhysicalExamTabContainer"
+          data-dojo-id   = "newVisitHistoryAndPhysicalExamTabContainer"
           data-dojo-type = "dijit/layout/TabContainer"
           data-dojo-props = "tabPosition:'top',tabStrip: true"
      >
      
-        <div id             = "visitHPIFormContentPane"
-              data-dojo-id   = "visitHPIFormContentPane"
+        <div id             = "newVisitHPIFormContentPane"
+              data-dojo-id   = "newVisitHPIFormContentPane"
               data-dojo-type = "dojox/layout/ContentPane"
               data-dojo-props = "title:'HPI'"
         >
-          <table id                =   "visitHpiAddFormDiv"
+          <table id                =   "newVisitHpiAddFormDiv"
                   style           = "margin: 10px;"
             >
               {{visit_hpi_form.hpi}}
           </table>
       </div>
       
-      <div id             = "visitROSFormContentPane"
-              data-dojo-id   = "visitROSFormContentPane"
+      <div id             = "newVisitROSFormContentPane"
+              data-dojo-id   = "newVisitROSFormContentPane"
               data-dojo-type = "dojox/layout/ContentPane"
               data-dojo-props = "title:'ROS'"
         >
-          <table id              = "visitRosAddFormDiv" 
+          <table id              = "newVisitRosAddFormDiv" 
                   style           = "margin: 10px;"
                   >
                 {{visit_ros_form.as_table}} 
             </table>     
         </div>
 
-        <div id             = "visitVitalsGenAndHEENTExamFormContentPane"
-              data-dojo-id   = "visitVitalsGenAndHEENTExamFormContentPane"
+        <div id             = "newVisitVitalsGenAndHEENTExamFormContentPane"
+              data-dojo-id   = "newVisitVitalsGenAndHEENTExamFormContentPane"
               data-dojo-type = "dojox/layout/ContentPane"
               data-dojo-props = "title:'Vitals, GE, HEENT'"
         >
-            <table id              = "visitVitalsGenAndHEENTExamAddFormDiv" 
+            <table id              = "newVisitVitalsGenAndHEENTExamAddFormDiv" 
                   style           = "margin: 10px;"
                   >
 
             </table>     
         </div>
 
-        <div id             = "visitRespCVSExamFromContentPane"
-              data-dojo-id   = "visitRespCVSExamFromContentPane"
+        <div id             = "newVisitRespCVSExamFromContentPane"
+              data-dojo-id   = "newVisitRespCVSExamFromContentPane"
               data-dojo-type = "dojox/layout/ContentPane"
               data-dojo-props = "title:'Resp, CVS &amp; Abd'"
         >
-          <table id              = "visitRespCVSAdbExamAddFromDiv" 
+          <table id              = "newVisitRespCVSAdbExamAddFromDiv" 
                   style           = "margin: 10px;"
                   >
 
             </table>     
         </div>
 
-        <div id             = "visitMSAndNeuroExamFromContentPane"
-              data-dojo-id   = "visitMSAndNeuroExamFromContentPane"
+        <div id             = "newVisitMSAndNeuroExamFromContentPane"
+              data-dojo-id   = "newVisitMSAndNeuroExamFromContentPane"
               data-dojo-type = "dojox/layout/ContentPane"
               data-dojo-props = "title:'Extremity &amp; Neuro'"
         >
-          <table id              = "visitMSAndNeuroExamAddFromDiv" 
+          <table id              = "newVisitMSAndNeuroExamAddFromDiv" 
                   style           = "margin: 10px;"
                   >
 
