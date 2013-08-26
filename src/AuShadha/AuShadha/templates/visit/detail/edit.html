@@ -37,7 +37,11 @@
                     parser){
 
         var totalVisitComplaintForms = "{{visit_complaint_formset.total_form_count}}";
-        var available_prefix;
+        var used_prefix=[ ];
+        var available_prefix=[];
+        for(var i=0; i < parseInt(totalVisitComplaintForms); i++){
+          used_prefix.push(i);
+        }
 
         var rowStart = '<tr>';
         var rowEnd   = '</tr>';
@@ -53,9 +57,9 @@
   //    var emptyVisitComplaintForm  = emptyVisitComplaintForm.replace(/__prefix__/g, totalVisitComplaintForms);
 
         function getAllRows(node /*String | domNode */){
-          console.log(node);
+//           console.log(node);
           var n = query("#"+node)[0];
-          console.log(n);
+//           console.log(n);
           if (n.tagName == 'TABLE'){
             var allRows = query(n).children('tbody').children('tr');
           }else if(n.tagName != "TABLE"){
@@ -64,6 +68,7 @@
             console.log("Query fetched nothing");
             return;
           }
+          console.log("Returning All Rows of Table from getAllRows Function");
           console.log(allRows);
           return allRows;
         }
@@ -74,9 +79,9 @@
         }
 
         function getLastRow(table_id/*String | domNode */){
-          console.log(table_id);
+//           console.log(table_id);
           var allRows = getAllRows(table_id);
-          console.log(allRows.length)
+//           console.log(allRows.length)
           if (allRows.length>0){
             console.log("Returning Last row...");
             console.log( query(allRows[allRows.length-1]) );
@@ -111,46 +116,112 @@
           }
         }
 
-        function getRowFromTable(rowNumber /*String*/,table_id /* String | domNode */){
-          require(['dojo/dom',
-                    'dojo/query',
-                    'dojo/NodeList-data',
-                    'dojo/NodeList-traverse'],
-          function(dom,query){
-            try{
-              var rowNumber = parseInt(rowNumber);
-              var table = dom.byId(table_id);
-              var row = query(table).chidlren('tbody').children('tr')[rowNumber];
-              if(row){
-                return row;
-              }else{
-                return null;
-              }
-            }catch(err){
-              console.log(err.message);
-              return;
+        function getRowFromTable(table_id /* String | domNode */,r /*String*/){
+          var _r = parseInt(r);
+          console.log("Received request for Table Row No. " + r + " in Table id: " + table_id);
+          var _row_to_return = query("#"+table_id).children('tbody').children('tr')[_r-1];
+          console.log("Returning Row with number: " + _r);
+          console.log(_row_to_return);
+          return _row_to_return;
+        }
+
+        function _getLastElem(l){
+            if (l.length>0){
+              l.sort();
+              var _l = l.length;
+              var i = _l-1;
+              var e = l[i];
+              return parseInt(e);
+            }else{
+              return null;
             }
-          });
         }
 
 
         function returnUnusedPrefix(){
-          if(available_prefix != undefined){
-            console.log("AVAILABLE_PREFIX" + available_prefix);
-            return available_prefix;
+          available_prefix.sort();            
+          used_prefix.sort();                
+
+          if(available_prefix.length >= 1 ){
+
+            var _last_elem = _getLastElem(available_prefix);
+
+            if (used_prefix.indexOf(_last_elem) == -1 ){
+                console.log("used_prefix does not have the element");
+                console.log("LAST ELEMENT OF USED_PREFIX" + used_prefix.indexOf(_last_elem).toString());
+                available_prefix.pop();
+                available_prefix.sort();
+                used_prefix.push(_last_elem);
+                used_prefix.sort();
+                console.log("USED_PREFIX is" + used_prefix.toString());
+                console.log("AVAILABLE_PREFIX is" + available_prefix.toString());
+                return _last_elem;
+            }else{
+              console.log("used_prefix has the element");
+              console.log("LAST ELEMENT OF USED_PREFIX" + used_prefix.indexOf(_last_elem).toString());
+              console.log("USED_PREFIX is" + used_prefix.toString());
+              console.log("AVAILABLE_PREFIX is" + available_prefix.toString());
+              // FIXME May be an edge case.. but still...
+            }
+            
+
           }else{
-            console.log("TOTAL_FORMS: " + totalVisitComplaintForms);
-            return totalVisitComplaintForms;
+            var _last_elem = _getLastElem(used_prefix);
+            var _new_elem = parseInt(_last_elem) +1;
+            used_prefix.push(_new_elem);
+            used_prefix.sort();
+            console.log("USED_PREFIX is" + used_prefix.toString());
+            console.log("AVAILABLE_PREFIX is" + available_prefix.toString());
+            return _new_elem;
           }
+
         }
 
+
+        function rehashPrefixes(node){
+          var n_id= domAttr.get(node.domNode,'id');
+          var _id = parseInt(n_id.match(/\d+/g)[0]);
+          var _available_ = available_prefix.indexOf(_id);
+          var _used_ = used_prefix.indexOf(_id);          
+
+          if(_available_ == -1){          
+            if(_used_ != -1){
+              used_prefix.splice(_used_,1);
+              available_prefix.push(_id);
+              console.log("USED_PREFIX is" + used_prefix.toString());
+              console.log("AVAILABLE_PREFIX is" + available_prefix.toString());
+            }else{
+              console.log("PREFIX_ERROR!! PREFIXES CANNOT BE PRESENT IN BOTH LISTS");
+              console.log("USED_PREFIX is" + used_prefix.toString());
+              console.log("AVAILABLE_PREFIX is" + available_prefix.toString());
+            }
+          }else{
+            available_prefix.splice(_available_,1);
+            used_prefix.push(_id);
+            console.log("USED_PREFIX is" + used_prefix.toString());
+            console.log("AVAILABLE_PREFIX is" + available_prefix.toString());
+          }
+          available_prefix.sort();
+          used_prefix.sort();
+
+        }
+
+
         function lastButOneRowActionCellStyling(){
-            var table_id="visitComplaintEditFormTable_{{visit_detail_obj.id}}";
-            var lastRow = getLastRow(table_id);
-            var addIcon = lastRow.children('td.actionCell').children('span.showNextComplaint')[0];
-            var removeIcon = lastRow.children('td.actionCell').children('span.removeThisComplaint')[0];
-            domStyle.set(addIcon, {'display':'none'});
-            domStyle.set(removeIcon,{'display':'table-cell'});
+            var _t_id="visitComplaintEditFormTable_{{visit_detail_obj.id}}";
+//             var lastRow = getLastRow(table_id);
+            var _rn= parseInt(getNumRows(_t_id));
+            console.log("Querying for Row with Number " + (_rn-1) + " in Table with ID: " + _t_id);
+            if (_rn>=1){
+              var _lbr = getRowFromTable(_t_id, _rn-1);
+//               console.log(_lbr);
+              var _aIcon = query(_lbr).children('td.actionCell').children('span.showNextComplaint')[0];
+              var _rIcon = query(_lbr).children('td.actionCell').children('span.removeThisComplaint')[0];
+              domStyle.set(_aIcon, {'display':'none'});
+              domStyle.set(_rIcon,{'display':'table-cell'});
+            }else{
+              return;
+            }
         }
 
         function lastRowActionCellStyling(){
@@ -187,104 +258,96 @@
           var HTMLToInsert = rowStart + escapedComplaintHTML + escapedDurationHTML + actionButtonCells + rowEnd;
           var rowInserted = domConstruct.place(HTMLToInsert,query("#visitComplaintEditFormTable_{{visit_detail_obj.id}} tbody")[0] );
           parser.parse(rowInserted);
-//           bindAddMoreComplaintsClick();
-//           bindRemoveComplaintsClick();
           var addIcon = query(rowInserted).children('td.actionCell').children('span.showNextComplaint')[0];
           var removeIcon = query(rowInserted).children('td.actionCell').children('span.removeThisComplaint')[0];
           on(addIcon,'click',onAddMoreComplaintsClick);
           on(removeIcon,'click',function(){onRemoveComplaintClick(removeIcon);});
-           available_prefix= undefined;
           setTotalFormInputNumber();
         }
 
         function onAddMoreComplaintsClick(){
-
-              lastButOneRowActionCellStyling();
-
               placeAndDijitiseRows();
-
+              lastButOneRowActionCellStyling();
               lastRowActionCellStyling();
-
-//               incrementTotalFormInput();
         }
 
         function rollBackRows(r){
-          var totalRowsInTable = getNumRows("visitComplaintEditFormTable_{{visit_detail_obj.id}}");
+          var table_id = "visitComplaintEditFormTable_{{visit_detail_obj.id}}";
 
-          if(totalRowsInTable >1){
+          if(getNumRows(table_id) >1){
             registry.
                 findWidgets(r).
-                  forEach(function(n){
-                            var n_id= domAttr.get(n.domNode,'id');
-                            available_prefix = n_id.match(/\d+/g)[0];
-                            console.log("AVAILABLE_PREFIX :" + available_prefix);
+                  forEach(function(n,i){
+                            if (i==0){rehashPrefixes(n); }
                             n.destroyRecursive(false);
                           });
 
             domConstruct.destroy(r);
-            lastButOneRowActionCellStyling();
-            lastRowActionCellStyling();
-            setTotalFormInputNumber();
           }
 
+          if(getNumRows(table_id) >1){
+            lastButOneRowActionCellStyling();
+          }
+          lastRowActionCellStyling();
+          setTotalFormInputNumber();
         }
 
         function onRemoveComplaintClick(evt){
 
-                if (confirm("This will delete the complaint.. Proceed ?")){
-                  var closestRow    = query(evt).closest('tr');
-                  var rowToDelete   = closestRow[0];
-                  var delBtn        = closestRow.
-                                        children('td.actionCell').
-                                        children('span.removeThisComplaint');
-                  var parentTable = closestRow.parents('table');
-                  var urlToCall   = domAttr.get(delBtn,'data-url');
+          if (confirm("This will delete the complaint.. Proceed ?")){
+            var closestRow    = query(evt).closest('tr');
+            var rowToDelete   = closestRow[0];
+            var delBtn        = closestRow.
+                                  children('td.actionCell').
+                                  children('span.removeThisComplaint')[0];
+            var parentTable = closestRow.parents('table');
+            var urlToCall   = domAttr.get(delBtn,'data-url');
 
-                  if(urlToCall !== null){
-                    console.log("Requesting delete of the complaint");
-                    request(urlToCall).then(
-                    function(json){
-                      var jsondata = JSON.parse(json);
-                      if(jsondata.success == true){
-                        publishInfo("Successfully Deleted Complaint");
-                        rollBackRows(rowToDelete);
-                      }else{
-                        publishError("ERROR! "+ jsondata.error_message);
-                      }
-                    },
-                    function(){
-                      publishError("ERROR! Server Error");
-                    }
-                    );
-                  }else{
-                    console.log("Deleting the Complaint forms");
-                    rollBackRows(rowToDelete);
-                    console.log("Destroyed Empty forms");
-                  }
-
+            if(urlToCall !== 'null'){
+              console.log("Requesting delete of the complaint");
+              request(urlToCall).then(
+              function(json){
+                var jsondata = JSON.parse(json);
+                if(jsondata.success == true){
+                  publishInfo("Successfully Deleted Complaint");
+                  rollBackRows(rowToDelete);
+                }else{
+                  publishError("ERROR! "+ jsondata.error_message);
                 }
-                console.log("CONFIRM_DIALOG_CLOSED");
+              },
+              function(){
+                publishError("ERROR! Server Error");
+              }
+              );
+            }else{
+              console.log("Deleting the Complaint forms");
+              rollBackRows(rowToDelete);
+              console.log("Destroyed Empty forms");
             }
 
-        function bindAddMoreComplaintsClick(){
-          query('.showNextComplaint').forEach(
-          function(node){
-            on(node,'click',onAddMoreComplaintsClick);
-          });
-        }
+          }
+          console.log("CONFIRM_DIALOG_CLOSED");
+       }
 
-        function bindRemoveComplaintsClick(){
-          query('.removeThisComplaint').forEach(
-          function(node){
-              on(node,'click',function(evt){onRemoveComplaintClick(evt.target);});
-          });
-        }
+      function bindAddMoreComplaintsClick(){
+        query('.showNextComplaint').forEach(
+        function(node){
+          on(node,'click',onAddMoreComplaintsClick);
+        });
+      }
 
-        bindAddMoreComplaintsClick();
-        bindRemoveComplaintsClick();
+      function bindRemoveComplaintsClick(){
+        query('.removeThisComplaint').forEach(
+        function(node){
+            on(node,'click',function(evt){onRemoveComplaintClick(evt.target);});
+        });
+      }
 
-     });
-    </script>
+      bindAddMoreComplaintsClick();
+      bindRemoveComplaintsClick();
+
+   });
+  </script>
 
 <div data-dojo-type = "dijit/form/Form" 
      id             = "newVisitEditForm_{{visit_detail_obj.id}}"

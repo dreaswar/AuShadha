@@ -110,7 +110,7 @@ class AuShadhaBaseModel(models.Model):
   '''
   #__model_label__ = "AuShadhaBaseModel"
   #__root_url__ = APP_ROOT_URL
-  parent_clinic = models.ForeignKey('clinic.Clinic', null = True, blank = True)
+  #parent_clinic = models.ForeignKey('clinic.Clinic', null = True, blank = True)
 
   #def __init__(self, au_model_label = "AuShadhaBaseModel", *args, **kwargs):
     #from AuShadha.settings import APP_ROOT_URL

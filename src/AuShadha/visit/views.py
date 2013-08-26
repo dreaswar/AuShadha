@@ -700,6 +700,12 @@ def visit_detail_add(request,  id, nature = 'initial'):
 @login_required
 def visit_detail_edit(request, id):
   user = request.user
+  VisitComplaintFormset = modelformset_factory(VisitComplaint, 
+                                               form = VisitComplaintForm, 
+                                               extra=0, 
+                                               can_delete=True,
+                                               can_order=True
+                                              )        
   if request.method == "GET" and request.is_ajax():
     try:
       id = int(id)
@@ -718,7 +724,6 @@ def visit_detail_edit(request, id):
 
     complaint_formset_auto_id = "id_%s"+"_edit_visit_complaint_"+ str(id)
     complaint_total_form_auto_id = "id_form-TOTAL_FORMS_edit_visit_complaint_"+str(id)
-    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm, extra=0, can_delete=True,can_order=True)        
     visit_complaint_formset = VisitComplaintFormset(queryset = VisitComplaint.objects.filter(visit_detail = visit_detail_obj),
                                                     auto_id=complaint_formset_auto_id
                                                     )
@@ -787,11 +792,8 @@ def visit_detail_edit(request, id):
       #visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
       complaint_formset_auto_id = "id_%s"+"_edit_visit_complaint_"+ str(id)
       complaint_total_form_auto_id = "id_form-TOTAL_FORMS_edit_visit_complaint_"+str(id)      
-      VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)
-      visit_complaint_formset = VisitComplaintFormset(request.POST,
-                                                      queryset = visit_complaint_obj,
-                                                      auto_id= complaint_formset_auto_id
-                                                      )
+      #VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)
+      visit_complaint_formset = VisitComplaintFormset(request.POST , queryset = visit_complaint_obj)
 
       visit_hpi_form         = VisitHPIForm(request.POST, instance = visit_hpi_obj[0])
       visit_ros_form         = VisitROSForm(request.POST, instance = visit_ros_obj[0])

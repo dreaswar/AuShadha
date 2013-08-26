@@ -220,7 +220,7 @@ class VisitComplaint(AuShadhaBaseModel):
   duration      = models.CharField(max_length = 30, help_text= 'limit to 30 words')
   visit_detail  = models.ForeignKey(VisitDetail)
   created_at    = models.DateTimeField(auto_now_add = True, editable = False)
-
+  base_model    = models.OneToOneField('aushadha_base_models.AuShadhaBaseModel',parent_link = True)
   def __unicode__(self):
     return '%s : %s' %(self.complaint, self.duration)
 
@@ -531,35 +531,35 @@ class VisitDetailForm(ModelForm):
 
   def __init__(self, *args, **kwargs):
       super(VisitDetailForm, self).__init__(*args, **kwargs)
-      text_fields = [{"field"         : 'visit_date',
+      text_fields = [ {"field"         : 'visit_date',
                       'max_length'    :  100         ,
                       "data-dojo-type": "dijit.form.DateTextBox",
                       "data-dojo-props": r"'required' :true"
                       },
-                    {"field"            : 'op_surgeon',
-                      'max_length'      :  100         ,
-                    "data-dojo-type"    : "dijit.form.Select",
-                      "data-dojo-props" : r"'required' : true"
-                    },
+                      {"field"            : 'op_surgeon',
+                        'max_length'      :  100         ,
+                      "data-dojo-type"    : "dijit.form.Select",
+                        "data-dojo-props" : r"'required' : true"
+                      },
                       {"field"         : 'referring_doctor',
                       'max_length'    :  100         ,
                       "data-dojo-type": "dijit.form.ValidationTextBox",
                       "data-dojo-props": r"'required' :false"
                       },
-                    {"field"          : 'consult_nature',
-                      'max_length'    :  100         ,
-                      "data-dojo-type": "dijit.form.Select",
-                      "data-dojo-props": r"'required' :true"
-                      },
-                    {"field"          : 'status',
-                      'max_length'    :  100         ,
-                      "data-dojo-type": "dijit.form.Select",
-                      "data-dojo-props": r"'required' :true"
-                      },
-                    {"field"         : 'remarks',
-                      'max_length'    :  150         ,
-                      "data-dojo-type": "dijit.form.Textarea",
-                      "data-dojo-props": r"'required' :false"
+                      {"field"          : 'consult_nature',
+                        'max_length'    :  100         ,
+                        "data-dojo-type": "dijit.form.Select",
+                        "data-dojo-props": r"'required' :true"
+                        },
+                      {"field"          : 'status',
+                        'max_length'    :  100         ,
+                        "data-dojo-type": "dijit.form.Select",
+                        "data-dojo-props": r"'required' :true"
+                        },
+                      {"field"         : 'remarks',
+                        'max_length'    :  150         ,
+                        "data-dojo-type": "dijit.form.Textarea",
+                        "data-dojo-props": r"'required' :false"
                       }
             ]
       for field in text_fields:
@@ -573,21 +573,41 @@ class VisitComplaintForm(ModelForm):
 
   class Meta:
     model = VisitComplaint
-    exclude = ('parent_clinic','visit_detail')
+    #exclude = ('visit_detail',)
 
   def __init__(self, *args, **kwargs):
     super(VisitComplaintForm, self).__init__(*args, **kwargs)
     text_fields = [
 
+                   {"field"           : 'visit_detail',
+                    'max_length'     :  '100'         ,
+                    "data-dojo-type" : "dijit.form.Select",
+                    "data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
+                    'style':r"display:none;"
+                    },
+                   #{"field"           : 'parent_clinic',
+                    #'max_length'     :  '100'         ,
+                    #"data-dojo-type" : "dijit.form.Select",
+                    #"data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
+                    #'style':r"display:none;"
+                    #},
+                   #{"field"           : 'base_model',
+                    #'max_length'     :  '100'         ,
+                    #"data-dojo-type" : "dijit.form.ValidationTextBox",
+                    #"data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
+                    #'style':r"display:none;"
+                    #},
                   {"field"           : 'complaint',
                     'max_length'     :  '100'         ,
                     "data-dojo-type" : "dijit.form.ValidationTextBox",
-                    "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
+                    "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
+                    'style':r""
                     },
                     {"field"         : 'duration',
                     'max_length'     :  '100'         ,
                     "data-dojo-type" : "dijit.form.ValidationTextBox",
-                    "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
+                    "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
+                    'style':r""
                     },
     ]
 
@@ -596,6 +616,7 @@ class VisitComplaintForm(ModelForm):
       self.fields[field['field']].widget.attrs['data-dojo-type']  = field['data-dojo-type']
       self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
       self.fields[field['field']].widget.attrs['max_length']      = field['max_length']
+      self.fields[field['field']].widget.attrs['style']      = field['style']
 
 class VisitHPIForm(ModelForm):
 

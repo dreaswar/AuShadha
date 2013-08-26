@@ -14,7 +14,10 @@
       <tr id    = "visitComplaintEditFormsetRow_{{forloop.counter}}"
           class = "visitComplaintsEditFormRow complaintFormRow"
       >
-          <td>{{ form.complaint }}</td>
+          <td>{{ form.visit_detail }} 
+              {{form.base_model}}
+              {{form.complaint}}
+          </td>
           <td>{{ form.duration }}</td>
           <td class="actionCell"> 
               {% if forloop.counter != '1' %}
