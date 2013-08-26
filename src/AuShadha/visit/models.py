@@ -573,30 +573,30 @@ class VisitComplaintForm(ModelForm):
 
   class Meta:
     model = VisitComplaint
-    #exclude = ('visit_detail',)
+    exclude = ('visit_detail',)
 
   def __init__(self, *args, **kwargs):
     super(VisitComplaintForm, self).__init__(*args, **kwargs)
     text_fields = [
 
-                   {"field"           : 'visit_detail',
-                    'max_length'     :  '100'         ,
-                    "data-dojo-type" : "dijit.form.Select",
-                    "data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-                    'style':r"display:none;"
-                    },
+                   #{"field"           : 'visit_detail',
+                    #'max_length'     :  '100'         ,
+                    #"data-dojo-type" : "dijit.form.Select",
+                    #"data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
+                    #'style':r"display:none;"
+                    #},
                    #{"field"           : 'parent_clinic',
                     #'max_length'     :  '100'         ,
                     #"data-dojo-type" : "dijit.form.Select",
                     #"data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
                     #'style':r"display:none;"
                     #},
-                   #{"field"           : 'base_model',
-                    #'max_length'     :  '100'         ,
-                    #"data-dojo-type" : "dijit.form.ValidationTextBox",
-                    #"data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-                    #'style':r"display:none;"
-                    #},
+                   {"field"           : 'base_model',
+                    'max_length'     :  '100'         ,
+                    "data-dojo-type" : "dijit.form.ValidationTextBox",
+                    "data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
+                    'style':r"display:none;"
+                    },
                   {"field"           : 'complaint',
                     'max_length'     :  '100'         ,
                     "data-dojo-type" : "dijit.form.ValidationTextBox",

@@ -683,9 +683,11 @@ def visit_detail_add(request,  id, nature = 'initial'):
 
       else:
         success       = False
-        error_message = '''Error! Visit Could not be added. 
+        error_message = ''' Visit Could not be added. 
                           Please check the forms for errors
-                        '''
+                        '''  
+        errors= str(visit_detail_form.errors) + str(visit_complaint_formset.errors) + str(visit_ros_form.errors)
+        error_message += ('\n'+ errors)
       data = { 'success'       : success      ,
               'error_message' : error_message
             }
