@@ -6,13 +6,18 @@
                 width: 16px; 
                 height: 16px; 
                 cursor: pointer; 
-                display:table-cell;
+                display:{% if not forloop.first %} 
+                          table-cell 
+                        {% else %} 
+                           none
+                        {% endif %}
+                        ;
                 "
-      {% if form.instance.get_del_url %}
-      data-url="{{form.instance.get_del_url}}"
-      {% else %}
-      data-url=null
-      {% endif %}
+        {% if form.instance.get_del_url %}
+          data-url="{{form.instance.get_del_url}}"
+        {% else %}
+          data-url=null
+        {% endif %}
       class  = "removeThisComplaint"
       title  = "Remove this Complaint"
   >

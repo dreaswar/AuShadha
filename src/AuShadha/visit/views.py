@@ -601,7 +601,7 @@ def visit_detail_add(request,  id, nature = 'initial'):
     complaint_add_icon_html      = complaint_add_icon_template.render(RequestContext(request,{'user':user}))
     complaint_remove_icon_html  = complaint_remove_icon_template.render(RequestContext(request,{'user':user}))
     form_auto_id = "id_%s"+"_new_visit_"+ str(id)
-    total_form_auto_id = "id_form-TOTAL_FORMS_new_visit_"+str(id)
+    complaint_total_form_auto_id = "id_form-TOTAL_FORMS_new_visit_"+str(id)
 
 
     if request.method == "GET" and request.is_ajax():
@@ -615,6 +615,10 @@ def visit_detail_add(request,  id, nature = 'initial'):
                                                         },
                                                instance = visit_detail_obj, 
                                                auto_id  = "id_new_visit_detail"+ str(id)+"_%s")
+        
+        #complaint_formset_auto_id = "id_%s"+"_add_visit_complaint_"+ str(id)
+        #complaint_total_form_auto_id = "id_form-TOTAL_FORMS_add_visit_complaint_"+str(id)
+        
         #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
                                                   #auto_id  = "id_new_visit_complaint"+ str(id)+"_%s")
         visit_complaint_formset = VisitComplaintFormset(queryset=VisitComplaint.objects.none(),
@@ -637,7 +641,7 @@ def visit_detail_add(request,  id, nature = 'initial'):
                                             'complaint_remove_icon_html':complaint_remove_icon_html,
                                             'success'                  : success,
                                             'form_auto_id'             : form_auto_id,
-                                            'total_form_auto_id'       : total_form_auto_id
+                                            'complaint_total_form_auto_id'       : complaint_total_form_auto_id
                                             })
         return render_to_response('visit/detail/add.html', variable)
 
