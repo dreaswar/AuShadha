@@ -664,11 +664,13 @@ def visit_detail_add(request,  id, nature = 'initial'):
       visit_complaint_formset = VisitComplaintFormset(request.POST,auto_id= form_auto_id)
       visit_hpi_form       = VisitHPIForm(request.POST, instance = visit_hpi_obj)
       visit_ros_form       = VisitROSForm(request.POST, instance = visit_ros_obj)
+      vital_exam_free_model_form = VitalExam_FreeModelForm(request.POST,instance = vital_exam_free_model_obj)
 
-      if visit_detail_form.is_valid()       and \
+      if visit_detail_form.is_valid()      and \
         visit_complaint_formset.is_valid() and \
         visit_hpi_form.is_valid()          and \
-        visit_ros_form.is_valid():
+        visit_ros_form.is_valid()          and \
+        vital_exam_free_model_form.is_valid():
         
         saved_visit     = visit_detail_form.save()
         saved_visit_complaints = visit_complaint_formset.save(commit=False)
@@ -684,9 +686,16 @@ def visit_detail_add(request,  id, nature = 'initial'):
         saved_visit_hpi = visit_hpi_form.save(commit=False)
         saved_visit_hpi.visit_detail = saved_visit
         saved_visit_hpi.save()
+        
         saved_visit_ros = visit_ros_form.save(commit=False)
         saved_visit_ros.visit_detail = saved_visit
         saved_visit_ros.save()
+        
+        saved_vital_exam = vital_exam_free_model_form.save(commit = False)
+        saved_vital_exam.visit_detail = saved_visit
+        saved_vital_exam.physician = saved_visit.op_surgeon
+        saved_vital_exam.save()
+
         success       = True
         error_message = "Visit Added Successfully"
 
@@ -695,7 +704,10 @@ def visit_detail_add(request,  id, nature = 'initial'):
         error_message = ''' Visit Could not be added. 
                           Please check the forms for errors
                         '''  
-        errors= str(visit_detail_form.errors) + str(visit_complaint_formset.errors) + str(visit_ros_form.errors)
+        errors= str(visit_detail_form.errors) + \
+                str(visit_complaint_formset.errors) + \
+                str(visit_ros_form.errors)+ \
+                str(vital_exam_free_model_form.errors)
         error_message += ('\n'+ errors)
       data = { 'success'       : success      ,
               'error_message' : error_message
@@ -724,6 +736,7 @@ def visit_detail_edit(request, id):
       visit_complaint_obj   = VisitComplaint.objects.filter(visit_detail = visit_detail_obj)
       visit_hpi_obj         = VisitHPI.objects.filter(visit_detail = visit_detail_obj)
       visit_ros_obj         = VisitROS.objects.filter(visit_detail = visit_detail_obj)
+      vital_exam_free_model_obj = VitalExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Error ! Invalid Request Parameters. ")
     except (VisitDetail.DoesNotExist):
@@ -767,6 +780,14 @@ def visit_detail_edit(request, id):
     else:
       visit_ros_form = None
 
+    if vital_exam_free_model_obj:
+      vital_exam_free_model_obj = vital_exam_free_model_obj[0]
+      vital_auto_id     = 'id_edit_vital_exam_free_model_' + str(vital_exam_free_model_obj.id)
+      vital_exam_free_model_form = VitalExam_FreeModelForm(instance = vital_exam_free_model_obj, auto_id= vital_auto_id+"_%s")
+    else:
+      vital_auto_id     = 'id_add_vital_exam_free_model_' + str(visit_detail_obj.id)
+      vital_exam_free_model_form = VitalExam_FreeModelForm(instance = VitalExam_FreeModel(visit_detail = visit_detail_obj), auto_id= vital_auto_id+"_%s")
+    
     variable = RequestContext(request, {'user'                  : user                  ,
                                         'visit_detail_obj'      : visit_detail_obj      ,
                                         'visit_detail_form'     : visit_detail_form     ,
@@ -775,6 +796,7 @@ def visit_detail_edit(request, id):
                                         'complaint_count'       : complaint_count,
                                         'visit_hpi_form'       : visit_hpi_form        ,
                                         'visit_ros_form'       : visit_ros_form        ,
+                                        'vital_exam_free_model_form':vital_exam_free_model_form,
                                         'patient_detail_obj'    : visit_detail_obj.patient_detail   ,
                                         'error_message'         : error_message         ,
                                         'complaint_add_icon_html': complaint_add_icon_html,
@@ -791,6 +813,7 @@ def visit_detail_edit(request, id):
       visit_complaint_obj = VisitComplaint.objects.filter(visit_detail = visit_detail_obj)
       visit_hpi_obj       = VisitHPI.objects.filter(visit_detail = visit_detail_obj)
       visit_ros_obj       = VisitROS.objects.filter(visit_detail = visit_detail_obj)
+      vital_exam_free_model_obj = VitalExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)      
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Error ! Invalid Request Parameters. ")
     except (VisitDetail.DoesNotExist):
@@ -808,11 +831,17 @@ def visit_detail_edit(request, id):
 
       visit_hpi_form         = VisitHPIForm(request.POST, instance = visit_hpi_obj[0])
       visit_ros_form         = VisitROSForm(request.POST, instance = visit_ros_obj[0])
-      
-      if visit_detail_edit_form.is_valid() and \
-        visit_complaint_formset.is_valid()   and \
-        visit_hpi_form.is_valid()         and \
-        visit_ros_form.is_valid():
+      if vital_exam_free_model_obj:
+        vital_exam_free_model_form = VitalExam_FreeModelForm(request.POST, instance = vital_exam_free_model_obj[0])
+      else:
+        vital_exam_free_model_obj = VitalExam_FreeModel(visit_detail = visit_detail_obj)              
+        vital_exam_free_model_form = VitalExam_FreeModelForm(request.POST, instance = vital_exam_free_model_obj)
+
+      if visit_detail_edit_form.is_valid()    and \
+        visit_complaint_formset.is_valid()    and \
+        visit_hpi_form.is_valid()             and \
+        visit_ros_form.is_valid()             and \
+        vital_exam_free_model_form.is_valid():
 
         saved_visit   = visit_detail_edit_form.save()
         saved_visit_complaint = visit_complaint_formset.save(commit = False)
@@ -834,6 +863,11 @@ def visit_detail_edit(request, id):
         saved_visit_ros.save()
 
         #saved_visit.visit_status_change(unicode(saved_visit.status))
+        
+        saved_vital_exam = vital_exam_free_model_form.save(commit = False)
+        saved_vital_exam.visit_detail  = saved_visit
+        saved_vital_exam.physician = saved_visit.op_surgeon
+        saved_vital_exam.save()
 
         success       = True
         error_message = "Visit Edited Successfully"
