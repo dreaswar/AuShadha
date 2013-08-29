@@ -411,104 +411,155 @@
 
 {% if perms.visit.change_visitdetail %}
 
-      <table id ="visitDetailEditFormTable_{{visit_detail_obj.id}}">
-          <tr> 
-            <td> Date        </td> <td>  {{visit_detail_form.visit_date}}      </td> 
-          </tr> 
-          <tr>
-            <td> Physician   </td> <td>   {{visit_detail_form.op_surgeon}}       </td>
-          </tr>
-          <tr>
-            <td> Referred    </td> <td>   {{visit_detail_form.referring_doctor}} </td> 
-          </tr>
-          <tr>
-            <td> Nature   </td> <td>   {{visit_detail_form.consult_nature}} </td> 
-          </tr>
-          <tr>
-            <td> Status   </td> <td>   {{visit_detail_form.status}}         </td> 
-          </tr>
-          <tr>
-            <td> Remarks   </td> <td>   {{visit_detail_form.remarks}}         </td> 
-          </tr>
-      </table>
+      <div data-dojo-type="dijit/TitlePane" id="visitDetailEditForm_TitlePane_{{visit_detail_obj.id}}"
+           data-dojo-props="'title':'Visit Details &amp; Basic Data','open':false">
 
-      <hr>
+        <table id ="visitDetailEditFormTable_{{visit_detail_obj.id}}">
+            <tr> 
+              <th> <label for="id_visit_date"> Date</label></th>
+              <td> {{visit_detail_form.visit_date}} </td>
+            </tr>
+            <tr>           
+              <th> <label for="id_op_surgeon">Physician</label>
+              <td> {{visit_detail_form.op_surgeon}} </td>
+            </tr>
+            <tr>           
+              <th> <label for="id_refering_doctor">Referred</label> </th>
+              <td> {{visit_detail_form.referring_doctor}}</td>
+            </tr>
+            <tr>           
+              <th> <label for="id_consult_nature"> Nature</label>
+              <td> {{visit_detail_form.consult_nature}} </td>
+            </tr>
+            <tr>           
+              <th> <label for="id_status"> Status</label></th>
+              <td> {{visit_detail_form.status}} </td>
+            </tr>
 
-      <div>
+            <tr>
+              <td>
+                <button data-dojo-type="dijit/form/Button" 
+                        type="button" 
+                        data-dojo-props="iconClass:'attachment_small'"
+                        onClick="showOrHideEditVisitRemarksCell();"
+                        >
+                Remarks
+                <script type="text/javascript">
+                    function showOrHideEditVisitRemarksCell(){
+                      require(['dojo/on',
+                              'dojo/dom',
+                              'dijit/registry',
+                              'dojo/dom-style',
+                              'dojo/dom-class',
+                              'dojo/dom-attr'
+                            ], 
+                      function(on,
+                                dom,
+                                registry,
+                                domStyle,
+                                domClass,
+                                domAttr
+                                ){
+                        if (domStyle.get(dom.byId("editVisitRemarksCell_{{visit_detail_obj.id}}"),'display') == 'none'){
+                          domStyle.set(dom.byId("editVisitRemarksCell_{{visit_detail_obj.id}}"), {display:'table-cell'});
+      //                     domAttr.set(this,{'label':'Hide Remarks'});
+                        }else{
+                          domStyle.set(dom.byId("editVisitRemarksCell_{{visit_detail_obj.id}}"), {display:'none'});
+      //                     domAttr.set(this,{'label':'Show Remarks'});
+                        }
+                      });
+                    }
+                </script>
+                </button>
+              </td>
+            </tr>
+            </table>
+           
+            <table>
+              <tr>
+                <td style="display:none;" id="editVisitRemarksCell_{{visit_detail_obj.id}}">
+                  {{visit_detail_form.remarks}}
+                </td>
+              </tr>
+            </table>
+
+      </div>
+
+      <div data-dojo-type="dijit/TitlePane" data-dojo-props="'title':'Complaints','open': true">
         {% include 'visit/complaints/edit.html' %}
       </div>
 
-      <div id            = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
-          data-dojo-id   = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
-          data-dojo-type = "dojox/layout/ContentPane"
-          style          = "height: 30em; overflow:auto;"
-      >
-          <div id             = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
-              data-dojo-id    = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
-              data-dojo-type  = "dijit/layout/TabContainer"
-              data-dojo-props = "tabPosition:'top',tabStrip: true"
-          >
-            <div id              = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
-                 data-dojo-id    = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
-                 data-dojo-type  = "dojox/layout/ContentPane"
-                 data-dojo-props = "title:'HPI'"
+      <div data-dojo-type="dijit/TitlePane" data-dojo-props="'title':'History &amp; Examinations','open': false">      
+        <div id            = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
+            data-dojo-id   = "visitHistoryAndPhysicalExamEditBorderContainer_{{visit_detail_obj.id}}"
+            data-dojo-type = "dojox/layout/ContentPane"
+            style          = "height: 30em; overflow:auto;"
+        >
+            <div id             = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
+                data-dojo-id    = "visitHistoryAndPhysicalExamEditTabContainer_{{visit_detail_obj.id}}"
+                data-dojo-type  = "dijit/layout/TabContainer"
+                data-dojo-props = "tabPosition:'top',tabStrip: true"
             >
-              <table id="visit_hpi_edit_form_table_{{visit_detail_obj.id}}"> 
-                {{visit_hpi_form.hpi}}
-              </table> 
-            </div>
-
-            <div id             = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
-                    data-dojo-id   = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
-                    data-dojo-type = "dojox/layout/ContentPane"
-                    data-dojo-props = "title:'ROS'"
+              <div id              = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-id    = "visitHPIEditFormContentPane_{{visit_detail_obj.id}}"
+                  data-dojo-type  = "dojox/layout/ContentPane"
+                  data-dojo-props = "title:'HPI'"
               >
-                <table id              = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
+                <table id="visit_hpi_edit_form_table_{{visit_detail_obj.id}}"> 
+                  {{visit_hpi_form.hpi}}
+                </table> 
+              </div>
+
+              <div id             = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
+                      data-dojo-id   = "visitROSEditFormContentPane_{{visit_detail_obj.id}}"
+                      data-dojo-type = "dojox/layout/ContentPane"
+                      data-dojo-props = "title:'ROS'"
+                >
+                  <table id              = "visitRosEditFormDiv_{{visit_detail_obj.id}}" 
+                          style           = "margin: 10px;"
+                          >
+                        {{visit_ros_form.as_table}} 
+                    </table>     
+              </div>
+              
+              <div id             = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-id   = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-type = "dojox/layout/ContentPane"
+                    data-dojo-props = "title:'Vitals, GE, HEENT'"
+              >
+                  <table id              = "visitVitalsGenAndHEENTExamEditFormDiv_{{visit_detail_obj.id}}" 
                         style           = "margin: 10px;"
                         >
-                      {{visit_ros_form.as_table}} 
+
                   </table>     
-            </div>
-            
-            <div id             = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
-                  data-dojo-id   = "visitVitalsGenAndHEENTExamEditFormContentPane_{{visit_detail_obj.id}}"
-                  data-dojo-type = "dojox/layout/ContentPane"
-                  data-dojo-props = "title:'Vitals, GE, HEENT'"
-            >
-                <table id              = "visitVitalsGenAndHEENTExamEditFormDiv_{{visit_detail_obj.id}}" 
-                      style           = "margin: 10px;"
-                      >
+              </div>
 
-                </table>     
-            </div>
+              <div id             = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-id   = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-type = "dojox/layout/ContentPane"
+                    data-dojo-props = "title:'Resp, CVS &amp; Abd'"
+              >
+                <table id              = "visitRespCVSAdbExamEditFromDiv_{{visit_detail_obj.id}}" 
+                        style           = "margin: 10px;"
+                        >
 
-            <div id             = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
-                  data-dojo-id   = "visitRespCVSExamEditFromContentPane_{{visit_detail_obj.id}}"
-                  data-dojo-type = "dojox/layout/ContentPane"
-                  data-dojo-props = "title:'Resp, CVS &amp; Abd'"
-            >
-              <table id              = "visitRespCVSAdbExamEditFromDiv_{{visit_detail_obj.id}}" 
-                      style           = "margin: 10px;"
-                      >
+                  </table>     
+              </div>
 
-                </table>     
-            </div>
+              <div id             = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-id   = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
+                    data-dojo-type = "dojox/layout/ContentPane"
+                    data-dojo-props = "title:'Extremity &amp; Neuro'"
+              >
+                <table id              = "visitMSAndNeuroExamEditFromDiv_{{visit_detail_obj.id}}" 
+                        style           = "margin: 10px;"
+                        >
 
-            <div id             = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
-                  data-dojo-id   = "visitMSAndNeuroExamEditFromContentPane_{{visit_detail_obj.id}}"
-                  data-dojo-type = "dojox/layout/ContentPane"
-                  data-dojo-props = "title:'Extremity &amp; Neuro'"
-            >
-              <table id              = "visitMSAndNeuroExamEditFromDiv_{{visit_detail_obj.id}}" 
-                      style           = "margin: 10px;"
-                      >
+                  </table>     
+              </div>
 
-                </table>     
-            </div>
-
-    </div>
-
-  </div>
+      </div>
+     </div>
 
 {% endif %} 
     

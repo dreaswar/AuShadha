@@ -479,7 +479,7 @@
                            'dijit/Dialog'
                            ],
                     function(registry,dom,on,domStyle,Dialog){
-                              registry.byId('visitSummaryHiddenDiv').show();
+                              registry.byId('visitSummaryHiddenDiv_{{patient_detail_obj}}').show();
                               /*
                               try{
                                 domStyle.set('visitSummaryHiddenDiv_underlay',
@@ -518,8 +518,8 @@
                             'dijit/Dialog'
                            ],
                     function(registry,dom,on,Dialog){
-                              registry.byId('visitComplaintsHiddenDiv').show();
-                              console.log(registry.byId('visitComplaintsHiddenDiv'));
+                              registry.byId('visitComplaintsHiddenDiv_{{patient_detail_obj}}').show();
+                              console.log(registry.byId('visitComplaintsHiddenDiv_{{patient_detail_obj}}'));
                     });
                   }
                 </script>
@@ -794,8 +794,9 @@
                                 text-align   : justify;
                                 ">
                         {% for item in obj_list %}
-                              {{item}}
+                            {{item}}
                         {% endfor %}
+                        
                       </td>
                     </tr>
                     </tbody>
@@ -857,10 +858,10 @@
 
   
   
-  <div data-dojo-id   = "visitSummaryHiddenDiv" 
+  <div data-dojo-id   = "visitSummaryHiddenDiv_{{patient_detail_obj}}" 
        data-dojo-type = "dijit/Dialog"
        data-dojo-props = "title:'Visit Notes for: {{patient_detail_obj}}'"
-       id             = "visitSummaryHiddenDiv" 
+       id             = "visitSummaryHiddenDiv_{{patient_detail_obj}}" 
        class          = "hiddenVisitNotes" style="display:none;">
   
     {%if visit_obj_list %}

@@ -163,6 +163,71 @@ class PhyExam(AuShadhaBaseModel):
     return 'AuShadha/phyexam/add_other_exams/%s/' %(self.id)
 
 
+class PhyExamBaseModel(AuShadhaBaseModel):
+  __model_label__ ='phy_exam'
+
+  remarks           = models.TextField(blank = True, null = True, default = "NAD", max_length = 200)
+  created_at        = models.DateTimeField(auto_now = True, auto_now_add = True, editable=False)
+  modified_at       = models.DateTimeField(auto_now = True, editable=True)
+
+  admission_detail  = models.ForeignKey('admission.Admission'  ,null = True, blank = True)
+  visit_detail      = models.ForeignKey('visit.VisitDetail'    ,null = True, blank = True)
+  physician         = models.ForeignKey('clinic.Staff')
+
+  base_model    = models.OneToOneField('aushadha_base_models.AuShadhaBaseModel', parent_link = True)
+
+  def __unicode__(self):
+    if self.admission_detail:
+      return "Adm: %s, Date: %s" %(self.admission_detail, self.created_at)
+    elif self.visit_detail:
+      return "Visit: %s, Date: %s" %(self.visit_detail, self.created_at)
+    else:
+      return "Created at: %s" %(self.visit_detail, self.created_at)
+
+
+class VitalExam_FreeModel(PhyExamBaseModel):
+  sys_bp      = models.PositiveIntegerField('Systolic B.P', max_length =3, default = 120)
+  dia_bp      = models.PositiveIntegerField('Diastolic B.P', max_length =3, default = 80)
+  pulse_rate  = models.PositiveIntegerField('Pulse Rate',max_length =3, default = 82)
+  resp_rate   = models.PositiveIntegerField('Respiratory Rate',max_length =2, default = 20)
+
+  gcs         = models.PositiveIntegerField('GCS',max_length =2, default = 15)
+
+  height      = models.PositiveIntegerField(max_length = 3, null = True, blank = True)
+  weight      = models.PositiveIntegerField(max_length = 3, null = True, blank = True)
+  bmi         = models.DecimalField('BMI',decimal_places=2,max_digits=4)
+  
+  phy_exam_base_model    = models.OneToOneField('PhyExamBaseModel', parent_link = True)
+
+
+  def __init__(self,*args,**kwargs):
+    self.__model_label__ = 'vital'
+    super(VitalExam_FreeModel,self).__init__(*args,**kwargs)
+
+  def save(self,*args,**kwargs):
+    self.__model_label__ = 'vital'
+    if self.physician in Staff.objects.filter(clinic_staff_role = 'doctor'):
+      if self.admission_detail or self.visit_detail:
+        super(VitalExam_FreeModel,self).save(*args,**kwargs)
+      else:
+        raise Exception("You Require either an Admission / Visit to add an exam to..")
+    else:
+      raise Exception("You need to belong to Role - Doctor to save an examination !")
+
+  def __unicode__(self):
+    if self.admission_detail:
+      return "Adm: %s, Pat: %s, Date: %s" %(self.admission_detail.date_of_admission,
+                                            self.created_at)
+    elif self.visit_detail:
+      return "Visit: %s, Date: %s" %(self.visit_detail.visit_date,
+                                            self.created_at)
+  class Meta:
+    verbose_name_plural = "Vital"
+    verbose_name        = "Vital"
+    ordering =['sys_bp','dia_bp','pulse_rate','resp_rate','height','weight','bmi','gcs']
+
+
+
 class VitalExam(AuShadhaBaseModel):
   sys_bp      = models.PositiveIntegerField('Systolic B.P', max_length =3, default = 120)
   dia_bp      = models.PositiveIntegerField('Diastolic B.P', max_length =3, default = 80)
@@ -176,14 +241,13 @@ class VitalExam(AuShadhaBaseModel):
   bmi         = models.DecimalField(decimal_places=2,max_digits=4)
   
   remarks           = models.TextField(blank = True, null = True, default = "NAD", max_length = 200)
+  date_time         = models.DateTimeField(auto_now = True)
+  phyexam          = models.ForeignKey(PhyExam, null = True, blank = True)
 
-  date_time   = models.DateTimeField(auto_now = True)
-  phyexam    = models.ForeignKey(PhyExam, null = True, blank = True)
 
   def __unicode__(self):
-    return "Adm: %s, Pat: %s, Date: %s" %(self.phyexam.admission_detail.date_of_admission,
-                                          self.phyexam.admission_detail.patient_detail,
-                                          self.date_time)
+    return "%s/%s mmHg" %(self.sys_bp, self.dia_bp)
+  
   class Meta:
     verbose_name_plural = "Vital"
     verbose_name        = "Vital"
@@ -202,11 +266,25 @@ class GenExam(AuShadhaBaseModel):
   remarks           = models.TextField(blank = True, null = True, default = "NAD", max_length = 200)
   date_time         = models.DateTimeField(auto_now = True)
   phyexam          = models.ForeignKey(PhyExam, null = True, blank = True)
+  #created_at        = models.DateTimeField(auto_now = True, auto_now_add = True, editable=False)
+  #modified_at       = models.DateTimeField(auto_now = True, editable=True)
+
+  #admission_detail  = models.ForeignKey('admission.Admission'  ,null = True, blank = True)
+  #visit_detail      = models.ForeignKey('visit.VisitDetail'    ,null = True, blank = True)
+  #physician         = models.ForeignKey('clinic.Staff')
+
 
   def __unicode__(self):
-    return "Adm: %s, Pat: %s, Date: %s" %(self.phyexam.admission_detail.date_of_admission,
-                                          self.phyexam.admission_detail.patient_detail,
-                                          self.phyexam)
+    if self.admission_detail:
+      return "Adm: %s, Pat: %s, Date: %s" %(self.phyexam.admission_detail.date_of_admission,
+                                            self.phyexam.admission_detail.patient_detail,
+                                            self.created_at)
+    elif self.visit_detail :
+      return "Visit: %s, Pat: %s, Date: %s" %(self.phyexam.visit_detail.visit_date,
+                                            self.phyexam.visit_detail.patient_detail,
+                                            self.created_at)
+    else:
+      return "%s %s - %s" %(self.created_at, self.modified_at, self.physician)
 
   class Meta:
     verbose_name_plural = "General Examination"
@@ -226,6 +304,7 @@ class SysExam(AuShadhaBaseModel):
  git_and_gut        = models.TextField(max_length = 100, default = GIT_GUT_EX)
  date_time          = models.DateTimeField(auto_now = True)
  phyexam             = models.ForeignKey(PhyExam, null = True, blank = True)
+
 
  def __unicode__(self):
    return "Adm: %s, Pat: %s, Date: %s" %(self.phyexam.admission_detail.date_of_admission,
@@ -557,7 +636,7 @@ class GenExamForm(ModelForm):
 class VitalExamForm(ModelForm):
   class Meta:
     model = VitalExam
-    exclude = ('parent_clinic','phyexam')
+    exclude = ('phyexam',)
 
   def __init__(self, *args, **kwargs):
     super(VitalExamForm, self).__init__(*args, **kwargs)
@@ -612,6 +691,81 @@ class VitalExamForm(ModelForm):
       self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
       self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
       self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+
+class VitalExam_FreeModelForm(ModelForm):
+  class Meta:
+    model = VitalExam_FreeModel
+    exclude = ('phy_exam_base_model','physician','visit_detail','admission_detail','remarks')
+
+  def __init__(self, *args, **kwargs):
+    super(VitalExam_FreeModelForm, self).__init__(*args, **kwargs)
+    text_fields = [{"field"         : 'sys_bp',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.NumberSpinner",
+                    "data-dojo-props": r"'required' :true,placeHolder:'mmHg',smallDelta:2, constraints:{min:0,max:300,places:0}",
+                    'style' :r'width:100px;'
+                    },
+                  {"field"         : 'dia_bp',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.NumberSpinner",
+                    "data-dojo-props": r"'required' :true,placeHolder:'mmHg',smallDelta:2, constraints:{min:0,max:200,places:0}",
+                    'style' :r'width:100px;'
+                    },
+                   {"field": 'pulse_rate',
+                    'max_length'    :  100         ,
+                   "data-dojo-type": "dijit.form.NumberSpinner",
+                    "data-dojo-props": r"'required' : false,placeHolder:'per min',smallDelta:2, constraints:{min:0,max:250,places:0}",
+                    'style' :r'width:100px;'
+                   },
+                    {"field"         : 'resp_rate',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.NumberSpinner",
+                    "data-dojo-props": r"'required' :false,placeHolder:'per minute',smallDelta:2, constraints:{min:0,max:100,places:0}",
+                    'style' :r'width:100px;'
+                    },
+                   {"field": 'gcs',
+                   'max_length':100,
+                   "data-dojo-type": "dijit.form.NumberSpinner",
+                    "data-dojo-props": r"'required' : false,placeHolder:'out of 15',smallDelta:1, constraints:{min:0,max:15,places:0}",
+                    'style' :r'width:100px;'
+                   },
+                  {"field"         : 'height',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.NumberSpinner",
+                    "data-dojo-props": r"'required' :false, placeHolder:'in cms',smallDelta:1, constraints:{min:0,max:250,places:2}",
+                    'style' :r'width:100px;'
+                    },
+                  {"field"         : 'weight',
+                    'max_length'    :  100         ,
+                    "data-dojo-type": "dijit.form.NumberSpinner",
+                    "data-dojo-props": r"'required' :false,placeHolder:'in Kgs',smallDelta:1, constraints:{min:0,max:200,places:2}",
+                    'style' :r'width:100px;'
+                    },
+                   {"field"         : 'bmi',
+                   'max_length'     : 100,
+                   "data-dojo-type" : "dijit.form.NumberSpinner",
+                   "data-dojo-props": r"'required' : true,smallDelta:0.5, constraints:{min:0,max:50,places:2}",
+                    'style' :r'width:100px;'
+                   }
+                   #{"field"           : 'remarks',
+                   #'max_length'       : 100,
+                   #"data-dojo-type"   : "dijit.form.Textarea",
+                    #"data-dojo-props" : r"'required' : false",
+                    #'style' :''
+                   #},
+                   #{"field"         : 'physician',
+                   #'max_length'     : 100,
+                   #"data-dojo-type" : "dijit.form.Select",
+                   #"data-dojo-props": r"'required' : true,"
+                   #},
+                   
+          ]
+    for field in text_fields:
+      print(self.fields[field['field']].widget);
+      self.fields[field['field']].widget.attrs['data-dojo-type'] = field['data-dojo-type']
+      self.fields[field['field']].widget.attrs['data-dojo-props'] = field['data-dojo-props']
+      self.fields[field['field']].widget.attrs['max_length'] = field['max_length']
+      self.fields[field['field']].widget.attrs['style'] = field['style']
 
 
 

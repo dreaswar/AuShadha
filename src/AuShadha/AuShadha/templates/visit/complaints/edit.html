@@ -21,7 +21,7 @@
           <td>{{ form.duration }}</td>
           <td class="actionCell"> 
               {% if forloop.counter != '1' %}
-                {% include 'visit/snippets/icons/complaints_save.html' %}
+                {% comment %} {% include 'visit/snippets/icons/complaints_save.html' %} {% endcomment %}
                 {% include 'visit/snippets/icons/complaints_remove.html' %}
               {% endif %}
               {% if forloop.last %}

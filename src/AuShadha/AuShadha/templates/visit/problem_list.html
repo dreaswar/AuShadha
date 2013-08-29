@@ -1,7 +1,7 @@
-<div data-dojo-id    = "visitComplaintsHiddenDiv" 
+<div data-dojo-id    = "visitComplaintsHiddenDiv_{{patient_detail_obj}}" 
        data-dojo-type  = "dijit/Dialog"
        data-dojo-props = "title:'Problem List for: {{patient_detail_obj}}'"
-       id              = "visitComplaintsHiddenDiv" 
+       id              = "visitComplaintsHiddenDiv_{{patient_detail_obj}}" 
        class           = "hiddenVisitNotes nonModalDialog" 
        style           = "display  : none; 
                           position : absolute; 
@@ -21,9 +21,9 @@
       >
     </span>
       Filter By : 
-    <span id              = "visitSummaryFilterSelector_problemList"
+    <span id              = "visitSummaryFilterSelector_problemList_{{patient_detail_obj}}"
           data-dojo-type  = "dijit/form/Select"
-          data-dojo-id    = "visitSummaryFilterSelector_problemList"
+          data-dojo-id    = "visitSummaryFilterSelector_problemList_{{patient_detail_obj}}"
           data-dojo-props = "required:true"
           class           = "visitSummaryFilterSelector_problemList"
       >
@@ -164,9 +164,9 @@
 
     </span>
 
-    <span id              = "visitComplaintFilterSelector_problemList"
+    <span id              = "visitComplaintFilterSelector_problemList_{{patient_detail_obj}}"
           data-dojo-type  = "dijit/form/Select"
-          data-dojo-id    = "visitComplaintFilterSelector_problemList"
+          data-dojo-id    = "visitComplaintFilterSelector_problemList_{{patient_detail_obj}}"
           data-dojo-props = "required:true"
           class           = "visitComplaintFilterSelector_problemList"
           style           = "display:none;"
@@ -221,9 +221,9 @@
     </span>
 
 
-    <span id              = "visitStatusFilterSelector_problemList"
+    <span id              = "visitStatusFilterSelector_problemList_{{patient_detail_obj}}"
           data-dojo-type  = "dijit/form/Select"
-          data-dojo-id    = "visitStatusFilterSelector_problemList"
+          data-dojo-id    = "visitStatusFilterSelector_problemList_{{patient_detail_obj}}"
           data-dojo-props = "required:true"
           class           = "visitStatusFilterSelector_problemList"
           style           = "display:none;"
@@ -271,9 +271,9 @@
     </span>
 
 
-    <span id              = "visitOpSurgeonFilterSelector_problemList"
+    <span id              = "visitOpSurgeonFilterSelector_problemList_{{patient_detail_obj}}"
           data-dojo-type  = "dijit/form/Select"
-          data-dojo-id    = "visitOpSurgeonFilterSelector_problemList"
+          data-dojo-id    = "visitOpSurgeonFilterSelector_problemList_{{patient_detail_obj}}"
           data-dojo-props = "required:true"
           class           = "visitOpSurgeonFilterSelector"
           style           = "display:none;"
@@ -367,7 +367,7 @@
     </div>
     
     <table class = "content_pane_table visitProblemListTable"
-            id    = "visitProblemListTable"
+            id    = "visitProblemListTable_{{patient_detail_obj}}"
       >
       <thead >
         <tr > 
