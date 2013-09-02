@@ -560,7 +560,8 @@
             <table id              = "newVisitVitalsGenAndHEENTExamAddFormDiv" 
                   style           = "margin: 10px;"
                   >
-              {{vital_exam_free_model_form.as_table}}
+                  {{vital_exam_free_model_form.as_table}}
+                  {{gen_exam_free_model_form.as_table}}
             </table>     
         </div>
 
@@ -569,10 +570,10 @@
               data-dojo-type = "dojox/layout/ContentPane"
               data-dojo-props = "title:'Resp, CVS &amp; Abd'"
         >
-          <table id              = "newVisitRespCVSAdbExamAddFromDiv" 
-                  style           = "margin: 10px;"
+            <table id              = "newVisitRespCVSAdbExamAddFromDiv" 
+                   style           = "margin: 10px;"
                   >
-
+                  {{sys_exam_free_model_form.as_table}}
             </table>     
         </div>
 
@@ -581,10 +582,11 @@
               data-dojo-type = "dojox/layout/ContentPane"
               data-dojo-props = "title:'Extremity &amp; Neuro'"
         >
-          <table id              = "newVisitMSAndNeuroExamAddFromDiv" 
+            <table id              = "newVisitMSAndNeuroExamAddFromDiv" 
                   style           = "margin: 10px;"
-                  >
-
+                    >
+                    {{neuro_exam_free_model_form.as_table}}
+                    {{vasc_exam_free_model_form.as_table}}
             </table>     
         </div>
 

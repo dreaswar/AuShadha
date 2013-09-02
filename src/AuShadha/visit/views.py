@@ -41,18 +41,36 @@ from admission.models                import Admission
 from physician.models                import PhysicianDetail
 from inv_and_imaging.models          import LabInvestigationRegistry, ImagingInvestigationRegistry
 from phyexam.models                  import *
-
 #from complaints_and_history.models                  import *
-
 #from detail_exam.models              import *
+
+
+from phyexam.models import DEFAULT_VITALS
 
 #TOTAL_COMPLAINTS_FORM = 1
 #VisitComplaintsFormset = modelformset_factory(VisitComplaints, VisitComplaintsForm, extra  = TOTAL_COMPLAINTS_FORM +2, max_num = 10)
+
+
 
 # Module Vars:
 complaint_add_icon_template     = get_template('visit/snippets/icons/complaints_add.html')
 complaint_remove_icon_template = get_template('visit/snippets/icons/complaints_remove.html')
 
+
+
+#UTILITIES
+
+def form_error_formatter(forms):
+  error_string = '<p> <b> Correct Following Errors </b></p><ul>'
+  for form in forms:
+    error_dict = form.errors
+    if error_dict:
+      for k,v in error_dict:
+        error_string += '<li>'+ k +":" +v +'</li>'
+    else:
+      error_string += "<li> No Errors </li>"
+  error_string += '</ul>'
+  return error_string
 
 # views start here;;
 
@@ -485,6 +503,138 @@ def visit_detail_list(request, id):
     raise Http404(" Error ! Unsupported Request..")
 
 
+
+#################################################################################
+
+class VitalObjHTMLFormatter(object):
+  """Creates a Class Based Representation of Vital Object for manipulation and HTML Formatting
+   
+  """
+  from phyexam.models import DEFAULT_VITALS
+
+  unit_delimitter_map = {
+                        'sys_bp'    : {'unit':'mmHg' ,'label':'Systolic','delimitter':'/'},
+                        'dia_bp'    : {'unit':'mmHg' ,'label':'Diastolic','delimitter':'/'},
+                        'pulse_rate': {'unit':'per minute','label':'Pulse Rate','delimitter':' '},
+                        'resp_rate' : {'unit': 'per minute','label':'Resp.Rate','delimitter':' '},
+                        'gcs'       : {'unit':'out of 15','label':'GCS','delimitter':' '},
+                        'weight'    : {'unit': 'Kg.', 'label':'Weight','delimitter': ' '},
+                        'height'    : {'unit': 'Cms', 'label':'Height','delimitter': ' '},
+                        'bmi'       : {'unit':'','label':'BMI','delimitter':' '},
+                        'remarks'   : {'unit':'','label':'Remarks','delimitter':' '}
+                        }
+
+  fields = []
+  field_names =[]
+  field_map = {}
+
+  #templates = {
+              #'add' :get_template('phyexam/vitals/add.html'),
+              #'edit':get_template('phyexam/vitals/edit.html'),
+              #'list':get_template('phyexam/vitals/list.html'),
+              #'object': get_template('phyexam/vitals/vital.html')
+              #}
+
+
+  def __init__(self,vital_instance, request = None, context = None):
+    self.vital = vital_instance
+    self.__model_label__ = self.vital.__model_label__
+    self.__app_label__ = self.vital._meta.app_label
+    self._meta = self.vital._meta
+
+    for field in self.vital._meta.fields:
+      print field.__class__.__name__
+      try:
+        field_name = field.name
+        field_val  = field.value_from_object(self.vital)
+        self.fields.append(field)
+        self.field_names.append(field_name)
+
+        if self.unit_delimitter_map.get(field_name):
+          label = self.unit_delimitter_map[field_name]['label']
+          unit = self.unit_delimitter_map[field_name]['unit']
+          delimitter = self.unit_delimitter_map[field_name]['delimitter']
+          is_abnormal = self._eval(field_val,field_name)
+
+          self.field_map[field] = {'name': field_name,
+                                  'label': label,
+                                  'unit': unit,
+                                  'delimitter': delimitter,
+                                  'value':field_val,
+                                  'is_abnormal': is_abnormal
+                                  }
+        print self.field_map
+      except(AttributeError):
+        print "AttributeError Raised...."
+        continue
+
+
+  def __call__(self):
+    return self.build_html_div()
+  
+  def __unicode__(self):
+    return self.__call__()
+
+  #def template_render(self):
+    #try:
+      #self.templates.object.render()
+    #except('TemplateDoesNotExist'):
+      #return None
+
+  def _eval(self,value,name):
+    try:
+      default_val = int(DEFAULT_VITALS[name])
+      value = int(value)
+      if name in ['sys_bp','pulse_rate','resp_rate']:
+        value > default_val
+        return True
+      elif name in ['dia_bp','gcs']:
+        value < default_val
+        return True
+      else:
+        return False
+
+    except(KeyError,NameError,AttributeError,TypeError, ValueError):
+      return False
+      #raise Exception("Invalid Field Name")
+    
+
+  def build_html_div(self):
+
+    paragraph = ''
+    for v in self.field_map.values():
+      html_class = ''
+      label = unicode(v['label'])
+      value = v['value']
+      if value:
+        value = unicode(value)
+        unit = unicode(v['unit'])
+        delimitter = unicode(v['delimitter'])
+        is_abnormal = v['is_abnormal']
+        if is_abnormal:
+          html_class = 'alert_message'
+      else:
+        value = unicode("--Not Recorded--")
+        unit = unicode('')
+        delimitter = unicode('')
+        html_class = 'suggestion_text'        
+      line = """<p> %s: <span class="%s"> %s %s %s</span> </p>""" %(label,html_class,value,delimitter,unit)
+      paragraph += line
+    return """<div> %s </div>""" %(paragraph)
+
+  def build_html_table(self):
+    pass
+  
+
+  def return_object_json(self):
+    pass
+  
+  def return_object_grid_structure(self):
+    pass
+
+#################################################################################
+
+
 def format_ros(ros_obj):
     print "Formatting ROS"
     ros_str  = ''
@@ -538,13 +688,24 @@ def visit_summary(request, id):
         visit_complaint_obj = VisitComplaint.objects.filter(visit_detail = visit)
         visit_hpi_obj       = VisitHPI.objects.filter(visit_detail = visit)
         visit_ros_obj       = VisitROS.objects.filter(visit_detail = visit)
+        vital_exam_obj      = VitalExam_FreeModel.objects.filter(visit_detail = visit)
+
         if visit_ros_obj:
           visit_ros_obj = visit_ros_obj[0]
+
+        if vital_exam_obj:
+          vital_exam_obj = vital_exam_obj[0]
+          vf = VitalObjHTMLFormatter(vital_exam_obj).__call__()
+        else:
+          vf = "No Vitals Recorded"
+
         dict_to_append[visit] = {'complaint': visit_complaint_obj,
                                  'hpi'      : visit_hpi_obj,
-                                 'ros'      : format_ros(visit_ros_obj)
+                                 'ros'      : visit_ros_obj,
+                                 'vitals'   : vf,
                                 }
         visit_obj_list.append(dict_to_append)
+
     else:
       error_message = "No Visits Recorded"
     variable = RequestContext(request, {'user'               : user              ,
@@ -595,11 +756,21 @@ def visit_detail_add(request,  id, nature = 'initial'):
   else:
     print patient_detail_obj, " can add VisitDetail"
     visit_detail_obj = VisitDetail(patient_detail = patient_detail_obj)
+    
     visit_complaint_obj = VisitComplaint(visit_detail = visit_detail_obj)
     visit_hpi_obj       = VisitHPI(visit_detail = visit_detail_obj)
     visit_ros_obj       = VisitROS(visit_detail = visit_detail_obj)
+    
     vital_exam_free_model_obj = VitalExam_FreeModel(visit_detail = visit_detail_obj)
-    VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintAddForm, can_delete=True, can_order=True)        
+    gen_exam_free_model_obj = GenExam_FreeModel(visit_detail = visit_detail_obj)
+    sys_exam_free_model_obj = SysExam_FreeModel(visit_detail = visit_detail_obj)
+    neuro_exam_free_model_obj = PeriNeuroExam_FreeModel(visit_detail = visit_detail_obj)
+    vasc_exam_free_model_obj = VascExam_FreeModel(visit_detail = visit_detail_obj)
+    
+    VisitComplaintFormset = modelformset_factory(VisitComplaint, 
+                                                 form = VisitComplaintAddForm, 
+                                                 can_delete=True, 
+                                                 can_order=True)        
     complaint_add_icon_html      = complaint_add_icon_template.render(RequestContext(request,{'user':user}))
     complaint_remove_icon_html  = complaint_remove_icon_template.render(RequestContext(request,{'user':user}))
     form_auto_id = "id_%s"+"_new_visit_"+ str(id)
@@ -630,23 +801,42 @@ def visit_detail_add(request,  id, nature = 'initial'):
                                             auto_id  = "id_new_visit_hpi"+ str(id)+"_%s")
         visit_ros_form       = VisitROSForm(instance = visit_ros_obj,
                                             auto_id  = "id_new_visit_ros"+ str(id)+"_%s")
+
         vital_exam_free_model_form       = VitalExam_FreeModelForm(instance = vital_exam_free_model_obj,
                                             auto_id  = "id_new_vital_exam_free_model"+ str(id)+"_%s")
-        variable = RequestContext(request, {'user'                     : user                  ,
-                                            'visit_detail_obj'         : visit_detail_obj      ,
-                                            'visit_detail_form'        : visit_detail_form     ,
-                                            'visit_complaint_formset'  : visit_complaint_formset  ,
-                                            #'visit_complaint_form_html'     : visit_complaint_form_html,
-                                            'visit_hpi_form'           : visit_hpi_form        ,
-                                            'visit_ros_form'           : visit_ros_form        ,
-                                            'vital_exam_free_model_form': vital_exam_free_model_form,
-                                            'patient_detail_obj'       : patient_detail_obj    ,
-                                            'error_message'            : error_message         ,
-                                            'complaint_add_icon_html'  : complaint_add_icon_html,
-                                            'complaint_remove_icon_html':complaint_remove_icon_html,
-                                            'success'                  : success,
-                                            'form_auto_id'             : form_auto_id,
-                                            'complaint_total_form_auto_id'       : complaint_total_form_auto_id
+        gen_exam_free_model_form       = GenExam_FreeModelForm(instance = gen_exam_free_model_obj,
+                                            auto_id  = "id_new_gen_exam_free_model"+ str(id)+"_%s")
+        sys_exam_free_model_form       = SysExam_FreeModelForm(instance = sys_exam_free_model_obj,
+                                            auto_id  = "id_new_sys_exam_free_model"+ str(id)+"_%s")
+        neuro_exam_free_model_form       = PeriNeuroExam_FreeModelForm(instance = neuro_exam_free_model_obj,
+                                            auto_id  = "id_new_neuro_exam_free_model"+ str(id)+"_%s")
+        vasc_exam_free_model_form       = VascExam_FreeModelForm(instance = vasc_exam_free_model_obj,
+                                            auto_id  = "id_new_vasc_exam_free_model"+ str(id)+"_%s")
+
+
+        variable = RequestContext(request, {'user'                         : user                  ,
+                                            'visit_detail_obj'             : visit_detail_obj      ,
+                                            'visit_detail_form'            : visit_detail_form     ,
+                                            'visit_complaint_formset'      : visit_complaint_formset  ,
+                                            #'visit_complaint_form_html'   : visit_complaint_form_html,
+                                            'visit_hpi_form'               : visit_hpi_form        ,
+                                            'visit_ros_form'               : visit_ros_form        ,
+
+                                            'vital_exam_free_model_form'   : vital_exam_free_model_form,
+                                            'gen_exam_free_model_form'     : gen_exam_free_model_form,
+                                            'sys_exam_free_model_form'     : sys_exam_free_model_form,
+                                            'neuro_exam_free_model_form'   : neuro_exam_free_model_form,
+                                            'vasc_exam_free_model_form'    : vasc_exam_free_model_form,
+
+                                            'patient_detail_obj'           : patient_detail_obj    ,
+                                            'error_message'                : error_message         ,
+                                            'complaint_add_icon_html'      : complaint_add_icon_html,
+                                            'complaint_remove_icon_html'   : complaint_remove_icon_html,
+
+                                            'success'                      : success,
+                                            'form_auto_id'                 : form_auto_id,
+                                            'complaint_total_form_auto_id' : complaint_total_form_auto_id
+
                                             })
         return render_to_response('visit/detail/add.html', variable)
 
@@ -658,28 +848,39 @@ def visit_detail_add(request,  id, nature = 'initial'):
       print "Received request to add visit..."
       print "POST Request Contains::"
       print request.POST
+
       visit_detail_form    = VisitDetailForm(request.POST, instance = visit_detail_obj)
       #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
       #VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)              
       visit_complaint_formset = VisitComplaintFormset(request.POST,auto_id= form_auto_id)
       visit_hpi_form       = VisitHPIForm(request.POST, instance = visit_hpi_obj)
       visit_ros_form       = VisitROSForm(request.POST, instance = visit_ros_obj)
+      
       vital_exam_free_model_form = VitalExam_FreeModelForm(request.POST,instance = vital_exam_free_model_obj)
+      gen_exam_free_model_form   = GenExam_FreeModelForm(request.POST,instance = gen_exam_free_model_obj)
+      sys_exam_free_model_form   = SysExam_FreeModelForm(request.POST,instance = sys_exam_free_model_obj)
+      neuro_exam_free_model_form = PeriNeuroExam_FreeModelForm(request.POST,instance = neuro_exam_free_model_obj)
+      vasc_exam_free_model_form  = VascExam_FreeModelForm(request.POST,instance = vasc_exam_free_model_obj)
 
-      if visit_detail_form.is_valid()      and \
-        visit_complaint_formset.is_valid() and \
-        visit_hpi_form.is_valid()          and \
-        visit_ros_form.is_valid()          and \
-        vital_exam_free_model_form.is_valid():
+      if visit_detail_form.is_valid()         and \
+        visit_complaint_formset.is_valid()    and \
+        visit_hpi_form.is_valid()             and \
+        visit_ros_form.is_valid()             and \
+        vital_exam_free_model_form.is_valid() and \
+        gen_exam_free_model_form.is_valid()   and \
+        sys_exam_free_model_form.is_valid()   and \
+        neuro_exam_free_model_form.is_valid() and \
+        vasc_exam_free_model_form.is_valid():
         
         saved_visit     = visit_detail_form.save()
+
         saved_visit_complaints = visit_complaint_formset.save(commit=False)
         print "Saved visit is:"
         print saved_visit
-        print saved_visit_complaints
+        #print saved_visit_complaints
         for complaint in saved_visit_complaints:
           print "Saving Complaints..."
-          print complaint
+          #print complaint
           complaint.visit_detail = saved_visit
           complaint.save()
 
@@ -696,18 +897,42 @@ def visit_detail_add(request,  id, nature = 'initial'):
         saved_vital_exam.physician = saved_visit.op_surgeon
         saved_vital_exam.save()
 
+        saved_gen_exam = gen_exam_free_model_form.save(commit = False)
+        saved_gen_exam.visit_detail = saved_visit
+        saved_gen_exam.physician = saved_visit.op_surgeon
+        saved_gen_exam.save()
+
+        saved_sys_exam = sys_exam_free_model_form.save(commit = False)
+        saved_sys_exam.visit_detail = saved_visit
+        saved_sys_exam.physician = saved_visit.op_surgeon
+        saved_sys_exam.save()
+
+        saved_neuro_exam = neuro_exam_free_model_form.save(commit = False)
+        saved_neuro_exam.visit_detail = saved_visit
+        saved_neuro_exam.physician = saved_visit.op_surgeon
+        saved_neuro_exam.save()
+
+        saved_vasc_exam = vasc_exam_free_model_form.save(commit = False)
+        saved_vasc_exam.visit_detail = saved_visit
+        saved_vasc_exam.physician = saved_visit.op_surgeon
+        saved_vasc_exam.save()
+
         success       = True
         error_message = "Visit Added Successfully"
 
       else:
         success       = False
-        error_message = ''' Visit Could not be added. 
-                          Please check the forms for errors
+        error_message = ''' Visit Could not be Saved. 
+                            Please check the forms for errors
                         '''  
-        errors= str(visit_detail_form.errors) + \
-                str(visit_complaint_formset.errors) + \
-                str(visit_ros_form.errors)+ \
-                str(vital_exam_free_model_form.errors)
+        errors= str(visit_detail_form.errors)          + \
+                str(visit_complaint_formset.errors)    + \
+                str(visit_ros_form.errors)             + \
+                str(vital_exam_free_model_form.errors) + \
+                str(gen_exam_free_model_form.errors)   + \
+                str(sys_exam_free_model_form.errors)   + \
+                str(neuro_exam_free_model_form.errors) + \
+                str(vasc_exam_free_model_form.errors)
         error_message += ('\n'+ errors)
       data = { 'success'       : success      ,
               'error_message' : error_message
@@ -737,6 +962,10 @@ def visit_detail_edit(request, id):
       visit_hpi_obj         = VisitHPI.objects.filter(visit_detail = visit_detail_obj)
       visit_ros_obj         = VisitROS.objects.filter(visit_detail = visit_detail_obj)
       vital_exam_free_model_obj = VitalExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)
+      gen_exam_free_model_obj = GenExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)
+      sys_exam_free_model_obj = SysExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)
+      neuro_exam_free_model_obj= PeriNeuroExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)
+      vasc_exam_free_model_obj= VascExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Error ! Invalid Request Parameters. ")
     except (VisitDetail.DoesNotExist):
@@ -765,14 +994,14 @@ def visit_detail_edit(request, id):
     #else:
       #visit_complaint_form = None
       #visit_complaint_formset  = None
-    
+
     if visit_hpi_obj:
       visit_hpi_obj = visit_hpi_obj[0]
       h_auto_id = 'id_edit_visit_hpi_'+ str(visit_hpi_obj.id)
       visit_hpi_form = VisitHPIForm(instance = visit_hpi_obj, auto_id = h_auto_id+"_%s")
     else:
       visit_hpi_form = None
-    
+
     if visit_ros_obj:
       visit_ros_obj = visit_ros_obj[0]
       r_auto_id     = 'id_edit_visit_ros_' + str(visit_ros_obj.id)
@@ -783,22 +1012,70 @@ def visit_detail_edit(request, id):
     if vital_exam_free_model_obj:
       vital_exam_free_model_obj = vital_exam_free_model_obj[0]
       vital_auto_id     = 'id_edit_vital_exam_free_model_' + str(vital_exam_free_model_obj.id)
-      vital_exam_free_model_form = VitalExam_FreeModelForm(instance = vital_exam_free_model_obj, auto_id= vital_auto_id+"_%s")
+      vital_exam_free_model_form = VitalExam_FreeModelForm(instance = vital_exam_free_model_obj, 
+                                                           auto_id= vital_auto_id+"_%s")
     else:
       vital_auto_id     = 'id_add_vital_exam_free_model_' + str(visit_detail_obj.id)
-      vital_exam_free_model_form = VitalExam_FreeModelForm(instance = VitalExam_FreeModel(visit_detail = visit_detail_obj), auto_id= vital_auto_id+"_%s")
-    
+      vital_exam_free_model_form = VitalExam_FreeModelForm(instance = VitalExam_FreeModel(visit_detail = visit_detail_obj), 
+                                                           auto_id= vital_auto_id+"_%s")
+
+    if gen_exam_free_model_obj:
+      gen_exam_free_model_obj = gen_exam_free_model_obj[0]
+      gen_auto_id     = 'id_edit_gen_exam_free_model_' + str(gen_exam_free_model_obj.id)
+      gen_exam_free_model_form = GenExam_FreeModelForm(instance = gen_exam_free_model_obj, 
+                                                       auto_id= gen_auto_id+"_%s")
+    else:
+      gen_auto_id     = 'id_add_gen_exam_free_model_' + str(visit_detail_obj.id)
+      gen_exam_free_model_form = GenExam_FreeModelForm(instance = GenExam_FreeModel(visit_detail = visit_detail_obj), 
+                                                       auto_id= gen_auto_id+"_%s")
+
+    if sys_exam_free_model_obj:
+      sys_exam_free_model_obj = sys_exam_free_model_obj[0]
+      sys_auto_id     = 'id_edit_sys_exam_free_model_' + str(sys_exam_free_model_obj.id)
+      sys_exam_free_model_form = SysExam_FreeModelForm(instance = sys_exam_free_model_obj, 
+                                                       auto_id= sys_auto_id+"_%s")
+    else:
+      sys_auto_id     = 'id_add_sys_exam_free_model_' + str(visit_detail_obj.id)
+      sys_exam_free_model_form = SysExam_FreeModelForm(instance = SysExam_FreeModel(visit_detail = visit_detail_obj), 
+                                                       auto_id= sys_auto_id+"_%s")
+
+    if neuro_exam_free_model_obj:
+      neuro_exam_free_model_obj = neuro_exam_free_model_obj[0]
+      neuro_auto_id     = 'id_edit_neuro_exam_free_model_' + str(neuro_exam_free_model_obj.id)
+      neuro_exam_free_model_form = PeriNeuroExam_FreeModelForm(instance = neuro_exam_free_model_obj, 
+                                                       auto_id= neuro_auto_id+"_%s")
+    else:
+      neuro_auto_id     = 'id_add_neuro_exam_free_model_' + str(visit_detail_obj.id)
+      neuro_exam_free_model_form = PeriNeuroExam_FreeModelForm(instance = PeriNeuroExam_FreeModel(visit_detail = visit_detail_obj), 
+                                                       auto_id= neuro_auto_id+"_%s")
+
+    if vasc_exam_free_model_obj:
+      vasc_exam_free_model_obj = vasc_exam_free_model_obj[0]
+      vasc_auto_id     = 'id_edit_vasc_exam_free_model_' + str(vasc_exam_free_model_obj.id)
+      vasc_exam_free_model_form = VascExam_FreeModelForm(instance = vasc_exam_free_model_obj, 
+                                                       auto_id= vasc_auto_id+"_%s")
+    else:
+      vasc_auto_id     = 'id_add_vasc_exam_free_model_' + str(visit_detail_obj.id)
+      vasc_exam_free_model_form = VascExam_FreeModelForm(instance = VascExam_FreeModel(visit_detail = visit_detail_obj), 
+                                                       auto_id= vasc_auto_id+"_%s")
+
     variable = RequestContext(request, {'user'                  : user                  ,
                                         'visit_detail_obj'      : visit_detail_obj      ,
                                         'visit_detail_form'     : visit_detail_form     ,
                                         #'visit_complaint_form'  : visit_complaint_form  ,
                                         'visit_complaint_formset': visit_complaint_formset,
-                                        'complaint_count'       : complaint_count,
                                         'visit_hpi_form'       : visit_hpi_form        ,
                                         'visit_ros_form'       : visit_ros_form        ,
-                                        'vital_exam_free_model_form':vital_exam_free_model_form,
+
+                                        'vital_exam_free_model_form'   : vital_exam_free_model_form,
+                                        'gen_exam_free_model_form'     : gen_exam_free_model_form,
+                                        'sys_exam_free_model_form'     : sys_exam_free_model_form,
+                                        'neuro_exam_free_model_form'   : neuro_exam_free_model_form,
+                                        'vasc_exam_free_model_form'    : vasc_exam_free_model_form,
+
                                         'patient_detail_obj'    : visit_detail_obj.patient_detail   ,
                                         'error_message'         : error_message         ,
+                                        'complaint_count'       : complaint_count,
                                         'complaint_add_icon_html': complaint_add_icon_html,
                                         'complaint_remove_icon_html': complaint_remove_icon_html,
                                         'complaint_formset_auto_id':complaint_formset_auto_id,
@@ -813,7 +1090,13 @@ def visit_detail_edit(request, id):
       visit_complaint_obj = VisitComplaint.objects.filter(visit_detail = visit_detail_obj)
       visit_hpi_obj       = VisitHPI.objects.filter(visit_detail = visit_detail_obj)
       visit_ros_obj       = VisitROS.objects.filter(visit_detail = visit_detail_obj)
-      vital_exam_free_model_obj = VitalExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)      
+
+      vital_exam_free_model_obj = VitalExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)
+      gen_exam_free_model_obj = GenExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)      
+      sys_exam_free_model_obj = SysExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)      
+      neuro_exam_free_model_obj = PeriNeuroExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)      
+      vasc_exam_free_model_obj = VascExam_FreeModel.objects.filter(visit_detail = visit_detail_obj)            
+
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Error ! Invalid Request Parameters. ")
     except (VisitDetail.DoesNotExist):
@@ -822,7 +1105,7 @@ def visit_detail_edit(request, id):
     error_message          = None
 
     if visit_complaint_obj and visit_hpi_obj and visit_ros_obj:
-      visit_detail_edit_form = VisitDetailForm(request.POST, instance = visit_detail_obj)
+      visit_detail_form = VisitDetailForm(request.POST, instance = visit_detail_obj)
       #visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
       complaint_formset_auto_id = "id_%s"+"_edit_visit_complaint_"+ str(id)
       complaint_total_form_auto_id = "id_form-TOTAL_FORMS_edit_visit_complaint_"+str(id)      
@@ -831,72 +1114,110 @@ def visit_detail_edit(request, id):
 
       visit_hpi_form         = VisitHPIForm(request.POST, instance = visit_hpi_obj[0])
       visit_ros_form         = VisitROSForm(request.POST, instance = visit_ros_obj[0])
+
       if vital_exam_free_model_obj:
         vital_exam_free_model_form = VitalExam_FreeModelForm(request.POST, instance = vital_exam_free_model_obj[0])
       else:
         vital_exam_free_model_obj = VitalExam_FreeModel(visit_detail = visit_detail_obj)              
         vital_exam_free_model_form = VitalExam_FreeModelForm(request.POST, instance = vital_exam_free_model_obj)
 
-      if visit_detail_edit_form.is_valid()    and \
+      if gen_exam_free_model_obj:
+        gen_exam_free_model_form = GenExam_FreeModelForm(request.POST, instance = gen_exam_free_model_obj[0])
+      else:
+        gen_exam_free_model_obj = GenExam_FreeModel(visit_detail = visit_detail_obj)              
+        gen_exam_free_model_form = GenExam_FreeModelForm(request.POST, instance = gen_exam_free_model_obj)
+      
+      if sys_exam_free_model_obj:
+        sys_exam_free_model_form = SysExam_FreeModelForm(request.POST, instance = sys_exam_free_model_obj[0])
+      else:
+        sys_exam_free_model_obj = SysExam_FreeModel(visit_detail = visit_detail_obj)              
+        sys_exam_free_model_form = SysExam_FreeModelForm(request.POST, instance = sys_exam_free_model_obj)
+
+      if neuro_exam_free_model_obj:
+        neuro_exam_free_model_form = PeriNeuroExam_FreeModelForm(request.POST, instance = neuro_exam_free_model_obj[0])
+      else:
+        neuro_exam_free_model_obj = PeriNeuroExam_FreeModel(visit_detail = visit_detail_obj)              
+        neuro_exam_free_model_form = PeriNeuroExam_FreeModelForm(request.POST, instance = neuro_exam_free_model_obj)
+
+      if vasc_exam_free_model_obj:
+        vasc_exam_free_model_form = VascExam_FreeModelForm(request.POST, instance = vasc_exam_free_model_obj[0])
+      else:
+        vasc_exam_free_model_obj = VascExam_FreeModel(visit_detail = visit_detail_obj)              
+        vasc_exam_free_model_form = VascExam_FreeModelForm(request.POST, instance = vasc_exam_free_model_obj)
+
+      if visit_detail_form.is_valid()         and \
         visit_complaint_formset.is_valid()    and \
         visit_hpi_form.is_valid()             and \
         visit_ros_form.is_valid()             and \
-        vital_exam_free_model_form.is_valid():
+        vital_exam_free_model_form.is_valid() and \
+        gen_exam_free_model_form.is_valid()   and \
+        sys_exam_free_model_form.is_valid()   and \
+        neuro_exam_free_model_form.is_valid() and \
+        vasc_exam_free_model_form.is_valid():
+        
+        saved_visit     = visit_detail_form.save()
 
-        saved_visit   = visit_detail_edit_form.save()
-        saved_visit_complaint = visit_complaint_formset.save(commit = False)
-
-        for complaint in saved_visit_complaint:
+        saved_visit_complaints = visit_complaint_formset.save(commit=False)
+        print "Saved visit is:"
+        print saved_visit
+        #print saved_visit_complaints
+        for complaint in saved_visit_complaints:
+          print "Saving Complaints..."
+          #print complaint
           complaint.visit_detail = saved_visit
-          saved_complaint = complaint.save()
-          print saved_complaint
+          complaint.save()
 
-        #saved_visit_complaint.visit_detail = saved_visit
-        #saved_visit_complaint.save()
-
-        saved_visit_hpi = visit_hpi_form.save(commit = False)
+        saved_visit_hpi = visit_hpi_form.save(commit=False)
         saved_visit_hpi.visit_detail = saved_visit
         saved_visit_hpi.save()
-
-        saved_visit_ros = visit_ros_form.save(commit = False)
+        
+        saved_visit_ros = visit_ros_form.save(commit=False)
         saved_visit_ros.visit_detail = saved_visit
         saved_visit_ros.save()
-
-        #saved_visit.visit_status_change(unicode(saved_visit.status))
         
         saved_vital_exam = vital_exam_free_model_form.save(commit = False)
-        saved_vital_exam.visit_detail  = saved_visit
+        saved_vital_exam.visit_detail = saved_visit
         saved_vital_exam.physician = saved_visit.op_surgeon
         saved_vital_exam.save()
+
+        saved_gen_exam = gen_exam_free_model_form.save(commit = False)
+        saved_gen_exam.visit_detail = saved_visit
+        saved_gen_exam.physician = saved_visit.op_surgeon
+        saved_gen_exam.save()
+
+        saved_sys_exam = sys_exam_free_model_form.save(commit = False)
+        saved_sys_exam.visit_detail = saved_visit
+        saved_sys_exam.physician = saved_visit.op_surgeon
+        saved_sys_exam.save()
+
+        saved_neuro_exam = neuro_exam_free_model_form.save(commit = False)
+        saved_neuro_exam.visit_detail = saved_visit
+        saved_neuro_exam.physician = saved_visit.op_surgeon
+        saved_neuro_exam.save()
+
+        saved_vasc_exam = vasc_exam_free_model_form.save(commit = False)
+        saved_vasc_exam.visit_detail = saved_visit
+        saved_vasc_exam.physician = saved_visit.op_surgeon
+        saved_vasc_exam.save()
 
         success       = True
         error_message = "Visit Edited Successfully"
       else:
+        form_list = [visit_detail_form,
+                     visit_complaint_formset,
+                     visit_hpi_form,
+                     visit_ros_form,
+                     vital_exam_free_model_form,
+                     gen_exam_free_model_form,
+                     sys_exam_free_model_form,
+                     neuro_exam_free_model_form,
+                     vasc_exam_free_model_form
+                     ]
+        form_errors = form_error_formatter(form_list)
         success       = False
-        
-        #def form_error_formatter(error_list):
-          #error_string = ''
-          #if error_list:
-            #for error in error_list:
-              #error_string_to_join    = error + "\n"
-              #error_string += error_string_to_join
-            #return error_string
-          #else:
-            #return ''
-
-        #visit_detail_form_error    = form_error_formatter(visit_detail_edit_form.errors)
-        ##visit_complaint_form_error = form_error_formatter(visit_complaint_form.errors)
-        #visit_hpi_form_error       = form_error_formatter(visit_hpi_form.errors)
-        #visit_ros_form_error       = form_error_formatter(visit_ros_form.errors)
-
-        #error_message = "Error! Visit Could not be edited" + "\n" +\
-                        #visit_detail_form_error    + "\n" + \
-                        ##visit_complaint_form_error + "\n" + \
-                        #visit_hpi_form_error       + "\n" + \
-                        #visit_ros_form_error       + "\n" 
-
+        error_message = "<p> Forms Could not be saved. Correct Errors and try again </p> " + form_errors 
       data = { 'success'      : success      ,
-              'error_message': None
+              'error_message': error_message
             }
       json = simplejson.dumps(data)
       return HttpResponse(json, content_type = 'application/json')

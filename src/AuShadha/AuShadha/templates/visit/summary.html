@@ -793,10 +793,9 @@
                                 line-height  : 1.6em; 
                                 text-align   : justify;
                                 ">
-                        {% for item in obj_list %}
-                            {{item}}
-                        {% endfor %}
-                        
+                          {% if obj == 'vitals' %}
+                            {{obj_list|safe}}
+                          {% endif %}
                       </td>
                     </tr>
                     </tbody>
@@ -938,9 +937,7 @@
                                 line-height  : 1.6em; 
                                 text-align   : justify;
                                 ">
-                        {% for item in obj_list %}
-                              {{item}}
-                        {% endfor %}
+                        {{obj_list}}
                       </td>
                     </tr>
                     </tbody>

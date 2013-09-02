@@ -445,8 +445,14 @@ hr.shadow_line {
       height: 16px;
   }    
 
+.likeARow{
+   position:relative;
+   top:0;
+   float:left;
+  
+}
 
-/* dijit Custom Classess */
+  /* dijit Custom Classess */
 
 .settingsIcon
    {
