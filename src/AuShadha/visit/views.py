@@ -33,23 +33,22 @@ import cStringIO                     as StringIO
 
 # Application Specific Model Imports-----------------------
 
-from aushadha_users.models            import AuShadhaUser
+from aushadha_users.models           import AuShadhaUser
 from clinic.models                   import Clinic, Staff
 from visit.models                    import *
 from patient.models                  import *
 from admission.models                import Admission
 from physician.models                import PhysicianDetail
-from inv_and_imaging.models          import LabInvestigationRegistry, ImagingInvestigationRegistry
+from inv_and_imaging.models          import LabInvestigationRegistry, \
+                                            ImagingInvestigationRegistry
 from phyexam.models                  import *
 #from complaints_and_history.models                  import *
 #from detail_exam.models              import *
 
+from utilities.forms                 import AuModelFormErrorFormatter, \
+                                            aumodelformerrorformatter_factory
 
 from phyexam.models import DEFAULT_VITALS
-
-#TOTAL_COMPLAINTS_FORM = 1
-#VisitComplaintsFormset = modelformset_factory(VisitComplaints, VisitComplaintsForm, extra  = TOTAL_COMPLAINTS_FORM +2, max_num = 10)
-
 
 
 # Module Vars:
@@ -57,20 +56,6 @@ complaint_add_icon_template     = get_template('visit/snippets/icons/complaints_
 complaint_remove_icon_template = get_template('visit/snippets/icons/complaints_remove.html')
 
 
-
-#UTILITIES
-
-def form_error_formatter(forms):
-  error_string = '<p> <b> Correct Following Errors </b></p><ul>'
-  for form in forms:
-    error_dict = form.errors
-    if error_dict:
-      for k,v in error_dict:
-        error_string += '<li>'+ k +":" +v +'</li>'
-    else:
-      error_string += "<li> No Errors </li>"
-  error_string += '</ul>'
-  return error_string
 
 # views start here;;
 
@@ -921,19 +906,20 @@ def visit_detail_add(request,  id, nature = 'initial'):
         error_message = "Visit Added Successfully"
 
       else:
-        success       = False
-        error_message = ''' Visit Could not be Saved. 
-                            Please check the forms for errors
+        error_message = ''' <h4>Visit Could not be Saved. 
+                            Please check the forms for errors</h4>
                         '''  
-        errors= str(visit_detail_form.errors)          + \
-                str(visit_complaint_formset.errors)    + \
-                str(visit_ros_form.errors)             + \
-                str(vital_exam_free_model_form.errors) + \
-                str(gen_exam_free_model_form.errors)   + \
-                str(sys_exam_free_model_form.errors)   + \
-                str(neuro_exam_free_model_form.errors) + \
-                str(vasc_exam_free_model_form.errors)
+        errors= aumodelformerrorformatter_factory(visit_detail_form)          + \
+                aumodelformerrorformatter_factory(visit_ros_form)             + \
+                aumodelformerrorformatter_factory(vital_exam_free_model_form) + \
+                aumodelformerrorformatter_factory(gen_exam_free_model_form)   + \
+                aumodelformerrorformatter_factory(sys_exam_free_model_form)   + \
+                aumodelformerrorformatter_factory(neuro_exam_free_model_form) + \
+                aumodelformerrorformatter_factory(vasc_exam_free_model_form)  + '\n'
+        for form in visit_complaint_formset:
+          errors += aumodelformerrorformatter_factory(form)
         error_message += ('\n'+ errors)
+
       data = { 'success'       : success      ,
               'error_message' : error_message
             }
@@ -1203,19 +1189,21 @@ def visit_detail_edit(request, id):
         success       = True
         error_message = "Visit Edited Successfully"
       else:
-        form_list = [visit_detail_form,
-                     visit_complaint_formset,
-                     visit_hpi_form,
-                     visit_ros_form,
-                     vital_exam_free_model_form,
-                     gen_exam_free_model_form,
-                     sys_exam_free_model_form,
-                     neuro_exam_free_model_form,
-                     vasc_exam_free_model_form
-                     ]
-        form_errors = form_error_formatter(form_list)
         success       = False
-        error_message = "<p> Forms Could not be saved. Correct Errors and try again </p> " + form_errors 
+        error_message = ''' <h4>Visit Could not be Saved. 
+                            Please check the forms for errors</h4>
+                        '''  
+
+        errors= aumodelformerrorformatter_factory(visit_detail_form)          + \
+                aumodelformerrorformatter_factory(visit_ros_form)             + \
+                aumodelformerrorformatter_factory(vital_exam_free_model_form) + \
+                aumodelformerrorformatter_factory(gen_exam_free_model_form)   + \
+                aumodelformerrorformatter_factory(sys_exam_free_model_form)   + \
+                aumodelformerrorformatter_factory(neuro_exam_free_model_form) + \
+                aumodelformerrorformatter_factory(vasc_exam_free_model_form)  + '\n'
+        for form in visit_complaint_formset:
+          errors += aumodelformerrorformatter_factory(form)
+        error_message += ('\n'+ errors)
       data = { 'success'      : success      ,
               'error_message': error_message
             }

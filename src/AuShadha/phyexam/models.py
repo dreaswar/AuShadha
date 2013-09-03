@@ -294,6 +294,8 @@ class PhyExamBaseModelForm(ModelForm):
   """
   dijit_fields = []
 
+  __form_name__  = "Physical Examination Base Form"
+  
   class Meta:
     model = PhyExamBaseModel
     exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
@@ -317,6 +319,8 @@ class VitalExam_FreeModelForm(PhyExamBaseModelForm):
   """ 
   Describes the Vital Monitoring signs ModelForm
   """
+  __form_name__  = "Vital Signs Form"
+  
   dijit_fields = VITAL_FORM_CONSTANTS
   
   class Meta:
@@ -328,6 +332,7 @@ class GenExam_FreeModelForm(PhyExamBaseModelForm):
   """ 
   Describes the General Exam Monitoring ModelForm
   """
+  __form_name__  = "General Examination Form"
   
   dijit_fields = GEN_EXAM_FORM_CONSTANTS
   
@@ -340,6 +345,7 @@ class SysExam_FreeModelForm(PhyExamBaseModelForm):
   """ 
   Describes the Systemic Exam Monitoring ModelForm
   """
+  __form_name__  = "Systemic Examination Form"
   
   dijit_fields = SYS_EXAM_FORM_CONSTANTS
   
@@ -352,7 +358,8 @@ class PeriNeuroExam_FreeModelForm(PhyExamBaseModelForm):
   """ 
   Describes the Neurological Exam Monitoring ModelForm
   """
-
+  __form_name__  = "Neurological Examination Form"
+  
   dijit_fields = NEURO_EXAM_FORM_CONSTANTS
   
   class Meta:
@@ -364,7 +371,8 @@ class VascExam_FreeModelForm(PhyExamBaseModelForm):
   """ 
   Describes the Vascular Exam Monitoring ModelForm
   """
-  
+  __form_name__  = "Vascular Examination Form"
+
   dijit_fields = VASCULAR_EXAM_FORM_CONSTANTS
   
   class Meta:
