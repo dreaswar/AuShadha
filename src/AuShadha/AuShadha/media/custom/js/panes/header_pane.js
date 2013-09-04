@@ -5,8 +5,7 @@
     A separate trigger is present in search/patient.html
     for handling the click event of the Filter button
 */
-
-define (["dojox/timing",
+define(["dojox/timing",
         "dojo/dom",
         "dojo/dom-style",
         "dojo/dom-construct",
@@ -20,49 +19,55 @@ define (["dojox/timing",
 
         "dojo/domReady!"
 ],
-function(timing,
-         dom,
-         domStyle,
-         domConstruct,
-         registry,
-         dateLocale,
-         ready, 
+    function (timing,
+        dom,
+        domStyle,
+        domConstruct,
+        registry,
+        dateLocale,
+        ready,
 
-         FilteringSelect,
-         JsonRest
-        ){
+        FilteringSelect,
+        JsonRest
+    ) {
 
-    var headerPane= {
-            headerPane        : function(){
-                                  registry.byId("header_area");
+        var headerPane = {
+            headerPane: function () {
+                registry.byId("header_area");
             },
 
-            headerPaneWidgets : function(){ 
-                                    return ( registry.findWidgets('header_area') ) 
-              
+            headerPaneWidgets: function () {
+                return (registry.findWidgets('header_area'))
+
             },
 
-            headerTimer : function(){
-                            console.log("Starting script headerTimer.js");
-                            ready(function(){
-                              var t = new timing.Timer(60000);
-                              var fmt = "MMMM d yyyy  - hh:mm ";
-                              function dateFormat(d, f){
-                                return dojo.date.locale.format(d, {selector: "date", datePattern: f})
-                              }
-                              t.onTick = function(){
-                                var timeNow = new Date();
-                                var timeBox = dom.byId("timeBox").innerHTML = dateFormat(timeNow, fmt);
-                              }
-                              t.onStart = function(){
-                                var timeNow = new Date();
-                                var timeBox = dom.byId("timeBox").innerHTML = dateFormat(timeNow, fmt);
-                              }
-                              t.start();
-                            });
+            headerTimer: function () {
+                console.log("Starting script headerTimer.js");
+                ready(function () {
+                    var t = new timing.Timer(60000);
+                    var fmt = "MMMM d yyyy  - hh:mm ";
+
+                    function dateFormat(d, f) {
+                        return dojo.date.locale.format(d, {
+                            selector: "date",
+                            datePattern: f
+                        })
+                    }
+                    t.onTick = function () {
+                        var timeNow = new Date();
+                        var timeBox = dom.byId("timeBox")
+                            .innerHTML = dateFormat(timeNow, fmt);
+                    }
+                    t.onStart = function () {
+                        var timeNow = new Date();
+                        var timeBox = dom.byId("timeBox")
+                            .innerHTML = dateFormat(timeNow, fmt);
+                    }
+                    t.start();
+                });
             }
-    }
+        }
 
-    headerPane.headerTimer();
-    return headerPane;
- });                      
+        headerPane.headerTimer();
+        return headerPane;
+    });

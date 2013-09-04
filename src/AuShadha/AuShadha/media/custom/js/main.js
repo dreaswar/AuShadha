@@ -1,12 +1,11 @@
 // The module loader for AuShadha scripts
-
 define(['dojo/dom',
         'dojo/on',
         'dijit/registry',
         'dojo/parser',
         'dojo/ready',
         'dojo/dom-style',
-        
+
         'aushadha/stores',
         'aushadha/behaviours/global_behaviours',
         "aushadha/grid/grid_setup",
@@ -14,37 +13,38 @@ define(['dojo/dom',
         'aushadha/panes/main',
 
         'notifications',
-        
+
         'dojo/domReady!'
        ],
-function(dom,
-         on,
-         registry,
-         parser,
-         ready,
-         domStyle,
+    function (dom,
+        on,
+        registry,
+        parser,
+        ready,
+        domStyle,
 
-         auStore, 
-         auBehaviours,
-         auGridSetup,
-         auEventBinders,
-         auPanes,
-         auNotifications
-        ){
-  
-    console.log("Returning Main.js");
+        auStore,
+        auBehaviours,
+        auGridSetup,
+        auEventBinders,
+        auPanes,
+        auNotifications
+    ) {
 
-    console.log("Calling setupPatientGrid");
-      auGridSetup.setupPatientGrid();
-    console.log("setupPatientGrid Returned");
-    
-    var auMain= {auStore         : auStore,
-            auGridSetup     : auGridSetup,
-            auBehaviours    : auBehaviours,
-            auEventBinders  : auEventBinders,
-            auPanes         : auPanes,
-            auNotifications : auNotifications
-    };
+        console.log("Returning Main.js");
 
-    return auMain;
-});
+        console.log("Calling setupPatientGrid");
+        auGridSetup.setupPatientGrid();
+        console.log("setupPatientGrid Returned");
+
+        var auMain = {
+            auStore: auStore,
+            auGridSetup: auGridSetup,
+            auBehaviours: auBehaviours,
+            auEventBinders: auEventBinders,
+            auPanes: auPanes,
+            auNotifications: auNotifications
+        };
+
+        return auMain;
+    });

@@ -15,379 +15,409 @@ define(['dojo/dom',
         "dojox/grid/DataGrid",
         "dojo/store/JsonRest",
         "dojo/data/ObjectStore",
-        "dojo/request/xhr", 
+        "dojo/request/xhr",
         "dojo/json",
 
         'aushadha/panes/event_controller',
 
         'dojo/domReady!'
 ],
-function(dom,
-         domConstruct,
-         domStyle,
-         on,
-         JSON, 
-         array,
-         registry, 
-         BorderContainer,
-         ContentPane,
-         TabContainer,
-         FilteringSelect,
-         
-         parser,
-         DataGrid,
-         JsonRest,
-         ObjectStore,
-         xhr,
-         JSON,
-         auPaneEventController
-         
-        ){
+    function (dom,
+        domConstruct,
+        domStyle,
+        on,
+        JSON,
+        array,
+        registry,
+        BorderContainer,
+        ContentPane,
+        TabContainer,
+        FilteringSelect,
 
-      var PATIENT_PANE = {
+        parser,
+        DataGrid,
+        JsonRest,
+        ObjectStore,
+        xhr,
+        JSON,
+        auPaneEventController
 
-        initialized: false,
+    ) {
 
-        repositioned: false,
+        var PATIENT_PANE = {
 
-        repositionSearchBar: function(){
-                  if(! this.repositioned){
+            initialized: false,
+
+            repositioned: false,
+
+            repositionSearchBar: function () {
+                if (!this.repositioned) {
                     domConstruct.destroy('frontPageSearchPatientAuShadhaLogo');
                     console.log("Destroyed the logo....first..")
                     domStyle.set(
-                                dom.byId('searchPatientContainerDiv'),
-                                 {top           : "0px",
-                                  left          : "0px",
-                                  height        : "50px",
-                                  width         : "auto",
-                                  background    : "none",
-                                  border        : "none",
-                                  'boxShadow'   : "none",
-                                  "borderRadius": "none",
-                                  'fontSize'    : "inherit",
-                                  "padding"     : "0px 0px 10px 0px;",
-                                  overflow      : 'hidden',
-                                  "margin"      : "0px 0px 10px 0px;",
-                                  "display"     : "none"
-                                });
+                        dom.byId('searchPatientContainerDiv'), {
+                            top: "0px",
+                            left: "0px",
+                            height: "50px",
+                            width: "auto",
+                            background: "none",
+                            border: "none",
+                            'boxShadow': "none",
+                            "borderRadius": "none",
+                            'fontSize': "inherit",
+                            "padding": "0px 0px 10px 0px;",
+                            overflow: 'hidden',
+                            "margin": "0px 0px 10px 0px;",
+                            "display": "none"
+                        });
                     domStyle.set(
-                                dom.byId('searchTitle'),
-                                        {top:"0px",left:"0px"}
-                                );
-                    registry.byId('addPatientButton').
-                              set('iconClass',"addPatientIcon_16");
+                        dom.byId('searchTitle'), {
+                            top: "0px",
+                            left: "0px"
+                        }
+                    );
+                    registry.byId('addPatientButton')
+                        .
+                    set('iconClass', "addPatientIcon_16");
                     domStyle.set(
-                                dom.byId('simplePatientFilteringSearch'),
-                                 {top          : "0px",
-                                  left          : "0px",
-                                  overflow      : 'hidden',
-                                  height        : "50px",
-                                  width         : "auto",
-                                  background    : "none",
-                                  border        : "none",
-                                  'boxShadow'   : "none",
-                                  "borderRadius": "none",
-                                  'fontSize'    : "inherit",
-                                  "padding"     : "0px 0px 10px 0px;",
-                                  "margin"      : "0px 0px 10px 0px;"
-                                  });
+                        dom.byId('simplePatientFilteringSearch'), {
+                            top: "0px",
+                            left: "0px",
+                            overflow: 'hidden',
+                            height: "50px",
+                            width: "auto",
+                            background: "none",
+                            border: "none",
+                            'boxShadow': "none",
+                            "borderRadius": "none",
+                            'fontSize': "inherit",
+                            "padding": "0px 0px 10px 0px;",
+                            "margin": "0px 0px 10px 0px;"
+                        });
 
-                    registry.byId('addPatientButton').
-                              set("style", 
-                                  {"fontSize": "12px"} 
-                              );
-                    registry.byId('filteringSelectPatSearch').
-                              set("style",
-                                   {width     : "400px", 
-                                    left      : "5%", 
-                                    "fontSize": "12px"
-                                   } 
-                                 );
+                    registry.byId('addPatientButton')
+                        .
+                    set("style", {
+                        "fontSize": "12px"
+                    });
+                    registry.byId('filteringSelectPatSearch')
+                        .
+                    set("style", {
+                        width: "400px",
+                        left: "5%",
+                        "fontSize": "12px"
+                    });
                     this.repositioned = true;
-                  }
-                  else{
+                } else {
                     return;
-                  }
-        },
+                }
+            },
 
-        doms: function(){
+            doms: function () {
 
                 console.log("Creating the necessary Patient Pane DOMS ")
 
-                if(!dom.byId('patientTabsBorderContainer') ){
-                  domConstruct.create('div',
-                                        {id: "patientTabsBorderContainer"},
-                                        "patientMainContainer",
-                                        "first"
-                  );
+                if (!dom.byId('patientTabsBorderContainer')) {
+                    domConstruct.create('div', {
+                            id: "patientTabsBorderContainer"
+                        },
+                        "patientMainContainer",
+                        "first"
+                    );
                 }
 
-                if( !dom.byId('patientSidebarContentPane')){
-                  domConstruct.create('div',
-                                        {id: "patientSidebarContentPane"},
-                                        "patientTabsBorderContainer",
-                                        0
-                  );
-                    domConstruct.create('div',
-                                        {id: "patientSidebarTabContainer"},
-                                        "patientSidebarContentPane",
-                                        "first"
+                if (!dom.byId('patientSidebarContentPane')) {
+                    domConstruct.create('div', {
+                            id: "patientSidebarContentPane"
+                        },
+                        "patientTabsBorderContainer",
+                        0
+                    );
+                    domConstruct.create('div', {
+                            id: "patientSidebarTabContainer"
+                        },
+                        "patientSidebarContentPane",
+                        "first"
                     );
 
-                      domConstruct.create('div',
-                                          {id: "patientTreeContainer"},
-                                          "patientSidebarTabContainer",
-                                          "first"
-                      );
-                        domConstruct.create('div',
-                                            {id: "patientTreeDiv"},
-                                            "patientTreeContainer",
-                                            "first"
-                        );
+                    domConstruct.create('div', {
+                            id: "patientTreeContainer"
+                        },
+                        "patientSidebarTabContainer",
+                        "first"
+                    );
+                    domConstruct.create('div', {
+                            id: "patientTreeDiv"
+                        },
+                        "patientTreeContainer",
+                        "first"
+                    );
 
-                      domConstruct.create('div',
-                                          {id: "patientSidebarDiv_media"},
-                                          "patientTreeContainer",
-                                          "after"
-                      );
+                    domConstruct.create('div', {
+                            id: "patientSidebarDiv_media"
+                        },
+                        "patientTreeContainer",
+                        "after"
+                    );
                 }
 
-                if(! dom.byId('patientContextContainer')){
-                  domConstruct.create('div',
-                                  {id: 'patientContextContainer'},
-                                  'patientTabsBorderContainer',
-                                  1
-                                );
-                  domConstruct.create('div',
-                                  {id: 'patientContextTabs'},
-                                  'patientContextContainer',
-                                  'first'
-                                );
-                    domConstruct.create('div',
-                                        {id: 'patientSummaryTab'},
-                                        'patientContextTabs',
-                                        'first'
-                                      );
-                    domConstruct.create('div',
-                                        {id: 'patientSynopsisBorderContainer'},
-                                        'patientSummaryTab',
-                                        'first'
-                                      );
-                    domConstruct.create('div',
-                                        {id: 'patientSynopsisTopContentPane'},
-                                        'patientSynopsisBorderContainer',
-                                        'first'
-                                      );
+                if (!dom.byId('patientContextContainer')) {
+                    domConstruct.create('div', {
+                            id: 'patientContextContainer'
+                        },
+                        'patientTabsBorderContainer',
+                        1
+                    );
+                    domConstruct.create('div', {
+                            id: 'patientContextTabs'
+                        },
+                        'patientContextContainer',
+                        'first'
+                    );
+                    domConstruct.create('div', {
+                            id: 'patientSummaryTab'
+                        },
+                        'patientContextTabs',
+                        'first'
+                    );
+                    domConstruct.create('div', {
+                            id: 'patientSynopsisBorderContainer'
+                        },
+                        'patientSummaryTab',
+                        'first'
+                    );
+                    domConstruct.create('div', {
+                            id: 'patientSynopsisTopContentPane'
+                        },
+                        'patientSynopsisBorderContainer',
+                        'first'
+                    );
                 }
                 console.log("Created Patient Pane DOMS");
                 this.setStyles();
-        },
+            },
 
-        setStyles: function(){
+            setStyles: function () {
                 console.log("Setting Styles for Patient Pane DOMS");
 
-                domStyle.set(dom.byId('patientTabsBorderContainer'),
-                             {"height"  : "50em",
-                              "width"    : "100em",
-                              "overflow" : "auto"
-                             });
-                domStyle.set( dom.byId('patientSidebarContentPane'),
-                              {'minWidth' : '17em',
-                              'minHeight' : "400px",
-                              'overflow'  : "auto"
+                domStyle.set(dom.byId('patientTabsBorderContainer'), {
+                    "height": "50em",
+                    "width": "100em",
+                    "overflow": "auto"
+                });
+                domStyle.set(dom.byId('patientSidebarContentPane'), {
+                    'minWidth': '17em',
+                    'minHeight': "400px",
+                    'overflow': "auto"
                 });
 
-                domStyle.set( dom.byId('patientTreeContainer'),
-                              {'minWidth' : '17em',
-                              'minHeight' : "400px",
-                              'overflow'  : "auto"
+                domStyle.set(dom.byId('patientTreeContainer'), {
+                    'minWidth': '17em',
+                    'minHeight': "400px",
+                    'overflow': "auto"
                 });
 
-                  domStyle.set( dom.byId('patientTreeDiv'),
-                                {'minWidth' : '17em',
-                                'minHeight' : "15em",
-                                'overflow'  : "auto",
-                                "display"   : "block"
-                  });
-                domStyle.set( dom.byId('patientSidebarDiv_media'),
-                              {'minWidth' : '275px',
-                              'minHeight' : "400px",
-                              'overflow'  : "auto"
+                domStyle.set(dom.byId('patientTreeDiv'), {
+                    'minWidth': '17em',
+                    'minHeight': "15em",
+                    'overflow': "auto",
+                    "display": "block"
+                });
+                domStyle.set(dom.byId('patientSidebarDiv_media'), {
+                    'minWidth': '275px',
+                    'minHeight': "400px",
+                    'overflow': "auto"
                 });
                 console.log("Styling of Patient Pane DOMS done");
-        },
+            },
 
-        menuBar: false,
+            menuBar: false,
 
-        dijits: function(){
+            dijits: function () {
 
-                    console.log("Setting Patient Pane Dijits");
+                console.log("Setting Patient Pane Dijits");
 
-                    if (! registry.byId('patientTabsBorderContainer') ){
-                      var mainBorderContainer = new BorderContainer({id: 'patientTabsBorderContainer'},
-                                                                    'patientTabsBorderContainer'
-                                                                    );
-                      registry.byId('patientMainContainer').addChild(mainBorderContainer);
-//                       mainBorderContainer.startup();
-                    }
-                    else{
-                      var mainBorderContainer = registry.byId("patientTabsBorderContainer");
-                    }
-                    
-                    console.log("mainBorderContainer is: ");
-                    console.log(mainBorderContainer);
-                    
-                    console.log( registry.byId('patientSidebarContentPane'));
-
-                    var sideBarContentPane = new ContentPane({id       : "patientSidebarContentPane",
-                                                              region   : "leading",
-                                                              splitter : true,
-                                                              style    : "width:18em;"
-                                                          },
-                                                        "patientSidebarContentPane"
+                if (!registry.byId('patientTabsBorderContainer')) {
+                    var mainBorderContainer = new BorderContainer({
+                            id: 'patientTabsBorderContainer'
+                        },
+                        'patientTabsBorderContainer'
                     );
-                    mainBorderContainer.addChild(sideBarContentPane);
-                    console.log("Added Sidebar Tree Container");
-                    console.log(sideBarContentPane);
+                    registry.byId('patientMainContainer')
+                        .addChild(mainBorderContainer);
+                    //                       mainBorderContainer.startup();
+                } else {
+                    var mainBorderContainer = registry.byId(
+                        "patientTabsBorderContainer");
+                }
 
-                      var sideBarTabContainer = new TabContainer({id    : "patientSidebarTabContainer",
-                                                            tabStrip    : true,
-                                                            tabPosition :'bottom',
-                                                            },
-                                                          "patientSidebarTabContainer"
-                      );
-                      sideBarContentPane.addChild(sideBarTabContainer)
-                      console.log("Added Sidebar Tab Container");
-                      console.log(sideBarTabContainer);
+                console.log("mainBorderContainer is: ");
+                console.log(mainBorderContainer);
 
-                        var sideBarTreeContainer = new ContentPane({id      : "patientTreeContainer",
-                                                                  title     : "Tree",
-                                                                  iconClass : "navigationIcon",
-                                                                  showTitle : false,
-                                                                  toolTip   : "Patient Tree"
-                                                              },
-                                                            "patientTreeContainer"
-                        );
-                        sideBarTabContainer.addChild(sideBarTreeContainer);
-                        console.log("Added Sidebar Tree Container");
-                        console.log(sideBarTreeContainer);
+                console.log(registry.byId('patientSidebarContentPane'));
 
-                        var sideBarMediaContainer = new ContentPane({id         : "patientSidebarDiv_media",
-                                                                    title       : "Media",
-                                                                    iconClass   : "mediaIcon",
-                                                                    showTitle   : false,
-                                                              },
-                                                            "patientSidebarDiv_media"
-                        );
-                        sideBarTabContainer.addChild(sideBarMediaContainer);  
-                        console.log("Added Sidebar Media Container");
-                        console.log(sideBarMediaContainer);
+                var sideBarContentPane = new ContentPane({
+                        id: "patientSidebarContentPane",
+                        region: "leading",
+                        splitter: true,
+                        style: "width:18em;"
+                    },
+                    "patientSidebarContentPane"
+                );
+                mainBorderContainer.addChild(sideBarContentPane);
+                console.log("Added Sidebar Tree Container");
+                console.log(sideBarContentPane);
 
-                    var patientContextContainer = new ContentPane({id       : 'patientContextContainer', 
-                                                        region    : "center",
-                                                        splitter  : true,
-                                                        gutters   : true
-                                                        },
-                                          'patientContextContainer'
-                                        );
-                    mainBorderContainer.addChild(patientContextContainer);
-                    console.log("Added patientContextContainer");
-                    console.log(patientContextContainer);
+                var sideBarTabContainer = new TabContainer({
+                        id: "patientSidebarTabContainer",
+                        tabStrip: true,
+                        tabPosition: 'bottom',
+                    },
+                    "patientSidebarTabContainer"
+                );
+                sideBarContentPane.addChild(sideBarTabContainer)
+                console.log("Added Sidebar Tab Container");
+                console.log(sideBarTabContainer);
 
-                      var mainTabs = new TabContainer({id          : 'patientContextTabs',
-                                                    tabPosition  : 'top',
-                                                    tabStrip     : true
-                                                    },
-                                            'patientContextTabs'
-                                          );
-                      patientContextContainer.addChild(mainTabs);
-                      console.log("Added mainTabs");
-                      console.log(mainTabs);
+                var sideBarTreeContainer = new ContentPane({
+                        id: "patientTreeContainer",
+                        title: "Tree",
+                        iconClass: "navigationIcon",
+                        showTitle: false,
+                        toolTip: "Patient Tree"
+                    },
+                    "patientTreeContainer"
+                );
+                sideBarTabContainer.addChild(sideBarTreeContainer);
+                console.log("Added Sidebar Tree Container");
+                console.log(sideBarTreeContainer);
 
-                        var summaryTab = new ContentPane({id: 'patientSummaryTab',
-                                                        title: 'Synopsis',
-                                                        closable:false
-                                                        },
-                                                'patientSummaryTab'
-                                              );
-                        mainTabs.addChild(summaryTab);
-                        console.log("Added summaryTab");
-                        console.log(summaryTab);
+                var sideBarMediaContainer = new ContentPane({
+                        id: "patientSidebarDiv_media",
+                        title: "Media",
+                        iconClass: "mediaIcon",
+                        showTitle: false,
+                    },
+                    "patientSidebarDiv_media"
+                );
+                sideBarTabContainer.addChild(sideBarMediaContainer);
+                console.log("Added Sidebar Media Container");
+                console.log(sideBarMediaContainer);
 
-                          var topBorderContainer = new BorderContainer({id: 'patientSynopsisBorderContainer'},
-                                                  'patientSynopsisBorderContainer'
-                                                );
-                          summaryTab.addChild(topBorderContainer);
-                          console.log("Added  topBorderContainer");
-                          console.log(topBorderContainer);
+                var patientContextContainer = new ContentPane({
+                        id: 'patientContextContainer',
+                        region: "center",
+                        splitter: true,
+                        gutters: true
+                    },
+                    'patientContextContainer'
+                );
+                mainBorderContainer.addChild(patientContextContainer);
+                console.log("Added patientContextContainer");
+                console.log(patientContextContainer);
 
-                            var topContentPane = new ContentPane({id: 'patientSynopsisTopContentPane', 
-                                                                region: 'center'},
-                                                    'patientSynopsisTopContentPane'
-                                                  );
-                            topBorderContainer.addChild(topContentPane);
+                var mainTabs = new TabContainer({
+                        id: 'patientContextTabs',
+                        tabPosition: 'top',
+                        tabStrip: true
+                    },
+                    'patientContextTabs'
+                );
+                patientContextContainer.addChild(mainTabs);
+                console.log("Added mainTabs");
+                console.log(mainTabs);
 
-                            console.log("Added topContentPane");
-                            console.log(topContentPane);
+                var summaryTab = new ContentPane({
+                        id: 'patientSummaryTab',
+                        title: 'Synopsis',
+                        closable: false
+                    },
+                    'patientSummaryTab'
+                );
+                mainTabs.addChild(summaryTab);
+                console.log("Added summaryTab");
+                console.log(summaryTab);
 
-            sideBarContentPane.startup();
-            patientContextContainer.startup();
+                var topBorderContainer = new BorderContainer({
+                        id: 'patientSynopsisBorderContainer'
+                    },
+                    'patientSynopsisBorderContainer'
+                );
+                summaryTab.addChild(topBorderContainer);
+                console.log("Added  topBorderContainer");
+                console.log(topBorderContainer);
 
-            mainBorderContainer.startup();
-            mainBorderContainer.resize();
+                var topContentPane = new ContentPane({
+                        id: 'patientSynopsisTopContentPane',
+                        region: 'center'
+                    },
+                    'patientSynopsisTopContentPane'
+                );
+                topBorderContainer.addChild(topContentPane);
 
-            console.log("Created Patient Pane Dijits");
+                console.log("Added topContentPane");
+                console.log(topContentPane);
 
-        },
+                sideBarContentPane.startup();
+                patientContextContainer.startup();
 
-        constructor : function(){
-                      console.log("Entering the Constructor function for Patient Pane");
-                      if(!this.initialized){
-                        console.log("Patient Pane is not initialized..");
-                        if(!this.repositioned){
-                          this.repositionSearchBar();
-                        }
-                        this.doms();
-                        this.dijits();
-                        this.initialized = true;
-                        new buildPatientTree();
-                        console.log("Patient Sidebar Tree Done..")
-                        return PATIENT_PANE;
-                      }
-                      else{
-                        console.log("Patient Pane is already initialized..");
-                        this.destroyPane();
-                      }
-        },  
+                mainBorderContainer.startup();
+                mainBorderContainer.resize();
 
-        destroyPane : function(){
-                  console.log("Entering function to destroy Patient Pane");
-                  registry.byId('patientTabsBorderContainer').destroyRecursive();
-                  console.log("Destroyed Patient Pane");                  
-                  //this.menuBar = false;
-                  this.initialized = false;
-                  console.log("Recreating the Patient Pane");
-                  this.constructor();                  
-        },
+                console.log("Created Patient Pane Dijits");
 
-        onPatientDelete : function(){
-          this.constructor();
-        },
+            },
 
-        onPatientUpdate : function(){
-          this.constructor();
-        },
+            constructor: function () {
+                console.log(
+                    "Entering the Constructor function for Patient Pane");
+                if (!this.initialized) {
+                    console.log("Patient Pane is not initialized..");
+                    if (!this.repositioned) {
+                        this.repositionSearchBar();
+                    }
+                    this.doms();
+                    this.dijits();
+                    this.initialized = true;
+                    new buildPatientTree();
+                    console.log("Patient Sidebar Tree Done..")
+                    return PATIENT_PANE;
+                } else {
+                    console.log("Patient Pane is already initialized..");
+                    this.destroyPane();
+                }
+            },
 
-        onPatientSwitch : function(){
-          this.constructor();
-        },
-        
-        setupPatientSummary: function (DivId, url){
+            destroyPane: function () {
+                console.log("Entering function to destroy Patient Pane");
+                registry.byId('patientTabsBorderContainer')
+                    .destroyRecursive();
+                console.log("Destroyed Patient Pane");
+                //this.menuBar = false;
+                this.initialized = false;
+                console.log("Recreating the Patient Pane");
+                this.constructor();
+            },
+
+            onPatientDelete: function () {
+                this.constructor();
+            },
+
+            onPatientUpdate: function () {
+                this.constructor();
+            },
+
+            onPatientSwitch: function () {
+                this.constructor();
+            },
+
+            setupPatientSummary: function (DivId, url) {
 
                 console.log("Filling DOM: " + DivId + " with URL: " + url);
-                registry.byId(DivId).set('href',url);
+                registry.byId(DivId)
+                    .set('href', url);
 
-               /*
+                /*
                   xhr(url,{
                       handleAs: "text",
                       method  : "GET",
@@ -410,11 +440,13 @@ function(dom,
                   console.log("Finished creating Patient Summary");
                   });
               */
-              },
-            searchWidget : function(){
-                            var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL});
+            },
+            searchWidget: function () {
+                var widgetStore = new JsonRest({
+                    target: PAT_SEARCH_JSON_URL
+                });
 
-                            /*
+                /*
                               domStyle.set('filteringSelectPatSearchSmall',
                                           {width      : '250px'     ,
                                             height     : '18px'     ,
@@ -426,31 +458,32 @@ function(dom,
                               });
                             */
 
-                            var searchBox = new FilteringSelect({regExp        : '[a-zA-Z0-9 -]+'  ,
-                                                                required       : true              ,
-                                                                invalidMessage : 'No Results'      ,
-                                                                store          : widgetStore       ,
-                                                                searchAttr     : 'name'            ,
-                                                                labelAttr      : 'label'           ,
-                                                                labelType      : 'html'            ,
-                                                                autoComplete   : false             ,
-                                                                placeHolder    : 'Patient\'s Name' ,
-                                                                hasDownArrow   : false             ,
-                                                                onChange       : function(e){
-                                                                                    try{
-                                                                                      auPaneEventController.onPatientChoice(e);
-                                                                                    }catch(err){
-                                                                                      console.error(err.message);
-                                                                                    }
-                                                                                 },
-                                                                style          : 'width:160%; textAlign:center;'
-                                                                },
-                                                                'filteringSelectPatSearch');
+                var searchBox = new FilteringSelect({
+                        regExp: '[a-zA-Z0-9 -]+',
+                        required: true,
+                        invalidMessage: 'No Results',
+                        store: widgetStore,
+                        searchAttr: 'name',
+                        labelAttr: 'label',
+                        labelType: 'html',
+                        autoComplete: false,
+                        placeHolder: 'Patient\'s Name',
+                        hasDownArrow: false,
+                        onChange: function (e) {
+                            try {
+                                auPaneEventController.onPatientChoice(e);
+                            } catch (err) {
+                                console.error(err.message);
+                            }
+                        },
+                        style: 'width:160%; textAlign:center;'
+                    },
+                    'filteringSelectPatSearch');
 
-                            searchBox.startup();
+                searchBox.startup();
             }
-      };
+        };
 
-//       PATIENT_PANE.searchWidget();
-      return PATIENT_PANE;
-});
+        //       PATIENT_PANE.searchWidget();
+        return PATIENT_PANE;
+    });
