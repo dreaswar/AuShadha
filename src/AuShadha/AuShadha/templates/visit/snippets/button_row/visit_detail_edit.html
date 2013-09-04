@@ -1,0 +1,22 @@
+<span>
+{% if perms.visit.change_visitdetail %}
+  <button data-dojo-type = "dijit/form/Button" 
+          data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+          type           = "submit" 
+          name           = "editButton" 
+          value          = "Edit">
+    Edit
+  </button>
+{%endif%}
+
+{% if perms.visit.delete_visitdetail %}
+  <button data-dojo-type  = "dijit/form/Button" 
+          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
+          type            = "button"
+          name            = "delVisit"
+          id              = "delVisitBtn_{{visit_detail_obj.id}}">
+    Delete
+    {% include 'visit/snippets/js/visit_detail_delete_validate.html' %}
+  </button>
+{% endif %}
+</span>

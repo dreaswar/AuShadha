@@ -793,9 +793,12 @@
                                 line-height  : 1.6em; 
                                 text-align   : justify;
                                 ">
-                          {% if obj == 'vitals' %}
+                          {% if obj %}
                             {{obj_list|safe}}
+                          {% else %}
+                            <span class="suggestion_text"> Not Recorded </span>
                           {% endif %}
+                          
                       </td>
                     </tr>
                     </tbody>

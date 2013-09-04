@@ -1,41 +1,42 @@
-##--------------------------------------------------------------
+# --------------------------------------------------------------
 # Views User Authentication and login / logout
 # Author: Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
 # License: GNU-GPL Version 3
 # Date: 01-01-2013
-##---------------------------------------------------------------
+# ---------------------------------------------------------------
 
-import os, sys
+import os
+import sys
 
 # General Django Imports----------------------------------
 
-from django.shortcuts                import render_to_response
-from django.http                     import Http404, HttpResponse, HttpResponseRedirect
-from django.template                 import RequestContext
+from django.shortcuts import render_to_response
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.template import RequestContext
 #from django.core.context_processors import csrf
 
-from django.contrib.auth.models      import User
+from django.contrib.auth.models import User
 
 from django.core.urlresolvers import reverse
 
-from django.views.decorators.csrf   import csrf_exempt
-from django.views.decorators.cache  import never_cache
-from django.views.decorators.csrf   import csrf_protect
-from django.views.decorators.debug  import sensitive_post_parameters
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.debug import sensitive_post_parameters
 
-from django.core.paginator           import Paginator
+from django.core.paginator import Paginator
 
-from django.utils                    import simplejson
-from django.core                     import serializers
-from django.core.serializers         import json    
-from django.core.serializers.json    import DjangoJSONEncoder
+from django.utils import simplejson
+from django.core import serializers
+from django.core.serializers import json
+from django.core.serializers.json import DjangoJSONEncoder
 
-from django.contrib.auth.views       import login, logout
-from django.contrib.auth.decorators  import login_required
-from django.contrib.auth             import REDIRECT_FIELD_NAME
-from django.contrib.auth.forms       import AuthenticationForm
-from django.template.response        import TemplateResponse
-from django.contrib.sites.models     import get_current_site
+from django.contrib.auth.views import login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import REDIRECT_FIELD_NAME
+from django.contrib.auth.forms import AuthenticationForm
+from django.template.response import TemplateResponse
+from django.contrib.sites.models import get_current_site
 import urlparse
 
 # General Module imports-----------------------------------
@@ -46,20 +47,18 @@ import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from aushadha_users.models import AuShadhaUser, AuShadhaUserForm
 
-#Views start here -----------------------------------------
+# Views start here -----------------------------------------
 
 
 @sensitive_post_parameters()
 @csrf_protect
 @never_cache
 def login_view(request, template_name='registration/login.html',
-          redirect_field_name=REDIRECT_FIELD_NAME,
-          #authentication_form=AuthenticationForm,
-          authentication_form  = AuShadhaUserForm,
-          current_app=None, extra_context=None):
-    """
-    Displays the login form and handles the login action.
-    """
+               redirect_field_name=REDIRECT_FIELD_NAME,
+               # authentication_form=AuthenticationForm,
+               authentication_form=AuShadhaUserForm,
+               current_app=None, extra_context=None):
+    """Displays the login form and handles the login action."""
     redirect_to = request.REQUEST.get(redirect_field_name, '')
 
     if request.method == "POST":
@@ -81,22 +80,22 @@ def login_view(request, template_name='registration/login.html',
 
             if request.session.test_cookie_worked():
                 request.session.delete_test_cookie()
-            data  = {'success'       : True, 
-                     'error_message' : "Successfully Loggged In !", 
-                     'redirect_to'   : redirect_to
+            data = {'success': True,
+                    'error_message': "Successfully Loggged In !",
+                    'redirect_to': redirect_to
                     }
         else:
-           data  = {'success'       : False, 
-                     'error_message' : '''<em class='error_text'>ERROR! Could not login</em>
+            data = {'success': False,
+                    'error_message' : '''<em class='error_text'>ERROR! Could not login</em>
                                          <p class='suggestion_text'>Please Check your Username & Password.</p>
                                          <i class='help_text'>If you are sure they are correct, 
                                          Please contact Administrator to find 
                                          out whether you need to activate your account.
                                          </i>
                                        ''',
-                  }
+                    }
         json = simplejson.dumps(data)
-        return HttpResponse(json, content_type = 'application/json')
+        return HttpResponse(json, content_type='application/json')
     else:
         form = authentication_form(request)
 
@@ -118,9 +117,7 @@ def login_view(request, template_name='registration/login.html',
 
 @login_required
 def logout_view(request):
-    '''
-    View for logging out of AuShadha
-    '''
+    """View for logging out of AuShadha."""
     logout(request)
     return HttpResponseRedirect('/AuShadha/')
 #    return HttpResponseRedirect('/login/')

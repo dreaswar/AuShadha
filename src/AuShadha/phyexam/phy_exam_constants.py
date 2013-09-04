@@ -1,25 +1,27 @@
-#########################################################
+#
 # Physical Examination Constants for AuShadha.
 # These Provide Default constants
-# 
+#
 # Author    : Dr.Easwar T.R
 # Copyright : 2012
 # Date      : 2012-12-31
 # Licence   : GNU-GPL Version 3
-#########################################################
+#
 
-#PHYSICAL EXAMINATION AND INCIDENT CONSTANTS 
-EXAMINATION_SIDES = (('R',"Right"),("L","Left"), ("B/L","Bilateral"))
+# PHYSICAL EXAMINATION AND INCIDENT CONSTANTS
+EXAMINATION_SIDES = (('R', "Right"), ("L", "Left"), ("B/L", "Bilateral"))
 
 INCIDENT_TYPES = (
-									('drug_related'				,	"Drug Related"				),
-									("procedure_related"	,	"Procedure Related"		), 
-									("anaesthesia_related",	"Anaesthesia Related"	),
-									("others"							,	"Others"							),
-								)
+    ('drug_related', "Drug Related"),
+    ("procedure_related",
+     "Procedure Related"		),
+    ("anaesthesia_related",
+     "Anaesthesia Related"	),
+    ("others", "Others"),
+)
 
-#SYS EXAM NORMALS
-HEENT_EX       = "No abnormality detected in Head/ Eye/ Ear/ Nose/ Throat and Neck Exam"
+# SYS EXAM NORMALS
+HEENT_EX = "No abnormality detected in Head/ Eye/ Ear/ Nose/ Throat and Neck Exam"
 
 CNS_EX         = """
 Higher functions normal. GCS 15/ 15.\n
@@ -82,10 +84,9 @@ No soft tissue contracture.\n
 """
 
 CONSULT_CHOICES = (
-										('initial'			, 'Initial'		),
-										('fu'		,	      'Follow-Up'	),
-										('pre_op'			  ,	'Pre-Op'		),
-										('post_op'			,	'Post-OP'		),
-										('discharge'		,	'Discharge'	)
-									)
-
+    ('initial', 'Initial'		),
+    ('fu', 'Follow-Up'),
+    ('pre_op', 'Pre-Op'),
+    ('post_op', 'Post-OP'),
+    ('discharge', 'Discharge')
+)

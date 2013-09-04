@@ -4,29 +4,28 @@ from django.contrib.auth.models import User
 from aushadha_users.models import AuShadhaUser
 
 
-
 """
 Model/s for Clinic module
 """
 
 CLINIC_STAFF_ROLE = (
-                      ("doctor"             , "Doctor"               ),
-                      ('nurse'              , "Nurse"                ),
-                      ('physio'             , "Physiotherapist"      ),
-                      ("non_clinical_staff" , "Non Clinical Staff"   ),
-                      ('clinical_staff'     , "Clinical Staff"       ),
-                      ('secretary'          , 'Secretary'            ),
-                      ('clinic_admin'       , "Clinic Administrator" ),
-                     )
+    ("doctor", "Doctor"),
+    ('nurse', "Nurse"),
+    ('physio', "Physiotherapist"),
+    ("non_clinical_staff", "Non Clinical Staff"),
+    ('clinical_staff', "Clinical Staff"),
+    ('secretary', 'Secretary'),
+    ('clinic_admin', "Clinic Administrator"),
+)
 
 
 # clinic model
 class Clinic(models.Model):
-    name_of_clinic   = models.CharField(max_length=200)
-    address          = models.TextField()
-    state            = models.CharField(max_length=200)
-    zipcode          = models.CharField(max_length=200)
-    country          = models.CharField(max_length=200)
+    name_of_clinic = models.CharField(max_length=200)
+    address = models.TextField()
+    state = models.CharField(max_length=200)
+    zipcode = models.CharField(max_length=200)
+    country = models.CharField(max_length=200)
     nature_of_clinic = models.CharField(max_length=200)
 
     def __str__(self):
@@ -56,7 +55,6 @@ class Clinic(models.Model):
     def add_fax_url(self):
         return 'clinic/%s/fax/add/%s/' % (self.name_of_clinic, self.id)
 
-
     def add_fax_url(self):
         return 'clinic/%s/fax/add/%s/' % (self.name_of_clinic, self.id)
 
@@ -65,7 +63,6 @@ class Clinic(models.Model):
 
     def add_website_url(self):
         return 'clinic/%s/website/add/%s/' % (self.name_of_clinic, self.id)
-
 
     def get_patient_list_url(self):
         return 'clinic/%s/pat/list/%s/' % (self.name_of_clinic, self.id)
@@ -88,26 +85,26 @@ class Clinic(models.Model):
 
 # Model for Departments in the Clinic
 class Department(models.Model):
-    name_of_department = models.CharField(max_length = 100, unique = True)
-    head_of_department = models.BooleanField(default = False)
-    staff_name         = models.ForeignKey('Staff', related_name = "Staff Name")
-    clinic             = models.ForeignKey(Clinic)
+    name_of_department = models.CharField(max_length=100, unique=True)
+    head_of_department = models.BooleanField(default=False)
+    staff_name = models.ForeignKey(
+        'Staff', related_name="Staff Name")
+    clinic = models.ForeignKey(Clinic)
 
     def __unicode__(self):
-         return "%s" %self.name_of_department
+        return "%s" % self.name_of_department
 
     class Meta:
-          unique_together = ( ('head_of_department', "staff_name"), 
-                              ('head_of_department', "name_of_department"), 
-                              ('name_of_department', "staff_name")
-                            )
+        unique_together = (('head_of_department', "staff_name"),
+                          ('head_of_department', "name_of_department"),
+                          ('name_of_department', "staff_name")
+                           )
 
     def get_edit_url(self):
         return 'clinic/department/edit/%s/' % (self.id)
 
     def get_del_url(self):
         return 'clinic/department/del/%s/' % (self.id)
-
 
     def get_staff_in_department_url(self):
         return 'clinic/department/staff/list/%s/' % (self.id)
@@ -116,14 +113,13 @@ class Department(models.Model):
         return 'clinic/department/hod/%s/' % (self.id)
 
 
-
 # phone model
 class Phone(models.Model):
-    clinic       = models.ForeignKey(Clinic)
+    clinic = models.ForeignKey(Clinic)
     phone_number = models.CharField(max_length=200)
 
     def __str__(self):
-        return '%s' % self.phone_number    
+        return '%s' % self.phone_number
 
     def get_edit_url(self):
         return 'clinic/phone/edit/%s/' % (self.id)
@@ -132,14 +128,13 @@ class Phone(models.Model):
         return 'clinic/phone/del/%s/' % (self.id)
 
 
-
 # fax model
 class Fax(models.Model):
-    clinic     = models.ForeignKey(Clinic)
+    clinic = models.ForeignKey(Clinic)
     fax_number = models.CharField(max_length=200)
 
     def __str__(self):
-        return '%s' % self.fax_number  
+        return '%s' % self.fax_number
 
     def get_edit_url(self):
         return 'clinic/fax/edit/%s/' % (self.id)
@@ -150,11 +145,11 @@ class Fax(models.Model):
 
 # email model
 class Email(models.Model):
-    clinic        = models.ForeignKey(Clinic)
-    email_address = models.CharField(max_length=200)  
+    clinic = models.ForeignKey(Clinic)
+    email_address = models.CharField(max_length=200)
 
     def __str__(self):
-        return '%s' % self.email_address      
+        return '%s' % self.email_address
 
     def get_edit_url(self):
         return 'clinic/email/edit/%s/' % (self.id)
@@ -165,11 +160,11 @@ class Email(models.Model):
 
 # website model
 class Website(models.Model):
-    clinic          = models.ForeignKey(Clinic)
-    website_address = models.CharField(max_length=200)     
+    clinic = models.ForeignKey(Clinic)
+    website_address = models.CharField(max_length=200)
 
     def __str__(self):
-        return '%s' % self.website_address  
+        return '%s' % self.website_address
 
     def get_edit_url(self):
         return 'clinic/website/edit/%s/' % (self.id)
@@ -180,34 +175,36 @@ class Website(models.Model):
 
 # staff model
 class Staff(models.Model):
-    clinic                = models.ForeignKey(Clinic)
-#   clinic_staff_list     = models.ForeignKey(User)     
-    clinic_staff_list     = models.ForeignKey(AuShadhaUser)
-    clinic_staff_role     = models.CharField("Staff Role", 
-                                              max_length = 100,
-                                              help_text = " This is the Role of the Staff in the Clinic",
-                                              choices   = CLINIC_STAFF_ROLE
-                                           )
+    clinic = models.ForeignKey(Clinic)
+#   clinic_staff_list     = models.ForeignKey(User)
+    clinic_staff_list = models.ForeignKey(AuShadhaUser)
+    clinic_staff_role = models.CharField("Staff Role",
+                                         max_length=100,
+                                         help_text=" This is the Role of the Staff in the Clinic",
+                                         choices=CLINIC_STAFF_ROLE
+                                         )
     #department            = models.ForeignKey(Department)
-    is_staff_hod          = models.BooleanField("Is Staff Head of the Department", 
-                                                editable = False
-                                               )
+    is_staff_hod = models.BooleanField(
+        "Is Staff Head of the Department",
+        editable=False
+    )
 
     class Meta:
-         unique_together = (('clinic', 'clinic_staff_list'),
+        unique_together = (('clinic', 'clinic_staff_list'),
                            )
 
     def __unicode__(self):
-        return "%s" %self.clinic_staff_list.username
+        return "%s" % self.clinic_staff_list.username
 
     def save(self, *args, **kw):
         self.is_staff_hod
         super(Staff, self).save(*args, **kw)
 
     def _is_staff_hod(self):
-        staff_obj    = self
+        staff_obj = self
         clinic_staff = self.clinic_staff_list
-        hod = Department.objects.filter(staff_name = clinic_staff).filter(head_of_department = True)
+        hod = Department.objects.filter(
+            staff_name=clinic_staff).filter(head_of_department=True)
         if hod:
             staff_obj.is_staff_hod = True
         else:
@@ -218,15 +215,12 @@ class Staff(models.Model):
         staff_obj = self
         staff_role = self.clinic_staff_role
         if staff_role == 'doctor':
-           return True
+            return True
         else:
-           return False
+            return False
 
     def get_edit_url(self):
         return 'clinic/staff/edit/%s/' % (self.id)
 
     def get_del_url(self):
         return 'clinic/staff/del/%s/' % (self.id)
-
-
-

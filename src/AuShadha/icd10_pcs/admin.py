@@ -2,23 +2,29 @@ from icd10_pcs.models import *
 import datetime
 from django.contrib import admin
 
+
 class PcsTableAdmin(admin.ModelAdmin):
-  pass
+    pass
+
 
 class PcsRowAdmin(admin.ModelAdmin):
-  pass
+    pass
+
 
 class BodyPartAdmin(admin.ModelAdmin):
-  pass
+    pass
+
 
 class ApproachAdmin(admin.ModelAdmin):
-  pass
+    pass
+
 
 class DeviceAdmin(admin.ModelAdmin):
-  pass
+    pass
+
 
 class QualifierAdmin(admin.ModelAdmin):
-  pass
+    pass
 
 
 admin.site.register(PcsTable, PcsTableAdmin)
@@ -27,4 +33,3 @@ admin.site.register(BodyPart, BodyPartAdmin)
 admin.site.register(Approach, ApproachAdmin)
 admin.site.register(Device, DeviceAdmin)
 admin.site.register(Qualifier, QualifierAdmin)
-

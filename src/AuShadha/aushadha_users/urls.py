@@ -11,5 +11,4 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-)
-
+                       )

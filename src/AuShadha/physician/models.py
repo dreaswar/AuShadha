@@ -4,11 +4,8 @@ from django.forms import ModelForm
 
 
 class PhysicianDetail(models.Model):
-  pass
+    pass
 
 
 class PhysicianDetailForm(ModelForm):
-  pass
-
-
-
+    pass
