@@ -55,6 +55,11 @@ complaint_add_icon_template = get_template(
 complaint_remove_icon_template = get_template(
     'visit/snippets/icons/complaints_remove.html')
 
+generic_table_form_add_icon_template = get_template(
+    'visit/snippets/icons/generic_add_icon.html')
+generic_table_form_remove_icon_template = get_template(
+    'visit/snippets/icons/generic_remove_icon.html')
+
 
 # views start here;;
 @login_required
@@ -789,6 +794,17 @@ def visit_detail_add(request, id, nature='initial'):
         vasc_exam_free_model_obj = VascExam_FreeModel(
             visit_detail=visit_detail_obj)
 
+        generic_add_icon_html = generic_table_form_add_icon_template.render(
+            RequestContext(request, {'user': user}))
+        generic_remove_icon_html = generic_table_form_remove_icon_template.render(
+            RequestContext(request, {'user': user}))
+        initial_data = [{'location':'Dorsalis Pedis','side':'right','character':'normal'}]
+        VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
+                                              form=VascExam_FreeModelForm,
+                                              extra=1,
+                                              fields=('location','character','side')
+                                              )
+
         VisitComplaintFormset = modelformset_factory(VisitComplaint,
                                                      form=VisitComplaintAddForm,
                                                      can_delete=True,
@@ -799,6 +815,9 @@ def visit_detail_add(request, id, nature='initial'):
             RequestContext(request, {'user': user}))
         form_auto_id = "id_%s" + "_new_visit_" + str(id)
         complaint_total_form_auto_id = "id_form-TOTAL_FORMS_new_visit_" + \
+            str(id)
+        vasc_exam_form_auto_id = "id_new_vasc_exam_free_model" + str(id) + "_%s"
+        vasc_total_form_auto_id = "id_form-TOTAL_FORMS_new_vasc_exam_free_model" + \
             str(id)
 
         if request.method == "GET" and request.is_ajax():
@@ -845,7 +864,12 @@ def visit_detail_add(request, id, nature='initial'):
                     auto_id="id_new_neuro_exam_free_model" + str(id) + "_%s")
                 vasc_exam_free_model_form = VascExam_FreeModelForm(
                     instance=vasc_exam_free_model_obj,
-                    auto_id="id_new_vasc_exam_free_model" + str(id) + "_%s")
+                    auto_id=vasc_exam_form_auto_id)
+
+                vasc_exam_free_model_formset = VascExam_FreeModelFormset(
+                    queryset=VascExam_FreeModel.objects.none(),
+                    auto_id=vasc_exam_form_auto_id,
+                    initial=initial_data)
 
                 variable = RequestContext(
                     request, {
@@ -862,11 +886,16 @@ def visit_detail_add(request, id, nature='initial'):
                         'sys_exam_free_model_form': sys_exam_free_model_form,
                         'neuro_exam_free_model_form': neuro_exam_free_model_form,
                         'vasc_exam_free_model_form': vasc_exam_free_model_form,
+                        'vasc_exam_free_model_formset' :vasc_exam_free_model_formset,
+                        'vasc_exam_form_auto_id':vasc_exam_form_auto_id,
+                        'vasc_total_form_auto_id': vasc_total_form_auto_id,
 
                         'patient_detail_obj': patient_detail_obj,
                         'error_message': error_message,
                         'complaint_add_icon_html': complaint_add_icon_html,
                         'complaint_remove_icon_html': complaint_remove_icon_html,
+                        'generic_add_icon_html':generic_add_icon_html,
+                        'generic_remove_icon_html':generic_remove_icon_html,
 
                         'success': success,
                         'form_auto_id': form_auto_id,
@@ -1003,6 +1032,11 @@ def visit_detail_edit(request, id):
                                                  can_delete=True,
                                                  can_order=True
                                                  )
+    VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
+                                              form=VascExam_FreeModelForm,
+                                              fields=('location','character','side'),
+                                              extra=9
+                                              )
     if request.method == "GET" and request.is_ajax():
         try:
             id = int(id)
@@ -1140,6 +1174,10 @@ def visit_detail_edit(request, id):
             vasc_exam_free_model_form = VascExam_FreeModelForm(
                 instance=vasc_exam_free_model_obj,
                 auto_id=vasc_auto_id + "_%s")
+            vasc_exam_free_model_formset = VascExam_FreeModelFormset(
+                queryset=VascExam_FreeModel.objects.filter(visit_detail = visit_detail_obj),
+                auto_id=vasc_auto_id+"_%s")
+
         else:
             vasc_auto_id     = 'id_add_vasc_exam_free_model_' + \
                 str(visit_detail_obj.id)

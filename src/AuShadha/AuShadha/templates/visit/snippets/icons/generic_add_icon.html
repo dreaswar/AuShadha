@@ -1,0 +1,18 @@
+<span style  = "background-image: url({{STATIC_URL}}images/add.png);
+                background-repeat: no-repeat;
+                background-size  : 16px 16px;
+                background-color : white;
+                width: 16px; 
+                height: 16px; 
+                cursor: pointer; 
+                display: {% if not forloop.last %}  
+                            {% if not forloop.first %} none {% else %} table-cell {%endif %}
+                         {%else%} 
+                            table-cell
+                         {%endif %};
+                "
+      class  = "addMoreItem"
+      title  = "Add more Item"
+    >
+
+</span>
