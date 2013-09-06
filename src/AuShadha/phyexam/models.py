@@ -106,7 +106,7 @@ class PhyExamBaseModel(AuShadhaBaseModel):
         elif self.visit_detail:
             return "Visit: %s, Date: %s" % (self.visit_detail, self.created_at)
         else:
-            return "Created at: %s" % (self.visit_detail, self.created_at)
+            return "Created at: %s" % (self.created_at)
 
 
 class VitalExam_FreeModel(PhyExamBaseModel):

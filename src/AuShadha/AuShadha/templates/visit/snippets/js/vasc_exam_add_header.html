@@ -34,7 +34,8 @@
                     on,
                     parser){
 
-        var TABLE_ID   = "vascExam_FreeModel_AddFormTable_{{visit_detail_obj.id}}";
+        var tableDomNode = query('table.vascExamAddFormTable')[0];
+        var TABLE_ID   = domAttr.get(tableDomNode,'id');
         var TOTAL_FORM_AUTO_ID = "{{vasc_total_form_auto_id}}";
         var totalForms = "{{vasc_exam_free_model_formset.total_form_count}}";
         var used_prefix=[];
@@ -252,7 +253,8 @@
           var escapedSideHTML = sideHTML.replace( /__prefix__/g, prefix );
           var escapedCharacterHTML = characterHTML.replace(/__prefix__/g,prefix)
           var HTMLToInsert = rowStart + escapedLocationHTML + escapedSideHTML + escapedCharacterHTML+ actionButtonCells + rowEnd;
-          var rowInserted = domConstruct.place(HTMLToInsert,query("#" +TABLE_ID + " tbody")[0] );
+          var _id = "#" +TABLE_ID + " tbody";
+          var rowInserted = domConstruct.place(HTMLToInsert,query(_id)[0] );
           parser.parse(rowInserted);
           var addIcon = query(rowInserted).children('td.actionCell').children('span.addMoreItem')[0];
           var removeIcon = query(rowInserted).children('td.actionCell').children('span.removeThisItem')[0];

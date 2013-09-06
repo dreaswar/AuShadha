@@ -235,6 +235,7 @@
           var table_id='visitComplaintAddFormTable';
           var numberOfRows = getNumRows(table_id);
           totalVisitComplaintForms = numberOfRows;
+          alert("{{complaint_total_form_auto_id}}");
           domAttr.set("{{complaint_total_form_auto_id}}",{'value':totalVisitComplaintForms});
         }
 
@@ -265,8 +266,11 @@
 
         function onAddMoreComplaintsClick(){
               placeAndDijitiseRows();
+              console.log("Placed and Dijitised the Rows");
               lastButOneRowActionCellStyling();
+              console.log("Styled the last but one row");
               lastRowActionCellStyling();
+              console.log("Finished the last row styling");
         }
 
         function rollBackRows(r){

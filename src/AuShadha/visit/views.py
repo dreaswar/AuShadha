@@ -560,7 +560,7 @@ class VitalObjHTMLFormatter(object):
         self._meta = self.vital._meta
 
         for field in self.vital._meta.fields:
-            print field.__class__.__name__
+            #print field.__class__.__name__
             try:
                 field_name = field.name
                 field_val = field.value_from_object(self.vital)
@@ -581,7 +581,7 @@ class VitalObjHTMLFormatter(object):
                                              'value': field_val,
                                              'is_abnormal': is_abnormal
                                              }
-                print self.field_map
+                #print self.field_map
             except(AttributeError):
                 print "AttributeError Raised...."
                 continue
@@ -762,6 +762,10 @@ def visit_detail_add(request, id, nature='initial'):
         print "Patient is: ", patient_detail_obj
         visit_detail_objs = VisitDetail.objects.filter(
             patient_detail=patient_detail_obj).filter(is_active=True)
+
+        visit_complaint_formset_prefix="visit_complaints"
+        vasc_exam_formset_prefix = "vasc_exam"
+        initial_data = [{'location':"Dorsalis Pedis",'side':'right','character':'normal'}]
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
         raise Http404("Error ! Invalid Request Parameters. ")
     except (PatientDetail.DoesNotExist):
@@ -798,27 +802,35 @@ def visit_detail_add(request, id, nature='initial'):
             RequestContext(request, {'user': user}))
         generic_remove_icon_html = generic_table_form_remove_icon_template.render(
             RequestContext(request, {'user': user}))
-        initial_data = [{'location':'Dorsalis Pedis','side':'right','character':'normal'}]
+
         VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
                                               form=VascExam_FreeModelForm,
-                                              extra=1,
-                                              fields=('location','character','side')
+                                              extra=1
                                               )
 
         VisitComplaintFormset = modelformset_factory(VisitComplaint,
                                                      form=VisitComplaintAddForm,
                                                      can_delete=True,
-                                                     can_order=True)
+                                                     can_order=True,
+                                                     )
         complaint_add_icon_html = complaint_add_icon_template.render(
             RequestContext(request, {'user': user}))
         complaint_remove_icon_html = complaint_remove_icon_template.render(
             RequestContext(request, {'user': user}))
-        form_auto_id = "id_%s" + "_new_visit_" + str(id)
-        complaint_total_form_auto_id = "id_form-TOTAL_FORMS_new_visit_" + \
-            str(id)
-        vasc_exam_form_auto_id = "id_new_vasc_exam_free_model" + str(id) + "_%s"
-        vasc_total_form_auto_id = "id_form-TOTAL_FORMS_new_vasc_exam_free_model" + \
-            str(id)
+
+        complaint_form_var_dict = {'prefix': visit_complaint_formset_prefix,
+                                   'total_form_id': visit_complaint_formset_prefix+"-TOTAL_FORMS",
+                                   'form_count':''
+                                   } # Ultimately this may be better way to pass the vars to template
+
+        complaint_form_auto_id = "id_"+ visit_complaint_formset_prefix + \
+          "_new_complaint_" + str(id)
+        complaint_total_form_auto_id = "id_"+visit_complaint_formset_prefix + \
+          "-TOTAL_FORMS_new_complaint_" + str(id)
+        vasc_exam_form_auto_id = "id_"+vasc_exam_formset_prefix + \
+          "_new_vasc_exam_free_model_" + str(id)
+        vasc_total_form_auto_id = "id_"+ vasc_exam_formset_prefix + \
+          "-TOTAL_FORMS_new_vasc_exam_free_model_" + str(id)
 
         if request.method == "GET" and request.is_ajax():
 
@@ -843,7 +855,8 @@ def visit_detail_add(request, id, nature='initial'):
                                                           # str(id)+"_%s")
                 visit_complaint_formset = VisitComplaintFormset(
                     queryset=VisitComplaint.objects.none(),
-                    auto_id=form_auto_id)
+                    auto_id=complaint_form_auto_id,
+                    prefix=visit_complaint_formset_prefix)
                 #visit_complaint_form_html = visit_complaint_add(request,id=id)
                 visit_hpi_form = VisitHPIForm(instance=visit_hpi_obj,
                                               auto_id="id_new_visit_hpi" + str(id) + "_%s")
@@ -862,14 +875,15 @@ def visit_detail_add(request, id, nature='initial'):
                 neuro_exam_free_model_form = PeriNeuroExam_FreeModelForm(
                     instance=neuro_exam_free_model_obj,
                     auto_id="id_new_neuro_exam_free_model" + str(id) + "_%s")
-                vasc_exam_free_model_form = VascExam_FreeModelForm(
-                    instance=vasc_exam_free_model_obj,
-                    auto_id=vasc_exam_form_auto_id)
+                #vasc_exam_free_model_form = VascExam_FreeModelForm(
+                    #instance=vasc_exam_free_model_obj,
+                    #auto_id=vasc_exam_form_auto_id)
 
                 vasc_exam_free_model_formset = VascExam_FreeModelFormset(
                     queryset=VascExam_FreeModel.objects.none(),
                     auto_id=vasc_exam_form_auto_id,
-                    initial=initial_data)
+                    initial=initial_data,
+                    prefix=vasc_exam_formset_prefix)
 
                 variable = RequestContext(
                     request, {
@@ -885,10 +899,10 @@ def visit_detail_add(request, id, nature='initial'):
                         'gen_exam_free_model_form': gen_exam_free_model_form,
                         'sys_exam_free_model_form': sys_exam_free_model_form,
                         'neuro_exam_free_model_form': neuro_exam_free_model_form,
-                        'vasc_exam_free_model_form': vasc_exam_free_model_form,
+                        #'vasc_exam_free_model_form': vasc_exam_free_model_form,
                         'vasc_exam_free_model_formset' :vasc_exam_free_model_formset,
                         'vasc_exam_form_auto_id':vasc_exam_form_auto_id,
-                        'vasc_total_form_auto_id': vasc_total_form_auto_id,
+                        'vasc_total_form_auto_id': vasc_exam_formset_prefix+"-TOTAL_FORMS",
 
                         'patient_detail_obj': patient_detail_obj,
                         'error_message': error_message,
@@ -898,8 +912,8 @@ def visit_detail_add(request, id, nature='initial'):
                         'generic_remove_icon_html':generic_remove_icon_html,
 
                         'success': success,
-                        'form_auto_id': form_auto_id,
-                        'complaint_total_form_auto_id': complaint_total_form_auto_id
+                        'complaint_form_auto_id': complaint_form_auto_id,
+                        'complaint_total_form_auto_id': visit_complaint_formset_prefix+"-TOTAL_FORMS"
 
                     })
                 return render_to_response('visit/detail/add.html', variable)
@@ -918,7 +932,8 @@ def visit_detail_add(request, id, nature='initial'):
             #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
             #VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)
             visit_complaint_formset = VisitComplaintFormset(
-                request.POST, auto_id=form_auto_id)
+                request.POST, auto_id=complaint_form_auto_id,
+                prefix=visit_complaint_formset_prefix)
             visit_hpi_form = VisitHPIForm(
                 request.POST, instance=visit_hpi_obj)
             visit_ros_form = VisitROSForm(
@@ -934,6 +949,9 @@ def visit_detail_add(request, id, nature='initial'):
                 request.POST, instance=neuro_exam_free_model_obj)
             vasc_exam_free_model_form = VascExam_FreeModelForm(
                 request.POST, instance=vasc_exam_free_model_obj)
+            vasc_exam_free_model_formset = VascExam_FreeModelFormset(
+                request.POST, auto_id=vasc_exam_form_auto_id,
+                prefix=vasc_exam_formset_prefix)
 
             if visit_detail_form.is_valid()         and \
                 visit_complaint_formset.is_valid()    and \
@@ -943,7 +961,7 @@ def visit_detail_add(request, id, nature='initial'):
                 gen_exam_free_model_form.is_valid()   and \
                 sys_exam_free_model_form.is_valid()   and \
                 neuro_exam_free_model_form.is_valid() and \
-                vasc_exam_free_model_form.is_valid():
+                vasc_exam_free_model_formset.is_valid():
 
                 saved_visit = visit_detail_form.save()
 
@@ -988,11 +1006,22 @@ def visit_detail_add(request, id, nature='initial'):
                 saved_neuro_exam.physician = saved_visit.op_surgeon
                 saved_neuro_exam.save()
 
-                saved_vasc_exam = vasc_exam_free_model_form.save(
+                #saved_vasc_exam = vasc_exam_free_model_form.save(
+                    #commit=False)
+                #saved_vasc_exam.visit_detail = saved_visit
+                #saved_vasc_exam.physician = saved_visit.op_surgeon
+                #saved_vasc_exam.save()
+
+                saved_vasc_exam = vasc_exam_free_model_formset.save(
                     commit=False)
-                saved_vasc_exam.visit_detail = saved_visit
-                saved_vasc_exam.physician = saved_visit.op_surgeon
-                saved_vasc_exam.save()
+                for vasc in saved_vasc_exam:
+                    print "Saving Vascular Exam... : ", vasc
+                    vasc.visit_detail = saved_visit
+                    vasc.physician = saved_visit.op_surgeon
+                    vasc.created_at = datetime.datetime.now()
+                    vasc.modified_at = datetime.datetime.now()
+                    vasc.save()
+                    print "Vascular Exam, " , vasc, " Saved"
 
                 success = True
                 error_message = "Visit Added Successfully"
@@ -1001,16 +1030,19 @@ def visit_detail_add(request, id, nature='initial'):
                 error_message = ''' <h4>Visit Could not be Saved.
                             Please check the forms for errors</h4>
                         '''
-                errors = aumodelformerrorformatter_factory(visit_detail_form)          + \
+                errors = aumodelformerrorformatter_factory(visit_detail_form)     + \
                     aumodelformerrorformatter_factory(visit_ros_form)             + \
                     aumodelformerrorformatter_factory(vital_exam_free_model_form) + \
                     aumodelformerrorformatter_factory(gen_exam_free_model_form)   + \
                     aumodelformerrorformatter_factory(sys_exam_free_model_form)   + \
-                    aumodelformerrorformatter_factory(neuro_exam_free_model_form) + \
-                    aumodelformerrorformatter_factory(
-                        vasc_exam_free_model_form) + '\n'
+                    aumodelformerrorformatter_factory(neuro_exam_free_model_form) + '\n'
+                    #aumodelformerrorformatter_factory(vasc_exam_free_model_form)  + '\n'
+
                 for form in visit_complaint_formset:
                     errors += aumodelformerrorformatter_factory(form)
+                for form in vasc_exam_free_model_formset:
+                    errors += aumodelformerrorformatter_factory(form)
+
                 error_message += ('\n' + errors)
 
             data = {'success': success,
@@ -1026,17 +1058,12 @@ def visit_detail_add(request, id, nature='initial'):
 @login_required
 def visit_detail_edit(request, id):
     user = request.user
+    visit_complaint_formset_prefix="edit_visit_complaints_"+str(id)
+    vasc_exam_formset_prefix = "edit_vasc_exam_"+str(id)
     VisitComplaintFormset = modelformset_factory(VisitComplaint,
                                                  form=VisitComplaintEditForm,
-                                                 extra=0,
-                                                 can_delete=True,
-                                                 can_order=True
+                                                 extra=0
                                                  )
-    VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
-                                              form=VascExam_FreeModelForm,
-                                              fields=('location','character','side'),
-                                              extra=9
-                                              )
     if request.method == "GET" and request.is_ajax():
         try:
             id = int(id)
@@ -1067,14 +1094,15 @@ def visit_detail_edit(request, id):
         visit_detail_form = VisitDetailForm(
             initial=data, instance=visit_detail_obj, auto_id=form_field_auto_id + "_%s")
 
-        complaint_formset_auto_id = "id_%s" + \
-            "_edit_visit_complaint_" + str(id)
-        complaint_total_form_auto_id = "id_form-TOTAL_FORMS_edit_visit_complaint_" + \
-            str(id)
+        complaint_formset_auto_id = "id_"+visit_complaint_formset_prefix +\
+          "_edit_visit_complaint_" + str(id)
+        complaint_total_form_auto_id = "id_"+visit_complaint_formset_prefix+\
+          "-TOTAL_FORMS_edit_visit_complaint_" + str(id)
         visit_complaint_formset = VisitComplaintFormset(
             queryset=VisitComplaint.objects.filter(
                 visit_detail=visit_detail_obj),
-            auto_id=complaint_formset_auto_id
+            auto_id=complaint_formset_auto_id,
+            prefix = visit_complaint_formset_prefix
         )
         complaint_count = len(visit_complaint_obj)
         complaint_add_icon_template = get_template(
@@ -1168,22 +1196,47 @@ def visit_detail_edit(request, id):
                 auto_id=neuro_auto_id + "_%s")
 
         if vasc_exam_free_model_obj:
-            vasc_exam_free_model_obj = vasc_exam_free_model_obj[0]
-            vasc_auto_id     = 'id_edit_vasc_exam_free_model_' + \
-                str(vasc_exam_free_model_obj.id)
-            vasc_exam_free_model_form = VascExam_FreeModelForm(
-                instance=vasc_exam_free_model_obj,
-                auto_id=vasc_auto_id + "_%s")
-            vasc_exam_free_model_formset = VascExam_FreeModelFormset(
-                queryset=VascExam_FreeModel.objects.filter(visit_detail = visit_detail_obj),
-                auto_id=vasc_auto_id+"_%s")
+            #vasc_exam_free_model_obj = vasc_exam_free_model_obj[0]
+            vasc_exam_form_auto_id = "id_"+vasc_exam_formset_prefix  + \
+              "_edit_vasc_exam_free_model_" + str(id)
+            vasc_total_form_auto_id = "id_"+vasc_exam_formset_prefix + \
+              "-TOTAL_FORMS_edit_vasc_exam_free_model_" + str(id)
+            VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
+                                                      form=VascExam_FreeModelForm,
+                                                      extra=0
+                                                      )
+
+            #vasc_auto_id     = 'id_edit_vasc_exam_free_model_' + \
+                #str(vasc_exam_free_model_obj.id)
+            #vasc_exam_free_model_form = VascExam_FreeModelForm(
+                #instance=vasc_exam_free_model_obj,
+                #auto_id=vasc_exam_form_auto_id)
 
         else:
-            vasc_auto_id     = 'id_add_vasc_exam_free_model_' + \
-                str(visit_detail_obj.id)
-            vasc_exam_free_model_form = VascExam_FreeModelForm(
-                instance=VascExam_FreeModel(visit_detail=visit_detail_obj),
-                auto_id=vasc_auto_id + "_%s")
+            vasc_exam_form_auto_id = "id_"+vasc_exam_formset_prefix + \
+              "_add_vasc_exam_free_model_" + str(id)
+            vasc_total_form_auto_id = "id_"+ vasc_exam_formset_prefix +\
+              "-TOTAL_FORMS_add_vasc_exam_free_model_" + str(id)
+            vasc_exam_formset_prefix = "add_vasc_exam_"+str(id)
+            VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
+                                                      form=VascExam_FreeModelForm,
+                                                      extra=1
+                                                      )
+
+            #vasc_auto_id     = 'id_add_vasc_exam_free_model_' + \
+                #str(visit_detail_obj.id)
+            #vasc_exam_free_model_form = VascExam_FreeModelForm(
+                #instance=VascExam_FreeModel(visit_detail=visit_detail_obj),
+                #auto_id=vasc_exam_form_auto_id)
+        vasc_exam_free_model_formset = VascExam_FreeModelFormset(
+                queryset=VascExam_FreeModel.objects.filter(visit_detail = visit_detail_obj),
+                auto_id=vasc_exam_form_auto_id,
+                prefix=vasc_exam_formset_prefix
+                )
+        generic_add_icon_html = generic_table_form_add_icon_template.render(
+            RequestContext(request, {'user': user}))
+        generic_remove_icon_html = generic_table_form_remove_icon_template.render(
+            RequestContext(request, {'user': user}))
 
         variable = RequestContext(
             request, {'user': user,
@@ -1198,7 +1251,10 @@ def visit_detail_edit(request, id):
                       'gen_exam_free_model_form': gen_exam_free_model_form,
                       'sys_exam_free_model_form': sys_exam_free_model_form,
                       'neuro_exam_free_model_form': neuro_exam_free_model_form,
-                      'vasc_exam_free_model_form': vasc_exam_free_model_form,
+                      #'vasc_exam_free_model_form': vasc_exam_free_model_form,
+                      'vasc_exam_free_model_formset': vasc_exam_free_model_formset,
+                      'vasc_exam_form_auto_id':vasc_exam_form_auto_id,
+                      'vasc_total_form_auto_id':vasc_exam_formset_prefix+"-TOTAL_FORMS",
 
                       'patient_detail_obj': visit_detail_obj.patient_detail,
                       'error_message': error_message,
@@ -1206,7 +1262,9 @@ def visit_detail_edit(request, id):
                       'complaint_add_icon_html': complaint_add_icon_html,
                       'complaint_remove_icon_html': complaint_remove_icon_html,
                       'complaint_formset_auto_id': complaint_formset_auto_id,
-                      'complaint_total_form_auto_id': complaint_total_form_auto_id
+                      'complaint_total_form_auto_id': visit_complaint_formset_prefix+"-TOTAL_FORMS",
+                      'generic_add_icon_html':generic_add_icon_html,
+                      'generic_remove_icon_html':generic_remove_icon_html
                       })
         return render_to_response('visit/detail/edit.html', variable)
 
@@ -1243,13 +1301,15 @@ def visit_detail_edit(request, id):
             visit_detail_form = VisitDetailForm(
                 request.POST, instance=visit_detail_obj)
             #visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
-            complaint_formset_auto_id = "id_%s" + \
+            complaint_formset_auto_id = "id_"+visit_complaint_formset_prefix + \
                 "_edit_visit_complaint_" + str(id)
-            complaint_total_form_auto_id = "id_form-TOTAL_FORMS_edit_visit_complaint_" + \
-                str(id)
+            complaint_total_form_auto_id = "id_"+ visit_complaint_formset_prefix+\
+              "-TOTAL_FORMS_edit_visit_complaint_" + str(id)
             #VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)
             visit_complaint_formset = VisitComplaintFormset(
-                request.POST, queryset=visit_complaint_obj)
+                request.POST, queryset=visit_complaint_obj,
+                prefix=visit_complaint_formset_prefix,
+                auto_id=complaint_formset_auto_id)
 
             visit_hpi_form = VisitHPIForm(
                 request.POST, instance=visit_hpi_obj[0])
@@ -1293,13 +1353,31 @@ def visit_detail_edit(request, id):
                     request.POST, instance=neuro_exam_free_model_obj)
 
             if vasc_exam_free_model_obj:
-                vasc_exam_free_model_form = VascExam_FreeModelForm(
-                    request.POST, instance=vasc_exam_free_model_obj[0])
+                #vasc_exam_free_model_form = VascExam_FreeModelForm(
+                    #request.POST, instance=vasc_exam_free_model_obj[0])
+                vasc_exam_formset_auto_id = "id_"+vasc_exam_formset_prefix + \
+                "_edit_vasc_exam_" + str(id)
+                vasc_exam_total_form_auto_id = "id_"+ vasc_exam_formset_prefix+\
+                "-TOTAL_FORMS_edit_vasc_exam_" + str(id)
+                vasc_exam_free_model_formset = VascExam_FreeModelFormset(
+                    request.POST, queryset=vasc_exam_free_model_obj,
+                    prefix=vasc_exam_formset_prefix,
+                    auto_id=vasc_exam_formset_auto_id)
+
             else:
-                vasc_exam_free_model_obj = VascExam_FreeModel(
-                    visit_detail=visit_detail_obj)
-                vasc_exam_free_model_form = VascExam_FreeModelForm(
-                    request.POST, instance=vasc_exam_free_model_obj)
+                #vasc_exam_free_model_obj = VascExam_FreeModel(
+                    #visit_detail=visit_detail_obj)
+                vasc_exam_formset_auto_id = "id_"+vasc_exam_formset_prefix + \
+                "_add_vasc_exam_" + str(id)
+                vasc_exam_total_form_auto_id = "id_"+ vasc_exam_formset_prefix+\
+                "-TOTAL_FORMS_add_vasc_exam_" + str(id)
+                vasc_exam_free_model_formset = VascExam_FreeModelFormset(
+                    request.POST, queryset=VascExam_FreeModel.objects.none(),
+                    prefix=vasc_exam_formset_prefix,
+                    auto_id=vasc_exam_formset_auto_id)
+
+                #vasc_exam_free_model_form = VascExam_FreeModelForm(
+                    #request.POST, instance=vasc_exam_free_model_obj)
 
             if visit_detail_form.is_valid()         and \
                 visit_complaint_formset.is_valid()    and \
@@ -1309,7 +1387,9 @@ def visit_detail_edit(request, id):
                 gen_exam_free_model_form.is_valid()   and \
                 sys_exam_free_model_form.is_valid()   and \
                 neuro_exam_free_model_form.is_valid() and \
-                vasc_exam_free_model_form.is_valid():
+                vasc_exam_free_model_formset.is_valid():                
+                #vasc_exam_free_model_form.is_valid()
+
 
                 saved_visit = visit_detail_form.save()
 
@@ -1354,11 +1434,22 @@ def visit_detail_edit(request, id):
                 saved_neuro_exam.physician = saved_visit.op_surgeon
                 saved_neuro_exam.save()
 
-                saved_vasc_exam = vasc_exam_free_model_form.save(
+                #saved_vasc_exam = vasc_exam_free_model_form.save(
+                    #commit=False)
+                #saved_vasc_exam.visit_detail = saved_visit
+                #saved_vasc_exam.physician = saved_visit.op_surgeon
+                #saved_vasc_exam.save()
+
+                saved_vasc_exam = vasc_exam_free_model_formset.save(
                     commit=False)
-                saved_vasc_exam.visit_detail = saved_visit
-                saved_vasc_exam.physician = saved_visit.op_surgeon
-                saved_vasc_exam.save()
+                print saved_vasc_exam
+                for vasc in saved_vasc_exam:
+                    print "Saving ", vasc
+                    vasc.visit_detail = saved_visit
+                    vasc.physician = saved_visit.op_surgeon
+                    vasc.modified_at = datetime.datetime.now()
+                    vasc.save()
+                    print "Vascular Exam saved"
 
                 success = True
                 error_message = "Visit Edited Successfully"
@@ -1368,15 +1459,16 @@ def visit_detail_edit(request, id):
                             Please check the forms for errors</h4>
                         '''
 
-                errors = aumodelformerrorformatter_factory(visit_detail_form)          + \
+                errors = aumodelformerrorformatter_factory(visit_detail_form)     + \
                     aumodelformerrorformatter_factory(visit_ros_form)             + \
                     aumodelformerrorformatter_factory(vital_exam_free_model_form) + \
                     aumodelformerrorformatter_factory(gen_exam_free_model_form)   + \
                     aumodelformerrorformatter_factory(sys_exam_free_model_form)   + \
-                    aumodelformerrorformatter_factory(neuro_exam_free_model_form) + \
-                    aumodelformerrorformatter_factory(
-                        vasc_exam_free_model_form) + '\n'
+                    aumodelformerrorformatter_factory(neuro_exam_free_model_form) + '\n'
+                    #aumodelformerrorformatter_factory(vasc_exam_free_model_form)  + '\n'
                 for form in visit_complaint_formset:
+                    errors += aumodelformerrorformatter_factory(form)
+                for form in vasc_exam_free_model_formset:
                     errors += aumodelformerrorformatter_factory(form)
                 error_message += ('\n' + errors)
             data = {'success': success,
