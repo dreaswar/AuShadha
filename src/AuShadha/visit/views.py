@@ -31,22 +31,28 @@ import cStringIO as StringIO
 
 
 # Application Specific Model Imports-----------------------
+from utilities.forms import AuModelFormErrorFormatter, aumodelformerrorformatter_factory
+
 from aushadha_users.models import AuShadhaUser
 from clinic.models import Clinic, Staff
 from visit.models import *
 from patient.models import *
 from admission.models import Admission
 from physician.models import PhysicianDetail
-from inv_and_imaging.models          import LabInvestigationRegistry, \
-    ImagingInvestigationRegistry
+from inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
+
 from phyexam.models import *
-#from complaints_and_history.models                  import *
-#from detail_exam.models              import *
-
-from utilities.forms                 import AuModelFormErrorFormatter, \
-    aumodelformerrorformatter_factory
-
 from phyexam.models import DEFAULT_VITALS
+
+from phyexam.presentation_classes import VitalExamObjPresentationClass,\
+                                         GenExamObjPresentationClass,\
+                                         SysExamObjPresentationClass,\
+                                         vitalexamobjpresentationclass_factory,\
+                                         genexamobjpresentationclass_factory,\
+                                         sysexamobjpresentationclass_factory,\
+                                         neuroexamobjpresentationclass_factory,\
+                                         vascexamobjpresentationclass_factory,\
+                                         vascexamobjpresentationclass_querysetfactory
 
 
 # Module Vars:
@@ -524,129 +530,129 @@ def visit_detail_list(request, id):
 
 
 #
-class VitalObjHTMLFormatter(object):
+#class VitalObjHTMLFormatter(object):
 
-    """Creates a Class Based Representation of Vital Object for manipulation
-    and HTML Formatting."""
-    from phyexam.models import DEFAULT_VITALS
+    #"""Creates a Class Based Representation of Vital Object for manipulation
+    #and HTML Formatting."""
+    #from phyexam.models import DEFAULT_VITALS
 
-    unit_delimitter_map = {
-        'sys_bp': {'unit': 'mmHg', 'label': 'Systolic', 'delimitter': '/'},
-        'dia_bp': {'unit': 'mmHg', 'label': 'Diastolic', 'delimitter': '/'},
-        'pulse_rate': {'unit': 'per minute', 'label': 'Pulse Rate', 'delimitter': ' '},
-        'resp_rate': {'unit': 'per minute', 'label': 'Resp.Rate', 'delimitter': ' '},
-        'gcs': {'unit': 'out of 15', 'label': 'GCS', 'delimitter': ' '},
-        'weight': {'unit': 'Kg.', 'label': 'Weight', 'delimitter': ' '},
-        'height': {'unit': 'Cms', 'label': 'Height', 'delimitter': ' '},
-        'bmi': {'unit': '', 'label': 'BMI', 'delimitter': ' '},
-        'remarks': {'unit': '', 'label': 'Remarks', 'delimitter': ' '}
-    }
+    #unit_delimitter_map = {
+        #'sys_bp': {'unit': 'mmHg', 'label': 'Systolic', 'delimitter': '/'},
+        #'dia_bp': {'unit': 'mmHg', 'label': 'Diastolic', 'delimitter': '/'},
+        #'pulse_rate': {'unit': 'per minute', 'label': 'Pulse Rate', 'delimitter': ' '},
+        #'resp_rate': {'unit': 'per minute', 'label': 'Resp.Rate', 'delimitter': ' '},
+        #'gcs': {'unit': 'out of 15', 'label': 'GCS', 'delimitter': ' '},
+        #'weight': {'unit': 'Kg.', 'label': 'Weight', 'delimitter': ' '},
+        #'height': {'unit': 'Cms', 'label': 'Height', 'delimitter': ' '},
+        #'bmi': {'unit': '', 'label': 'BMI', 'delimitter': ' '},
+        #'remarks': {'unit': '', 'label': 'Remarks', 'delimitter': ' '}
+    #}
 
-    fields = []
-    field_names = []
-    field_map = {}
+    #fields = []
+    #field_names = []
+    #field_map = {}
 
-    # templates = {
-                            #'add' :get_template('phyexam/vitals/add.html'),
-                            #'edit':get_template('phyexam/vitals/edit.html'),
-                            #'list':get_template('phyexam/vitals/list.html'),
-                            #'object': get_template('phyexam/vitals/vital.html')
-                            #}
+    ## templates = {
+                            ##'add' :get_template('phyexam/vitals/add.html'),
+                            ##'edit':get_template('phyexam/vitals/edit.html'),
+                            ##'list':get_template('phyexam/vitals/list.html'),
+                            ##'object': get_template('phyexam/vitals/vital.html')
+                            ##}
 
-    def __init__(self, vital_instance, request=None, context=None):
-        self.vital = vital_instance
-        self.__model_label__ = self.vital.__model_label__
-        self.__app_label__ = self.vital._meta.app_label
-        self._meta = self.vital._meta
+    #def __init__(self, vital_instance, request=None, context=None):
+        #self.vital = vital_instance
+        #self.__model_label__ = self.vital.__model_label__
+        #self.__app_label__ = self.vital._meta.app_label
+        #self._meta = self.vital._meta
 
-        for field in self.vital._meta.fields:
-            #print field.__class__.__name__
-            try:
-                field_name = field.name
-                field_val = field.value_from_object(self.vital)
-                self.fields.append(field)
-                self.field_names.append(field_name)
+        #for field in self.vital._meta.fields:
+            ##print field.__class__.__name__
+            #try:
+                #field_name = field.name
+                #field_val = field.value_from_object(self.vital)
+                #self.fields.append(field)
+                #self.field_names.append(field_name)
 
-                if self.unit_delimitter_map.get(field_name):
-                    label = self.unit_delimitter_map[field_name]['label']
-                    unit = self.unit_delimitter_map[field_name]['unit']
-                    delimitter = self.unit_delimitter_map[
-                        field_name]['delimitter']
-                    is_abnormal = self._eval(field_val, field_name)
+                #if self.unit_delimitter_map.get(field_name):
+                    #label = self.unit_delimitter_map[field_name]['label']
+                    #unit = self.unit_delimitter_map[field_name]['unit']
+                    #delimitter = self.unit_delimitter_map[
+                        #field_name]['delimitter']
+                    #is_abnormal = self._eval(field_val, field_name)
 
-                    self.field_map[field] = {'name': field_name,
-                                             'label': label,
-                                             'unit': unit,
-                                             'delimitter': delimitter,
-                                             'value': field_val,
-                                             'is_abnormal': is_abnormal
-                                             }
-                #print self.field_map
-            except(AttributeError):
-                print "AttributeError Raised...."
-                continue
+                    #self.field_map[field] = {'name': field_name,
+                                             #'label': label,
+                                             #'unit': unit,
+                                             #'delimitter': delimitter,
+                                             #'value': field_val,
+                                             #'is_abnormal': is_abnormal
+                                             #}
+                ##print self.field_map
+            #except(AttributeError):
+                #print "AttributeError Raised...."
+                #continue
 
-    def __call__(self):
-        return self.build_html_div()
+    #def __call__(self):
+        #return self.build_html_div()
 
-    def __unicode__(self):
-        return self.__call__()
+    #def __unicode__(self):
+        #return self.__call__()
 
-    # def template_render(self):
-        # try:
-            # self.templates.object.render()
-        # except('TemplateDoesNotExist'):
-            # return None
+    ## def template_render(self):
+        ## try:
+            ## self.templates.object.render()
+        ## except('TemplateDoesNotExist'):
+            ## return None
 
-    def _eval(self, value, name):
-        try:
-            default_val = int(DEFAULT_VITALS[name])
-            value = int(value)
-            if name in ['sys_bp', 'pulse_rate', 'resp_rate']:
-                value > default_val
-                return True
-            elif name in ['dia_bp', 'gcs']:
-                value < default_val
-                return True
-            else:
-                return False
+    #def _eval(self, value, name):
+        #try:
+            #default_val = int(DEFAULT_VITALS[name])
+            #value = int(value)
+            #if name in ['sys_bp', 'pulse_rate', 'resp_rate']:
+                #value > default_val
+                #return True
+            #elif name in ['dia_bp', 'gcs']:
+                #value < default_val
+                #return True
+            #else:
+                #return False
 
-        except(KeyError, NameError, AttributeError, TypeError, ValueError):
-            return False
-            #raise Exception("Invalid Field Name")
+        #except(KeyError, NameError, AttributeError, TypeError, ValueError):
+            #return False
+            ##raise Exception("Invalid Field Name")
 
-    def build_html_div(self):
+    #def build_html_div(self):
 
-        paragraph = ''
-        for v in self.field_map.values():
-            html_class = ''
-            label = unicode(v['label'])
-            value = v['value']
-            if value:
-                value = unicode(value)
-                unit = unicode(v['unit'])
-                delimitter = unicode(v['delimitter'])
-                is_abnormal = v['is_abnormal']
-                if is_abnormal:
-                    html_class = 'alert_message'
-            else:
-                value = unicode("--Not Recorded--")
-                unit = unicode('')
-                delimitter = unicode('')
-                html_class = 'suggestion_text'
-            line = """<p> %s: <span class="%s"> %s %s %s</span> </p>""" % (
-                label, html_class, value, delimitter, unit)
-            paragraph += line
-        return """<div> %s </div>""" % (paragraph)
+        #paragraph = ''
+        #for v in self.field_map.values():
+            #html_class = ''
+            #label = unicode(v['label'])
+            #value = v['value']
+            #if value:
+                #value = unicode(value)
+                #unit = unicode(v['unit'])
+                #delimitter = unicode(v['delimitter'])
+                #is_abnormal = v['is_abnormal']
+                #if is_abnormal:
+                    #html_class = 'alert_message'
+            #else:
+                #value = unicode("--Not Recorded--")
+                #unit = unicode('')
+                #delimitter = unicode('')
+                #html_class = 'suggestion_text'
+            #line = """<p> %s: <span class="%s"> %s %s %s</span> </p>""" % (
+                #label, html_class, value, delimitter, unit)
+            #paragraph += line
+        #return """<div> %s </div>""" % (paragraph)
 
-    def build_html_table(self):
-        pass
+    #def build_html_table(self):
+        #pass
 
-    def return_object_json(self):
-        pass
+    #def return_object_json(self):
+        #pass
 
-    def return_object_grid_structure(self):
-        pass
+    #def return_object_grid_structure(self):
+        #pass
 
 #
 
@@ -710,20 +716,60 @@ def visit_summary(request, id):
                     visit_detail=visit)
                 vital_exam_obj = VitalExam_FreeModel.objects.filter(
                     visit_detail=visit)
+                gen_exam_obj = GenExam_FreeModel.objects.filter(
+                    visit_detail=visit)
+                sys_exam_obj = SysExam_FreeModel.objects.filter(
+                    visit_detail=visit)
+                neuro_exam_obj = PeriNeuroExam_FreeModel.objects.filter(
+                    visit_detail=visit)
+                vasc_exam_obj = VascExam_FreeModel.objects.filter(
+                    visit_detail=visit)
+
+                if visit_hpi_obj:
+                    visit_hpi_obj = visit_hpi_obj[0]
 
                 if visit_ros_obj:
                     visit_ros_obj = visit_ros_obj[0]
 
                 if vital_exam_obj:
                     vital_exam_obj = vital_exam_obj[0]
-                    vf = VitalObjHTMLFormatter(vital_exam_obj).__call__()
+                    vf = vitalexamobjpresentationclass_factory(vital_exam_obj)
                 else:
                     vf = "No Vitals Recorded"
 
+                if gen_exam_obj:
+                    gen_exam_obj = gen_exam_obj[0]
+                    gf = genexamobjpresentationclass_factory(gen_exam_obj)
+                else:
+                    gf = "No General Examination Recorded"
+
+                if sys_exam_obj:
+                    sys_exam_obj = sys_exam_obj[0]
+                    sf = sysexamobjpresentationclass_factory(sys_exam_obj)
+                else:
+                    sf = "No Systemic Examination Recorded"
+
+                if neuro_exam_obj:
+                    neuro_exam_obj = neuro_exam_obj[0]
+                    nf = neuroexamobjpresentationclass_factory(neuro_exam_obj)
+                    print type(nf)
+                else:
+                    nf = "No Neurological Examination Recorded"
+
+                if vasc_exam_obj:
+                    vasc_f = vascexamobjpresentationclass_querysetfactory(vasc_exam_obj)
+                else:
+                    vasc_f = "No Vascular Examination Recorded"
+
+
                 dict_to_append[visit] = {'complaint': visit_complaint_obj,
                                          'hpi': visit_hpi_obj,
-                                         'ros': visit_ros_obj,
+                                         'ros': format_ros(visit_ros_obj),
                                          'vitals': vf,
+                                         'gen_exam':gf,
+                                         'sys_exam':sf,
+                                         'neuro_exam':nf,
+                                         'vasc_exam':vasc_f
                                          }
                 visit_obj_list.append(dict_to_append)
 
@@ -1296,7 +1342,9 @@ def visit_detail_edit(request, id):
             raise Http404("Requested Visit Does not exist.")
         success = False
         error_message = None
-
+        VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
+                                                  form=VascExam_FreeModelForm
+                                                  )
         if visit_complaint_obj and visit_hpi_obj and visit_ros_obj:
             visit_detail_form = VisitDetailForm(
                 request.POST, instance=visit_detail_obj)
@@ -1372,9 +1420,9 @@ def visit_detail_edit(request, id):
                 vasc_exam_total_form_auto_id = "id_"+ vasc_exam_formset_prefix+\
                 "-TOTAL_FORMS_add_vasc_exam_" + str(id)
                 vasc_exam_free_model_formset = VascExam_FreeModelFormset(
-                    request.POST, queryset=VascExam_FreeModel.objects.none(),
-                    prefix=vasc_exam_formset_prefix,
-                    auto_id=vasc_exam_formset_auto_id)
+                    request.POST, 
+                    queryset=VascExam_FreeModel.objects.filter(visit_detail=visit_detail_obj),
+                    prefix=vasc_exam_formset_prefix)
 
                 #vasc_exam_free_model_form = VascExam_FreeModelForm(
                     #request.POST, instance=vasc_exam_free_model_obj)

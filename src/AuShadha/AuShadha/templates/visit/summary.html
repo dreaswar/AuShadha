@@ -793,8 +793,63 @@
                                 line-height  : 1.6em; 
                                 text-align   : justify;
                                 ">
-                          {% if obj %}
-                            {{obj_list|safe}}
+                          {% if obj_list %}
+
+                            {% if obj == 'complaint' %}
+                              <table class="content_pane_table">
+                                <thead>
+                                  <tr> 
+                                    <th> Complaint </th> 
+                                    <th> Duration </th> 
+                                  </tr> 
+                                </thead>
+                                <tbody>
+                                  {% for o in obj_list %}
+                                    <tr>
+                                       <td> {{o.complaint}} </td> 
+                                       <td> {{o.duration}} </td>
+                                    </tr>
+                                  {% endfor %}
+                                </tbody>
+                                </table>
+                            <hr>
+                            {% endif %}
+
+                            {% if obj == 'hpi' %}
+                              {{obj_list|safe}}
+                            <hr>
+                            {% endif %}
+
+                            {% if obj == 'ros' %}
+                              {{obj_list|safe}}
+                            <hr>
+                            {% endif %}
+
+                            {% if obj == 'vitals' %}
+                              {{obj_list|safe}}
+                            <hr>                            
+                            {% endif %}
+
+                            {% if obj == 'gen_exam' %}
+                              {{obj_list|safe}}
+                            <hr>
+                            {% endif %}
+
+                            {% if obj == 'sys_exam' %}
+                              {{obj_list|safe}}
+                            <hr>    
+                            {% endif %}
+
+                            {% if obj == 'neuro_exam' %}
+                              {{obj_list|safe}}
+                            <hr>
+                            {% endif %}
+
+                            {% if obj == 'vasc_exam' %}
+                              {{obj_list|safe}}
+                            <hr>
+                            {% endif %}
+
                           {% else %}
                             <span class="suggestion_text"> Not Recorded </span>
                           {% endif %}

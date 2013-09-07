@@ -305,31 +305,31 @@ define(
                         },
                         'visitPaneContentBorderContainer',
                         1);
-                    domConstruct.create('div', {
-                            id: "visitLSidebarTabContainer",
-                            style: "height: 100%; width: 20em"
-                        },
-                        'visitPaneLSidebar',
-                        0);
-                    domConstruct.create('div', {
-                            id: "visitLSidebarTreeContainer",
-                            style: "height: 100%; width: 20em"
-                        },
-                        'visitLSidebarTabContainer',
-                        0);
-                    domConstruct.create('div', {
-                            id: "visitLSidebarTreeDiv",
-                            style: "height: 100%; width: 20em"
-                        },
-                        'visitLSidebarTreeContainer',
-                        0);
+                      domConstruct.create('div', {
+                              id: "visitLSidebarTabContainer",
+                              style: "height: 100%; width: 20em"
+                          },
+                          'visitPaneLSidebar',
+                          0);
+                      domConstruct.create('div', {
+                              id: "visitLSidebarTreeContainer",
+                              style: "height: 100%; width: 20em"
+                          },
+                          'visitLSidebarTabContainer',
+                          0);
+                        domConstruct.create('div', {
+                                id: "visitLSidebarTreeDiv",
+                                style: "height: 100%; width: 20em"
+                            },
+                            'visitLSidebarTreeContainer',
+                            0);
 
-                    domConstruct.create('div', {
-                            id: "visitSummaryContainer",
-                            style: "height: 100%; width: 20em"
-                        },
-                        'visitLSidebarTabContainer',
-                        1);
+                      domConstruct.create('div', {
+                              id: "visitSummaryContainer",
+                              style: "height: 100%; width: 20em"
+                          },
+                          'visitLSidebarTabContainer',
+                          1);
 
                     domConstruct.create('div', {
                             id: "visitPaneContentArea"
@@ -337,16 +337,16 @@ define(
                         'visitPaneContentBorderContainer',
                         2);
 
-                    domConstruct.create('div', {
-                            id: 'visitEditPaneTabContainer'
-                        },
-                        'visitPaneContentArea',
-                        'first');
-                    domConstruct.create('div', {
-                            id: 'visitSummaryTab'
-                        },
-                        'visitEditPaneTabContainer',
-                        0);
+                      domConstruct.create('div', {
+                              id: 'visitEditPaneTabContainer'
+                          },
+                          'visitPaneContentArea',
+                          'first');
+                        domConstruct.create('div', {
+                                id: 'visitSummaryTab'
+                            },
+                            'visitEditPaneTabContainer',
+                            0);
 
                     /*                          
                             domConstruct.create('div',

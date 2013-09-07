@@ -110,6 +110,9 @@ class PhyExamBaseModel(AuShadhaBaseModel):
 
 
 class VitalExam_FreeModel(PhyExamBaseModel):
+    
+    __model_label__ = 'vital'
+    
     sys_bp = models.PositiveIntegerField(
         'Systolic B.P', max_length=3, default=120)
     dia_bp = models.PositiveIntegerField(

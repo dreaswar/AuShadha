@@ -403,6 +403,14 @@ hr.shadow_line {
    margin: 10px 0px 20px 0px;
    }
 
+  .label_text{
+    font-size  : 12px;
+    color:navy;
+    font-weight:bold;
+    margin-right: 5px;
+    float:left;
+    line-height:1.5em;
+  }
 
    .error_text
    {
@@ -416,6 +424,7 @@ hr.shadow_line {
      margin              : 10px 5px 20px 5px;
    }
 
+   
    .suggestion_text
    {
      font-size  : 10px;

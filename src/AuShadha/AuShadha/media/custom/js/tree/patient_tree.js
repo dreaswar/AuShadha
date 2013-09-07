@@ -295,7 +295,7 @@ function buildPatientTree(){
                                 }
                         }
 
-                        if(item.name =="Medications" || item.type=="medication_list_module"){
+                        if(item.name =="Medications" || item.module_type=="medication_list_module"){
                                 if(!registry.byId('medicationListTab') ){
                                     console.log(CHOSEN_PATIENT);
                                     medicationListTab.constructor();
