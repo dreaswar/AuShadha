@@ -692,10 +692,10 @@
 
           <div data-dojo-type  = "dijit/TitlePane" 
                data-dojo-props = "'title': '{{visit_detail.visit_date.isoformat}}-{{visit_detail.op_surgeon}}', 
-                                          {% if forloop.first %}
-                                             'open':true 
+                                          {% if forloop.counter == '1' %}
+                                             open:true 
                                           {%else%} 
-                                            'open':false 
+                                            open:false 
                                           {%endif%}
                                   "
                id              = "visitSummaryTitlePane_{{visit_detail.id}}"
