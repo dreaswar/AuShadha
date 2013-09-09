@@ -48,6 +48,7 @@ class PhyExamBasePresentationClass(object):
                                                       f['value'],
                                                       f_constraints,
                                                       f_compare_with)
+                  #print "Validator returned: " , f['is_abnormal']
                 except (KeyError,NameError,ValueError):
                   continue
             except(AttributeError):
@@ -86,10 +87,9 @@ class PhyExamBasePresentationClass(object):
                 delimitter = unicode('')
                 html_class = 'suggestion_text'
             line = """<p> <span class='label_text'>%s:</span> 
-                          <span> %s %s %s </span>
-                          <span class="%s">  </span> 
+                          <span class="%s">%s %s %s  </span> 
                       </p>
-                   """ % (label,value, delimitter, unit, html_class)
+                   """ % (label, html_class,value, delimitter, unit)
             paragraph += line
         return """<div> %s </div>""" % (paragraph)
 
@@ -124,6 +124,25 @@ class VisitComplaintsPresentationClass(PhyExamBasePresentationClass):
         # except('TemplateDoesNotExist'):
             # return None
 
+class VisitROSPresentationClass(PhyExamBasePresentationClass):
+
+    """
+      Creates a Class Based Representation of Visit ROS
+      and HTML Formatting.
+    """
+
+    # templates = {
+                            #'add' :get_template('visit/ros/add.html'),
+                            #'edit':get_template('visit/ros/edit.html'),
+                            #'list':get_template('visit/ros/list.html'),
+                            #'object': get_template('visit/ros/ros.html')
+                            #}
+
+    # def template_render(self):
+        # try:
+            # self.templates.object.render()
+        # except('TemplateDoesNotExist'):
+            # return None
 
 class VisitHPIPresentationClass(PhyExamBasePresentationClass):
 
@@ -248,6 +267,9 @@ class VascExamObjPresentationClass(PhyExamBasePresentationClass):
 
 
 ########################## Factory Functions...##################################
+
+def visitrospresentationclass_factory(instance):
+  return VisitROSPresentationClass(instance)()
 
 def vitalexamobjpresentationclass_factory(instance):
   return VitalExamObjPresentationClass(instance)

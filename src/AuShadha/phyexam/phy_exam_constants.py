@@ -23,7 +23,9 @@ class Validator(object):
                       'is_earlier',
                       'is_true_or_false',
                       'is_equal_to',
+                      'is_not_equal_to',
                       'contains_text',
+                      'in_list',
                       None
                      ]
 
@@ -42,7 +44,9 @@ class Validator(object):
                         'is_earlier':self.is_earlier,
                         'is_true_or_false':self.is_true_or_false,
                         'is_equal_to':self.is_equal_to,
+                        'is_not_equal_to':self.is_not_equal_to,
                         'contains_text':None,
+                        'in_list':self.in_list,
                         None:None
                         }
       self.method_to_call = self.method_map[method]
@@ -55,19 +59,36 @@ class Validator(object):
 
   def __call__(self):
     attr = getattr(self,'method_to_call',None)
-    return attr()
+    if attr:
+      return attr()
+    else:
+      return
 
   def is_in_range(self):
-    max_v = self.constraints['max']+1
-    if self.value_to_validate in range( self.constraints['min'], max_v ):
-      print "Value is in range"
-      return True
-    else:
-      print "Value not in range"
-      return False
+
+    if type(self.value_to_validate) == 'int':
+      max_v = self.constraints['max']+1
+      if self.value_to_validate in range( self.constraints['min'], max_v ):
+        print "Value is in range"
+        return True
+      else:
+        print "Value not in range"
+        return False
+    elif type(self.value_to_validate) == 'float':
+      if (self.value_to_validate <= self.constraints['max']) and \
+         (self.value_to_validate >= self.constraints['min']):
+          return True
+      else:
+        return False
 
   def is_equal_to(self):
     if self.value_to_validate == self.value_to_compare:
+      return True
+    else:
+      return False
+
+  def is_not_equal_to(self):
+    if self.value_to_validate != self.value_to_compare:
       return True
     else:
       return False
@@ -96,16 +117,21 @@ class Validator(object):
     else:
       return False
 
-  def is_true_or_false(self,v):
+  def is_true_or_false(self):
     if self.value_to_validate == True:
       return True
     else:
       return False
 
+  def in_list(self):
+    if self.value_to_validate in self.value_to_compare:
+      return True
+    else:
+      return False
 
 def validator_factory(method,value,constraints=None,value_to_compare = None):
   """ Returns a instantiated Validator Class """
-  return Validator(method,value,constraints,value_to_compare)
+  return Validator(method,value,constraints,value_to_compare).__call__()
 
 
 
@@ -194,6 +220,25 @@ No Pain, spasm / crepitus on movements.\n
 No soft tissue contracture.\n
 """
 
+NEURO_EXAM={
+    'plantar': "Bilateral Flexor response",
+
+    'abdominal':"Ellicited well in all four quadrants",
+
+    "cremasteric":"Present",
+
+    "anal_wink":"Present",
+
+    "motor": "Normal Bulk, Tone and Power in all four limbs. No Fasciculations",
+
+    "sensory": "Normal Sensation in all four limbs. Perianal sensation intact",
+
+    "dtr" : "Equally ellicitable in all four limbs. No Clonus.",
+
+    "cranial_nerve" :"All Cranial Nerves NAD"
+    }
+
+
 CONSULT_CHOICES = (
     ('initial', 'Initial'       ),
     ('fu', 'Follow-Up'),
@@ -204,6 +249,100 @@ CONSULT_CHOICES = (
 
 
 PC = {
+
+   'visit_ros': {
+      'const_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Constitutional Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'eye_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Eye Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'ent_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'ENT Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'cvs_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Cardiovascular Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'resp_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Respiratory Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'gi_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Gastro-Intestinal Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'gu_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Genitourinary Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                   },
+      'integ_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Integumentary /Breast Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'neuro_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Neurological Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'psych_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Psychiatric Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'endocr_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Endocrine Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'hemat_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Hematological Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    },
+      'immuno_symp': {'default':"Nil",
+                      'constraints':{},
+                      'validator':'is_not_equal_to',
+                      'label' :'Immunologic Symptoms',
+                      'unit'     :'',
+                      'delimitter':''
+                    }
+   },
 
    'vital':{'sys_bp': {'default':120,
                        'constraints':{'max':150,'min':90},
@@ -263,7 +402,7 @@ PC = {
                      },
             'remarks': {'default':"NAD",
                        'constraints':{},
-                       'validator':'is_equal_to',
+                       'validator':'is_not_equal_to',
                        'label' :'Remarks',                       
                        'unit'     :' ',
                        'delimitter':':'
@@ -314,7 +453,7 @@ PC = {
                        },
               'remarks': {'default':"NAD",
                        'constraints':{},
-                       'validator':'is_equal_to',
+                       'validator':'is_not_equal_to',
                        'label' :'Remarks',                       
                        'unit'     :' ',
                        'delimitter':''
@@ -324,7 +463,7 @@ PC = {
   'sys_exam':{        
               'heent': {'default':HEENT_EX,
                         'constraints':{},
-                        'validator':'is_equal_to',
+                        'validator':'is_not_equal_to',
                         'label' :'HEENT Examination',                       
                         'unit'     :' ',
                         'delimitter':''
@@ -332,7 +471,7 @@ PC = {
 
               'cns': {'default':CNS_EX,
                         'constraints':{},
-                        'validator':'is_equal_to',
+                        'validator':'is_not_equal_to',
                         'label' :'Central Nervous Examination',                       
                         'unit'     :' ',
                         'delimitter':''
@@ -340,7 +479,7 @@ PC = {
               
               'cvs': {'default':CVS_EX,
                         'constraints':{},
-                        'validator':'is_equal_to',
+                        'validator':'is_not_equal_to',
                         'label' :'Cardio-Vascular Examination',                       
                         'unit'     :' ',
                         'delimitter':''
@@ -348,7 +487,7 @@ PC = {
 
               'respiratory_system': {'default':RESP_EX,
                                       'constraints':{},
-                                      'validator':'is_equal_to',
+                                      'validator':'is_not_equal_to',
                                       'label' :'Respiratory System Examination',                       
                                       'unit'     :' ',
                                       'delimitter':''
@@ -356,7 +495,7 @@ PC = {
 
                'git_and_gut': {'default':GIT_GUT_EX,
                               'constraints':{},
-                              'validator':'is_equal_to',
+                              'validator':'is_not_equal_to',
                               'label' :'GastroIntestinal & Genitourinary System Examination',                       
                               'unit'     :' ',
                               'delimitter':''
@@ -365,92 +504,92 @@ PC = {
                 },
 
    'neuro_exam':{
-                    'plantar': {'default':'',
+                    'plantar': {'default':NEURO_EXAM['plantar'],
                                 'constraints':{},
-                                'validator':'is_equal_to',
+                                'validator':'is_not_equal_to',
                                 'label' :'Plantar Reflex',                       
                                 'unit'     :' ',
                                 'delimitter':''
                                 },
 
-                    'cremasteric': {'default':'',
+                    'cremasteric': {'default':NEURO_EXAM['cremasteric'],
                                     'constraints':{},
-                                    'validator':'is_equal_to',
+                                    'validator':'is_not_equal_to',
                                     'label' :'Cremasteric Reflex',                       
                                     'unit'     :' ',
                                     'delimitter':''
                                     },
 
-                    'abdominal': {'default':'',
+                    'abdominal': {'default':NEURO_EXAM['abdominal'],
                                   'constraints':{},
-                                  'validator':'is_equal_to',
+                                  'validator':'is_not_equal_to',
                                   'label' :'Abdominal Reflexes',                       
                                   'unit'     :' ',
                                   'delimitter':''
                                   },
 
-                    'anal_wink': {'default':'',
+                    'anal_wink': {'default':NEURO_EXAM['anal_wink'],
                                   'constraints':{},
-                                  'validator':'is_equal_to',
+                                  'validator':'is_not_equal_to',
                                   'label' :'Anal Wink',                       
                                   'unit'     :' ',
                                   'delimitter':''
                                   },
 
-                    'motor': {'default':'',
+                    'motor': {'default':NEURO_EXAM['motor'],
                               'constraints':{},
-                              'validator':'is_equal_to',
+                              'validator':'is_not_equal_to',
                               'label' :'Motor Examination',                       
                               'unit'     :' ',
                               'delimitter':''
                               },
 
-                    'sensory': {'default':'',
+                    'sensory': {'default':NEURO_EXAM['sensory'],
                                 'constraints':{},
-                                'validator':'is_equal_to',
+                                'validator':'is_not_equal_to',
                                 'label' :'Sensory Examination',                       
                                 'unit'     :' ',
                                 'delimitter':''
                                 },
 
-                    'dtr': {'default':'',
+                    'dtr': {'default':NEURO_EXAM['dtr'],
                             'constraints':{},
-                            'validator':'is_equal_to',
+                            'validator':'is_not_equal_to',
                             'label' :'Deep Reflexes',                       
                             'unit'     :' ',
                             'delimitter':''
                             },
 
-                    'cranial_nerve': {'default':'',
+                    'cranial_nerve': {'default':NEURO_EXAM['cranial_nerve'],
                                       'constraints':{},
-                                      'validator':'is_equal_to',
+                                      'validator':'is_not_equal_to',
                                       'label' :'Cranial Nerve',                       
                                       'unit'     :' ',
                                       'delimitter':''
-                                      },
+                                      }
 
      },
 
    'vascular_exam':{
-                    'location': {'default':'',
+                    'location': {'default':['D','PT','P','F','R','U','B','A','C'],
                                 'constraints':{},
-                                'validator':'is_equal_to',
+                                'validator':'in_list',
                                 'label' :'Location',                       
                                 'unit'     :' ',
                                 'delimitter':''
                                 },
 
-                    'side': {'default':'',
+                    'side': {'default':['R','L','B'],
                             'constraints':{},
-                            'validator':'is_equal_to',
+                            'validator':'in_list',
                             'label' :'Side',                       
                             'unit'     :' ',
                             'delimitter':''
                             },
 
-                    'character': {'default':'Normal',
+                    'character': {'default':'normal',
                                   'constraints':{},
-                                  'validator':'is_equal_to',
+                                  'validator':'is_not_equal_to',
                                   'label' :'Character',                       
                                   'unit'     :' ',
                                   'delimitter':''

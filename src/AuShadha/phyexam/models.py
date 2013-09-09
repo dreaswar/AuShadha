@@ -224,7 +224,7 @@ class PeriNeuroExam_FreeModel(PhyExamBaseModel):
 
     motor = models.TextField('Motor Exam',
                              max_length=100,
-                             default="Normal Bulk, Tone and Power in all four limbs. No Fasciculations.",
+                             default="Normal Bulk, Tone and Power in all four limbs. No Fasciculations",
                              help_text='limit to 100 words')
 
     sensory = models.TextField('Sensory Exam',
@@ -234,7 +234,7 @@ class PeriNeuroExam_FreeModel(PhyExamBaseModel):
 
     dtr = models.TextField('Deep Tendon Reflex',
                            max_length=50,
-                           default="Equally ellicitable in all four limbs. No Clonus.",
+                           default="Equally ellicitable in all four limbs. No Clonus",
                            help_text='limit to 50 words'
                            )
 

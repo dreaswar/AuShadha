@@ -28,7 +28,7 @@ from datetime import datetime, date, time
 #import ho.pisa                      as pisa
 import xhtml2pdf.pisa as pisa
 import cStringIO as StringIO
-
+from collections import OrderedDict
 
 # Application Specific Model Imports-----------------------
 from utilities.forms import AuModelFormErrorFormatter, aumodelformerrorformatter_factory
@@ -52,7 +52,8 @@ from phyexam.presentation_classes import VitalExamObjPresentationClass,\
                                          sysexamobjpresentationclass_factory,\
                                          neuroexamobjpresentationclass_factory,\
                                          vascexamobjpresentationclass_factory,\
-                                         vascexamobjpresentationclass_querysetfactory
+                                         vascexamobjpresentationclass_querysetfactory,\
+                                         visitrospresentationclass_factory
 
 
 # Module Vars:
@@ -529,163 +530,6 @@ def visit_detail_list(request, id):
         raise Http404(" Error ! Unsupported Request..")
 
 
-#
-#class VitalObjHTMLFormatter(object):
-
-    #"""Creates a Class Based Representation of Vital Object for manipulation
-    #and HTML Formatting."""
-    #from phyexam.models import DEFAULT_VITALS
-
-    #unit_delimitter_map = {
-        #'sys_bp': {'unit': 'mmHg', 'label': 'Systolic', 'delimitter': '/'},
-        #'dia_bp': {'unit': 'mmHg', 'label': 'Diastolic', 'delimitter': '/'},
-        #'pulse_rate': {'unit': 'per minute', 'label': 'Pulse Rate', 'delimitter': ' '},
-        #'resp_rate': {'unit': 'per minute', 'label': 'Resp.Rate', 'delimitter': ' '},
-        #'gcs': {'unit': 'out of 15', 'label': 'GCS', 'delimitter': ' '},
-        #'weight': {'unit': 'Kg.', 'label': 'Weight', 'delimitter': ' '},
-        #'height': {'unit': 'Cms', 'label': 'Height', 'delimitter': ' '},
-        #'bmi': {'unit': '', 'label': 'BMI', 'delimitter': ' '},
-        #'remarks': {'unit': '', 'label': 'Remarks', 'delimitter': ' '}
-    #}
-
-    #fields = []
-    #field_names = []
-    #field_map = {}
-
-    ## templates = {
-                            ##'add' :get_template('phyexam/vitals/add.html'),
-                            ##'edit':get_template('phyexam/vitals/edit.html'),
-                            ##'list':get_template('phyexam/vitals/list.html'),
-                            ##'object': get_template('phyexam/vitals/vital.html')
-                            ##}
-
-    #def __init__(self, vital_instance, request=None, context=None):
-        #self.vital = vital_instance
-        #self.__model_label__ = self.vital.__model_label__
-        #self.__app_label__ = self.vital._meta.app_label
-        #self._meta = self.vital._meta
-
-        #for field in self.vital._meta.fields:
-            ##print field.__class__.__name__
-            #try:
-                #field_name = field.name
-                #field_val = field.value_from_object(self.vital)
-                #self.fields.append(field)
-                #self.field_names.append(field_name)
-
-                #if self.unit_delimitter_map.get(field_name):
-                    #label = self.unit_delimitter_map[field_name]['label']
-                    #unit = self.unit_delimitter_map[field_name]['unit']
-                    #delimitter = self.unit_delimitter_map[
-                        #field_name]['delimitter']
-                    #is_abnormal = self._eval(field_val, field_name)
-
-                    #self.field_map[field] = {'name': field_name,
-                                             #'label': label,
-                                             #'unit': unit,
-                                             #'delimitter': delimitter,
-                                             #'value': field_val,
-                                             #'is_abnormal': is_abnormal
-                                             #}
-                ##print self.field_map
-            #except(AttributeError):
-                #print "AttributeError Raised...."
-                #continue
-
-    #def __call__(self):
-        #return self.build_html_div()
-
-    #def __unicode__(self):
-        #return self.__call__()
-
-    ## def template_render(self):
-        ## try:
-            ## self.templates.object.render()
-        ## except('TemplateDoesNotExist'):
-            ## return None
-
-    #def _eval(self, value, name):
-        #try:
-            #default_val = int(DEFAULT_VITALS[name])
-            #value = int(value)
-            #if name in ['sys_bp', 'pulse_rate', 'resp_rate']:
-                #value > default_val
-                #return True
-            #elif name in ['dia_bp', 'gcs']:
-                #value < default_val
-                #return True
-            #else:
-                #return False
-
-        #except(KeyError, NameError, AttributeError, TypeError, ValueError):
-            #return False
-            ##raise Exception("Invalid Field Name")
-
-    #def build_html_div(self):
-
-        #paragraph = ''
-        #for v in self.field_map.values():
-            #html_class = ''
-            #label = unicode(v['label'])
-            #value = v['value']
-            #if value:
-                #value = unicode(value)
-                #unit = unicode(v['unit'])
-                #delimitter = unicode(v['delimitter'])
-                #is_abnormal = v['is_abnormal']
-                #if is_abnormal:
-                    #html_class = 'alert_message'
-            #else:
-                #value = unicode("--Not Recorded--")
-                #unit = unicode('')
-                #delimitter = unicode('')
-                #html_class = 'suggestion_text'
-            #line = """<p> %s: <span class="%s"> %s %s %s</span> </p>""" % (
-                #label, html_class, value, delimitter, unit)
-            #paragraph += line
-        #return """<div> %s </div>""" % (paragraph)
-
-    #def build_html_table(self):
-        #pass
-
-    #def return_object_json(self):
-        #pass
-
-    #def return_object_grid_structure(self):
-        #pass
-
-#
-
-
-def format_ros(ros_obj):
-    print "Formatting ROS"
-    ros_str = ''
-    ros_list = [
-        ros_obj.const_symp,
-        ros_obj.eye_symp,
-        ros_obj.ent_symp,
-        ros_obj.resp_symp,
-        ros_obj.gi_symp,
-        ros_obj.gu_symp,
-        ros_obj.ms_symp,
-        ros_obj.integ_symp,
-        ros_obj.psych_symp,
-        ros_obj.endocr_symp,
-        ros_obj.hemat_symp,
-        ros_obj.immuno_symp
-    ]
-
-    not_nil_count = 0
-    for obj in ros_list:
-        if obj != 'Nil':
-            not_nil_count += 1
-            ros_str += obj.capitalize() + '\n'
-
-    if not_nil_count == 0:
-        return "NAD"
-    else:
-        return ros_str
-
 
 @login_required
 def visit_summary(request, id):
@@ -705,9 +549,10 @@ def visit_summary(request, id):
 
         visit_obj_list = []
         if visit_detail_obj:
-            error_message = "Listing the Visits"
+            error_message = "Listing the Visits in ", visit_detail_obj
+            dict_to_append = {}
             for visit in visit_detail_obj:
-                dict_to_append = {}
+                print "Aggregating sub-modules in visit: ", visit
                 visit_complaint_obj = VisitComplaint.objects.filter(
                     visit_detail=visit)
                 visit_hpi_obj = VisitHPI.objects.filter(
@@ -730,6 +575,9 @@ def visit_summary(request, id):
 
                 if visit_ros_obj:
                     visit_ros_obj = visit_ros_obj[0]
+                    v_ros = visitrospresentationclass_factory(visit_ros_obj)
+                else:
+                  v_ros = "No Review of System Recorded"
 
                 if vital_exam_obj:
                     vital_exam_obj = vital_exam_obj[0]
@@ -752,7 +600,6 @@ def visit_summary(request, id):
                 if neuro_exam_obj:
                     neuro_exam_obj = neuro_exam_obj[0]
                     nf = neuroexamobjpresentationclass_factory(neuro_exam_obj)
-                    print type(nf)
                 else:
                     nf = "No Neurological Examination Recorded"
 
@@ -761,17 +608,17 @@ def visit_summary(request, id):
                 else:
                     vasc_f = "No Vascular Examination Recorded"
 
-
-                dict_to_append[visit] = {'complaint': visit_complaint_obj,
-                                         'hpi': visit_hpi_obj,
-                                         'ros': format_ros(visit_ros_obj),
-                                         'vitals': vf,
-                                         'gen_exam':gf,
-                                         'sys_exam':sf,
-                                         'neuro_exam':nf,
-                                         'vasc_exam':vasc_f
-                                         }
-                visit_obj_list.append(dict_to_append)
+                d = OrderedDict()
+                d['complaint']= visit_complaint_obj
+                d['hpi']= visit_hpi_obj
+                d['ros']= v_ros
+                d['vitals']= vf
+                d['gen_exam']=gf
+                d['sys_exam']=sf
+                d['neuro_exam']=nf
+                d['vasc_exam']=vasc_f
+                dict_to_append[visit] = d
+            visit_obj_list.append(dict_to_append)
 
         else:
             error_message = "No Visits Recorded"
