@@ -272,19 +272,19 @@ def visitrospresentationclass_factory(instance):
   return VisitROSPresentationClass(instance)()
 
 def vitalexamobjpresentationclass_factory(instance):
-  return VitalExamObjPresentationClass(instance)
+  return VitalExamObjPresentationClass(instance)()
 
 def genexamobjpresentationclass_factory(instance):
-  return GenExamObjPresentationClass(instance)
+  return GenExamObjPresentationClass(instance)()
 
 def sysexamobjpresentationclass_factory(instance):
-  return GenExamObjPresentationClass(instance)
+  return GenExamObjPresentationClass(instance)()
 
 def neuroexamobjpresentationclass_factory(instance):
-  return PeriNeuroExamObjPresentationClass(instance)
+  return PeriNeuroExamObjPresentationClass(instance)()
 
 def vascexamobjpresentationclass_factory(instance):
-  return VascExamObjPresentationClass(instance).__call__()
+  return VascExamObjPresentationClass(instance)()
 
 def vascexamobjpresentationclass_querysetfactory(queryset):
   html = '<div>'

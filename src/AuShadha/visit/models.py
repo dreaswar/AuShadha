@@ -71,7 +71,7 @@ class VisitDetail(AuShadhaBaseModel):
         verbose_name_plural = "Visit Details"
 
     def __unicode__(self):
-        return '%s: %s: %s' % (self.patient_detail, self.visit_date.date().isoformat(), self.op_surgeon)
+        return '%s(%s): %s: %s' % (self.patient_detail,self.id, self.visit_date, self.op_surgeon)
 
     def get_absolute_url(self):
         return '/AuShadha/visit/detail/%d/' % (self.id)

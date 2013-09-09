@@ -550,8 +550,10 @@ def visit_summary(request, id):
         visit_obj_list = []
         if visit_detail_obj:
             error_message = "Listing the Visits in ", visit_detail_obj
-            dict_to_append = {}
+            print "Listing the Visits in ", visit_detail_obj
             for visit in visit_detail_obj:
+                dict_to_append = OrderedDict()
+                dict_to_append[visit] = None
                 print "Aggregating sub-modules in visit: ", visit
                 visit_complaint_obj = VisitComplaint.objects.filter(
                     visit_detail=visit)
@@ -618,8 +620,7 @@ def visit_summary(request, id):
                 d['neuro_exam']=nf
                 d['vasc_exam']=vasc_f
                 dict_to_append[visit] = d
-            visit_obj_list.append(dict_to_append)
-
+                visit_obj_list.append(dict_to_append)
         else:
             error_message = "No Visits Recorded"
         variable = RequestContext(
@@ -629,6 +630,7 @@ def visit_summary(request, id):
                       'patient_detail_obj': patient_detail_obj,
                       'error_message': error_message
                       })
+        print visit_obj_list
         return render_to_response('visit/summary.html', variable)
     else:
         raise Http404(" Error ! Unsupported Request..")

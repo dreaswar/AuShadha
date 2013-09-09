@@ -330,16 +330,6 @@
                             {{visit_detail.op_surgeon}} 
                     </option>
 
-                    {% comment %} 
-                    #FIXME FU visit op surgeon listing not implemented. This has to be done
-                      {% for visit_fu in visit_detail.has_fu_visits %}
-                      <option name = "{{visit_fu.op_surgeon}}"  
-                              value= "{{visit_fu.op_surgeon}}"   > 
-                              {{visit_fu.op_surgeon}} 
-                      </option>
-                      {%endfor%}
-                    {% endcomment %}
-
                 {% endfor%}
 
               {% endfor %}
@@ -698,10 +688,16 @@
 
       {% for visit_obj in visit_obj_list %}
 
-        {% for visit_detail, visit_rel in visit_obj.iteritems %}
+        {% for visit_detail, visit_rel in visit_obj.items %}
 
           <div data-dojo-type  = "dijit/TitlePane" 
-               data-dojo-props = "title: '{{visit_detail.visit_date.date}}-{{visit_detail.op_surgeon}}', {% if forloop.counter == '1' %}open:true {%else%} open:false {%endif%}"
+               data-dojo-props = "'title': '{{visit_detail.visit_date.isoformat}}-{{visit_detail.op_surgeon}}', 
+                                          {% if forloop.first %}
+                                             'open':true 
+                                          {%else%} 
+                                            'open':false 
+                                          {%endif%}
+                                  "
                id              = "visitSummaryTitlePane_{{visit_detail.id}}"
                class           = "visitSummaryTitlePane
 
@@ -731,32 +727,35 @@
                >
             <div>
               <p>
-              {% if visit_detail.is_active %}
-                <img src   = "{{STATIC_URL}}images/flag_green.png" 
-                    alt   = "ACTIVE VISIT" 
-                    title = "Active Visit"
-                    style = 'float:right; margin: 3px; width:16px; height:16px;'
-                    >
-              {%else%}
-                <img src  = "{{STATIC_URL}}images/flag_red.png" 
-                    alt  = "INACTIVE VISIT" 
-                    title = "Visit Closed"
-                    style = 'float:right;margin: 3px; width:16px; height:16px;'
-                    >
-              {%endif%}
-              {% if visit_detail.has_fu_visits %}
-              <img src   = "{{STATIC_URL}}images/generic/document/actions/redo.png" 
-                  alt   = "Has Follow Up Visit" 
-                  title = "Has Follow Up Visit"
-                  style = 'float:right; margin: 3px; width:16px; height:16px;'
-                  >
-              {% else %}
-              <img src   = "{{STATIC_URL}}images/forbidden.png" 
-                  alt   = "No Follow Up Visit" 
-                  title = "No Follow Up Visit"
-                  style = 'float:right; margin: 3px; width:16px; height:16px;'
-                  >
-              {% endif %}
+
+                {% if visit_detail.is_active %}
+                  <img src   = "{{STATIC_URL}}images/flag_green.png" 
+                      alt   = "ACTIVE VISIT" 
+                      title = "Active Visit"
+                      style = 'float:right; margin: 3px; width:16px; height:16px;'
+                      >
+                {%else%}
+                  <img src  = "{{STATIC_URL}}images/flag_red.png" 
+                      alt  = "INACTIVE VISIT" 
+                      title = "Visit Closed"
+                      style = 'float:right;margin: 3px; width:16px; height:16px;'
+                      >
+                {%endif%}
+
+                {% if visit_detail.has_fu_visits %}
+                  <img src   = "{{STATIC_URL}}images/generic/document/actions/redo.png" 
+                      alt   = "Has Follow Up Visit" 
+                      title = "Has Follow Up Visit"
+                      style = 'float:right; margin: 3px; width:16px; height:16px;'
+                      >
+                {% else %}
+                  <img src   = "{{STATIC_URL}}images/forbidden.png" 
+                      alt   = "No Follow Up Visit" 
+                      title = "No Follow Up Visit"
+                      style = 'float:right; margin: 3px; width:16px; height:16px;'
+                      >
+                {% endif %}
+
               </p>
               <p>
                   <span style="color : navy;
@@ -796,28 +795,12 @@
                           {% if obj_list %}
 
                             {% if obj == 'complaint' %}
-                              <table class="content_pane_table">
-                                <thead>
-                                  <tr> 
-                                    <th> Complaint </th> 
-                                    <th> Duration </th> 
-                                  </tr> 
-                                </thead>
-                                <tbody>
-                                  {% for o in obj_list %}
-                                    <tr>
-                                       <td> {{o.complaint}} </td> 
-                                       <td> {{o.duration}} </td>
-                                    </tr>
-                                  {% endfor %}
-                                </tbody>
-                              </table>
+                                {% include 'visit/complaints/list.html' %}
                               <hr>
-                            {% else %}
+                            {% else%}
                               {{obj_list|safe}}
                               <hr>
                             {% endif %}
-
 
                           {% else %}
                             <span class="suggestion_text"> Not Recorded </span>
@@ -853,22 +836,11 @@
 
                       {{fu.formatted_obj|safe}}  
 
-                  {% comment %} 
-                  <table >
-                    <tr><th>Seen On    </th><td> {{fu.visit_date.date.isoformat}} </td></tr>
-                    <tr><th>Seen By    </th><td> {{fu.op_surgeon}}                </td></tr>
-                    <tr><th>Subjective </th><td> {{fu.subjective|safe}}           </td></tr>
-                    <tr><th>Objective  </th><td> {{fu.objective|safe}}            </td></tr>
-                    <tr><th>Assessment </th><td> {{fu.assessment|safe}}           </td></tr>
-                    <tr><th>Plan       </th><td> {{fu.plan|safe}}                 </td></tr>
-                  </table>
-                  {% endcomment %}
-
                 </div>
               {% endfor %}
             {% endif %}
           </div>
-<!--           <hr class="shadow_line"> -->
+
       {% endfor %}
 
     {% endfor %}
@@ -993,22 +965,11 @@
 
                     {{fu.formatted_obj|safe}}  
 
-                  {% comment %} 
-                  <table >
-                    <tr><th>Seen On    </th><td> {{fu.visit_date.date.isoformat}} </td></tr>
-                    <tr><th>Seen By    </th><td> {{fu.op_surgeon}}                </td></tr>
-                    <tr><th>Subjective </th><td> {{fu.subjective|safe}}           </td></tr>
-                    <tr><th>Objective  </th><td> {{fu.objective|safe}}            </td></tr>
-                    <tr><th>Assessment </th><td> {{fu.assessment|safe}}           </td></tr>
-                    <tr><th>Plan       </th><td> {{fu.plan|safe}}                 </td></tr>
-                  </table>
-                  {% endcomment %}
-
                 </div>
               {% endfor %}
             {% endif %}
           </div>
-<!--           <hr class="shadow_line"> -->
+
       {% endfor %}
 
     {% endfor %}
