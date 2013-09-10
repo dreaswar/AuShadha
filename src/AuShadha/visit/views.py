@@ -1192,7 +1192,7 @@ def visit_detail_edit(request, id):
         success = False
         error_message = None
         VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
-                                                  form=VascExam_FreeModelForm
+                                                  form=Edit_VascExam_FreeModelForm
                                                   )
         if visit_complaint_obj and visit_hpi_obj and visit_ros_obj:
             visit_detail_form = VisitDetailForm(
@@ -1271,7 +1271,8 @@ def visit_detail_edit(request, id):
                 vasc_exam_free_model_formset = VascExam_FreeModelFormset(
                     request.POST, 
                     queryset=VascExam_FreeModel.objects.filter(visit_detail=visit_detail_obj),
-                    prefix=vasc_exam_formset_prefix)
+                    prefix=vasc_exam_formset_prefix,
+                    auto_id=vasc_exam_formset_auto_id)
 
                 #vasc_exam_free_model_form = VascExam_FreeModelForm(
                     #request.POST, instance=vasc_exam_free_model_obj)

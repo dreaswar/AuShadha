@@ -68,6 +68,11 @@ DEFAULT_PHYEXAM_FORM_EXCLUDES = ('phy_exam_base_model',
                                  'remarks'
                                  )
 
+VASC_EXAM_FORM_EXCLUDES = ('physician',
+                          'visit_detail',
+                          'admission_detail',
+                          'remarks'
+                          )
 
 # Physical Examination Models start here:::
 # NEW PHYEXAM MODELS ###############################
@@ -243,6 +248,10 @@ class PeriNeuroExam_FreeModel(PhyExamBaseModel):
                                      default="All Cranial Nerves NAD",
                                      help_text='limit to 30 words')
 
+    phy_exam_base_model = models.OneToOneField(
+        'PhyExamBaseModel', parent_link=True)
+
+
     class Meta:
         verbose_name_plural = "Neuro Examination"
         verbose_name = "Neuro Examination"
@@ -283,6 +292,10 @@ class VascExam_FreeModel(PhyExamBaseModel):
                                           ),
                                  default = 'Normal'
                                  )
+
+    phy_exam_base_model = models.OneToOneField(
+        'PhyExamBaseModel', parent_link=True)
+
 
     class Meta:
         verbose_name_plural = "Vascular Examination"
@@ -380,7 +393,8 @@ class VascExam_FreeModelForm(PhyExamBaseModelForm):
 
     class Meta:
         model = VascExam_FreeModel
-        exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
+        #exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
+        exclude = VASC_EXAM_FORM_EXCLUDES
 
 
 #

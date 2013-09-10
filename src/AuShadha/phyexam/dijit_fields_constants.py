@@ -154,4 +154,5 @@ VASCULAR_EXAM_FORM_CONSTANTS = {
                   "data-dojo-type": "dijit.form.Select",
                   "data-dojo-props": r"'required' : false"
                   }
+
 }

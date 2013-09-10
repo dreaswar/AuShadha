@@ -233,7 +233,7 @@ NEURO_EXAM={
 
     "sensory": "Normal Sensation in all four limbs. Perianal sensation intact",
 
-    "dtr" : "Equally ellicitable in all four limbs. No Clonus.",
+    "dtr" : "Equally ellicitable in all four limbs. No Clonus",
 
     "cranial_nerve" :"All Cranial Nerves NAD"
     }

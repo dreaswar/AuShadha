@@ -93,6 +93,36 @@ class PhyExamBasePresentationClass(object):
             paragraph += line
         return """<div> %s </div>""" % (paragraph)
 
+    def build_table_header(self):
+        header = ''
+        for k in self.field_map.values():
+          label = unicode(k['label'])
+          header += '<th>'+label+'</th>'
+        return "<thead> <tr> %s </th> </thead>" %(header)
+
+    def build_table_rows(self):
+        line = ''
+        for v in self.field_map.values():
+          html_class = ''
+          label = unicode(v['label'])
+          value = v['value']
+          if value:
+              value = unicode(value)
+              unit = unicode(v['unit'])
+              delimitter = unicode(v['delimitter'])
+              is_abnormal = v['is_abnormal']
+              if is_abnormal:
+                  html_class = 'abnormal_value_indicator_text'
+          else:
+              value = unicode("--Not Recorded--")
+              unit = unicode('')
+              delimitter = unicode('')
+              html_class = 'suggestion_text'
+          line += """<td class='%s'>%s %s %s</td>
+                  """ %(html_class, value, delimitter, unit)
+        return "<tr > %s </tr>" %(line)
+
+
     def build_html_table(self):
 
         header = '<thead> <tr>'
@@ -316,12 +346,14 @@ def neuroexamobjpresentationclass_factory(instance):
 
 def vascexamobjpresentationclass_factory(instance):
   v = VascExamObjPresentationClass(instance)
-  return v.build_html_table()
+  return v
 
 def vascexamobjpresentationclass_querysetfactory(queryset):
-  html = '<table>'
+  h_head = ''
+  h_rows = ''
   for instance in queryset:
     h = vascexamobjpresentationclass_factory(instance)
-    html += h
-    html += '</table>'
-  return html
+    if not h_head:
+      h_head = h.build_table_header()
+    h_rows += h.build_table_rows()
+  return "<table class='content_pane_table'> %s <tbody> %s </tbody> </table>" %( h_head,h_rows)
