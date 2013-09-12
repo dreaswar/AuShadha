@@ -11,13 +11,16 @@ urlpatterns = patterns('',
 
                        # Specific URLS..
                        #(r'^AuShadha/clinic/',         include('clinic.urls')),
+
                       (r'^AuShadha/pat/', include('patient.urls')),
                       (r'^AuShadha/patient/', include('patient.urls')),
                       (r'^AuShadha/visit/', include('visit.urls')),
+                      (r'^AuShadha/phyexam/', include('phyexam.urls')),
+
                        #(r'^AuShadha/admission/',      include('admission.urls')),
 
                        #(r'^AuShadha/history/'       ,     include('history.urls')),
-                       #(r'^AuShadha/phyexam/'       ,     include('phyexam.urls')),
+
                        #(r'^AuShadha/procedure/'     ,     include('procedure.urls')),
                        #(r'^AuShadha/discharge/'     ,     include('discharge.urls')),
                        #(r'^AuShadha/allergy/'       ,     include('allergydatabase.urls')),
@@ -29,8 +32,7 @@ urlpatterns = patterns('',
 
                        # Admin and Admin Docs URL:
                       (r'^AuShadha/admin/', include(admin.site.urls)),
-                      (r'^AuShadha/admin/doc/', include(
-                          'django.contrib.admindocs.urls')),
+                      (r'^AuShadha/admin/doc/', include('django.contrib.admindocs.urls')),
 
                        # Media URL
                       (r'^AuShadha/media/(?P<path>.*)$', 'django.views.static.serve',

@@ -74,6 +74,13 @@ GEN_EXAM_FORM_CONSTANTS = {
     }
 }
 
+PHY_EXAM_BASE_MODEL_FORM_CONSTANTS = {
+    'base_model': {'max_length': 100,
+              "data-dojo-type": "dijit.form.ValidationTextBox",
+              "data-dojo-props": r"'required' :false"
+              }
+}
+
 SYS_EXAM_FORM_CONSTANTS = {
     'heent': {'max_length': 1000,
               "data-dojo-type": "dijit.form.Textarea",

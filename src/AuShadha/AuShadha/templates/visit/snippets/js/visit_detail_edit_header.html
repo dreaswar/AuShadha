@@ -309,6 +309,11 @@
                 if(jsondata.success == true){
                   publishInfo("Successfully Deleted Complaint");
                   rollBackRows(rowToDelete);
+                  new buildVisitTree();
+//                registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+                  registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
+                  new buildPatientTree();
+                  new buildAdmissionTree();
                 }else{
                   publishError("ERROR! "+ jsondata.error_message);
                 }

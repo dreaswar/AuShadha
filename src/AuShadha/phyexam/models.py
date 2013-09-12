@@ -45,7 +45,8 @@ from dijit_fields_constants import VITAL_FORM_CONSTANTS, \
     GEN_EXAM_FORM_CONSTANTS, \
     SYS_EXAM_FORM_CONSTANTS, \
     NEURO_EXAM_FORM_CONSTANTS,\
-    VASCULAR_EXAM_FORM_CONSTANTS
+    VASCULAR_EXAM_FORM_CONSTANTS,\
+    PHY_EXAM_BASE_MODEL_FORM_CONSTANTS
 
 # Constants
 
@@ -61,21 +62,28 @@ DEFAULT_VITALS = {
     'remarks': "NAD"
 }
 
-DEFAULT_PHYEXAM_FORM_EXCLUDES = ('phy_exam_base_model',
+DEFAULT_PHYEXAM_FORM_EXCLUDES = (
                                  'physician',
                                  'visit_detail',
                                  'admission_detail',
                                  'remarks'
                                  )
 
-VASC_EXAM_FORM_EXCLUDES = ('physician',
+VASC_EXAM_FORM_EXCLUDES = (
+                          'physician',
                           'visit_detail',
                           'admission_detail',
                           'remarks'
                           )
 
 # Physical Examination Models start here:::
-# NEW PHYEXAM MODELS ###############################
+
+############################################################
+# NEW PHYEXAM MODELS 
+#
+#
+############################################################
+
 class PhyExamBaseModel(AuShadhaBaseModel):
     __model_label__ = 'phy_exam'
 
@@ -310,17 +318,23 @@ class VascExam_FreeModel(PhyExamBaseModel):
         super(VascExam_FreeModel, self).save(*args, **kwargs)
 
 
-# NEW MODEL FORMS ###############################
+##############################################################
+# NEW MODEL FORMS
+# Implementation with a PhyExamBaseModelForm inheritance 
+#   this is to ease Dijitisation of forms
+#
+##############################################################
+
 class PhyExamBaseModelForm(ModelForm):
 
     """Base class for all Physical Examination Forms."""
-    dijit_fields = []
+    dijit_fields = PHY_EXAM_BASE_MODEL_FORM_CONSTANTS
 
     __form_name__ = "Physical Examination Base Form"
 
     class Meta:
         model = PhyExamBaseModel
-        exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
+        #exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
 
     def __init__(self, *args, **kwargs):
         super(PhyExamBaseModelForm, self).__init__(*args, **kwargs)
@@ -393,12 +407,20 @@ class VascExam_FreeModelForm(PhyExamBaseModelForm):
 
     class Meta:
         model = VascExam_FreeModel
-        #exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
-        exclude = VASC_EXAM_FORM_EXCLUDES
+        exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
+        #exclude = VASC_EXAM_FORM_EXCLUDES
 
 
-#
-#
+
+
+
+
+
+
+
+
+
+#################################################################################
 # NON FREE MODELS & FORMS.
 # These are bound to specific PhyExam Parent.
 #   This PhyExam Parent needs to be created first.
@@ -407,7 +429,8 @@ class VascExam_FreeModelForm(PhyExamBaseModelForm):
 # The dijitisation is also repetitive and spaghetti code.
 #   This will be phased out very soon.
 # Several view codes depends on these now.  So its left in place
-#
+################################################################################
+
 class PhyExam(AuShadhaBaseModel):
 
     consult_nature = models.CharField(

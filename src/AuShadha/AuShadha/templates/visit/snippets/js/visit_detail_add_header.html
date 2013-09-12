@@ -305,29 +305,30 @@
             var parentTable = closestRow.parents('table');
             var urlToCall   = domAttr.get(delBtn,'data-url');
 
+            // Necessary as the Full URL is generated from Template  #FIXME
             try{
-              var _hasNone = urlToCall.match(/None/g)[0]; // Necessary as the Full URL is generated from Template  #FIXME
-              if( !_hasNone){
-                var _hasNone = 'None';
-              }
+              var inValidUrl = urlToCall.match(/None/g)[0]; 
             }catch(err){
-              var _hasNone = 'None';
+              try{
+                  var inValidUrl = urlToCall.match(/null/g)[0]; 
+                }catch(err){
+                  var inValidUrl = false
+                }
             }
 
-//             var _hasDigit = urlToCall.match(/\d+/g)[_hasDigit.length];
-//             console.log(_hasDigit);
-//             var _hasNone = urlToCall.match(/None/g)[0];
-//             console.log(_hasNone);            
-//             console.log(urlToCall);
-
-            if( _hasNone !== 'None'){
-              console.log("Requesting delete of the complaint");
+            if( inValidUrl == false){
+              console.log("Requesting delete of the Row");
               request(urlToCall).then(
               function(json){
                 var jsondata = JSON.parse(json);
                 if(jsondata.success == true){
-                  publishInfo("Successfully Deleted Complaint");
+                  publishInfo("Successfully Deleted");
                   rollBackRows(rowToDelete);
+                  new buildVisitTree();
+//                registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
+                  registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
+                  new buildPatientTree();
+                  new buildAdmissionTree();                  
                 }else{
                   publishError("ERROR! "+ jsondata.error_message);
                 }
@@ -337,7 +338,7 @@
               }
               );
             }else{
-              console.log("Deleting the Complaint forms");
+              console.log("Deleting the Rows..");
               rollBackRows(rowToDelete);
               console.log("Destroyed Empty forms");
             }

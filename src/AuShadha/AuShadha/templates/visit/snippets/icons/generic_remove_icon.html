@@ -5,12 +5,7 @@
                 width: 16px; 
                 height: 16px; 
                 cursor: pointer; 
-                display:{% if not forloop.first %} 
-                          table-cell 
-                        {% else %} 
-                           none
-                        {% endif %}
-                        ;
+                display:table-cell ;
                 "
         {% if form.instance.get_del_url %}
           data-url="{{form.instance.get_del_url}}"

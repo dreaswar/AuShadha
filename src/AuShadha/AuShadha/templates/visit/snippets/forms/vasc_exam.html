@@ -1,31 +1,77 @@
-{% include 'visit/snippets/js/vasc_exam_add_header.html' %}
+{% if form_action == 'add' %}
+  {% include 'visit/snippets/js/vasc_exam_add_header.html' %}
 
-<table {%if vasc_exam_free_model_formset.form.0.instance %}
-        id="vascExam_FreeModel_AddFormTable_{{visit_detail_obj.id}}"
-       {%else%}
-        id="vascExam_FreeModel_AddFormTable_{{patient_detail_obj.id}}"
-       {%endif%}
-       class="vascExamAddFormTable addFormTable content_pane_table">
-  <thead>
-      {% for form in vasc_exam_free_model_formset.forms %}
-        {% if forloop.first %}
-          <th>{{ form.location.label_tag }}</th>
-          <th>{{ form.side.label_tag }}</th>
-          <th>{{ form.character.label_tag }}</th>                   
-          <th> &nbsp; &nbsp;</th>
-        {% endif %}
-  </thead>
-  <tbody>
-      <tr>
-        <td>{{ form.location }} </td>
-        <td>{{ form.side }}     </td>
-        <td>{{ form.character }}</td>
-        <td class="actionCell">
-           {%include 'visit/snippets/icons/generic_remove_icon.html' %} 
-           {%include 'visit/snippets/icons/generic_add_icon.html' %}
-        </td>
-      </tr>
-    {% endfor %}
-  </tbody>
-{{ vasc_exam_free_model_formset.management_form }}
-</table>
+  <table {%if vasc_exam_free_model_formset.form.0.instance %}
+          id="vascExam_FreeModel_AddFormTable_{{visit_detail_obj.id}}"
+        {%else%}
+          id="vascExam_FreeModel_AddFormTable_{{patient_detail_obj.id}}"
+        {%endif%}
+        class="vascExamAddFormTable addFormTable content_pane_table">
+    <thead>
+        {% for form in vasc_exam_free_model_formset.forms %}
+          {% if forloop.first %}
+            <th>{{ form.location.label_tag }}</th>
+            <th>{{ form.side.label_tag }}</th>
+            <th>{{ form.character.label_tag }}</th>                   
+            <th> &nbsp; &nbsp;</th>
+          {% endif %}
+        {% endfor %}
+    </thead>
+    <tbody>
+       {% for form in vasc_exam_free_model_formset.forms %}
+        <tr>
+          <td> {{form.phy_exam_base_model}} 
+               {{form.visit_detail}}
+               {{ form.location }} </td>
+          <td>{{ form.side }}     </td>
+          <td>{{ form.character }}</td>
+          <td class="actionCell">
+            {%include 'visit/snippets/icons/generic_remove_icon.html' %} 
+            {%include 'visit/snippets/icons/generic_add_icon.html' %}
+          </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  {{ vasc_exam_free_model_formset.management_form }}
+  </table>
+
+{% elif form_action == 'edit' %}
+
+  {% include 'visit/snippets/js/vasc_exam_edit_header.html' %}
+
+  <table {%if vasc_exam_free_model_formset.form.0.instance %}
+          id="vascExam_FreeModel_EditFormTable_{{visit_detail_obj.id}}"
+        {%else%}
+          id="vascExam_FreeModel_EditFormTable_{{patient_detail_obj.id}}"
+        {%endif%}
+        class="vascExamEditFormTable EditFormTable content_pane_table">
+    <thead>
+        {% for form in vasc_exam_free_model_formset.forms %}
+          {% if forloop.first %}
+            <th>{{ form.location.label_tag }}</th>
+            <th>{{ form.side.label_tag }}</th>
+            <th>{{ form.character.label_tag }}</th>                   
+            <th> &nbsp; &nbsp;</th>
+          {% endif %}
+        {% endfor %}
+    </thead>
+    <tbody>
+       {% for form in vasc_exam_free_model_formset.forms %}
+        <tr>
+          <td> {{form.phy_exam_base_model}} 
+               {{form.visit_detail}}
+               {{ form.location }} </td>
+          <td>{{ form.side }}     </td>
+          <td>{{ form.character }}</td>
+          <td class="actionCell">
+            {%include 'visit/snippets/icons/generic_remove_icon.html' %} 
+            {%include 'visit/snippets/icons/generic_add_icon.html' %}
+          </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+       
+  {{ vasc_exam_free_model_formset.management_form }}
+  </table>
+
+{% endif %}

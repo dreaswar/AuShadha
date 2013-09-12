@@ -5,12 +5,8 @@
                 width: 16px; 
                 height: 16px; 
                 cursor: pointer; 
-                display: {% if not forloop.last %}  
-                            {% if not forloop.first %} none {% else %} table-cell {%endif %}
-                         {%else%} 
-                            table-cell
-                         {%endif %};
-                "
+                display: table-cell
+               "
       class  = "addMoreItem"
       title  = "Add more Item"
     >

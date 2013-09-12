@@ -700,6 +700,8 @@ def visit_detail_add(request, id, nature='initial'):
 
         VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
                                               form=VascExam_FreeModelForm,
+                                              can_delete=True,
+                                              can_order=True,
                                               extra=1
                                               )
 
@@ -808,7 +810,9 @@ def visit_detail_add(request, id, nature='initial'):
 
                         'success': success,
                         'complaint_form_auto_id': complaint_form_auto_id,
-                        'complaint_total_form_auto_id': visit_complaint_formset_prefix+"-TOTAL_FORMS"
+                        'complaint_total_form_auto_id': visit_complaint_formset_prefix+"-TOTAL_FORMS",
+                        
+                        'form_action':'add'
 
                     })
                 return render_to_response('visit/detail/add.html', variable)
@@ -1159,7 +1163,9 @@ def visit_detail_edit(request, id):
                       'complaint_formset_auto_id': complaint_formset_auto_id,
                       'complaint_total_form_auto_id': visit_complaint_formset_prefix+"-TOTAL_FORMS",
                       'generic_add_icon_html':generic_add_icon_html,
-                      'generic_remove_icon_html':generic_remove_icon_html
+                      'generic_remove_icon_html':generic_remove_icon_html,
+                      
+                      'form_action':'edit'
                       })
         return render_to_response('visit/detail/edit.html', variable)
 
@@ -1192,7 +1198,7 @@ def visit_detail_edit(request, id):
         success = False
         error_message = None
         VascExam_FreeModelFormset = modelformset_factory(VascExam_FreeModel,
-                                                  form=Edit_VascExam_FreeModelForm
+                                                  form=VascExam_FreeModelForm
                                                   )
         if visit_complaint_obj and visit_hpi_obj and visit_ros_obj:
             visit_detail_form = VisitDetailForm(
