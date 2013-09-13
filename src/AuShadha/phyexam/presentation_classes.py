@@ -1,4 +1,18 @@
-from phy_exam_constants import PC, validator_factory
+################################################################################
+# Presentation classes for AuShadhaModels.
+# 
+# This will format, pass validation output and generate HTML, JSON ouputs
+# This is attempt to make something simple rather than use Django Class based
+#   views.
+#
+# Author: Dr.Easwar T.R
+# License: GNU-GPL Version 3
+# Date : 09-09-2013
+################################################################################
+
+
+from phy_exam_constants import PC
+from validator import validator_factory
 
 class PhyExamBasePresentationClass(object):
 
@@ -35,6 +49,7 @@ class PhyExamBasePresentationClass(object):
                 try:
                   f = self.field_map[field.name]
                   f['value'] = field.value_from_object(self.exam)
+                  f['class_name'] = field.__class__.__name__
                   f_validator = f['validator']
                   f_constraints = f['constraints']
                   f_compare_with  = f['default']
@@ -74,18 +89,29 @@ class PhyExamBasePresentationClass(object):
             html_class = ''
             label = unicode(v['label'])
             value = v['value']
+            class_name = v['class_name']
+            is_abnormal = v['is_abnormal']
             if value:
-                value = unicode(value)
-                unit = unicode(v['unit'])
-                delimitter = unicode(v['delimitter'])
-                is_abnormal = v['is_abnormal']
+                if class_name == "BooleanField": 
+                  value = unicode("Present")
+                  delimitter = ''
+                  unit = ''
+                else:
+                  value = unicode(value)
+                  unit = unicode(v['unit'])
+                  delimitter = unicode(v['delimitter'])
                 if is_abnormal:
                     html_class = 'abnormal_value_indicator_text'
             else:
-                value = unicode("--Not Recorded--")
+                if class_name == "BooleanField":
+                  value = unicode("Not Present")
+                  html_class = ''
+                else:
+                  value = unicode("--Not Recorded--")
+                  html_class = 'suggestion_text'
                 unit = unicode('')
                 delimitter = unicode('')
-                html_class = 'suggestion_text'
+
             line = """<p> <span class='label_text'>%s:</span> 
                           <span class="%s">%s %s %s  </span> 
                       </p>
@@ -106,18 +132,29 @@ class PhyExamBasePresentationClass(object):
           html_class = ''
           label = unicode(v['label'])
           value = v['value']
+          class_name = v['class_name']
+          is_abnormal = v['is_abnormal']
           if value:
-              value = unicode(value)
-              unit = unicode(v['unit'])
-              delimitter = unicode(v['delimitter'])
-              is_abnormal = v['is_abnormal']
+              if class_name is not "BooleanField":
+                value= unicode(value)
+                unit = unicode(v['unit'])
+                delimitter = unicode(v['delimitter'])                
+              else:
+                value = "Present"
+                unit = ''
+                delimitter = ' '
               if is_abnormal:
                   html_class = 'abnormal_value_indicator_text'
           else:
-              value = unicode("--Not Recorded--")
+              if class_name is not "BooleanField":
+                value = unicode("--Not Recorded--")
+                html_class = 'suggestion_text'
+              else:
+                value = unicode("Not Present")
+                html_class = ''
               unit = unicode('')
               delimitter = unicode('')
-              html_class = 'suggestion_text'
+
           line += """<td class='%s'>%s %s %s</td>
                   """ %(html_class, value, delimitter, unit)
         return "<tr > %s </tr>" %(line)

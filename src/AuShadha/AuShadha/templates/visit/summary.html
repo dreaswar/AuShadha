@@ -38,6 +38,7 @@
 {% if user.is_authenticated %}
 
   {% if perms.visit %}
+
     {%if visit_obj_list %}
       <div style = "background    : white; 
                     height        : 2.5em; 
@@ -46,7 +47,8 @@
                     width         : 100%;
                     margin-bottom : 10px;
                    "
-           id   = "visitSummaryNotesContainer">
+           id   = "visitSummaryNotesContainer"
+           >
 
 
         <div style = "position      : relative; 
@@ -55,7 +57,8 @@
                       white-space   : nowrap;
                       width         : 90%;
                      "
-             id    = "visitSummaryNotesSettingsContainer">
+             id    = "visitSummaryNotesSettingsContainer"
+             >
           <span style = "position    : relative; 
                          float       : left; 
                          display     : inline-block; 
@@ -604,9 +607,10 @@
           </a>
 
         </div>
+
       </div>
-      
     {% endif %}
+
   {% endif %}
 
   <div id="visitSummaryNotesSettings" 
@@ -618,7 +622,7 @@
               border-radius : 5px;
               padding       : 0px 5px 0px 10px;
               "
-              >
+    >
     <button id              = "visitShowTimeLineButton"
             data-dojo-type  = "dijit/form/Button"
             data-dojo-id    = "visitShowTimeLineButton"

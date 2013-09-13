@@ -34,9 +34,7 @@
                     on,
                     parser){
 
-        var TABLE_ID = "{%if vasc_exam_free_model_formset.form.0.instance %}\
-                          vascExam_FreeModel_EditFormTable_{{visit_detail_obj.id}}\
-                        {%else%}vascExam_FreeModel_EditFormTable_{{patient_detail_obj.id}}{%endif%}"
+        var TABLE_ID = "vascExam_FreeModel_EditFormTable_{{visit_detail_obj.id}}"
 
         var tableDomNode   = dom.byId(TABLE_ID);
         var TOTAL_FORM_AUTO_ID = "{{vasc_total_form_auto_id}}";
@@ -213,14 +211,18 @@
 
         function lastButOneRowActionCellStyling(){
             var _rn= parseInt(getNumRows(TABLE_ID));
-            console.log("Querying for Row with Number " + (_rn-1) + " in Table with ID: " + TABLE_ID);
-            if (_rn>=1){
-              var _lbr = getRowFromTable(TABLE_ID, _rn-1);
-              var _aIcon = query(_lbr).children('td.actionCell').children('span.addMoreItem')[0];
-              var _rIcon = query(_lbr).children('td.actionCell').children('span.removeThisItem')[0];
-              domStyle.set(_aIcon, {'display':'none'});
-              domStyle.set(_rIcon,{'display':'table-cell'});
-            }else{
+            if(_rn>1){
+              for(var i=1; i<_rn; i++){
+                console.log("Querying for Row with Number " + i + " in Table with ID: " + TABLE_ID);
+                var _lbr = getRowFromTable(TABLE_ID, i);
+                var _aIcon = query(_lbr).children('td.actionCell').children('span.addMoreItem')[0];
+                var _rIcon = query(_lbr).children('td.actionCell').children('span.removeThisItem')[0];
+                domStyle.set(_aIcon, {'display':'none'});
+                domStyle.set(_rIcon,{'display':'table-cell'});
+              }
+            }else if(_rn==1){
+              return;
+            }else {
               return;
             }
         }

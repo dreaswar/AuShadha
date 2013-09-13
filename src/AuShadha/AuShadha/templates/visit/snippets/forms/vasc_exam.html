@@ -39,11 +39,7 @@
 
   {% include 'visit/snippets/js/vasc_exam_edit_header.html' %}
 
-  <table {%if vasc_exam_free_model_formset.form.0.instance %}
-          id="vascExam_FreeModel_EditFormTable_{{visit_detail_obj.id}}"
-        {%else%}
-          id="vascExam_FreeModel_EditFormTable_{{patient_detail_obj.id}}"
-        {%endif%}
+  <table  id="vascExam_FreeModel_EditFormTable_{{visit_detail_obj.id}}"
         class="vascExamEditFormTable EditFormTable content_pane_table">
     <thead>
         {% for form in vasc_exam_free_model_formset.forms %}
