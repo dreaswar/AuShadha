@@ -9,7 +9,6 @@ class AuModelFormErrorFormatter(object):
         self.form = form
         self.content = ''
         self.form_name = getattr(self.form, '__form_name__', 'Form Error')
-        # return self.__unicode__()
 
     def __unicode__(self):
         if self.form.errors:
