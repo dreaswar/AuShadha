@@ -64,28 +64,38 @@ You may need to install Python development libraries if you are on Linux. Requir
 Project Structure
 =================
 
-1) AuShadha_logo : Contains the logo, with SVG and .png file along with License.
+1) AuShadha_logo : Contains the logo, with SVG and .png file along with License.  
 
-2) docs : Contains the Requirements.txt, License.txt
+2) docs : Contains the Requirements.txt, License.txt  
 
-3) src : Project Source Code, Media files(Icons,Images, File uploads), Javscript (custom and Dojo)
+3) src : Project Source Code, Media files(Icons,Images, File uploads), Javscript (custom and Dojo)  
 
-4) README.md
+4) README.md  
 
-5) LICENSE.txt
-
-
+5) LICENSE.txt  
 
 
-Plan
-=====
-1) I plan to develop the Clinic, Patient, Physician, Nurse modules first.  
-2) Visit Module will be next followed by Clinical Exam, Investigations, Procedure, Discharge, Prescription  
-3) Stock and Pharmacy will follow.  
-4) Allergy and Incident Reports next  
-5) Admission Module will follow.   
-6) Specific public health modules like Paediatrics, Neonatology, Gynaecology/ Obstetrics will be last as by then
-   the interdependencies will be solved  
+
+Development Status
+==================
+Patient Registration Module done  
+Patient History, Medication Module completed  
+Allergy Module completed  
+Outpatient Visit Module in progress, nearing completion  
+  
+ICD 10, ICD 10 PCS parser's output incorporated as a fixture  
+FDA medication list included as a fixture after parsing from FDA xml file  
+
+
+
+Developement Roadmap    
+====================
+Surgical Procedure module will be next  
+In-patient Admission management module along with Progress notes  
+Pharmacy, Billing and Inventory to follow  
+  
+Specific public health modules like Paediatrics, Neonatology, Gynaecology/ Obstetrics will be last as by then
+ he interdependencies will be solved  
 
 
 Want to participate ?
@@ -95,6 +105,6 @@ Suggestions and participation are welcome.
 
 Please email me at dreaswar@gmail.com  
 Visit me at http://www.dreaswar.com  
-Follow me at http://www.twitter.com/dreaswar/
+Follow me at http://www.twitter.com/aushadhaemr/
 Follow the Project news at http://www.facebook.com/AuShadha/  
 
