@@ -119,17 +119,6 @@ class AuShadhaBaseModel(models.Model):
     __model_label__ = "AuShadhaBaseModel"
 
     _parent_model = None    
-    
-    urls = {
-            'summary':{},
-            'tree'   :{},
-            'sidebar':{},
-            'json'   :{},
-            'list'   :{},
-            'add'    :{},
-            'edit'   :{},
-            'del'    :{},
-    }
 
     def __init__(self, *args, **kwargs):
 
@@ -138,8 +127,6 @@ class AuShadhaBaseModel(models.Model):
     def save(self, *args, **kwargs):
 
         super(AuShadhaBaseModel, self).save(*args, **kwargs)
-        self.generate_urls()
-
 
     def __unicode__(self):
 
@@ -148,17 +135,29 @@ class AuShadhaBaseModel(models.Model):
     def _generate_and_assign_urls(self,parent):
       """ Generates and Assigns URL to the Model Object"""
 
-      self.url = urlgenerator_factory(self,parent)
+      #print "Printing Self:: "
+      #print self
+      self.urls =  urlgenerator_factory(self,parent)
 
     def generate_urls(self):
+      """ Generates and Assigns URL to the Model Object
+          As of now this needs to be called as needed on instances. 
+
+          #TODO: The result is not saved as a model attribute
+
+          #FIXME: Calling methods on serial instances somehow replaces the self.urls in 
+                  called previously. 
+                  Currently it is therefore best to call it once and
+                  save in a variable and use it. 
+      """
 
       parent = getattr(self,'_parent_model',None)
-      print "Parent Instance for URL is ", parent
+      #print "Parent Instance for URL is ", parent
 
       if parent:
         if type(parent) is str:
           parent_field = getattr(self,parent)
-          print "Parent Fields for URL is ", parent_field
+          #print "Parent Fields for URL is ", parent_field
           self._generate_and_assign_urls(parent_field)        
         elif type(parent) is list:
           for item in parent:

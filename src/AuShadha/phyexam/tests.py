@@ -41,22 +41,46 @@ class TestUrlsForPhyExam(object):
     self.vis.save()
 
     self.pat.save()
+    self.pat.generate_urls()
 
+    print "\n"
     print "URLS for Patient is " 
     print self.pat.urls
-    print "#"*30
+    print "#"*50
 
+    print "\n"
     print "URLS for Visit is " 
+    self.vis.generate_urls()
     print self.vis.urls
-    print "#"*30
+    print "#"*50
+    print "\n"
 
 
     self.pe = PhyExamBaseModel(visit_detail = self.vis,physician = self.surg)
     self.pe.save()
 
+    print "\n"
     print "URLS for Phyexam is" 
+    self.pe.generate_urls()
     print self.pe.urls
-    print "#"*30
+    print "#"*50
+    print "\n"
+
+    print "\n"
+    print "Reprinting Visit URLS" 
+    #self.vis.generate_urls()
+    print self.vis.urls
+    print "#"*50
+    print "\n"
+
+
+    print "\n"
+    print "Reprinting Patient URLS" 
+    #self.pat.generate_urls()
+    print self.pat.urls
+    print "#"*50
+    print "\n"
+
 
 t = TestUrlsForPhyExam()
 t()

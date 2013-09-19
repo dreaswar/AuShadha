@@ -8,26 +8,46 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-                      url(r'json/$', 'visit.views.visit_json',name='visit_json'),
+                      url(r'json/(?P<patient_id>\d+)/$'  , 
+                          'visit.views.visit_json'  , 
+                          name="visit_json_with_id"
+                      ),
 
-                      url(r'render_visit_list/$', render_visit_list, name="render_visit_list"),
-                       url(r'render_visit_tree/$',render_visit_tree, name="render_visit_tree"),
-                       #url(r'render_visit_json/(?P<id>\d+)/$'  , render_visit_json  , name="render_visit_json"),
+                      url(r'json/$', 
+                          'visit.views.visit_json',
+                          name='visit_json_without_id'
+                      ),
 
-                       url(r'render_patient_visits_pdf/(?P<id>\d+)/$',
+                      url(r'render_visit_list/$', 
+                          render_visit_list, 
+                          name="render_visit_list"
+                      ),
+
+                      url(r'tree/(?P<patient_id>\d+)/$',
+                          "visit.views.render_visit_tree", 
+                          name="render_visit_tree_with_id"
+                      ),
+
+                      url(r'tree/$',
+                          "visit.views.render_visit_tree", 
+                          name="render_visit_tree"
+                      ),
+
+
+                       url(r'render_patient_visits_pdf/(?P<patient_id>\d+)/$',
                            'visit.views.render_patient_visits_pdf',
                            name='render_patient_visits_pdf'
                            ),
 
-                       url(r'render_visit_pdf/(?P<id>\d+)/$',
+                       url(r'render_visit_pdf/(?P<patient_id>\d+)/$',
                            'visit.views.render_visit_pdf',
                            name='render_visit_pdf'
                            ),
 
-                       url(r'summary/(?P<id>\d+)/$',
+                       url(r'summary/(?P<patient_id>\d+)/$',
                            visit_summary, name="visit_summary"),
 
-                       url(r'follow_up/add/(?P<id>\d+)/$',
+                       url(r'follow_up/add/(?P<visit_id>\d+)/$',
                            visit_follow_up_add, name="visit_follow_up_add"),
                        url(r'follow_up/edit/(?P<id>\d+)/$',
                            visit_follow_up_edit, name="visit_follow_up_edit"),

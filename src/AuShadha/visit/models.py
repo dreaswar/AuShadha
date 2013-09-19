@@ -60,6 +60,21 @@ class VisitDetail(AuShadhaBaseModel):
     __model_label__ = "visit"
     _parent_model = 'patient_detail'
 
+    _can_add_list_or_json = ['complaint',
+                             'follow_up',
+                             'ros',
+                             'hpi',
+                             'soap',
+                             'phy_exam',
+                             #'past_history',
+                             #'inv',
+                             #'imaging',
+                             #'procedure',
+                             #'discharge'
+                             ]
+
+    _extra_url_actions = ['close','change_nature']
+
     patient_detail = models.ForeignKey(PatientDetail)
     visit_date = models.DateTimeField(
         auto_now=False, default=datetime.now())
@@ -327,7 +342,7 @@ class VisitFollowUp(AuShadhaBaseModel):
 class VisitSOAP(AuShadhaBaseModel):
 
     """Model to describe the Follow up OPD Visit Notes  or SOAP notes."""
-    __model_label__ = "visit_soap"
+    __model_label__ = "soap"
     _parent_model = 'visit_detail'
 
     subjective = models.TextField(
@@ -445,7 +460,7 @@ class VisitImaging(AuShadhaBaseModel):
 
 class VisitROS(AuShadhaBaseModel):
 
-    __model_label__ = 'visit_ros'
+    __model_label__ = 'ros'
 
     _parent_model = 'visit_detail'
 

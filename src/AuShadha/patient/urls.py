@@ -118,5 +118,10 @@ urlpatterns = patterns('',
                            'patient.views.patient_name_autocompleter',
                            name='patient_name_autocompleter'
                            ),
+###############################################################################
+                       url(r'list/$',
+                           'patient.views.render_patient_list'  ,
+                           name='render_patient_list'
+                           ),
 
 )

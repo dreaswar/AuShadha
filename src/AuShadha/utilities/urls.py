@@ -7,19 +7,32 @@ class UrlGenerator(object):
   parented_actions = ['add','list','json','tree','sidebar','summary']
   parentless_actions = ['edit','del']
 
+  urlDict = {
+            'summary':{},
+            'tree'   :{},
+            'sidebar':{},
+            'json'   :{},
+            'list'   :{},
+            'add'    :{},
+            'edit'   :{},
+            'del'    :{},
+          }
+    
   def __init__(self,
                instance,
                parent = None):
+
 
     self.root_url = APP_ROOT_URL
     self.instance = instance
 
     self.instance_id = str(instance.id)
-    self.urlDict = instance.urls
     self.app_label = instance._meta.app_label
     self.model_label = instance.__model_label__
     self.parent_model = instance._parent_model
 
+    self.can_add_list_or_json = hasattr(instance,'_can_add_list_or_json')
+    self.extra_url_actions = hasattr(instance,'_extra_url_actions')
 
     for action in self.parentless_actions:
         url = "%s%s/%s/%s/%s/" %(self.root_url,
@@ -31,38 +44,55 @@ class UrlGenerator(object):
         self.urlDict[action] = url
 
     for action in self.parented_actions:
-        print "Received Parent: ", parent
-        print "Parent is of type: ", type(parent)
         parent_label = getattr(parent,'__model_label__')
-        print parent.__model_label__
-        print "Parent Label generated is: ", parent_label
         parent_id = getattr(parent,'id')
-        print "Parent ID is: ", parent_id
 
-        if hasattr(instance,'_can_add_list_or_json'):
+        #print "Received Parent: ", parent
+        #print "Parent is of type: ", type(parent)
+        #print parent.__model_label__
+        #print "Parent Label generated is: ", parent_label
+        #print "Parent ID is: ", parent_id
+
+        if self.can_add_list_or_json:
+          self.urlDict[action] = {}
           for m in instance._can_add_list_or_json:
-            self.urlDict[action] = {}
-            if parent_label and parent_id:
-                url = "%s%s/%s/%s/?%s_id=%s/" %(self.root_url,
-                                                self.app_label,
-                                                self.model_label,
-                                                action,
-                                                parent_label,
-                                                str(parent_id)
-                                          )
-                self.urlDict[action][m] = url
-            else:
-              raise Exception("NoParentModelLabelError")
+              url = "%s%s/%s/?%s_id=%s" %(self.root_url,
+                                            m,
+                                            action,
+                                            self.model_label,
+                                            str(self.instance_id)
+                                        )
+              self.urlDict[action][m] = url
+
+        #if self.extra_url_actions:
+          #self.urlDict[action] = {}
+          #for m in instance._extra_url_actions:
+              #url = "%s%s/%s/%s/?%s_id=%s/" %(self.root_url,
+                                           #self.app_label,
+                                           #self.model_label,
+                                           #m,
+                                           #self.model_label,
+                                           #str(self.instance_id)
+                                        #)
+              #self.urlDict[action][m] = url
 
         else:
             if parent_label and parent_id:
-                url = "%s%s/%s/%s/?%s_id=%s/" %(self.root_url,
-                                                self.app_label,
-                                                self.model_label,
-                                                action,
-                                                parent_label,
-                                                str(parent_id)
-                                          )
+                if self.app_label != self.model_label:
+                  url = "%s%s/%s/%s/?%s_id=%s" %(self.root_url,
+                                                  self.app_label,
+                                                  self.model_label,
+                                                  action,
+                                                  parent_label,
+                                                  str(parent_id)
+                                            )
+                else:
+                  url = "%s%s/%s/?%s_id=%s" %(self.root_url,
+                                                  self.app_label,
+                                                  action,
+                                                  parent_label,
+                                                  str(parent_id)
+                                            )
                 self.urlDict[action] = url
             else:
               raise Exception("NoParentModelLabelError")

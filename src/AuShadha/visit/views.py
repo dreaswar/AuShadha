@@ -36,9 +36,16 @@ from utilities.forms import AuModelFormErrorFormatter, aumodelformerrorformatter
 from aushadha_users.models import AuShadhaUser
 from clinic.models import Clinic, Staff
 from visit.models import *
-from patient.models import *
+from patient.models import PatientDetail
 from admission.models import Admission
 from physician.models import PhysicianDetail
+from demographics.models import Contact, Guardian, Phone, Demographics
+from medication_list.models import MedicationList
+from allergy_list.models import Allergy
+from social_history.models import SocialHistory
+from family_history.models import FamilyHistory
+from medical_history.models import MedicalHistory
+from surgical_history.models import SurgicalHistory
 from inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
 
 from phyexam.models import *
@@ -92,10 +99,13 @@ def visit_home(request, id='id'):
 #
 
 @login_required
-def visit_json(request):
+def visit_json(request, patient_id = None):
     try:
         action = unicode(request.GET.get('action'))
-        id = int(request.GET.get('patient_id'))
+        if not patient_id:
+          id = int(request.GET.get('patient_id'))
+        else:
+          id = int(patient_id)
         if action == 'add':
             return patient_visit_add(request, id)
         patient_detail_obj = PatientDetail.objects.get(pk=id)
@@ -128,10 +138,10 @@ def visit_json(request):
 
 
 @login_required
-def render_visit_tree(request, id=None):
+def render_visit_tree(request, patient_id=None):
     if request.method == "GET" and request.is_ajax():
-        if id:
-            patient_id = int(id)
+        if patient_id:
+            patient_id = int(patient_id)
         else:
             try:
                 patient_id = int(request.GET.get('patient_id'))
@@ -151,20 +161,20 @@ def render_visit_tree(request, id=None):
             active_visit_obj = VisitDetail.objects.filter(
                 patient_detail=pat_obj).filter(is_active=True)
 
-            demographics_obj = PatientDemographicsData.objects.filter(
+            demographics_obj = Demographics.objects.filter(
                 patient_detail=pat_obj)
-            social_history_obj = PatientSocialHistory.objects.filter(
+            social_history_obj = SocialHistory.objects.filter(
                 patient_detail=pat_obj)
-            family_history_obj = PatientFamilyHistory.objects.filter(
+            family_history_obj = FamilyHistory.objects.filter(
                 patient_detail=pat_obj)
-            medical_history_obj = PatientMedicalHistory.objects.filter(
+            medical_history_obj = MedicalHistory.objects.filter(
                 patient_detail=pat_obj)
-            surgical_history_obj = PatientSurgicalHistory.objects.filter(
+            surgical_history_obj = SurgicalHistory.objects.filter(
                 patient_detail=pat_obj)
 
-            medication_list_obj = PatientMedicationList.objects.filter(
+            medication_list_obj = MedicationList.objects.filter(
                 patient_detail=pat_obj)
-            allergy_obj = PatientAllergies.objects.filter(
+            allergy_obj = Allergy.objects.filter(
                 patient_detail=pat_obj)
 
             pat_inv_obj = VisitInv.objects.filter(
