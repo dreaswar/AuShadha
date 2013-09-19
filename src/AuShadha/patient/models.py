@@ -10,9 +10,18 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from utilities.urls import generic_url_maker
-from clinic.models import Clinic
+from utilities.queries import has_contact,
+                              has_phone,
+                              has_guardian,
+                              has_active_admission,
+                              has_active_visit, 
+                              adm_for_pat,
+                              visit_for_pat,
+                              can_add_new_visit,
+                              get_patient_complaints
+
 from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
-#from demographics.models import Contact, Phone, Guardian
+from clinic.models import Clinic
 from dijit_fields_constants import PATIENT_DETAIL_FORM_CONSTANTS
 
 DEFAULT_PATIENT_DETAIL_FORM_EXCLUDES=('parent_clinic',)
@@ -53,6 +62,13 @@ class PatientDetail(AuShadhaBaseModel):
     _extra_url_actions = ['transfer_patient','transfer_clinic','refer']
 
 
+    # Instance Methods imported from utilities/queries
+    self.has_active_admission = has_active_admission
+    self.has_active_visit = has_active_visit
+    self.has_contact = has_contact
+    self.has_guardian = has_guardian
+    self.has_phone = has_phone
+    self.can_add_new_visit = can_add_new_visit
 
 
     # Model attributes
@@ -95,21 +111,7 @@ class PatientDetail(AuShadhaBaseModel):
                     )
         unique_together = ('patient_hospital_id', 'parent_clinic')
 
-    def save(self, *args, **kwargs):
-        """Custom Save Method needs to be defined.
 
-        This should check for:
-        1. Whether the patient is registered before.
-        2. Patient DOB / Age Verfication and attribute setting
-        3. Setting the full_name attribute
-
-        """
-        self.check_before_you_add()
-        self._set_full_name()
-    #     self._set_age()
-        super(PatientDetail, self).save(*args, **kwargs)
-
-    # Define the Unicode method for Patient Detail Model::
     def __unicode__(self):
         if self.middle_name and self.last_name:
             return "%s %s %s" % (self.first_name.capitalize(),
@@ -121,6 +123,43 @@ class PatientDetail(AuShadhaBaseModel):
             return "%s %s" % (self.first_name.capitalize(), self.last_name.capitalize())
           else:
             return "%s %s" % (self.first_name.capitalize(), self.middle_name.capitalize())
+
+
+    def check_before_you_add(self):
+      """
+        Checks whether the patient has already been registered in the
+        database before adding.
+      """
+      all_pat = PatientDetail.objects.all()
+      hosp_id = self.patient_hospital_id
+      id_list = []
+      if all_pat:
+          for p in all_pat:
+              id_list.append(p.patient_hospital_id)
+        if hosp_id in id_list:
+            error = "Patient is already registered"
+            print error
+            return False
+        else:
+            return True
+      else:
+          return True
+
+    def save(self, *args, **kwargs):
+
+        """
+          Custom Save Method needs to be defined.
+          This should check for:
+          1. Whether the patient is registered before.
+          2. Patient DOB / Age Verfication and attribute setting
+          3. Setting the full_name attribute
+        """
+
+        self.check_before_you_add()
+        self._set_full_name()
+    #     self._set_age()
+        super(PatientDetail, self).save(*args, **kwargs)
+
 
     def _field_list(self):
         self.field_list = []
@@ -139,10 +178,15 @@ class PatientDetail(AuShadhaBaseModel):
         str_obj += "</ul>"
         return str_obj
 
-# Defines and sets the Full Name for a Model on save.
-# This stores the value under the self.full_name attribute.
-# This is mainly intented for name display and search
+
     def _set_full_name(self):
+
+        """
+            Defines and sets the Full Name for a Model on save.
+            This stores the value under the self.full_name attribute.
+            This is mainly intented for name display and search
+        """
+
         if self.middle_name and self.last_name:
             self.full_name = unicode(self.first_name.capitalize() + " " +
                                      self.middle_name.capitalize() + " " +
@@ -159,10 +203,16 @@ class PatientDetail(AuShadhaBaseModel):
                                      )
         return self.full_name
 
-# Check DOB and Age. See Which one to set. Dont set age if DOB is given. Dont allow age > 120 to be set.
-# This should be called before Form & Model save.
-# If this returns false, the save should fail raising proper Exception
+
     def _set_age(self):
+
+        """ Check DOB and Age. See Which one to set. 
+            Dont set age if DOB is given. 
+            Dont allow age > 120 to be set.
+            This should be called before Form & Model save.
+            If this returns false, the save should fail raising proper Exception
+        """
+
         if self.date_of_birth:
             min_allowed_dob = datetime.datetime(1900, 01, 01)
             max_allowed_dob = datetime.datetime.now()
@@ -181,6 +231,33 @@ class PatientDetail(AuShadhaBaseModel):
             else:
                 raise Exception("Invalid Date of Birth / Age Supplied")
                 return False
+
+
+class PatientDetailForm(AuShadhaBaseModelForm):
+
+    """
+        ModelForm for Patient Basic Data
+    """
+
+    __form_name__ = "Patient Detail Form"
+
+    dijit_fields = PATIENT_DETAIL_FORM_CONSTANTS
+
+    class Meta:
+        model = PatientDetail
+        exclude = DEFAULT_PATIENT_DETAIL_FORM_EXCLUDES
+
+
+
+
+
+
+
+
+
+
+################################################################################
+
 
     # Defines all the URLS associated with a Patient Model and the actions associated::
 
@@ -322,213 +399,3 @@ class PatientDetail(AuShadhaBaseModel):
     #def get_patient_visit_tree_url(self):
         #"""Returns the URL for listing visits for a Patient."""
         #return '/AuShadha/render_visit_tree/?patient_id=%s/' % self.id
-
-
-    ## Defines all the methods associated with the Patient Model for
-    ## manipulation and queriing..
-    def check_before_you_add(self):
-        """Checks whether the patient has already been registered in the
-        database before adding."""
-        all_pat = PatientDetail.objects.all()
-        hosp_id = self.patient_hospital_id
-        id_list = []
-        if all_pat:
-            for patient in all_pat:
-                id_list.append(patient.patient_hospital_id)
-                if hosp_id in id_list:
-                    #raise Exception("Patient Already Registered")
-                    error = "Patient is already registered"
-                    return False, error
-                else:
-                    return True
-        else:
-            return True
-
-    def has_active_admission(self):
-        """Queries whether a given patient has an active admission."""
-        from admission.models import Admission
-        id = self.id
-        try:
-            pat_obj = PatientDetail.objects.get(pk=id)
-        except(TypeError, ValueError, PatientDetail.DoesNotExist):
-            return False
-        adm_obj = Admission.objects.filter(
-            patient_detail=pat_obj).filter(admission_closed=False)
-        if adm_obj:
-            return True
-        else:
-            return False
-
-    def adm_for_pat(self):
-        """Returns the number of admissions for a patient after calling
-        has_active_admission.
-
-        If no admission it returns the None. Useful for Templates
-        manipulation.
-
-        """
-        from admission.models import Admission
-        id = self.id
-        try:
-            pat_obj = PatientDetail.objects.get(pk=id)
-        except(TypeError, ValueError, PatientDetail.DoesNotExist):
-            return False
-        if self.has_active_admission() == '0':
-            return None
-        else:
-            all_adm_obj = Admission.objects.filter(patient_detail=pat_obj)
-            return all_adm_obj
-
-    def has_active_visit(self):
-        """Queries whether a given patient has a active visit.
-
-        Returns Boolean. Returns False in case of error.
-
-        """
-
-        from visit.models import VisitDetail
-        id = self.id
-        try:
-            pat_obj = PatientDetail.objects.get(pk=id)
-        except(TypeError, ValueError, AttributeError, PatientDetail.DoesNotExist):
-            return False
-        visit_obj = VisitDetail.objects.filter(
-            patient_detail=pat_obj, is_active=True)
-        if visit_obj:
-            return True
-        else:
-            return False
-
-    def can_add_new_visit(self):
-        from visit.models import VisitDetail
-        from admission.models import Admission
-        id = self.id
-        try:
-            pat_obj = PatientDetail.objects.get(pk=id)
-        except(TypeError, ValueError, AttributeError, PatientDetail.DoesNotExist):
-            return False
-        # if not self.has_active_visit():
-        if not self.has_active_admission():
-            return True
-        else:
-            return False
-        # else:
-            # return False
-
-
-    def visit_for_pat(self):
-        """Details the visit details for each patient.
-
-        This is useful for display on the Patient List table in
-        template. Can just call this method and format a table with
-        results for a quick view. Can use the return value of "Visit
-        Object" to call the is_visit_active method if needed
-
-        """
-
-        from visit.models import VisitDetail
-        id = self.id
-        try:
-            pat_obj = PatientDetail.objects.get(pk=id)
-        except (TypeError, ValueError, AttributeError, PatientDetail.DoesNotExist):
-            return False
-        visit_obj = VisitDetail.objects.filter(patient_detail=pat_obj)
-        if not visit_obj:
-            return None
-        else:
-            return visit_obj
-
-
-    #def get_patient_complaints(self):
-        ##from django.utils import simplejson
-        #from visit.models import VisitDetail, VisitComplaint
-        #p_id = self.id
-        #try:
-            #pat_obj = PatientDetail.objects.get(pk=p_id)
-        #except(TypeError, AttributeError, NameError):
-            #raise Exception("Invalid ID. Raised Error")
-        #except(PatientDetail.DoesNotExist):
-            #raise Exception("Invalid Patient. No Such Patient on record")
-        #visit_obj = VisitDetail.objects.filter(
-            #patient_detail=pat_obj).order_by('-visit_date')
-        #visit_complaint_list = []
-        #if visit_obj:
-            #for visit in visit_obj:
-                #visit_complaints = VisitComplaint.objects.filter(
-                    #visit_detail=visit)
-                #if visit_complaints:
-                    #for complaint in visit_complaints:
-                        #dict_to_append = {}
-                        #dict_to_append['complaint'] = complaint.complaint
-                        #dict_to_append['duration'] = complaint.duration
-                        #dict_to_append[
-                            #'visit_date'] = complaint.visit_detail.visit_date.date().isoformat()
-                        #dict_to_append[
-                            #'is_active'] = complaint.visit_detail.is_active
-                        #dict_to_append['visit_detail'] = complaint.visit_detail
-                        #dict_to_append[
-                            #'visit_fu'] = complaint.visit_detail.has_fu_visits()
-                        #visit_complaint_list.append(dict_to_append)
-        ##json = simplejson.dumps(visit_complaint_list)
-        ## return json
-        #return visit_complaint_list
-
-
-    #def has_contact(self):
-        #"""Returns a Boolean whether a particular patient has a contact or not
-        #in Database."""
-        #id = self.id
-        #try:
-            #pat_obj = PatientDetail.objects.get(pk=id)
-        #except(ValueError, AttributeError, TypeError, PatientDetail.DoesNotExist):
-            #return False
-        #contact = Contact.objects.filter(patient_detail=pat_obj)
-        #if contact:
-            #return contact
-        #else:
-            #return False
-
-    #def has_phone(self):
-        #"""Returns a Boolean whether a particular patient has a contact or not
-        #in Database."""
-        #id = self.id
-        #try:
-            #pat_obj = PatientPhone.objects.get(pk=id)
-        #except(ValueError, AttributeError, TypeError, PatientDetail.DoesNotExist):
-            #return False
-        #phone = Phone.objects.filter(patient_detail=pat_obj)
-        #if phone:
-            #return phone
-        #else:
-            #return False
-
-    #def has_guardian(self):
-        #"""Returns a Boolean whether a particular patient has a contact or not
-        #in Database."""
-        #id = self.id
-        #try:
-            #pat_obj = PatientDetail.objects.get(pk=id)
-        #except(ValueError, AttributeError, TypeError, PatientDetail.DoesNotExist):
-            #return False
-        #guardian = Guardian.objects.filter(patient_detail=pat_obj)
-        #if guardian:
-            #return guardian
-        #else:
-            #return False
-
-
-
-
-class PatientDetailForm(AuShadhaBaseModelForm):
-
-    """
-        ModelForm for Patient Basic Data
-    """
-
-    __form_name__ = "Patient Detail Form"
-
-    dijit_fields = PATIENT_DETAIL_FORM_CONSTANTS
-
-    class Meta:
-        model = PatientDetail
-        exclude = DEFAULT_PATIENT_DETAIL_FORM_EXCLUDES
