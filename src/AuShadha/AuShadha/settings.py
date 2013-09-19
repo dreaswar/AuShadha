@@ -145,27 +145,38 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
 
-    # Custom Apps here:
+    # Custom Apps:
     'aushadha_users',
     'clinic',
     'aushadha_base_models',
-    'patient',
     'physician',
     'nurse',
     'staff',
+
+    'vaccine_registry',
+    'icd10',
+    'icd10_pcs',
+    'drug_db',
     'inv_and_imaging',
+
+    'patient',
+    'demographics',
+    'medical_history',
+    'surgical_history',
+    'social_history',
+    'family_history',
+    'medication_list',
+    'allergy_list',
+    'immunisation',
+
+    'phyexam',
+
     'admission',
     'visit',
     'obs_and_gyn',
-    'phyexam',
-    'icd10',
-    'icd10_pcs',
-    'drug_db'
 )
 
 # A sample logging configuration. The only tangible logging

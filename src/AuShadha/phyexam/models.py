@@ -28,7 +28,7 @@ from django.core.exceptions import ValidationError
 
 # Application specific django imports::
 
-from aushadha_base_models.models import AuShadhaBaseModel
+from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 from aushadha_users.models import AuShadhaUser
 from physician.models import *
 from clinic.models import Clinic, Staff
@@ -86,6 +86,8 @@ VASC_EXAM_FORM_EXCLUDES = (
 
 class PhyExamBaseModel(AuShadhaBaseModel):
     __model_label__ = 'phy_exam'
+    
+    _parent_model = ['visit_detail']
 
     remarks = models.TextField(
         blank=True, null=True, default="NAD", max_length=200)

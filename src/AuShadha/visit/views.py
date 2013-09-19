@@ -91,6 +91,41 @@ def visit_home(request, id='id'):
 
 #
 
+@login_required
+def visit_json(request):
+    try:
+        action = unicode(request.GET.get('action'))
+        id = int(request.GET.get('patient_id'))
+        if action == 'add':
+            return patient_visit_add(request, id)
+        patient_detail_obj = PatientDetail.objects.get(pk=id)
+    except(AttributeError, NameError, TypeError, ValueError, KeyError):
+        raise Http404("ERROR:: Bad request.Invalid arguments passed")
+    except(PatientDetail.DoesNotExist):
+        raise Http404("ERROR:: Patient requested does not exist.")
+    patient_visit_obj = VisitDetail.objects.filter(
+        patient_detail=patient_detail_obj)
+    data = []
+    if patient_visit_obj:
+        for visit in patient_visit_obj:
+            i = 0
+            data_to_append = {}
+            data_to_append['id'] = visit.id
+            data_to_append[
+                'visit_date'] = visit.visit_date.date().isoformat() + i
+            data_to_append['op_surgeon'] = visit.op_surgeon.__unicode__()
+            data_to_append['is_active'] = visit.is_active
+            data_to_append['referring_doctor'] = visit.referring_doctor
+            data_to_append['consult_nature'] = visit.consult_nature
+            data_to_append['remarks'] = visit.remarks
+            data_to_append['edit'] = visit.get_edit_url()
+            data_to_append['del'] = visit.get_del_url()
+            data.append(data_to_append)
+            i += 1
+    json = simplejson.dumps(data)
+    return HttpResponse(json, content_type="application/json")
+
+
 
 @login_required
 def render_visit_tree(request, id=None):

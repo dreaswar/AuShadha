@@ -1,27 +1,36 @@
-#
-# Models for AuShadha OPD Visits.
-# Copyright Dr. Easwar TR 25/12/2012
-# LICENSE : GNU-GPL Version 3
-#
+################################################################################
+# Project      : AuShadha
+# Description  : Models for AuShadha OPD Visits.
+# Author       : Dr. Easwar TR 
+# Date         : 17-09-2013
+# LICENSE      : GNU-GPL Version 3, Please see AuShadha/LICENSE.txt
+################################################################################
+
+# General Imports
+from datetime import datetime, date, time
 
 # Django Specific Imports
 from django.db import models
 from django.forms import ModelForm, ModelChoiceField, Textarea, TextInput
 
-# General Imports
-from datetime import datetime, date, time
-
 # Application model imports
-from aushadha_base_models.models import AuShadhaBaseModel
-
+from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 from patient.models import PatientDetail
 from clinic.models import Clinic, Staff
 from admission.models import Admission
 from inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
 
-#from staff.models import Staff
-#from nurse.models import NurseDetail
+from dijit_fields_constants import VISIT_DETAIL_FORM_CONSTANTS,\
+                                   VISIT_COMPLAINTS_FORM_CONSTANTS,\
+                                   VISIT_HPI_FORM_CONSTANTS,\
+                                   VISIT_PAST_HISTORY_FORM_CONSTANTS,\
+                                   VISIT_IMAGING_FORM_CONSTANTS,\
+                                   VISIT_INVESTIGATION_FORM_CONSTANTS,\
+                                   VISIT_ROS_FORM_CONSTANTS,\
+                                   VISIT_FOLLOW_UP_FORM_CONSTANTS,\
+                                   VISIT_SOAP_FORM_CONSTANTS
 
+DEFAULT_VISIT_DETAIL_FORM_EXCLUDES = ('patient_detail',)
 
 CONSULT_NATURE_CHOICES = (
     ('initial', 'Initial'),
@@ -44,17 +53,17 @@ CONSULT_STATUS_CHOICES = (
     ('no_show', 'No Show'),
 )
 
-# Models start here..
 
 
 class VisitDetail(AuShadhaBaseModel):
 
-    __model_label__ = "detail"
+    __model_label__ = "visit"
+    _parent_model = 'patient_detail'
 
-    patient_detail = models.ForeignKey('patient.PatientDetail')
+    patient_detail = models.ForeignKey(PatientDetail)
     visit_date = models.DateTimeField(
         auto_now=False, default=datetime.now())
-    op_surgeon = models.ForeignKey('clinic.Staff')
+    op_surgeon = models.ForeignKey(Staff)
     referring_doctor = models.CharField(max_length=30, default="Self")
     consult_nature = models.CharField(
         max_length=30, choices=CONSULT_NATURE_CHOICES)
@@ -165,7 +174,6 @@ class VisitDetail(AuShadhaBaseModel):
             return False
 
     def save(self, *args, **kwargs):
-        self.__model_label__ = 'detail'
         # if self.op_surgeon.clinic_staff_role == 'doctor':
         consult_nature = self.consult_nature
         print "Calling save method with args"
@@ -221,6 +229,7 @@ class VisitDetail(AuShadhaBaseModel):
 
 class VisitComplaint(AuShadhaBaseModel):
     __model_label__ = "complaint"
+    _parent_model = 'visit_detail'
 
     complaint = models.CharField(
         max_length=30, help_text='limit to 30 words')
@@ -235,7 +244,6 @@ class VisitComplaint(AuShadhaBaseModel):
         return '%s : %s' % (self.complaint, self.duration)
 
     def save(self, *args, **kwargs):
-        self.__model_label__ = 'complaint'
         super(VisitComplaint, self).save(*args, **kwargs)
 
     # def get_edit_url(self):
@@ -253,11 +261,13 @@ class VisitComplaint(AuShadhaBaseModel):
 class VisitFollowUp(AuShadhaBaseModel):
 
     """Model to describe the Follow up OPD Visit Notes  or SOAP notes."""
-    #__model_label__ = "follow_up"
+    
+    __model_label__ = "follow_up"
+    _parent_model = 'visit_detail'
 
     visit_date = models.DateTimeField(
         auto_now=False, default=datetime.now())
-    op_surgeon = models.ForeignKey('clinic.Staff')
+    op_surgeon = models.ForeignKey(Staff)
 
     consult_nature = models.CharField(
         max_length=30, choices=CONSULT_NATURE_CHOICES)
@@ -302,12 +312,7 @@ class VisitFollowUp(AuShadhaBaseModel):
                    self.plan
                    )
 
-    def __init__(self, *args, **kwargs):
-        self.__model_label__ = 'follow_up'
-        super(VisitFollowUp, self).__init__(*args, **kwargs)
-
     def save(self, *args, **kwargs):
-        #self.__model_label__        = 'follow_up'
         if self.visit_detail.is_active:
             if self.status == 'no_show' or self.status == 'discharged' or self.status == 'admission':
                 self.visit_detail._close_all_active_visits()
@@ -323,6 +328,7 @@ class VisitSOAP(AuShadhaBaseModel):
 
     """Model to describe the Follow up OPD Visit Notes  or SOAP notes."""
     __model_label__ = "visit_soap"
+    _parent_model = 'visit_detail'
 
     subjective = models.TextField(
         "Subjective", max_length=1000, help_text="Restrict to 1000 words")
@@ -348,14 +354,13 @@ class VisitSOAP(AuShadhaBaseModel):
             ).isoformat()
         )
 
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'visit_soap'
-        super(VisitSOAP, self).save(*args, **kwargs)
 
 
 class VisitHPI(AuShadhaBaseModel):
+    
     __model_label__ = "hpi"
-
+    _parent_model = 'visit_detail'
+    
     hpi = models.TextField(
         'History of Presenting Illness', max_length=1000, help_text='limit to 1000 words')
     visit_detail = models.ForeignKey(VisitDetail)
@@ -363,10 +368,6 @@ class VisitHPI(AuShadhaBaseModel):
 
     def __unicode__(self):
         return '%s' % (self.hpi)
-
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'hpi'
-        super(VisitHPI, self).save(*args, **kwargs)
 
     # def get_edit_url(self):
         # return '/AuShadha/visit/hpi/edit/%s/' %(self.id)
@@ -384,6 +385,8 @@ class VisitHPI(AuShadhaBaseModel):
 class VisitPastHistory(AuShadhaBaseModel):
 
     __model_label__ = "past_history"
+    _parent_model = 'visit_detail'
+
 
     past_history = models.TextField(
         'Past History ', max_length=1000, help_text='limit to 1000 words')
@@ -393,10 +396,6 @@ class VisitPastHistory(AuShadhaBaseModel):
 
     def __unicode__(self):
         return '%s' % (self.past_history)
-
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'past_history'
-        super(VisitPastHistory, self).save(*args, **kwargs)
 
     # def get_edit_url(self):
         # return '/AuShadha/visit/past_history/edit/%s/' %(self.id)
@@ -414,6 +413,7 @@ class VisitPastHistory(AuShadhaBaseModel):
 class VisitImaging(AuShadhaBaseModel):
 
     __model_label__ = "imaging"
+    _parent_model = 'visit_detail'
 
     modality = models.ForeignKey(
         'inv_and_imaging.ImagingInvestigationRegistry')
@@ -427,10 +427,6 @@ class VisitImaging(AuShadhaBaseModel):
 
     def __trimmed_unicode__(self):
         return '''%s: %s ... \n(%s)''' % (self.modality, self.finding[0:5], self.created_at.date().isoformat() )
-
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'imaging'
-        super(VisitImaging, self).save(*args, **kwargs)
 
     # def get_add_url(self):
         # return '/AuShadha/visit/imaging/add/%s/' %(self.id)
@@ -448,7 +444,10 @@ class VisitImaging(AuShadhaBaseModel):
 
 
 class VisitROS(AuShadhaBaseModel):
+
     __model_label__ = 'visit_ros'
+
+    _parent_model = 'visit_detail'
 
     const_symp = models.TextField(
         'Constitutional', max_length=500, default="Nil")
@@ -511,10 +510,6 @@ class VisitROS(AuShadhaBaseModel):
     # def get_del_url(self):
         # return '/AuShadha/visit/inv/del/%s/' %(self.id)
 
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'visit_ros'
-        super(VisitROS, self).save(*args, **kwargs)
-
     class Meta:
         verbose_name = "Visit Review of Systems"
         verbose_name_plural = "Visit Review of Systems"
@@ -523,6 +518,8 @@ class VisitROS(AuShadhaBaseModel):
 class VisitInv(AuShadhaBaseModel):
 
     __model_label__ = "inv"
+    
+    _parent_model = 'visit_detail'    
 
     investigation = models.ForeignKey(
         'inv_and_imaging.LabInvestigationRegistry')
@@ -539,442 +536,123 @@ class VisitInv(AuShadhaBaseModel):
     # def get_del_url(self):
         # return '/AuShadha/visit/inv/del/%s/' %(self.id)
 
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'inv'
-        super(VisitInv, self).save(*args, **kwargs)
-
     class Meta:
         verbose_name = "Lab Investigation"
         verbose_name_plural = "Lab Investigation"
         ordering = ('visit_detail', 'created_at', 'investigation')
 
 
-# ModelForm start here..
-class VisitDetailForm(ModelForm):
+
+
+class VisitDetailForm(AuShadhaBaseModelForm):
+    
+    __form_name__ = "Visit Detail Form"
+    
     op_surgeon = ModelChoiceField(
         queryset=Staff.objects.filter(clinic_staff_role='doctor'))
 
+    dijit_fields = VISIT_DETAIL_FORM_CONSTANTS
+
     class Meta:
         model = VisitDetail
-        exclude = ('patient_detail', 'parent_clinic')
-
-    def __init__(self, *args, **kwargs):
-        super(VisitDetailForm, self).__init__(*args, **kwargs)
-        text_fields = [{"field": 'visit_date',
-                        'max_length': 100,
-                        "data-dojo-type": "dijit.form.DateTextBox",
-                        "data-dojo-props": r"'required' :true"
-                        },
-                       {"field": 'op_surgeon',
-                        'max_length': 100,
-                        "data-dojo-type": "dijit.form.Select",
-                        "data-dojo-props": r"'required' : true"
-                        },
-                       {"field": 'referring_doctor',
-                        'max_length': 100,
-                        "data-dojo-type": "dijit.form.ValidationTextBox",
-                        "data-dojo-props": r"'required' :false"
-                        },
-                       {"field": 'consult_nature',
-                        'max_length': 100,
-                        "data-dojo-type": "dijit.form.Select",
-                        "data-dojo-props": r"'required' :true"
-                        },
-                       {"field": 'status',
-                        'max_length': 100,
-                        "data-dojo-type": "dijit.form.Select",
-                        "data-dojo-props": r"'required' :true"
-                        },
-                       {"field": 'remarks',
-                        'max_length': 150,
-                        "data-dojo-type": "dijit.form.Textarea",
-                        "data-dojo-props": r"'required' :false"
-                        }
-                       ]
-        for field in text_fields:
-            print(self.fields[field['field']].widget)
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-type'] = field['data-dojo-type']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-props'] = field['data-dojo-props']
-            self.fields[field['field']].widget.attrs[
-                'max_length'] = field['max_length']
+        exclude = DEFAULT_VISIT_DETAIL_FORM_EXCLUDES
 
 
-class VisitComplaintAddForm(ModelForm):
+class VisitComplaintAddForm(AuShadhaBaseModelForm):
+
+    __form_name__ = "Visit Complaint Form"
+    
+    dijit_fields = VISIT_COMPLAINTS_FORM_CONSTANTS
+
 
     class Meta:
         model = VisitComplaint
-        exclude = ('visit_detail',)
-
-    def __init__(self, *args, **kwargs):
-        super(VisitComplaintAddForm, self).__init__(*args, **kwargs)
-        text_fields = [
-
-            #{"field"           : 'visit_detail',
-            #'max_length'     :  '100'         ,
-            #"data-dojo-type" : "dijit.form.Select",
-            # "data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-            #'style':r"display:none;"
-            #},
-            #{"field"           : 'parent_clinic',
-            #'max_length'     :  '100'         ,
-            #"data-dojo-type" : "dijit.form.Select",
-            # "data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-            #'style':r"display:none;"
-            #},
-            #{"field"           : 'base_model',
-            #'max_length'     :  '100'         ,
-            #"data-dojo-type" : "dijit.form.ValidationTextBox",
-            # "data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-            #'style':r"display:none;"
-            #},
-            {"field": 'complaint',
-                      'max_length': '100',
-                      "data-dojo-type": "dijit.form.ValidationTextBox",
-                      "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-                      'style': r""
-             },
-            {"field": 'duration',
-                      'max_length': '100',
-                      "data-dojo-type": "dijit.form.ValidationTextBox",
-                      "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-                      'style': r""
-             },
-        ]
-
-        for field in text_fields:
-            print(self.fields[field['field']].widget)
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-type'] = field['data-dojo-type']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-props'] = field['data-dojo-props']
-            self.fields[field['field']].widget.attrs[
-                'max_length'] = field['max_length']
-            self.fields[field['field']].widget.attrs[
-                'style'] = field['style']
+        exclude = ('visit_detail','patient_detail')
 
 
-class VisitComplaintEditForm(ModelForm):
+class VisitComplaintEditForm(AuShadhaBaseModelForm):
+
+    __form_name__ = "Visit Complaint Form"
+    
+    dijit_fields = VISIT_COMPLAINTS_FORM_CONSTANTS
 
     class Meta:
         model = VisitComplaint
-        exclude = ('visit_detail',)
-
-    def __init__(self, *args, **kwargs):
-        super(VisitComplaintEditForm, self).__init__(*args, **kwargs)
-        text_fields = [
-
-            #{"field"           : 'visit_detail',
-            #'max_length'     :  '100'         ,
-            #"data-dojo-type" : "dijit.form.Select",
-            # "data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-            #'style':r"display:none;"
-            #},
-            #{"field"           : 'parent_clinic',
-            #'max_length'     :  '100'         ,
-            #"data-dojo-type" : "dijit.form.Select",
-            # "data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-            #'style':r"display:none;"
-            #},
-            #{"field"           : 'base_model',
-            #'max_length'     :  '100'         ,
-            #"data-dojo-type" : "dijit.form.ValidationTextBox",
-            # "data-dojo-props": r"'required' : false ,'readOnly':true,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-            #'style':r"display:none;"
-            #},
-            {"field": 'complaint',
-                      'max_length': '100',
-                      "data-dojo-type": "dijit.form.ValidationTextBox",
-                      "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-                      'style': r""
-             },
-            {"field": 'duration',
-                      'max_length': '100',
-                      "data-dojo-type": "dijit.form.ValidationTextBox",
-                      "data-dojo-props": r"'required' : false ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'",
-                      'style': r""
-             },
-        ]
-
-        for field in text_fields:
-            print(self.fields[field['field']].widget)
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-type'] = field['data-dojo-type']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-props'] = field['data-dojo-props']
-            self.fields[field['field']].widget.attrs[
-                'max_length'] = field['max_length']
-            self.fields[field['field']].widget.attrs[
-                'style'] = field['style']
+        exclude = ('visit_detail','patient_detail')
 
 
-class VisitHPIForm(ModelForm):
+class VisitHPIForm(AuShadhaBaseModelForm):
+
+    __form_name__ = "Visit HPI Form"
+    
+    dijit_fields = VISIT_HPI_FORM_CONSTANTS
 
     class Meta:
         model = VisitHPI
-        exclude = ('visit_detail', 'parent_clinic')
+        exclude = ('visit_detail','patient_detail')
 
-    def __init__(self, *args, **kwargs):
-        super(VisitHPIForm, self).__init__(*args, **kwargs)
-        text_fields = [
-            {"field": 'hpi',
-                      'max_length': '1000',
-                      "data-dojo-type": "dijit/form/SimpleTextarea",
-                      "data-dojo-id": "visit_hpi",
-                      "data-dojo-props": r"'required' : true ,'regExp':'[a-zA-Z /-_:0-9#]+','invalidMessage' : 'Invalid Character'",
-                      "style" : r"width: 70%;min-width:50%;"
-             },
-        ]
 
-        for field in text_fields:
-            print(self.fields[field['field']].widget)
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-type'] = field['data-dojo-type']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-props'] = field['data-dojo-props']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-id'] = field['data-dojo-id']
-            self.fields[field['field']].widget.attrs[
-                'max_length'] = field['max_length']
-            self.fields[field['field']].widget.attrs[
-                'style'] = field['style']
+class VisitPastHistoryForm(AuShadhaBaseModelForm):
 
-class VisitPastHistoryForm(ModelForm):
+    __form_name__ = "Visit Past History Form"
+    
+    dijit_fields = VISIT_PAST_HISTORY_FORM_CONSTANTS
 
     class Meta:
         model = VisitPastHistory
-        exclude = ('parent_clinic', 'visit_detail')
-
-    def __init__(self, *args, **kwargs):
-        super(VisitPastHistoryForm, self).__init__(*args, **kwargs)
-        text_fields = [
-            {"field": 'past_history',
-                      'max_length': '1000',
-                      "data-dojo-type": "dijit.form.SimpleTextarea",
-                      "data-dojo-id": "visit_past_history",
-                      "data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-_:0-9#]+','invalidMessage' : 'Invalid Character'"
-             },
-        ]
-
-        for field in text_fields:
-            print(self.fields[field['field']].widget)
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-type'] = field['data-dojo-type']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-props'] = field['data-dojo-props']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-id'] = field['data-dojo-id']
-            self.fields[field['field']].widget.attrs[
-                'max_length'] = field['max_length']
+        exclude = ('visit_detail','patient_detail')
 
 
-class VisitImagingForm(ModelForm):
+class VisitImagingForm(AuShadhaBaseModelForm):
+
+    __form_name__ = "Visit Imaging Form"
+    
+    dijit_fields = VISIT_IMAGING_FORM_CONSTANTS
 
     class Meta:
         model = VisitImaging
-        exclude = ('parent_clinic', 'visit_detail')
-
-    def __init__(self, *args, **kwargs):
-        super(VisitImagingForm, self).__init__(*args, **kwargs)
-        text_fields = [
-            {"field": 'modality',
-                      'max_length': '100',
-                      "data-dojo-type": "dijit.form.Select",
-                      "data-dojo-id": "visit_imaging_imaging",
-                      "data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
-             },
-            {"field": 'finding',
-                      'max_length': '1000',
-                      "data-dojo-type": "dijit.form.SimpleTextarea",
-                      "data-dojo-id": "visit_imaging_finding",
-                      "data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
-             },
-
-        ]
-
-        for field in text_fields:
-            print(self.fields[field['field']].widget)
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-type'] = field['data-dojo-type']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-props'] = field['data-dojo-props']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-id'] = field['data-dojo-id']
-            self.fields[field['field']].widget.attrs[
-                'max_length'] = field['max_length']
+        exclude = ('visit_detail','patient_detail')
 
 
-class VisitInvForm(ModelForm):
+
+class VisitInvForm(AuShadhaBaseModelForm):
+
+    __form_name__ = "Visit Investigation Form"
+    
+    dijit_fields = VISIT_INVESTIGATION_FORM_CONSTANTS
 
     class Meta:
         model = VisitInv
-        exclude = ('visit_detail', 'parent_clinic')
-
-    def __init__(self, *args, **kwargs):
-        super(VisitInvForm, self).__init__(*args, **kwargs)
-        text_fields = [{"field": 'investigation',
-                        'max_length': '100',
-                        "data-dojo-type": "dijit.form.Select",
-                        "data-dojo-id": "visit_investigation_investigation",
-                        "data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
-                        },
-                       {"field": 'value',
-                        'max_length': '100',
-                        "data-dojo-type": "dijit.form.ValidationTextBox",
-                        "data-dojo-id": "visit_investigation_value",
-                        "data-dojo-props": r"'required' : 'true' ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
-                        },
-
-                       ]
-
-        for field in text_fields:
-            print(self.fields[field['field']].widget)
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-type'] = field['data-dojo-type']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-props'] = field['data-dojo-props']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-id'] = field['data-dojo-id']
-            self.fields[field['field']].widget.attrs[
-                'max_length'] = field['max_length']
+        exclude = ('visit_detail','patient_detail')
 
 
-class VisitROSForm(ModelForm):
+class VisitROSForm(AuShadhaBaseModelForm):
 
+    __form_name__ = "Visit ROS Form"
+
+    dijit_fields = VISIT_ROS_FORM_CONSTANTS
+    
     class Meta:
         model = VisitROS
         exclude = ('visit_detail', 'parent_clinic', 'created_at')
 
-    def __init__(self, *args, **kwargs):
-        super(VisitROSForm, self).__init__(*args, **kwargs)
-        form_field_list = ['const_symp',
-                           'eye_symp',
-                           'ent_symp',
-                           'cvs_symp',
-                           'resp_symp',
-                           'gi_symp',
-                           'gu_symp',
-                           'ms_symp',
-                           'integ_symp',
-                           'neuro_symp',
-                           'psych_symp',
-                           'endocr_symp',
-                           'immuno_symp',
-                           'hemat_symp'
-                           ]
-        for model_field in form_field_list:
-            text_fields = [{"field": model_field,
-                            'max_length': '500',
-                            "data-dojo-type": "dijit.form.Textarea",
-                            "data-dojo-id": "visit_ros_" + model_field,
-                            "data-dojo-props": r"'required' : true ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
-                            },
-                           ]
-            for field in text_fields:
-                print(self.fields[field['field']].widget)
-                self.fields[field['field']].widget.attrs[
-                    'data-dojo-type'] = field['data-dojo-type']
-                self.fields[field['field']].widget.attrs[
-                    'data-dojo-props'] = field['data-dojo-props']
-                self.fields[field['field']].widget.attrs[
-                    'data-dojo-id'] = field['data-dojo-id']
-                self.fields[field['field']].widget.attrs[
-                    'max_length'] = field['max_length']
+class VisitFollowUpForm(AuShadhaBaseModelForm):
 
+    __form_name__ = "Visit Follow Up Form"
 
-class VisitFollowUpForm(ModelForm):
-
+    dijit_fields = VISIT_FOLLOW_UP_FORM_CONSTANTS
+    
     class Meta:
         model = VisitFollowUp
         exclude = ('visit_detail', 'parent_clinic', 'created_at')
 
-    def __init__(self, *args, **kwargs):
-        super(VisitFollowUpForm, self).__init__(*args, **kwargs)
 
-        text_fields = [{"field": 'visit_date',
-                        'max_length': 100,
-                        "data-dojo-type": "dijit.form.DateTextBox",
-                        "data-dojo-props": r"'required' :true"
-                        },
-                       {"field": 'op_surgeon',
-                        'max_length': 100,
-                        "data-dojo-type": "dijit.form.Select",
-                        "data-dojo-props": r"'required' : true"
-                        },
-                       {"field": 'consult_nature',
-                        'max_length': 100,
-                        "data-dojo-type": "dijit.form.Select",
-                        "data-dojo-props": r"'required' :true"
-                        },
-                       {"field": 'status',
-                        'max_length': 100,
-                        "data-dojo-type": "dijit.form.Select",
-                        "data-dojo-props": r"'required' :true"
-                        }
-                       ]
-        for field in text_fields:
-            print(self.fields[field['field']].widget)
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-type'] = field['data-dojo-type']
-            self.fields[field['field']].widget.attrs[
-                'data-dojo-props'] = field['data-dojo-props']
-            self.fields[field['field']].widget.attrs[
-                'max_length'] = field['max_length']
+class VisitSOAPForm(AuShadhaBaseModelForm):
 
-        form_field_list = ['subjective',
-                           'objective',
-                           'assessment',
-                           'plan'
-                           ]
-        for model_field in form_field_list:
-            textarea_text_fields = [{"field": model_field,
-                                     'max_length': '500',
-                                     "data-dojo-type": "dijit.form.Textarea",
-                                     "data-dojo-id": "visit_ros_" + model_field,
-                                     "data-dojo-props": r"'required' : true ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
-                                     },
-                                    ]
-            for field in textarea_text_fields:
-                print(self.fields[field['field']].widget)
-                self.fields[field['field']].widget.attrs[
-                    'data-dojo-type'] = field['data-dojo-type']
-                self.fields[field['field']].widget.attrs[
-                    'data-dojo-props'] = field['data-dojo-props']
-                self.fields[field['field']].widget.attrs[
-                    'data-dojo-id'] = field['data-dojo-id']
-                self.fields[field['field']].widget.attrs[
-                    'max_length'] = field['max_length']
+    __form_name__ = "Visit SOAP Form"
 
-
-class VisitSOAPForm(ModelForm):
-
+    dijit_fields = VISIT_SOAP_FORM_CONSTANTS
+    
     class Meta:
         model = VisitSOAP
         exclude = ('visit_detail', 'parent_clinic', 'created_at')
-
-    def __init__(self, *args, **kwargs):
-        super(VisitSOAPForm, self).__init__(*args, **kwargs)
-        form_field_list = ['subjective',
-                           'objective',
-                           'assessment',
-                           'plan'
-                           ]
-        for model_field in form_field_list:
-            text_fields = [{"field": model_field,
-                            'max_length': '500',
-                            "data-dojo-type": "dijit.form.Textarea",
-                            "data-dojo-id": "visit_ros_" + model_field,
-                            "data-dojo-props": r"'required' : true ,'regExp':'[a-zA-Z /-:0-9#]+','invalidMessage' : 'Invalid Character'"
-                            },
-                           ]
-            for field in text_fields:
-                print(self.fields[field['field']].widget)
-                self.fields[field['field']].widget.attrs[
-                    'data-dojo-type'] = field['data-dojo-type']
-                self.fields[field['field']].widget.attrs[
-                    'data-dojo-props'] = field['data-dojo-props']
-                self.fields[field['field']].widget.attrs[
-                    'data-dojo-id'] = field['data-dojo-id']
-                self.fields[field['field']].widget.attrs[
-                    'max_length'] = field['max_length']

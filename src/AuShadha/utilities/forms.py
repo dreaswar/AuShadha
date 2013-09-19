@@ -1,9 +1,17 @@
-# UTILITIES
+################################################################################
+# Description : AuShadha Base ModelForm and Several Form Utilities
+# Author      : Dr. Easwar T.R
+# Date        : 16-09-2013
+# License     : Part of AuShadha Project. Licensed under GNU-GPL Version 3
+#                Please see AuShadha/LICENSE 
+################################################################################
 
 
 class AuModelFormErrorFormatter(object):
 
-    """Generic Form Error Formatter."""
+    """
+    Generic Form Error Formatter.
+    """
 
     def __init__(self, form):
         self.form = form
@@ -22,9 +30,9 @@ class AuModelFormErrorFormatter(object):
                     i, k, v)
                 i += 1
         return self.content
-# error formatter factory
 
 
+# Form error formatter factory
 def aumodelformerrorformatter_factory(form):
     form_error = AuModelFormErrorFormatter(form)
     return form_error.__unicode__()

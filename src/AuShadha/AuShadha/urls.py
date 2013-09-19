@@ -14,21 +14,28 @@ urlpatterns = patterns('',
 
                       (r'^AuShadha/pat/', include('patient.urls')),
                       (r'^AuShadha/patient/', include('patient.urls')),
-                      (r'^AuShadha/visit/', include('visit.urls')),
+
+                      (r'^AuShadha/demographics/', include('demographics.urls')),
+
+                      (r'^AuShadha/family_history/', include('family_history.urls')),
+                      (r'^AuShadha/social_history/', include('social_history.urls')),
+                      (r'^AuShadha/medical_history/', include('medical_history.urls')),
+                      (r'^AuShadha/surgical_history/', include('surgical_history.urls')),
+
+                      (r'^AuShadha/medication_list/', include('medication_list.urls')),
+                      (r'^AuShadha/allergy_list/', include('allergy_list.urls')),
+                      (r'^AuShadha/immunisation/', include('immunisation.urls')),
+
                       (r'^AuShadha/phyexam/', include('phyexam.urls')),
+                      #(r'^AuShadha/admission/'     ,     include('admission.urls')),
+                      (r'^AuShadha/visit/', include('visit.urls')),
 
-                       #(r'^AuShadha/admission/',      include('admission.urls')),
-
-                       #(r'^AuShadha/history/'       ,     include('history.urls')),
-
-                       #(r'^AuShadha/procedure/'     ,     include('procedure.urls')),
-                       #(r'^AuShadha/discharge/'     ,     include('discharge.urls')),
-                       #(r'^AuShadha/allergy/'       ,     include('allergydatabase.urls')),
-                       #(r'^AuShadha/drugdatabase/'  ,     include('drugdatabase.urls')),
-                       #(r'^AuShadha/calendar/'               ,     include('calendar.urls')),
-                       #(r'^AuShadha/prescription/'            ,     include('prescription.urls')),
-
-
+                      #(r'^AuShadha/prescription/'  ,     include('prescription.urls')),
+                      #(r'^AuShadha/drugdatabase/'  ,     include('drugdatabase.urls')),
+                      #(r'^AuShadha/history/'       ,     include('history.urls')),
+                      #(r'^AuShadha/procedure/'     ,     include('procedure.urls')),
+                      #(r'^AuShadha/discharge/'     ,     include('discharge.urls')),
+                      #(r'^AuShadha/calendar/'      ,     include('calendar.urls')),
 
                        # Admin and Admin Docs URL:
                       (r'^AuShadha/admin/', include(admin.site.urls)),

@@ -1,18 +1,17 @@
 from django.conf.urls.defaults import *
+from django.contrib import admin
 
 import AuShadha.settings
 from visit.views import *
 
-# Uncomment the next two lines to enable the admin:
-from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
 
-                       url(r'render_visit_list/$',
-                           render_visit_list, name="render_visit_list"),
-                       url(r'render_visit_tree/$',
-                           render_visit_tree, name="render_visit_tree"),
+                      url(r'json/$', 'visit.views.visit_json',name='visit_json'),
+
+                      url(r'render_visit_list/$', render_visit_list, name="render_visit_list"),
+                       url(r'render_visit_tree/$',render_visit_tree, name="render_visit_tree"),
                        #url(r'render_visit_json/(?P<id>\d+)/$'  , render_visit_json  , name="render_visit_json"),
 
                        url(r'render_patient_visits_pdf/(?P<id>\d+)/$',

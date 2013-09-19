@@ -1,10 +1,10 @@
-#
-# Admission Models for AuShadha
-# Takes care of all the admission related activities.
-# Author    : Dr.Easwar T.R
-# Date      : 01-09-2012
-# Licence   : GNU GPL version3 Please see AuShadha/LICENSE.txt for the License
-#
+################################################################################
+# Project      : AuShadha
+# Description  : Admission Models 
+# Author       : Dr.Easwar T.R
+# Date         : 18-09-2013
+# Licence      : GNU GPL version3 Please see AuShadha/LICENSE.txt 
+################################################################################
 
 
 from django.db import models

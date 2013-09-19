@@ -21,6 +21,10 @@ CLINIC_STAFF_ROLE = (
 
 # clinic model
 class Clinic(models.Model):
+  
+    __model_label__ = 'clinic'
+    _parent_model = 'clinic'
+
     name_of_clinic = models.CharField(max_length=200)
     address = models.TextField()
     state = models.CharField(max_length=200)
