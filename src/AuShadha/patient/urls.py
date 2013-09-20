@@ -20,9 +20,14 @@ urlpatterns = patterns('',
                            name='render_patient_list'
                            ),
 
+                       url(r'new/add/(?P<clinic_id>\d+)/$'                             ,
+                           'patient.views.patient_detail_add',
+                           name='patient_detail_add'
+                           ),
+
                        url(r'new/add/$'                             ,
-                           'patient.views.patient_new_add',
-                           name='patient_new_add'
+                           'patient.views.patient_detail_add',
+                           name='patient_detail_add_without_id'
                            ),
 
                        #    url(r'patient/list/(?P<id>\d+)/$',
@@ -43,7 +48,7 @@ urlpatterns = patterns('',
 
 ################################ PATIENT TREE ##################################
 
-                       url(r'patient/tree/(?P<id>\d+)/$',
+                       url(r'patient/tree/(?P<patient_id>\d+)/$',
                            'patient.views.render_patient_tree',
                            name='render_patient_tree_with_id'
                            ),
@@ -65,7 +70,6 @@ urlpatterns = patterns('',
                            'patient.views.render_patient_summary',
                            name='render_patient_summary_with_id'
                            ),
-
 
 ################################ PATIENT SIDEBAR ###############################
 
@@ -103,7 +107,6 @@ urlpatterns = patterns('',
                            name="patient_filtering_search_json_with_id"
                            ),
 
-                       #
                        url(r'patient_id/autocompleter/$',
                            'patient.views.patient_id_autocompleter',
                            name='patient_id_autocompleter'
@@ -118,7 +121,9 @@ urlpatterns = patterns('',
                            'patient.views.patient_name_autocompleter',
                            name='patient_name_autocompleter'
                            ),
+
 ###############################################################################
+
                        url(r'list/$',
                            'patient.views.render_patient_list'  ,
                            name='render_patient_list'

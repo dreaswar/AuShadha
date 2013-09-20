@@ -46,6 +46,7 @@ class TestUrlsForPhyExam(object):
     print "\n"
     print "URLS for Patient is " 
     print self.pat.urls
+    print self.pat.urls['tree']['patient']
     print "#"*50
 
     print "\n"

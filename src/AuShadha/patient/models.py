@@ -23,6 +23,7 @@ from utilities.queries import has_contact,\
 from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 from clinic.models import Clinic
 from dijit_fields_constants import PATIENT_DETAIL_FORM_CONSTANTS
+from AuShadha.settings import APP_ROOT_URL
 
 DEFAULT_PATIENT_DETAIL_FORM_EXCLUDES=('parent_clinic',)
 
@@ -268,6 +269,23 @@ class PatientDetail(AuShadhaBaseModel):
                 raise Exception("Invalid Date of Birth / Age Supplied")
                 return False
 
+    def get_patient_tree_url(self):
+      """ Returns Tree URL for the Patient"""
+      return "%s%s/%s/tree/?%s_id=%s" %(APP_ROOT_URL,
+                                    self._meta.app_label,
+                                    self.__model_label__,
+                                    self.__model_label__, 
+                                    str(self.id) 
+                                    )
+
+    def get_patient_summary_url(self):
+      """ Returns Tree URL for the Patient"""
+      return "%s%s/%s/summary/?%s_id=%s" %(APP_ROOT_URL,
+                                    self._meta.app_label,
+                                    self.__model_label__,
+                                    self.__model_label__, 
+                                    str(self.id) 
+                                    )
 
 class PatientDetailForm(AuShadhaBaseModelForm):
 

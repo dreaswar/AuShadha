@@ -338,9 +338,6 @@ def render_visit_tree(request, patient_id=None):
 
                         for fu in fu_visit:
                             fu_dict_to_append = fu_sub_dict.copy()
-                            print fu.__class__
-                            print "Edit URL for FU is: ", fu.get_edit_url()
-                            print "Del URL for FU is: ", fu.get_del_url()
 
                             fu_dict_to_append = {
                                 "name": fu.visit_date.date().isoformat(),
@@ -428,7 +425,6 @@ def render_visit_tree(request, patient_id=None):
                     #dict_to_append['delUrl']      = visit.get_del_url()
                     # children_list.append(dict_to_append)
             json = simplejson.dumps(data)
-            print json
             return HttpResponse(json, content_type="application/json")
     else:
         raise Http404("Bad Request")
@@ -473,7 +469,6 @@ def render_visit_list(request):
         data_to_append['edit'] = visit.get_del_url()
         data.append(data_to_append)
     json = simplejson.dumps(data)
-    print json
     return HttpResponse(json, content_type="application/json")
 
 #
@@ -689,7 +684,6 @@ def visit_summary(request, patient_id = None):
                       'patient_detail_obj': patient_detail_obj,
                       'error_message': error_message
                       })
-        print visit_obj_list
         return render_to_response('visit/summary.html', variable)
     else:
         raise Http404(" Error ! Unsupported Request..")
@@ -703,7 +697,6 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
         Implementation of separate visits for 'initial' , 'fu' etc.. can be implemented later.
     """
     print "Received request to add VisitDetail"
-    print "Request nature is: ", request.method
 
     user = request.user
     success = False
@@ -716,7 +709,7 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
         else:
           patient_id = int(request.GET.get('patient_id'))
         patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-        print "Patient is: ", patient_detail_obj
+        #print "Patient is: ", patient_detail_obj
         visit_detail_objs = VisitDetail.objects.filter(
             patient_detail=patient_detail_obj).filter(is_active=True)
 
@@ -733,7 +726,6 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                         There may be a active admission / visit. 
                         Please close that and try again
                     '''
-        print error_message
         raise Http404(error_message)
 
     else:
@@ -885,8 +877,6 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
 
         elif request.method == "POST" and request.is_ajax():
             print "Received request to add visit..."
-            print "POST Request Contains::"
-            print request.POST
 
             visit_detail_form = VisitDetailForm(
                 request.POST, instance=visit_detail_obj)
@@ -928,11 +918,11 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
 
                 saved_visit_complaints = visit_complaint_formset.save(
                     commit=False)
-                print "Saved visit is:"
-                print saved_visit
+                #print "Saved visit is:"
+                #print saved_visit
                 # print saved_visit_complaints
                 for complaint in saved_visit_complaints:
-                    print "Saving Complaints..."
+                    #print "Saving Complaints..."
                     # print complaint
                     complaint.visit_detail = saved_visit
                     complaint.save()
@@ -976,13 +966,13 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                 saved_vasc_exam = vasc_exam_free_model_formset.save(
                     commit=False)
                 for vasc in saved_vasc_exam:
-                    print "Saving Vascular Exam... : ", vasc
+                    #print "Saving Vascular Exam... : ", vasc
                     vasc.visit_detail = saved_visit
                     vasc.physician = saved_visit.op_surgeon
                     vasc.created_at = datetime.datetime.now()
                     vasc.modified_at = datetime.datetime.now()
                     vasc.save()
-                    print "Vascular Exam, " , vasc, " Saved"
+                    #print "Vascular Exam, " , vasc, " Saved"
 
                 success = True
                 error_message = "Visit Added Successfully"
@@ -1376,11 +1366,11 @@ def visit_detail_edit(request, visit_id = None):
 
                 saved_visit_complaints = visit_complaint_formset.save(
                     commit=False)
-                print "Saved visit is:"
-                print saved_visit
+                #print "Saved visit is:"
+                #print saved_visit
                 # print saved_visit_complaints
                 for complaint in saved_visit_complaints:
-                    print "Saving Complaints..."
+                    #print "Saving Complaints..."
                     # print complaint
                     complaint.visit_detail = saved_visit
                     complaint.save()
@@ -1423,14 +1413,14 @@ def visit_detail_edit(request, visit_id = None):
 
                 saved_vasc_exam = vasc_exam_free_model_formset.save(
                     commit=False)
-                print saved_vasc_exam
+                #print saved_vasc_exam
                 for vasc in saved_vasc_exam:
-                    print "Saving ", vasc
+                    #print "Saving ", vasc
                     vasc.visit_detail = saved_visit
                     vasc.physician = saved_visit.op_surgeon
                     vasc.modified_at = datetime.datetime.now()
                     vasc.save()
-                    print "Vascular Exam saved"
+                    #print "Vascular Exam saved"
 
                 success = True
                 error_message = "Visit Edited Successfully"
@@ -1738,7 +1728,7 @@ def visit_complaint_add(request, visit_id=None):
                                                   # str(id)+"_%s")
         visit_complaint_formset = VisitComplaintFormset(
             queryset=visit_complaint_objs)
-        print visit_complaint_formset
+        #print visit_complaint_formset
         variable = RequestContext(
             request, {'user': user,
                       'visit_detail_obj': visit_detail_obj,

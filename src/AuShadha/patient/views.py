@@ -34,6 +34,7 @@ from django.contrib.auth.decorators import login_required
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from core.serializers.data_grid import generate_json_for_datagrid
+from utilities.forms import aumodelformerrorformatter_factory
 
 from patient.models import PatientDetail, PatientDetailForm
 from clinic.models import Clinic
@@ -186,35 +187,64 @@ def patient_index(request):
 
 
 @login_required
-def patient_new_add(request):
+def patient_detail_add(request, clinic_id = None):
+
     user = request.user
     print "Received a request to add a New Patient...."
-    clinic = Clinic.objects.get(pk = 1)
-    patient_detail_obj = PatientDetail(parent_clinic = clinic)
-    if request.method == "GET" and request.is_ajax():
-        patient_detail_form = PatientDetailForm(
-            instance=patient_detail_obj)
-        variable = RequestContext(request,
-                                  {"user": user,
-                                   "patient_detail_obj": patient_detail_obj,
-                                   "patient_detail_form": patient_detail_form
-                                   }
-                                  )
-        return render_to_response('patient/detail/add.html', variable)
-    if request.method == "POST"  and request.is_ajax():
-        patient_detail_form = PatientDetailForm(request.POST,instance = patient_detail_obj)
-        if patient_detail_form.is_valid():
-            saved_patient = patient_detail_form.save(commit = False)
-            saved_patient.parent_clinic = clinic
-            saved_patient.save()
-            success = True
-        else:
-            saved_patient = None
-            success = False
-        json = return_patient_json(saved_patient,success)
-        return HttpResponse(json, content_type='application/json')
-    else:
-        raise Http404('Bad Request:: Unsupported Request Method.')
+
+    try:
+      if clinic_id :
+        clinic_id = int(clinic_id)
+      else:
+        clinic_id = int(request.GET.get('clinic_id'))
+    except (KeyError,NameError,AttributeError,ValueError,TypeError):
+        clinic_id = 1
+
+    try:
+      clinic = Clinic.objects.get(pk = clinic_id)          
+      patient_detail_obj = PatientDetail(parent_clinic = clinic)
+      if request.method == "GET" and request.is_ajax():
+          patient_detail_form = PatientDetailForm(
+              instance=patient_detail_obj)
+          variable = RequestContext(request,
+                                    {"user": user,
+                                    "patient_detail_obj": patient_detail_obj,
+                                    "patient_detail_form": patient_detail_form
+                                    }
+                                    )
+          return render_to_response('patient/detail/add.html', variable)
+
+      elif request.method == "POST"  and request.is_ajax():
+          patient_detail_form = PatientDetailForm(request.POST,
+                                                  instance = patient_detail_obj)
+          if patient_detail_form.is_valid():
+              saved_patient = patient_detail_form.save(commit = False)
+              saved_patient.parent_clinic = clinic
+              saved_patient.save()
+              success = True
+              json = return_patient_json(saved_patient,success)
+          else:
+              form_errors = aumodelformerrorformatter_factory(patient_detail_form)
+              saved_patient = None
+              success = False
+              data = {'success':success,
+                      'error_message':form_errors,
+                      'form_errors': form_errors
+                      }
+              json = simplejson.dumps(data)
+
+      else:
+          raise Http404('Bad Request:: Unsupported Request Method.')
+
+    except(Clinic.DoesNotExist):
+        saved_patient = None
+        success = False
+        data = {'success':success,'error_message':"No Clinic by the specified id"}
+        json = simplejson.dumps(data)
+
+    return HttpResponse(json, content_type='application/json')
+
+
 
 
 @login_required
@@ -247,7 +277,7 @@ def patient_detail_edit(request, id):
                 if patient_detail_edit_form.is_valid():
                     detail_object = patient_detail_edit_form.save()
                     json = return_patient_json(detail_object, success=True)
-                    print json
+                    #print json
                     return HttpResponse(json, content_type='application/json')
                 else:
                     success = False
@@ -346,9 +376,11 @@ def return_patient_json(patient, success=True):
         data_to_append['edit'] = urls['edit']
         data_to_append['del'] = urls['del']
 
-        data_to_append['patientTreeUrl']   =  urls['tree']
+        #print "Tree URL for Patient is: " , urls['tree']
+        data_to_append['patientTreeUrl']   =  patient.get_patient_tree_url()
 
-        data_to_append['patientsummary']     = urls['summary']
+        #print "Summary URL for Patient is: " , urls['summary']
+        data_to_append['patientsummary']     = patient.get_patient_summary_url()
 
         #data_to_append['sidebarcontacttab']  = urls['sidebar']
 
@@ -404,9 +436,9 @@ def return_patient_json(patient, success=True):
         data_to_append['medicationlistlist'] = urls['list']['medication_list']
         data_to_append['medicationlistjson']  = urls['json']['medication_list']
 
-        data_to_append['allergiesadd'] = urls['add']['allergies_list']
-        data_to_append['allergieslist'] = urls['list']['allergies_list']
-        data_to_append['allergiesjson']  = urls['json']['allergies_list']
+        data_to_append['allergiesadd'] = urls['add']['allergy_list']
+        data_to_append['allergieslist'] = urls['list']['allergy_list']
+        data_to_append['allergiesjson']  = urls['json']['allergy_list']
 
         data_to_append['socialhistoryadd'] = urls['add']['social_history']
         data_to_append['socialhistorylist'] = urls['list']['social_history']
@@ -425,21 +457,23 @@ def return_patient_json(patient, success=True):
     data['error_message'] = error_message
     data['form_errors'] = form_errors
     json = simplejson.dumps(data)
-    print "JSON=", json
+    #print "JSON=", json
     return json
 
 #
 
 
 @login_required
-def render_patient_tree(request, id=None):
+def render_patient_tree(request, patient_id=None):
     if request.method == "GET" and request.is_ajax():
-        if id:
-            patient_id = int(id)
+        if patient_id:
+            patient_id = int(patient_id)
         else:
             try:
                 patient_id = int(request.GET.get('patient_id'))
                 pat_obj = PatientDetail.objects.get(pk=patient_id)
+                pat_obj.generate_urls()
+                pat_urls = pat_obj.urls
             except(AttributeError, NameError, KeyError, TypeError, ValueError):
                 raise Http404("ERROR! Bad Request Parameters")
             except(AttributeError, NameError, KeyError, TypeError, ValueError):
@@ -540,7 +574,7 @@ def render_patient_tree(request, id=None):
                           "type": "immunisation_module",
                           "id": "IMMUNISATION",
                           'len': len(immunisation_obj),
-                          "addUrl": pat_obj.get_patient_immunisation_add_url(),
+                          "addUrl": pat_urls['add']['immunisation'],
                           },
                          #{"name": "Obs & Gyn",
                           #"type": "obs_and_gyn_preventives_module",
@@ -642,14 +676,24 @@ def render_patient_tree(request, id=None):
                                 # allergies_obj
                                 ]
 
-            add_url_mapper = {medical_history_obj: pat_obj.get_patient_medical_history_add_url(
-            ),
-                surgical_history_obj: pat_obj.get_patient_surgical_history_add_url(),
-                family_history_obj: pat_obj.get_patient_family_history_add_url(),
-                social_history_obj: pat_obj.get_patient_social_history_add_url(),
-                demographics_obj: pat_obj.get_patient_demographics_data_add_url(),
-                medication_list_obj: pat_obj.get_patient_medication_list_add_url(),
-                allergies_obj: pat_obj.get_patient_allergies_add_url()
+            #add_url_mapper = {
+              #medical_history_obj: pat_obj.get_patient_medical_history_add_url(),
+                #surgical_history_obj: pat_obj.get_patient_surgical_history_add_url(),
+                #family_history_obj: pat_obj.get_patient_family_history_add_url(),
+                #social_history_obj: pat_obj.get_patient_social_history_add_url(),
+                #demographics_obj: pat_obj.get_patient_demographics_data_add_url(),
+                #medication_list_obj: pat_obj.get_patient_medication_list_add_url(),
+                #allergies_obj: pat_obj.get_patient_allergies_add_url()
+            #}
+
+            add_url_mapper = {
+                medical_history_obj: pat_urls['add']['medical_history'],
+                surgical_history_obj: pat_urls['add']['surgical_history'],
+                family_history_obj: pat_urls['add']['family_history'],
+                social_history_obj: pat_urls['add']['social_history'],
+                demographics_obj: pat_urls['add']['demographics'],
+                medication_list_obj: pat_urls['add']['medication_list'],
+                allergy_obj: pat_urls['add']['allergy_list']
             }
 
             obj_list_label_mapper = {medical_history_obj: 'medical_history',
@@ -658,7 +702,7 @@ def render_patient_tree(request, id=None):
                                      social_history_obj: 'social_history',
                                      demographics_obj: 'demographics',
                                      medication_list_obj: 'medication_list',
-                                     allergies_obj: 'allergies'
+                                     allergy_obj: 'allergy_list'
                                      }
 
             def generic_tree_builder(obj_list, index, type_label):
@@ -720,11 +764,11 @@ def render_patient_tree(request, id=None):
         raise Http404("Bad Request")
 
 
-def render_patient_summary(request, id=None):
+def render_patient_summary(request, patient_id=None):
     if request.method == "GET" and request.is_ajax():
         user = request.user
-        if id:
-            patient_id = int(id)
+        if patient_id:
+            patient_id = int(patient_id)
         else:
             patient_id = int(request.GET.get('patient_id'))
         try:
@@ -847,7 +891,7 @@ def check_before_adding(patient_obj):
         id_list.append(patient.patient_hospital_id)
     if patient_id in id_list:
         error = "This ID is already Taken. Please renter and retry"
-        print error
+        #print error
         return False
     else:
         if active_visit == False:
@@ -856,11 +900,11 @@ def check_before_adding(patient_obj):
                 return True
             else:
                 error = 'This patient has active admissions. Please discharge and retry.'
-                print error
+                #print error
                 return False
         else:
             error = "This patient has active visit. Please discharge and retry."
-            print error
+            #print error
             return False
 
 
@@ -873,11 +917,9 @@ def patient_id_autocompleter(request, patient_id=None):
             patient_id = request_copy.get('patient_id')
         else:
             patient_id = int(patient_id)
-        print patient_id
         patient_id_list = []
         if patient_id != "*":
             pat_obj = PatientDetail.objects.get(pk=patient_id)
-            print pat_obj
             if pat_obj:
                 dict_to_append = {}
                 dict_to_append[
@@ -917,7 +959,6 @@ def patient_id_autocompleter(request, patient_id=None):
                               }
             patient_id_list.append(dict_to_append)
         json = simplejson.dumps(patient_id_list)
-        print json
         str_to_construct = simplejson.dumps(patient_id_list)
         f = open(
             os.path.join(settings.CUSTOM_SCRIPT_ROOT, 'patient_id_list.json'), 'w')
@@ -930,13 +971,15 @@ def patient_id_autocompleter(request, patient_id=None):
 
 @login_required
 def hospital_id_autocompleter(request, patient_hospital_id=None):
+
     if request.method == "GET" and request.is_ajax():
         request_copy = request.GET.copy()
+
         if not patient_hospital_id:
             hospital_id = request_copy.get('patient_hospital_id')
         else:
             hospital_id = unicode(patient_hospital_id)
-        print hospital_id
+
         if hospital_id == "*":
             pat_obj = PatientDetail.objects.all()
         else:
@@ -944,8 +987,8 @@ def hospital_id_autocompleter(request, patient_hospital_id=None):
                 hospital_id = hospital_id[:-1]
             pat_obj = PatientDetail.objects.filter(
                 patient_hospital_id__startswith=hospital_id)
-        print pat_obj
         hospital_id_list = []
+
         if pat_obj:
             for pat in pat_obj:
                 dict_to_append = {}
@@ -973,7 +1016,7 @@ def hospital_id_autocompleter(request, patient_hospital_id=None):
                               }
             hospital_id_list.append(dict_to_append)
         json = simplejson.dumps(hospital_id_list)
-        print json
+
 #    str_to_construct = "var PATIENT_LIST = " + str(hospital_id_list) +";"
         str_to_construct = simplejson.dumps(hospital_id_list)
         f = open(
@@ -987,17 +1030,19 @@ def hospital_id_autocompleter(request, patient_hospital_id=None):
 
 @login_required
 def patient_name_autocompleter(request, patient_name=None):
+
     if request.method == "GET" and request.is_ajax():
         request_copy = request.GET.copy()
         patient_name_list = []
         patient_id = None
+
         if request.GET.get('patient_id'):
             patient_id = int(request.GET.get('patient_id'))
         if not patient_name:
             patient_name = request_copy.get('patient_name')
         else:
             patient_name = unicode(patient_name)
-        print patient_name
+
         if patient_name == "*":
             pat_obj = PatientDetail.objects.all()
         else:
@@ -1009,7 +1054,7 @@ def patient_name_autocompleter(request, patient_name=None):
             else:
                 pat_obj = PatientDetail.objects.filter(
                     full_name__icontains=patient_name).filter(pk=patient_id)
-        print pat_obj
+
         if pat_obj:
             for pat in pat_obj:
                 dict_to_append = {}
@@ -1035,7 +1080,7 @@ def patient_name_autocompleter(request, patient_name=None):
                               }
             patient_name_list.append(dict_to_append)
         json = simplejson.dumps(patient_name_list)
-        print json
+
         str_to_construct = simplejson.dumps(patient_name_list)
         f = open(
             os.path.join(settings.CUSTOM_SCRIPT_ROOT, 'patient_name_list.json'), 'w')
@@ -1046,7 +1091,6 @@ def patient_name_autocompleter(request, patient_name=None):
         raise Http404("Bad Request..")
 
 
-#
 
 
 @login_required
@@ -1054,7 +1098,7 @@ def render_patient_list(request):
     """View for Generating Patient List Takes on Request Object as argument."""
     user = request.user
     data = []
-    print request.GET
+
     keys = ["sort( first_name)", "sort(-first_name)", "sort(+first_name)",
             "sort( last_name)", "sort(-last_name)", "sort(+last_name)",
             "sort( age)", "sort(-age)", "sort(+sex)",
@@ -1111,10 +1155,10 @@ def render_patient_list(request):
                 print "Evaluating Patient: "
                 print patient
 
-                print "Generating URL for JSON export: "
+                #print "Generating URL for JSON export: "
                 patient.generate_urls()
                 urls = patient.urls
-                print urls
+                #print urls
 
                 data_to_append = {'addData': {}}
                 addData = data_to_append['addData']
@@ -1161,8 +1205,9 @@ def render_patient_list(request):
                 #addData['home'] = patient.get_patient_main_window_url()
                 addData['edit'] = urls['edit']
                 addData['del'] = urls['del']
-                addData['patientTreeUrl']   =  urls['tree']
-                addData['patientsummary']     = urls['summary']
+                addData['patientTreeUrl']   =  patient.get_patient_tree_url()
+                #print "Printing Patient Summary: ", urls["summary"]
+                addData['patientsummary']     = patient.get_patient_summary_url()
                 #addData['sidebarcontacttab']  = urls['sidebar']
 
                 addData['contactadd'] = urls['add']['contact']
@@ -1231,7 +1276,7 @@ def render_patient_list(request):
         else:
           data = {}
         json = simplejson.dumps(data)
-        print json
+        #print json
         return HttpResponse(json, content_type="application/json")
 
     if request.GET.get('search_field') in search_field_list and \

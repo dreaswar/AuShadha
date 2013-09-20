@@ -361,7 +361,7 @@ require(["dojo/on",
                                                 //{% if perms.patient.add_patientcontact %} //
                                 {
                                     name: "Patient",
-                                    id: "{%url 'patient_new_add' %}"
+                                    id: "{%url 'patient_detail_add_without_id' %}"
                                 },
                                                 //{% endif %}//
 
@@ -475,7 +475,7 @@ require(["dojo/on",
                     }
                 } else {
                     //{% if perms.patient and perms.add_patientdetails %}
-                    request("{%url 'patient_new_add' %}")
+                    request("{%url 'patient_detail_add_without_id' %}")
                         .then(
                             function (html) {
                                 var thisDialog = new Dialog({

@@ -92,7 +92,7 @@ function buildPatientTree(){
 
     console.log("Trying to build the Patient Tree");
 
-      var patientTree = new Tree({
+    var patientTree = new Tree({
           model   : patientTreeModel,
           showRoot: false,
           startup : function(){

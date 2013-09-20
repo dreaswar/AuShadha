@@ -59,6 +59,7 @@ function(registry,
 
       _setChosenPatient : function(addData){
                           CHOSEN_PATIENT = addData;
+                          console.log(CHOSEN_PATIENT);
 //                           return CHOSEN_PATIENT;
       },
 

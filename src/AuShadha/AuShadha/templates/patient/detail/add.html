@@ -1,4 +1,5 @@
 {% if perms.patient.add_patientdetail %}
+
 <div data-dojo-type = "dijit/form/Form" 
      id             = "newPatientAddForm" 
      data-dojo-id   = "newPatientAddForm"
@@ -20,62 +21,53 @@
                "dojo/domReady!"
       ],
       function(xhr, dom, JSON, registry, Dialog){
- 							var hasBeenSent = false;
-							var editDialog = dijit.byId("editPatientDialog");
-							var errorDialog = dijit.byId("dialogJsonMessage");
-//            {% if perms.patient.add_patientdetail %}
-							xhr.post({
-									url  : "{%url 'patient_new_add' %}",
-									form : dom.byId("newPatientAddForm"),
-									load : function(json) {
-											var jsondata = JSON.parse(json);
-											if(jsondata.success = true){
-												dom.byId("newPatientAddForm").reset();
-												var data = jsondata.addData;
-												grid.store.newItem(data);
-												publishInfo("<p class='suggestion_text'>New Patient Added Successfully.<p>\
-												             \nPlease switch Search Tab if you want to open Chart"
-                        );
-												if(ADD_MORE_PATIENTS == false){
-                          editDialog.hide();
-												}
-												else{
-												  dijit.byId("id_patient_hospital_id").focus();
-												}
-											}
-											else{
-												var content = jsondata.error_message + "\n" + jsondata.form_errors;
-                        dijit.byId("dialogJsonMessage").set('title', "ERROR!");
-                        dijit.byId("dialogJsonMessage").set('content',content);
-					              dijit.byId("dialogJsonMessage").show();
-					              publishError("<p class='suggestion_text'> ERROR! :" +
-                                     jsondata.error_message +
-                                     "</p>"
-                        );
-											}
-									},
-									error: function(json) {
-									          var jsondata = JSON.parse(json)
-                            dijit.byId("dialogJsonMessage").set('title', "ERROR!");
-                            dijit.byId("dialogJsonMessage").set('content', jsondata.error_message);
-							              dijit.byId("dialogJsonMessage").show();
-							              publishError("ERROR! : \n"+ jsondata.error_message);
-									},
-									handle: function() {
-											hasBeenSent = true;
-									}
-							});
-//				{% else %}
-          dijit.byId("permissionDeniedErrorDialog").show();
-          return false;
-//        {% endif %}
-     });
+            var editDialog = registry.byId("editPatientDialog");
+            var errorDialog = registry.byId("dialogJsonMessage");
+
+//{% if perms.patient.add_patientdetail %}
+        xhr.post({
+                url  : "{%url 'patient_detail_add_without_id' %}",
+                form : dom.byId("newPatientAddForm"),
+                load : function(json) {
+                        var jsondata = JSON.parse(json);
+                        if(jsondata.success == true){
+                            dom.byId("newPatientAddForm").reset();
+                            var data = jsondata.addData;
+                            grid.store.newItem(data);
+                            publishInfo("<p class='suggestion_text'>New Patient Added Successfully.<p>\
+                                          \nPlease switch Search Tab if you want to open Chart"
+                            );
+                            if(ADD_MORE_PATIENTS == false){
+                              editDialog.hide();
+                            }
+                            else{
+                              registry.byId("id_patient_hospital_id").focus();
+                            }
+                        }
+                        else{
+                            var content = jsondata.error_message + "\n" + jsondata.form_errors;
+                            publishError(content );
+                        }
+                },
+                error: function(json) {
+                          var jsondata = JSON.parse(json)
+                          publishError("ERROR! : \n"+ jsondata.error_message);
+                }
+        });
+
+//	{% else %}
+    registry.byId("permissionDeniedErrorDialog").show();
+    return false;
+
+//  {% endif %}
+    });
     return false;
     }
     else{
-     dijit.byId("invalidFormSubmissionErrorDialog").show();
+     registry.byId("invalidFormSubmissionErrorDialog").show();
      return false;
     }
+
   </script>
 
   {% if perms.patient.add_patientdetail %}
