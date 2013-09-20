@@ -10,14 +10,14 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from utilities.urls import generic_url_maker
-from utilities.queries import has_contact,
-                              has_phone,
-                              has_guardian,
-                              has_active_admission,
-                              has_active_visit, 
-                              adm_for_pat,
-                              visit_for_pat,
-                              can_add_new_visit,
+from utilities.queries import has_contact,\
+                              has_phone,\
+                              has_guardian,\
+                              has_active_admission,\
+                              has_active_visit, \
+                              adm_for_pat,\
+                              visit_for_pat,\
+                              can_add_new_visit,\
                               get_patient_complaints
 
 from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
@@ -63,12 +63,12 @@ class PatientDetail(AuShadhaBaseModel):
 
 
     # Instance Methods imported from utilities/queries
-    self.has_active_admission = has_active_admission
-    self.has_active_visit = has_active_visit
-    self.has_contact = has_contact
-    self.has_guardian = has_guardian
-    self.has_phone = has_phone
-    self.can_add_new_visit = can_add_new_visit
+    has_active_admission = has_active_admission
+    has_active_visit = has_active_visit
+    has_contact = has_contact
+    has_guardian = has_guardian
+    has_phone = has_phone
+    can_add_new_visit = can_add_new_visit
 
 
     # Model attributes
@@ -112,6 +112,42 @@ class PatientDetail(AuShadhaBaseModel):
         unique_together = ('patient_hospital_id', 'parent_clinic')
 
 
+    def get_all_json_exportable_fields(self):
+      """ 
+        Gets the JSON exportable fields and its values as key, value pair
+        This skips AutoField, OneToOneField type of field
+      """
+      exportable_fields = {}
+      for item in self._meta.get_fields_with_model():
+        if item[0].__class__.__name__ not in ['OneToOneField']:
+          exportable_fields[item[0][0].name] = item[0][0].value_from_object(self)
+        else:
+          continue
+      return exportable_fields
+
+
+    def get_all_related_fields(self):
+      """ 
+        Gets the related fields (basically ForeignKey) 
+        These are the keys used to add / list / json/ tree/ summary stuff in related models
+        This should be useful later in URL creation automagically
+      """
+
+      related_field_list = []
+
+      for item in self._meta.get_all_related_objects():
+          if hasattr(item.model,'__model_label__'):
+            model_label = getattr(item.model, '__model_label__')
+            related_field_list.append(model_label)
+          else:
+            continue
+      for item in related_field_list:
+        if item not in self._can_add_list_or_json:
+          self._can_add_list_or_json.append(item)
+      print "_can_add_list_or_json, Updated"
+      return related_field_list
+
+
     def __unicode__(self):
         if self.middle_name and self.last_name:
             return "%s %s %s" % (self.first_name.capitalize(),
@@ -134,8 +170,8 @@ class PatientDetail(AuShadhaBaseModel):
       hosp_id = self.patient_hospital_id
       id_list = []
       if all_pat:
-          for p in all_pat:
-              id_list.append(p.patient_hospital_id)
+        for p in all_pat:
+            id_list.append(p.patient_hospital_id)
         if hosp_id in id_list:
             error = "Patient is already registered"
             print error

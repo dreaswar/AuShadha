@@ -1,9 +1,10 @@
-# --------------------------------------------------------------
-# AuShadha Views for Visit Details and modification.
-# Author: Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
-# License : GNU - GPL Version 3
-# Date: 27-12-2012
-# ---------------------------------------------------------------
+#################################################################################
+# Project     : AuShadha
+# Description : AuShadha Views for OPD Visits
+# Author      : Dr.Easwar T.R 
+# Date        : 27-12-2012
+# License     : GNU - GPL Version 3, see AuShadha/LICENSE.txt
+#################################################################################
 
 
 # General Django Imports----------------------------------
@@ -102,13 +103,13 @@ def visit_home(request, id='id'):
 def visit_json(request, patient_id = None):
     try:
         action = unicode(request.GET.get('action'))
-        if not patient_id:
-          id = int(request.GET.get('patient_id'))
+        if patient_id:
+          patient_id = int(patient_id)
         else:
-          id = int(patient_id)
+          patient_id = int(request.GET.get('patient_id'))          
         if action == 'add':
-            return patient_visit_add(request, id)
-        patient_detail_obj = PatientDetail.objects.get(pk=id)
+            return patient_visit_add(request, patient_id)
+        patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
     except(PatientDetail.DoesNotExist):
@@ -151,10 +152,14 @@ def render_visit_tree(request, patient_id=None):
             except(AttributeError, NameError, KeyError, TypeError, ValueError):
                 raise Http404("ERROR! Requested Patient Data Does not exist")
 
+            pat_obj.generate_urls()
+            pat_urls = pat_obj.urls
+
             adm_obj = Admission.objects.filter(
                 patient_detail=pat_obj)
             visit_obj = VisitDetail.objects.filter(
                 patient_detail=pat_obj)
+
 
             prev_visit_obj = VisitDetail.objects.filter(
                 patient_detail=pat_obj).filter(is_active=False)
@@ -235,7 +240,7 @@ def render_visit_tree(request, patient_id=None):
                                   "type": "application",
                                   "id": "NEW_OPD_VISIT",
                                   "len": len(visit_obj),
-                                  "addUrl": pat_obj.get_patient_visit_add_url()
+                                  "addUrl": pat_urls['add']['visit']
                                   }
                 tree_item_list.insert(0, dict_to_append)
 
@@ -252,20 +257,22 @@ def render_visit_tree(request, patient_id=None):
                                            'children': []
                                            }
                 for active_visit in active_visits:
+                    active_visit.generate_urls()
+                    av_urls = active_visit.urls
                     base_dict = {
                         "name": active_visit.visit_date.date().isoformat(),
                         "type": "active_visit",
                         "id": "ACTIVE_VISITS_" + str(active_visit.id),
                         "len": True,
                         "addUrl": None,
-                        'editUrl': active_visit.get_edit_url(),
-                        'delUrl': active_visit.get_del_url(),
+                        'editUrl': av_urls['edit'],
+                        'delUrl': av_urls['del'],
                         'children': [
                             {"name": "Add Follow-Up",
                                 "type": "visit_follow_up_add",
                                 "id": "VISIT_FOLLOW_UP_ADD_" + str(active_visit.id),
                                 "len": 1,
-                                "addUrl": active_visit.get_visit_detail_visit_follow_up_add_url(),
+                                "addUrl": av_urls['add']['follow_up'],
                              },
 
                             {"name": "Orders",
@@ -359,15 +366,16 @@ def render_visit_tree(request, patient_id=None):
                 sub_dict = {
                     "name": "", "type": "visit", "id": "", "editUrl": "", "delUrl": ""}
                 for visit in prev_visit_obj:
+                    visit.generate_urls()
+                    v_urls = visit.urls
                     dict_to_append = sub_dict.copy()
                     dict_to_append['name'] = visit.visit_date.date(
                     ).isoformat() + "(" + visit.op_surgeon.__unicode__() + ")"
                     dict_to_append[
                         'id'] = "CLOSED_VISIT_" + unicode(visit.id)
                     dict_to_append['absoluteUrl'] = visit.get_absolute_url()
-                    dict_to_append['editUrl'] = visit.get_edit_url()
-                    dict_to_append['editUrl'] = visit.get_edit_url()
-                    dict_to_append['delUrl'] = visit.get_del_url()
+                    dict_to_append['editUrl'] = v_urls['edit']
+                    dict_to_append['delUrl'] = v_urls['del']
                     dict_to_append['children'] = [{"name": "Orders",
                                                    "type": "application",
                                                    "id": "CLOSED_VISIT_" + str(visit.id) + "_ORDERS_AND_PRESCRIPTION",
@@ -540,13 +548,15 @@ def visit_del(request, id=None):
 
 
 @login_required
-def visit_detail_list(request, id):
-    print "Listing Visit Detail for patient with ID: " + str(id)
+def visit_detail_list(request, patient_id = None):
     user = request.user
     if request.method == "GET" and request.is_ajax():
         try:
-            id = int(id)
-            patient_detail_obj = PatientDetail.objects.get(pk=id)
+            if patient_id:
+              patient_id = int(patient_id)
+            else:
+              patient_id = int(request.GET.get('patient_id'))
+            patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
             visit_detail_obj = VisitDetail.objects.filter(
                 patient_detail=patient_detail_obj).order_by('-visit_date')
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
@@ -577,14 +587,18 @@ def visit_detail_list(request, id):
 
 
 @login_required
-def visit_summary(request, id):
-    print "Listing Summary for patient with ID: " + str(id)
+def visit_summary(request, patient_id = None):
+
     user = request.user
 
     if request.method == "GET" and request.is_ajax():
         try:
-            id = int(id)
-            patient_detail_obj = PatientDetail.objects.get(pk=id)
+            if patient_id:
+              patient_id = int(patient_id)
+            else:
+              patient_id = int(request.GET.get('patient_id') )
+            print "Listing Summary for patient with ID: " + str(patient_id)
+            patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
             visit_detail_obj = VisitDetail.objects.filter(
                 patient_detail=patient_detail_obj).order_by('-visit_date')
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
@@ -682,7 +696,7 @@ def visit_summary(request, id):
 
 
 @login_required
-def visit_detail_add(request, id, nature='initial'):
+def visit_detail_add(request, patient_id = None, nature='initial'):
     """ Adds a new VisitDetail Object and related Objects: VisitComplaint,VisitROS, VisitHPI
         Takes request and id of PatientDetail object
         the nature of visit is defaulted to 'initial'.
@@ -697,8 +711,11 @@ def visit_detail_add(request, id, nature='initial'):
     form_errors = []
 
     try:
-        id = int(id)
-        patient_detail_obj = PatientDetail.objects.get(pk=id)
+        if patient_id:
+          patient_id = int(patient_id)
+        else:
+          patient_id = int(request.GET.get('patient_id'))
+        patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
         print "Patient is: ", patient_detail_obj
         visit_detail_objs = VisitDetail.objects.filter(
             patient_detail=patient_detail_obj).filter(is_active=True)
@@ -1000,18 +1017,23 @@ def visit_detail_add(request, id, nature='initial'):
 
 
 @login_required
-def visit_detail_edit(request, id):
+def visit_detail_edit(request, visit_id = None):
+
     user = request.user
-    visit_complaint_formset_prefix="edit_visit_complaints_"+str(id)
-    vasc_exam_formset_prefix = "edit_vasc_exam_"+str(id)
+    error_message = None    
     VisitComplaintFormset = modelformset_factory(VisitComplaint,
                                                  form=VisitComplaintEditForm,
                                                  extra=0
                                                  )
+
     if request.method == "GET" and request.is_ajax():
         try:
-            id = int(id)
-            visit_detail_obj = VisitDetail.objects.get(pk=id)
+            if visit_id:
+              visit_id = int(visit_id)
+            else:
+              visit_id = int(request.GET.get('visit_id'))
+            visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
+
             visit_complaint_obj = VisitComplaint.objects.filter(
                 visit_detail=visit_detail_obj)
             visit_hpi_obj = VisitHPI.objects.filter(
@@ -1032,16 +1054,19 @@ def visit_detail_edit(request, id):
             raise Http404("Error ! Invalid Request Parameters. ")
         except (VisitDetail.DoesNotExist):
             raise Http404("Requested Patient Does not exist.")
-        error_message = None
-        form_field_auto_id = 'id_edit_visit_detail_' + str(id)
+
+        visit_complaint_formset_prefix="edit_visit_complaints_"+str(visit_id)
+        vasc_exam_formset_prefix = "edit_vasc_exam_"+str(visit_id)
+        form_field_auto_id = 'id_edit_visit_detail_' + str(visit_id)
+        complaint_formset_auto_id = "id_"+visit_complaint_formset_prefix +\
+          "_edit_visit_complaint_" + str(visit_id)
+        complaint_total_form_auto_id = "id_"+visit_complaint_formset_prefix+\
+          "-TOTAL_FORMS_edit_visit_complaint_" + str(visit_id)
+
         data = {'visit_date': visit_detail_obj.visit_date.date().isoformat()}
         visit_detail_form = VisitDetailForm(
             initial=data, instance=visit_detail_obj, auto_id=form_field_auto_id + "_%s")
 
-        complaint_formset_auto_id = "id_"+visit_complaint_formset_prefix +\
-          "_edit_visit_complaint_" + str(id)
-        complaint_total_form_auto_id = "id_"+visit_complaint_formset_prefix+\
-          "-TOTAL_FORMS_edit_visit_complaint_" + str(id)
         visit_complaint_formset = VisitComplaintFormset(
             queryset=VisitComplaint.objects.filter(
                 visit_detail=visit_detail_obj),
@@ -1216,8 +1241,15 @@ def visit_detail_edit(request, id):
 
     if request.method == "POST" and request.is_ajax():
         try:
-            id = int(id)
-            visit_detail_obj = VisitDetail.objects.get(pk=id)
+            if visit_id:
+              visit_id = int(visit_id)
+            else:
+              visit_id = request.POST.get('visit_id')
+            visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
+
+            visit_complaint_formset_prefix="edit_visit_complaints_"+str(visit_id)
+            vasc_exam_formset_prefix = "edit_vasc_exam_"+str(visit_id)
+
             visit_complaint_obj = VisitComplaint.objects.filter(
                 visit_detail=visit_detail_obj)
             visit_hpi_obj = VisitHPI.objects.filter(
@@ -1433,13 +1465,16 @@ def visit_detail_edit(request, id):
 
 
 @login_required
-def visit_detail_del(request, id):
+def visit_detail_del(request, visit_id = None):
     if request.method == "GET" and request.is_ajax():
         user = request.user
         if user.has_perm('visit.delete_visitdetail'):
             try:
-                id = int(id)
-                visit_detail_obj = VisitDetail.objects.get(pk=id)
+                if visit_id:
+                  visit_id = int(visit_id)
+                else:
+                  visit_id = int(request.GET.get('visit_id'))
+                visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
             except (TypeError, NameError, ValueError, AttributeError, KeyError):
                 raise Http404("Error ! Invalid Request Parameters. ")
             except (VisitDetail.DoesNotExist):
@@ -1462,13 +1497,16 @@ def visit_detail_del(request, id):
 
 
 @login_required
-def visit_detail_close(request, id):
+def visit_detail_close(request, visit_id = None):
     if request.method == "GET" and request.is_ajax():
         user = request.user
         if user.has_perm('visit.change_visitdetail'):
             try:
-                id = int(id)
-                visit_detail_obj = VisitDetail.objects.get(pk=id)
+                if visit_id :
+                  visit_id= int(visit_id)
+                else:
+                  visit_id = int(request.GET.get('visit_id'))
+                visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
             except (TypeError, NameError, ValueError, AttributeError, KeyError):
                 raise Http404("Error ! Invalid Request Parameters. ")
             except (VisitDetail.DoesNotExist):
@@ -1477,7 +1515,7 @@ def visit_detail_close(request, id):
             visit_detail_obj._close_visit()
             error_message = None
             success = True
-            error_message = "Successfully Deleted Visit."
+            error_message = "Successfully Closed Visit."
             data = {
                 'success': success, 'error_message': error_message}
             json = simplejson.dumps(data)
@@ -1493,15 +1531,21 @@ def visit_detail_close(request, id):
         raise Http404(" Error ! Unsupported Request..")
 
 
+
+
+
 @login_required
-def visit_follow_up_add(request, id):
+def visit_follow_up_add(request, visit_id = None):
 
     user = request.user
     print "Received Request to add a follow up visit from ", user
     if request.method == "GET" and request.is_ajax():
         try:
-            id = int(id)
-            visit_detail_obj = VisitDetail.objects.get(pk=id)
+            if visit_id:
+              visit_id = int(visit_id)
+            else:
+              visit_id = int(request.GET.get('visit_id'))
+            visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
             raise Http404("Error ! Invalid Request Parameters. ")
         except (VisitDetail.DoesNotExist):
@@ -1528,8 +1572,11 @@ def visit_follow_up_add(request, id):
     if request.method == "POST" and request.is_ajax():
         print "Received request to add a Follow-Up OPD Visit..."
         try:
-            id = int(id)
-            visit_detail_obj = VisitDetail.objects.get(pk=id)
+            if visit_id : 
+              visit_id = int(visit_id)
+            else:
+              visit_id = int(request.GET.get('visit_id'))
+            visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
             raise Http404("Error ! Invalid Request Parameters. ")
         except (VisitDetail.DoesNotExist):
@@ -1556,14 +1603,17 @@ def visit_follow_up_add(request, id):
 
 
 @login_required
-def visit_follow_up_edit(request, id):
+def visit_follow_up_edit(request, follow_up_id = None):
 
     user = request.user
     print "Received Request to add a follow up visit from ", user
     if request.method == "GET" and request.is_ajax():
         try:
-            id = int(id)
-            visit_follow_up_obj = VisitFollowUp.objects.get(pk=id)
+            if follow_up_id: 
+              follow_up_id= int(follow_up_id)
+            else:
+              follow_up_id = int(request.GET.get('follow_up_id'))
+            visit_follow_up_obj = VisitFollowUp.objects.get(pk=follow_up_id)
             visit_detail_obj = visit_follow_up_obj.visit_detail
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
             raise Http404("Error ! Invalid Request Parameters. ")
@@ -1590,8 +1640,11 @@ def visit_follow_up_edit(request, id):
     if request.method == "POST" and request.is_ajax():
         print "Received request to add a Follow-Up OPD Visit..."
         try:
-            id = int(id)
-            visit_follow_up_obj = VisitFollowUp.objects.get(pk=id)
+            if follow_up_id: 
+              follow_up_id= int(follow_up_id)
+            else:
+              follow_up_id = int(request.POST.get('follow_up_id'))
+            visit_follow_up_obj = VisitFollowUp.objects.get(pk=follow_up_id)
             visit_detail_obj = visit_follow_up_obj.visit_detail
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
             raise Http404("Error ! Invalid Request Parameters. ")
@@ -1620,12 +1673,34 @@ def visit_follow_up_edit(request, id):
 
 
 @login_required
-def visit_follow_up_del(request, id):
+def visit_follow_up_del(request, follow_up_id = None):
 
-    user = request.user
-    print "Received Request to add a follow up visit from ", user
     if request.method == "GET" and request.is_ajax():
-        pass
+        user = request.user
+        if user.has_perm('visit.delete_visitfollowup'):
+            try:
+                if follow_up_id:
+                  follow_up_id = int(follow_up_id)
+                else:
+                  follow_up_id = int(request.GET.get('follow_up_id'))
+                visit_follow_up_obj = VisitFollowUp.objects.get(pk=follow_up_id)
+            except (TypeError, NameError, ValueError, AttributeError, KeyError):
+                raise Http404("Error ! Invalid Request Parameters. ")
+            except (VisitFollowUp.DoesNotExist):
+                raise Http404("Requested Patient Does not exist.")
+            error_message = None
+            visit_follow_up_obj.delete()
+            success = True
+            error_message = "Successfully Deleted Visit."
+            data = {'success': success, 'error_message': error_message}
+            json = simplejson.dumps(data)
+            return HttpResponse(json, content_type='application/json')
+        else:
+            success = False
+            error_message = "Insufficient Permission. Could not delete."
+            data = {'success': success, 'error_message': error_message}
+            json = simplejson.dumps(data)
+            return HttpResponse(json, content_type='application/json')
     else:
         raise Http404(" Error ! Unsupported Request..")
 
@@ -1633,14 +1708,17 @@ def visit_follow_up_del(request, id):
 #
 
 @login_required
-def visit_complaint_add(request, id=None):
+def visit_complaint_add(request, visit_id=None):
     user = request.user
     success = False
     error_message = "Complaint Added Successfully"
     form_errors = []
     try:
-        id = int(id)
-        visit_detail_obj = VisitDetail.objects.get(pk=id)
+        if visit_id :
+          visit_id = int(visit_id)
+        else:
+          visit_id = int(request.GET.get('visit_id'))
+        visit_detail_obj = VisitDetail.objects.get(pk= visit_id)
         patient_detail_obj = visit_detail_obj.patient_detail
         visit_complaint_objs = VisitComplaint.objects.filter(
             visit_detail=visit_detail_obj)
@@ -1696,18 +1774,21 @@ def visit_complaint_add(request, id=None):
 
 
 @login_required
-def visit_complaint_edit(request, id=None):
+def visit_complaint_edit(request, complaint_id=None):
     pass
 
 
 @login_required
-def visit_complaint_del(request, id=None):
+def visit_complaint_del(request, complaint_id=None):
     if request.method == "GET" and request.is_ajax():
         user = request.user
         if user.has_perm('visit.delete_visitcomplaint'):
             try:
-                id = int(id)
-                visit_complaint_obj = VisitComplaint.objects.get(pk=id)
+                if complaint_id : 
+                  complaint_id = int(complaint_id)
+                else:
+                  complaint_id = int(request.GET.get('complaint_id'))
+                visit_complaint_obj = VisitComplaint.objects.get(pk=complaint_id)
             except (TypeError, NameError, ValueError, AttributeError, KeyError):
                 raise Http404("Error ! Invalid Request Parameters. ")
             except (VisitComplaint.DoesNotExist):
@@ -1729,329 +1810,18 @@ def visit_complaint_del(request, id=None):
         raise Http404(" Error ! Unsupported Request..")
 
 
-#
-
-@login_required
-def visit_status_list(request, id):
-    user = request.user
-    try:
-        id = int(id)
-        visit_obj = VisitDetail.objects.get(pk=id)
-    except (NameError, ValueError, AttributeError, KeyError):
-        raise Http404("Bad Request:: Invalid Request Parameters")
-    except (VisitDetail.DoesNotExist):
-        raise Http404("Bad Request:: Requested VisitDetail Does Not Exist")
-    if request.method == "GET" and request.is_ajax():
-        pass
-    elif request.method == "POST" and request.is_ajax():
-        pass
-    else:
-        raise Http404(" Error ! Unsupported Request..")
 
 
-@login_required
-def visit_status_edit(request, id):
-    user = request.user
-    try:
-        id = int(id)
-        visit_obj = VisitDetail.objects.get(pk=id)
-    except (NameError, ValueError, AttributeError, KeyError):
-        raise Http404("Bad Request:: Invalid Request Parameters")
-    except (VisitDetail.DoesNotExist):
-        raise Http404("Bad Request:: Requested VisitDetail Does Not Exist")
-    if request.method == "GET" and request.is_ajax():
-        pass
-    elif request.method == "POST" and request.is_ajax():
-        pass
-    else:
-        raise Http404(" Error ! Unsupported Request..")
-
-#
 
 
-@login_required
-def visit_nature_list(request, id):
-    user = request.user
-    try:
-        id = int(id)
-        visit_obj = VisitDetail.objects.get(pk=id)
-    except (NameError, ValueError, AttributeError, KeyError):
-        raise Http404("Bad Request:: Invalid Request Parameters")
-    except (VisitDetail.DoesNotExist):
-        raise Http404("Bad Request:: Requested VisitDetail Does Not Exist")
-    if request.method == "GET" and request.is_ajax():
-        pass
-    elif request.method == "POST" and request.is_ajax():
-        pass
-    else:
-        raise Http404(" Error ! Unsupported Request..")
+####################################### PDF Render #############################
 
-
-@login_required
-def visit_nature_edit(request, id):
-    user = request.user
-    try:
-        id = int(id)
-        visit_obj = VisitDetail.objects.get(pk=id)
-    except (NameError, ValueError, AttributeError, KeyError):
-        raise Http404("Bad Request:: Invalid Request Parameters")
-    except (VisitDetail.DoesNotExist):
-        raise Http404("Bad Request:: Requested VisitDetail Does Not Exist")
-    if request.method == "GET" and request.is_ajax():
-        pass
-    elif request.method == "POST" and request.is_ajax():
-        pass
-    else:
-        raise Http404(" Error ! Unsupported Request..")
-
-#
-
-
-@login_required
-def visit_close(request, id):
-    user = request.user
-    if user.is_staff:
-        try:
-            id = int(id)
-            visit_obj = VisitDetail.objects.get(pk=id)
-        except (NameError, ValueError, AttributeError, KeyError):
-            raise Http404("Bad Request:: Invalid Request Parameters")
-        except (VisitDetail.DoesNotExist):
-            raise Http404("Bad Request:: Requested VisitDetail Does Not Exist")
-        if request.method == "GET" and request.is_ajax():
-            visit_obj.visit_status_change('discharged')
-            success = True
-            error_message = "Visit Closed Successfully"
-            data = {"success": success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
-        else:
-            raise Http404(" Error ! Unsupported Request..")
-    else:
-        raise Http404(" Error ! Permission Denied..")
-
-#
-
-
-#
-#@login_required
-# def visit_action(request,action = 'add', id = 'id'):
-#  if request.user:
-#    user = request.user
-#    if action == "add":
-#      if request.method == "GET":
-# try:
-#   id = int(id)
-#   pat_obj = PatientDetail.objects.get(pk = id)
-# except(ValueError, AttributeError, TypeError, PatientDetail.DoesNotExist):
-#   raise Http404("Bad Request: Raised ValueError / TypeError / PatientDetail DoesNotExist")
-# visit_objs    = VisitDetail.objects.filter(patient_detail = pat_obj)
-# adm_obj       = Admission.objects.filter(patient_detail = pat_obj).filter(admission_closed = False)
-# active_visits = []
-# if visit_objs:
-#   for visits in visit_objs:
-#     active_visits = VisitStatus.objects.filter(visit_detail = visits).filter(is_active = True)
-# if active_visits:
-#   error_message = "Patient has an active Visit. You cannot add further visits for the same patient"
-# variable     = RequestContext(request, {'user':user, 'error_message':error_message})
-#   return HttpResponse(error_message)
-# elif adm_obj:
-#   error_message = "Patient has an active Admission. You cannot add OPD notes for the same patient"
-#   return HttpResponse(error_message)
-# else:
-#   visit_detail_obj      = VisitDetail(patient_detail = pat_obj)
-#   visit_status_obj      = VisitStatus(visit_detail = visit_detail_obj)
-#   visit_complaint_obj   = VisitComplaints(visit_detail = visit_detail_obj)
-#   visit_nature_obj      = VisitNature(visit_detail = visit_detail_obj)
-#
-#   visit_detail_form           = VisitDetailForm(instance = visit_detail_obj)
-#   visit_nature_form           = VisitNatureForm(instance = visit_nature_obj)
-#   visit_status_form           = VisitStatusForm(instance = visit_status_obj)
-#   visit_complaint_form        = VisitComplaintsForm(instance = visit_complaint_obj)
-#
-#   action = '/visit/add/'+str(pat_obj.id) +'/'
-#   method = 'post'
-#   button = 'Add Visit'
-#   variable = RequestContext(request, {'user':user,
-#               'pat_obj':pat_obj,
-#               'active':active_visits,
-#               'visit_detail_obj':visit_detail_obj,
-#               'visit_status_obj':visit_status_obj,
-#               'visit_nature_obj':visit_nature_obj,
-#               'visit_complaint_obj':visit_complaint_obj,
-#
-#               'visit_detail_form':visit_detail_form,
-#               'visit_nature_form':visit_nature_form,
-#               'visit_status_form':visit_status_form,
-#               'visit_complaint_form':visit_complaint_form,
-#
-#               'action':action,
-#               'method':method,
-#               'button':button,
-#               })
-#   return render_to_response('visit/visit_actions.html', variable)
-#
-#      elif request.method == "POST":
-# try:
-#   id = int(id)
-#   pat_obj = PatientDetail.objects.get(pk = id)
-# except(ValueError, AttributeError, TypeError, PatientDetail.DoesNotExist):
-#   raise Http404("Bad Request: Raised ValueError / TypeError / PatientDetail DoesNotExist")
-# adm_obj = Admission.objects.filter(patient_detail = pat_obj).filter(admission_closed = False)
-# if adm_obj:
-#   error_message = "Patient has an active Admission.\nYou cannot add OPD notes for the same patient"
-#   return HttpResponseRedirect('/phy_exam/home/'+str(adm_obj.id)+'/')
-# else:
-#   visit_detail_obj    = VisitDetail(patient_detail = pat_obj)
-#   visit_status_obj    = VisitStatus(visit_detail = visit_detail_obj)
-# visit_complaint_obj    = VisitComplaints(visit_detail = visit_detail_obj)
-#   visit_nature_obj    = VisitNature(visit_detail = visit_detail_obj)
-#
-#   visit_detail_form         = VisitDetailForm(request.POST, instance = visit_detail_obj)
-#   visit_nature_form           = VisitNatureForm(request.POST,instance = visit_nature_obj)
-#   visit_status_form           = VisitStatusForm(request.POST,instance = visit_status_obj)
-# visit_complaint_form        = VisitComplaintsForm(request.POST,instance = visit_complaint_obj)
-#
-#   if visit_detail_form.is_valid()and visit_nature_form.is_valid()and visit_status_form.is_valid():
-#      visit_detail_obj  = visit_detail_form.save()
-#      visit_detail_obj.patient_detail = pat_obj
-#      visit_detail_obj.save()
-#
-# visit_nature_form.cleaned_data['visit_detail'] = visit_detail_obj
-#      visit_nature_obj.visit_detail = visit_detail_obj
-#      visit_nature_obj = visit_nature_form.save()
-#      visit_nature_obj.save()
-# visit_status_form.cleaned_data['visit_detail'] = visit_detail_obj
-#      visit_status_obj.visit_detail = visit_detail_obj
-#      visit_status_obj = visit_status_form.save()
-#      if visit_status_form.cleaned_data['status'] == 'admission' or visit_status_form.cleaned_data['status'] =='discharge':
-#        visit_status_obj.is_active = 'False'
-#      else:
-#        visit_status_obj.is_active = 'True'
-#      visit_status_obj.save()
-#      error_message        = "Visit Details saved Successfully"
-#      visit_complaints_formset = VisitComplaintsFormset(queryset = VisitComplaints.objects.filter(visit_detail = visit_detail_obj))
-#      action               = 'visit/complaints/add/'+str(visit_detail_obj.id)+'/'
-#      method               = 'post'
-#      button               = 'Add Complaints'
-#      variable             = RequestContext(request, {'user':user,
-#            'visit_detail_obj':visit_detail_obj,
-#            'visit_complaints_formset':visit_complaints_formset,
-#            'method':method,
-#            'action':action,
-#            'button':button,
-#            'error_message':error_message
-#            })
-#      return render_to_response('visit/visit_complaints.html', variable)
-# return HttpResponseRedirect('/visit/list/')
-#   else:
-#     action   = '/visit/add/'+str(pat_obj.id) +'/'
-#     method   = 'post'
-#     button   = 'Resubmit'
-#     variable = RequestContext(request, {'user':user,
-#           'pat_obj':pat_obj,
-#
-#           'visit_detail_obj':visit_detail_obj,
-#           'visit_status_obj':visit_status_obj,
-#           'visit_nature_obj':visit_nature_obj,
-# 'visit_complaint_obj':visit_complaint_obj,
-#
-#           'visit_detail_form':visit_detail_form,
-#           'visit_nature_form':visit_nature_form,
-#           'visit_status_form':visit_status_form,
-# 'visit_complaint_formset':visit_complaint_formset,
-#           'action':action,
-#           'method':method,
-#           'button':button,
-#           })
-#     return render_to_response('visit/visit_actions.html', variable)
-#      else:
-# return Http404("Bad Request")
-#    elif action == 'edit':
-#      pass
-#    elif action == 'del':
-#      pass
-#    else:
-#      raise Http404("Unknown Action:: " +str(action))
-#  else:
-#    return HttpResponseRedirect('/login/')
-#@login_required
-# def visit_complaints(request, id):
-#  global TOTAL_COMPLAINTS_FORM
-#  if request.user:
-#    user = request.user
-#    if request.method == 'POST':
-#      try:
-# id = int(id)
-# visit_detail_obj = VisitDetail.objects.get(pk = id)
-#      except (TypeError, ValueError, AttributeError, VisitDetail.DoesNotExist):
-# raise Http404("Error !!:: Type / AttributeError / ValueError/ DoesNotExist Error ")
-#      visit_complaints_obj  = VisitComplaints(visit_detail = visit_detail_obj)
-#      visit_complaints_formset = VisitComplaintsFormset(request.POST)
-#      if visit_complaints_formset.is_valid():
-#        instances = visit_complaints_formset.save(commit = False)
-#        for instance in instances:
-#     instance.visit_detail = visit_detail_obj
-#     instance.save()
-#        if 'add_more_complaints' in request.POST:
-#   TOTAL_COMPLAINTS_FORM  = int(request.POST['form-TOTAL_FORMS'])+1
-#   visit_complaints_formset = VisitComplaintsFormset(queryset = VisitComplaints.objects.filter(visit_detail = visit_detail_obj))
-#   action               = 'visit/complaints/add/'+str(visit_detail_obj.id)+'/'
-#   method               = 'post'
-#   button               = 'Add Complaints'
-#   error_message = "Complaints have been saved.\nYou can add "+ str(10-TOTAL_COMPLAINTS_FORM) +" more complaints."
-#   max_forms_reached = False
-#   if TOTAL_COMPLAINTS_FORM == 10:
-#         error_message = "Cannot add more complaints"
-#         max_forms_reached = True
-#   variable = RequestContext(request, {'user':user,
-#                 'visit_detail_obj':visit_detail_obj,
-#                 'visit_complaints_formset':visit_complaints_formset,
-#                 'action':action,
-#                 'button':button,
-#                 'method':method,
-#                 'error_message':error_message,
-#                 'max_forms_reached':max_forms_reached,
-#                 })
-#   return render_to_response('visit/visit_complaints.html', variable)
-# else:
-#   return HttpResponseRedirect('/visit/list')
-#      else:
-# visit_action(request, action = 'add', id = id)
-@login_required
-def visit_home(request, id=id):
-    if request.user:
-        user = request.user
-        try:
-            id = int(id)
-            visit_obj = VisitDetail.objects.get(pk=id)
-        except(ValueError, AttributeError, TypeError, VisitDetail.DoesNotExist):
-            raise Http404(
-                'Error!!:: AttributeError/ ValueError/ TypeError/ DoesNotExist')
-        pat_detail_obj = visit_obj.patient_detail
-#    visit_status_obj     = VisitStatus.objects.filter(visit_detail = visit_obj)
-#    visit_nature_obj     = VisitNature.objects.filter(visit_detail = visit_obj)
-#    visit_complaints_obj = VisitComplaints.objects.filter(visit_detail = visit_obj)
-        #phy_exam_obj      = PhyExam.objects.filter(visit_detail = visit_obj)
-        #reg_exam_obj      = RegExam.objects.filter(visit_detail = visit_obj)
-        if request.method == 'GET':
-            variable = RequestContext(request, {'user': user,
-                                                'pat_detail_obj': pat_detail_obj,
-                                                'visit_obj': visit_obj,
-                                                #           'visit_status_obj':visit_status_obj,
-                                                #           'visit_nature_obj':visit_nature_obj,
-                                                #           'visit_complaints_obj':visit_complaints_obj,
-                                                #'phy_exam_obj':phy_exam_obj,
-                                                #'reg_exam_obj':reg_exam_obj,
-                                                })
-            return render_to_response('visit/visit_home.html', variable)
-        elif request.method == 'POST':
-            pass
-        else:
-            raise Http404("Bad Request.." + str(request.method))
-    else:
-        return HttpResponseRedirect('/login')
-
+# Will be removed
+# Better to rely on plain HTML
+# This is lot of work and not an absolute necessity
+# Add more complexity, external dependency to the project
+# Cumbersome to style it with current tools
+# Creates a significant additional skillset to learn with a very limited use case 
 
 @login_required
 def render_visit_pdf(request, id):

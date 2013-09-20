@@ -111,7 +111,7 @@ class VisitDetail(AuShadhaBaseModel):
             # return self.patient_detail.get_patient_visit_add_url()
         # else:
             # return False
-        return '/AuShadha/visit/follow_up/add/%s/' % (self.id)
+        return '/AuShadha/visit/follow_up/add/?visit_id=%s/' % (self.id)
 
     def has_fu_visits(self):
         id = self.id
@@ -460,7 +460,7 @@ class VisitImaging(AuShadhaBaseModel):
 
 class VisitROS(AuShadhaBaseModel):
 
-    __model_label__ = 'ros'
+    __model_label__ = 'visit_ros'
 
     _parent_model = 'visit_detail'
 
