@@ -41,10 +41,10 @@ MEDICAL_HISTORY_FORM_CONSTANTS ={
               "data-dojo-type": "dijit.form.DateTextBox",
               "data-dojo-props": r"'required' : false"
   },
-  'healed':{
-            "data-dojo-type": "dijit.form.CheckBox",
-            "data-dojo-props": r"'required' :false"
-  },
+  #'healed':{
+            #"data-dojo-type": "dijit.form.CheckBox",
+            #"data-dojo-props": r"'required' :false"
+  #},
   'remarks':{
             'max_length': 1000,
             "data-dojo-type": "dijit.form.Textarea",

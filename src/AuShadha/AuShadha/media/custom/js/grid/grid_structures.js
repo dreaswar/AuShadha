@@ -866,13 +866,13 @@ define(function () {
                                   ],
 
         PATIENT_MEDICAL_HISTORY_GRID_STRUCTURE: [
-            {
-                name: "ID",
-                field: "id",
-                width: "50px",
-                hidden: true,
-                cellStyles: "text-align:center;"
-                                    },
+//             {
+//                 name: "ID",
+//                 field: "id",
+//                 width: "50px",
+//                 hidden: true,
+//                 cellStyles: "text-align:center;"
+//                                     },
 
             {
                 name: "Edit",
@@ -948,12 +948,12 @@ define(function () {
                 cellStyles: "text-align:center;"
                                     },
 
-            {
-                name: "Healed",
-                field: "healed",
-                width: "70px",
-                cellStyles: "text-align:center;"
-                                    },
+//             {
+//                 name: "Healed",
+//                 field: "healed",
+//                 width: "70px",
+//                 cellStyles: "text-align:center;"
+//                                     },
 
             {
                 name: "Remarks",

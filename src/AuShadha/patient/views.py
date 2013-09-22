@@ -157,7 +157,7 @@ def patient_list(request):
                                         "all_patients": all_patients,
                                         "alternate_layout": False
                                         })
-    return render_to_response('patient/patient_list.html', variable)
+    return render_to_response('patient_detail/list.html', variable)
 
 
 @login_required
@@ -183,7 +183,7 @@ def patient_index(request):
     all_patients = PatientDetail.objects.all().order_by('patient_hospital_id')
     variable = RequestContext(
         request, {"all_patients": all_patients, 'user': user})
-    return render_to_response('patient/index.html', variable)
+    return render_to_response('patient_detail/index.html', variable)
 
 
 @login_required
@@ -212,7 +212,7 @@ def patient_detail_add(request, clinic_id = None):
                                     "patient_detail_form": patient_detail_form
                                     }
                                     )
-          return render_to_response('patient/detail/add.html', variable)
+          return render_to_response('patient_detail/add.html', variable)
 
       elif request.method == "POST"  and request.is_ajax():
           patient_detail_form = PatientDetailForm(request.POST,
@@ -267,7 +267,7 @@ def patient_detail_edit(request, id):
                 raise Http404("BadRequest")
             except PatientDetail.DoesNotExist:
                 raise Http404("BadRequest: Patient detail Data Does Not Exist")
-            return render_to_response('patient/detail/edit.html', variable)
+            return render_to_response('patient_detail/edit.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -828,7 +828,7 @@ def render_patient_summary(request, patient_id=None):
                                       'visit_obj': visit_obj,
 
                                       })
-            return render_to_response('patient/summary.html', variable)
+            return render_to_response('patient_detail/summary.html', variable)
         except(AttributeError, NameError, KeyError, TypeError, ValueError):
             raise Http404("ERROR! Bad Request Parameters")
         except(AttributeError, NameError, KeyError, TypeError, ValueError):
@@ -872,7 +872,7 @@ def render_patient_sidebar_contact_tab(request, id=None):
                                                 'allergy_obj': allergy_obj,
                                                 'medication_list_obj': medication_list_obj
                                                 })
-            return render_to_response('patient/sidebar_contact_tab.html', variable)
+            return render_to_response('patient_detail/sidebar_contact_tab.html', variable)
     else:
         raise Http404("Bad Request")
 

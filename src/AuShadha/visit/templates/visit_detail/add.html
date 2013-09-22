@@ -1,0 +1,58 @@
+{% if perms.visit.add_visitdetail %}
+    
+  {% include 'visit_template_snippets/js/visit_detail_add_header.html' %}
+
+  <div data-dojo-type = "dijit/form/Form" 
+      id             = "newVisitAddForm"
+      data-dojo-id   = "newVisitAddForm"
+      encType        = "multipart/form-data" 
+      action         = "" 
+      method         = ""
+      style          = "height: 60em; min-width: 50em; overflow:auto;"
+      >
+
+    {% include 'visit_template_snippets/js/visit_detail_add_form_validate.html' %}
+
+    {% if perms.visit.add_visitdetail %}
+          <div data-dojo-type = "dijit/layout/BorderContainer"
+    >
+
+      <div data-dojo-type = "dojox/layout/ContentPane"
+          data-dojo-props = "'region':'bottom','splitter':false"
+          style="border:none;"
+      >
+        {% include 'visit_template_snippets/button_row/visit_detail_add.html' %}
+      </div>
+
+      <div data-dojo-type="dijit/layout/TabContainer" 
+          data-dojo-props="'tabStrip':true,'tabPosition':'top','nested':true,'region':'center','splitter':false"
+      >      
+
+          <div data-dojo-type="dojox/layout/ContentPane" 
+              data-dojo-props="'title':'Basic Data'"
+            >
+            {% include 'visit_template_snippets/forms/visit_detail_add.html' %}
+          </div>
+
+          <div data-dojo-type="dojox/layout/ContentPane" 
+              data-dojo-props="'title':'Complaints &amp; HPI','selected':true"
+            >
+            {% include 'visit_complaints/add.html' %}
+            {% include 'visit_template_snippets/forms/hpi.html' %}
+          </div>
+
+          {% include 'visit_template_snippets/forms/ros_and_all_exam_forms.html' %}
+
+      </div> 
+      <!-- End of TabContainer -->
+
+    </div>
+    <!-- End of BorderContainer -->
+    {% endif %} 
+
+  </div>
+  <!-- End of Form -->
+
+{% else %}
+  <p class="suggestion_text"> Insufficient Permissions</p>
+{% endif %}

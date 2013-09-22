@@ -149,8 +149,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 contactGrid.onRowDblClick = function (e) {
-                    //  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}
-                    onPatientSubMenuRowClick(e,
+                    //  {% if perms.demographics.change_contact or perms.demographics.delete_contact %}
+                    this.onPatientSubMenuRowClick(e,
                         contactGrid,
                         "Edit Contact"
                     );
@@ -188,8 +188,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 popUpGrid.onRowDblClick = function (e) {
-                    //  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}
-                    onPatientSubMenuRowClick(e,
+                    //  {% if perms.demographics.change_contact or perms.demographics.delete_contact %}
+                    this.onPatientSubMenuRowClick(e,
                         popUpGrid,
                         "Edit"
                     );
@@ -220,8 +220,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 contactAltGrid.onRowDblClick = function (e) {
-                    //  {% if perms.patient.change_patientcontact or perms.patient.delete_patientcontact %}
-                    onPatientSubMenuRowClick(e,
+                    //  {% if perms.demographics.change_contact or perms.demographics.delete_contact %}
+                    this.onPatientSubMenuRowClick(e,
                         contactAltGrid,
                         "Edit Contact"
                     );
@@ -253,8 +253,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 phoneGrid.onRowDblClick = function (e) {
-                    // {% if perms.patient.change_patientphone or perms.patient.delete_patientphone %}
-                    onPatientSubMenuRowClick(e, phoneGrid, "Edit Phone");
+                    // {% if perms.demographics.change_phone or perms.demographics.delete_phone %}
+                    this.onPatientSubMenuRowClick(e, phoneGrid, "Edit Phone");
                     return false;
                     // {% endif %}
                 };
@@ -278,8 +278,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 guardianGrid.onRowDblClick = function (e) {
-                    // {% if perms.patient.change_patientguardian or perms.patient.delete_patientguardian %}
-                    onPatientSubMenuRowClick(e, guardianGrid, "Edit Guardian");
+                    // {% if perms.demographics.change_guardian or perms.demographics.delete_guardian %}
+                    this.onPatientSubMenuRowClick(e, guardianGrid, "Edit Guardian");
                     return false;
                     // {% endif %}
                 };
@@ -308,8 +308,8 @@ define(["dojox/grid/DataGrid",
                 console.log(allergiesGrid);
 
                 allergiesGrid.onRowDblClick = function (e) {
-                    // {% if perms.patient.change_patientallergies or perms.patient.delete_patientallergies %}
-                    onPatientSubMenuRowClick(e, allergiesGrid, "Edit Allergy");
+                    // {% if perms.allergy_list.change_allergy or perms.allergy_list.delete_allergy %}
+                    this.onPatientSubMenuRowClick(e, allergiesGrid, "Edit Allergy");
                     return false;
                     // {% endif %}
                 };
@@ -335,8 +335,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 medicationListGrid.onRowDblClick = function (e) {
-                    // {% if perms.patient.change_patientmedicationlist or perms.patient.delete_patientmedicationlist %}
-                    onPatientSubMenuRowClick(e, medicationListGrid,
+                    // {% if perms.medication_list.change_medicationlist or perms.medication_list.delete_medicationlist %}
+                    this.onPatientSubMenuRowClick(e, medicationListGrid,
                         "Edit Medication List");
                     return false;
                     // {% endif %}
@@ -361,8 +361,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 familyHistoryGrid.onRowDblClick = function (e) {
-                    // {% if perms.patient.change_patientfamilyhistory or perms.patient.delete_patientfamilyhistory %}
-                    onPatientSubMenuRowClick(e, familyHistoryGrid,
+                    // {% if perms.family_history.change_familyhistory or perms.family_history.delete_familyhistory %}
+                    this.onPatientSubMenuRowClick(e, familyHistoryGrid,
                         "Edit Family History");
                     return false;
                     // {% endif %}
@@ -388,8 +388,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 medicalHistoryGrid.onRowDblClick = function (e) {
-                    // {% if perms.patient.change_patientmedicalhistory or perms.patient.delete_patientmedicalhistory %}
-                    onPatientSubMenuRowClick(e, medicalHistoryGrid,
+                    // {% if perms.medical_history.change_medicalhistory or perms.medical_history.delete_medicalhistory %}
+                    this.onPatientSubMenuRowClick(e, medicalHistoryGrid,
                         "Edit Medical History");
                     return false;
                     // {% endif %}
@@ -415,8 +415,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 surgicalHistoryGrid.onRowDblClick = function (e) {
-                    // {% if perms.patient.change_patientsurgicalhistory or perms.patient.delete_patientsurgicalhistory %}
-                    onPatientSubMenuRowClick(e, surgicalHistoryGrid,
+                    // {% if perms.surgical_history.change_surgicalhistory or perms.surgical_history.delete_surgicalhistory %}
+                    this.onPatientSubMenuRowClick(e, surgicalHistoryGrid,
                         "Edit Surgical History");
                     return false;
                     // {% endif %}
@@ -442,8 +442,8 @@ define(["dojox/grid/DataGrid",
                 );
 
                 immunisationGrid.onRowDblClick = function (e) {
-                    // {% if perms.patient.change_patientimmunisation or perms.patient.delete_patientimmunisation %}
-                    onPatientSubMenuRowClick(e, immunisationGrid,
+                    // {% if perms.immunisation.change_immunisation or perms.immunisation.delete_immunisation %}
+                    this.onPatientSubMenuRowClick(e, immunisationGrid,
                         "Edit Immunisation");
                     return false;
                     // {% endif %}
@@ -475,7 +475,7 @@ define(["dojox/grid/DataGrid",
 
                 admissionGrid.onRowDblClick = function (e) {
                     //  {% if perms.admission.change_admissiondetail or perms.admission.delete_admissiondetail %}
-                    onPatientSubMenuRowClick(e,
+                    this.onPatientSubMenuRowClick(e,
                         admissionGrid,
                         "Edit Admission"
                     );
@@ -526,7 +526,7 @@ define(["dojox/grid/DataGrid",
 
                 visitGrid.onRowDblClick = function (e) {
                     //{% if perms.visit.change_visitdetail or perms.visit.delete_visitdetail %}
-                    onPatientSubMenuRowClick(e, visitGrid, "Edit Visit");
+                    this.onPatientSubMenuRowClick(e, visitGrid, "Edit Visit");
                     //{% endif %}
                     return false;
                 };

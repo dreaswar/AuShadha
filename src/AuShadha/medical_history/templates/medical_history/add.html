@@ -1,0 +1,91 @@
+<div data-dojo-type = "dijit/form/Form" 
+     id             = "newMedicalHistoryAddForm"
+     data-dojo-id   = "newMedicalHistoryAddForm"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = "">
+
+  <script type            = "dojo/method" 
+          data-dojo-event = "onReset"
+  >
+    return true;
+  </script>
+
+  <script type            = "dojo/method" 
+          data-dojo-event = "onSubmit"
+          data-dojo-args  = "evt"
+  >
+   if(this.validate()){
+      require([
+       "dijit/registry", 
+      ],
+      function(registry){
+//    {% if perms.medical_history.add_medicalhistory %}
+      addItem("{{addUrl}}", "newMedicalHistoryAddForm", "medical_history_list");
+//    {% else %}
+      registry.byId("permissionDeniedErrorDialog").show();
+//   {% endif %}
+     });
+     return false;
+    }
+    else{
+      raiseInvalidFormSubmission();
+      return false;
+    }
+  </script>
+
+    {% if perms.medical_history.add_medical_history %}
+
+        <table>
+        {{medical_history_form}}
+        </table>
+
+        <button 	type 	          = "submit" 
+                    data-dojo-type    = "dijit/form/Button"
+                    data-dojo-props   = "iconClass:'dijitIconSave'"
+                    name 	          = "submitbutton" 
+                    id 		          = "medical_history_add_form_submit"
+                    value             = "Add">
+          Add
+
+          <script type            = "dojo/connect" 
+                  data-dojo-event = "onClick" 
+                  data-dojo-args  = "evt"
+          >
+            ADD_MORE_ITEMS           = false;
+          </script>
+
+        </button>
+
+        <button 	type 	        = "submit" 
+                    data-dojo-type  = "dijit/form/Button"
+                    data-dojo-props = "iconClass:'dijitIconSave'"
+                    name 	        = "submitAndAddMoreButton" 
+                    id 		        = "medical_history_add_form_add_more"
+                    value           = "Add More">
+
+          Add More
+          
+          <script type            = "dojo/connect" 
+                  data-dojo-event = "onClick"
+                  data-dojo-args  = "evt"
+          >
+            ADD_MORE_ITEMS           = true;
+          </script>
+
+        </button>
+
+        <button   type            = "reset" 
+                  data-dojo-type  = "dijit/form/Button"
+                  data-dojo-props = "iconClass:'dijitIconClear'"
+                  id              = "medical_history_add_form_reset"
+                  value           = "Reset">
+          Reset
+        </button>
+
+    {% else %}
+      <p class="suggestion_text"> Insufficient Permissions to add medical_history </p>
+    {%endif%}
+
+</div>
+

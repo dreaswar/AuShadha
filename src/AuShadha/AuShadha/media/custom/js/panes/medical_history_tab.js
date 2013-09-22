@@ -52,7 +52,7 @@ define([
           }
 
           function createHistoryDijits(){
-            //{% if perms.patient %}
+            //{% if perms.medical_history %}
               if(registry.byId('patientMedicalHistoryTab')){
                 registry.byId('patientMedicalHistoryTab').destroyRecursive(true);
               }
@@ -68,7 +68,7 @@ define([
           }
 
           function createButtons(){
-                //{% if perms.patient.add_patientmedicalhistory %}
+                //{% if perms.medical_history.add_medicalhistory %}
                     var addPatientMedicalHistoryButton =  new Button({
                                                           label       : "Add",
                                                           title       : "Add Medical History Details",
@@ -101,8 +101,9 @@ define([
           }
 
           function fillData(){
-            //{% if perms.patient %}
+            //{% if perms.medical_history %}
               var medicalHistoryUrl   = CHOSEN_PATIENT.medicalhistoryjson;
+              console.log(auGridSetup);
               auGridSetup.setupMedicalHistoryGrid(medicalHistoryUrl);
               registry.byId("patientContextTabs").selectChild('patientMedicalHistoryTab');
             //{% endif %}

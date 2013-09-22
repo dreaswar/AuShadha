@@ -94,7 +94,7 @@ def contact_add(request, id):
                 raise Http404("BadRequest")
             except PatientDetail.DoesNotExist:
                 raise Http404("BadRequest: Patient Data Does Not Exist")
-            return render_to_response('demographics/contact/add.html', variable)
+            return render_to_response('contact/add.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -168,7 +168,7 @@ def contact_edit(request, id):
             except PatientContact.DoesNotExist:
                 raise Http404(
                     "BadRequest: Contact Data Does Not Exist")
-            return render_to_response('demographics/contact/edit.html', variable)
+            return render_to_response('contact/edit.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -308,7 +308,7 @@ def email_and_fax_add(request, id):
                 raise Http404("BadRequest")
             except PatientDetail.DoesNotExist:
                 raise Http404("BadRequest: Patient Data Does Not Exist")
-            return render_to_response('demographics/email_and_fax/add.html', variable)
+            return render_to_response('email_and_fax/add.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -367,7 +367,7 @@ def email_and_fax_edit(request, id):
             except EmailAndFax.DoesNotExist:
                 raise Http404(
                     "BadRequest: Email and Fax Data Does Not Exist")
-            return render_to_response('demographics/email_and_fax/edit.html', variable)
+            return render_to_response('email_and_fax/edit.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -386,7 +386,7 @@ def email_and_fax_edit(request, id):
                                                "user": user,
                                                'patient_detail_obj': patient_detail_obj
                                                })
-                    return render_to_response("demographics/email_and_fax/edit.html", variable)
+                    return render_to_response("email_and_fax/edit.html", variable)
             except ValueError or AttributeError or TypeError:
                 raise Http404("BadRequest: Server Error")
             except EmailAndFax.DoesNotExist:
@@ -445,7 +445,7 @@ def guardian_add(request, id):
                 raise Http404("BadRequest")
             except PatientDetail.DoesNotExist:
                 raise Http404("BadRequest: Patient Data Does Not Exist")
-            return render_to_response('demographics/guardian/add.html', variable)
+            return render_to_response('guardian/add.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -516,7 +516,7 @@ def guardian_edit(request, id):
             except PatientContact.DoesNotExist:
                 raise Http404(
                     "BadRequest: Patient guardian Data Does Not Exist")
-            return render_to_response('demographics/guardian/edit.html', variable)
+            return render_to_response('guardian/edit.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -615,7 +615,7 @@ def phone_add(request, id):
                 raise Http404("BadRequest")
             except PatientDetail.DoesNotExist:
                 raise Http404("BadRequest: Patient Data Does Not Exist")
-            return render_to_response('demographics/phone/add.html', variable)
+            return render_to_response('phone/add.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -686,7 +686,7 @@ def phone_edit(request, id):
                 raise Http404("BadRequest")
             except Phone.DoesNotExist:
                 raise Http404("BadRequest: Phone Data Does Not Exist")
-            return render_to_response('demographics/phone/edit.html', variable)
+            return render_to_response('phone/edit.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -815,7 +815,7 @@ def demographics_add(request, id):
                                                'editUrl': None,
                                                'delUrl': None
                                                })
-                return render_to_response('patient/demographics/add_or_edit_form.html', variable)
+                return render_to_response('demographics/add_or_edit_form.html', variable)
             except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")
             except PatientDetail.DoesNotExist:
@@ -907,7 +907,7 @@ def demographics_edit(request, id):
             except Demographics.DoesNotExist:
                 raise Http404(
                     "BadRequest: Patient DemographicsData Data Does Not Exist")
-            return render_to_response('patient/demographics/add_or_edit_form.html', variable)
+            return render_to_response('demographics/add_or_edit_form.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)

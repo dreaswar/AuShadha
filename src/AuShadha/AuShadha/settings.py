@@ -133,9 +133,28 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'templates'),
     os.path.join(ROOT_PATH, 'media/custom/js/'),
     os.path.join(ROOT_PATH, 'media/custom/styles'),
+
+    os.path.join(ROOT_PATH, 'patient/templates/'),
+    os.path.join(ROOT_PATH, 'demographics/templates/'),    
+
+    os.path.join(ROOT_PATH, 'medical_history/templates/'),
+    os.path.join(ROOT_PATH, 'surgical_history/templates/'),
+    os.path.join(ROOT_PATH, 'family_history/templates/'),
+    os.path.join(ROOT_PATH, 'social_history/templates/'),
+    os.path.join(ROOT_PATH, 'immunisation/templates/'),
+    os.path.join(ROOT_PATH, 'medication_list/templates/'),    
+    os.path.join(ROOT_PATH, 'allergy_list/templates/'),    
+
+    os.path.join(ROOT_PATH, 'phyexam/templates/'),    
+
+    os.path.join(ROOT_PATH, 'visit/templates/'),
+    os.path.join(ROOT_PATH, 'admission/templates/'),
+    os.path.join(ROOT_PATH, 'obs_and_gyn/templates/'),    
+
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+
 )
 
 INSTALLED_APPS = (

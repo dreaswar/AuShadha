@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block js_bits %}
+<script type="text/javascript">
+		 require(["dojo/dom", 
+		          "dojo/_base/xhr",
+			        "dojo/domReady!"
+			    ],
+     			function(dom,xhr){
+/*
+				 				xhr.get({
+										url: "{%url 'render_patient_list' %}",
+										load: function(html){
+												dom.
+												 byId("centerPaneTab1").
+												 innerHTML = html;
+											}
+								});
+
+				        xhr.get({
+										url: "{%url 'patient_detail_add_without_id' %}",
+										load: function(html){
+												 dom.
+												  byId("centerPaneTab2").
+												  innerHTML = html;
+											  }
+								});
+*/
+     });
+</script>
+{% endblock js_bits %}
+
+

@@ -1,0 +1,65 @@
+<div data-dojo-type = "dijit/form/Form" 
+     id             = "newSurgicalHistoryEditForm"
+     data-dojo-id   = "newSurgicalHistoryEditForm"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = "">
+
+  <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
+    if( this.validate() ){
+      require(["dijit/registry",
+               "dojo/domReady!"
+      ],
+       function(registry){
+         //	{% if perms.patient.change_patientsurgicalhistory %}
+          editItem("{{patient_surgical_history_obj.get_edit_url}}","newSurgicalHistoryEditForm","surgical_history_list");
+         // {% else %}
+          registry.byId("permissionDeniedErrorDialog").show();
+         // {%endif %}
+         return false;
+   	   }
+ 		  );
+     return false;
+    }
+    else{
+     raiseInvalidFormSubmission();
+     return false;
+    }
+  </script>
+
+		<table>
+			{{patient_surgical_history_edit_form}}
+		</table>
+
+    {% if perms.patient.change_patientsurgicalhistory %}
+    <button data-dojo-type = "dijit/form/Button" 
+            data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+            type           = "submit" 
+            name           = "editButton" 
+            value          = "Edit"
+    >
+      Edit
+    </button>
+    {% endif %}
+
+    {% if perms.patient.delete_patientsurgicalhistory %}
+    <button data-dojo-type  = "dijit/form/Button" 
+						data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+            type            = "button"
+            name            = "delSurgicalHistory"
+            id              = "delSurgicalHistoryBtn">
+       Delete
+       <script  type            = "dojo/method" 
+                data-dojo-event = "onClick" 
+                data-dojo-args  = "evt"
+        >
+         //	{% if perms.patient.delete_patientsurgicalhistory %}
+		     delItem("{{patient_surgical_history_obj.get_del_url}}", "surgical_history_list");
+         // {% else %}
+         registry.byId("permissionDeniedErrorDialog").show();
+         // {%endif %}
+        </script>
+    </button>
+    {% endif %}
+
+</div>

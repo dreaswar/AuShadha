@@ -66,14 +66,14 @@ from phyexam.presentation_classes import VitalExamObjPresentationClass,\
 
 # Module Vars:
 complaint_add_icon_template = get_template(
-    'visit/snippets/icons/complaints_add.html')
+    'visit_template_snippets/icons/complaints_add.html')
 complaint_remove_icon_template = get_template(
-    'visit/snippets/icons/complaints_remove.html')
+    'visit_template_snippets/icons/complaints_remove.html')
 
 generic_table_form_add_icon_template = get_template(
-    'visit/snippets/icons/generic_add_icon.html')
+    'visit_template_snippets/icons/generic_add_icon.html')
 generic_table_form_remove_icon_template = get_template(
-    'visit/snippets/icons/generic_remove_icon.html')
+    'visit_template_snippets/icons/generic_remove_icon.html')
 
 
 # views start here;;
@@ -86,7 +86,7 @@ def visit_list(request):
             variable = RequestContext(request, {'user': user,
                                                 'visit_obj': visit_obj,
                                                 })
-            return render_to_response('visit/visit_list.html', variable)
+            return render_to_response('visit_detail/visit_list.html', variable)
         else:
             raise Http404("Bad Request:: " + str(request.method) + " ")
     else:
@@ -575,7 +575,7 @@ def visit_detail_list(request, patient_id = None):
                       'patient_detail_obj': patient_detail_obj,
                       'error_message': error_message
                       })
-        return render_to_response('visit/detail/list.html', variable)
+        return render_to_response('visit_detail/list.html', variable)
     else:
         raise Http404(" Error ! Unsupported Request..")
 
@@ -684,7 +684,7 @@ def visit_summary(request, patient_id = None):
                       'patient_detail_obj': patient_detail_obj,
                       'error_message': error_message
                       })
-        return render_to_response('visit/summary.html', variable)
+        return render_to_response('visit_detail/summary.html', variable)
     else:
         raise Http404(" Error ! Unsupported Request..")
 
@@ -869,7 +869,7 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                         'form_action':'add'
 
                     })
-                return render_to_response('visit/detail/add.html', variable)
+                return render_to_response('visit_detail/add.html', variable)
 
             elif nature == 'fu':
                 # TODO
@@ -1065,9 +1065,9 @@ def visit_detail_edit(request, visit_id = None):
         )
         complaint_count = len(visit_complaint_obj)
         complaint_add_icon_template = get_template(
-            'visit/snippets/icons/complaints_add.html')
+            'visit_template_snippets/icons/complaints_add.html')
         complaint_remove_icon_template = get_template(
-            'visit/snippets/icons/complaints_remove.html')
+            'visit_template_snippets/icons/complaints_remove.html')
         complaint_add_icon_html = complaint_add_icon_template.render(
             RequestContext(request, {'user': user}))
         complaint_remove_icon_html = complaint_remove_icon_template.render(
@@ -1227,7 +1227,7 @@ def visit_detail_edit(request, visit_id = None):
                       
                       'form_action':'edit'
                       })
-        return render_to_response('visit/detail/edit.html', variable)
+        return render_to_response('visit_detail/edit.html', variable)
 
     if request.method == "POST" and request.is_ajax():
         try:
@@ -1557,7 +1557,7 @@ def visit_follow_up_add(request, visit_id = None):
                       'visit_follow_up_form': visit_follow_up_form,
                       'patient_detail_obj': visit_detail_obj.patient_detail
                       })
-        return render_to_response('visit/follow_up/add.html', variable)
+        return render_to_response('visit_follow_up/add.html', variable)
 
     if request.method == "POST" and request.is_ajax():
         print "Received request to add a Follow-Up OPD Visit..."
@@ -1625,7 +1625,7 @@ def visit_follow_up_edit(request, follow_up_id = None):
                       'visit_follow_up_form': visit_follow_up_form,
                       'patient_detail_obj': visit_detail_obj.patient_detail
                       })
-        return render_to_response('visit/follow_up/edit.html', variable)
+        return render_to_response('visit_follow_up/edit.html', variable)
 
     if request.method == "POST" and request.is_ajax():
         print "Received request to add a Follow-Up OPD Visit..."
@@ -1735,7 +1735,7 @@ def visit_complaint_add(request, visit_id=None):
                       'visit_complaint_formset': visit_complaint_formset,
                       'patient_detail_obj': patient_detail_obj
                       })
-        return render_to_response('visit/complaints/add.html', variable)
+        return render_to_response('visit_complaints/add.html', variable)
 
     if request.method == "POST" and request.is_ajax():
         print "Received POST request to add Visit complaints ..."
@@ -1831,7 +1831,7 @@ def render_visit_pdf(request, id):
                                        'visit_detail_obj': visit_detail_obj,
                                        }
                                       )
-            return render_to_response('visit/visit_pdf_template.html', variable)
+            return render_to_response('visit_detail/visit_pdf_template.html', variable)
         elif request.method == 'POST':
             pass
         else:
@@ -1885,7 +1885,7 @@ def render_patient_visits_pdf(request, id):
                           })
 
             template = get_template(
-                'visit/patient_visit_pdf_template.html')
+                'visit_detail/patient_visit_pdf_template.html')
             html = template.render(variable)
             result = StringIO.StringIO()
             pdf = pisa.pisaDocument(

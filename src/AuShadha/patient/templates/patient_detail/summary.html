@@ -1,0 +1,190 @@
+<div id="patientHistoryContainer">
+
+{%comment %}
+  <div id="patientDemographicsContainer"> 
+    <div>
+    {% if pat_demographics_obj %}
+      <ul>
+      {% for obj in pat_demographics_obj %}
+        <li> {{obj.formatted_obj_data}} </li>
+      {% endfor %}
+    {% else %}
+      No Demographics data
+    {% endif %}
+    </div>
+    <div>
+    {% if pat_contact_obj %}
+      <ul>
+      {% for obj in pat_contact_obj %}
+        <li> {{obj}} </li>
+      {% endfor %}
+    {% else %}
+      No Contact data
+    {% endif %}
+    </div>
+    <div>
+    {% if pat_guardian_obj %}
+      <ul>
+      {% for obj in pat_guardian_obj %}
+        <li> {{obj}} </li>
+      {% endfor %}
+    {% else %}
+      No Guardian data
+    {% endif %}
+    </div>
+  </div>
+{% endcomment %}
+
+  <div id="patientFamilyHistoryContainer"> 
+    {% if pat_family_history_obj %}
+      <ul>
+      {% for obj in pat_family_history_obj %}
+        <li> {{obj.formatted_obj_data}} </li>
+      {% endfor %}
+    {% else %}
+      No Family History Recorded
+    {% endif %}
+  </div>
+
+  <div id="patientSocialHistoryContainer"> 
+    {% if pat_social_history_obj %}
+      <ul>
+      {% for obj in pat_social_history_obj %}
+        <li> {{obj.formatted_obj_data}} </li>
+      {% endfor %}
+    {% else %}
+      No Social History data
+    {% endif %}
+  </div>
+
+  <div id="patientMedicalHistoryContainer"> 
+    {% if pat_medical_history_obj %}
+      <ul>
+      {% for obj in pat_medical_history_obj %}
+        <li> {{obj.formatted_obj_data}} </li>
+      {% endfor %}
+    {% else %}
+      No Medical History data
+    {% endif %}
+  </div>
+
+  <div id="patientSurgicalHistoryContainer"> 
+  {% if pat_surgical_history_obj %}
+      <ul>
+      {% for obj in pat_surgical_history_obj %}
+        <li> {{obj.formatted_obj_data}} </li>
+      {% endfor %}
+    {% else %}
+      No Surgical History data
+    {% endif %}
+  </div>
+
+</div>
+
+<div id="patientMedicationsContainer">
+  
+  <div id="patientMedicationListContainer"> 
+    {% if pat_medication_list_obj %}
+      <table class="content_pane_table">
+      <thead> 
+        <th> No </th> 
+        <th> Drug </th>
+        <th> Strength </th> 
+        <th> Dosage </th> 
+        <th> Prescribed by </th> 
+        <th> Date of Prescription </th> 
+        <th> Active ? </th>
+      </thead>
+      <tbody>
+      {% for obj in pat_medication_list_obj %}
+        <tr class="{%cycle 'even_row' 'odd_row' %}"> 
+          <td> {{forloop.counter}} </td>
+          <td> {{obj.medication}} </td>
+          <td> {{obj.strength}} </td>
+          <td> {{obj.dosage}} </td>
+          <td> {{obj.prescribed_by}} </td>
+          <td> {{obj.prescription_date.date.isoformat}} </td>
+            {% if obj.currently_active %}
+              <td class="normal_value_indicator_text">  Active  </td> 
+            {% else %}
+              <td class="abnormal_value_indicator_text"> Not Active </td>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+        </tbody>
+        </table>
+    {% else %}
+      No Medication
+    {% endif %}
+  </div>
+  
+    <div id="patientAllergyListContainer"> 
+    {% if pat_allergy_obj %}
+      <table class="content_pane_table">
+      <thead> 
+        <th> No </th> <th> Drug</th> <th> Reaction </th>
+      </thead>
+        <tbody>
+          {% for obj in pat_allergy_obj %}
+            <tr class="{%cycle 'even_row' 'odd_row' %}"> 
+              <td> {{forloop.counter}}       </td>
+              <td> {{obj.allergic_to}}              </td>
+              <td> {{obj.reaction_observed}} </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      No Recorded Allergies
+    {% endif %}
+  </div>
+</div>
+
+
+<div id="patientPreventivesContainer">
+  
+  <div id="patientImmunisationContainer"> 
+    {% if pat_immunisation_obj %}
+      <ul>
+      {% for obj in pat_immunisation_obj %}
+        <li> {{obj.formatted_obj_data}} </li>
+      {% endfor %}
+    {% else %}
+      No Immunisation data
+    {% endif %}
+  </div>
+
+  <div id="patientObstetricHistoryDetailContainer"> 
+    {% if pat_obstetric_history_detail_obj %}
+      <ul>
+      {% for obj in pat_obstetric_history_detail_obj %}
+        <li> {{obj.formatted_obj_data}} </li>
+      {% endfor %}
+    {% else %}
+      No Obstetric History data
+    {% endif %}
+  </div>
+
+  <div id="patientMedicalPreventivesContainer"> 
+  
+  </div>
+  
+</div>
+
+
+<div id="patientInvContainer">
+  
+</div>
+
+<div id="patientImagingContainer">
+  
+</div>
+
+<div id="patientProceduresContainer">
+  
+</div>
+
+<div id="patientCodingContainer">
+  
+</div>

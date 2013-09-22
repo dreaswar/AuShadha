@@ -1,3 +1,11 @@
+################################################################################
+# Project      : AuShadha
+# Description  : URLS for Medical History
+# Author       : Dr. Easwar T.R
+# Date         : 21-09-2013
+# License      : GNU-GPL Version 3, see AuShadha/LICENSE.txt
+################################################################################
+
 from django.conf.urls.defaults import *
 from django.contrib import admin
 import AuShadha.settings
@@ -8,27 +16,54 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-                  url(r'json/$',
+                  url(r'json/(?P<patient_id>\d+)/$',
                       'medical_history.views.medical_history_json',
                       name='medical_history_json'
                       ),
 
-                  # url(r'list/(?P<id>\d+)/$',
+                  url(r'json/$',
+                      'medical_history.views.medical_history_json',
+                      name='medical_history_json_without_id'
+                      ),
+
+
+                  # url(r'list/(?P<patient_id>\d+)/$',
                   #'medical_history.views.medical_history_list',
                   #name = 'medical_history_list'
                   #),
 
-                  url(r'add/(?P<id>\d+)/$',
+                  # url(r'list/$',
+                  #'medical_history.views.medical_history_list',
+                  #name = 'medical_history_list_without_id'
+                  #),
+
+                  url(r'add/(?P<patient_id>\d+)/$',
                       'medical_history.views.medical_history_add',
                       name='medical_history_add'
                       ),
 
-                  url(r'edit/(?P<id>\d+)/$',
+                  url(r'add/$',
+                      'medical_history.views.medical_history_add',
+                      name='medical_history_add_without_id'
+                      ),
+
+
+                  url(r'edit/(?P<patient_id>\d+)/$',
                       'medical_history.views.medical_history_edit',
                       name='medical_history_edit'
                       ),
-                  url(r'del/(?P<id>\d+)/$',
+                  url(r'edit/$',
+                      'medical_history.views.medical_history_edit',
+                      name='medical_history_edit_without_id'
+                      ),
+
+                  url(r'del/(?P<patient_id>\d+)/$',
                       'medical_history.views.medical_history_del',
                       name='medical_history_del'
                       ),
+                  url(r'del/$',
+                      'medical_history.views.medical_history_del',
+                      name='medical_history_del_without_id'
+                      ),
+
 )

@@ -46,6 +46,8 @@ class UrlGenerator(object):
     for action in self.parented_actions:
         parent_label = getattr(parent,'__model_label__')
         parent_id = getattr(parent,'id')
+        if parent_id: 
+          parent_id = str(parent_id)
 
         #print "Received Parent: ", parent
         #print "Parent is of type: ", type(parent)
@@ -53,14 +55,24 @@ class UrlGenerator(object):
         #print "Parent Label generated is: ", parent_label
         #print "Parent ID is: ", parent_id
 
+        self.urlDict[action] = {}
         if self.can_add_list_or_json:
-          self.urlDict[action] = {}
-          for m in instance._can_add_list_or_json:
+          if action == 'add':
+            for m in instance._can_add_list_or_json:
+                url = "%s%s/%s/%s/" %(self.root_url,
+                                              m,
+                                              action,
+                                              self.instance_id
+                                          )
+                self.urlDict[action][m] = url
+
+          else:
+            for m in instance._can_add_list_or_json:
               url = "%s%s/%s/?%s_id=%s" %(self.root_url,
                                             m,
                                             action,
                                             self.model_label,
-                                            str(self.instance_id)
+                                            self.instance_id
                                         )
               self.urlDict[action][m] = url
 
@@ -72,26 +84,26 @@ class UrlGenerator(object):
                                            #self.model_label,
                                            #m,
                                            #self.model_label,
-                                           #str(self.instance_id)
+                                           #self.instance_id
                                         #)
               #self.urlDict[action][m] = url
 
         else:
             if parent_label and parent_id:
                 if self.app_label != self.model_label:
-                  url = "%s%s/%s/%s/?%s_id=%s" %(self.root_url,
+                  url = "%s%s/%s/%s/?%s_id=%s/" %(self.root_url,
                                                   self.app_label,
                                                   self.model_label,
                                                   action,
                                                   parent_label,
-                                                  str(parent_id)
+                                                  parent_id
                                             )
                 else:
-                  url = "%s%s/%s/?%s_id=%s" %(self.root_url,
+                  url = "%s%s/%s/?%s_id=%s/" %(self.root_url,
                                                   self.app_label,
                                                   action,
                                                   parent_label,
-                                                  str(parent_id)
+                                                  parent_id
                                             )
                 self.urlDict[action] = url
             else:
