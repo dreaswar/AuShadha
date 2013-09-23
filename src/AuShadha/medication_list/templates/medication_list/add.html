@@ -1,5 +1,5 @@
 <div data-dojo-type = "dijit/form/Form" 
-     id             = "newMedicationListAddForm" 
+     id             = "newMedicationListAddForm"
      data-dojo-id   = "newMedicationListAddForm"
      encType        = "multipart/form-data" 
      action         = "" 
@@ -20,8 +20,8 @@
        "dijit/registry", 
       ],
       function(registry){
-//    {% if perms.patient.add_patientmedicationlist %}
-      addItem("{{patient_detail_obj.get_patient_medication_list_add_url}}", "newMedicationListAddForm", "medication_list");
+//    {% if perms.medication_list.add_medicationlist%}
+      addItem("{{addUrl}}", "newMedicationListAddForm", "medication_list");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}
@@ -34,51 +34,58 @@
     }
   </script>
 
-    {% if perms.patient.add_patientmedicationlist %}
-		<table>
-			{{patient_medication_list_add_form}}
-		</table>
-		<button 	type 	          = "submit" 
-						  data-dojo-type  = "dijit/form/Button"
-						  data-dojo-props = "iconClass:'dijitIconSave'"
-					   	name 	          = "submitbutton" 
-						  id 		          = "patient_medication_list_add_form_submit"
-						  value           = "Add">
-		 Add
-     <script type            = "dojo/connect" 
-             data-dojo-event = "onClick" 
-             data-dojo-args  = "evt"
-     >
-//       ADD_MORE_PATIENT_CONTACT = false;
-       ADD_MORE_ITEMS           = false;
-     </script>
-		</button>
+    {% if perms.medication_list.add_medication_list%}
 
-<!--		<button 	type 	          = "submit" -->
-<!--						  data-dojo-type  = "dijit/form/Button"-->
-<!--						  data-dojo-props = "iconClass:'dijitIconSave'"-->
-<!--					   	name 	          = "submitAndAddMoreButton" -->
-<!--						  id 		          = "patient_medication_list_add_form_add_more"-->
-<!--						  value           = "Add More">-->
-<!--		 Add More-->
-<!--     <script type            = "dojo/connect" -->
-<!--             data-dojo-event = "onClick"-->
-<!--             data-dojo-args  = "evt"-->
-<!--     >-->
-<!--//      ADD_MORE_PATIENT_CONTACT = true;-->
-<!--      ADD_MORE_ITEMS           = true;-->
-<!--     </script>-->
-<!--		</button>-->
+        <table>
+        {{medication_list_form}}
+        </table>
 
-		<button 	type 	          = "reset" 
-						  data-dojo-type  = "dijit/form/Button"
-						  data-dojo-props = "iconClass:'dijitIconClear'"
-						  id 		          = "patient_medication_list_add_form_reset"
-						  value           = "Reset">
-		 Reset
-		</button>
+        <button 	type 	          = "submit" 
+                    data-dojo-type    = "dijit/form/Button"
+                    data-dojo-props   = "iconClass:'dijitIconSave'"
+                    name 	          = "submitbutton" 
+                    id 		          = "medication_list_form_submit"
+                    value             = "Add">
+          Add
+
+          <script type            = "dojo/connect" 
+                  data-dojo-event = "onClick" 
+                  data-dojo-args  = "evt"
+          >
+            ADD_MORE_ITEMS           = false;
+          </script>
+
+        </button>
+
+        <button 	type 	        = "submit" 
+                    data-dojo-type  = "dijit/form/Button"
+                    data-dojo-props = "iconClass:'dijitIconSave'"
+                    name 	        = "submitAndAddMoreButton" 
+                    id 		        = "medication_list_form_add_more"
+                    value           = "Add More">
+
+          Add More
+          
+          <script type            = "dojo/connect" 
+                  data-dojo-event = "onClick"
+                  data-dojo-args  = "evt"
+          >
+            ADD_MORE_ITEMS           = true;
+          </script>
+
+        </button>
+
+        <button   type            = "reset" 
+                  data-dojo-type  = "dijit/form/Button"
+                  data-dojo-props = "iconClass:'dijitIconClear'"
+                  id              = "medication_list_form_reset"
+                  value           = "Reset">
+          Reset
+        </button>
+
     {% else %}
-      <p class="suggestion_text"> Insufficient Permissions to add medication_list </p>
+      <p class="suggestion_text"> Insufficient Permissions to add Medication List</p>
     {%endif%}
+
 </div>
 

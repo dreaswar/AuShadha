@@ -13,6 +13,7 @@ define([
         "dijit/Dialog",
         "dojo/request",
         "dojo/json",
+        "dojo/_base/lang",
 
        'aushadha/grid/grid_structures',
        'aushadha/grid/grid_setup',
@@ -32,6 +33,7 @@ define([
              Dialog,
              request,
              JSON,
+             lang,
 
              GRID_STRUCTURES,
              auGridSetup
@@ -71,7 +73,7 @@ define([
                 //{% if perms.medical_history.add_medicalhistory %}
                     var addPatientMedicalHistoryButton =  new Button({
                                                           label       : "Add",
-                                                          title       : "Add Medical History Details",
+                                                          title       : "Record Medical History",
                                                           iconClass   : "dijitIconNewTask",
                                                           onClick: function(){
                                                                 require(
@@ -82,7 +84,7 @@ define([
                                                                       load: function(html){
                                                                                 var myDialog = dijit.byId("editPatientDialog");
                                                                                 myDialog.set('content', html);
-                                                                                myDialog.set('title', "Record New Medical History Details");
+                                                                                myDialog.set('title', "Record Medical History");
                                                                                 myDialog.show();
                                                                             }
                                                                   });
@@ -103,14 +105,14 @@ define([
           function fillData(){
             //{% if perms.medical_history %}
               var medicalHistoryUrl   = CHOSEN_PATIENT.medicalhistoryjson;
-              console.log(auGridSetup);
-              auGridSetup.setupMedicalHistoryGrid(medicalHistoryUrl);
+               auGridSetup.setupMedicalHistoryGrid(medicalHistoryUrl);
               registry.byId("patientContextTabs").selectChild('patientMedicalHistoryTab');
             //{% endif %}
           }
 
           return {
             constructor: function(){
+                              alert("Running Medical History Constructor");
                               createHistoryDoms();
                               createHistoryDijits();
                               createButtons();

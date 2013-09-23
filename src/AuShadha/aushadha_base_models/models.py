@@ -137,7 +137,8 @@ class AuShadhaBaseModel(models.Model):
 
       #print "Printing Self:: "
       #print self
-      self.urls =  urlgenerator_factory(self,parent)
+      urls = urlgenerator_factory(self,parent)
+      self.urls = urls.copy()
 
     def generate_urls(self):
       """ Generates and Assigns URL to the Model Object

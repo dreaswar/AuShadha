@@ -1,0 +1,74 @@
+<div data-dojo-type = "dijit/form/Form" 
+     id             = "newAllergyListEditForm"
+     data-dojo-id   = "newAllergyListEditForm"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = "">
+
+  <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
+    if( this.validate() ){
+      require(["dijit/registry",
+               "dojo/domReady!"
+      ],
+       function(registry){
+         //	{% if perms.allergy_list.change_allergy %}
+          editItem("{{editUrl}}","newAllergyListEditForm","allergy_list");
+         // {% else %}
+          registry.byId("permissionDeniedErrorDialog").show();
+         // {%endif %}
+         return false;
+   	   }
+ 		  );
+     return false;
+    }
+    else{
+     raiseInvalidFormSubmission();
+     return false;
+    }
+
+  </script>
+
+    <table>
+
+      {{allergy_list_form}}
+
+    </table>
+
+    {% if perms.allergy_list.change_allergy %}
+
+        <button data-dojo-type = "dijit/form/Button" 
+                data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+                type           = "submit" 
+                name           = "editButton" 
+                value          = "Edit"
+        >
+          Edit
+        </button>
+
+    {% endif %}
+
+    {% if perms.allergy_list.delete_allergy %}
+
+      <button data-dojo-type  = "dijit/form/Button" 
+                          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+              type            = "button"
+              name            = "delAllergyList"
+              id              = "delAllergyListBtn">
+        Delete
+
+        <script  type            = "dojo/method" 
+                  data-dojo-event = "onClick" 
+                  data-dojo-args  = "evt"
+          >
+          //	{% if perms.allergy_list.delete_allergy %}
+              delItem("{{delUrl}}", "allergy_list");
+          // {% else %}
+              registry.byId("permissionDeniedErrorDialog").show();
+          // {%endif %}
+          </script>
+
+      </button>
+
+    {% endif %}
+
+</div>

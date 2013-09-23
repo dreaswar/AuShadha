@@ -48,7 +48,7 @@ urlpatterns = patterns('',
                       ),
 
 
-                  url(r'edit/(?P<patient_id>\d+)/$',
+                  url(r'edit/(?P<medical_history_id>\d+)/$',
                       'medical_history.views.medical_history_edit',
                       name='medical_history_edit'
                       ),
@@ -57,7 +57,7 @@ urlpatterns = patterns('',
                       name='medical_history_edit_without_id'
                       ),
 
-                  url(r'del/(?P<patient_id>\d+)/$',
+                  url(r'del/(?P<medical_history_id>\d+)/$',
                       'medical_history.views.medical_history_del',
                       name='medical_history_del'
                       ),

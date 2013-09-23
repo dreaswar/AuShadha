@@ -1,5 +1,5 @@
 <div data-dojo-type = "dijit/form/Form" 
-     id             = "newImmunisationAddForm" 
+     id             = "newImmunisationAddForm"
      data-dojo-id   = "newImmunisationAddForm"
      encType        = "multipart/form-data" 
      action         = "" 
@@ -20,8 +20,8 @@
        "dijit/registry", 
       ],
       function(registry){
-//    {% if perms.patient.add_patientimmunisation %}
-      addItem("{{patient_detail_obj.get_patient_immunisation_add_url}}", "newImmunisationAddForm", "immunisation_list");
+//    {% if perms.immunisation.add_immunisation %}
+      addItem("{{addUrl}}", "newImmunisationAddForm", "immunisation_list");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}
@@ -34,51 +34,58 @@
     }
   </script>
 
-    {% if perms.patient.add_patientimmunisation %}
-		<table>
-			{{patient_immunisation_add_form}}
-		</table>
-		<button 	type 	          = "submit" 
-						  data-dojo-type  = "dijit/form/Button"
-						  data-dojo-props = "iconClass:'dijitIconSave'"
-					   	name 	          = "submitbutton" 
-						  id 		          = "patient_immunisation_add_form_submit"
-						  value           = "Add">
-		 Add
-     <script type            = "dojo/connect" 
-             data-dojo-event = "onClick" 
-             data-dojo-args  = "evt"
-     >
-//       ADD_MORE_PATIENT_CONTACT = false;
-       ADD_MORE_ITEMS           = false;
-     </script>
-		</button>
+    {% if perms.immunisation.add_immunisation %}
 
-		<button 	type 	          = "submit" 
-						  data-dojo-type  = "dijit/form/Button"
-						  data-dojo-props = "iconClass:'dijitIconSave'"
-					   	name 	          = "submitAndAddMoreButton" 
-						  id 		          = "patient_immunisation_add_form_add_more"
-						  value           = "Add More">
-		 Add More
-     <script type            = "dojo/connect" 
-             data-dojo-event = "onClick"
-             data-dojo-args  = "evt"
-     >
-//      ADD_MORE_PATIENT_CONTACT = true;
-      ADD_MORE_ITEMS           = true;
-     </script>
-		</button>
+        <table>
+        {{immunisation_form}}
+        </table>
 
-		<button 	type 	          = "reset" 
-						  data-dojo-type  = "dijit/form/Button"
-						  data-dojo-props = "iconClass:'dijitIconClear'"
-						  id 		          = "patient_immunisation_add_form_reset"
-						  value           = "Reset">
-		 Reset
-		</button>
+        <button 	type 	          = "submit" 
+                    data-dojo-type    = "dijit/form/Button"
+                    data-dojo-props   = "iconClass:'dijitIconSave'"
+                    name 	          = "submitbutton" 
+                    id 		          = "immunisation_form_submit"
+                    value             = "Add">
+          Add
+
+          <script type            = "dojo/connect" 
+                  data-dojo-event = "onClick" 
+                  data-dojo-args  = "evt"
+          >
+            ADD_MORE_ITEMS           = false;
+          </script>
+
+        </button>
+
+        <button 	type 	        = "submit" 
+                    data-dojo-type  = "dijit/form/Button"
+                    data-dojo-props = "iconClass:'dijitIconSave'"
+                    name 	        = "submitAndAddMoreButton" 
+                    id 		        = "immunisation_form_add_more"
+                    value           = "Add More">
+
+          Add More
+          
+          <script type            = "dojo/connect" 
+                  data-dojo-event = "onClick"
+                  data-dojo-args  = "evt"
+          >
+            ADD_MORE_ITEMS           = true;
+          </script>
+
+        </button>
+
+        <button   type            = "reset" 
+                  data-dojo-type  = "dijit/form/Button"
+                  data-dojo-props = "iconClass:'dijitIconClear'"
+                  id              = "immunisation_form_reset"
+                  value           = "Reset">
+          Reset
+        </button>
+
     {% else %}
       <p class="suggestion_text"> Insufficient Permissions to add immunisation </p>
     {%endif%}
+
 </div>
 

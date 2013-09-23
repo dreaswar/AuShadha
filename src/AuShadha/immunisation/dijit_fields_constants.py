@@ -18,11 +18,11 @@ IMMUNISATION_FORM_CONSTANTS ={'vaccine_detail':{
                                       "data-dojo-type": "dijit.form.ValidationTextBox",
                                       "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
                                 },
-                               'administrator':{
-                                      'max_length': 30,
-                                      "data-dojo-type": "dijit.form.Select",
-                                      "data-dojo-props": r"'required': true"
-                                },
+                               #'administrator':{
+                                      #'max_length': 30,
+                                      #"data-dojo-type": "dijit.form.Select",
+                                      #"data-dojo-props": r"'required': true"
+                                #},
                                'vaccination_date':{
                                       'max_length': 30,
                                       "data-dojo-type": "dijit.form.DateTextBox",

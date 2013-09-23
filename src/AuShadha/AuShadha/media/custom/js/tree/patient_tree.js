@@ -22,8 +22,9 @@ function buildPatientTree(){
       'aushadha/panes/medical_history_tab',
       'aushadha/panes/surgical_history_tab',
       'aushadha/panes/social_history_tab',
-      'aushadha/panes/medication_list_tab'      
-      
+      'aushadha/panes/medication_list_tab',
+      'aushadha/panes/immunisation_tab',      
+
       /*
       'aushadha/panes/obstetric_history_tab',
       'aushadha/panes/neonatal_and_paediatric_exam_tab',
@@ -50,7 +51,8 @@ function buildPatientTree(){
           medicalHistoryTab,
           surgicalHistoryTab,
           socialHistoryTab,
-          medicationListTab
+          medicationListTab,
+          immunisationTab
           ){
 
     // Create store 
@@ -191,7 +193,8 @@ function buildPatientTree(){
                         'Surgical History'  : 'patientSurgicalHistoryContainer',
                         'Family History'    : 'patientFamilyHistoryContainer',
                         'Social History'    : 'patientSocialHistoryContainer',
-                        'Medications'       : 'patientMedicationsContainer'
+                        'Medications'       : 'patientMedicationsContainer',
+                        'Immunisation'     : 'patientImmunisationContainer'
                       }
 
                       if ( treeItemDivMap[item.name]){
@@ -307,6 +310,17 @@ function buildPatientTree(){
                                 }
                         }
 
+                        if(item.name =="Immunisation" || item.module_type=="immunisation_module"){
+                                if(!registry.byId('immunisationTab') ){
+                                    console.log(CHOSEN_PATIENT);
+                                    immunisationTab.constructor();
+                                }
+                                else{
+                                  registry.byId("patientContextTabs").selectChild(
+                                    registry.byId("immunisationTab")
+                                  );
+                                }
+                        }
 //                             if(item.type == "family_history_module"   ||
 //                                item.type == "medical_history_module"  || 
 //                                item.type == "surgical_history_module" || 

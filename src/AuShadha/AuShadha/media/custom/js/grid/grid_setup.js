@@ -10,6 +10,7 @@ define(["dojox/grid/DataGrid",
         "dojox/layout/ContentPane",
         "dijit/Dialog",
         "dojo/_base/xhr",
+        "dojo/_base/lang",
 
         "aushadha/stores",
         "aushadha/grid/grid_structures",
@@ -24,15 +25,53 @@ define(["dojox/grid/DataGrid",
         ContentPane,
         Dialog,
         xhr,
+        lang,
 
         aushadhaStores,
         GRID_STRUCTURES,
         auEventController
     ) {
 
-        return {
+      var onGridRowDblClick= function ( obj/*e, gridToUse, titleToUse*/) {
 
-            setupPatientGrid: function () {
+          var gridToUse = obj.grid;
+          var e = obj.event;
+          var titleToUse = obj.title;
+
+          var idx = e.rowIndex,
+              item = gridToUse.getItem(idx);
+          console.log(item);
+          var id = gridToUse.store.getValue(item, "id");
+          var edit = gridToUse.store.getValue(item, "edit");
+          var del = gridToUse.store.getValue(item, "del");
+          gridToUse.selection.clear();
+          gridToUse.selection.setSelected(item, true);
+          xhr.get({
+              url: edit,
+              load: function (html, idx) {
+                  var myDialog = registry.byId("editPatientDialog");
+                  if (myDialog == undefined || myDialog == null) {
+                      myDialog = new Dialog({
+                              title: titleToUse,
+                              content: html,
+                              style: "width: 500px; height:500px;"
+                          },
+                          "editPatientDialog"
+                      );
+                      myDialog.startup();
+                  } else {
+                      myDialog.set('content', html);
+                      myDialog.set('title', titleToUse);
+                  }
+                  myDialog.show();
+              }
+          });
+          return false;
+      }
+
+      return {
+
+           setupPatientGrid: function () {
                 patientStore = new JsonRest({
                     target: "/AuShadha/pat/list/",
                     idProperty: 'id'
@@ -150,10 +189,9 @@ define(["dojox/grid/DataGrid",
 
                 contactGrid.onRowDblClick = function (e) {
                     //  {% if perms.demographics.change_contact or perms.demographics.delete_contact %}
-                    this.onPatientSubMenuRowClick(e,
-                        contactGrid,
-                        "Edit Contact"
-                    );
+                      var args = {event: e,grid: contactGrid, title: "Edit Contact"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     //  {%endif%}
                     return false;
                 };
@@ -189,10 +227,9 @@ define(["dojox/grid/DataGrid",
 
                 popUpGrid.onRowDblClick = function (e) {
                     //  {% if perms.demographics.change_contact or perms.demographics.delete_contact %}
-                    this.onPatientSubMenuRowClick(e,
-                        popUpGrid,
-                        "Edit"
-                    );
+                      var args = {event: e,grid: popUpGrid, title: "Edit Contact"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     //  {%endif%}
                     return false;
                 };
@@ -221,10 +258,9 @@ define(["dojox/grid/DataGrid",
 
                 contactAltGrid.onRowDblClick = function (e) {
                     //  {% if perms.demographics.change_contact or perms.demographics.delete_contact %}
-                    this.onPatientSubMenuRowClick(e,
-                        contactAltGrid,
-                        "Edit Contact"
-                    );
+                      var args = {event: e,grid: contactAltGrid, title: "Edit Contact"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     //  {%endif%}
                     return false;
                 };
@@ -254,8 +290,9 @@ define(["dojox/grid/DataGrid",
 
                 phoneGrid.onRowDblClick = function (e) {
                     // {% if perms.demographics.change_phone or perms.demographics.delete_phone %}
-                    this.onPatientSubMenuRowClick(e, phoneGrid, "Edit Phone");
-                    return false;
+                      var args = {event: e,grid: phoneGrid, title: "Edit Phone"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     // {% endif %}
                 };
                 phoneGrid.startup();
@@ -279,8 +316,9 @@ define(["dojox/grid/DataGrid",
 
                 guardianGrid.onRowDblClick = function (e) {
                     // {% if perms.demographics.change_guardian or perms.demographics.delete_guardian %}
-                    this.onPatientSubMenuRowClick(e, guardianGrid, "Edit Guardian");
-                    return false;
+                      var args = {event: e,grid: guardianGrid, title: "Edit Guardian"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     // {% endif %}
                 };
                 guardianGrid.startup();
@@ -309,8 +347,9 @@ define(["dojox/grid/DataGrid",
 
                 allergiesGrid.onRowDblClick = function (e) {
                     // {% if perms.allergy_list.change_allergy or perms.allergy_list.delete_allergy %}
-                    this.onPatientSubMenuRowClick(e, allergiesGrid, "Edit Allergy");
-                    return false;
+                      var args = {event: e,grid: allergiesGrid, title: "Edit Allergy"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     // {% endif %}
                 };
 
@@ -336,9 +375,9 @@ define(["dojox/grid/DataGrid",
 
                 medicationListGrid.onRowDblClick = function (e) {
                     // {% if perms.medication_list.change_medicationlist or perms.medication_list.delete_medicationlist %}
-                    this.onPatientSubMenuRowClick(e, medicationListGrid,
-                        "Edit Medication List");
-                    return false;
+                      var args = {event: e,grid: medicationListGrid, title: "Edit Medication List"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     // {% endif %}
                 };
                 medicationListGrid.startup();
@@ -362,8 +401,9 @@ define(["dojox/grid/DataGrid",
 
                 familyHistoryGrid.onRowDblClick = function (e) {
                     // {% if perms.family_history.change_familyhistory or perms.family_history.delete_familyhistory %}
-                    this.onPatientSubMenuRowClick(e, familyHistoryGrid,
-                        "Edit Family History");
+                      var args = {event: e,grid: familyHistoryGrid, title: "Edit Family History"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     return false;
                     // {% endif %}
                 };
@@ -389,9 +429,9 @@ define(["dojox/grid/DataGrid",
 
                 medicalHistoryGrid.onRowDblClick = function (e) {
                     // {% if perms.medical_history.change_medicalhistory or perms.medical_history.delete_medicalhistory %}
-                    this.onPatientSubMenuRowClick(e, medicalHistoryGrid,
-                        "Edit Medical History");
-                    return false;
+                      var args = {event: e,grid: medicalHistoryGrid, title: "Edit Medical History"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     // {% endif %}
                 };
                 medicalHistoryGrid.startup();
@@ -416,9 +456,9 @@ define(["dojox/grid/DataGrid",
 
                 surgicalHistoryGrid.onRowDblClick = function (e) {
                     // {% if perms.surgical_history.change_surgicalhistory or perms.surgical_history.delete_surgicalhistory %}
-                    this.onPatientSubMenuRowClick(e, surgicalHistoryGrid,
-                        "Edit Surgical History");
-                    return false;
+                      var args = {event: e,grid: surgicalHistoryGrid, title: "Edit Surgical History"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     // {% endif %}
                 };
                 surgicalHistoryGrid.startup();
@@ -443,9 +483,9 @@ define(["dojox/grid/DataGrid",
 
                 immunisationGrid.onRowDblClick = function (e) {
                     // {% if perms.immunisation.change_immunisation or perms.immunisation.delete_immunisation %}
-                    this.onPatientSubMenuRowClick(e, immunisationGrid,
-                        "Edit Immunisation");
-                    return false;
+                      var args = {event: e,grid: immunisationGrid, title: "Edit Immunisation History"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     // {% endif %}
                 };
                 immunisationGrid.startup();
@@ -475,11 +515,9 @@ define(["dojox/grid/DataGrid",
 
                 admissionGrid.onRowDblClick = function (e) {
                     //  {% if perms.admission.change_admissiondetail or perms.admission.delete_admissiondetail %}
-                    this.onPatientSubMenuRowClick(e,
-                        admissionGrid,
-                        "Edit Admission"
-                    );
-                    return false;
+                      var args = {event: e,grid: admissionGrid, title: "Edit Admission"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     // {% endif %}
                 };
 
@@ -526,44 +564,17 @@ define(["dojox/grid/DataGrid",
 
                 visitGrid.onRowDblClick = function (e) {
                     //{% if perms.visit.change_visitdetail or perms.visit.delete_visitdetail %}
-                    this.onPatientSubMenuRowClick(e, visitGrid, "Edit Visit");
+                      var args = {event: e,grid: visitGrid, title: "Edit Visit"};
+                      var toCall = lang.hitch(this,onGridRowDblClick,args);
+                      toCall();
                     //{% endif %}
                     return false;
                 };
-            },
-
-
-            onPatientSubMenuRowClick: function (e, gridToUse, titleToUse) {
-                var idx = e.rowIndex,
-                    item = gridToUse.getItem(idx);
-                var id = gridToUse.store.getValue(item, "id");
-                var edit = gridToUse.store.getValue(item, "edit");
-                var del = gridToUse.store.getValue(item, "del");
-                gridToUse.selection.clear();
-                gridToUse.selection.setSelected(item, true);
-                xhr.get({
-                    url: edit,
-                    load: function (html, idx) {
-                        var myDialog = registry.byId("editPatientDialog");
-                        if (myDialog == undefined || myDialog == null) {
-                            myDialog = new Dialog({
-                                    title: titleToUse,
-                                    content: html,
-                                    style: "width: 500px; height:500px;"
-                                },
-                                "editPatientDialog"
-                            );
-                            myDialog.startup();
-                        } else {
-                            myDialog.set('content', html);
-                            myDialog.set('title', titleToUse);
-                        }
-                        myDialog.show();
-                    }
-                });
-                return false;
             }
         }
+
+
+
     });
 
 /*

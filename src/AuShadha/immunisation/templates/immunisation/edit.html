@@ -1,5 +1,5 @@
 <div data-dojo-type = "dijit/form/Form" 
-     id             = "newImmunisationEditForm" 
+     id             = "newImmunisationEditForm"
      data-dojo-id   = "newImmunisationEditForm"
      encType        = "multipart/form-data" 
      action         = "" 
@@ -11,8 +11,8 @@
                "dojo/domReady!"
       ],
        function(registry){
-         //	{% if perms.patient.change_patientimmunisation %}
-          editItem("{{patient_immunisation_obj.get_edit_url}}","newImmunisationEditForm","immunisation_list");
+         //	{% if perms.immunisation.change_immunisation %}
+          editItem("{{editUrl}}","newImmunisationEditForm","immunisation_list");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -25,41 +25,50 @@
      raiseInvalidFormSubmission();
      return false;
     }
+
   </script>
 
-		<table>
-			{{patient_immunisation_edit_form}}
-		</table>
+    <table>
 
-    {% if perms.patient.change_patientimmunisation %}
-    <button data-dojo-type = "dijit/form/Button" 
-            data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
-            type           = "submit" 
-            name           = "editButton" 
-            value          = "Edit"
-    >
-      Edit
-    </button>
+      {{immunisation_form}}
+
+    </table>
+
+    {% if perms.immunisation.change_immunisation %}
+
+        <button data-dojo-type = "dijit/form/Button" 
+                data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+                type           = "submit" 
+                name           = "editButton" 
+                value          = "Edit"
+        >
+          Edit
+        </button>
+
     {% endif %}
 
-    {% if perms.patient.delete_patientimmunisation %}
-    <button data-dojo-type  = "dijit/form/Button" 
-						data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
-            type            = "button"
-            name            = "delImmunisation"
-            id              = "delImmunisationBtn">
-       Delete
-       <script  type            = "dojo/method" 
-                data-dojo-event = "onClick" 
-                data-dojo-args  = "evt"
-        >
-         //	{% if perms.patient.delete_patientimmunisation %}
-		     delItem("{{patient_immunisation_obj.get_del_url}}", "immunisation_list");
-         // {% else %}
-         registry.byId("permissionDeniedErrorDialog").show();
-         // {%endif %}
-        </script>
-    </button>
+    {% if perms.immunisation.delete_immunisation %}
+
+      <button data-dojo-type  = "dijit/form/Button" 
+                          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+              type            = "button"
+              name            = "delImmunisation"
+              id              = "delImmunisationBtn">
+        Delete
+
+        <script  type            = "dojo/method" 
+                  data-dojo-event = "onClick" 
+                  data-dojo-args  = "evt"
+          >
+          //	{% if perms.immunisation.delete_immunisation %}
+              delItem("{{delUrl}}", "immunisation_list");
+          // {% else %}
+              registry.byId("permissionDeniedErrorDialog").show();
+          // {%endif %}
+          </script>
+
+      </button>
+
     {% endif %}
 
 </div>

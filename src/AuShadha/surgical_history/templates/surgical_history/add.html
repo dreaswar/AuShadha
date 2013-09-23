@@ -20,8 +20,8 @@
        "dijit/registry", 
       ],
       function(registry){
-//    {% if perms.patient.add_patientsurgical_history %}
-      addItem("{{patient_detail_obj.get_patient_surgical_history_add_url}}", "newSurgicalHistoryAddForm", "surgical_history_list");
+//    {% if perms.surgical_history.add_surgicalhistory %}
+      addItem("{{addUrl}}", "newSurgicalHistoryAddForm", "surgical_history_list");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}
@@ -34,51 +34,58 @@
     }
   </script>
 
-    {% if perms.patient.add_patientsurgical_history %}
-		<table>
-			{{patient_surgical_history_add_form}}
-		</table>
-		<button 	type 	          = "submit" 
-						  data-dojo-type  = "dijit/form/Button"
-						  data-dojo-props = "iconClass:'dijitIconSave'"
-					   	name 	          = "submitbutton" 
-						  id 		          = "patient_surgical_history_add_form_submit"
-						  value           = "Add">
-		 Add
-     <script type            = "dojo/connect" 
-             data-dojo-event = "onClick" 
-             data-dojo-args  = "evt"
-     >
-//       ADD_MORE_PATIENT_CONTACT = false;
-       ADD_MORE_ITEMS           = false;
-     </script>
-		</button>
+    {% if perms.surgical_history.add_surgical_history %}
 
-		<button 	type 	          = "submit" 
-						  data-dojo-type  = "dijit/form/Button"
-						  data-dojo-props = "iconClass:'dijitIconSave'"
-					   	name 	          = "submitAndAddMoreButton" 
-						  id 		          = "patient_surgical_history_add_form_add_more"
-						  value           = "Add More">
-		 Add More
-     <script type            = "dojo/connect" 
-             data-dojo-event = "onClick"
-             data-dojo-args  = "evt"
-     >
-//      ADD_MORE_PATIENT_CONTACT = true;
-      ADD_MORE_ITEMS           = true;
-     </script>
-		</button>
+        <table>
+        {{surgical_history_form}}
+        </table>
 
-		<button 	type 	          = "reset" 
-						  data-dojo-type  = "dijit/form/Button"
-						  data-dojo-props = "iconClass:'dijitIconClear'"
-						  id 		          = "patient_surgical_history_add_form_reset"
-						  value           = "Reset">
-		 Reset
-		</button>
+        <button 	type 	          = "submit" 
+                    data-dojo-type    = "dijit/form/Button"
+                    data-dojo-props   = "iconClass:'dijitIconSave'"
+                    name 	          = "submitbutton" 
+                    id 		          = "surgical_history_form_submit"
+                    value             = "Add">
+          Add
+
+          <script type            = "dojo/connect" 
+                  data-dojo-event = "onClick" 
+                  data-dojo-args  = "evt"
+          >
+            ADD_MORE_ITEMS           = false;
+          </script>
+
+        </button>
+
+        <button 	type 	        = "submit" 
+                    data-dojo-type  = "dijit/form/Button"
+                    data-dojo-props = "iconClass:'dijitIconSave'"
+                    name 	        = "submitAndAddMoreButton" 
+                    id 		        = "surgical_history_form_add_more"
+                    value           = "Add More">
+
+          Add More
+          
+          <script type            = "dojo/connect" 
+                  data-dojo-event = "onClick"
+                  data-dojo-args  = "evt"
+          >
+            ADD_MORE_ITEMS           = true;
+          </script>
+
+        </button>
+
+        <button   type            = "reset" 
+                  data-dojo-type  = "dijit/form/Button"
+                  data-dojo-props = "iconClass:'dijitIconClear'"
+                  id              = "surgical_history_form_reset"
+                  value           = "Reset">
+          Reset
+        </button>
+
     {% else %}
       <p class="suggestion_text"> Insufficient Permissions to add surgical_history </p>
     {%endif%}
+
 </div>
 

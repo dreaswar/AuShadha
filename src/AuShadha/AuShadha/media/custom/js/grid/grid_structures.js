@@ -964,13 +964,13 @@ define(function () {
                                   ],
 
         PATIENT_SURGICAL_HISTORY_GRID_STRUCTURE: [
-            {
-                name: "ID",
-                field: "id",
-                width: "50px",
-                hidden: true,
-                cellStyles: "text-align:center;"
-                                    },
+//             {
+//                 name: "ID",
+//                 field: "id",
+//                 width: "50px",
+//                 hidden: true,
+//                 cellStyles: "text-align:center;"
+//                                     },
 
             {
                 name: "Edit",
@@ -995,31 +995,23 @@ define(function () {
                 cellStyles: "text-align:center;",
                                     },
             {
-                name: "ICD 10  ",
-                field: "icd_10_code",
-                width: "100px",
-                cellStyles: "text-align:center;"
-                                    },
-
-            {
-                name: "CPC Code",
-                field: "cpc_code",
-                width: "100px",
-                cellStyles: "text-align:center;"
-                                    },
-
-            {
                 name: "Base Condition",
                 field: "base_condition",
                 width: "100px",
                 cellStyles: "text-align:center;"
                                     },
             {
-                name: "Med. Condition",
-                field: "med_condition",
-                width: "100px",
+                name: "Description",
+                field: "description",
+                width: "200px",
                 cellStyles: "text-align:center;"
                                     },
+//             {
+//                 name: "Med. Condition",
+//                 field: "med_condition",
+//                 width: "100px",
+//                 cellStyles: "text-align:center;"
+//                                     },
             {
                 name: "Classification",
                 field: "classification",
@@ -1027,8 +1019,27 @@ define(function () {
                 cellStyles: "text-align:center;"
                                     },
             {
+                name: "Healed ?",
+                field: "healed",
+                width: "100px",
+                cellStyles: "text-align:center;"
+                                    },
+            {
                 name: "Date of Surgery",
                 field: "date_of_surgery",
+                width: "100px",
+                cellStyles: "text-align:center;"
+                                    },
+            {
+                name: "ICD 10  ",
+                field: "icd_10",
+                width: "100px",
+                cellStyles: "text-align:center;"
+                                    },
+
+            {
+                name: "Procedure Code",
+                field: "icd_10_pcs",
                 width: "100px",
                 cellStyles: "text-align:center;"
                                     },

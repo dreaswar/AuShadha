@@ -473,7 +473,7 @@ def render_patient_tree(request, patient_id=None):
                 patient_id = int(request.GET.get('patient_id'))
                 pat_obj = PatientDetail.objects.get(pk=patient_id)
                 pat_obj.generate_urls()
-                pat_urls = pat_obj.urls
+                pat_urls = pat_obj.urls.copy()
             except(AttributeError, NameError, KeyError, TypeError, ValueError):
                 raise Http404("ERROR! Bad Request Parameters")
             except(AttributeError, NameError, KeyError, TypeError, ValueError):
@@ -693,7 +693,8 @@ def render_patient_tree(request, patient_id=None):
                 social_history_obj: pat_urls['add']['social_history'],
                 demographics_obj: pat_urls['add']['demographics'],
                 medication_list_obj: pat_urls['add']['medication_list'],
-                allergy_obj: pat_urls['add']['allergy_list']
+                allergy_obj: pat_urls['add']['allergy_list'],
+                immunisation_obj : pat_urls['add']['immunisation']
             }
 
             obj_list_label_mapper = {medical_history_obj: 'medical_history',
@@ -702,7 +703,8 @@ def render_patient_tree(request, patient_id=None):
                                      social_history_obj: 'social_history',
                                      demographics_obj: 'demographics',
                                      medication_list_obj: 'medication_list',
-                                     allergy_obj: 'allergy_list'
+                                     allergy_obj: 'allergy_list',
+                                     immunisation_obj: 'immunisation_obj'
                                      }
 
             def generic_tree_builder(obj_list, index, type_label):
@@ -722,8 +724,7 @@ def render_patient_tree(request, patient_id=None):
                                       "addUrl": None
                                       }
                     dict_to_append['name'] = s.get_formatted_obj()
-                    dict_to_append[
-                        'id'] = type_label.upper() + "_" + unicode(s.id)
+                    dict_to_append['id'] = type_label.upper() + "_" + unicode(s.id)
                     dict_to_append['absoluteUrl'] = s.get_absolute_url()
                     dict_to_append['editUrl'] = s.get_edit_url()
                     dict_to_append['delUrl'] = s.get_del_url()
