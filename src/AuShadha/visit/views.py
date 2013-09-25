@@ -32,7 +32,7 @@ import cStringIO as StringIO
 from collections import OrderedDict
 
 # Application Specific Model Imports-----------------------
-from utilities.forms import AuModelFormErrorFormatter, aumodelformerrorformatter_factory
+from AuShadha.utilities.forms import AuModelFormErrorFormatter, aumodelformerrorformatter_factory
 
 from aushadha_users.models import AuShadhaUser
 from clinic.models import Clinic, Staff

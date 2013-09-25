@@ -33,8 +33,10 @@ from django.contrib.auth.decorators import login_required
 # Application Specific Model Imports-----------------------
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
-from core.serializers.data_grid import generate_json_for_datagrid
-from utilities.forms import aumodelformerrorformatter_factory
+from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
+from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
+from AuShadha.utilities.forms import aumodelformerrorformatter_factory
+
 
 from patient.models import PatientDetail, PatientDetailForm
 from clinic.models import Clinic
@@ -507,6 +509,196 @@ def render_patient_tree(request, patient_id=None):
                 visit_detail__patient_detail=pat_obj)
             pat_imaging_obj = VisitImaging.objects.filter(
                 visit_detail__patient_detail=pat_obj)
+
+            patient_tree_node = DijitTree()
+
+            history_node = DijitTreeNode({"name": "History",
+                                      "type": "application",
+                                      "id": "HISTORY",
+                                      'len': 1,
+                                      "addUrl": None
+                                      })
+
+            medical_history_node = DijitTreeNode({"name": "Medical History",
+                                                  "type": "medical_history_module",
+                                                  "id": "MEDICAL_HISTORY",
+                                                  'len': len(medical_history_obj),
+                                                  "addUrl": pat_urls['add']['medical_history']
+                                                  })
+            history_node.add_child_node(medical_history_node)
+
+            surgical_history_node = DijitTreeNode({"name": "Surgical History",
+                                                  "type": "surgical_history_module",
+                                                  "id": "SURGICAL_HISTORY",
+                                                  'len': len(surgical_history_obj),
+                                                  "addUrl": pat_urls['add']['surgical_history'],
+                                                 })
+            history_node.add_child_node(surgical_history_node)
+
+            family_history_node = DijitTreeNode({"name": "Family History",
+                                                 "type": "family_history_module",
+                                                 "id": "FAMILY_HISTORY",
+                                                 'len': len(family_history_obj),
+                                                 "addUrl": pat_urls['add']['family_history'],
+                                                })
+            history_node.add_child_node(family_history_node)
+
+            social_history_node = DijitTreeNode({"name": "Social History",
+                                                "type": "social_history_module",
+                                                "id": "SOCIAL_HISTORY",
+                                                'len': len(social_history_obj),
+                                                "addUrl": pat_urls['add']['social_history'],
+                                                })
+            history_node.add_child_node(social_history_node)
+
+            demographics_node = DijitTreeNode({"name": "Demographics",
+                                              "type": "demographics_module",
+                                              "id": "DEMOGRAPHICS",
+                                              'len': len(demographics_obj),
+                                              "addUrl": pat_urls['add']['demographics'],
+                                              })
+            history_node.add_child_node(demographics_node)
+
+            patient_tree_node.add_child_node(history_node)
+
+            medication_list_node = DijitTreeNode({"name" : "Medications",
+                                                  "type": "application",
+                                                  "module_type": "medication_list_module",
+                                                  "id" : "MEDICATIONS",
+                                                  'len': len(medication_list_obj),
+                                                  "addUrl": pat_urls['add']['medication_list'],
+                                                })
+            patient_tree_node.add_child_node(medication_list_node)
+
+            preventives_node = DijitTreeNode({"name": "Preventives",
+                                            "type": "application",
+                                            "id": "PREVENTIVES",
+                                            'len': len(immunisation_obj),
+                                            "addUrl": pat_urls['add']['immunisation']
+                                            })
+
+            immunisation_node = DijitTreeNode({"name": "Immunisation",
+                                              "type": "immunisation_module",
+                                              "id": "IMMUNISATION",
+                                              'len': len(immunisation_obj),
+                                              "addUrl": pat_urls['add']['immunisation'],
+                                              })
+            preventives_node.add_child_node(immunisation_node)
+
+            patient_tree_node.add_child_node(preventives_node)
+
+            #medical_preventives_node = DijitTreeNode({"name": "Medical",
+                                                      #"type": "medical_preventives_module",
+                                                      #"id": "MEDICAL_PREVENTIVES",
+                                                      #'len': None,
+                                                      #"addUrl": None,
+                                                      #})
+
+            #surgical_preventives_node = DijitTreeNode({"name": "Surgical",
+                                                        #"type": "surgical_preventives_module",
+                                                        #"id": "SURGICAL_PREVENTIVES",
+                                                        #'len': None,
+                                                        #"addUrl": None,
+                                                      #})
+
+            #obs_and_gyn_preventives_node = DijitTreeNode({"name": "Obs & Gyn",
+                                                          #"type": "obs_and_gyn_preventives_module",
+                                                          #"id": "OBS_PREVENTIVES",
+                                                          #'len': None,
+                                                          #"addUrl": None,
+                                                          #})
+
+            #admission_node = DijitTreeNode({"name" : "Admissions"   , 
+                                            #"type" :"application", 
+                                            #"id"   :"ADM",
+                                            #'len'   : len(adm_obj),
+                                            #"addUrl": None,
+                                            #})
+
+            #visit_node = DijitTreeNode({"name"  : "OPD Visits"          , 
+                                        #"type":"application", 
+                                        #"id":"VISIT",
+                                        #"len"   : len(visit_obj),
+                                        #"addUrl": None,
+                                        #})
+
+            investigation_node = DijitTreeNode({"name": "Investigation", 
+                                                "type": "application", 
+                                                "id": "INV",
+                                                "len": len(pat_inv_obj),
+                                                "addUrl": None
+                                               })
+            patient_tree_node.add_child_node(investigation_node)
+
+            imaging_node = DijitTreeNode({"name": "Imaging", 
+                                          "type": "application", 
+                                          "id": "IMAG",
+                                          "len": 1,
+                                          "addUrl": None
+                                         })
+            patient_tree_node.add_child_node(imaging_node)
+
+            procedure_node = DijitTreeNode({"name": "Procedures", 
+                                            "type": "application", 
+                                            "id": "PROCEDURES",
+                                            "len": 1,
+                                            "addUrl": None
+                                            })
+            patient_tree_node.add_child_node(procedure_node)
+
+            #calendar_node = DijitTreeNode({"name"  : "Calendar" , 
+                                          #"type":"application", 
+                                          #"id":"CAL" ,
+                                          #"len"   : 1,
+                                          #"addUrl": None,
+                                        #})
+
+            #media_node = DijitTreeNode({"name": "Media", 
+                                        #"type": "application", 
+                                        #"id": "MEDIA",
+                                        #"len": 1,
+                                        #"addUrl": None
+                                      #})
+
+            #documents_node = DijitTreeNode({"name": "Documents",
+                                            #"type": "patient_documents_module",
+                                            #"id": "DOCS",
+                                            #"len": 1,
+                                            #"addUrl": None,
+                                          #})
+            #images_node = DijitTreeNode({"name": "Images",
+                                          #"type": "patient_images_module",
+                                          #"id": "IMAGES",
+                                          #"len": 1,
+                                          #"addUrl": None,
+                                        #})
+
+            #coding_node = DijitTreeNode({"name": "Coding",
+                                          #"type": "application",
+                                          #"id": "CODING",
+                                          #"len": 1,
+                                          #"addUrl": None
+                                        #})
+
+            #icd_10_node = DijitTreeNode({"name": "ICD 10",
+                                          #"type": "icd10_module",
+                                          #"id": "ICD_10",
+                                          #"len": 1,
+                                          #"addUrl": 1
+                                         #})
+
+            #icd_10_pcs_node = DijitTreeNode({"name": "ICD 10 PC",
+                                              #"type": "icd10_pcs_module",
+                                              #"id": "ICD_10_PROCEDURE_CODES",
+                                              #"len": 1,
+                                              #"addUrl": 1
+                                            #})
+
+            print "PATIENT TREE"
+            print patient_tree_node()
+
+
+
 
             data = {
                 "identifier": "id",

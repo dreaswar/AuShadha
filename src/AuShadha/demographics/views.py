@@ -44,7 +44,7 @@ from datetime import datetime, date, time
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 
-from core.serializers.data_grid import generate_json_for_datagrid
+from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 
 from patient.models import PatientDetail
 from demographics.models import Contact, Phone, EmailAndFax, Demographics,\

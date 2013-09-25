@@ -32,7 +32,7 @@ from django.contrib.auth.decorators import login_required
 # Application Specific Model Imports-----------------------
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
-from core.serializers.data_grid import generate_json_for_datagrid
+from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 
 from patient.models import PatientDetail, PatientDetailForm
 from admission.models import Admission

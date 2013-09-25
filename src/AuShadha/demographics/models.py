@@ -9,7 +9,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from AuShadha.settings import APP_ROOT_URL
-from utilities.urls import UrlGenerator, generic_url_maker
+from AuShadha.utilities.urls import UrlGenerator, generic_url_maker
 
 from aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 from patient.models import PatientDetail

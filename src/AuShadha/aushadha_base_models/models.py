@@ -17,8 +17,8 @@ from django.core.serializers.json import DjangoJSONEncoder
 
 import AuShadha.settings
 
-from utilities.urls import generic_url_maker, UrlGenerator, urlgenerator_factory
-from core.serializers.data_grid import generate_json_for_datagrid
+from AuShadha.utilities.urls import generic_url_maker, UrlGenerator, urlgenerator_factory
+from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 
 from clinic.models import Clinic
 

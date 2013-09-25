@@ -9,8 +9,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from utilities.urls import generic_url_maker
-from utilities.queries import has_contact,\
+from AuShadha.utilities.urls import generic_url_maker
+from AuShadha.utilities.queries import has_contact,\
                               has_phone,\
                               has_guardian,\
                               has_active_admission,\
@@ -63,7 +63,7 @@ class PatientDetail(AuShadhaBaseModel):
     _extra_url_actions = ['transfer_patient','transfer_clinic','refer']
 
 
-    # Instance Methods imported from utilities/queries
+    # Instance Methods imported from AuShadha.utilities.queries
     has_active_admission = has_active_admission
     has_active_visit = has_active_visit
     has_contact = has_contact

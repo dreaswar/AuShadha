@@ -25,8 +25,8 @@ from django.contrib.auth.decorators import login_required
 # Application Specific Model Imports-----------------------
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
-from core.serializers.data_grid import generate_json_for_datagrid
-from utilities.forms import aumodelformerrorformatter_factory
+from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
+from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 
 from patient.models import PatientDetail
 from allergy_list.models import Allergy, AllergyForm
