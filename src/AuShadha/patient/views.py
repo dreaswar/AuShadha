@@ -462,8 +462,6 @@ def return_patient_json(patient, success=True):
     #print "JSON=", json
     return json
 
-#
-
 
 @login_required
 def render_patient_tree(request, patient_id=None):
@@ -481,81 +479,40 @@ def render_patient_tree(request, patient_id=None):
             except(AttributeError, NameError, KeyError, TypeError, ValueError):
                 raise Http404("ERROR! Requested Patient Data Does not exist")
 
-            adm_obj = Admission.objects.filter(
-                patient_detail=pat_obj)
-            visit_obj = VisitDetail.objects.filter(
-                patient_detail=pat_obj)
-
-            demographics_obj = Demographics.objects.filter(
-                patient_detail=pat_obj)
-            social_history_obj = SocialHistory.objects.filter(
-                patient_detail=pat_obj)
-            family_history_obj = FamilyHistory.objects.filter(
-                patient_detail=pat_obj)
-            medical_history_obj = MedicalHistory.objects.filter(
-                patient_detail=pat_obj)
-            surgical_history_obj = SurgicalHistory.objects.filter(
-                patient_detail=pat_obj)
-
-            immunisation_obj = Immunisation.objects.filter(
-                patient_detail=pat_obj)
-
-            medication_list_obj = MedicationList.objects.filter(
-                patient_detail=pat_obj)
-            allergy_obj = Allergy.objects.filter(
-                patient_detail=pat_obj)
-
-            pat_inv_obj = VisitInv.objects.filter(
-                visit_detail__patient_detail=pat_obj)
-            pat_imaging_obj = VisitImaging.objects.filter(
-                visit_detail__patient_detail=pat_obj)
-
             patient_tree_node = DijitTree()
 
             history_node = DijitTreeNode({"name": "History",
                                       "type": "application",
-                                      "id": "HISTORY",
-                                      'len': 1,
-                                      "addUrl": None
+                                      "id": "HISTORY"
                                       })
 
             medical_history_node = DijitTreeNode({"name": "Medical History",
                                                   "type": "medical_history_module",
-                                                  "id": "MEDICAL_HISTORY",
-                                                  'len': len(medical_history_obj),
-                                                  "addUrl": pat_urls['add']['medical_history']
+                                                  "id": "MEDICAL_HISTORY"
                                                   })
             history_node.add_child_node(medical_history_node)
 
             surgical_history_node = DijitTreeNode({"name": "Surgical History",
                                                   "type": "surgical_history_module",
-                                                  "id": "SURGICAL_HISTORY",
-                                                  'len': len(surgical_history_obj),
-                                                  "addUrl": pat_urls['add']['surgical_history'],
+                                                  "id": "SURGICAL_HISTORY"
                                                  })
             history_node.add_child_node(surgical_history_node)
 
             family_history_node = DijitTreeNode({"name": "Family History",
                                                  "type": "family_history_module",
-                                                 "id": "FAMILY_HISTORY",
-                                                 'len': len(family_history_obj),
-                                                 "addUrl": pat_urls['add']['family_history'],
+                                                 "id": "FAMILY_HISTORY"
                                                 })
             history_node.add_child_node(family_history_node)
 
             social_history_node = DijitTreeNode({"name": "Social History",
                                                 "type": "social_history_module",
-                                                "id": "SOCIAL_HISTORY",
-                                                'len': len(social_history_obj),
-                                                "addUrl": pat_urls['add']['social_history'],
+                                                "id": "SOCIAL_HISTORY"
                                                 })
             history_node.add_child_node(social_history_node)
 
             demographics_node = DijitTreeNode({"name": "Demographics",
                                               "type": "demographics_module",
-                                              "id": "DEMOGRAPHICS",
-                                              'len': len(demographics_obj),
-                                              "addUrl": pat_urls['add']['demographics'],
+                                              "id": "DEMOGRAPHICS"
                                               })
             history_node.add_child_node(demographics_node)
 
@@ -564,24 +521,18 @@ def render_patient_tree(request, patient_id=None):
             medication_list_node = DijitTreeNode({"name" : "Medications",
                                                   "type": "application",
                                                   "module_type": "medication_list_module",
-                                                  "id" : "MEDICATIONS",
-                                                  'len': len(medication_list_obj),
-                                                  "addUrl": pat_urls['add']['medication_list'],
+                                                  "id" : "MEDICATIONS"
                                                 })
             patient_tree_node.add_child_node(medication_list_node)
 
             preventives_node = DijitTreeNode({"name": "Preventives",
                                             "type": "application",
-                                            "id": "PREVENTIVES",
-                                            'len': len(immunisation_obj),
-                                            "addUrl": pat_urls['add']['immunisation']
+                                            "id": "PREVENTIVES"
                                             })
 
             immunisation_node = DijitTreeNode({"name": "Immunisation",
                                               "type": "immunisation_module",
-                                              "id": "IMMUNISATION",
-                                              'len': len(immunisation_obj),
-                                              "addUrl": pat_urls['add']['immunisation'],
+                                              "id": "IMMUNISATION"
                                               })
             preventives_node.add_child_node(immunisation_node)
 
@@ -589,369 +540,81 @@ def render_patient_tree(request, patient_id=None):
 
             #medical_preventives_node = DijitTreeNode({"name": "Medical",
                                                       #"type": "medical_preventives_module",
-                                                      #"id": "MEDICAL_PREVENTIVES",
-                                                      #'len': None,
-                                                      #"addUrl": None,
+                                                      #"id": "MEDICAL_PREVENTIVES"
                                                       #})
 
             #surgical_preventives_node = DijitTreeNode({"name": "Surgical",
                                                         #"type": "surgical_preventives_module",
-                                                        #"id": "SURGICAL_PREVENTIVES",
-                                                        #'len': None,
-                                                        #"addUrl": None,
+                                                        #"id": "SURGICAL_PREVENTIVES"
                                                       #})
 
             #obs_and_gyn_preventives_node = DijitTreeNode({"name": "Obs & Gyn",
                                                           #"type": "obs_and_gyn_preventives_module",
-                                                          #"id": "OBS_PREVENTIVES",
-                                                          #'len': None,
-                                                          #"addUrl": None,
+                                                          #"id": "OBS_PREVENTIVES"
                                                           #})
 
             #admission_node = DijitTreeNode({"name" : "Admissions"   , 
                                             #"type" :"application", 
-                                            #"id"   :"ADM",
-                                            #'len'   : len(adm_obj),
-                                            #"addUrl": None,
+                                            #"id"   :"ADM"
                                             #})
 
             #visit_node = DijitTreeNode({"name"  : "OPD Visits"          , 
                                         #"type":"application", 
-                                        #"id":"VISIT",
-                                        #"len"   : len(visit_obj),
-                                        #"addUrl": None,
+                                        #"id":"VISIT"
                                         #})
 
             investigation_node = DijitTreeNode({"name": "Investigation", 
                                                 "type": "application", 
-                                                "id": "INV",
-                                                "len": len(pat_inv_obj),
-                                                "addUrl": None
+                                                "id": "INV"
                                                })
             patient_tree_node.add_child_node(investigation_node)
 
             imaging_node = DijitTreeNode({"name": "Imaging", 
                                           "type": "application", 
-                                          "id": "IMAG",
-                                          "len": 1,
-                                          "addUrl": None
+                                          "id": "IMAG"
                                          })
             patient_tree_node.add_child_node(imaging_node)
 
             procedure_node = DijitTreeNode({"name": "Procedures", 
                                             "type": "application", 
-                                            "id": "PROCEDURES",
-                                            "len": 1,
-                                            "addUrl": None
+                                            "id": "PROCEDURES"
                                             })
             patient_tree_node.add_child_node(procedure_node)
 
             #calendar_node = DijitTreeNode({"name"  : "Calendar" , 
                                           #"type":"application", 
-                                          #"id":"CAL" ,
-                                          #"len"   : 1,
-                                          #"addUrl": None,
+                                          #"id":"CAL" 
                                         #})
 
             #media_node = DijitTreeNode({"name": "Media", 
                                         #"type": "application", 
-                                        #"id": "MEDIA",
-                                        #"len": 1,
-                                        #"addUrl": None
+                                        #"id": "MEDIA"
                                       #})
 
             #documents_node = DijitTreeNode({"name": "Documents",
                                             #"type": "patient_documents_module",
-                                            #"id": "DOCS",
-                                            #"len": 1,
-                                            #"addUrl": None,
+                                            #"id": "DOCS"
                                           #})
             #images_node = DijitTreeNode({"name": "Images",
                                           #"type": "patient_images_module",
-                                          #"id": "IMAGES",
-                                          #"len": 1,
-                                          #"addUrl": None,
+                                          #"id": "IMAGES"
                                         #})
 
             #coding_node = DijitTreeNode({"name": "Coding",
                                           #"type": "application",
-                                          #"id": "CODING",
-                                          #"len": 1,
-                                          #"addUrl": None
+                                          #"id": "CODING"
                                         #})
 
             #icd_10_node = DijitTreeNode({"name": "ICD 10",
                                           #"type": "icd10_module",
-                                          #"id": "ICD_10",
-                                          #"len": 1,
-                                          #"addUrl": 1
+                                          #"id": "ICD_10"
                                          #})
 
             #icd_10_pcs_node = DijitTreeNode({"name": "ICD 10 PC",
                                               #"type": "icd10_pcs_module",
-                                              #"id": "ICD_10_PROCEDURE_CODES",
-                                              #"len": 1,
-                                              #"addUrl": 1
+                                              #"id": "ICD_10_PROCEDURE_CODES"
                                             #})
-
-            print "PATIENT TREE"
-            print patient_tree_node()
-
-
-
-
-            data = {
-                "identifier": "id",
-                "label": "name",
-                "items": [
-                    {"name": "History",
-                     "type": "application",
-                     "id": "HISTORY",
-                     'len': 1,
-                     "addUrl": None,
-                     'children': [
-                         {"name": "Medical History",
-                          "type": "medical_history_module",
-                          "id": "MEDICAL_HISTORY",
-                          'len': len(medical_history_obj),
-                          "addUrl": None,
-                          },
-                         {"name": "Surgical History",
-                          "type": "surgical_history_module",
-                          "id": "SURGICAL_HISTORY",
-                          'len': len(surgical_history_obj),
-                          "addUrl": None,
-                          },
-                         {"name": "Family History",
-                          "type": "family_history_module",
-                          "id": "FAMILY_HISTORY",
-                          'len': len(family_history_obj),
-                          "addUrl": None,
-                          },
-                         {"name": "Social History",
-                          "type": "social_history_module",
-                          "id": "SOCIAL_HISTORY",
-                          'len': len(social_history_obj),
-                          "addUrl": None,
-                          },
-                         {"name": "Demographics",
-                          "type": "demographics_module",
-                          "id": "DEMOGRAPHICS",
-                          'len': len(demographics_obj),
-                          "addUrl": None,
-                          },
-                         #,
-                         #{"name"    : "Allergies"   ,
-                         #"type"    : "allergies_module",
-                         #"id"     : "ALLERGIES",
-                         #'len'     : len(allergies_obj),
-                         #"addUrl" : None,
-                         #}
-                     ]
-                     },
-                    {"name": "Medications",
-                      "type": "application",
-                      "module_type": "medication_list_module",
-                      "id": "MEDICATIONS",
-                      'len': len(medication_list_obj),
-                      "addUrl": None,
-                    },
-                    {"name": "Preventives",
-                     "type": "application",
-                     "id": "PREVENTIVES",
-                     'len': len(immunisation_obj),
-                     "addUrl": None,
-                     "children": [
-                         {"name": "Immunisation",
-                          "type": "immunisation_module",
-                          "id": "IMMUNISATION",
-                          'len': len(immunisation_obj),
-                          "addUrl": pat_urls['add']['immunisation'],
-                          },
-                         #{"name": "Obs & Gyn",
-                          #"type": "obs_and_gyn_preventives_module",
-                          #"id": "OBS_PREVENTIVES",
-                          #'len': None,
-                          #"addUrl": None,
-                          #},
-                         #{"name": "Medical",
-                          #"type": "medical_preventives_module",
-                          #"id": "MEDICAL_PREVENTIVES",
-                          #'len': None,
-                          #"addUrl": None,
-                          #},
-                         #{"name": "Surgical",
-                          #"type": "surgical_preventives_module",
-                          #"id": "SURGICAL_PREVENTIVES",
-                          #'len': None,
-                          #"addUrl": None,
-                          #}
-                     ]
-                     },
-                    #{"name"  : "Admissions"   , "type":"application", "id":"ADM",
-                    #'len'   : len(adm_obj),
-                    #"addUrl": None,
-                    #},
-                    #{"name"  : "OPD Visits"          , "type":"application", "id":"VISIT",
-                    #"len"   : len(visit_obj),
-                    #"addUrl": None,
-                    #},
-                    {"name": "Investigation", "type": "application", "id": "INV",
-                     "len": len(pat_inv_obj),
-                     "addUrl": None,
-                     "children": []
-                     },
-                    {"name": "Imaging", "type": "application", "id": "IMAG",
-                     "len": 1,
-                     "addUrl": len(pat_imaging_obj),
-                     "children": []
-                     },
-                    {"name": "Procedures", "type": "application", "id": "PROCEDURES",
-                     "len": 1,
-                     "addUrl": None,
-                     "children": [
-                     ]
-                     },
-                    #{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
-                    #"len"   : 1,
-                    #"addUrl": None,
-                    #},
-                    #{"name": "Media", "type": "application", "id": "MEDIA",
-                     #"len": 1,
-                     #"addUrl": None,
-                     #"children": [
-                                              #{"name": "Documents",
-                                               #"type": "patient_documents_module",
-                                               #"id": "DOCS",
-                                               #"len": 1,
-                                               #"addUrl": None,
-                                               #},
-                                              #{"name": "Images",
-                                               #"type": "patient_images_module",
-                                               #"id": "IMAGES",
-                                               #"len": 1,
-                                               #"addUrl": None,
-                                               #}
-                     #]
-                     #},
-                    #{"name": "Coding",
-                     #"type": "application",
-                     #"id": "CODING",
-                     #"len": 1,
-                     #"addUrl": None,
-                     #"children": [
-                         #{"name": "ICD 10",
-                          #"type": "icd10_module",
-                          #"id": "ICD_10",
-                          #"len": 1,
-                          #"addUrl": 1,
-                          #"children": []
-                          #},
-                         #{"name": "ICD 10 PC",
-                          #"type": "icd10_pcs_module",
-                          #"id": "ICD_10_PROCEDURE_CODES",
-                          #"len": 1,
-                          #"addUrl": 1,
-                          #"children": []
-                          #},
-                     #]
-                     #}
-                ]
-            }
-
-            history_obj_list = [medical_history_obj,
-                                surgical_history_obj,
-                                family_history_obj,
-                                social_history_obj,
-                                demographics_obj,
-                                #medication_list_obj ,
-                                # allergies_obj
-                                ]
-
-            #add_url_mapper = {
-              #medical_history_obj: pat_obj.get_patient_medical_history_add_url(),
-                #surgical_history_obj: pat_obj.get_patient_surgical_history_add_url(),
-                #family_history_obj: pat_obj.get_patient_family_history_add_url(),
-                #social_history_obj: pat_obj.get_patient_social_history_add_url(),
-                #demographics_obj: pat_obj.get_patient_demographics_data_add_url(),
-                #medication_list_obj: pat_obj.get_patient_medication_list_add_url(),
-                #allergies_obj: pat_obj.get_patient_allergies_add_url()
-            #}
-
-            add_url_mapper = {
-                medical_history_obj: pat_urls['add']['medical_history'],
-                surgical_history_obj: pat_urls['add']['surgical_history'],
-                family_history_obj: pat_urls['add']['family_history'],
-                social_history_obj: pat_urls['add']['social_history'],
-                demographics_obj: pat_urls['add']['demographics'],
-                medication_list_obj: pat_urls['add']['medication_list'],
-                allergy_obj: pat_urls['add']['allergy_list'],
-                immunisation_obj : pat_urls['add']['immunisation']
-            }
-
-            obj_list_label_mapper = {medical_history_obj: 'medical_history',
-                                     surgical_history_obj: 'surgical_history',
-                                     family_history_obj: 'family_history',
-                                     social_history_obj: 'social_history',
-                                     demographics_obj: 'demographics',
-                                     medication_list_obj: 'medication_list',
-                                     allergy_obj: 'allergy_list',
-                                     immunisation_obj: 'immunisation_obj'
-                                     }
-
-            def generic_tree_builder(obj_list, index, type_label):
-                if not obj_list:
-                    data['items'][index]['addUrl'] = add_url_mapper[obj_list],
-                else:
-                    data['items'][index]['addUrl'] = None
-                    s = obj_list[0]
-                    data['items'][index]['children'] = []
-                    children_list = data[
-                        'items'][index]['children']
-                    dict_to_append = {"name": "",
-                                      "type": type_label,
-                                      "id": "",
-                                      "editUrl": "",
-                                      "delUrl": "",
-                                      "addUrl": None
-                                      }
-                    dict_to_append['name'] = s.get_formatted_obj()
-                    dict_to_append['id'] = type_label.upper() + "_" + unicode(s.id)
-                    dict_to_append['absoluteUrl'] = s.get_absolute_url()
-                    dict_to_append['editUrl'] = s.get_edit_url()
-                    dict_to_append['delUrl'] = s.get_del_url()
-                    children_list.append(dict_to_append)
-
-            obj_list_index = 0
-            for obj_list in history_obj_list:
-                generic_tree_builder(
-                    obj_list, obj_list_index, obj_list_label_mapper[obj_list])
-                obj_list_index += 1
-
-            # if adm_obj:
-                #data['items'][3]['children'] = []
-                #children_list  = data['items'][3]['children']
-                # for adm in adm_obj:
-                    #dict_to_append = {"name":"", "type":"admission", "id":"","editUrl":"","delUrl":""}
-                    #dict_to_append['name']    = adm.date_of_admission.date().isoformat()
-                    #dict_to_append['id']      = "ADM_"+ unicode(adm.id)
-                    #dict_to_append['absoluteUrl'] = adm.get_absolute_url()
-                    #dict_to_append['editUrl'] = adm.get_admission_edit_url()
-                    #dict_to_append['delUrl']  = adm.get_admission_del_url()
-                    # children_list.append(dict_to_append)
-
-            # if visit_obj:
-                #data['items'][4]['children'] = []
-                #children_list  = data['items'][4]['children']
-                # for visit in visit_obj:
-                    #dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
-                    #dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
-                    #dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
-                    #dict_to_append['absoluteUrl'] = visit.get_absolute_url()
-                    #dict_to_append['editUrl']     = visit.get_edit_url()
-                    #dict_to_append['delUrl']      = visit.get_del_url()
-                    # children_list.append(dict_to_append)
-            json = simplejson.dumps(data)
+            json = patient_tree_node.to_json()
             return HttpResponse(json, content_type="application/json")
     else:
         raise Http404("Bad Request")

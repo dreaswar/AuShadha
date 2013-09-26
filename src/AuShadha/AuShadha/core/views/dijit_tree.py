@@ -6,6 +6,11 @@
 # License     : GNU-GPL Version 3 , See AuShadha/LICENSE.txt
 ################################################################################
 
+import json as JSON
+#from django.utils import simplejson
+#from django.core import serializers
+#from django.core.serializers import json
+#from django.core.serializers.json import DjangoJSONEncoder
 
 class DijitTreeNode(object):
 
@@ -72,7 +77,20 @@ class DijitTreeNode(object):
       return "__repr__ function returning the self.node attribute"
 
   def __call__(self):
+    print "Type of node is : ", type(self.node)
     return self.node
+    #return JSON.dumps( self.node ,encoding = 'UTF-8',default = str)
+
+  def to_json(self):
+    node = self.node
+    #for k, v in node.iteritems():
+      #if not type(v) is list:
+        #print type(k), "--> " , k, "::--> ",v, type(v)
+      #else:
+        #for item in v:
+          #print item, type(item)
+    print "Trying to serialize node of type ", type(self.node)
+    return JSON.dumps(node)
 
   #def set(self,key,value):
     #return self.__setitem__(key,value)
@@ -113,7 +131,7 @@ class DijitTreeNode(object):
     if self.check_node_attr(attrs) and self.is_id_unique(attrs):
       if not self.node.has_key('children'):
         self.node['children'] = []
-      self.node['children'].append(attrs)
+      self.node['children'].append(attrs.node)
     else:
       raise AttributeError
 
@@ -185,6 +203,11 @@ class DijitTree(object):
   def __call__(self):
     return self.node
 
+  def to_json(self):
+    node = self.node
+    print "Trying to serialize node of type ", type(self.node)
+    return JSON.dumps(node)
+
   #def set(self,key,value):
     #return self.__setitem__(key,value)
 
@@ -227,13 +250,19 @@ class DijitTree(object):
       raise Exception("DuplicateIDError")
     else:
       if self.node.has_key('items'):
-        children = self.node['items']
-        if children:
-          for items in children:
-            if items['id'] == id_val:
-              raise Exception("DuplicateIDError")
-            else:
-              continue
+        items = self.node['items']
+        if items:
+          print "Items are: "
+          print items
+          for item in items:
+            if item.has_key('children'):
+              children = item['children']
+              if children:
+                for child in children:
+                  if child['id'] == id_val:
+                    raise Exception("DuplicateIDError")
+                  else:
+                    continue
       return True
 
   def get_child_node_by_id(self,branch_id):
@@ -245,13 +274,19 @@ class DijitTree(object):
   def add_child_node(self,attrs):
     if self.check_branch_attr(attrs) and self.is_id_unique(attrs):
       attr_id = attrs['id']
+
+      if not self.node.has_key('items'):
+        items = self.node['items'] = [] 
+      else:
+        items = self.node['items']
+
       if not isinstance(attrs,DijitTreeNode):
         self.branch_dict[attr_id] = DijitTreeNode(attrs)
+        items.append(attrs)
       else:
         self.branch_dict[attr_id] = attrs
-      if not self.node.has_key('items'):
-        self.node['items'] = []
-      self.node['items'] = self.branch_dict.values()
+        items.append(attrs.node)
+
     else:
       raise AttributeError
 
@@ -294,8 +329,8 @@ def main():
                             "addUrl": None
                             })
 
-  print history_node
-  print history_node.id_registry
+  #print history_node
+  #print history_node.id_registry
 
   medical_history_node = DijitTreeNode({"name": "Medical History",
                                         "type": "medical_history_module",
@@ -303,7 +338,11 @@ def main():
                                         'len': None,
                                         "addUrl": None
                                         })
-  print medical_history_node
-  print medical_history_node.id_registry
+  #print medical_history_node
+  #print medical_history_node.id_registry
 
   history_node.add_child_node(medical_history_node)
+
+  #print history_node()
+  x = history_node.to_json()
+  print x
