@@ -15,7 +15,7 @@ from django import forms
 from django.contrib.auth.models import User
 from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 from patient.models import PatientDetail
-#from icd10.models import Chapter
+#from registry.icd10.models import Chapter
 
 from dijit_fields_constants import MEDICAL_HISTORY_FORM_CONSTANTS
 

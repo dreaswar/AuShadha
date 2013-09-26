@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 from aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 from aushadha_users.models import AuShadhaUser
 from patient.models import PatientDetail
-from vaccine_registry.models import VaccineRegistry
+from registry.vaccine_registry.models import VaccineRegistry
 
 from dijit_fields_constants import IMMUNISATION_FORM_CONSTANTS
 

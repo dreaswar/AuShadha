@@ -18,7 +18,7 @@ from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 from patient.models import PatientDetail
 from clinic.models import Clinic, Staff
 from admission.models import Admission
-from inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
+from registry.inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
 
 from dijit_fields_constants import VISIT_DETAIL_FORM_CONSTANTS,\
                                    VISIT_COMPLAINTS_FORM_CONSTANTS,\

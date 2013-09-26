@@ -175,11 +175,11 @@ INSTALLED_APPS = (
     'nurse',
     'staff',
 
-    'vaccine_registry',
-    'icd10',
-    'icd10_pcs',
-    'drug_db',
-    'inv_and_imaging',
+    'registry.vaccine_registry',
+    'registry.icd10',
+    'registry.icd10_pcs',
+    'registry.drug_db',
+    'registry.inv_and_imaging',
 
     'patient',
     'demographics',

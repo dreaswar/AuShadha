@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vaccine_registry.models import VaccineRegistry
+from registry.vaccine_registry.models import VaccineRegistry
 
 
 class VaccineRegistryAdmin(admin.ModelAdmin):

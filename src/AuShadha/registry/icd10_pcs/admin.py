@@ -1,4 +1,4 @@
-from icd10_pcs.models import *
+from registry.icd10_pcs.models import *
 import datetime
 from django.contrib import admin
 

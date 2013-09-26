@@ -1,4 +1,4 @@
-from drug_db.models import *
+from registry.drug_db.models import *
 import datetime
 from django.contrib import admin
 

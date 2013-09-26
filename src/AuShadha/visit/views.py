@@ -47,7 +47,7 @@ from social_history.models import SocialHistory
 from family_history.models import FamilyHistory
 from medical_history.models import MedicalHistory
 from surgical_history.models import SurgicalHistory
-from inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
+from registry.inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
 
 from phyexam.models import *
 from phyexam.models import DEFAULT_VITALS
