@@ -1,3 +1,13 @@
+################################################################################
+# Project     : AuShadha
+# Description : URL Generator Class for AuShadha
+# Author      : Dr. Easwar T.R
+# Date        : 26-09-2013
+# License     : GNU-GPL Version 3, see AuShadha/LICENSE.txt 
+################################################################################
+
+
+
 from AuShadha.settings import APP_ROOT_URL
 
 class UrlGenerator(object):
@@ -7,21 +17,20 @@ class UrlGenerator(object):
   parented_actions = ['add','list','json','tree','sidebar','summary']
   parentless_actions = ['edit','del']
 
-  urlDict = {
-            'summary':{},
-            'tree'   :{},
-            'sidebar':{},
-            'json'   :{},
-            'list'   :{},
-            'add'    :{},
-            'edit'   :{},
-            'del'    :{},
-          }
-    
   def __init__(self,
                instance,
                parent = None):
 
+    self.urlDict = {
+                    'summary':{},
+                    'tree'   :{},
+                    'sidebar':{},
+                    'json'   :{},
+                    'list'   :{},
+                    'add'    :{},
+                    'edit'   :{},
+                    'del'    :{},
+                  }
 
     self.root_url = APP_ROOT_URL
     self.instance = instance

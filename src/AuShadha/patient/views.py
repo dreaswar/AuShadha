@@ -473,7 +473,7 @@ def render_patient_tree(request, patient_id=None):
                 patient_id = int(request.GET.get('patient_id'))
                 pat_obj = PatientDetail.objects.get(pk=patient_id)
                 pat_obj.generate_urls()
-                pat_urls = pat_obj.urls.copy()
+                pat_urls = pat_obj.urls
             except(AttributeError, NameError, KeyError, TypeError, ValueError):
                 raise Http404("ERROR! Bad Request Parameters")
             except(AttributeError, NameError, KeyError, TypeError, ValueError):

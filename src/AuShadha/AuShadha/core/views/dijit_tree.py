@@ -318,31 +318,3 @@ class DijitTree(object):
       self.branch_dict.pop(branch_id)
     else:
       raise Exception("InvalidBranchId")
-
-
-
-def main():
-  history_node = DijitTreeNode({"name": "History",
-                            "type": "application",
-                            "id": "HISTORY",
-                            'len': 1,
-                            "addUrl": None
-                            })
-
-  #print history_node
-  #print history_node.id_registry
-
-  medical_history_node = DijitTreeNode({"name": "Medical History",
-                                        "type": "medical_history_module",
-                                        "id": "MEDICAL_HISTORY",
-                                        'len': None,
-                                        "addUrl": None
-                                        })
-  #print medical_history_node
-  #print medical_history_node.id_registry
-
-  history_node.add_child_node(medical_history_node)
-
-  #print history_node()
-  x = history_node.to_json()
-  print x

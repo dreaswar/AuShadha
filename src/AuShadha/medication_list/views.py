@@ -74,7 +74,7 @@ def medication_list_add(request, patient_id = None):
             patient_id  = int(request.GET.get('patient_id'))
           patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
           patient_detail_obj.generate_urls()
-          p_urls = patient_detail_obj.urls.copy()
+          p_urls = patient_detail_obj.urls
           medication_list_obj = MedicationList(patient_detail=patient_detail_obj)
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
@@ -98,11 +98,11 @@ def medication_list_add(request, patient_id = None):
             if medication_list_form.is_valid():
                 medication_list_obj = medication_list_form.save()
                 medication_list_obj.generate_urls()
-                m_urls = medication_list_obj.urls.copy()
+                m_urls = medication_list_obj.urls
                 print "MedicationList URLS: "
                 print m_urls
                 patient_detail_obj.generate_urls()
-                p_urls = patient_detail_obj.urls.copy()
+                p_urls = patient_detail_obj.urls
 
                 fields_list = [field for field in medication_list_obj._meta.fields if field.serialize]
 
@@ -147,7 +147,7 @@ def medication_list_edit(request, medication_list_id = None):
           medication_list_id = int(medication_list_id)
           medication_list_obj = MedicationList.objects.get(pk= medication_list_id)
           medication_list_obj.generate_urls()
-          m_urls = medication_list_obj.urls.copy()
+          m_urls = medication_list_obj.urls
 
         except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")
@@ -176,10 +176,10 @@ def medication_list_edit(request, medication_list_id = None):
                 medication_list_obj = medication_list_form.save()
 
                 medication_list_obj.generate_urls()
-                m_urls = medication_list_obj.urls.copy()
+                m_urls = medication_list_obj.urls
 
                 medication_list_obj.patient_detail.generate_urls()
-                p_urls = medication_list_obj.patient_detail.urls.copy()
+                p_urls = medication_list_obj.patient_detail.urls
 
                 fields_list = [field for field in medication_list_obj._meta.fields if field.serialize]
 

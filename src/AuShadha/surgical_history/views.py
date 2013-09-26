@@ -74,7 +74,7 @@ def surgical_history_add(request, patient_id = None):
             patient_id  = int(request.GET.get('patient_id'))
           patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
           patient_detail_obj.generate_urls()
-          p_urls = patient_detail_obj.urls.copy()
+          p_urls = patient_detail_obj.urls
           surgical_history_obj = SurgicalHistory(patient_detail=patient_detail_obj)
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
@@ -98,11 +98,11 @@ def surgical_history_add(request, patient_id = None):
             if surgical_history_form.is_valid():
                 surgical_history_obj = surgical_history_form.save()
                 surgical_history_obj.generate_urls()
-                m_urls = surgical_history_obj.urls.copy()
+                m_urls = surgical_history_obj.urls
                 print "Surgical History URLS: "
                 print m_urls
                 patient_detail_obj.generate_urls()
-                p_urls = patient_detail_obj.urls.copy()
+                p_urls = patient_detail_obj.urls
 
                 fields_list = [field for field in surgical_history_obj._meta.fields if field.serialize]
 
@@ -147,7 +147,7 @@ def surgical_history_edit(request, surgical_history_id = None):
           surgical_history_id = int(surgical_history_id)
           surgical_history_obj = SurgicalHistory.objects.get(pk= surgical_history_id)
           surgical_history_obj.generate_urls()
-          m_urls = surgical_history_obj.urls.copy()
+          m_urls = surgical_history_obj.urls
 
         except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")
@@ -176,10 +176,10 @@ def surgical_history_edit(request, surgical_history_id = None):
                 surgical_history_obj = surgical_history_form.save()
 
                 surgical_history_obj.generate_urls()
-                m_urls = surgical_history_obj.urls.copy()
+                m_urls = surgical_history_obj.urls
 
                 surgical_history_obj.patient_detail.generate_urls()
-                p_urls = surgical_history_obj.patient_detail.urls.copy()
+                p_urls = surgical_history_obj.patient_detail.urls
 
                 fields_list = [field for field in surgical_history_obj._meta.fields if field.serialize]
 

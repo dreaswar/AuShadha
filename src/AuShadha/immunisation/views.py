@@ -74,7 +74,7 @@ def immunisation_add(request, patient_id = None):
             patient_id  = int(request.GET.get('patient_id'))
           patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
           patient_detail_obj.generate_urls()
-          p_urls = patient_detail_obj.urls.copy()
+          p_urls = patient_detail_obj.urls
           immunisation_obj = Immunisation(patient_detail=patient_detail_obj)
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
@@ -98,11 +98,11 @@ def immunisation_add(request, patient_id = None):
             if immunisation_form.is_valid():
                 immunisation_obj = immunisation_form.save()
                 immunisation_obj.generate_urls()
-                m_urls = immunisation_obj.urls.copy()
+                m_urls = immunisation_obj.urls
                 print "Immunisation URLS: "
                 print m_urls
                 patient_detail_obj.generate_urls()
-                p_urls = patient_detail_obj.urls.copy()
+                p_urls = patient_detail_obj.urls
 
                 fields_list = [field for field in immunisation_obj._meta.fields if field.serialize]
 
@@ -147,7 +147,7 @@ def immunisation_edit(request, immunisation_id = None):
           immunisation_id = int(immunisation_id)
           immunisation_obj = Immunisation.objects.get(pk= immunisation_id)
           immunisation_obj.generate_urls()
-          m_urls = immunisation_obj.urls.copy()
+          m_urls = immunisation_obj.urls
 
         except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")
@@ -176,10 +176,10 @@ def immunisation_edit(request, immunisation_id = None):
                 immunisation_obj = immunisation_form.save()
 
                 immunisation_obj.generate_urls()
-                m_urls = immunisation_obj.urls.copy()
+                m_urls = immunisation_obj.urls
 
                 immunisation_obj.patient_detail.generate_urls()
-                p_urls = immunisation_obj.patient_detail.urls.copy()
+                p_urls = immunisation_obj.patient_detail.urls
 
                 fields_list = [field for field in immunisation_obj._meta.fields if field.serialize]
 

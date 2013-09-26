@@ -74,7 +74,7 @@ def allergy_list_add(request, patient_id = None):
             patient_id  = int(request.GET.get('patient_id'))
           patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
           patient_detail_obj.generate_urls()
-          p_urls = patient_detail_obj.urls.copy()
+          p_urls = patient_detail_obj.urls
           allergy_list_obj = Allergy(patient_detail=patient_detail_obj)
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
@@ -98,11 +98,11 @@ def allergy_list_add(request, patient_id = None):
             if allergy_list_form.is_valid():
                 allergy_list_obj = allergy_list_form.save()
                 allergy_list_obj.generate_urls()
-                m_urls = allergy_list_obj.urls.copy()
+                m_urls = allergy_list_obj.urls
                 print "Allergy URLS: "
                 print m_urls
                 patient_detail_obj.generate_urls()
-                p_urls = patient_detail_obj.urls.copy()
+                p_urls = patient_detail_obj.urls
 
                 fields_list = [field for field in allergy_list_obj._meta.fields if field.serialize]
 
@@ -147,7 +147,7 @@ def allergy_list_edit(request, allergy_list_id = None):
           allergy_list_id = int(allergy_list_id)
           allergy_list_obj = Allergy.objects.get(pk= allergy_list_id)
           allergy_list_obj.generate_urls()
-          m_urls = allergy_list_obj.urls.copy()
+          m_urls = allergy_list_obj.urls
 
         except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")
@@ -176,10 +176,10 @@ def allergy_list_edit(request, allergy_list_id = None):
                 allergy_list_obj = allergy_list_form.save()
 
                 allergy_list_obj.generate_urls()
-                m_urls = allergy_list_obj.urls.copy()
+                m_urls = allergy_list_obj.urls
 
                 allergy_list_obj.patient_detail.generate_urls()
-                p_urls = allergy_list_obj.patient_detail.urls.copy()
+                p_urls = allergy_list_obj.patient_detail.urls
 
                 fields_list = [field for field in allergy_list_obj._meta.fields if field.serialize]
 
