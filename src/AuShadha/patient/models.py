@@ -98,7 +98,7 @@ class PatientDetail(AuShadhaBaseModel):
                                     ("Others", "Others")
                                     ),
                            default = "Male")
-    parent_clinic = models.ForeignKey('clinic.Clinic')
+    parent_clinic = models.ForeignKey(Clinic)
 
 
     class Meta:

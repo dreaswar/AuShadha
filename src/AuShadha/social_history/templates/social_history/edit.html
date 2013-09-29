@@ -11,14 +11,13 @@
                "dojo/domReady!"
       ],
        function(registry){
-         //	{% if perms.patient.change_patientsocial_history %}
-          editItem("{{patient_social_history_obj.get_patient_social_history_edit_url}}","newSocialHistoryEditForm","social_history_list");
+         //	{% if perms.social_history.change_socialhistory %}
+          editItem("{{social_history_obj.urls.edit}}","newSocialHistoryEditForm","social_history_list");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
          return false;
-   	   }
- 		  );
+        });
      return false;
     }
     else{
@@ -27,24 +26,24 @@
     }
   </script>
 
-		<table>
-			{{patient_social_history_edit_form}}
-		</table>
+    <table>
+        {{social_history_form}}
+    </table>
 
-    {% if perms.patient.change_patientsocial_history %}
-    <button data-dojo-type = "dijit/form/Button" 
-            data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
-            type           = "submit" 
-            name           = "editButton" 
-            value          = "Edit"
-    >
-      Edit
-    </button>
+    {% if perms.social_history.change_socialhistory %}
+        <button data-dojo-type = "dijit/form/Button" 
+                data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+                type           = "submit" 
+                name           = "editButton" 
+                value          = "Edit"
+        >
+          Edit
+        </button>
     {% endif %}
 
-    {% if perms.patient.delete_patientsocial_history %}
+    {% if perms.social_history.delete_socialhistory %}
     <button data-dojo-type  = "dijit/form/Button" 
-						data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+            data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
             type            = "button"
             name            = "delSocialHistory"
             id              = "delSocialHistoryBtn">
@@ -53,8 +52,8 @@
                 data-dojo-event = "onClick" 
                 data-dojo-args  = "evt"
         >
-         //	{% if perms.patient.delete_patientsocial_history %}
-		     delItem("{{patient_social_history_obj.get_patient_social_history_del_url}}", "social_history_list");
+         //	{% if perms.social_history.delete_social_history %}
+		     delItem("{{social_history_obj.urls.del}}", "social_history_list");
          // {% else %}
          registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}

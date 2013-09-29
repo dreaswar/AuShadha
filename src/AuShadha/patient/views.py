@@ -358,6 +358,7 @@ def patient_detail_del(request, id):
 
 
 def return_patient_json(patient, success=True):
+    print "Trying to generate JSON"
     data = {"addData": {}}
     patient.generate_urls()
     urls = patient.urls

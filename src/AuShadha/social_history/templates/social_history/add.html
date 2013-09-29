@@ -20,8 +20,8 @@
        "dijit/registry", 
       ],
       function(registry){
-//    {% if perms.patient.add_patientsocial_history %}
-      addItem("{{patient_detail_obj.get_patient_social_history_add_url}}", "newSocialHistoryAddForm", "social_history_list");
+//    {% if perms.social_history.add_socialhistory %}
+      addItem("{{patient_detail_obj.urls.add.social_history}}", "newSocialHistoryAddForm", "social_history_list");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}
@@ -34,15 +34,15 @@
     }
   </script>
 
-    {% if perms.patient.add_patientsocial_history %}
+    {% if perms.social_history.add_socialhistory %}
 		<table>
-			{{patient_social_history_add_form}}
+			{{social_history_form}}
 		</table>
 		<button 	type 	          = "submit" 
 						  data-dojo-type  = "dijit/form/Button"
 						  data-dojo-props = "iconClass:'dijitIconSave'"
 					   	name 	          = "submitbutton" 
-						  id 		          = "patient_social_history_add_form_submit"
+						  id 		          = "social_history_form_submit"
 						  value           = "Add">
 		 Add
      <script type            = "dojo/connect" 
@@ -58,7 +58,7 @@
 <!--						  data-dojo-type  = "dijit/form/Button"-->
 <!--						  data-dojo-props = "iconClass:'dijitIconSave'"-->
 <!--					   	name 	          = "submitAndAddMoreButton" -->
-<!--						  id 		          = "patient_social_history_add_form_add_more"-->
+<!--						  id 		          = "social_history_form_add_more"-->
 <!--						  value           = "Add More">-->
 <!--		 Add More-->
 <!--     <script type            = "dojo/connect" -->
@@ -73,7 +73,7 @@
 		<button 	type 	          = "reset" 
 						  data-dojo-type  = "dijit/form/Button"
 						  data-dojo-props = "iconClass:'dijitIconClear'"
-						  id 		          = "patient_social_history_add_form_reset"
+						  id 		          = "social_history_form_reset"
 						  value           = "Reset">
 		 Reset
 		</button>

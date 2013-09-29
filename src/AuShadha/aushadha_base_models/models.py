@@ -34,10 +34,12 @@ class AuShadhaBaseModel(models.Model):
 
     def __init__(self, *args, **kwargs):
         super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
+        #if hasattr(self,'id') and not hasattr(self,'urls'):
+          #self.generate_urls()
 
     def save(self, *args, **kwargs):
-        self.generate_urls()
         super(AuShadhaBaseModel, self).save(*args, **kwargs)
+        self.generate_urls()
 
     def __unicode__(self):
         return unicode(self.__model_label__)
@@ -111,40 +113,42 @@ class AuShadhaBaseModel(models.Model):
         return str_obj
 
 
-    def generate_json_for_datagrid(self):
-        """Returns the JSON formatted Values of a specific Django Model
-        Instance for use with Dojo Grid.
+    #def generate_json_for_datagrid(self):
+        #"""Returns the JSON formatted Values of a specific Django Model
+        #Instance for use with Dojo Grid.
 
-        A few default DOJO Grid Values are specified, rest are instance
-        specific and are generated on the fly. It assumes the presence
-        of get_edit_url and get_del_url in the model instances passed to
-        it via obj.
+        #A few default DOJO Grid Values are specified, rest are instance
+        #specific and are generated on the fly. It assumes the presence
+        #of get_edit_url and get_del_url in the model instances passed to
+        #it via obj.
 
-        """
-        print "TRYING TO RETURN JSON FOR OBJECT: ", self
-        json_data = []
-        print self._meta.fields
-        data = {'add': getattr(self, 'get_add_url()', None),
-                'edit': getattr(self, 'get_edit_url()', self.get_edit_url()),
-                'del': getattr(self, 'get_del_url()', self.get_del_url()),
-                'patient_detail': getattr(self, 'patient_detail.__unicode__()', self.patient_detail.__unicode__())
-                }
-        for i in self._meta.fields:
-            print "CURRENT ITERATING FIELD NAME IS : ", i
-            print "DATA DICTIONARY NOW IS ", data.keys(), data.values()
-            if i.name not in data.keys():
-                print "Adding ", i.name
-                print i.name.__class__
-                print simplejson.dumps(i.name)
-                if i.name == "aushadhabasemodel_ptr":
-                    data[i.name] = "AuShadhaBaseModel"
-                else:
-                    data[i.name] = getattr(self, i.name, None)
-#      json_data.append(data)
+        #"""
+        #print "TRYING TO RETURN JSON FOR OBJECT: ", self
+        #json_data = []
+        #print self._meta.fields
+        #data = {'add': getattr(self, 'get_add_url()', None),
+                #'edit': getattr(self, 'get_edit_url()', self.get_edit_url()),
+                #'del': getattr(self, 'get_del_url()', self.get_del_url()),
+                #'patient_detail': getattr(self, 'patient_detail.__unicode__()', self.patient_detail.__unicode__())
+                #}
+        #for i in self._meta.fields:
+            #print "CURRENT ITERATING FIELD NAME IS : ", i
+            #print "DATA DICTIONARY NOW IS ", data.keys(), data.values()
+            #if i.name not in data.keys():
+                #print "Adding ", i.name
+                #print i.name.__class__
+                #print simplejson.dumps(i.name)
+                #if i.name == "aushadhabasemodel_ptr":
+                    #data[i.name] = "AuShadhaBaseModel"
+                #else:
+                    #data[i.name] = getattr(self, i.name, None)
+##      json_data.append(data)
 
-        json_data = simplejson.dumps(data, cls=DjangoJSONEncoder)
-        print "RETURNED JSON IS ", unicode(json_data)
-        return json_data
+        #json_data = simplejson.dumps(data, cls=DjangoJSONEncoder)
+        #print "RETURNED JSON IS ", unicode(json_data)
+        #return json_data
+
+
 
 
 class AuShadhaBaseModelForm(ModelForm):
