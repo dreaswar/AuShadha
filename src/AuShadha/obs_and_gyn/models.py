@@ -11,8 +11,8 @@ from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 from django import forms
 
-from aushadha_base_models.models import AuShadhaBaseModel
-from clinic.models import Clinic
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel
+from AuShadha.apps.clinic.models import Clinic
 from patient.models import PatientDetail, generic_url_maker
 
 

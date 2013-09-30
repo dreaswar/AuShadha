@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.utilities.urls import UrlGenerator, generic_url_maker
 
-from aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 from patient.models import PatientDetail
 
 from dijit_fields_constants import CONTACT_FORM_CONSTANTS,    \

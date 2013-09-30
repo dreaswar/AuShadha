@@ -14,11 +14,13 @@ from django.db import models
 from django.forms import ModelForm, ModelChoiceField, Textarea, TextInput
 
 # Application model imports
-from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
-from patient.models import PatientDetail
-from clinic.models import Clinic, Staff
-from admission.models import Admission
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
+from AuShadha.apps.clinic.models import Clinic, Staff
 from registry.inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
+
+from patient.models import PatientDetail
+from admission.models import AdmissionDetail
+
 
 from dijit_fields_constants import VISIT_DETAIL_FORM_CONSTANTS,\
                                    VISIT_COMPLAINTS_FORM_CONSTANTS,\
@@ -57,10 +59,10 @@ CONSULT_STATUS_CHOICES = (
 
 class VisitDetail(AuShadhaBaseModel):
 
-    __model_label__ = "visit"
-    _parent_model = 'patient_detail'
-
-    _can_add_list_or_json = ['complaint',
+    def __init__(self, *args, **kwargs):
+      self.__model_label__ = "visit"
+      self._parent_model = 'patient_detail'
+      self._can_add_list_or_json = ['complaint',
                              'follow_up',
                              'ros',
                              'hpi',
@@ -73,22 +75,16 @@ class VisitDetail(AuShadhaBaseModel):
                              #'discharge'
                              ]
 
-    _extra_url_actions = ['close','change_nature']
+      self._extra_url_actions = ['close','change_nature']
 
     patient_detail = models.ForeignKey(PatientDetail)
-    visit_date = models.DateTimeField(
-        auto_now=False, default=datetime.now())
+    visit_date = models.DateTimeField(auto_now=False, default=datetime.now())
     op_surgeon = models.ForeignKey(Staff)
     referring_doctor = models.CharField(max_length=30, default="Self")
-    consult_nature = models.CharField(
-        max_length=30, choices=CONSULT_NATURE_CHOICES)
-    status = models.CharField(
-        max_length=30, choices=CONSULT_STATUS_CHOICES)
+    consult_nature = models.CharField(max_length=30, choices=CONSULT_NATURE_CHOICES)
+    status = models.CharField(max_length=30, choices=CONSULT_STATUS_CHOICES)
     is_active = models.BooleanField(default=True, editable=False)
-    remarks = models.TextField(max_length=200,
-                               default="NAD",
-                               help_text="limit to 200 words"
-                               )
+    remarks = models.TextField(max_length=200,default="NAD",help_text="limit to 200 words")
 
     class Meta:
         verbose_name = "Visit Details"
@@ -243,8 +239,10 @@ class VisitDetail(AuShadhaBaseModel):
 
 
 class VisitComplaint(AuShadhaBaseModel):
-    __model_label__ = "complaint"
-    _parent_model = 'visit_detail'
+    
+    def __init__(self, *args, **kwargs):
+      self.__model_label__ = "complaint"
+      self._parent_model = 'visit_detail'
 
     complaint = models.CharField(
         max_length=30, help_text='limit to 30 words')
@@ -252,14 +250,13 @@ class VisitComplaint(AuShadhaBaseModel):
         max_length=30, help_text='limit to 30 words')
     visit_detail = models.ForeignKey(VisitDetail)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    base_model = models.OneToOneField(
-        'aushadha_base_models.AuShadhaBaseModel', parent_link=True)
+    #base_model = models.OneToOneField(AuShadhaBaseModel, parent_link=True)
 
     def __unicode__(self):
         return '%s : %s' % (self.complaint, self.duration)
 
-    def save(self, *args, **kwargs):
-        super(VisitComplaint, self).save(*args, **kwargs)
+    #def save(self, *args, **kwargs):
+        #super(VisitComplaint, self).save(*args, **kwargs)
 
     # def get_edit_url(self):
         # return '/AuShadha/visit/complaint/edit/%s/' %(self.id)
@@ -277,26 +274,18 @@ class VisitFollowUp(AuShadhaBaseModel):
 
     """Model to describe the Follow up OPD Visit Notes  or SOAP notes."""
     
-    __model_label__ = "follow_up"
-    _parent_model = 'visit_detail'
+    def __init__(self, *args, **kwargs):
+      self.__model_label__ = "follow_up"
+      self._parent_model = 'visit_detail'
 
-    visit_date = models.DateTimeField(
-        auto_now=False, default=datetime.now())
+    visit_date = models.DateTimeField(auto_now=False, default=datetime.now())
     op_surgeon = models.ForeignKey(Staff)
-
-    consult_nature = models.CharField(
-        max_length=30, choices=CONSULT_NATURE_CHOICES)
-    status = models.CharField(
-        max_length=30, choices=CONSULT_STATUS_CHOICES)
-    subjective = models.TextField(
-        "Subjective", max_length=1000, help_text="Restrict to 1000 words")
-    objective = models.TextField(
-        "Objective", max_length=1000, help_text="Restrict to 1000 words")
-    assessment = models.TextField(
-        "Assessment", max_length=1000, help_text="Restrict to 1000 words")
-    plan = models.TextField(
-        "Plan", max_length=1000, help_text="Restrict to 1000 words")
-
+    consult_nature = models.CharField(max_length=30, choices=CONSULT_NATURE_CHOICES)
+    status = models.CharField(max_length=30, choices=CONSULT_STATUS_CHOICES)
+    subjective = models.TextField("Subjective", max_length=1000, help_text="Restrict to 1000 words")
+    objective = models.TextField("Objective", max_length=1000, help_text="Restrict to 1000 words")
+    assessment = models.TextField("Assessment", max_length=1000, help_text="Restrict to 1000 words")
+    plan = models.TextField("Plan", max_length=1000, help_text="Restrict to 1000 words")
     visit_detail = models.ForeignKey(VisitDetail)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
@@ -342,8 +331,10 @@ class VisitFollowUp(AuShadhaBaseModel):
 class VisitSOAP(AuShadhaBaseModel):
 
     """Model to describe the Follow up OPD Visit Notes  or SOAP notes."""
-    __model_label__ = "soap"
-    _parent_model = 'visit_detail'
+
+    def __init__(self, *args, **kwargs):
+      self.__model_label__ = "soap"
+      self._parent_model = 'visit_detail'
 
     subjective = models.TextField(
         "Subjective", max_length=1000, help_text="Restrict to 1000 words")
@@ -373,8 +364,9 @@ class VisitSOAP(AuShadhaBaseModel):
 
 class VisitHPI(AuShadhaBaseModel):
     
-    __model_label__ = "hpi"
-    _parent_model = 'visit_detail'
+    def __init__(self, *args, **kwargs):
+      self.__model_label__ = "hpi"
+      self._parent_model = 'visit_detail'
     
     hpi = models.TextField(
         'History of Presenting Illness', max_length=1000, help_text='limit to 1000 words')
@@ -383,12 +375,6 @@ class VisitHPI(AuShadhaBaseModel):
 
     def __unicode__(self):
         return '%s' % (self.hpi)
-
-    # def get_edit_url(self):
-        # return '/AuShadha/visit/hpi/edit/%s/' %(self.id)
-
-    # def get_del_url(self):
-        # return '/AuShadha/visit/hpi/del/%s/' %(self.id)
 
     class Meta:
         #unique_together   = ('hpi', 'visit_detail')
@@ -399,8 +385,9 @@ class VisitHPI(AuShadhaBaseModel):
 
 class VisitPastHistory(AuShadhaBaseModel):
 
-    __model_label__ = "past_history"
-    _parent_model = 'visit_detail'
+    def __init__(self, *args, **kwargs):
+      self.__model_label__ = "past_history"
+      self._parent_model = 'visit_detail'
 
 
     past_history = models.TextField(
@@ -412,12 +399,6 @@ class VisitPastHistory(AuShadhaBaseModel):
     def __unicode__(self):
         return '%s' % (self.past_history)
 
-    # def get_edit_url(self):
-        # return '/AuShadha/visit/past_history/edit/%s/' %(self.id)
-
-    # def get_del_url(self):
-        # return '/AuShadha/visit/past_history/del/%s/' %(self.id)
-
     class Meta:
         #unique_together   = ('past_history', 'visit_detail')
         verbose_name = "Past History"
@@ -427,8 +408,9 @@ class VisitPastHistory(AuShadhaBaseModel):
 
 class VisitImaging(AuShadhaBaseModel):
 
-    __model_label__ = "imaging"
-    _parent_model = 'visit_detail'
+    def __init__(self, *args, **kwargs):
+      self.__model_label__ = "imaging"
+      self._parent_model = 'visit_detail'
 
     modality = models.ForeignKey(
         'inv_and_imaging.ImagingInvestigationRegistry')
@@ -443,15 +425,6 @@ class VisitImaging(AuShadhaBaseModel):
     def __trimmed_unicode__(self):
         return '''%s: %s ... \n(%s)''' % (self.modality, self.finding[0:5], self.created_at.date().isoformat() )
 
-    # def get_add_url(self):
-        # return '/AuShadha/visit/imaging/add/%s/' %(self.id)
-
-    # def get_edit_url(self):
-        # return '/AuShadha/visit/imaging/edit/%s/' %(self.id)
-
-    # def get_del_url(self):
-        # return '/AuShadha/visit/imaging/del/%s/' %(self.id)
-
     class Meta:
         verbose_name = "Imaging Studies"
         verbose_name_plural = "Imaging Studies"
@@ -460,9 +433,9 @@ class VisitImaging(AuShadhaBaseModel):
 
 class VisitROS(AuShadhaBaseModel):
 
-    __model_label__ = 'visit_ros'
-
-    _parent_model = 'visit_detail'
+    def __init__(self, *args, **kwargs):
+      self.__model_label__ = 'visit_ros'
+      self._parent_model = 'visit_detail'
 
     const_symp = models.TextField(
         'Constitutional', max_length=500, default="Nil")
@@ -519,12 +492,6 @@ class VisitROS(AuShadhaBaseModel):
                   self.immuno_symp,
                   self.created_at.date().isoformat())
 
-    # def get_edit_url(self):
-        # return '/AuShadha/visit/inv/edit/%s/' %(self.id)
-
-    # def get_del_url(self):
-        # return '/AuShadha/visit/inv/del/%s/' %(self.id)
-
     class Meta:
         verbose_name = "Visit Review of Systems"
         verbose_name_plural = "Visit Review of Systems"
@@ -532,9 +499,9 @@ class VisitROS(AuShadhaBaseModel):
 
 class VisitInv(AuShadhaBaseModel):
 
-    __model_label__ = "inv"
-    
-    _parent_model = 'visit_detail'    
+    def __init__(self, *args, **kwargs):
+      self.__model_label__ = "inv"
+      self._parent_model = 'visit_detail'    
 
     investigation = models.ForeignKey(
         'inv_and_imaging.LabInvestigationRegistry')
@@ -544,12 +511,6 @@ class VisitInv(AuShadhaBaseModel):
 
     def __unicode__(self):
         return "%s: %s \n(%s)" % (self.investigation, self.value, self.created_at.date().isoformat())
-
-    # def get_edit_url(self):
-        # return '/AuShadha/visit/inv/edit/%s/' %(self.id)
-
-    # def get_del_url(self):
-        # return '/AuShadha/visit/inv/del/%s/' %(self.id)
 
     class Meta:
         verbose_name = "Lab Investigation"

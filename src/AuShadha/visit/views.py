@@ -34,12 +34,12 @@ from collections import OrderedDict
 # Application Specific Model Imports-----------------------
 from AuShadha.utilities.forms import AuModelFormErrorFormatter, aumodelformerrorformatter_factory
 
-from aushadha_users.models import AuShadhaUser
-from clinic.models import Clinic, Staff
+from AuShadha.apps.aushadha_users.models import AuShadhaUser
+from AuShadha.apps.clinic.models import Clinic, Staff
 from visit.models import *
 from patient.models import PatientDetail
-from admission.models import Admission
-from physician.models import PhysicianDetail
+from admission.models import AdmissionDetail
+#from physician.models import PhysicianDetail
 from demographics.models import Contact, Guardian, Phone, Demographics
 from medication_list.models import MedicationList
 from allergy_list.models import Allergy
@@ -155,7 +155,7 @@ def render_visit_tree(request, patient_id=None):
             pat_obj.generate_urls()
             pat_urls = pat_obj.urls
 
-            adm_obj = Admission.objects.filter(
+            adm_obj = AdmissionDetail.objects.filter(
                 patient_detail=pat_obj)
             visit_obj = VisitDetail.objects.filter(
                 patient_detail=pat_obj)

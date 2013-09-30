@@ -45,7 +45,7 @@ from datetime import datetime, date, time
 # Application Specific Model Imports-----------------------
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
-from aushadha_users.models import AuShadhaUser, AuShadhaUserForm
+from AuShadha.apps.aushadha_users.models import AuShadhaUser, AuShadhaUserForm
 
 # Views start here -----------------------------------------
 

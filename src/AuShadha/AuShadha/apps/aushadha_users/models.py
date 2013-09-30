@@ -11,7 +11,7 @@ from django.forms import ModelForm
 
 
 #from patient.models   import PatientDetail
-#from clinic.models    import Clinic
+#from AuShadha.apps.clinic.models    import Clinic
 #from physician.models import *
 #from nurses.models    import *
 #from staff.models     import *

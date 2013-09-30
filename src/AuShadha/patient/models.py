@@ -20,8 +20,8 @@ from AuShadha.utilities.queries import has_contact,\
                               can_add_new_visit,\
                               get_patient_complaints
 
-from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
-from clinic.models import Clinic
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
+from AuShadha.apps.clinic.models import Clinic
 from dijit_fields_constants import PATIENT_DETAIL_FORM_CONSTANTS
 from AuShadha.settings import APP_ROOT_URL
 
@@ -36,40 +36,39 @@ class PatientDetail(AuShadhaBaseModel):
 
    # Some data to Generate the URLS
 
-    __model_label__ = "patient"
+    def __init__(self,*args,**kwargs):
+      self.__model_label__ = "patient"
+      self._parent_model = 'parent_clinic'
+      self._can_add_list_or_json = [
+                                    'contact',
+                                    'phone',
+                                    'guardian',
+                                    'demographics',
+                                    'email_and_fax',
 
-    _parent_model = 'parent_clinic'
+                                    'admission',
+                                    'visit',
 
-    _can_add_list_or_json = [
-                            'contact',
-                            'phone',
-                            'guardian',
-                            'demographics',
-                            'email_and_fax',
+                                    'medical_history',
+                                    'surgical_history',
+                                    'social_history',
+                                    'family_history',
+                                    'immunisation',
+                                    'obstetric_history_detail',
 
-                            'admission',
-                            'visit',
-
-                            'medical_history',
-                            'surgical_history',
-                            'social_history',
-                            'family_history',
-                            'immunisation',
-                            'obstetric_history_detail',
-
-                            'medication_list',
-                            'allergy_list'
+                                    'medication_list',
+                                    'allergy_list'
                        ]
-    _extra_url_actions = ['transfer_patient','transfer_clinic','refer']
+      self._extra_url_actions = ['transfer_patient','transfer_clinic','refer']
 
 
-    # Instance Methods imported from AuShadha.utilities.queries
-    has_active_admission = has_active_admission
-    has_active_visit = has_active_visit
-    has_contact = has_contact
-    has_guardian = has_guardian
-    has_phone = has_phone
-    can_add_new_visit = can_add_new_visit
+      # Instance Methods imported from AuShadha.utilities.queries
+      self.has_active_admission = has_active_admission
+      self.has_active_visit = has_active_visit
+      self.has_contact = has_contact
+      self.has_guardian = has_guardian
+      self.has_phone = has_phone
+      self.can_add_new_visit = can_add_new_visit
 
 
     # Model attributes

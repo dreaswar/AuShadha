@@ -8,8 +8,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
-from aushadha_users.models import AuShadhaUser
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_users.models import AuShadhaUser
 from patient.models import PatientDetail
 from registry.vaccine_registry.models import VaccineRegistry
 

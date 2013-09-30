@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 
-from aushadha_users.models import AuShadhaUser
+from AuShadha.apps.aushadha_users.models import AuShadhaUser
 
 
 class AuShadhaUserInline(admin.StackedInline):

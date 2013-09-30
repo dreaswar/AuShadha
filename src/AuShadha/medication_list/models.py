@@ -9,7 +9,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 from patient.models import PatientDetail
 from dijit_fields_constants import MEDICATION_LIST_FORM_CONSTANTS
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from clinic.models import Clinic, Department, Phone, Fax, Email, Website, Staff
+from AuShadha.apps.clinic.models import Clinic, Department, Phone, Fax, Email, Website, Staff
 
 
 """
@@ -68,7 +68,7 @@ clinic module
 
 class ClinicAdmin(admin.ModelAdmin):
     inlines = [DepartmentInline, PhoneInline, FaxInline,
-               EmailInline, WebsiteInline, StaffInline, ]
+               EmailInline, WebsiteInline, ]
     extra = 0
 
 
@@ -79,13 +79,13 @@ class ClinicAdmin(admin.ModelAdmin):
 
 
 class DepartmentAdmin(admin.ModelAdmin):
-    pass
+    inlines = [StaffInline]
 
 
 """
 phone module for clinic
 will remove this if not needed 
-(since we can manage this from clinic form)
+(since we can manage this from AuShadha.apps.clinic form)
 """
 
 
@@ -95,7 +95,7 @@ class PhoneAdmin(admin.ModelAdmin):
 """
 fax module for clinic
 will remove this if not needed 
-(since we can manage this from clinic form)
+(since we can manage this from AuShadha.apps.clinic form)
 """
 
 
@@ -105,7 +105,7 @@ class FaxAdmin(admin.ModelAdmin):
 """
 email module for clinic
 will remove this if not needed 
-(since we can manage this from clinic form)
+(since we can manage this from AuShadha.apps.clinic form)
 """
 
 
@@ -115,7 +115,7 @@ class EmailAdmin(admin.ModelAdmin):
 """
 website module for clinic
 will remove this if not needed 
-(since we can manage this from clinic form)
+(since we can manage this from AuShadha.apps.clinic form)
 """
 
 

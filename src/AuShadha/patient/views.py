@@ -39,7 +39,7 @@ from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 
 
 from patient.models import PatientDetail, PatientDetailForm
-from clinic.models import Clinic
+from AuShadha.apps.clinic.models import Clinic
 from demographics.models import Contact, Phone, Guardian, Demographics
 from medical_history.models import MedicalHistory
 from surgical_history.models import SurgicalHistory
@@ -48,7 +48,7 @@ from family_history.models import FamilyHistory
 from immunisation.models import Immunisation
 from allergy_list.models import Allergy
 from medication_list.models import MedicationList
-from admission.models import Admission, AdmissionForm
+from admission.models import AdmissionDetail, AdmissionDetailForm
 from visit.models import VisitDetail, VisitImaging, VisitInv
 from obs_and_gyn.models import ObstetricHistoryDetail
 
@@ -554,7 +554,7 @@ def render_patient_tree(request, patient_id=None):
                                                           #"id": "OBS_PREVENTIVES"
                                                           #})
 
-            #admission_node = DijitTreeNode({"name" : "Admissions"   , 
+            #admission_node = DijitTreeNode({"name" : "AdmissionDetails"   , 
                                             #"type" :"application", 
                                             #"id"   :"ADM"
                                             #})
@@ -658,7 +658,7 @@ def render_patient_summary(request, patient_id=None):
             obstetric_history_detail_obj = ObstetricHistoryDetail.objects.filter(
                 patient_detail=pat_obj)
 
-            admission_obj = Admission.objects.filter(
+            admission_obj = AdmissionDetail.objects.filter(
                 patient_detail=pat_obj)
             visit_obj = VisitDetail.objects.filter(
                 patient_detail=pat_obj)
@@ -740,7 +740,7 @@ def check_before_adding(patient_obj):
     patient_object = patient_obj
     patient_id = patient_object.patient_hospital_id
     all_patients = PatientDetail.objects.all()
-    active_admissions = Admission.objects.filter(
+    active_admissions = AdmissionDetail.objects.filter(
         patient_detail=patient_object).filter(admission_closed='False')
     active_visit = patient_object.has_active_visit()
     id_list = []

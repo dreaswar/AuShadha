@@ -13,7 +13,7 @@ from django.core.exceptions import ValidationError
 from django import forms
 
 from django.contrib.auth.models import User
-from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 from patient.models import PatientDetail
 #from registry.icd10.models import Chapter
 

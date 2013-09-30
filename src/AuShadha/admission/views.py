@@ -37,7 +37,7 @@ from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 from patient.models import PatientDetail, PatientDetailForm
 from admission.models import Admission
 
-#from clinic.models import Clinic
+#from AuShadha.apps.clinic.models import Clinic
 #from demographics.models import Contact, Phone, Guardian, Demographics
 #from medical_history.models import MedicalHistory
 #from surgical_history.models import SurgicalHistory

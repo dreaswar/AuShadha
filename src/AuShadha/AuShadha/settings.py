@@ -158,6 +158,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -168,12 +169,9 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # Custom Apps:
-    'aushadha_users',
-    'clinic',
-    'aushadha_base_models',
-    'physician',
-    'nurse',
-    'staff',
+    'AuShadha.apps.aushadha_users',
+    'AuShadha.apps.clinic',
+    'AuShadha.apps.aushadha_base_models',
 
     'registry.vaccine_registry',
     'registry.icd10',
@@ -191,11 +189,12 @@ INSTALLED_APPS = (
     'allergy_list',
     'immunisation',
 
-    'phyexam',
-
     'admission',
     'visit',
     'obs_and_gyn',
+
+     'phyexam',
+
 )
 
 # A sample logging configuration. The only tangible logging

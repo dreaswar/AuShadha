@@ -12,7 +12,7 @@ from django.db import models
 #from django import forms
 #from django.contrib.auth.models import User
 
-from aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 
 from patient.models import PatientDetail
 #from icd_10.models import ICD10

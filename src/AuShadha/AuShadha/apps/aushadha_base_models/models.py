@@ -19,23 +19,22 @@ import AuShadha.settings
 from AuShadha.utilities.urls import generic_url_maker, UrlGenerator, urlgenerator_factory
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 
-from clinic.models import Clinic
 
 class AuShadhaBaseModel(models.Model):
 
     """
-      Base AuShadha Model From which all AuShadha Models Except the Clinic
-      Model Derive.
+      Abstract Base AuShadha Model From which all AuShadha Models Derive.
     """
 
-    __model_label__ = "AuShadhaBaseModel"
-
-    _parent_model = None    
-
     def __init__(self, *args, **kwargs):
+        self.__model_label__ = "AuShadhaBaseModel"
+        self._parent_model = None
         super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
         #if hasattr(self,'id') and not hasattr(self,'urls'):
           #self.generate_urls()
+
+    class Meta:
+      abstract = True
 
     def save(self, *args, **kwargs):
         super(AuShadhaBaseModel, self).save(*args, **kwargs)
@@ -65,12 +64,12 @@ class AuShadhaBaseModel(models.Model):
       """
 
       parent = getattr(self,'_parent_model',None)
-      #print "Parent Instance for URL is ", parent
+      print "Parent Instance for URL is ", parent
 
       if parent:
         if type(parent) is str:
           parent_field = getattr(self,parent)
-          #print "Parent Fields for URL is ", parent_field
+          print "Parent Fields for URL is ", parent_field
           self._generate_and_assign_urls(parent_field)        
         elif type(parent) is list:
           for item in parent:

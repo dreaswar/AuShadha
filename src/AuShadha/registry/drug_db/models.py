@@ -12,10 +12,10 @@ from django.core.exceptions import ValidationError
 from django import forms
 
 from django.contrib.auth.models import User
-from aushadha_base_models.models import AuShadhaBaseModel
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel
 
 
-from clinic.models import Clinic
+from AuShadha.apps.clinic.models import Clinic
 
 
 class FDADrugs(models.Model):

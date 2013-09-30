@@ -10,7 +10,7 @@ from django.test import TestCase
 import datetime
 
 from patient.models import PatientDetail
-from clinic.models import Clinic, Staff
+from AuShadha.apps.clinic.models import Clinic, Staff
 from visit.models import VisitDetail
 from phyexam.models import PhyExamBaseModel
 
