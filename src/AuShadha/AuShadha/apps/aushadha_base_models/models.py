@@ -69,12 +69,15 @@ class AuShadhaBaseModel(models.Model):
       if parent:
         if type(parent) is str:
           parent_field = getattr(self,parent)
-          print "Parent Fields for URL is ", parent_field
           self._generate_and_assign_urls(parent_field)        
         elif type(parent) is list:
           for item in parent:
             p_field = getattr(self,item)
-            self._generate_and_assign_urls(p_field)
+            if not p_field:
+              continue
+            else:
+              self._generate_and_assign_urls(p_field)
+              break
       else:
         raise Exception("NoParentModelURLError")
 

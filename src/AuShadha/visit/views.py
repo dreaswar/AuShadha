@@ -969,8 +969,8 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                     #print "Saving Vascular Exam... : ", vasc
                     vasc.visit_detail = saved_visit
                     vasc.physician = saved_visit.op_surgeon
-                    vasc.created_at = datetime.datetime.now()
-                    vasc.modified_at = datetime.datetime.now()
+                    vasc.created_at = datetime.now()
+                    vasc.modified_at = datetime.now()
                     vasc.save()
                     #print "Vascular Exam, " , vasc, " Saved"
 
@@ -1418,7 +1418,7 @@ def visit_detail_edit(request, visit_id = None):
                     #print "Saving ", vasc
                     vasc.visit_detail = saved_visit
                     vasc.physician = saved_visit.op_surgeon
-                    vasc.modified_at = datetime.datetime.now()
+                    vasc.modified_at = datetime.now()
                     vasc.save()
                     #print "Vascular Exam saved"
 

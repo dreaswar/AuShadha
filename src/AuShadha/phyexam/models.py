@@ -89,7 +89,7 @@ class PhyExamBaseModel(AuShadhaBaseModel):
     def __init__(self, *args, **kwargs):
       super(PhyExamBaseModel,self).__init__(*args, **kwargs)
       self.__model_label__ = "phy_exam"
-      self._parent_model = ['admission_detail','visit_detail']
+      self._parent_model = ['visit_detail','admission_detail']
 
     remarks = models.TextField(
         blank=True, null=True, default="NAD", max_length=200)
@@ -129,7 +129,7 @@ class VitalExam_FreeModel(PhyExamBaseModel):
     def __init__(self, *args, **kwargs):
         super(VitalExam_FreeModel, self).__init__(*args, **kwargs)
         self.__model_label__ = "vital"
-        self._parent_model = ['admission_detail','visit_detail']
+        self._parent_model = ['visit_detail','admission_detail']
 
     sys_bp = models.PositiveIntegerField('Systolic B.P', max_length=3, default=120)
     dia_bp = models.PositiveIntegerField('Diastolic B.P', max_length=3, default=80)
@@ -153,7 +153,7 @@ class GenExam_FreeModel(PhyExamBaseModel):
     def __init__(self, *args, **kwargs):
         super(GenExam_FreeModel, self).__init__(*args, **kwargs)
         self.__model_label__ = "gen_exam"
-        self._parent_model = ['admission_detail','visit_detail']
+        self._parent_model = ['visit_detail','admission_detail']
 
 
     pallor = models.BooleanField(default=False)
@@ -177,7 +177,7 @@ class SysExam_FreeModel(PhyExamBaseModel):
     def __init__(self, *args, **kwargs):
         super(SysExam_FreeModel, self).__init__(*args, **kwargs)
         self.__model_label__ = 'sys_exam'
-        self._parent_model = ['admission_detail','visit_detail']
+        self._parent_model = ['visit_detail','admission_detail']
 
     heent = models.TextField(max_length=75, default=HEENT_EX)
     cns = models.TextField(max_length=100, default=CNS_EX)
@@ -201,7 +201,7 @@ class PeriNeuroExam_FreeModel(PhyExamBaseModel):
     def __init__(self, *args, **kwargs):
         super(PeriNeuroExam_FreeModel, self).__init__(*args, **kwargs)
         self.__model_label__ = 'neuro_exam'
-        self._parent_model = ['admission_detail','visit_detail']
+        self._parent_model = ['visit_detail','admission_detail']
 
     plantar = models.TextField('Plantar Reflex',
                                max_length=30,
@@ -253,7 +253,7 @@ class VascExam_FreeModel(PhyExamBaseModel):
     def __init__(self, *args, **kwargs):
         super(VascExam_FreeModel, self).__init__(*args, **kwargs)
         self.__model_label__ = 'neuro_exam'
-        self._parent_model = ['admission_detail','visit_detail']
+        self._parent_model = ['visit_detail','admission_detail']
 
 #  pulse      = models.BooleanField()
     location = models.CharField(
