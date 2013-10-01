@@ -37,6 +37,7 @@ class PatientDetail(AuShadhaBaseModel):
    # Some data to Generate the URLS
 
     def __init__(self,*args,**kwargs):
+      super(PatientDetail,self).__init__(*args, **kwargs)
       self.__model_label__ = "patient"
       self._parent_model = 'parent_clinic'
       self._can_add_list_or_json = [
@@ -73,18 +74,18 @@ class PatientDetail(AuShadhaBaseModel):
 
     # Model attributes
     patient_hospital_id = models.CharField('Hospital ID',
-                                           max_length=15, 
-                                           null=True, 
-                                           blank=True, 
+                                           max_length=15,
                                            unique=True)
     first_name = models.CharField(max_length=30)
     middle_name = models.CharField(max_length=30,
                                    help_text="Please enter Initials / Middle Name",
                                    blank=True, 
                                    null=True)
-    last_name = models.CharField(max_length=30, blank=True,
+    last_name = models.CharField(max_length=30, 
+                                 blank=True,
                                  null=True,
-                                 help_text="Enter Initials / Last Name")
+                                 help_text="Enter Initials / Last Name"
+                                 )
     full_name = models.CharField(max_length=100,
                                  editable=False,
                                  null=False,

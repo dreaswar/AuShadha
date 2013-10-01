@@ -235,7 +235,7 @@ def render_visit_tree(request, patient_id=None):
 
             tree_item_list = data['items']
 
-            if pat_obj.can_add_new_visit():
+            if pat_obj.can_add_new_visit(pat_obj):
                 dict_to_append = {"name": "New OPD Visit",
                                   "type": "application",
                                   "id": "NEW_OPD_VISIT",
@@ -721,7 +721,7 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
     except (PatientDetail.DoesNotExist):
         raise Http404("Requested Patient Does not exist.")
 
-    if not patient_detail_obj.can_add_new_visit():
+    if not patient_detail_obj.can_add_new_visit(patient_detail_obj):
         error_message = '''Cannot add new visit now.
                         There may be a active admission / visit. 
                         Please close that and try again
@@ -789,7 +789,7 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                 print "Adding an Initial Visit for ", patient_detail_obj
                 visit_detail_form = VisitDetailForm(
                     initial={
-                        'visit_date': datetime.datetime.now().date().isoformat(),
+                        'visit_date': datetime.now().date().isoformat(),
                         'consult_nature': 'initial',
                         'status': 'examining',
                         'op_surgeon': user

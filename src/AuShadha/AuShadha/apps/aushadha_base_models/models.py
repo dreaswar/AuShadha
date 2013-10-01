@@ -27,9 +27,9 @@ class AuShadhaBaseModel(models.Model):
     """
 
     def __init__(self, *args, **kwargs):
+        super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
         self.__model_label__ = "AuShadhaBaseModel"
         self._parent_model = None
-        super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
         #if hasattr(self,'id') and not hasattr(self,'urls'):
           #self.generate_urls()
 

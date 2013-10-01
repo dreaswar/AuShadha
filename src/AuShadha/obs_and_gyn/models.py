@@ -27,7 +27,10 @@ class ObstetricHistoryDetail(AuShadhaBaseModel):
 
     """
 
-    __model_label__ = "obstetric_history_detail"
+    def __init__(self, *args, **kwargs):
+      super(ObstetricHistoryDetail, self).__init__(*args, **kwargs)
+      self.__model_label__ = "obstetric_history_detail"
+      self._parent_model = 'patient_detail'
 
     never_been_pregnant = models.BooleanField(
         'Never been pregnant', default=False)
@@ -37,27 +40,18 @@ class ObstetricHistoryDetail(AuShadhaBaseModel):
         "Adopted Children Names", default="Not Applicable", blank=True, null=True)
     pregnancy_listing      = models.TextField(help_text='''List all pregnancies in order,including still, premature births, ectopics and abortions''', blank=True, null=True
                                               )
-    patient_detail = models.ForeignKey(
-        'patient.PatientDetail', null=True, blank=True, unique=True)
+    patient_detail = models.ForeignKey(PatientDetail, null=True, blank=True, unique=True)
 
     def __unicode__(self):
         return "%s" % (self.patient_detail)
 
-    def save(self, *args, **kwargs):
-        self.__model_label__ = "obstetric_history_detail"
-        super(ObstetricHistoryDetail, self).save(*args, **kwargs)
-
-    def get_edit_url(self):
-        """Returns the URL for editing Obstetric History details for a
-        Patient."""
-        return '/AuShadha/pat/%s/edit/%s/' % (self.__model_label__, self.id)
-
-    def get_del_url(self):
-        """Returns the URL for editing ObstetricHistory for a Patient."""
-        return '/AuShadha/pat/%s/del/%s/' % (self.__model_label__, self.id)
-
 
 class ObstetricHistory(AuShadhaBaseModel):
+
+    def __init__(self, *args, **kwargs):
+      super(ObstetricHistory, self).__init__(*args, **kwargs)
+      self.__model_label__ = "obstetric_history"
+      self._parent_model = 'obstetric_detail'
 
     year = models.PositiveIntegerField()
     sex = models.CharField(max_length=10,
@@ -79,23 +73,11 @@ class ObstetricHistory(AuShadhaBaseModel):
     age = models.CharField(max_length=100)
     breast_feeding = models.CharField(
         "Periods of exclusive breast feeding", max_length=100)
-    obstetric_detail = models.ForeignKey(
-        ObstetricHistoryDetail, null=True, blank=True)
+    obstetric_detail = models.ForeignKey(ObstetricHistoryDetail, null=True, blank=True)
 
     def __unicode__(self):
         return "%s" % (self.obstetric_detail)
 
-    def save(self, *args, **kwargs):
-        self.__model_label__ = "obstetric_history"
-        super(ObstetricHistory, self).save(*args, **kwargs)
-
-    def get_edit_url(self):
-        """Returns the URL for editing Social details for a Patient."""
-        return '/AuShadha/pat/%s/edit/%s/' % (self.__model_label__, self.id)
-
-    def get_del_url(self):
-        """Returns the URL for adding Social for a Patient."""
-        return '/AuShadha/pat/%s/del/%s/' % (self.__model_label__, self.id)
 
 
 # Obstetric Modelform ##################################

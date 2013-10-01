@@ -30,9 +30,10 @@ class Contact(AuShadhaBaseModel):
       Class that defines the Contact Address of a particular patient.
     """
 
-    __model_label__ = "contact"
-
-    _parent_model = 'patient_detail'
+    def __init__(self, *args, **kwargs):
+      super(Contact,self).__init__(*args, **kwargs)
+      self.__model_label__ = "contact"
+      self._parent_model = 'patient_detail'
 
     address_type = models.CharField('Type',
                                     max_length=10,
@@ -106,9 +107,10 @@ class Phone(AuShadhaBaseModel):
       Class that defines the Phone data of a patient.
     """
 
-    __model_label__ = "phone"
-    
-    _parent_model = 'patient_detail'
+    def __init__(self, *args, **kwargs):
+      super(Phone,self).__init__(*args, **kwargs)
+      self.__model_label__ = "phone"
+      self._parent_model = 'patient_detail'
 
     phone_type = models.CharField('Type',
                                   max_length=10,
@@ -180,9 +182,11 @@ class EmailAndFax(models.Model):
        Model that manages the Email, Fax and Web contact details of a patient.
     """
 
-    __model_label__ = "email_and_fax"
-    
-    _parent_model = 'patient_detail'
+
+    def __init__(self, *args, **kwargs):
+      super(EmailAndFax,self).__init__(*args, **kwargs)
+      self.__model_label__ = "email_and_fax"
+      self._parent_model = 'patient_detail'
 
     date_entered = models.DateTimeField(auto_now_add=True)
     email = models.EmailField(max_length=75, blank=True, null=True)
@@ -224,9 +228,10 @@ class Guardian(AuShadhaBaseModel):
       Class that defines the Guardian of a Particular patient.
     """
 
-    __model_label__ = "guardian"
-    
-    _parent_model = 'patient_detail'
+    def __init__(self, *args, **kwargs):
+      super(Guardian,self).__init__(*args, **kwargs)
+      self.__model_label__ = "guardian"
+      self._parent_model = 'patient_detail'
     
     guardian_name = models.CharField(max_length=20, blank=True,
                                      null=True,
@@ -268,9 +273,10 @@ class Demographics(AuShadhaBaseModel):
       This has been adapted from the excellent work by GNU Health project.
     """
 
-    __model_label__ = "demographics"
-    
-    _parent_model = 'patient_detail'
+    def __init__(self, *args, **kwargs):
+      super(Demographics,self).__init__(*args, **kwargs)
+      self.__model_label__ = "demographics"
+      self._parent_model = 'patient_detail'
 
     date_of_birth = models.DateField(auto_now_add=False,
                                      null=True,

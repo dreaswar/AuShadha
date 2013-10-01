@@ -37,20 +37,21 @@ class Clinic(AuShadhaBaseModel):
   
   def __init__(self, *args, **kwargs):
 
-        self.__model_label__ = 'clinic'
-        self._parent_model = 'clinic'
+      super(Clinic,self).__init__(*args, **kwargs)
+      self.__model_label__ = 'clinic'
+      self._parent_model = 'clinic'
 
-        self._can_add_list_or_json = [
-                            'patient',
-                            'phone',
-                            'address',
-                            'website',
-                            'email',
-                            'fax',
-                            'department'
-                       ]
-        self._extra_url_actions = ['transfer_patient','transfer_clinic','refer']
-        super(Clinic,self).__init__(*args, **kwargs)
+      self._can_add_list_or_json = [
+                          'patient',
+                          'phone',
+                          'address',
+                          'website',
+                          'email',
+                          'fax',
+                          'department'
+                      ]
+      self._extra_url_actions = ['transfer_patient','transfer_clinic','refer']
+
 
   name_of_clinic = models.CharField(max_length=200)
   nature_of_clinic = models.CharField(max_length=200, choices = CLINIC_NATURE_CHOICES)
@@ -63,11 +64,12 @@ class Address(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
 
+      super(Address,self).__init__(*args, **kwargs)
       self.__model_label__ = 'address'
       self._parent_model = 'clinic'
       self._can_add_list_or_json = []
       self._extra_url_actions = []
-      super(Address,self).__init__(*args, **kwargs)
+
 
     building_no = models.CharField(max_length=200, default= 'Tamil Nadu')    
     street_name = models.TextField()
@@ -94,10 +96,11 @@ class Phone(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
 
+      super(Phone,self).__init__(*args, **kwargs)
       self.__model_label__ = 'phone'
       self._parent_model = 'clinic'
       self._can_add_list_or_json = ['phone']
-      super(Phone,self).__init__(*args, **kwargs)
+
 
     country_code    = models.PositiveIntegerField(max_length = 6, default = 91)
     area_code    = models.PositiveIntegerField(max_length = 10, default = 422)
@@ -113,10 +116,10 @@ class Phone(AuShadhaBaseModel):
 class Fax(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-
+      super(Fax,self).__init__(*args, **kwargs)
       self.__model_label__ = 'fax'
       self._parent_model = 'clinic'
-      super(Fax,self).__init__(*args, **kwargs)
+
 
     fax_number = models.CharField(max_length=200)
     clinic = models.ForeignKey(Clinic)
@@ -130,9 +133,10 @@ class Email(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
 
+      super(Email,self).__init__(*args, **kwargs)
       self.__model_label__ = 'email'
       self._parent_model = 'clinic'
-      super(Email,self).__init__(*args, **kwargs)
+
 
     email_address = models.CharField(max_length=200)
     clinic = models.ForeignKey(Clinic)
@@ -145,10 +149,10 @@ class Website(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
 
+      super(Website,self).__init__(*args, **kwargs)
       self.__model_label__ = 'website'
       self._parent_model = 'clinic'
 
-      super(Website,self).__init__(*args, **kwargs)
 
     website_address = models.CharField(max_length=200)
     clinic = models.ForeignKey(Clinic)
@@ -160,12 +164,12 @@ class Website(AuShadhaBaseModel):
 class Department(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-
+      super(Department,self).__init__(*args, **kwargs)
       self.__model_label__ = 'department'
       self._parent_model = 'clinic'
       self._can_add_list_or_json = ['staff']
       self._extra_url_actions = ['assign_hod','transfer_department']
-      super(Department,self).__init__(*args, **kwargs)
+
 
     name_of_department = models.CharField(max_length=100, unique=True)
     clinic = models.ForeignKey(Clinic)
@@ -178,11 +182,12 @@ class Department(AuShadhaBaseModel):
 class Staff(AuShadhaBaseModel):
   
     def __init__(self, *args, **kwargs):
+      super(Staff,self).__init__(*args, **kwargs)
       self.__model_label__ = 'staff'
       self._parent_model = 'department'
       self._can_add_list_or_json = []
       self._extra_url_actions = []
-      super(Staff,self).__init__(*args, **kwargs)
+
 
     staff_detail  = models.ForeignKey(AuShadhaUser)
     clinic_staff_role = models.CharField("Staff Role",max_length=100,

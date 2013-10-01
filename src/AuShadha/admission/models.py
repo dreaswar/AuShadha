@@ -35,6 +35,7 @@ class AdmissionDetail(AuShadhaBaseModel):
 
     """
     def __init__(self, *args, **kwargs):
+      super(AdmissionDetail,self).__init__(*args, **kwargs)
       self.__model_label__ = "admission"
       self._parent_model = 'patient_detail'
       self._can_add_list_or_json = [
@@ -80,6 +81,7 @@ class AdmissionDetail(AuShadhaBaseModel):
 class AdmissionComplaint(AuShadhaBaseModel):
     
     def __init__(self, *args, **kwargs):
+      super(AdmissionComplaint,self).__init__(*args, **kwargs)      
       self.__model_label__ = "complaint"
       self._parent_model = 'admission_detail'
 
@@ -102,6 +104,7 @@ class AdmissionComplaint(AuShadhaBaseModel):
 class AdmissionHPI(AuShadhaBaseModel):
     
     def __init__(self, *args, **kwargs):
+      super(AdmissionHPI,self).__init__(*args, **kwargs)
       self.__model_label__ = "hpi"
       self._parent_model = 'admission_detail'
     
@@ -124,6 +127,7 @@ class AdmissionHPI(AuShadhaBaseModel):
 class AdmissionPastHistory(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
+      super(AdmissionPastHistory,self).__init__(*args, **kwargs)      
       self.__model_label__ = "past_history"
       self._parent_model = 'admission_detail'
 
@@ -147,6 +151,7 @@ class AdmissionPastHistory(AuShadhaBaseModel):
 class AdmissionImaging(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
+      super(AdmissionImaging,self).__init__(*args, **kwargs)      
       self.__model_label__ = "imaging"
       self._parent_model = 'admission_detail'
 
@@ -170,6 +175,7 @@ class AdmissionImaging(AuShadhaBaseModel):
 class AdmissionROS(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
+      super(AdmissionROS,self).__init__(*args, **kwargs)      
       self.__model_label__ = 'admission_ros'
       self._parent_model = 'admission_detail'
 
@@ -236,6 +242,7 @@ class AdmissionROS(AuShadhaBaseModel):
 class AdmissionInv(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
+      super(AdmissionInv,self).__init__(*args, **kwargs)      
       self.__model_label__ = "inv"
       self._parent_model = 'admission_detail'    
 

@@ -18,49 +18,51 @@ from dijit_fields_constants import SOCIAL_HISTORY_FORM_CONSTANTS
 
 DEFAULT_SOCIAL_HISTORY_FORM_EXCLUDES = ('patient_detail',)
 
+exercise_choices = (('sendentary', "Sedentary"),
+                    ("active lifestyle", "Active, but no Exercise"),
+                    ("minimal", "Minimal"), ('moderate', 'Moderate'),
+                    ('extreme', "Extreme")
+                    )
+
+sexual_preference_choices = (("opposite_sex", "Opposite Sex"),
+                              ('same_sex', "Same Sex"),
+                            ("both", "Both"),
+                            ('neither', 'Neither')
+                              )
+
+marital_status_choices = (('single', "Single"),
+                          ("married", "Married"),
+                          ("divorced", "Divorced"),
+                          ('separated', 'Separated'),
+                          ('widowed', 'Widowed'),
+                          ('living with partner', 'Living with Partner')
+                          )
+
+abuse_frequency = (('none', "None"), ('former', "Former"),
+                    ('everyday', "Everyday"), ("periodic", "Periodic")
+                    )
+
+diet_choices = (
+    ('well_balanced', "Well Balanced"),
+    ('vegetarian', "Vegetarian"),
+    ('jain', "Jain"),
+    ('vegan', "Vegan"),
+    ('non_vegetarian', "Non-Vegetarian"),
+    ("junk", "Junk"),
+    ("others", "Others")
+)
+
 class SocialHistory(AuShadhaBaseModel):
 
     """
       This defines the Social History that the patient has 
     """
 
-    __model_label__ = "social_history"
+    def __init__(self, *args, **kwargs):
+      super(SocialHistory,self).__init__(*args, **kwargs)
+      self.__model_label__ = "social_history"
+      self._parent_model = 'patient_detail'
 
-    _parent_model = 'patient_detail'
-    
-    exercise_choices = (('sendentary', "Sedentary"),
-                       ("active lifestyle", "Active, but no Exercise"),
-                       ("minimal", "Minimal"), ('moderate', 'Moderate'),
-                       ('extreme', "Extreme")
-                        )
-
-    sexual_preference_choices = (("opposite_sex", "Opposite Sex"),
-                                 ('same_sex', "Same Sex"),
-                                ("both", "Both"),
-                                ('neither', 'Neither')
-                                 )
-
-    marital_status_choices = (('single', "Single"),
-                              ("married", "Married"),
-                              ("divorced", "Divorced"),
-                              ('separated', 'Separated'),
-                              ('widowed', 'Widowed'),
-                              ('living with partner', 'Living with Partner')
-                              )
-
-    abuse_frequency = (('none', "None"), ('former', "Former"),
-                       ('everyday', "Everyday"), ("periodic", "Periodic")
-                       )
-
-    diet_choices = (
-        ('well_balanced', "Well Balanced"),
-        ('vegetarian', "Vegetarian"),
-        ('jain', "Jain"),
-        ('vegan', "Vegan"),
-        ('non_vegetarian', "Non-Vegetarian"),
-        ("junk", "Junk"),
-        ("others", "Others")
-    )
 
     marital_status = models.CharField(max_length=250,
                                       choices=marital_status_choices,

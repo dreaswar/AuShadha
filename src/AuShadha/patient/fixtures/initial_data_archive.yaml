@@ -1,0 +1,178 @@
+- model: patient.patientdetail
+  pk: 1
+  fields:
+    first_name: Mister
+    last_name: Spock
+    full_name: Mister Spock
+    patient_hospital_id: 1111111
+    age: 50
+    sex: Male
+    parent_clinic: 1
+
+- model: patient.patientdetail
+  pk: 2
+  fields:
+    first_name: Captain
+    last_name: Pike
+    full_name: Captain Pike
+    patient_hospital_id: 22222222
+    age: 62
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 3
+  fields:
+    first_name: Christopher
+    last_name: Pike
+    full_name: Christopher Pike
+    patient_hospital_id: 33333333
+    age: 25
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 4
+  fields:
+    first_name: Real 
+    last_name: McCoy
+    full_name: Real McCoy
+    patient_hospital_id: 444444444
+    age: 32
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 6
+  fields:
+    first_name: James
+    last_name: Kirk
+    full_name: James Kirk
+    patient_hospital_id: 66666666
+    age: 77
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 7
+  fields:
+    first_name: Montgomery
+    last_name: Scott
+    full_name: Montgomery Scott
+    patient_hospital_id: 7777777
+    age: 78
+    sex: Female
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 8
+  fields:
+    first_name: Jean-Luc
+    last_name: Picard
+    full_name: Jean-Luc Picard
+    patient_hospital_id: 888888888
+    age: 16
+    sex: Male
+    parent_clinic: 1
+
+
+
+- model: patient.patientdetail
+  pk: 9
+  fields:
+    first_name: Indrajith 
+    last_name: Ravanan
+    full_name: Indrajith Ravanan
+    patient_hospital_id: 6667788888
+    age: 42
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 12
+  fields:
+    first_name: Ravanan
+    last_name: Asura
+    full_name: Ravanan Asura
+    patient_hospital_id: 64545234234
+    age: 33
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 13
+  fields:
+    first_name: Kumbakarna
+    last_name: Asura
+    full_name: Kumbakarna Asura
+    patient_hospital_id: 3453542342
+    age: 45
+    sex: Male
+    parent_clinic: 1
+
+- model: patient.patientdetail
+  pk: 14
+  fields:
+    first_name: Duryudhana
+    last_name: Dhritharashtra
+    full_name: Duryudhana Dhritharashtra
+    patient_hospital_id: 5654634523
+    age: 10
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 15
+  fields:
+    first_name: Ashwathama
+    last_name: Dronacharya
+    full_name: Ashwathama Dronacharya
+    patient_hospital_id: 756756763
+    age: 83
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 16
+  fields:
+    first_name: Gul 
+    last_name: Dukat
+    full_name: Gul Dukat
+    patient_hospital_id: 645756757
+    age: 10
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 17
+  fields:
+    first_name: Dukat 
+    last_name: Kull
+    full_name: Dukat Kull
+    patient_hospital_id: 565475675
+    age: 34
+    sex: Male
+    parent_clinic: 1
+
+
+- model: patient.patientdetail
+  pk: 18
+  fields:
+    first_name : Kimara
+    last_name  : Kretak
+    full_name  : Kimara Kretak
+    patient_hospital_id: 6457467658
+    age: 10
+    sex: Male
+    parent_clinic: 1
+

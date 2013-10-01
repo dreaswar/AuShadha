@@ -23,10 +23,11 @@ class Allergy(AuShadhaBaseModel):
     """
       This defines the Allergies that the patient has
     """
-
-    __model_label__ = "allergy"
-
-    _parent_model = 'patient_detail'    
+  
+    def __init__(self, *args, **kwargs):
+      super(Allergy,self).__init__(*args, **kwargs)
+      self.__model_label__ = "allergy"
+      self._parent_model = 'patient_detail'    
 
     allergic_to = models.CharField(max_length=100)
     reaction_observed = models.CharField(max_length=100,

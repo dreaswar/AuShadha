@@ -27,9 +27,10 @@ class SurgicalHistory(AuShadhaBaseModel):
       This defines the Surgical History that the patient has had. 
     """
 
-    __model_label__ = "surgical_history"
-
-    _parent_model = 'patient_detail'    
+    def __init__(self, *args, **kwargs):
+      super(SurgicalHistory,self).__init__(*args, **kwargs)
+      self.__model_label__ = "surgical_history"
+      self._parent_model = 'patient_detail'    
 
     base_condition = models.TextField("Base Condition",
                                       max_length=500,

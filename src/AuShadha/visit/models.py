@@ -60,6 +60,7 @@ CONSULT_STATUS_CHOICES = (
 class VisitDetail(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
+      super(VisitDetail,self).__init__(*args, **kwargs)
       self.__model_label__ = "visit"
       self._parent_model = 'patient_detail'
       self._can_add_list_or_json = ['complaint',
@@ -241,6 +242,7 @@ class VisitDetail(AuShadhaBaseModel):
 class VisitComplaint(AuShadhaBaseModel):
     
     def __init__(self, *args, **kwargs):
+      super(VisitComplaint,self).__init__(*args, **kwargs)
       self.__model_label__ = "complaint"
       self._parent_model = 'visit_detail'
 
@@ -275,6 +277,7 @@ class VisitFollowUp(AuShadhaBaseModel):
     """Model to describe the Follow up OPD Visit Notes  or SOAP notes."""
     
     def __init__(self, *args, **kwargs):
+      super(VisitFollowUp,self).__init__(*args, **kwargs)      
       self.__model_label__ = "follow_up"
       self._parent_model = 'visit_detail'
 
@@ -333,6 +336,7 @@ class VisitSOAP(AuShadhaBaseModel):
     """Model to describe the Follow up OPD Visit Notes  or SOAP notes."""
 
     def __init__(self, *args, **kwargs):
+      super(VisitSOAP,self).__init__(*args, **kwargs)      
       self.__model_label__ = "soap"
       self._parent_model = 'visit_detail'
 
@@ -365,6 +369,7 @@ class VisitSOAP(AuShadhaBaseModel):
 class VisitHPI(AuShadhaBaseModel):
     
     def __init__(self, *args, **kwargs):
+      super(VisitHPI,self).__init__(*args, **kwargs)      
       self.__model_label__ = "hpi"
       self._parent_model = 'visit_detail'
     
@@ -386,6 +391,7 @@ class VisitHPI(AuShadhaBaseModel):
 class VisitPastHistory(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
+      super(VisitPastHistory,self).__init__(*args, **kwargs)      
       self.__model_label__ = "past_history"
       self._parent_model = 'visit_detail'
 
@@ -409,6 +415,7 @@ class VisitPastHistory(AuShadhaBaseModel):
 class VisitImaging(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
+      super(VisitImaging,self).__init__(*args, **kwargs)      
       self.__model_label__ = "imaging"
       self._parent_model = 'visit_detail'
 
@@ -434,6 +441,7 @@ class VisitImaging(AuShadhaBaseModel):
 class VisitROS(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
+      super(VisitROS,self).__init__(*args, **kwargs)
       self.__model_label__ = 'visit_ros'
       self._parent_model = 'visit_detail'
 
@@ -500,6 +508,7 @@ class VisitROS(AuShadhaBaseModel):
 class VisitInv(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
+      super(VisitInv,self).__init__(*args, **kwargs)
       self.__model_label__ = "inv"
       self._parent_model = 'visit_detail'    
 

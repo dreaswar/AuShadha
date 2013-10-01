@@ -15,7 +15,7 @@ def has_active_admission(patient):
     """Queries whether a given patient has an active admission."""
 
     from patient.models import PatientDetail
-    from admission.models import Admission
+    from admission.models import AdmissionDetail
 
     patient_id = patient.id
 
@@ -23,7 +23,7 @@ def has_active_admission(patient):
         pat_obj = PatientDetail.objects.get(pk=patient_id)
     except(TypeError, ValueError, PatientDetail.DoesNotExist):
         return False
-    adm_obj = Admission.objects.filter(
+    adm_obj = AdmissionDetail.objects.filter(
         patient_detail=pat_obj).filter(admission_closed=False)
     if adm_obj:
         return True
@@ -41,7 +41,7 @@ def adm_for_pat(patient):
     """
 
     from patient.models import PatientDetail
-    from admission.models import Admission
+    from admission.models import AdmissionDetail
 
     patient_id = patient.id
 
@@ -53,7 +53,7 @@ def adm_for_pat(patient):
     if has_active_admission(patient) == '0':
         return None
     else:
-        all_adm_obj = Admission.objects.filter(patient_detail=pat_obj)
+        all_adm_obj = AdmissionDetail.objects.filter(patient_detail=pat_obj)
         return all_adm_obj
 
 def has_active_visit(patient):
@@ -94,7 +94,7 @@ def can_add_new_visit(patient):
     """
 
     from patient.models import PatientDetail
-    from admission.models import Admission
+    from admission.models import AdmissionDetail
     from visit.models import VisitDetail, VisitComplaint
 
     patient_id = patient.id
@@ -128,7 +128,7 @@ def visit_for_pat(patient):
     """
 
     from patient.models import PatientDetail
-    from admission.models import Admission
+    from admission.models import AdmissionDetail
     from visit.models import VisitDetail, VisitComplaint
 
     patient_id = patient.id
@@ -146,7 +146,7 @@ def visit_for_pat(patient):
 def get_patient_complaints(patient):
 
     from patient.models import PatientDetail
-    from admission.models import Admission
+    from admission.models import AdmissionDetail
     from visit.models import VisitDetail, VisitComplaint
 
     p_id = patient.id

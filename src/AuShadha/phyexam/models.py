@@ -85,9 +85,11 @@ VASC_EXAM_FORM_EXCLUDES = (
 ############################################################
 
 class PhyExamBaseModel(AuShadhaBaseModel):
-    __model_label__ = 'phy_exam'
     
-    _parent_model = ['visit_detail']
+    def __init__(self, *args, **kwargs):
+      super(PhyExamBaseModel,self).__init__(*args, **kwargs)
+      self.__model_label__ = "phy_exam"
+      self._parent_model = ['admission_detail','visit_detail']
 
     remarks = models.TextField(
         blank=True, null=True, default="NAD", max_length=200)
@@ -123,37 +125,21 @@ class PhyExamBaseModel(AuShadhaBaseModel):
 
 
 class VitalExam_FreeModel(PhyExamBaseModel):
-    
-    __model_label__ = 'vital'
-    
-    sys_bp = models.PositiveIntegerField(
-        'Systolic B.P', max_length=3, default=120)
-    dia_bp = models.PositiveIntegerField(
-        'Diastolic B.P', max_length=3, default=80)
-    pulse_rate = models.PositiveIntegerField(
-        'Pulse Rate', max_length=3, default=82)
-    resp_rate = models.PositiveIntegerField(
-        'Respiratory Rate', max_length=2, default=20)
-
-    gcs = models.PositiveIntegerField(
-        'GCS', max_length=2, default=15)
-
-    height = models.PositiveIntegerField(
-        max_length=3, null=True, blank=True)
-    weight = models.PositiveIntegerField(
-        max_length=3, null=True, blank=True)
-    bmi = models.DecimalField('BMI', decimal_places=2, max_digits=4)
-
-    phy_exam_base_model = models.OneToOneField(
-        'PhyExamBaseModel', parent_link=True)
 
     def __init__(self, *args, **kwargs):
-        self.__model_label__ = 'vital'
         super(VitalExam_FreeModel, self).__init__(*args, **kwargs)
+        self.__model_label__ = "vital"
+        self._parent_model = ['admission_detail','visit_detail']
 
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'vital'
-        super(VitalExam_FreeModel, self).save(*args, **kwargs)
+    sys_bp = models.PositiveIntegerField('Systolic B.P', max_length=3, default=120)
+    dia_bp = models.PositiveIntegerField('Diastolic B.P', max_length=3, default=80)
+    pulse_rate = models.PositiveIntegerField('Pulse Rate', max_length=3, default=82)
+    resp_rate = models.PositiveIntegerField('Respiratory Rate', max_length=2, default=20)
+    gcs = models.PositiveIntegerField('GCS', max_length=2, default=15)
+    height = models.PositiveIntegerField(max_length=3, null=True, blank=True)
+    weight = models.PositiveIntegerField(max_length=3, null=True, blank=True)
+    bmi = models.DecimalField('BMI', decimal_places=2, max_digits=4)
+    phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)
 
     class Meta:
         verbose_name_plural = "Vital"
@@ -163,7 +149,12 @@ class VitalExam_FreeModel(PhyExamBaseModel):
 
 
 class GenExam_FreeModel(PhyExamBaseModel):
-    __model_label__ = 'gen_exam'
+
+    def __init__(self, *args, **kwargs):
+        super(GenExam_FreeModel, self).__init__(*args, **kwargs)
+        self.__model_label__ = "gen_exam"
+        self._parent_model = ['admission_detail','visit_detail']
+
 
     pallor = models.BooleanField(default=False)
     icterus = models.BooleanField(default=False)
@@ -174,14 +165,6 @@ class GenExam_FreeModel(PhyExamBaseModel):
     phy_exam_base_model = models.OneToOneField(
         'PhyExamBaseModel', parent_link=True)
 
-    def __init__(self, *args, **kwargs):
-        self.__model_label__ = 'gen_exam'
-        super(GenExam_FreeModel, self).__init__(*args, **kwargs)
-
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'gen_exam'
-        super(GenExam_FreeModel, self).save(*args, **kwargs)
-
     class Meta:
         verbose_name_plural = "General Examination"
         verbose_name = "General Examination"
@@ -190,7 +173,11 @@ class GenExam_FreeModel(PhyExamBaseModel):
 
 
 class SysExam_FreeModel(PhyExamBaseModel):
-    __model_label__ = 'sys_exam'
+
+    def __init__(self, *args, **kwargs):
+        super(SysExam_FreeModel, self).__init__(*args, **kwargs)
+        self.__model_label__ = 'sys_exam'
+        self._parent_model = ['admission_detail','visit_detail']
 
     heent = models.TextField(max_length=75, default=HEENT_EX)
     cns = models.TextField(max_length=100, default=CNS_EX)
@@ -202,13 +189,6 @@ class SysExam_FreeModel(PhyExamBaseModel):
     phy_exam_base_model = models.OneToOneField(
         'PhyExamBaseModel', parent_link=True)
 
-    def __init__(self, *args, **kwargs):
-        self.__model_label__ = 'sys_exam'
-        super(SysExam_FreeModel, self).__init__(*args, **kwargs)
-
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'sys_exam'
-        super(SysExam_FreeModel, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name_plural = "System Examination"
@@ -218,7 +198,10 @@ class SysExam_FreeModel(PhyExamBaseModel):
 
 class PeriNeuroExam_FreeModel(PhyExamBaseModel):
 
-    __model_label__ = 'neuro_exam'
+    def __init__(self, *args, **kwargs):
+        super(PeriNeuroExam_FreeModel, self).__init__(*args, **kwargs)
+        self.__model_label__ = 'neuro_exam'
+        self._parent_model = ['admission_detail','visit_detail']
 
     plantar = models.TextField('Plantar Reflex',
                                max_length=30,
@@ -264,18 +247,13 @@ class PeriNeuroExam_FreeModel(PhyExamBaseModel):
         verbose_name_plural = "Neuro Examination"
         verbose_name = "Neuro Examination"
 
-    def __init__(self, *args, **kwargs):
-        self.__model_label__ = 'neuro_exam'
-        super(PeriNeuroExam_FreeModel, self).__init__(*args, **kwargs)
-
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'neuro_exam'
-        super(PeriNeuroExam_FreeModel, self).save(*args, **kwargs)
-
 
 class VascExam_FreeModel(PhyExamBaseModel):
 
-    __model_label__ = 'vascular_exam'
+    def __init__(self, *args, **kwargs):
+        super(VascExam_FreeModel, self).__init__(*args, **kwargs)
+        self.__model_label__ = 'neuro_exam'
+        self._parent_model = ['admission_detail','visit_detail']
 
 #  pulse      = models.BooleanField()
     location = models.CharField(
@@ -308,15 +286,6 @@ class VascExam_FreeModel(PhyExamBaseModel):
     class Meta:
         verbose_name_plural = "Vascular Examination"
         verbose_name = "Vascular Examination"
-
-    def __init__(self, *args, **kwargs):
-        self.__model_label__ = 'vascular_exam'
-        super(VascExam_FreeModel, self).__init__(*args, **kwargs)
-
-    def save(self, *args, **kwargs):
-        self.__model_label__ = 'vascular_exam'
-        super(VascExam_FreeModel, self).save(*args, **kwargs)
-
 
 ##############################################################
 # NEW MODEL FORMS

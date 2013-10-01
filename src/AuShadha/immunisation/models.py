@@ -37,9 +37,10 @@ class Immunisation(AuShadhaBaseModel):
       This defines the Immunisation that the patient has had. 
     """
 
-    __model_label__ = "immunisation"
-
-    _parent_model = 'patient_detail'    
+    def __init__(self, *args, **kwargs):
+      super(Immunisation,self).__init__(*args, **kwargs)
+      self.__model_label__ = "immunisation"
+      self._parent_model = 'patient_detail'    
 
     vaccine_detail = models.ForeignKey(VaccineRegistry)
     route = models.CharField(max_length=30,

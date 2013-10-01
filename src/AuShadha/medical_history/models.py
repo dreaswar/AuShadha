@@ -27,9 +27,10 @@ class MedicalHistory(AuShadhaBaseModel):
       This defines the Medical History that the patient has had. 
     """
 
-    __model_label__ = "medical_history"
-    
-    _parent_model = 'patient_detail'    
+    def __init__(self, *args, **kwargs):
+      super(MedicalHistory,self).__init__(*args, **kwargs)
+      self.__model_label__ = "medical_history"
+      self._parent_model = 'patient_detail'    
 
     disease = models.CharField(max_length=100)
     status = models.TextField("Status",

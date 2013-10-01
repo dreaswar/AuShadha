@@ -25,10 +25,10 @@ class MedicationList(AuShadhaBaseModel):
     add, edit, del methods defined on him.
 
     """
-
-    __model_label__ = "medication_list"
-
-    _parent_model = 'patient_detail'
+    def __init__(self, *args, **kwargs):
+      super(MedicationList,self).__init__(*args, **kwargs)
+      self.__model_label__ = "medication_list"
+      self._parent_model = 'patient_detail'
 
     medication = models.CharField(max_length=100,
                                   help_text="Only Generic Names.."
