@@ -56,100 +56,6 @@ from obs_and_gyn.models import ObstetricHistoryDetail
 # Views start here -----------------------------------------
 
 
-#def generate_json_for_datagrid(obj, success=True, error_message="Saved Successfully", form_errors=None):
-    #"""Returns the JSON formatted Values of a specific Django Model Instance
-    #for use with Dojo Grid. A few default DOJO Grid Values are specified, rest
-    #are instance specific and are generated on the fly. It assumes the presence
-    #of get_edit_url and get_del_url in the model instances passed to it via
-    #obj.
-
-    #ARGUMENTS: obj           : model instace / queryset
-               #success       : A success message
-               #error_message : Error Message if any.
-               #form_errors   : Form Validation Errors from Django while saving can be passed.
-
-    #"""
-    #print "TRYING TO RETURN JSON FOR OBJECT: ", obj
-    #json_data = []
-
-    #try:
-        ## Find out if the Object is an iterable one that is a Django Query Object..
-        ## If iterable iterate over the fields of _meta attribute
-        ## set a basic attribute dictionary and getattr method specifying
-        ## default fallbacks
-        #iterable = iter(obj)
-        #if iterable:
-            #for element in obj:
-                #print element._meta.fields
-                #print "APP LABEL IS", element._meta.app_label
-                #data = {'success': success,
-                        #'error_message': unicode(error_message),
-                        #'form_errors': form_errors,
-                        #'edit': getattr(element, 'get_edit_url()', element.get_edit_url()),
-                        #'del': getattr(element, 'get_del_url()', element.get_del_url()),
-                        #'patient_detail': getattr(element, 'patient_detail.__unicode__()', None)
-                        #}
-                #for i in element._meta.fields:
-                    #print "CURRENT ITERATING FIELD NAME IS : ", i
-                    #print "DATA DICTIONARY NOW IS ", data.keys()
-                    #if i.name not in data.keys():
-                        #print "Dealing with object: ", i
-                        #print "Trying to add it Name attribute: ", i.name
-                        #print "Class of the i object is: ", i.name.__class__
-                        #try:
-                            #if i.name == 'aushadhabasemodel_ptr':
-                                #data[i.name] = "AuShadhaBaseModel"
-                            #elif i.name == "administrator":
-                                #data[i.name] = getattr(
-                                    #element, '__unicode__()', element.administrator.__unicode__())
-                            #elif i.name == "vaccine_detail":
-                                #data[i.name] = getattr(
-                                    #element, '__unicode__()', element.vaccine_detail.vaccine_name)
-                            #else:
-                                #data[i.name] = getattr(element, i.name, None)
-                        #except(TypeError):
-                            #raise Exception("Error In serialization..")
-                #json_data.append(data)
-
-    #except TypeError:
-        #print obj._meta.fields
-        #data = {'success': success,
-                #'error_message': unicode(error_message),
-                #'form_errors': form_errors,
-                #'edit': getattr(obj, 'get_edit_url()', obj.get_edit_url()),
-                #'del': getattr(obj, 'get_del_url()', obj.get_del_url()),
-                #'patient_detail': getattr(obj, 'patient_detail.__unicode__()', None)
-                #}
-        #for i in obj._meta.fields:
-            #print "CURRENT ITERATING FIELD NAME IS : ", i
-            #print "DATA DICTIONARY NOW IS ", data.keys()
-            #if i.name not in data.keys():
-                #print "Adding ", i.name
-                #print i.name.__class__
-                #try:
-                    #if i.name == 'aushadhabasemodel_ptr':
-                        #data[i.name] = "AuShadhaBaseModel"
-                    #elif i.name == "administrator":
-                        #data[i.name] = getattr(
-                            #obj, 'username', obj.administrator.username)
-                    #elif i.name == "vaccine_detail":
-                        #data[i.name] = getattr(
-                            #obj, 'vaccine_name', obj.vaccine_detail.vaccine_name)
-                    #else:
-                        #data[i.name] = getattr(obj, i.name, None)
-                #except(TypeError):
-                    #raise Exception("Error In serialization..")
-        #json_data.append(data)
-
-##    json_serializer = serializers.get_serializer('json')()
-##    json_data = json_serializer.serialize(json_data, ensure_ascii = False)
-    #json_data = simplejson.dumps(json_data, cls=DjangoJSONEncoder)
-##    json_data = simplejson.dumps(json_data)
-    #print "RETURNED JSON IS ", unicode(json_data)
-    #return json_data
-
-
-
 @login_required
 def patient_list(request):
     """View for Generating Patient List Takes on Request Object as argument."""
@@ -473,19 +379,19 @@ def render_patient_tree(request, patient_id=None):
             try:
                 patient_id = int(request.GET.get('patient_id'))
                 pat_obj = PatientDetail.objects.get(pk=patient_id)
-                pat_obj.generate_urls()
-                pat_urls = pat_obj.urls
+                #pat_obj.generate_urls()
+                #pat_urls = pat_obj.urls
             except(AttributeError, NameError, KeyError, TypeError, ValueError):
                 raise Http404("ERROR! Bad Request Parameters")
-            except(AttributeError, NameError, KeyError, TypeError, ValueError):
+            except(PatientDetail.DoesNotExist):
                 raise Http404("ERROR! Requested Patient Data Does not exist")
 
             patient_tree_node = DijitTree()
 
             history_node = DijitTreeNode({"name": "History",
-                                      "type": "application",
-                                      "id": "HISTORY"
-                                      })
+                                          "type": "application",
+                                          "id": "HISTORY"
+                                        })
 
             medical_history_node = DijitTreeNode({"name": "Medical History",
                                                   "type": "medical_history_module",
@@ -494,8 +400,8 @@ def render_patient_tree(request, patient_id=None):
             history_node.add_child_node(medical_history_node)
 
             surgical_history_node = DijitTreeNode({"name": "Surgical History",
-                                                  "type": "surgical_history_module",
-                                                  "id": "SURGICAL_HISTORY"
+                                                   "type": "surgical_history_module",
+                                                   "id": "SURGICAL_HISTORY"
                                                  })
             history_node.add_child_node(surgical_history_node)
 
@@ -506,8 +412,8 @@ def render_patient_tree(request, patient_id=None):
             history_node.add_child_node(family_history_node)
 
             social_history_node = DijitTreeNode({"name": "Social History",
-                                                "type": "social_history_module",
-                                                "id": "SOCIAL_HISTORY"
+                                                 "type": "social_history_module",
+                                                 "id": "SOCIAL_HISTORY"
                                                 })
             history_node.add_child_node(social_history_node)
 
@@ -615,8 +521,10 @@ def render_patient_tree(request, patient_id=None):
                                               #"type": "icd10_pcs_module",
                                               #"id": "ICD_10_PROCEDURE_CODES"
                                             #})
+
             json = patient_tree_node.to_json()
             return HttpResponse(json, content_type="application/json")
+
     else:
         raise Http404("Bad Request")
 
@@ -694,44 +602,44 @@ def render_patient_summary(request, patient_id=None):
         raise Http404("Bad Request")
 
 
-def render_patient_sidebar_contact_tab(request, id=None):
-    if request.method == "GET" and request.is_ajax():
-        user = request.user
-        if id:
-            patient_id = int(id)
-        else:
-            try:
-                patient_id = int(request.GET.get('patient_id'))
-                pat_obj = PatientDetail.objects.get(pk=patient_id)
-                contact_obj = Contact.objects.filter(
-                    patient_detail=pat_obj)
-                phone_obj = Phone.objects.filter(
-                    patient_detail=pat_obj)
-                guardian_obj = Guardian.objects.filter(
-                    patient_detail=pat_obj)
-                admission_obj = None
-                visit_obj = None
-                allergy_obj = Allergy.objects.filter(
-                    patient_detail=pat_obj)
-                medication_list_obj = MedicationList.objects.filter(
-                    patient_detail=pat_obj)
-            except(AttributeError, NameError, KeyError, TypeError, ValueError):
-                raise Http404("ERROR! Bad Request Parameters")
-            except(AttributeError, NameError, KeyError, TypeError, ValueError):
-                raise Http404("ERROR! Requested Patient Data Does not exist")
-            variable = RequestContext(request, {'user': user,
-                                                'pat_obj': pat_obj,
-                                                'contact_obj': contact_obj,
-                                                'phone_obj': phone_obj,
-                                                'guardian_obj': guardian_obj,
-                                                'admission_obj': admission_obj,
-                                                'visit_obj': visit_obj,
-                                                'allergy_obj': allergy_obj,
-                                                'medication_list_obj': medication_list_obj
-                                                })
-            return render_to_response('patient_detail/sidebar_contact_tab.html', variable)
-    else:
-        raise Http404("Bad Request")
+#def render_patient_sidebar_contact_tab(request, id=None):
+    #if request.method == "GET" and request.is_ajax():
+        #user = request.user
+        #if id:
+            #patient_id = int(id)
+        #else:
+            #try:
+                #patient_id = int(request.GET.get('patient_id'))
+                #pat_obj = PatientDetail.objects.get(pk=patient_id)
+                #contact_obj = Contact.objects.filter(
+                    #patient_detail=pat_obj)
+                #phone_obj = Phone.objects.filter(
+                    #patient_detail=pat_obj)
+                #guardian_obj = Guardian.objects.filter(
+                    #patient_detail=pat_obj)
+                #admission_obj = None
+                #visit_obj = None
+                #allergy_obj = Allergy.objects.filter(
+                    #patient_detail=pat_obj)
+                #medication_list_obj = MedicationList.objects.filter(
+                    #patient_detail=pat_obj)
+            #except(AttributeError, NameError, KeyError, TypeError, ValueError):
+                #raise Http404("ERROR! Bad Request Parameters")
+            #except(AttributeError, NameError, KeyError, TypeError, ValueError):
+                #raise Http404("ERROR! Requested Patient Data Does not exist")
+            #variable = RequestContext(request, {'user': user,
+                                                #'pat_obj': pat_obj,
+                                                #'contact_obj': contact_obj,
+                                                #'phone_obj': phone_obj,
+                                                #'guardian_obj': guardian_obj,
+                                                #'admission_obj': admission_obj,
+                                                #'visit_obj': visit_obj,
+                                                #'allergy_obj': allergy_obj,
+                                                #'medication_list_obj': medication_list_obj
+                                                #})
+            #return render_to_response('patient_detail/sidebar_contact_tab.html', variable)
+    #else:
+        #raise Http404("Bad Request")
 
 #
 

@@ -16,6 +16,7 @@ function buildPatientTree(){
       'dojox/fx/scroll',
 
       'dojo/query',
+      'dojo/request',
 
       'aushadha/panes/demographics_tab',
       'aushadha/panes/family_history_tab',
@@ -45,6 +46,7 @@ function buildPatientTree(){
           JSON,
           scroll,
           query,
+          request,
 
           demographicsTab,
           familyHistoryTab,
@@ -56,6 +58,16 @@ function buildPatientTree(){
           ){
 
     // Create store 
+    
+//     request(CHOSEN_PATIENT.patientTreeUrl).
+//       then(function(json){
+//               console.log(json);
+//           }, 
+//           function(err){ 
+//               console.log(err)
+//           });
+// 
+
     var patientTreeStore = new ItemFileReadStore({url: CHOSEN_PATIENT.patientTreeUrl,
                                                   clearOnClose:true,
                                                   heirarchial:false
