@@ -372,6 +372,7 @@ def return_patient_json(patient, success=True):
 
 @login_required
 def render_patient_tree(request, patient_id=None):
+    user = request.user
     if request.method == "GET" and request.is_ajax():
         if patient_id:
             patient_id = int(patient_id)
