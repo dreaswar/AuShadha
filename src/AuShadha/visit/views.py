@@ -43,10 +43,10 @@ from admission.models import AdmissionDetail
 from demographics.models import Contact, Guardian, Phone, Demographics
 from medication_list.models import MedicationList
 from allergy_list.models import Allergy
-from social_history.models import SocialHistory
-from family_history.models import FamilyHistory
-from medical_history.models import MedicalHistory
-from surgical_history.models import SurgicalHistory
+from history.social_history.models import SocialHistory
+from history.family_history.models import FamilyHistory
+from history.medical_history.models import MedicalHistory
+from history.surgical_history.models import SurgicalHistory
 from registry.inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
 
 from phyexam.models import *

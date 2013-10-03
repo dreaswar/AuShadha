@@ -49,7 +49,7 @@ import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 
 from patient.models import *
-from obs_and_gyn.models import *
+from history.obs_and_gyn.models import *
 #from admission.models  import *
 #from discharge.models  import *
 #from visit.models      import *

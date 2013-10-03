@@ -39,16 +39,16 @@ from admission.models import Admission
 
 #from AuShadha.apps.clinic.models import Clinic
 #from demographics.models import Contact, Phone, Guardian, Demographics
-#from medical_history.models import MedicalHistory
-#from surgical_history.models import SurgicalHistory
-#from social_history.models import SocialHistory
-#from family_history.models import FamilyHistory
+#from history.medical_history.models import MedicalHistory
+#from history.surgical_history.models import SurgicalHistory
+#from history.social_history.models import SocialHistory
+#from history.family_history.models import FamilyHistory
 #from immunisation.models import Immunisation
 #from allergy_list.models import Allergy
 #from medication_list.models import MedicationList
 #from admission.models import Admission, AdmissionForm
 #from visit.models import VisitDetail, VisitImaging, VisitInv
-#from obs_and_gyn.models import ObstetricHistoryDetail
+#from history.obs_and_gyn.models import ObstetricHistoryDetail
 
 
 # Views start here -----------------------------------------

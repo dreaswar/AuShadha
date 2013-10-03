@@ -43,7 +43,7 @@ from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 
 from patient.models import PatientDetail
-from social_history.models import SocialHistory, SocialHistoryForm
+from history.social_history.models import SocialHistory, SocialHistoryForm
 
 
 # Views start here -----------------------------------------

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from family_history.models import FamilyHistory
+from history.family_history.models import FamilyHistory
 
 
 class FamilyHistoryAdmin(admin.ModelAdmin):

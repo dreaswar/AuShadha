@@ -10,7 +10,7 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 import AuShadha.settings
 
-from surgical_history.views import *
+from history.surgical_history.views import *
 
 admin.autodiscover()
 

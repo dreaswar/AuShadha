@@ -169,29 +169,31 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # Custom Apps:
+    'AuShadha.apps.aushadha_base_models',
     'AuShadha.apps.aushadha_users',
     'AuShadha.apps.clinic',
-    'AuShadha.apps.aushadha_base_models',
 
-    'registry.vaccine_registry',
     'registry.icd10',
     'registry.icd10_pcs',
     'registry.drug_db',
     'registry.inv_and_imaging',
+    'registry.vaccine_registry',    
 
     'patient',
     'demographics',
-    'medical_history',
-    'surgical_history',
-    'social_history',
-    'family_history',
+
+    'history.medical_history',
+    'history.surgical_history',
+    'history.social_history',
+    'history.family_history',
+    'history.obs_and_gyn',
+
     'medication_list',
     'allergy_list',
     'immunisation',
 
     'admission',
     'visit',
-    'obs_and_gyn',
 
      'phyexam',
 

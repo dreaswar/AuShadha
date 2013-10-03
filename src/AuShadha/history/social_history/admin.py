@@ -1,5 +1,5 @@
 from django.contrib import admin
-from social_history.models import SocialHistory
+from history.social_history.models import SocialHistory
 
 
 class SocialHistoryAdmin(admin.ModelAdmin):

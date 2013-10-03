@@ -41,16 +41,16 @@ from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 from patient.models import PatientDetail, PatientDetailForm
 from AuShadha.apps.clinic.models import Clinic
 from demographics.models import Contact, Phone, Guardian, Demographics
-from medical_history.models import MedicalHistory
-from surgical_history.models import SurgicalHistory
-from social_history.models import SocialHistory
-from family_history.models import FamilyHistory
+from history.medical_history.models import MedicalHistory
+from history.surgical_history.models import SurgicalHistory
+from history.social_history.models import SocialHistory
+from history.family_history.models import FamilyHistory
 from immunisation.models import Immunisation
 from allergy_list.models import Allergy
 from medication_list.models import MedicationList
 from admission.models import AdmissionDetail, AdmissionDetailForm
 from visit.models import VisitDetail, VisitImaging, VisitInv
-from obs_and_gyn.models import ObstetricHistoryDetail
+from history.obs_and_gyn.models import ObstetricHistoryDetail
 
 
 # Views start here -----------------------------------------
@@ -603,44 +603,44 @@ def render_patient_summary(request, patient_id=None):
         raise Http404("Bad Request")
 
 
-#def render_patient_sidebar_contact_tab(request, id=None):
-    #if request.method == "GET" and request.is_ajax():
-        #user = request.user
-        #if id:
-            #patient_id = int(id)
-        #else:
-            #try:
-                #patient_id = int(request.GET.get('patient_id'))
-                #pat_obj = PatientDetail.objects.get(pk=patient_id)
-                #contact_obj = Contact.objects.filter(
-                    #patient_detail=pat_obj)
-                #phone_obj = Phone.objects.filter(
-                    #patient_detail=pat_obj)
-                #guardian_obj = Guardian.objects.filter(
-                    #patient_detail=pat_obj)
-                #admission_obj = None
-                #visit_obj = None
-                #allergy_obj = Allergy.objects.filter(
-                    #patient_detail=pat_obj)
-                #medication_list_obj = MedicationList.objects.filter(
-                    #patient_detail=pat_obj)
-            #except(AttributeError, NameError, KeyError, TypeError, ValueError):
-                #raise Http404("ERROR! Bad Request Parameters")
-            #except(AttributeError, NameError, KeyError, TypeError, ValueError):
-                #raise Http404("ERROR! Requested Patient Data Does not exist")
-            #variable = RequestContext(request, {'user': user,
-                                                #'pat_obj': pat_obj,
-                                                #'contact_obj': contact_obj,
-                                                #'phone_obj': phone_obj,
-                                                #'guardian_obj': guardian_obj,
-                                                #'admission_obj': admission_obj,
-                                                #'visit_obj': visit_obj,
-                                                #'allergy_obj': allergy_obj,
-                                                #'medication_list_obj': medication_list_obj
-                                                #})
-            #return render_to_response('patient_detail/sidebar_contact_tab.html', variable)
-    #else:
-        #raise Http404("Bad Request")
+def render_patient_sidebar_contact_tab(request, id=None):
+    if request.method == "GET" and request.is_ajax():
+        user = request.user
+        if id:
+            patient_id = int(id)
+        else:
+            try:
+                patient_id = int(request.GET.get('patient_id'))
+                pat_obj = PatientDetail.objects.get(pk=patient_id)
+                contact_obj = Contact.objects.filter(
+                    patient_detail=pat_obj)
+                phone_obj = Phone.objects.filter(
+                    patient_detail=pat_obj)
+                guardian_obj = Guardian.objects.filter(
+                    patient_detail=pat_obj)
+                admission_obj = None
+                visit_obj = None
+                allergy_obj = Allergy.objects.filter(
+                    patient_detail=pat_obj)
+                medication_list_obj = MedicationList.objects.filter(
+                    patient_detail=pat_obj)
+            except(AttributeError, NameError, KeyError, TypeError, ValueError):
+                raise Http404("ERROR! Bad Request Parameters")
+            except(AttributeError, NameError, KeyError, TypeError, ValueError):
+                raise Http404("ERROR! Requested Patient Data Does not exist")
+            variable = RequestContext(request, {'user': user,
+                                                'pat_obj': pat_obj,
+                                                'contact_obj': contact_obj,
+                                                'phone_obj': phone_obj,
+                                                'guardian_obj': guardian_obj,
+                                                'admission_obj': admission_obj,
+                                                'visit_obj': visit_obj,
+                                                'allergy_obj': allergy_obj,
+                                                'medication_list_obj': medication_list_obj
+                                                })
+            return render_to_response('patient_detail/sidebar_contact_tab.html', variable)
+    else:
+        raise Http404("Bad Request")
 
 #
 

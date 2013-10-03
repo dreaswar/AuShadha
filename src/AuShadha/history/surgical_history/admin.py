@@ -1,5 +1,5 @@
 from django.contrib import admin
-from surgical_history.models import SurgicalHistory
+from history.surgical_history.models import SurgicalHistory
 
 
 class SurgicalHistoryAdmin(admin.ModelAdmin):

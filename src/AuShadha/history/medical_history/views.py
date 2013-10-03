@@ -29,7 +29,7 @@ from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 
 from patient.models import PatientDetail
-from medical_history.models import MedicalHistory, MedicalHistoryForm
+from history.medical_history.models import MedicalHistory, MedicalHistoryForm
 
 
 # Views start here -----------------------------------------

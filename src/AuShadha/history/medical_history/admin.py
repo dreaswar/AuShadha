@@ -1,5 +1,5 @@
 from django.contrib import admin
-from medical_history.models import MedicalHistory
+from history.medical_history.models import MedicalHistory
 
 
 class MedicalHistoryAdmin(admin.ModelAdmin):
