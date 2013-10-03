@@ -20,7 +20,7 @@ urlpatterns = patterns('',
                       (r'^AuShadha/social_history/', include('history.social_history.urls')),
                       (r'^AuShadha/medical_history/', include('history.medical_history.urls')),
                       (r'^AuShadha/surgical_history/', include('history.surgical_history.urls')),
-                      (r'^AuShadha/obs_and_gyn/', include('history.obs_and_gyn.urls')),                      
+                      #(r'^AuShadha/obs_and_gyn/', include('history.obs_and_gyn.urls')),                      
 
                       (r'^AuShadha/medication_list/', include('medication_list.urls')),
                       (r'^AuShadha/allergy_list/', include('allergy_list.urls')),
