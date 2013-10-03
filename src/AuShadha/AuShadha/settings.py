@@ -159,6 +159,7 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
 
+    # Core Django Apps used 
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -168,34 +169,41 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
 
-    # Custom Apps:
+    # Core AuShadha Apps, base_models, custom_users:
     'AuShadha.apps.aushadha_base_models',
     'AuShadha.apps.aushadha_users',
     'AuShadha.apps.clinic',
 
+    # Core AuShadha Registry for ICD 10 codes, ICD 10 PCS codes, Drug Database
+    #   and Vaccing Registry
     'registry.icd10',
     'registry.icd10_pcs',
     'registry.drug_db',
     'registry.inv_and_imaging',
     'registry.vaccine_registry',    
 
+    # Custom Apps for Patient Registration, Demographics
     'patient',
     'demographics',
 
+    # AuShadha stock apps for History
     'history.medical_history',
     'history.surgical_history',
     'history.social_history',
     'history.family_history',
     'history.obs_and_gyn',
 
+    #AuShadha Stock apps for Medication List, Allergy, Immunisaion
     'medication_list',
     'allergy_list',
     'immunisation',
 
+    #AuShadha Stock apps for Admission and OPD Visits
     'admission',
     'visit',
 
-     'phyexam',
+    #AuShadha Stock for Physical Examination Management
+    'phyexam',
 
 )
 
