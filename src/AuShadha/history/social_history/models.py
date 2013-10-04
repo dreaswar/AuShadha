@@ -7,9 +7,9 @@
 ################################################################################
 
 from django.db import models
-from django.forms import ModelForm
+#from django.forms import ModelForm
+#from django.contrib.auth.models import User
 
-from django.contrib.auth.models import User
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 
 from patient.models import PatientDetail

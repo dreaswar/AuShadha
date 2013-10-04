@@ -43,7 +43,7 @@ from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 
 from patient.models import PatientDetail
-from history.social_history.models import SocialHistory, SocialHistoryForm
+from .models import SocialHistory, SocialHistoryForm
 
 
 # Views start here -----------------------------------------
@@ -150,6 +150,11 @@ def social_history_add(request, patient_id = None):
                               "sexual_preference_notes": social_history_obj.sexual_preference_notes,
                               "current_events": social_history_obj.current_events
                           }
+
+                          if not hasattr(social_history_obj,'urls'):
+                            social_history_obj.save()
+                            urls  = social_history_obj.urls
+
                           data = {'success': success,
                                   'error_message': error_message,
                                   'form_errors': form_errors,
@@ -199,6 +204,10 @@ def social_history_edit(request, social_history_id = None):
             social_history_id = int(request.GET.get('social_history_id'))
           social_history_obj = SocialHistory.objects.get(pk=social_history_id)
 
+          if not hasattr(social_history_obj,'urls'):
+            social_history_obj.save()
+            urls  = social_history_obj.urls
+
         except ValueError or AttributeError or TypeError:
             raise Http404("BadRequest: Server Error")
         except SocialHistory.DoesNotExist:
@@ -238,12 +247,12 @@ def social_history_edit(request, social_history_id = None):
                                            "social_history_form": social_history_form,
                                            "social_history_obj": social_history_obj,
                                            "addData": addData,
-                                           'action': social_history_obj.urls['edit'],
+                                           'action': urls['edit'],
                                            'button_label': "Edit",
                                            'canDel': True,
                                            'addUrl': None,
-                                           'editUrl': social_history_obj.urls['edit'],
-                                           'delUrl': social_history_obj.urls['del'],
+                                           'editUrl': urls['edit'],
+                                           'delUrl': urls['del'],
                                            })
                 return render_to_response('social_history/add_or_edit_form.html', variable)
 
