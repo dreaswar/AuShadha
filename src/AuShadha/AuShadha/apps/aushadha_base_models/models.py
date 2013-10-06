@@ -30,8 +30,7 @@ class AuShadhaBaseModel(models.Model):
         super(AuShadhaBaseModel, self).__init__(*args, **kwargs)
         self.__model_label__ = "AuShadhaBaseModel"
         self._parent_model = None
-        #if hasattr(self,'id') and not hasattr(self,'urls'):
-          #self.generate_urls()
+        self.urls={}
 
     class Meta:
       abstract = True
@@ -49,7 +48,6 @@ class AuShadhaBaseModel(models.Model):
       #print "Printing Self:: "
       #print self
       self.urls = urlgenerator_factory(self,parent)
-      #self.urls = urls.copy()
 
     def generate_urls(self):
       """ Generates and Assigns URL to the Model Object
@@ -64,7 +62,7 @@ class AuShadhaBaseModel(models.Model):
       """
 
       parent = getattr(self,'_parent_model',None)
-      print "Parent Instance for URL is ", parent
+      #print "Parent Instance for URL is ", parent
 
       if parent:
         if type(parent) is str:

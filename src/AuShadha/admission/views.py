@@ -35,20 +35,28 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 
 from patient.models import PatientDetail, PatientDetailForm
-from admission.models import Admission
+from .models import AdmissionDetail,AdmissionDetailForm
 
 #from AuShadha.apps.clinic.models import Clinic
-#from demographics.models import Contact, Phone, Guardian, Demographics
+
+#from demographics.demographics.models import Demographics
+#from demographics.contact.models import Contact
+#from demographics.phone.models import Phone
+#from demographics.email_and_fax.models import EmailAndFax
+
 #from history.medical_history.models import MedicalHistory
 #from history.surgical_history.models import SurgicalHistory
 #from history.social_history.models import SocialHistory
 #from history.family_history.models import FamilyHistory
+#from history.obs_and_gyn.models import ObstetricHistoryDetail
+
 #from immunisation.models import Immunisation
 #from allergy_list.models import Allergy
 #from medication_list.models import MedicationList
+
 #from admission.models import Admission, AdmissionForm
 #from visit.models import VisitDetail, VisitImaging, VisitInv
-#from history.obs_and_gyn.models import ObstetricHistoryDetail
+
 
 
 # Views start here -----------------------------------------

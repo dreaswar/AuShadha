@@ -35,19 +35,29 @@ from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 #from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 #from AuShadha.utilities.forms import aumodelformerrorformatter_factory
-#from patient.models import PatientDetail, PatientDetailForm
+
 #from AuShadha.apps.clinic.models import Clinic
-#from demographics.models import Contact, Phone, Guardian, Demographics
+#from patient.models import PatientDetail, PatientDetailForm
+
+#from demographics.contact.models import Contact
+#from demographics.phone.models import Phone
+#from demographics.guardian.models import Guardian
+#from demographics.demographics.models import Demographics
+#from demographics.email_and_fax.models import EmailAndFax
+
 #from history.medical_history.models import MedicalHistory
 #from history.surgical_history.models import SurgicalHistory
 #from history.social_history.models import SocialHistory
 #from history.family_history.models import FamilyHistory
-#from immunisation.models import Immunisation
+#from history.obs_and_gyn.models import ObstetricHistoryDetail
+
 #from allergy_list.models import Allergy
 #from medication_list.models import MedicationList
+#from immunisation.models import Immunisation
+
 #from admission.models import AdmissionDetail, AdmissionDetailForm
 #from visit.models import VisitDetail, VisitImaging, VisitInv
-#from history.obs_and_gyn.models import ObstetricHistoryDetail
+
 
 
 @login_required

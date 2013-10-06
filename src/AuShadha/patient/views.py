@@ -38,19 +38,28 @@ from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 
 
-from patient.models import PatientDetail, PatientDetailForm
 from AuShadha.apps.clinic.models import Clinic
-from demographics.models import Contact, Phone, Guardian, Demographics
+from .models import PatientDetail, PatientDetailForm
+
+from demographics.demographics.models import Demographics
+from demographics.contact.models import Contact
+from demographics.phone.models import Phone
+from demographics.guardian.models import Guardian
+from demographics.email_and_fax.models import EmailAndFax
+
 from history.medical_history.models import MedicalHistory
 from history.surgical_history.models import SurgicalHistory
 from history.social_history.models import SocialHistory
 from history.family_history.models import FamilyHistory
+from history.obs_and_gyn.models import ObstetricHistoryDetail
+
 from immunisation.models import Immunisation
 from allergy_list.models import Allergy
 from medication_list.models import MedicationList
+
 from admission.models import AdmissionDetail, AdmissionDetailForm
 from visit.models import VisitDetail, VisitImaging, VisitInv
-from history.obs_and_gyn.models import ObstetricHistoryDetail
+
 
 
 # Views start here -----------------------------------------
@@ -1203,7 +1212,7 @@ def patient_search(request, search_by, search_for):
 
         elif search_by == "phone":
             try:
-                phone_obj = PatientPhone.objects.filter(
+                phone_obj = Phone.objects.filter(
                     phone__icontains=search_for)
                 variable = RequestContext(
                     request, {'phone_obj': phone_obj, 'user': user})
@@ -1213,7 +1222,7 @@ def patient_search(request, search_by, search_for):
 
         elif search_by == "guardian_name":
             try:
-                guardian_obj = PatientGuardian.objects.filter(
+                guardian_obj = Guardian.objects.filter(
                     guardian_name__icontains=search_for)
                 variable = RequestContext(
                     request, {'guardian_obj': guardian_obj, 'user': user})
@@ -1223,7 +1232,7 @@ def patient_search(request, search_by, search_for):
 
         elif search_by == "city":
             try:
-                contact_obj = PatientContact.objects.filter(
+                contact_obj = Contact.objects.filter(
                     city__icontains=search_for)
                 variable = RequestContext(
                     request, {'contact_obj': contact_obj, 'user': user})

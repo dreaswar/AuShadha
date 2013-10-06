@@ -36,17 +36,27 @@ from AuShadha.utilities.forms import AuModelFormErrorFormatter, aumodelformerror
 
 from AuShadha.apps.aushadha_users.models import AuShadhaUser
 from AuShadha.apps.clinic.models import Clinic, Staff
-from visit.models import *
+
+from .models import *
+#from AuShadha.apps.clinic.models import Clinic
 from patient.models import PatientDetail
 from admission.models import AdmissionDetail
-#from physician.models import PhysicianDetail
-from demographics.models import Contact, Guardian, Phone, Demographics
-from medication_list.models import MedicationList
-from allergy_list.models import Allergy
+
+from demographics.demographics.models import Demographics
+from demographics.contact.models import Contact
+from demographics.phone.models import Phone
+from demographics.guardian.models import Guardian
+from demographics.email_and_fax.models import EmailAndFax
+
 from history.social_history.models import SocialHistory
 from history.family_history.models import FamilyHistory
 from history.medical_history.models import MedicalHistory
 from history.surgical_history.models import SurgicalHistory
+#from history.obs_and_gyn.models import ObstetricHistoryDetail
+
+from medication_list.models import MedicationList
+from allergy_list.models import Allergy
+
 from registry.inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
 
 from phyexam.models import *

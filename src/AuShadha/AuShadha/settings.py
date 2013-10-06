@@ -135,21 +135,27 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'media/custom/styles'),
 
     os.path.join(ROOT_PATH, 'patient/templates/'),
-    os.path.join(ROOT_PATH, 'demographics/templates/'),    
 
-    os.path.join(ROOT_PATH, 'medical_history/templates/'),
-    os.path.join(ROOT_PATH, 'surgical_history/templates/'),
-    os.path.join(ROOT_PATH, 'family_history/templates/'),
-    os.path.join(ROOT_PATH, 'social_history/templates/'),
+    os.path.join(ROOT_PATH, 'demographics/demographics/templates/'),
+    os.path.join(ROOT_PATH, 'demographics/contact/templates/'),    
+    os.path.join(ROOT_PATH, 'demographics/phone/templates/'),    
+    os.path.join(ROOT_PATH, 'demographics/guardian/templates/'),    
+    os.path.join(ROOT_PATH, 'demographics/email_and_fax/templates/'),    
+
+    os.path.join(ROOT_PATH, 'history/medical_history/templates/'),
+    os.path.join(ROOT_PATH, 'history/surgical_history/templates/'),
+    os.path.join(ROOT_PATH, 'history/family_history/templates/'),
+    os.path.join(ROOT_PATH, 'history/social_history/templates/'),
+    os.path.join(ROOT_PATH, 'history/obs_and_gyn/templates/'),    
+
     os.path.join(ROOT_PATH, 'immunisation/templates/'),
     os.path.join(ROOT_PATH, 'medication_list/templates/'),    
     os.path.join(ROOT_PATH, 'allergy_list/templates/'),    
 
-    os.path.join(ROOT_PATH, 'phyexam/templates/'),    
-
     os.path.join(ROOT_PATH, 'visit/templates/'),
     os.path.join(ROOT_PATH, 'admission/templates/'),
-    os.path.join(ROOT_PATH, 'obs_and_gyn/templates/'),    
+
+    os.path.join(ROOT_PATH, 'phyexam/templates/'),    
 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -175,16 +181,22 @@ INSTALLED_APPS = (
     'AuShadha.apps.clinic',
 
     # Core AuShadha Registry for ICD 10 codes, ICD 10 PCS codes, Drug Database
-    #   and Vaccing Registry
+    #   and Vaccine Registry
     'registry.icd10',
     'registry.icd10_pcs',
     'registry.drug_db',
     'registry.inv_and_imaging',
     'registry.vaccine_registry',    
 
-    # Custom Apps for Patient Registration, Demographics
+    # Custom Apps for Patient Registration
     'patient',
-    'demographics',
+
+    # Custom Apps for Patient Demographics
+    'demographics.demographics',
+    'demographics.contact',
+    'demographics.phone',
+    'demographics.guardian',
+    'demographics.email_and_fax',
 
     # AuShadha stock apps for History
     'history.medical_history',

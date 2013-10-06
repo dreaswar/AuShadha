@@ -187,8 +187,8 @@ def has_contact(patient):
     in Database."""
 
     from patient.models import PatientDetail
-    from demographics.models import Contact
-    
+    from demographics.contact.models import Contact
+
     patient_id = patient.id
 
     try:
@@ -206,7 +206,7 @@ def has_phone(patient):
     in Database."""
 
     from patient.models import PatientDetail
-    from demographics.models import Phone
+    from demographics.phone.models import Phone
 
     patient_id = patient.id
 
@@ -226,7 +226,7 @@ def has_guardian(patient):
     in Database."""
 
     from patient.models import PatientDetail
-    from demographics.models import Guardian
+    from demographics.guardian.models import Guardian
 
     patient_id = patient.id
 
