@@ -252,7 +252,7 @@ class VascExam_FreeModel(PhyExamBaseModel):
 
     def __init__(self, *args, **kwargs):
         super(VascExam_FreeModel, self).__init__(*args, **kwargs)
-        self.__model_label__ = 'neuro_exam'
+        self.__model_label__ = 'vascular_exam'
         self._parent_model = ['visit_detail','admission_detail']
 
 #  pulse      = models.BooleanField()

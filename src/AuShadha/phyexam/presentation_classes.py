@@ -388,9 +388,17 @@ def vascexamobjpresentationclass_factory(instance):
 def vascexamobjpresentationclass_querysetfactory(queryset):
   h_head = ''
   h_rows = ''
+  
   for instance in queryset:
     h = vascexamobjpresentationclass_factory(instance)
+    print "Passing ", instance.__class__ , " to ", h.__class__
+    print "Returning fieldmap of: "
+    print h.field_map
+    #print instance
+    #print instance.__class__
     if not h_head:
       h_head = h.build_table_header()
     h_rows += h.build_table_rows()
+
+  #print h_rows
   return "<table class='content_pane_table'> %s <tbody> %s </tbody> </table>" %( h_head,h_rows)

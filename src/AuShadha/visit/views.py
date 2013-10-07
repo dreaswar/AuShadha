@@ -685,6 +685,8 @@ def visit_summary(request, patient_id = None):
                 d['vasc_exam']=vasc_f
                 dict_to_append[visit] = d
                 visit_obj_list.append(dict_to_append)
+                #print "Vascular Exam is: "
+                #print vasc_f
         else:
             error_message = "No Visits Recorded"
         variable = RequestContext(
@@ -692,7 +694,7 @@ def visit_summary(request, patient_id = None):
                       'visit_detail_obj': visit_detail_obj,
                       'visit_obj_list': visit_obj_list,
                       'patient_detail_obj': patient_detail_obj,
-                      'error_message': error_message
+                      'error_ message': error_message
                       })
         return render_to_response('visit_detail/summary.html', variable)
     else:
