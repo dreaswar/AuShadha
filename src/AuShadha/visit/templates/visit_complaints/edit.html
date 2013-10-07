@@ -14,8 +14,8 @@
       <tr id    = "visitComplaintEditFormsetRow_{{forloop.counter}}"
           class = "visitComplaintsEditFormRow complaintFormRow"
       >
-          <td>{{ form.visit_detail }} 
-              {{form.base_model}}
+          <td>{{form.id}}
+              <span style="display:none;">{{form.visit_detail}} </span>
               {{form.complaint}}
           </td>
           <td>{{ form.duration }}</td>

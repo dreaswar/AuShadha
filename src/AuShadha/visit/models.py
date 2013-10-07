@@ -532,7 +532,7 @@ class VisitInv(AuShadhaBaseModel):
 class VisitDetailForm(AuShadhaBaseModelForm):
     
     __form_name__ = "Visit Detail Form"
-    
+
     op_surgeon = ModelChoiceField(
         queryset=Staff.objects.filter(clinic_staff_role='doctor'))
 
@@ -546,13 +546,13 @@ class VisitDetailForm(AuShadhaBaseModelForm):
 class VisitComplaintAddForm(AuShadhaBaseModelForm):
 
     __form_name__ = "Visit Complaint Form"
-    
+
     dijit_fields = VISIT_COMPLAINTS_FORM_CONSTANTS
 
 
     class Meta:
         model = VisitComplaint
-        exclude = ('visit_detail','patient_detail')
+        exclude = ('visit_detail',)
 
 
 class VisitComplaintEditForm(AuShadhaBaseModelForm):
@@ -563,7 +563,7 @@ class VisitComplaintEditForm(AuShadhaBaseModelForm):
 
     class Meta:
         model = VisitComplaint
-        exclude = ('visit_detail','patient_detail')
+        exclude = ('visit_detail',)
 
 
 class VisitHPIForm(AuShadhaBaseModelForm):
@@ -616,7 +616,7 @@ class VisitROSForm(AuShadhaBaseModelForm):
     __form_name__ = "Visit ROS Form"
 
     dijit_fields = VISIT_ROS_FORM_CONSTANTS
-    
+
     class Meta:
         model = VisitROS
         exclude = ('visit_detail', 'parent_clinic', 'created_at')
@@ -626,7 +626,7 @@ class VisitFollowUpForm(AuShadhaBaseModelForm):
     __form_name__ = "Visit Follow Up Form"
 
     dijit_fields = VISIT_FOLLOW_UP_FORM_CONSTANTS
-    
+
     class Meta:
         model = VisitFollowUp
         exclude = ('visit_detail', 'parent_clinic', 'created_at')
@@ -637,7 +637,7 @@ class VisitSOAPForm(AuShadhaBaseModelForm):
     __form_name__ = "Visit SOAP Form"
 
     dijit_fields = VISIT_SOAP_FORM_CONSTANTS
-    
+
     class Meta:
         model = VisitSOAP
         exclude = ('visit_detail', 'parent_clinic', 'created_at')
