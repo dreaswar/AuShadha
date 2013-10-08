@@ -91,6 +91,9 @@ STATICFILES_DIRS = (
     os.path.join(ROOT_PATH, 'media/plugins'),
     os.path.join(ROOT_PATH, 'media/custom/js'),
     os.path.join(ROOT_PATH, 'media/custom/styles'),
+
+    os.path.join(ROOT_PATH, 'apps/ui/media'),
+
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -130,10 +133,14 @@ ROOT_URLCONF = 'AuShadha.urls'
 WSGI_APPLICATION = 'AuShadha.wsgi.application'
 
 TEMPLATE_DIRS = (
+
     os.path.join(ROOT_PATH, 'templates'),
     os.path.join(ROOT_PATH, 'media/custom/js/'),
     os.path.join(ROOT_PATH, 'media/custom/styles'),
 
+    os.path.join(ROOT_PATH, 'apps/ui/templates/ui/'),
+    os.path.join(ROOT_PATH, 'apps/ui/media/ui/'),
+    
     os.path.join(ROOT_PATH, 'patient/templates/'),
 
     os.path.join(ROOT_PATH, 'demographics/demographics/templates/'),
@@ -180,6 +187,7 @@ INSTALLED_APPS = (
     'AuShadha.apps.aushadha_users',
     'AuShadha.apps.clinic',
     'AuShadha.apps.ui',
+    'AuShadha.apps.search',
 
     # Core AuShadha Registry for ICD 10 codes, ICD 10 PCS codes, Drug Database
     #   and Vaccine Registry

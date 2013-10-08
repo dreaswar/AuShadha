@@ -12,6 +12,8 @@ urlpatterns = patterns('',
                        # Specific URLS..
                        #(r'^AuShadha/clinic/',include('AuShadha.apps.clinic.urls')),
 
+                      (r'^AuShadha/ui/', include('AuShadha.apps.ui.urls') ),
+
                       (r'^AuShadha/pat/', include('patient.urls') ),
                       (r'^AuShadha/patient/', include('patient.urls') ),
 

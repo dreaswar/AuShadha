@@ -99,7 +99,7 @@ define([
        auPaneEventController : auPaneEventController,
 
        searchWidget : function(){
-                        var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL});
+                        var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL?PAT_SEARCH_JSON_URL:''});
 
                         var searchBox = new FilteringSelect({regExp        : '[a-zA-Z0-9 -]+'  ,
                                                             required       : true              ,
@@ -126,7 +126,7 @@ define([
         },
 
         headerPaneSearchWidget : function(){
-                            var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL});
+                            var widgetStore = new JsonRest({target: PAT_SEARCH_JSON_URL?PAT_SEARCH_JSON_URL:''});
 
                             /*
                             domStyle.set('filteringSelectPatSearchSmall',
