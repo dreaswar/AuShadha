@@ -179,6 +179,7 @@ INSTALLED_APPS = (
     'AuShadha.apps.aushadha_base_models',
     'AuShadha.apps.aushadha_users',
     'AuShadha.apps.clinic',
+    'AuShadha.apps.ui',
 
     # Core AuShadha Registry for ICD 10 codes, ICD 10 PCS codes, Drug Database
     #   and Vaccine Registry
