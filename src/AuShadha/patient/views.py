@@ -35,11 +35,10 @@ import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
+from AuShadha.apps.ui.data.json import ModelInstanceJson
+from AuShadha.apps.ui.data.summary import ModelInstanceSummary
 from AuShadha.utilities.forms import aumodelformerrorformatter_factory
-
-
 from AuShadha.apps.clinic.models import Clinic
-from .models import PatientDetail, PatientDetailForm
 
 from demographics.demographics.models import Demographics
 from demographics.contact.models import Contact
@@ -60,6 +59,8 @@ from medication_list.models import MedicationList
 from admission.models import AdmissionDetail, AdmissionDetailForm
 from visit.models import VisitDetail, VisitImaging, VisitInv
 
+from .models import PatientDetail, PatientDetailForm
+from dijit_widgets.tree import PatientTree
 
 
 # Views start here -----------------------------------------
@@ -91,15 +92,15 @@ def alternate_layout(request):
 
 @login_required
 def patient_index(request):
-    """View for Generating Patient List.
+    """
+    View for Generating Patient List.
 
     Takes on Request Object as argument.
 
     """
     user = request.user
     all_patients = PatientDetail.objects.all().order_by('patient_hospital_id')
-    variable = RequestContext(
-        request, {"all_patients": all_patients, 'user': user})
+    variable = RequestContext(request, {"all_patients": all_patients, 'user': user})
     return render_to_response('patient_detail/index.html', variable)
 
 
@@ -271,387 +272,43 @@ def patient_detail_del(request, id):
         raise Http404("Server Error: No Permission to delete.")
 
 
-
-def return_patient_json(patient, success=True):
-    print "Trying to generate JSON"
-    data = {"addData": {}}
-    patient.generate_urls()
-    urls = patient.urls
-    if patient:
-        patient_id = unicode(patient.id)
-        data_to_append = data['addData']
-        data_to_append['id'] = patient.id
-        data_to_append['patient_hospital_id'] = patient.patient_hospital_id
-
-        data_to_append['full_name'] = patient.full_name
-        data_to_append['first_name'] = patient.first_name
-        data_to_append['middle_name'] = patient.middle_name
-        data_to_append['last_name'] = patient.last_name
-        data_to_append['age'] = patient.age
-        data_to_append['sex'] = patient.sex
-
-        #data_to_append['home'] = patient.get_patient_main_window_url()
-        data_to_append['edit'] = urls['edit']
-        data_to_append['del'] = urls['del']
-
-        #print "Tree URL for Patient is: " , urls['tree']
-        data_to_append['patientTreeUrl']   =  patient.get_patient_tree_url()
-
-        #print "Summary URL for Patient is: " , urls['summary']
-        data_to_append['patientsummary']     = patient.get_patient_summary_url()
-
-        #data_to_append['sidebarcontacttab']  = urls['sidebar']
-
-        data_to_append['contactadd'] = urls['add']['contact']
-        data_to_append['contactlist'] = urls['list']['contact']
-        data_to_append['contactjson']  = urls['json']['contact']
-
-        data_to_append['phoneadd'] = urls['add']['phone']
-        data_to_append['phonelist'] = urls['list']['phone']
-        data_to_append['phonejson']  = urls['json']['phone']
-
-        data_to_append['guardianadd'] = urls['add']['guardian']
-        data_to_append['guardianlist'] = urls['list']['guardian']
-        data_to_append['guardianjson']  = urls['json']['guardian']
-
-        data_to_append['emailadd']  = urls['add']['email_and_fax']
-        data_to_append['emaillist'] = urls['list']['email_and_fax']
-        data_to_append['emailjson'] = urls['json']['email_and_fax']
-
-        data_to_append['admissionadd'] = urls['add']['admission']
-        data_to_append['admissionlist'] = urls['list']['admission']
-        data_to_append['admissionjson'] = urls['json']['admission']
-#        data_to_append['admissiontree']   = urls['tree']['admission']
-
-        data_to_append['visitadd'] = urls['add']['visit']
-        data_to_append['visitlist'] = urls['list']['visit']
-        data_to_append['visitjson'] = urls['json']['visit']
-        data_to_append['visittree'] = urls['tree'] ['visit']
-        data_to_append['visitsummary']= urls['summary']['visit'] 
-        data_to_append['patientvisitspdf']  = APP_ROOT_URL + \
-            "visit/render_patient_visits_pdf/" + patient_id + "/"
-
-        data_to_append['demographicsadd'] = urls['add']['demographics']
-        data_to_append['demographicslist'] = urls['list']['demographics']
-
-        data_to_append['familyhistorylist'] = urls['list']['family_history']
-        data_to_append['familyhistoryadd'] = urls['add']['family_history']
-        data_to_append['familyhistoryjson']  = urls['json']['family_history']
-
-        data_to_append['medicalhistorylist'] = urls['list']['medical_history']
-        data_to_append['medicalhistoryadd'] = urls['add']['medical_history']
-        data_to_append['medicalhistoryjson']  = urls['json']['medical_history']
-
-        data_to_append['surgicalhistorylist'] = urls['list']['surgical_history']
-        data_to_append['surgicalhistoryadd'] = urls['add']['surgical_history']
-        data_to_append['surgicalhistoryjson']  = urls['json']['surgical_history']
-
-        data_to_append['immunisationadd'] = urls['add']['immunisation']
-        data_to_append['immunisationlist'] = urls['list']['immunisation']
-        data_to_append['immunisationjson']  = urls['json']['immunisation']
-
-        data_to_append['medicationlistadd'] = urls['add']['medication_list']
-        data_to_append['medicationlistlist'] = urls['list']['medication_list']
-        data_to_append['medicationlistjson']  = urls['json']['medication_list']
-
-        data_to_append['allergiesadd'] = urls['add']['allergy_list']
-        data_to_append['allergieslist'] = urls['list']['allergy_list']
-        data_to_append['allergiesjson']  = urls['json']['allergy_list']
-
-        data_to_append['socialhistoryadd'] = urls['add']['social_history']
-        data_to_append['socialhistorylist'] = urls['list']['social_history']
-
-        data_to_append['obstetrichistorydetailadd'] = urls['add']['obstetric_history_detail']
-        data_to_append['obstetrichistorydetaillist'] = urls['list']['obstetric_history_detail']
-
-    if success:
-        error_message = "Patient Detail Saved Successfully"
-        form_errors = None
-    else:
-        success = False
-        error_message = "Error! Form could not be saved. "
-        form_errors = True
-    data['success'] = success
-    data['error_message'] = error_message
-    data['form_errors'] = form_errors
-    json = simplejson.dumps(data)
-    #print "JSON=", json
-    return json
-
+def return_patient_json(patient,success = True):
+   p = ModelInstanceJson(patient)
+   return p()
 
 @login_required
 def render_patient_tree(request, patient_id=None):
-    user = request.user
     if request.method == "GET" and request.is_ajax():
-        if patient_id:
-            patient_id = int(patient_id)
-        else:
-            try:
-                patient_id = int(request.GET.get('patient_id'))
-                pat_obj = PatientDetail.objects.get(pk=patient_id)
-                #pat_obj.generate_urls()
-                #pat_urls = pat_obj.urls
-            except(AttributeError, NameError, KeyError, TypeError, ValueError):
-                raise Http404("ERROR! Bad Request Parameters")
-            except(PatientDetail.DoesNotExist):
-                raise Http404("ERROR! Requested Patient Data Does not exist")
-
-            patient_tree_node = DijitTree()
-
-            history_node = DijitTreeNode({"name": "History",
-                                          "type": "application",
-                                          "id": "HISTORY"
-                                        })
-
-            medical_history_node = DijitTreeNode({"name": "Medical History",
-                                                  "type": "medical_history_module",
-                                                  "id": "MEDICAL_HISTORY"
-                                                  })
-            history_node.add_child_node(medical_history_node)
-
-            surgical_history_node = DijitTreeNode({"name": "Surgical History",
-                                                   "type": "surgical_history_module",
-                                                   "id": "SURGICAL_HISTORY"
-                                                 })
-            history_node.add_child_node(surgical_history_node)
-
-            family_history_node = DijitTreeNode({"name": "Family History",
-                                                 "type": "family_history_module",
-                                                 "id": "FAMILY_HISTORY"
-                                                })
-            history_node.add_child_node(family_history_node)
-
-            social_history_node = DijitTreeNode({"name": "Social History",
-                                                 "type": "social_history_module",
-                                                 "id": "SOCIAL_HISTORY"
-                                                })
-            history_node.add_child_node(social_history_node)
-
-            demographics_node = DijitTreeNode({"name": "Demographics",
-                                              "type": "demographics_module",
-                                              "id": "DEMOGRAPHICS"
-                                              })
-            history_node.add_child_node(demographics_node)
-
-            patient_tree_node.add_child_node(history_node)
-
-            medication_list_node = DijitTreeNode({"name" : "Medications",
-                                                  "type": "application",
-                                                  "module_type": "medication_list_module",
-                                                  "id" : "MEDICATIONS"
-                                                })
-            patient_tree_node.add_child_node(medication_list_node)
-
-            preventives_node = DijitTreeNode({"name": "Preventives",
-                                            "type": "application",
-                                            "id": "PREVENTIVES"
-                                            })
-
-            immunisation_node = DijitTreeNode({"name": "Immunisation",
-                                              "type": "immunisation_module",
-                                              "id": "IMMUNISATION"
-                                              })
-            preventives_node.add_child_node(immunisation_node)
-
-            patient_tree_node.add_child_node(preventives_node)
-
-            #medical_preventives_node = DijitTreeNode({"name": "Medical",
-                                                      #"type": "medical_preventives_module",
-                                                      #"id": "MEDICAL_PREVENTIVES"
-                                                      #})
-
-            #surgical_preventives_node = DijitTreeNode({"name": "Surgical",
-                                                        #"type": "surgical_preventives_module",
-                                                        #"id": "SURGICAL_PREVENTIVES"
-                                                      #})
-
-            #obs_and_gyn_preventives_node = DijitTreeNode({"name": "Obs & Gyn",
-                                                          #"type": "obs_and_gyn_preventives_module",
-                                                          #"id": "OBS_PREVENTIVES"
-                                                          #})
-
-            #admission_node = DijitTreeNode({"name" : "AdmissionDetails"   , 
-                                            #"type" :"application", 
-                                            #"id"   :"ADM"
-                                            #})
-
-            #visit_node = DijitTreeNode({"name"  : "OPD Visits"          , 
-                                        #"type":"application", 
-                                        #"id":"VISIT"
-                                        #})
-
-            investigation_node = DijitTreeNode({"name": "Investigation", 
-                                                "type": "application", 
-                                                "id": "INV"
-                                               })
-            patient_tree_node.add_child_node(investigation_node)
-
-            imaging_node = DijitTreeNode({"name": "Imaging", 
-                                          "type": "application", 
-                                          "id": "IMAG"
-                                         })
-            patient_tree_node.add_child_node(imaging_node)
-
-            procedure_node = DijitTreeNode({"name": "Procedures", 
-                                            "type": "application", 
-                                            "id": "PROCEDURES"
-                                            })
-            patient_tree_node.add_child_node(procedure_node)
-
-            #calendar_node = DijitTreeNode({"name"  : "Calendar" , 
-                                          #"type":"application", 
-                                          #"id":"CAL" 
-                                        #})
-
-            #media_node = DijitTreeNode({"name": "Media", 
-                                        #"type": "application", 
-                                        #"id": "MEDIA"
-                                      #})
-
-            #documents_node = DijitTreeNode({"name": "Documents",
-                                            #"type": "patient_documents_module",
-                                            #"id": "DOCS"
-                                          #})
-            #images_node = DijitTreeNode({"name": "Images",
-                                          #"type": "patient_images_module",
-                                          #"id": "IMAGES"
-                                        #})
-
-            #coding_node = DijitTreeNode({"name": "Coding",
-                                          #"type": "application",
-                                          #"id": "CODING"
-                                        #})
-
-            #icd_10_node = DijitTreeNode({"name": "ICD 10",
-                                          #"type": "icd10_module",
-                                          #"id": "ICD_10"
-                                         #})
-
-            #icd_10_pcs_node = DijitTreeNode({"name": "ICD 10 PC",
-                                              #"type": "icd10_pcs_module",
-                                              #"id": "ICD_10_PROCEDURE_CODES"
-                                            #})
-
-            json = patient_tree_node.to_json()
-            return HttpResponse(json, content_type="application/json")
-
+      tree = PatientTree(request)()
+      return HttpResponse(tree, content_type="application/json")
     else:
         raise Http404("Bad Request")
 
 
+@login_required
 def render_patient_summary(request, patient_id=None):
     if request.method == "GET" and request.is_ajax():
         user = request.user
+
         if patient_id:
             patient_id = int(patient_id)
         else:
             patient_id = int(request.GET.get('patient_id'))
+
         try:
             pat_obj = PatientDetail.objects.get(pk=patient_id)
-            contact_obj = Contact.objects.filter(
-                patient_detail=pat_obj)
-            phone_obj = Phone.objects.filter(
-                patient_detail=pat_obj)
-            guardian_obj = Guardian.objects.filter(
-                patient_detail=pat_obj)
-
-            medical_history_obj = MedicalHistory.objects.filter(
-                patient_detail=pat_obj)
-            surgical_history_obj = SurgicalHistory.objects.filter(
-                patient_detail=pat_obj)
-            social_history_obj = SocialHistory.objects.filter(
-                patient_detail=pat_obj)
-            family_history_obj = FamilyHistory.objects.filter(
-                patient_detail=pat_obj)
-            demographics_obj = Demographics.objects.filter(
-                patient_detail=pat_obj)
-
-            allergy_obj = Allergy.objects.filter(
-                patient_detail=pat_obj)
-            medication_list_obj = MedicationList.objects.filter(
-                patient_detail=pat_obj)
-
-            immunisation_obj = Immunisation.objects.filter(
-                patient_detail=pat_obj)
-            obstetric_history_detail_obj = ObstetricHistoryDetail.objects.filter(
-                patient_detail=pat_obj)
-
-            admission_obj = AdmissionDetail.objects.filter(
-                patient_detail=pat_obj)
-            visit_obj = VisitDetail.objects.filter(
-                patient_detail=pat_obj)
-
-            variable = RequestContext(request, {
-                                      'user': user,
-                                      'pat_obj': pat_obj,
-                                      'contact_obj': contact_obj,
-                                      'phone_obj': phone_obj,
-                                      'guardian_obj': guardian_obj,
-
-                                      'allergy_obj': allergy_obj,
-                                      'medication_list_obj': medication_list_obj,
-                                      'medical_history_obj': medical_history_obj,
-                                      'surgical_history_obj': surgical_history_obj,
-                                      'social_history_obj': social_history_obj,
-                                      'family_history_obj': family_history_obj,
-                                      'demographics_obj': demographics_obj,
-
-                                      'obstetric_history_detail_obj': obstetric_history_detail_obj,
-                                      'immunisation_obj': immunisation_obj,
-
-                                      'admission_obj': admission_obj,
-                                      'visit_obj': visit_obj,
-
-                                      })
+            var = ModelInstanceSummary(pat_obj).variable
+            var['user']  = user
+            variable = RequestContext(request, var)
             return render_to_response('patient_detail/summary.html', variable)
+
         except(AttributeError, NameError, KeyError, TypeError, ValueError):
             raise Http404("ERROR! Bad Request Parameters")
+
         except(AttributeError, NameError, KeyError, TypeError, ValueError):
             raise Http404("ERROR! Requested Patient Data Does not exist")
     else:
         raise Http404("Bad Request")
-
-
-def render_patient_sidebar_contact_tab(request, id=None):
-    if request.method == "GET" and request.is_ajax():
-        user = request.user
-        if id:
-            patient_id = int(id)
-        else:
-            try:
-                patient_id = int(request.GET.get('patient_id'))
-                pat_obj = PatientDetail.objects.get(pk=patient_id)
-                contact_obj = Contact.objects.filter(
-                    patient_detail=pat_obj)
-                phone_obj = Phone.objects.filter(
-                    patient_detail=pat_obj)
-                guardian_obj = Guardian.objects.filter(
-                    patient_detail=pat_obj)
-                admission_obj = None
-                visit_obj = None
-                allergy_obj = Allergy.objects.filter(
-                    patient_detail=pat_obj)
-                medication_list_obj = MedicationList.objects.filter(
-                    patient_detail=pat_obj)
-            except(AttributeError, NameError, KeyError, TypeError, ValueError):
-                raise Http404("ERROR! Bad Request Parameters")
-            except(AttributeError, NameError, KeyError, TypeError, ValueError):
-                raise Http404("ERROR! Requested Patient Data Does not exist")
-            variable = RequestContext(request, {'user': user,
-                                                'pat_obj': pat_obj,
-                                                'contact_obj': contact_obj,
-                                                'phone_obj': phone_obj,
-                                                'guardian_obj': guardian_obj,
-                                                'admission_obj': admission_obj,
-                                                'visit_obj': visit_obj,
-                                                'allergy_obj': allergy_obj,
-                                                'medication_list_obj': medication_list_obj
-                                                })
-            return render_to_response('patient_detail/sidebar_contact_tab.html', variable)
-    else:
-        raise Http404("Bad Request")
-
-#
 
 
 def check_before_adding(patient_obj):
@@ -931,123 +588,8 @@ def render_patient_list(request):
                 print patient
 
                 #print "Generating URL for JSON export: "
-                patient.generate_urls()
-                urls = patient.urls
-                #print urls
-
-                data_to_append = {'addData': {}}
-                addData = data_to_append['addData']
-
-                data_to_append['id'] = patient.id
-                data_to_append['patient_hospital_id'] = patient.patient_hospital_id
-                data_to_append['full_name'] = patient.full_name
-                data_to_append['first_name'] = patient.first_name
-                data_to_append['middle_name'] = patient.middle_name
-                data_to_append['last_name'] = patient.last_name
-                data_to_append['age'] = patient.age
-                data_to_append['sex'] = patient.sex
-
-                #data_to_append['home']         = patient.get_patient_main_window_url()
-                #data_to_append['edit']         = patient.get_patient_detail_edit_url()
-                #data_to_append['del']          = patient.get_patient_detail_del_url()
-
-                #data_to_append['contactadd']   = patient.get_patient_contact_add_url()
-                #data_to_append['contactlist']  = patient.get_patient_contact_list_url()
-                #data_to_append['phoneadd']     = patient.get_patient_phone_add_url()
-                #data_to_append['phonelist']    = patient.get_patient_phone_list_url()
-                #data_to_append['guardianadd']  = patient.get_patient_guardian_add_url()
-                #data_to_append['guardianlist'] = patient.get_patient_guardian_list_url()
-                #data_to_append['emailadd']     = patient.get_patient_email_and_fax_add_url()
-                #data_to_append['emaillist']    = patient.get_patient_email_and_fax_list_url()
-
-                #data_to_append['admissionadd']  = patient.get_patient_admission_add_url()
-                #data_to_append['visitadd']      = patient.get_patient_visit_add_url()
-                #data_to_append['admissionlist'] = patient.get_patient_admission_list_url()
-                #data_to_append['visitlist']     = patient.get_patient_visit_list_url()
-
-                patient_id = unicode(patient.id)
-                addData['id'] = patient.id
-                addData['patient_hospital_id'] = patient.patient_hospital_id
-
-                addData['full_name'] = patient.full_name
-                addData['first_name'] = patient.first_name
-                addData['middle_name'] = patient.middle_name
-                addData['last_name'] = patient.last_name
-                addData['age'] = patient.age
-                addData['sex'] = patient.sex
-
-                #addData['home'] = patient.get_patient_main_window_url()
-                #addData['home'] = patient.get_patient_main_window_url()
-                addData['edit'] = urls['edit']
-                addData['del'] = urls['del']
-                addData['patientTreeUrl']   =  patient.get_patient_tree_url()
-                #print "Printing Patient Summary: ", urls["summary"]
-                addData['patientsummary']     = patient.get_patient_summary_url()
-                #addData['sidebarcontacttab']  = urls['sidebar']
-
-                addData['contactadd'] = urls['add']['contact']
-                addData['contactlist'] = urls['list']['contact']
-                addData['contactjson']  = urls['json']['contact']
-
-                addData['phoneadd'] = urls['add']['phone']
-                addData['phonelist'] = urls['list']['phone']
-                addData['phonejson']  = urls['json']['phone']
-
-                addData['guardianadd'] = urls['add']['guardian']
-                addData['guardianlist'] = urls['list']['guardian']
-                addData['guardianjson']  = urls['json']['guardian']
-
-                addData['emailadd']  = urls['add']['email_and_fax']
-                addData['emaillist'] = urls['list']['email_and_fax']
-                addData['emailjson'] = urls['json']['email_and_fax']
-
-                addData['admissionadd'] = urls['add']['admission']
-                addData['admissionlist'] = urls['list']['admission']
-                addData['admissionjson'] = urls['json']['admission']
-        #        addData['admissiontree']   = urls['tree']['admission']
-
-                addData['visitadd'] = urls['add']['visit']
-                addData['visitlist'] = urls['list']['visit']
-                addData['visitjson'] = urls['json']['visit']
-                addData['visittree'] = urls['tree'] ['visit']
-                addData['visitsummary']= urls['summary']['visit'] 
-                addData['patientvisitspdf']  = APP_ROOT_URL + \
-                    "visit/render_patient_visits_pdf/" + patient_id + "/"
-
-                addData['demographicsadd'] = urls['add']['demographics']
-                addData['demographicslist'] = urls['list']['demographics']
-
-                addData['familyhistorylist'] = urls['list']['family_history']
-                addData['familyhistoryadd'] = urls['add']['family_history']
-                addData['familyhistoryjson']  = urls['json']['family_history']
-
-                addData['medicalhistorylist'] = urls['list']['medical_history']
-                addData['medicalhistoryadd'] = urls['add']['medical_history']
-                addData['medicalhistoryjson']  = urls['json']['medical_history']
-
-                addData['surgicalhistorylist'] = urls['list']['surgical_history']
-                addData['surgicalhistoryadd'] = urls['add']['surgical_history']
-                addData['surgicalhistoryjson']  = urls['json']['surgical_history']
-
-                addData['immunisationadd'] = urls['add']['immunisation']
-                addData['immunisationlist'] = urls['list']['immunisation']
-                addData['immunisationjson']  = urls['json']['immunisation']
-
-                addData['medicationlistadd'] = urls['add']['medication_list']
-                addData['medicationlistlist'] = urls['list']['medication_list']
-                addData['medicationlistjson']  = urls['json']['medication_list']
-
-                addData['allergiesadd'] = urls['add']['allergy_list']
-                addData['allergieslist'] = urls['list']['allergy_list']
-                addData['allergiesjson']  = urls['json']['allergy_list']
-
-                addData['socialhistoryadd'] = urls['add']['social_history']
-                addData['socialhistorylist'] = urls['list']['social_history']
-
-                addData['obstetrichistorydetailadd'] = urls['add']['obstetric_history_detail']
-                addData['obstetrichistorydetaillist'] = urls['list']['obstetric_history_detail']
-
-                data.append(data_to_append)
+                json = ModelInstanceJson(patient)()
+                data.append(json)
         else:
           data = {}
         json = simplejson.dumps(data)
