@@ -138,6 +138,14 @@ hr.shadow_line {
   overflow    : visible;
 }
 
+.dijitContentPane.topContentPane:{
+      height: .5em;
+      border:none; 
+      background: #eee;
+      border-radius: 5px;
+      box-shadow: 0px 2px;
+}
+
 #topPane{
   box-shadow: 1px 1px 3px #aaa;
   z-index: 10000;

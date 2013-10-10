@@ -524,6 +524,32 @@ def patient_name_autocompleter(request, patient_name=None):
 
 
 
+@login_required
+def render_patient_json(request):
+
+    if request.method =='GET':
+      all_p = PatientDetail.objects.all()
+      if all_p is not None:
+          data = []
+          for patient in all_p:
+              print "Evaluating Patient: "
+              print patient
+              json = ModelInstanceJson(patient)()
+              data.append(json)
+      else:
+        data = {}
+      json = simplejson.dumps(data)
+      #print "#"*100
+      #print "Returning all patients.."
+      #print "-"*100
+      #print json
+      #print "-"*100
+      return HttpResponse(json, content_type="application/json")
+    else:
+      raise Http404("Bad Request Method")
+
+
+
 
 @login_required
 def render_patient_list(request):

@@ -5,6 +5,21 @@
 # License : GNU-GPL Version 3, see LICENSE.txt
 ################################################################################
 
+#from models import VisitDetail
+#from .views import render_visit_tree, render_visit_summary
+
+MODULE_IDENTIFIER = 'aushadha-visit'
 MODULE_LABEL = 'OPD Visits'
-PACKAGE_NAME = 'aushadha-visit'
+MODULE_TYPE = 'main_module'
 VERSION = 0.01
+PARENT_MODULE = 'aushadha'
+DEPENDS_ON = ['aushadha','patient',]
+
+ui_sections = {'app_type': 'main_module',
+               'layout'  :['trailing','top','center'],
+               'widgets' :{ 'tree'    : '',
+                           'summary'  : '',
+                           'grid'     : '',
+                           'search'   : ''
+                          }
+              }

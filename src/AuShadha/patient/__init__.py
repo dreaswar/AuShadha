@@ -6,8 +6,9 @@
 # Author : Dr. Easwar T.R
 ################################################################################
 
-from .views import render_patient_tree
-from .models import PatientDetail
+#from patient.views import render_patient_tree, render_patient_summary
+#from patient.models import PatientDetail
+from django.core.urlresolvers import reverse
 
 MODULE_IDENTIFIER = 'aushadha-patient'
 MODULE_LABEL = 'Patient'
@@ -16,6 +17,11 @@ MODULE_TYPE = 'main_module'
 PARENT_MODULE = 'aushadha'
 DEPENDS_ON = ['aushadha',]
 
-ui_sections = {'layout' :'two_column',
-               'widgets':{ 'tree':render_patient_tree,}
+ui_sections = {'app_type': 'main_module',
+               'layout'  :['trailing','top','center'],
+               'widgets' :{ 'tree'   : reverse('render_patient_tree_without_id'),
+                            'summary': True,
+                            'grid'   : reverse('render_patient_json'),
+                            'search' : True
+                          }
               }

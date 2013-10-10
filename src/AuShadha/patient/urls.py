@@ -58,6 +58,11 @@ urlpatterns = patterns('',
                            name='render_patient_tree_without_id'
                            ),
 
+                       url(r'patient/json/$',
+                           'patient.views.render_patient_json',
+                           name='render_patient_json'
+                           ),
+
 
 ################################ PATIENT SUMMARY ###############################
 
