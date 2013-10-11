@@ -22,6 +22,6 @@ ui_sections = {'app_type': 'main_module',
                'widgets' :{ 'tree'   : reverse('render_patient_tree_without_id'),
                             'summary': True,
                             'grid'   : reverse('render_patient_json'),
-                            'search' : True
+                            'search' : reverse('filtering_search_without_id')
                           }
               }

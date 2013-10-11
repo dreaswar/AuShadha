@@ -53,7 +53,7 @@ urlpatterns = patterns('',
                        # TODO This will be the true address.. a kind of like a Dashboard. 
                        #      Till then use the one below for /AuShadha/home/
                        #(r'^AuShadha/home/$', 'home.views.home'),
-                      (r'^AuShadha/home/$', 'patient.views.patient_list'),
+                      #(r'^AuShadha/home/$', 'patient.views.patient_list'),
 
                        # Login and Logout URLS
                        #(r'^AuShadha/login/$', 'django.contrib.auth.views.login'),
@@ -61,9 +61,9 @@ urlpatterns = patterns('',
                       (r'^AuShadha/logout/$','AuShadha.apps.aushadha_users.views.logout_view'),
 
                        # If it dosent match anything else..
-                      (r'^AuShadha/alternate_layout/$','patient.views.alternate_layout'),
-                      (r'^AuShadha/$', 'patient.views.patient_list'),
-                      (r'^$', 'patient.views.patient_list'),
+                      #(r'^AuShadha/alternate_layout/$','patient.views.alternate_layout'),
+                      #(r'^AuShadha/$', 'patient.views.patient_list'),
+                      #(r'^$', 'patient.views.patient_list'),
 )
 
 if settings.DEBUG:

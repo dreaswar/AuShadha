@@ -10,15 +10,15 @@ urlpatterns = patterns('',
 
 ############################ PATIENT CRUD ######################################
 
-                       url(r'patient/index/$',
-                           'patient.views.patient_index',
-                           name='patient_index'
-                           ),
+                       #url(r'patient/index/$',
+                           #'patient.views.patient_index',
+                           #name='patient_index'
+                           #),
 
-                       url(r'patient/list/$',
-                           'patient.views.render_patient_list'	,
-                           name='render_patient_list'
-                           ),
+                       #url(r'patient/list/$',
+                           #'patient.views.render_patient_list'	,
+                           #name='render_patient_list'
+                           #),
 
                        url(r'new/add/(?P<clinic_id>\d+)/$'                             ,
                            'patient.views.patient_detail_add',
@@ -60,6 +60,7 @@ urlpatterns = patterns('',
 
                        url(r'patient/json/$',
                            'patient.views.render_patient_json',
+                           #'patient.views.render_patient_list',
                            name='render_patient_json'
                            ),
 
@@ -71,7 +72,7 @@ urlpatterns = patterns('',
                            name='render_patient_summary_without_id'
                            ),
 
-                       url(r'patient/summary/(?P<id>\d+)/$',
+                       url(r'patient/summary/(?P<patient_id>\d+)/$',
                            'patient.views.render_patient_summary',
                            name='render_patient_summary_with_id'
                            ),
@@ -102,14 +103,14 @@ urlpatterns = patterns('',
                          ),
 
 
-                       url(r'patient_filtering_search_json/$'	,
-                           'patient.views.patient_filtering_search_json',
-                           name="patient_filtering_search_json_without_id"
+                       url(r'filtering_search/$'	,
+                           'patient.views.filtering_search',
+                           name="filtering_search_without_id"
                            ),
 
-                       url(r'patient_filtering_search_json/(?P<id>\d+)/$'	,
-                           'patient.views.patient_filtering_search_json',
-                           name="patient_filtering_search_json_with_id"
+                       url(r'filtering_search/(?P<id>\d+)/$'	,
+                           'patient.views.filtering_search',
+                           name="filtering_search_with_id"
                            ),
 
                        url(r'patient_id/autocompleter/$',
@@ -129,9 +130,9 @@ urlpatterns = patterns('',
 
 ###############################################################################
 
-                       url(r'list/$',
-                           'patient.views.render_patient_list'  ,
-                           name='render_patient_list'
-                           ),
+                       #url(r'list/$',
+                           #'patient.views.render_patient_list'  ,
+                           #name='render_patient_list'
+                           #),
 
 )
