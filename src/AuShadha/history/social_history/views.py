@@ -204,8 +204,10 @@ def social_history_edit(request, social_history_id = None):
             social_history_id = int(request.GET.get('social_history_id'))
           social_history_obj = SocialHistory.objects.get(pk=social_history_id)
 
-          if not hasattr(social_history_obj,'urls'):
+          if not getattr(social_history_obj,'urls',None):
             social_history_obj.save()
+            urls  = social_history_obj.urls
+          else:
             urls  = social_history_obj.urls
 
         except ValueError or AttributeError or TypeError:
