@@ -320,7 +320,7 @@
                     console.log(jsondata);
                     publishInfo(jsondata.error_message);
                     if (jsondata.editUrl){
-                      registry.byId("socialHistoryTab").set('href', jsondata.editUrl);
+                      registry.byId("social_history_tab").set('href', jsondata.editUrl);
                     }
                   }
                   else{
@@ -465,7 +465,7 @@
                   var jsondata = JSON.parse(json);
                   if(jsondata.success == true){
                     publishInfo(jsondata.error_message);
-                    registry.byId("socialHistoryTab").set('href', jsondata.addUrl);
+                    registry.byId("social_history_tab").set('href', jsondata.addUrl);
                   }
                   else{
                     publishError(jsondata.error_message);
