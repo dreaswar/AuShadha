@@ -138,13 +138,20 @@ hr.shadow_line {
   overflow    : visible;
 }
 
-.dijitContentPane.topContentPane:{
-      height: .5em;
-      border:none; 
-      background: #eee;
-      border-radius: 5px;
-      box-shadow: 0px 2px;
+.dijitContentPane.topContentPane{
+  background: none repeat scroll 0 0 #EEEEDD !important;
+  border-radius: 14px 14px 14px 14px !important;
+  font-family: Helvetica !important;
+  font-weight: bold !important;
+  height: 1em !important;
+  left: 5px !important;
+  letter-spacing: 0.1em !important;
+  position: absolute !important;
+  text-align: center !important;
+  top: 5px !important;
+  width: 1221px !important;
 }
+
 
 #topPane{
   box-shadow: 1px 1px 3px #aaa;
