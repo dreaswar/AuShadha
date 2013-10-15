@@ -12,7 +12,7 @@
       ],
        function(registry){
          //	{% if perms.medication_list.change_medicationlist %}
-          editItem("{{editUrl}}","newMedicationListEditForm","medication_list");
+          editItem("{{editUrl}}","newMedicationListEditForm","medication_list_list");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -61,7 +61,7 @@
                   data-dojo-args  = "evt"
           >
           //	{% if perms.medication_list.delete_medicationlist %}
-              delItem("{{delUrl}}", "medication_list");
+              delItem("{{delUrl}}", "medication_list_list");
           // {% else %}
               registry.byId("permissionDeniedErrorDialog").show();
           // {%endif %}

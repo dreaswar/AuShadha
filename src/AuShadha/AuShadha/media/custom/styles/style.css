@@ -314,14 +314,22 @@ hr.shadow_line {
   width: 45em;
 }
 
-#medication_list{
-  height : 15em;
+/* Three options to style the Allergy Grid to protect (me) againt (me and my naming conventions) */
+#medication_list, 
+#medication_list_list,
+#medication
+{
+  min-height : 15em;
   width: 57em;
 }
 
-#allergy_list{
-  height : 15em;
-  width  : 15em;
+/* Three options to style the Allergy Grid to protect (me) againt (me and my naming conventions) */
+#allergy_list,
+#allergy_list_list, 
+#allergy
+{
+  min-height : 15em !important;
+  width  : 15em !important;
   position:relative;
   top: 0;
   left:0;
