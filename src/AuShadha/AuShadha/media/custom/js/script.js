@@ -18,6 +18,7 @@
               "dojo/dom-geometry",
               "dojo/request",
               "dojo/_base/fx",
+
               'aushadha/main',
 
               "dojo/_base/connect",
