@@ -5,7 +5,11 @@
 # License : GNU-GPL Version 3, see LICENSE.txt
 ################################################################################
 
-#from admission.models import AdmissionDetail
+from django.core.urlresolvers import reverse
+
+#from AuShadha.admission.models import AdmissionDetail
+
+
 
 MODULE_IDENTIFIER = 'aushadha-visit'
 MODULE_LABEL = 'Admission'
@@ -23,3 +27,4 @@ ui_sections = {'app_type': 'main_module',
                            'search'  : ''
                           }
               }
+

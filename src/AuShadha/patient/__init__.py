@@ -6,9 +6,10 @@
 # Author : Dr. Easwar T.R
 ################################################################################
 
-#from patient.views import render_patient_tree, render_patient_summary
-#from patient.models import PatientDetail
 from django.core.urlresolvers import reverse
+
+#from AuShadha.patient.models import PatientDetail
+#from patient.views import render_patient_tree, render_patient_summary
 
 MODULE_IDENTIFIER = 'aushadha-patient'
 MODULE_LABEL = 'Patient'
