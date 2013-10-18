@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import patterns, url, include
 #from django.views.generic.simple import direct_to_template
 
 import settings
@@ -12,38 +12,40 @@ urlpatterns = patterns('',
                        # Specific URLS..
                        #(r'^AuShadha/clinic/',include('AuShadha.apps.clinic.urls')),
 
-                      (r'^AuShadha/ui/', include('AuShadha.apps.ui.urls') ),
+                      url(r'^AuShadha/ui/', include('AuShadha.apps.ui.urls') ),
 
-                      (r'^AuShadha/pat/', include('patient.urls') ),
-                      (r'^AuShadha/patient/', include('patient.urls') ),
+                      url(r'^AuShadha/pat/', include('patient.urls') ),
+                      url(r'^AuShadha/patient/', include('patient.urls') ),
+                      url(r'^AuShadha/patient/', include('patient.urls') ),
+                      url(r'^AuShadha/admission/', include('admission.urls') ),
 
-                      (r'^AuShadha/demographics/', include('demographics.demographics.urls') ),
-                      (r'^AuShadha/contact/', include('demographics.contact.urls') ),
-                      (r'^AuShadha/phone/', include('demographics.phone.urls') ),
-                      (r'^AuShadha/guardian/', include('demographics.guardian.urls') ),
-                      (r'^AuShadha/email_and_fax/', include('demographics.email_and_fax.urls') ),                      
+                      url(r'^AuShadha/demographics/', include('demographics.demographics.urls') ),
+                      url(r'^AuShadha/contact/', include('demographics.contact.urls') ),
+                      url(r'^AuShadha/phone/', include('demographics.phone.urls') ),
+                      url(r'^AuShadha/guardian/', include('demographics.guardian.urls') ),
+                      url(r'^AuShadha/email_and_fax/', include('demographics.email_and_fax.urls') ),                      
 
-                      (r'^AuShadha/family_history/', include('history.family_history.urls')),
-                      (r'^AuShadha/social_history/', include('history.social_history.urls')),
-                      (r'^AuShadha/medical_history/', include('history.medical_history.urls')),
-                      (r'^AuShadha/surgical_history/', include('history.surgical_history.urls')),
-                      #(r'^AuShadha/obs_and_gyn/', include('history.obs_and_gyn.urls') ),                      
+                      url(r'^AuShadha/family_history/', include('history.family_history.urls')),
+                      url(r'^AuShadha/social_history/', include('history.social_history.urls')),
+                      url(r'^AuShadha/medical_history/', include('history.medical_history.urls')),
+                      url(r'^AuShadha/surgical_history/', include('history.surgical_history.urls')),
+                      #url(r'^AuShadha/obs_and_gyn/', include('history.obs_and_gyn.urls') ),                      
 
-                      (r'^AuShadha/medication_list/', include('medication_list.urls') ),
-                      (r'^AuShadha/allergy_list/', include('allergy_list.urls') ),
-                      (r'^AuShadha/immunisation/', include('immunisation.urls') ),
+                      url(r'^AuShadha/medication_list/', include('medication_list.urls') ),
+                      url(r'^AuShadha/allergy_list/', include('allergy_list.urls') ),
+                      url(r'^AuShadha/immunisation/', include('immunisation.urls') ),
 
-                      #(r'^AuShadha/admission/',include('admission.urls')),
-                      (r'^AuShadha/visit/', include('visit.urls')),
 
-                      (r'^AuShadha/phyexam/', include('phyexam.urls')),
+                      url(r'^AuShadha/visit/', include('visit.urls')),
+
+                      url(r'^AuShadha/phyexam/', include('phyexam.urls')),
 
                        # Admin and Admin Docs URL:
-                      (r'^AuShadha/admin/', include(admin.site.urls)),
-                      (r'^AuShadha/admin/doc/', include('django.contrib.admindocs.urls')),
+                      url(r'^AuShadha/admin/', include(admin.site.urls)),
+                      url(r'^AuShadha/admin/doc/', include('django.contrib.admindocs.urls')),
 
                        # Media URL
-                      ( r'^AuShadha/media/(?P<path>.*)$', 
+                      url( r'^AuShadha/media/(?P<path>.*)$', 
                         'django.views.static.serve',
                         {'document_root': settings.MEDIA_ROOT}, 
                         'show_indexes:True'

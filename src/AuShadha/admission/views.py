@@ -36,6 +36,7 @@ from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 
 from patient.models import PatientDetail, PatientDetailForm
 from .models import AdmissionDetail,AdmissionDetailForm
+from dijit_widgets.tree import AdmissionTree
 
 #from AuShadha.apps.clinic.models import Clinic
 
@@ -98,6 +99,18 @@ def admission_json(request):
             data.append(data_to_append)
     json = simplejson.dumps(data)
     return HttpResponse(json, content_type="application/json")
+
+
+@login_required
+def render_admission_tree(request, admission_id=None):
+    if request.method == "GET" and request.is_ajax():
+      tree = AdmissionTree(request)()
+      return HttpResponse(tree, content_type="application/json")
+    else:
+        raise Http404("Bad Request")
+
+
+
 
 @login_required
 def admission_add(request, id=None):

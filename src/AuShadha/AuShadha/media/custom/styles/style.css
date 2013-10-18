@@ -293,7 +293,8 @@ hr.shadow_line {
 #surgical_history_list,
 #patient_media_list,
 #admission_list,
-#visit_list
+#visit_list,
+div[id $= '_list'].dojoxGrid
 {
   min-height : 230px;
   margin-top : 5px;

@@ -5,7 +5,7 @@
 # License : GNU-GPL Version 3, see LICENSE.txt
 ################################################################################
 
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
 
 #from AuShadha.admission.models import AdmissionDetail
 
@@ -21,7 +21,7 @@ DEPENDS_ON = ['aushadha','patient',]
 
 ui_sections = {'app_type': 'main_module',
                'layout' : ['trailing','top','center'],
-               'widgets':{ 'tree'    : '',
+               'widgets':{ 'tree'    : '/AuShadha/admission/admission/tree/',
                            'summary' : '',
                            'grid'    : '',
                            'search'  : ''

@@ -5,6 +5,7 @@
 # License : GNU-GPL Version 3, see LICENSE.txt
 ################################################################################
 
+from django.core.urlresolvers import reverse
 #from models import VisitDetail
 #from .views import render_visit_tree, render_visit_summary
 
@@ -17,7 +18,7 @@ DEPENDS_ON = ['aushadha','patient',]
 
 ui_sections = {'app_type': 'main_module',
                'layout'  :['trailing','top','center'],
-               'widgets' :{ 'tree'    : '',
+               'widgets' :{ 'tree'    : '/AuShadha/visit/visit/tree/',
                            'summary'  : '',
                            'grid'     : '',
                            'search'   : ''

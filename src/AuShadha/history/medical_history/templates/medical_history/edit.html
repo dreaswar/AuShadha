@@ -7,12 +7,13 @@
 
   <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
     if( this.validate() ){
-      require(["dijit/registry",
+      require(["dojo/dom",
+               "dijit/registry",
                "dojo/domReady!"
       ],
-       function(registry){
+       function(dom,registry){
          //	{% if perms.medical_history.change_patientmedicalhistory %}
-          editItem("{{editUrl}}","newMedicalHistoryEditForm","medical_history_list");
+          editItem("{{editUrl}}","newMedicalHistoryEditForm", window.CHOSEN_GRID_STORE);
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -50,7 +51,7 @@
     {% if perms.medical_history.delete_medical_history %}
 
       <button data-dojo-type  = "dijit/form/Button" 
-                          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+              data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
               type            = "button"
               name            = "delMedicalHistory"
               id              = "delMedicalHistoryBtn">
@@ -60,12 +61,20 @@
                   data-dojo-event = "onClick" 
                   data-dojo-args  = "evt"
           >
-          //	{% if perms.medical_history.delete_medicalhistory %}
-              delItem("{{delUrl}}", "medical_history_list");
-          // {% else %}
-              registry.byId("permissionDeniedErrorDialog").show();
-          // {%endif %}
-          </script>
+
+              require(["dojo/dom",
+                  "dijit/registry",
+                  "dojo/domReady!"
+              ],
+              function(dom,registry){
+                  //	{% if perms.medical_history.delete_medicalhistory %}
+                      delItem("{{delUrl}}", window.CHOSEN_GRID_STORE);
+                  // {% else %}
+                      registry.byId("permissionDeniedErrorDialog").show();
+                  // {%endif %}
+              });
+
+        </script>
 
       </button>
 

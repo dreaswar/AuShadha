@@ -15,23 +15,28 @@
           data-dojo-event = "onSubmit"
           data-dojo-args  = "evt"
   >
-   if(this.validate()){
+  
+    if(this.validate()){
+
       require([
-       "dijit/registry", 
+          "dojo/dom",
+          "dijit/registry"
       ],
-      function(registry){
-//    {% if perms.medical_history.add_medicalhistory %}
-      addItem("{{addUrl}}", "newMedicalHistoryAddForm", "medical_history_list");
-//    {% else %}
-      registry.byId("permissionDeniedErrorDialog").show();
-//   {% endif %}
-     });
-     return false;
+      function(dom,registry){
+    //    {% if perms.medical_history.add_medicalhistory %}
+          addItem("{{addUrl}}", "newMedicalHistoryAddForm", window.CHOSEN_GRID_STORE );
+    //    {% else %}
+          registry.byId("permissionDeniedErrorDialog").show();
+    //   {% endif %}
+      });
+
+      return false;
     }
     else{
       raiseInvalidFormSubmission();
       return false;
     }
+  
   </script>
 
     {% if perms.medical_history.add_medical_history %}

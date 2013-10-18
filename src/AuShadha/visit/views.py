@@ -38,6 +38,7 @@ from AuShadha.apps.aushadha_users.models import AuShadhaUser
 from AuShadha.apps.clinic.models import Clinic, Staff
 
 from .models import *
+from dijit_widgets.tree import VisitTree
 #from AuShadha.apps.clinic.models import Clinic
 from patient.models import PatientDetail
 from admission.models import AdmissionDetail
@@ -147,297 +148,306 @@ def visit_json(request, patient_id = None):
     return HttpResponse(json, content_type="application/json")
 
 
-
 @login_required
-def render_visit_tree(request, patient_id=None):
-    if request.method == "GET" and request.is_ajax():
-        if patient_id:
-            patient_id = int(patient_id)
-        else:
-            try:
-                patient_id = int(request.GET.get('patient_id'))
-                pat_obj = PatientDetail.objects.get(pk=patient_id)
-            except(AttributeError, NameError, KeyError, TypeError, ValueError):
-                raise Http404("ERROR! Bad Request Parameters")
-            except(AttributeError, NameError, KeyError, TypeError, ValueError):
-                raise Http404("ERROR! Requested Patient Data Does not exist")
-
-            pat_obj.generate_urls()
-            pat_urls = pat_obj.urls
-
-            adm_obj = AdmissionDetail.objects.filter(
-                patient_detail=pat_obj)
-            visit_obj = VisitDetail.objects.filter(
-                patient_detail=pat_obj)
+def render_visit_tree(request,patient_id = None):
+  if request.method == "GET" and request.is_ajax():
+    tree = VisitTree(request)()
+    return HttpResponse(tree, content_type="application/json")
+  else:
+      raise Http404("Bad Request")
 
 
-            prev_visit_obj = VisitDetail.objects.filter(
-                patient_detail=pat_obj).filter(is_active=False)
-            active_visit_obj = VisitDetail.objects.filter(
-                patient_detail=pat_obj).filter(is_active=True)
 
-            demographics_obj = Demographics.objects.filter(
-                patient_detail=pat_obj)
-            social_history_obj = SocialHistory.objects.filter(
-                patient_detail=pat_obj)
-            family_history_obj = FamilyHistory.objects.filter(
-                patient_detail=pat_obj)
-            medical_history_obj = MedicalHistory.objects.filter(
-                patient_detail=pat_obj)
-            surgical_history_obj = SurgicalHistory.objects.filter(
-                patient_detail=pat_obj)
+#@login_required
+#def render_visit_tree(request, patient_id=None):
+    #if request.method == "GET" and request.is_ajax():
+        #if patient_id:
+            #patient_id = int(patient_id)
+        #else:
+            #try:
+                #patient_id = int(request.GET.get('patient_id'))
+                #pat_obj = PatientDetail.objects.get(pk=patient_id)
+            #except(AttributeError, NameError, KeyError, TypeError, ValueError):
+                #raise Http404("ERROR! Bad Request Parameters")
+            #except(AttributeError, NameError, KeyError, TypeError, ValueError):
+                #raise Http404("ERROR! Requested Patient Data Does not exist")
 
-            medication_list_obj = MedicationList.objects.filter(
-                patient_detail=pat_obj)
-            allergy_obj = Allergy.objects.filter(
-                patient_detail=pat_obj)
+            #pat_obj.generate_urls()
+            #pat_urls = pat_obj.urls
 
-            pat_inv_obj = VisitInv.objects.filter(
-                visit_detail__patient_detail=pat_obj)
-            pat_imaging_obj = VisitImaging.objects.filter(
-                visit_detail__patient_detail=pat_obj)
+            #adm_obj = AdmissionDetail.objects.filter(
+                #patient_detail=pat_obj)
+            #visit_obj = VisitDetail.objects.filter(
+                #patient_detail=pat_obj)
 
-            data = {
-                "identifier": "id",
-                "label": "name",
-                "items": [
-                              {"name": "Procedures", "type": "application", "id": "PROC",
-                               "len": 1,
-                               "addUrl": None,
-                               },
 
-                              {"name": "History", "type": "application", "id": "HISTORY",
-                               "len": 1,
-                               "addUrl": None,
-                               },
+            #prev_visit_obj = VisitDetail.objects.filter(
+                #patient_detail=pat_obj).filter(is_active=False)
+            #active_visit_obj = VisitDetail.objects.filter(
+                #patient_detail=pat_obj).filter(is_active=True)
 
-                              {"name": "Medication", "type": "application", "id": "MEDICATION_LIST",
-                               "len": 1,
-                               "addUrl": None,
-                               },
+            #demographics_obj = Demographics.objects.filter(
+                #patient_detail=pat_obj)
+            #social_history_obj = SocialHistory.objects.filter(
+                #patient_detail=pat_obj)
+            #family_history_obj = FamilyHistory.objects.filter(
+                #patient_detail=pat_obj)
+            #medical_history_obj = MedicalHistory.objects.filter(
+                #patient_detail=pat_obj)
+            #surgical_history_obj = SurgicalHistory.objects.filter(
+                #patient_detail=pat_obj)
 
-                              {"name": "Investigation", "type": "application", "id": "INV",
-                               "len": 1,
-                               "addUrl": None,
-                               },
+            #medication_list_obj = MedicationList.objects.filter(
+                #patient_detail=pat_obj)
+            #allergy_obj = Allergy.objects.filter(
+                #patient_detail=pat_obj)
 
-                              {"name": "Imaging", "type": "application", "id": "IMAG",
-                               "len": 1,
-                               "addUrl": None,
-                               },
+            #pat_inv_obj = VisitInv.objects.filter(
+                #visit_detail__patient_detail=pat_obj)
+            #pat_imaging_obj = VisitImaging.objects.filter(
+                #visit_detail__patient_detail=pat_obj)
 
-                              #{"name"  : "Media" , "type":"application", "id":"MEDIA" ,
-                              #"len"   : 1,
-                              #"addUrl": None,
-                              #'children':[
-                    #{"name"  : "Documents" , "type":"patient_documents_module", "id":"DOCS" ,
-                    #"len"   : 1,
-                    #"addUrl": None,
-                    #},
-                    #{"name"  : "Images" , "type":"patient_images_module", "id":"IMAGES" ,
-                    #"len"   : 1,
-                    #"addUrl": None,
+            #data = {
+                #"identifier": "id",
+                #"label": "name",
+                #"items": [
+                              #{"name": "Procedures", "type": "application", "id": "PROC",
+                               #"len": 1,
+                               #"addUrl": None,
+                               #},
+
+                              #{"name": "History", "type": "application", "id": "HISTORY",
+                               #"len": 1,
+                               #"addUrl": None,
+                               #},
+
+                              #{"name": "Medication", "type": "application", "id": "MEDICATION_LIST",
+                               #"len": 1,
+                               #"addUrl": None,
+                               #},
+
+                              #{"name": "Investigation", "type": "application", "id": "INV",
+                               #"len": 1,
+                               #"addUrl": None,
+                               #},
+
+                              #{"name": "Imaging", "type": "application", "id": "IMAG",
+                               #"len": 1,
+                               #"addUrl": None,
+                               #},
+
+                              ##{"name"  : "Media" , "type":"application", "id":"MEDIA" ,
+                              ##"len"   : 1,
+                              ##"addUrl": None,
+                              ##'children':[
+                    ##{"name"  : "Documents" , "type":"patient_documents_module", "id":"DOCS" ,
+                    ##"len"   : 1,
+                    ##"addUrl": None,
+                    ##},
+                    ##{"name"  : "Images" , "type":"patient_images_module", "id":"IMAGES" ,
+                    ##"len"   : 1,
+                    ##"addUrl": None,
+                    ##}
+                    ##]
+                              ##}
+                #]
+            #}
+
+            #tree_item_list = data['items']
+
+            #if pat_obj.can_add_new_visit(pat_obj):
+                #dict_to_append = {"name": "New OPD Visit",
+                                  #"type": "application",
+                                  #"id": "NEW_OPD_VISIT",
+                                  #"len": len(visit_obj),
+                                  #"addUrl": pat_urls['add']['visit']
+                                  #}
+                #tree_item_list.insert(0, dict_to_append)
+
+            #if active_visit_obj:
+                #active_visits = VisitDetail.objects.filter(
+                    #patient_detail=pat_obj).filter(is_active=True)
+                #active_visits_base_dict = {"name": "Active Visits",
+                                           #"type": "application",
+                                           #"id": "ACTIVE_VISITS",
+                                           #"len": True,
+                                           #"addUrl": None,
+                                           #'editUrl': None,
+                                           #'delUrl': None,
+                                           #'children': []
+                                           #}
+                #for active_visit in active_visits:
+                    #active_visit.generate_urls()
+                    #av_urls = active_visit.urls
+                    #base_dict = {
+                        #"name": active_visit.visit_date.date().isoformat(),
+                        #"type": "active_visit",
+                        #"id": "ACTIVE_VISITS_" + str(active_visit.id),
+                        #"len": True,
+                        #"addUrl": None,
+                        #'editUrl': av_urls['edit'],
+                        #'delUrl': av_urls['del'],
+                        #'children': [
+                            #{"name": "Add Follow-Up",
+                                #"type": "visit_follow_up_add",
+                                #"id": "VISIT_FOLLOW_UP_ADD_" + str(active_visit.id),
+                                #"len": 1,
+                                #"addUrl": av_urls['add']['follow_up'],
+                             #},
+
+                            #{"name": "Orders",
+                                     #"type": "application",
+                                     #"id": "ACTIVE_VISIT_" + str(active_visit.id) + "_ORDERS_AND_PRESCRIPTION",
+                                     #"len": 1,
+                                     #"addUrl": None,
+                             #},
+
+                            #{"name": "Close",
+                                #"type": "close_visit",
+                                #"id": "VISIT_CLOSE_" + str(active_visit.id),
+                                #"len": 1,
+                                #"addUrl": active_visit.get_visit_detail_close_url(),
+                             #},
+
+                            ##{"name"      : "Edit" ,
+                            ##"type"       : "visit",
+                            ##"id"         : "ACTIVE_VISIT_" + str(active_visit.id) ,
+                            ##"len"        : 1,
+                            ##"addUrl"     : None,
+                            ##"absoluteUrl": active_visit.get_absolute_url(),
+                            ##"editUrl"    : active_visit.get_edit_url(),
+                            ##"deUrl"      : active_visit.get_del_url()
+                            ##},
+
+                            ##{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
+                            ##"len"   : 1,
+                            ##"addUrl": None,
+                            ##},
+
+                            ##{"name"  : "Advice" , "type":"advice","id":"ADVICE" ,
+                            ##"len"   : 1,
+                            ##"addUrl": None,
+                            ##},
+
+                            ##{"name"  : "Procedure" , "type":"procedure", "id":"PROC" ,
+                            ##"len"   : 1,
+                            ##"addUrl": None,
+                            ##},
+
+                            ##{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
+                            ##"len"   : 1,
+                            ##"addUrl": None,
+                            ##},
+                        #]
                     #}
-                    #]
-                              #}
-                ]
-            }
+                    #active_visits_base_dict['children'].append(base_dict)
 
-            tree_item_list = data['items']
+                    #if active_visit.has_fu_visits():
+                        #fu_visit = active_visit.has_fu_visits()
+                        #fu_base_dict = {"name": "Follow-ups",
+                                        #"type": "fu_visits",
+                                        #"id": "",
+                                        #"len": 1,
+                                        #"addUrl": None,
+                                        #"absoluteUrl": None,
+                                        #"children": []
+                                        #}
+                        #fu_sub_dict = {
+                            #"name": "", "type": "visit", "id": "", "editUrl": "", "delUrl": ""}
+                        #base_dict['children'].append(fu_base_dict)
 
-            if pat_obj.can_add_new_visit(pat_obj):
-                dict_to_append = {"name": "New OPD Visit",
-                                  "type": "application",
-                                  "id": "NEW_OPD_VISIT",
-                                  "len": len(visit_obj),
-                                  "addUrl": pat_urls['add']['visit']
-                                  }
-                tree_item_list.insert(0, dict_to_append)
+                        #for fu in fu_visit:
+                            #fu_dict_to_append = fu_sub_dict.copy()
 
-            if active_visit_obj:
-                active_visits = VisitDetail.objects.filter(
-                    patient_detail=pat_obj).filter(is_active=True)
-                active_visits_base_dict = {"name": "Active Visits",
-                                           "type": "application",
-                                           "id": "ACTIVE_VISITS",
-                                           "len": True,
-                                           "addUrl": None,
-                                           'editUrl': None,
-                                           'delUrl': None,
-                                           'children': []
-                                           }
-                for active_visit in active_visits:
-                    active_visit.generate_urls()
-                    av_urls = active_visit.urls
-                    base_dict = {
-                        "name": active_visit.visit_date.date().isoformat(),
-                        "type": "active_visit",
-                        "id": "ACTIVE_VISITS_" + str(active_visit.id),
-                        "len": True,
-                        "addUrl": None,
-                        'editUrl': av_urls['edit'],
-                        'delUrl': av_urls['del'],
-                        'children': [
-                            {"name": "Add Follow-Up",
-                                "type": "visit_follow_up_add",
-                                "id": "VISIT_FOLLOW_UP_ADD_" + str(active_visit.id),
-                                "len": 1,
-                                "addUrl": av_urls['add']['follow_up'],
-                             },
+                            #fu_dict_to_append = {
+                                #"name": fu.visit_date.date().isoformat(),
+                                #"type": "fu_visit",
+                                #"id": "FU_VISIT_" + str(fu.id),
+                                #"editUrl": fu.get_edit_url(),
+                                #"delUrl": fu.get_del_url(),
+                                #"children": [{"name": "Orders",
+                                              #"type": "application",
+                                              #"id": "FU_VISIT_" + str(fu.id) + "_ORDERS_AND_PRESCRIPTION",
+                                              #"len": 1,
+                                              #"addUrl": None,
+                                              #}]
+                            #}
+                            #fu_base_dict['children'].append(fu_dict_to_append)
 
-                            {"name": "Orders",
-                                     "type": "application",
-                                     "id": "ACTIVE_VISIT_" + str(active_visit.id) + "_ORDERS_AND_PRESCRIPTION",
-                                     "len": 1,
-                                     "addUrl": None,
-                             },
+                #tree_item_list.insert(1, active_visits_base_dict)
+                ##tree_item_list.insert(1, base_dict)
 
-                            {"name": "Close",
-                                "type": "close_visit",
-                                "id": "VISIT_CLOSE_" + str(active_visit.id),
-                                "len": 1,
-                                "addUrl": active_visit.get_visit_detail_close_url(),
-                             },
-
-                            #{"name"      : "Edit" ,
-                            #"type"       : "visit",
-                            #"id"         : "ACTIVE_VISIT_" + str(active_visit.id) ,
-                            #"len"        : 1,
-                            #"addUrl"     : None,
-                            #"absoluteUrl": active_visit.get_absolute_url(),
-                            #"editUrl"    : active_visit.get_edit_url(),
-                            #"deUrl"      : active_visit.get_del_url()
-                            #},
-
-                            #{"name"  : "Diagnosis" , "type":"application", "id":"DIAG" ,
-                            #"len"   : 1,
-                            #"addUrl": None,
-                            #},
-
-                            #{"name"  : "Advice" , "type":"advice","id":"ADVICE" ,
-                            #"len"   : 1,
-                            #"addUrl": None,
-                            #},
-
-                            #{"name"  : "Procedure" , "type":"procedure", "id":"PROC" ,
-                            #"len"   : 1,
-                            #"addUrl": None,
-                            #},
-
-                            #{"name"  : "Calendar" , "type":"application", "id":"CAL" ,
-                            #"len"   : 1,
-                            #"addUrl": None,
-                            #},
-                        ]
-                    }
-                    active_visits_base_dict['children'].append(base_dict)
-
-                    if active_visit.has_fu_visits():
-                        fu_visit = active_visit.has_fu_visits()
-                        fu_base_dict = {"name": "Follow-ups",
-                                        "type": "fu_visits",
-                                        "id": "",
-                                        "len": 1,
-                                        "addUrl": None,
-                                        "absoluteUrl": None,
-                                        "children": []
-                                        }
-                        fu_sub_dict = {
-                            "name": "", "type": "visit", "id": "", "editUrl": "", "delUrl": ""}
-                        base_dict['children'].append(fu_base_dict)
-
-                        for fu in fu_visit:
-                            fu_dict_to_append = fu_sub_dict.copy()
-
-                            fu_dict_to_append = {
-                                "name": fu.visit_date.date().isoformat(),
-                                "type": "fu_visit",
-                                "id": "FU_VISIT_" + str(fu.id),
-                                "editUrl": fu.get_edit_url(),
-                                "delUrl": fu.get_del_url(),
-                                "children": [{"name": "Orders",
-                                              "type": "application",
-                                              "id": "FU_VISIT_" + str(fu.id) + "_ORDERS_AND_PRESCRIPTION",
-                                              "len": 1,
-                                              "addUrl": None,
-                                              }]
-                            }
-                            fu_base_dict['children'].append(fu_dict_to_append)
-
-                tree_item_list.insert(1, active_visits_base_dict)
-                #tree_item_list.insert(1, base_dict)
-
-            if prev_visit_obj:
-                base_dict = {"name": "Closed Visits", "type":
-                             "application", "id": "CLOSED_VISITS", 'children': []}
-                sub_dict = {
-                    "name": "", "type": "visit", "id": "", "editUrl": "", "delUrl": ""}
-                for visit in prev_visit_obj:
-                    visit.generate_urls()
-                    v_urls = visit.urls
-                    dict_to_append = sub_dict.copy()
-                    dict_to_append['name'] = visit.visit_date.date(
-                    ).isoformat() + "(" + visit.op_surgeon.__unicode__() + ")"
-                    dict_to_append[
-                        'id'] = "CLOSED_VISIT_" + unicode(visit.id)
-                    dict_to_append['absoluteUrl'] = visit.get_absolute_url()
-                    dict_to_append['editUrl'] = v_urls['edit']
-                    dict_to_append['delUrl'] = v_urls['del']
-                    dict_to_append['children'] = [{"name": "Orders",
-                                                   "type": "application",
-                                                   "id": "CLOSED_VISIT_" + str(visit.id) + "_ORDERS_AND_PRESCRIPTION",
-                                                   "len": 1,
-                                                   "addUrl": None,
-                                                   }]
-                    base_dict['children'].append(dict_to_append)
-                    if visit.has_fu_visits():
-                        fu_visit = visit.has_fu_visits()
-                        fu_base_dict = {"name": "Follow-ups",
-                                        "type": "fu_visits",
-                                        "id": "CLOSED_FOLLOW_UP_VISITS_" + str(visit.id),
-                                        "len": 1,
-                                        "addUrl": None,
-                                        "absoluteUrl": None,
-                                        "children": []
-                                        }
-                        fu_sub_dict = {
-                            "name": "", "type": "visit", "id": "", "editUrl": "", "delUrl": ""}
-                        dict_to_append['children'].append(fu_base_dict)
-
-                        for fu in fu_visit:
-                            fu_dict_to_append = fu_sub_dict.copy()
-                            fu_dict_to_append = {
-                                "name": fu.visit_date.date().isoformat(),
-                                "type": "fu_visit",
-                                "id": "CLOSED_FU_VISIT_" + str(fu.id),
-                                "editUrl": fu.get_edit_url(),
-                                "delUrl": fu.get_del_url(),
-                                "children": [{"name": "Orders",
-                                              "type": "application",
-                                              "id": "CLOSED_FU_VISIT_" + str(fu.id) + "_ORDERS_AND_PRESCRIPTION",
-                                              "len": 1,
-                                              "addUrl": None,
-                                              }]
-                            }
-                            fu_base_dict['children'].append(fu_dict_to_append)
-
-                tree_item_list.insert(2, base_dict)
-
-            # if visit_obj:
-                #data['items'][1]['children'] = []
-                #children_list  = data['items'][1]['children']
-                # for visit in visit_obj:
-                    #dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
-                    #dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
-                    #dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
+            #if prev_visit_obj:
+                #base_dict = {"name": "Closed Visits", "type":
+                             #"application", "id": "CLOSED_VISITS", 'children': []}
+                #sub_dict = {
+                    #"name": "", "type": "visit", "id": "", "editUrl": "", "delUrl": ""}
+                #for visit in prev_visit_obj:
+                    #visit.generate_urls()
+                    #v_urls = visit.urls
+                    #dict_to_append = sub_dict.copy()
+                    #dict_to_append['name'] = visit.visit_date.date(
+                    #).isoformat() + "(" + visit.op_surgeon.__unicode__() + ")"
+                    #dict_to_append[
+                        #'id'] = "CLOSED_VISIT_" + unicode(visit.id)
                     #dict_to_append['absoluteUrl'] = visit.get_absolute_url()
-                    #dict_to_append['editUrl']     = visit.get_edit_url()
-                    #dict_to_append['delUrl']      = visit.get_del_url()
-                    # children_list.append(dict_to_append)
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type="application/json")
-    else:
-        raise Http404("Bad Request")
+                    #dict_to_append['editUrl'] = v_urls['edit']
+                    #dict_to_append['delUrl'] = v_urls['del']
+                    #dict_to_append['children'] = [{"name": "Orders",
+                                                   #"type": "application",
+                                                   #"id": "CLOSED_VISIT_" + str(visit.id) + "_ORDERS_AND_PRESCRIPTION",
+                                                   #"len": 1,
+                                                   #"addUrl": None,
+                                                   #}]
+                    #base_dict['children'].append(dict_to_append)
+                    #if visit.has_fu_visits():
+                        #fu_visit = visit.has_fu_visits()
+                        #fu_base_dict = {"name": "Follow-ups",
+                                        #"type": "fu_visits",
+                                        #"id": "CLOSED_FOLLOW_UP_VISITS_" + str(visit.id),
+                                        #"len": 1,
+                                        #"addUrl": None,
+                                        #"absoluteUrl": None,
+                                        #"children": []
+                                        #}
+                        #fu_sub_dict = {
+                            #"name": "", "type": "visit", "id": "", "editUrl": "", "delUrl": ""}
+                        #dict_to_append['children'].append(fu_base_dict)
+
+                        #for fu in fu_visit:
+                            #fu_dict_to_append = fu_sub_dict.copy()
+                            #fu_dict_to_append = {
+                                #"name": fu.visit_date.date().isoformat(),
+                                #"type": "fu_visit",
+                                #"id": "CLOSED_FU_VISIT_" + str(fu.id),
+                                #"editUrl": fu.get_edit_url(),
+                                #"delUrl": fu.get_del_url(),
+                                #"children": [{"name": "Orders",
+                                              #"type": "application",
+                                              #"id": "CLOSED_FU_VISIT_" + str(fu.id) + "_ORDERS_AND_PRESCRIPTION",
+                                              #"len": 1,
+                                              #"addUrl": None,
+                                              #}]
+                            #}
+                            #fu_base_dict['children'].append(fu_dict_to_append)
+
+                #tree_item_list.insert(2, base_dict)
+
+            ## if visit_obj:
+                ##data['items'][1]['children'] = []
+                ##children_list  = data['items'][1]['children']
+                ## for visit in visit_obj:
+                    ##dict_to_append = {"name":"", "type":"visit", "id":"","editUrl":"","delUrl":""}
+                    ##dict_to_append['name']    = visit.visit_date.date().isoformat() + "("+ visit.op_surgeon.__unicode__() +")"
+                    ##dict_to_append['id']      = "VISIT_"+ unicode(visit.id)
+                    ##dict_to_append['absoluteUrl'] = visit.get_absolute_url()
+                    ##dict_to_append['editUrl']     = visit.get_edit_url()
+                    ##dict_to_append['delUrl']      = visit.get_del_url()
+                    ## children_list.append(dict_to_append)
+            #json = simplejson.dumps(data)
+            #return HttpResponse(json, content_type="application/json")
+    #else:
+        #raise Http404("Bad Request")
 
 
 @login_required
