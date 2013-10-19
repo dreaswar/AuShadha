@@ -21,7 +21,7 @@
       ],
       function(registry){
 //    {% if perms.allergy_list.add_allergylist %}
-      addItem("{{addUrl}}", "newAllergyListAddForm", "allergy_list_list");
+      addItem("{{addUrl}}", "newAllergyListAddForm");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}
@@ -52,7 +52,9 @@
                   data-dojo-event = "onClick" 
                   data-dojo-args  = "evt"
           >
+
             ADD_MORE_ITEMS           = false;
+
           </script>
 
         </button>
@@ -62,10 +64,11 @@
                     data-dojo-props = "iconClass:'dijitIconSave'"
                     name 	        = "submitAndAddMoreButton" 
                     id 		        = "allergy_list_form_add_more"
-                    value           = "Add More">
+                    value           = "Add More"
+        >
 
           Add More
-          
+
           <script type            = "dojo/connect" 
                   data-dojo-event = "onClick"
                   data-dojo-args  = "evt"

@@ -6,24 +6,32 @@
      method         = "">
 
   <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
+    
     if( this.validate() ){
-      require(["dijit/registry",
-               "dojo/domReady!"
-      ],
-       function(registry){
+    
+      require(
+        ["dijit/registry",
+         "dojo/domReady!"
+        ],
+
+      function(registry){
          //	{% if perms.immunisation.change_immunisation %}
-          editItem("{{editUrl}}","newImmunisationEditForm","immunisation_list");
+          editItem("{{editUrl}}","newImmunisationEditForm");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
          return false;
-   	   }
- 		  );
-     return false;
+   	  });
+
+      return false;
+
     }
+    
     else{
-     raiseInvalidFormSubmission();
-     return false;
+
+      raiseInvalidFormSubmission();
+      return false;
+
     }
 
   </script>
@@ -50,22 +58,26 @@
     {% if perms.immunisation.delete_immunisation %}
 
       <button data-dojo-type  = "dijit/form/Button" 
-                          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+              data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
               type            = "button"
               name            = "delImmunisation"
-              id              = "delImmunisationBtn">
+              id              = "delImmunisationBtn"
+      >
+
         Delete
 
         <script  type            = "dojo/method" 
                   data-dojo-event = "onClick" 
                   data-dojo-args  = "evt"
           >
+
           //	{% if perms.immunisation.delete_immunisation %}
-              delItem("{{delUrl}}", "immunisation_list");
+              delItem("{{delUrl}}");
           // {% else %}
               registry.byId("permissionDeniedErrorDialog").show();
           // {%endif %}
-          </script>
+
+        </script>
 
       </button>
 

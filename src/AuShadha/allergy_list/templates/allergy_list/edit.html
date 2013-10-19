@@ -12,7 +12,7 @@
       ],
        function(registry){
          //	{% if perms.allergy_list.change_allergy %}
-          editItem("{{editUrl}}","newAllergyListEditForm","allergy_list_list");
+          editItem("{{editUrl}}","newAllergyListEditForm");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -61,7 +61,7 @@
                   data-dojo-args  = "evt"
           >
           //	{% if perms.allergy_list.delete_allergy %}
-              delItem("{{delUrl}}", "allergy_list_list");
+              delItem("{{delUrl}}");
           // {% else %}
               registry.byId("permissionDeniedErrorDialog").show();
           // {%endif %}

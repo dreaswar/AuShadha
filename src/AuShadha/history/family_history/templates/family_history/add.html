@@ -21,7 +21,7 @@
       ],
       function(registry){
 //    {% if perms.family_history.add_familyhistory %}
-      addItem("{{addUrl}}", "newFamilyHistoryAddForm", "family_history_list");
+      addItem("{{addUrl}}", "newFamilyHistoryAddForm");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}

@@ -21,7 +21,7 @@
       ],
       function(registry){
 //    {% if perms.medication_list.add_medicationlist%}
-      addItem("{{addUrl}}", "newMedicationListAddForm", "medication_list_list");
+      addItem("{{addUrl}}", "newMedicationListAddForm");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}

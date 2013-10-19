@@ -12,7 +12,7 @@
       ],
        function(registry){
          //	{% if perms.surgical_history.change_surgicalhistory %}
-          editItem("{{editUrl}}","newSurgicalHistoryEditForm","surgical_history_list");
+          editItem("{{editUrl}}","newSurgicalHistoryEditForm");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -60,8 +60,8 @@
                   data-dojo-event = "onClick" 
                   data-dojo-args  = "evt"
           >
-          //	{% if perms.surgical_history.delete_medicalhistory %}
-              delItem("{{delUrl}}", "surgical_history_list");
+          //	{% if perms.surgical_history.delete_surgicalhistory %}
+              delItem("{{delUrl}}");
           // {% else %}
               registry.byId("permissionDeniedErrorDialog").show();
           // {%endif %}

@@ -12,7 +12,7 @@
       ],
        function(registry){
          //	{% if perms.family_history.change_familyhistory %}
-          editItem("{{editUrl}}","newFamilyHistoryEditForm","family_history_list");
+          editItem("{{editUrl}}","newFamilyHistoryEditForm");
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
          // {%endif %}
@@ -50,10 +50,12 @@
     {% if perms.family_history.delete_family_history %}
 
       <button data-dojo-type  = "dijit/form/Button" 
-                          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+              data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
               type            = "button"
               name            = "delFamilyHistory"
-              id              = "delFamilyHistoryBtn">
+              id              = "delFamilyHistoryBtn"
+      >
+
         Delete
 
         <script  type            = "dojo/method" 
@@ -61,11 +63,11 @@
                   data-dojo-args  = "evt"
           >
           //	{% if perms.family_history.delete_familyhistory %}
-              delItem("{{delUrl}}", "family_history_list");
+              delItem("{{delUrl}}");
           // {% else %}
               registry.byId("permissionDeniedErrorDialog").show();
           // {%endif %}
-          </script>
+        </script>
 
       </button>
 
