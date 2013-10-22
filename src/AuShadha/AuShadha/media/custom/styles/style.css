@@ -36,7 +36,7 @@ body{
 }
  
 .loadingOverlay {
-    background:  #D0DFEA url('{{STATIC_URL}}plugins/dojo-1.8.0/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
+    background:  #D0DFEA url('{{STATIC_URL}}plugins/dojo/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
     position : relative;
     top      : 10px;
     width    : 200px;
