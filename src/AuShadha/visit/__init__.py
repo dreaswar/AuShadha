@@ -20,7 +20,7 @@ ui_sections = {'app_type': 'main_module',
                'layout'  :['trailing','top','center'],
                'widgets' :{ 'tree'    : '/AuShadha/visit/visit/tree/',
                            'summary'  : '',
-                           'grid'     : '',
+                           'grid'     : '/AuShadha/visit/visit/json/',
                            'search'   : ''
                           }
               }

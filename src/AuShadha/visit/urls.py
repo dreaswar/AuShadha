@@ -11,13 +11,13 @@ urlpatterns = patterns('',
 ################################################################################
 
                       url(r'json/(?P<patient_id>\d+)/$'  , 
-                          'visit.views.visit_json'  , 
-                          name="visit_json"
+                          'visit.views.render_visit_json'  , 
+                          name="render_visit_json"
                       ),
 
                       url(r'json/$', 
-                          'visit.views.visit_json',
-                          name='visit_json_without_id'
+                          'visit.views.render_visit_json',
+                          name='render_visit_json_without_id'
                       ),
 
                       url(r'render_visit_list/$', 

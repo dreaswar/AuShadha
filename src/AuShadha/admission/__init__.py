@@ -23,7 +23,7 @@ ui_sections = {'app_type': 'main_module',
                'layout' : ['trailing','top','center'],
                'widgets':{ 'tree'    : '/AuShadha/admission/admission/tree/',
                            'summary' : '',
-                           'grid'    : '',
+                           'grid'    : '/AuShadha/admission/admission/json/',
                            'search'  : ''
                           }
               }

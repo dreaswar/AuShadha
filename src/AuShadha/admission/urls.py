@@ -11,8 +11,8 @@ from admission.views import *
 urlpatterns = patterns('',
 
                        url(r'json/$',
-                           'admission.views.admission_json',
-                           name='admission_json'
+                           'admission.views.render_admission_json',
+                           name='render_admission_json'
                            ),
 
                        #   url(r'list/(?P<id>\d+)/$',

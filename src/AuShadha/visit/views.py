@@ -33,7 +33,7 @@ from collections import OrderedDict
 
 # Application Specific Model Imports-----------------------
 from AuShadha.utilities.forms import AuModelFormErrorFormatter, aumodelformerrorformatter_factory
-
+from AuShadha.apps.ui.data.json import ModelInstanceJson
 from AuShadha.apps.aushadha_users.models import AuShadhaUser
 from AuShadha.apps.clinic.models import Clinic, Staff
 
@@ -146,6 +146,34 @@ def visit_json(request, patient_id = None):
             i += 1
     json = simplejson.dumps(data)
     return HttpResponse(json, content_type="application/json")
+
+
+@login_required
+def render_visit_json(request):
+
+    if request.method =='GET':
+      all_v = VisitDetail.objects.all()
+      if all_v is not None:
+          data = []
+          for visit in all_v:
+              print "Evaluating Visit.. "
+              print visit
+              json = ModelInstanceJson(visit).return_data()
+              data.append(json)
+      else:
+        data = {}
+      json = simplejson.dumps(data)
+      print "\n"
+      print "-" *100
+      print "Printing Sample Visit JSON"
+      print "-" *100
+      print (simplejson.dumps(data[0]))
+      print "-" *100
+      print "\n"
+      return HttpResponse(json, content_type="application/json")
+    else:
+      raise Http404("Bad Request Method")
+
 
 
 @login_required

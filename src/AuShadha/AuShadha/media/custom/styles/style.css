@@ -294,7 +294,8 @@ hr.shadow_line {
 #patient_media_list,
 #admission_list,
 #visit_list,
-div[id $= '_list'].dojoxGrid
+div[id $= '_list'].dojoxGrid,
+div.auGridContainer
 {
   min-height : 230px;
   margin-top : 5px;

@@ -37,9 +37,9 @@ from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 from patient.models import PatientDetail, PatientDetailForm
 from .models import AdmissionDetail,AdmissionDetailForm
 from dijit_widgets.tree import AdmissionTree
+from AuShadha.apps.ui.data.json import ModelInstanceJson
 
 #from AuShadha.apps.clinic.models import Clinic
-
 #from demographics.demographics.models import Demographics
 #from demographics.contact.models import Contact
 #from demographics.phone.models import Phone
@@ -63,42 +63,72 @@ from dijit_widgets.tree import AdmissionTree
 # Views start here -----------------------------------------
 
 @login_required
-def admission_json(request):
-    try:
-        action = unicode(request.GET.get('action'))
-        id = int(request.GET.get('patient_id'))
-        if action == 'add':
-            return patient_admission_add(request, id)
-        patient_detail_obj = PatientDetail.objects.get(pk=id)
-    except(AttributeError, NameError, TypeError, ValueError, KeyError):
-        raise Http404("ERROR:: Bad request.Invalid arguments passed")
-    except(PatientDetail.DoesNotExist):
-        raise Http404("ERROR:: Patient requested does not exist.")
-    patient_admission_obj = Admission.objects.filter(
-        patient_detail=patient_detail_obj)
-    data = []
-    if patient_admission_obj:
-        for admission in patient_admission_obj:
-            data_to_append = {}
-            data_to_append['id'] = admission.id
-            data_to_append[
-                'date_of_admission'] = admission.date_of_admission.isoformat()
-            data_to_append[
-                'time_of_admission'] = admission.time_of_admission.isoformat()
-            data_to_append[
-                'admitting_surgeon'] = admission.admitting_surgeon.surgeon_name
-            data_to_append['room_or_ward'] = admission.room_or_ward
-            data_to_append['admission_closed'] = admission.admission_closed
-            data_to_append['hospital'] = admission.hospital
-            data_to_append[
-                'home'] = admission.get_admission_main_window_url()
-            data_to_append[
-                'edit'] = admission.get_admission_edit_url()
-            data_to_append[
-                'del'] = admission.get_admission_del_url()
-            data.append(data_to_append)
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")
+def render_admission_json(request):
+
+    if request.method =='GET':
+      all_a = AdmissionDetail.objects.all()
+      if all_a is not None:
+          data = []
+          for admission in all_a:
+              print "Evaluating Admission.. "
+              print admission
+              json = ModelInstanceJson(admission).return_data()
+              data.append(json)
+      else:
+        data = {}
+      json = simplejson.dumps(data)
+      print "\n"
+      print "-" *100
+      print "Printing Sample Admission JSON"
+      print "-" *100
+      if data: 
+        print (simplejson.dumps(data[0]))
+      else:
+        print "No Admissions"
+      print "-" *100
+      print "\n"
+      return HttpResponse(json, content_type="application/json")
+    else:
+      raise Http404("Bad Request Method")
+
+
+#@login_required
+#def admission_json(request):
+    #try:
+        #action = unicode(request.GET.get('action'))
+        #id = int(request.GET.get('patient_id'))
+        #if action == 'add':
+            #return patient_admission_add(request, id)
+        #patient_detail_obj = PatientDetail.objects.get(pk=id)
+    #except(AttributeError, NameError, TypeError, ValueError, KeyError):
+        #raise Http404("ERROR:: Bad request.Invalid arguments passed")
+    #except(PatientDetail.DoesNotExist):
+        #raise Http404("ERROR:: Patient requested does not exist.")
+    #patient_admission_obj = Admission.objects.filter(
+        #patient_detail=patient_detail_obj)
+    #data = []
+    #if patient_admission_obj:
+        #for admission in patient_admission_obj:
+            #data_to_append = {}
+            #data_to_append['id'] = admission.id
+            #data_to_append[
+                #'date_of_admission'] = admission.date_of_admission.isoformat()
+            #data_to_append[
+                #'time_of_admission'] = admission.time_of_admission.isoformat()
+            #data_to_append[
+                #'admitting_surgeon'] = admission.admitting_surgeon.surgeon_name
+            #data_to_append['room_or_ward'] = admission.room_or_ward
+            #data_to_append['admission_closed'] = admission.admission_closed
+            #data_to_append['hospital'] = admission.hospital
+            #data_to_append[
+                #'home'] = admission.get_admission_main_window_url()
+            #data_to_append[
+                #'edit'] = admission.get_admission_edit_url()
+            #data_to_append[
+                #'del'] = admission.get_admission_del_url()
+            #data.append(data_to_append)
+    #json = simplejson.dumps(data)
+    #return HttpResponse(json, content_type="application/json")
 
 
 @login_required
