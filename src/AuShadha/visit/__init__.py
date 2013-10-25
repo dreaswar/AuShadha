@@ -17,6 +17,8 @@ PARENT_MODULE = 'aushadha'
 DEPENDS_ON = ['aushadha','patient',]
 
 ui_sections = {'app_type': 'main_module',
+               'load_after': 'patient',
+               'load_first': False,
                'layout'  :['trailing','top','center'],
                'widgets' :{ 'tree'    : '/AuShadha/visit/visit/tree/',
                            'summary'  : '',
