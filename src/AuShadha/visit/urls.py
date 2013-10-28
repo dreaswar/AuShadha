@@ -20,6 +20,16 @@ urlpatterns = patterns('',
                           name='render_visit_json_without_id'
                       ),
 
+                      url(r'pane/(?P<patient_id>\d+)/$', 
+                          'visit.dijit_widgets.pane.render_visit_pane',
+                          name='render_visit_pane_with_id'
+                      ),
+
+                      url(r'pane/$', 
+                          'visit.dijit_widgets.pane.render_visit_pane',
+                          name='render_visit_pane_without_id'
+                      ),
+
                       url(r'render_visit_list/$', 
                           render_visit_list, 
                           name="render_visit_list"
