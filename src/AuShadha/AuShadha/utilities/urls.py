@@ -14,7 +14,7 @@ class UrlGenerator(object):
   """ 
     Generates URL for the classes based on action, id and a parent class attribute
   """
-  parented_actions = ['add','list','json','tree','sidebar','summary']
+  parented_actions = ['add','list','json','tree','sidebar','summary','pane']
   parentless_actions = ['edit','del']
 
   def __init__(self,
@@ -23,6 +23,7 @@ class UrlGenerator(object):
 
     self.urlDict = {
                     'summary':{},
+                    'pane'   :{},                    
                     'tree'   :{},
                     'sidebar':{},
                     'json'   :{},

@@ -35,28 +35,43 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 
 from patient.models import PatientDetail, PatientDetailForm
-from .models import AdmissionDetail,AdmissionDetailForm
+from .models import AdmissionDetail,AdmissionDetailForm, \
+                    AdmissionHPI, AdmissionROS, AdmissionImaging, \
+                    AdmissionInv, AdmissionComplaint
+
 from dijit_widgets.tree import AdmissionTree
 from AuShadha.apps.ui.data.json import ModelInstanceJson
 
-#from AuShadha.apps.clinic.models import Clinic
-#from demographics.demographics.models import Demographics
-#from demographics.contact.models import Contact
-#from demographics.phone.models import Phone
-#from demographics.email_and_fax.models import EmailAndFax
+from demographics.demographics.models import Demographics
+from demographics.contact.models import Contact
+from demographics.phone.models import Phone
+from demographics.guardian.models import Guardian
+from demographics.email_and_fax.models import EmailAndFax
 
-#from history.medical_history.models import MedicalHistory
-#from history.surgical_history.models import SurgicalHistory
-#from history.social_history.models import SocialHistory
-#from history.family_history.models import FamilyHistory
+from history.social_history.models import SocialHistory
+from history.family_history.models import FamilyHistory
+from history.medical_history.models import MedicalHistory
+from history.surgical_history.models import SurgicalHistory
 #from history.obs_and_gyn.models import ObstetricHistoryDetail
 
-#from immunisation.models import Immunisation
-#from allergy_list.models import Allergy
-#from medication_list.models import MedicationList
+from medication_list.models import MedicationList
+from allergy_list.models import Allergy
 
-#from admission.models import Admission, AdmissionForm
-#from visit.models import VisitDetail, VisitImaging, VisitInv
+from registry.inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
+
+from phyexam.models import *
+from phyexam.models import DEFAULT_VITALS
+
+from phyexam.presentation_classes import VitalExamObjPresentationClass,\
+                                         GenExamObjPresentationClass,\
+                                         SysExamObjPresentationClass,\
+                                         vitalexamobjpresentationclass_factory,\
+                                         genexamobjpresentationclass_factory,\
+                                         sysexamobjpresentationclass_factory,\
+                                         neuroexamobjpresentationclass_factory,\
+                                         vascexamobjpresentationclass_factory,\
+                                         vascexamobjpresentationclass_querysetfactory,\
+                                         visitrospresentationclass_factory
 
 
 
@@ -132,13 +147,123 @@ def render_admission_json(request):
 
 
 @login_required
-def render_admission_tree(request, admission_id=None):
+def render_admission_tree(request, patient_id=None):
     if request.method == "GET" and request.is_ajax():
       tree = AdmissionTree(request)()
       return HttpResponse(tree, content_type="application/json")
     else:
         raise Http404("Bad Request")
 
+
+
+@login_required
+def admission_summary(request, patient_id = None):
+
+    user = request.user
+
+    if request.method == "GET" and request.is_ajax():
+        try:
+            if patient_id:
+              patient_id = int(patient_id)
+            else:
+              patient_id = int(request.GET.get('patient_id') )
+            print "Listing Summary for patient with ID: " + str(patient_id)
+            patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+            admission_detail_obj = AdmissionDetail.objects.filter(
+                patient_detail=patient_detail_obj).order_by('-date_of_admission')
+        except (TypeError, NameError, ValueError, AttributeError, KeyError):
+            raise Http404("Error ! Invalid Request Parameters. ")
+        except (PatientDetail.DoesNotExist):
+            raise Http404("Requested Patient Does not exist.")
+
+        admission_obj_list = []
+        if admission_detail_obj:
+            error_message = "Listing the Admissions in ", admission_detail_obj
+            print "Listing the Admissions in ", admission_detail_obj
+            for admission in admission_detail_obj:
+                dict_to_append = OrderedDict()
+                dict_to_append[admission] = None
+                print "Aggregating sub-modules in admission: ", admission
+                admission_complaint_obj = AdmissionComplaint.objects.filter(
+                    admission_detail=admission)
+                admission_hpi_obj = AdmissionHPI.objects.filter(
+                    admission_detail=admission)
+                admission_ros_obj = AdmissionROS.objects.filter(
+                    admission_detail=admission)
+                vital_exam_obj = VitalExam_FreeModel.objects.filter(
+                    admission_detail=admission)
+                gen_exam_obj = GenExam_FreeModel.objects.filter(
+                    admission_detail=admission)
+                sys_exam_obj = SysExam_FreeModel.objects.filter(
+                    admission_detail=admission)
+                neuro_exam_obj = PeriNeuroExam_FreeModel.objects.filter(
+                    admission_detail=admission)
+                vasc_exam_obj = VascExam_FreeModel.objects.filter(
+                    admission_detail=admission)
+
+                if admission_hpi_obj:
+                    admission_hpi_obj = admission_hpi_obj[0]
+
+                if admission_ros_obj:
+                    admission_ros_obj = admission_ros_obj[0]
+                    v_ros = admissionrospresentationclass_factory(admission_ros_obj)
+                else:
+                  v_ros = "No Review of System Recorded"
+
+                if vital_exam_obj:
+                    vital_exam_obj = vital_exam_obj[0]
+                    vf = vitalexamobjpresentationclass_factory(vital_exam_obj)
+                else:
+                    vf = "No Vitals Recorded"
+
+                if gen_exam_obj:
+                    gen_exam_obj = gen_exam_obj[0]
+                    gf = genexamobjpresentationclass_factory(gen_exam_obj)
+                else:
+                    gf = "No General Examination Recorded"
+
+                if sys_exam_obj:
+                    sys_exam_obj = sys_exam_obj[0]
+                    sf = sysexamobjpresentationclass_factory(sys_exam_obj)
+                else:
+                    sf = "No Systemic Examination Recorded"
+
+                if neuro_exam_obj:
+                    neuro_exam_obj = neuro_exam_obj[0]
+                    nf = neuroexamobjpresentationclass_factory(neuro_exam_obj)
+                else:
+                    nf = "No Neurological Examination Recorded"
+
+                if vasc_exam_obj:
+                    vasc_f = vascexamobjpresentationclass_querysetfactory(vasc_exam_obj)
+                else:
+                    vasc_f = "No Vascular Examination Recorded"
+
+                d = OrderedDict()
+                d['complaint']= admission_complaint_obj
+                d['hpi']= admission_hpi_obj
+                d['ros']= v_ros
+                d['vitals']= vf
+                d['gen_exam']=gf
+                d['sys_exam']=sf
+                d['neuro_exam']=nf
+                d['vasc_exam']=vasc_f
+                dict_to_append[admission] = d
+                admission_obj_list.append(dict_to_append)
+                #print "Vascular Exam is: "
+                #print vasc_f
+        else:
+            error_message = "No Admissions Recorded"
+        variable = RequestContext(
+            request, {'user': user,
+                      'admission_detail_obj': admission_detail_obj,
+                      'admission_obj_list': admission_obj_list,
+                      'patient_detail_obj': patient_detail_obj,
+                      'error_ message': error_message
+                      })
+        return render_to_response('admission_detail/summary.html', variable)
+    else:
+        raise Http404(" Error ! Unsupported Request..")
 
 
 
