@@ -179,7 +179,26 @@ def render_visit_json(request):
 @login_required
 def render_visit_tree(request,patient_id = None):
   if request.method == "GET" and request.is_ajax():
-    tree = VisitTree(request)()
+    if patient_id:
+      patient_id = int( patient_id )
+    else:
+      try:
+        patient_id = int( request.GET.get('patient_id') )
+        patient_detail_obj = PatientDetail.objects.get(pk = patient_id)        
+      except (KeyError, NameError, ValueError,AttributeError):
+        raise Http404("Bad Request: Invalid Request Parameters")
+      except (PatientDetail.DoesNotExist):
+        raise Http404("Bad Request: Patient Does Not Exist")
+
+    d = {'request' : request,
+         'patient': patient_detail_obj,
+         'can_add_new_visit' : patient_detail_obj.can_add_new_visit(patient_detail_obj),
+         'active_visits' : VisitDetail.objects.filter(patient_detail = patient_detail_obj).filter(is_active = True),
+         'all_visits' : VisitDetail.objects.filter(patient_detail = patient_detail_obj),
+         'inactive_visits': VisitDetail.objects.filter(patient_detail = patient_detail_obj).filter(is_active = False)
+         }
+
+    tree = VisitTree(d)()
     return HttpResponse(tree, content_type="application/json")
   else:
       raise Http404("Bad Request")
