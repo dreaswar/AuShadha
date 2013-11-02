@@ -1,49 +1,66 @@
+<script type="dojo/method" data-dojo-event="onSubmit">
+  
+    if( this.validate() ) {
 
-    <script type="dojo/method" data-dojo-event="onSubmit">
-      if( this.validate() ){
-        require(["dojo/dom",
-                "dojo/request/xhr",
-                "dijit/registry"  ,
-                "dojo/json"       ,
-                "dojo/dom-form"   ,
-                "dijit/Dialog" 
-        ],
-        function(dom, xhr, registry, JSON, domForm, Dialog){
-          var editDialog  = registry.byId("editPatientDialog");
-          var errorDialog = registry.byId("dialogJsonMessage");
-
-          xhr(CHOSEN_PATIENT.visitedit ? CHOSEN_PATIENT.visitedit :"{{visit_detail_obj.get_edit_url}}",{
-              handleAs: "text",
+      require(["dojo/dom",
+               "dojo/query",
+               "dojo/dom-attr",
+              "dojo/request/xhr",
+              "dijit/registry"  ,
+              "dojo/json"       ,
+              "dojo/dom-form"   ,
+              "dijit/Dialog",
+              "dojo/NodeList-traverse",
+              "dojo/NodeList-data"
+      ],
+      
+      function( dom, query, domAttr, xhr, registry, JSON, domForm, Dialog ) {
+        
+        xhr("{{visit_detail_obj.urls.edit}}",
+            {handleAs: "text",
               method  : "POST",
               data    : domForm.toObject("newVisitEditForm_{{visit_detail_obj.id}}")
-          }).then(
-            function(json){
-                var jsondata = JSON.parse(json);
-                console.log(jsondata);
-                if(jsondata.success == true){
-                  publishInfo("Saved Successfully" );
-                  editDialog.hide();
-                  new buildVisitTree();
-//                   registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
-                  registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
-                  new buildPatientTree();
-                  new buildAdmissionTree();
-                }
-                else{
-                  publishError("ERROR ! :" + jsondata.error_message );
-                }
-            },
-            function(json){
-                  var jsondata = JSON.parse(json); 
-                  publishError("ERROR!: "+ jsondata.error_message );
-            },
-            function(evt){console.log("Edited Visit Successfully...")}
-          );
-        });
-        return false;
-      }
-      else{
-        return false;
-      }
-    </script>
+            }
+        ).then(
+
+          function( json ){
+              var jsondata = JSON.parse( json );
+              var parentTab = registry.byId('opd_visits_center_summary_tab').getParent();
+              var editTab = query("#newVisitEditForm_{{visit_detail_obj.id}}").parent('.subTabContainer')[0];
+              editTab = registry.byId(domAttr.get(editTab, 'id'))
+
+              if( jsondata.success == true ){
+                publishInfo( jsondata.error_message );
+                registry.byId('opd_visits_center_summary_tab').set('href',CHOSEN_PATIENT.urls.summary.visit);
+                registry.byId('opd_visits_leading_tree').refresh();
+                parentTab.removeChild( editTab );
+                editTab.destroyRecursive();
+              }
+
+              else{
+                publishError("ERROR ! :" + jsondata.error_message );
+              }
+          },
+
+          function( json ){
+                var jsondata = JSON.parse( json ); 
+                publishError("ERROR!: "+ jsondata.error_message );
+          },
+
+          function( evt ){
+              console.log("Edited Visit Successfully...")
+          }
+
+        );
+      });
+
+      return false;
+
+    }
+
+    else{
+      return false;
+    }
+
+</script>
 

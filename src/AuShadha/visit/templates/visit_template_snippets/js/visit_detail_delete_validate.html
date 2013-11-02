@@ -1,31 +1,42 @@
 <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
+
   require(
-    ["dojo/dom", 
-      "dojo/_base/xhr",
-      "dojo/json",
-      "dijit/registry",
-      "dijit/Dialog"
-    ],
-  function(dom, xhr, JSON, registry, Dialog){
+          ["dojo/dom", 
+            "dojo/query",
+            "dojo/dom-attr",
+            "dojo/_base/xhr",
+            "dojo/json",
+            "dijit/registry",
+            "dijit/Dialog",
+            "dojo/NodeList-traverse",
+            "dojo/NodeList-data"
+          ],
+
+  function(dom, query, domAttr, xhr, JSON, registry, Dialog){
+
       xhr.get({
-        url: "{{visit_detail_obj.get_del_url}}",
+
+        url: "{{visit_detail_obj.urls.del}}",
+
         load: function(json){
-                var jsondata = JSON.parse(json)
-                if (jsondata.success == true){
-                  publishInfo(jsondata.error_message);
-                  registry.byId("editPatientDialog").hide();
-                  if( registry.byId('VISIT_{{visit_detail_obj.id}}') ){
-                    registry.byId('VISIT_{{visit_detail_obj.id}}').destroyRecursive(false);
+
+                  var parentTab = registry.byId('opd_visits_center_summary_tab').getParent();
+                  var editTab = query("#newVisitEditForm_{{visit_detail_obj.id}}").parent('.subTabContainer')[0];
+                  editTab = registry.byId( domAttr.get(editTab, 'id') );
+                  var jsondata = JSON.parse(json);
+
+                  if( jsondata.success == true ){
+                    publishInfo( jsondata.error_message );
+                    registry.byId('opd_visits_center_summary_tab').set('href',CHOSEN_PATIENT.urls.summary.visit);
+                    registry.byId('opd_visits_leading_tree').refresh();
+                    parentTab.removeChild( editTab );
+                    editTab.destroyRecursive();
                   }
-                  new buildVisitTree();
-//                      registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
-                  registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
-                  new buildPatientTree();
-                  new buildAdmissionTree();
-                }else{
-                  publishError(jsondata.error_message);
-                }
-              }
+
+                  else{
+                    publishError("ERROR ! :" + jsondata.error_message );
+                  }
+            }
       });
   });
 </script>

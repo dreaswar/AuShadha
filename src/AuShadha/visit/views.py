@@ -1266,6 +1266,9 @@ def visit_detail_edit(request, visit_id = None):
         generic_remove_icon_html = generic_table_form_remove_icon_template.render(
             RequestContext(request, {'user': user}))
 
+        if not getattr(visit_detail_obj,'urls',None):
+          visit_detail_obj.save()
+
         variable = RequestContext(
             request, {'user': user,
                       'visit_detail_obj': visit_detail_obj,
