@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+  <meta name    = "generator"
+        content = "HTML Tidy for Linux (vers 6 November 2007), see www.w3.org"
+  >
+  {% block title %}
+  
+    <title> AuShadha </title>
+
+  {% endblock title %}
+
+<!--The global non template tagged style sheet and Dojo specific Style sheets from here-->
+
+  {% block media %}
+
+    {% include 'ui/style_links.html' %}
+
+  {% endblock media %}
+
+  {% block style_bits %}
+
+    <style  type="text/css">
+
+      {% include "style.css" %}
+
+    </style>
+
+  {% endblock style_bits %}
+
+  <script type="text/javascript">
+
+    var LOADER_STATUS_INDEX = 0;
+
+    var LOADER_TIMER = window.setInterval(setLoaderMessage,1000);
+
+    var loaderStatusMessages=[ "Starting to load the scripts...",
+                               "Finished the header pane and search widgets ...",
+                               "Finished adding the Patient Registration UI elements ...",
+                               "Added Autofiltering to patient search..",
+                               //{% if user.is_authenticated %}
+                               "Customising UI for {{user.username}}",
+                               //{% endif %}
+                               "Getting ready to load page.."
+                            ];
+
+    function setLoaderMessage(){
+      if(LOADER_STATUS_INDEX<loaderStatusMessages.length){
+        document.getElementById('aushadhaLoaderStatusMessage').innerHTML = loaderStatusMessages[LOADER_STATUS_INDEX];
+
+        console.log(document.getElementById('aushadhaLoaderStatusMessage').innerHTML);
+        LOADER_STATUS_INDEX ++;
+      }
+
+      window.onload = function(){
+        window.clearInterval(LOADER_TIMER);
+      }
+
+    }
+
+  </script>
+  
+  {% block js %}
+
+    {% include 'ui/script_links.html' %}
+
+  {% endblock js %}
+
+ <!-- Defining Global Events in Jasvascript -->
+
+  <script type="text/javascript">
+
+    {% include 'js/constants.js' %}
+
+    {% include 'js/urls.js' %}
+
+    {% include 'js/resources.js' %}
+
+    {% include 'js/crud.js' %}
+
+    {% include 'js/notification_dialog.js' %}
+
+    {% include 'js/key_bindings.js' %}
+
+  </script>
+  
+
+  {% block js_bits %}
+
+  {% endblock js_bits %}
+
+</head>
+
+<body class="claro">
+
+<!--  START OF APPLAYOUT  -->
+<div    id              = "appLayout"
+        class           = "demoLayout"
+        data-dojo-type  = "dijit/layout/BorderContainer">
+
+<div id="aushadhaLoaderIndicator">
+
+  <div class="loadingOverlayLogo">        </div>  
+  <div class="loadingOverlay">            </div>  
+  <div class="loadingMessage"> 
+      <div> Loading...                       </div>
+      <div id="aushadhaLoaderStatusMessage"> </div>
+  </div>
+
+</div>
+
+{% block topbar %}
+  <!--  START OF TOPPANE  -->
+  <div    id              = "topPane"
+          data-dojo-type  = "dojox/layout/ContentPane"
+          data-dojo-props = "region: 'top'"
+  >
+
+    <!--  START OF HEADERAREA  -->
+     <div id              ="header_area"
+          data-dojo-type  = "dijit/layout/BorderContainer"
+     >
+
+       <div id="logoDiv"
+       >
+        <h3 class="header_with_logo">
+           <a href="/" target="_blank" alt="AuShadha" >
+           <img src   =  "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_text.svg"
+                alt   = "AuShadha"
+                id    = "AuShadhaHeaderIcon"
+           >
+           </a>
+        </h3>
+       </div>
+
+       <!--  START OF LOGINAREA  -->
+       <div id              ="login_area"
+            data-dojo-type  = "dojox/layout/ContentPane"
+            data-dojo-props = "region     : 'right'"
+       >
+
+          <span id="headerPaneSearchBox"
+                style="position: absolute; left: -400px;top:1px;"
+            >
+              {% include 'ui/header_pane/search_widget.html' %}
+          </span>
+
+         <span id="timeBox"> </span>
+         {% if user.is_authenticated %}
+          <img src   = "{{STATIC_URL}}images/generic/auth/user_16.png"
+               alt   = "{{user.username}}"
+               class = "login_area_img"
+               id    = "loggedInUserIcon"
+               >
+          {% if user.is_staff %}
+          <a href="/AuShadha/admin/"
+             id="adminAreaHref"
+             target="_blank">
+          <img src   = "{{STATIC_URL}}images/generic/dashboard_and_settings/settings_16.png"
+               alt   = "Admin"
+               class = "login_area_img" >
+          </a>
+          {% endif %}
+          &nbsp;
+          <a href="/AuShadha/logout/" id="logoutHref">
+          <img src   = "{{STATIC_URL}}images/generic/auth/system-shutdown-panel-restart.svg"
+               alt   = "Logout"
+               class = "login_area_img"
+               >
+          </a>&nbsp;
+         {% else %}
+          <a href="/AuShadha/login/" id="loginHref">
+          <img src   = "{{STATIC_URL}}images/generic/auth/login_128.png"
+               alt   = "Login"
+               class = "login_area_img"
+               style="width:16px; height:16px;"
+               >
+          </a>
+         {% endif %}
+     </div>
+    <!--  END OF LOGIN AREA  -->
+
+  </div>
+  <!--  END OF HEADER AREA  -->
+
+ </div>
+<!--  END OF TOP PANE  -->
+{% endblock topbar %}
+
+
+
+  {% block centerbar %}
+    <!--  START OF CENTERMAINPANE  -->
+    <div    id              = "centerMainPane"
+            class           = "centerMainPane"
+            data-dojo-type  = "dojox/layout/ContentPane"
+            data-dojo-props = "region:'center'"
+    >
+          <!--  START OF CENTERTOPTABPANE -->
+            <div   id       = "centerTopTabPane"
+            class           = "centerTopTabPane"
+            data-dojo-type  = "dijit/layout/TabContainer"
+            data-dojo-props = "tabPosition:'top',tabStrip: true"
+            class           = "mainTabContainer"
+            > 
+
+                <div id="search_main"
+                data-dojo-type="dojox/layout/ContentPane"
+                data-dojo-props="title: 'Search',iconClass:'dijitIcon dijitSearch'">
+
+                      <div id="search_bc"
+                        data-dojo-type="dijit/layout/BorderContainer"
+                      >
+
+                            <div id="search_cp_top"
+                                data-dojo-type="dojox/layout/ContentPane"
+                                data-dojo-props="region: 'top'"
+                                class="topContentPane nonSelected">
+                            </div>
+
+                            <div id="search_tc_center"
+                                data-dojo-type="dijit/layout/TabContainer"
+                                data-dojo-props="region: 'center',tabStrip:true, tabPosition:'top',nested:true"
+                            >
+
+                                <div id="search_cp_form"
+                                      data-dojo-type="dojox/layout/ContentPane"
+                                      data-dojo-props="title: 'Live Search',selected:true"
+                                    >
+
+                                    <div id="search_cp_form_container"
+                                        style="position        : relative;
+                                                left            : 5%;
+                                                width           : 90%;
+                                                height          : 100%;
+                                                overflow        : visible;
+                                                border          : solid 1px #cecece;
+                                                border-radius   : 3px;
+                                                background      : #D0DFEA;
+                                                box-shadow      : 1px 1px 1px #cecece;
+                                              "
+                                    > 
+
+                                        <div>
+                                            <img    src   = "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo.svg"
+                                                    style = " position:relative;
+                                                              min-width: 30%;
+                                                              max-width:30%;
+                                                              min-height: 30%;
+                                                              max-height:30%;
+                                                              left: 35%;
+                                                            "
+                                              >
+                                        </div>
+
+                                        <div id="search_form"> </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div id="search_cp_grid"
+                                    data-dojo-type="dojox/layout/ContentPane"
+                                    data-dojo-props="title: 'Grids'"
+                                    >
+
+                                    <!--<div id="search_cp_grid_container" 
+                                         class="auGridContainer"
+                                    > -->
+
+<!--                                     </div> -->
+
+                                </div>
+
+                          </div>
+
+                      </div>
+
+                </div>
+
+            </div>
+          <!--  END OF CENTERTOPTABPANE  -->
+
+        <!-- TOOLTIPS --> 
+        {% include 'tooltips.html' %} 
+        <!-- END TOOLTIPS -->
+
+    </div>
+    <!--  END OF CENTERMAINPANE  -->
+
+  {% endblock centerbar %}
+  <!--  START OF JSON MESSAGE  -->
+  {% block json_message_div %}
+    <div  id              = "bottomPane"
+          class           = "edgePanel"
+          data-dojo-type  = "dojox/layout/ContentPane"
+          data-dojo-props = "region: 'bottom'">
+
+        {% block footer %}
+
+            <div class="footer ">
+              <span>
+                <i> AuShadha and Logo are &copy;of Dr. Easwar T.R 2012,<i> &nbsp;
+                    <i id="click_for_gpl3"> GNU GPL Version 3 License</i> &nbsp;
+                    <a href="mailto:dreaswar@gmail.com">dreaswar@gmail.com</a> &nbsp;
+              </span>
+
+            </div>
+        {% endblock footer %}
+    </div>
+  {% endblock json_message_div %}
+  <!--  END OF JSON MESSAGE  -->
+
+  <!--  DIALOGS AND MISC  -->
+    {%include 'dialogs_and_misc.html' %}
+  <!--  END DIALOGS AND MISC  -->
+
+</div>
+<!--  END OF APP CONTAINER  -->
+</body>
+</html>
+
+

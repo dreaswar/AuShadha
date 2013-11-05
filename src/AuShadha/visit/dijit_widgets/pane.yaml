@@ -1,0 +1,35 @@
+# YAML to describe the Visit pane and the contained widgets. 
+# This can be parsed and values changed before its outputted on XHR
+
+type : bc
+title    : Opd Visits
+closable : True
+panes :
+  columns  : 3
+  type     : tc
+  title    : Opd Visits
+  closable : True
+  panes :
+
+    leading: 
+      type: cp
+      splitter: True
+      widgets: 
+        tree :
+          type : tree
+          content : /AuShadha/visit/visit/tree/
+
+    top:
+      type: cp
+      splitter: False
+      content : /AuShadha/visit/visit/top_pane_content/
+
+    center: 
+      type: tc
+      splitter: True
+      panes:
+        summary:
+          type : cp
+          title: Summary
+          closable: True
+          content : /AuShadha/visit/visit/summary/  

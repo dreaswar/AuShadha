@@ -1,0 +1,234 @@
+medical_history: &MEDICAL_HISTORY
+  name: Medical History
+  type: medical_history_module
+  id: MEDICAL_HISTORY
+  module_type: sub_module
+  module_name: medical_history
+  ui_layout: standard
+  widgets:  [ grid, button ]
+
+
+surgical_history: &SURGICAL_HISTORY
+  name: Surgical History
+  type: surgical_history_module
+  id: SURGICAL_HISTORY
+  module_type: sub_module
+  module_name: surgical_history
+  ui_layout: standard
+  widgets: [ grid, button ]
+
+
+family_history: &FAMILY_HISTORY
+  name: Family History
+  type: family_history_module
+  id: FAMILY_HISTORY
+  module_type: sub_module
+  module_name: family_history
+  ui_layout: standard
+  widgets: [ grid, button ]
+
+
+social_history: &SOCIAL_HISTORY
+  name: Social History
+  type: social_history_module
+  id: SOCIAL_HISTORY
+  module_type: sub_module
+  module_name: social_history
+  ui_layout: standard
+  widgets: [ form ]
+
+
+contact: &CONTACT
+  name: Contact
+  type: contact_module
+  id: CONTACT
+  module_type: sub_module
+  module_name: contact
+  ui_layout: standard
+  widgets: [ grid, button ]
+
+phone: &PHONE
+  name: Phone
+  type: phone_module
+  id: PHONE
+  module_type: sub_module
+  module_name: phone
+  ui_layout: standard
+  widgets: [ grid, button ]
+
+
+guardian: &GUARDIAN
+  name: Guardian
+  type: guardian_module
+  id: GUARDIAN
+  module_type: sub_module
+  module_name: guardian
+  ui_layout: standard
+  widgets: [ grid, button ]
+
+
+
+allergy: &ALLERGY
+  name : Allergy
+  type: allergy_list_module
+  module_type: sub_module
+  module_name: allergy_list
+  id : ALLERGY
+  ui_layout: standard
+  widgets: [ grid, button ]
+
+
+immunisation: &IMMUNISATION
+  name: Immunisation
+  type: immunisation_module
+  id: IMMUNISATION
+  module_type: sub_module
+  module_name: immunisation
+  ui_layout: standard
+  widgets: [ grid, button ]
+
+
+medical_preventives: &MEDICAL_PREVENTIVES
+  name: Medical
+  type: medical_preventives_module
+  id: MEDICAL_PREVENTIVES
+
+
+surgical_preventives: &SURGICAL_PREVENTIVES
+  name: Surgical
+  type: surgical_preventives_module
+  id: SURGICAL_PREVENTIVES
+
+
+obs_preventives: &OBS_PREVENTIVES
+  name: Obs & Gyn
+  type: obs_and_gyn_preventives_module
+  id: OBS_PREVENTIVES
+
+
+
+
+history: &HISTORY
+  name: History 
+  type: application
+  id: HISTORY
+  linked_modules: [ *MEDICAL_HISTORY, *SURGICAL_HISTORY, *FAMILY_HISTORY, *SOCIAL_HISTORY ]
+
+
+demographics: &DEMOGRAPHICS
+  name: Demographics
+  type: demographics_module
+  id: DEMOGRAPHICS
+  module_type: sub_module
+  module_name: demographics
+  ui_layout: composite
+  widgets: [ form ]
+  linked_modules: [ *CONTACT, *PHONE, *GUARDIAN ]
+
+
+medications: &MEDICATIONS
+  name : Medications
+  type: application
+  module_type: medication_list_module
+  module_name: medication_list
+  id : MEDICATIONS
+  ui_layout: composite
+  widgets: [ grid, button ]
+  linked_modules: [ *ALLERGY ]
+
+
+preventives: &PREVENTIVES
+  name: Preventives
+  type: application
+  id: PREVENTIVES
+  linked_modules: [ *IMMUNISATION, *MEDICAL_PREVENTIVES, *SURGICAL_PREVENTIVES, *OBS_PREVENTIVES ]
+
+
+investigation: &INVESTIGATION
+  name: Investigation
+  type: application
+  id: INVESTIGATION
+
+
+
+imaging: &IMAGING
+  name: Imaging
+  type: application
+  id: IMAGING
+
+
+procedures: &PROCEDURES
+  name: Procedures
+  type: application
+  id: PROCEDURES
+
+
+admissions: &ADMISSIONS
+  name : Admissions
+  type: application
+  module_type: admission_module
+  module_name: admission
+  id : ADMISSIONS
+  ui_layout: pane
+  widgets: [ pane ]
+  paneUrl: !!python/object/apply:django.core.urlresolvers.reverse [render_admission_pane_without_id]
+
+
+visits: &VISITS
+  name : Visits
+  type: application
+  module_type: visit_module
+  module_name: visit
+  id : VISITS
+  ui_layout: pane
+  widgets: [ pane ]
+  paneUrl: !!python/object/apply:django.core.urlresolvers.reverse [render_visit_pane_without_id]
+
+#   tree: &PATIENT_TREE
+#     !!python/object/new:patient.dijit_widgets.tree.PatientTree []
+# 
+#   tree_str: !!python/object/apply:apply
+#     - !!python/object/apply:getattr
+#         - !!python/object/new:patient.dijit_widgets.tree.PatientTree []
+#         - __call__
+#     - []
+
+
+
+# calendar: &CALENDAR
+#   name  : Calendar 
+#   type: application
+#   id: CALENDAR 
+# 
+# 
+# media: &MEDIA
+#   name: Media
+#   type: application
+#   id: MEDIA
+# 
+# 
+# documents: &DOCUMENTS
+#   name: Documents
+#   type: patient_documents_module
+#   id: DOCUMENTS
+# 
+# images: &IMAGES
+#   name: Images
+#   type: patient_images_module
+#   id: IMAGES
+# 
+# coding: &CODING
+#   name: Coding
+#   type: application
+#   id: CODING
+# 
+# icd_10: &ICD_10
+#   name: ICD 10
+#   type: icd10_module
+#   id: ICD_10
+# 
+# 
+# icd_10_pc: &ICD_10_PC
+#   name: ICD 10 PC
+#   type: icd10_pcs_module
+#   id: ICD_10_PROCEDURE_CODES

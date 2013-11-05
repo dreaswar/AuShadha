@@ -1,0 +1,110 @@
+<div data-dojo-type = "dijit/form/Form" 
+     id             = "newEmailAndFaxAddForm" 
+     data-dojo-id   = "newEmailAndFaxAddForm"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = ""
+  >
+
+  <script type            = "dojo/method" 
+          data-dojo-event = "onReset"
+  >
+    return true;
+  </script>
+
+  <script type            = "dojo/method" 
+          data-dojo-event = "onSubmit"
+          data-dojo-args  = "evt"
+  >
+  
+    if(this.validate()){
+      require([
+       "dijit/registry", 
+      ],
+      function(registry){
+
+//    {% if perms.email_and_fax.add_email_and_fax %}
+
+        addItem("{{patient_detail_obj.urls.add.email_and_fax}}", 
+                "newEmailAndFaxAddForm");
+
+//         addItem("{{patient_detail_obj.urls.add.email_and_fax}}", 
+//                 "newEmailAndFaxAddForm", 
+//                 "email_and_fax_grid_alt"
+//                 );
+
+//    {% else %}
+        registry.byId("permissionDeniedErrorDialog").show();
+//   {% endif %}
+
+     });
+     return false;
+    }
+    else{
+      raiseInvalidFormSubmission();
+      return false;
+    }
+  
+  </script>
+
+  {% if perms.email_and_fax.add_email_and_fax %}
+
+        <table>
+          {{email_and_fax_form}}
+        </table>
+        
+        <button 	type = "submit" 
+          data-dojo-type  = "dijit/form/Button"
+          data-dojo-props = "iconClass:'dijitIconSave'"
+          name 	          = "submitbutton" 
+          id 		      = "email_and_fax_form_submit"
+          value           = "Add"
+        >
+          
+          Add
+        
+          <script type            = "dojo/connect" 
+                  data-dojo-event = "onClick" 
+                  data-dojo-args  = "evt"
+          >
+                  //       ADD_MORE_CONTACT = false;
+                  ADD_MORE_ITEMS           = false;
+          </script>
+      </button>
+
+      <button 	type 	        = "submit" 
+                data-dojo-type  = "dijit/form/Button"
+                data-dojo-props = "iconClass:'dijitIconSave'"
+                name 	        = "submitAndAddMoreButton" 
+                id 		        = "email_and_fax_form_add_more"
+                value           = "Add More"
+        >
+
+        Add More
+
+        <script type            = "dojo/connect" 
+                data-dojo-event = "onClick"
+                data-dojo-args  = "evt"
+        >
+          //ADD_MORE_CONTACT = true;
+          ADD_MORE_ITEMS     = true;
+        </script>
+
+      </button>
+
+        <button 	type 	        = "reset" 
+                    data-dojo-type  = "dijit/form/Button"
+                    data-dojo-props = "iconClass:'dijitIconClear'"
+                    id 		        = "email_and_fax_form_reset"
+                    value           = "Reset"
+        >
+          Reset
+        </button>
+
+    {% else %}
+
+      <p class="suggestion_text"> Insufficient Permissions to add Email and Fax </p>
+
+    {% endif %}
+
+</div>

@@ -1,0 +1,34 @@
+<!-- Dojo library -->
+
+    <script type="text/javascript">
+    
+      var dojoConfig = {
+          baseUrl           : "{{STATIC_URL}}",
+          tlmSiblingOfDojo  : false,
+          packages: [
+              { name: "dojo"    , location: "{{STATIC_URL}}plugins/dojo/dojo" },
+              { name: "dijit"   , location: "{{STATIC_URL}}plugins/dojo/dijit" },
+              { name: "dojox"   , location: "{{STATIC_URL}}plugins/dojo/dojox" },
+              { name: "aushadha", location: "{{STATIC_URL}}/ui/js"  , main: "main" }
+          ]
+      };
+    
+    </script>
+
+    <script type="text/javascript"
+            src="{{STATIC_URL}}plugins/dojo/dojo/dojo.js"    
+            data-dojo-config="async: true, parseOnLoad: true, executeScripts:true, isDebug:true">
+    </script>
+<!-- end of Dojo library links -->
+
+{% if user.is_authenticated %}
+    <script type    =   "text/javascript" 
+            src     =   "{{STATIC_URL}}ui/js/script.js"> 
+    </script>
+{% else %}
+    <script type=   "text/javascript" 
+            src =   "{{UI_STATIC_URL}}ui/js/login.js"> 
+    </script>  
+{% endif %}
+
+

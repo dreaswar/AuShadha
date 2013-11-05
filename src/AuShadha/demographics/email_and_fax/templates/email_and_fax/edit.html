@@ -1,0 +1,67 @@
+<div data-dojo-type = "dijit/form/Form" 
+     id             = "newEmailAndFaxEditForm" 
+     data-dojo-id   = "newEmailAndFaxEditForm"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = "">
+
+  <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
+    if( this.validate() ){
+      require(["dijit/registry",
+               "dojo/domReady!"
+      ],
+       function(registry){
+         //	{% if perms.email_and_fax.change_email_and_fax %}
+          editItem("{{email_and_fax_obj.urls.edit}}","newEmailAndFaxEditForm");
+//           editItem("{{email_and_fax_obj.urls.edit}}","newEmailAndFaxEditForm");
+         // {% else %}
+          registry.byId("permissionDeniedErrorDialog").show();
+         // {%endif %}
+         return false;
+        });
+     
+     return false;
+    }
+    else{
+     raiseInvalidFormSubmission();
+     return false;
+    }
+  </script>
+
+    <table>
+      {{email_and_fax_form}}
+    </table>
+
+    {% if perms.email_and_fax.change_email_and_fax %}
+    <button data-dojo-type = "dijit/form/Button" 
+            data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+            type           = "submit" 
+            name           = "editButton" 
+            value          = "Edit"
+    >
+      Edit
+    </button>
+    {% endif %}
+
+    {% if perms.email_and_fax.delete_email_and_fax %}
+    <button data-dojo-type  = "dijit/form/Button" 
+            data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
+            type            = "button"
+            name            = "delEmailAndFax"
+            id              = "delEmailAndFaxBtn">
+       Delete
+       <script  type            = "dojo/method" 
+                data-dojo-event = "onClick" 
+                data-dojo-args  = "evt"
+        >
+         //	{% if perms.email_and_fax.delete_email_and_fax %}
+		     delItem("{{email_and_fax_obj.urls.del}}");
+// 		     delItem("{{email_and_fax_obj.urls.del}}");
+         // {% else %}
+         registry.byId("permissionDeniedErrorDialog").show();
+         // {%endif %}
+        </script>
+    </button>
+    {% endif %}
+
+</div>
