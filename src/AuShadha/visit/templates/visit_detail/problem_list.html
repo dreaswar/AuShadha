@@ -55,14 +55,9 @@
                   var filterValue = evt;
                   var tableRows   = query('.visitProblemListTable tbody tr');
 
-                  var surgeon = query('.visitOpSurgeonFilterSelector_problemList')[0];
-                  var status = query('.visitStatusFilterSelector_problemList')[0];
-                  var complaint = query('.visitComplaintFilterSelector_problemList')[0];
-
-                  console.log(tableRows);
-                  console.log(surgeon);
-                  console.log(status);
-                  console.log(complaint);
+                  var surgeon = registry.byId('visitOpSurgeonFilterSelector_problemList_{{patient_detail_obj}}').domNode;
+                  var status = registry.byId('visitStatusFilterSelector_problemList_{{patient_detail_obj}}').domNode;
+                  var complaint = registry.byId('visitComplaintFilterSelector_problemList_{{patient_detail_obj}}').domNode;
 
                   switch(evt){
 
@@ -70,7 +65,7 @@
                       tableRows.forEach(function(node){
                         domStyle.set(node,{display:"table-row"});
                       });
-                      
+
                       domStyle.set(surgeon,{display:'none'});                              
                       domStyle.set(status,{display:'none'});                                                          
                       domStyle.set(complaint,{display:'none'});                            
@@ -81,6 +76,7 @@
                       tableRows.forEach(function(node){
                         domStyle.set(node,{display:"table-row"});
                       });
+
                       domStyle.set(surgeon,{display:'none'});                              
                       domStyle.set(status,{display:'none'});                                                          
                       domStyle.set(complaint,{display:'none'});                            
@@ -95,6 +91,7 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
+
                       domStyle.set(surgeon,{display:'none'});                              
                       domStyle.set(status,{display:'none'});                                                          
                       domStyle.set(complaint,{display:'none'});                            
@@ -109,6 +106,7 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
+
                       domStyle.set(surgeon,{display:'none'});                              
                       domStyle.set(status,{display:'none'});                                                          
                       domStyle.set(complaint,{display:'none'});                            
@@ -123,6 +121,7 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
+
                       domStyle.set(surgeon,{display:'none'});                              
                       domStyle.set(status,{display:'none'});                                                          
                       domStyle.set(complaint,{display:'none'});                                                          
@@ -137,6 +136,7 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
+
                       domStyle.set(surgeon,{display:'none'});                              
                       domStyle.set(status,{display:'none'});                                                          
                       domStyle.set(complaint,{display:'none'});                                                          
@@ -151,6 +151,7 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
+
                       domStyle.set(surgeon,{display:'none'});                              
                       domStyle.set(status,{display:'none'});                                                          
                       domStyle.set(complaint,{display:'none'});                            
@@ -160,6 +161,7 @@
                       tableRows.forEach(function(node){
                           domStyle.set(node,{display:"table-row"});
                       });
+
                       domStyle.set(status,{display:'inline-block',whiteSpace:'nowrap'});                              
                       domStyle.set(surgeon,{display:'none'});                            
                       domStyle.set(complaint,{display:'none'});                            
@@ -167,8 +169,15 @@
 
                     case 'op_surgeon':
                       tableRows.forEach(function(node){
+                          console.log("Evaluating Node: ");
+                          console.log(node);
                           domStyle.set(node,{display:"table-row"});
                       });
+                      
+                      console.log(surgeon);
+                      console.log(status);
+                      console.log(complaint);
+
                       domStyle.set(surgeon,{display:'inline-block',whiteSpace:'nowrap'});                              
                       domStyle.set(status,{display:'none'});                            
                       domStyle.set(complaint,{display:'none'});                            
@@ -178,6 +187,7 @@
                       tableRows.forEach(function(node){
                         domStyle.set(node,{display:"table-row"});
                       });
+
                       domStyle.set(surgeon,{display:'none'});                              
                       domStyle.set(status,{display:'none'});                                                          
                       domStyle.set(complaint,{display:'none'});                            
@@ -278,19 +288,30 @@
                         "dojo/NodeList-traverse",
                         "dojo/NodeList-data"
                       ],
+
               function(dom,on,domStyle,domAttr, registry, domClass,query){
+
                   var filterValue = evt;
                   var allTp       = query('.visitProblemListTable tbody tr');
                   var className   = "visitStatus_" + evt;
+
                   if(className){
+
                     allTp.forEach(function(node){
+                      console.log("Verifying Class: " + className );
+                      console.log( domClass.contains(node, className) );
+                      
                       if(domClass.contains(node, className)){
                         domStyle.set(node,{display:'table-row'});
-                      }else{
+                      }
+
+                      else{
                         domStyle.set(node,{display:'none'});
                       }
                     });
+
                   }
+
               });
       </script>
     </span>
@@ -342,6 +363,7 @@
                   var filterValue = evt;
                   var allTp       = query(".visitProblemListTable tbody tr");
                   var className   = "visitOPSurgeon_" + evt;
+
                   if(className){
                     allTp.forEach(function(node){
                       if(domClass.contains(node, className)){
@@ -410,7 +432,7 @@
 
         {% for visit_obj in visit_obj_list %}
 
-          {% for visit_detail in visit_obj.keys %}
+          {% for visit_detail, visit_rel in visit_obj.iteritems %}
 
             {%if visit_detail.get_visit_complaints %}
 
@@ -500,7 +522,7 @@
                   </td>
 
                   <td> 
-                      {%if complaint.is_active %}  
+                      {%if visit_detail.is_active %}  
                               Active
                       {% else %}  
                               Inactive
@@ -520,7 +542,11 @@
       </tbody>
 
     </table>
+
   {% else %}
+  
     <p> No OPD Visits Recorded</p>
+
   {% endif %}
+
 </div>
