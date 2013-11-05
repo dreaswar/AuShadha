@@ -70,6 +70,7 @@ class PatientDetail(AuShadhaBaseModel):
       self.has_guardian = has_guardian
       self.has_phone = has_phone
       self.can_add_new_visit = can_add_new_visit
+      self.get_patient_complaints = get_patient_complaints
 
 
     # Model attributes

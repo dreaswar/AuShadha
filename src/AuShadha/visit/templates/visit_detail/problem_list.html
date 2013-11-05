@@ -38,6 +38,7 @@
       <option name="Physician"             value="op_surgeon"> Physician  </option>
 
       <script type="dojo/on" data-dojo-event="change" data-dojo-args="evt">
+
               require(['dojo/dom',
                         'dojo/on',
                         'dojo/dom-style',
@@ -48,29 +49,44 @@
                         "dojo/NodeList-traverse",
                         "dojo/NodeList-data"
                       ],
+
               function(dom,on,domStyle,domAttr, registry, domClass,query){
+
                   var filterValue = evt;
                   var tableRows   = query('.visitProblemListTable tbody tr');
+
+                  var surgeon = query('.visitOpSurgeonFilterSelector_problemList')[0];
+                  var status = query('.visitStatusFilterSelector_problemList')[0];
+                  var complaint = query('.visitComplaintFilterSelector_problemList')[0];
+
                   console.log(tableRows);
+                  console.log(surgeon);
+                  console.log(status);
+                  console.log(complaint);
+
                   switch(evt){
+
                     case 'all':
                       tableRows.forEach(function(node){
                         domStyle.set(node,{display:"table-row"});
                       });
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'none'});                              
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});
+                      
+                      domStyle.set(surgeon,{display:'none'});                              
+                      domStyle.set(status,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                            
+                      domStyle.set(complaint,{display:'none'});
                       break;
+
                     case 'complaint':
                       tableRows.forEach(function(node){
                         domStyle.set(node,{display:"table-row"});
                       });
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'none'});                              
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'inline-block',whiteSpace:'nowrap'});
+                      domStyle.set(surgeon,{display:'none'});                              
+                      domStyle.set(status,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                            
+                      domStyle.set(complaint,{display:'inline-block',whiteSpace:'nowrap'});
                       break;
+
                     case 'active':
                       tableRows.forEach(function(node){
                         if( domClass.contains(node, "visit_isActive") ){
@@ -79,11 +95,12 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'none'});                              
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});
+                      domStyle.set(surgeon,{display:'none'});                              
+                      domStyle.set(status,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                            
+                      domStyle.set(complaint,{display:'none'});
                       break;
+
                     case 'appts':
                       tableRows.forEach(function(node){
                         if( domClass.contains(node, "visit_hasFu") ){
@@ -92,11 +109,12 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'none'});                              
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
+                      domStyle.set(surgeon,{display:'none'});                              
+                      domStyle.set(status,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                            
+                      domStyle.set(complaint,{display:'none'});                            
                       break;
+
                     case 'walkins':
                       tableRows.forEach(function(node){
                         if( domClass.contains(node, "visit_hasNoFu") ){
@@ -105,11 +123,12 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'none'});                              
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
+                      domStyle.set(surgeon,{display:'none'});                              
+                      domStyle.set(status,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                            
                       break;
+
                     case 'emer':
                       tableRows.forEach(function(node){
                         if( domClass.contains(node, "visit_hasNoFu visitNature_emer") ){
@@ -118,11 +137,12 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'none'});                              
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
+                      domStyle.set(surgeon,{display:'none'});                              
+                      domStyle.set(status,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                            
                       break;
+
                     case 'tele':
                       tableRows.forEach(function(node){
                         if( domClass.contains(node, "visit_hasNoFu visitNature_tele") ){
@@ -131,35 +151,40 @@
                           domStyle.set(node,{display:'none'});
                         }
                       });
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'none'});                              
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
+                      domStyle.set(surgeon,{display:'none'});                              
+                      domStyle.set(status,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                            
                       break;
+
                     case 'visit_status':
                       tableRows.forEach(function(node){
                           domStyle.set(node,{display:"table-row"});
                       });
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'inline-block',whiteSpace:'nowrap'});                              
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'none'});                            
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
+                      domStyle.set(status,{display:'inline-block',whiteSpace:'nowrap'});                              
+                      domStyle.set(surgeon,{display:'none'});                            
+                      domStyle.set(complaint,{display:'none'});                            
                       break;
+
                     case 'op_surgeon':
                       tableRows.forEach(function(node){
                           domStyle.set(node,{display:"table-row"});
                       });
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'inline-block',whiteSpace:'nowrap'});                              
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'none'});                            
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
+                      domStyle.set(surgeon,{display:'inline-block',whiteSpace:'nowrap'});                              
+                      domStyle.set(status,{display:'none'});                            
+                      domStyle.set(complaint,{display:'none'});                            
                       break;
+
                     default:
                       tableRows.forEach(function(node){
                         domStyle.set(node,{display:"table-row"});
                       });
-                      domStyle.set('visitOpSurgeonFilterSelector_problemList',{display:'none'});                              
-                      domStyle.set('visitStatusFilterSelector_problemList',{display:'none'});                                                          
-                      domStyle.set('visitComplaintFilterSelector_problemList',{display:'none'});                            
+                      domStyle.set(surgeon,{display:'none'});                              
+                      domStyle.set(status,{display:'none'});                                                          
+                      domStyle.set(complaint,{display:'none'});                            
                   }
+
               });
+
       </script>
 
     </span>
@@ -382,69 +407,118 @@
         </tr>
       </thead>
       <tbody>
-      {% for complaint in patient_detail_obj.get_patient_complaints %}
-          <tr class="{%cycle 'even_row' 'odd_row' %}{%if complaint.visit_detail.is_active%} visit_isActive{%else%} visit_isNotActive{%endif%} visitStatus_{{complaint.visit_detail.status}} visitNature_{{complaint.visit_detail.consult_nature}}{%if complaint.visit_detail.get_visit_complaints%}{%for visitComplaint in complaint.visit_detail.get_visit_complaints %} visitComplaint_{{visitComplaint.complaint}}{%endfor%}{%endif%}{%if complaint.visit_detail.has_fu_visits %} visit_hasFu{%else%} visit_hasNoFu{%endif%} visitOPSurgeon_{{complaint.visit_detail.op_surgeon}}"
-            >
-            <td> 
-              {{forloop.counter}} 
-              <input type            = "checkbox" 
-                     data-dojo-type  = "dijit/form/CheckBox" 
-                     data-dojo-props = "required:false"
-                     title           = "Choose to compare notes"
-                     class           = "compareVisitNotesCheckBox"
-                     >
-            </td>
-            <td> 
-              <div id           = "openVisitNotes_{{complaint.visit_detail.id}}"
-                    title       = "Open Visit Notes on Sidebar"
-                    style       = "color:blue; cursor:pointer;"
-                    class       = "openVisitNotesLink"
-                    onClick     = "openVisitNotesTitlePane(this);"
-                    titlePaneId = "visitSummaryTitlePane_{{complaint.visit_detail.id}}"
-                > 
-                {{complaint.visit_date}} 
-              </div>
-            </td>
-            <td> {{complaint.visit_detail.consult_nature}} </td>
-            <td> {{complaint.visit_detail.status}} </td>
-            <td> {{complaint.complaint}} </td>
-            <td> {{complaint.duration}} </td>
-            <td> 
-              {% if complaint.visit_fu %} 
-                {% for fu in complaint.visit_fu %}
-                  <div id    = "visitComplaintsHiddenDiv_FU_details_{{fu.id}}" 
-                        style = "margin:3px;padding:2px;"> 
 
-                    <span title       = "Open Visit Notes on Sidebar"
+        {% for visit_obj in visit_obj_list %}
+
+          {% for visit_detail in visit_obj.keys %}
+
+            {%if visit_detail.get_visit_complaints %}
+
+              {%for complaint in visit_detail.get_visit_complaints %} 
+
+                <tr class="
+                          {%cycle 'even_row' 'odd_row' %}
+
+                          {%if visit_detail.is_active%} 
+                            visit_isActive
+                          {%else%} 
+                            visit_isNotActive
+                          {%endif%} 
+
+                          visitStatus_{{visit_detail.status}} 
+                          visitNature_{{visit_detail.consult_nature}}
+                          visitOPSurgeon_{{visit_detail.op_surgeon}}
+
+                          visitComplaint_{{complaint.complaint}}
+
+                          {%if visit_detail.has_fu_visits %} 
+                            visit_hasFu
+                          {%else%} 
+                            visit_hasNoFu
+                          {%endif%} 
+                        "
+                >
+
+                  <td> 
+                    {{forloop.counter}} 
+                    <input type            = "checkbox" 
+                          data-dojo-type  = "dijit/form/CheckBox" 
+                          data-dojo-props = "required:false"
+                          title           = "Choose to compare notes"
+                          class           = "compareVisitNotesCheckBox"
+                          >
+                  </td>
+
+                  <td> 
+                    <div id           = "openVisitNotes_{{visit_detail.id}}"
+                          title       = "Open Visit Notes on Sidebar"
                           style       = "color:blue; cursor:pointer;"
                           class       = "openVisitNotesLink"
                           onClick     = "openVisitNotesTitlePane(this);"
-                          titlePaneId = "visitSummaryTitlePane_{{complaint.visit_detail.id}}"
-                    >
-                      {{fu.visit_date.date.isoformat }}
-                    </span>
+                          titlePaneId = "visitSummaryTitlePane_{{visit_detail.id}}"
+                      > 
+                      {{visit_detail.visit_date.date.isoformat}} 
+                    </div>
+                  </td>
 
-                  </div>
+                  <td> {{visit_detail.consult_nature}} </td>
+                  <td> {{visit_detail.status}} </td>
+                  <td> {{complaint.complaint}} </td>
+                  <td> {{complaint.duration}} </td>
 
-                  <div data-dojo-type  = "dijit/Tooltip"
-                        data-dojo-props= "connectId : 'visitComplaintsHiddenDiv_FU_details_{{fu.id}}',
-                                          position  : ['below']">
-                      {{fu.formatted_obj|safe}}
-                  </div>
-                {% endfor %}
-              {%else %}
-                No Follow ups.
-              {% endif %}
-            </td>
-            <td> {%if complaint.is_active %}  
-                        Active
-                {% else %}  
-                        Inactive
-                {% endif %} 
-            </td>
-          </tr>
-      {% endfor %}
+                  <td> 
+
+                    {% if visit_detail.visit_fu %} 
+
+                      {% for fu in visit_detail.visit_fu %}
+                        <div id    = "visitComplaintsHiddenDiv_FU_details_{{fu.id}}" 
+                              style = "margin:3px;padding:2px;"> 
+
+                          <span title       = "Open Visit Notes on Sidebar"
+                                style       = "color:blue; cursor:pointer;"
+                                class       = "openVisitNotesLink"
+                                onClick     = "openVisitNotesTitlePane(this);"
+                                titlePaneId = "visitSummaryTitlePane_{{visit_detail.id}}"
+                          >
+                            {{fu.visit_date.date.isoformat }}
+                          </span>
+
+                        </div>
+
+                        <div data-dojo-type  = "dijit/Tooltip"
+                              data-dojo-props= "connectId : 'visitComplaintsHiddenDiv_FU_details_{{fu.id}}',
+                                                position  : ['below']">
+                            {{fu.formatted_obj|safe}}
+                        </div>
+
+                      {% endfor %}
+
+                    {%else %}
+                      No Follow ups.
+                    {% endif %}
+
+                  </td>
+
+                  <td> 
+                      {%if complaint.is_active %}  
+                              Active
+                      {% else %}  
+                              Inactive
+                      {% endif %} 
+                  </td>
+
+                </tr>
+
+              {% endfor %}
+
+            {% endif %}
+
+          {% endfor %}
+
+        {% endfor %}
+
       </tbody>
+
     </table>
   {% else %}
     <p> No OPD Visits Recorded</p>

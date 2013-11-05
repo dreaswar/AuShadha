@@ -182,6 +182,8 @@ def get_patient_complaints(patient):
     return visit_complaint_list
 
 
+
+
 def has_contact(patient):
     """Returns a Boolean whether a particular patient has a contact or not
     in Database."""

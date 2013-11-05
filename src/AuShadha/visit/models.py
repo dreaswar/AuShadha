@@ -238,7 +238,6 @@ class VisitDetail(AuShadhaBaseModel):
         # return json
         return visit_complaint_list
 
-
 class VisitComplaint(AuShadhaBaseModel):
     
     def __init__(self, *args, **kwargs):
