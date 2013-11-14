@@ -25,6 +25,7 @@ define(['dojo/dom',
        'aushadha/tree/generic_tree_builder',
        'aushadha/panes/create_main_pane',
        'aushadha/panes/create_sub_module_pane',
+       "aushadha/under_construction/pane_and_widget_creator",
 
        "dojo/ready",
        'dojo/domReady!'
@@ -54,6 +55,8 @@ define(['dojo/dom',
         buildGenericTree,
         createMainModulePane,
         createSubModulePane,
+        testPaneCreator,
+
         ready){
 
       var pane = {
@@ -151,101 +154,123 @@ define(['dojo/dom',
 
         function runMainModulePaneCreator(){
 
-          if ( window.PANES[loadAfter.toUpperCase()].LOAD_STATUS ){
+//           if ( window.PANES[loadAfter.toUpperCase()].LOAD_STATUS  || loadAfter == 'first' ){
 
-              var mainTabPaneDomNode = createMainModulePane( d, p, title, domId );
+          if ( loadFirst == true ){
 
-              if ( url ) {
 
-                var domN = domId+"_leading_tree";
-                console.log(buildGenericTree);
-                buildGenericTree( url, domN, mainTabPaneDomNode );
+              if (title == 'Search' ){
+
+                if ( uiSections.widgets.pane ){
+
+                  request(uiSections.widgets.pane).then(
+
+                    function(json){
+                      var jsondata  = JSON.parse(json);
+                      testPaneCreator.constructor(jsondata.pane);
+                      alert(searchEnabled);
+                      auMain.auEventBinders.headerPaneSearchWidget( searchEnabled,'Search for:  '+ title);
+                      auMain.auEventBinders.searchWidget( searchEnabled,'Search for:  '+ title);                    
+                    }
+
+                  );
+
+                }
 
               }
 
-              if ( gridEnabled ){
+//               var mainTabPaneDomNode = createMainModulePane( d, p, title, domId );
+// 
+//               if ( url ) {
+// 
+//                 var domN = domId+"_leading_tree";
+//                 console.log(buildGenericTree);
+//                 buildGenericTree( url, domN, mainTabPaneDomNode );
+// 
+//               }
+// 
+//               if ( gridEnabled ){
+// 
+//                 console.log("Grid Store URL is : " + gridEnabled);
+// 
+//                 var gridTitle = title.replace(' ','_'); 
+//                 gridTitle = gridTitle.toUpperCase().toString();
+// 
+//                 var gridStore = gridTitle + "_GRID_STORE";
+//                 var gridDom   = gridTitle.toLowerCase()+"_grid_container";
+// 
+//                 console.log("Trying to Grid for App : , " + gridTitle + 
+//                             " with Store as: " + gridStore + 
+//                             " and DOM as " + gridDom
+//                            );
+// 
+//                 if (! dom.byId('search_grid_tc') ){
+// 
+//                   domConstruct.create('div',
+//                                       { id    : 'search_grid_tc'},
+//                                       'search_cp_grid',
+//                                       0
+//                                     );
+//                 }
+// 
+//                 if (! registry.byId('search_grid_tc') ) {
+// 
+//                   var search_tc = new TabContainer({id:'search_grid_tc',
+//                                                     tabPosition:'top',
+//                                                     tabStrip:true
+//                                                   });
+// 
+//                   registry.byId('search_cp_grid').addChild(search_tc);
+// 
+//                 }
+// 
+//                 else{
+//                   var search_tc  = registry.byId('search_grid_tc');
+//                 }
+// 
+//                 if (! dom.byId(gridDom) ) {
+// 
+//                   domConstruct.create('div',
+//                                       { id    : gridDom+"_grid_cp"},
+//                                       'search_grid_tc',
+//                                       'last'
+//                                     );
+// 
+//                   domConstruct.create('div',
+//                                       { id    : gridDom,
+//                                         class : 'gridContainer'
+//                                       },
+//                                       gridDom+"_grid_cp",
+//                                       'last'
+//                                     );
+// 
+//                 }
+// 
+//                 if ( ! registry.byId( gridDom+"_grid_cp") ) {
+// 
+//                   cp = new ContentPane({id: gridDom+"_grid_cp",
+//                                         title: title },
+//                                         gridDom+"_grid_cp"
+//                                       );
+// 
+//                   search_tc.addChild(cp);
+// 
+//                 }
+// 
+//                 search_tc.startup();
+// 
+//                 auGenericGridSetup.setupGrid(
+//                                             gridEnabled,                   // URL of the GRID
+//                                             gridDom,                       // DOM id to put the Grid into
+//                                             GRID_STRUCTURES[gridTitle],    // Grid Structure
+//                                             true,                          // Whether to activate RowSingleClick behavior
+//                                             gridTitle,                     // Title of the Grid
+//                                             gridStore                      // Variable name for Grid Store
+//                                             );
+// 
+//               }
 
-                console.log("Grid Store URL is : " + gridEnabled);
-
-                var gridTitle = title.replace(' ','_'); 
-                gridTitle = gridTitle.toUpperCase().toString();
-
-                var gridStore = gridTitle + "_GRID_STORE";
-                var gridDom   = gridTitle.toLowerCase()+"_grid_container";
-
-                console.log("Trying to Grid for App : , " + gridTitle + 
-                            " with Store as: " + gridStore + 
-                            " and DOM as " + gridDom
-                           );
-
-                if (! dom.byId('search_grid_tc') ){
-
-                  domConstruct.create('div',
-                                      { id    : 'search_grid_tc'},
-                                      'search_cp_grid',
-                                      0
-                                    );
-                }
-
-                if (! registry.byId('search_grid_tc') ) {
-
-                  var search_tc = new TabContainer({id:'search_grid_tc',
-                                                    tabPosition:'top',
-                                                    tabStrip:true
-                                                  });
-
-                  registry.byId('search_cp_grid').addChild(search_tc);
-
-                }
-
-                else{
-                  var search_tc  = registry.byId('search_grid_tc');
-                }
-
-                if (! dom.byId(gridDom) ) {
-
-                  domConstruct.create('div',
-                                      { id    : gridDom+"_grid_cp"},
-                                      'search_grid_tc',
-                                      'last'
-                                    );
-
-                  domConstruct.create('div',
-                                      { id    : gridDom,
-                                        class : 'gridContainer'
-                                      },
-                                      gridDom+"_grid_cp",
-                                      'last'
-                                    );
-
-                }
-
-                if ( ! registry.byId( gridDom+"_grid_cp") ) {
-
-                  cp = new ContentPane({id: gridDom+"_grid_cp",
-                                        title: title },
-                                        gridDom+"_grid_cp"
-                                      );
-
-                  search_tc.addChild(cp);
-
-                }
-
-                search_tc.startup();
-
-                auGenericGridSetup.setupGrid(
-                                            gridEnabled,                   // URL of the GRID
-                                            gridDom,                       // DOM id to put the Grid into
-                                            GRID_STRUCTURES[gridTitle],    // Grid Structure
-                                            true,                          // Whether to activate RowSingleClick behavior
-                                            gridTitle,                     // Title of the Grid
-                                            gridStore                      // Variable name for Grid Store
-                                            );
-
-              }
-
-              if ( searchEnabled && title =='Patient' ) {
-
+              if ( searchEnabled ) {
                 console.log("Enabling Search for Header Pane Search widget with URL of : " + searchEnabled );
                 auMain.auEventBinders.headerPaneSearchWidget( searchEnabled,'Search for:  '+ title);
                 auMain.auEventBinders.searchWidget( searchEnabled,'Search for:  '+ title);                    

@@ -138,6 +138,8 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'media/custom/js/'),
     os.path.join(ROOT_PATH, 'media/custom/styles'),
 
+    os.path.join(ROOT_PATH, 'apps/search/templates/'),
+
     os.path.join(ROOT_PATH, 'apps/ui/templates/ui/'),
     os.path.join(ROOT_PATH, 'apps/ui/media/ui/'),
     

@@ -1,0 +1,49 @@
+  <div style="position : relative; 
+               top      : 0em; ">
+    {%if perms.patient.add_patientdetail %}
+        <img id             = "addPatientButtonSmall"
+              src            = "{{MEDIA_URL}}images/patient/patient_add.svg"
+              style          = " position     : relative;
+                                  width        : 16px;
+                                  height       : 16px;
+                                  margin-right : 20px;
+                                  cursor       : pointer;
+                                "
+        >
+     {% endif %}
+
+      <img id            = "searchPatientMenuBarIcon"
+          src            = "{{MEDIA_URL}}images/patient/search_small.svg"
+          style          = " position    : relative;
+                             width       : 16px; 
+                             height      : 16px;
+                             margin-left : 10px;
+                            "
+      >
+      <span  id             = "filteringSelectPatSearchSmall"
+            style          = " position    : relative;
+                               margin-left : 20px;
+                             "
+      >
+
+      </span>
+  </div>
+
+  <!-- TOOLTIPS -->
+
+    <div  data-dojo-type="dijit/Tooltip"
+          data-dojo-props="connectId:'addPatientButtonSmall',position:['below']"
+          style="display:none;"
+    >
+        <p class="suggestion_text"> Register a New Patient to the Clinic..</p>
+    </div>
+    <div  data-dojo-type="dijit/Tooltip"
+          data-dojo-props="connectId:'searchPatientMenuBarIcon',position:['below']"
+          style="display:none;"
+    >
+        <div class="suggestion_text">
+         <p> Search For a Patient by typing the name. </p>
+         <p> The Tabs below will autopopulate with data</p>
+        </div>
+    </div>
+  <!-- TOOLTIPS -->

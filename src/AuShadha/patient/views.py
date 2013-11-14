@@ -103,6 +103,30 @@ from dijit_widgets.tree import PatientTree
     #variable = RequestContext(request, {"all_patients": all_patients, 'user': user})
     #return render_to_response('patient_detail/index.html', variable)
 
+@login_required
+def render_patient_info(request,patient_id = None):
+  if request.user and request.method == 'GET':
+    if patient_id:
+      try:
+        patient_id = int( patient_id )
+        patient_detail_obj = PatientDetail.objects.get(pk = patient_id )
+      except (NameError,ValueError,TypeError,AttributeError):
+        raise Http404("Bad Request Parameters")
+      except(PatientDetail.DoesNotExist):
+        raise Http404("Requested Patient Does Not Exist")
+      #data = {'success': True, 
+              #'error_message': 'Successfully retrieved patient info',
+              #'info': patient_detail_obj.__unicode__()
+              #}
+      #json = simplejson.dumps(data)
+      #return HttpResponse(json, content_type='application/json')
+      variable = RequestContext(request,
+                                {'info': patient_detail_obj}
+                                )
+      return render_to_response( 'patient_detail/info.html', variable )
+  else:
+    return HttpResponseRedirect('login')
+
 
 @login_required
 def patient_detail_add(request, clinic_id = None):

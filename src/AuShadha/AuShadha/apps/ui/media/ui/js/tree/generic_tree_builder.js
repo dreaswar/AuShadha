@@ -1,57 +1,60 @@
 define([
-    'dojo/window',
-    "dojo/store/Memory",
-    "dijit/tree/ObjectStoreModel",
-    "dijit/Tree",
-    "dijit/tree/ForestStoreModel",
-    "dojo/data/ItemFileReadStore",
+        "dojo/window",
+        "dojo/store/Memory",
+        "dijit/tree/ObjectStoreModel",
+        "dijit/Tree",
+        "dijit/tree/ForestStoreModel",
+        "dojo/data/ItemFileReadStore",
 
-    "dojo/dom",
-    "dijit/registry",
-    "dojo/dom-construct",
-    "dojo/dom-style",
-    'dojo/dom-attr',
-    "dojo/json",
+        "dojo/dom",
+        "dojo/dom-construct",
+        "dojo/dom-style",
+        "dojo/dom-attr", 
+        "dojo/query",
 
-    'dojox/fx/scroll',
+        "dojox/fx/scroll",
+        "dojo/request",
 
-    'dojo/query',
-    'dojo/request',
+        "dijit/registry",
+        "dojo/json",
+        "dojox/layout/ContentPane",
+        "dijit/layout/BorderContainer",
+        "dijit/layout/TabContainer",
 
-    "dijit/registry",
-    "dojox/layout/ContentPane",
-    "dijit/layout/BorderContainer",
-    "dijit/layout/TabContainer",
+        "aushadha/under_construction/pane_and_widget_creator",
 
-    'aushadha/grid/grid_structures',
-    'aushadha/panes/create_tab',
-    'aushadha/panes/create_form_tab',
-    'aushadha/panes/create_empty_tab',
-    'aushadha/panes/create_form_container',
-    'aushadha/panes/create_grid_container',
-    'aushadha/panes/dynamic_pane_creator'
+        "aushadha/grid/grid_structures",
+        "aushadha/panes/create_tab",
+        "aushadha/panes/create_form_tab",
+        "aushadha/panes/create_empty_tab",
+        "aushadha/panes/create_form_container",
+        "aushadha/panes/create_grid_container",
+        "aushadha/panes/dynamic_pane_creator"
+      ], 
 
-  ], 
   function(win,
           Memory, 
           ObjectStoreModel,
           Tree,
           ForestStoreModel,
           ItemFileReadStore,
+
           dom, 
-          registry,
           domConstruct, 
           domStyle, 
           domAttr,
-          JSON,
-          scroll,
           query,
+
+          scroll,
           request,
 
           registry,
+          JSON,
           ContentPane,
           BorderContainer,
           TabContainer,
+
+          testPaneCreator,
 
           GRID_STRUCTURES,
           createTab,
@@ -59,7 +62,8 @@ define([
           createEmptyTab,
           createFormContainer,
           createGridContainer,
-          createDynamicPane){
+          createDynamicPane
+        ){
 
     var buildTree = function (url,domNode, mainTabPaneDomNode,treeRootTitle) {
 
@@ -279,17 +283,23 @@ define([
                                                         console.log(theTab);
                                                         linkedTc.addChild(theTab);
                                                       }
-                                                      else if (linked_widget_layout ==  formLayout ) {
+                                                      else if ( linked_widget_layout ==  formLayout ) {
+
                                                         var linkedModuleFormArgs = {
                                                           parentPane: linkedTc,
                                                           module_name: linked_modules[x].module_name.toString(),
                                                           module_title: linked_modules[x].name.toString(),
                                                           url: CHOSEN_PATIENT.urls.add[ linked_modules[x].module_name.toString()]
                                                         }
-                                                        linkedTc.addChild( createFormContainer.constructor(linkedModuleFormArgs) );
+
+                                                        linkedTc.addChild( 
+                                                            createFormContainer.constructor( linkedModuleFormArgs ) 
+                                                        );
+
                                                       }
 
                                                   }
+
                                                   linkedTc.startup();
                                                   emptyTab.pane.Bc.bottomCp.addChild(linkedTc);
 
@@ -298,22 +308,32 @@ define([
                                                   p.selectChild(emptyTab.pane);
                                               }
 
-                                              else if ( item.ui_layout == 'pane'){
+                                              else if ( item.ui_layout == 'pane' ){
 
                                                 var query = '?patient_id='+CHOSEN_PATIENT.id;
                                                 var paneUrl = item.paneUrl+query;
 
                                                 request( paneUrl ).
                                                 then( 
+
                                                   function( json ) { 
-                                                      var jsondata= JSON.parse(json);
-                                                      console.log(jsondata);
-                                                      createDynamicPane(jsondata);
+                                                      var jsondata = JSON.parse( json );
+                                                      console.log( "Returning the PANE JSON..." );
+                                                      console.log( jsondata );
+                                                      console.log( "Trying to call the pane creator" );
+
+//                                                       createDynamicPane( jsondata );
+
+                                                      if ( jsondata.pane ) {
+                                                        testPaneCreator.constructor( jsondata.pane );
+                                                      }
                                                   },
-                                                  function( json ){
-                                                    var jsondata= JSON.parse(json);                                                    
-                                                    publishError(jsondata.error_message);
+
+                                                  function( json ) {
+                                                    var jsondata = JSON.parse( json ); 
+                                                    publishError( jsondata.error_message );
                                                   }
+
                                                 );
                                               }
 

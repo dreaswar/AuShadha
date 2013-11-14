@@ -54,8 +54,8 @@ class UrlGenerator(object):
         self.urlDict[action] = url
 
     for action in self.parented_actions:
-        parent_label = getattr(parent,'__model_label__')
-        parent_id = getattr(parent,'id')
+        parent_label = getattr(parent,'__model_label__',None)
+        parent_id = getattr(parent,'id',None)
         if parent_id: 
           parent_id = str(parent_id)
 

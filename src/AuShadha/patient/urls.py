@@ -3,6 +3,7 @@ from django.contrib import admin
 import AuShadha.settings
 
 from patient.views import *
+from patient.dijit_widgets.pane import render_patient_pane
 
 admin.autodiscover()
 
@@ -19,6 +20,7 @@ urlpatterns = patterns('',
                            #'patient.views.render_patient_list'	,
                            #name='render_patient_list'
                            #),
+
 
                        url(r'new/add/(?P<clinic_id>\d+)/$'                             ,
                            'patient.views.patient_detail_add',
@@ -44,7 +46,20 @@ urlpatterns = patterns('',
                            name='patient_detail_del'
                            ),
 
+                      url(r'patient/info/(?P<patient_id>\d+)/$',
+                           'patient.views.render_patient_info',
+                           name='render_patient_info'
+                           ),
 
+                      url(r'patient/pane/(?P<patient_id>\d+)/$',
+                           'patient.dijit_widgets.pane.render_patient_pane',
+                           name='render_patient_pane_with_id'
+                           ),
+
+                      url(r'patient/pane/$',
+                           'patient.dijit_widgets.pane.render_patient_pane',
+                           name='render_patient_pane_without_id'
+                           ),
 
 ################################ PATIENT TREE ##################################
 

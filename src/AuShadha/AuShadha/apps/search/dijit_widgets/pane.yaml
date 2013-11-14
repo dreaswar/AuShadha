@@ -1,0 +1,83 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+# VARS
+
+VARS:
+
+  clinic_id: &CLINIC_ID
+            !!int {{clinic_id}}
+
+URLS:
+
+  pane: &SEARCH_PANE_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_aushadha_search_pane ]
+              kwds: {}
+  
+  search_form: &RENDER_SEARCH_FORM
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_aushadha_search_form ]
+              kwds: {}
+
+ # YAML
+
+depends_on: [ aushadha ]
+load_after: first
+load_first: !!bool True
+
+id       : AUSHADHA_SEARCH
+type     : bc
+title    : Search
+url      : *SEARCH_PANE_URL
+closable : !!bool False
+
+widgets:
+
+  - type: grid
+    id  : PATIENT_MAIN_GRID
+    url:  *SEARCH_PANE_URL
+
+  - type: search
+    id  : PATIENT_MAIN_SEARCH
+    url : *SEARCH_PANE_URL
+
+panes:
+
+  - id : SEARCH_TOP_CP
+    region: top
+    type: cp
+    splitter: False
+    url: null
+    widgets: []
+    panes: []
+    class: topContentPane nonSelected
+    style: 
+      height: 1.8em
+
+  - id: SEARCH_CENTER_TC
+    region: center
+    type: tc
+    tabPosition: top
+    tabStrip: True
+    nested: True
+    widgets: []
+    closable: !!bool False
+
+    panes: 
+      - id: SEARCH_CENTER_TC_CP_SEARCH_FORM
+        type: cp
+        widgets: []
+        title: Live Search
+        closable: False
+        url: *RENDER_SEARCH_FORM
+
+      - id: SEARCH_CENTER_TC_CP_SEARCH_GRID
+        type: cp
+        widgets: []
+        title: Grid
+        closable: False
+        url: *RENDER_SEARCH_FORM

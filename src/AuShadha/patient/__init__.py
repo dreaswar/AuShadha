@@ -20,7 +20,7 @@ DEPENDS_ON = ['aushadha',]
 
 ui_sections = {'app_type'  : 'main_module',
                'load_after': 'search',
-               'load_first': True,
+               'load_first': False,
                'layout'  :['trailing','top','center'],
                'widgets' :{ 'tree'   : reverse('render_patient_tree_without_id'),
                             'summary': True,

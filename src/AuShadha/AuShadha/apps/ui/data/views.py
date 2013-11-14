@@ -82,10 +82,10 @@ def installed_apps(request):
 
     for app in apps:
       main_module = app.split('.')[0]
-
+      app_name = app.split('.')[-1]
       #Hack to avoid core modules. This way the UI atleast starts with core modules
       #as dependencies
-      if  main_module not in ['django','AuShadha'] :
+      if  main_module not in ['django','AuShadha'] or app_name in ['search']:
         x = importlib.import_module(app)
         label = getattr(x,'MODULE_LABEL',None)
         ui_sections = getattr(x,'ui_sections',None)
