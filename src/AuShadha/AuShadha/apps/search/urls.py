@@ -13,6 +13,11 @@ urlpatterns = patterns('',
                           name='aushadha_patient_search'
                       ),
 
+                      url(r'patient/(?P<patient_id>\d+)/$',  
+                          aushadha_patient_search, 
+                          name='aushadha_patient_search_with_id'
+                      ),
+
                       url(r'pane/$',  
                           render_aushadha_search_pane, 
                           name='render_aushadha_search_pane'

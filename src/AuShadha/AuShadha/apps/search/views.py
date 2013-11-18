@@ -45,11 +45,11 @@ from patient.models import PatientDetail
 
 
 @login_required
-def aushadha_patient_search(request, id= None):
+def aushadha_patient_search(request, patient_id= None):
   # FIXME Dojo sends REST queries with * suffix. This has to be split and dealt with before json generation is done.
   user = request.user
   if request.method == "GET" and request.is_ajax():
-      if not id:
+      if not patient_id:
           try:
               name = unicode(request.GET.get('name'))
               print "You have queried Patients with Full Name containing: ", name
@@ -79,18 +79,45 @@ def aushadha_patient_search(request, id= None):
                       patient.age       + "/" + \
                       patient.sex       + "(" + \
                       patient.patient_hospital_id + ")"
+                  data_to_append['paneUrl'] = reverse('render_patient_pane_with_id', 
+                                                      kwargs={'patient_id': patient.id}
+                                                      )
                   json.append(data_to_append)
           json = simplejson.dumps(json)
           return HttpResponse(json, content_type="application/json")
-      elif id:
+
+      elif patient_id:
+
           try:
-              id = int(id)
-              pat_obj = PatientDetail.objects.get(pk=id)
+            patient_id = int( patient_id )
+            patient = PatientDetail.objects.get(pk= patient_id)
+            json = []
+
+            if patient:
+                data_to_append = {}
+                data_to_append['name'] = patient.full_name
+                data_to_append['id'] = patient.id
+                data_to_append['hospital_id'] = patient.patient_hospital_id
+                data_to_append['age'] = patient.age
+                data_to_append['sex'] = patient.sex
+                data_to_append['label'] = patient.full_name + "-" + \
+                    patient.age       + "/" + \
+                    patient.sex       + "(" + \
+                    patient.patient_hospital_id + ")"
+                data_to_append['paneUrl'] = reverse( 'render_patient_pane_with_id', 
+                                                      kwargs={'patient_id': patient.id} 
+                                                    )
+
+                json.append(data_to_append)
+
+            json = simplejson.dumps(json)
+            return HttpResponse(json, content_type="application/json")
+
           except(TypeError, KeyError, NameError, AttributeError):
               raise Http404("ERROR ! Bad Parameters. No Patients in result.")
+
           except(PatientDetail.DoesNotExist):
               raise Http404("ERROR! Patient Does Not Exist")
-          json = return_patient_json(pat_obj)
-          return HttpResponse(json, content_type="application/json")
+
   else:
     raise Http404("Bad Request Method")

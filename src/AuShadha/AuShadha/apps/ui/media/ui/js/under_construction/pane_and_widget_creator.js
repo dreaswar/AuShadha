@@ -27,13 +27,10 @@ define(
          'aushadha/panes/dynamic_pane_creator',
          'aushadha/panes/dynamic_html_pane_creator', 
          'aushadha/panes/create_main_pane',
-         'aushadha/tree/pane_tree_creator',
          'aushadha/grid/generic_grid_setup',
 
          'dojo/NodeList-data',
-         'dojo/NodeList-traverse',
-
-         'dojo/domReady!'
+         'dojo/NodeList-traverse'
         ],
 
 function(
@@ -56,7 +53,6 @@ function(
          dynamicPaneCreator,
          dynamicHTMLPaneCreator,
          createMainPane,
-         paneTreeCreator,
          genericGridSetup
 
       ){
@@ -201,6 +197,7 @@ function(
                   var splitter = p.splitter;
                   var paneNested = p.nested ? p.nested: false;
                   var href     = p.url ? p.url: '';
+                  var html = p.hrml ? p.hrml: '';
 
                   var hasWidgets = p.widgets;
                   var hasPanes = p.panes;
@@ -217,7 +214,11 @@ function(
 
                   createDom();
                   console.log( "Created all the DOMS for Pane for pane with ID: " + paneDomId );
-                  createDijit();
+
+                  if ( p.type != 'dom' ){
+                    createDijit();
+                  }
+
                   console.log( "Created all the Dijits inside pane with ID: " + paneDomId );                  
 
                   if ( hasPanes ) {
@@ -231,11 +232,22 @@ function(
                   function createDom() {
 
                     console.log("Creating DOM with ID: " + paneDomId );
+
                     if (! dom.byId(paneDomId) ){
-                      domConstruct.create('div',
+
+                      if ( p.domType == 'img' ){
+                        domConstruct.create('img',
+                                            {id: paneDomId, 
+                                             src: p.src},
+                                            parentDomId,
+                                          'last');
+                      }
+                      else {
+                        domConstruct.create('div',
                                           {id: paneDomId},
                                           parentDomId,
-                                         'last');
+                                        'last');
+                      }
                     }
 
                     if ( p.hasOwnProperty('class') ){
@@ -310,35 +322,38 @@ function(
 
     _createWidget: function( widgetQ ){
 
-                      console.log( "Creating Widgets with Args: ");                
-                      console.log( widgetQ );
+                      require(['aushadha/tree/pane_tree_creator'],
+                      function(paneTreeCreator){
+                        console.log( "Creating Widgets with Args: ");                
+                        console.log( widgetQ );
 
-                      function createDom() {
+                        function createDom() {
 
-                        if (! dom.byId(widgetQ.widget.id) ){
-                          domConstruct.create('div',
-                                              {id: widgetQ.widget.id},
-                                              widgetQ.parent,
-                                              'last');
+                          if (! dom.byId(widgetQ.widget.id) ){
+                            domConstruct.create('div',
+                                                {id: widgetQ.widget.id},
+                                                widgetQ.parent,
+                                                'last');
+                          }
+
                         }
 
-                      }
+                        createDom();
 
-                      createDom();
+                        if ( widgetQ.widget.type == 'tree' ){
 
-                      if ( widgetQ.widget.type == 'tree' ){
+                          if ( widgetQ.widget.hasOwnProperty('mainTabPane') ){
+                            pane.mainTabPaneDomNode = widgetQ.widget.mainTabPane;
+                          }
 
-                        if ( widgetQ.widget.hasOwnProperty('mainTabPane') ){
-                          pane.mainTabPaneDomNode = widgetQ.widget.mainTabPane;
+                          paneTreeCreator(widgetQ.widget.url, 
+                                          widgetQ.widget.id, 
+                                          widgetQ.widget.mainTabPane,
+                                          widgetQ.widget.title
+                                        );
+
                         }
-
-                        paneTreeCreator(widgetQ.widget.url, 
-                                        widgetQ.widget.id, 
-                                        widgetQ.widget.mainTabPane,
-                                        widgetQ.widget.title
-                                       );
-
-                      }
+                      });
     }
 
   }

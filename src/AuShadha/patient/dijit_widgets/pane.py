@@ -37,7 +37,7 @@ def render_patient_pane(request, patient_id = None):
       patient_detail_obj = PatientDetail.objects.get(pk = patient_id)
       clinic_detail_obj = patient_detail_obj.parent_clinic
       context = Context({'patient_id': patient_id, 
-                         'clinic_id': clinic_detail_obj.id 
+                          'clinic_id': clinic_detail_obj.id 
                         })
 
       if not getattr(patient_detail_obj,'urls',None):
@@ -60,13 +60,13 @@ def render_patient_pane(request, patient_id = None):
                                   'load_after': 'search',
                                   'load_first': False,
                                   'layout'  :['trailing','top','center'],
-                                  'widgets' :{ 'tree'    : reverse('render_patient_tree_with_id',{'patient_id': patient_id} ),
-                                              'summary'  : reverse('render_patient_summary_with_id', {'patient_id': patient_id}),
+                                  'widgets' :{ 'tree'    : reverse('render_patient_tree_with_id',kwargs= {'patient_id': patient_id} ),
+                                              'summary'  : reverse('render_patient_summary_with_id', kwargs = {'patient_id': patient_id}),
                                               'grid'     : reverse('render_patient_json'),
                                               'search'   : reverse('render_patient_json')
                                               }
                                   }
-      app_object['url'] = reverse('render_patient_tree_with_id',{'patient_id': patient_id} )
+      app_object['url'] = reverse('render_patient_tree_with_id', kwargs = {'patient_id': patient_id} )
       app_wrapper.append( app_object )
 
       success = True

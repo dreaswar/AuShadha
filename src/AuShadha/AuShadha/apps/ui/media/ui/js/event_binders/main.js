@@ -136,6 +136,7 @@ define([
 //                       }
 
                       var widgetStore = new JsonRest({target: url});
+                      console.log("calling search widget function with " + url);
 
                         var searchBox = new FilteringSelect({regExp        : '[a-zA-Z0-9 -]+'  ,
                                                             required       : true              ,
@@ -149,6 +150,7 @@ define([
                                                             hasDownArrow   : false             ,
                                                             onChange       : function(e){
                                                                                 try{
+                                                                                  console.log(this);
                                                                                   auPaneEventController.onPatientChoice(this);
                                                                                 }catch(err){
                                                                                   console.error(err.message);
@@ -158,7 +160,7 @@ define([
                                                             },
                                                             'search_form');
                         searchBox.startup();
-
+                        console.log(searchBox);
         },
 
         headerPaneSearchWidget : function(url,placeHolder){

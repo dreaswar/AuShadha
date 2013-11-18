@@ -29,7 +29,6 @@ URLS:
   json: &PATIENT_JSON_URL
           !!python/object/apply:django.core.urlresolvers.reverse
             args: [ render_patient_json ]
-            kwds: { kwargs : { patient_id: *PATIENT_ID } }
 
   tree: &PATIENT_TREE_URL
           !!python/object/apply:django.core.urlresolvers.reverse

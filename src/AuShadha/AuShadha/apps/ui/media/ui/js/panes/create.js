@@ -59,6 +59,7 @@ define(['dojo/dom',
 
         ready){
 
+
       var pane = {
 
         panes: [],
@@ -164,15 +165,17 @@ define(['dojo/dom',
                 if ( uiSections.widgets.pane ){
 
                   request(uiSections.widgets.pane).then(
-
                     function(json){
                       var jsondata  = JSON.parse(json);
                       testPaneCreator.constructor(jsondata.pane);
-                      alert(searchEnabled);
-                      auMain.auEventBinders.headerPaneSearchWidget( searchEnabled,'Search for:  '+ title);
-                      auMain.auEventBinders.searchWidget( searchEnabled,'Search for:  '+ title);                    
+                      auMain.auEventBinders.headerPaneSearchWidget( searchEnabled,'Search for:  '+ title);                      
+                      if ( dom.byId('search_form') ){
+                        auMain.auEventBinders.searchWidget( searchEnabled,'Search for:  '+ title);
+                      }
+                      else{
+                        alert("Dom is not ready for searching");
+                      }
                     }
-
                   );
 
                 }
@@ -270,12 +273,12 @@ define(['dojo/dom',
 // 
 //               }
 
-              if ( searchEnabled ) {
-                console.log("Enabling Search for Header Pane Search widget with URL of : " + searchEnabled );
-                auMain.auEventBinders.headerPaneSearchWidget( searchEnabled,'Search for:  '+ title);
-                auMain.auEventBinders.searchWidget( searchEnabled,'Search for:  '+ title);                    
-
-              }                        
+//               if ( searchEnabled ) {
+//                 console.log("Enabling Search for Header Pane Search widget with URL of : " + searchEnabled );
+//                 auMain.auEventBinders.headerPaneSearchWidget( searchEnabled,'Search for:  '+ title);
+//                 auMain.auEventBinders.searchWidget( searchEnabled,'Search for:  '+ title);                    
+// 
+//               }                        
 
               window.PANES[ title.toUpperCase() ].LOAD_STATUS = true;
 

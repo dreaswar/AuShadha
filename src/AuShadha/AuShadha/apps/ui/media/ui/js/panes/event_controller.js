@@ -19,6 +19,7 @@ define(["dijit/registry",
         "aushadha/panes/visit_pane",
         "aushadha/panes/header_pane",
 //      "aushadha/panes/patient_search_pane",        
+        "aushadha/under_construction/pane_and_widget_creator",
         "dojo/domReady!"
         ],
 
@@ -41,7 +42,8 @@ define(["dijit/registry",
         PATIENT_PANE,
         ADMISSION_PANE,
         VISIT_PANE,
-        HEADER_PANE
+        HEADER_PANE,
+        paneAndWidgetCreator
 
         ){
 
@@ -49,9 +51,21 @@ define(["dijit/registry",
 
       _reInitAllPanes: function (item){
                         console.log("Running _reInitAllPanes at panes/event_controller.js");
+                        console.log(item[0]);
 
-                        this._setChosenPatient(item);
-                        this._displayPatientName(item);
+                        request(item[0].paneUrl).then(
+                          function(json){
+                            var jsondata = JSON.parse(json);
+                            paneAndWidgetCreator.constructor(jsondata.pane)
+                          },
+                          function(json){
+                            var jsondata = JSON.parse(json);
+                            publishError(jsondata.error_message);
+                          }
+                        )
+/*
+                        this._setChosenPatient(item[0]);
+                        this._displayPatientName(item[0]);
                         
                         var p = registry.byId("centerTopTabPane");
                         var c = p.getChildren();
@@ -104,25 +118,24 @@ define(["dijit/registry",
                                 if( i.get('disabled') ){ 
                                       i.set('disabled',false); 
                                 }
-                        });
+                        });*/
 
-                        p.selectChild( registry.byId('patient_main') );
-
-                        request('/AuShadha/patient/patient/summary/'+CHOSEN_PATIENT.id+'/').
-                        then(
-                          function(html){
-                            dom.byId('patient_summary_div').innerHTML = html;
-                          },
-                          function(json){
-                            var jsondata = JSON.parse(json);
-                            publishError(jsondata);
-                          },
-                          function(err){
-                            console.log(err);
-                            publishError(err);
-                            return;
-                          }
-                        );
+//                         p.selectChild( registry.byId('patient_main') );
+//                         request('/AuShadha/patient/patient/summary/'+CHOSEN_PATIENT.id+'/').
+//                         then(
+//                           function(html){
+//                             dom.byId('patient_summary_div').innerHTML = html;
+//                           },
+//                           function(json){
+//                             var jsondata = JSON.parse(json);
+//                             publishError(jsondata);
+//                           },
+//                           function(err){
+//                             console.log(err);
+//                             publishError(err);
+//                             return;
+//                           }
+//                         );
 
                         registry.byId("centerMainPane").resize();                          
 

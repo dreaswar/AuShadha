@@ -10,6 +10,8 @@ VARS:
 
   clinic_id: &CLINIC_ID
             !!int {{clinic_id}}
+  
+  logo_url: &LOGO_URL {{STATIC_URL}}images/AuShadha_logo/AuShadha_logo.svg
 
 URLS:
 
@@ -18,10 +20,11 @@ URLS:
               args: [ render_aushadha_search_pane ]
               kwds: {}
   
-  search_form: &RENDER_SEARCH_FORM
-          !!python/object/apply:django.core.urlresolvers.reverse
-              args: [ render_aushadha_search_form ]
-              kwds: {}
+#   search_form: &RENDER_SEARCH_FORM
+#           !!python/object/apply:django.core.urlresolvers.reverse
+#               args: [ render_aushadha_search_form ]
+#               kwds: {}
+
 
  # YAML
 
@@ -33,7 +36,7 @@ id       : AUSHADHA_SEARCH
 type     : bc
 title    : Search
 url      : *SEARCH_PANE_URL
-closable : !!bool False
+closable : !!bool True
 
 widgets:
 
@@ -73,11 +76,45 @@ panes:
         widgets: []
         title: Live Search
         closable: False
-        url: *RENDER_SEARCH_FORM
+        panes: 
+          - id: SEARCH_CENTER_TC_CP_SEARCH_FORM_CONTAINER
+            type: dom
+            domType: div
+            style: 
+              position        : relative
+              left            : 5%
+              width           : 90%
+              height          : 100%
+              overflow        : visible
+              border          : "solid 1px #cecece"
+              border-radius   : 3px
+              background      : "#D0DFEA"
+              box-shadow      : "1px 1px 1px #cecece"
+
+            panes:
+              - id: logo_container
+                type: dom
+                domType: div
+                panes:
+                  - id: search_logo
+                    type: dom
+                    domType: img
+                    src: *LOGO_URL
+                    style:
+                      position: relative
+                      min-width: 30%
+                      max-width: 30%
+                      min-height: 30%
+                      max-height: 30%
+                      left: 35%
+
+              - id: search_form
+                type: dom
+                domType: div
 
       - id: SEARCH_CENTER_TC_CP_SEARCH_GRID
         type: cp
         widgets: []
         title: Grid
         closable: False
-        url: *RENDER_SEARCH_FORM
+        url: null

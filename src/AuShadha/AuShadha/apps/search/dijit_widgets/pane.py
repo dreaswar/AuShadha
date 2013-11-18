@@ -49,7 +49,7 @@ def render_aushadha_search_pane(request):
 
       if clinic_obj:
         clinic_id = clinic_obj[0].id
-        context = Context({'clinic_id': 1 })
+        context = RequestContext(request, {'clinic_id': 1 })
 
         if not getattr(clinic_obj[0],'urls',None):
           print "No Attribute of URLS on Clinic. Saving to generate the same"

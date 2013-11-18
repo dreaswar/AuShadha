@@ -300,13 +300,46 @@ def return_patient_json(patient,success = True):
    p = ModelInstanceJson(patient)
    return p()
 
+#@login_required
+#def render_patient_tree(request, patient_id=None):
+    #if request.method == "GET" and request.is_ajax():
+      #tree = PatientTree(request)()
+      #return HttpResponse(tree, content_type="application/json")
+    #else:
+        #raise Http404("Bad Request")
+
+
 @login_required
-def render_patient_tree(request, patient_id=None):
-    if request.method == "GET" and request.is_ajax():
-      tree = PatientTree(request)()
-      return HttpResponse(tree, content_type="application/json")
+def render_patient_tree(request,patient_id = None):
+
+  if request.method == "GET" and request.is_ajax():
+
+    if patient_id:
+      patient_id = int( patient_id )
+
     else:
-        raise Http404("Bad Request")
+      try:
+        patient_id = int( request.GET.get('patient_id') )
+      except (KeyError, NameError, ValueError,AttributeError):
+        raise Http404("Bad Request: Invalid Request Parameters")
+
+    try:
+      patient_detail_obj = PatientDetail.objects.get(pk = patient_id)
+
+      if not getattr(patient_detail_obj,'urls',None):
+        patient_detail_obj.save()
+
+      d = {'request' : request,
+          'patient_detail_obj': patient_detail_obj
+          }
+      tree = PatientTree(d)()
+      return HttpResponse(tree, content_type="application/json")    
+
+    except (PatientDetail.DoesNotExist):
+      raise Http404("Bad Request: Patient Does Not Exist")      
+
+  else:
+      raise Http404("Bad Request")
 
 
 @login_required

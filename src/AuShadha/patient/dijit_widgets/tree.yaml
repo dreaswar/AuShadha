@@ -1,3 +1,20 @@
+
+
+# MODEL_YAML:
+#   name: --
+#   type: -_module
+#   id: SOME_ID
+#   module_type: sub_module / main_module
+#   module_name: module-name
+#   ui_layout: standard / composite
+#   widgets: [ form ] / [grid,button]
+#   ondblclick: null URL on dblclick
+#   onrclick: null URL on Right click
+#   onclick: null  URL on click
+#   redirect: 1  to redirect to new pane as maintab or not -- 0/1
+
+
+
 medical_history: &MEDICAL_HISTORY
   name: Medical History
   type: medical_history_module
@@ -6,6 +23,9 @@ medical_history: &MEDICAL_HISTORY
   module_name: medical_history
   ui_layout: standard
   widgets:  [ grid, button ]
+  ondblclick: {{patient_detail_obj.urls.pane.medical_history}}
+  onrclick: null
+  onclick: null
 
 
 surgical_history: &SURGICAL_HISTORY
@@ -16,6 +36,9 @@ surgical_history: &SURGICAL_HISTORY
   module_name: surgical_history
   ui_layout: standard
   widgets: [ grid, button ]
+  ondblclick: {{patient_detail_obj.urls.pane.surgical_history}}
+  onrclick: null
+  onclick: null
 
 
 family_history: &FAMILY_HISTORY
@@ -26,6 +49,9 @@ family_history: &FAMILY_HISTORY
   module_name: family_history
   ui_layout: standard
   widgets: [ grid, button ]
+  ondblclick: {{patient_detail_obj.urls.pane.family_history}}
+  onrclick: null
+  onclick: null
 
 
 social_history: &SOCIAL_HISTORY
@@ -36,6 +62,9 @@ social_history: &SOCIAL_HISTORY
   module_name: social_history
   ui_layout: standard
   widgets: [ form ]
+  ondblclick: {{patient_detail_obj.urls.pane.social_history}}
+  onrclick: null
+  onclick: null
 
 
 contact: &CONTACT
@@ -46,6 +75,9 @@ contact: &CONTACT
   module_name: contact
   ui_layout: standard
   widgets: [ grid, button ]
+  ondblclick: null
+  onrclick: null
+  onclick: null
 
 phone: &PHONE
   name: Phone
@@ -55,6 +87,9 @@ phone: &PHONE
   module_name: phone
   ui_layout: standard
   widgets: [ grid, button ]
+  ondblclick: null
+  onrclick: null
+  onclick: null
 
 
 guardian: &GUARDIAN
@@ -65,6 +100,9 @@ guardian: &GUARDIAN
   module_name: guardian
   ui_layout: standard
   widgets: [ grid, button ]
+  ondblclick: null
+  onrclick: null
+  onclick: null
 
 
 
@@ -76,6 +114,9 @@ allergy: &ALLERGY
   id : ALLERGY
   ui_layout: standard
   widgets: [ grid, button ]
+  ondblclick: null
+  onrclick: null
+  onclick: null
 
 
 immunisation: &IMMUNISATION
@@ -86,33 +127,43 @@ immunisation: &IMMUNISATION
   module_name: immunisation
   ui_layout: standard
   widgets: [ grid, button ]
+  ondblclick: {{patient_detail_obj.urls.pane.immunisation}}
+  onrclick: null
+  onclick: null
 
 
 medical_preventives: &MEDICAL_PREVENTIVES
   name: Medical
   type: medical_preventives_module
   id: MEDICAL_PREVENTIVES
+  ondblclick: null
+  onrclick: null
+  onclick: null
 
 
 surgical_preventives: &SURGICAL_PREVENTIVES
   name: Surgical
   type: surgical_preventives_module
   id: SURGICAL_PREVENTIVES
+  ondblclick: null
+  onrclick: null
+  onclick: null
 
 
 obs_preventives: &OBS_PREVENTIVES
   name: Obs & Gyn
   type: obs_and_gyn_preventives_module
   id: OBS_PREVENTIVES
-
-
+  ondblclick: null
+  onrclick: null
+  onclick: null
 
 
 history: &HISTORY
   name: History 
   type: application
   id: HISTORY
-  linked_modules: [ *MEDICAL_HISTORY, *SURGICAL_HISTORY, *FAMILY_HISTORY, *SOCIAL_HISTORY ]
+  children: [ *MEDICAL_HISTORY, *SURGICAL_HISTORY, *FAMILY_HISTORY, *SOCIAL_HISTORY ]
 
 
 demographics: &DEMOGRAPHICS
@@ -124,43 +175,59 @@ demographics: &DEMOGRAPHICS
   ui_layout: composite
   widgets: [ form ]
   linked_modules: [ *CONTACT, *PHONE, *GUARDIAN ]
+  ondblclick: {{patient_detail_obj.urls.pane.demographics}}
+  onrclick: null
+  onclick: null
 
 
 medications: &MEDICATIONS
-  name : Medications
-  type: application
-  module_type: medication_list_module
-  module_name: medication_list
-  id : MEDICATIONS
-  ui_layout: composite
-  widgets: [ grid, button ]
-  linked_modules: [ *ALLERGY ]
+    name: Medications
+    type: application
+    module_type: medication_list_module
+    module_name: medication_list
+    id: MEDICATIONS
+    ui_layout: composite
+    widgets: [ grid, button ]
+    linked_modules: [ *ALLERGY ]
+    ondblclick: {{patient_detail_obj.urls.pane.medication_list}}
+    onrclick: null
+    onclick: null
+    redirect: 1    
 
 
 preventives: &PREVENTIVES
   name: Preventives
   type: application
   id: PREVENTIVES
-  linked_modules: [ *IMMUNISATION, *MEDICAL_PREVENTIVES, *SURGICAL_PREVENTIVES, *OBS_PREVENTIVES ]
+  children: [ *IMMUNISATION, *MEDICAL_PREVENTIVES, *SURGICAL_PREVENTIVES, *OBS_PREVENTIVES ]
 
 
 investigation: &INVESTIGATION
   name: Investigation
   type: application
   id: INVESTIGATION
-
+  ondblclick: null
+  onrclick: null
+  onclick: null
+  redirect: 1
 
 
 imaging: &IMAGING
   name: Imaging
   type: application
   id: IMAGING
-
+  ondblclick: null
+  onrclick: null
+  onclick: null
+  redirect: 1
 
 procedures: &PROCEDURES
   name: Procedures
   type: application
   id: PROCEDURES
+  ondblclick: null
+  onrclick: null
+  onclick: null
 
 
 admissions: &ADMISSIONS
@@ -171,8 +238,11 @@ admissions: &ADMISSIONS
   id : ADMISSIONS
   ui_layout: pane
   widgets: [ pane ]
-  paneUrl: !!python/object/apply:django.core.urlresolvers.reverse [render_admission_pane_without_id]
-
+#   paneUrl: !!python/object/apply:django.core.urlresolvers.reverse [render_admission_pane_without_id]
+  ondblclick: {{patient_detail_obj.urls.pane.admission}}
+  onrclick: null
+  onclick: null
+  redirect: 1
 
 visits: &VISITS
   name : Visits
@@ -182,7 +252,11 @@ visits: &VISITS
   id : VISITS
   ui_layout: pane
   widgets: [ pane ]
-  paneUrl: !!python/object/apply:django.core.urlresolvers.reverse [render_visit_pane_without_id]
+#   paneUrl: !!python/object/apply:django.core.urlresolvers.reverse [render_visit_pane_without_id]
+  ondblclick: {{patient_detail_obj.urls.pane.visit}}
+  onrclick: null
+  onclick: null
+  redirect: 1
 
 #   tree: &PATIENT_TREE
 #     !!python/object/new:patient.dijit_widgets.tree.PatientTree []

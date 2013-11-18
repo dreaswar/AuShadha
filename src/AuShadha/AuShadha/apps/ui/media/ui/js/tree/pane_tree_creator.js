@@ -61,7 +61,25 @@ define([
           createFormContainer,
           createGridContainer,
           createDynamicPane,
-          createDynamicHTMLPane){
+          createDynamicHTMLPane
+          ){
+
+    function onDblClickOnTree(item){
+        require(['aushadha/under_construction/pane_and_widget_creator'],
+        function(paneAndWidgetCreator){  
+            request( item.ondblclick ).
+              then(
+                function(json){
+                  var jsondata = JSON.parse(json);
+                  paneAndWidgetCreator.constructor( jsondata.pane );
+                },
+                function(json){
+                  var jsondata = JSON.parse(json);
+                  publishError(jsondata.error_message);
+                }
+              );
+        });
+    }
 
     var buildTree = function (url,domNode, mainTabPaneDomNode,treeRootTitle) {
 
@@ -174,202 +192,207 @@ define([
                                               var formLayout = (['form']).sort().toString();
                                               var gridLayout = (['grid','button']).sort().toString();
 
-                                              if(item.ui_layout == 'standard'){
+//                                               if(item.ui_layout == 'standard'){
+// 
+//                                                 var widgets = item.widgets.sort().toString() ;
+// 
+//                                                 var obj={parent: mainTabPaneDomNodeId ,
+//                                                         module_name: (item.module_name).toString(),
+//                                                         module_title: (item.name).toString()
+//                                                 };
+// 
+//                                                 var formArgs={parent: mainTabPaneDomNodeId ,
+//                                                               module_name: (item.module_name).toString(),
+//                                                               module_title: (item.name).toString(),
+//                                                               url:CHOSEN_PATIENT.urls.add[ item.module_name.toString() ]
+//                                                       };
+// 
+//                                                 var emptyTab = createEmptyTab.constructor(obj);
+//                                                 emptyTab.addBc('vertical',1);
+//                                                 var parentNode = domAttr.get(emptyTab.pane.Bc.topCp.domNode,'id')
+// 
+//                                                 if (widgets == gridLayout ){
+//                                                    emptyTab.pane.Bc.
+//                                                     topCp.
+//                                                     addChild( 
+//                                                         makeTheTab(item,
+//                                                                    parentNode,
+//                                                                    true
+//                                                                   )
+//                                                     );
+//                                                 }
+// 
+//                                                 else if(widgets == formLayout ){
+//                                                   emptyTab.pane.Bc.
+//                                                     topCp.
+//                                                     addChild( 
+//                                                         createFormContainer.constructor(formArgs) 
+//                                                     );
+//                                                 }
+// 
+//                                                 else{
+//                                                   alert("This is an unimplemented widget arrangement !! ");
+//                                                   return false;
+//                                                 }
+// 
+//                                                 emptyTab.pane.startup();
+//                                                 var p = emptyTab.pane.getParent(); 
+//                                                 p.selectChild(emptyTab.pane);
+// 
+//                                               }
+// 
+//                                               else if (item.ui_layout == 'composite'){
+// 
+//                                                   var p_widget_layout = item.widgets.sort().toString();
+// 
+//                                                   var obj={parent: mainTabPaneDomNodeId,
+//                                                            module_name: item.module_name.toString(),
+//                                                            module_title: item.name.toString(),
+//                                                   };
+// 
+//                                                   var emptyTab = createEmptyTab.constructor(obj);
+// 
+//                                                   console.log("Creating vertical layout");
+//                                                   emptyTab.addBc('vertical',3);
+// 
+//                                                   if (p_widget_layout == formLayout ) {
+//                                                     var formArgs={ parentPane: emptyTab.pane,
+//                                                                    module_name: item.module_name.toString(),
+//                                                                    module_title: item.name.toString(),
+//                                                                    url:CHOSEN_PATIENT.urls.add[ item.module_name.toString() ]
+//                                                     };
+//                                                     emptyTab.pane.Bc.topCp.addChild( createFormContainer.constructor(formArgs) );
+//                                                   }
+// 
+//                                                   else if(p_widget_layout == gridLayout ){
+//                                                     var parentNode = domAttr.get(emptyTab.pane.Bc.topCp.domNode,'id')
+//                                                     emptyTab.pane.Bc.topCp.addChild( makeTheTab(item,
+//                                                                                                 parentNode,
+//                                                                                                 true)
+//                                                                                    );
+//                                                   }
+// 
+//                                                   console.log("Trying to create a SubTabcontainer");
+//                                                   console.log("Existing Content panes are: ");
+//                                                   console.log(emptyTab.pane.Bc.topCp);
+//                                                   console.log(emptyTab.pane.Bc.bottomCp);
+// 
+//                                                   var linkedTc = TabContainer({tabStrip:true,
+//                                                                                tabPosition:'top',
+//                                                                                style: "height: 100%; width: 400px; overflow: auto;"
+//                                                                               },
+//                                                                               domConstruct.create('div',{id: item.module_name.toString()+"_subTc"},
+//                                                                                                   emptyTab.pane.Bc.bottomCp.domNode,
+//                                                                                                   'last')
+//                                                                              );
+// 
+//                                                   for (var x=0; x< item.linked_modules.length; x++){
+// 
+//                                                       var linked_widget_layout = item.linked_modules[x].widgets.sort().toString();
+//                                                       console.log(linkedTc);
+//                                                       var parentName = domAttr.get(linkedTc.domNode, 'id').toString();
+// 
+//                                                       if (linked_widget_layout == gridLayout ){
+//                                                         var theTab = makeTheTab(item.linked_modules[x],
+//                                                                                       parentName,
+//                                                                                       true
+//                                                                                      ) 
+//                                                         console.log(theTab);
+//                                                         linkedTc.addChild(theTab);
+//                                                       }
+//                                                       else if (linked_widget_layout ==  formLayout ) {
+//                                                         var linkedModuleFormArgs = {
+//                                                           parentPane: linkedTc,
+//                                                           module_name: linked_modules[x].module_name.toString(),
+//                                                           module_title: linked_modules[x].name.toString(),
+//                                                           url: CHOSEN_PATIENT.urls.add[ linked_modules[x].module_name.toString()]
+//                                                         }
+//                                                         linkedTc.addChild( createFormContainer.constructor(linkedModuleFormArgs) );
+//                                                       }
+// 
+//                                                   }
+//                                                   linkedTc.startup();
+//                                                   emptyTab.pane.Bc.bottomCp.addChild(linkedTc);
+// 
+//                                                   emptyTab.pane.startup();
+//                                                   var p = emptyTab.pane.getParent(); 
+//                                                   p.selectChild(emptyTab.pane);
+//                                               }
+// 
+//                                               else if ( item.ui_layout == 'pane'){
+// 
+//                                                 var query = '?patient_id='+CHOSEN_PATIENT.id;
+//                                                 var paneUrl = '/AuShadha/visit/visit/pane/'+query;
+// 
+//                                                 request( paneUrl ).
+//                                                 then( 
+// 
+//                                                   function( json ) { 
+//                                                       var jsondata= JSON.parse(json);
+//                                                       console.log(jsondata);
+//                                                       createDynamicPane(jsondata);
+//                                                   },
+// 
+//                                                   function( json ){
+//                                                     var jsondata= JSON.parse(json);                                                    
+//                                                     publishError(jsondata.error_message);
+//                                                   }
+// 
+//                                                 );
+//                                               }
+// 
+//                                             }
+// 
+//                                             else{
+// 
+//                                               var urlToCall = item.ondblclick;
+//                                               var redirectAfterClick = item.redirect;
+//                                               var allChildrenTabs = registry.byId(mainTabPaneDomNodeId).getChildren();
+//                                               var lastChild = allChildrenTabs[allChildrenTabs.length-1];
+//                                               var domId = item.id.toString().replace(' ','_').toLowerCase();
+// 
+//                                               var args = { title: item.name, 
+//                                                             domId: domId,
+//                                                             url: urlToCall,
+//                                                             parentTab: registry.byId(mainTabPaneDomNodeId)
+//                                                         };
+// 
+//                                               if ( redirectAfterClick == 1 ) {
+// 
+//                                                 console.log("Creating Dynamic HTML Pane with Arguments: ");
+//                                                 console.log(args);
+//                                                 createDynamicHTMLPane( args );
+// 
+//                                               }
+// 
+//                                               else{
+//                                                 request(urlToCall).then(
+// 
+//                                                   function(json){
+//                                                     var jsondata = JSON.parse(json);
+//                                                     if (jsondata.success = true) {
+//                                                        console.log(tree);
+//                                                        tree.refresh();
+//                                                        publishInfo(jsondata.error_message);
+//                                                     }
+//                                                     else{
+//                                                       publishError(jsondata.error_message);
+//                                                     }
+//                                                   },
+// 
+//                                                   function(json) {
+//                                                     var jsondata = JSON.parse(json);
+//                                                     publishError(jsondata.error_message);
+//                                                   }
+// 
+//                                                 );
+//                                               }
+//                                             }
+                                        }
 
-                                                var widgets = item.widgets.sort().toString() ;
-
-                                                var obj={parent: mainTabPaneDomNodeId ,
-                                                        module_name: (item.module_name).toString(),
-                                                        module_title: (item.name).toString()
-                                                };
-
-                                                var formArgs={parent: mainTabPaneDomNodeId ,
-                                                              module_name: (item.module_name).toString(),
-                                                              module_title: (item.name).toString(),
-                                                              url:CHOSEN_PATIENT.urls.add[ item.module_name.toString() ]
-                                                      };
-
-                                                var emptyTab = createEmptyTab.constructor(obj);
-                                                emptyTab.addBc('vertical',1);
-                                                var parentNode = domAttr.get(emptyTab.pane.Bc.topCp.domNode,'id')
-
-                                                if (widgets == gridLayout ){
-                                                   emptyTab.pane.Bc.
-                                                    topCp.
-                                                    addChild( 
-                                                        makeTheTab(item,
-                                                                   parentNode,
-                                                                   true
-                                                                  )
-                                                    );
-                                                }
-
-                                                else if(widgets == formLayout ){
-                                                  emptyTab.pane.Bc.
-                                                    topCp.
-                                                    addChild( 
-                                                        createFormContainer.constructor(formArgs) 
-                                                    );
-                                                }
-
-                                                else{
-                                                  alert("This is an unimplemented widget arrangement !! ");
-                                                  return false;
-                                                }
-
-                                                emptyTab.pane.startup();
-                                                var p = emptyTab.pane.getParent(); 
-                                                p.selectChild(emptyTab.pane);
-
-                                              }
-
-                                              else if (item.ui_layout == 'composite'){
-
-                                                  var p_widget_layout = item.widgets.sort().toString();
-
-                                                  var obj={parent: mainTabPaneDomNodeId,
-                                                           module_name: item.module_name.toString(),
-                                                           module_title: item.name.toString(),
-                                                  };
-
-                                                  var emptyTab = createEmptyTab.constructor(obj);
-
-                                                  console.log("Creating vertical layout");
-                                                  emptyTab.addBc('vertical',3);
-
-                                                  if (p_widget_layout == formLayout ) {
-                                                    var formArgs={ parentPane: emptyTab.pane,
-                                                                   module_name: item.module_name.toString(),
-                                                                   module_title: item.name.toString(),
-                                                                   url:CHOSEN_PATIENT.urls.add[ item.module_name.toString() ]
-                                                    };
-                                                    emptyTab.pane.Bc.topCp.addChild( createFormContainer.constructor(formArgs) );
-                                                  }
-
-                                                  else if(p_widget_layout == gridLayout ){
-                                                    var parentNode = domAttr.get(emptyTab.pane.Bc.topCp.domNode,'id')
-                                                    emptyTab.pane.Bc.topCp.addChild( makeTheTab(item,
-                                                                                                parentNode,
-                                                                                                true)
-                                                                                   );
-                                                  }
-
-                                                  console.log("Trying to create a SubTabcontainer");
-                                                  console.log("Existing Content panes are: ");
-                                                  console.log(emptyTab.pane.Bc.topCp);
-                                                  console.log(emptyTab.pane.Bc.bottomCp);
-
-                                                  var linkedTc = TabContainer({tabStrip:true,
-                                                                               tabPosition:'top',
-                                                                               style: "height: 100%; width: 400px; overflow: auto;"
-                                                                              },
-                                                                              domConstruct.create('div',{id: item.module_name.toString()+"_subTc"},
-                                                                                                  emptyTab.pane.Bc.bottomCp.domNode,
-                                                                                                  'last')
-                                                                             );
-
-                                                  for (var x=0; x< item.linked_modules.length; x++){
-
-                                                      var linked_widget_layout = item.linked_modules[x].widgets.sort().toString();
-                                                      console.log(linkedTc);
-                                                      var parentName = domAttr.get(linkedTc.domNode, 'id').toString();
-
-                                                      if (linked_widget_layout == gridLayout ){
-                                                        var theTab = makeTheTab(item.linked_modules[x],
-                                                                                      parentName,
-                                                                                      true
-                                                                                     ) 
-                                                        console.log(theTab);
-                                                        linkedTc.addChild(theTab);
-                                                      }
-                                                      else if (linked_widget_layout ==  formLayout ) {
-                                                        var linkedModuleFormArgs = {
-                                                          parentPane: linkedTc,
-                                                          module_name: linked_modules[x].module_name.toString(),
-                                                          module_title: linked_modules[x].name.toString(),
-                                                          url: CHOSEN_PATIENT.urls.add[ linked_modules[x].module_name.toString()]
-                                                        }
-                                                        linkedTc.addChild( createFormContainer.constructor(linkedModuleFormArgs) );
-                                                      }
-
-                                                  }
-                                                  linkedTc.startup();
-                                                  emptyTab.pane.Bc.bottomCp.addChild(linkedTc);
-
-                                                  emptyTab.pane.startup();
-                                                  var p = emptyTab.pane.getParent(); 
-                                                  p.selectChild(emptyTab.pane);
-                                              }
-
-                                              else if ( item.ui_layout == 'pane'){
-
-                                                var query = '?patient_id='+CHOSEN_PATIENT.id;
-                                                var paneUrl = '/AuShadha/visit/visit/pane/'+query;
-
-                                                request( paneUrl ).
-                                                then( 
-
-                                                  function( json ) { 
-                                                      var jsondata= JSON.parse(json);
-                                                      console.log(jsondata);
-                                                      createDynamicPane(jsondata);
-                                                  },
-
-                                                  function( json ){
-                                                    var jsondata= JSON.parse(json);                                                    
-                                                    publishError(jsondata.error_message);
-                                                  }
-
-                                                );
-                                              }
-
-                                            }
-
-                                            else{
-
-                                              var urlToCall = item.ondblclick;
-                                              var redirectAfterClick = item.redirect;
-                                              var allChildrenTabs = registry.byId(mainTabPaneDomNodeId).getChildren();
-                                              var lastChild = allChildrenTabs[allChildrenTabs.length-1];
-                                              var domId = item.id.toString().replace(' ','_').toLowerCase();
-
-                                              var args = { title: item.name, 
-                                                            domId: domId,
-                                                            url: urlToCall,
-                                                            parentTab: registry.byId(mainTabPaneDomNodeId)
-                                                        };
-
-                                              if ( redirectAfterClick == 1 ) {
-
-                                                console.log("Creating Dynamic HTML Pane with Arguments: ");
-                                                console.log(args);
-                                                createDynamicHTMLPane( args );
-
-                                              }
-
-                                              else{
-                                                request(urlToCall).then(
-
-                                                  function(json){
-                                                    var jsondata = JSON.parse(json);
-                                                    if (jsondata.success = true) {
-                                                       console.log(tree);
-                                                       tree.refresh();
-                                                       publishInfo(jsondata.error_message);
-                                                    }
-                                                    else{
-                                                      publishError(jsondata.error_message);
-                                                    }
-                                                  },
-
-                                                  function(json) {
-                                                    var jsondata = JSON.parse(json);
-                                                    publishError(jsondata.error_message);
-                                                  }
-
-                                                );
-                                              }
-                                            }
+                                        else{
+                                          onDblClickOnTree(item);
+                                        }
 
                                 }
                             },
