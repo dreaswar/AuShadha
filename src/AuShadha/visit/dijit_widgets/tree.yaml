@@ -4,12 +4,11 @@ new_visit: &NEW_VISIT
   id: NEW_VISIT
   module_type: sub_module
   module_name: visit
-  ui_layout: standard
-  widgets: [ form ]
   ondblclick: null
   onrclick: null
   onclick: null
   redirect: 1
+  returns: html
 
 
 
@@ -31,12 +30,11 @@ active_visit: &ACTIVE_VISIT
   id: ACTIVE_VISIT_
   module_type: sub_module
   module_name: visit
-  ui_layout: standard
-  widgets: [ form ]
   ondblclick: null
   onrclick: null
   onclick: null
   redirect: 1
+  returns: html  
 
 close_active_visit: &CLOSE_ACTIVE_VISIT
   name: Close
@@ -44,13 +42,11 @@ close_active_visit: &CLOSE_ACTIVE_VISIT
   id: CLOSE_ACTIVE_VISIT_
   module_type: sub_module
   module_name: visit
-  ui_layout: null
-  widgets: []
   ondblclick: null
   onrclick: null
   onclick: null
   redirect: null
-
+  returns: json
 
 add_follow_up_to_active_visit: &ADD_FOLLOW_UP_TO_ACTIVE_VISIT
   name:  Add Follow-up
@@ -58,12 +54,11 @@ add_follow_up_to_active_visit: &ADD_FOLLOW_UP_TO_ACTIVE_VISIT
   id: ADD_FOLLOW_UP_ACTIVE_VISIT_
   module_type: sub_module
   module_name: visit
-  ui_layout: null
-  widgets: []
   ondblclick: null
   onrclick: null
   onclick: null
   redirect: 1
+  returns: html
 
 active_visits_follow_ups: &ACTIVE_VISIT_FOLLOW_UPS
   name: Follow-ups
@@ -79,13 +74,11 @@ active_visit_follow_up: &ACTIVE_VISIT_FOLLOW_UP
   id: ACTIVE_VISIT_FOLLOW_UP_VISIT_
   module_type: sub_module
   module_name: visit_follow_up
-  ui_layout: standard
-  widgets: [ form ]
   ondblclick: null
   onrclick: null
   onclick: null
   redirect: 1  
-  
+  returns: html  
 
 previous_visits: &PREVIOUS_VISITS
   name: Previous Visits
@@ -100,12 +93,11 @@ previous_visit: &PREVIOUS_VISIT
   id: INACTIVE_VISIT_
   module_type: sub_module
   module_name: visit
-  ui_layout: standard
-  widgets: [ form ]
   ondblclick: null
   onrclick: null
   onclick: null
   redirect: 1  
+  returns: html
 
 previous_visits_follow_ups:
   name: Follow-ups
@@ -122,12 +114,11 @@ previous_visit_follow_up:
   id: INACTIVE_VISIT_FOLLOW_UP_VISIT_
   module_type: sub_module
   module_name: visit_follow_up
-  ui_layout: standard
-  widgets: [ form ]
   ondblclick: null
   onrclick: null
   onclick: null
   redirect: 1
+  returns: html
 
 medical_history: &MEDICAL_HISTORY
       name: Medical History
@@ -135,9 +126,11 @@ medical_history: &MEDICAL_HISTORY
       id: MEDICAL_HISTORY
       module_type: sub_module
       module_name: medical_history
-      ui_layout: standard
-      widgets: [ grid , button ]
-      redirect: 1      
+      redirect: 1    
+      ondblclick: null
+      onrclick: null
+      onclick: null
+      returns: json
 
 surgical_history: &SURGICAL_HISTORY
       name: Surgical History
@@ -145,9 +138,11 @@ surgical_history: &SURGICAL_HISTORY
       id: SURGICAL_HISTORY
       module_type: sub_module
       module_name: surgical_history
-      ui_layout: standard
-      widgets: [ grid , button ]
-      redirect: 1      
+      redirect: 1    
+      ondblclick: null
+      onrclick: null
+      onclick: null
+      returns: json
 
 family_history: &FAMILY_HISTORY
       name: Family History
@@ -155,9 +150,11 @@ family_history: &FAMILY_HISTORY
       id: FAMILY_HISTORY
       module_type: sub_module
       module_name: family_history
-      ui_layout: standard
-      widgets: [ grid , button ]
-      redirect: 1      
+      redirect: 1    
+      ondblclick: null
+      onrclick: null
+      onclick: null
+      returns: json
 
 social_history: &SOCIAL_HISTORY
     name: Social History
@@ -165,9 +162,11 @@ social_history: &SOCIAL_HISTORY
     id: SOCIAL_HISTORY
     module_type: sub_module
     module_name: social_history
-    ui_layout: standard
-    widgets: [ form ]
     redirect: 1    
+    ondblclick: null
+    onrclick: null
+    onclick: null
+    returns: json
 
 contact: &CONTACT
     name: Contact
@@ -175,8 +174,11 @@ contact: &CONTACT
     id: CONTACT
     module_type: sub_module
     module_name: contact
-    ui_layout: standard
-    widgets: [ grid , button ]
+    redirect: 1    
+    ondblclick: null
+    onrclick: null
+    onclick: null
+    returns: json
 
 phone: &PHONE
     name: Phone
@@ -184,8 +186,11 @@ phone: &PHONE
     id: PHONE
     module_type: sub_module
     module_name: phone
-    ui_layout: standard
-    widgets: [ grid , button ]
+    redirect: 1    
+    ondblclick: null
+    onrclick: null
+    onclick: null
+    returns: json
 
 guardian: &GUARDIAN
     name: Guardian
@@ -193,8 +198,11 @@ guardian: &GUARDIAN
     id: GUARDIAN
     module_type: sub_module
     module_name: guardian
-    ui_layout: standard
-    widgets: [ grid , button ]
+    redirect: 1    
+    ondblclick: null
+    onrclick: null
+    onclick: null
+    returns: json
 
 demographics: &DEMOGRAPHICS
     name: Demographics
@@ -202,10 +210,12 @@ demographics: &DEMOGRAPHICS
     id: DEMOGRAPHICS
     module_type: sub_module
     module_name: demographics
-    ui_layout: composite
-    widgets: [ form ]
     linked_modules: [ *CONTACT, *PHONE, *GUARDIAN ]
     redirect: 1    
+    ondblclick: null
+    onrclick: null
+    onclick: null
+    returns: json
 
 allergy: &ALLERGY
     name: Allergy
@@ -213,8 +223,11 @@ allergy: &ALLERGY
     module_type: sub_module
     module_name: allergy_list
     id: ALLERGY
-    ui_layout: standard
-    widgets: [ grid , button ]
+    redirect: 1  
+    ondblclick: null
+    onrclick: null
+    onclick: null
+    returns: json    
 
 immunisation: &IMMUNISATION
       name: Immunisation
@@ -222,29 +235,42 @@ immunisation: &IMMUNISATION
       id: IMMUNISATION
       module_type: sub_module
       module_name: immunisation
-      ui_layout: standard
-      widgets: [ grid , button ]
-      redirect: 1      
+      redirect: 1    
+      ondblclick: null
+      onrclick: null
+      onclick: null
+      returns: json
 
 medical_preventives: &MEDICAL_PREVENTIVES
       name: Medical
       type: medical_preventives_module
       id: MEDICAL_PREVENTIVES
-      redirect: 1      
+      redirect: 1    
+      ondblclick: null
+      onrclick: null
+      onclick: null
+      returns: json
+      
 
 surgical_preventives: &SURGICAL_PREVENTIVES
       name: Surgical
       type: surgical_preventives_module
       id: SURGICAL_PREVENTIVES
       redirect: 1      
-
+      ondblclick: null
+      onrclick: null
+      onclick: null
+      returns: json
 
 obstetric_preventives: &OBS_PREVENTIVES
       name: Obs & Gyn
       type: obs_and_gyn_preventives_module
       id: OBS_PREVENTIVES
       redirect: 1      
-
+      ondblclick: null
+      onrclick: null
+      onclick: null
+      returns: json
 
 history:
     name: History
@@ -259,10 +285,12 @@ medications:
     module_type: medication_list_module
     module_name: medication_list
     id: MEDICATIONS
-    ui_layout: composite
-    widgets: [ grid, button ]
     linked_modules: [ *ALLERGY ]
     redirect: 1    
+    ondblclick: null
+    onrclick: null
+    onclick: null
+    returns: json
 
 preventives:
   name: Preventives

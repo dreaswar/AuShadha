@@ -50,19 +50,25 @@ define(["dijit/registry",
   var paneEventController = {
 
       _reInitAllPanes: function (item){
+
                         console.log("Running _reInitAllPanes at panes/event_controller.js");
                         console.log(item[0]);
 
-                        request(item[0].paneUrl).then(
+                        request( item[0].paneUrl ).
+                        then(
+
                           function(json){
                             var jsondata = JSON.parse(json);
                             paneAndWidgetCreator.constructor(jsondata.pane)
                           },
+
                           function(json){
                             var jsondata = JSON.parse(json);
                             publishError(jsondata.error_message);
                           }
-                        )
+
+                        );
+
 /*
                         this._setChosenPatient(item[0]);
                         this._displayPatientName(item[0]);

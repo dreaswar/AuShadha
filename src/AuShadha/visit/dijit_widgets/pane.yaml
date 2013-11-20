@@ -64,15 +64,15 @@ closable : !!bool True
 #         - OPD_VISITS_CENTER_CP_TC
 #           - OPD_VISITS_CENTER_CP_TC_SUMMARY_CP
 
-widgets:
+widgets: []
 
-  - type: grid
-    id  : OPD_VISITS_MAIN_GRID
-    url:  *VISIT_JSON_URL
-
-  - type: search
-    id  : OPD_VISITS_MAIN_SEARCH
-    url : *VISIT_JSON_URL
+#   - type: grid
+#     id  : OPD_VISITS_MAIN_GRID
+#     url:  *VISIT_JSON_URL
+# 
+#   - type: search
+#     id  : OPD_VISITS_MAIN_SEARCH
+#     url : *VISIT_JSON_URL
 
 panes:
 

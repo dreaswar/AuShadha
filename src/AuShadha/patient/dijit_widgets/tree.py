@@ -30,7 +30,8 @@ from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
 
-class PatientTree(object):
+class PatientTree( object ):
+
     """
      Defines the Dijit UI for Patient Tree
     """
@@ -90,4 +91,3 @@ class PatientTree(object):
 
       json = patient_tree_node.to_json()
       return json
-

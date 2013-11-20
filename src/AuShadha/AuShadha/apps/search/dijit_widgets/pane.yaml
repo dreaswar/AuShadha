@@ -38,15 +38,15 @@ title    : Search
 url      : *SEARCH_PANE_URL
 closable : !!bool True
 
-widgets:
+widgets: []
 
-  - type: grid
-    id  : PATIENT_MAIN_GRID
-    url:  *SEARCH_PANE_URL
-
-  - type: search
-    id  : PATIENT_MAIN_SEARCH
-    url : *SEARCH_PANE_URL
+#   - type: grid
+#     id  : PATIENT_MAIN_GRID
+#     url:  *SEARCH_PANE_URL
+# 
+#   - type: search
+#     id  : PATIENT_MAIN_SEARCH
+#     url : *SEARCH_PANE_URL
 
 panes:
 

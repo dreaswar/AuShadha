@@ -1,0 +1,73 @@
+- name: ID
+  field: id
+  width: 50px
+  hidden: True
+  cellStyles: "text-align:center;"
+
+- name: PatID
+  field: pat_id
+  width: 50px
+  hidden: True
+  cellStyles: "text-align:center;"
+
+- name: Edit
+  field: edit
+  width: 50px
+  hidden: True
+  cellStyles: "text-align:center;"
+
+- name: Del
+  field: del
+  width: 50px
+  hidden: True
+  cellStyles: "text-align:center;"
+
+- name: Type
+  field: address_type
+  width: 50px
+  cellStyles: "text-align:center;"
+  hidden: True
+
+- name: Address
+  field: address
+  width: 300px
+  cellStyles: "text-align:center;"
+  formatter: |
+              function (address, rowI) {
+                  var thisRow = this.grid.getItem(rowI);
+                  var address_type = thisRow.address_type;
+                  var city_name = thisRow.city;
+                  var state = thisRow.state;
+                  var country = thisRow.country;
+                  var pincode = thisRow.pincode;
+                  var formatted_data = "<i><b>" + address_type +
+                      "</b></i></br>" +
+                      address + "</br>" +
+                      city_name + "," + state + "</br>" +
+                      country + "-" + pincode;
+                  return formatted_data;
+              }
+
+- name: City
+  field: city
+  width: 150px
+  hidden: True
+  cellStyles: "text-align:center;"
+
+- name: State
+  field: state
+  width: 50px
+  hidden: True
+  cellStyles: "text-align:center;"
+
+- name: Country
+  field: country
+  width: 100px
+  hidden: True
+  cellStyles: "text-align:center;"
+
+- name: Pincode
+  field: pincode
+  width: 100px
+  hidden: True
+  cellStyles: "text-align:center;"

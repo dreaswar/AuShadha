@@ -1,0 +1,179 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+# VARS
+
+VARS:
+
+  patient_id: &PATIENT_ID
+            !!int {{patient_detail_obj.id}}
+
+contact_grid: &CONTACT_GRID
+        id : CONTACT_GRID
+        type: grid
+        url: {{patient_detail_obj.urls.json.contact}}
+        str: CONTACT
+        activateRowClick: !!bool False
+        title:  Contact
+        storeToUse:  CONTACT_GRID_STORE
+
+phone_grid: &PHONE_GRID
+        id : PHONE_GRID
+        type: grid
+        url: {{patient_detail_obj.urls.json.phone}}
+        str: PHONE
+        activateRowClick: !!bool False
+        title:  Phone
+        storeToUse:  PHONE_GRID_STORE
+
+guardian_grid: &GUARDIAN_GRID
+        id : GUARDIAN_GRID
+        type: grid
+        url: {{patient_detail_obj.urls.json.guardian}}
+        str: GUARDIAN
+        activateRowClick: !!bool False
+        title:  Guardian
+        storeToUse:  GUARDIAN_GRID_STORE
+
+
+URLS:
+
+  pane: &DEMOGRAPHICS_PANE_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_demographics_pane_with_id ]
+              kwds: { kwargs : { patient_id: *PATIENT_ID } }
+
+  patient_info: &PATIENT_INFO_URL
+                  !!python/object/apply:django.core.urlresolvers.reverse
+                      args: [ render_patient_info ]
+                      kwds: { kwargs: { patient_id: *PATIENT_ID }  }
+
+  demographics_json: &DEMOGRAPHICS_JSON_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+            args: [ demographics_json_with_id ]
+            kwds: { kwargs: { patient_id: *PATIENT_ID }  }
+
+  patient_json: &PATIENT_JSON_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+            args: [ render_patient_json ]
+
+
+ # YAML
+
+depends_on: [ patient ]
+load_after: patient
+load_first: !!bool False
+
+id       : DEMOGRAPHICS
+type     : bc
+title    : Demographics
+url      : {{patient_detail_obj.urls.pane.demographics}}
+closable : !!bool True
+
+widgets: []
+
+panes:
+
+  - id : DEMOGRAPHICS_TOP_CP
+    region: top
+    type: cp
+    splitter: False
+    url: *PATIENT_INFO_URL
+    widgets: []
+    panes: []
+    class: topContentPane selected
+    style: 
+      height: 1.8em
+
+  - id : DEMOGRAPHICS_CENTER_BC
+    region: center
+    type: bc
+    splitter: False
+    widgets: []
+    panes: 
+      - id : DEMOGRAPHICS_CENTER_BC_CENTER_CP
+        region: center
+        type: cp
+        splitter: True
+        url: {{patient_detail_obj.urls.add.demographics}}
+        panes: []
+        widgets: []
+
+      - id : DEMOGRAPHICS_CENTER_BC_BOTTOM_TC
+        region: bottom
+        type: tc
+        splitter: True
+        tabPosition: top
+        tabStrip: !!bool True
+        style: 
+          minHeight: 20em
+        widgets: []
+
+        panes:
+            - id : CONTACT_GRID_CP
+              type: cp
+              title: Contact
+              closable: False
+              style: 
+                height: 20em
+                width: 70em
+                overflow: auto
+              widgets: []
+
+              panes: 
+                - id: CONTACT_GRID_CONTAINER
+                  type: dom
+                  domType: div
+                  style: 
+                    height: 20em
+                    width: 70em
+                    overflow: auto
+                  panes: []
+                  widgets: 
+                    - *CONTACT_GRID
+
+
+            - id : PHONE_GRID_CP
+              type: cp
+              title: Phone
+              closable: False
+              style: 
+                height: 20em
+                width: 70em
+                overflow: auto
+              widgets: []
+              panes: 
+                - id: PHONE_GRID_CONTAINER
+                  type: dom
+                  domType: div
+                  style: 
+                    height: 20em
+                    width: 70em
+                    overflow: auto
+                  panes: []
+                  widgets: 
+                    - *PHONE_GRID
+
+            - id : GUARDIAN_GRID_CP
+              type: cp
+              title: Guardian
+              closable: False
+              style: 
+                height: 20em
+                width: 70em
+                overflow: auto
+              widgets: []
+              panes: 
+                - id: GUARDIAN_GRID_CONTAINER
+                  type: dom
+                  domType: div
+                  style: 
+                    height: 20em
+                    width: 70em
+                    overflow: auto
+                  panes: []
+                  widgets: 
+                    - *GUARDIAN_GRID

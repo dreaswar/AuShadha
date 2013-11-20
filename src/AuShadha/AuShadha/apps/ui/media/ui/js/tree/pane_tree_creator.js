@@ -64,20 +64,49 @@ define([
           createDynamicHTMLPane
           ){
 
-    function onDblClickOnTree(item){
+
+    function onDblClickOnTree(item, mainTabPaneDomNodeId){
         require(['aushadha/under_construction/pane_and_widget_creator'],
         function(paneAndWidgetCreator){  
+
+          if ( !item.returns || item.returns == 'json' ) {
             request( item.ondblclick ).
               then(
                 function(json){
                   var jsondata = JSON.parse(json);
-                  paneAndWidgetCreator.constructor( jsondata.pane );
+
+                  if ( item.redirect != 0 ) { 
+                    // Determines whether or not to open tab in main tab 
+                    // redirect if true will add the tab to the main tab 
+                    // else it will add it under the main tab
+                    // for main modules like OPD visits and Admission where lot of sub-tabs are 
+                    // expected its better for UI purposes to open set redirect to true
+                    // this can be customised in the tree.yaml 
+                    paneAndWidgetCreator.constructor( jsondata.pane  );
+                  }
+
+                  else {
+                    paneAndWidgetCreator.constructor( jsondata.pane , mainTabPaneDomNodeId );
+                  }
+
                 },
                 function(json){
                   var jsondata = JSON.parse(json);
                   publishError(jsondata.error_message);
                 }
               );
+            }
+
+          else if ( item.returns == 'html' ) {
+            var args = { title: item.name[0], 
+                        domId: item.id[0],
+                        url: item.ondblclick[0],
+                        parentTab: registry.byId(mainTabPaneDomNodeId)
+                    };              
+            console.log(args);
+            createDynamicHTMLPane( args );
+          }
+
         });
     }
 
@@ -96,7 +125,6 @@ define([
                                               childrenAttrs : ["children"]
                                               });
 
-//         console.log(createTab);
         var mainTabPaneDomNodeId = mainTabPaneDomNode ? domAttr.get(mainTabPaneDomNode,'id'):'patient_center_tc' ;
 
         var gridDomId;
@@ -115,7 +143,7 @@ define([
 
           for(var i=0; i< (_split_string.length-1); i++){ 
               module_name.push( _split_string[i] ); 
-               console.log(module_name);
+              console.log(module_name);
           }; 
 
           y.module_name = module_name.join('_');
@@ -391,7 +419,7 @@ define([
                                         }
 
                                         else{
-                                          onDblClickOnTree(item);
+                                          onDblClickOnTree(item, mainTabPaneDomNodeId);
                                         }
 
                                 }

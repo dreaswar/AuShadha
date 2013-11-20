@@ -53,15 +53,15 @@ title    : Patient
 url      : *PATIENT_PANE_URL
 closable : !!bool False
 
-widgets:
+widgets: []
 
-  - type: grid
-    id  : PATIENT_MAIN_GRID
-    url:  *PATIENT_JSON_URL
-
-  - type: search
-    id  : PATIENT_MAIN_SEARCH
-    url : *PATIENT_JSON_URL
+#   - type: grid
+#     id  : PATIENT_MAIN_GRID
+#     url:  *PATIENT_JSON_URL
+# 
+#   - type: search
+#     id  : PATIENT_MAIN_SEARCH
+#     url : *PATIENT_JSON_URL
 
 panes:
 
@@ -101,6 +101,8 @@ panes:
       - id: PATIENT_CENTER_CP_TC
         type: tc
         widgets: []
+        tabPosition: top
+        tabStrip: True
 
         panes:
           - id: PATIENT_CENTER_CP_TC_SUMMARY_CP

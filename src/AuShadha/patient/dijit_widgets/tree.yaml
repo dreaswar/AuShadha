@@ -1,18 +1,14 @@
-
-
 # MODEL_YAML:
 #   name: --
-#   type: -_module
+#   type: application will list the item on the tree as a root node
 #   id: SOME_ID
-#   module_type: sub_module / main_module
+#   module_type: sub_module / main_module / module_name in verbose way
 #   module_name: module-name
-#   ui_layout: standard / composite
-#   widgets: [ form ] / [grid,button]
 #   ondblclick: null URL on dblclick
 #   onrclick: null URL on Right click
 #   onclick: null  URL on click
 #   redirect: 1  to redirect to new pane as maintab or not -- 0/1
-
+#   returns: HTML / JSON
 
 
 medical_history: &MEDICAL_HISTORY
@@ -21,12 +17,11 @@ medical_history: &MEDICAL_HISTORY
   id: MEDICAL_HISTORY
   module_type: sub_module
   module_name: medical_history
-  ui_layout: standard
-  widgets:  [ grid, button ]
   ondblclick: {{patient_detail_obj.urls.pane.medical_history}}
   onrclick: null
   onclick: null
-
+  returns: json
+  redirect: 0
 
 surgical_history: &SURGICAL_HISTORY
   name: Surgical History
@@ -34,11 +29,10 @@ surgical_history: &SURGICAL_HISTORY
   id: SURGICAL_HISTORY
   module_type: sub_module
   module_name: surgical_history
-  ui_layout: standard
-  widgets: [ grid, button ]
   ondblclick: {{patient_detail_obj.urls.pane.surgical_history}}
   onrclick: null
   onclick: null
+  redirect: 0
 
 
 family_history: &FAMILY_HISTORY
@@ -47,12 +41,11 @@ family_history: &FAMILY_HISTORY
   id: FAMILY_HISTORY
   module_type: sub_module
   module_name: family_history
-  ui_layout: standard
-  widgets: [ grid, button ]
   ondblclick: {{patient_detail_obj.urls.pane.family_history}}
   onrclick: null
   onclick: null
-
+  returns: json
+  redirect: 0
 
 social_history: &SOCIAL_HISTORY
   name: Social History
@@ -60,12 +53,11 @@ social_history: &SOCIAL_HISTORY
   id: SOCIAL_HISTORY
   module_type: sub_module
   module_name: social_history
-  ui_layout: standard
-  widgets: [ form ]
   ondblclick: {{patient_detail_obj.urls.pane.social_history}}
   onrclick: null
   onclick: null
-
+  returns: json
+  redirect: 0
 
 contact: &CONTACT
   name: Contact
@@ -73,11 +65,11 @@ contact: &CONTACT
   id: CONTACT
   module_type: sub_module
   module_name: contact
-  ui_layout: standard
-  widgets: [ grid, button ]
   ondblclick: null
   onrclick: null
   onclick: null
+  returns: json
+  redirect: 0
 
 phone: &PHONE
   name: Phone
@@ -85,12 +77,11 @@ phone: &PHONE
   id: PHONE
   module_type: sub_module
   module_name: phone
-  ui_layout: standard
-  widgets: [ grid, button ]
   ondblclick: null
   onrclick: null
   onclick: null
-
+  returns: json
+  redirect: 0
 
 guardian: &GUARDIAN
   name: Guardian
@@ -98,12 +89,11 @@ guardian: &GUARDIAN
   id: GUARDIAN
   module_type: sub_module
   module_name: guardian
-  ui_layout: standard
-  widgets: [ grid, button ]
   ondblclick: null
   onrclick: null
   onclick: null
-
+  redirect: 0    
+  returns: json
 
 
 allergy: &ALLERGY
@@ -112,12 +102,11 @@ allergy: &ALLERGY
   module_type: sub_module
   module_name: allergy_list
   id : ALLERGY
-  ui_layout: standard
-  widgets: [ grid, button ]
   ondblclick: null
   onrclick: null
   onclick: null
-
+  returns: json
+  redirect: 0
 
 immunisation: &IMMUNISATION
   name: Immunisation
@@ -125,20 +114,21 @@ immunisation: &IMMUNISATION
   id: IMMUNISATION
   module_type: sub_module
   module_name: immunisation
-  ui_layout: standard
-  widgets: [ grid, button ]
   ondblclick: {{patient_detail_obj.urls.pane.immunisation}}
   onrclick: null
   onclick: null
-
+  returns: json
+  redirect: 0
 
 medical_preventives: &MEDICAL_PREVENTIVES
   name: Medical
   type: medical_preventives_module
   id: MEDICAL_PREVENTIVES
+  redirect: 0    
   ondblclick: null
   onrclick: null
   onclick: null
+  returns: json
 
 
 surgical_preventives: &SURGICAL_PREVENTIVES
@@ -148,6 +138,8 @@ surgical_preventives: &SURGICAL_PREVENTIVES
   ondblclick: null
   onrclick: null
   onclick: null
+  returns: json
+  redirect: 0
 
 
 obs_preventives: &OBS_PREVENTIVES
@@ -157,6 +149,8 @@ obs_preventives: &OBS_PREVENTIVES
   ondblclick: null
   onrclick: null
   onclick: null
+  returns: json
+  redirect: 0
 
 
 history: &HISTORY
@@ -168,17 +162,16 @@ history: &HISTORY
 
 demographics: &DEMOGRAPHICS
   name: Demographics
-  type: demographics_module
+  type: application
   id: DEMOGRAPHICS
-  module_type: sub_module
+  module_type: demographics_module
   module_name: demographics
-  ui_layout: composite
-  widgets: [ form ]
   linked_modules: [ *CONTACT, *PHONE, *GUARDIAN ]
   ondblclick: {{patient_detail_obj.urls.pane.demographics}}
   onrclick: null
   onclick: null
-
+  returns: json
+  redirect: 0
 
 medications: &MEDICATIONS
     name: Medications
@@ -186,13 +179,12 @@ medications: &MEDICATIONS
     module_type: medication_list_module
     module_name: medication_list
     id: MEDICATIONS
-    ui_layout: composite
-    widgets: [ grid, button ]
     linked_modules: [ *ALLERGY ]
     ondblclick: {{patient_detail_obj.urls.pane.medication_list}}
     onrclick: null
     onclick: null
-    redirect: 1    
+    redirect: 0    
+    returns: json
 
 
 preventives: &PREVENTIVES
@@ -206,29 +198,32 @@ investigation: &INVESTIGATION
   name: Investigation
   type: application
   id: INVESTIGATION
+  redirect: 1    
   ondblclick: null
   onrclick: null
   onclick: null
-  redirect: 1
+  returns: json
 
 
 imaging: &IMAGING
   name: Imaging
   type: application
   id: IMAGING
+  redirect: 1  
   ondblclick: null
   onrclick: null
   onclick: null
-  redirect: 1
+  returns: json
 
 procedures: &PROCEDURES
   name: Procedures
   type: application
   id: PROCEDURES
+  redirect: 1    
   ondblclick: null
   onrclick: null
   onclick: null
-
+  returns: json
 
 admissions: &ADMISSIONS
   name : Admissions
@@ -236,13 +231,11 @@ admissions: &ADMISSIONS
   module_type: admission_module
   module_name: admission
   id : ADMISSIONS
-  ui_layout: pane
-  widgets: [ pane ]
-#   paneUrl: !!python/object/apply:django.core.urlresolvers.reverse [render_admission_pane_without_id]
   ondblclick: {{patient_detail_obj.urls.pane.admission}}
   onrclick: null
   onclick: null
   redirect: 1
+  returns: json
 
 visits: &VISITS
   name : Visits
@@ -250,13 +243,11 @@ visits: &VISITS
   module_type: visit_module
   module_name: visit
   id : VISITS
-  ui_layout: pane
-  widgets: [ pane ]
-#   paneUrl: !!python/object/apply:django.core.urlresolvers.reverse [render_visit_pane_without_id]
   ondblclick: {{patient_detail_obj.urls.pane.visit}}
   onrclick: null
   onclick: null
   redirect: 1
+  returns: json
 
 #   tree: &PATIENT_TREE
 #     !!python/object/new:patient.dijit_widgets.tree.PatientTree []
