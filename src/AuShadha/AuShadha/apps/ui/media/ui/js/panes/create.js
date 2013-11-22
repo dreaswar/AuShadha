@@ -298,9 +298,9 @@ define(['dojo/dom',
 //           runMainModulePaneCreator();
 //         }
 
-        else if( appType == 'sub_module' ){
-          createSubModulePane( d,p,title,domId );
-        }
+//         else if( appType == 'sub_module' ){
+//           createSubModulePane( d,p,title,domId );
+//         }
 
     }
 

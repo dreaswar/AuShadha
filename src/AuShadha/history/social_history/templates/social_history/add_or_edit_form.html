@@ -135,6 +135,7 @@
               }
 
               function registerOccupation(){
+
                 registry.byId('id_occupation').destroy(true);
                 var occupationStore  = new Memory({data:[{name:"Doctor", id:"doc"}, 
                                                         {name:'Engineer', id:"engineer"},
@@ -338,12 +339,12 @@
                 }
               );
             return false;
-          });
-            return false;
+          });/*
+            return false;*/
         }
         else{
           raiseInvalidFormSubmission();
-          return false;
+//           return false;
         }
       </script>
 

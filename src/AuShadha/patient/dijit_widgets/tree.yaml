@@ -183,7 +183,7 @@ medications: &MEDICATIONS
     ondblclick: {{patient_detail_obj.urls.pane.medication_list}}
     onrclick: null
     onclick: null
-    redirect: 0    
+    redirect: !!int 0    
     returns: json
 
 
@@ -246,7 +246,7 @@ visits: &VISITS
   ondblclick: {{patient_detail_obj.urls.pane.visit}}
   onrclick: null
   onclick: null
-  redirect: 1
+  redirect: !!int 1
   returns: json
 
 #   tree: &PATIENT_TREE

@@ -11,6 +11,7 @@ from django.contrib import admin
 import AuShadha.settings
 
 from immunisation.views import *
+from .dijit_widgets.pane import render_immunisation_pane
 
 admin.autodiscover()
 
@@ -26,6 +27,15 @@ urlpatterns = patterns('',
                       name='immunisation_json_without_id'
                       ),
 
+                  url(r'pane/(?P<patient_id>\d+)/$',
+                      render_immunisation_pane,
+                      name='render_immunisation_pane_with_id'
+                      ),
+
+                  url(r'pane/$',
+                      render_immunisation_pane,
+                      name='render_immunisation_pane_without_id'
+                      ),
 
                   # url(r'list/(?P<patient_id>\d+)/$',
                   #'immunisation.views.immunisation_list',

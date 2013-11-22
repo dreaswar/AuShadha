@@ -1,6 +1,6 @@
 ################################################################################
 # Project      : AuShadha
-# Description  : URLS for Allergy 
+# Description  : URLS for Medication list 
 # Author       : Dr. Easwar T.R
 # Date         : 21-09-2013
 # License      : GNU-GPL Version 3, see AuShadha/LICENSE.txt
@@ -11,6 +11,7 @@ from django.contrib import admin
 import AuShadha.settings
 
 from medication_list.views import *
+from .dijit_widgets.pane import render_medication_list_pane
 
 admin.autodiscover()
 
@@ -26,6 +27,16 @@ urlpatterns = patterns('',
                       name='medication_list_json_without_id'
                       ),
 
+
+                  url(r'pane/(?P<patient_id>\d+)/$',
+                      render_medication_list_pane,
+                      name='render_medication_list_pane_with_id'
+                      ),
+
+                  url(r'pane/$',
+                      render_medication_list_pane,
+                      name='render_medication_list_pane_without_id'
+                      ),
 
                   # url(r'list/(?P<patient_id>\d+)/$',
                   #'medication_list.views.medication_list',

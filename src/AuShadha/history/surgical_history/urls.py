@@ -11,6 +11,7 @@ from django.contrib import admin
 import AuShadha.settings
 
 from .views import *
+from dijit_widgets.pane import render_surgical_history_pane
 
 admin.autodiscover()
 
@@ -24,6 +25,16 @@ urlpatterns = patterns('',
                   url(r'json/$',
                       surgical_history_json,
                       name='surgical_history_json_without_id'
+                      ),
+
+                  url(r'pane/(?P<patient_id>\d+)/$',
+                      render_surgical_history_pane,
+                      name='render_surgical_history_pane_with_id'
+                      ),
+
+                  url(r'pane/$',
+                      render_surgical_history_pane,
+                      name='render_surgical_history_pane_without_id'
                       ),
 
 

@@ -1,0 +1,81 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+# VARS
+
+VARS:
+
+  patient_id: &PATIENT_ID
+            !!int {{patient_detail_obj.id}}
+
+  family_history_grid: &FAMILY_HISTORY_GRID
+        id : FAMILY_HISTORY_GRID
+        type: grid
+        url: {{patient_detail_obj.urls.json.family_history}}
+        str: FAMILY_HISTORY
+        activateRowClick: !!bool False
+        title:  Family History
+        storeToUse:  FAMILY_HISTORY_GRID_STORE
+
+
+URLS:
+
+  pane: &FAMILY_HISTORY_PANE_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_family_history_pane_with_id ]
+              kwds: { kwargs : { patient_id: *PATIENT_ID } }
+
+  patient_info: &PATIENT_INFO_URL
+                  !!python/object/apply:django.core.urlresolvers.reverse
+                      args: [ render_patient_info ]
+                      kwds: { kwargs: { patient_id: *PATIENT_ID }  }
+
+  json: &FAMILY_HISTORY_JSON_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+            args: [ family_history_json ]
+            kwds: { kwargs: { patient_id: *PATIENT_ID }  }            
+
+
+ # YAML
+
+depends_on: [ patient ]
+load_after: patient
+load_first: !!bool False
+
+id       : FAMILY_HISTORY
+type     : bc
+title    : Family History
+url      : *FAMILY_HISTORY_PANE_URL
+closable : !!bool True
+widgets: []
+
+panes:
+
+  - id : FAMILY_HISTORY_TOP_CP
+    region: top
+    type: cp
+    splitter: False
+    url: *PATIENT_INFO_URL
+    widgets: []
+    panes: []
+    class: topContentPane selected
+    style: 
+      height: 1.8em
+
+  - id : FAMILY_HISTORY_CENTER_CP
+    region: center
+    type: cp
+    splitter: False
+    widgets: []
+    panes: 
+      - id: FAMILY_HISTORY_CENTER_CP_GRID_CONTAINER
+        type: dom
+        domType: div
+        style:
+          height: 30em
+        panes: []
+        widgets: 
+          - *FAMILY_HISTORY_GRID

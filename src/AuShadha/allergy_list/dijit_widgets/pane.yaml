@@ -1,0 +1,112 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+# VARS
+
+VARS:
+
+  clinic_id: &CLINIC_ID
+            !!int {{clinic_id}}
+  
+  patient_id: &PATIENT_ID
+            !!int {{patient_id}}
+
+URLS:
+
+  pane: &PATIENT_PANE_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_patient_pane_with_id ]
+              kwds: { kwargs : { patient_id: *PATIENT_ID } }
+
+  patient_info: &PATIENT_INFO_URL
+                  !!python/object/apply:django.core.urlresolvers.reverse
+                      args: [ render_patient_info ]
+                      kwds: { kwargs: { patient_id: *PATIENT_ID }  }
+
+  json: &PATIENT_JSON_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+            args: [ render_patient_json ]
+
+  tree: &PATIENT_TREE_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_patient_tree_with_id ]
+              kwds: { kwargs : { patient_id: *PATIENT_ID }  }
+
+  summary: &PATIENT_SUMMARY_URL
+            !!python/object/apply:django.core.urlresolvers.reverse
+                args: [ render_patient_summary_with_id ]
+                kwds: { kwargs: { patient_id: *PATIENT_ID } }
+
+
+ # YAML
+
+depends_on: [ search ]
+load_after: search
+load_first: !!bool False
+
+id       : PATIENT
+type     : bc
+title    : Patient
+url      : *PATIENT_PANE_URL
+closable : !!bool True
+
+widgets: []
+
+#   - type: grid
+#     id  : PATIENT_MAIN_GRID
+#     url:  *PATIENT_JSON_URL
+# 
+#   - type: search
+#     id  : PATIENT_MAIN_SEARCH
+#     url : *PATIENT_JSON_URL
+
+panes:
+
+  - id : PATIENT_TOP_CP
+    region: top
+    type: cp
+    splitter: False
+    url: *PATIENT_INFO_URL
+    widgets: []
+    panes: []
+    class: topContentPane selected
+    style: 
+      height: 1.8em
+
+  - id : PATIENT_LEADING_CP
+    region: trailing
+    type: cp
+    splitter: True
+    style: 
+      width: 18em
+    panes: []
+
+    widgets:
+      - id: PATIENT_LEADING_CP_TREE
+        type: tree
+        url: *PATIENT_TREE_URL
+        mainTabPane: PATIENT_CENTER_CP_TC
+        title: Patient
+
+  - id: PATIENT_CENTER_CP
+    region: center
+    type: cp
+    splitter: True
+    widgets: []
+
+    panes: 
+      - id: PATIENT_CENTER_CP_TC
+        type: tc
+        widgets: []
+        tabPosition: top
+        tabStrip: True
+
+        panes:
+          - id: PATIENT_CENTER_CP_TC_SUMMARY_CP
+            type: cp
+            title: Summary
+            closable: False
+            url: *PATIENT_SUMMARY_URL

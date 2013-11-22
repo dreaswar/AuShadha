@@ -436,7 +436,7 @@ function(
                             });
                         }
 
-                        else if ( widgetQ.widget.type == 'grid' ){
+                        else if ( widgetQ.widget.type == 'something_else' ){
 
                         }
 

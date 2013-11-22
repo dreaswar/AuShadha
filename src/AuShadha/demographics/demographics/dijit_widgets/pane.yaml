@@ -11,32 +11,32 @@ VARS:
   patient_id: &PATIENT_ID
             !!int {{patient_detail_obj.id}}
 
-contact_grid: &CONTACT_GRID
-        id : CONTACT_GRID
-        type: grid
-        url: {{patient_detail_obj.urls.json.contact}}
-        str: CONTACT
-        activateRowClick: !!bool False
-        title:  Contact
-        storeToUse:  CONTACT_GRID_STORE
+  contact_grid: &CONTACT_GRID
+          id : CONTACT_GRID
+          type: grid
+          url: {{patient_detail_obj.urls.json.contact}}
+          str: CONTACT_LARGE
+          activateRowClick: !!bool False
+          title:  Contact
+          storeToUse:  CONTACT_GRID_STORE
 
-phone_grid: &PHONE_GRID
-        id : PHONE_GRID
-        type: grid
-        url: {{patient_detail_obj.urls.json.phone}}
-        str: PHONE
-        activateRowClick: !!bool False
-        title:  Phone
-        storeToUse:  PHONE_GRID_STORE
+  phone_grid: &PHONE_GRID
+          id : PHONE_GRID
+          type: grid
+          url: {{patient_detail_obj.urls.json.phone}}
+          str: PHONE_LARGE
+          activateRowClick: !!bool False
+          title:  Phone
+          storeToUse:  PHONE_GRID_STORE
 
-guardian_grid: &GUARDIAN_GRID
-        id : GUARDIAN_GRID
-        type: grid
-        url: {{patient_detail_obj.urls.json.guardian}}
-        str: GUARDIAN
-        activateRowClick: !!bool False
-        title:  Guardian
-        storeToUse:  GUARDIAN_GRID_STORE
+  guardian_grid: &GUARDIAN_GRID
+          id : GUARDIAN_GRID
+          type: grid
+          url: {{patient_detail_obj.urls.json.guardian}}
+          str: GUARDIAN
+          activateRowClick: !!bool False
+          title:  Guardian
+          storeToUse:  GUARDIAN_GRID_STORE
 
 
 URLS:
@@ -94,7 +94,7 @@ panes:
     splitter: False
     widgets: []
     panes: 
-      - id : DEMOGRAPHICS_CENTER_BC_CENTER_CP
+      - id : DEMOGRAPHICS_CENTER_BC_TOP_CP
         region: center
         type: cp
         splitter: True
@@ -102,78 +102,122 @@ panes:
         panes: []
         widgets: []
 
-      - id : DEMOGRAPHICS_CENTER_BC_BOTTOM_TC
-        region: bottom
-        type: tc
-        splitter: True
-        tabPosition: top
-        tabStrip: !!bool True
-        style: 
-          minHeight: 20em
+      - id : DEMOGRAPHICS_CENTER_BC_CENTER_CP
+        region: trailing
+        type: cp
         widgets: []
+        style: 
+          width: 40em
 
-        panes:
-            - id : CONTACT_GRID_CP
-              type: cp
-              title: Contact
-              closable: False
-              style: 
-                height: 20em
-                width: 70em
-                overflow: auto
-              widgets: []
+        panes: 
+          - id : DEMOGRAPHICS_CENTER_BC_CENTER_CP_TC
+            type: tc
+            tabPosition: top
+            tabStrip: !!bool True
+            widgets: []
+            panes:
 
-              panes: 
-                - id: CONTACT_GRID_CONTAINER
-                  type: dom
-                  domType: div
-                  style: 
-                    height: 20em
-                    width: 70em
-                    overflow: auto
-                  panes: []
-                  widgets: 
-                    - *CONTACT_GRID
+                - id : CONTACT_GRID_BC
+                  type: bc
+                  title: Contact
+                  closable: False
+                  widgets: []
+
+                  panes: 
+                    - id: CONTACT_GRID_BC_GRID_CONTAINER_CP
+                      type: cp
+                      region: center
+                      widgets: []
+                      splitter: True
+                      panes: 
+                        - id: CONTACT_GRID
+                          type: dom
+                          domType: div
+                          style:
+                            height: 20em
+                          panes: []
+                          widgets: 
+                            - *CONTACT_GRID
+
+                    - id: CONTACT_GRID_BC_FORM_CONTAINER_CP
+                      type: cp
+                      region: bottom
+                      panes: []
+                      widgets: []
+                      splitter: True
+                      style: 
+                        height: 20em
+                        background: whitesmoke
+                        border: solid 1px slate
+                        borderRadius: 5px
+                      url: {{patient_detail_obj.urls.add.contact}}
 
 
-            - id : PHONE_GRID_CP
-              type: cp
-              title: Phone
-              closable: False
-              style: 
-                height: 20em
-                width: 70em
-                overflow: auto
-              widgets: []
-              panes: 
-                - id: PHONE_GRID_CONTAINER
-                  type: dom
-                  domType: div
-                  style: 
-                    height: 20em
-                    width: 70em
-                    overflow: auto
-                  panes: []
-                  widgets: 
-                    - *PHONE_GRID
+                - id : PHONE_GRID_BC
+                  type: bc
+                  title: Phone
+                  closable: False
+                  widgets: []
+                  panes: 
+                    - id: PHONE_GRID_BC_GRID_CONTAINER_CP
+                      type: cp
+                      region: center
+                      widgets: []
+                      splitter: True
+                      panes: 
+                        - id: PHONE_GRID
+                          type: dom
+                          domType: div
+                          style:
+                            height: 20em
+                          panes: []
+                          widgets: 
+                            - *PHONE_GRID
 
-            - id : GUARDIAN_GRID_CP
-              type: cp
-              title: Guardian
-              closable: False
-              style: 
-                height: 20em
-                width: 70em
-                overflow: auto
-              widgets: []
-              panes: 
-                - id: GUARDIAN_GRID_CONTAINER
-                  type: dom
-                  domType: div
-                  style: 
-                    height: 20em
-                    width: 70em
-                    overflow: auto
-                  panes: []
-                  widgets: 
-                    - *GUARDIAN_GRID
+                    - id: PHONE_GRID_BC_FORM_CONTAINER_CP
+                      type: cp
+                      region: bottom
+                      panes: []
+                      widgets: []
+                      splitter: True
+                      style: 
+                        height: 20em
+                        background: whitesmoke
+                        border: solid 1px slate
+                        borderRadius: 5px
+                      url: {{patient_detail_obj.urls.add.phone}}
+
+
+                - id : GUARDIAN_GRID_BC
+                  type: bc
+                  title: Guardian
+                  closable: False
+                  widgets: []
+                  panes: 
+                    - id: GUARDIAN_GRID_BC_GRID_CONTAINER_CP
+                      type: cp
+                      region: center
+                      widgets: []
+                      splitter: True
+                      panes: 
+                        - id: GUARDIAN_GRID
+                          type: dom
+                          domType: div
+                          style:
+                            height: 20em
+                          panes: []
+                          widgets: 
+                            - *GUARDIAN_GRID
+
+                    - id: GUARDIAN_GRID_BC_FORM_CONTAINER_CP
+                      type: cp
+                      region: bottom
+                      panes: []
+                      widgets: []
+                      splitter: True
+                      style: 
+                        height: 20em
+                        background: whitesmoke
+                        border: solid 1px slate
+                        borderRadius: 5px
+                      url: {{patient_detail_obj.urls.add.guardian}}

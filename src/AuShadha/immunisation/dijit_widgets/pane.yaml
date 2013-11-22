@@ -1,0 +1,91 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+# VARS
+
+VARS:
+
+  patient_id: &PATIENT_ID
+            !!int {{patient_detail_obj.id}}
+
+  immunisation_grid: &IMMUNISATION_GRID
+        id : IMMUNISATION_GRID
+        type: grid
+        url: {{patient_detail_obj.urls.json.immunisation}}
+        str: IMMUNISATION
+        activateRowClick: !!bool False
+        title:  Immunisation
+        storeToUse:  IMMUNISATION_GRID_STORE
+
+
+URLS:
+
+  pane: &IMMUNISATION_PANE_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_immunisation_pane_with_id ]
+              kwds: { kwargs : { patient_id: *PATIENT_ID } }
+
+  patient_info: &PATIENT_INFO_URL
+                  !!python/object/apply:django.core.urlresolvers.reverse
+                      args: [ render_patient_info ]
+                      kwds: { kwargs: { patient_id: *PATIENT_ID }  }
+
+  json: &IMMUNISATION_JSON_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+            args: [ immunisation_json ]
+            kwds: { kwargs: { patient_id: *PATIENT_ID }  }            
+
+
+ # YAML
+
+depends_on: [ patient ]
+load_after: patient
+load_first: !!bool False
+
+id       : IMMUNISATION
+type     : bc
+title    : Immunisation
+url      : *IMMUNISATION_PANE_URL
+closable : !!bool True
+widgets: []
+
+panes:
+
+  - id : IMMUNISATION_TOP_CP
+    region: top
+    type: cp
+    splitter: False
+    url: *PATIENT_INFO_URL
+    widgets: []
+    panes: []
+    class: topContentPane selected
+    style: 
+      height: 1.8em
+
+  - id : IMMUNISATION_CENTER_CP
+    region: center
+    type: cp
+    splitter: True
+    widgets: []
+    panes: 
+      - id: IMMUNISATION_CENTER_CP_GRID_CONTAINER
+        type: dom
+        domType: div
+        style:
+          height: 30em
+        panes: []
+        widgets: 
+          - *IMMUNISATION_GRID
+  - id : IMMUNISATION_BOTTOM_CP
+    region: bottom
+    type: cp
+    splitter: True
+    widgets: []
+    style:
+      height: 15em
+    panes: []
+    url: {{patient_detail_obj.urls.add.immunisation}}
+  

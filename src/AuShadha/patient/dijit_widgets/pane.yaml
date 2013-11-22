@@ -43,15 +43,15 @@ URLS:
 
  # YAML
 
-depends_on: [ patient ]
-load_after: patient
+depends_on: [ search ]
+load_after: search
 load_first: !!bool False
 
 id       : PATIENT
 type     : bc
 title    : Patient
 url      : *PATIENT_PANE_URL
-closable : !!bool False
+closable : !!bool True
 
 widgets: []
 
