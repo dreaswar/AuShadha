@@ -82,7 +82,7 @@ def allergy_list_add(request, patient_id = None):
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            allergy_list_form = AllergyForm( instance=allergy_list_obj)
+            allergy_list_form = AllergyForm( instance=allergy_list_obj, auto_id = False )
             variable = RequestContext(request,
                                       {"user": user,
                                         "patient_detail_obj": patient_detail_obj,
@@ -157,7 +157,7 @@ def allergy_list_edit(request, allergy_list_id = None):
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing Allergy"
             print "Allergy URLS is, ", m_urls
-            allergy_list_form = AllergyForm(instance=allergy_list_obj)
+            allergy_list_form = AllergyForm(instance=allergy_list_obj, auto_id = False )
             variable = RequestContext(request,
                                       { "user": user,
                                         "patient_detail_obj"  : allergy_list_obj.patient_detail,

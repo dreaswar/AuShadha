@@ -82,7 +82,7 @@ def family_history_add(request, patient_id = None):
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            family_history_form = FamilyHistoryForm( instance=family_history_obj)
+            family_history_form = FamilyHistoryForm( instance=family_history_obj, auto_id = False )
             variable = RequestContext(request,
                                       {"user": user,
                                         "patient_detail_obj": patient_detail_obj,
@@ -157,7 +157,7 @@ def family_history_edit(request, family_history_id = None):
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing Family History"
             print "Family History URLS is, ", m_urls
-            family_history_form = FamilyHistoryForm(instance=family_history_obj)
+            family_history_form = FamilyHistoryForm(instance=family_history_obj, auto_id = False )
             variable = RequestContext(request,
                                       { "user": user,
                                         "patient_detail_obj"  : family_history_obj.patient_detail,

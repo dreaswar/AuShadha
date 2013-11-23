@@ -71,7 +71,7 @@ def phone_add(request, patient_id = None):
             patient_detail_obj.save()
 
           if request.method == "GET" and request.is_ajax():
-              phone_form = PhoneForm(instance=phone_obj)
+              phone_form = PhoneForm(instance=phone_obj, auto_id = False )
               variable = RequestContext(request,
                                         {"user": user,
                                         "patient_detail_obj": patient_detail_obj,
@@ -141,7 +141,7 @@ def phone_edit(request, phone_id):
             phone_obj.generate_urls()                  
 
           if request.method == "GET" and request.is_ajax():
-              phone_form = PhoneForm(instance=phone_obj)
+              phone_form = PhoneForm(instance=phone_obj, auto_id = False )
               variable = RequestContext(request,
                                         {"user": user,
                                           "patient_detail_obj": patient_detail_obj,

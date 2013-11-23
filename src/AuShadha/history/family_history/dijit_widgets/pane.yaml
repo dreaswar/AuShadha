@@ -79,3 +79,13 @@ panes:
         panes: []
         widgets: 
           - *FAMILY_HISTORY_GRID
+
+  - id : FAMILY_HISTORY_TRAILING_CP
+    region: trailing
+    type: cp
+    splitter: True
+    widgets: []
+    panes: []
+    style:
+      width: 30em
+    url: {{patient_detail_obj.urls.add.family_history}}

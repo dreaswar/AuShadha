@@ -82,7 +82,7 @@ def surgical_history_add(request, patient_id = None):
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            surgical_history_form = SurgicalHistoryForm( instance=surgical_history_obj)
+            surgical_history_form = SurgicalHistoryForm( instance=surgical_history_obj, auto_id = False )
             variable = RequestContext(request,
                                       {"user": user,
                                         "patient_detail_obj": patient_detail_obj,
@@ -157,7 +157,7 @@ def surgical_history_edit(request, surgical_history_id = None):
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing Surgical History"
             print "Surgical History URLS is, ", m_urls
-            surgical_history_form = SurgicalHistoryForm(instance=surgical_history_obj)
+            surgical_history_form = SurgicalHistoryForm(instance=surgical_history_obj, auto_id = False )
             variable = RequestContext(request,
                                       { "user": user,
                                         "patient_detail_obj"  : surgical_history_obj.patient_detail,

@@ -79,7 +79,7 @@ def demographics_add(request, patient_id = None):
               return demographics_edit(request, demographics_id = demographics_obj.id)
 
           if request.method == "GET" and request.is_ajax():
-                demographics_form = DemographicsForm(instance=demographics_obj)
+                demographics_form = DemographicsForm(instance=demographics_obj, auto_id = False)
                 variable = RequestContext(request,
                                           {"user": user,
                                             "patient_detail_obj": patient_detail_obj,
@@ -166,7 +166,7 @@ def demographics_edit(request, demographics_id  = None):
             raise Http404("BadRequest: Patient DemographicsData Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            demographics_form = DemographicsForm(instance=demographics_obj)
+            demographics_form = DemographicsForm(instance=demographics_obj, auto_id = False )
             variable = RequestContext(request,
                                       {"user": user,
                                         "patient_detail_obj": patient_detail_obj,

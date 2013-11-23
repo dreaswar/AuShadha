@@ -82,7 +82,7 @@ def immunisation_add(request, patient_id = None):
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            immunisation_form = ImmunisationForm( instance=immunisation_obj)
+            immunisation_form = ImmunisationForm( instance=immunisation_obj, auto_id = False )
             variable = RequestContext(request,
                                       {"user": user,
                                         "patient_detail_obj": patient_detail_obj,
@@ -157,7 +157,7 @@ def immunisation_edit(request, immunisation_id = None):
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing Immunisation"
             print "Immunisation URLS is, ", m_urls
-            immunisation_form = ImmunisationForm(instance=immunisation_obj)
+            immunisation_form = ImmunisationForm(instance=immunisation_obj, auto_id = False )
             variable = RequestContext(request,
                                       { "user": user,
                                         "patient_detail_obj"  : immunisation_obj.patient_detail,

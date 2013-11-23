@@ -68,7 +68,7 @@ def email_and_fax_add(request, patient_id = None):
           email_and_fax_obj = EmailAndFax(patient_detail=patient_detail_obj)
 
           if request.method == "GET" and request.is_ajax():
-              email_and_fax_form = EmailAndFaxForm(instance=email_and_fax_obj)
+              email_and_fax_form = EmailAndFaxForm(instance=email_and_fax_obj, auto_id = False )
               variable = RequestContext(request,
                                         {"user": user,
                                         "patient_detail_obj": patient_detail_obj,
@@ -136,7 +136,7 @@ def email_and_fax_edit(request, email_and_fax_id):
             email_and_fax_obj.generate_urls()
 
           if request.method == "GET" and request.is_ajax():
-              email_and_fax_form = EmailAndFaxForm(instance=email_and_fax_obj)
+              email_and_fax_form = EmailAndFaxForm(instance=email_and_fax_obj, auto_id = False )
               variable = RequestContext(request,
                                         {"user": user,
                                           "patient_detail_obj": patient_detail_obj,

@@ -70,7 +70,7 @@ def guardian_add(request, patient_id = None):
           guardian_obj = Guardian(patient_detail=patient_detail_obj)
 
           if request.method == "GET" and request.is_ajax():
-              guardian_form = GuardianForm(instance=guardian_obj)
+              guardian_form = GuardianForm(instance=guardian_obj, auto_id = False )
               variable = RequestContext(request,
                                         {"user": user,
                                         "patient_detail_obj": patient_detail_obj,
@@ -138,7 +138,7 @@ def guardian_edit(request, guardian_id):
               guardian_obj.generate_urls()                  
 
           if request.method == "GET" and request.is_ajax():
-              guardian_form = GuardianForm(instance=guardian_obj)
+              guardian_form = GuardianForm(instance=guardian_obj, auto_id = False )
               variable = RequestContext(request,
                                         {"user": user,
                                           "patient_detail_obj": patient_detail_obj,

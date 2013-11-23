@@ -82,7 +82,7 @@ def medication_list_add(request, patient_id = None):
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            medication_list_form = MedicationListForm( instance=medication_list_obj)
+            medication_list_form = MedicationListForm( instance=medication_list_obj, auto_id = False )
             variable = RequestContext(request,
                                       {"user": user,
                                         "patient_detail_obj": patient_detail_obj,
@@ -157,7 +157,7 @@ def medication_list_edit(request, medication_list_id = None):
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing MedicationList"
             print "MedicationList URLS is, ", m_urls
-            medication_list_form = MedicationListForm(instance=medication_list_obj)
+            medication_list_form = MedicationListForm(instance=medication_list_obj, auto_id = False )
             variable = RequestContext(request,
                                       { "user": user,
                                         "patient_detail_obj"  : medication_list_obj.patient_detail,

@@ -69,7 +69,7 @@ def contact_add(request, patient_id = None):
           contact_obj = Contact(patient_detail=patient_detail_obj)
 
           if request.method == "GET" and request.is_ajax():
-              contact_form = ContactForm(instance=contact_obj)
+              contact_form = ContactForm(instance=contact_obj, auto_id = False)
               variable = RequestContext(request,
                                         {"user": user,
                                         "patient_detail_obj": patient_detail_obj,
@@ -142,7 +142,7 @@ def contact_edit(request, contact_id = None):
 
           if request.method == "GET" and request.is_ajax():
 
-              contact_form = ContactForm(instance=contact_obj)
+              contact_form = ContactForm(instance=contact_obj, auto_id = False)
               variable = RequestContext(request,
                                         {"user": user,
                                           "patient_detail_obj": patient_detail_obj,

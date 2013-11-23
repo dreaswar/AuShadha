@@ -54,6 +54,54 @@ define(["dijit/registry",
                         console.log("Running _reInitAllPanes at panes/event_controller.js");
                         console.log(item[0]);
 
+//                         query( '.mainTabContainer' ).
+//                         forEach(
+//                           function( i ){
+//                             var tc = registry.byId( domAttr.get(i,'id') );
+//                             var parentTab = tc.getParent();
+//                             if ( tc.get('closable') ) {
+//                                 var title = tc.get('title').toUpperCase();
+//                                 window.PANES[ title ].LOAD_STATUS = false;
+//                                 parentTab.removeChild( tc );
+//                                 tc.destroyRecursive();
+//                             }
+//                         });
+// 
+//                         query('.subTabContainer').
+//                         forEach(
+//                           function(i){
+//                             var tc = registry.byId( domAttr.get(i,'id') );
+//                             console.log(i);
+// 
+//                             var children = tc.getChildren();
+//                             children.forEach(function(child){
+//                                 if( child.get('closable') ){
+//                                   tc.removeChild(child);
+//                                   child.destroyRecursive();
+//                                 }
+//                             });
+// 
+//                         });
+
+                        var tcChildren = registry.byId('centerTopTabPane').getChildren();
+
+                        console.log(tcChildren);
+
+//                         tcChildren.forEach(
+//                           function(i){
+//                             var tc = registry.byId( domAttr.get(i,'id') );
+//                             console.log(i);
+// 
+//                             var children = tc.getChildren();
+//                             children.forEach(function(child){
+//                                 if( child.get('closable') ){
+//                                   tc.removeChild(child);
+//                                   child.destroyRecursive();
+//                                 }
+//                             });
+//                           }
+//                         );
+      
                         request( item[0].paneUrl ).
                         then(
 
@@ -86,45 +134,17 @@ define(["dijit/registry",
                             }
                             
                         });
+*/
 
-                        query( '.mainTabContainer' ).
-                        forEach(
-                          function( i ){
-                            var tc = registry.byId( domAttr.get(i,'id') );
-                            var parentTab = tc.getParent();
-                            if ( tc.get('closable') ) {
-                                var title = tc.get('title').toUpperCase();
-                                window.PANES[ title ].LOAD_STATUS = false;
-                                parentTab.removeChild( tc );
-                                tc.destroyRecursive();
-                            }
-                        });
-
-                        query('.subTabContainer').
-                        forEach(
-                          function(i){
-                            var tc = registry.byId( domAttr.get(i,'id') );
-                            console.log(i);
-
-                            var children = tc.getChildren();
-                            children.forEach(function(child){
-                                if( child.get('closable') ){
-                                  tc.removeChild(child);
-                                  child.destroyRecursive();
-                                }
-                            });
-
-                        });
-
-                        c.forEach(
-                            function(i){ 
-//                                 console.log("Evaluating: ");
-//                                 console.log(i);
-                                console.log(i.getChildren());
-                                if( i.get('disabled') ){ 
-                                      i.set('disabled',false); 
-                                }
-                        });*/
+//                         c.forEach(
+//                             function(i){ 
+// //                                 console.log("Evaluating: ");
+// //                                 console.log(i);
+//                                 console.log(i.getChildren());
+//                                 if( i.get('disabled') ){ 
+//                                       i.set('disabled',false); 
+//                                 }
+//                         });
 
 //                         p.selectChild( registry.byId('patient_main') );
 //                         request('/AuShadha/patient/patient/summary/'+CHOSEN_PATIENT.id+'/').

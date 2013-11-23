@@ -8,29 +8,29 @@
   <script type            = "dojo/method" 
           data-dojo-event = "onReset"
   >
-    return true;
+//     return true;
   </script>
 
   <script type            = "dojo/method" 
           data-dojo-event = "onSubmit"
           data-dojo-args  = "evt"
   >
-   if(this.validate()){
+   if( this.validate() ){
       require([
        "dijit/registry", 
       ],
       function(registry){
 //    {% if perms.surgical_history.add_surgicalhistory %}
-      addItem("{{addUrl}}", "newSurgicalHistoryAddForm", "surgical_history_list");
+      addItem("{{addUrl}}", "newSurgicalHistoryAddForm", "SURGICAL_HISTORY_GRID");
 //    {% else %}
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}
      });
-     return false;
+      return false;
     }
     else{
       raiseInvalidFormSubmission();
-      return false;
+       return false;
     }
   </script>
 
