@@ -78,7 +78,9 @@ define(['dojo/dom',
                                     closable:true,
                                     id:domId,
                                     class:"subTabContainer",
-                                    href : url
+                                    href : url,
+                                    executeScripts: true,
+                                    scriptHasHooks: true
                                    },
                                    domId
                                   );

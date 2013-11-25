@@ -20,6 +20,13 @@ VARS:
         title:  Surgical History
         storeToUse:  SURGICAL_HISTORY_GRID_STORE
 
+  surgical_history_add_button: &SURGICAL_HISTORY_ADD_BUTTON
+        id: SURGICAL_HISTORY_GRID
+        type: button
+        label: Add
+        title: SURGICAL_HISTORY
+        url: {{patient_detail_obj.urls.add.surgical_history}}
+
 
 URLS:
 
@@ -73,10 +80,10 @@ panes:
     panes: 
       - id: SURGICAL_HISTORY_CENTER_BC_GRID_CONTAINER_CP
         type: cp
-        region: top
-        splitter: True
-        style:
-          height: 30em
+        region: center
+#         splitter: True
+#         style:
+#           height: 30em
         widgets: []
         panes: 
           - id: SURGICAL_HISTORY_GRID_CONTAINER
@@ -86,12 +93,13 @@ panes:
             style:
               height: 30em
             widgets: 
+              - *SURGICAL_HISTORY_ADD_BUTTON
               - *SURGICAL_HISTORY_GRID
 
-      - id: SURGICAL_HISTORY_CENTER_BC_FORM_CONTAINER_CP
-        type: cp
-        region: center
-        splitter: True
-        widgets: []
-        panes: []
-        url: {{patient_detail_obj.urls.add.surgical_history}}
+#       - id: SURGICAL_HISTORY_CENTER_BC_FORM_CONTAINER_CP
+#         type: cp
+#         region: center
+#         splitter: True
+#         widgets: []
+#         panes: []
+#         url: {{patient_detail_obj.urls.add.surgical_history}}

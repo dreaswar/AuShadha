@@ -92,7 +92,9 @@ function(registry,
                                        id: domId+"_main",
                                        disabled: disabled,
                                        closable : closable,
-                                       class : "mainTabContainer"
+                                       class : "mainTabContainer",
+                                       scriptHasHooks: true,
+                                       executeScripts: true
                                       },
                                       domId+"_main");
 
@@ -100,20 +102,26 @@ function(registry,
 
               var top_dijit = new ContentPane({region:'top',
                                                class : "topContentPane",
-                                               id: domId+"_top"
-                                              },
+                                               id: domId+"_top",
+                                               scriptHasHooks: true,
+                                               executeScripts: true
+              },
                                               domId+"_top");
 
               var center_dijit = new ContentPane({region: 'center',
-                                                  id: domId+"_center"
-                                                 },
+                                                  id: domId+"_center",
+                                                  scriptHasHooks: true,
+                                                  executeScripts: true
+              },
                                                  domId+"_center");
 
               var left_dijit = new ContentPane({region: 'leading',
                                                 splitter: true,
                                                 style:'width: 18em;',
-                                                id: domId+"_leading"
-                                               },
+                                                id: domId+"_leading",
+                                                scriptHasHooks: true,
+                                                executeScripts: true
+              },
                                                domId+"_leading");
 
               b_dijit.addChild(top_dijit);
@@ -130,7 +138,9 @@ function(registry,
               center_dijit.addChild(c_tc_dijit);
 
               var summary_t_dijit = new ContentPane({title: "Summary", 
-                                                    id: domId+"_center_summary_tab"
+                                                    id: domId+"_center_summary_tab",
+                                                    scriptHasHooks: true,
+                                                    executeScripts: true
                                                     },
                                                     domId+"_center_summary_tab");
 

@@ -11,14 +11,24 @@ VARS:
   patient_id: &PATIENT_ID
             !!int {{patient_detail_obj.id}}
 
+  grid_name: &GRID_NAME
+          MEDICAL_HISTORY_GRID
+  
   medical_history_grid: &MEDICAL_HISTORY_GRID
-        id : MEDICAL_HISTORY_GRID
+        id : *GRID_NAME
         type: grid
         url: {{patient_detail_obj.urls.json.medical_history}}
         str: MEDICAL_HISTORY
         activateRowClick: !!bool False
         title:  Medical History
         storeToUse:  MEDICAL_HISTORY_GRID_STORE
+
+  medical_history_add_button: &MEDICAL_HISTORY_ADD_BUTTON
+        id: *GRID_NAME
+        type: button
+        title: Medical History
+        label: Add
+        url: {{patient_detail_obj.urls.add.medical_history}}
 
 
 URLS:
@@ -73,10 +83,10 @@ panes:
     panes: 
       - id: MEDICAL_HISTORY_CENTER_BC_GRID_CONTAINER_CP
         type: cp
-        region: top
-        splitter: True
-        style:
-          height: 30em
+        region: center
+#         splitter: True
+#         style:
+#           height: 30em
         widgets: []
         panes: 
           - id: MEDICAL_HISTORY_GRID_CONTAINER
@@ -86,12 +96,13 @@ panes:
             style:
               height: 30em
             widgets: 
+              - *MEDICAL_HISTORY_ADD_BUTTON
               - *MEDICAL_HISTORY_GRID
 
-      - id: MEDICAL_HISTORY_CENTER_BC_FORM_CONTAINER_CP
-        type: cp
-        region: center
-        splitter: True
-        widgets: []
-        panes: []
-        url: {{patient_detail_obj.urls.add.medical_history}}
+#       - id: MEDICAL_HISTORY_CENTER_BC_FORM_CONTAINER_CP
+#         type: cp
+#         region: center
+#         splitter: True
+#         widgets: []
+#         panes: []
+#         url: {{patient_detail_obj.urls.add.medical_history}}

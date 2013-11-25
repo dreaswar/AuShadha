@@ -911,6 +911,9 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                     initial=initial_data,
                     prefix=vasc_exam_formset_prefix)
 
+                if not getattr(patient_detail_obj, 'urls' , None):
+                  patient_detail_obj.save()
+
                 variable = RequestContext(
                     request, {
                         'user': user,

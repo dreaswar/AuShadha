@@ -63,8 +63,8 @@ def render_medication_list_pane(request, patient_id = None):
 
       return HttpResponse(json, content_type="application/json")
 
-    except (TypeError, NameError, ValueError, AttributeError, KeyError):
-      raise Http404("Bad Request Parameters")
+    #except (TypeError, NameError, ValueError, AttributeError, KeyError):
+      #raise Http404("Bad Request Parameters")
 
     except (PatientDetail.DoesNotExist):
       raise Http404("Bad Request: Patient Does Not Exist")

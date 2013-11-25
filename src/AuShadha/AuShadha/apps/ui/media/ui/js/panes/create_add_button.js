@@ -54,6 +54,8 @@ function(dom,
                                                             "before")
                             );
 
+                            console.log("Button is: ");
+                            console.log(b);
                             return b;
 
       }

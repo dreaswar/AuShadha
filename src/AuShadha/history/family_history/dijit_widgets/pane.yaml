@@ -11,15 +11,24 @@ VARS:
   patient_id: &PATIENT_ID
             !!int {{patient_detail_obj.id}}
 
+  grid: &GRID_NAME
+      FAMILY_HISTORY_GRID
+  
   family_history_grid: &FAMILY_HISTORY_GRID
-        id : FAMILY_HISTORY_GRID
+        id : *GRID_NAME
         type: grid
         url: {{patient_detail_obj.urls.json.family_history}}
         str: FAMILY_HISTORY
         activateRowClick: !!bool False
         title:  Family History
         storeToUse:  FAMILY_HISTORY_GRID_STORE
-
+  
+  family_history_add_button: &FAMILY_HISTORY_ADD_BUTTON
+        id: *GRID_NAME
+        type: button
+        label: Add
+        title: Family History
+        url: {{patient_detail_obj.urls.add.family_history}}
 
 URLS:
 
@@ -78,14 +87,15 @@ panes:
           height: 30em
         panes: []
         widgets: 
+          - *FAMILY_HISTORY_ADD_BUTTON
           - *FAMILY_HISTORY_GRID
 
-  - id : FAMILY_HISTORY_TRAILING_CP
-    region: trailing
-    type: cp
-    splitter: True
-    widgets: []
-    panes: []
-    style:
-      width: 30em
-    url: {{patient_detail_obj.urls.add.family_history}}
+#   - id : FAMILY_HISTORY_TRAILING_CP
+#     region: trailing
+#     type: cp
+#     splitter: True
+#     widgets: []
+#     panes: []
+#     style:
+#       width: 30em
+#     url: {{patient_detail_obj.urls.add.family_history}}

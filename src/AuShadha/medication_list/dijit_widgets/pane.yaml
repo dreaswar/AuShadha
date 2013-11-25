@@ -17,23 +17,44 @@ VARS:
   allergy_list_add_url: &ALLERGY_LIST_ADD_URL
       {{patient_detail_obj.urls.add.allergy_list}}
 
+  medication_list_grid_name: &GRID_NAME_MEDICATION_LIST
+      MEDICATION_LIST_GRID
+
+  allergy_list_grid_name: &GRID_NAME_ALLERGY_LIST
+      ALLERGY_LIST_GRID
+
   medication_list_grid: &MEDICATION_LIST_GRID
-      id : MEDICATION_LIST_GRID
+      id : *GRID_NAME_MEDICATION_LIST
       type: grid
       url: {{patient_detail_obj.urls.json.medication_list}}
       str: MEDICATION_LIST
       activateRowClick: !!bool False
       title:  Medications 
       storeToUse:  MEDICATION_LIST_GRID_STORE
+  
+  medication_list_add_button: &MEDICATION_LIST_ADD_BUTTON
+      id: *GRID_NAME_MEDICATION_LIST
+      type: button
+      title: Medications
+      label: Add
+      url: {{patient_detail_obj.urls.add.medication_list}}
 
   allergy_list_grid: &ALLERGY_LIST_GRID
-      id : ALLERGY_LIST_GRID
+      id : *GRID_NAME_ALLERGY_LIST
       type: grid
       url: {{patient_detail_obj.urls.json.allergy_list}}
       str: ALLERGY_LIST
       activateRowClick: !!bool False
       title:  Allergy
       storeToUse:  ALLERGY_LIST_GRID_STORE  
+
+  allergy_list_add_button: &ALLERGY_LIST_ADD_BUTTON
+      id: *GRID_NAME_ALLERGY_LIST
+      type: button
+      title: Allergy List
+      label: Add
+      url: {{patient_detail_obj.urls.add.allergy_list}}
+
 
 URLS:
 
@@ -96,6 +117,7 @@ panes:
             style:
               height: 20em
             widgets: 
+              - *MEDICATION_LIST_ADD_BUTTON
               - *MEDICATION_LIST_GRID
 
       - id: MEDICATION_LIST_CENTER_BC_TRAILING_CP
@@ -116,31 +138,32 @@ panes:
             style:
               height: 20em
             widgets: 
+              - *ALLERGY_LIST_ADD_BUTTON
               - *ALLERGY_LIST_GRID
 
-      - id: MEDICATION_LIST_CENTER_BC_BOTTOM_BC
-        type: bc
-        region: bottom
-        widgets: []
-        splitter: True
-        style:
-          height: 15em
-        panes:
-            - id: MEDICATION_LIST_CENTER_BC_BOTTOM_BC_FORM_CONTAINER
-              type: cp
-              region: center
-              widgets: []
-              splitter: True
-              url: *MEDICATION_LIST_ADD_URL
-
-            - id: ALLERGY_LIST_CENTER_BC_BOTTOM_BC_FORM_CONTAINER
-              type: cp
-              region: trailing
-              widgets: []
-              splitter: True
-              style:
-                width: 20em
-                background: whitesmoke
-                borderRadius: 5px
-                border: solid 1px slate
-              url: *ALLERGY_LIST_ADD_URL
+#       - id: MEDICATION_LIST_CENTER_BC_BOTTOM_BC
+#         type: bc
+#         region: bottom
+#         widgets: []
+#         splitter: True
+#         style:
+#           height: 15em
+#         panes:
+#             - id: MEDICATION_LIST_CENTER_BC_BOTTOM_BC_FORM_CONTAINER
+#               type: cp
+#               region: center
+#               widgets: []
+#               splitter: True
+#               url: *MEDICATION_LIST_ADD_URL
+# 
+#             - id: ALLERGY_LIST_CENTER_BC_BOTTOM_BC_FORM_CONTAINER
+#               type: cp
+#               region: trailing
+#               widgets: []
+#               splitter: True
+#               style:
+#                 width: 20em
+#                 background: whitesmoke
+#                 borderRadius: 5px
+#                 border: solid 1px slate
+#               url: *ALLERGY_LIST_ADD_URL

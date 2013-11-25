@@ -11,8 +11,11 @@ VARS:
   patient_id: &PATIENT_ID
             !!int {{patient_detail_obj.id}}
 
+  grid_name: &GRID_NAME
+    IMMUNISATION_GRID
+  
   immunisation_grid: &IMMUNISATION_GRID
-        id : IMMUNISATION_GRID
+        id : *GRID_NAME
         type: grid
         url: {{patient_detail_obj.urls.json.immunisation}}
         str: IMMUNISATION
@@ -20,6 +23,12 @@ VARS:
         title:  Immunisation
         storeToUse:  IMMUNISATION_GRID_STORE
 
+  immunisation_add_button: &IMMUNISATION_ADD_BUTTON
+        id: *GRID_NAME
+        label: Add
+        title: Immunisation
+        url: {{patient_detail_obj.urls.add.immunisation}}
+        type: button
 
 URLS:
 
@@ -68,7 +77,7 @@ panes:
   - id : IMMUNISATION_CENTER_CP
     region: center
     type: cp
-    splitter: True
+#     splitter: True
     widgets: []
     panes: 
       - id: IMMUNISATION_CENTER_CP_GRID_CONTAINER
@@ -78,14 +87,16 @@ panes:
           height: 30em
         panes: []
         widgets: 
+          - *IMMUNISATION_ADD_BUTTON
           - *IMMUNISATION_GRID
-  - id : IMMUNISATION_BOTTOM_CP
-    region: bottom
-    type: cp
-    splitter: True
-    widgets: []
-    style:
-      height: 15em
-    panes: []
-    url: {{patient_detail_obj.urls.add.immunisation}}
-  
+
+#   - id : IMMUNISATION_BOTTOM_CP
+#     region: bottom
+#     type: cp
+#     splitter: True
+#     widgets: []
+#     style:
+#       height: 15em
+#     panes: []
+#     url: {{patient_detail_obj.urls.add.immunisation}}
+#   

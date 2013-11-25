@@ -15,6 +15,8 @@ define(
          'dojo/dom-attr',
          'dojo/ready',
          'dojo/query',
+         "dojo/request",
+         "dojo/json",
 
          'dijit/registry',
          'dojo/parser',
@@ -36,7 +38,9 @@ define(
          'aushadha/panes/create_add_button',
 
          'dojo/NodeList-data',
-         'dojo/NodeList-traverse'
+         'dojo/NodeList-traverse',
+
+          "dijit/form/Form"
         ],
 
 function(
@@ -47,6 +51,8 @@ function(
          domAttr,
          ready,
          query,
+         request,
+         JSON,
 
          registry,
          parser,
@@ -166,8 +172,10 @@ function(
         if (! registry.byId( pane.container.id ) ) {
           console.log("No Pane Dijit created yet. Creating the same");
           pane.container.dijit = new pane.container.type({ id: pane.container.id, 
-                                                           closable: pane.container.closable, 
-                                                           title: pane.container.title
+                                                           closable: json.closable ? json.closable: false, 
+                                                           title: pane.container.title,
+                                                           scriptHasHooks: true,
+                                                           executeScripts: true
                                                         });
           pane.container.dijit.startup();
           pane.container.parentDijit.addChild( pane.container.dijit );
@@ -295,15 +303,33 @@ function(
                     if ( ! registry.byId( paneDomId ) ){
 
                       if ( p.type == 'cp' ) { 
+
                         var pd = new paneType({id: paneDomId,
                                                title: paneTitle,
                                                region: paneRegion,
                                                closable: paneClosable,
-                                               href: href,
                                                splitter: splitter,
-                                               style: p.style ? p.style : ''
+                                               style: p.style ? p.style : '',
+                                               executeScripts: true,
+                                               scriptHasHooks: true,
+                                               parseOnLoad: true
                                             },
                                             paneDomId );
+
+                        var html;
+                        if (href){
+                          request(href).then(
+                            function(html){
+                              pd.set('content',html);
+                            },
+                            function(json){
+                              var jsondata = JSON.parse(json);
+                              html = jsondata;
+                              publishError(jsondata.error_message)
+                            }
+                          );
+                        }
+
                         pd.startup();
                       }
 

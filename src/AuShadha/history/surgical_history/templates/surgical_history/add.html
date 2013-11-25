@@ -8,13 +8,16 @@
   <script type            = "dojo/method" 
           data-dojo-event = "onReset"
   >
-//     return true;
+    function onReset() {
+      return confirm("Press OK to reset the values.. ");
+    }
   </script>
 
   <script type            = "dojo/method" 
           data-dojo-event = "onSubmit"
-          data-dojo-args  = "evt"
+          data-dojo-args = 'evt'
   >
+
    if( this.validate() ){
       require([
        "dijit/registry", 
@@ -26,12 +29,14 @@
       registry.byId("permissionDeniedErrorDialog").show();
 //   {% endif %}
      });
-      return false;
+     return false;
     }
     else{
       raiseInvalidFormSubmission();
-       return false;
+      return false;
     }
+    return false;
+
   </script>
 
     {% if perms.surgical_history.add_surgical_history %}
@@ -48,12 +53,6 @@
                     value             = "Add">
           Add
 
-          <script type            = "dojo/connect" 
-                  data-dojo-event = "onClick" 
-                  data-dojo-args  = "evt"
-          >
-            ADD_MORE_ITEMS           = false;
-          </script>
 
         </button>
 
