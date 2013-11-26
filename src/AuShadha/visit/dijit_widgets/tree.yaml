@@ -47,6 +47,11 @@ close_active_visit: &CLOSE_ACTIVE_VISIT
   onclick: null
   redirect: null
   returns: json
+  ondblclickreturn: 
+    - type: custom
+      action: close_active_visit
+
+
 
 add_follow_up_to_active_visit: &ADD_FOLLOW_UP_TO_ACTIVE_VISIT
   name:  Add Follow-up

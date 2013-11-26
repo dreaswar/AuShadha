@@ -487,7 +487,9 @@
                   }
                 </script>
           </span>
-          
+
+
+{% comment %}
           <span style = "background-color : white;
                          background-image : url('{{STATIC_URL}}images/patient_past_history.png');
                          background-size  : 16px 16px;
@@ -517,7 +519,8 @@
                   }
                 </script>
           </span>
-          
+
+
           <span style = "background-color : white;
                          background-image : url('{{STATIC_URL}}images/archive.png');
                          background-size  : 16px 16px;
@@ -605,8 +608,10 @@
                   }
                 </script>
           </a>
+{% endcomment %}
 
         </div>
+
 
       </div>
     {% endif %}
@@ -940,7 +945,7 @@
                                 line-height  : 1.6em; 
                                 text-align   : justify;
                                 ">
-                        {{obj_list}}
+                        {{obj_list|safe}}
                       </td>
                     </tr>
                     </tbody>

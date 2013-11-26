@@ -74,9 +74,10 @@ class PatientTree( object ):
       medication_list_node =  DijitTreeNode( y['medications'])
       admission_node =  DijitTreeNode( y['admissions'])
       visit_node=  DijitTreeNode( y['visits'])
-      procedure_node = DijitTreeNode( y['procedures'] )
-      imaging_node = DijitTreeNode( y['imaging'] )
-      investigation_node=  DijitTreeNode( y['investigation'] )
+
+      #procedure_node = DijitTreeNode( y['procedures'] )
+      #imaging_node = DijitTreeNode( y['imaging'] )
+      #investigation_node=  DijitTreeNode( y['investigation'] )
 
       patient_tree_node.add_child_node( history_node )
       patient_tree_node.add_child_node( preventives_node )
@@ -85,9 +86,9 @@ class PatientTree( object ):
       patient_tree_node.add_child_node( admission_node )
       patient_tree_node.add_child_node( visit_node )
 
-      patient_tree_node.add_child_node( procedure_node )
-      patient_tree_node.add_child_node( imaging_node )
-      patient_tree_node.add_child_node( investigation_node )
+      #patient_tree_node.add_child_node( procedure_node )
+      #patient_tree_node.add_child_node( imaging_node )
+      #patient_tree_node.add_child_node( investigation_node )
 
       json = patient_tree_node.to_json()
       return json

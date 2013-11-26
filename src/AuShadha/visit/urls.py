@@ -3,6 +3,7 @@ from django.contrib import admin
 
 import AuShadha.settings
 from visit.views import *
+from .dijit_widgets.pane import render_visit_tree, render_visit_pane
 
 admin.autodiscover()
 
@@ -21,12 +22,12 @@ urlpatterns = patterns('',
                       ),
 
                       url(r'pane/(?P<patient_id>\d+)/$', 
-                          'visit.dijit_widgets.pane.render_visit_pane',
+                          render_visit_pane,
                           name='render_visit_pane_with_id'
                       ),
 
                       url(r'pane/$', 
-                          'visit.dijit_widgets.pane.render_visit_pane',
+                          render_visit_pane,
                           name='render_visit_pane_without_id'
                       ),
 
@@ -35,13 +36,23 @@ urlpatterns = patterns('',
                           name="render_visit_list"
                       ),
 
+                      #url(r'tree/(?P<patient_id>\d+)/$',
+                          #"visit.views.render_visit_tree", 
+                          #name="render_visit_tree"
+                      #),
+
+                      #url(r'tree/$',
+                          #"visit.views.render_visit_tree", 
+                          #name="render_visit_tree_without_id"
+                      #),
+
                       url(r'tree/(?P<patient_id>\d+)/$',
-                          "visit.views.render_visit_tree", 
+                          render_visit_tree, 
                           name="render_visit_tree"
                       ),
 
                       url(r'tree/$',
-                          "visit.views.render_visit_tree", 
+                          render_visit_tree, 
                           name="render_visit_tree_without_id"
                       ),
 

@@ -171,7 +171,7 @@ demographics: &DEMOGRAPHICS
   onrclick: null
   onclick: null
   returns: json
-  redirect: 0
+  redirect: 1
 
 medications: &MEDICATIONS
     name: Medications
@@ -183,7 +183,7 @@ medications: &MEDICATIONS
     ondblclick: {{patient_detail_obj.urls.pane.medication_list}}
     onrclick: null
     onclick: null
-    redirect: !!int 0    
+    redirect: 1
     returns: json
 
 
@@ -191,39 +191,43 @@ preventives: &PREVENTIVES
   name: Preventives
   type: application
   id: PREVENTIVES
-  children: [ *IMMUNISATION, *MEDICAL_PREVENTIVES, *SURGICAL_PREVENTIVES, *OBS_PREVENTIVES ]
+  children: 
+    - *IMMUNISATION 
+#     - *MEDICAL_PREVENTIVES 
+#     - *SURGICAL_PREVENTIVES 
+#     - *OBS_PREVENTIVES 
 
 
-investigation: &INVESTIGATION
-  name: Investigation
-  type: application
-  id: INVESTIGATION
-  redirect: 1    
-  ondblclick: null
-  onrclick: null
-  onclick: null
-  returns: json
-
-
-imaging: &IMAGING
-  name: Imaging
-  type: application
-  id: IMAGING
-  redirect: 1  
-  ondblclick: null
-  onrclick: null
-  onclick: null
-  returns: json
-
-procedures: &PROCEDURES
-  name: Procedures
-  type: application
-  id: PROCEDURES
-  redirect: 1    
-  ondblclick: null
-  onrclick: null
-  onclick: null
-  returns: json
+# investigation: &INVESTIGATION
+#   name: Investigation
+#   type: application
+#   id: INVESTIGATION
+#   redirect: 1    
+#   ondblclick: null
+#   onrclick: null
+#   onclick: null
+#   returns: json
+# 
+# 
+# imaging: &IMAGING
+#   name: Imaging
+#   type: application
+#   id: IMAGING
+#   redirect: 1  
+#   ondblclick: null
+#   onrclick: null
+#   onclick: null
+#   returns: json
+# 
+# procedures: &PROCEDURES
+#   name: Procedures
+#   type: application
+#   id: PROCEDURES
+#   redirect: 1    
+#   ondblclick: null
+#   onrclick: null
+#   onclick: null
+#   returns: json
 
 admissions: &ADMISSIONS
   name : Admissions

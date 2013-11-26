@@ -317,7 +317,7 @@ function(
                                             paneDomId );
 
                         var html;
-                        if (href){
+                        if ( href && ! p.content ){
                           request(href).then(
                             function(html){
                               pd.set('content',html);
@@ -328,6 +328,9 @@ function(
                               publishError(jsondata.error_message)
                             }
                           );
+                        }
+                        else if ( p.content ){
+                              pd.set('content', p.content );
                         }
 
                         pd.startup();
@@ -405,7 +408,7 @@ function(
 
                         if ( widgetQ.widget.type == 'tree' ){
 
-                          paneTreeCreator(widgetQ.widget.url, 
+                          new paneTreeCreator(widgetQ.widget.url, 
                                           widgetQ.widget.id, 
                                           widgetQ.widget.mainTabPane,
                                           widgetQ.widget.title
