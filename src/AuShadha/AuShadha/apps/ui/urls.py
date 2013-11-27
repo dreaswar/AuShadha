@@ -11,6 +11,8 @@ urlpatterns = patterns('',
                       url(r'home/$',  home, name='home'),
                       url(r'json/installed_apps/$',  installed_apps, name='installed_apps'),
 
+                      url(r'^$',  home, name='home'),
+
                       #(r'^AuShadha/json_data/', include('json_data.urls') ),
                       #(r'^AuShadha/widgets/', include('widgets.urls') ),
 ) 

@@ -89,10 +89,11 @@ STATICFILES_DIRS = (
     os.path.join(ROOT_PATH, 'media/images'),
     os.path.join(ROOT_PATH, 'media'),
     os.path.join(ROOT_PATH, 'media/plugins'),
-    os.path.join(ROOT_PATH, 'media/custom/js'),
+    #os.path.join(ROOT_PATH, 'media/custom/js'),
     os.path.join(ROOT_PATH, 'media/custom/styles'),
 
     os.path.join(ROOT_PATH, 'apps/ui/media'),
+    os.path.join(ROOT_PATH, 'apps/ui/media/ui/js'),    
 
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.

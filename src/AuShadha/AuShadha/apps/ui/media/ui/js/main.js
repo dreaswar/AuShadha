@@ -15,7 +15,7 @@ define([
         'aushadha/event_binders/main',
         'aushadha/panes/main',
 
-        'notifications',
+        'aushadha/notifications',
 
         'dojo/domReady!'
        ],

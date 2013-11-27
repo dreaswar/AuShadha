@@ -9,11 +9,6 @@ define([
   'dojo/request',
   'dojo/json',
 
-  'aushadha/panes/header_pane',
-  'aushadha/panes/patient_pane',
-  'aushadha/panes/admission_pane',
-  'aushadha/panes/visit_pane',
-  'aushadha/panes/patient_search_pane',
   'aushadha/panes/event_controller'
 
   ],
@@ -26,22 +21,11 @@ define([
            registry,
            request,
            JSON,
-           
-           auHeaderPane,
-           auPatientPane,
-           auAdmissionPane,
-           auVisitPane,
-           auSearchPane,
+
            auPaneEventController
           ){
 
-    return {auHeaderPane          : auHeaderPane,
-            auPatientPane         : auPatientPane,
-            auAdmissionPane       : auAdmissionPane,
-            auVisitPane           : auVisitPane,
-            auSearchPane          : auSearchPane,
-            auPaneEventController : auPaneEventController
-    }
+    return {auPaneEventController : auPaneEventController}
 
 });  
  

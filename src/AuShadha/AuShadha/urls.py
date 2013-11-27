@@ -60,7 +60,7 @@ urlpatterns = patterns('',
                       #(r'^AuShadha/home/$', 'patient.views.patient_list'),
 
                        # Login and Logout URLS
-                       #(r'^AuShadha/login/$', 'django.contrib.auth.views.login'),
+                      (r'^AuShadha/$', include('AuShadha.apps.ui.urls')),
                       (r'^AuShadha/login/$','AuShadha.apps.aushadha_users.views.login_view'),
                       (r'^AuShadha/logout/$','AuShadha.apps.aushadha_users.views.logout_view'),
 
