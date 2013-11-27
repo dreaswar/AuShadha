@@ -32,9 +32,7 @@ define(
          "dojo/store/JsonRest",
          "dojo/data/ObjectStore",
 
-         'aushadha/panes/dynamic_pane_creator',
          'aushadha/panes/dynamic_html_pane_creator', 
-         'aushadha/panes/create_main_pane',
          'aushadha/panes/create_add_button',
 
          'dojo/NodeList-data',
@@ -67,9 +65,7 @@ function(
          JsonRest,
          ObjectStore,
 
-         dynamicPaneCreator,
          dynamicHTMLPaneCreator,
-         createMainPane,
          addButton
       ){
 

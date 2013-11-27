@@ -17,13 +17,7 @@ define([
   "dojo/data/ObjectStore",
 
   'aushadha/panes/main',
-  'aushadha/panes/event_controller',
-  
-  'aushadha/grid/generic_grid_setup',
-  'aushadha/tree/patient_tree',
-  'aushadha/tree/admission_tree',
-  'aushadha/tree/visit_tree',
-  'aushadha/menu/patient_menu'
+  'aushadha/panes/event_controller'
 
   ],
   function(on,
@@ -44,63 +38,43 @@ define([
            ObjectStore,
            
            auPanes,
-           auPaneEventController,
-           auGrids,
-           auPatientTree,
-           auAdmissionTree,
-           auVisitTree,
-           auMenu
-          ){
+           auPaneEventController){
 
     var auEvents={
-        treeEvents: function(obj){
-          return {auPatientTree   : auPatientTree, 
-                  auAdmissionTree : auAdmissionTree, 
-                  auVisitTree     : auVisitTree
-            
-          }
+
+        auPaneEventController : auPaneEventController,
+ 
+        treeEvents: function(){
+          
         },
+
         gridEvents: function(auGrids){
           
         },
+
         paneEvents: function(auPanes){
           
         },
+
         menuEvents: function(auMenu){
           
         },
+
         formEvents : function(){
-                        /*
-                        (function (){ // A Visit Pane Event Binder . Allow autoscrolling to the ROS section//
-                            require(['dojo/window',
-                                      'dojo/_base/window',
-                                      'dojo/dom', 
-                                      'dojo/on', 
-                                      'dojo/topic'], 
-                            function(win, w,dom, on){
-                              on( w.body(), 
-                                  'click', 
-                                  function(evt){
-                                    if(evt.target.id == 'visitRosAddFormTable'){
-                                      evt.target.open ? win.scrollIntoView('visitRosAddFormTable'):null;
-                                    }
-                                  }
-                              );
-                            });
-                        })();
-                        */
+
         },
+
         getEvent : function(/*String | domId*/id, /*String | eventType*/evt){
           
         },
+
         setEvent: function(/*String | domId*/id, /*String | eventType*/evt){
           
         },
+
         startup : function(){
-//                       auEvents.formEvents();
+
         },
-        
-       auPaneEventController : auPaneEventController,
 
        searchStores: {
          
@@ -128,12 +102,6 @@ define([
        },
 
        searchWidget : function(url,placeHolder){
-
-//                       auEvents.searchApps.push(app);
-// 
-//                       if (! auEvents.searchStores[app] ){
-//                         auEvents.searchStores[app] = new JsonRest({target: url});
-//                       }
 
                       var widgetStore = new JsonRest({target: url});
                       console.log("calling search widget function with " + url);
@@ -193,7 +161,6 @@ define([
 
     };
 
-//     auEvents.startup();
     return auEvents;
 
 });  

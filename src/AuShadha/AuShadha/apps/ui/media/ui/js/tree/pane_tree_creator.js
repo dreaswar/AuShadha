@@ -24,13 +24,8 @@ define([
     "dijit/layout/TabContainer",
 
     'aushadha/grid/grid_structures',
-    'aushadha/panes/create_tab',
-    'aushadha/panes/create_form_tab',
-    'aushadha/panes/create_empty_tab',
-    'aushadha/panes/create_form_container',
-    'aushadha/panes/create_grid_container',
-    'aushadha/panes/dynamic_pane_creator',    
     'aushadha/panes/dynamic_html_pane_creator'
+
   ], 
 
   function(win,
@@ -55,13 +50,8 @@ define([
           TabContainer,
 
           GRID_STRUCTURES,
-          createTab,
-          createFormTab,
-          createEmptyTab,
-          createFormContainer,
-          createGridContainer,
-          createDynamicPane,
           createDynamicHTMLPane
+
           ){
 
 

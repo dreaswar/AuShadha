@@ -14,12 +14,8 @@ define(["dijit/registry",
         "dojox/layout/ContentPane",
         "dijit/layout/TabContainer",
 
-        "aushadha/panes/patient_pane",
-        "aushadha/panes/admission_pane",
-        "aushadha/panes/visit_pane",
-        "aushadha/panes/header_pane",
-//      "aushadha/panes/patient_search_pane",        
         "aushadha/under_construction/pane_and_widget_creator",
+
         "dojo/domReady!"
         ],
 
@@ -39,10 +35,6 @@ define(["dijit/registry",
         ContentPane,
         TabContainer,
 
-        PATIENT_PANE,
-        ADMISSION_PANE,
-        VISIT_PANE,
-        HEADER_PANE,
         paneAndWidgetCreator
 
         ){
@@ -52,56 +44,10 @@ define(["dijit/registry",
       _reInitAllPanes: function (item){
 
                         console.log("Running _reInitAllPanes at panes/event_controller.js");
-                        console.log(item[0]);
 
-//                         query( '.mainTabContainer' ).
-//                         forEach(
-//                           function( i ){
-//                             var tc = registry.byId( domAttr.get(i,'id') );
-//                             var parentTab = tc.getParent();
-//                             if ( tc.get('closable') ) {
-//                                 var title = tc.get('title').toUpperCase();
-//                                 window.PANES[ title ].LOAD_STATUS = false;
-//                                 parentTab.removeChild( tc );
-//                                 tc.destroyRecursive();
-//                             }
-//                         });
-// 
-//                         query('.subTabContainer').
-//                         forEach(
-//                           function(i){
-//                             var tc = registry.byId( domAttr.get(i,'id') );
-//                             console.log(i);
-// 
-//                             var children = tc.getChildren();
-//                             children.forEach(function(child){
-//                                 if( child.get('closable') ){
-//                                   tc.removeChild(child);
-//                                   child.destroyRecursive();
-//                                 }
-//                             });
-// 
-//                         });
+                        this.clearLoadedTabs();
+                        this._setChosenPatientAndGridStore(item[0]);
 
-                        var tcChildren = registry.byId('centerTopTabPane').getChildren();
-
-                        console.log(tcChildren);
-
-//                         tcChildren.forEach(
-//                           function(i){
-//                             var tc = registry.byId( domAttr.get(i,'id') );
-//                             console.log(i);
-// 
-//                             var children = tc.getChildren();
-//                             children.forEach(function(child){
-//                                 if( child.get('closable') ){
-//                                   tc.removeChild(child);
-//                                   child.destroyRecursive();
-//                                 }
-//                             });
-//                           }
-//                         );
-      
                         request( item[0].paneUrl ).
                         then(
 
@@ -117,57 +63,28 @@ define(["dijit/registry",
 
                         );
 
-/*
-                        this._setChosenPatient(item[0]);
-                        this._displayPatientName(item[0]);
-                        
-                        var p = registry.byId("centerTopTabPane");
-                        var c = p.getChildren();
-
-                        console.log(c);
-
-                        p.selectChild(c[0]);
-
-                        c.forEach(function(i){
-                            if (c.indexOf(i)>0){
-                              i.set('disabled',true);
-                            }
-                            
-                        });
-*/
-
-//                         c.forEach(
-//                             function(i){ 
-// //                                 console.log("Evaluating: ");
-// //                                 console.log(i);
-//                                 console.log(i.getChildren());
-//                                 if( i.get('disabled') ){ 
-//                                       i.set('disabled',false); 
-//                                 }
-//                         });
-
-//                         p.selectChild( registry.byId('patient_main') );
-//                         request('/AuShadha/patient/patient/summary/'+CHOSEN_PATIENT.id+'/').
-//                         then(
-//                           function(html){
-//                             dom.byId('patient_summary_div').innerHTML = html;
-//                           },
-//                           function(json){
-//                             var jsondata = JSON.parse(json);
-//                             publishError(jsondata);
-//                           },
-//                           function(err){
-//                             console.log(err);
-//                             publishError(err);
-//                             return;
-//                           }
-//                         );
-
                         registry.byId("centerMainPane").resize();                          
 
       },
 
-      _setChosenPatient : function(item){
+      clearLoadedTabs: function (){
+        var p = registry.byId("centerTopTabPane");
+        var c = p.getChildren();
+
+        if ( c.length > 1 ) {
+          c.forEach(function(i){
+            if (c.indexOf(i)>0){
+              p.removeChild(i);
+              i.destroyRecursive();
+            }
+          });
+        }
+
+        p.selectChild(c[0]);
+
+      },
+
+      _setChosenPatientAndGridStore : function(item){
                           console.log("Resetting the Chosen Patient...");
                           CHOSEN_PATIENT = item;
                           console.log("Clearing stores...");
@@ -175,20 +92,12 @@ define(["dijit/registry",
                           window.gridStore = {};
       },
 
-      _displayPatientName: function(item){
-                    var selectedPatientContent = item.full_name + "-" +
-                                                item.age +"-" + item.sex +
-                                                "(" +item.patient_hospital_id +")";
-
-                    query('.topContentPane').
-                      forEach(function(i){
-
-                        domClass.add(i,'selected');
-
-                        registry.
-                          byId( domAttr.get(i,'id') ).
-                          set( 'content', selectedPatientContent );
-                    });
+      _resetChosenPatientAndGridStore : function(){
+                          console.log("Resetting the Chosen Patient...");
+                          CHOSEN_PATIENT = undefined;
+                          console.log("Clearing stores...");
+                          window.CHOSEN_GRID_STORE = undefined;
+                          window.gridStore = {};
       },
 
       _reInitAdmissionPane:function (){
@@ -220,45 +129,10 @@ define(["dijit/registry",
       },
 
       onPatientDelete:function (){
-
-                    var p = registry.byId("centerTopTabPane");
-                    var c = p.getChildren();
-
-                    CHOSEN_PATIENT = undefined;
-
-                    query('.topContentPane').
-                      forEach(function(i){
-                        domClass.remove(i,'selected');
-                        registry.
-                          byId( domAttr.get(i,'id') ).
-                          set( 'content', '' );
-                    });
-
-                    query('.subTabContainer').
-                    forEach(
-                      function(i){
-                        var tc = registry.byId( domAttr.get(i,'id') );
-                        console.log(i);
-                        var children = tc.getChildren();
-                        children.forEach(function(child){
-                            if( child.get('closable') ){
-                              tc.removeChild(child);
-                              child.destroyRecursive();
-                            }
-                        });
-                    });
-
-                    c.forEach(
-                      function(i){ 
-                          if( c.indexOf(i)>0 ){ 
-                              i.set('disabled',true); 
-                          }else if(c.indexOf(i)==0){
-                              i.set('disabled',false); 
-                              p.selectChild(i);
-                          }
-                    });
-
+        this._resetChosenPatientAndGridStore();
+        this.clearLoadedTabs();
       }
+
   };
 
   return paneEventController;
