@@ -156,7 +156,7 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'history/surgical_history/templates/'),
     os.path.join(ROOT_PATH, 'history/family_history/templates/'),
     os.path.join(ROOT_PATH, 'history/social_history/templates/'),
-    os.path.join(ROOT_PATH, 'history/obs_and_gyn/templates/'),    
+    #os.path.join(ROOT_PATH, 'history/obs_and_gyn/templates/'),    
 
     os.path.join(ROOT_PATH, 'immunisation/templates/'),
     os.path.join(ROOT_PATH, 'medication_list/templates/'),    
@@ -215,7 +215,7 @@ INSTALLED_APPS = (
     'history.surgical_history',
     'history.social_history',
     'history.family_history',
-    'history.obs_and_gyn',
+    #'history.obs_and_gyn',
 
     #AuShadha Stock apps for Medication List, Allergy, Immunisaion
     'medication_list',

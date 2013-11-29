@@ -25,7 +25,7 @@ urlpatterns = patterns('',
                       url(r'^AuShadha/contact/', include('demographics.contact.urls') ),
                       url(r'^AuShadha/phone/', include('demographics.phone.urls') ),
                       url(r'^AuShadha/guardian/', include('demographics.guardian.urls') ),
-                      url(r'^AuShadha/email_and_fax/', include('demographics.email_and_fax.urls') ),                      
+                      #url(r'^AuShadha/email_and_fax/', include('demographics.email_and_fax.urls') ),                      
 
                       url(r'^AuShadha/family_history/', include('history.family_history.urls')),
                       url(r'^AuShadha/social_history/', include('history.social_history.urls')),

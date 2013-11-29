@@ -20,6 +20,15 @@ VARS:
           title:  Contact
           storeToUse:  CONTACT_GRID_STORE
 
+  contact_add_button: &CONTACT_ADD_BUTTON
+        id: CONTACT_ADD_BUTTON
+        gridId: CONTACT_GRID
+        type: button
+        label: Add
+        title: Contact
+        url: {{patient_detail_obj.urls.add.contact}}
+
+
   phone_grid: &PHONE_GRID
           id : PHONE_GRID
           type: grid
@@ -29,6 +38,14 @@ VARS:
           title:  Phone
           storeToUse:  PHONE_GRID_STORE
 
+  phone_add_button: &PHONE_ADD_BUTTON
+        id: PHONE_ADD_BUTTON
+        gridId: PHONE_GRID
+        type: button
+        label: Add
+        title: Phone
+        url: {{patient_detail_obj.urls.add.phone}}
+
   guardian_grid: &GUARDIAN_GRID
           id : GUARDIAN_GRID
           type: grid
@@ -37,6 +54,14 @@ VARS:
           activateRowClick: !!bool False
           title:  Guardian
           storeToUse:  GUARDIAN_GRID_STORE
+
+  guardian_add_button: &GUARDIAN_ADD_BUTTON
+        id: GUARDIAN_ADD_BUTTON
+        gridId: GUARDIAN_GRID
+        type: button
+        label: Add
+        title: Guardian
+        url: {{patient_detail_obj.urls.add.guardian}}
 
 
 URLS:
@@ -117,107 +142,50 @@ panes:
             widgets: []
             panes:
 
-                - id : CONTACT_GRID_BC
-                  type: bc
+                - id : CONTACT_GRID_CP
+                  type: cp
                   title: Contact
                   closable: False
                   widgets: []
-
                   panes: 
-                    - id: CONTACT_GRID_BC_GRID_CONTAINER_CP
-                      type: cp
-                      region: center
-                      widgets: []
-                      splitter: True
-                      panes: 
-                        - id: CONTACT_GRID
-                          type: dom
-                          domType: div
-                          style:
-                            height: 20em
-                          panes: []
-                          widgets: 
-                            - *CONTACT_GRID
+                      - id: CONTACT_GRID_CONTAINER
+                        type: dom
+                        domType: div
+                        style:
+                          height: 20em
+                        panes: []
+                        widgets: 
+                          - *CONTACT_ADD_BUTTON
+                          - *CONTACT_GRID
 
-                    - id: CONTACT_GRID_BC_FORM_CONTAINER_CP
-                      type: cp
-                      region: bottom
-                      panes: []
-                      widgets: []
-                      splitter: True
-                      style: 
-                        height: 20em
-                        background: whitesmoke
-                        border: solid 1px slate
-                        borderRadius: 5px
-                      url: {{patient_detail_obj.urls.add.contact}}
-
-
-                - id : PHONE_GRID_BC
-                  type: bc
+                - id : PHONE_GRID_CP
+                  type: cp
                   title: Phone
                   closable: False
                   widgets: []
                   panes: 
-                    - id: PHONE_GRID_BC_GRID_CONTAINER_CP
-                      type: cp
-                      region: center
-                      widgets: []
-                      splitter: True
-                      panes: 
-                        - id: PHONE_GRID
-                          type: dom
-                          domType: div
-                          style:
-                            height: 20em
-                          panes: []
-                          widgets: 
-                            - *PHONE_GRID
-
-                    - id: PHONE_GRID_BC_FORM_CONTAINER_CP
-                      type: cp
-                      region: bottom
-                      panes: []
-                      widgets: []
-                      splitter: True
-                      style: 
+                    - id: PHONE_GRID_CONTAINER
+                      type: dom
+                      domType: div
+                      style:
                         height: 20em
-                        background: whitesmoke
-                        border: solid 1px slate
-                        borderRadius: 5px
-                      url: {{patient_detail_obj.urls.add.phone}}
+                      panes: []
+                      widgets: 
+                        - *PHONE_ADD_BUTTON
+                        - *PHONE_GRID
 
-
-                - id : GUARDIAN_GRID_BC
-                  type: bc
+                - id : GUARDIAN_GRID_CP
+                  type: cp
                   title: Guardian
                   closable: False
                   widgets: []
                   panes: 
-                    - id: GUARDIAN_GRID_BC_GRID_CONTAINER_CP
-                      type: cp
-                      region: center
-                      widgets: []
-                      splitter: True
-                      panes: 
-                        - id: GUARDIAN_GRID
-                          type: dom
-                          domType: div
-                          style:
-                            height: 20em
-                          panes: []
-                          widgets: 
-                            - *GUARDIAN_GRID
-
-                    - id: GUARDIAN_GRID_BC_FORM_CONTAINER_CP
-                      type: cp
-                      region: bottom
-                      panes: []
-                      widgets: []
-                      splitter: True
-                      style: 
+                    - id: GUARDIAN_GRID_CONTAINER
+                      type: dom
+                      domType: div
+                      style:
                         height: 20em
-                        background: whitesmoke
-                        border: solid 1px slate
-                        borderRadius: 5px
-                      url: {{patient_detail_obj.urls.add.guardian}}
+                      panes: []
+                      widgets: 
+                        - *GUARDIAN_ADD_BUTTON
+                        - *GUARDIAN_GRID
