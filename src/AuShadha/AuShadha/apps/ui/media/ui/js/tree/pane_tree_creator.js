@@ -67,23 +67,14 @@ define([
                   var redirect = item.redirect ? item.redirect[0]:false;
                   var jsondata = JSON.parse(json);
 
-                  if ( redirect == 1 ) { 
-                    // Determines whether or not to open tab in main tab 
-                    // redirect if true will add the tab to the main tab 
-                    // else it will add it under the main tab
-                    // for main modules like OPD visits and Admission where lot of sub-tabs are 
-                    // expected its better for UI purposes to open set redirect to true
-                    // this can be customised in the tree.yaml 
-                    paneAndWidgetCreator.constructor( jsondata.pane  );
-                  }
+                  // Determines whether or not to open tab in main tab 
+                  // redirect if true will add the tab to the main tab 
+                  // else it will add it under the main tab
+                  // for main modules like OPD visits and Admission where lot of sub-tabs are 
+                  // expected its better for UI purposes to open set redirect to true
+                  // this can be customised in the tree.yaml 
 
-                  else if ( redirect == 0 ) {
-                    paneAndWidgetCreator.constructor( jsondata.pane , mainTabPaneDomNodeId );
-                  }
-
-                  else if ( !redirect ) {
-                    alert("this requires a custom handler")
-                  }
+                  paneAndWidgetCreator.constructor( jsondata.pane , mainTabPaneDomNodeId, redirect );
 
                 },
 

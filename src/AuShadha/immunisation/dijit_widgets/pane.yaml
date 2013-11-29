@@ -24,7 +24,8 @@ VARS:
         storeToUse:  IMMUNISATION_GRID_STORE
 
   immunisation_add_button: &IMMUNISATION_ADD_BUTTON
-        id: *GRID_NAME
+        id: IMMUNISATION_ADD_BUTTON
+        gridId: *GRID_NAME
         label: Add
         title: Immunisation
         url: {{patient_detail_obj.urls.add.immunisation}}

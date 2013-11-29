@@ -48,10 +48,13 @@ function(dom,
                                                             );
                                                   }
                                         },
+                                        args.id/*
                                         domConstruct.create('button',
-                                                            {type : "button",id: args.gridId+"_button"},
+                                                            {type : "button",
+                                                             id: args.id 
+                                                            },
                                                             args.gridId,
-                                                            "before")
+                                                            "before")*/
                             );
 
                             console.log("Button is: ");

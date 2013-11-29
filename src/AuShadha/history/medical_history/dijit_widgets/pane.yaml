@@ -24,7 +24,8 @@ VARS:
         storeToUse:  MEDICAL_HISTORY_GRID_STORE
 
   medical_history_add_button: &MEDICAL_HISTORY_ADD_BUTTON
-        id: *GRID_NAME
+        id: MEDICAL_HISTORY_ADD_BUTTON
+        gridId: *GRID_NAME
         type: button
         title: Medical History
         label: Add

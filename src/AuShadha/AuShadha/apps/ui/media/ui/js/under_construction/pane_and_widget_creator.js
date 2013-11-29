@@ -124,24 +124,37 @@ function(
         // destroys the pane and its widgets
       },
 
-      constructor: function( json, parentTab ){
+      constructor: function( json, parentTab, redirectToMainTab ){
         // creates the pane and its widgets recursively
+        
         if (parentTab){
           pane.parentTab = parentTab;
         }
-        pane._createContainer(json);
+        if (! redirectToMainTab ){
+          console.log("No redirect specified. Assuming redirection to main tab")
+          redirectToMainTab  = 1;
+        }
+        pane._createContainer(json, redirectToMainTab );
 
       },
 
-      _createContainer: function (json) {
+      _createContainer: function (json, redirectToMainTab ) {
  
-        if (! pane.parentTab ){
+        pane.container.grandParentDomNode = dom.byId('centerTopTabPane');
+        pane.container.grandParentDijit = registry.byId('centerTopTabPane');
+
+        if ( redirectToMainTab == 1 ){
           pane.container.parentDomNode = dom.byId('centerTopTabPane');
           pane.container.parentDijit = registry.byId('centerTopTabPane');
         }
-        else{
+
+        else if ( redirectToMainTab == 0 ) {
           pane.container.parentDomNode = dom.byId(pane.parentTab);
           pane.container.parentDijit = registry.byId(pane.parentTab);
+        }
+
+        else{
+          alert("This redirect directive will not work now.... Currently directives of 0 or 1 are supported ")
         }
 
         pane.container.id = json.id;
@@ -151,40 +164,41 @@ function(
         console.log("Received JSON: ");
         console.log(json);
 
-        if (! dom.byId( pane.container.id ) ) {
-          console.log("No Pane DOM created yet. Creating the same");
-          console.log("Placing the DOM Node at: "  + 
-                      pane.container.parentDomNode + 
-                      " with an ID of " + 
-                      pane.container.id 
-                    );
-          pane.container.domNode = domConstruct.create('div',
-                                                       { id: pane.container.id },
-                                                       pane.container.parentDomNode,
-                                                       'last'
-                                                      );
+        if ( registry.byId( pane.container.id ) ) {
+
+            try {
+              pane.container.parentDijit.removeChild( registry.byId( pane.container.id ) );
+              registry.byId( pane.container.id ).destroyRecursive();
+            } 
+            catch (err){
+              console.log(err.message);
+            }
+
         }
 
-        if (! registry.byId( pane.container.id ) ) {
-          console.log("No Pane Dijit created yet. Creating the same");
-          pane.container.dijit = new pane.container.type({ id: pane.container.id, 
+        if ( dom.byId( pane.container.id ) ) {
+          domConstruct.destroy( dom.byId( pane.container.id ) );
+        }
+
+        pane.container.domNode = domConstruct.create('div',
+                                                      { id: pane.container.id },
+                                                      pane.container.parentDomNode,
+                                                      'last'
+                                                    );
+
+        pane.container.dijit = new pane.container.type({ id: pane.container.id, 
                                                            closable: json.closable ? json.closable: false, 
                                                            title: pane.container.title,
                                                            scriptHasHooks: true,
                                                            executeScripts: true
-                                                        });
-          pane.container.dijit.startup();
-          pane.container.parentDijit.addChild( pane.container.dijit );
-          pane.container.parentDijit.resize();      
-        }
-
-        else{
-          console.log( "No Pane Dijit exists. Selecting it." );        
-          pane.container.parentDijit.selectChild( 
-                registry.byId( pane.container.id ) 
-          );
-        }
-
+                                                        },
+                                                        pane.container.id);
+        pane.container.parentDijit.addChild( pane.container.dijit );
+        pane.container.dijit.startup();
+        pane.container.parentDijit.resize();      
+//         debugger;
+//         pane.container.grandParentDijit.selectChild( pane.container.parentDijit);
+//         pane.container.parentDijit.selectChild( registry.byId( pane.container.id ) )
 
         console.log("Building the widgets array ...");
         for ( var x=0; x< json.widgets.length; x++ ) {
@@ -260,6 +274,10 @@ function(
 
                     console.log("Creating DOM with ID: " + paneDomId );
 
+                    if ( dom.byId(paneDomId) ){
+                      domConstruct.destroy( paneDomId );
+                    }
+
                     if (! dom.byId(paneDomId) ){
 
                       if ( p.domType == 'img' ){
@@ -295,6 +313,15 @@ function(
                   function createDijit() {
 
                     console.log("Creating Dijit with ID: " + paneDomId );
+
+                    var paneToCreate = registry.byId( paneDomId );
+                    console.log(paneDomId);
+                    console.log(paneToCreate);
+                    if (paneToCreate){
+                      var c = paneToCreate.getChildren();
+                      c.forEach(function(t){ t.destroyRecursive() });
+                    }
+//                     debugger;
 
                     if ( ! registry.byId( paneDomId ) ){
 
@@ -381,18 +408,37 @@ function(
                     console.log( widgetQ );
                     console.log( "This widget is of type: " + widgetQ.widget.type );
 
-                    function createDom() {
-                        if (! dom.byId(widgetQ.widget.id) ){
-                          domConstruct.create('div',
-                                              {id: widgetQ.widget.id},
-                                              widgetQ.parent,
-                                              'last');
-                        }
-                    }
+                      function createDom() {
 
-                    require(
-                      ['aushadha/tree/pane_tree_creator'],
-                      function(paneTreeCreator){
+                        if (! dom.byId(widgetQ.widget.id) ){
+
+                          if (  widgetQ.widget.type !== 'button' ) {
+
+                            domConstruct.create('div',
+                                                {id: widgetQ.widget.id},
+                                                widgetQ.parent,
+                                                'last');
+                          }
+
+                          else if ( widgetQ.widget.type == 'button' ) {
+
+                            domConstruct.create('button',
+                                                {id: widgetQ.widget.id, type: 'button' },
+                                                 widgetQ.parent,
+                                                0);
+
+                          }
+
+                        }
+
+                      }
+
+                     if ( registry.byId(widgetQ.widget.id) ) {
+                       var c = registry.byId(widgetQ.widget.id);
+                       console.log("Widgets Exists.. proceeding to destroy it..");
+                       console.log(c);
+                       c.destroyRecursive();
+                     }
 
                         createDom();
 
@@ -403,29 +449,42 @@ function(
                         }
 
                         if ( widgetQ.widget.type == 'tree' ){
-
-                          new paneTreeCreator(widgetQ.widget.url, 
-                                          widgetQ.widget.id, 
-                                          widgetQ.widget.mainTabPane,
-                                          widgetQ.widget.title
-                                        );
-
+                            require(
+                              ['aushadha/tree/pane_tree_creator'],
+                            function(paneTreeCreator){
+                                try {
+                                    paneTreeCreator(widgetQ.widget.url, 
+                                                    widgetQ.widget.id, 
+                                                    widgetQ.widget.mainTabPane,
+                                                    widgetQ.widget.title
+                                                  );
+                                } 
+                                catch (err){
+                                    console.log(err.message);
+                                }
+                           });
                         }
 
                         else if ( widgetQ.widget.type == 'grid' ){
                             require(['aushadha/grid/generic_grid_setup',
                                     'aushadha/grid/grid_structures'],
                             function(genericGridSetup, gridStr){ 
-                                console.log(genericGridSetup);
-                                console.log(gridStr[widgetQ.widget.str]);
-                                genericGridSetup.setupGrid(widgetQ.widget.url,
-                                                          widgetQ.widget.id,
-                                                          gridStr[widgetQ.widget.str],
-                                                          widgetQ.widget.activateRowClick,
-                                                          widgetQ.widget.title,
-                                                          widgetQ.widget.storeToUse
-                                );                                      
+                                try {
+                                  console.log(genericGridSetup);
+                                  console.log(gridStr[widgetQ.widget.str]);
+                                  genericGridSetup.setupGrid(widgetQ.widget.url,
+                                                            widgetQ.widget.id,
+                                                            gridStr[widgetQ.widget.str],
+                                                            widgetQ.widget.activateRowClick,
+                                                            widgetQ.widget.title,
+                                                            widgetQ.widget.storeToUse
+                                  );                                      
+                                } 
+                                catch (err) {
+                                  console.error(err);
+                                }
                             });
+
                         }
 
                         else if ( widgetQ.widget.type == 'search' ){
@@ -454,7 +513,8 @@ function(
                         }
 
                         else if ( widgetQ.widget.type == 'button' ){
-                            addButton.constructor({gridId: widgetQ.widget.id, 
+                            addButton.constructor({id: widgetQ.widget.id,
+                                                  gridId: widgetQ.widget.gridId, 
                                                   label: widgetQ.widget.label,
                                                   title: widgetQ.widget.title,
                                                   url: widgetQ.widget.url
@@ -465,7 +525,6 @@ function(
 
                         }
 
-                      });
     }
 
   }

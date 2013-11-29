@@ -33,9 +33,10 @@ VARS:
       storeToUse:  MEDICATION_LIST_GRID_STORE
   
   medication_list_add_button: &MEDICATION_LIST_ADD_BUTTON
-      id: *GRID_NAME_MEDICATION_LIST
+      id: MEDICATION_LIST_ADD_BUTTON
+      gridId: *GRID_NAME_MEDICATION_LIST
       type: button
-      title: Medications
+      title: Medications 
       label: Add
       url: {{patient_detail_obj.urls.add.medication_list}}
 
@@ -49,7 +50,8 @@ VARS:
       storeToUse:  ALLERGY_LIST_GRID_STORE  
 
   allergy_list_add_button: &ALLERGY_LIST_ADD_BUTTON
-      id: *GRID_NAME_ALLERGY_LIST
+      id: ALLERGY_LIST_ADD_BUTTON
+      gridId: *GRID_NAME_ALLERGY_LIST
       type: button
       title: Allergy List
       label: Add

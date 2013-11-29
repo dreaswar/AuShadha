@@ -24,7 +24,8 @@ VARS:
         storeToUse:  FAMILY_HISTORY_GRID_STORE
   
   family_history_add_button: &FAMILY_HISTORY_ADD_BUTTON
-        id: *GRID_NAME
+        id: FAMILY_HISTORY_ADD_BUTTON
+        gridId: *GRID_NAME
         type: button
         label: Add
         title: Family History

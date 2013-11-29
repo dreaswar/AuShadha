@@ -12,7 +12,7 @@ VARS:
             !!int {{patient_detail_obj.id}}
 
   surgical_history_grid: &SURGICAL_HISTORY_GRID
-        id : SURGICAL_HISTORY_GRID
+        id:  SURGICAL_HISTORY_GRID
         type: grid
         url: {{patient_detail_obj.urls.json.surgical_history}}
         str: SURGICAL_HISTORY
@@ -21,7 +21,8 @@ VARS:
         storeToUse:  SURGICAL_HISTORY_GRID_STORE
 
   surgical_history_add_button: &SURGICAL_HISTORY_ADD_BUTTON
-        id: SURGICAL_HISTORY_GRID
+        id: SURGICAL_HISTORY_ADD_BUTTON
+        gridId: SURGICAL_HISTORY_GRID
         type: button
         label: Add
         title: SURGICAL_HISTORY
