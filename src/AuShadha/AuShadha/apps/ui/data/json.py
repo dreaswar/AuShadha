@@ -41,7 +41,7 @@ class ModelInstanceJson(object):
       for item in self.instance._meta.get_fields_with_model():
         
         if item[0].serialize:
-          print item[0] , " of type ", item[0].__class__.__name__, " is JSON exportable "
+          #print item[0] , " of type ", item[0].__class__.__name__, " is JSON exportable "
 
           if type( item[0].value_from_object(self.instance) ) is datetime.datetime : 
             self.exportable_fields[item[0].name] = item[0].value_from_object(self.instance).isoformat()
@@ -74,4 +74,4 @@ class ModelInstanceJson(object):
       for item in self.related_field_list:
         if item not in self.instance._can_add_list_or_json:
           self.instance._can_add_list_or_json.append(item)
-      print "_can_add_list_or_json, Updated"
+      #print "_can_add_list_or_json, Updated"

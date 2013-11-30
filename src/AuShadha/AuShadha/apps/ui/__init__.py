@@ -29,6 +29,9 @@ def autodiscover():
         try:
             print "Printing Registry so far: "
             print before_import_registry
+            #cl =  ui.registry.get('PatientRegistration', '')
+            #if cl:
+              #print cl.__module__, cl.__name__
             import_module('%s.aushadha' % app)
         except:
             print "WARNING! Could not import:: ", app

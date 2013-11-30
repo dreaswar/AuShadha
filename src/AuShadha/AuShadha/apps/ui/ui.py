@@ -125,8 +125,8 @@ class RoleRegistry(object):
                   'SurgicalHistory',
                   'FamilyHistory',
                   'SocialHistory',
-                  'Medication',
-                  'Allergy',
+                  'MedicationList',
+                  'AllergyList',
                   'LabInvestigations',
                   'ImagingStudies',
                   'Demographics',
@@ -134,7 +134,8 @@ class RoleRegistry(object):
                   'Phone',
                   'Guardian',
                   'EmailAndFax',
-                  'Immunisation'
+                  'Immunisation',
+                  'PhysicalExamination'
                 ]
 
   def __call__(self):
@@ -181,7 +182,9 @@ class ModuleRegistry(object):
         raise ImportError(ex)
       
       if not module in self.modules:
-        self.modules.append(module.__name__)
+        self.modules.append(module)
+        print "*" *100
+        print type(module)
   
   def __call__(self):
       return self.modules
@@ -212,6 +215,10 @@ class AuShadhaUI(object):
     if role in self.registered_roles():
       if module not in self.registry.values():
         self.registry[role] = module
+        #print "#" * 100
+        #for x in self.registry.values():
+          #print type(x)
+        #print "#" * 100        
         if module not in self.registered_modules():
           self.registered_modules().append(module)
       else:

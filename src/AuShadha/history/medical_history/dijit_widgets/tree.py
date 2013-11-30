@@ -20,10 +20,10 @@ from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
 
-class FamilyHistoryTree( object ):
+class MedicalHistoryTree( object ):
 
     """
-     Defines the Dijit UI for FamilyHistoryTree
+     Defines the Dijit UI for MedicalHistoryTree
     """
 
     def __init__(self,kwargs):
@@ -34,7 +34,7 @@ class FamilyHistoryTree( object ):
         self.variables['patient_detail_obj'].save()
 
       try:
-        d = open('history/family_history/dijit_widgets/tree.yaml','r')
+        d = open('history/medical_history/dijit_widgets/tree.yaml','r')
         f = d.read()
         d.close()
         pane_template = Template( f )

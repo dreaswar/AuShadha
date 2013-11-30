@@ -6,6 +6,8 @@
 # License: GNU-GPL Version3, see LICENSE.txt for details
 ################################################################################
 
+import importlib
+
 # General Django Imports----------------------------------
 from django.http import Http404, HttpResponse
 from django.utils import simplejson
@@ -17,8 +19,21 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 
 from patient import MODULE_LABEL
-from patient.models import PatientDetail
+#from patient.models import PatientDetail
+from AuShadha.apps.ui.ui import ui as UI
 
+patient = UI.registry.get('PatientRegistration','')
+if patient:
+  print "UI has PatientRegistration role and class defined"
+  module = importlib.import_module(patient.__module__)
+  PatientDetail = getattr(module, patient.__name__)
+else:
+  raise Exception("""
+                  PatientRegistration role not defined and hence cannot be imported.
+                  This module depends on this. 
+                  Please register the module and class for PatientRegistration Role
+                  """
+                  )
 
 @login_required
 def render_surgical_history_pane(request, patient_id = None):

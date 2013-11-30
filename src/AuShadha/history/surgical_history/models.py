@@ -6,6 +6,8 @@
 # Licence      : GNU GPL V3. Please see AuShadha/LICENSE.txt
 ################################################################################
 
+import importlib
+
 from django.db import models
 #from django.forms import ModelForm
 #from django.core.exceptions import ValidationError
@@ -14,9 +16,24 @@ from django.db import models
 
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 
-from patient.models import PatientDetail
+#from patient.models import PatientDetail
 #from icd_10.models import ICD10
 #from icd_10_pc.models import ICD10_PC
+from AuShadha.apps.ui.ui import ui as UI
+
+patient = UI.registry.get('PatientRegistration','')
+if patient:
+  print "UI has PatientRegistration role and class defined"
+  module = importlib.import_module(patient.__module__)
+  PatientDetail = getattr(module, patient.__name__)
+else:
+  raise Exception("""
+                  PatientRegistration role not defined and hence cannot be imported.
+                  This module depends on this. 
+                  Please register the module and class for PatientRegistration Role
+                  """
+                  )
+
 from dijit_fields_constants import SURGICAL_HISTORY_FORM_CONSTANTS
 
 DEFAULT_SURGICAL_HISTORY_FORM_EXCLUDES = ('patient_detail',)
