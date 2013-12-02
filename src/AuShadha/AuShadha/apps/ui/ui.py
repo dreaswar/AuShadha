@@ -9,8 +9,10 @@
 
 
 import importlib
+from collections import OrderedDict
+import yaml
 
-from AuShadha.settings import INSTALLED_APPS
+from AuShadha.settings import INSTALLED_APPS, ENABLED_APPS
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTree, DijitTreeNode
 
@@ -117,26 +119,32 @@ class RoleRegistry(object):
   
   """
   def __init__(self):
-    self.roles = [
-                  'PatientRegistration',
-                  'Admission',
-                  'OpdVisits',
-                  'MedicalHistory',
-                  'SurgicalHistory',
-                  'FamilyHistory',
-                  'SocialHistory',
-                  'MedicationList',
-                  'AllergyList',
-                  'LabInvestigations',
-                  'ImagingStudies',
-                  'Demographics',
-                  'Contact',
-                  'Phone',
-                  'Guardian',
-                  'EmailAndFax',
-                  'Immunisation',
-                  'PhysicalExamination'
-                ]
+    #self.roles = [
+                  #'PatientRegistration',
+                  #'Admission',
+                  #'OpdVisits',
+                  #'MedicalHistory',
+                  #'SurgicalHistory',
+                  #'FamilyHistory',
+                  #'SocialHistory',
+                  #'MedicationList',
+                  #'AllergyList',
+                  #'LabInvestigations',
+                  #'ImagingStudies',
+                  #'Demographics',
+                  #'Contact',
+                  #'Phone',
+                  #'Guardian',
+                  #'EmailAndFax',
+                  #'Immunisation',
+                  #'PhysicalExamination'
+                #]
+    self.roles = []
+    for app in ENABLED_APPS:
+      if app['role'] not in self.roles:
+        self.roles.append( app['role'] )
+      else:
+        print "Skipping role and the app as the app role is duplication in configure.yaml"
 
   def __call__(self):
       return self.roles
@@ -172,19 +180,30 @@ class ModuleRegistry(object):
   
   def __init__(self):
     self.modules = []
-    self.installed_modules = INSTALLED_APPS
+    self.enabled_apps = ENABLED_APPS
     self.registered_modules = []
 
-    for module in INSTALLED_APPS:
+    for app in ENABLED_APPS:
       try:
-        module = importlib.import_module(module)
-      except(ImportError) as ex:
+        module = importlib.import_module( app['app'] )
+      except (ImportError) as ex:
         raise ImportError(ex)
-      
-      if not module in self.modules:
-        self.modules.append(module)
+
+      if not app['app'] in self.modules:
+        self.modules.append( app['app'] )
         print "*" *100
-        print type(module)
+        print type( app['app'] )
+
+    #for module in INSTALLED_APPS:
+      #try:
+        #module = importlib.import_module(module)
+      #except(ImportError) as ex:
+        #raise ImportError(ex)
+      
+      #if not module in self.modules:
+        #self.modules.append(module)
+        #print "*" *100
+        #print type(module)
   
   def __call__(self):
       return self.modules
@@ -198,29 +217,45 @@ class AuShadhaUI(object):
   """
     The UI Object which will help registration of the elements of UI and installed modules
   """
-  
- 
+
   def __init__(self):
 
     self.UI_INSTALLATION_STATE  = False  
-    self.registered_roles = RoleRegistry()
-    self.registered_modules = ModuleRegistry()
-    self.registry = {}
+    #self.registered_roles = RoleRegistry()()
+    #self.registered_modules = ModuleRegistry()()
+    self.registry = OrderedDict()
+    self.mass_register()
 
   def __call__(self):
     return self.registry
   
+  def mass_register(self):
+    for item in ENABLED_APPS:
+      app = item['app']
+      import_from = item['module']
+      role = item['role']
+      class_name = item['class_name']
+      try:
+        print "Trying to import", app, " module"
+        module = importlib.import_module( app ) 
+        print module
+        print dir(module)
+        model_file = getattr(module, import_from )
+        print model_file
+        cl = getattr(model_file, class_name )
+        print cl
+        self.registry[role] = cl
+      except (ImportError) as ex:
+        raise ImportError(ex)
+
+
   def register(self, role,module):
     """ Registers a module with the UI for a particular role. """
     if role in self.registered_roles():
       if module not in self.registry.values():
         self.registry[role] = module
-        #print "#" * 100
-        #for x in self.registry.values():
-          #print type(x)
-        #print "#" * 100        
         if module not in self.registered_modules():
-          self.registered_modules().append(module)
+          self.registered_modules.append(module)
       else:
         for k, v in self.registry:
           if v == role:

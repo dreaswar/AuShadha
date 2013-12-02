@@ -7,11 +7,8 @@
 
 from django.core.urlresolvers import reverse, reverse_lazy
 
-#from AuShadha.admission.models import AdmissionDetail
 
-
-
-MODULE_IDENTIFIER = 'aushadha-visit'
+MODULE_IDENTIFIER = 'aushadha-admission'
 MODULE_LABEL = 'Admission'
 MODULE_TYPE = 'main_module'
 PACKAGE_NAME = 'aushadha-admission'

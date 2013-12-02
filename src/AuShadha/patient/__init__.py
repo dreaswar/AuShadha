@@ -6,11 +6,6 @@
 # Author : Dr. Easwar T.R
 ################################################################################
 
-from django.core.urlresolvers import reverse
-
-#from AuShadha.patient.models import PatientDetail
-#from patient.views import render_patient_tree, render_patient_summary
-
 MODULE_IDENTIFIER = 'aushadha-patient'
 MODULE_LABEL = 'Patient'
 VERSION = 0.01
@@ -22,9 +17,9 @@ ui_sections = {'app_type'  : 'main_module',
                'load_after': 'search',
                'load_first': False,
                'layout'  :['trailing','top','center'],
-               'widgets' :{ 'tree'   : reverse('render_patient_tree_without_id'),
+               'widgets' :{ 'tree'   : '',
                             'summary': True,
-                            'grid'   : reverse('render_patient_json'),
-                            'search' : reverse('filtering_search_without_id')
+                            'grid'   : '',
+                            'search' : ''
                           }
               }

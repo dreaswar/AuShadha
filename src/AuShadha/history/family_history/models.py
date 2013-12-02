@@ -7,29 +7,33 @@
 ################################################################################
 
 import importlib
+
 from django.db import models
 from django.contrib.auth.models import User
+
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
-#from patient.models import PatientDetail
-from AuShadha.apps.ui.ui import ui as UI
+#from AuShadha.apps.ui.ui import ui as UI
 
-patient = UI.registry.get('PatientRegistration','')
-if patient:
-  print "UI has PatientRegistration role and class defined"
-  module = importlib.import_module(patient.__module__)
-  PatientDetail = getattr(module, patient.__name__)
-else:
-  raise Exception("""
-                  PatientRegistration role not defined and hence cannot be imported.
-                  This module depends on this. 
-                  Please register the module and class for PatientRegistration Role
-                  """
-                  )
-
-
+from patient.models import PatientDetail
 from dijit_fields_constants import FAMILY_HISTORY_FORM_CONSTANTS
 
 DEFAULT_FAMILY_HISTORY_FORM_EXCLUDES=('patient_detail',)
+
+
+#patient = UI.registry.get('PatientRegistration','')
+#if patient:
+  #print "UI has PatientRegistration role and class defined"
+  #module = importlib.import_module(patient.__module__)
+  #PatientDetail = getattr(module, patient.__name__)
+#else:
+  #raise Exception("""
+                  #PatientRegistration role not defined and hence cannot be imported.
+                  #This module depends on this. 
+                  #Please register the module and class for PatientRegistration Role
+                  #"""
+                  #)
+
+
 
 
 

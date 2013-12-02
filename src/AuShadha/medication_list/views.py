@@ -9,6 +9,7 @@
 
 # General Module imports-----------------------------------
 from datetime import datetime, date, time
+import importlib
 
 # General Django Imports----------------------------------
 from django.shortcuts import render_to_response
@@ -27,8 +28,23 @@ import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 from AuShadha.utilities.forms import aumodelformerrorformatter_factory
+from AuShadha.apps.ui.ui import ui as UI
 
 from patient.models import PatientDetail
+
+#patient = UI.registry.get('PatientRegistration','')
+#if patient:
+  #print "UI has PatientRegistration role and class defined"
+  #module = importlib.import_module(patient.__module__)
+  #PatientDetail = getattr(module, patient.__name__)
+#else:
+  #raise Exception("""
+                  #PatientRegistration role not defined and hence cannot be imported.
+                  #This module depends on this. 
+                  #Please register the module and class for PatientRegistration Role
+                  #"""
+                  #)
+
 from medication_list.models import MedicationList, MedicationListForm
 
 

@@ -6,9 +6,8 @@
 # License      : GNU-GPL Version 3,Please see AuShadha/LICENSE.txt for details
 ################################################################################
 
-import importlib
-
 # General Module imports-----------------------------------
+import importlib
 from datetime import datetime, date, time
 
 # General Django Imports----------------------------------
@@ -17,7 +16,6 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 #from django.core.context_processors import csrf
 from django.contrib.auth.models import User
-
 from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
@@ -28,23 +26,25 @@ import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 from AuShadha.utilities.forms import aumodelformerrorformatter_factory
-#from patient.models import PatientDetail
 from AuShadha.apps.ui.ui import ui as UI
 
-patient = UI.registry.get('PatientRegistration','')
-if patient:
-  print "UI has PatientRegistration role and class defined"
-  module = importlib.import_module(patient.__module__)
-  PatientDetail = getattr(module, patient.__name__)
-else:
-  raise Exception("""
-                  PatientRegistration role not defined and hence cannot be imported.
-                  This module depends on this. 
-                  Please register the module and class for PatientRegistration Role
-                  """
-                  )
-
+from patient.models import PatientDetail
 from history.surgical_history.models import SurgicalHistory, SurgicalHistoryForm
+
+#patient = UI.registry.get('PatientRegistration','')
+#if patient:
+  #print "UI has PatientRegistration role and class defined"
+  #module = importlib.import_module(patient.__module__)
+  #PatientDetail = getattr(module, patient.__name__)
+#else:
+  #raise Exception("""
+                  #PatientRegistration role not defined and hence cannot be imported.
+                  #This module depends on this. 
+                  #Please register the module and class for PatientRegistration Role
+                  #"""
+                  #)
+
+
 
 
 # Views start here -----------------------------------------

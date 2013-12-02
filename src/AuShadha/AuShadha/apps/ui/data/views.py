@@ -78,7 +78,7 @@ def installed_apps(request):
   if request.method == "GET":
     success = True
     installed_apps = []
-    apps = settings.ENABLED_APPS
+    apps = settings.INSTALLED_APPS
 
     for app in apps:
       main_module = app.split('.')[0]

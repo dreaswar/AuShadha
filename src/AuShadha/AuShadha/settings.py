@@ -2,6 +2,7 @@
 
 import sys
 import os
+import yaml
 
 ROOT_PATH = os.path.dirname(__file__)
 
@@ -203,6 +204,9 @@ INSTALLED_APPS = (
     # Custom Apps for Patient Registration
     'patient',
 
+    #AuShadha Stock apps for Admission and OPD Visits
+    'admission',
+
     # Custom Apps for Patient Demographics
     'demographics.demographics',
     'demographics.contact',
@@ -222,8 +226,6 @@ INSTALLED_APPS = (
     'allergy_list',
     'immunisation',
 
-    #AuShadha Stock apps for Admission and OPD Visits
-    'admission',
     'visit',
 
     #AuShadha Stock for Physical Examination Management
@@ -231,9 +233,40 @@ INSTALLED_APPS = (
 
 )
 
-ENABLED_APPS = []
-for x in INSTALLED_APPS:
-  ENABLED_APPS.append(x)
+#ENABLED_APPS = [
+      ## Custom Apps for Patient Registration
+    #'patient',
+
+    ##AuShadha Stock apps for Admission and OPD Visits
+    #'admission',
+
+    ## Custom Apps for Patient Demographics
+    #'demographics.demographics',
+    #'demographics.contact',
+    #'demographics.phone',
+    #'demographics.guardian',
+    #'demographics.email_and_fax',
+
+    ## AuShadha stock apps for History
+    #'history.medical_history',
+    #'history.surgical_history',
+    #'history.social_history',
+    #'history.family_history',
+    ##'history.obs_and_gyn',
+
+    ##AuShadha Stock apps for Medication List, Allergy, Immunisaion
+    #'medication_list',
+    #'allergy_list',
+    #'immunisation',
+
+    #'visit',
+
+    ##AuShadha Stock for Physical Examination Management
+    #'phyexam',
+
+  #]
+
+ENABLED_APPS = yaml.load( open('AuShadha/configure.yaml').read() )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -263,5 +296,3 @@ LOGGING = {
         },
     }
 }
-
-

@@ -1,0 +1,69 @@
+- role: PatientRegistration
+  app: patient
+  module: models
+  class_name: PatientDetail
+
+- role: Admission
+  app: admission
+  module: models
+  class_name: AdmissionDetail
+
+- role: Contact
+  app: demographics.contact
+  module: models
+  class_name: Contact
+
+- role: Phone
+  app: demographics.phone
+  module: models
+  class_name: Phone
+
+- role: Guardian
+  app: demographics.guardian
+  module: models
+  class_name: Guardian
+
+- role: MedicalHistory
+  app: history.medical_history
+  module: models
+  class_name: MedicalHistory
+
+- role: SurgicalHistory
+  app: history.surgical_history
+  module: models
+  class_name: SurgicalHistory
+
+- role: FamilyHistory
+  app: history.family_history
+  module: models
+  class_name: FamilyHistory
+
+- role: SocialHistory
+  app: history.social_history
+  module: models
+  class_name: SocialHistory
+
+- role: Immunisation
+  app: immunisation
+  module: models
+  class_name: Immunisation
+
+- role: MedicationList
+  app: medication_list
+  module: models
+  class_name: MedicationList
+
+- role: AllergyList
+  app: allergy_list
+  module: models
+  class_name: Allergy
+
+- role: OPD_Visit
+  app: visit
+  module: models
+  class_name: VisitDetail
+
+- role: PhysicalExamination
+  app: phyexam
+  module: models
+  class_name: PhyExamBaseModel
