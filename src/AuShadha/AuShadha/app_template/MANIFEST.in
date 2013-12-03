@@ -1,0 +1,6 @@
+include LICENSE.txt
+include README.md
+recursive-include {{app_name}}/media *
+recursive-include {{app_name}}/templates *
+recursive-include {{app_name}}/docs *
+recursive-include {{app_name}}/dijit_widgets *
