@@ -23,10 +23,12 @@ from django.contrib.auth.decorators import login_required
 # Application Specific Model Imports-----------------------
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
+from AuShadha.apps.ui.ui import ui as UI
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 
-from patient.models import PatientDetail
+#from patient.models import PatientDetail
+PatientDetail = UI.get_module("PatientRegistration")
 from .models import Demographics, DemographicsForm
 
 

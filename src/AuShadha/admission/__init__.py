@@ -5,9 +5,6 @@
 # License : GNU-GPL Version 3, see LICENSE.txt
 ################################################################################
 
-from django.core.urlresolvers import reverse, reverse_lazy
-
-
 MODULE_IDENTIFIER = 'aushadha-admission'
 MODULE_LABEL = 'Admission'
 MODULE_TYPE = 'main_module'
@@ -20,9 +17,9 @@ ui_sections = {'app_type': 'main_module',
                'load_after':'patient',
                'load_first': False,
                'layout' : ['trailing','top','center'],
-               'widgets':{ 'tree'    : '/AuShadha/admission/admission/tree/',
+               'widgets':{ 'tree'    : '',
                            'summary' : '',
-                           'grid'    : '/AuShadha/admission/admission/json/',
+                           'grid'    : '',
                            'search'  : ''
                           }
               }

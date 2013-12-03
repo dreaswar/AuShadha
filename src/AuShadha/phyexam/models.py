@@ -1,42 +1,39 @@
-#
+################################################################################
 # Physical Examination Models for AuShadha
 # Takes care of all the Physical Examination Related Data.
 # Author    : Dr.Easwar T.R
 # Copyright : 2012
 # Date      : 2012-12-31
-# Licence   : GNU-GPL Version 3
-#
+# License   : GNU-GPL Version 3
+################################################################################
 
 # General Imports
 import datetime
 from datetime import date, time, datetime
+import importlib
+import yaml
 
 # General Django Imports
 from django.db import models
-from django.forms           import ModelForm,\
-    Textarea,\
-    CharField,\
-    Widget,\
-    TextInput,\
-    HiddenInput,\
-    ModelChoiceField
-
+from django.forms import ModelForm,Textarea,CharField,Widget,TextInput,HiddenInput,ModelChoiceField
 from django.contrib.auth.models import User
 from django.contrib import admin
 from django.core.exceptions import ValidationError
 
-
 # Application specific django imports::
-
+from AuShadha.apps.ui.ui import ui as UI
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 from AuShadha.apps.aushadha_users.models import AuShadhaUser
-#from physician.models import *
 from AuShadha.apps.clinic.models import Clinic, Staff
 
+#from physician.models import *
 from patient.models import PatientDetail
 from admission.models import AdmissionDetail
 from visit.models import VisitDetail
 
+#PatientDetail  = UI.get_module("PatientRegistration")
+#VisitDetail = UI.get_module("OPD_Visit")
+#AdmissionDetail = UI.get_module("Admission")
 
 # Imports the needed Constants
 from phyexam.phyexam_constants import *

@@ -10,12 +10,13 @@ from django.contrib.auth.models import User
 
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.utilities.urls import UrlGenerator, generic_url_maker
-
+from AuShadha.apps.ui.ui import ui as UI
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
-from patient.models import PatientDetail
+
+#from patient.models import PatientDetail
+PatientDetail = UI.get_module("PatientRegistration")
 
 from dijit_fields_constants import DEMOGRAPHICS_FORM_CONSTANTS
-
 DEFAULT_DEMOGRAPHICS_FORM_EXCLUDES = ('patient_detail',)
 
 

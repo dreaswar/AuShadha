@@ -10,13 +10,18 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
+from AuShadha.apps.ui.ui import ui as UI
 
-from patient.models import PatientDetail
+#from patient.models import PatientDetail
+PatientDetail = UI.get_module("PatientRegistration")
 
 from dijit_fields_constants import ALLERGY_FORM_CONSTANTS
 
 DEFAULT_ALLERGY_FORM_EXCLUDES = ('patient_detail',)
 REACTION_OBSERVED = (("rash", 'Rash'),('angioedema', 'Angioedema'),("anaphylaxis", "Anaphylaxis"))
+
+
+
 
 class Allergy(AuShadhaBaseModel):
 

@@ -20,22 +20,11 @@ from django.contrib.auth.decorators import login_required
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 from AuShadha.apps.ui.ui import ui as UI
 
-from patient.models import PatientDetail
+#from patient.models import PatientDetail
+PatientDetail = UI.get_module("PatientRegistration")
 from visit import MODULE_LABEL
 from visit.models import VisitDetail
 
-#patient = UI.registry.get('PatientRegistration','')
-#if patient:
-  #print "UI has PatientRegistration role and class defined"
-  #module = importlib.import_module(patient.__module__)
-  #PatientDetail = getattr(module, patient.__name__)
-#else:
-  #raise Exception("""
-                  #PatientRegistration role not defined and hence cannot be imported.
-                  #This module depends on this. 
-                  #Please register the module and class for PatientRegistration Role
-                  #"""
-                  #)
 
 
 

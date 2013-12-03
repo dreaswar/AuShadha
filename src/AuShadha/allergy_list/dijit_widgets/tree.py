@@ -30,64 +30,10 @@ from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
 
-class PatientTree( object ):
+class AllergyTree( object ):
 
     """
-     Defines the Dijit UI for Patient Tree
+     Defines the Dijit UI for Allergy Tree
     """
 
-    def __init__(self,kwargs):
-
-      self.request = kwargs['request']
-      self.variables = RequestContext(self.request, kwargs)
-      if not getattr(self.variables['patient_detail_obj'],'urls',None):
-        self.variables['patient_detail_obj'].save()
-
-      try:
-        d = open('patient/dijit_widgets/tree.yaml','r')
-        f = d.read()
-        d.close()
-        pane_template = Template( f )
-        rendered_pane = pane_template.render(self.variables)
-        self.yaml_file = yaml.load( rendered_pane ) 
-
-      except( IOError ):
-        raise Http404("No template file to render the pane ! ")
-
-      try:
-        self.user = self.request.user
-      
-      except(AttributeError,ValueError,NameError,TypeError):
-        raise Exception("Invalid User or no user supplied")
-
-    def __unicode__(self):
-      return self.__call__()
-
-    def __call__(self):
-
-      y =  self.yaml_file
-      patient_tree_node = DijitTree()
-
-      history_node  =  DijitTreeNode( y['history'])
-      preventives_node =  DijitTreeNode( y['preventives'])
-      demographics_node =  DijitTreeNode( y['demographics'])
-      medication_list_node =  DijitTreeNode( y['medications'])
-      admission_node =  DijitTreeNode( y['admissions'])
-      visit_node=  DijitTreeNode( y['visits'])
-      procedure_node = DijitTreeNode( y['procedures'] )
-      imaging_node = DijitTreeNode( y['imaging'] )
-      investigation_node=  DijitTreeNode( y['investigation'] )
-
-      patient_tree_node.add_child_node( history_node )
-      patient_tree_node.add_child_node( preventives_node )
-      patient_tree_node.add_child_node( demographics_node )      
-      patient_tree_node.add_child_node( medication_list_node )
-      patient_tree_node.add_child_node( admission_node )
-      patient_tree_node.add_child_node( visit_node )
-
-      patient_tree_node.add_child_node( procedure_node )
-      patient_tree_node.add_child_node( imaging_node )
-      patient_tree_node.add_child_node( investigation_node )
-
-      json = patient_tree_node.to_json()
-      return json
+    pass

@@ -12,4 +12,4 @@
 from .models import VisitDetail
 from AuShadha.apps.ui.ui import ui as UI
 
-UI.register('OpdVisits', VisitDetail)
+UI.register('OPD_Visit', VisitDetail)

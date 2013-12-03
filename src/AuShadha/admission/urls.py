@@ -1,6 +1,5 @@
 
 from django.conf.urls.defaults import *
-#from django.contrib import admin
 from django.conf.urls.defaults import patterns, url
 
 import AuShadha.settings

@@ -1,10 +1,10 @@
 # General Module imports-----------------------------------
-#from datetime import datetime, date, time
+from datetime import datetime, date, time
 
 # General Django Imports----------------------------------
 #from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-#from django.template import RequestContext
+from django.template import RequestContext
 #from django.contrib.auth.models import User
 
 from django.utils import simplejson
@@ -12,13 +12,22 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
 # Application Specific Model Imports-----------------------
-#import AuShadha.settings as settings
+import AuShadha.settings as settings
 #from AuShadha.settings import APP_ROOT_URL
 #from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
+from AuShadha.apps.ui.ui import ui as UI
 
-from patient.models import PatientDetail
-from admission.models import AdmissionDetail
-from admission import MODULE_LABEL
+PatientDetail = UI.get_module("PatientRegistration")
+AdmissionDetail = UI.get_module("Admission")
+
+try:
+  from admission import MODULE_LABEL
+except (AttributeError, ImportError):
+  MODULE_LABEL = "Admission"
+
+#from patient.models import PatientDetail
+#from admission.models import AdmissionDetail
+
 
 @login_required
 def render_admission_pane(request, patient_id = None):

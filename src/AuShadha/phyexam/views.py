@@ -1,12 +1,20 @@
-#
+################################################################################
 # Physical Examination Views for AuShadha
 # Takes care of all the Physical Examination Related Data.
 # Author    : Dr.Easwar T.R
 # Copyright : 2012
 # Date      : 2012-12-31
-# Licence   : GNU-GPL Version 3
-#
+# License   : GNU-GPL Version 3
+################################################################################
 
+
+# General Module imports-----------------------------------
+import StringIO
+import ho.pisa as pisa
+from reportlab.pdfgen import canvas
+from datetime import datetime, date, time
+import yaml
+import importlib
 
 # General Django Imports----------------------------------
 
@@ -15,29 +23,22 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.forms.models import modelformset_factory
 from django.forms.formsets import formset_factory
 from django.template import RequestContext
-#from django.core.context_processors  import csrf
 from django.contrib.auth.models import User
-#from django.views.decorators.csrf    import csrf_exempt
 from django.template.loader import render_to_string
 from django.contrib.auth.decorators import login_required
-
-
-# General Module imports-----------------------------------
-import StringIO
-import ho.pisa as pisa
-
-from reportlab.pdfgen import canvas
-from datetime import datetime, date, time
+#from django.core.context_processors  import csrf
+#from django.views.decorators.csrf    import csrf_exempt
 
 # Application Specific Model Imports-----------------------
 
 from AuShadha.settings import LOGIN_URL
+from AuShadha.apps.ui.ui import ui as UI
+
 from patient.models import *
+from patient.views import *
 from admission.models import *
 from visit.models import *
 from phyexam.models import *
-
-from patient.views import *
 
 
 ################################################################################

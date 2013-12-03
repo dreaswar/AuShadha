@@ -6,24 +6,32 @@
 # License: GNU-GPL Version3, see LICENSE.txt for details
 ################################################################################
 
+import yaml
+from cStringIO import StringIO
+
 # General Django Imports----------------------------------
 from django.http import Http404, HttpResponse
 from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.template import Template, Context
-from cStringIO import StringIO
-import yaml
 from django.contrib.auth.decorators import login_required
 
-from patient.models import PatientDetail
-
+from AuShadha.apps.ui.ui import ui as UI
+#from patient.models import PatientDetail
+#from demographics.demographics.models import Demographics
+#from demographics.contact.models import Contact
+#from demographics.phone.models import Phone
+#from demographics.guardian.models import Guardian
 from demographics import MODULE_LABEL
 
-from demographics.demographics.models import Demographics
-from demographics.contact.models import Contact
-from demographics.phone.models import Phone
-from demographics.guardian.models import Guardian
+PatientDetail = UI.get_module("PatientRegistration")
+Demographics  = UI.get_module("Demographics")
+Contact = UI.get_module("Contact")
+Phone = UI.get_module("Phone")
+Guardian = UI.get_module("Guardian")
+
+
 
 
 @login_required

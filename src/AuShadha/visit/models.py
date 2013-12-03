@@ -16,43 +16,16 @@ from django.db import models
 from django.forms import ModelForm, ModelChoiceField, Textarea, TextInput
 
 # Application model imports
+from AuShadha.apps.ui.ui import ui as UI
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
 from AuShadha.apps.clinic.models import Clinic, Staff
-#from AuShadha.apps.ui.ui import ui as UI
 
 from registry.inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
-from patient.models import PatientDetail
-from admission.models import AdmissionDetail
+#from patient.models import PatientDetail
+#from admission.models import AdmissionDetail
 
-#patient = UI.registry.get('PatientRegistration','')
-
-#if patient:
-  #print "UI has PatientRegistration role and class defined"
-  #module = importlib.import_module(patient.__module__)
-  #PatientDetail = getattr(module, patient.__name__)
-#else:
-  #raise Exception("""
-                  #PatientRegistration role not defined and hence cannot be imported.
-                  #This module depends on this. 
-                  #Please register the module and class for PatientRegistration Role
-                  #"""
-                  #)
-
-#admission = UI.registry.get('Admission','')
-
-#if admission:
-  #print "UI has Admission role and class defined"
-  #module = importlib.import_module(admission.__module__)
-  #AdmissionDetail = getattr(module, admission.__name__)
-#else:
-  #raise Exception("""
-                  #ERROR!:
-                  ##Admission Management role not defined and hence cannot be imported.
-                  ##This module depends on this. 
-                  ##Please register the module and class for Admission Management Role
-                  ##"""
-                  #)
-
+PatientDetail = UI.get_module("PatientRegistration")
+AdmissionDetail = UI.get_module("Admission")
 
 
 from dijit_fields_constants import VISIT_DETAIL_FORM_CONSTANTS,\

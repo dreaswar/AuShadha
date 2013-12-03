@@ -12,7 +12,10 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.utilities.urls import UrlGenerator, generic_url_maker
 
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
-from patient.models import PatientDetail
+from AuShadha.apps.ui.ui import ui as UI
+#from patient.models import PatientDetail
+
+PatientDetail = UI.get_module("PatientRegistration")
 
 from dijit_fields_constants import CONTACT_FORM_CONSTANTS
 DEFAULT_DEMOGRAPHICS_FORM_EXCLUDES = ('patient_detail',)

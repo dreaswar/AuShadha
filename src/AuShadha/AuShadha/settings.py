@@ -187,10 +187,10 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # Core AuShadha Apps, base_models, custom_users:
+    'AuShadha.apps.ui',
     'AuShadha.apps.aushadha_base_models',
     'AuShadha.apps.aushadha_users',
     'AuShadha.apps.clinic',
-    'AuShadha.apps.ui',
     'AuShadha.apps.search',
 
     # Core AuShadha Registry for ICD 10 codes, ICD 10 PCS codes, Drug Database
@@ -230,7 +230,6 @@ INSTALLED_APPS = (
 
     #AuShadha Stock for Physical Examination Management
     'phyexam',
-
 )
 
 #ENABLED_APPS = [
@@ -296,3 +295,5 @@ LOGGING = {
         },
     }
 }
+
+UI_INITIALIZED = False

@@ -33,31 +33,46 @@ from django.contrib.auth.decorators import login_required
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
-
-from patient.models import PatientDetail, PatientDetailForm
-from .models import AdmissionDetail,AdmissionDetailForm, \
-                    AdmissionHPI, AdmissionROS, AdmissionImaging, \
-                    AdmissionInv, AdmissionComplaint
-
-from dijit_widgets.tree import AdmissionTree
+from AuShadha.apps.ui.ui import ui as UI
 from AuShadha.apps.ui.data.json import ModelInstanceJson
 
-from demographics.demographics.models import Demographics
-from demographics.contact.models import Contact
-from demographics.phone.models import Phone
-from demographics.guardian.models import Guardian
-from demographics.email_and_fax.models import EmailAndFax
+from registry.inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
 
-from history.social_history.models import SocialHistory
-from history.family_history.models import FamilyHistory
-from history.medical_history.models import MedicalHistory
-from history.surgical_history.models import SurgicalHistory
+
+PatientDetail = UI.get_module("PatientRegistration")
+
+Demographics = UI.get_module("Demographics")
+Contact = UI.get_module("Contact")
+Phone = UI.get_module("Phone")
+Guardian = UI.get_module("Guardian")
+EmailAndFax = UI.get_module("EmailAndFax")
+
+SocialHistory  = UI.get_module("SocialHistory")
+FamilyHistory = UI.get_module("FamilyHistory")
+MedicalHistory = UI.get_module("MedicalHistory")
+SurgicalHistory = UI.get_module("SurgicalHistory")
+
+MedicationList = UI.get_module("MedicationList")
+Allergy = UI.get_module("AllergyList")
+
+#from patient.models import PatientDetail
+
+#from demographics.demographics.models import Demographics
+#from demographics.contact.models import Contact
+#from demographics.phone.models import Phone
+#from demographics.guardian.models import Guardian
+#from demographics.email_and_fax.models import EmailAndFax
+
+#from history.social_history.models import SocialHistory
+#from history.family_history.models import FamilyHistory
+#from history.medical_history.models import MedicalHistory
+#from history.surgical_history.models import SurgicalHistory
 #from history.obs_and_gyn.models import ObstetricHistoryDetail
 
-from medication_list.models import MedicationList
-from allergy_list.models import Allergy
+#from medication_list.models import MedicationList
+#from allergy_list.models import Allergy
 
-from registry.inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
+
 
 from phyexam.models import *
 from phyexam.models import DEFAULT_VITALS
@@ -73,6 +88,12 @@ from phyexam.presentation_classes import VitalExamObjPresentationClass,\
                                          vascexamobjpresentationclass_querysetfactory,\
                                          visitrospresentationclass_factory
 
+
+from .models import AdmissionDetail,AdmissionDetailForm, \
+                    AdmissionHPI, AdmissionROS, AdmissionImaging, \
+                    AdmissionInv, AdmissionComplaint
+
+from dijit_widgets.tree import AdmissionTree
 
 
 # Views start here -----------------------------------------

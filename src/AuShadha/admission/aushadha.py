@@ -11,13 +11,7 @@
 
 from .models import AdmissionDetail
 
-#from AuShadha.apps.ui.ui import UIClass
 from AuShadha.apps.ui.ui import ui as UI
-
-#class AdmissionUI(UIClass):
-    #"""
-     #Generates UI Class for Admission Object with related metadata to be passed to UI
-    #"""
 
 UI.register('Admission', AdmissionDetail)
 

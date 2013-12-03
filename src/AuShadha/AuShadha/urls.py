@@ -2,10 +2,15 @@ from django.conf.urls.defaults import patterns, url, include
 #from django.views.generic.simple import direct_to_template
 
 import settings
-
+#from AuShadha.apps.ui import autodiscover as autodiscover_ui
+#from AuShadha.apps.ui.ui import ui as UI
 from django.contrib import admin
+
 admin.autodiscover()
 
+#print "Trying to autodiscover UI for AuShadha"
+#autodiscover_ui()
+#print "Finished autodiscovering"
 
 urlpatterns = patterns('',
 
@@ -73,3 +78,4 @@ urlpatterns = patterns('',
 if settings.DEBUG:
     urlpatterns += patterns('django.contrib.staticfiles.views', url(
         r'^AuShadha/static/(?P<path>.*)$', 'serve'), )
+

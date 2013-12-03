@@ -6,17 +6,21 @@
 # License: GNU-GPL Version3, see LICENSE.txt for details
 ################################################################################
 
+from cStringIO import StringIO
+import yaml
+
 # General Django Imports----------------------------------
 from django.http import Http404, HttpResponse
 from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.template import Template, Context
-from cStringIO import StringIO
-import yaml
 from django.contrib.auth.decorators import login_required
 
+from AuShadha.apps.ui.ui import ui as UI
+
 from patient import MODULE_LABEL
-from patient.models import PatientDetail
+#from patient.models import PatientDetail
+PatientDetail = UI.get_module("PatientRegistration")
 
 
 @login_required

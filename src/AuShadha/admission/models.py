@@ -7,12 +7,20 @@
 ################################################################################
 
 import datetime
+import importlib
+
 from django.db import models
+from django.forms import ModelForm, ModelChoiceField, Textarea, TextInput
+
+from AuShadha.apps.ui.ui import ui as UI
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
+
 from AuShadha.apps.clinic.models import Staff
 from registry.inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
-from patient.models import PatientDetail
-from django.forms import ModelForm, ModelChoiceField, Textarea, TextInput
+
+#from patient.models import PatientDetail
+PatientDetail = UI.get_module('PatientRegistration')
+
 
 from dijit_fields_constants import ADMISSION_DETAIL_FORM_CONSTANTS, \
                                    ADMISSION_COMPLAINTS_FORM_CONSTANTS,\
@@ -21,6 +29,7 @@ from dijit_fields_constants import ADMISSION_DETAIL_FORM_CONSTANTS, \
                                    ADMISSION_INVESTIGATION_FORM_CONSTANTS,\
                                    ADMISSION_PAST_HISTORY_FORM_CONSTANTS,\
                                    ADMISSION_ROS_FORM_CONSTANTS
+
 
 IMAGING_CHOICES = (	('MRI', 'MRI'), ('X-Ray', 'X-Ray'),
                   ('USG', 'USG'), ('CT', 'CT'), ('Others', 'Others'	))

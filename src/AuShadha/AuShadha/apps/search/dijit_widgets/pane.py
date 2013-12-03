@@ -6,22 +6,32 @@
 # License: GNU-GPL Version3, see LICENSE.txt for details
 ################################################################################
 
+from cStringIO import StringIO
+import yaml
+
 # General Django Imports----------------------------------
 from django.http import Http404, HttpResponse
 from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.template import Template, Context
-from cStringIO import StringIO
-import yaml
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 
-
-from patient import MODULE_LABEL
-from patient.models import PatientDetail
 from AuShadha.apps.clinic.models import Clinic
+from AuShadha.apps.ui.ui import ui as UI
+
+#from patient.models import PatientDetail
+PatientDetail = UI.get_module("PatientRegistration")
+try:
+  from patient import MODULE_LABEL
+except (ImportError, AttributeError):
+  MODULE_LABEL = "Patient"
+
+
+
+
 
 @login_required
 def render_aushadha_search_form(request):

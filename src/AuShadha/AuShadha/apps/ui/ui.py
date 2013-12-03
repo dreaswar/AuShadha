@@ -12,8 +12,7 @@ import importlib
 from collections import OrderedDict
 import yaml
 
-from AuShadha.settings import INSTALLED_APPS, ENABLED_APPS
-from AuShadha.settings import APP_ROOT_URL
+from AuShadha.settings import INSTALLED_APPS, ENABLED_APPS, UI_INITIALIZED, APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTree, DijitTreeNode
 
 
@@ -88,11 +87,14 @@ class AlreadyRegisteredException(Exception):
 
 class NotRegisteredException(Exception):
 
+  def __init__(self, role_name):
+    self.module_role = role_name
+
   def __call__(self):
-    return Exception("NotRegisteredException")
+    return Exception( "%s: Module not Registered ! " %(self.module_role) )
 
   def __repr__(self):
-    return  str("NotRegisteredException")
+    return Exception( "%s: Module not Registered ! " %(self.module_role) )
 
 
 
@@ -220,11 +222,8 @@ class AuShadhaUI(object):
 
   def __init__(self):
 
-    self.UI_INSTALLATION_STATE  = False  
-    #self.registered_roles = RoleRegistry()()
-    #self.registered_modules = ModuleRegistry()()
     self.registry = OrderedDict()
-    self.mass_register()
+    #self.mass_register()
 
   def __call__(self):
     return self.registry
@@ -244,29 +243,17 @@ class AuShadhaUI(object):
         print model_file
         cl = getattr(model_file, class_name )
         print cl
-        self.registry[role] = cl
-      except (ImportError) as ex:
-        raise ImportError(ex)
+        self.register(role,cl)
+      except (AttributeError, ImportError) as ex:
+        raise Exception(ex)
 
 
-  def register(self, role,module):
+  def register(self, role, class_obj ):
     """ Registers a module with the UI for a particular role. """
-    if role in self.registered_roles():
-      if module not in self.registry.values():
-        self.registry[role] = module
-        if module not in self.registered_modules():
-          self.registered_modules.append(module)
-      else:
-        for k, v in self.registry:
-          if v == role:
-            key = k
-            message  = "This module is already registered for a role:: ", self.registry[key]
-            raise AlreadyRegisteredException(message)
-          else:
-            continue
+    if self.registry.get(role):
+      raise AlreadyRegisteredException()
     else:
-      raise NotRegisteredException("Not a acceptable role")
-
+      self.registry[role]  = class_obj
 
   def check_registry(self):
     """ Checks the registry and raises an AlreadyRegisteredException if the module is registered already """
@@ -280,9 +267,16 @@ class AuShadhaUI(object):
     """ Registers a module with the UI for a particular role. """
     pass
   
-  def get_module_for_role(self, role):
+  def get_module(self, role):
     """ Gets a Module registered for a particular role. """
-    pass
+    try:
+      module = self.registry.get(role)
+      if not module and UI_INITIALIZED:
+          raise NotRegisteredException(role)
+      else:
+        return module
+    except (AttributeError,ImportError,ValueError) as ex:
+      raise Exception(ex)
 
 
 #Creates an instance of the AuShadhaUI
