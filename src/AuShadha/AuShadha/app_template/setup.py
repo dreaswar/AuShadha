@@ -9,14 +9,21 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name='aushadha-{{app_name}}',
     version='0.01',
-    packages=['{{app_name}}'],
+    packages=['dijit_widgets'],
     include_package_data=True,
     license='GNU-GPL Version 3',  
-    description='{{app_name}} Description',
+    description='{{app_name}} Description of the application',
     long_description=README,
     url='http://www.aushadha.org/',
     author='Dr. Easwar T.R',
     author_email='dreaswar@gmail.com',
+    install_requires=[
+        "Django >= 1.4",
+        "aushadha >= 0.01",
+        "aushadha-patient >= 0.01",
+        "aushadha-admission >= 0.01",
+        "aushadha-visit >= 0.01",
+    ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
