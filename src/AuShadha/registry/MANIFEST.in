@@ -1,0 +1,9 @@
+include LICENSE.txt
+include README.md
+recursive-include docs *
+recursive-include drug_db *
+recursive-include icd10 *
+recursive-include icd10_pcs *
+recursive-include inv_and_imaging *
+recursive-include vaccine_registry *
+

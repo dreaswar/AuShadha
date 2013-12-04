@@ -1,0 +1,6 @@
+include LICENSE.txt
+include README.md
+recursive-include media *
+recursive-include templates *
+recursive-include docs *
+recursive-include dijit_widgets *
