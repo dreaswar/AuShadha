@@ -32,8 +32,8 @@
                         var jsondata = JSON.parse(json);
                         if(jsondata.success == true){
                             dom.byId("newPatientAddForm").reset();
-                            var data = jsondata.addData;
-                            grid.store.newItem(data);
+//                             var data = jsondata.addData;
+//                             grid.store.newItem(data);
                             publishInfo("<p class='suggestion_text'>New Patient Added Successfully.<p>\
                                           \nPlease switch Search Tab if you want to open Chart"
                             );

@@ -13,7 +13,7 @@ import yaml
 from django.http import Http404, HttpResponse
 from django.utils import simplejson
 from django.core.urlresolvers import reverse
-from django.template import Template, Context
+from django.template import Template, Context, RequestContext
 from django.contrib.auth.decorators import login_required
 
 from patient import MODULE_LABEL
@@ -37,9 +37,11 @@ def render_patient_pane(request, patient_id = None):
       app_wrapper = []
       patient_detail_obj = PatientDetail.objects.get(pk = patient_id)
       clinic_detail_obj = patient_detail_obj.parent_clinic
-      context = Context({'patient_id': patient_id, 
-                          'clinic_id': clinic_detail_obj.id 
-                        })
+      context = RequestContext(request,
+                               { 'patient_detail_obj': patient_detail_obj,
+                                 'patient_id': patient_id, 
+                                'clinic_id': clinic_detail_obj.id 
+                               })
 
       if not getattr(patient_detail_obj,'urls',None):
         print "No Attribute of URLS on Patient. Saving to generate the same"

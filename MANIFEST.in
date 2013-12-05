@@ -1,0 +1,4 @@
+include LICENSE.txt
+include README.md
+recursive-include {{app_name}}/src *
+recursive-include {{app_name}}/docs *

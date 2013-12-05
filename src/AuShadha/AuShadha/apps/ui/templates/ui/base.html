@@ -87,6 +87,48 @@
 
   </script>
   
+  {% comment %}
+  <!--<script type="text/javascript" >
+
+    require(['dojo/request',
+             'dojo/dom',
+             'dojo/parser',
+             'dojo/ready',
+             'dojo/json',
+             'dijit/registry',
+             'aushadha/under_construction/pane_and_widget_creator',
+             'dojo/domReady!'
+             ],
+
+    function(request,dom,parser,ready,JSON,registry,paneAndWidgetCreator){
+
+      ready(
+
+       function(){
+
+          request("{%url 'render_aushadha_ui_pane' %}").
+          then(
+
+            function(json){
+              var jsondata = JSON.parse(json);
+              var pane = jsondata.pane;
+              paneAndWidgetCreator.constructor( pane );
+            },
+
+            function(json){
+              var jsondata = JSON.parse(json);
+              alert("ERROR! UI could not be loaded");
+              console.error(jsondata.error_message);
+            }
+
+          );
+        }
+      );
+
+    });
+  
+  </script>-->
+  {% endcomment %}
 
   {% block js_bits %}
 
@@ -185,6 +227,19 @@
 
   </div>
   <!--  END OF HEADER AREA  -->
+  <span id="headerPaneActionIconsBox" 
+        style="float:right; 
+               width: auto; 
+               height: auto; 
+               margin: 3px;
+               padding: 2px;
+               box-shadow: 2px 2px #ddd;
+               border-radius: 5px;
+              "
+        class= "dijitTabInner dijitTabContent dijitTab dijitTabChecked dijitChecked"
+       > 
+  
+  </span>
 
  </div>
 <!--  END OF TOP PANE  -->
@@ -206,74 +261,6 @@
             data-dojo-props = "tabPosition:'top',tabStrip: true"
             class           = "mainTabContainer"
             > 
-
-<!--                <div id="search_main"
-                data-dojo-type="dojox/layout/ContentPane"
-                data-dojo-props="title: 'Search',iconClass:'dijitIcon dijitSearch'">
-
-                      <div id="search_bc"
-                        data-dojo-type="dijit/layout/BorderContainer"
-                      >
-
-                            <div id="search_cp_top"
-                                data-dojo-type="dojox/layout/ContentPane"
-                                data-dojo-props="region: 'top'"
-                                class="topContentPane nonSelected">
-                            </div>
-
-                            <div id="search_tc_center"
-                                data-dojo-type="dijit/layout/TabContainer"
-                                data-dojo-props="region: 'center',tabStrip:true, tabPosition:'top',nested:true"
-                            >
-
-                                <div id="search_cp_form"
-                                      data-dojo-type="dojox/layout/ContentPane"
-                                      data-dojo-props="title: 'Live Search',selected:true"
-                                    >
-
-                                    <div id="search_cp_form_container"
-                                        style="position        : relative;
-                                                left            : 5%;
-                                                width           : 90%;
-                                                height          : 100%;
-                                                overflow        : visible;
-                                                border          : solid 1px #cecece;
-                                                border-radius   : 3px;
-                                                background      : #D0DFEA;
-                                                box-shadow      : 1px 1px 1px #cecece;
-                                              "
-                                    > 
-
-                                        <div>
-                                            <img    src   = "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo.svg"
-                                                    style = " position:relative;
-                                                              min-width: 30%;
-                                                              max-width:30%;
-                                                              min-height: 30%;
-                                                              max-height:30%;
-                                                              left: 35%;
-                                                            "
-                                              >
-                                        </div>
-
-                                        <div id="search_form"> </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div id="search_cp_grid"
-                                    data-dojo-type="dojox/layout/ContentPane"
-                                    data-dojo-props="title: 'Grids'"
-                                    >
-
-                                </div>
-
-                          </div>
-
-                      </div>
-
-                </div>-->
 
             </div>
           <!--  END OF CENTERTOPTABPANE  -->

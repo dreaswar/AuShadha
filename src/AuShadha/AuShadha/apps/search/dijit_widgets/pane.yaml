@@ -50,6 +50,41 @@ widgets: []
 
 panes:
 
+  - id: PATIENT_ADD_ICON
+    type: dom
+    domType: img
+    src: {{MEDIA_URL}}images/patient/patient_detail_add_128.png
+    onclick: {%url 'patient_detail_add_without_id' %}
+    placeAt: headerPaneActionIconsBox
+    position: !!int 0
+    title: Register New Patient to Clinic
+    returns: html
+    alt: Register
+    style:
+      width: 32px
+      height: 32px
+      cursor: pointer
+      margin: 2px
+    widgets: []
+    panes: []
+{% comment %}
+#   - id: SEARCH_PANE_ICON
+#     type: dom
+#     domType: img
+#     src: {{MEDIA_URL}}images/patient/patient_detail_search_128.png
+#     onclick: {%url 'render_aushadha_search_pane' %}
+#     placeAt: headerPaneActionIconsBox
+#     position: !!int 1
+#     title: Switch to Search Pane
+#     returns: json
+#     alt: Search Pane
+#     style:
+#       width: 32px
+#       height: 32px
+#       cursor: pointer
+#       margin: 2px
+{% endcomment %}
+
   - id : SEARCH_TOP_CP
     region: top
     type: cp
@@ -112,9 +147,9 @@ panes:
                 type: dom
                 domType: div
 
-      - id: SEARCH_CENTER_TC_CP_SEARCH_GRID
-        type: cp
-        widgets: []
-        title: Grid
-        closable: False
-        url: null
+#       - id: SEARCH_CENTER_TC_CP_SEARCH_GRID
+#         type: cp
+#         widgets: []
+#         title: Grid
+#         closable: False
+#         url: null

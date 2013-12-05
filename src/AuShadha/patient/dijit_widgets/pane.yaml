@@ -65,6 +65,47 @@ widgets: []
 
 panes:
 
+  - id: PATIENT_DETAIL_ACTIONS_ICONS
+    type: dom
+    domType: div
+    style: 
+      position: relative
+      top: 10
+      zIndex: 1000
+      float: right
+      width: 200px
+      height: 1.8em
+    panes: 
+      - id: PATIENT_DETAIL_EDIT_ICON
+        type: dom
+        domType: img
+        onclick: {{patient_detail_obj.urls.edit}}
+        panes: []
+        widgets: []
+        returns: html
+        src: {{MEDIA_URL}}images/patient/patient_detail_edit_128.png
+        title: Edit or Delete Patient Data
+        style:
+          width: 32px
+          height: 32px
+          cursor: pointer
+          margin: 2px
+
+#       - id: PATIENT_DETAIL_DELETE_ICON
+#         type: dom
+#         domType: img
+#         onclick: {{patient_detail_obj.urls.del}}
+#         returns: json
+#         panes: []
+#         widgets: []
+#         src: {{MEDIA_URL}}images/patient/patient_detail_delete_128.png
+#         title: Delete Patient
+#         style:
+#           width: 32px
+#           height: 32px
+#           cursor: pointer
+#           margin: 2px
+
   - id : PATIENT_TOP_CP
     region: top
     type: cp

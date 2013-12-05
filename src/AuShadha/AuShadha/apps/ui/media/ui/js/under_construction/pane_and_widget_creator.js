@@ -143,7 +143,7 @@ function(
         pane.container.grandParentDomNode = dom.byId('centerTopTabPane');
         pane.container.grandParentDijit = registry.byId('centerTopTabPane');
 
-        if ( redirectToMainTab == 1 ){
+        if ( redirectToMainTab == 1 ) {
           pane.container.parentDomNode = dom.byId('centerTopTabPane');
           pane.container.parentDijit = registry.byId('centerTopTabPane');
         }
@@ -153,7 +153,7 @@ function(
           pane.container.parentDijit = registry.byId(pane.parentTab);
         }
 
-        else{
+        else {
           alert("This redirect directive will not work now.... Currently directives of 0 or 1 are supported ")
         }
 
@@ -170,7 +170,7 @@ function(
               pane.container.parentDijit.removeChild( registry.byId( pane.container.id ) );
               registry.byId( pane.container.id ).destroyRecursive();
             } 
-            catch (err){
+            catch (err) {
               console.log(err.message);
             }
 
@@ -280,19 +280,164 @@ function(
 
                     if (! dom.byId(paneDomId) ){
 
-                      if ( p.domType == 'img' ){
-                        domConstruct.create('img',
+                      if ( p.domType == 'img' ) {
+                        domConstruct.create( p.domType,
                                             {id: paneDomId, 
-                                             src: p.src},
-                                            parentDomId,
-                                          'last');
+                                             src: p.src,
+                                             style: p.style ? p.style:'',
+                                             title: p.title ? p.title: '',
+                                             class: p.class ? p.class: '',
+                                             alt: p.alt ? p.alt:''
+                                            },
+                                            p.placeAt ? p.placeAt:parentDomId,
+                                            p.position ? p.position:'last'
+                                           );
+
+                        var returnValue = p.returns ? p.returns:'html';
+
+                        if ( p.onclick ) {
+                                require(["dojo/on", 
+                                         "dojo/dom",
+                                         "dojo/_base/xhr",
+                                         "dijit/registry",
+                                         "dijit/Dialog",
+                                         "dojo/json"      
+                                ],
+                                function (on, dom, xhr, registry, Dialog, JSON) {
+
+                                    on(dom.byId(paneDomId),
+                                        "click",
+                                        function () {
+                                                  var myDialog = registry.byId("editPatientDialog");
+                                                  xhr.get({
+                                                      url: p.onclick,
+                                                      load: function ( returns ) {
+                                                                    if ( returnValue == 'html' ) {
+                                                                      myDialog.set( 'content', returns );
+                                                                      myDialog.set('title',p.title? p.title: "Dialog");
+                                                                      myDialog.show();
+                                                                    }
+                                                                    else if (returnValue == 'json' ){
+                                                                      var jsondata = JSON.parse( returns )
+                                                                      if ( jsondata.success == true ){
+                                                                        // Do something !! 
+                                                                      }
+                                                                      else {
+                                                                        
+                                                                      }
+                                                                    }
+                                                      }
+                                                  });
+                                        }
+                                    );
+                                });
+                        }
+
+                        if ( p.ondblclick ){
+                          
+                        }
+
+                        if ( p.onrclick ) {
+                            
+                        }
+
                       }
+
+                      else if ( p.domType == 'span' || p.domType == 'h3' || p.domType == 'p' ){
+                        domConstruct.create(
+                                          p.domType,
+                                          {id: paneDomId,
+                                           innerHTML: p.innerHTML ? p.innerHTML:'',
+                                           class: p.class ? p.class : '',
+                                           style: p.style ? p.style : '',
+                                           title: p.title ? p.title : '',
+                                          },
+                                          p.placeAt ? p.placeAt : parentDomId,
+                                          p.position ? p.position : 'last'
+                                         );
+                      }
+
+                      else if ( p.domType == 'a' ){
+
+                        domConstruct.create(
+                                          p.domType,
+                                          {id: paneDomId,
+                                           innerHTML: p.innerHTML ? p.innerHTML:'',
+                                           class: p.class ? p.class : '',
+                                           style: p.style ? p.style : '',
+                                           href : p.onclick ? p.onclick : '',
+                                           alt: p.alt ? p.alt : '',
+                                           title: p.title ? p.title : '',
+                                           target: p.target ? p.target : ''
+                                          },
+                                          p.placeAt ? p.placeAt : parentDomId,
+                                          p.position ? p.position : 'last'
+                                         );
+
+                        var returnValue = p.returns ? p.returns:'html';
+
+                        if ( p.onclick ) {
+                                require(["dojo/on", 
+                                         "dojo/dom",
+                                         "dojo/_base/xhr",
+                                         "dijit/registry",
+                                         "dijit/Dialog",
+                                         "dojo/json"      
+                                ],
+                                function (on, dom, xhr, registry, Dialog, JSON) {
+
+                                    on(dom.byId(paneDomId),
+                                        "click",
+                                        function (e) {
+                                                  e.preventDefault();
+                                                  var myDialog = registry.byId("editPatientDialog");
+                                                  xhr.get({
+                                                      url: p.onclick,
+                                                      load: function ( returns ) {
+                                                                    if ( returnValue == 'html' ) {
+                                                                      myDialog.set( 'content', returns );
+                                                                      myDialog.set('title',p.title? p.title: "Dialog");
+                                                                      myDialog.show();
+                                                                    }
+                                                                    else if (returnValue == 'json' ){
+                                                                      var jsondata = JSON.parse( returns )
+                                                                      if ( jsondata.success == true ){
+                                                                        // Do something !! 
+                                                                      }
+                                                                      else {
+                                                                        
+                                                                      }
+                                                                    }
+                                                      }
+                                                  });
+                                        }
+                                    );
+                                });
+                        }
+
+                        if ( p.ondblclick ){
+                          
+                        }
+
+                        if ( p.onrclick ) {
+                            
+                        }
+
+                      }
+
                       else {
-                        domConstruct.create('div',
-                                          {id: paneDomId},
-                                          parentDomId,
-                                        'last');
+                        domConstruct.create(
+                                          'div',
+                                          {id: paneDomId,
+                                           innerHTML: p.innerHTML ? p.innerHTML:'',
+                                           class: p.class ? p.class : '',
+                                           style: p.style ? p.style : ''
+                                          },
+                                          p.placeAt ? p.placeAt : parentDomId,
+                                          p.position ? p.position : 'last'
+                                         );
                       }
+
                     }
 
                     if ( p.hasOwnProperty('class') ){

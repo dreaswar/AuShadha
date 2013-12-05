@@ -164,16 +164,18 @@ def patient_detail_add(request, clinic_id = None):
               saved_patient.parent_clinic = clinic
               saved_patient.save()
               success = True
-              json = return_patient_json(saved_patient,success)
+              error_message = "Patient Saved Successfully"
+              form_errors = None
+              #json = return_patient_json(saved_patient,success)
           else:
               form_errors = aumodelformerrorformatter_factory(patient_detail_form)
               saved_patient = None
               success = False
-              data = {'success':success,
-                      'error_message':form_errors,
-                      'form_errors': form_errors
-                      }
-              json = simplejson.dumps(data)
+          data = {'success':success,
+                  'error_message':form_errors,
+                  'form_errors': form_errors
+                  }
+          json = simplejson.dumps(data)
 
       else:
           raise Http404('Bad Request:: Unsupported Request Method.')
