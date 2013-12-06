@@ -119,8 +119,6 @@ hr.shadow_line {
 /* The credit for the above is at : http://jsfiddle.net/4yZNN/  Slightly modified */
 
 
-
-
 #appLayout {
   height: 100%;
 }
@@ -172,20 +170,6 @@ hr.shadow_line {
   background:none;
 }
 
-/*
-#topPane h3{
- position     : relative;
- top          : -26px;
- left         : 20px;
- font-family  : "Droid-Sans", "Helvetica",'Sans-Serif';
- font-size    : 16px;
-}
-
-#topPane h3 img{
-  width: 32px;
-  height:32px;
-}
-*/
 
 #logoDiv{
   overflow : visible;
@@ -206,8 +190,6 @@ hr.shadow_line {
 
 #login_area{
   position    : relative;
-  top         : 3px !important;
-  height      : 20px;
   width       : 400px;
   border      : none; 
   margin      : 0px; 
@@ -263,42 +245,8 @@ hr.shadow_line {
   color         : Navy;
 }
 
-#patient_grid{
-  position   : relative;
-  left       : 70px;
-  min-height : 300px;
-  height     : 500px; 
-  max-height : 550px;
-  margin-top : 5px;
-}
 
 
-/*
-	#patient_grid_menubar{
-		height:40px;
-		width: 400px;
-	}
-*/
-
-#contact_list,
-#phone_list{
-  min-height: 15em;
-  height: 15em;
-  width:35em;
-  position:relative;
-  left:0em;
-  top:0.1em;
-}
-
-
-#demographics_list,
-#immunisation_list,
-#family_history_list,
-#medical_history_list,
-#surgical_history_list,
-#patient_media_list,
-#admission_list,
-#visit_list,
 div[id $= '_list'].dojoxGrid,
 div.auGridContainer
 {
@@ -308,14 +256,6 @@ div.auGridContainer
 }
 
 
-#visit_list_container,
-#admission_list_container{
-  width    : 60em;
-  height   : 22em;
-  position : relative;
-  top      : -20.0em;
-  left     : 50em;
-}
 
 #patientSynopsisBottomContentPane{
 	height   : 18em;
@@ -323,38 +263,6 @@ div.auGridContainer
 }
 
 
-#guardian_list{
-  min-height : 15em;
-  height     : 15em;
-  max-height : 15em;
-  width      : 35em;
-}
-
-#family_history_list{
-  min-height : 15em;
-  height     : 15em;
-  max-height : 20em;
-  width      : 45em;
-}
-
-/* Three options to style the Allergy Grid to protect (me) againt (me and my naming conventions) */
-#medication_list, 
-#medication_list_list,
-#medication{
-  min-height : 15em;
-  width      : 57em;
-}
-
-/* Three options to style the Allergy Grid to protect (me) againt (me and my naming conventions) */
-#allergy_list,
-#allergy_list_list, 
-#allergy{
-  min-height : 15em !important;
-  width      : 15em !important;
-  position   : relative;
-  top        : 0;
-  left       : 0;
-}
 
 #demographics_add_or_edit_form,
 #demographics_add_or_edit_form form{
@@ -363,49 +271,16 @@ div.auGridContainer
   overflow : auto;
 }
 
-/*
-#contact_grid_alt,
-#phone_grid_alt
-{
-  height : 150px;
-  margin-top: 5px;
-  overflow:auto;
-}
-*/
-/*
-	#leftCol, 
-	#rightCol 
-	{width: 20em;
-    background: -moz-linear-gradient(center top , #EDF2F7, whitesmoke) repeat scroll 0 0 transparent;
-    font-size: 10px;
-	}
-*/
 
+.headerPaneWidgetArea {
+  border: solid 1px slate !important;
+  border-radius: 5px !important;
+}
 
 
 /* Sidebar Inner Div Styles */
 
 
-.sidebarDiv{
-  width         : 14.8em;
-  max-width     : 15em;
-  border        : solid 1px #ddd;
-  border-radius : 2px;
-  background    : whitesmoke;
-  margin        : 10px 0px 25px 0px;
-  padding       : 7px;
-  position      : relative;
-  left          : -0.5em;
-}
-
-
-.portletInnerActionSpan{
-  position  : relative;
-  float     : right;
-  top       : -0.1em;
-  font-size : 10px;
-  margin    : 1px;
-}
 
 
 .login_area_img{
@@ -639,28 +514,6 @@ a{
     left                 : 5px;
     height               : 80px;
     width                : 80px;
-}
-
-
-/*
-#patientContextPane{
-  height: 600px;
-  min-width : 700px;
-  overflow:auto;
-}
-*/
-
-#simplePatientSearch {
-  padding : 0px;
-  padding : 0px 0px 20px 0px;
-}
-
-#simplePatientSearch .search_form_div{
-  float        : left;
-  display      : inline;
-  margin-left  : 0px;
-  margin-right : 2px;
-  margin-top   : 0px;
 }
 
 

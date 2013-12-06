@@ -268,10 +268,11 @@
               'dojo/json',
               'dijit/registry',
               'aushadha/under_construction/app_container_creator',
+              'aushadha/timer',
               'dojo/domReady!'
               ],
 
-            function(request,dom,parser,ready,JSON,registry,appContainerCreator){
+            function( request,dom,parser,ready,JSON,registry,appContainerCreator, timer ){
 
               ready(
 
@@ -288,7 +289,8 @@
                       getInstalledApps();
                       fadeAwayLoader.play();
                       console.log("Finished running the Animations and Fading it..");
-                      parser.parse('tooltipsAndDialogs');                      
+                      parser.parse('tooltipsAndDialogs');
+                      timer();
                     },
 
                     function(json){
