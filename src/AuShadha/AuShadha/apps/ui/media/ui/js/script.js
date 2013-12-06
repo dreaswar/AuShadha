@@ -245,26 +245,63 @@
 // 
 //                   patientNameSelect.startup();
 
-          console.log("Getting The Installed Apps from script.js");
-          getInstalledApps();
 
-          /* Hide the Loader */
-          var fadeAwayLoader = fx.fadeOut({
-              node: dom.byId('aushadhaLoaderIndicator'),
-              duration: 3300
-          });
 
-          on( fadeAwayLoader,
-              "End",
-              function () {
-                  domStyle.set(dom.byId('aushadhaLoaderIndicator'), {display: 'none'} );
-              }, 
-              true
-          );
+            /* Hide the Loader */
+            var fadeAwayLoader = fx.fadeOut({
+                node: dom.byId('aushadhaLoaderIndicator'),
+                duration: 3300
+            });
 
-          fadeAwayLoader.play();
+            on( fadeAwayLoader,
+                "End",
+                function () {
+                    domStyle.set(dom.byId('aushadhaLoaderIndicator'), {display: 'none'} );
+                }, 
+                true
+            );
 
-          console.log("Finished running the Animations and Fading it..");
+            require(['dojo/request',
+              'dojo/dom',
+              'dojo/parser',
+              'dojo/ready',
+              'dojo/json',
+              'dijit/registry',
+              'aushadha/under_construction/app_container_creator',
+              'dojo/domReady!'
+              ],
+
+            function(request,dom,parser,ready,JSON,registry,appContainerCreator){
+
+              ready(
+
+              function(){
+
+                  request( URL_render_aushadha_ui_pane ).
+                  then(
+
+                    function(json){
+                      var jsondata = JSON.parse(json);
+                      var pane = jsondata.pane;
+                      appContainerCreator.constructor( pane );
+                      console.log("Getting The Installed Apps from script.js");
+                      getInstalledApps();
+                      fadeAwayLoader.play();
+                      console.log("Finished running the Animations and Fading it..");
+                      parser.parse('tooltipsAndDialogs');                      
+                    },
+
+                    function(json){
+                      var jsondata = JSON.parse(json);
+                      alert("ERROR! UI could not be loaded");
+                      console.error(jsondata.error_message);
+                    }
+
+                  );
+                }
+              );
+
+            });
 
     });
 

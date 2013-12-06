@@ -4,22 +4,6 @@
   # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
 {% endverbatim %}
  
-# VARS
-
-clinic_id: &CLINIC_ID
-          !!int {{clinic_id}}
-
-logo_url: &LOGO_URL {{STATIC_URL}}images/AuShadha_logo/AuShadha_logo.svg
-
-search_logo_url: &SEARCH_LOGO_URL {{STATIC_URL}}images/patient/patient_detail_search_128.png
-
-pane: &SEARCH_PANE_URL
-        !!python/object/apply:django.core.urlresolvers.reverse
-            args: [ render_aushadha_search_pane ]
-            kwds: {}
-
-
-
 
 # YAML
 
@@ -29,49 +13,12 @@ load_first: !!bool True
 
 id       : APP_LAYOUT
 type     : bc
-placeAt  : aushadhaLoaderIndicator
-position : after
 class    : demoLayout
 url      : {%url 'render_aushadha_ui_pane' %}
 closable : !!bool False
 widgets: []
 panes:
 
-#   - id: aushadhaLoaderIndicator
-#     type: dom
-#     domType: div
-#     widgets: []
-#     panes: 
-# 
-#       - id: loadingOverlayLogo
-#         type: dom
-#         domType: div
-#         panes: []
-#         widgets: []
-# 
-#       - id: loadingOverlay
-#         type: dom
-#         domType: div
-#         panes: []
-#         widgets: []
-# 
-#       - id: loadingMessage
-#         type: dom
-#         domType: div
-#         widgets: []
-#         panes: 
-# 
-#           - id: loading__indicator
-#             type: dom
-#             domType: div
-#             panes: []
-#             widgets: []
-# 
-#           - id: aushadhaLoaderStatusMessage
-#             type: dom
-#             domType: div
-#             panes: []
-#             widgets: []
 
   - id: topPane
     type: cp
@@ -81,12 +28,19 @@ panes:
 
       - id: header_area
         type: bc
+        design: layout
         widgets: []
         panes:
 
           - id: logoDiv
-            type: dom
-            domType: div
+            type: cp
+            region: leading
+            style:
+              width: 20em
+              background: none
+              border: none
+              padding: 0
+              margin: 1px
             widgets: []
             panes: 
 
@@ -112,77 +66,77 @@ panes:
                         widgets: []
                         panes: []
 
+          - id: headerPaneSearchBoxCP
+            type: cp
+            region: center
+            style:
+              background: none
+              border: none
+              padding: 0
+              margin: 1px
+            widgets: []
+            panes:
+              
+              - id: headerPaneSearchBox
+                type: dom
+                domType: span
+                style:
+                  width: 35em
+                widgets: []
+                panes: 
+
+                  - id: headerPaneSearchWidgetIcon
+                    type: dom
+                    domType: img
+                    src: {{MEDIA_URL}}images/patient/search_small.svg
+                    style:
+                      width: 16px
+                      height: 16px
+                      padding: 0
+                      margin: 0
+                      verticalAlign: middle
+                    panes: []
+                    widgets: []
+
+                  - id: headerPaneSearchWidget
+                    type: dom
+                    domType: div
+                    style:
+                      padding: 2px
+                      margin: 2px
+                      minWidth: 30em
+                      height: 1em
+                    panes: []
+                    widgets: []
+
           - id: login_area
             type: cp
             region: trailing
+            style:
+              width: 10em
+              background: none
+              border: none
+              padding: 0
+              margin: 1px
             widgets: []
             panes:
 
-              - id: headerPaneSearchBox
+              - id: timeBox
                 type: dom
                 domType: span
                 panes: []
                 widgets: []
 
-{% comment %}
-#                    - id: headerPaneSearchWidget
-#                      type: search
-#                      panes: []
-#                      widgets: []
-#                      html: |
-#                        {% include 'ui/header_pane/search_widget.html' %}
-{% endcomment %}
-
-              {% if user.is_authenticated %}
-
+              {% if user %}
               - id: loggedInUserIcon
                 type: dom
                 domType: img
                 class: login_area_img
-                widgets: []
-                panes: []
                 src: {{STATIC_URL}}images/generic/auth/user_16.png
                 alt: {{user.username}}
                 title: {{user.username}}
-
-              - id: logoutHref
-                type: dom
-                domType: a
-                onclick: /AuShadha/logout/
-                alt: Logout
-                title: Logout
                 widgets: []
-                panes: 
-                  
-                  - id: 
-                    type: dom
-                    domType: img
-                    src: {{STATIC_URL}}images/generic/auth/system-shutdown-panel-restart.svg
-                    onclick: /AuShadha/logout/
-                    alt: Logout
-                    title: Logout
-                    class: login_area_img
-
-              {% else %}
-
-              - id: loginHref
-                type: dom
-                domType: a
-                onclick: /AuShadha/login/
-                alt: Login
-                title: Login
-                widgets: []
-                panes: 
-                  
-                  - id: 
-                    type: dom
-                    domType: img
-                    src: {{STATIC_URL}}images/generic/auth/login_128.png
-                    onclick: /AuShadha/login/
-                    alt: Login
-                    title: Login
-                    class: login_area_img
-
+                panes: []
               {% endif %}
 
               {% if user.is_staff %}
@@ -208,11 +162,47 @@ panes:
 
               {% endif %}
 
-              - id: timeBox
+              {% if user.is_authenticated %}
+
+              - id: logoutHref
                 type: dom
-                domType: span
-                panes: []
+                domType: a
+                onclick: /AuShadha/logout/
+                alt: Logout
+                title: Logout
                 widgets: []
+                panes: 
+
+                  - id: logOutImg
+                    type: dom
+                    domType: img
+                    src: {{STATIC_URL}}images/generic/auth/system-shutdown-panel-restart.svg
+                    onclick: /AuShadha/logout/
+                    alt: Logout
+                    title: Logout
+                    class: login_area_img
+
+              {% else %}
+
+              - id: loginHref
+                type: dom
+                domType: a
+                onclick: /AuShadha/login/
+                alt: Login
+                title: Login
+                widgets: []
+                panes: 
+                  
+                  - id: loginImg
+                    type: dom
+                    domType: img
+                    src: {{STATIC_URL}}images/generic/auth/login_128.png
+                    onclick: /AuShadha/login/
+                    alt: Login
+                    title: Login
+                    class: login_area_img
+
+              {% endif %}
 
 
       - id: headerPaneActionIconsBox
@@ -223,7 +213,7 @@ panes:
           float: right
           margin: 3px
           padding: 2px
-          boxShadow: 2px 2px grey
+          boxShadow: 1px 1px slate
           borderRadius: 5px
         
 
@@ -233,7 +223,7 @@ panes:
     executeScripts: True
     scriptHasHooks: True
     widgets: []
-    pane:
+    panes:
 
       - id: centerTopTabPane
         class: centerTopTabPane mainTabContainer

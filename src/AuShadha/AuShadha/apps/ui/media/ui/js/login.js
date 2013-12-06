@@ -1,3 +1,10 @@
+require(["dojo/parser",'dojo/ready','dojo/domReady!'],
+function(parser,ready){
+  ready( 
+    function() { parser.parse(); } 
+  );
+});
+
 /*
 
 Handle Login..

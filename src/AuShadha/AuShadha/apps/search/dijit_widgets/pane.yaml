@@ -36,7 +36,7 @@ id       : AUSHADHA_SEARCH
 type     : bc
 title    : Search
 url      : *SEARCH_PANE_URL
-closable : !!bool True
+closable : !!bool False
 
 widgets: []
 
@@ -67,7 +67,7 @@ panes:
       margin: 2px
     widgets: []
     panes: []
-{% comment %}
+
 #   - id: SEARCH_PANE_ICON
 #     type: dom
 #     domType: img
@@ -83,7 +83,7 @@ panes:
 #       height: 32px
 #       cursor: pointer
 #       margin: 2px
-{% endcomment %}
+
 
   - id : SEARCH_TOP_CP
     region: top

@@ -219,6 +219,9 @@ hr.shadow_line {
 #login_area img{
  width       : 16px;
  height      : 16px;
+ margin      : 0 5px 0 5px;
+ padding     : 0;
+ vertical-align: middle;
 }
 
 #timeBox{
@@ -228,8 +231,10 @@ hr.shadow_line {
   padding-right : 5px;
   top           : -5px;
   border-right  : solid #aaa 1px;
+  border-left  : solid #aaa 1px;
   color         : #404040;
   font-size     : 10px;
+  min-width     : 5em;
 }
 
 #centerTopPane, 
@@ -375,7 +380,6 @@ div.auGridContainer
     font-size: 10px;
 	}
 */
-
 
 
 

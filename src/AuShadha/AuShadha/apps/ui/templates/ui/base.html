@@ -87,48 +87,7 @@
 
   </script>
   
-  {% comment %}
-  <!--<script type="text/javascript" >
 
-    require(['dojo/request',
-             'dojo/dom',
-             'dojo/parser',
-             'dojo/ready',
-             'dojo/json',
-             'dijit/registry',
-             'aushadha/under_construction/pane_and_widget_creator',
-             'dojo/domReady!'
-             ],
-
-    function(request,dom,parser,ready,JSON,registry,paneAndWidgetCreator){
-
-      ready(
-
-       function(){
-
-          request("{%url 'render_aushadha_ui_pane' %}").
-          then(
-
-            function(json){
-              var jsondata = JSON.parse(json);
-              var pane = jsondata.pane;
-              paneAndWidgetCreator.constructor( pane );
-            },
-
-            function(json){
-              var jsondata = JSON.parse(json);
-              alert("ERROR! UI could not be loaded");
-              console.error(jsondata.error_message);
-            }
-
-          );
-        }
-      );
-
-    });
-  
-  </script>-->
-  {% endcomment %}
 
   {% block js_bits %}
 
@@ -138,169 +97,32 @@
 
 <body class="claro">
 
-<!--  START OF APPLAYOUT  -->
-<div    id              = "appLayout"
-        class           = "demoLayout"
-        data-dojo-type  = "dijit/layout/BorderContainer">
+  <div id="APP_LAYOUT" 
+       style="height:100%;">
 
-<div id="aushadhaLoaderIndicator">
+    <div id="aushadhaLoaderIndicator">
 
-  <div class="loadingOverlayLogo">        </div>  
-  <div class="loadingOverlay">            </div>  
-  <div class="loadingMessage"> 
-      <div> Loading...                       </div>
-      <div id="aushadhaLoaderStatusMessage"> </div>
-  </div>
-
-</div>
-
-{% block topbar %}
-  <!--  START OF TOPPANE  -->
-  <div    id              = "topPane"
-          data-dojo-type  = "dojox/layout/ContentPane"
-          data-dojo-props = "region: 'top'"
-  >
-
-    <!--  START OF HEADERAREA  -->
-     <div id              ="header_area"
-          data-dojo-type  = "dijit/layout/BorderContainer"
-     >
-
-       <div id="logoDiv"
-       >
-        <h3 class="header_with_logo">
-           <a href="/" target="_blank" alt="AuShadha" >
-           <img src   =  "{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_text.svg"
-                alt   = "AuShadha"
-                id    = "AuShadhaHeaderIcon"
-           >
-           </a>
-        </h3>
-       </div>
-
-       <!--  START OF LOGINAREA  -->
-       <div id              ="login_area"
-            data-dojo-type  = "dojox/layout/ContentPane"
-            data-dojo-props = "region     : 'right'"
-       >
-
-          <span id="headerPaneSearchBox"
-                style="position: absolute; left: -400px;top:1px;"
-            >
-              {% include 'ui/header_pane/search_widget.html' %}
-          </span>
-
-         <span id="timeBox"> </span>
-         {% if user.is_authenticated %}
-          <img src   = "{{STATIC_URL}}images/generic/auth/user_16.png"
-               alt   = "{{user.username}}"
-               class = "login_area_img"
-               id    = "loggedInUserIcon"
-               >
-          {% if user.is_staff %}
-          <a href="/AuShadha/admin/"
-             id="adminAreaHref"
-             target="_blank">
-          <img src   = "{{STATIC_URL}}images/generic/dashboard_and_settings/settings_16.png"
-               alt   = "Admin"
-               class = "login_area_img" >
-          </a>
-          {% endif %}
-          &nbsp;
-          <a href="/AuShadha/logout/" id="logoutHref">
-          <img src   = "{{STATIC_URL}}images/generic/auth/system-shutdown-panel-restart.svg"
-               alt   = "Logout"
-               class = "login_area_img"
-               >
-          </a>&nbsp;
-         {% else %}
-          <a href="/AuShadha/login/" id="loginHref">
-          <img src   = "{{STATIC_URL}}images/generic/auth/login_128.png"
-               alt   = "Login"
-               class = "login_area_img"
-               style="width:16px; height:16px;"
-               >
-          </a>
-         {% endif %}
-     </div>
-    <!--  END OF LOGIN AREA  -->
-
-  </div>
-  <!--  END OF HEADER AREA  -->
-  <span id="headerPaneActionIconsBox" 
-        style="float:right; 
-               width: auto; 
-               height: auto; 
-               margin: 3px;
-               padding: 2px;
-               box-shadow: 2px 2px #ddd;
-               border-radius: 5px;
-              "
-        class= "dijitTabInner dijitTabContent dijitTab dijitTabChecked dijitChecked"
-       > 
-  
-  </span>
-
- </div>
-<!--  END OF TOP PANE  -->
-{% endblock topbar %}
-
-
-
-  {% block centerbar %}
-    <!--  START OF CENTERMAINPANE  -->
-    <div    id              = "centerMainPane"
-            class           = "centerMainPane"
-            data-dojo-type  = "dojox/layout/ContentPane"
-            data-dojo-props = "region:'center', executeScripts: true, scriptHasHooks:true"
-    >
-          <!--  START OF CENTERTOPTABPANE -->
-            <div   id       = "centerTopTabPane"
-            class           = "centerTopTabPane"
-            data-dojo-type  = "dijit/layout/TabContainer"
-            data-dojo-props = "tabPosition:'top',tabStrip: true"
-            class           = "mainTabContainer"
-            > 
-
-            </div>
-          <!--  END OF CENTERTOPTABPANE  -->
-
-        <!-- TOOLTIPS --> 
-        {% include 'tooltips.html' %} 
-        <!-- END TOOLTIPS -->
+      <div class="loadingOverlayLogo">        </div>  
+      <div class="loadingOverlay">            </div>  
+      <div class="loadingMessage"> 
+          <div> Loading...                       </div>
+          <div id="aushadhaLoaderStatusMessage"> </div>
+      </div>
 
     </div>
-    <!--  END OF CENTERMAINPANE  -->
 
-  {% endblock centerbar %}
-  <!--  START OF JSON MESSAGE  -->
-  {% block json_message_div %}
-    <div  id              = "bottomPane"
-          class           = "edgePanel"
-          data-dojo-type  = "dojox/layout/ContentPane"
-          data-dojo-props = "region: 'bottom'">
+  </div>
 
-        {% block footer %}
-
-            <div class="footer ">
-              <span>
-                <i> AuShadha and Logo are &copy;of Dr. Easwar T.R 2012,<i> &nbsp;
-                    <i id="click_for_gpl3"> GNU GPL Version 3 License</i> &nbsp;
-                    <a href="mailto:dreaswar@gmail.com">dreaswar@gmail.com</a> &nbsp;
-              </span>
-
-            </div>
-        {% endblock footer %}
-    </div>
-  {% endblock json_message_div %}
-  <!--  END OF JSON MESSAGE  -->
+  <div id="tooltipsAndDialogs" style="display: none; ">
+  <!-- TOOLTIPS --> 
+  {% include 'tooltips.html' %} 
+  <!-- END TOOLTIPS -->
 
   <!--  DIALOGS AND MISC  -->
     {%include 'dialogs_and_misc.html' %}
   <!--  END DIALOGS AND MISC  -->
+  </div>
 
-</div>
-<!--  END OF APP CONTAINER  -->
 </body>
 </html>
 
