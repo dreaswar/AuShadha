@@ -42,7 +42,9 @@ function addItem(url, form_id, grid_id) {
                 if (jsondata.success == true) {
 
                     var data = jsondata.addData;                                  
-                    registry.byId(grid_id).store.newItem(data);
+                    if (grid_id){
+                      registry.byId(grid_id).store.newItem(data);
+                    }
                     dom.byId(form_id).reset();
 
                     publishInfo("Saved Successfully");
@@ -114,7 +116,9 @@ function editItem(url, form_id, grid_id) {
                 }
                 
                 if (jsondata.success == true) {
-                    registry.byId(grid_id).render();
+                    if (grid_id ) {
+                      registry.byId(grid_id).render();
+                    }
                     editDialog.hide();
                     publishInfo(jsondata.error_message);
                 } else {
@@ -169,8 +173,10 @@ function delItem(url, grid_id) {
               if (jsondata.success == true) {
 
                   registry.byId("editPatientDialog").hide();
-                  registry.byId(grid_id).render();
-                  registry.byId(grid_id).selection.clear();
+                  if (grid_id ) { 
+                    registry.byId(grid_id).render();
+                    registry.byId(grid_id).selection.clear();
+                  }
                   publishInfo("Successfully Deleted ..");
 
               } 

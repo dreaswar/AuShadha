@@ -15,7 +15,7 @@ class UrlGenerator(object):
     Generates URL for the classes based on action, id and a parent class attribute
   """
   parented_actions = ['add','list','json','tree','sidebar','summary','pane']
-  parentless_actions = ['edit','del']
+  parentless_actions = ['edit','del','info']
 
   def __init__(self,
                instance,
@@ -31,6 +31,7 @@ class UrlGenerator(object):
                     'add'    :{},
                     'edit'   :{},
                     'del'    :{},
+                    'info'   :{}
                   }
 
     self.root_url = APP_ROOT_URL

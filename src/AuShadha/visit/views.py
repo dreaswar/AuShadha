@@ -815,7 +815,12 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
           patient_id = int(patient_id)
         else:
           patient_id = int(request.GET.get('patient_id'))
+
         patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+
+        if not getattr(patient_detail_obj, 'urls', None):
+          patient_detail_obj.save()
+
         #print "Patient is: ", patient_detail_obj
         visit_detail_objs = VisitDetail.objects.filter(
             patient_detail=patient_detail_obj).filter(is_active=True)

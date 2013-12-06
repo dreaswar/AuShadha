@@ -78,31 +78,6 @@ from dijit_widgets.tree import PatientTree
     #return render_to_response('patient_detail/list.html', variable)
 
 
-#@login_required
-#def alternate_layout(request):
-    #"""View for Generating an alternate layout for sandboxing purposes..."""
-    #user = request.user
-    #all_patients = PatientDetail.objects.all().order_by('first_name')
-    #variable = RequestContext(request, {'user': user,
-                                        #"all_patients": all_patients,
-                                        #"alternate_layout": True
-                                        #})
-    #return render_to_response('base_alternate.html', variable)
-
-
-#@login_required
-#def patient_index(request):
-    #"""
-    #View for Generating Patient List.
-
-    #Takes on Request Object as argument.
-
-    #"""
-    #user = request.user
-    #all_patients = PatientDetail.objects.all().order_by('patient_hospital_id')
-    #variable = RequestContext(request, {"all_patients": all_patients, 'user': user})
-    #return render_to_response('patient_detail/index.html', variable)
-
 @login_required
 def render_patient_info(request,patient_id = None):
   if request.user and request.method == 'GET':
@@ -193,50 +168,64 @@ def patient_detail_add(request, clinic_id = None):
 
 @login_required
 def patient_detail_edit(request, id):
+
     if request.user:
         user = request.user
+
+        try:
+            id = int(id)
+            patient_detail_obj = PatientDetail.objects.get(pk=id)
+
+            if not getattr(patient_detail_obj,'urls',None):
+              patient_detail_obj.save()
+              print "*" * 100
+              print patient_detail_obj.urls['info']
+              print "*" * 100
+        
+        except TypeError or ValueError or AttributeError:
+            raise Http404("BadRequest")
+
+        except PatientDetail.DoesNotExist:
+            raise Http404("BadRequest: Patient detail Data Does Not Exist")
+
         if request.method == "GET" and request.is_ajax():
-            try:
-                id = int(id)
-                patient_detail_obj = PatientDetail.objects.get(pk=id)
-                patient_detail_edit_form = PatientDetailForm(
-                    instance=patient_detail_obj)
-                variable = RequestContext(request,
-                                          {"user"   : user,
-                                           "patient_detail_obj": patient_detail_obj,
-                                           "patient_detail_edit_form"   : patient_detail_edit_form
-                                           }
-                                          )
-            except TypeError or ValueError or AttributeError:
-                raise Http404("BadRequest")
-            except PatientDetail.DoesNotExist:
-                raise Http404("BadRequest: Patient detail Data Does Not Exist")
+
+            patient_detail_edit_form = PatientDetailForm(auto_id = False, instance=patient_detail_obj)
+
+            variable = RequestContext(request,
+                                      {"user"   : user,
+                                        "patient_detail_obj" : patient_detail_obj,
+                                        "patient_detail_edit_form"   : patient_detail_edit_form
+                                        }
+                                      )
+
             return render_to_response('patient_detail/edit.html', variable)
+
         elif request.method == 'POST' and request.is_ajax():
-            try:
-                id = int(id)
-                patient_detail_obj = PatientDetail.objects.get(pk=id)
-                patient_detail_edit_form = PatientDetailForm(
-                    request.POST, instance=patient_detail_obj)
-                if patient_detail_edit_form.is_valid():
-                    detail_object = patient_detail_edit_form.save()
-                    json = return_patient_json(detail_object, success=True)
-                    #print json
-                    return HttpResponse(json, content_type='application/json')
-                else:
-                    success = False
-                    error_message = "Error:: Patient Detail could not be edited."
-                    form_errors = ''
-                    for error in patient_detail_edit_form.errors:
-                        form_errors += '<p>' + error + '</p>'
-                    json = return_patient_json(
-                        detail_object=None, success=False)
-                    return HttpResponse(json, content_type='application/json')
-            except ValueError or AttributeError or TypeError:
-                raise Http404("BadRequest: Server Error")
-            except PatientDetail.DoesNotExist:
-                raise Http404(
-                    "BadRequest: Requested Patient detail DoesNotExist")
+            patient_detail_edit_form = PatientDetailForm(request.POST, instance=patient_detail_obj)
+
+            if patient_detail_edit_form.is_valid():
+                detail_object = patient_detail_edit_form.save()
+                success = True
+                error_message = "Patient Edited Successfully"
+                form_errors = None
+                #json = return_patient_json(detail_object, success=True)
+
+            else:
+                success = False
+                error_message = "Error:: Patient Detail could not be edited."
+                form_errors = ''
+                for error in patient_detail_edit_form.errors:
+                    form_errors += '<p>' + error + '</p>'
+                #json = return_patient_json(detail_object=None, success=False)
+
+            data  = {'success': success, 
+                     'error_message': error_message, 
+                     'form_errors': form_errors 
+                    }
+            json = simplejson.dumps(data)
+            return HttpResponse(json, content_type='application/json')
+
         else:
             raise Http404("BadRequest: Unsupported Request Method")
 
@@ -301,15 +290,6 @@ def patient_detail_del(request, id):
 def return_patient_json(patient,success = True):
    p = ModelInstanceJson(patient)
    return p()
-
-#@login_required
-#def render_patient_tree(request, patient_id=None):
-    #if request.method == "GET" and request.is_ajax():
-      #tree = PatientTree(request)()
-      #return HttpResponse(tree, content_type="application/json")
-    #else:
-        #raise Http404("Bad Request")
-
 
 @login_required
 def render_patient_tree(request,patient_id = None):
@@ -605,11 +585,6 @@ def render_patient_json(request):
       print (simplejson.dumps(data[0]))
       print "-" *100
       print "\n"
-      #print "#"*100
-      #print "Returning all patients.."
-      #print "-"*100
-      #print json
-      #print "-"*100
       return HttpResponse(json, content_type="application/json")
     else:
       raise Http404("Bad Request Method")
