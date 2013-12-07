@@ -85,6 +85,11 @@ URLS:
           !!python/object/apply:django.core.urlresolvers.reverse
             args: [ render_patient_json ]
 
+  tree: &PATIENT_TREE_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_patient_tree_with_id ]
+              kwds: { kwargs : { patient_id: *PATIENT_ID }  }
+
 
  # YAML
 
@@ -118,7 +123,9 @@ panes:
     type: bc
     splitter: False
     widgets: []
+    
     panes: 
+    
       - id : DEMOGRAPHICS_CENTER_BC_TOP_CP
         region: center
         type: cp
@@ -127,14 +134,32 @@ panes:
         panes: []
         widgets: []
 
+      - id : DEMOGRAPHICS_PATIENT_TREE_TRAILING_CP
+        region: trailing
+        type: cp
+        splitter: True
+        style: 
+          width: 12em
+        panes: []
+        widgets:
+        
+          - id: DEMOGRAPHICS_PATIENT_TRAILING_CP_TREE
+            type: tree
+            url: *PATIENT_TREE_URL
+            mainTabPane: PATIENT_CENTER_CP_TC
+            title: Demographics
+
+
       - id : DEMOGRAPHICS_CENTER_BC_CENTER_CP
         region: trailing
         type: cp
         widgets: []
+        splitter: True
         style: 
-          width: 40em
+          width: 38em
 
         panes: 
+
           - id : DEMOGRAPHICS_CENTER_BC_CENTER_CP_TC
             type: tc
             tabPosition: top
@@ -142,50 +167,108 @@ panes:
             widgets: []
             panes:
 
-                - id : CONTACT_GRID_CP
-                  type: cp
+                - id: CONTACT_BC
+                  type: bc
                   title: Contact
                   closable: False
                   widgets: []
-                  panes: 
-                      - id: CONTACT_GRID_CONTAINER
-                        type: dom
-                        domType: div
-                        style:
-                          height: 20em
-                        panes: []
-                        widgets: 
-                          - *CONTACT_ADD_BUTTON
-                          - *CONTACT_GRID
+                  panes:
 
-                - id : PHONE_GRID_CP
-                  type: cp
+                    - id : CONTACT_GRID_CP
+                      type: cp
+                      region: center
+                      widgets: []
+                      panes: 
+
+                          - id: CONTACT_GRID_CONTAINER
+                            type: dom
+                            domType: div
+                            style:
+                              height: 20em
+                            panes: []
+                            widgets: 
+#                               - *CONTACT_ADD_BUTTON
+                              - *CONTACT_GRID
+
+                    - id: CONTACT_ADD_FORM
+                      type: cp
+                      region: bottom
+                      splitter: True
+                      style: 
+                        height: 5em
+                        background: whitesmoke
+                        border: solid 1px slate
+                        borderRadius: 5px
+                      url: {{patient_detail_obj.urls.add.contact}}
+                      panes: []
+                      widgets: []
+
+                - id: PHONE_BC
+                  type: bc
                   title: Phone
                   closable: False
                   widgets: []
-                  panes: 
-                    - id: PHONE_GRID_CONTAINER
-                      type: dom
-                      domType: div
-                      style:
-                        height: 20em
-                      panes: []
-                      widgets: 
-                        - *PHONE_ADD_BUTTON
-                        - *PHONE_GRID
+                  panes:                
 
-                - id : GUARDIAN_GRID_CP
-                  type: cp
+                    - id : PHONE_GRID_CP
+                      type: cp
+                      region: center
+                      widgets: []
+                      panes: 
+
+                        - id: PHONE_GRID_CONTAINER
+                          type: dom
+                          domType: div
+                          style:
+                            height: 20em
+                          panes: []
+                          widgets: 
+#                               - *PHONE_ADD_BUTTON
+                            - *PHONE_GRID
+
+                    - id: PHONE_ADD_FORM
+                      type: cp
+                      region: bottom
+                      splitter: True
+                      style: 
+                        height: 5em
+                        background: whitesmoke
+                        border: solid 1px slate
+                        borderRadius: 5px
+                      url: {{patient_detail_obj.urls.add.phone}}
+
+
+                - id: GUARDIAN_BC
+                  type: bc
                   title: Guardian
                   closable: False
                   widgets: []
-                  panes: 
-                    - id: GUARDIAN_GRID_CONTAINER
-                      type: dom
-                      domType: div
-                      style:
-                        height: 20em
-                      panes: []
-                      widgets: 
-                        - *GUARDIAN_ADD_BUTTON
-                        - *GUARDIAN_GRID
+                  panes:                                
+
+                    - id : GUARDIAN_GRID_CP
+                      type: cp
+                      region: center
+                      widgets: []
+                      panes: 
+
+                        - id: GUARDIAN_GRID_CONTAINER
+                          type: dom
+                          domType: div
+                          style:
+                            height: 20em
+                          panes: []
+                          widgets: 
+#                               - *GUARDIAN_ADD_BUTTON
+                            - *GUARDIAN_GRID
+                    
+                    - id: GUARDIAN_ADD_FORM
+                      type: cp
+                      region: bottom
+                      splitter: True
+                      style: 
+                        height: 5em
+                        background: whitesmoke
+                        border: solid 1px slate
+                        borderRadius: 5px
+                      url: {{patient_detail_obj.urls.add.guardian}}
+

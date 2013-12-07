@@ -119,7 +119,7 @@ panes:
             style:
               height: 20em
             widgets: 
-              - *MEDICATION_LIST_ADD_BUTTON
+#               - *MEDICATION_LIST_ADD_BUTTON
               - *MEDICATION_LIST_GRID
 
       - id: MEDICATION_LIST_CENTER_BC_TRAILING_CP
@@ -140,32 +140,34 @@ panes:
             style:
               height: 20em
             widgets: 
-              - *ALLERGY_LIST_ADD_BUTTON
+#               - *ALLERGY_LIST_ADD_BUTTON
               - *ALLERGY_LIST_GRID
 
-#       - id: MEDICATION_LIST_CENTER_BC_BOTTOM_BC
-#         type: bc
-#         region: bottom
-#         widgets: []
-#         splitter: True
-#         style:
-#           height: 15em
-#         panes:
-#             - id: MEDICATION_LIST_CENTER_BC_BOTTOM_BC_FORM_CONTAINER
-#               type: cp
-#               region: center
-#               widgets: []
-#               splitter: True
-#               url: *MEDICATION_LIST_ADD_URL
-# 
-#             - id: ALLERGY_LIST_CENTER_BC_BOTTOM_BC_FORM_CONTAINER
-#               type: cp
-#               region: trailing
-#               widgets: []
-#               splitter: True
-#               style:
-#                 width: 20em
-#                 background: whitesmoke
-#                 borderRadius: 5px
-#                 border: solid 1px slate
-#               url: *ALLERGY_LIST_ADD_URL
+      - id: MEDICATION_LIST_CENTER_BC_BOTTOM_BC
+        type: bc
+        region: bottom
+        widgets: []
+        splitter: True
+        style:
+          height: 15em
+        panes:
+            - id: MEDICATION_LIST_CENTER_BC_BOTTOM_BC_FORM_CONTAINER
+              type: cp
+              region: center
+              panes: []
+              widgets: []
+              splitter: True
+              url: {{patient_detail_obj.urls.add.medication_list}}
+
+            - id: ALLERGY_LIST_CENTER_BC_BOTTOM_BC_FORM_CONTAINER
+              type: cp
+              region: trailing
+              panes: []
+              widgets: []
+              splitter: True
+              style:
+                width: 20em
+                background: whitesmoke
+                borderRadius: 5px
+                border: solid 1px slate
+              url: {{patient_detail_obj.urls.add.allergy_list}}

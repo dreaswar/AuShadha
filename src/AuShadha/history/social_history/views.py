@@ -89,7 +89,11 @@ def social_history_add(request, patient_id = None):
             patient_id = int(request.GET.get('patient_id'))
 
           patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-          patient_detail_obj.generate_urls()
+          #patient_detail_obj.generate_urls()
+
+          if not getattr(patient_detail_obj, 'urls',None):
+            patient_detail_obj.save()
+
           social_history_obj = SocialHistory.objects.filter(patient_detail=patient_detail_obj)
 
           if social_history_obj:
@@ -177,8 +181,9 @@ def social_history_add(request, patient_id = None):
                                   'addData':None
                                   }
                   else:
+                      error_message = aumodelformerrorformatter_factory(social_history_form)
                       data = {'success': False,
-                              'error_message': aumodelformerrorformatter_factory(social_history_form),
+                              'error_message': error_message,
                               'form_errors': error_message,
                               'addData':None
                               }
@@ -209,6 +214,10 @@ def social_history_edit(request, social_history_id = None):
           else:
             social_history_id = int(request.GET.get('social_history_id'))
           social_history_obj = SocialHistory.objects.get(pk=social_history_id)
+          patient_detail_obj = social_history_obj.patient_detail
+
+          if not getattr(patient_detail_obj, 'urls',None):
+            patient_detail_obj.save()
 
           if not getattr(social_history_obj,'urls',None):
             social_history_obj.save()

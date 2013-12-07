@@ -5,22 +5,37 @@
      action         = "" 
      method         = "">
 
-      <script type="dojo/method">
-          require( ["dijit/registry", 
-                    "dojo/store/Memory",
-                    "dojo/ready", 
+      <script type="text/javascript" >
 
-                    "dijit/form/ComboBox",
-                    "dijit/form/FilteringSelect",
-                    "dijit/form/MultiSelect",
+          require( 
+            ["dijit/registry", 
+              "dojo/store/Memory",
+              "dojo/ready", 
 
-                    "dojo/dom","dojo/_base/window",
-                    "dojo/dom-construct","dojo/dom-style",
-                    "dojo/parser"
-          ],
-          function(registry,Memory,ready,ComboBox, FilteringSelect, 
-                  MultiSelect,dom,win, domConstruct, domStyle, parser
-                  ){
+              "dijit/form/ComboBox",
+              "dijit/form/FilteringSelect",
+              "dijit/form/MultiSelect",
+
+              "dojo/dom","dojo/_base/window",
+              "dojo/dom-construct","dojo/dom-style",
+              "dojo/parser",
+
+              "dojo/domReady!"
+            ],
+
+          function(registry,
+                   Memory,
+                   ready,
+                   ComboBox, 
+                   FilteringSelect, 
+                   MultiSelect,
+                   dom,
+                   win, 
+                   domConstruct, 
+                   domStyle, 
+                   parser)
+          {
+
             ready( function(){ 
 
               /* Set Variables */
@@ -29,6 +44,8 @@
               var interval_list = ['per day', 'per week', 'per month','per year'];
 
               /* Call Functions */
+              parser.parse("newSocialHistoryAddOrEditForm");
+
               registerOccupation();
               registerHomeOccupants();
               registerPets();
@@ -304,48 +321,73 @@
 
       </script>
 
-      <script type="dojo/method" data-dojo-event="onSubmit" data-dojo-args="evt">
+
+      <script type="dojo/on" data-dojo-event="submit">
+
         if( this.validate() ){
+
           require(["dijit/registry", 
-                  "dojo/request","dojo/dom","dojo/dom-form","dojo/json","dojo/_base/fx",
-                  "dojo/ready","dijit/form/Button","dojo/domReady!"
+                  "dojo/request",
+                  "dojo/dom",
+                  "dojo/dom-form",
+                  "dojo/json",
+                  "dojo/_base/fx",
+                  "dojo/ready",
+                  "dijit/form/Button",
+                  "dojo/domReady!"
           ],
+
           function(registry, request, dom, domForm, JSON,fx,ready){
+
               var url = "{{action}}";
               var form_data = domForm.toObject('newSocialHistoryAddOrEditForm');
+
               request(url,{method:"POST", data: form_data}).
               then( 
+
                 function(json){
+
                   var jsondata = JSON.parse(json);
+
                   if (jsondata.success == true){
                     console.log(jsondata);
                     publishInfo(jsondata.error_message);
-                    if (jsondata.editUrl){
-                      registry.byId("social_history_tab").set('href', jsondata.editUrl);
-                    }
+                    var socialHistoryFormCP = registry.byId("SOCIAL_HISTORY_CENTER_CP");
+                    socialHistoryFormCP.set( 'href', "{{patient_detail_obj.urls.add.social_history}}" );
                   }
+
                   else{
                     publishError("Error Saving. Please retry");
                   }
+
                 },
+
                 function(json){
                   var jsondata = JSON.parse(json);              
                   publishError("Server Error ! Please retry..")
                   publishError(json.error_message)
                 },
+
                 function(evt){
                   publishError("Server Error ! Please retry ");
                   console.debug(evt);
                 }
+
               );
-            return false;
-          });/*
-            return false;*/
+
+            return false
+
+          });
+
+          return false
+
         }
+
         else{
           raiseInvalidFormSubmission();
-//           return false;
+          return false
         }
+
       </script>
 
 
@@ -445,7 +487,7 @@
       {{button_label}}
     </button>
 
-{% if canDel %}
+    {% if canDel %}
     <button data-dojo-type  = "dijit/form/Button" 
             data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"
             type            = "button"
@@ -454,36 +496,57 @@
             >
       Delete
 
-      <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
-          var confirmDialog = confirm("This will delete the SocialHistory Data.. Are you Sure ? ");
+      <script type="dojo/on" data-dojo-event="click">
+          
+          var confirmDialog = confirm('This will delete the SocialHistory Data.. Are you Sure ? ')
 
           if (confirmDialog == true){
-            require(["dojo/request", "dojo/json", "dojo/dom", "dijit/registry"], 
+
+            require( 
+
+              ["dojo/request", 
+               "dojo/json", 
+               "dojo/dom", 
+               "dijit/registry"
+              ], 
+
             function(request, JSON, dom, registry){
+
               request("{{delUrl}}",{method: "GET"}).
               then(
+
                 function(json){
+
                   var jsondata = JSON.parse(json);
+
                   if(jsondata.success == true){
                     publishInfo(jsondata.error_message);
-                    registry.byId("social_history_tab").set('href', jsondata.addUrl);
+                    var socialHistoryFormCP = registry.byId("SOCIAL_HISTORY_CENTER_CP");
+                    socialHistoryFormCP.set( 'href', "{{patient_detail_obj.urls.add.social_history}}" );
                   }
                   else{
                     publishError(jsondata.error_message);
                   }
+
                 },
+
                 function(json){
                   publishError("Server Error ! Please retry..")
                 },
+
                 function(evt){
                   publishError(evt)
                   console.log("Delete functions run successfully..");
                 }
+
               );
+
             });
+
           }
+
           else{
-            return false;
+            return false
           }
 
       </script>

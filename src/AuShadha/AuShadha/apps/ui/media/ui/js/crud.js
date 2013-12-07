@@ -35,16 +35,22 @@ function addItem(url, form_id, grid_id) {
                 var jsondata = JSON.parse(json)
                 console.log(jsondata);
 
-                if (!grid_id){
-                  var grid_id = window.CHOSEN_GRID
-                }
+//                 if ( !grid_id ){
+//                   var grid_id = window.CHOSEN_GRID;
+//                 }
 
                 if (jsondata.success == true) {
 
                     var data = jsondata.addData;                                  
+//                     console.log(grid_id);
+//                     console.log( window.gridStore );
+
                     if (grid_id){
-                      registry.byId(grid_id).store.newItem(data);
+//                        registry.byId(grid_id).store.newItem(data);
+//                        registry.byId(grid_id).store.onNew();
+                        registry.byId(grid_id).render();
                     }
+
                     dom.byId(form_id).reset();
 
                     publishInfo("Saved Successfully");

@@ -1,43 +1,33 @@
+{% if perms.allergy_list.add_allergy %}
+
 <div data-dojo-type = "dijit/form/Form" 
      id             = "newAllergyListAddForm"
      data-dojo-id   = "newAllergyListAddForm"
      encType        = "multipart/form-data" 
-     action         = "" 
-     method         = "">
+     action         = " " 
+     method         = " " >
 
-  <script type            = "dojo/method" 
-          data-dojo-event = "onReset"
-  >
-    return true;
-  </script>
+        <script type="dojo/on" data-dojo-event="submit" >
 
-  <script type            = "dojo/method" 
-          data-dojo-event = "onSubmit"
-          data-dojo-args  = "evt"
-  >
-   if(this.validate()){
-      require([
-       "dijit/registry", 
-      ],
-      function(registry){
-//    {% if perms.allergy_list.add_allergylist %}
-      addItem("{{addUrl}}", "newAllergyListAddForm");
-//    {% else %}
-      registry.byId("permissionDeniedErrorDialog").show();
-//   {% endif %}
-     });
-     return false;
-    }
-    else{
-      raiseInvalidFormSubmission();
-      return false;
-    }
-  </script>
+            if( this.validate() ){
+                require( 
+                  ["dijit/registry"],
+                function(registry){
+                  addItem("{{addUrl}}", 
+                          "newAllergyListAddForm", 
+                          "ALLERGY_LIST_GRID" );
+                });
+                return false
+            }
+            else{
+                raiseInvalidFormSubmission();
+                return false
+            }
 
-    {% if perms.allergy_list.add_allergy %}
+        </script>
 
         <table>
-        {{allergy_list_form}}
+          {{allergy_list_form}}
         </table>
 
         <button 	type 	          = "submit" 
@@ -48,18 +38,17 @@
                     value             = "Add">
           Add
 
-          <script type            = "dojo/connect" 
-                  data-dojo-event = "onClick" 
-                  data-dojo-args  = "evt"
-          >
+         <!--          
+          <script type= "dojo/on" data-dojo-event = "click" >
 
             ADD_MORE_ITEMS           = false;
 
           </script>
+         -->
 
         </button>
 
-        <button 	type 	        = "submit" 
+<!--        <button 	type 	        = "submit" 
                     data-dojo-type  = "dijit/form/Button"
                     data-dojo-props = "iconClass:'dijitIconSave'"
                     name 	        = "submitAndAddMoreButton" 
@@ -69,14 +58,16 @@
 
           Add More
 
-          <script type            = "dojo/connect" 
-                  data-dojo-event = "onClick"
-                  data-dojo-args  = "evt"
+          <script type            = "dojo/on" 
+                  data-dojo-event = "click"
           >
+
             ADD_MORE_ITEMS           = true;
+
           </script>
 
         </button>
+-->
 
         <button   type            = "reset" 
                   data-dojo-type  = "dijit/form/Button"
@@ -84,11 +75,17 @@
                   id              = "allergy_list_form_reset"
                   value           = "Reset">
           Reset
+
+          <script type="dojo/on" data-dojo-event="click">
+
+               return confirm('This will reset the form. Proceed ? ')
+
+          </script>
         </button>
 
-    {% else %}
-      <p class="suggestion_text"> Insufficient Permissions to add Allergy </p>
-    {%endif%}
-
 </div>
+
+{% else %}
+  <p class="suggestion_text"> Insufficient Permissions to add Allergy </p>
+{% endif %}
 

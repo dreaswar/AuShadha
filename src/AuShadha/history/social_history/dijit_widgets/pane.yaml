@@ -27,6 +27,10 @@ URLS:
                       args: [ render_patient_info ]
                       kwds: { kwargs: { patient_id: *PATIENT_ID }  }
 
+  tree: &PATIENT_TREE_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_patient_tree_with_id ]
+              kwds: { kwargs : { patient_id: *PATIENT_ID }  }
 
  # YAML
 
@@ -61,3 +65,18 @@ panes:
     widgets: []
     panes: []
     url: *SOCIAL_HISTORY_ADD_URL
+
+  - id : SOCIAL_HISTORY_PATIENT_TREE_TRAILING_CP
+    region: trailing
+    type: cp
+    splitter: True
+    style: 
+      width: 15em
+    panes: []
+
+    widgets:
+      - id: PATIENT_TRAILING_CP_TREE_SOCIAL_HISTORY_PANE
+        type: tree
+        url: *PATIENT_TREE_URL
+        mainTabPane: PATIENT_CENTER_CP_TC
+        title: SocialHistory

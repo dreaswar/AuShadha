@@ -33,6 +33,11 @@ VARS:
 
 URLS:
 
+  tree: &PATIENT_TREE_URL
+          !!python/object/apply:django.core.urlresolvers.reverse
+              args: [ render_patient_tree_with_id ]
+              kwds: { kwargs : { patient_id: *PATIENT_ID }  }
+
   pane: &FAMILY_HISTORY_PANE_URL
           !!python/object/apply:django.core.urlresolvers.reverse
               args: [ render_family_history_pane_with_id ]
@@ -75,28 +80,50 @@ panes:
     style: 
       height: 1.8em
 
-  - id : FAMILY_HISTORY_CENTER_CP
+  - id : FAMILY_HISTORY_CENTER_BC
     region: center
-    type: cp
+    type: bc
     splitter: False
     widgets: []
     panes: 
-      - id: FAMILY_HISTORY_CENTER_CP_GRID_CONTAINER
-        type: dom
-        domType: div
-        style:
-          height: 30em
-        panes: []
-        widgets: 
-          - *FAMILY_HISTORY_ADD_BUTTON
-          - *FAMILY_HISTORY_GRID
+      - id : FAMILY_HISTORY_CENTER_BC_CENTER_CP
+        region: center
+        type: cp
+        splitter: True
+        widgets: []
+        panes: 
+          - id: FAMILY_HISTORY_CENTER_BC_CENTER_CP_GRID_CONTAINER
+            type: dom
+            domType: div
+            style:
+              height: 20em
+            panes: []
+            widgets: 
+    #           - *FAMILY_HISTORY_ADD_BUTTON
+              - *FAMILY_HISTORY_GRID
 
-#   - id : FAMILY_HISTORY_TRAILING_CP
-#     region: trailing
-#     type: cp
-#     splitter: True
-#     widgets: []
-#     panes: []
-#     style:
-#       width: 30em
-#     url: {{patient_detail_obj.urls.add.family_history}}
+      - id : FAMILY_HISTORY_CENTER_BC_BOTTOM_CP
+        region: bottom
+        type: cp
+        splitter: True
+        widgets: []
+        panes: []
+        style:
+          height: 15em
+#           overflow: auto
+        url: {{patient_detail_obj.urls.add.family_history}}
+
+  - id : PATIENT_TREE_TRAILING_CP
+    region: trailing
+    type: cp
+    splitter: True
+    style: 
+      width: 15em
+    panes: []
+
+    widgets:
+      - id: PATIENT_TRAILING_CP_TREE_FAMILY_HISTORY_PANE
+        type: tree
+        url: *PATIENT_TREE_URL
+        mainTabPane: PATIENT_CENTER_CP_TC
+        title: FamilyHistory

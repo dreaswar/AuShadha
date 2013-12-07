@@ -5,33 +5,27 @@
      action         = "" 
      method         = "">
 
-  <script type            = "dojo/method" 
-          data-dojo-event = "onReset"
-  >
-    return true;
-  </script>
-
-  <script type            = "dojo/method" 
-          data-dojo-event = "onSubmit"
-          data-dojo-args  = "evt"
-  >
-   if(this.validate()){
+  <script type="dojo/on" data-dojo-event="submit">
+  
+    if( this.validate() ){
       require([
        "dijit/registry", 
       ],
-      function(registry){
-//    {% if perms.family_history.add_familyhistory %}
-      addItem("{{addUrl}}", "newFamilyHistoryAddForm");
-//    {% else %}
-      registry.byId("permissionDeniedErrorDialog").show();
-//   {% endif %}
+      function( registry ){
+        //    {% if perms.family_history.add_familyhistory %}
+        addItem( "{{addUrl}}", "newFamilyHistoryAddForm", "FAMILY_HISTORY_GRID" );
+        //    {% else %}
+        registry.byId( "permissionDeniedErrorDialog" ).show();
+        //   {% endif %}
      });
      return false;
     }
+
     else{
       raiseInvalidFormSubmission();
       return false;
     }
+  
   </script>
 
     {% if perms.family_history.add_family_history %}
@@ -48,15 +42,14 @@
                     value             = "Add">
           Add
 
-          <script type            = "dojo/connect" 
-                  data-dojo-event = "onClick" 
-                  data-dojo-args  = "evt"
+          <script type            = "dojo/on" 
+                  data-dojo-event = "click" 
           >
             ADD_MORE_ITEMS           = false;
           </script>
 
         </button>
-
+<!--
         <button 	type 	        = "submit" 
                     data-dojo-type  = "dijit/form/Button"
                     data-dojo-props = "iconClass:'dijitIconSave'"
@@ -66,14 +59,13 @@
 
           Add More
           
-          <script type            = "dojo/connect" 
-                  data-dojo-event = "onClick"
-                  data-dojo-args  = "evt"
+          <script type            = "dojo/on" 
+                  data-dojo-event = "click"
           >
             ADD_MORE_ITEMS           = true;
           </script>
 
-        </button>
+        </button>-->
 
         <button   type            = "reset" 
                   data-dojo-type  = "dijit/form/Button"
@@ -81,6 +73,13 @@
                   id              = "family_history_form_reset"
                   value           = "Reset">
           Reset
+
+          <script type="dojo/on" data-dojo-event="click">
+
+              return confirm('Press OK to reset widget values');
+
+          </script>
+
         </button>
 
     {% else %}
