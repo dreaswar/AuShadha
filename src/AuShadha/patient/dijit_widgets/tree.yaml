@@ -229,17 +229,19 @@ preventives: &PREVENTIVES
 #   onclick: null
 #   returns: json
 
-admissions: &ADMISSIONS
-  name : Admissions
-  type: application
-  module_type: admission_module
-  module_name: admission
-  id : ADMISSIONS
-  ondblclick: {{patient_detail_obj.urls.pane.admission}}
-  onrclick: null
-  onclick: null
-  redirect: 1
-  returns: json
+{%comment%}
+# admissions: &ADMISSIONS
+#   name : Admissions
+#   type: application
+#   module_type: admission_module
+#   module_name: admission
+#   id : ADMISSIONS
+#   ondblclick: {{patient_detail_obj.urls.pane.admission}}
+#   onrclick: null
+#   onclick: null
+#   redirect: 1
+#   returns: json
+{%endcomment%}
 
 visits: &VISITS
   name : Visits

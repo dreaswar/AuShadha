@@ -70,6 +70,9 @@ def contact_add(request, patient_id = None):
           patient_detail_obj.save()
           contact_obj = Contact(patient_detail=patient_detail_obj)
 
+          if not getattr(patient_detail_obj, 'urls', None):
+            patient_detail_obj.save()
+
           if request.method == "GET" and request.is_ajax():
               contact_form = ContactForm(instance=contact_obj, auto_id = False)
               variable = RequestContext(request,

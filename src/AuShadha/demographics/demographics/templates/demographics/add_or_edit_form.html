@@ -35,7 +35,7 @@
                 if (jsondata.editUrl){
 
                   publishInfo(jsondata.error_message);
-                  registry.byId("demographics_add_or_edit_form").set('href', jsondata.editUrl);
+                  registry.byId("DEMOGRAPHICS_CENTER_BC_TOP_CP").set('href', jsondata.editUrl);
 
                 }
 
@@ -151,7 +151,7 @@
               if(jsondata.success == true){
 
                 publishInfo(jsondata.error_message);
-                registry.byId("demographics_add_or_edit_form").set('href', jsondata.addUrl);
+                registry.byId("DEMOGRAPHICS_CENTER_BC_TOP_CP").set('href', jsondata.addUrl);
               }
 
               else{

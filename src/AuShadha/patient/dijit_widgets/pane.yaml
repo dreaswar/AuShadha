@@ -93,35 +93,35 @@ panes:
           cursor: pointer
           margin: 2px
 
-      - id: PATIENT_CONTACT_ADD_ICON
-        type: dom
-        domType: img
-        onclick: {{patient_detail_obj.urls.add.contact}}
-        panes: []
-        widgets: []
-        returns: html
-        src: {{MEDIA_URL}}images/patient/patient_contact_add_128.png
-        title: Add a Contact Address
-        style:
-          width: 22px
-          height: 22px
-          cursor: pointer
-          margin: 3px
-
-      - id: PATIENT_PHONE_ADD_ICON
-        type: dom
-        domType: img
-        onclick: {{patient_detail_obj.urls.add.phone}}
-        panes: []
-        widgets: []
-        returns: html
-        src: {{MEDIA_URL}}images/patient/phone_128.png
-        title: Add a Phone Contact
-        style:
-          width: 22px
-          height: 22px
-          cursor: pointer
-          margin: 3px
+#       - id: PATIENT_CONTACT_ADD_ICON
+#         type: dom
+#         domType: img
+#         onclick: {{patient_detail_obj.urls.add.contact}}
+#         panes: []
+#         widgets: []
+#         returns: html
+#         src: {{MEDIA_URL}}images/patient/patient_contact_add_128.png
+#         title: Add a Contact Address
+#         style:
+#           width: 22px
+#           height: 22px
+#           cursor: pointer
+#           margin: 3px
+# 
+#       - id: PATIENT_PHONE_ADD_ICON
+#         type: dom
+#         domType: img
+#         onclick: {{patient_detail_obj.urls.add.phone}}
+#         panes: []
+#         widgets: []
+#         returns: html
+#         src: {{MEDIA_URL}}images/patient/phone_128.png
+#         title: Add a Phone Contact
+#         style:
+#           width: 22px
+#           height: 22px
+#           cursor: pointer
+#           margin: 3px
 
 #       - id: PATIENT_VISIT_ADD_ICON
 #         type: dom

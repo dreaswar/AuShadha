@@ -78,9 +78,10 @@ def immunisation_add(request, patient_id = None):
           else:
             patient_id  = int(request.GET.get('patient_id'))
           patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-          patient_detail_obj.generate_urls()
-          p_urls = patient_detail_obj.urls
           immunisation_obj = Immunisation(patient_detail=patient_detail_obj)
+          if not getattr(patient_detail_obj, 'urls', None):
+            patient_detail_obj.save()
+
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
         except PatientDetail.DoesNotExist:
@@ -93,7 +94,6 @@ def immunisation_add(request, patient_id = None):
                                         "patient_detail_obj": patient_detail_obj,
                                         "immunisation_form": immunisation_form,
                                         "immunisation_obj": immunisation_obj,
-                                        'addUrl' : p_urls['add']['immunisation']
                                         })
             return render_to_response('immunisation/add.html', variable)
 
@@ -102,11 +102,12 @@ def immunisation_add(request, patient_id = None):
                                                       instance=immunisation_obj)
             if immunisation_form.is_valid():
                 immunisation_obj = immunisation_form.save()
-                immunisation_obj.generate_urls()
+                #immunisation_obj.generate_urls()
                 m_urls = immunisation_obj.urls
-                print "Immunisation URLS: "
-                print m_urls
-                patient_detail_obj.generate_urls()
+                #print "Immunisation URLS: "
+                #print m_urls
+                if not getattr(patient_detail_obj, 'urls', None):
+                  patient_detail_obj.save()
                 p_urls = patient_detail_obj.urls
 
                 fields_list = [field for field in immunisation_obj._meta.fields if field.serialize]
@@ -151,8 +152,14 @@ def immunisation_edit(request, immunisation_id = None):
         try:
           immunisation_id = int(immunisation_id)
           immunisation_obj = Immunisation.objects.get(pk= immunisation_id)
-          immunisation_obj.generate_urls()
+          patient_detail_obj = immunisation_obj.patient_detail
+          if not getattr(immunisation_obj, 'urls', None):
+            immunisation_obj.save()
+          #immunisation_obj.generate_urls()
           m_urls = immunisation_obj.urls
+          if not getattr(patient_detail_obj, 'urls', None):
+            patient_detail_obj.save()
+          
 
         except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")
@@ -161,7 +168,7 @@ def immunisation_edit(request, immunisation_id = None):
 
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing Immunisation"
-            print "Immunisation URLS is, ", m_urls
+            #print "Immunisation URLS is, ", m_urls
             immunisation_form = ImmunisationForm(instance=immunisation_obj, auto_id = False )
             variable = RequestContext(request,
                                       { "user": user,
@@ -180,10 +187,10 @@ def immunisation_edit(request, immunisation_id = None):
             if immunisation_form.is_valid():
                 immunisation_obj = immunisation_form.save()
 
-                immunisation_obj.generate_urls()
+                #immunisation_obj.generate_urls()
                 m_urls = immunisation_obj.urls
 
-                immunisation_obj.patient_detail.generate_urls()
+                #immunisation_obj.patient_detail.generate_urls()
                 p_urls = immunisation_obj.patient_detail.urls
 
                 fields_list = [field for field in immunisation_obj._meta.fields if field.serialize]

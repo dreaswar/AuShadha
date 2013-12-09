@@ -72,7 +72,7 @@ class PatientTree( object ):
       preventives_node =  DijitTreeNode( y['preventives'])
       demographics_node =  DijitTreeNode( y['demographics'])
       medication_list_node =  DijitTreeNode( y['medications'])
-      admission_node =  DijitTreeNode( y['admissions'])
+      #admission_node =  DijitTreeNode( y['admissions'])
       visit_node=  DijitTreeNode( y['visits'])
 
       #procedure_node = DijitTreeNode( y['procedures'] )
@@ -83,7 +83,7 @@ class PatientTree( object ):
       patient_tree_node.add_child_node( preventives_node )
       patient_tree_node.add_child_node( demographics_node )      
       patient_tree_node.add_child_node( medication_list_node )
-      patient_tree_node.add_child_node( admission_node )
+      #patient_tree_node.add_child_node( admission_node )
       patient_tree_node.add_child_node( visit_node )
 
       #patient_tree_node.add_child_node( procedure_node )
