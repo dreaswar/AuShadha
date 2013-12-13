@@ -1659,8 +1659,8 @@ def visit_follow_up_add(request, visit_id = None):
 
             visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         
-        #except (TypeError, NameError, ValueError, AttributeError, KeyError):
-            #raise Http404("Error ! Invalid Request Parameters. ")
+        except (TypeError, NameError, ValueError, AttributeError, KeyError):
+            raise Http404("Error ! Invalid Request Parameters. ")
         
         except (VisitDetail.DoesNotExist):
             raise Http404("Requested Visit Does not exist.")

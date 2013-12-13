@@ -1,4 +1,6 @@
+
 {% if user and user.is_authenticated %}
+
 <div data-dojo-type = "dijit/form/Form" 
      id             = "visitFUEditForm_{{visit_follow_up_obj.id}}"
      data-dojo-id   = "visitFUEditForm_{{visit_follow_up_obj.id}}"
@@ -10,7 +12,9 @@
 
 
     <script type="dojo/method" data-dojo-event="onSubmit">
+
       if( this.validate() ){
+
         require(["dojo/dom",
                 "dojo/request/xhr",
                 "dijit/registry"  ,
@@ -18,43 +22,60 @@
                 "dojo/dom-form"   ,
                 "dijit/Dialog" 
         ],
+
         function(dom, xhr, registry, JSON, domForm, Dialog){
+
           var editDialog  = registry.byId("editPatientDialog");
           var errorDialog = registry.byId("dialogJsonMessage");
 
-          xhr("{{visit_follow_up_obj.get_edit_url}}",{
-              handleAs: "text",
-              method  : "POST",
-              data    : domForm.toObject("visitFUEditForm_{{visit_follow_up_obj.id}}")
-          }).then(
+          xhr(
+              "{{visit_follow_up_obj.urls.del}}",
+              {
+                handleAs: "text",
+                method  : "POST",
+                data    : domForm.toObject("visitFUEditForm_{{visit_follow_up_obj.id}}")
+              }
+          ).
+          then(
+
             function(json){
                 var jsondata = JSON.parse(json);
                 console.log(jsondata);
-                if(jsondata.success == true){
+
+                if ( jsondata.success == true ) {
                   publishInfo("Saved Successfully" );
                   editDialog.hide();
-                  new buildVisitTree();
-//                   registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
-                  registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
-                  new buildPatientTree();
-                  new buildAdmissionTree();
                 }
-                else{
+
+                else {
                   publishError("ERROR ! :" + jsondata.error_message );
                 }
+
             },
-            function(json){
+
+            function (json) {
                   var jsondata = JSON.parse(json); 
                   publishError("ERROR!: "+ jsondata.error_message );
             },
-            function(evt){console.log("Edited Visit Successfully...")}
+
+            function (evt) {
+              console.log("Edited Visit Successfully...")
+            }
+
           );
+
         });
+
         return false;
+
       }
+
       else{
+
         return false;
+
       }
+
     </script>
 
 
@@ -201,50 +222,69 @@
     {%endif%}
 
     {% if perms.visit.delete_visitfollowup %}
+
     <button data-dojo-type  = "dijit/form/Button" 
 			data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
             type            = "button"
             name            = "delFUVisit"
             id              = "delFUVisitBtn_{{visit_follow_up_obj.id}}">
       Delete
-      <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
-        require(
-          ["dojo/dom", 
-            "dojo/_base/xhr",
-            "dojo/json",
-            "dijit/registry",
-            "dijit/Dialog"
-          ],
-        function(dom, xhr, JSON, registry, Dialog){
-            xhr.get({
-              url: "{{visit_follow_up_obj.get_del_url}}",
-              load: function(json){
-                      var jsondata = JSON.parse(json)
-                      if (jsondata.success == true){
-                        publishInfo(jsondata.error_message);
-                        registry.byId("editPatientDialog").hide();
-                        if( registry.byId('VISIT_{{visit_follow_up_obj.id}}') ){
-                          registry.byId('VISIT_{{visit_follow_up_obj.id}}').destroyRecursive(false);
+
+        <script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
+
+          require(
+            ["dojo/dom", 
+              "dojo/_base/xhr",
+              "dojo/json",
+              "dijit/registry",
+              "dijit/Dialog"
+            ],
+
+          function(dom, xhr, JSON, registry, Dialog){
+
+              xhr.get(
+                {
+
+                  url: "{{visit_follow_up_obj.urls.del}}",
+
+                  load: function(json){
+
+                          var jsondata = JSON.parse(json)
+
+                          if (jsondata.success == true){
+
+                            publishInfo(jsondata.error_message);
+
+                            registry.byId("editPatientDialog").hide();
+
+                            if( registry.byId('VISIT_{{visit_follow_up_obj.id}}') ){
+
+                              registry.byId('VISIT_{{visit_follow_up_obj.id}}').destroyRecursive(false);
+
+                            }
+                          }
+
+                          else {
+
+                            publishError(jsondata.error_message);
+
+                          }
+
                         }
-                        new buildVisitTree();
-//                      registry.byId('visitPaneRSidebar').set('href',CHOSEN_PATIENT.visitsummary);
-                        registry.byId('visitSummaryTab').set('href',CHOSEN_PATIENT.visitsummary);
-                        new buildPatientTree();
-                        new buildAdmissionTree();
-                      }else{
-                         publishError(jsondata.error_message);
-                      }
-                    }
-            });
-        });
-    </script>
+                }
+
+              );
+
+          });
+
+      </script>
+
     </button>
     {% endif %}
 
 
 </div>
+
 {% else %}
-<p class="suggestion_text"> Please Login </p>
+  <p class="suggestion_text"> Please Login </p>
 {% endif %}
-
-
