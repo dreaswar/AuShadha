@@ -1,0 +1,68 @@
+  <table id ="visitDetailEditFormTable_{{visit_detail_obj.id}}">
+    <tr> 
+      <th> <label for="id_visit_date"> Date</label></th>
+      <td> {{visit_detail_form.visit_date}} </td>
+    </tr>
+    <tr>           
+      <th> <label for="id_op_surgeon">Physician</label>
+      <td> {{visit_detail_form.op_surgeon}} </td>
+    </tr>
+    <tr>           
+      <th> <label for="id_refering_doctor">Referred</label> </th>
+      <td> {{visit_detail_form.referring_doctor}}</td>
+    </tr>
+    <tr>           
+      <th> <label for="id_consult_nature"> Nature</label>
+      <td> {{visit_detail_form.consult_nature}} </td>
+    </tr>
+    <tr>           
+      <th> <label for="id_status"> Status</label></th>
+      <td> {{visit_detail_form.status}} </td>
+    </tr>
+
+    <tr>
+      <td>
+        <button data-dojo-type="dijit/form/Button" 
+                type="button" 
+                data-dojo-props="iconClass:'attachment_small'"
+                onClick="showOrHideEditVisitRemarksCell();"
+        >
+          Remarks
+          <script type="text/javascript">
+            function showOrHideEditVisitRemarksCell(){
+                              require(['dojo/on',
+                                      'dojo/dom',
+                                      'dijit/registry',
+                                      'dojo/dom-style',
+                                      'dojo/dom-class',
+                                      'dojo/dom-attr'
+                                      ], 
+                                      function(on,
+                                              dom,
+                                              registry,
+                                              domStyle,
+                                              domClass,
+                                              domAttr
+                                              ){
+                              if (domStyle.get(dom.byId("editVisitRemarksCell_{{visit_detail_obj.id}}"),'display') == 'none'){
+                              domStyle.set(dom.byId("editVisitRemarksCell_{{visit_detail_obj.id}}"), {display:'table-cell'});
+                              //                     domAttr.set(this,{'label':'Hide Remarks'});
+                              }else{
+                              domStyle.set(dom.byId("editVisitRemarksCell_{{visit_detail_obj.id}}"), {display:'none'});
+                              //                     domAttr.set(this,{'label':'Show Remarks'});
+                              }
+                              });
+            }
+          </script>
+        </button>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td style="display:none;" id="editVisitRemarksCell_{{visit_detail_obj.id}}">
+        {{visit_detail_form.remarks}}
+      </td>
+    </tr>
+  </table>

@@ -1,0 +1,120 @@
+<div class="base_container" 
+     data-dojo-type="dojox/layout/ContentPane"
+     data-widget-content="visit_edit_form_base_container"
+>
+  
+  <script type="text/javascript">
+    /*
+    This is the Base Container for Visit Add Forms. This will House Visit Details, Complaints and Exams. 
+    Allows lazy operation like part by part saving and AJAX loading.
+    Permission Handling is also fine grained. 
+      Get the URLS to load
+      Identify the DOMS 
+      Match the Permissions
+      Load the DOM and Elements
+      Parser manually if necessary
+      Display to user / Display and error
+    */
+    require(['dojo/dom',
+             'dojo/dom-attr',
+             'dojo/dom-class',
+             'dojo/dom-style',
+             'dojo/parser',
+             'dojo/request',
+             'dojo/json',
+             'dijit/registry',
+             'dojo/query',
+             'dojo/on'],
+    function(dom,
+             domAttr,
+             domClass,
+             domStyle,
+             parser,
+             request,
+             JSON,
+             registry,
+             query,
+             on){
+
+    var visit_detail_edit_form_container,
+        visit_complaint_edit_form_container,
+        visit_history_phyexam_edit_form_container;
+
+    });
+
+  </script>
+
+  {% if user.perms.change_visitdetail %}
+  <div class="form_container" 
+       data-dojo-type="dijit/TitlePane" 
+       data-dojo-props="'title':'Basic Data','open':true"
+       data-widget-content="visit_detail_edit_form">
+    {%include 'visit/detail/edit.html' %}
+  </div>
+  {% endif %}
+
+  {% if user.perms.change_visitcomplaint %}
+  <div class="form_container" 
+       data-dojo-type="dijit/TitlePane" 
+       data-dojo-props="'title':'Complaints','open':true"
+       data-widget-content="visit_complaint_edit_form">
+    {%include 'visit/complaints/edit.html' %}
+  </div>
+  {% endif %}
+
+
+  <div class="form_container" 
+       data-dojo-type="dijit/TitlePane" 
+       data-dojo-props="'title':'History &amp; Physical Exams','open':false"
+       data-widget-content="visit_history_phyexam_edit_form"
+  >
+    
+    <div
+       data-dojo-type = "dojox/layout/ContentPane"
+       style          = "height: 30em; overflow:auto;"
+    >
+
+     <div data-dojo-type = "dijit/layout/TabContainer"
+          data-dojo-props = "tabPosition:'top',tabStrip: true"
+     >
+     
+        {% if user.perms.change_visithpi %}
+        <div  data-dojo-type = "dojox/layout/ContentPane"
+              data-dojo-props = "title:'HPI'"
+        >
+          {% include 'visit/hpi/edit.html' %}
+        </div>
+        {% endif %}
+      
+        {% if user.perms.change_visitros %}
+        <div data-dojo-type = "dojox/layout/ContentPane"
+           data-dojo-props = "title:'ROS'"
+        >
+          {% include 'visit/ros/edit.html' %}
+        </div>
+        {%endif %}
+
+        <div data-dojo-type = "dojox/layout/ContentPane"
+             data-dojo-props = "title:'Vitals, GE, HEENT'"
+        >
+          
+        </div>
+
+        <div data-dojo-type = "dojox/layout/ContentPane"
+             data-dojo-props = "title:'Resp, CVS &amp; Abd'"
+        >
+
+        </div>
+
+        <div data-dojo-type = "dojox/layout/ContentPane"
+              data-dojo-props = "title:'Extremity &amp; Neuro'"
+        >
+        </div>
+
+    </div>
+  
+  </div>
+
+  </div>
+  
+</div>

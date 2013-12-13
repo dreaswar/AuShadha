@@ -1,0 +1,17 @@
+{% if perms.visit.change_visitcomplaint %}
+<span style  = "background-image: url({{STATIC_URL}}images/save_small.png);
+                background-repeat: no-repeat;
+                background-size  : 16px 16px;
+                background-color : white;
+                width: 16px; 
+                height: 16px; 
+                cursor: pointer; 
+                display:table-cell;
+                "
+      data-url="{{form.instance.get_edit_url}}"
+      class  = "saveThisComplaint"
+      title  = "Save"
+    >
+
+</span>
+{%endif%}

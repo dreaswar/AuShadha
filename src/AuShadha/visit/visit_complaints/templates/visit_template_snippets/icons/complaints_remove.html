@@ -1,0 +1,26 @@
+{% if perms.visit.delete_visitcomplaint %}
+<span style  = "background-image: url({{STATIC_URL}}images/absent.png );
+                background-repeat: no-repeat;
+                background-size  : 16px 16px;
+                background-color : white;
+                width: 16px; 
+                height: 16px; 
+                cursor: pointer; 
+                display:{% if not forloop.first %} 
+                          table-cell 
+                        {% else %} 
+                           none
+                        {% endif %}
+                        ;
+                "
+        {% if form.instance.get_del_url %}
+          data-url="{{form.instance.get_del_url}}"
+        {% else %}
+          data-url=null
+        {% endif %}
+      class  = "removeThisComplaint"
+      title  = "Remove this Complaint"
+  >
+</span>
+{%endif%}
+

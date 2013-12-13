@@ -1,0 +1,16 @@
+<table class="content_pane_table">
+  <thead>
+    <tr> 
+      <th> Complaint </th> 
+      <th> Duration </th> 
+    </tr> 
+  </thead>
+  <tbody>
+    {% for o in obj_list %}
+      <tr>
+          <td> {{o.complaint}} </td> 
+          <td> {{o.duration}} </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

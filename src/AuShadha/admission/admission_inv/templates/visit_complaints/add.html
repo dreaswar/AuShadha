@@ -1,0 +1,30 @@
+<table id  = "visitComplaintAddFormTable" 
+       class="content_pane_table visitComplaintAddFormTable">
+  {{ visit_complaint_formset.management_form }}
+  <thead> 
+    <tr> 
+          <th> Complaint </th> 
+          <th> Duration  </th> 
+          <th>     &nbsp;&nbsp;      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% for form in visit_complaint_formset %}
+      <tr id    = "visitComplaintFormsetRow_{{forloop.counter}}"
+          class = "visitComplaintsAddFormRow complaintFormRow"
+      >
+          <td><span style="display:none;">{{form.visit_detail}} </span>
+              {{form.id}}
+              {{ form.complaint }}
+          </td>
+          <td>{{ form.duration }}</td>
+          <td class="actionCell"> 
+                {% include 'visit_template_snippets/icons/complaints_remove.html' %}
+                {% include 'visit_template_snippets/icons/complaints_add.html' %}
+          </td>
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
