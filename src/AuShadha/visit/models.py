@@ -70,17 +70,17 @@ class VisitDetail(AuShadhaBaseModel):
       self.__model_label__ = "visit"
       self._parent_model = 'patient_detail'
       self._can_add_list_or_json = ['complaint',
-                             'follow_up',
-                             'ros',
-                             'hpi',
-                             'soap',
-                             'phy_exam',
-                             #'past_history',
-                             #'inv',
-                             #'imaging',
-                             #'procedure',
-                             #'discharge'
-                             ]
+                                    'follow_up',
+                                    'ros',
+                                    'hpi',
+                                    'soap',
+                                    'phy_exam',
+                                    #'past_history',
+                                    #'inv',
+                                    #'imaging',
+                                    #'procedure',
+                                    #'discharge'
+                                    ]
 
       self._extra_url_actions = ['close','change_nature']
 
@@ -283,7 +283,7 @@ class VisitFollowUp(AuShadhaBaseModel):
     
     def __init__(self, *args, **kwargs):
       super(VisitFollowUp,self).__init__(*args, **kwargs)      
-      self.__model_label__ = "visit/follow_up"
+      self.__model_label__ = "follow_up"
       self._parent_model = 'visit_detail'
 
     visit_date = models.DateTimeField(auto_now=False, default=datetime.now())
@@ -308,6 +308,12 @@ class VisitFollowUp(AuShadhaBaseModel):
             self.visit_date.date(
             ).isoformat()
         )
+
+    def get_edit_url(self):
+        return '/AuShadha/visit/follow_up/edit/%s/' %(self.id)
+
+    def get_del_url(self):
+        return '/AuShadha/visit/follow_up/del/%s/' %(self.id)
 
     def formatted_obj(self):
         return '''<b> Seen On   :</b> %s\n</br>

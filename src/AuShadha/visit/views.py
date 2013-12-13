@@ -1648,81 +1648,76 @@ def visit_follow_up_add(request, visit_id = None):
     user = request.user
     print "Received Request to add a follow up visit from ", user
     
-    if request.method == "GET" and request.is_ajax():
-        
-        try:
-            if visit_id:
-              visit_id = int(visit_id)
+    try:
+        if visit_id:
+          visit_id = int(visit_id)
 
-            else:
-              visit_id = int(request.GET.get('visit_id'))
+        else:
+          visit_id = int(request.GET.get('visit_id'))
 
-            visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
-        
-        except (TypeError, NameError, ValueError, AttributeError, KeyError):
-            raise Http404("Error ! Invalid Request Parameters. ")
-        
-        except (VisitDetail.DoesNotExist):
-            raise Http404("Requested Visit Does not exist.")
+        visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
+
+        if not getattr(visit_detail_obj, 'urls', None):
+          visit_detail_obj.save()
 
         if not visit_detail_obj.is_active:
-            raise Http404("The Visit is Closed. Cannot add Followup Visits")
+          raise Http404("The Visit is Closed. Cannot add Followup Visits")
 
-        visit_follow_up_obj = VisitFollowUp(visit_detail=visit_detail_obj)
+        if request.method == "GET" and request.is_ajax():
 
-        visit_follow_up_form = VisitFollowUpForm(
-            instance=visit_follow_up_obj,
-            auto_id='id_visit_follow_up_' +
-            str(visit_detail_obj.id) +
-            "_%s"
-        )
+          visit_follow_up_obj = VisitFollowUp(visit_detail=visit_detail_obj)
 
-        variable = RequestContext(
-            request, {'user': user,
-                      'visit_detail_obj': visit_detail_obj,
-                      'visit_follow_up_obj': visit_follow_up_obj,
-                      'visit_follow_up_form': visit_follow_up_form,
-                      'patient_detail_obj': visit_detail_obj.patient_detail
-                      })
-        return render_to_response('visit_follow_up/add.html', variable)
+          visit_follow_up_form = VisitFollowUpForm(
+                                                  instance=visit_follow_up_obj,
+                                                  auto_id='id_visit_follow_up_' +str(visit_detail_obj.id) +"_%s",
+                                                  initial={
+                                                    'visit_date': datetime.now().isoformat() ,
+                                                    'op_surgeon': visit_detail_obj.op_surgeon,
+                                                    'consult_nature': 'follow_up'
+                                                    }
+                                              )
 
-    if request.method == "POST" and request.is_ajax():
-        print "Received request to add a Follow-Up OPD Visit..."
-        
-        try:
-            if visit_id : 
-              visit_id = int(visit_id)
+          variable = RequestContext(
+              request, {'user': user,
+                        'visit_detail_obj': visit_detail_obj,
+                        'visit_follow_up_obj': visit_follow_up_obj,
+                        'visit_follow_up_form': visit_follow_up_form,
+                        'patient_detail_obj': visit_detail_obj.patient_detail
+                        })
+          return render_to_response('visit_follow_up/add.html', variable)
+
+        elif request.method == "POST" and request.is_ajax():
+            print "Received request to add a Follow-Up OPD Visit..."
+
+            visit_follow_up_obj = VisitFollowUp(visit_detail=visit_detail_obj)
+
+            visit_follow_up_form = VisitFollowUpForm(
+                request.POST, instance=visit_follow_up_obj)
+
+            if visit_follow_up_form.is_valid():
+                saved_follow_up = visit_follow_up_form.save()
+                success = True
+                error_message = "Follow Up Visit Added Successfully"
+            
             else:
-              visit_id = int(request.GET.get('visit_id'))
-            visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
-        
-        except (TypeError, NameError, ValueError, AttributeError, KeyError):
-            raise Http404("Error ! Invalid Request Parameters. ")
-        
-        except (VisitDetail.DoesNotExist):
-            raise Http404("Requested Visit Does not exist.")
-
-        visit_follow_up_obj = VisitFollowUp(visit_detail=visit_detail_obj)
-        visit_follow_up_form = VisitFollowUpForm(
-            request.POST, instance=visit_follow_up_obj)
-
-        if visit_follow_up_form.is_valid():
-            saved_follow_up = visit_follow_up_form.save()
-            success = True
-            error_message = "Follow Up Visit Added Successfully"
+                success = False
+                error_message = "Error! Follow-up visit Could not be added"
+            
+            data = {'success': success,
+                    'error_message': error_message
+                    }
+            json = simplejson.dumps(data)
+            return HttpResponse(json, content_type='application/json')
         
         else:
-            success = False
-            error_message = "Error! Follow-up visit Could not be added"
-        
-        data = {'success': success,
-                'error_message': error_message
-                }
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type='application/json')
+            raise Http404(" Error ! Unsupported Request..")
+
+    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+        raise Http404("Error ! Invalid Request Parameters. ")
     
-    else:
-        raise Http404(" Error ! Unsupported Request..")
+    except (VisitDetail.DoesNotExist):
+        raise Http404("Requested Visit Does not exist.")
+
 
 
 @login_required
@@ -1730,69 +1725,71 @@ def visit_follow_up_edit(request, follow_up_id = None):
 
     user = request.user
     print "Received Request to add a follow up visit from ", user
-    if request.method == "GET" and request.is_ajax():
-        try:
-            if follow_up_id: 
-              follow_up_id= int(follow_up_id)
-            else:
-              follow_up_id = int(request.GET.get('follow_up_id'))
-            visit_follow_up_obj = VisitFollowUp.objects.get(pk=follow_up_id)
-            visit_detail_obj = visit_follow_up_obj.visit_detail
-        except (TypeError, NameError, ValueError, AttributeError, KeyError):
-            raise Http404("Error ! Invalid Request Parameters. ")
-        except (VisitFollowUp.DoesNotExist):
-            raise Http404("Requested Visit Does not exist.")
-        except(visit_follow_up_obj.visit_detail.is_active == False):
-            raise Http404("The Visit is Closed. Cannot add Followup Visits")
 
-        visit_follow_up_form = VisitFollowUpForm(
-            instance=visit_follow_up_obj,
-            auto_id='id_visit_follow_up_' +
-            str(visit_follow_up_obj.id) +
-            "_%s"
-        )
-        variable = RequestContext(
-            request, {'user': user,
-                      'visit_detail_obj': visit_detail_obj,
-                      'visit_follow_up_obj': visit_follow_up_obj,
-                      'visit_follow_up_form': visit_follow_up_form,
-                      'patient_detail_obj': visit_detail_obj.patient_detail
-                      })
-        return render_to_response('visit_follow_up/edit.html', variable)
-
-    if request.method == "POST" and request.is_ajax():
-        print "Received request to add a Follow-Up OPD Visit..."
-        try:
-            if follow_up_id: 
-              follow_up_id= int(follow_up_id)
-            else:
-              follow_up_id = int(request.POST.get('follow_up_id'))
-            visit_follow_up_obj = VisitFollowUp.objects.get(pk=follow_up_id)
-            visit_detail_obj = visit_follow_up_obj.visit_detail
-        except (TypeError, NameError, ValueError, AttributeError, KeyError):
-            raise Http404("Error ! Invalid Request Parameters. ")
-        except (VisitFollowUp.DoesNotExist):
-            raise Http404("Requested Visit Does not exist.")
-        except(visit_follow_up_obj.visit_detail.is_active == False):
-            raise Http404("The Visit is Closed. Cannot add Followup Visits")
-
-        visit_follow_up_form = VisitFollowUpForm(
-            request.POST, instance=visit_follow_up_obj)
-
-        if visit_follow_up_form.is_valid():
-            saved_follow_up = visit_follow_up_form.save()
-            success = True
-            error_message = "Follow Up Visit Edited Successfully"
+    try:
+        if follow_up_id: 
+          follow_up_id= int(follow_up_id)
         else:
-            success = False
-            error_message = "Error! Follow-up visit Could not be added"
-        data = {'success': success,
-                'error_message': error_message
-                }
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type='application/json')
-    else:
-        raise Http404(" Error ! Unsupported Request..")
+          follow_up_id = int(request.GET.get('follow_up_id'))
+
+        visit_follow_up_obj = VisitFollowUp.objects.get(pk=follow_up_id)
+        if not getattr(visit_follow_up_obj, 'urls', None):
+          visit_follow_up_obj.save()
+
+        visit_detail_obj = visit_follow_up_obj.visit_detail
+        if not getattr(visit_detail_obj, 'urls', None):
+          visit_detail_obj.save()
+
+        if not visit_follow_up_obj.visit_detail.is_active :
+          raise Http404("The Visit is Closed. Cannot add Followup Visits")
+
+        if request.method == "GET" and request.is_ajax():
+
+            visit_follow_up_form = VisitFollowUpForm( instance=visit_follow_up_obj,
+                                                      auto_id='id_visit_follow_up_' +str(visit_follow_up_obj.id) +"_%s",
+                                                      initial={
+                                                        'visit_date': visit_follow_up_obj.visit_date.isoformat()
+                                                      }
+                                                    )
+
+            variable = RequestContext(request, 
+                                      {'user': user,
+                                        'visit_detail_obj': visit_detail_obj,
+                                        'visit_follow_up_obj': visit_follow_up_obj,
+                                        'visit_follow_up_form': visit_follow_up_form,
+                                        'patient_detail_obj': visit_detail_obj.patient_detail
+                                      })
+            return render_to_response('visit_follow_up/edit.html', variable)
+
+        elif request.method == "POST" and request.is_ajax():
+            print "Received request to add a Follow-Up OPD Visit..."
+
+            visit_follow_up_form = VisitFollowUpForm(request.POST, 
+                                                     instance=visit_follow_up_obj
+                                                    )
+
+            if visit_follow_up_form.is_valid():
+                saved_follow_up = visit_follow_up_form.save()
+                success = True
+                error_message = "Follow Up Visit Edited Successfully"
+            else:
+                success = False
+                error_message = "Error! Follow-up visit Could not be added"
+            data = {'success': success,
+                    'error_message': error_message
+                    }
+            json = simplejson.dumps(data)
+            return HttpResponse(json, content_type='application/json')
+
+        else:
+            raise Http404(" Error ! Unsupported Request..")
+
+    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+        raise Http404("Error ! Invalid Request Parameters. ")
+    except (VisitFollowUp.DoesNotExist):
+        raise Http404("Requested Visit Does not exist.")
+
+
 
 
 @login_required

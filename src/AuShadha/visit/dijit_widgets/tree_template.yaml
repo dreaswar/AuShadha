@@ -171,55 +171,55 @@ items:
     type: application
     id: VISITS
     children:
-      {% if active_visits %}
+      {% if active_visit_list %}
       - name: Active Visits
         type: visit_module
         id: ACTIVE_VISITS
         children:
-          {% for active_visit in active_visits %}
-          - name: {{active_visit.visit_date.date}}
+          {% for item in active_visit_list %}
+          - name: {{item.active_visit.visit_date.date}}
             type: visit_module
-            id: ACTIVE_VISIT_{{active_visit.id}}
+            id: ACTIVE_VISIT_{{item.active_visit.id}}
             module_type: sub_module
             module_name: visit
-            ondblclick: {{active_visit.urls.edit}}
+            ondblclick: {{item.active_visit.urls.edit}}
             onrclick: null
             onclick: null
             redirect: 1
             returns: html  
             children: 
-              - name: Close
-                type: visit_module
-                id: CLOSE_ACTIVE_VISIT_{{active_visit.id}}
-                module_type: sub_module
-                module_name: visit
-                ondblclick: {{active_visit.get_visit_detail_close_url}}
-                onrclick: null
-                onclick: null
-                redirect: null
-                returns: json
+#               - name: Close
+#                 type: visit_module
+#                 id: CLOSE_ACTIVE_VISIT_{{active_visit.id}}
+#                 module_type: sub_module
+#                 module_name: visit
+#                 ondblclick: {{active_visit.get_visit_detail_close_url}}
+#                 onrclick: null
+#                 onclick: null
+#                 redirect: null
+#                 returns: json
   #                 ondblclickreturn: 
   #                   - type: custom
   #                     action: close_active_visit
               - name:  Add Follow-up
                 type: visit_module
-                id: ADD_FOLLOW_UP_ACTIVE_VISIT_{{active_visit.id}}
+                id: ADD_FOLLOW_UP_ACTIVE_VISIT_{{item.active_visit.id}}
                 module_type: sub_module
                 module_name: visit
-                ondblclick: {{active_visit.get_visit_detail_visit_follow_up_add_url}}
+                ondblclick: {{item.active_visit.get_visit_detail_visit_follow_up_add_url }}
                 onrclick: null
                 onclick: null
                 redirect: 1
                 returns: html
 
-            {% if active_visit.has_fu_visits %}
+            {% if item.fu %}
               - name: Follow-ups
                 type: visit_follow_up_module
                 id: ACTIVE_VISIT_FOLLOW_UP_VISITS
                 module_type: sub_module
                 module_name: visit_follow_up
                 children:
-                  {% for fu in active_visit.has_fu_visits %}
+                  {% for fu in item.fu %}
                   - name: {{fu.visit_date.date}}
                     type: visit_follow_up_module
                     id: ACTIVE_VISIT_FOLLOW_UP_VISIT_{{fu.id}}
@@ -237,26 +237,26 @@ items:
 
       {% endif %}
 
-      {% if inactive_visits %}
+      {% if inactive_visit_list %}
         name: Previous Visits
         type: visit_module
         id: PREVIOUS_INACTIVE_VISITS
         module_type: sub_module
         module_name: visit
         children:
-          {% for inactive_visit in inactive_visits %}
-          - name: {{inactive_visit.visit_date.date}}
+          {% for item in inactive_visit_list %}
+          - name: {{item.inactive_visit.visit_date.date}}
             type: visit_module
-            id: INACTIVE_VISIT_{{inactive_visit.id}}
+            id: INACTIVE_VISIT_{{item.inactive_visit.id}}
             module_type: sub_module
             module_name: visit
-            ondblclick: {{inactive_visit.urls.edit}}
+            ondblclick: {{item.inactive_visit.urls.edit}}
             onrclick: null
             onclick: null
             redirect: 1  
             returns: html
 
-            {% if inactive_visit.has_fu_visits %}
+            {% if item.fu %}
             children:
               - name: Follow-ups
                 type: visit_follow_up_module
@@ -264,7 +264,7 @@ items:
                 module_type: sub_module
                 module_name: visit_follow_up
                 children:
-                  {% for fu in inactive_visit.has_fu_visits %}
+                  {% for fu in item.fu %}
                   - name: {{fu.visit_date.date}}
                     type: visit_follow_up_module
                     id: INACTIVE_VISIT_FOLLOW_UP_VISIT_{{fu.id}}

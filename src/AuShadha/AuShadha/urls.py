@@ -44,6 +44,7 @@ urlpatterns = patterns('',
 
 
                       url(r'^AuShadha/visit/', include('visit.urls')),
+                      url(r'^AuShadha/follow_up/', include('visit.urls')),
 
                       url(r'^AuShadha/phyexam/', include('phyexam.urls')),
 

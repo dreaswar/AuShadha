@@ -83,7 +83,7 @@ class VisitTree(object):
             if not getattr(active_visit,'urls',None):
               active_visit.save()
             active_visit_yaml = y['active_visit'].copy()
-            close_active_visit_yaml = y['close_active_visit'].copy()
+            #close_active_visit_yaml = y['close_active_visit'].copy()
             add_follow_up_visit_yaml = y['add_follow_up_to_active_visit'].copy()
 
             active_visit_yaml['id'] = "%s_%s" %(active_visit_yaml['id'], str(active_visit.id) )
@@ -91,15 +91,15 @@ class VisitTree(object):
             active_visit_yaml['ondblclick'] = active_visit.urls['edit']
             active_visit_yaml['onclick'] = active_visit.urls['edit'] 
 
-            close_active_visit_yaml['id'] = "%s_%s" %(close_active_visit_yaml['id'], str(active_visit.id) )
+            #close_active_visit_yaml['id'] = "%s_%s" %(close_active_visit_yaml['id'], str(active_visit.id) )
             add_follow_up_visit_yaml['id'] = "%s_%s" %(add_follow_up_visit_yaml['id'], str(active_visit.id) )
-            close_active_visit_yaml['ondblclick'] = active_visit.get_visit_detail_close_url()
+            #close_active_visit_yaml['ondblclick'] = active_visit.get_visit_detail_close_url()
             add_follow_up_visit_yaml['ondblclick'] = active_visit.urls['add']['follow_up']
 
             active_visit_node = DijitTreeNode(active_visit_yaml)
 
-            close_active_visit_node = DijitTreeNode(close_active_visit_yaml)
-            active_visit_node.add_child_node(close_active_visit_node)
+            #close_active_visit_node = DijitTreeNode(close_active_visit_yaml)
+            #active_visit_node.add_child_node(close_active_visit_node)
 
             add_follow_up_active_visit_node = DijitTreeNode(add_follow_up_visit_yaml)
             active_visit_node.add_child_node(add_follow_up_active_visit_node)
@@ -114,6 +114,9 @@ class VisitTree(object):
               for f in fu:
                 if not getattr(f,'urls',None):
                   f.save()
+                print "*"*100
+                print f.urls
+                print "*"*100
                 f_yaml = y['active_visit_follow_up'].copy()
                 f_yaml['id'] = "%s_%s" %(f_yaml['id'], str(f.id) )
                 f_yaml['ondblclick']  = f.urls['edit']

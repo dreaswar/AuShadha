@@ -23,7 +23,7 @@ from AuShadha.apps.ui.ui import ui as UI
 #from patient.models import PatientDetail
 PatientDetail = UI.get_module("PatientRegistration")
 from visit import MODULE_LABEL
-from visit.models import VisitDetail
+from visit.models import VisitDetail, VisitFollowUp
 
 
 
@@ -123,30 +123,44 @@ def render_visit_tree(request, patient_id = None):
               if not getattr(fu, 'urls', None):
                 fu.save()
 
-      active_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj ).filter(is_active = True )
+      active_visits = VisitDetail.objects.filter( patient_detail = patient_detail_obj ).filter( is_active = True )
+      
+      #[ { active_visit:<active_visit>, fu:[<follow_ups>] } ]
+      active_visit_list = []
       for v in active_visits:
+        dict_to_append = {'active_visit': None, 'fu': [] }
         if not getattr(v, 'urls',None):
           v.save()
+          dict_to_append['active_visit'] = v
           if v.has_fu_visits():
             for fu in v.has_fu_visits():
               if not getattr(fu, 'urls', None):
                 fu.save()
+                dict_to_append['fu'].append(fu)
+        active_visit_list.append(dict_to_append)
 
-      inactive_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj ).filter(is_active = False )
+      inactive_visits = VisitDetail.objects.filter( patient_detail = patient_detail_obj ).filter( is_active = False )
+      inactive_visit_list = []
       for v in inactive_visits:
+        dict_to_append = {'inactive_visit': None, 'fu': [] }
         if not getattr(v, 'urls',None):
           v.save()
+          dict_to_append['inactive_visit'] = v
           if v.has_fu_visits():
             for fu in v.has_fu_visits():
               if not getattr(fu, 'urls', None):
                 fu.save()
+                dict_to_append['fu'].append(fu)
+        inactive_visit_list.append(dict_to_append)
 
       context = RequestContext(request, 
                                {'patient_detail_obj' : patient_detail_obj , 
                                 'all_visits': all_visits,
                                 'active_visits' : active_visits,
                                 'inactive_visits': inactive_visits,
-                                'user': user 
+                                'user': user ,
+                                'active_visit_list': active_visit_list,
+                                'inactive_visit_list': inactive_visit_list
                                 })
 
       try:
