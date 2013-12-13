@@ -27,7 +27,7 @@ import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
-
+from patient.models import PatientDetail
 
 
 class PatientTree( object ):
@@ -92,3 +92,37 @@ class PatientTree( object ):
 
       json = patient_tree_node.to_json()
       return json
+
+
+
+@login_required
+def render_patient_tree(request,patient_id = None):
+
+  if request.method == "GET" and request.is_ajax():
+
+    if patient_id:
+      patient_id = int( patient_id )
+
+    else:
+      try:
+        patient_id = int( request.GET.get('patient_id') )
+      except (KeyError, NameError, ValueError,AttributeError):
+        raise Http404("Bad Request: Invalid Request Parameters")
+
+    try:
+      patient_detail_obj = PatientDetail.objects.get(pk = patient_id)
+
+      if not getattr(patient_detail_obj,'urls',None):
+        patient_detail_obj.save()
+
+      d = {'request' : request,
+          'patient_detail_obj': patient_detail_obj
+          }
+      tree = PatientTree(d)()
+      return HttpResponse(tree, content_type="application/json")    
+
+    except (PatientDetail.DoesNotExist):
+      raise Http404("Bad Request: Patient Does Not Exist")      
+
+  else:
+      raise Http404("Bad Request")

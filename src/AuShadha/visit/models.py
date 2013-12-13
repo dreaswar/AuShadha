@@ -114,7 +114,7 @@ class VisitDetail(AuShadhaBaseModel):
             # return self.patient_detail.get_patient_visit_add_url()
         # else:
             # return False
-        return '/AuShadha/visit/follow_up/add/?visit_id=%s/' % (self.id)
+        return '/AuShadha/visit/follow_up/add/?visit_id=%s' % (self.id)
 
     def has_fu_visits(self):
         id = self.id
@@ -283,7 +283,7 @@ class VisitFollowUp(AuShadhaBaseModel):
     
     def __init__(self, *args, **kwargs):
       super(VisitFollowUp,self).__init__(*args, **kwargs)      
-      self.__model_label__ = "follow_up"
+      self.__model_label__ = "visit/follow_up"
       self._parent_model = 'visit_detail'
 
     visit_date = models.DateTimeField(auto_now=False, default=datetime.now())

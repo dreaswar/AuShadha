@@ -1647,27 +1647,36 @@ def visit_follow_up_add(request, visit_id = None):
 
     user = request.user
     print "Received Request to add a follow up visit from ", user
+    
     if request.method == "GET" and request.is_ajax():
+        
         try:
             if visit_id:
               visit_id = int(visit_id)
+
             else:
               visit_id = int(request.GET.get('visit_id'))
+
             visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
-        except (TypeError, NameError, ValueError, AttributeError, KeyError):
-            raise Http404("Error ! Invalid Request Parameters. ")
+        
+        #except (TypeError, NameError, ValueError, AttributeError, KeyError):
+            #raise Http404("Error ! Invalid Request Parameters. ")
+        
         except (VisitDetail.DoesNotExist):
             raise Http404("Requested Visit Does not exist.")
-        except(visit_detail_obj.is_active == False):
+
+        if not visit_detail_obj.is_active:
             raise Http404("The Visit is Closed. Cannot add Followup Visits")
 
         visit_follow_up_obj = VisitFollowUp(visit_detail=visit_detail_obj)
+
         visit_follow_up_form = VisitFollowUpForm(
             instance=visit_follow_up_obj,
             auto_id='id_visit_follow_up_' +
             str(visit_detail_obj.id) +
             "_%s"
         )
+
         variable = RequestContext(
             request, {'user': user,
                       'visit_detail_obj': visit_detail_obj,
@@ -1679,14 +1688,17 @@ def visit_follow_up_add(request, visit_id = None):
 
     if request.method == "POST" and request.is_ajax():
         print "Received request to add a Follow-Up OPD Visit..."
+        
         try:
             if visit_id : 
               visit_id = int(visit_id)
             else:
               visit_id = int(request.GET.get('visit_id'))
             visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
+        
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
             raise Http404("Error ! Invalid Request Parameters. ")
+        
         except (VisitDetail.DoesNotExist):
             raise Http404("Requested Visit Does not exist.")
 
@@ -1698,14 +1710,17 @@ def visit_follow_up_add(request, visit_id = None):
             saved_follow_up = visit_follow_up_form.save()
             success = True
             error_message = "Follow Up Visit Added Successfully"
+        
         else:
             success = False
             error_message = "Error! Follow-up visit Could not be added"
+        
         data = {'success': success,
                 'error_message': error_message
                 }
         json = simplejson.dumps(data)
         return HttpResponse(json, content_type='application/json')
+    
     else:
         raise Http404(" Error ! Unsupported Request..")
 

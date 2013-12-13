@@ -42,6 +42,11 @@ from AuShadha.apps.clinic.models import Clinic
 
 #from patient.models import PatientDetail
 PatientDetail = UI.get_module("PatientRegistration")
+Demographics = UI.get_module("Demographics")
+Contact = UI.get_module("Contact")
+Phone = UI.get_module("Phone")
+EmailAndFax = UI.get_module("EmailAndFax")
+Guardian = UI.get_module("Guardian")
 
 
 # Views start here -----------------------------------------
@@ -124,3 +129,272 @@ def aushadha_patient_search(request, patient_id= None):
 
   else:
     raise Http404("Bad Request Method")
+
+
+########################## OLD CODE NEEDS TO BE RELOOKED. THIS WAS THE EARLY ADVANCED SEARCH IMPLEMENTATION #############
+
+#@login_required
+#def aushadha_advanced_patient_search(request, search_by, search_for):
+    #if request.user:
+        #user = request.user
+        #search_by = request.GET['search_by']
+        #search_for = request.GET['search_for']
+
+        #if search_by == "first_name":
+            #try:
+                #patient_obj = PatientDetail.objects.filter(
+                    #first_name__icontains=search_for)
+                #variable = RequestContext(
+                    #request, {'patient_obj': patient_obj, 'user': user})
+                #return render_to_response('patient/patient_search_result.html', variable)
+            #except ValueError or TypeError or AttributeError:
+                #raise Http404("Please enter a correct search term")
+
+        #elif search_by == "middle_name":
+            #try:
+                #patient_obj = PatientDetail.objects.filter(
+                    #middle_name__icontains=search_for)
+                #variable = RequestContext(
+                    #request, {'patient_obj': patient_obj, 'user': user})
+                #return render_to_response('patient/patient_search_result.html', variable)
+            #except ValueError or TypeError or AttributeError:
+                #raise Http404("Please enter a correct search term")
+
+        #elif search_by == "last_name":
+            #try:
+                #patient_obj = PatientDetail.objects.filter(
+                    #last_name__icontains=search_for)
+                #variable = RequestContext(
+                    #request, {'patient_obj': patient_obj, 'user': user})
+                #return render_to_response('patient/patient_search_result.html', variable)
+            #except ValueError or TypeError or AttributeError:
+                #raise Http404("Please enter a correct search term")
+
+        #elif search_by == "hospital_id":
+            #try:
+                #patient_obj = PatientDetail.objects.filter(
+                    #patient_hospital_id__icontains=search_for)
+                #variable = RequestContext(
+                    #request, {'patient_obj': patient_obj, 'user': user})
+                #return render_to_response('patient/patient_search_result.html', variable)
+            #except ValueError or TypeError or AttributeError:
+                #raise Http404("Please enter a correct search term")
+
+        #elif search_by == "phone":
+            #try:
+                #phone_obj = Phone.objects.filter(
+                    #phone__icontains=search_for)
+                #variable = RequestContext(
+                    #request, {'phone_obj': phone_obj, 'user': user})
+                #return render_to_response('patient/patient_search_result.html', variable)
+            #except ValueError or TypeError or AttributeError:
+                #raise Http404("Please enter a correct search term")
+
+        #elif search_by == "guardian_name":
+            #try:
+                #guardian_obj = Guardian.objects.filter(
+                    #guardian_name__icontains=search_for)
+                #variable = RequestContext(
+                    #request, {'guardian_obj': guardian_obj, 'user': user})
+                #return render_to_response('patient/patient_search_result.html', variable)
+            #except ValueError or TypeError or AttributeError:
+                #raise Http404("Please enter a correct search term")
+
+        #elif search_by == "city":
+            #try:
+                #contact_obj = Contact.objects.filter(
+                    #city__icontains=search_for)
+                #variable = RequestContext(
+                    #request, {'contact_obj': contact_obj, 'user': user})
+                #return render_to_response('patient/patient_search_result.html', variable)
+            #except ValueError or TypeError or AttributeError:
+                #raise Http404("Please enter a correct search term")
+
+    #else:
+        #raise Http404("Please Log in")
+
+
+
+
+
+#@login_required
+#def patient_id_autocompleter(request, patient_id=None):
+    #if request.method == "GET" and request.is_ajax():
+        #request_copy = request.GET.copy()
+        #if not patient_id:
+            #patient_id = request_copy.get('patient_id')
+        #else:
+            #patient_id = int(patient_id)
+        #patient_id_list = []
+        #if patient_id != "*":
+            #pat_obj = PatientDetail.objects.get(pk=patient_id)
+            #if pat_obj:
+                #dict_to_append = {}
+                #dict_to_append[
+                    #'patient_hospital_id'] = pat_obj.patient_hospital_id
+                #dict_to_append['patient_id'] = pat_obj.id
+                #dict_to_append['name'] = unicode(
+                    #pat_obj.patient_hospital_id) + "-" + pat_obj.__unicode__()
+                #dict_to_append['patient_name'] = pat_obj.__unicode__()
+                #dict_to_append['first_name'] = pat_obj.first_name
+                #dict_to_append['middle_name'] = pat_obj.middle_name
+                #dict_to_append['last_name'] = pat_obj.last_name
+                #dict_to_append['age'] = pat_obj.age
+                #dict_to_append['sex'] = pat_obj.sex
+                #patient_id_list.append(dict_to_append)
+            #else:
+                #dict_to_append = {"patient_name": "No-Result",
+                                  #"name": "No Patients Recorded.",
+                                  #"patient_id": "No-Result",
+                                  #"patient_hospital_id": "",
+                                  #"first_name": "",
+                                  #"middle_name": "",
+                                  #"last_name": "",
+                                  #"age": "",
+                                  #"sex": "",
+                                  #}
+                #patient_id_list.append(dict_to_append)
+        #else:
+            #dict_to_append = {"patient_name": "No-Result",
+                              #"name": "No Patients Recorded.",
+                              #"patient_id": "No-Result",
+                              #"patient_hospital_id": "",
+                              #"first_name": "",
+                              #"middle_name": "",
+                              #"last_name": "",
+                              #"age": "",
+                              #"sex": "",
+                              #}
+            #patient_id_list.append(dict_to_append)
+        #json = simplejson.dumps(patient_id_list)
+        #str_to_construct = simplejson.dumps(patient_id_list)
+        #f = open(
+            #os.path.join(settings.CUSTOM_SCRIPT_ROOT, 'patient_id_list.json'), 'w')
+        #f.write(str_to_construct)
+        #f.close()
+        #return HttpResponse(json, content_type='application/json')
+    #else:
+        #raise Http404("Bad Request..")
+
+
+#@login_required
+#def hospital_id_autocompleter(request, patient_hospital_id=None):
+
+    #if request.method == "GET" and request.is_ajax():
+        #request_copy = request.GET.copy()
+
+        #if not patient_hospital_id:
+            #hospital_id = request_copy.get('patient_hospital_id')
+        #else:
+            #hospital_id = unicode(patient_hospital_id)
+
+        #if hospital_id == "*":
+            #pat_obj = PatientDetail.objects.all()
+        #else:
+            #if hospital_id[-1:] == "*":
+                #hospital_id = hospital_id[:-1]
+            #pat_obj = PatientDetail.objects.filter(
+                #patient_hospital_id__startswith=hospital_id)
+        #hospital_id_list = []
+
+        #if pat_obj:
+            #for pat in pat_obj:
+                #dict_to_append = {}
+                #dict_to_append['patient_hospital_id'] = pat.patient_hospital_id
+                #dict_to_append['patient_id'] = pat.id
+                #dict_to_append['name'] = unicode(
+                    #pat.patient_hospital_id) + "-" + pat.__unicode__()
+                #dict_to_append['patient_name'] = pat.__unicode__()
+                #dict_to_append['first_name'] = pat.first_name
+                #dict_to_append['middle_name'] = pat.middle_name
+                #dict_to_append['last_name'] = pat.last_name
+                #dict_to_append['age'] = pat.age
+                #dict_to_append['sex'] = pat.sex
+                #hospital_id_list.append(dict_to_append)
+        #else:
+            #dict_to_append = {"patient_name": "No-Result",
+                              #"name": "No Patients Recorded.",
+                              #"patient_id": "No-Result",
+                              #"patient_hospital_id": "",
+                              #"first_name": "",
+                              #"middle_name": "",
+                              #"last_name": "",
+                              #"age": "",
+                              #"sex": "",
+                              #}
+            #hospital_id_list.append(dict_to_append)
+        #json = simplejson.dumps(hospital_id_list)
+
+##    str_to_construct = "var PATIENT_LIST = " + str(hospital_id_list) +";"
+        #str_to_construct = simplejson.dumps(hospital_id_list)
+        #f = open(
+            #os.path.join(settings.CUSTOM_SCRIPT_ROOT, 'patient_list.json'), 'w')
+        #f.write(str_to_construct)
+        #f.close()
+        #return HttpResponse(json, content_type='application/json')
+    #else:
+        #raise Http404("Bad Request..")
+
+
+#@login_required
+#def patient_name_autocompleter(request, patient_name=None):
+
+    #if request.method == "GET" and request.is_ajax():
+        #request_copy = request.GET.copy()
+        #patient_name_list = []
+        #patient_id = None
+
+        #if request.GET.get('patient_id'):
+            #patient_id = int(request.GET.get('patient_id'))
+        #if not patient_name:
+            #patient_name = request_copy.get('patient_name')
+        #else:
+            #patient_name = unicode(patient_name)
+
+        #if patient_name == "*":
+            #pat_obj = PatientDetail.objects.all()
+        #else:
+            #if patient_name[-1:] == "*":
+                #patient_name = patient_name[:-1]
+            #if not patient_id:
+                #pat_obj = PatientDetail.objects.filter(
+                    #full_name__icontains=patient_name)
+            #else:
+                #pat_obj = PatientDetail.objects.filter(
+                    #full_name__icontains=patient_name).filter(pk=patient_id)
+
+        #if pat_obj:
+            #for pat in pat_obj:
+                #dict_to_append = {}
+                #dict_to_append['patient_id'] = pat.id
+                #dict_to_append['patient_hospital_id'] = pat.patient_hospital_id
+                #dict_to_append['patient_name'] = pat.full_name
+                #dict_to_append['first_name'] = pat.first_name
+                #dict_to_append['middle_name'] = pat.middle_name
+                #dict_to_append['last_name'] = pat.last_name
+                #dict_to_append['age'] = pat.age
+                #dict_to_append['sex'] = pat.sex
+                #patient_name_list.append(dict_to_append)
+        #else:
+            #dict_to_append = {"patient_name": "No-Result",
+                              #"name": "No Patients Recorded.",
+                              #"patient_id": "No-Result",
+                              #"patient_hospital_id": "",
+                              #"first_name": "",
+                              #"middle_name": "",
+                              #"last_name": "",
+                              #"age": "",
+                              #"sex": "",
+                              #}
+            #patient_name_list.append(dict_to_append)
+        #json = simplejson.dumps(patient_name_list)
+
+        #str_to_construct = simplejson.dumps(patient_name_list)
+        #f = open(
+            #os.path.join(settings.CUSTOM_SCRIPT_ROOT, 'patient_name_list.json'), 'w')
+        #f.write(str_to_construct)
+        #f.close()
+        #return HttpResponse(json, content_type='application/json')
+    #else:
+        #raise Http404("Bad Request..")
+

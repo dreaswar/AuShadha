@@ -48,6 +48,11 @@ URLS:
             args: [ immunisation_json ]
             kwds: { kwargs: { patient_id: *PATIENT_ID }  }            
 
+  tree: &PATIENT_TREE_URL
+        !!python/object/apply:django.core.urlresolvers.reverse
+            args: [ render_patient_tree_with_id ]
+            kwds: { kwargs : { patient_id: *PATIENT_ID }  }
+
 
  # YAML
 
@@ -100,4 +105,18 @@ panes:
       height: 15em
     panes: []
     url: {{patient_detail_obj.urls.add.immunisation}}
+
+  - id: IMMUNISATION_TRAILING_CP
+    region: trailing
+    type: cp
+    splitter: True
+    style: 
+      width: 12em
+    panes: []
+    widgets:
+      - id: IMMUNISATION_PATIENT_TRAILING_CP_TREE
+        type: tree
+        url: *PATIENT_TREE_URL
+        mainTabPane: PATIENT_CENTER_CP_TC
+        title: Immunisation
   

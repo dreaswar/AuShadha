@@ -49,6 +49,11 @@ URLS:
             args: [ medical_history_json ]
             kwds: { kwargs: { patient_id: *PATIENT_ID }  }            
 
+  tree: &PATIENT_TREE_URL
+        !!python/object/apply:django.core.urlresolvers.reverse
+            args: [ render_patient_tree_with_id ]
+            kwds: { kwargs : { patient_id: *PATIENT_ID }  }
+
 
  # YAML
 
@@ -107,3 +112,17 @@ panes:
 #         widgets: []
 #         panes: []
 #         url: {{patient_detail_obj.urls.add.medical_history}}
+
+  - id: MEDICAL_HISTORY_TRAILING_CP
+    region: trailing
+    type: cp
+    splitter: True
+    style: 
+      width: 12em
+    panes: []
+    widgets:
+      - id: MEDICAL_HISTORY_PATIENT_TRAILING_CP_TREE
+        type: tree
+        url: *PATIENT_TREE_URL
+        mainTabPane: PATIENT_CENTER_CP_TC
+        title: MedicalHistory

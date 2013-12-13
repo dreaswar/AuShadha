@@ -1,3 +1,26 @@
+<div data-dojo-type="dojox/layout/ContentPane" >
+{% if perms.surgical_history.add_surgical_history %}
+
+  <script type="dojo/method" >
+
+    require(
+      ['dojo/parser',
+        'dojo/on',
+        'dijit/registry',
+        'dijit/form/Form',
+        'dojo/ready'
+      ],
+
+    function (parser, on, registry){
+      ready ( function() {
+        parser.parse('newSurgicalHistoryAddForm');
+        alert("Dijit loaded");
+        
+      } );
+    });
+
+  </script>
+
 <div data-dojo-type = "dijit/form/Form" 
      id             = "newSurgicalHistoryAddForm"
      data-dojo-id   = "newSurgicalHistoryAddForm"
@@ -5,41 +28,35 @@
      action         = "" 
      method         = "">
 
-  <script type            = "dojo/method" 
-          data-dojo-event = "onReset"
-  >
-    function onReset() {
-      return confirm("Press OK to reset the values.. ");
-    }
-  </script>
 
-  <script type            = "dojo/method" 
-          data-dojo-event = "onSubmit"
-          data-dojo-args = 'evt'
-  >
+        <script type= "dojo/on" data-dojo-event = "submit">
 
-   if( this.validate() ){
-      require([
-       "dijit/registry", 
-      ],
-      function(registry){
-//    {% if perms.surgical_history.add_surgicalhistory %}
-      addItem("{{addUrl}}", "newSurgicalHistoryAddForm", "SURGICAL_HISTORY_GRID");
-//    {% else %}
-      registry.byId("permissionDeniedErrorDialog").show();
-//   {% endif %}
-     });
-     return false;
-    }
-    else{
-      raiseInvalidFormSubmission();
-      return false;
-    }
-    return false;
+        if( this.validate() ){
 
-  </script>
+            require(["dijit/registry","dijit/form/Form" ],
 
-    {% if perms.surgical_history.add_surgical_history %}
+            function( registry ){
+
+            addItem("{{patient_detail_obj.urls.add.surgical_history}}", 
+                    "newSurgicalHistoryAddForm", 
+                    "SURGICAL_HISTORY_GRID"
+                    );
+
+          });
+
+          return false;
+
+          }
+
+          else{
+
+            raiseInvalidFormSubmission();
+            return false;
+
+          }
+
+        </script>
+
 
         <table>
         {{surgical_history_form}}
@@ -53,9 +70,9 @@
                     value             = "Add">
           Add
 
-
         </button>
 
+<!--
         <button 	type 	        = "submit" 
                     data-dojo-type  = "dijit/form/Button"
                     data-dojo-props = "iconClass:'dijitIconSave'"
@@ -73,18 +90,34 @@
           </script>
 
         </button>
+-->
 
         <button   type            = "reset" 
                   data-dojo-type  = "dijit/form/Button"
                   data-dojo-props = "iconClass:'dijitIconClear'"
                   id              = "surgical_history_form_reset"
                   value           = "Reset">
-          Reset
-        </button>
 
-    {% else %}
-      <p class="suggestion_text"> Insufficient Permissions to add surgical_history </p>
-    {%endif%}
+          Reset
+
+          <script type            = "dojo/on" 
+                  data-dojo-event = "click"
+          >
+
+              return confirm("Press OK to reset the values.. ");
+
+          </script>
+
+        </button>
 
 </div>
 
+{% else %}
+
+  <p class="suggestion_text"> 
+    Insufficient Permissions to add surgical_history 
+  </p>
+
+{% endif %}
+
+</div>

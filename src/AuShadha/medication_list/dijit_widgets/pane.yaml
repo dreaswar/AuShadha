@@ -11,6 +11,11 @@ VARS:
   patient_id: &PATIENT_ID
             !!int {{patient_detail_obj.id}}
 
+  tree: &PATIENT_TREE_URL
+        !!python/object/apply:django.core.urlresolvers.reverse
+            args: [ render_patient_tree_with_id ]
+            kwds: { kwargs : { patient_id: *PATIENT_ID }  }
+
   medication_list_add_url: &MEDICATION_LIST_ADD_URL
       {{patient_detail_obj.urls.add.medication_list}}
 
@@ -86,18 +91,18 @@ widgets: []
 
 panes:
 
-#   {% if user.is_superuser %}
-#   - id : MEDICATION_LIST_TOP_CP
-#     region: top
-#     type: cp
-#     splitter: False
-#     url: *PATIENT_INFO_URL
-#     widgets: []
-#     panes: []
-#     class: topContentPane selected
-#     style: 
-#       height: 1.8em
-#   {% endif %}
+  {% if user.is_superuser %}
+  - id : MEDICATION_LIST_TOP_CP
+    region: top
+    type: cp
+    splitter: False
+    url: *PATIENT_INFO_URL
+    widgets: []
+    panes: []
+    class: topContentPane selected
+    style: 
+      height: 1.8em
+  {% endif %}
 
   - id: MEDICATION_LIST_CENTER_BC
     region: center
@@ -171,3 +176,17 @@ panes:
                 borderRadius: 5px
                 border: solid 1px slate
               url: {{patient_detail_obj.urls.add.allergy_list}}
+
+  - id: MEDICATION_LIST_TRAILING_CP
+    region: trailing
+    type: cp
+    splitter: True
+    style: 
+      width: 12em
+    panes: []
+    widgets:
+      - id: MEDICATION_LIST_PATIENT_TRAILING_CP_TREE
+        type: tree
+        url: *PATIENT_TREE_URL
+        mainTabPane: PATIENT_CENTER_CP_TC
+        title: Medication List

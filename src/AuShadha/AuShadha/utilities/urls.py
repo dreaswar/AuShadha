@@ -102,7 +102,7 @@ class UrlGenerator(object):
         else:
             if parent_label and parent_id:
                 if self.app_label != self.model_label:
-                  url = "%s%s/%s/%s/?%s_id=%s/" %(self.root_url,
+                  url = "%s%s/%s/%s/?%s_id=%s" %(self.root_url,
                                                   self.app_label,
                                                   self.model_label,
                                                   action,
@@ -110,7 +110,7 @@ class UrlGenerator(object):
                                                   parent_id
                                             )
                 else:
-                  url = "%s%s/%s/?%s_id=%s/" %(self.root_url,
+                  url = "%s%s/%s/?%s_id=%s" %(self.root_url,
                                                   self.app_label,
                                                   action,
                                                   parent_label,
