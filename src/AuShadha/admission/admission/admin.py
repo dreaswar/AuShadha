@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from admission.models import AdmissionDetail, AdmissionComplaint, \
-                             AdmissionHPI, AdmissionInv, AdmissionImaging,\
-                             AdmissionPastHistory, AdmissionROS
+from admission.admission.models import AdmissionDetail, AdmissionComplaint, \
+                                       AdmissionHPI, AdmissionInv, AdmissionImaging,\
+                                       AdmissionPastHistory, AdmissionROS
 
 
 class AdmissionDetailAdmin(admin.ModelAdmin):

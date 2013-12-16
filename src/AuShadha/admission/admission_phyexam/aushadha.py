@@ -9,7 +9,4 @@
 # This can be later extended to class based role
 ################################################################################
 
-from .models import PhyExamBaseModel
 from AuShadha.apps.ui.ui import ui as UI
-
-UI.register('PhysicalExamination', PhyExamBaseModel )

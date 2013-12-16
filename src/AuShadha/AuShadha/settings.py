@@ -163,10 +163,25 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'medication_list/templates/'),    
     os.path.join(ROOT_PATH, 'allergy_list/templates/'),    
 
-    os.path.join(ROOT_PATH, 'visit/templates/'),
-    os.path.join(ROOT_PATH, 'admission/templates/'),
+    os.path.join(ROOT_PATH, 'visit/visit/templates/'),
+    os.path.join(ROOT_PATH, 'visit/visit_complaints/templates/'),
+#    os.path.join(ROOT_PATH, 'visit/visit_hpi/templates/'),
+#    os.path.join(ROOT_PATH, 'visit/visit_ros/templates/'),
+#    os.path.join(ROOT_PATH, 'visit/visit_phyexam/templates/'),
+#    os.path.join(ROOT_PATH, 'visit/visit_imaging/templates/'),
+#    os.path.join(ROOT_PATH, 'visit/visit_inv/templates/'),
+#    os.path.join(ROOT_PATH, 'visit/visit_procedures/templates/'),
 
-    os.path.join(ROOT_PATH, 'phyexam/templates/'),    
+    os.path.join(ROOT_PATH, 'admission/admission/templates/'),
+#    os.path.join(ROOT_PATH, 'admission/admission_complaints/templates/'),
+#    os.path.join(ROOT_PATH, 'admission/admission_hpi/templates/'),
+#    os.path.join(ROOT_PATH, 'admission/admission_ros/templates/'),    
+#    os.path.join(ROOT_PATH, 'admission/admission_phyexam/templates/'),
+#    os.path.join(ROOT_PATH, 'admission/admission_imaging/templates/'),
+#    os.path.join(ROOT_PATH, 'admission/admission_inv/templates/'),
+#    os.path.join(ROOT_PATH, 'admission/admission_procedures/templates/'),    
+
+    #os.path.join(ROOT_PATH, 'phyexam/templates/'),    
 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -205,7 +220,14 @@ INSTALLED_APPS = (
     'patient',
 
     #AuShadha Stock apps for Admission and OPD Visits
-    'admission',
+    'admission.admission',
+#    'admission.admission_complaints',
+#    'admission.admission_hpi',
+#    'admission.admission_ros',
+#    'admission.admission_phyexam',
+#    'admission.admission_procedures',
+#    'admission.admission_imaging',
+#    'admission.admission_inv',
 
     # Custom Apps for Patient Demographics
     'demographics.demographics',
@@ -226,44 +248,19 @@ INSTALLED_APPS = (
     'allergy_list',
     'immunisation',
 
-    'visit',
+    'visit.visit',
+    'visit.visit_complaints',
+#    'visit.visit_hpi',
+#    'visit.visit_inv',
+#    'visit.visit_imaging',
+#    'visit.visit_phyexam',
+#    'visit.visit_procedures',
+#    'visit.visit_ros',
 
     #AuShadha Stock for Physical Examination Management
-    'phyexam',
+    #'phyexam',
 )
 
-#ENABLED_APPS = [
-      ## Custom Apps for Patient Registration
-    #'patient',
-
-    ##AuShadha Stock apps for Admission and OPD Visits
-    #'admission',
-
-    ## Custom Apps for Patient Demographics
-    #'demographics.demographics',
-    #'demographics.contact',
-    #'demographics.phone',
-    #'demographics.guardian',
-    #'demographics.email_and_fax',
-
-    ## AuShadha stock apps for History
-    #'history.medical_history',
-    #'history.surgical_history',
-    #'history.social_history',
-    #'history.family_history',
-    ##'history.obs_and_gyn',
-
-    ##AuShadha Stock apps for Medication List, Allergy, Immunisaion
-    #'medication_list',
-    #'allergy_list',
-    #'immunisation',
-
-    #'visit',
-
-    ##AuShadha Stock for Physical Examination Management
-    #'phyexam',
-
-  #]
 
 ENABLED_APPS = yaml.load( open('AuShadha/configure.yaml').read() )
 

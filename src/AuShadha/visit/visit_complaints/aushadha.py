@@ -9,18 +9,10 @@
 # This can be later extended to class based role
 ################################################################################
 
-from .models import VisitDetail, VisitFollowUp, VisitComplaint, \
-                    VisitHPI, VisitPastHistory, VisitROS, \
-                    VisitInv, VisitImaging, VisitSOAP
+from .models import VisitComplaint, VisitComplaintAddForm, VisitComplaintEditForm
 
 from AuShadha.apps.ui.ui import ui as UI
 
-UI.register('OPD_Visit', VisitDetail)
 UI.register('OPD_Visit_Complaint', VisitComplaint)
-UI.register('OPD_Visit_HPI', VisitHPI)
-UI.register('OPD_Visit_PastHistory', VisitPastHistory)
-UI.register('OPD_Visit_ROS', VisitROS)
-UI.register('OPD_Visit_Inv', VisitInv)
-UI.register('OPD_Visit_Imaging', VisitImaging)
-UI.register('OPD_Visit_SOAP', VisitSOAP)
-UI.register('OPD_Visit_FollowUp', VisitFollowUp)
+UI.register('OPD_Add_Visit_ComplaintForm', VisitComplaintAddForm)
+UI.register('OPD_Edit_Visit_ComplaintForm', VisitComplaintEditForm)

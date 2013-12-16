@@ -74,19 +74,19 @@ Allergy = UI.get_module("AllergyList")
 
 
 
-from phyexam.models import *
-from phyexam.models import DEFAULT_VITALS
+from admission.admission_phyexam.models import *
+from admission.admission_phyexam.models import DEFAULT_VITALS
 
-from phyexam.presentation_classes import VitalExamObjPresentationClass,\
-                                         GenExamObjPresentationClass,\
-                                         SysExamObjPresentationClass,\
-                                         vitalexamobjpresentationclass_factory,\
-                                         genexamobjpresentationclass_factory,\
-                                         sysexamobjpresentationclass_factory,\
-                                         neuroexamobjpresentationclass_factory,\
-                                         vascexamobjpresentationclass_factory,\
-                                         vascexamobjpresentationclass_querysetfactory,\
-                                         visitrospresentationclass_factory
+from admission.admission_phyexam.presentation_classes import VitalExamObjPresentationClass,\
+                                                             GenExamObjPresentationClass,\
+                                                             SysExamObjPresentationClass,\
+                                                             vitalexamobjpresentationclass_factory,\
+                                                             genexamobjpresentationclass_factory,\
+                                                             sysexamobjpresentationclass_factory,\
+                                                             neuroexamobjpresentationclass_factory,\
+                                                             vascexamobjpresentationclass_factory,\
+                                                             vascexamobjpresentationclass_querysetfactory,\
+                                                             visitrospresentationclass_factory
 
 
 from .models import AdmissionDetail,AdmissionDetailForm, \

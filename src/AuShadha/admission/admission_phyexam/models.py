@@ -28,22 +28,22 @@ from AuShadha.apps.clinic.models import Clinic, Staff
 
 #from physician.models import *
 from patient.models import PatientDetail
-from admission.models import AdmissionDetail
-from visit.models import VisitDetail
+from admission.admission.models import AdmissionDetail
+from visit.visit.models import VisitDetail
 
 #PatientDetail  = UI.get_module("PatientRegistration")
 #VisitDetail = UI.get_module("OPD_Visit")
 #AdmissionDetail = UI.get_module("Admission")
 
 # Imports the needed Constants
-from phyexam.phyexam_constants import *
+from admission.admission_phyexam.phyexam_constants import *
 
 from dijit_fields_constants import VITAL_FORM_CONSTANTS, \
-    GEN_EXAM_FORM_CONSTANTS, \
-    SYS_EXAM_FORM_CONSTANTS, \
-    NEURO_EXAM_FORM_CONSTANTS,\
-    VASCULAR_EXAM_FORM_CONSTANTS,\
-    PHY_EXAM_BASE_MODEL_FORM_CONSTANTS
+                                    GEN_EXAM_FORM_CONSTANTS, \
+                                    SYS_EXAM_FORM_CONSTANTS, \
+                                    NEURO_EXAM_FORM_CONSTANTS,\
+                                    VASCULAR_EXAM_FORM_CONSTANTS,\
+                                    PHY_EXAM_BASE_MODEL_FORM_CONSTANTS
 
 # Constants
 

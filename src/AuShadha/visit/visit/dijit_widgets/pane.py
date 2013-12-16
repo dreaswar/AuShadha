@@ -21,9 +21,12 @@ from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 from AuShadha.apps.ui.ui import ui as UI
 
 #from patient.models import PatientDetail
+#from visit.visit.models import VisitDetail, VisitFollowUp
 PatientDetail = UI.get_module("PatientRegistration")
-from visit import MODULE_LABEL
-from visit.models import VisitDetail, VisitFollowUp
+VisitDetail = UI.get_module("OPD_Visit")
+VisitFollowUp = UI.get_module("OPD_Visit_Followup")
+from visit.visit import MODULE_LABEL
+
 
 
 
@@ -51,7 +54,7 @@ def render_visit_pane(request, patient_id = None):
         patient_detail_obj.save()
 
       try:
-        pane_template = Template( open('visit/dijit_widgets/pane.yaml','r').read() )
+        pane_template = Template( open('visit/visit/dijit_widgets/pane.yaml','r').read() )
 
       except( IOError ):
         raise Http404("No template file to render the pane ! ")
@@ -164,7 +167,7 @@ def render_visit_tree(request, patient_id = None):
                                 })
 
       try:
-        tree_template = Template( open('visit/dijit_widgets/tree_template.yaml','r').read() )
+        tree_template = Template( open('visit/visit/dijit_widgets/tree_template.yaml','r').read() )
 
       except( IOError ):
         raise Http404("No template file to render the Tree ")

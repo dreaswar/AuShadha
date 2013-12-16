@@ -9,16 +9,8 @@
 # This can be later extended to class based role
 ################################################################################
 
-from .models import AdmissionDetail, AdmissionComplaint, AdmissionHPI, \
-                    AdmissionPastHistory, AdmissionROS, AdmissionInv, AdmissionImaging
+from .models import AdmissionDetail
 
 from AuShadha.apps.ui.ui import ui as UI
 
 UI.register('Admission', AdmissionDetail)
-
-UI.register('Admission_Complaint', AdmissionComplaint)
-UI.register('Admission_HPI', AdmissionHPI)
-UI.register('Admission_PastHistory', AdmissionPastHistory)
-UI.register('Admission_ROS', AdmissionROS)
-UI.register('Admission_Inv', AdmissionInv)
-UI.register('Admission_Imaging', AdmissionImaging)

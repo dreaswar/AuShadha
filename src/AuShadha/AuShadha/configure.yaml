@@ -4,7 +4,7 @@
   class_name: PatientDetail
 
 - role: Admission
-  app: admission
+  app: admission.admission
   module: models
   class_name: AdmissionDetail
 
@@ -59,11 +59,16 @@
   class_name: Allergy
 
 - role: OPD_Visit
-  app: visit
+  app: visit.visit
   module: models
   class_name: VisitDetail
 
-- role: PhysicalExamination
-  app: phyexam
+- role: OPD_VisitComplaints
+  app: visit.visit_complaints
   module: models
-  class_name: PhyExamBaseModel
+  class_name: VisitComplaint
+
+#- role: PhysicalExamination
+#  app: phyexam
+#  module: models
+#  class_name: PhyExamBaseModel
