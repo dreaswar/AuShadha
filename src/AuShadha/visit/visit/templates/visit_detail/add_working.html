@@ -1,0 +1,39 @@
+{% if perms.visit.add_visitdetail %}
+
+<div data-dojo-type="dijit/layout/TabContainer"
+     data-dojo-props="tabPosition: 'top', nested: true"
+     data-dojo-id  = "NEW_VISIT_ADD_FORM_TAB_CONTAINER"
+     >
+
+
+  <div data-dojo-type  = "dojox/layout/ContentPane"
+       data-dojo-props = "title: 'Basic Data', selected: true"
+      >
+
+    <div data-dojo-type = "dijit/form/Form" 
+         id             = "newVisitAddForm"
+         data-dojo-id   = "newVisitAddForm"
+         encType        = "multipart/form-data" 
+         action         = "" 
+         method         = ""
+         style          = "height: 60em; min-width: 50em; overflow:auto;"
+       >
+
+        {% include 'visit_template_snippets/js/visit_detail_add_form_validate.html' %}
+        {% include 'visit_template_snippets/forms/visit_detail_add.html' %}
+        {% include 'visit_template_snippets/button_row/visit_detail_add.html' %}
+
+    </div>
+    <!-- End of Form -->
+
+  </div>
+
+</div>
+
+{% else %}
+
+  <p class="suggestion_text"> 
+    Insufficient Permissions
+  </p>
+
+{% endif %}

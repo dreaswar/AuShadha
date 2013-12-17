@@ -110,7 +110,44 @@ def visit_json(request, patient_id = None):
 
 @login_required
 def visit_summary(request, patient_id = None):
-  pass
+  user = request.user
+
+  if request.method == 'GET':
+
+    try:
+
+      if patient_id:
+        patient_id = int( patient_id )
+
+      else:
+        patient_id = int( request.GET.get('patient_id') )
+
+      patient_detail_obj = PatientDetail.objects.get(pk = patient_id )
+      visit_detail_objs = VisitDetail.objects.filter(patient_detail = patient_detail_obj)
+      visit_obj_list = []
+
+      if not getattr(patient_detail_obj, 'urls', None):
+        patient_detail_obj.save()
+
+      for visit in visit_detail_objs:
+        if not getattr(visit, 'urls', None):
+          visit.save()
+        visit_obj_list.append(visit)
+
+      variable = RequestContext(request, {'user': user, 
+                                          'patient_detail_obj': patient_detail_obj,
+                                          'visit_obj_list': visit_obj_list
+                                          })
+      return render_to_response( 'visit_detail/summary_working.html', variable )
+
+    except(ValueError, NameError, TypeError, AttributeError, KeyError):
+      raise Http404("Bad Request Parameters")
+
+    except (PatientDetail.DoesNotExist):
+      raise Http404("Requested Patient Not Found !")
+
+  else:
+    raise Http404("Invalid Request Method")
 
 
 @login_required
@@ -328,7 +365,7 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                             'success': success,
                             'form_action':'add'
                         })
-                    return render_to_response('visit_detail/add.html', variable)
+                    return render_to_response('visit_detail/add_working.html', variable)
 
                 elif nature == 'fu':
                     # TODO
@@ -342,17 +379,24 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                     saved_visit = visit_detail_form.save()
                     success = True
                     error_message = "Visit Added Successfully"
+                    returnData = {'id': 'EDIT_ACTIVE_VISIT_'+ str(saved_visit.id), 
+                                  'title': saved_visit.visit_date.date().isoformat(), 
+                                  'url': saved_visit.urls['edit']
+                                }
 
                 else:
-                    error_message = ''' <h4>Visit Could not be Saved.
-                                        Please check the forms for errors
+                    error_message = ''' <h4>
+                                          Visit Could not be Saved.
+                                          Please check the forms for errors
                                         </h4>
                                     '''
                     errors = aumodelformerrorformatter_factory(visit_detail_form) + '\n'
+                    returnData = None
 
-                data = {'success': success,
-                        'error_message': error_message
-                        }
+                data = {'success': success, 
+                        'error_message': error_message, 
+                        'returnData' : returnData 
+                      }
                 json = simplejson.dumps(data)
                 return HttpResponse(json, content_type='application/json')
 

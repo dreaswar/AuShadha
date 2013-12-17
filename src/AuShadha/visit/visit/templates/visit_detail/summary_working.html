@@ -1,0 +1,9 @@
+{% if visit_obj_list %}
+  <ul>
+ {% for visit in visit_obj_list %}
+    <li>  {{visit}} </li>
+ {% endfor %}
+ </ul>
+{% else %}
+ <p class="suggestion_text" > No Visits Recorded </p>
+{% endif %}

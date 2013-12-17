@@ -9,13 +9,22 @@
 
 #from django.utils import simplejson
 
+#from AuShadha.apps.ui.ui import ui as UI
+
+#PatientDetail = UI.get_module("PatientRegistration")
+#AdmissionDetail = UI.get_module("Admission")
+#VisitDetail = UI.get_module("OPD_Visit")
+#VisitComplaint = UI.get_module("OPD_Visit_Complaint")
+#Contact = UI.get_module("Contact")
+#Phone = UI.get_module("Phone")
+#Guardian = UI.get_module("Guardian")
 
 def has_active_admission(patient):
     
     """Queries whether a given patient has an active admission."""
 
     from patient.models import PatientDetail
-    from admission.models import AdmissionDetail
+    from admission.admission.models import AdmissionDetail
 
     patient_id = patient.id
 
@@ -41,7 +50,7 @@ def adm_for_pat(patient):
     """
 
     from patient.models import PatientDetail
-    from admission.models import AdmissionDetail
+    from admission.admission.models import AdmissionDetail
 
     patient_id = patient.id
 
@@ -65,7 +74,7 @@ def has_active_visit(patient):
     """
 
     from patient.models import PatientDetail
-    from visit.models import VisitDetail
+    from visit.visit.models import VisitDetail
 
     patient_id = patient.id
     try:
@@ -94,8 +103,9 @@ def can_add_new_visit(patient):
     """
 
     from patient.models import PatientDetail
-    from admission.models import AdmissionDetail
-    from visit.models import VisitDetail, VisitComplaint
+    from admission.admission.models import AdmissionDetail
+    from visit.visit.models import VisitDetail
+    from visit.visit_complaints.models import VisitComplaint
 
     patient_id = patient.id
 
@@ -127,9 +137,9 @@ def visit_for_pat(patient):
         to call the is_visit_active method if needed
     """
 
-    from patient.models import PatientDetail
-    from admission.models import AdmissionDetail
-    from visit.models import VisitDetail, VisitComplaint
+    #from patient.models import PatientDetail
+    #from admission.models import AdmissionDetail
+    #from visit.models import VisitDetail, VisitComplaint
 
     patient_id = patient.id
     try:
@@ -146,8 +156,9 @@ def visit_for_pat(patient):
 def get_patient_complaints(patient):
 
     from patient.models import PatientDetail
-    from admission.models import AdmissionDetail
-    from visit.models import VisitDetail, VisitComplaint
+    from admission.admission.models import AdmissionDetail
+    from visit.visit.models import VisitDetail
+    from visit.visit_complaints.models import VisitComplaint
 
     p_id = patient.id
 
