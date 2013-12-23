@@ -632,6 +632,31 @@ function(
 
                         }
 
+                        else if ( widgetQ.widget.type == 'dynamic_pane_grid' ){
+                            
+                            require(['aushadha/grid/generic_grid_setup',
+                                     'aushadha/grid/grid_structures'
+                                    ],
+                            
+                            function(genericGridSetup, gridStr){ 
+                            
+                              try {
+                                  console.log(genericGridSetup);
+                                  console.log(gridStr[widgetQ.widget.str]);
+                                  genericGridSetup.setupDynamicPaneGrid(widgetQ.widget.url,
+                                                                        widgetQ.widget.id,
+                                                                        gridStr[widgetQ.widget.str],
+                                                                        widgetQ.widget.activateRowClick,
+                                                                        widgetQ.widget.title,
+                                                                        widgetQ.widget.storeToUse
+                                  );
+                                } 
+                                catch (err) {
+                                  console.error(err);
+                                }
+                            });
+
+                        }
                         else if ( widgetQ.widget.type == 'search' ){
                             var widgetStore = new JsonRest({target: widgetQ.widget.url});
                             var searchBox = new FilteringSelect({regExp        : '[a-zA-Z0-9 -]+'  ,

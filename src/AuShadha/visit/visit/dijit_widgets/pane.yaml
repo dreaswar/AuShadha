@@ -8,8 +8,19 @@
 
 VARS:
 
+  opd_visit_grid: &OPD_VISITS_GRID
+          id : OPD_VISITS_GRID
+          type: dynamic_pane_grid
+          url: {{patient_detail_obj.urls.json.visit}}
+          str: OPD_VISITS
+          activateRowClick: !!bool False
+          title:  OPD Visits
+          storeToUse:  OPD_VISITS_GRID_STORE
+
   patient_id: &PATIENT_ID
             !!int {{patient_id}}
+
+
 
 URLS:
 
@@ -61,6 +72,7 @@ widgets: []
 #   - type: grid
 #     id  : OPD_VISITS_MAIN_GRID
 #     url:  *VISIT_JSON_URL
+
 # 
 #   - type: search
 #     id  : OPD_VISITS_MAIN_SEARCH
@@ -144,8 +156,23 @@ panes:
         widgets: []
 
         panes:
-          - id: OPD_VISITS_CENTER_CP_TC_SUMMARY_CP
+#           - id: OPD_VISITS_CENTER_CP_TC_SUMMARY_CP
+#             type: cp
+#             title: Summary
+#             closable: False
+#             url: *VISIT_SUMMARY_URL
+
+          - id: OPD_VISITS_CENTER_CP_TC_GRID_CP
             type: cp
-            title: Summary
+            title: Grid
             closable: False
-            url: *VISIT_SUMMARY_URL
+            widgets: []
+            panes: 
+                - id: OPD_VISITS_GRID_CONTAINER
+                  type: dom
+                  domType: div
+                  style:
+                    height: 30em
+                  panes: []
+                  widgets: 
+                    - *OPD_VISITS_GRID

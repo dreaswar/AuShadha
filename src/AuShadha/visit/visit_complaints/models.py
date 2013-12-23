@@ -57,6 +57,12 @@ class VisitComplaint(AuShadhaBaseModel):
     # def get_del_url(self):
         # return '/AuShadha/visit/complaint/del/%s/' %(self.id)
 
+    def get_all_patient_complaints_url(self):
+        return '/AuShadha/visit_complaints/complaint/get/%s/' %(self.visit_detail.id)
+
+    def import_active_complaints_url(self):
+        return '/AuShadha/visit_complaints/complaint/import_active_complaints/%s/' %(self.visit_detail.id)
+
     class Meta:
         verbose_name = "Presenting Complaint"
         verbose_name_plural = "Presenting Complaint"

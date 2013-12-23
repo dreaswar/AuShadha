@@ -15,10 +15,12 @@ define(["dojo/dom",
         "dojo/_base/xhr",
         "dojo/_base/lang",
         'dojo/request',
+        'dojo/json',
 
         "aushadha/stores",
         "aushadha/grid/grid_structures",
         "aushadha/panes/event_controller",
+        'aushadha/panes/dynamic_html_pane_creator',
 
         "dojo/domReady!"
   ],
@@ -33,10 +35,12 @@ define(["dojo/dom",
             xhr,
             lang,
             request,
+            JSON,
 
             aushadhaStores,
             GRID_STRUCTURES,
-            auEventController) {
+            auEventController,
+            createDynamicHTMLPane) {
 
       var onGridRowDblClick= function ( obj/*e, gridToUse, titleToUse*/) {
 
@@ -131,6 +135,10 @@ define(["dojo/dom",
 
            setupGrid: function (gridUrl, gridDomNode, gridStr, activateRowClick, gridName, storeToUse) {
                 
+//                 console.log("URL: " + gridUrl + "\nDOM: " + gridDomNode + "\nSTR: " );
+//                 console.log( gridStr );
+//                 debugger;
+
                 if (!window.gridStore[storeToUse]){
                     console.log("No store set for : " + storeToUse );
                     console.log("Creating the same...");
@@ -143,10 +151,12 @@ define(["dojo/dom",
                         store: dataStore = ObjectStore({
                             objectStore: window.gridStore[storeToUse]
                         }),
+                        /*,
                         query: {
                             search_field: 'id',
                             search_for: "*"
                         },
+                        */
                         clientSort: true,
                         autoWidth: true,
                         selectionMode: "single",
@@ -194,8 +204,169 @@ define(["dojo/dom",
                 grid.startup();                
                 console.log(grid);
                 return grid;
+            },
+
+            setupDynamicPaneGrid: function (gridUrl, gridDomNode, gridStr, activateRowClick, gridName, storeToUse) {
+
+                if (!window.gridStore[storeToUse]){
+                    console.log("No store set for : " + storeToUse );
+                    console.log("Creating the same...");
+                    window.gridStore[storeToUse] = new JsonRest({target: gridUrl,
+                                                      idProperty: 'id'
+                                                    });
+                }
+
+                var grid = new DataGrid({
+                        store: dataStore = ObjectStore({
+                            objectStore: window.gridStore[storeToUse]
+                        }),
+                        /*,
+                        query: {
+                            search_field: 'id',
+                            search_for: "*"
+                        },
+                        */
+                        clientSort: true,
+                        autoWidth: true,
+                        selectionMode: "single",
+                        rowSelector: "20px",
+                        structure: gridStr,
+                        noDataMessage: "<span class='dojoxGridNoData'>No Matching Data</span>"
+                    },
+                    gridDomNode
+                );
+
+                grid.activateRowClick = activateRowClick;
+
+                grid.title = gridName ? gridName.toString():"Patient";
+
+                grid.canSort = function () {
+                    return true;
+                };
+
+                grid.onRowClick = function (e) {
+                    /*
+                      Get the Clicked Rows index and the Grid item 
+                    */
+//                     var idx = e.rowIndex,
+//                         item = this.getItem(idx);
+//                     grid.selection.clear();
+//                     grid.selection.setSelected(item, true);
+
+//                     if (grid.activateRowClick) {
+//                       auEventController.onPatientGridSelect(item);
+//                     }
+//                     else{ 
+                      return false; 
+//                     }
+
+                }
+
+                grid.onRowDblClick = function(e){ 
+                                                var idx = e.rowIndex,
+                                                    item = this.getItem(idx);
+                                                grid.selection.clear();
+                                                grid.selection.setSelected(item, true);
+
+                                                dynamicPaneUrl = item.dynamic_pane_url;
+
+                                                request(dynamicPaneUrl).then(
+
+                                                  function(json){
+                                                    var jsondata = JSON.parse(json);
+                                                    var args = { title     : jsondata.title, 
+                                                                domId     : jsondata.id,
+                                                                url       : jsondata.url,
+                                                                parentTab : registry.byId( jsondata.parentTab )
+                                                            };
+//                                                   console.log( args );
+                                                    createDynamicHTMLPane( args );
+
+                                                  },
+                                                  function(err){
+                                                    publishError(err.response.text);
+                                                  }
+                                                );
+//                                                 return false;
+
+                }
+
+                grid.startup();                
+                console.log(grid);
+                return grid;
+        },
+
+        setupReadOnlyGrid: function (gridUrl, gridDomNode, gridStr, activateRowClick, gridName, storeToUse) {
+
+                if (!window.gridStore[storeToUse]){
+                    console.log("No store set for : " + storeToUse );
+                    console.log("Creating the same...");
+                    window.gridStore[storeToUse] = new JsonRest({target: gridUrl,
+                                                      idProperty: 'id'
+                                                    });
+                }
+
+                var grid = new DataGrid({
+                        store: dataStore = ObjectStore({
+                            objectStore: window.gridStore[storeToUse]
+                        }),
+                        /*,
+                        query: {
+                            search_field: 'id',
+                            search_for: "*"
+                        },
+                        */
+                        clientSort: true,
+                        autoWidth: true,
+                        selectionMode: "single",
+                        rowSelector: "20px",
+                        structure: gridStr,
+                        noDataMessage: "<span class='dojoxGridNoData'>No Matching Data</span>"
+                    },
+                    gridDomNode
+                );
+
+                grid.activateRowClick = activateRowClick;
+
+                grid.title = gridName ? gridName.toString():"Patient";
+
+                grid.canSort = function () {
+                    return true;
+                };
+
+                grid.onRowClick = function (e) {
+                    /*
+                      Get the Clicked Rows index and the Grid item 
+                    */
+//                     var idx = e.rowIndex,
+//                         item = this.getItem(idx);
+//                     grid.selection.clear();
+//                     grid.selection.setSelected(item, true);
+
+//                     if (grid.activateRowClick) {
+//                       auEventController.onPatientGridSelect(item);
+//                     }
+//                     else{ 
+                      return false; 
+//                     }
+
+                }
+
+                grid.onRowDblClick = function(e){ 
+                                    return false;
+//                                         onGridRowDblClick({event: e, 
+//                                                            grid: grid, 
+//                                                            title: grid.title,
+//                                                            gridId : gridDomNode
+//                                                           });
+                }
+
+                grid.startup();                
+                console.log(grid);
+                return grid;
             }
 
+            
       }
 
 });

@@ -166,6 +166,18 @@ items:
     redirect: 1
     returns: html
 
+  - name: Summary Notes
+    type: application
+    id: OPD_VISIT_SUMMARY
+    module_type: sub_module
+    module_name: visit
+    ondblclick: {{patient_detail_obj.urls.summary.visit}}
+    onrclick: null
+    onclick: null
+    redirect: 1
+    returns: html
+
+
   {% if all_visits %}
   - name: Visits
     type: application

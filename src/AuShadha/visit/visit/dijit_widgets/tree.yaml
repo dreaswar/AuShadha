@@ -10,6 +10,17 @@ new_visit: &NEW_VISIT
   redirect: 1
   returns: html
 
+visit_summary: &VISIT_SUMMARY
+  name: Summary
+  type: application
+  id: VISIT_SUMMARY
+  module_type: sub_module
+  module_name: visit
+  ondblclick: null
+  onrclick: null
+  onclick: null
+  redirect: 1
+  returns: html
 
 
 visits: &VISITS

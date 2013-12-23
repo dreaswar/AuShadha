@@ -1,0 +1,337 @@
+<div>
+
+  <span id="visitOldComplaintsGrid_buttonRow">
+
+    <button type="button" 
+            data-dojo-type="dijit/form/Button"
+            data-dojo-props="'label': 'Check Old Complaints' "
+            >
+
+      <script type="dojo/on" data-dojo-event="click">
+
+        require(
+              ["dojo/dom",
+              "dojo/request/xhr",
+              "dijit/registry"  ,
+              "dojo/json"       ,
+              "dojo/dom-form"   ,
+              "dijit/Dialog"    ,
+              'dojo/ready',
+              "dijit/form/Button",
+              "dojo/dom-construct",
+              'aushadha/grid/generic_grid_setup',
+              'aushadha/grid/grid_structures'
+              ],
+
+            function(dom, 
+                    xhr, 
+                    registry, 
+                    JSON, 
+                    domForm, 
+                    Dialog,
+                    ready,
+                    Button,
+                    domConstruct,
+                    genericGridSetup,
+                    GRID_STRUCTURES 
+                    ){
+                          var complaintGridDom = 'visitOldComplaintsGrid_{{visit_detail_obj.id}}';
+                          var complaintGridUrl = "{{visit_detail_obj.get_all_patient_complaints_url}}";
+                          var complaintGridStr = GRID_STRUCTURES.OPD_OLD_VISIT_COMPLAINTS;
+                          var activateRowClick = false;
+                          var gridName = "Old Visit Complaints ";
+                          var storeToUse = "OPD_VISIT_OLD_COMPLAINTS_GRID_STORE_{{visit_detail_obj.id}}";
+
+                          if (! dom.byId("visitOldComplaintsGrid_{{visit_detail_obj.id}}") ){
+                            domConstruct.create('div',
+                                                {id:"visitOldComplaintsGrid_{{visit_detail_obj.id}}",
+                                                  style: "height: 10em; overflow: auto; "
+                                                },
+                                                'visitOldComplaintsGrid_buttonRow',
+                                                'after');
+                          }
+
+                          if (! registry.byId("visitOldComplaintsGrid_{{visit_detail_obj.id}}") ){
+
+                            var grid = genericGridSetup.setupReadOnlyGrid(complaintGridUrl, 
+                                                                          complaintGridDom, 
+                                                                          complaintGridStr, 
+                                                                          activateRowClick, 
+                                                                          gridName, 
+                                                                          storeToUse);
+
+                          } else {
+                            registry.byId("visitOldComplaintsGrid_{{visit_detail_obj.id}}").render();
+                          }
+
+                          if (! dom.byId("visitOldComplaintsGrid_{{visit_detail_obj.id}}_hideButton") ){
+
+                            domConstruct.create('div',
+                                                {id:"visitOldComplaintsGrid_{{visit_detail_obj.id}}_hideButton"},
+                                                'visitOldComplaintsGrid_buttonRow',
+                                                0);
+                          }
+
+                          if (! registry.byId("visitOldComplaintsGrid_{{visit_detail_obj.id}}_hideButton") ) {
+
+                            var btn = new Button({label: 'Hide Grid', 
+
+                                                  onClick: function(){
+
+                                                            registry.
+                                                              byId("visitOldComplaintsGrid_{{visit_detail_obj.id}}").
+                                                              destroyRecursive();
+
+                                                            registry.
+                                                              byId("visitOldComplaintsGrid_{{visit_detail_obj.id}}_hideButton").
+                                                              destroyRecursive();
+
+                                                          }
+                                                },
+                                                "visitOldComplaintsGrid_{{visit_detail_obj.id}}_hideButton"
+                                      );
+                          }
+
+                    });
+
+    </script>
+
+    </button>
+
+  </span>
+
+  
+<div id="visitComplaintGrid_{{visit_detail_obj.id}}" 
+     style="height: 10em; overflow: auto; "
+     > 
+
+  <script type="text/javascript">
+
+          require(
+            ["dojo/dom",
+            "dojo/request/xhr",
+            "dijit/registry"  ,
+            "dojo/json"       ,
+            "dojo/dom-form"   ,
+            "dijit/Dialog"    ,
+            'dojo/ready',
+            'aushadha/grid/generic_grid_setup',
+            'aushadha/grid/grid_structures'
+            ],
+
+          function(dom, 
+                  xhr, 
+                  registry, 
+                  JSON, 
+                  domForm, 
+                  Dialog,
+                  ready,
+                  genericGridSetup,
+                  GRID_STRUCTURES 
+                  ){
+                        var complaintGridDom = 'visitComplaintGrid_{{visit_detail_obj.id}}';
+                        var complaintGridUrl = "{{visit_detail_obj.urls.json.visit_complaint}}";
+                        var complaintGridStr = GRID_STRUCTURES.OPD_VISIT_COMPLAINTS;
+                        var activateRowClick = false;
+                        var gridName = "Visit Complaints ";
+                        var storeToUse = "OPD_VISIT_COMPLAINTS_GRID_STORE_{{visit_detail_obj.id}}";
+
+                        console.log(genericGridSetup);
+
+                        genericGridSetup.setupGrid(complaintGridUrl, 
+                                                  complaintGridDom, 
+                                                  complaintGridStr, 
+                                                  activateRowClick, 
+                                                  gridName, 
+                                                  storeToUse);
+                  });
+  </script>
+
+</div>
+
+<button id="importOldComplaints_{{visit_detail_obj.id}}"
+        type="button"
+        data-dojo-type="dijit/form/Button"
+        data-dojo-props="'label': 'Import Active Complaints'"
+  >
+
+  <script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+
+    require(
+      ['dojo/dom',
+       'dojo/on',
+       'dojo/request',
+       'dojo/json',
+       'dijit/registry',
+       'dojo/dom-style',
+       'dojo/dom-attr'
+      ],
+
+    function(dom,on,request,JSON, registry, domStyle, domAttr) {
+        
+        var importBtn = registry.byId("importOldComplaints_{{visit_detail_obj.id}}")
+        var complaintGrid = registry.byId("visitComplaintGrid_{{visit_detail_obj.id}}");
+        var complaintStore = complaintGrid.store;
+        var getActiveComplaintUrl = "{{visit_detail_obj.import_active_complaints_url}}";
+
+        importBtn.set('disabled', true );
+
+        request(getActiveComplaintUrl).
+        then(
+
+          function(json) {
+            var jsondata = JSON.parse(json);
+            if ( jsondata.success == true ) {
+              importBtn.set('style' , {'display':'none'});
+              complaintStore.newItem(jsondata.return_data);
+              complaintGrid.render();
+              publishInfo( jsondata.error_message);
+            }
+            else {
+              publishError("ERROR!" + jsondata.error_message);
+              importBtn.set('disabled', false );
+            }
+          },
+
+          function(err) {
+            publishError("ERROR!" + err.response.text);
+            importBtn.set('disabled', false );
+          }
+        );
+
+    });
+
+  </script>
+
+</button>
+
+
+<div data-dojo-type="dijit/form/Form"
+     id             = "visitComplaintAddForm_{{visit_detail_obj.id}}"
+     data-dojo-id   = "visitComplaintAddForm_{{visit_detail_obj.id}}"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = ""
+    >
+
+  <script type="dojo/on" data-dojo-event="reset" >
+
+      return confirm("This will reset the form")
+
+  </script>
+
+  <script type="dojo/on" data-dojo-event="submit" >
+
+      if( this.validate() ){
+
+        require(["dojo/dom",
+                "dojo/request/xhr",
+                "dijit/registry"  ,
+                "dojo/json"       ,
+                "dojo/dom-form"   ,
+                "dijit/Dialog"    ,
+                'aushadha/panes/dynamic_html_pane_creator',
+                'aushadha/grid/generic_grid_setup'
+        ],
+
+        function(dom, 
+                 xhr, 
+                 registry, 
+                 JSON, 
+                 domForm, 
+                 Dialog,
+                 genericGridSetup
+                 ){
+
+          xhr( "{{ visit_detail_obj.urls.add.visit_complaint }}",
+              {handleAs: "text",
+               method  : "POST",
+               data    : domForm.toObject("visitComplaintAddForm_{{visit_detail_obj.id}}")
+              }
+          ).
+          then(
+
+            function(json){
+
+                var jsondata = JSON.parse(json);
+//                 var summaryTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP');
+//                 var parentTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP').getParent();
+//                 var visitTree = registry.byId('OPD_VISITS_LEADING_BC_TOP_CP_TREE');
+//                 var visitAddFormTabContainer =  registry.byId('NEW_VISIT_ADD_FORM_TAB_CONTAINER');
+
+                if ( jsondata.success == true ) {
+
+                  publishInfo( jsondata.error_message );
+//                   summaryTab.set( 'href', "{{ patient_detail_obj.urls.summary.visit }}" );
+//                   visitTree.refresh();
+                  registry.byId("visitComplaintGrid_{{visit_detail_obj.id}}").render();
+                  return false;
+//                parentTab.removeChild( newVisitTab );
+//                newVisitTab.destroyRecursive();
+
+                }
+
+                else {
+
+                  publishError("ERROR ! :" + jsondata.error_message );
+
+                }
+
+            },
+
+            function(json){
+                  var jsondata = JSON.parse(json); 
+                  publishError("ERROR!: "+ jsondata.error_message );
+            },
+
+            function(evt){
+              console.log("Adding Data Finished Successfully...")
+            }
+
+          );
+
+        });
+        return false;
+      }
+
+      else{
+        return false;
+      }
+
+  </script>
+
+
+  <table class="content_pane_table">
+    
+    <thead> 
+      <tr> 
+            <th> Complaint </th> 
+            <th> Duration  </th> 
+            <th> &nbsp;&nbsp; </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+
+          <td>
+              <span style="display:none;"> 
+              {{visit_complaint_form.visit_detail}} 
+              </span>
+              {{ visit_complaint_form.complaint }}
+          </td>
+
+          <td>{{ visit_complaint_form.duration }}</td>
+
+          <td class="actionCell"> 
+            {% include 'visit_complaints/snippets/button_row/visit_complaints_add.html' %}
+          </td>
+
+        </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

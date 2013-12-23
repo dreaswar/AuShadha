@@ -47,11 +47,12 @@ def render_visit_pane(request, patient_id = None):
 
       app_wrapper = []
       patient_detail_obj = PatientDetail.objects.get(pk = patient_id)
-      context = Context({'patient_id': patient_id})
 
       if not getattr(patient_detail_obj,'urls',None):
         print "No Attribute of URLS on Patient. Saving to generate the same"
         patient_detail_obj.save()
+
+      context = Context({'patient_id': patient_id, 'patient_detail_obj': patient_detail_obj })
 
       try:
         pane_template = Template( open('visit/visit/dijit_widgets/pane.yaml','r').read() )

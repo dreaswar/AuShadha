@@ -15,17 +15,64 @@
           action        =  "" 
           method         =  ""
           style          = "overflow: auto;"
-          >
+        >
 
-        {% include 'visit_template_snippets/js/visit_detail_edit_form_validate.html' %}
-        {% include 'visit_template_snippets/forms/visit_detail_edit.html' %}
-        {% include 'visit_template_snippets/button_row/visit_detail_edit.html' %}
+        {% include 'visit_detail/snippets/js/visit_detail_edit_form_validate.html' %}
+        {% include 'visit_detail/snippets/forms/edit.html' %}
+        {% include 'visit_detail/snippets/button_row/visit_detail_edit.html' %}
 
       </div>
       <!-- End of BasicDataForm -->
 
     </div> 
     <!-- End of ContentPane -->
+
+    <div data-dojo-type="dojox/layout/ContentPane"
+         data-dojo-props="'title': 'Complaints', 'href': '{{visit_detail_obj.urls.add.visit_complaint}}' "
+         >
+
+    </div>
+
+    <div data-dojo-type="dojox/layout/ContentPane"
+         data-dojo-props="'title': 'History', 'href': '' , disabled: true">
+
+    </div>
+
+    <div data-dojo-type="dojox/layout/ContentPane"
+         data-dojo-props="'title': 'ROS', 'href': '', disabled: true"
+         >
+
+    </div>
+
+    <div data-dojo-type="dijit/layout/TabContainer"
+         data-dojo-props="'title': 'Examinations','href': '', disabled: true"
+         >
+
+    </div>
+
+    <div data-dojo-type="dijit/layout/TabContainer"
+         data-dojo-props="'title': 'Labs','href': '', disabled: true"
+         >
+
+    </div>
+
+    <div data-dojo-type="dijit/layout/TabContainer"
+         data-dojo-props="'title': 'Imaging','href': '', disabled: true"
+         >
+
+    </div>
+
+    <div data-dojo-type="dijit/layout/TabContainer"
+         data-dojo-props="'title': 'Procedures','href': '', disabled: true"
+         >
+
+    </div>
+
+    <div data-dojo-type="dijit/layout/TabContainer"
+         data-dojo-props="'title': 'Prescription','href': '', disabled: true"
+         >
+
+    </div>
 
   </div>
   <!-- End of TabContainer -->

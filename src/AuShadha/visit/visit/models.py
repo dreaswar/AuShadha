@@ -95,9 +95,18 @@ class VisitDetail(AuShadhaBaseModel):
     def get_absolute_url(self):
         return '/AuShadha/visit/detail/%d/' % (self.id)
 
+    def get_all_patient_complaints_url(self):
+        return '/AuShadha/visit_complaints/complaint/get/%s/' %(self.id)
+
+    def import_active_complaints_url(self):
+        return '/AuShadha/visit_complaints/complaint/import_active_complaints/%s/' %(self.id)
+
+    def get_edit_pane_header_url(self):
+        return '/AuShadha/visit/get/visit_detail/edit_pane_header/%s/' %(self.id)
+
     def get_visit_detail_close_url(self):
         if self.is_active:
-            return '/AuShadha/visit/detail/close/%d/' % (self.id)
+            return '/AuShadha/visit/visit/detail/close/%d/' % (self.id)
         else:
             raise Exception("Visit is already not active. Cannot Close")
 

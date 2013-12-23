@@ -49,19 +49,57 @@ VisitDetail = UI.get_module('OPD_Visit')
 from .models import VisitComplaint, VisitComplaintAddForm, VisitComplaintEditForm
 
 
-# Module Vars:
-complaint_add_icon_template = get_template(
-    'visit_template_snippets/icons/complaints_add.html')
-complaint_remove_icon_template = get_template(
-    'visit_template_snippets/icons/complaints_remove.html')
-
-generic_table_form_add_icon_template = get_template(
-    'visit_template_snippets/icons/generic_add_icon.html')
-generic_table_form_remove_icon_template = get_template(
-    'visit_template_snippets/icons/generic_remove_icon.html')
-
-
 # views start here;;
+
+
+@login_required
+def visit_complaint_json(request, visit_id = None):
+
+    try:
+        if visit_id:
+          visit_id = int(visit_id)
+        else:
+          visit_id = int(request.GET.get('visit_id'))          
+
+        visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
+        patient_detail_obj = visit_detail_obj.patient_detail
+
+        if not getattr(visit_detail_obj, 'urls', None):
+          visit_detail_obj.save()
+    
+    except(AttributeError, NameError, TypeError, ValueError, KeyError):
+        raise Http404("ERROR:: Bad request.Invalid arguments passed")
+    
+    except(VisitDetail.DoesNotExist):
+        raise Http404("ERROR:: Patient requested does not exist.")
+
+    #visit_complaint_objs  = []
+    #all_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj)
+    #for visit in all_visits:
+      #vc = VisitComplaint.objects.filter(visit_detail = visit)
+      #for c in vc:
+        #visit_complaint_objs.append(c)
+
+    visit_complaint_objs = VisitComplaint.objects.filter(visit_detail = visit_detail_obj)
+    data = []
+
+    if visit_complaint_objs:
+        for complaint in visit_complaint_objs:
+            if not getattr(complaint, 'urls', None):
+              complaint.save()
+            i = 0
+            data_to_append = {}
+            data_to_append['id'] = complaint.id
+            data_to_append['complaint'] = complaint.complaint
+            data_to_append['duration'] = complaint.duration
+            data_to_append['edit'] = complaint.urls['edit']
+            data_to_append['del'] = complaint.urls['del']
+            data.append(data_to_append)
+            i += 1
+
+    json = simplejson.dumps(data)
+    return HttpResponse(json, content_type="application/json")
+
 
 
 @login_required
@@ -76,21 +114,9 @@ def visit_complaint_add(request, visit_id = None):
     error_message = None
     form_errors = []
 
-    visit_complaint_formset_prefix="visit_complaints"
-
-    generic_add_icon_html = generic_table_form_add_icon_template.render(RequestContext(request, {'user': user}))
-    generic_remove_icon_html = generic_table_form_remove_icon_template.render(RequestContext(request, {'user': user}))
-    complaint_add_icon_html = complaint_add_icon_template.render(RequestContext(request, {'user': user}))
-    complaint_remove_icon_html = complaint_remove_icon_template.render(RequestContext(request, {'user': user}))
-
-    complaint_form_var_dict = {'prefix': visit_complaint_formset_prefix,
-                                'total_form_id': visit_complaint_formset_prefix+"-TOTAL_FORMS",
-                                'form_count':''
-                                } 
-
     try:
         if visit_id:
-          visit_id = int(patient_id)
+          visit_id = int(visit_id)
         else:
           visit_id = int(request.GET.get('visit_id'))
 
@@ -98,68 +124,37 @@ def visit_complaint_add(request, visit_id = None):
         patient_detail_obj = visit_detail_obj.patient_detail
         visit_complaint_obj = VisitComplaint(visit_detail=visit_detail_obj)
 
-        if not getattr(visit_detail_obj, 'urls', None):
-          visit_detail_obj.save()
-
         if not getattr(patient_detail_obj, 'urls', None):
           patient_detail_obj.save()
 
-        VisitComplaintFormset = modelformset_factory(VisitComplaint,
-                                                     form=VisitComplaintAddForm,
-                                                     can_delete=True,
-                                                     can_order=True,
-                                                    )
-
-        complaint_form_auto_id = "id_"+ visit_complaint_formset_prefix + "_new_complaint_" + str(visit_id)
-        complaint_total_form_auto_id = "id_"+visit_complaint_formset_prefix + "-TOTAL_FORMS_new_complaint_" + str(visit_id)
+        if not getattr(visit_detail_obj, 'urls', None):
+          visit_detail_obj.save()
 
         if request.method == "GET" and request.is_ajax():
 
-            visit_complaint_formset = VisitComplaintFormset(queryset=VisitComplaint.objects.none(),
-                                                            auto_id=complaint_form_auto_id,
-                                                            prefix=visit_complaint_formset_prefix
-                                                            )
-
-            #complaint_formset_auto_id = "id_%s"+"_add_visit_complaint_"+ str(id)
-            #complaint_total_form_auto_id = "id_form-TOTAL_FORMS_add_visit_complaint_"+str(id)
-
-            # visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
-                                                      # auto_id  =
-                                                      # "id_new_visit_complaint"+
-                                                      # str(id)+"_%s")
+            visit_complaint_form = VisitComplaintAddForm(instance = visit_complaint_obj,
+                                                      auto_id  =
+                                                      "id_add_visit_complaint"+
+                                                      str(visit_id)+"_%s")
             variable = RequestContext(request, {
                                                 'user': user,
                                                 'visit_detail_obj': visit_detail_obj,
-                                                'visit_complaint_formset': visit_complaint_formset,
-                                                #'visit_complaint_form_html'   : visit_complaint_form_html,
+                                                'visit_complaint_form': visit_complaint_form,
                                                 'patient_detail_obj': patient_detail_obj,
                                                 'error_message': error_message,
-                                                'complaint_add_icon_html': complaint_add_icon_html,
-                                                'complaint_remove_icon_html': complaint_remove_icon_html,
-                                                'generic_add_icon_html':generic_add_icon_html,
-                                                'generic_remove_icon_html':generic_remove_icon_html,
                                                 'success': success,
-                                                'complaint_form_auto_id': complaint_form_auto_id,
-                                                'complaint_total_form_auto_id': visit_complaint_formset_prefix+"-TOTAL_FORMS",
-                                                'form_action':'add'
                                             })
-            
-            return render_to_response('visit_complaint/add.html', variable)
+
+            return render_to_response('visit_complaints/forms/add.html', variable)
 
         elif request.method == "POST" and request.is_ajax():
 
-            #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
-            #VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)
-            visit_complaint_formset = VisitComplaintFormset(request.POST, 
-                                                            auto_id=complaint_form_auto_id,
-                                                            prefix=visit_complaint_formset_prefix
-                                                            )
+            visit_complaint_form = VisitComplaintAddForm(request.POST, instance = visit_complaint_obj)
 
-            if visit_complaint_formset.is_valid() :
-                saved_visit_complaints = visit_complaint_formset.save(commit=False)
-                for complaint in saved_visit_complaints:
-                    complaint.visit_detail = visit_detail_obj
-                    complaint.save()
+            if visit_complaint_form.is_valid() :
+                saved_visit_complaint = visit_complaint_form.save(commit=False)
+                saved_visit_complaint.visit_detail = visit_detail_obj
+                saved_visit_complaint.save()
                 success = True
                 error_message = "Visit Added Successfully"
 
@@ -169,11 +164,7 @@ def visit_complaint_add(request, visit_id = None):
                                       Please check the forms for errors
                                     </h4>
                                 '''
-                for form in visit_complaint_formset:
-                    errors += aumodelformerrorformatter_factory(form)
-                for form in vasc_exam_free_model_formset:
-                    errors += aumodelformerrorformatter_factory(form)
-
+                errors += aumodelformerrorformatter_factory(visit_complaint_form)
                 error_message += ('\n' + errors)
 
             data = {'success': success,
@@ -186,12 +177,11 @@ def visit_complaint_add(request, visit_id = None):
             raise Http404(" Error ! Unsupported Request..")
 
 
-    except (TypeError, NameError, ValueError, AttributeError, KeyError):
-        raise Http404("Error ! Invalid Request Parameters. ")
+    #except (TypeError, NameError, ValueError, AttributeError, KeyError):
+        #raise Http404("Error ! Invalid Request Parameters. ")
 
     except (VisitDetail.DoesNotExist):
         raise Http404("Requested Visit Does not exist.")
-
 
 
 @login_required
@@ -199,153 +189,81 @@ def visit_complaint_edit(request, visit_complaint_id = None):
 
     user = request.user
     error_message = None    
-    VisitComplaintFormset = modelformset_factory(VisitComplaint,
-                                                 form=VisitComplaintEditForm,
-                                                 extra=0
-                                                 )
+    
+    try:
 
+        if visit_complaint_id:
+          visit_complaint_id = int(visit_complaint_id)
 
-    if request.method == "GET" and request.is_ajax():
+        else:
+          visit_complaint_id = int(request.GET.get('visit_complaint_id'))
 
-        try:
-            if visit_complaint_id:
-              visit_complaint_id = int(visit_complaint_id)
-            else:
-              visit_complaint_id = int(request.GET.get('visit_complaint_id'))
-
-            visit_complaint_obj = VisitComplaint.objects.get(pk=visit_complaint_id)
-            visit_detail_obj = visit_complaint_obj.visit_detail
-
-            visit_complaint_formset_prefix="edit_visit_complaints_"+str(visit_complaint_id)
-            form_field_auto_id = 'id_edit_visit_detail_' + str(visit_complaint_id)
-
-            complaint_formset_auto_id = "id_"+visit_complaint_formset_prefix +"_edit_visit_complaint_" + str(visit_complaint_id)
-            complaint_total_form_auto_id = "id_"+visit_complaint_formset_prefix+"-TOTAL_FORMS_edit_visit_complaint_" + str(visit_complaint_id)
-
-            data = {'visit_date': visit_detail_obj.visit_date.date().isoformat() }
-
-            visit_complaint_formset = VisitComplaintFormset(queryset=VisitComplaint.objects.filter(
-                                                                visit_detail=visit_detail_obj),
-                                                            auto_id=complaint_formset_auto_id,
-                                                            prefix = visit_complaint_formset_prefix
-                                                          )
-
-
-        except (TypeError, NameError, ValueError, AttributeError, KeyError):
-            raise Http404("Error ! Invalid Request Parameters. ")
-
-        except (VisitComplaint.DoesNotExist):
-            raise Http404("Requested VisitComplaint Does not exist.")
-
-
-        complaint_add_icon_template = get_template(
-            'visit_template_snippets/icons/complaints_add.html')
-        complaint_remove_icon_template = get_template(
-                'visit_template_snippets/icons/complaints_remove.html')
-        complaint_add_icon_html = complaint_add_icon_template.render(
-            RequestContext(request, {'user': user}))
-        complaint_remove_icon_html = complaint_remove_icon_template.render(
-            RequestContext(request, {'user': user}))
-
-        # if visit_complaint_obj:
-            #visit_complaint_obj = visit_complaint_obj[0]
-            #c_auto_id = 'id_edit_visit_complaint_'+str(visit_complaint_obj.id)
-            #visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj, auto_id = c_auto_id +"_%s")
-        # else:
-            #visit_complaint_form = None
-            #visit_complaint_formset  = None
-        generic_add_icon_html = generic_table_form_add_icon_template.render(
-            RequestContext(request, {'user': user}))
-        generic_remove_icon_html = generic_table_form_remove_icon_template.render(
-            RequestContext(request, {'user': user}))
+        visit_complaint_obj = VisitComplaint.objects.get(pk=visit_complaint_id)
+        visit_detail_obj = visit_complaint_obj.visit_detail
+        patient_detail_obj = visit_detail_obj.patient_detail
 
         if not getattr(visit_detail_obj,'urls',None):
           visit_detail_obj.save()
 
-        variable = RequestContext(
-            request, {'user': user,
-                      'visit_detail_obj': visit_detail_obj,
-                      #'visit_complaint_form'  : visit_complaint_form  ,
-                      'visit_complaint_formset': visit_complaint_formset,
-                      'patient_detail_obj': visit_detail_obj.patient_detail,
-                      'error_message': error_message,
-                      'complaint_count': complaint_count,
-                      'complaint_add_icon_html': complaint_add_icon_html,
-                      'complaint_remove_icon_html': complaint_remove_icon_html,
-                      'complaint_formset_auto_id': complaint_formset_auto_id,
-                      'complaint_total_form_auto_id': visit_complaint_formset_prefix+"-TOTAL_FORMS",
-                      'generic_add_icon_html':generic_add_icon_html,
-                      'generic_remove_icon_html':generic_remove_icon_html,
-                      'form_action':'edit'
-                      })
-        return render_to_response('visit_complaint/edit.html', variable)
+        if not getattr(patient_detail_obj,'urls',None):
+          patient_detail_obj.save()
 
-    if request.method == "POST" and request.is_ajax():
-        try:
-            if visit_id:
-              visit_id = int(visit_id)
-            else:
-              visit_id = request.POST.get('visit_id')
-            visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
+        if not getattr(visit_complaint_obj,'urls',None):
+          visit_complaint_obj.save()
+        
+        if request.method == "GET" and request.is_ajax():
 
-            visit_complaint_formset_prefix="edit_visit_complaints_"+str(visit_id)
-            vasc_exam_formset_prefix = "edit_vasc_exam_"+str(visit_id)
+            visit_complaint_form = VisitComplaintEditForm(instance = visit_complaint_obj, 
+                                                          auto_id = False
+                                                        )
 
-            visit_complaint_obj = VisitComplaint.objects.filter(
-                visit_detail=visit_detail_obj)
+            variable = RequestContext(
+                request, {'user': user,
+                          'visit_detail_obj': visit_detail_obj,
+                          'visit_complaint_obj': visit_complaint_obj,
+                          'visit_complaint_form'  : visit_complaint_form  ,
+                          'patient_detail_obj': visit_detail_obj.patient_detail,
+                          'error_message': error_message,
+                          'form_action':'edit'
+                          })
 
-        except (TypeError, NameError, ValueError, AttributeError, KeyError):
-            raise Http404("Error ! Invalid Request Parameters. ")
-        except (VisitDetail.DoesNotExist):
-            raise Http404("Requested Visit Does not exist.")
+            return render_to_response('visit_complaints/forms/edit.html', variable)
 
-        success = False
-        error_message = None
+        if request.method == "POST" and request.is_ajax():
 
-        if visit_complaint_obj and visit_hpi_obj and visit_ros_obj:
-            #visit_complaint_form   = VisitComplaintForm(request.POST, instance = visit_complaint_obj[0])
-            complaint_formset_auto_id = "id_"+visit_complaint_formset_prefix + \
-                "_edit_visit_complaint_" + str(id)
-            complaint_total_form_auto_id = "id_"+ visit_complaint_formset_prefix+\
-              "-TOTAL_FORMS_edit_visit_complaint_" + str(id)
-            #VisitComplaintFormset = modelformset_factory(VisitComplaint, form = VisitComplaintForm)
-            visit_complaint_formset = VisitComplaintFormset(
-                request.POST, queryset=visit_complaint_obj,
-                prefix=visit_complaint_formset_prefix,
-                auto_id=complaint_formset_auto_id)
+            visit_complaint_form   = VisitComplaintEditForm(request.POST, instance = visit_complaint_obj )
 
-            if visit_complaint_formset.is_valid()    :                
+            if visit_complaint_form.is_valid()    :                
 
-                saved_visit_complaints = visit_complaint_formset.save(commit=False)
-
-                for complaint in saved_visit_complaints:
-                    complaint.visit_detail = saved_visit
-                    complaint.save()
+                saved_visit_complaint = visit_complaint_form.save(commit=False)
+                saved_visit_complaint.visit_detail = visit_detail_obj
+                saved_visit_complaint.save()
                 success = True
-                error_message = "Visit Edited Successfully"
+                error_message = "Visit Complaint Edited Successfully"
 
             else:
                 success = False
-                error_message = ''' <h4>Visit Could not be Saved.
-                            Please check the forms for errors</h4>
-                        '''
-
-                for form in visit_complaint_formset:
-                    errors += aumodelformerrorformatter_factory(form)
-
+                error_message = ''' <h4>
+                                      Visit Could not be Saved.
+                                      Please check the forms for errors
+                                    </h4>
+                                '''
+                errors += aumodelformerrorformatter_factory(visit_complaint_form)
                 error_message += ('\n' + errors)
 
-            data = {'success': success,
-                    'error_message': error_message
-                    }
+            data = {'success': success, 'error_message': error_message }
             json = simplejson.dumps(data)
             return HttpResponse(json, content_type='application/json')
 
         else:
-            raise Http404(
-                "ERROR!  The visit has not associated complaints, HPI or ROS to edit")
-    else:
-        raise Http404(" Error ! Unsupported Request..")
+             raise Http404(" Error ! Unsupported Request..")
+
+
+    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+        raise Http404("Error ! Invalid Request Parameters. ")
+
+    except (VisitComplaint.DoesNotExist):
+        raise Http404("Requested VisitComplaint Does not exist.")
 
 
 @login_required
@@ -356,16 +274,18 @@ def visit_complaint_del(request, visit_complaint_id = None):
         user = request.user
 
         try:
-            if visit_id:
-              visit_id = int(visit_id)
-            else:
-              visit_id = int(request.GET.get('visit_id'))
 
-            visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
+            if visit_complaint_id:
+              visit_complaint_id = int(visit_complaint_id)
+
+            else:
+              visit_complaint_id = int(request.GET.get('visit_complaint_id'))
+
+            visit_complaint_obj = VisitComplaint.objects.get(pk=visit_complaint_id)
             error_message = None
-            visit_detail_obj.delete()
+            visit_complaint_obj.delete()
             success = True
-            error_message = "Successfully Deleted Visit."
+            error_message = "Successfully Deleted Visit Complaint "
             data = {'success': success, 'error_message': error_message}
             json = simplejson.dumps(data)
             return HttpResponse(json, content_type='application/json')
@@ -376,117 +296,5 @@ def visit_complaint_del(request, visit_complaint_id = None):
         except (VisitComplaint.DoesNotExist):
             raise Http404("Requested Visit Complaint Does not exist.")
 
-        else:
-            success = False
-            error_message = "Insufficient Permission. Could not delete."
-            data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
-
-    else:
-        raise Http404(" Error ! Unsupported Request..")
-
-
-#
-
-@login_required
-def visit_complaint_add(request, visit_id=None):
-    user = request.user
-    success = False
-    error_message = "Complaint Added Successfully"
-    form_errors = []
-    try:
-        if visit_id :
-          visit_id = int(visit_id)
-        else:
-          visit_id = int(request.GET.get('visit_id'))
-        visit_detail_obj = VisitDetail.objects.get(pk= visit_id)
-        patient_detail_obj = visit_detail_obj.patient_detail
-        visit_complaint_objs = VisitComplaint.objects.filter(
-            visit_detail=visit_detail_obj)
-        visit_complaint_obj = VisitComplaint(visit_detail=visit_detail_obj)
-        VisitComplaintFormset = modelformset_factory(
-            VisitComplaint, form=VisitComplaintForm, extra=1)
-    except (TypeError, NameError, ValueError, AttributeError, KeyError):
-        raise Http404("Error ! Invalid Request Parameters. ")
-    except (VisitDetail.DoesNotExist):
-        raise Http404("Requested Visit Does not exist.")
-
-    if request.method == "GET" and request.is_ajax():
-        print "Received GET request to add Visit Complaints "
-    # visit_complaint_form = VisitComplaintForm(instance = visit_complaint_obj,
-                                                  # auto_id  =
-                                                  # "id_new_visit_complaint"+
-                                                  # str(id)+"_%s")
-        visit_complaint_formset = VisitComplaintFormset(
-            queryset=visit_complaint_objs)
-        #print visit_complaint_formset
-        variable = RequestContext(
-            request, {'user': user,
-                      'visit_detail_obj': visit_detail_obj,
-                      'visit_complaint_formset': visit_complaint_formset,
-                      'patient_detail_obj': patient_detail_obj
-                      })
-        return render_to_response('visit_complaints/add.html', variable)
-
-    if request.method == "POST" and request.is_ajax():
-        print "Received POST request to add Visit complaints ..."
-        #visit_complaint_form = VisitComplaintForm(request.POST, instance = visit_complaint_obj)
-        visit_complaint_formset = VisitComplaintFormset(request.POST)
-
-        if visit_complaint_formset.is_valid():
-            saved_visit_complaint = visit_complaint_formset.save(commit=False)
-            for complaint in saved_visit_complaint:
-                complaint.visit_detail = saved_visit
-                complaint.save()
-
-            success = True
-        else:
-            success = False
-            error_message = '''Error! Complaint Could not be added.
-                          Please check the forms for errors
-                      '''
-        data = {'success': success,
-                'error_message': error_message
-                }
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type='application/json')
-    else:
-        raise Http404(" Error ! Unsupported Request..")
-
-
-@login_required
-def visit_complaint_edit(request, complaint_id=None):
-    pass
-
-
-@login_required
-def visit_complaint_del(request, complaint_id=None):
-    if request.method == "GET" and request.is_ajax():
-        user = request.user
-        if user.has_perm('visit.delete_visitcomplaint'):
-            try:
-                if complaint_id : 
-                  complaint_id = int(complaint_id)
-                else:
-                  complaint_id = int(request.GET.get('complaint_id'))
-                visit_complaint_obj = VisitComplaint.objects.get(pk=complaint_id)
-            except (TypeError, NameError, ValueError, AttributeError, KeyError):
-                raise Http404("Error ! Invalid Request Parameters. ")
-            except (VisitComplaint.DoesNotExist):
-                raise Http404("Requested Complaint Does not exist.")
-            error_message = None
-            visit_complaint_obj.delete()
-            success = True
-            error_message = "Successfully Deleted Visit Complaint"
-            data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
-        else:
-            success = False
-            error_message = "Insufficient Permission. Could not delete."
-            data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
     else:
         raise Http404(" Error ! Unsupported Request..")

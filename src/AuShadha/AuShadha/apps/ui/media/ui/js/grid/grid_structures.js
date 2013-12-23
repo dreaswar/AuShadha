@@ -1115,7 +1115,7 @@ define(function () {
                         return "Others"
                     }
                 }
-                                  },
+            },
 
             {
                 name: "Room",
@@ -1159,37 +1159,169 @@ define(function () {
             {
                 name: "DOV",
                 field: "visit_date",
-                width: "250px",
+                width: "75px",
                 cellStyles: "text-align:center;"
-                                  },
+            },
 
             {
                 name: "Surgeon",
                 field: "op_surgeon",
+                width: "75px",
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Nature",
+                field: "consult_nature",
+                width: "60px",
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Status",
+                field: "status",
+                width: "125px",
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Referring Surgeon",
+                field: "referring_doctor",
+                width: "100px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Active ?",
+                field: "is_active",
+                width: "50px",
+                cellStyles: "text-align:center;",
+                formatter: function (is_active) {
+
+                              if (is_active ) {
+                                  return window.ICONS.ACTIVE_STATE;
+                              } 
+
+                              else {
+                                  return window.ICONS.INACTIVE_STATE;
+                              } 
+
+                }
+            },
+
+            {
+                name: "Remarks",
+                field: "remarks",
+                width: "100px",
+                cellStyles: "text-align:center;"
+            }
+    ],
+
+    OPD_VISIT_COMPLAINTS: [
+            {
+                name: "ID",
+                field: "id",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+                                  },
+
+            {
+                name: "Edit",
+                field: "edit",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+                                  },
+
+            {
+                name: "Del",
+                field: "del",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+                                  },
+
+            {
+                name: "Complaint",
+                field: "complaint",
                 width: "250px",
                 cellStyles: "text-align:center;"
                                   },
 
             {
-                name: "Nature",
-                field: "consult_nature",
-                width: "150px",
+                name: "Duration",
+                field: "duration",
+                width: "250px",
                 cellStyles: "text-align:center;"
                                   },
+      ],
+
+    OPD_OLD_VISIT_COMPLAINTS: [
 
             {
-                name: "Status",
-                field: "is_active",
+                name: "ID",
+                field: "id",
                 width: "50px",
+                hidden: true,
                 cellStyles: "text-align:center;"
                                   },
 
             {
-                name: "Remarks",
-                field: "remarks",
-                width: "150px",
+                name: "Edit",
+                field: "edit",
+                width: "50px",
+                hidden: true,
                 cellStyles: "text-align:center;"
-                                  }],
+                                  },
+
+            {
+                name: "Del",
+                field: "del",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+                                  },
+
+            {
+                name: "Complaint",
+                field: "complaint",
+                width: "200px",
+                cellStyles: "text-align:center;"
+                                  },
+
+            {
+                name: "Duration",
+                field: "duration",
+                width: "100px",
+                cellStyles: "text-align:center;"
+                                  },
+            {
+                name: "Recorded On",
+                field: "recorded_on",
+                width: "100px",
+                cellStyles: "text-align:center;"
+                                  },
+            {
+                name: "Is Visit Active ?",
+                field: "is_active",
+                width: "100px",
+                cellStyles: "text-align:center;",
+                formatter: function (is_active) {
+
+                              if (is_active ) {
+                                  return window.ICONS.ACTIVE_STATE;
+                              } 
+
+                              else {
+                                  return window.ICONS.INACTIVE_STATE;
+                              } 
+
+                }
+          },
+      ],
+
     };
 
 });

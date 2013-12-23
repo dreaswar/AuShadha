@@ -72,40 +72,82 @@ def visit_list(request):
 
 @login_required
 def visit_json(request, patient_id = None):
+
+    key_map = {
+        
+        "sort( visit_date)" : "visit_date" ,
+        "sort(-visit_date)" : "-visit_date", 
+        "sort(+visit_date)" : "visit_date" ,
+
+        "sort( op_surgeon)" : "op_surgeon" ,
+        "sort(-op_surgeon)" : "-op_surgeon", 
+        "sort(+op_surgeon)" : "op_surgeon",
+
+        "sort( consult_nature)" : "consult_nature",
+        "sort(-consult_nature)" : "-consult_nature",
+        "sort(+consult_nature)" : "consult_nature",
+
+        "sort( is_active)"      : "is_active",
+        "sort(+is_active)"      : "is_active",
+        "sort(-is_active)"      : "-is_active",
+
+        "sort( status)"      : "status",
+        "sort(+status)"      : "status",
+        "sort(-status)"      : "-status",
+
+        "sort( remarks)"      : "remarks",
+        "sort(+remarks)"      : "remarks",
+        "sort(-remarks)"      : "-remarks"
+
+    }
+
     try:
-        action = unicode(request.GET.get('action'))
-        if patient_id:
-          patient_id = int(patient_id)
-        else:
-          patient_id = int(request.GET.get('patient_id'))          
-        if action == 'add':
-            return patient_visit_add(request, patient_id)
-        patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+
+      if patient_id:
+        patient_id = int( patient_id )
+      else:
+        patient_id = int( request.GET.get('patient_id') )
+
+      patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+
+      for key in request.GET.keys():
+          if key in key_map.keys():
+              sort = key_map[key]
+              break
+          else:
+              sort = "-visit_date"
+
+      patient_visit_obj = VisitDetail.objects.filter(patient_detail=patient_detail_obj).order_by(sort)
+      data = []
+
+      if patient_visit_obj:
+          for visit in patient_visit_obj:
+              if not getattr(visit, 'urls', None):
+                visit.save()
+              data_to_append = {}
+              data_to_append['id'] = visit.id
+              data_to_append['visit_date'] = visit.visit_date.date().isoformat()
+              data_to_append['op_surgeon'] = visit.op_surgeon.__unicode__()
+              data_to_append['is_active'] = visit.is_active
+              data_to_append['referring_doctor'] = visit.referring_doctor
+              data_to_append['consult_nature'] = visit.consult_nature
+              data_to_append['status'] = visit.status              
+              data_to_append['referring_doctor'] = visit.referring_doctor
+              data_to_append['remarks'] = visit.remarks
+              data_to_append['dynamic_pane_url'] = visit.get_edit_pane_header_url()
+              data_to_append['edit'] = visit.urls['edit']
+              data_to_append['del'] = visit.urls['del']
+              data.append(data_to_append)
+
+      json = simplejson.dumps(data)
+      return HttpResponse(json, content_type="application/json")
+
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
+
     except(PatientDetail.DoesNotExist):
         raise Http404("ERROR:: Patient requested does not exist.")
-    patient_visit_obj = VisitDetail.objects.filter(
-        patient_detail=patient_detail_obj)
-    data = []
-    if patient_visit_obj:
-        for visit in patient_visit_obj:
-            i = 0
-            data_to_append = {}
-            data_to_append['id'] = visit.id
-            data_to_append[
-                'visit_date'] = visit.visit_date.date().isoformat() + i
-            data_to_append['op_surgeon'] = visit.op_surgeon.__unicode__()
-            data_to_append['is_active'] = visit.is_active
-            data_to_append['referring_doctor'] = visit.referring_doctor
-            data_to_append['consult_nature'] = visit.consult_nature
-            data_to_append['remarks'] = visit.remarks
-            data_to_append['edit'] = visit.get_edit_url()
-            data_to_append['del'] = visit.get_del_url()
-            data.append(data_to_append)
-            i += 1
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")
+
 
 
 @login_required
@@ -303,6 +345,50 @@ def visit_detail_list(request, patient_id = None):
 
 
 @login_required
+def get_visit_detail_edit_pane_header(request, visit_id = None):
+  
+  """
+
+   Utility for returning header for Visit Detail Editing pane when called
+    on double click of the Visit Grid
+
+   Used for returning the headers that can be directed to the grid 
+    double click function to render the HTML from visit_detail_edit
+
+  """
+
+  if request.method == "GET":
+    
+    try:
+    
+      if visit_id:
+        visit_id = int(visit_id)
+      else:
+        visit_id = int(request.GET.get('visit_id') )
+
+      visit_detail_obj = VisitDetail.objects.get(pk = visit_id)
+      if not getattr(visit_detail_obj, 'urls', None):
+        visit_detail_obj.save()
+
+      json = simplejson.dumps({'id': 'EDIT_ACTIVE_VISIT_'+ str(visit_detail_obj.id), 
+                              'title': visit_detail_obj.visit_date.date().isoformat(), 
+                              'url': visit_detail_obj.urls['edit'],
+                              'parentTab': "OPD_VISITS_CENTER_CP_TC"
+                              })
+      return HttpResponse(json, content_type='application/json')
+
+    except ( NameError, TypeError, AttributeError, ValueError):
+      raise Http404("Bad Parameters")
+
+    except ( VisitDetail.DoesNotExist ):
+      raise Http404("Visit Does Not Exist !")
+  
+  else:
+    raise Http404("Bad Request Method")
+
+
+
+@login_required
 def visit_detail_add(request, patient_id = None, nature='initial'):
 
     """ 
@@ -425,24 +511,28 @@ def visit_detail_edit(request, visit_id = None):
           visit_id = int(request.GET.get('visit_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
+        patient_detail_obj = visit_detail_obj.patient_detail
+
         form_field_auto_id = 'id_edit_visit_detail_' + str(visit_id)
         data = {'visit_date': visit_detail_obj.visit_date.date().isoformat()}
 
         if not getattr(visit_detail_obj,'urls',None):
           visit_detail_obj.save()
+        if not getattr(patient_detail_obj, 'urls', None):
+          patient_detail_obj.save()
 
         if request.method == "GET" and request.is_ajax():
 
             visit_detail_form = VisitDetailForm(initial=data, 
                                                 instance=visit_detail_obj, 
                                                 auto_id=form_field_auto_id + "_%s"
-                                                )
+                                               )
 
             variable = RequestContext(request, 
                                       {'user': user,
                                         'visit_detail_obj': visit_detail_obj,
                                         'visit_detail_form': visit_detail_form,
-                                        'patient_detail_obj': visit_detail_obj.patient_detail,
+                                        'patient_detail_obj': patient_detail_obj,
                                         'error_message': error_message,
                                         'form_action':'edit'
                                       })
@@ -463,7 +553,7 @@ def visit_detail_edit(request, visit_id = None):
                                         Please check the forms for errors
                                     </h4>
                                 '''
-                errors = aumodelformerrorformatter_factory(visit_detail_form)     + '\n'
+                errors = aumodelformerrorformatter_factory(visit_detail_form) + '\n'
                 error_message += ('\n' + errors)
 
             data = {'success': success,
