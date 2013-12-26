@@ -1,0 +1,86 @@
+{% if visit_hpi_objs %}
+
+<div >
+
+ {% for hpi in visit_hpi_objs %}
+
+    <div style="background: white; border: solid #ddd 1px; border-radius: 5px; ">
+
+        <div syle="background: slate; text-align: center;">
+            <h4> {{hpi.visit_detail.visit_date }} </h4>
+        </div>
+
+        <div>
+
+            <h4> History: </h4>
+
+            <p style="text-align: justify;" 
+               id="visit_hpi_paragraph_{{hpi.id}}" 
+               class="visit_hpi_paragraph"
+               > 
+                {{hpi}} 
+            </p>
+
+            <button type="button"
+                    id="visit_hpi_import_button_{{hpi.id}}"
+                    class="visit_hpi_import_button"
+                    data-dojo-type="dijit/form/Button"
+                    data-dojo-props="label: 'Copy to current'"
+                 >
+                
+                Copy to current
+                
+                <script type="dojo/on" data-dojo-event="click" data-dojo-args="evt" >
+
+                    require(['dojo/dom', 
+                            'dojo/dom-class', 
+                            'dojo/dom-attr', 
+                            'dojo/on', 
+                            'dijit/registry',
+                            'dojo/query',
+                            'dojo/NodeList-traverse',
+                            'dojo/NodeList-data',
+                            'dojo/domReady!'
+                            ],
+
+                    function ( dom, domClass, domAttr, on, registry, query ) {
+
+//                         var hpiTextArea = query('#id_visit_hpi_{{visit_hpi.id}}_hpi')[0];
+                        var html = query( "#visit_hpi_paragraph_{{hpi.id}}" )[0].innerHTML;
+                        var hpiTextArea = query(evt.target).closest('.visit_hpi_textarea');
+                        console.log(hpiTextArea);
+                        console.log(html);
+//                         return false;
+
+                        if ( hpiTextArea.value != '' ) {
+                            var _c = confirm("This will overwrite the existing history. Continue ?");
+                            if (_c ) {
+                                hpiTextArea.value = html;
+                                publishInfo( "History Copied to current form" );
+                            }
+                        } else {
+                                hpiTextArea.value = html;
+                                publishInfo( "History Copied to current form" );
+                        }
+
+                    });
+
+                </script>
+
+            </button>
+
+        </div>
+
+    </div>
+
+ {% endfor %}
+
+</div>
+
+{% else %}
+
+ <p class="suggestion_text" > 
+    No History Recorded 
+ </p>
+
+{% endif %}

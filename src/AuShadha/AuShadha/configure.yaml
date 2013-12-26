@@ -68,6 +68,11 @@
   module: models
   class_name: VisitComplaint
 
+- role: OPD_VisitHPI
+  app: visit.visit_hpi
+  module: models
+  class_name: VisitHPI
+
 #- role: PhysicalExamination
 #  app: phyexam
 #  module: models

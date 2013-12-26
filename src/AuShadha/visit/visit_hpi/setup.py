@@ -7,12 +7,12 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='aushadha-visit',
+    name='aushadha-visit_hpi',
     version='0.01',
     packages=['dijit_widgets'],
     include_package_data=True,
     license='GNU-GPL Version 3',  
-    description='OPD Visits Management Application for AuShadha Open Source EMR',
+    description='OPD Visits History Management Application for AuShadha Open Source EMR',
     long_description=README,
     url='http://www.aushadha.org/',
     author='Dr. Easwar T.R',

@@ -48,6 +48,7 @@ urlpatterns = patterns('',
                       url(r'^AuShadha/visit/', include('visit.visit.urls')),
                       url(r'^AuShadha/visit_complaint/'  , include('visit.visit_complaints.urls') ),
                       url(r'^AuShadha/visit_complaints/'  , include('visit.visit_complaints.urls') ),
+                      url(r'^AuShadha/visit_hpi/'  , include('visit.visit_hpi.urls') ),
 
 #                      url(r'^AuShadha/follow_up/', include('visit.urls')),
 #                      url(r'^AuShadha/phyexam/', include('phyexam.urls')),

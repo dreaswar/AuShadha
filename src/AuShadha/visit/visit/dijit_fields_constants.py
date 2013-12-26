@@ -19,6 +19,16 @@ VISIT_DETAIL_FORM_CONSTANTS = {
                 "data-dojo-type": "dijit.form.Select",
                 "data-dojo-props": r"'required' :true"
   },
+  'booking_category':{
+                'max_length': 100,
+                "data-dojo-type": "dijit.form.Select",
+                "data-dojo-props": r"'required' :true"
+  },
+  'consult_reason':{
+                'max_length': 100,
+                "data-dojo-type": "dijit.form.Select",
+                "data-dojo-props": r"'required' :true"
+  },
   'status':{
               'max_length': 100,
               "data-dojo-type": "dijit.form.Select",

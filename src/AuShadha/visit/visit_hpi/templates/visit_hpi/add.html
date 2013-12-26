@@ -1,0 +1,25 @@
+
+{% if perms.visit_hpi.add_visithpi %}
+    
+  <div data-dojo-type = "dijit/form/Form" 
+      id              = "newVisitHPIAddForm_{{visit_detail_obj.id}}"
+      data-dojo-id    = "newVisitHPIAddForm_{{visit_detail_obj.id}}"
+      encType         = "multipart/form-data" 
+      action          = "" 
+      method          = ""
+      style           = "height: 60em; min-width: 50em; overflow:auto;"
+    >
+
+    {% include 'visit_hpi/snippets/js/visit_hpi_add_form_validate.html' %}
+    {% include 'visit_hpi/snippets/forms/hpi.html' %}
+    {% include 'visit_hpi/snippets/button_row/visit_hpi_add.html' %}
+
+  </div>
+
+{% else %}
+
+  <p class="suggestion_text" > 
+    Insufficient Permissions
+  </p>
+
+{% endif %}

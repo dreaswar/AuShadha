@@ -29,7 +29,7 @@ from visit.models import VisitDetail, VisitFollowUp
 
 
 @login_required
-def render_visit_pane(request, patient_id = None):
+def render_visit_hpi_pane(request, patient_id = None):
   
   user = request.user
   
@@ -51,7 +51,7 @@ def render_visit_pane(request, patient_id = None):
         patient_detail_obj.save()
 
       try:
-        pane_template = Template( open('visit/dijit_widgets/pane.yaml','r').read() )
+        pane_template = Template( open('visit/visit_hpi/dijit_widgets/pane.yaml','r').read() )
 
       except( IOError ):
         raise Http404("No template file to render the pane ! ")
@@ -95,7 +95,7 @@ def render_visit_pane(request, patient_id = None):
 
 
 @login_required
-def render_visit_tree(request, patient_id = None):
+def render_visit_hpi_tree(request, patient_id = None):
   
   user = request.user
   
@@ -115,56 +115,12 @@ def render_visit_tree(request, patient_id = None):
         patient_detail_obj.save()
 
       all_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj )
-      for v in all_visits:
-        if not getattr(v, 'urls',None):
-          v.save()
-          if v.has_fu_visits():
-            for fu in v.has_fu_visits():
-              if not getattr(fu, 'urls', None):
-                fu.save()
-
-      active_visits = VisitDetail.objects.filter( patient_detail = patient_detail_obj ).filter( is_active = True )
-      
-      #[ { active_visit:<active_visit>, fu:[<follow_ups>] } ]
-      active_visit_list = []
-      for v in active_visits:
-        dict_to_append = {'active_visit': None, 'fu': [] }
-        if not getattr(v, 'urls',None):
-          v.save()
-          dict_to_append['active_visit'] = v
-          if v.has_fu_visits():
-            for fu in v.has_fu_visits():
-              if not getattr(fu, 'urls', None):
-                fu.save()
-                dict_to_append['fu'].append(fu)
-        active_visit_list.append(dict_to_append)
-
-      inactive_visits = VisitDetail.objects.filter( patient_detail = patient_detail_obj ).filter( is_active = False )
-      inactive_visit_list = []
-      for v in inactive_visits:
-        dict_to_append = {'inactive_visit': None, 'fu': [] }
-        if not getattr(v, 'urls',None):
-          v.save()
-          dict_to_append['inactive_visit'] = v
-          if v.has_fu_visits():
-            for fu in v.has_fu_visits():
-              if not getattr(fu, 'urls', None):
-                fu.save()
-                dict_to_append['fu'].append(fu)
-        inactive_visit_list.append(dict_to_append)
 
       context = RequestContext(request, 
-                               {'patient_detail_obj' : patient_detail_obj , 
-                                'all_visits': all_visits,
-                                'active_visits' : active_visits,
-                                'inactive_visits': inactive_visits,
-                                'user': user ,
-                                'active_visit_list': active_visit_list,
-                                'inactive_visit_list': inactive_visit_list
-                                })
+                               {'patient_detail_obj' : patient_detail_obj ,  'user': user })
 
       try:
-        tree_template = Template( open('visit/dijit_widgets/tree_template.yaml','r').read() )
+        tree_template = Template( open('visit/visit_hpi/dijit_widgets/tree_template.yaml','r').read() )
 
       except( IOError ):
         raise Http404("No template file to render the Tree ")
@@ -178,8 +134,8 @@ def render_visit_tree(request, patient_id = None):
 
       return HttpResponse(json, content_type="application/json")
 
-    #except (TypeError, NameError, ValueError, AttributeError, KeyError):
-      #raise Http404("Bad Request Parameters")
+    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+      raise Http404("Bad Request Parameters")
 
     except (PatientDetail.DoesNotExist):
       raise Http404("Bad Request: Patient Does Not Exist")

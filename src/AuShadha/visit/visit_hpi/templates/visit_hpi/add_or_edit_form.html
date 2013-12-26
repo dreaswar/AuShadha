@@ -1,0 +1,41 @@
+<div data-dojo-type ="dijit/layout/BorderContainer"
+     data-dojo-props="design:'headline'"
+     >
+{% if user.is_authenticated %}
+
+  <div data-dojo-type="dojox/layout/ContentPane"
+       data-dojo-props="region: 'center', splitter: true"
+       >
+    {% if visit_hpi_action == 'add' %}
+        {% include 'visit_hpi/add.html' %}
+    {% endif %}
+
+    {% if visit_hpi_action == 'edit' %}
+        {% include 'visit_hpi/edit.html' %}
+    {% endif %}
+ </div>
+
+ {% if perms.visit_hpi %}
+ 
+    <div data-dojo-type="dojox/layout/ContentPane"
+         data-dojo-props="region: 'trailing', splitter: true"
+         style= "width:20em; background: whitesmoke; border-radius: 5px; border: solid #aaa 1px;"
+        >
+
+        <span>
+            {% include 'visit_hpi/snippets/button_row/visit_hpi_history_templates.html' %}
+            {% include 'visit_hpi/snippets/button_row/visit_hpi_old_history.html' %}
+        </span>
+
+    </div>
+
+  {% endif %}
+
+{% else %}
+
+  <p class="suggestion_text"> 
+    Insufficient Priviliges 
+  </p>
+
+{% endif %}
+</div>

@@ -32,26 +32,47 @@ from dijit_fields_constants import VISIT_DETAIL_FORM_CONSTANTS
 
 DEFAULT_VISIT_DETAIL_FORM_EXCLUDES = ('patient_detail',)
 
+
 CONSULT_NATURE_CHOICES = (
     ('initial', 'Initial'),
     ('fu', 'Follow-Up'),
-    ('na', 'Non-Appointment / Walk-in'),
     ('emer', 'Emergency'),
-    ('pre_op', 'Pre-OP Counsel'),
-    ('post_op', 'Post-OP Review'),
+)
+
+
+CONSULT_BOOKING_CATEGORY_CHOICES = (
+    ('appointment', "Appointment"),
+    ('telephonic', 'Telephonic / Web'),
+    ('na', 'Walk-in / Emergency'),    
+    ('referral', 'Referral'),
+    ('starred', 'Starred'),        
+)
+
+
+CONSULT_REASON_CHOICES = (
+    ('opd_consult', "OPD Consult"),
+    ('inv_review',"Investigations Review"),
+    ('emergency',"Emergency"),
+    ('pre_op',"Pre-op Counselling"),
+    ('post_op',"Post-op Counselling"),
+    ('dressing',"Dressing"),
+    ('minor_opd_procedures',"Minor OPD Procedures"),    
+    ('prescription_top_up',"Prescription Top Up"),
+    ('admission',"Admission"),
+    ('others',"Others"),
 )
 
 CONSULT_STATUS_CHOICES = (
     ('waiting', 'Waiting'),
     ('examining', 'Examining'),
     ('review_awaited', 'Review Awaited'),
-    ('inv_awaited', 'Investigations Awaited'),
-    ('consults_awaited', 'Consults Awaited'),
-
     ('admission', 'Admission'),
     ('discharged', 'Discharged'),
     ('no_show', 'No Show'),
 )
+
+
+
 
 
 
@@ -79,10 +100,16 @@ class VisitDetail(AuShadhaBaseModel):
     patient_detail = models.ForeignKey(PatientDetail)
     visit_date = models.DateTimeField(auto_now=False, default=datetime.now())
     op_surgeon = models.ForeignKey(Staff)
-    referring_doctor = models.CharField(max_length=30, default="Self")
-    consult_nature = models.CharField(max_length=30, choices=CONSULT_NATURE_CHOICES)
-    status = models.CharField(max_length=30, choices=CONSULT_STATUS_CHOICES)
+
+    referring_doctor = models.CharField(max_length=30, default="Self")                          # Should be an FK to referring doctors model / Contacts
+
+    consult_nature = models.CharField(max_length=30, choices=CONSULT_NATURE_CHOICES)             # Should be an FK to appointment model
+    booking_category = models.CharField(max_length=30, choices=CONSULT_BOOKING_CATEGORY_CHOICES) # Should ideally be an FK to appointment model
+    consult_reason = models.CharField(max_length=30, choices=CONSULT_REASON_CHOICES)             # Should be an FK to appointment model
+    status = models.CharField(max_length=30, choices=CONSULT_STATUS_CHOICES)                     # Should update via FK the appointment model
+
     is_active = models.BooleanField(default=True, editable=False)
+
     remarks = models.TextField(max_length=200,default="NAD",help_text="limit to 200 words")
 
     class Meta:
@@ -100,6 +127,9 @@ class VisitDetail(AuShadhaBaseModel):
 
     def import_active_complaints_url(self):
         return '/AuShadha/visit_complaints/complaint/import_active_complaints/%s/' %(self.id)
+
+    def get_all_visit_hpi_url(self):
+        return '/AuShadha/visit_hpi/hpi/get_all_visit_hpi/%s/' %(self.id)
 
     def get_edit_pane_header_url(self):
         return '/AuShadha/visit/get/visit_detail/edit_pane_header/%s/' %(self.id)
@@ -138,7 +168,7 @@ class VisitDetail(AuShadhaBaseModel):
         except (TypeError, NameError, ValueError):
             print "ERROR:: Invalid CONSULT_NATURE_CHOICE supplied.."
             return False
-        if consult_nature in ['initial', 'fu', 'na', 'emer', 'pre_op', 'post_op']:
+        if consult_nature in ['initial', 'fu','emer']:
             self.save()
             return unicode(self.consult_nature)
         else:
@@ -152,9 +182,9 @@ class VisitDetail(AuShadhaBaseModel):
         try:
             self.status = unicode(status)
         except (TypeError, NameError, ValueError):
-            print "ERROR:: Invalid CONSULT_STATUS_CHOICE supplied.."
+            print "ERROR:: Invalid CONSULT_STATUS_CHOICES supplied.."
             return False
-        if status in ['discharged', 'admission', 'review_awaited', 'inv_awaited', 'consults_awaited']:
+        if status in ['discharged', 'admission', 'review_awaited']:
             if self.status == 'discharged' or \
                self.status == 'admission':
                 self._close_visit()
