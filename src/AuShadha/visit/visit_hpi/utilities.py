@@ -84,7 +84,11 @@ def get_all_visit_hpi(request, visit_id = None):
         #data_to_append['edit'] = hpi.urls['edit']
         #data_to_append['del']  = hpi.urls['del']
         #data.append(data_to_append)
-    variable = RequestContext(request, {'user': user, 'visit_hpi_objs': visit_hpi_objs})
+    variable = RequestContext(request, 
+                              {'user': user, 
+                               'visit_detail_obj': visit_detail_obj,
+                               'visit_hpi_objs': visit_hpi_objs
+                              })
     return render_to_response('visit_hpi/get_all_visit_hpi.html', variable)
     #else:
         #data.append( "No History Recorded so far" );

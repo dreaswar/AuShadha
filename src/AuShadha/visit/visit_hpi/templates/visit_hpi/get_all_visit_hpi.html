@@ -27,10 +27,13 @@
                     data-dojo-type="dijit/form/Button"
                     data-dojo-props="label: 'Copy to current'"
                  >
-                
+
                 Copy to current
-                
-                <script type="dojo/on" data-dojo-event="click" data-dojo-args="evt" >
+
+                <script type="dojo/on" 
+                        data-dojo-event="click" 
+                        data-dojo-args="evt" 
+                        >
 
                     require(['dojo/dom', 
                             'dojo/dom-class', 
@@ -38,19 +41,17 @@
                             'dojo/on', 
                             'dijit/registry',
                             'dojo/query',
+                            "dijit/focus",
                             'dojo/NodeList-traverse',
                             'dojo/NodeList-data',
                             'dojo/domReady!'
                             ],
 
-                    function ( dom, domClass, domAttr, on, registry, query ) {
+                    function ( dom, domClass, domAttr, on, registry, query, focusUtil ) {
 
-//                         var hpiTextArea = query('#id_visit_hpi_{{visit_hpi.id}}_hpi')[0];
                         var html = query( "#visit_hpi_paragraph_{{hpi.id}}" )[0].innerHTML;
-                        var hpiTextArea = query(evt.target).closest('.visit_hpi_textarea');
-                        console.log(hpiTextArea);
-                        console.log(html);
-//                         return false;
+                        var hpiTextArea = query('#visit_hpi_center_pane_{{visit_detail_obj.id}}').
+                                          query('form .visit_hpi_textarea')[0];
 
                         if ( hpiTextArea.value != '' ) {
                             var _c = confirm("This will overwrite the existing history. Continue ?");
@@ -80,7 +81,8 @@
 {% else %}
 
  <p class="suggestion_text" > 
-    No History Recorded 
+    No Old History Recorded  
+    (Excludes the present visit)
  </p>
 
 {% endif %}

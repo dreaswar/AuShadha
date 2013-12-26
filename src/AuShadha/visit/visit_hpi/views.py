@@ -220,7 +220,9 @@ def visit_hpi_edit(request, visit_hpi_id = None):
         
         if request.method == "GET" and request.is_ajax():
 
-            visit_hpi_form = VisitHPIForm(instance = visit_hpi_obj, auto_id = False)
+            visit_hpi_form = VisitHPIForm(instance = visit_hpi_obj, 
+                                          auto_id = "id_edit_visit_hpi"+ str(visit_hpi_id)+"_%s"
+                                          )
 
             variable = RequestContext(
                 request, {'user': user,
