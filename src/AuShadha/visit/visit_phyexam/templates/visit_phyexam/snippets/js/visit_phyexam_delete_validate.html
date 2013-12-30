@@ -1,0 +1,61 @@
+<script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
+
+  require(
+          ["dojo/dom", 
+            "dojo/query",
+            "dojo/dom-attr",
+            "dojo/_base/xhr",
+            "dojo/json",
+            "dijit/registry",
+            "dijit/Dialog",
+            "dojo/NodeList-traverse",
+            "dojo/NodeList-data"
+          ],
+
+  function(dom, query, domAttr, xhr, JSON, registry, Dialog){
+
+//       var summaryTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP');
+//       var parentTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP').getParent();
+//       var visitTree = registry.byId('OPD_VISITS_LEADING_BC_TOP_CP_TREE');
+      var editTab = query("#newVisitPhyExamEditForm_{{exam_name}}_{{exam_obj.id}}").parents('.subTabContainer')[0];
+//       editTab = registry.byId( domAttr.get(editTab, 'id') );
+//       var visitPhyExamAddUrl = "{{visit_detail_obj.urls.add.visit_phyexam}}";
+
+      xhr.get({
+
+        url: "{%url 'visit_phyexam_del' exam_name exam_obj.id %}",
+
+        load: function(json){
+                 var jsondata = JSON.parse(json);
+
+                  if( jsondata.success == true ){
+                    publishInfo( jsondata.error_message );
+                    
+                    //{% comment %}
+//                     summaryTab.set('href',"{{patient_detail_obj.urls.summary.visit}}");
+//                     visitTree.refresh();
+//                     parentTab.removeChild( editTab );
+//                     editTab.destroyRecursive();
+                    // {% endcomment %}
+
+                    // {% if exam_name != 'vasc' %}
+                        registry.byId( domAttr.get(editTab,'id') ).
+                                        set('href', 
+                                            "{%url 'visit_phyexam_add' exam_name visit_detail_obj.id %}"
+                                            );
+                    // {% endif %}
+
+                    // {% if exam_name == 'vasc' %}
+                        registry.byId('visit_phyexam_grid_{{exam_name}}_{{visit_detail_obj.id}}').render();
+                        registry.byId("editPatientDialog").hide();
+                    // {% endif %}
+                  }
+
+                  else{
+                    publishError("ERROR ! :" + jsondata.error_message );
+                  }
+            }
+      });
+  });
+
+</script>

@@ -1,0 +1,121 @@
+{% if visit_ros_objs %}
+
+<div >
+
+ {% for ros in visit_ros_objs %}
+
+    <div style="background: white; border: solid #ddd 1px; border-radius: 5px; ">
+
+        <div syle="background: slate; text-align: center;">
+            <h4> {{ros.visit_detail.visit_date }} </h4>
+        </div>
+
+        <div>
+
+            <h4> ROS: </h4>
+            <p style="text-align: justify;" 
+               id="visit_ros_paragraph_{{ros.id}}" 
+               class="visit_ros_paragraph"
+               > 
+                  <table class='content_pane_table'>
+                    <thead>
+                        <tr> 
+                            <th> System </th> 
+                            <th> Review </th>
+                    </thead>
+                    <tbody>
+                        <tr class='odd'> <td> Constitutional   </td>        <td> {{ros.const_symp}}       </td> </tr>
+                        <tr class='even'> <td> Eye </td>              <td> {{ros.eye_symp}}    </td>  </tr>
+                        <tr class='odd'> <td> ENT</td>               <td> {{ros.ent_symp}}    </td>  </tr>
+                        <tr class='even'> <td> Cardiovascular</td>    <td> {{ros.cvs_symp}}    </td>  </tr>
+                        <tr class='odd'> <td> Respiratory </td>      <td> {{ros.resp_symp}}   </td>  </tr>
+                        <tr class='even'> <td> GIT </td>              <td> {{ros.gi_symp}}     </td>  </tr>
+                        <tr class='odd'> <td> GUT </td>              <td> {{ros.gu_symp}}     </td>  </tr>
+                        <tr class='even'> <td> Musculoskeletal </td>  <td> {{ros.ms_symp}}     </td>  </tr>
+                        <tr class='odd'> <td> Integumentary</td>     <td> {{ros.integ_symp}}  </td>  </tr>
+                        <tr class='even'> <td> Psychiatric</td>       <td> {{ros.psych_symp}}  </td>  </tr>
+                        <tr class='odd'> <td> Endocrine </td>        <td> {{ros.endocr_symp}} </td>  </tr>
+                        <tr class='even'> <td> Hematological </td>    <td> {{ros.hemat_symp}}  </td>  </tr>
+                        <tr class='odd'> <td> Immunology </td>       <td> {{ros.immuno_symp}} </td>  </tr>
+                    </tbody>
+                  </table>
+            </p>
+
+            {% if perms.visit_ros.add_visitros %}
+                <button type="button"
+                        id="visit_ros_import_button_{{ros.id}}"
+                        class="visit_ros_import_button"
+                        data-dojo-type="dijit/form/Button"
+                        data-dojo-props="label: 'Copy to current', disabled: true"
+                        title=" Copy the ROS info to the current ROS"
+                    >
+
+                    Copy to current
+
+                    <script type="dojo/on" 
+                            data-dojo-event="click" 
+                            data-dojo-args="evt" 
+                            >
+
+                        require(['dojo/dom', 
+                                'dojo/dom-class', 
+                                'dojo/dom-attr', 
+                                'dojo/on', 
+                                'dijit/registry',
+                                'dojo/query',
+                                "dijit/focus",
+                                'dojo/NodeList-traverse',
+                                'dojo/NodeList-data',
+                                'dojo/domReady!'
+                                ],
+
+                        function ( dom, domClass, domAttr, on, registry, query, focusUtil ) {
+                        
+                        // This is currently unimplemented. Whether we would want it itself is a question....
+                          var html = query( "#visit_ros_paragraph_{{ros.id}}" )[0].innerHTML;
+/*
+
+                            var rosTextArea = query('#visit_ros_center_pane_{{visit_detail_obj.id}}').
+                                              query('form .visit_ros_textarea')[0];
+
+                            if ( rosTextArea.value != '' ) {
+                                //{% if perms.visit_ros.change_visitros %}
+                                    var _c = confirm("This will overwrite the existing ROS. Continue ?");
+                                    if (_c ) {
+                                        rosTextArea.value = html;
+                                        publishInfo( "ROS Copied to current form" );
+                                    }
+                                //{% else %}
+                                    return false;
+                                //{% endif %}
+                            } 
+                            
+                            else {
+                                rosTextArea.value = html;
+                                publishInfo( "ROS Copied to current form" );
+                            }
+*/ 
+
+                        });
+
+                    </script>
+
+                </button>
+              {% endif %}
+
+        </div>
+
+    </div>
+
+ {% endfor %}
+
+</div>
+
+{% else %}
+
+ <p class="suggestion_text" > 
+    No Old ROS Recorded  
+    (Excludes the present visit)
+ </p>
+
+{% endif %}

@@ -1,0 +1,74 @@
+{% if exam_name == 'vitals' %}
+
+    <button type="button"
+            data-dojo-type="dijit/form/Button"
+            data-dojo-props="label: 'Vitals Chart' , disabled: true"
+            title="Click to compare Examinations as a Chart"
+            >
+            Vitals Chart
+    </button>
+
+{% endif %}
+
+{% if exam_name == 'gen' %}
+
+    <button type="button"
+            data-dojo-type="dijit/form/Button"
+            data-dojo-props="label: 'General Exam Trend Chart' , disabled: true"
+            title="Click to compare Examinations as a Chart"
+            >
+            General Exam Chart
+    </button>
+
+{% endif %}
+
+{% if exam_name == 'sys' %}
+
+    <button type="button"
+            data-dojo-type="dijit/form/Button"
+            data-dojo-props="label: 'Systemic Exam Chart' , disabled: true"
+            title="Click to compare Examinations as a Chart"
+            >
+            Systemic Exam Chart
+    </button>
+
+{% endif %}
+
+{% if exam_name == 'neuro' %}
+
+    <button type="button"
+            data-dojo-type="dijit/form/Button"
+            data-dojo-props="label: 'Neurological Chart' , disabled: true"
+            title="Click to compare Examinations as a Chart"
+            >
+            Neurological Chart
+    </button>
+
+{% endif %}
+
+{% if exam_name == 'vasc' %}
+
+    <button type="button"
+            data-dojo-type="dijit/form/Button"
+            data-dojo-props="label: 'Vascular Exam Chart' , disabled: true"
+            title="Click to compare Examinations as a Chart"
+            >
+            Vascular Exam Chart
+    </button>
+
+{% endif %}
+
+
+{% comment %}
+    <button type="button"
+            data-dojo-type="dijit/form/Button"
+            data-dojo-props="label: 'Old Physical Examination' "
+            title="View &amp; Import Old Physical Examination data"
+            >
+
+            Old Physical Examination
+
+            {% include 'visit_phyexam/snippets/js/visit_phyexam_old.html' %}
+
+    </button>
+{% endcomment %}

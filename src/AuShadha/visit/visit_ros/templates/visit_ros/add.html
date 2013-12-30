@@ -1,0 +1,25 @@
+
+{% if perms.visit_ros.add_visitros %}
+    
+  <div data-dojo-type = "dijit/form/Form" 
+      id              = "newVisitROSAddForm_{{visit_detail_obj.id}}"
+      data-dojo-id    = "newVisitROSAddForm_{{visit_detail_obj.id}}"
+      encType         = "multipart/form-data" 
+      action          = "" 
+      method          = ""
+      style           = "height: 60em; min-width: 50em; overflow:auto;"
+    >
+
+    {% include 'visit_ros/snippets/js/visit_ros_add_form_validate.html' %}
+    {% include 'visit_ros/snippets/forms/ros.html' %}
+    {% include 'visit_ros/snippets/button_row/visit_ros_add.html' %}
+
+  </div>
+
+{% else %}
+
+  <p class="suggestion_text" > 
+    Insufficient Permissions
+  </p>
+
+{% endif %}

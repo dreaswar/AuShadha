@@ -1,9 +1,274 @@
 {% if visit_obj_list %}
-  <ul>
-    {% for visit in visit_obj_list %}
-        <li>  {{visit}} </li>
+  <div>
+
+     <span id="opd_visit_filtering_choices_menu_bar">
+            <select data-dojo-type="dijit/form/FilteringSelect"
+                    id="opd_visit_summary_filtering_select"
+                    name = "opd_visit_summary_filtering_select"
+            >
+
+            <option value="nature_of_consult" >Nature of Consult</option>
+            <option value="booking_category" >Booking Category</option>
+            <option value="reason_for_consult" >Reason for Consult</option>
+            <option value="status">Consult Status </option>
+            <option value="is_active" >Active</option>
+
+                <script type="dojo/on" data-dojo-event="change" data-dojo-args="evt" >
+
+                    require(['dojo/on',
+                            'dojo/dom',
+                            'dojo/dom-class',
+                            'dojo/dom-attr',
+                            'dojo/dom-construct',
+                            'dojo/dom-style',
+                            'dijit/registry',
+                            'dijit/form/FilteringSelect',
+                            'dijit/form/Button',
+                            'dijit/Dialog',
+                            'dojo/store/Memory',
+                            'dojo/query',
+                            'dojo/NodeList-traverse',
+                            'dojo/NodeList-data'
+                            ],
+
+                    function (on,
+                            dom,
+                            domClass,
+                            domAttr, 
+                            domConstruct, 
+                            domStyle,
+                            registry, 
+                            FilteringSelect, 
+                            Button, 
+                            Dialog,
+                            Memory,
+                            query ) {
+
+                        var consultNatureStore = new Memory({
+                                                                data: [
+                                                                    {name: 'Initial', id: 'initial'},
+                                                                    {name: 'Follow Up', id: 'follow_up'},
+                                                                    {name: 'Emergency', id: 'emer'}
+                                                                ]
+                                                                });
+
+                        var statusStore = new Memory({
+                                                data: [
+                                                    {name: 'Waiting', id: 'waiting'},
+                                                    {name: 'Examining', id: 'examining'},
+                                                    {name: 'Review Awaited', id: 'review_awaited'},
+                                                    {name: 'Admission', id: 'admission'},
+                                                    {name: 'Discharge', id: 'discharge'},
+                                                    {name: 'No Show', id: 'no_show'}
+                                                ]
+                                                });
+
+                        var bookingCategoryStore = new Memory({
+                                                        data: [
+                                                            {name: 'Appointment', id: 'appointment'},
+                                                            {name: 'Telephonic', id: 'telephonic'},
+                                                            {name: 'Walkin/Emergency', id: 'na'},
+                                                            {name: 'Referral', id: 'referral'},
+                                                            {name: 'Starred', id: 'starred'}
+                                                        ]
+                                                        });
+
+                        var reasonForConsultStore = new Memory({
+                                                        data: [
+                                                            {name: 'OPD Consult', id: 'opd_consult'},
+                                                            {name: 'Investigations Review', id: 'inv_review'},
+                                                            {name: 'Emergency', id: 'emergency'},
+                                                            {name: 'Pre-op Counselling', id: 'pre_op'},
+                                                            {name: 'Post-op Counselling', id: 'post_op'},
+                                                            {name: 'Dressing', id: 'dressing'},
+                                                            {name: 'Minor OPD Procedures', id: 'minor_opd_procedures'},
+                                                            {name: 'Prescription Top Up', id: 'prescription_top_up'},
+                                                            {name: 'Admission', id: 'admission'},
+                                                            {name: 'Others', id: 'others'}
+                                                        ]
+                                                        });
+                        var isActiveStore = new Memory({
+                                                        data: [
+                                                            {name: 'Closed', id: 'false'},
+                                                            {name: 'Active', id: 'true'},
+                                                        ]
+                                                        });
+
+                        var choice_store_map = { 'nature_of_consult': consultNatureStore,
+                                                'booking_category' : bookingCategoryStore,
+                                                'status': statusStore,
+                                                'reason_for_consult': reasonForConsultStore,
+                                                'is_active': isActiveStore
+                                            }
+
+                        function runFilters() {
+
+                            if ( registry.byId("opd_visit_filtering_choices") ) {
+                                registry.byId("opd_visit_filtering_choices").destroyRecursive();
+                            }
+
+                            if ( ! dom.byId('opd_visit_filtering_choices') ) {
+
+                                    domConstruct.create('select', 
+                                                        {id: 'opd_visit_filtering_choices'}, 
+                                                        'opd_visit_filtering_choices_menu_bar',
+                                                        'last');
+                            }
+
+                            var opdVisitFilteringChoicesSelect = new FilteringSelect({id: 'opd_visit_filtering_choices',
+                                                                                    store: choice_store_map[evt],
+                                                                                    searchAttr: 'name',
+                                                                                    name: 'opd_visit_filtering_choices',
+                                                                                    value: '',
+                                                                                    hasDownArrow: true,
+                                                                                    onChange: function(e) {
+
+                                                                                          query('.opd_visit_summary_block').
+                                                                                          forEach(
+                                                                                              function (node) {
+
+                                                                                                if ( domClass.contains(node, e) ) {
+                                                                                                    domStyle.set(node, 
+                                                                                                                 {'display': 'block' }
+                                                                                                                 );
+                                                                                                } 
+
+                                                                                                else {
+                                                                                                    domStyle.set(node, 
+                                                                                                                 {'display': 'none' }
+                                                                                                                 );
+                                                                                                }
+                                                                                          });
+                                                                                        }
+
+                                                                                    },
+                                                                                    'opd_visit_filtering_choices'
+                                                                                    );
+                        }
+
+                        if (evt == 'nature_of_consult' || 
+                            evt == 'booking_category' || 
+                            evt == 'reason_for_consult' ||
+                            evt == 'status' ||
+                            evt == 'is_active' ) 
+                        {
+                            runFilters();
+                        }
+
+                        else {
+                            alert("Please choose a Valid Value");
+                            return false;
+                        }
+
+                    });
+
+                </script>
+            </select>
+
+       </span>
+
+
+
+    {% for obj in visit_obj_list %}
+      <div class="opd_visit_summary_block {{ obj.visit.is_active }} {{ obj.visit.status }} {{ obj.visit.consult_reason }} {{ obj.visit.consult_nature }} {{ obj.visit.booking_category }}" 
+           id="opd_visit_summary_{{obj.visit.id}}_div"
+           >
+        <fieldset style="border-radius: 5px; 
+                         margin-bottom: 5px; 
+                         border: solid 1px #ddd; 
+                         padding: 10px;
+                         ">
+
+            <legend> 
+                <h4>  {{obj.visit.visit_date.date}}  - &nbsp; &nbsp; {{obj.visit.op_surgeon}} </h4>
+            </legend>
+
+            <div style="display: inline; 
+                         float: right; 
+                         position: relative; 
+                         top: -28px;
+                         height: 20px; 
+                         background: whitesmoke;
+                         border: solid 1px #aaa; 
+                         border-radius: 3px;
+                         box-shadow: -1px 1px 3px #ddd;
+                         padding: 2px;
+                         margin: 2px;
+                         vertical-align: middle;
+                         text-align: center;
+                        " 
+                  class="menu_bar"
+                  >
+
+                <div id="opd_visit_info_menu_{{obj.visit.id}}"
+                     style="background-image: url('{{STATIC_URL}}/images/generic/notifications/info_128.png');
+                            background-color: white;
+                            background-repeat: no-repeat;
+                            background-size: 16px 16px;
+                            width: 16px;
+                            height: 16px;
+                            "
+                >
+                
+                </div>
+
+                <div data-dojo-type="dijit/Tooltip"
+                    data-dojo-props="connectId: 'opd_visit_info_menu_{{obj.visit.id}}', position: ['below']"
+                >
+                    {% include 'visit_detail/snippets/visit_detail_info.html' %}
+                </div>
+
+
+            </div>
+
+            <div style="position: relative; 
+                       text-align: justify; 
+                       vertical-align: middle; 
+                       padding: 5px;
+                       margin: 2px; 
+                       ">
+                <div>
+                    <h5> Complaints: </h5>
+                    {% if obj.complaint %}
+                        <ul>
+                          {% for complaint in obj.complaint %}
+                            <li> complaint.complaint </li>
+                            <li> complaint.duration </li>
+                          {% endfor %}
+                        </ul>
+                    {% else %}
+                      <p class="suggestion_text"> No Complaints Recorded </p>
+                    {% endif %}
+                </div>
+
+                <div>
+                    <h5> History of Present Illness:  </h5>
+                    {% if obj.hpi %}
+                        <p> {{obj.hpi.0}} </p>
+                    {% else %}
+                      <p class="suggestion_text"> No History Recorded </p>
+                    {% endif %}
+                </div>
+
+                <div>
+                    <h5> Review of Systems  </h5>
+                    {% if obj.ros %}
+                        <p> {{obj.ros.0}} </p>
+                    {% else %}
+                      <p class="suggestion_text"> No ROS Recorded </p>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </fieldset>
+
+       </div>
+
     {% endfor %}
-  </ul>
+
+  </div>
+
 {% else %}
   <p class="suggestion_text" > 
     No Visits Recorded 

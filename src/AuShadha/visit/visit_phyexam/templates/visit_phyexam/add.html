@@ -1,0 +1,34 @@
+{% if exam_name != 'vasc' %}
+    <div data-dojo-type = "dijit/form/Form" 
+        id              = "newVisitPhyExamAddForm_{{exam_name}}_{{visit_detail_obj.id}}"
+        data-dojo-id    = "newVisitPhyExamAddForm_{{exam_name}}_{{visit_detail_obj.id}}"
+        encType         = "multipart/form-data" 
+        action          = "" 
+        method          = ""
+        style           = "height: 50em; min-width: 40em; overflow:auto;"
+    >
+
+        {% include 'visit_phyexam/snippets/js/visit_phyexam_add_form_validate.html' %}
+        {% include 'visit_phyexam/snippets/forms/visit_phyexam.html' %}
+        {% include 'visit_phyexam/snippets/button_row/visit_phyexam_add.html' %}
+
+    </div>
+{% endif %}
+
+{% if exam_name == 'vasc' %}
+
+    <div data-dojo-type = "dijit/form/Form" 
+        id              = "newVisitPhyExamAddForm_{{exam_name}}_{{visit_detail_obj.id}}"
+        data-dojo-id    = "newVisitPhyExamAddForm_{{exam_name}}_{{visit_detail_obj.id}}"
+        encType         = "multipart/form-data" 
+        action          = "" 
+        method          = ""
+        style           = "height: auto; overflow:auto;"
+        >
+
+        {% include 'visit_phyexam/snippets/js/visit_phyexam_add_form_validate.html' %}
+        {% include 'visit_phyexam/snippets/forms/vasc_exam_form.html' %}
+
+    </div>
+
+{% endif %}

@@ -1,0 +1,16 @@
+<p><h5> Consult Nature: </h5> {{obj.visit.consult_nature.title }} </p>
+
+<p><h5> Booking Category: </h5> {{obj.visit.booking_category.title}} </p>
+
+<p><h5> Reason : </h5> {{obj.visit.consult_reason.title}}</p>
+
+<p> <h5> Status: </h5>{{obj.visit.status.title}}</p>
+
+
+<p> <h5> Active ?: </h5>
+    {% if obj.visit.is_active %}
+      Active 
+    {% else %}
+      Closed 
+    {% endif %}
+</p> 

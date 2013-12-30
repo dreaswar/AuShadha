@@ -3,10 +3,19 @@
   module: models
   class_name: PatientDetail
 
+################################################################################
+
 - role: Admission
   app: admission.admission
   module: models
   class_name: AdmissionDetail
+
+################################################################################
+
+- role: Demographics
+  app: demographics.demographics
+  module: models
+  class_name: Demographics
 
 - role: Contact
   app: demographics.contact
@@ -22,6 +31,8 @@
   app: demographics.guardian
   module: models
   class_name: Guardian
+
+################################################################################
 
 - role: MedicalHistory
   app: history.medical_history
@@ -43,10 +54,14 @@
   module: models
   class_name: SocialHistory
 
+################################################################################
+
 - role: Immunisation
   app: immunisation
   module: models
   class_name: Immunisation
+
+################################################################################
 
 - role: MedicationList
   app: medication_list
@@ -58,22 +73,65 @@
   module: models
   class_name: Allergy
 
+
+################################################################################
+
 - role: OPD_Visit
   app: visit.visit
   module: models
   class_name: VisitDetail
+
+################################################################################
 
 - role: OPD_VisitComplaints
   app: visit.visit_complaints
   module: models
   class_name: VisitComplaint
 
+################################################################################
+
 - role: OPD_VisitHPI
   app: visit.visit_hpi
   module: models
   class_name: VisitHPI
 
-#- role: PhysicalExamination
-#  app: phyexam
-#  module: models
-#  class_name: PhyExamBaseModel
+################################################################################
+
+- role: OPD_VisitROS
+  app: visit.visit_ros
+  module: models
+  class_name: VisitROS
+
+################################################################################
+
+- role: PhysicalExamination
+  app: visit.visit_phyexam
+  module: models
+  class_name: PhyExamBaseModel
+
+- role: OPD_VitalExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: VitalExam
+
+- role: OPD_GenExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: GenExam
+
+- role: OPD_SysExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: SysExam
+
+- role: OPD_NeuroExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: NeuroExam
+
+- role: OPD_VascExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: VascExam
+
+################################################################################

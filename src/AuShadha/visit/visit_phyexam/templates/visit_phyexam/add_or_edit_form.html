@@ -1,0 +1,113 @@
+<div data-dojo-type ="dijit/layout/BorderContainer"
+     data-dojo-props="design:'headline'"
+     >
+{% if user.is_authenticated %}
+
+    <div data-dojo-type="dojox/layout/ContentPane"
+        data-dojo-props="region: 'center', splitter: true"
+        id = "visit_phyexam_center_pane_{{exam_name}}_{{visit_detail_obj.id}}"
+        >
+
+        {% if exam_name == 'vasc' %}
+
+            <div id="visit_phyexam_grid_{{exam_name}}_{{visit_detail_obj.id}}" 
+                style="height: 20em; overflow: auto; "
+                > 
+
+                <script type="text/javascript">
+
+                        require(
+                            ["dojo/dom",
+                            "dojo/request/xhr",
+                            "dijit/registry"  ,
+                            "dojo/json"       ,
+                            "dojo/dom-form"   ,
+                            "dijit/Dialog"    ,
+                            'dojo/ready',
+                            'aushadha/grid/generic_grid_setup',
+                            'aushadha/grid/grid_structures'
+                            ],
+
+                        function(dom, 
+                                xhr, 
+                                registry, 
+                                JSON, 
+                                domForm, 
+                                Dialog,
+                                ready,
+                                genericGridSetup,
+                                GRID_STRUCTURES ){
+
+                                    var gridDom = 'visit_phyexam_grid_{{exam_name}}_{{visit_detail_obj.id}}';
+                                    var gridUrl = "{%url 'visit_phyexam_json' 'vasc' visit_detail_obj.id %}";
+                                    var gridStr = GRID_STRUCTURES.OPD_VISIT_PHYEXAM_VASC;
+                                    var activateRowClick = false;
+                                    var gridName = "Vascular Exam";
+                                    var storeToUse = "OPD_VISIT_PHYEXAM_VASC_GRID_STORE_{{visit_detail_obj.id}}";
+
+                                    console.log(genericGridSetup);
+
+                                    genericGridSetup.setupGrid(gridUrl, 
+                                                                gridDom, 
+                                                                gridStr, 
+                                                                activateRowClick, 
+                                                                gridName, 
+                                                                storeToUse
+                                                            );
+                        });
+                </script>
+
+            </div>
+
+        {% endif %}
+
+        {% if visit_phyexam_action == 'add' %}
+            {% include 'visit_phyexam/add.html' %}
+        {% endif %}
+
+        {% if visit_phyexam_action == 'edit' and exam_name != 'vasc' %}
+                {% include 'visit_phyexam/edit.html' %}
+        {% endif %}
+
+    </div>
+
+ {% if perms.visit_phyexam %}
+ 
+    <div data-dojo-type="dojox/layout/ContentPane"
+         data-dojo-props="region: 'trailing', splitter: true"
+         style= "width:15em; 
+                 background: whitesmoke; 
+                 border-radius: 5px; 
+                 border: solid #aaa 1px;
+                "
+         id = "visit_phyexam_trailing_pane_{{exam_name}}_{{visit_detail_obj.id}}"
+        >
+
+        <span>
+            {% include 'visit_phyexam/snippets/button_row/visit_phyexam_templates.html' %}
+            {% include 'visit_phyexam/snippets/button_row/visit_phyexam_old.html' %}
+        </span>
+
+        <div style="display:none;" 
+             data-dojo-type="dijit/Dialog"
+             data-dojo-props="title: 'Old Examinations' "
+             data-dojo-id="visit_phyexam_old_dialog_{{exam_name}}_{{visit_detail_obj.id}}"
+             id="visit_phyexam_old_dialog_{{exam_name}}_{{visit_detail_obj.id}}"
+             style="min-width: 40em; 
+                    max-width: 40em;
+                   "
+             > 
+        </div>
+
+    </div>
+
+  {% endif %}
+
+{% else %}
+
+  <p class="suggestion_text"> 
+    Insufficient Priviliges 
+  </p>
+
+{% endif %}
+</div>

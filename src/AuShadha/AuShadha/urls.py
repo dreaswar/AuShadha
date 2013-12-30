@@ -17,13 +17,14 @@ urlpatterns = patterns('',
                        # Specific URLS..
                        #(r'^AuShadha/clinic/',include('AuShadha.apps.clinic.urls')),
 
-                      url(r'^AuShadha/search/', include('AuShadha.apps.search.urls') ),                      
+                      url(r'^AuShadha/search/', include('AuShadha.apps.search.urls') ),
 
                       url(r'^AuShadha/ui/', include('AuShadha.apps.ui.urls') ),
 
                       url(r'^AuShadha/pat/', include('patient.urls') ),
                       url(r'^AuShadha/patient/', include('patient.urls') ),
                       url(r'^AuShadha/patient/', include('patient.urls') ),
+
                       url(r'^AuShadha/admission/', include('admission.admission.urls') ),
 
                       url(r'^AuShadha/demographics/', include('demographics.demographics.urls') ),
@@ -45,10 +46,12 @@ urlpatterns = patterns('',
                       url(r'^AuShadha/immunisation/', include('immunisation.urls') ),
 
 
-                      url(r'^AuShadha/visit/', include('visit.visit.urls')),
-                      url(r'^AuShadha/visit_complaint/'  , include('visit.visit_complaints.urls') ),
+                      url(r'^AuShadha/visit/'             , include('visit.visit.urls')),
+                      url(r'^AuShadha/visit_complaint/'   , include('visit.visit_complaints.urls') ),
                       url(r'^AuShadha/visit_complaints/'  , include('visit.visit_complaints.urls') ),
-                      url(r'^AuShadha/visit_hpi/'  , include('visit.visit_hpi.urls') ),
+                      url(r'^AuShadha/visit_hpi/'         , include('visit.visit_hpi.urls') ),
+                      url(r'^AuShadha/visit_ros/'         , include('visit.visit_ros.urls') ),
+                      url(r'^AuShadha/visit_phyexam/'         , include('visit.visit_phyexam.urls') ),
 
 #                      url(r'^AuShadha/follow_up/', include('visit.urls')),
 #                      url(r'^AuShadha/phyexam/', include('phyexam.urls')),
@@ -59,9 +62,9 @@ urlpatterns = patterns('',
 
                        # Media URL
                       url( r'^AuShadha/media/(?P<path>.*)$', 
-                        'django.views.static.serve',
-                        {'document_root': settings.MEDIA_ROOT}, 
-                        'show_indexes:True'
+                            'django.views.static.serve',
+                            {'document_root': settings.MEDIA_ROOT}, 
+                            'show_indexes:True'
                        ),
 
                        # Home URL

@@ -86,12 +86,17 @@ class VisitDetail(AuShadhaBaseModel):
                                     'visit_follow_up',
                                     'visit_ros',
                                     'visit_hpi',
-                                    #'visit_soap',
                                     'visit_phyexam',
+                                    'vitals',
+                                    'gen',
+                                    'sys',
+                                    'neuro',
+                                    'vasc',
+                                    #'visit_soap',
                                     #'past_history',
-                                    'visit_inv',
-                                    'visit_imaging',
-                                    'visit_procedures',
+                                    #'visit_inv',
+                                    #'visit_imaging',
+                                    #'visit_procedures',
                                     #'discharge'
                                     ]
 
@@ -101,23 +106,43 @@ class VisitDetail(AuShadhaBaseModel):
     visit_date = models.DateTimeField(auto_now=False, default=datetime.now())
     op_surgeon = models.ForeignKey(Staff)
 
-    referring_doctor = models.CharField(max_length=30, default="Self")                          # Should be an FK to referring doctors model / Contacts
+    referring_doctor = models.CharField(max_length=30, 
+                                        default="Self"
+                                        )                          # Should be an FK to referring doctors model / Contacts
 
-    consult_nature = models.CharField(max_length=30, choices=CONSULT_NATURE_CHOICES)             # Should be an FK to appointment model
-    booking_category = models.CharField(max_length=30, choices=CONSULT_BOOKING_CATEGORY_CHOICES) # Should ideally be an FK to appointment model
-    consult_reason = models.CharField(max_length=30, choices=CONSULT_REASON_CHOICES)             # Should be an FK to appointment model
-    status = models.CharField(max_length=30, choices=CONSULT_STATUS_CHOICES)                     # Should update via FK the appointment model
+    consult_nature = models.CharField(max_length=30, 
+                                      choices=CONSULT_NATURE_CHOICES
+                                      )                            # Should be an FK to appointment model
+    
+    booking_category = models.CharField(max_length=30, 
+                                        choices=CONSULT_BOOKING_CATEGORY_CHOICES
+                                        )                          # Should ideally be an FK to appointment model
+    
+    consult_reason = models.CharField(max_length=30, 
+                                      choices=CONSULT_REASON_CHOICES
+                                      )                            # Should be an FK to appointment model
+    
+    status = models.CharField(max_length=30, 
+                              choices=CONSULT_STATUS_CHOICES
+                              )                                    # Should update via FK the appointment model
 
     is_active = models.BooleanField(default=True, editable=False)
 
-    remarks = models.TextField(max_length=200,default="NAD",help_text="limit to 200 words")
+    remarks = models.TextField(max_length=200,
+                               default="NAD",
+                               help_text="limit to 200 words"
+                               )
 
     class Meta:
         verbose_name = "Visit Details"
         verbose_name_plural = "Visit Details"
 
     def __unicode__(self):
-        return '%s(%s): %s: %s' % (self.patient_detail,self.id, self.visit_date, self.op_surgeon)
+        return '%s(%s): %s: %s' % (self.patient_detail,
+                                   self.id, 
+                                   self.visit_date, 
+                                   self.op_surgeon
+                                   )
 
     def get_absolute_url(self):
         return '/AuShadha/visit/detail/%d/' % (self.id)
@@ -130,6 +155,9 @@ class VisitDetail(AuShadhaBaseModel):
 
     def get_all_visit_hpi_url(self):
         return '/AuShadha/visit_hpi/hpi/get_all_visit_hpi/%s/' %(self.id)
+
+    def get_all_visit_ros_url(self):
+        return '/AuShadha/visit_ros/ros/get_all_visit_ros/%s/' %(self.id)
 
     def get_edit_pane_header_url(self):
         return '/AuShadha/visit/get/visit_detail/edit_pane_header/%s/' %(self.id)
@@ -146,6 +174,23 @@ class VisitDetail(AuShadhaBaseModel):
         # else:
             # return False
         return '/AuShadha/visit/follow_up/add/?visit_id=%s' % (self.id)
+
+    
+    def get_visit_phyexam_add_vitals_url(self):
+        return '/AuShadha/visit_phyexam/vitals/add/%s/' %(self.id)
+    
+    def get_visit_phyexam_add_gen_url(self):
+        return '/AuShadha/visit_phyexam/gen/add/%s/' %(self.id)
+    
+    def get_visit_phyexam_add_sys_url(self):
+        return '/AuShadha/visit_phyexam/sys/add/%s/' %(self.id)
+    
+    def get_visit_phyexam_add_neuro_url(self):
+        return '/AuShadha/visit_phyexam/neuro/add/%s/' %(self.id)
+    
+    def get_visit_phyexam_add_vasc_url(self):
+        return '/AuShadha/visit_phyexam/vasc/add/%s/' %(self.id)
+
 
     def has_fu_visits(self):
         id = self.id

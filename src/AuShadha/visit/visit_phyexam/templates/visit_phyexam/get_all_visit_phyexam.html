@@ -1,0 +1,100 @@
+{% if visit_phyexam_objs %}
+
+<div >
+
+ {% for phyexam in visit_phyexam_objs %}
+
+    <div style="background: white; 
+                border: solid #ddd 1px; 
+                border-radius: 5px; 
+               " >
+
+        <div syle="background: slate; text-align: center;">
+            <h4> {{phyexam.visit_detail.visit_date }} </h4>
+        </div>
+
+        <div>
+
+            <h4> Physical Examination: </h4>
+
+            <p style="text-align: justify;" 
+               id="visit_phyexam_paragraph_{{phyexam.id}}" 
+               class="visit_phyexam_paragraph"
+               > 
+                {{phyexam}} 
+            </p>
+
+            {% if perms.visit_phyexam.add_visitphyexam %}
+                <button type="button"
+                        id="visit_phyexam_import_button_{{phyexam.id}}"
+                        class="visit_phyexam_import_button"
+                        data-dojo-type="dijit/form/Button"
+                        data-dojo-props="label: 'Copy to current'"
+                    >
+
+                    Copy to current
+
+                    <script type="dojo/on" 
+                            data-dojo-event="click" 
+                            data-dojo-args="evt" 
+                            >
+
+                        require(['dojo/dom', 
+                                'dojo/dom-class', 
+                                'dojo/dom-attr', 
+                                'dojo/on', 
+                                'dijit/registry',
+                                'dojo/query',
+                                "dijit/focus",
+                                'dojo/NodeList-traverse',
+                                'dojo/NodeList-data',
+                                'dojo/domReady!'
+                                ],
+
+                        function ( dom, domClass, domAttr, on, registry, query, focusUtil ) {
+                            /*
+                                var html = query( "#visit_phyexam_paragraph_{{phyexam.id}}" )[0].innerHTML;
+                                var phyexamTextArea = query('#visit_phyexam_center_pane_{{visit_detail_obj.id}}').
+                                                query('form .visit_phyexam_textarea')[0];
+
+                                if ( phyexamTextArea.value != '' ) {
+                                    //{% if perms.visit_phyexam.change_visitphyexam %}
+                                        var _c = confirm("This will overwrite the existing history. Continue ?");
+                                        if (_c ) {
+                                            phyexamTextArea.value = html;
+                                            publishInfo( "Physical Examination Copied to current form" );
+                                        }
+                                    //{% else %}
+                                        return false;
+                                    //{% endif %}
+                                } 
+                                
+                                else {
+                                    phyexamTextArea.value = html;
+                                    publishInfo( "Physical Examination Copied to current form" );
+                                }
+                            */
+                        });
+
+                    </script>
+
+                </button>
+
+              {% endif %}
+
+        </div>
+
+    </div>
+
+ {% endfor %}
+
+</div>
+
+{% else %}
+
+ <p class="suggestion_text" > 
+    No Old Physical Examination Recorded  
+    (Excludes the present visit)
+ </p>
+
+{% endif %}

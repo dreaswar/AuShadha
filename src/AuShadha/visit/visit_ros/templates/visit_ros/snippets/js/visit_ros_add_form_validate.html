@@ -1,0 +1,94 @@
+    <script type="dojo/method" data-dojo-event="onReset">
+        return confirm("This will clear the Notes. \nClick OK to proceed");
+    </script>
+    
+    <script type="dojo/method" data-dojo-event="onSubmit">
+
+      if( this.validate() ){
+
+        require(["dojo/dom",
+                 "dojo/query",
+                 "dojo/request/xhr",
+                 "dijit/registry"  ,
+                 "dojo/json"       ,
+                 "dojo/dom-form"   ,
+                 'dojo/dom-attr'   ,
+                 "dijit/Dialog"    ,
+                 'aushadha/panes/dynamic_html_pane_creator',
+                 "dojo/NodeList-traverse",
+                 "dojo/NodeList-data"
+        ],
+
+        function(dom, 
+                 query,
+                 xhr, 
+                 registry, 
+                 JSON, 
+                 domForm, 
+                 domAttr,
+                 Dialog,
+                 createDynamicHTMLPane ){
+
+          xhr( "{{ visit_detail_obj.urls.add.visit_ros }}",
+              {handleAs: "text",
+               method  : "POST",
+               data    : domForm.toObject("newVisitROSAddForm_{{visit_detail_obj.id}}")
+              }
+          ).
+          then(
+
+            function(json){
+
+                var jsondata = JSON.parse(json);
+//                 var summaryTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP');
+//                 var visitTree = registry.byId('OPD_VISITS_LEADING_BC_TOP_CP_TREE');
+//                 var parentTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP').getParent();
+//                 var visitGridCP = registry.byId('OPD_VISITS_CENTER_CP_TC_GRID_CP');
+//                 var visitGrid = registry.byId('OPD_VISITS_GRID');
+//                 var parentTab = registry.byId('OPD_VISITS_CENTER_CP_TC_GRID_CP').getParent();
+//                 var newVisitTab = registry.byId('NEW_VISIT');
+//                 var visitAddFormTabContainer =  registry.byId('NEW_VISIT_ADD_FORM_TAB_CONTAINER');
+//                 var visitROSAddUrl = "{{visit_detail_obj.urls.add.visit_ros}}";
+
+                var editTab = query( "#newVisitROSAddForm_{{visit_detail_obj.id}}" ).parents( '.subTabContainer' )[0];
+
+                if ( jsondata.success == true ) {
+
+//                   summaryTab.set( 'href', "{{ patient_detail_obj.urls.summary.visit }}" );
+//                   visitTree.refresh();
+//                   visitGrid.render();
+
+                  publishInfo( jsondata.error_message );
+                  registry.byId( domAttr.get(editTab,'id') ).set( 'href', jsondata.redirectUrl );
+
+                }
+
+                else {
+
+                  publishError("ERROR ! :" + jsondata.error_message );
+                  console.log( jsondata.error_message );
+                }
+
+            },
+
+            function(err){
+//                   var jsondata = JSON.parse(json); 
+                  publishError("ERROR!: ROS could not be saved");
+                  console.log( err.response.text );
+            },
+
+            function(evt){
+
+              console.log("Adding Data Finished Successfully...");
+
+            }
+
+          );
+
+        });
+        return false;
+      }
+      else{
+        return false;
+      }
+    </script>

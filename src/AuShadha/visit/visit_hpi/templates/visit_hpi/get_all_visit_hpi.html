@@ -21,54 +21,62 @@
                 {{hpi}} 
             </p>
 
-            <button type="button"
-                    id="visit_hpi_import_button_{{hpi.id}}"
-                    class="visit_hpi_import_button"
-                    data-dojo-type="dijit/form/Button"
-                    data-dojo-props="label: 'Copy to current'"
-                 >
+            {% if perms.visit_hpi.add_visithpi %}
+                <button type="button"
+                        id="visit_hpi_import_button_{{hpi.id}}"
+                        class="visit_hpi_import_button"
+                        data-dojo-type="dijit/form/Button"
+                        data-dojo-props="label: 'Copy to current'"
+                    >
 
-                Copy to current
+                    Copy to current
 
-                <script type="dojo/on" 
-                        data-dojo-event="click" 
-                        data-dojo-args="evt" 
-                        >
+                    <script type="dojo/on" 
+                            data-dojo-event="click" 
+                            data-dojo-args="evt" 
+                            >
 
-                    require(['dojo/dom', 
-                            'dojo/dom-class', 
-                            'dojo/dom-attr', 
-                            'dojo/on', 
-                            'dijit/registry',
-                            'dojo/query',
-                            "dijit/focus",
-                            'dojo/NodeList-traverse',
-                            'dojo/NodeList-data',
-                            'dojo/domReady!'
-                            ],
+                        require(['dojo/dom', 
+                                'dojo/dom-class', 
+                                'dojo/dom-attr', 
+                                'dojo/on', 
+                                'dijit/registry',
+                                'dojo/query',
+                                "dijit/focus",
+                                'dojo/NodeList-traverse',
+                                'dojo/NodeList-data',
+                                'dojo/domReady!'
+                                ],
 
-                    function ( dom, domClass, domAttr, on, registry, query, focusUtil ) {
+                        function ( dom, domClass, domAttr, on, registry, query, focusUtil ) {
 
-                        var html = query( "#visit_hpi_paragraph_{{hpi.id}}" )[0].innerHTML;
-                        var hpiTextArea = query('#visit_hpi_center_pane_{{visit_detail_obj.id}}').
-                                          query('form .visit_hpi_textarea')[0];
+                            var html = query( "#visit_hpi_paragraph_{{hpi.id}}" )[0].innerHTML;
+                            var hpiTextArea = query('#visit_hpi_center_pane_{{visit_detail_obj.id}}').
+                                              query('form .visit_hpi_textarea')[0];
 
-                        if ( hpiTextArea.value != '' ) {
-                            var _c = confirm("This will overwrite the existing history. Continue ?");
-                            if (_c ) {
+                            if ( hpiTextArea.value != '' ) {
+                                //{% if perms.visit_hpi.change_visithpi %}
+                                    var _c = confirm("This will overwrite the existing history. Continue ?");
+                                    if (_c ) {
+                                        hpiTextArea.value = html;
+                                        publishInfo( "History Copied to current form" );
+                                    }
+                                //{% else %}
+                                    return false;
+                                //{% endif %}
+                            } 
+                            
+                            else {
                                 hpiTextArea.value = html;
                                 publishInfo( "History Copied to current form" );
                             }
-                        } else {
-                                hpiTextArea.value = html;
-                                publishInfo( "History Copied to current form" );
-                        }
 
-                    });
+                        });
 
-                </script>
+                    </script>
 
-            </button>
+                </button>
+              {% endif %}
 
         </div>
 

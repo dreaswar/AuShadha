@@ -1,0 +1,15 @@
+<div data-dojo-type = "dijit/form/Form" 
+    id              = "newVisitPhyExamEditForm_{{exam_name}}_{{exam_obj.id}}"
+    data-dojo-id    = "newVisitPhyExamEditForm_{{exam_name}}_{{exam_obj.id}}"
+    encType         = "multipart/form-data" 
+    action          = "" 
+    method          = ""
+    style           = "height: 60em; min-width: 50em; overflow:auto;"
+    >
+
+    {% include 'visit_phyexam/snippets/js/visit_phyexam_edit_form_validate.html' %}
+    {% include 'visit_phyexam/snippets/forms/visit_phyexam.html' %}
+    {% include 'visit_phyexam/snippets/button_row/visit_phyexam_edit.html' %}
+
+</div>
+

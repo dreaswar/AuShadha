@@ -1,0 +1,31 @@
+        <table class='content_pane_table'>
+
+            <thead>
+                <tr> 
+                    <th> Location </th> 
+                    <th> Side </th> 
+                    <th> Character </th>
+                    <th>  </th> 
+                </tr> 
+            </thead>
+
+            <tbody>
+                <tr> 
+                    <td> 
+                        <span style="display: none;"> 
+                        {{visit_phyexam_form.visit_detail}}  
+                        </span>
+                        {{visit_phyexam_form.location }}
+                    </td>
+                    <td> 
+                        {{visit_phyexam_form.side}}
+                    </td>
+                    <td> 
+                        {{visit_phyexam_form.character}}
+                    </td>
+                    <td>
+                        {% include 'visit_phyexam/snippets/button_row/visit_phyexam_add.html' %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>

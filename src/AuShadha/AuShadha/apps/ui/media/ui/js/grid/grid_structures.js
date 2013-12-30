@@ -1321,7 +1321,54 @@ define(function () {
                 }
           },
       ],
+    OPD_VISIT_PHYEXAM_VASC: [
 
+            {
+                name: "ID",
+                field: "id",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Edit",
+                field: "edit",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Del",
+                field: "del",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Location",
+                field: "location",
+                width: "200px",
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Side",
+                field: "side",
+                width: "100px",
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Character",
+                field: "character",
+                width: "100px",
+                cellStyles: "text-align:center;"
+            },
+
+      ],
     };
 
 });

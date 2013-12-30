@@ -1,0 +1,22 @@
+<span>
+{% if perms.visit_phyexam.change_visitphyexam %}
+  <button data-dojo-type = "dijit/form/Button" 
+          data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+          type           = "submit" 
+          name           = "editButton" 
+          value          = "Edit">
+    Edit
+  </button>
+{%endif%}
+
+{% if perms.visit_phyexam.delete_visitphyexam %}
+  <button data-dojo-type  = "dijit/form/Button" 
+          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
+          type            = "button"
+          name            = "delVisitPhyExam"
+          id              = "delVisitPhyExamBtn_{{exam_name}}_{{exam_obj.id}}">
+    Delete
+    {% include 'visit_phyexam/snippets/js/visit_phyexam_delete_validate.html' %}
+  </button>
+{% endif %}
+</span>

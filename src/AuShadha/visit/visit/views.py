@@ -49,6 +49,9 @@ AdmissionDetail = UI.get_module('Admission')
 from .models import VisitDetail, VisitDetailForm
 from dijit_widgets.tree import VisitTree
 
+VisitComplaint = UI.get_module("OPD_VisitComplaints")
+VisitHPI = UI.get_module("OPD_VisitHPI")
+VisitROS = UI.get_module("OPD_VisitROS")
 
 
 # views start here;;
@@ -168,25 +171,30 @@ def visit_summary(request, patient_id = None):
       visit_detail_objs = VisitDetail.objects.filter(patient_detail = patient_detail_obj)
       visit_obj_list = []
 
-      if not getattr(patient_detail_obj, 'urls', None):
-        patient_detail_obj.save()
-
-      for visit in visit_detail_objs:
-        if not getattr(visit, 'urls', None):
-          visit.save()
-        visit_obj_list.append(visit)
-
-      variable = RequestContext(request, {'user': user, 
-                                          'patient_detail_obj': patient_detail_obj,
-                                          'visit_obj_list': visit_obj_list
-                                          })
-      return render_to_response( 'visit_detail/summary_working.html', variable )
-
     except(ValueError, NameError, TypeError, AttributeError, KeyError):
       raise Http404("Bad Request Parameters")
 
     except (PatientDetail.DoesNotExist):
       raise Http404("Requested Patient Not Found !")
+
+    if not getattr(patient_detail_obj, 'urls', None):
+        patient_detail_obj.save()
+
+    for visit in visit_detail_objs:
+        if not getattr(visit, 'urls', None):
+            visit.save()
+        dict_to_append = {'visit': visit, 
+                            'complaint': VisitComplaint.objects.filter(visit_detail  = visit),
+                            'hpi': VisitHPI.objects.filter(visit_detail = visit),
+                            'ros': VisitROS.objects.filter(visit_detail = visit)
+                            }
+        visit_obj_list.append(dict_to_append)
+
+    variable = RequestContext(request, {'user': user, 
+                                        'patient_detail_obj': patient_detail_obj,
+                                        'visit_obj_list': visit_obj_list
+                                        })
+    return render_to_response( 'visit_detail/summary_working.html', variable )
 
   else:
     raise Http404("Invalid Request Method")
