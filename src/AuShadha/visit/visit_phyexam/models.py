@@ -39,10 +39,19 @@ VisitDetail = UI.get_module("OPD_Visit")
 
 # Imports the needed Constants
 from .phyexam_constants import *
+from .phy_exam_constants import PC
+from presentation_classes import vitalexamobjpresentationclass_factory,\
+                                 genexamobjpresentationclass_factory,\
+                                 sysexamobjpresentationclass_factory,\
+                                 musexamobjpresentationclass_factory,\
+                                 neuroexamobjpresentationclass_factory,\
+                                 vascexamobjpresentationclass_factory,\
+                                 vascexamobjpresentationclass_querysetfactory
 
 from dijit_fields_constants import VITAL_FORM_CONSTANTS, \
                                     GEN_EXAM_FORM_CONSTANTS, \
                                     SYS_EXAM_FORM_CONSTANTS, \
+                                    MUSCULOSKELETAL_EXAM_FORM_CONSTANTS,\
                                     NEURO_EXAM_FORM_CONSTANTS,\
                                     VASCULAR_EXAM_FORM_CONSTANTS,\
                                     PHY_EXAM_BASE_MODEL_FORM_CONSTANTS
@@ -130,6 +139,8 @@ class VitalExam(PhyExamBaseModel):
                     'gcs'
                   ]
 
+    def present(self):
+        return vitalexamobjpresentationclass_factory( VitalExam.objects.get(pk = self.id) )
 
 class GenExam(PhyExamBaseModel):
 
@@ -153,6 +164,8 @@ class GenExam(PhyExamBaseModel):
         ordering = ['pallor', 'icterus', 'cyanosis',
                     'clubbing', 'lymphadenopathy', 'edema']
 
+    def present(self):
+        return genexamobjpresentationclass_factory( GenExam.objects.get(pk = self.id) )
 
 class SysExam(PhyExamBaseModel):
 
@@ -174,6 +187,8 @@ class SysExam(PhyExamBaseModel):
         verbose_name = "System Examination"
         ordering = ['heent', 'cns', 'cvs', 'respiratory_system', 'git_and_gut']
 
+    def present(self):
+        return sysexamobjpresentationclass_factory( SysExam.objects.get(pk = self.id) )
 
 class NeuroExam(PhyExamBaseModel):
 
@@ -225,6 +240,32 @@ class NeuroExam(PhyExamBaseModel):
         verbose_name_plural = "Neuro Examination"
         verbose_name = "Neuro Examination"
 
+    def present(self):
+        return neuroexamobjpresentationclass_factory( NeuroExam.objects.get(pk = self.id) )
+
+
+class MusculoSkeletalExam(PhyExamBaseModel):
+
+    def __init__(self, *args, **kwargs):
+        super(MusculoSkeletalExam, self).__init__(*args, **kwargs)
+        self.__model_label__ = 'musculoskeletal'
+        self._parent_model = ['visit_detail',]
+
+    ms_exam = models.TextField('Findings',
+                               max_length=1000,
+                               default = "NAD")
+
+    phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)
+
+
+    class Meta:
+        verbose_name_plural = "Musculo Skeletal Examination"
+        verbose_name = "Musculo Skeletal Examination"
+
+    def present(self):
+        return musexamobjpresentationclass_factory( MusculoSkeletalExam.objects.get(pk = self.id) )
+
+
 
 class VascExam(PhyExamBaseModel):
 
@@ -265,7 +306,8 @@ class VascExam(PhyExamBaseModel):
         verbose_name_plural = "Vascular Examination"
         verbose_name = "Vascular Examination"
 
-
+    def present(self):
+        return vascexamobjpresentationclass_factory( VascExam.objects.get(pk = self.id) )
 
 ##############################################################
 # MODEL FORMS
@@ -331,6 +373,19 @@ class SysExamForm(PhyExamBaseModelForm):
     class Meta:
         model = SysExam
         exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
+
+
+class MusculoSkeletalExamForm(PhyExamBaseModelForm):
+
+    """Describes the Musculoskeletal Exam Monitoring ModelForm."""
+    __form_name__ = "Musculoskeletal Examination Form"
+
+    dijit_fields = MUSCULOSKELETAL_EXAM_FORM_CONSTANTS
+
+    class Meta:
+        model = MusculoSkeletalExam
+        exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
+
 
 
 class NeuroExamForm(PhyExamBaseModelForm):

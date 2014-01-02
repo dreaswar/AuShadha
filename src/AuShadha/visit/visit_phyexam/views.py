@@ -30,6 +30,7 @@ from django.core.urlresolvers import reverse
 from django.utils import simplejson
 #from django.core.context_processors  import csrf
 #from django.views.decorators.csrf    import csrf_exempt
+from django.template import loader, Context
 
 # Application Specific Model Imports-----------------------
 
@@ -45,8 +46,8 @@ PatientDetail = UI.get_module("PatientRegistration")
 AdmissionDetail = UI.get_module("Admission")
 VisitDetail = UI.get_module("OPD_Visit")
 
-from .models import VitalExam, GenExam, SysExam, NeuroExam, VascExam
-from .models import VitalExamForm, GenExamForm, SysExamForm, NeuroExamForm, VascExamForm
+from .models import VitalExam, GenExam, SysExam, NeuroExam, VascExam, MusculoSkeletalExam
+from .models import VitalExamForm, GenExamForm, SysExamForm, NeuroExamForm, VascExamForm, MusculoSkeletalExamForm
 
 from .utilities import visit_detail_has_exam
 
@@ -55,7 +56,8 @@ EXAM_NAME_MODEL_MAP = {
                         'sys': SysExam,
                         'gen': GenExam,
                         'neuro': NeuroExam,
-                        'vasc': VascExam
+                        'vasc': VascExam,
+                        'musculoskeletal': MusculoSkeletalExam
                       }
 
 EXAM_NAME_MODEL_FORM_MAP = {
@@ -63,8 +65,51 @@ EXAM_NAME_MODEL_FORM_MAP = {
                         SysExam: SysExamForm,
                         GenExam: GenExamForm,
                         NeuroExam: NeuroExamForm,
-                        VascExam: VascExamForm
+                        VascExam: VascExamForm,
+                        MusculoSkeletalExam: MusculoSkeletalExamForm
                       }
+
+
+@login_required
+def visit_phyexam_template(request, exam_name, visit_id = None):
+
+    if request.method == "GET":
+        user = request.user
+
+        try:
+            if visit_id:
+                visit_id = int( visit_id )
+
+            else:
+                visit_id = int( request.GET.get('visit_id') )
+
+            visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
+            exam_class = EXAM_NAME_MODEL_MAP.get(exam_name,'')
+
+            if not exam_class:
+                raise Http404("Invalid Exam Requested")
+
+            try:
+                template_file = 'visit_phyexam/%s_exam/template.html' %(exam_name)
+                #template = loader.get_template(template_file)
+                variable = RequestContext(request, {'user': user,
+                                                    'exam_name': exam_name ,
+                                                    'visit_detail_obj': visit_detail_obj
+                                                    })
+                #rendered_html = template.render(variable)
+                return render_to_response(template_file, variable )
+
+            except Exception as ex:
+                raise Http404("ERROR! " , ex)
+
+
+        except (ValueError, KeyError, NameError, AttributeError):
+            raise Http404("Invalid Exam template. ")
+
+    else:
+        raise Http404("Bad Request Method")
+
+
 
 @login_required
 def visit_phyexam_json(request,exam_name, visit_id=None):

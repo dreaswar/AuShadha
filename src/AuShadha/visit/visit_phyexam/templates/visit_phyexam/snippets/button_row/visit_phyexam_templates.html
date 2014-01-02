@@ -28,6 +28,18 @@
 {% endif %}
 
 
+{% if exam_name == 'musculoskeletal' %}
+<button type="button"
+        data-dojo-type="dijit/form/Button"
+        data-dojo-props="label: 'Templates' , disabled: false"
+        title="Use Musculoskeletal Examination Templates to populate"
+        >
+        Templates
+        {% include 'visit_phyexam/snippets/js/musculoskeletal/template.html' %}
+</button>
+{% endif %}
+
+
 
 {% comment %}
 <button type="button"

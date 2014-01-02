@@ -53,6 +53,13 @@ VisitComplaint = UI.get_module("OPD_VisitComplaints")
 VisitHPI = UI.get_module("OPD_VisitHPI")
 VisitROS = UI.get_module("OPD_VisitROS")
 
+VitalExam = UI.get_module("OPD_Visit_VitalExam")
+GenExam = UI.get_module("OPD_Visit_GenExam")
+SysExam = UI.get_module("OPD_Visit_SysExam")
+MusculoSkeletalExam = UI.get_module("OPD_Visit_MusculoSkeletalExam")
+NeuroExam = UI.get_module("OPD_Visit_NeuroExam")
+VascExam = UI.get_module("OPD_Visit_VascExam")
+
 
 # views start here;;
 @login_required
@@ -168,7 +175,7 @@ def visit_summary(request, patient_id = None):
         patient_id = int( request.GET.get('patient_id') )
 
       patient_detail_obj = PatientDetail.objects.get(pk = patient_id )
-      visit_detail_objs = VisitDetail.objects.filter(patient_detail = patient_detail_obj)
+      visit_detail_objs = VisitDetail.objects.filter(patient_detail = patient_detail_obj).order_by('-visit_date')
       visit_obj_list = []
 
     except(ValueError, NameError, TypeError, AttributeError, KeyError):
@@ -184,16 +191,23 @@ def visit_summary(request, patient_id = None):
         if not getattr(visit, 'urls', None):
             visit.save()
         dict_to_append = {'visit': visit, 
-                            'complaint': VisitComplaint.objects.filter(visit_detail  = visit),
-                            'hpi': VisitHPI.objects.filter(visit_detail = visit),
-                            'ros': VisitROS.objects.filter(visit_detail = visit)
-                            }
-        visit_obj_list.append(dict_to_append)
+                          'complaint': VisitComplaint.objects.filter(visit_detail  = visit),
+                          'hpi': VisitHPI.objects.filter(visit_detail = visit),
+                          'ros': VisitROS.objects.filter(visit_detail = visit),
+                          'vitals': VitalExam.objects.filter(visit_detail = visit),
+                          'gen': GenExam.objects.filter(visit_detail = visit),
+                          'sys': SysExam.objects.filter(visit_detail = visit),
+                          'neuro': NeuroExam.objects.filter(visit_detail = visit),
+                          'vasc': VascExam.objects.filter(visit_detail = visit),
+                          'musculoskeletal': MusculoSkeletalExam.objects.filter(visit_detail = visit)
+                         }
+        visit_obj_list.append( dict_to_append )
 
-    variable = RequestContext(request, {'user': user, 
-                                        'patient_detail_obj': patient_detail_obj,
-                                        'visit_obj_list': visit_obj_list
-                                        })
+    variable = RequestContext(request, 
+                              {'user': user, 
+                               'patient_detail_obj': patient_detail_obj,
+                               'visit_obj_list': visit_obj_list
+                              })
     return render_to_response( 'visit_detail/summary_working.html', variable )
 
   else:

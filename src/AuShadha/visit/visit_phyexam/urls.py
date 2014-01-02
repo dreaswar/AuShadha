@@ -7,6 +7,11 @@ from .views import *
 urlpatterns = patterns('',
 
 
+            url(r'get/template/(?P<exam_name>\w+)/(?P<visit_id>\d+)/$'  , 
+                visit_phyexam_template , 
+                name="visit_phyexam_template"
+                ),
+
             url(r'json/(?P<exam_name>\w+)/(?P<visit_id>\d+)/$'  , 
                 visit_phyexam_json , 
                 name="visit_phyexam_json"

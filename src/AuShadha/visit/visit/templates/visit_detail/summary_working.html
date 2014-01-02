@@ -1,12 +1,104 @@
 {% if visit_obj_list %}
   <div>
+        <script type="text/javascript" >
+
+        require(['dojo/request',
+                 'dojo/json',
+                 'dijit/registry',
+                 'dojo/dom',
+                 'dojo/dom-attr',
+                 'dojo/dom-class',
+                 'dojo/dom-construct',
+                 'dojo/on',
+                 'dojo/query',
+                 'aushadha/panes/dynamic_html_pane_creator',
+                 'dojo/NodeList-traverse',
+                 'dojo/NodeList-data',
+                 'dojo/domReady!'
+                ],
+
+        function(request,
+                    JSON, 
+                    registry, 
+                    dom, 
+                    domAttr,
+                    domClass,
+                    domConstruct,
+                    on,
+                    query,
+                    createDynamicHTMLPane 
+                    ) {
+
+            query('.opd_visit_summary_reload_menu').
+            forEach(
+                function(node) {
+                    on(node, 
+                       'click', 
+                       function() {
+                           var href = domAttr.get(node, 'data-url');
+                           registry.byId("OPD_VISIT_SUMMARY").set('href', href);
+                       }
+                    )
+                });
+
+            query('.opd_visit_edit_menu').
+            forEach(
+                function ( node ) {
+                  var href = domAttr.get(node, 'data-url');
+                  on( node, 
+                      'click', 
+                      function ( ) { 
+                         request(href).
+                         then(
+                             function(json){
+                                var jsondata = JSON.parse(json);
+                                var args = { title     : jsondata.title, 
+                                            domId     : jsondata.id,
+                                            url       : jsondata.url,
+                                            parentTab : registry.byId( jsondata.parentTab )
+                                        };
+                                createDynamicHTMLPane( args );
+                             },
+
+                             function(err){
+                                publishError(err.response.text);
+                             }
+
+                         );
+                  });
+
+                });
+
+        });
+
+        </script>
+
 
      <span id="opd_visit_filtering_choices_menu_bar">
+
+            <span>
+                <img src="{{STATIC_URL}}/images/generic/search/filter_128.png" 
+                    alt="Search Notes"
+                    style="width: 64px; height: 64px; position: relative; "
+                    >
+                <span id="searchNotesUpdateSpan" 
+                      style="position: relative; 
+                             top: -32px; 
+                             left: 80px; 
+                             max-width: 200px; 
+                             font-weight: bold;
+                             font-size: 1.1em;
+                            "
+                           > 
+                </span>
+            </span>
+
             <select data-dojo-type="dijit/form/FilteringSelect"
                     id="opd_visit_summary_filtering_select"
                     name = "opd_visit_summary_filtering_select"
             >
 
+            <option value="" >---- Choose ---</option>
             <option value="nature_of_consult" >Nature of Consult</option>
             <option value="booking_category" >Booking Category</option>
             <option value="reason_for_consult" >Reason for Consult</option>
@@ -122,12 +214,13 @@
                                                                                     value: '',
                                                                                     hasDownArrow: true,
                                                                                     onChange: function(e) {
-
+                                                                                          var i = 0;
                                                                                           query('.opd_visit_summary_block').
                                                                                           forEach(
                                                                                               function (node) {
 
                                                                                                 if ( domClass.contains(node, e) ) {
+                                                                                                    i ++;
                                                                                                     domStyle.set(node, 
                                                                                                                  {'display': 'block' }
                                                                                                                  );
@@ -138,8 +231,12 @@
                                                                                                                  {'display': 'none' }
                                                                                                                  );
                                                                                                 }
+
                                                                                           });
-                                                                                        }
+                                                                                          dom.
+                                                                                            byId('searchNotesUpdateSpan').innerHTML = i + " Result(s)";
+
+                                                                                     }
 
                                                                                     },
                                                                                     'opd_visit_filtering_choices'
@@ -155,6 +252,10 @@
                             runFilters();
                         }
 
+                        else if (evt == '') {
+                            return false;
+                        }
+
                         else {
                             alert("Please choose a Valid Value");
                             return false;
@@ -167,7 +268,62 @@
 
        </span>
 
+        <div class="opd_visit_summary_reload_menu"
+            style="background-image: url('{{STATIC_URL}}/images/generic/document/actions/reload.png');
+                    background-color: none;
+                    background-repeat: no-repeat;
+                    background-size: 16px 16px;
+                    width: 16px;
+                    height: 16px;
+                    float: right;
+                    position: relative;
+                    margin: 0px 2px 0px 2px;
+                    cursor: pointer;
+                    "
+            title = "Reload the Summary pane. Useful if the pane does not auto-update itself"
+            data-url= "{%url 'visit_summary' patient_detail_obj.id %}"
+            >
+            
 
+        </div>
+
+       <div class="opd_visit_print_menu"
+            style="background-image: url('{{STATIC_URL}}/images/generic/document/actions/print.png');
+                    background-color: none;
+                    background-repeat: no-repeat;
+                    background-size: 16px 16px;
+                    width: 16px;
+                    height: 16px;
+                    float: right;
+                    position: relative;
+                    margin: 0px 2px 0px 2px;
+                    cursor: pointer;
+                    "
+            title = "Print all the notes"
+            data-url= ""
+            onclick="alert('Will be implemented shortly');"
+            >
+
+        </div>
+
+        <div class="opd_visit_export_menu"
+            style="background-image: url('{{STATIC_URL}}/images/generic/document/actions/export.png');
+                    background-color: none;
+                    background-repeat: no-repeat;
+                    background-size: 16px 16px;
+                    width: 16px;
+                    height: 16px;
+                    float: right;
+                    position: relative;
+                    margin: 0px 2px 0px 2px;
+                    cursor: pointer;
+                    "
+            title = "Export all the notes"
+            data-url= ""
+            onclick="alert('Will be implemented shortly');"
+            >
+
+        </div>
 
     {% for obj in visit_obj_list %}
       <div class="opd_visit_summary_block {{ obj.visit.is_active }} {{ obj.visit.status }} {{ obj.visit.consult_reason }} {{ obj.visit.consult_nature }} {{ obj.visit.booking_category }}" 
@@ -200,20 +356,63 @@
                   class="menu_bar"
                   >
 
-                <div id="opd_visit_info_menu_{{obj.visit.id}}"
-                     style="background-image: url('{{STATIC_URL}}/images/generic/notifications/info_128.png');
-                            background-color: white;
+                <div id="opd_visit_print_menu_{{obj.visit.id}}"
+                   class="opd_visit_print_menu"
+                   style="background-image: url('{{STATIC_URL}}/images/generic/document/actions/print.png');
+                            background-color: none;
                             background-repeat: no-repeat;
                             background-size: 16px 16px;
                             width: 16px;
                             height: 16px;
-                            "
+                            float: left;
+                            position: relative;
+                            margin: 0px 2px 0px 2px;
+                            cursor: pointer;
+                           "
+                    title = "Print this visit note"
+                    data-url= "{{obj.visit.get_print_format_url}}"
+                    onclick="alert('Will be implemented shortly');"
+                  >
+
+                </div>
+
+                <div id="opd_visit_edit_menu_{{obj.visit.id}}"
+                   class="opd_visit_edit_menu"
+                   style="background-image: url('{{STATIC_URL}}/images/generic/crud/edit.png');
+                            background-color: none;
+                            background-repeat: no-repeat;
+                            background-size: 16px 16px;
+                            width: 16px;
+                            height: 16px;
+                            float: left;
+                            position: relative;
+                            margin: 0px 2px 0px 2px;
+                            cursor: pointer;
+                           "
+                    data-url= "{{obj.visit.get_edit_pane_header_url}}"
+                    title="Edit this Visit"
+                   >
+
+                </div>
+
+
+                <div id="opd_visit_info_menu_{{obj.visit.id}}"
+                     style="background-image: url('{{STATIC_URL}}/images/generic/notifications/info_128.png');
+                            background-color: none;
+                            background-repeat: no-repeat;
+                            background-size: 16px 16px;
+                            width: 16px;
+                            height: 16px;
+                            float: left;
+                            position: relative;     
+                            margin: 0px 2px 0px 2px;
+                           "
                 >
-                
+
                 </div>
 
                 <div data-dojo-type="dijit/Tooltip"
-                    data-dojo-props="connectId: 'opd_visit_info_menu_{{obj.visit.id}}', position: ['below']"
+                    data-dojo-props="connectId: 'opd_visit_info_menu_{{obj.visit.id}}', position: ['below','above']"
                 >
                     {% include 'visit_detail/snippets/visit_detail_info.html' %}
                 </div>
@@ -228,12 +427,11 @@
                        margin: 2px; 
                        ">
                 <div>
-                    <h5> Complaints: </h5>
+                    <span class="opdVisitNotesHeader"> Complaints: </span>
                     {% if obj.complaint %}
                         <ul>
                           {% for complaint in obj.complaint %}
-                            <li> complaint.complaint </li>
-                            <li> complaint.duration </li>
+                            <li> {{complaint.complaint.capitalize}} for past {{complaint.duration}} </li>
                           {% endfor %}
                         </ul>
                     {% else %}
@@ -242,21 +440,109 @@
                 </div>
 
                 <div>
-                    <h5> History of Present Illness:  </h5>
+                    <span class="opdVisitNotesHeader"> History of Present Illness:  </span>
                     {% if obj.hpi %}
-                        <p> {{obj.hpi.0}} </p>
+                        <p> {{obj.hpi.0|safe}} </p>
                     {% else %}
                       <p class="suggestion_text"> No History Recorded </p>
                     {% endif %}
                 </div>
 
                 <div>
-                    <h5> Review of Systems  </h5>
+                    <span class="opdVisitNotesHeader"> Review of Systems  </span>
                     {% if obj.ros %}
-                        <p> {{obj.ros.0}} </p>
+                        <p> {{obj.ros.0.present|safe}} </p>
                     {% else %}
-                      <p class="suggestion_text"> No ROS Recorded </p>
+                        <p class="suggestion_text"> No ROS Recorded </p>
                     {% endif %}
+                </div>
+
+                <div>
+
+                    <fieldset style="border-radius: 5px; 
+                                     margin-bottom: 5px; 
+                                     border: solid 1px #ddd; 
+                                     padding: 10px;
+                                    " >
+                        <legend> <span class="opdVisitNotesHeader"> Examinations </span> </legend>
+
+                        <div> 
+                            <span class="opdVisitNotesSubHeader"> Vitals </span>
+                                {% if obj.vitals %}
+                                    <p> {{obj.vitals.0.present|safe}} </p>
+                                {% else %}
+                                    <p class="suggestion_text"> No Vitals Recorded </p>
+                                {% endif %}
+                        </div>
+
+                        <div> 
+                            <span class="opdVisitNotesSubHeader"> General Exam </span>
+                                {% if obj.gen %}
+                                    <p> {{obj.gen.0.present|safe}} </p>
+                                {% else %}
+                                    <p class="suggestion_text"> No General Exam Recorded </p>
+                                {% endif %}
+                        </div>
+
+                        <div> 
+                            <span class="opdVisitNotesSubHeader"> Systemic Exam </span>
+                                {% if obj.sys %}
+                                    <p> {{obj.sys.0.present|safe}} </p>
+                                {% else %}
+                                    <p class="suggestion_text"> No Systemic Exam Recorded </p>
+                                {% endif %}
+                        </div>
+
+                        <div> 
+                            <span class="opdVisitNotesSubHeader"> Musculoskeletal Exam </span>
+                                {% if obj.musculoskeletal %}
+                                    <p> {{obj.musculoskeletal.0.present|safe}} </p>
+                                {% else %}
+                                    <p class="suggestion_text"> No Musculoskeletal Exam Recorded </p>
+                                {% endif %}
+                        </div>
+
+                        <div> 
+                            <span class="opdVisitNotesSubHeader"> Neurological Exam </span>
+                                {% if obj.neuro %}
+                                    <p> {{obj.neuro.0.present|safe}} </p>
+                                {% else %}
+                                    <p class="suggestion_text"> 
+                                        No Neurological Exam Recorded 
+                                    </p>
+                                {% endif %}
+                        </div>
+
+                        <div> 
+                            <span class="opdVisitNotesSubHeader"> Vascular Exam </span>
+                                {% if obj.vasc %}
+                                    <table class="content_pane_table">
+                                    <thead>
+                                    <tr> 
+                                    <th> Location </th> 
+                                    <th> Side </th>  
+                                    <th> Character </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for v in obj.vasc %}
+                                    <tr> 
+                                        <td>{{v.location.capitalize}} </td> 
+                                        <td> {{v.side.capitalize}} </td> 
+                                        <td> {{v.character.capitalize}} </td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                    </table>
+                                {% else %}
+                                    <p class="suggestion_text"> 
+                                        No Vascular Exam Recorded 
+                                    </p>
+                                {% endif %}
+                        </div>
+
+                    </fieldset>
+
                 </div>
 
             </div>

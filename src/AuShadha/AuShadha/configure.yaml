@@ -129,6 +129,11 @@
   module: models
   class_name: NeuroExam
 
+- role: OPD_MusculoSkeletalExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: MusculoSkeletalExam
+
 - role: OPD_VascExam
   app: visit.visit_phyexam
   module: models

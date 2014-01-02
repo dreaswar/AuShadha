@@ -1,0 +1,149 @@
+<div id = "visit_phyexam_{{exam_name}}_template_paragraph_{{visit_detail_obj.id}}" > 
+
+    <style type='text/css' >
+
+        div.exam_section_header{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            max-width: 30em;
+        }
+
+        .exam_section_header > p{
+          height: 4em;
+          text-decoration: underline;
+          position: relative;
+          left: 20px;
+          top: 10px;
+          font-style: italic;
+        }
+
+        .exam_section_header > p+div{
+          height: 2em;
+          position: relative;
+          left: 20px;
+          text-align: justify;
+        }
+
+        .underline_heading {
+          text-decoration: underline;
+          font-weight: bold;
+        }
+
+    </style>
+
+    <div class='exam_section_header'>
+
+        <span class="underline_heading"> Upper Limb </span>
+
+        <p>    Chest  </p>
+            <div> NAD </div>
+
+        <p>    Shoulder &amp; Arm </p>
+            <div> NAD </div>
+
+        <p>    Elbow &amp; Forearm </p>
+            <div> NAD </div>
+
+        <p>    Wrist &amp; Hand  </p>
+            <div> NAD </div>
+
+    </div>
+
+
+    <div class='exam_section_header'>
+        <span class="underline_heading"> Lower Limb </span>
+
+        <p> Hips &amp; Thigh </p>
+            <div> NAD </div>
+
+        <p> Knee &amp; Leg </p>
+            <div> NAD </div>
+
+        <p> Ankle &amp; Foot </p>
+            <div> NAD </div>
+
+    </div>
+
+
+    <div class='exam_section_header'>
+
+        <span class="underline_heading"> Spine </span>
+
+        <p> Cervical Spine </p>
+            <div> NAD </div>
+
+        <p> Thoracic Spine </p>
+            <div> NAD </div>
+
+        <p> LumboSacral Spine </p>
+            <div> NAD </div>
+    </div>
+
+</div>
+
+<button type="button"
+        id="visit_phyexam_{{exam_name}}_template_import_button_{{visit_detail_obj.id}}"
+        class="visit_phyexam_template_import_button"
+        data-dojo-type="dijit/form/Button"
+        data-dojo-props="label: 'Copy to current'"
+    >
+
+    Copy to current
+
+    <script type="dojo/on" 
+            data-dojo-event="click" 
+            data-dojo-args="evt" 
+            >
+
+        require(['dojo/dom', 
+                 'dojo/dom-class', 
+                 'dojo/dom-attr', 
+                 'dojo/on', 
+                 'dijit/registry',
+                 'dojo/query',
+                 "dijit/focus",
+                 'dojo/NodeList-traverse',
+                 'dojo/NodeList-data',
+                 'dojo/domReady!'
+                ],
+
+        function ( dom, domClass, domAttr, on, registry, query, focusUtil ) {
+
+            var html = query( "#visit_phyexam_{{exam_name}}_template_paragraph_{{visit_detail_obj.id}}" )[0].innerHTML;
+
+            var dijitEditor = query('#visit_phyexam_center_pane_{{exam_name}}_{{visit_detail_obj.id}}').
+                                query('form textarea.ms_exam_textarea')[0];
+
+            console.log(dijitEditor);
+            var msTextAreaId = domAttr.get( dijitEditor,'id' );
+            console.log(msTextAreaId);
+            var msTextArea = registry.byId( msTextAreaId );
+            var msTextAreaValue = msTextArea.get('value');
+
+            if ( msTextAreaValue != '' ) {
+
+                    var _c = confirm("This will overwrite the existing Examination. Continue ?");
+                    if (_c ) {
+                        msTextArea.set('value',html);
+                        dijitEditor.value = html;
+                        publishInfo( "Examination Copied to current form" );
+                    }
+
+            } 
+
+            else {
+                msTextArea.set('value',html);
+                dijitEditor.value = html;                
+                publishInfo( "Examination Copied to current form" );
+            }
+
+            registry.byId('editPatientDialog').hide();
+
+        });
+
+    </script>
+
+</button>
+

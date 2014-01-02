@@ -323,6 +323,9 @@ class SysExamObjPresentationClass(PhyExamBasePresentationClass):
         # except('TemplateDoesNotExist'):
             # return None
 
+class MusExamObjPresentationClass(PhyExamBasePresentationClass):
+    pass
+
 class PeriNeuroExamObjPresentationClass(PhyExamBasePresentationClass):
 
     """
@@ -377,6 +380,9 @@ def genexamobjpresentationclass_factory(instance):
 
 def sysexamobjpresentationclass_factory(instance):
   return GenExamObjPresentationClass(instance)()
+
+def musexamobjpresentationclass_factory(instance):
+  return MusExamObjPresentationClass(instance)()
 
 def neuroexamobjpresentationclass_factory(instance):
   return PeriNeuroExamObjPresentationClass(instance)()

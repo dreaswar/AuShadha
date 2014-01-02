@@ -1,0 +1,36 @@
+<script type='dojo/on'
+        data-dojo-event="click" 
+        data-dojo-args="evt" 
+        >
+
+    require(['dojo/on', 
+             'dojo/dom', 
+             'dijit/registry', 
+             'dojo/request', 
+             'dojo/json', 
+             'dojo/query'
+             ],
+
+    function ( on, dom, registry, request, JSON, query ) {
+
+       request ( "{%url 'visit_phyexam_template' exam_name visit_detail_obj.id %}" ).
+       then (
+
+           function (html) {
+               var dialog = registry.byId( 'editPatientDialog' );
+               dialog.set( 'content', html );
+               dialog.set( 'title', '{{exam_name.title}} Template' );
+               dialog.set( 'style', {minWidth: '30em', minHeight: '20em'} );
+               dialog.show();
+           },
+
+           function(err) {
+
+             publishError(err.response.txt);
+
+           }
+       );
+
+    });
+
+</script>

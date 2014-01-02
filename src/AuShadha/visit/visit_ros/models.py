@@ -28,6 +28,9 @@ from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadha
 
 VisitDetail = UI.get_module("OPD_Visit")
 
+from visit.visit_phyexam.presentation_classes import visitrospresentationclass_factory
+from visit.visit_phyexam.phy_exam_constants import PC
+
 from dijit_fields_constants import VISIT_ROS_FORM_CONSTANTS
 
 DEFAULT_VISIT_ROS_FORM_EXCLUDES = ('patient_detail',)
@@ -74,12 +77,22 @@ class VisitROS(AuShadhaBaseModel):
     created_at = models.DateTimeField(auto_now_add=True, editable=True)
 
     def __unicode__(self):
-        return '''%s \n %s \n
-              %s \n %s \n %s \n 
-              %s \n %s \n %s \n 
-              %s \n %s \n %s \n
-              %s \n %s \n %s \n %s
-           ''' % (self.const_symp,
+        return """Constitutional: %s
+                  Eye: %s 
+                  ENT: %s 
+                  CVS: %s 
+                  Respiratory: %s
+                  GIT: %s 
+                  GUT: %s 
+                  Musculoskeletal: %s
+                  Integumentary: %s 
+                  Neurological: %s 
+                  Psychiatric: %s
+                  Endocrine: %s 
+                  Hematological: %s 
+                  Immunologic: %s 
+                  Created at : %s
+           """ % (self.const_symp,
                   self.eye_symp,
                   self.ent_symp,
                   self.cvs_symp,
@@ -94,6 +107,9 @@ class VisitROS(AuShadhaBaseModel):
                   self.hemat_symp,
                   self.immuno_symp,
                   self.created_at.date().isoformat())
+
+    def present(self):
+        return visitrospresentationclass_factory( VisitROS.objects.get(pk = self.id) )
 
     class Meta:
         verbose_name = "Visit Review of Systems"

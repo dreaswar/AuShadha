@@ -278,6 +278,50 @@ div.auGridContainer
 }
 
 
+span.opdVisitNotesHeader {
+    background: none repeat scroll 0 0 whitesmoke; 
+    box-shadow: 1px 2px 5px whitesmoke; 
+    border-radius: 5px;
+    border: solid 1px #aaa;
+/*     float: left;  */
+    font-size: 1.1em; 
+/*     font-weight: bold;  */
+/*     font-family: Ubuntu, Sans-Serif, Tahoma,Helvetica; */
+    position: relative; 
+    left: -15px; 
+    height: 3.3em;
+    width: auto;
+    line-height: 1.5em; 
+    margin: -1px 5px 11px -10px; 
+    padding: 3px; 
+    -moz-transform: rotate(-32deg);
+    -webkit-transform: rotate(-32deg); 
+}
+
+span.opdVisitNotesSubHeader {
+/*     background: none repeat scroll 0 0 whitesmoke;  */
+    box-shadow: 1px 2px 5px whitesmoke; 
+/*     border-radius: 2px; */
+/*     border: solid 1px #ddd; */
+/*     border-bottom: solid 1px lightblue; */
+    
+    background-color: #CFE5FA;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+    background-repeat: repeat-x;
+    border-color: #759DC0;
+    border-width: 1px 0;
+    color: #000000;
+
+    font-size: 1em; 
+    position: relative; 
+    left: -5px; 
+    height: 3.1em;
+    min-width: 200px;
+    line-height: 1.5em; 
+    margin: -1px 5px 11px -10px; 
+    padding: 3px; 
+}
+
 /* Sidebar Inner Div Styles */
 
 

@@ -120,6 +120,17 @@ SYS_EXAM_FORM_CONSTANTS = {
                     }
 }
 
+
+MUSCULOSKELETAL_EXAM_FORM_CONSTANTS = {
+    'ms_exam': {
+        'max_length': 1000,
+        "data-dojo-type": "dijit.Editor",
+        "data-dojo-props": r"'required' :true",
+        'class': r"ms_exam_textarea"
+    }
+}
+
+
 NEURO_EXAM_FORM_CONSTANTS = {
     'plantar': {
         'max_length': 30,

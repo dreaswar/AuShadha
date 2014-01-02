@@ -103,6 +103,9 @@ NEURO_EXAM={
     "cranial_nerve" :"All Cranial Nerves NAD"
     }
 
+MUSCULOSKELETAL_EXAM = {
+    "ms_exam": "NAD"
+}
 
 CONSULT_CHOICES = (
     ('initial', 'Initial'       ),
@@ -265,6 +268,13 @@ PC = {
                      'unit'     :' ',
                      'delimitter':''
                      },
+            'temp': {'default':98.40,
+                     'constraints':{'max':120.0,'min':90.00},
+                     'validator':'is_in_range',
+                      'label' :'Temparature',                     
+                     'unit'     :'Farenheit',
+                     'delimitter':' '
+                     },
             'remarks': {'default':"NAD",
                        'constraints':{},
                        'validator':'is_not_equal_to',
@@ -274,7 +284,7 @@ PC = {
                        }
             },
 
-   'gen_exam':{'pallor':{'default':False,
+   'gen':{'pallor':{'default':False,
                        'constraints':{},
                        'validator':'is_true_or_false',
                        'label' :'Pallor',                       
@@ -325,7 +335,7 @@ PC = {
                        }
               },
 
-  'sys_exam':{        
+  'sys':{        
               'heent': {'default':HEENT_EX,
                         'constraints':{},
                         'validator':'is_not_equal_to',
@@ -368,7 +378,7 @@ PC = {
 
                 },
 
-   'neuro_exam':{
+   'neuro':{
                     'plantar': {'default':NEURO_EXAM['plantar'],
                                 'constraints':{},
                                 'validator':'is_not_equal_to',
@@ -435,7 +445,19 @@ PC = {
 
      },
 
-   'vascular_exam':{
+   'musculoskeletal':{
+
+                'ms_exam': {'default':MUSCULOSKELETAL_EXAM['ms_exam'],
+                            'constraints':{},
+                            'validator':'is_not_equal_to',
+                            'label' :'Findings',
+                            'unit'     :' ',
+                            'delimitter':''
+                            }
+
+    },
+
+   'vasc':{
                     'location': {'default':['DP','PT','P','F','R','U','B','A','SC','C'],
                                 'constraints':{},
                                 'validator':'in_list',

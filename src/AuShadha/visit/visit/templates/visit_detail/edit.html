@@ -88,6 +88,13 @@
         </div>
 
         <div data-dojo-type="dojox/layout/ContentPane"
+            data-dojo-props="'title': 'Musculoskeletal Exam','href': '{% url 'visit_phyexam_add' 'musculoskeletal' visit_detail_obj.id %}', disabled: false"
+            class="subTabContainer"
+            >
+
+        </div>
+
+        <div data-dojo-type="dojox/layout/ContentPane"
             data-dojo-props="'title': 'Neurological Exam','href': '{% url 'visit_phyexam_add' 'neuro' visit_detail_obj.id %}', disabled: false"
             class="subTabContainer"
             >
