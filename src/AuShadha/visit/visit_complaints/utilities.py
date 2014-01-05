@@ -33,9 +33,27 @@ from registry.inv_and_imaging.models import LabInvestigationRegistry, ImagingInv
 
 PatientDetail = UI.get_module("PatientRegistration")
 VisitDetail  = UI.get_module("OPD_Visit")
-
+MedicalHistory = UI.get_module("MedicalHistory")
 
 from .models import VisitComplaint
+
+
+def check_duplicates(complaint_to_check, visit_obj):
+
+    for complaint in VisitComplaint.objects.filter(visit_detail = visit_obj):
+
+        if complaint.complaint != complaint_to_check.complaint:
+            continue
+
+        else:
+            if not getattr(complaint_to_check, 'id', None):
+                return False
+            else:
+                if complaint.id == complaint_to_check.id:
+                    continue
+                else:
+                    return False
+    return True
 
 
 @login_required
@@ -61,6 +79,8 @@ def get_all_patient_complaints(request, visit_id = None):
 
     visit_complaint_objs  = []
     all_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj)
+    all_med_history = MedicalHistory.objects.filter(patient_detail  = patient_detail_obj).filter(active = True)
+
     for visit in all_visits:
       if visit != visit_detail_obj:
         vc = VisitComplaint.objects.filter(visit_detail = visit)
@@ -82,6 +102,20 @@ def get_all_patient_complaints(request, visit_id = None):
             data_to_append['is_active'] = complaint.visit_detail.is_active
             data_to_append['edit'] = complaint.urls['edit']
             data_to_append['del'] = complaint.urls['del']
+            data.append(data_to_append)
+
+    if all_med_history:
+        for medhistory in all_med_history:
+            if not getattr(medhistory, 'urls', None):
+              medhistory.save()
+            data_to_append = {}
+            data_to_append['id'] = medhistory.id
+            data_to_append['complaint'] = medhistory.disease
+            data_to_append['duration'] = medhistory.date_of_diagnosis.isoformat()
+            data_to_append['recorded_on'] = medhistory.date_of_diagnosis.isoformat()
+            data_to_append['is_active'] = True
+            data_to_append['edit'] = medhistory.urls['edit']
+            data_to_append['del'] = medhistory.urls['del']
             data.append(data_to_append)
 
     json = simplejson.dumps(data)
@@ -112,32 +146,57 @@ def import_active_complaints(request, visit_id = None):
     visit_complaint_objs  = []
 
     all_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj).filter(is_active = True).order_by('visit_date')
+    all_med_history = MedicalHistory.objects.filter(patient_detail  = patient_detail_obj).filter(active = True)
     complaint_list = [] # prevents duplication of complaints while importing
 
     for visit in all_visits:
-      if visit != visit_detail_obj:
-        vc = VisitComplaint.objects.filter(visit_detail = visit)
-        for c in vc:
-          if c.complaint not in complaint_list:
-            print c.complaint + " Not in list.. adding the same"
-            complaint_list.append(c.complaint)
-            visit_complaint_objs.append(c)
+      vc = VisitComplaint.objects.filter(visit_detail = visit)
+      for c in vc:
+            if c.complaint not in complaint_list:
+                print c.complaint + " Not in list.. adding the same"
+                complaint_list.append(c.complaint)
+
+            if visit != visit_detail_obj:
+                    visit_complaint_objs.append(c)
 
     complaint_data = []
-    if visit_complaint_objs:
+
+    if visit_complaint_objs or all_med_history:
+
         for complaint in visit_complaint_objs:
-            data = {'complaint': complaint.complaint, 
-                    'duration': complaint.duration + " ( As recorded on: " + complaint.visit_detail.visit_date.date().isoformat() + " )"
-                    }
-            new_complaint = VisitComplaint(**data)
-            new_complaint.visit_detail = visit_detail_obj
-            new_complaint.save()
-            complaint_data.append({'complaint': new_complaint.complaint, 
-                                   'duration': new_complaint.duration,
-                                   'edit' : new_complaint.urls['edit'],
-                                   'del' : new_complaint.urls['del'],
-                                   'id': new_complaint.id
-                                   })
+            if complaint.complaint not in complaint_list:
+                data = {'complaint': complaint.complaint, 
+                        'duration': complaint.duration + " ( As recorded on: " + complaint.visit_detail.visit_date.date().isoformat() + " )"
+                        }
+                new_complaint = VisitComplaint(**data)
+                new_complaint.visit_detail = visit_detail_obj
+                new_complaint.save()
+                complaint_data.append({'complaint': new_complaint.complaint, 
+                                    'duration': new_complaint.duration,
+                                    'edit' : new_complaint.urls['edit'],
+                                    'del' : new_complaint.urls['del'],
+                                    'id': new_complaint.id
+                                    })
+            else:
+                continue
+
+        for medhistory in all_med_history:
+            if medhistory.disease not in complaint_list:
+                data = {'complaint': medhistory.disease, 
+                        'duration': "From " + medhistory.date_of_diagnosis.isoformat() 
+                        }
+                new_complaint = VisitComplaint(**data)
+                new_complaint.visit_detail = visit_detail_obj
+                new_complaint.save()            
+                complaint_data.append({'complaint': new_complaint.complaint, 
+                                    'duration': new_complaint.duration,
+                                    'edit' : new_complaint.urls['edit'],
+                                    'del' : new_complaint.urls['del'],
+                                    'id': new_complaint.id
+                                    })
+            else:
+                continue
+
         success = True
         error_message = "Successfully imported complaints"
 

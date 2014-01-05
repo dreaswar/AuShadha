@@ -1,0 +1,24 @@
+{% if perms.visit_soap.change_visitsoap %}
+
+  <div data-dojo-type = "dijit/form/Form" 
+      id              = "newVisitSOAPEditForm_{{visit_soap_obj.id}}"
+      data-dojo-id    = "newVisitSOAPEditForm_{{visit_soap_obj.id}}"
+      encType         = "multipart/form-data" 
+      action          = "" 
+      method          = ""
+      style           = "height: 60em; min-width: 50em; overflow:auto;"
+    >
+
+    {% include 'visit_soap/snippets/js/visit_soap_edit_form_validate.html' %}
+    {% include 'visit_soap/snippets/forms/soap.html' %}
+    {% include 'visit_soap/snippets/button_row/visit_soap_edit.html' %}
+
+  </div>
+
+{% else %}
+
+  <p class="suggestion_text" > 
+    Insufficient Permissions
+  </p>
+
+{% endif %}

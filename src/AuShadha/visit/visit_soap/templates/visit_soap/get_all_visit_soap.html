@@ -1,0 +1,126 @@
+{% if visit_soap_objs %}
+
+<div >
+
+ {% for soap in visit_soap_objs %}
+
+    <div style="background: white; border: solid #ddd 1px; border-radius: 5px; ">
+
+        <div syle="background: slate; text-align: center;">
+            <h4> {{soap.visit_detail.visit_date }} </h4>
+        </div>
+
+        <div>
+
+            <h4> Visit SOAP: </h4>
+
+            <p style="text-align: justify;" 
+               id="visit_soap_paragraph_{{soap.id}}" 
+               class="visit_soap_paragraph"
+               > 
+                <p id="subjective_{{soap.id}}"> {{soap.subjective}} </p>
+                <p id="objective_{{soap.id}}"> {{soap.objective}} </p>
+                <p id="assessment_{{soap.id}}"> {{soap.assessment}} </p>
+                <p id="plan_{{soap.id}}"> {{soap.plan}} </p>
+                <p style="float: right;"> {{soap.created_at}} </p>
+            </p>
+
+            {% if perms.visit_soap.add_visitsoap %}
+
+                <button type="button"
+                        id="visit_soap_import_button_{{soap.id}}"
+                        class="visit_soap_import_button"
+                        data-dojo-type="dijit/form/Button"
+                        data-dojo-props="label: 'Copy to current'"
+                    >
+
+                    Copy to current
+
+                    <script type="dojo/on" 
+                            data-dojo-event="click" 
+                            data-dojo-args="evt" 
+                            >
+
+                        require(['dojo/dom', 
+                                'dojo/dom-class', 
+                                'dojo/dom-attr', 
+                                'dojo/on', 
+                                'dijit/registry',
+                                'dojo/query',
+                                "dijit/focus",
+                                'dojo/NodeList-traverse',
+                                'dojo/NodeList-data',
+                                'dojo/domReady!'
+                                ],
+
+                        function ( dom, domClass, domAttr, on, registry, query, focusUtil ) {
+
+                            var subjectiveHTML = query( "#subjective_{{soap.id}}" )[0].innerHTML;
+                            var objectiveHTML = query( "#objective_{{soap.id}}" )[0].innerHTML;
+                            var assessmentHTML = query( "#assessment_{{soap.id}}" )[0].innerHTML;
+                            var planHTML = query( "#plan_{{soap.id}}" )[0].innerHTML;
+
+                            var form        = query('#visit_soap_center_pane_{{visit_detail_obj.id}} form')[0];
+                            var subjectiveTextArea        = query(form).query('.subjective_textarea')[0];
+                            var objectiveTextArea         = query(form).query('.objective_textarea')[0];
+                            var assessmentTextArea        = query(form).query('.assessment_textarea')[0];
+                            var planTextArea              = query(form).query('.plan_textarea')[0];
+
+
+                            if ( planTextArea.value != ''       || 
+                                 subjectiveTextArea.value != '' ||
+                                 objectiveTextArea.value != ''  ||
+                                 assessmentTextArea.value != '' ||
+                                ) {
+
+                                //{% if perms.visit_soap.change_visitsoap %}
+
+                                    var _c = confirm("This will overwrite the existing soap. Continue ?");
+
+                                    if (_c ) {
+
+                                        subjectiveTextArea.value = subjectiveHTML;
+                                        objectiveTextArea.value = objectiveHTML;
+                                        assessmentTextArea.value = assessmentHTML;
+                                        planTextArea.value = planHTML;
+
+                                        publishInfo( "Visit SOAP Copied to current form" );
+
+                                    }
+                                //{% else %}
+                                    return false;
+                                //{% endif %}
+                            } 
+                            
+                            else {
+                                subjectiveTextArea.value = subjectiveHTML;
+                                objectiveTextArea.value = objectiveHTML;
+                                assessmentTextArea.value = assessmentHTML;
+                                planTextArea.value = planHTML;
+
+                                publishInfo( "Visit SOAP Copied to current form" );
+                            }
+
+                        });
+
+                    </script>
+
+                </button>
+              {% endif %}
+
+        </div>
+
+    </div>
+
+ {% endfor %}
+
+</div>
+
+{% else %}
+
+ <p class="suggestion_text" > 
+    No Old Visit SOAP Recorded  
+    (Excludes the present visit)
+ </p>
+
+{% endif %}

@@ -47,7 +47,7 @@ AdmissionDetail = UI.get_module('Admission')
 VisitDetail = UI.get_module('OPD_Visit')
 
 from .models import VisitComplaint, VisitComplaintAddForm, VisitComplaintEditForm
-
+from .utilities import check_duplicates
 
 # views start here;;
 
@@ -154,9 +154,19 @@ def visit_complaint_add(request, visit_id = None):
             if visit_complaint_form.is_valid() :
                 saved_visit_complaint = visit_complaint_form.save(commit=False)
                 saved_visit_complaint.visit_detail = visit_detail_obj
-                saved_visit_complaint.save()
-                success = True
-                error_message = "Visit Added Successfully"
+
+                if check_duplicates(saved_visit_complaint, visit_detail_obj):
+                    saved_visit_complaint.save()
+                    success = True
+                    error_message = "Visit Added Successfully"
+
+                else:
+                    success = False
+                    error_message = ''' <h4>
+                                        Visit Could not be Saved as there are duplicate complaints.
+                                        Please check the forms for errors
+                                        </h4>
+                                    '''
 
             else:
                 error_message = ''' <h4>
@@ -177,8 +187,8 @@ def visit_complaint_add(request, visit_id = None):
             raise Http404(" Error ! Unsupported Request..")
 
 
-    #except (TypeError, NameError, ValueError, AttributeError, KeyError):
-        #raise Http404("Error ! Invalid Request Parameters. ")
+    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+        raise Http404("Error ! Invalid Request Parameters. ")
 
     except (VisitDetail.DoesNotExist):
         raise Http404("Requested Visit Does not exist.")
@@ -233,13 +243,23 @@ def visit_complaint_edit(request, visit_complaint_id = None):
 
             visit_complaint_form   = VisitComplaintEditForm(request.POST, instance = visit_complaint_obj )
 
-            if visit_complaint_form.is_valid()    :                
+            if visit_complaint_form.is_valid():
 
                 saved_visit_complaint = visit_complaint_form.save(commit=False)
                 saved_visit_complaint.visit_detail = visit_detail_obj
-                saved_visit_complaint.save()
-                success = True
-                error_message = "Visit Complaint Edited Successfully"
+
+                if check_duplicates(saved_visit_complaint, visit_detail_obj):
+                    saved_visit_complaint.save()
+                    success = True
+                    error_message = "Visit Edited Successfully"
+
+                else:
+                    success = False
+                    error_message = ''' <h4>
+                                        Visit Could not be Saved as there are duplicate complaints.
+                                        Please check the forms for errors
+                                        </h4>
+                                    '''
 
             else:
                 success = False
@@ -268,7 +288,7 @@ def visit_complaint_edit(request, visit_complaint_id = None):
 
 @login_required
 def visit_complaint_del(request, visit_complaint_id = None):
-    
+
     if request.method == "GET" and request.is_ajax():
 
         user = request.user

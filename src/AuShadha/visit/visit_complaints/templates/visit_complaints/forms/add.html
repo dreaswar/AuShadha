@@ -5,6 +5,7 @@
     <button type="button" 
             data-dojo-type="dijit/form/Button"
             data-dojo-props="'label': 'Check Old Complaints' "
+            title="Automatically lists Previous complaints and Active Medical history"
             >
 
       <script type="dojo/on" data-dojo-event="click">
@@ -153,6 +154,7 @@
         type="button"
         data-dojo-type="dijit/form/Button"
         data-dojo-props="'label': 'Import Active Complaints'"
+        title="Import all Active complaints from previous visits, including active Medical History"
   >
 
   <script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
@@ -182,10 +184,17 @@
           function(json) {
             var jsondata = JSON.parse(json);
             if ( jsondata.success == true ) {
-              importBtn.set('style' , {'display':'none'});
-              complaintStore.newItem(jsondata.return_data);
-              complaintGrid.render();
-              publishInfo( jsondata.error_message);
+
+              if (jsondata.return_data.length  ) {
+//                 importBtn.set('style' , {'display':'none'});
+                complaintStore.newItem(jsondata.return_data);
+                complaintGrid.render();
+                publishInfo( jsondata.error_message);
+              } 
+              else {
+                publishInfo("Complaints are duplicates. No complaints imported");
+              }
+              importBtn.set('disabled', false );
             }
             else {
               publishError("ERROR!" + jsondata.error_message);

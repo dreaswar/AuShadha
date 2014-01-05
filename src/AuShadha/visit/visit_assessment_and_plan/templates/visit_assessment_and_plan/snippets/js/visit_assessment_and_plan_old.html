@@ -1,0 +1,25 @@
+<script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+
+  require(
+          ["dojo/dom", 
+            "dojo/query",
+            "dojo/dom-attr",
+            "dojo/_base/xhr",
+            "dojo/json",
+            "dijit/registry",
+            "dijit/Dialog",
+            "dojo/NodeList-traverse",
+            "dojo/NodeList-data"
+          ],
+
+  function(dom, query, domAttr, xhr, JSON, registry, Dialog){
+
+      xhr.get({ url : "{%url 'get_visit_assessment_and_plan' visit_detail_obj.id %}",
+                load : function( html ){
+                            registry.byId("visit_assessment_and_plan_old_dialog_{{visit_detail_obj.id}}").set('content',html);
+                            registry.byId("visit_assessment_and_plan_old_dialog_{{visit_detail_obj.id}}").show();
+                      }
+      });
+  });
+
+</script>

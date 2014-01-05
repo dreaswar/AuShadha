@@ -168,6 +168,9 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'visit/visit_hpi/templates/'),
     os.path.join(ROOT_PATH, 'visit/visit_ros/templates/'),
     os.path.join(ROOT_PATH, 'visit/visit_phyexam/templates/'),
+    os.path.join(ROOT_PATH, 'visit/visit_assessment_and_plan/templates/'),
+    os.path.join(ROOT_PATH, 'visit/visit_soap/templates/'),
+
 #    os.path.join(ROOT_PATH, 'visit/visit_imaging/templates/'),
 #    os.path.join(ROOT_PATH, 'visit/visit_inv/templates/'),
 #    os.path.join(ROOT_PATH, 'visit/visit_procedures/templates/'),
@@ -253,6 +256,8 @@ INSTALLED_APPS = (
     'visit.visit_hpi',
     'visit.visit_ros',
     'visit.visit_phyexam',
+    'visit.visit_assessment_and_plan',
+    'visit.visit_soap',    
 
 #    'visit.visit_inv',
 #    'visit.visit_imaging',

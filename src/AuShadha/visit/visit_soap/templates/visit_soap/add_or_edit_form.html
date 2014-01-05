@@ -1,0 +1,59 @@
+<div data-dojo-type ="dijit/layout/BorderContainer"
+     data-dojo-props="design:'headline'"
+     >
+{% if user.is_authenticated %}
+
+    <div data-dojo-type="dojox/layout/ContentPane"
+        data-dojo-props="region: 'center', splitter: true"
+        id = "visit_soap_center_pane_{{visit_detail_obj.id}}"
+        >
+        {% if visit_soap_action == 'add' %}
+            {% include 'visit_soap/add.html' %}
+        {% endif %}
+
+        {% if visit_soap_action == 'edit' %}
+            {% include 'visit_soap/edit.html' %}
+        {% endif %}
+    </div>
+
+ {% if perms.visit_soap %}
+ 
+    <div data-dojo-type="dojox/layout/ContentPane"
+         data-dojo-props="region: 'trailing', splitter: true"
+         style= "width:20em; 
+                 background: whitesmoke; 
+                 border-radius: 5px; 
+                 border: solid #aaa 1px;
+                "
+         id = "visit_soap_trailing_pane_{{visit_detail_obj.id}}"
+        >
+
+        <span>
+            {% include 'visit_soap/snippets/button_row/visit_soap_templates.html' %}
+            {% include 'visit_soap/snippets/button_row/visit_soap_icd_10_lookup.html' %}
+            {% include 'visit_soap/snippets/button_row/visit_soap_old.html' %}
+        </span>
+
+        <div style="display:none;" 
+             data-dojo-type="dijit/Dialog"
+             data-dojo-props="title: 'Previous Visit SOAPs' "
+             data-dojo-id="visit_soap_old_dialog_{{visit_detail_obj.id}}"
+             id="visit_soap_old_dialog_{{visit_detail_obj.id}}"
+             style="min-width: 40em; 
+                    max-width: 40em;
+                   "
+             > 
+        </div>
+
+    </div>
+
+  {% endif %}
+
+{% else %}
+
+  <p class="suggestion_text"> 
+    Insufficient Priviliges 
+  </p>
+
+{% endif %}
+</div>

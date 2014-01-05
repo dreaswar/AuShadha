@@ -67,11 +67,13 @@ define(['dojo/dom',
         if ( !p ) {
 
           if ( !d ){
-            domConstruct.create('div',
-                                {id: domId},
-                                pane.parentTab.domNode,
-                                'last'
-                               );
+
+            var paneDom = domConstruct.create('div',
+                                                {id: domId},
+                                                pane.parentTab.domNode,
+                                                'last'
+                                            );
+
           }
 
           var cp = new ContentPane({title: title, 
@@ -86,6 +88,19 @@ define(['dojo/dom',
                                   );
           cp.startup();
           pane.parentTab.addChild( cp );
+
+//           var reloadPane  = domConstruct.create('div',
+//                                     {id : domId + "_reloadPaneIcon", 
+//                                      style : "float:right; ",
+//                                      innerHTML : window.ICONS.RELOAD_PANE
+//                                     },
+//                                     domId,
+//                                     0
+//                                 );
+// 
+//           console.log("Created RELOAD_IMG");
+//           console.log(reloadPane.innerHTML);
+
         }
 
         pane.panes.push(p);

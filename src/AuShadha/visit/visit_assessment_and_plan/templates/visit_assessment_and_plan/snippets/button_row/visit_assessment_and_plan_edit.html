@@ -1,0 +1,22 @@
+<span>
+{% if perms.visit_assessment_and_plan.change_visitassessmentandplan %}
+  <button data-dojo-type = "dijit/form/Button" 
+          data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+          type           = "submit" 
+          name           = "editButton" 
+          value          = "Edit">
+    Edit
+  </button>
+{%endif%}
+
+{% if perms.visit_assessment_and_plan.delete_visitassessmentandplan %}
+  <button data-dojo-type  = "dijit/form/Button" 
+          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
+          type            = "button"
+          name            = "delVisitAssessmentAndPlan"
+          id              = "delVisitAssessmentAndPlanBtn_{{visit_assessment_and_plan_obj.id}}">
+    Delete
+    {% include 'visit_assessment_and_plan/snippets/js/visit_assessment_and_plan_delete_validate.html' %}
+  </button>
+{% endif %}
+</span>

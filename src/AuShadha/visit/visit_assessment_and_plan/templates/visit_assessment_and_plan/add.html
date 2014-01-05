@@ -1,0 +1,25 @@
+
+{% if perms.visit_assessment_and_plan.add_visitassessmentandplan %}
+    
+  <div data-dojo-type = "dijit/form/Form" 
+      id              = "newVisitAssessmentAndPlanAddForm_{{visit_detail_obj.id}}"
+      data-dojo-id    = "newVisitAssessmentAndPlanAddForm_{{visit_detail_obj.id}}"
+      encType         = "multipart/form-data" 
+      action          = "" 
+      method          = ""
+      style           = "height: 60em; min-width: 50em; overflow:auto;"
+    >
+
+    {% include 'visit_assessment_and_plan/snippets/js/visit_assessment_and_plan_add_form_validate.html' %}
+    {% include 'visit_assessment_and_plan/snippets/forms/assessment_and_plan.html' %}
+    {% include 'visit_assessment_and_plan/snippets/button_row/visit_assessment_and_plan_add.html' %}
+
+  </div>
+
+{% else %}
+
+  <p class="suggestion_text" > 
+    Insufficient Permissions
+  </p>
+
+{% endif %}

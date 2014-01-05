@@ -2,12 +2,42 @@
 
   <div data-dojo-type="dijit/layout/TabContainer" 
       data-dojo-props="'tabStrip':true,'tabPosition':'top','nested':true"
-  >      
+  >
 
     {% if perms.visit %}
+
     <div data-dojo-type = "dojox/layout/ContentPane"
         data-dojo-props = "'title':'Basic Data'"
     >
+            
+        <span style="position: relative; 
+                    float: right; 
+                    margin: 0; 
+                    margin-bottom: -16px; 
+                    padding: 0; 
+                    top: 0; 
+                    cursor: pointer; 
+                    z-index: 1000; 
+                    height: 16px; 
+                    width: 16px; 
+                    " 
+                    >  
+
+            <img src="{{STATIC_URL}}/images/generic/notifications/info_128.png" 
+                alt="Visit Notes Completion Status" 
+                class="small_img" 
+                title="Lists the Visit Notes Completion Status" 
+                id = "visit_notes_completion_status_indicator_{{visit_detail_obj.id}}"
+                >
+            <div data-dojo-type="dijit/Tooltip" 
+                 data-dojo-props="connectId:'visit_notes_completion_status_indicator_{{visit_detail_obj.id}}', 
+                                  position: ['above', 'below'],
+                                  label: 'Lists the Visit Notes Completion Status'
+                                  "
+            >
+              Lists the Visit Notes Completion Status
+            </div>
+        </span>
 
       <div data-dojo-type = "dijit/form/Form" 
           id             = "newVisitEditForm_{{visit_detail_obj.id}}"
@@ -18,7 +48,7 @@
           style          = "overflow: auto;"
         >
 
-        
+
         {% include 'visit_detail/snippets/js/visit_detail_edit_form_validate.html' %}
 
         {% include 'visit_detail/snippets/forms/edit.html' %}
@@ -36,7 +66,9 @@
 
     {% if perms.visit_complaints %}
     <div data-dojo-type="dojox/layout/ContentPane"
-         data-dojo-props="'title': 'Complaints', 'href': '{{visit_detail_obj.urls.add.visit_complaint}}' "
+         data-dojo-props="'title': 'Complaints', 
+                          'href': '{{visit_detail_obj.urls.add.visit_complaint}}' 
+                         "
          class="subTabContainer"
          >
 
@@ -45,7 +77,10 @@
 
     {% if perms.visit_hpi %}
     <div data-dojo-type="dojox/layout/ContentPane"
-         data-dojo-props="'title': 'History', 'href': '{{visit_detail_obj.urls.add.visit_hpi}}' , disabled: false"
+         data-dojo-props="'title': 'History', 
+                          'href': '{{visit_detail_obj.urls.add.visit_hpi}}' , 
+                          disabled: false
+                         "
          class="subTabContainer"
          >
 
@@ -54,7 +89,10 @@
 
     {% if perms.visit_ros %}
     <div data-dojo-type="dojox/layout/ContentPane"
-         data-dojo-props="'title': 'ROS', 'href': '{{visit_detail_obj.urls.add.visit_ros}}' , disabled: false"
+         data-dojo-props="'title': 'ROS', 
+                          'href': '{{visit_detail_obj.urls.add.visit_ros}}' , 
+                          disabled: false
+                         "
          class="subTabContainer"
          >
 
@@ -62,53 +100,107 @@
     {% endif %}
 
     <div data-dojo-type="dijit/layout/TabContainer"
-         data-dojo-props="'title': 'Examinations', disabled: false, tabPosition: 'left', tabStrip: true"
+         data-dojo-props="'title': 'Examinations', 
+                           disabled: false, 
+                           tabPosition: 'left', 
+                           tabStrip: true
+                           "
          class="subTabContainer"
          >
 
         <div data-dojo-type="dojox/layout/ContentPane"
-            data-dojo-props="'title': 'Vitals','href': '{% url 'visit_phyexam_add' 'vitals' visit_detail_obj.id %}', disabled: false"
+            data-dojo-props="'title': 'Vitals',
+                             'href': '{% url 'visit_phyexam_add' 'vitals' visit_detail_obj.id %}', 
+                             disabled: false
+                             "
             class="subTabContainer"
             >
 
         </div>
 
         <div data-dojo-type="dojox/layout/ContentPane"
-            data-dojo-props="'title': 'General Exam','href': '{% url 'visit_phyexam_add' 'gen' visit_detail_obj.id %}', disabled: false"
+            data-dojo-props="'title': 'General Exam',
+                             'href': '{% url 'visit_phyexam_add' 'gen' visit_detail_obj.id %}', 
+                             disabled: false
+                             "
             class="subTabContainer"
             >
 
         </div>
 
         <div data-dojo-type="dojox/layout/ContentPane"
-            data-dojo-props="'title': 'Systemic Exam','href': '{% url 'visit_phyexam_add' 'sys' visit_detail_obj.id %}', disabled: false"
+            data-dojo-props="'title': 'Systemic Exam',
+                             'href': '{% url 'visit_phyexam_add' 'sys' visit_detail_obj.id %}', 
+                             disabled: false
+                             "
             class="subTabContainer"
             >
 
         </div>
 
         <div data-dojo-type="dojox/layout/ContentPane"
-            data-dojo-props="'title': 'Musculoskeletal Exam','href': '{% url 'visit_phyexam_add' 'musculoskeletal' visit_detail_obj.id %}', disabled: false"
+            data-dojo-props="'title': 'Musculoskeletal Exam',
+                             'href': '{% url 'visit_phyexam_add' 'musculoskeletal' visit_detail_obj.id %}', 
+                              disabled: false
+                             "
             class="subTabContainer"
             >
 
         </div>
 
         <div data-dojo-type="dojox/layout/ContentPane"
-            data-dojo-props="'title': 'Neurological Exam','href': '{% url 'visit_phyexam_add' 'neuro' visit_detail_obj.id %}', disabled: false"
+            data-dojo-props="'title': 'Neurological Exam',
+                             'href': '{% url 'visit_phyexam_add' 'neuro' visit_detail_obj.id %}', 
+                             disabled: false
+                             "
             class="subTabContainer"
             >
 
         </div>
 
         <div data-dojo-type="dojox/layout/ContentPane"
-            data-dojo-props="'title': 'Vascular Exam','href': '{% url 'visit_phyexam_add' 'vasc' visit_detail_obj.id %}', disabled: false"
+            data-dojo-props="'title': 'Vascular Exam',
+                             'href': '{% url 'visit_phyexam_add' 'vasc' visit_detail_obj.id %}', 
+                             disabled: false
+                             "
             class="subTabContainer"
             >
 
         </div>
+
+        {% if perms.visit_soap %}
+            <div data-dojo-type="dojox/layout/ContentPane"
+                data-dojo-props="'title': 'SOAP', 
+
+                                  'href': '{%url 'visit_soap_add' visit_detail_obj.id %}' , 
+
+                                  {% if visit_detail_obj.consult_nature != 'initial' %} 
+                                    'selected': true,
+                                  {%else %} 
+                                    'selected': false,
+                                  {%endif %} 
+
+                                  'disabled': false
+                                  "
+                class="subTabContainer"
+                >
+
+            </div>
+        {% endif %}
 
     </div>
+
+    {% if perms.visit_assessment_and_plan %}
+    <div data-dojo-type="dojox/layout/ContentPane"
+         data-dojo-props="'title': 'Assessment &amp; Plan', 
+                          'href': '{%url 'visit_assessment_and_plan_add' visit_detail_obj.id %}' , 
+                          disabled: false
+                          "
+         class="subTabContainer"
+         >
+
+    </div>
+    {% endif %}
 
 
 {% comment %}

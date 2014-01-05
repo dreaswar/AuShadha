@@ -1,0 +1,118 @@
+{% if visit_assessment_and_plan_objs %}
+
+<div >
+
+ {% for assessment_and_plan in visit_assessment_and_plan_objs %}
+
+    <div style="background: white; border: solid #ddd 1px; border-radius: 5px; ">
+
+        <div syle="background: slate; text-align: center;">
+            <h4> {{assessment_and_plan.visit_detail.visit_date }} </h4>
+        </div>
+
+        <div>
+
+            <h4> Assessment and Plan: </h4>
+
+            <p style="text-align: justify;" 
+               id="visit_assessment_and_plan_paragraph_{{assessment_and_plan.id}}" 
+               class="visit_assessment_and_plan_paragraph"
+               > 
+                <p id="case_summary_{{assessment_and_plan.id}}"> {{assessment_and_plan.case_summary}} </p>
+                <p id="possible_diagnosis_{{assessment_and_plan.id}}"> {{assessment_and_plan.possible_diagnosis}} </p>
+                <p id="plan_{{assessment_and_plan.id}}"> {{assessment_and_plan.plan}} </p>
+                <p style="float: right;"> {{assessment_and_plan.created_at}} </p>
+            </p>
+
+            {% if perms.visit_assessment_and_plan.add_visitassessmentandplan %}
+
+                <button type="button"
+                        id="visit_assessment_and_plan_import_button_{{assessment_and_plan.id}}"
+                        class="visit_assessment_and_plan_import_button"
+                        data-dojo-type="dijit/form/Button"
+                        data-dojo-props="label: 'Copy to current'"
+                    >
+
+                    Copy to current
+
+                    <script type="dojo/on" 
+                            data-dojo-event="click" 
+                            data-dojo-args="evt" 
+                            >
+
+                        require(['dojo/dom', 
+                                'dojo/dom-class', 
+                                'dojo/dom-attr', 
+                                'dojo/on', 
+                                'dijit/registry',
+                                'dojo/query',
+                                "dijit/focus",
+                                'dojo/NodeList-traverse',
+                                'dojo/NodeList-data',
+                                'dojo/domReady!'
+                                ],
+
+                        function ( dom, domClass, domAttr, on, registry, query, focusUtil ) {
+
+                            var caseSummaryHTML = query( "#case_summary_{{assessment_and_plan.id}}" )[0].innerHTML;
+                            var possibleDiagnosisHTML = query( "#possible_diagnosis_{{assessment_and_plan.id}}" )[0].innerHTML;
+                            var planHTML = query( "#plan_{{assessment_and_plan.id}}" )[0].innerHTML;
+
+                            var form        = query('#visit_assessment_and_plan_center_pane_{{visit_detail_obj.id}} form')[0];
+                            var caseSummaryTextArea       = query(form).query('.case_summary_textarea')[0];
+                            var possibleDiagnosisTextArea = query(form).query('.possible_diagnosis_textarea')[0];
+                            var planTextArea              = query(form).query('.plan_textarea')[0];
+
+
+                            if ( planTextArea.value != ''        || 
+                                 caseSummaryTextArea.value != '' ||
+                                 possibleDiagnosisTextArea.value != ''
+                                ) {
+
+                                //{% if perms.visit_assessment_and_plan.change_visitassessmentandplan %}
+
+                                    var _c = confirm("This will overwrite the existing assessment_and_plan. Continue ?");
+
+                                    if (_c ) {
+
+                                        caseSummaryTextArea.value = caseSummaryHTML;
+                                        possibleDiagnosisTextArea.value = possibleDiagnosisHTML;
+                                        planTextArea.value = planHTML;
+                                        publishInfo( "Assessment and Plan Copied to current form" );
+
+                                    }
+                                //{% else %}
+                                    return false;
+                                //{% endif %}
+                            } 
+                            
+                            else {
+                                caseSummaryTextArea.value = caseSummaryHTML;
+                                possibleDiagnosisTextArea.value = possibleDiagnosisHTML;
+                                planTextArea.value = planHTML;
+                                publishInfo( "Assessment and Plan Copied to current form" );
+                            }
+
+                        });
+
+                    </script>
+
+                </button>
+              {% endif %}
+
+        </div>
+
+    </div>
+
+ {% endfor %}
+
+</div>
+
+{% else %}
+
+ <p class="suggestion_text" > 
+    No Old Assessment and Plan Recorded  
+    (Excludes the present visit)
+ </p>
+
+{% endif %}

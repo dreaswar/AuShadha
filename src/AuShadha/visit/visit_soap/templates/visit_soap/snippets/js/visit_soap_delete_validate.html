@@ -1,0 +1,47 @@
+<script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
+
+  require(
+          ["dojo/dom", 
+            "dojo/query",
+            "dojo/dom-attr",
+            "dojo/_base/xhr",
+            "dojo/json",
+            "dijit/registry",
+            "dijit/Dialog",
+            "dojo/NodeList-traverse",
+            "dojo/NodeList-data"
+          ],
+
+  function(dom, query, domAttr, xhr, JSON, registry, Dialog){
+
+//       var summaryTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP');
+//       var parentTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP').getParent();
+//       var visitTree = registry.byId('OPD_VISITS_LEADING_BC_TOP_CP_TREE');
+      var editTab = query("#newVisitSOAPEditForm_{{visit_soap_obj.id}}").parents('.subTabContainer')[0];
+//       editTab = registry.byId( domAttr.get(editTab, 'id') );
+//       var visitAssessmentAndPlanAddUrl = "{{visit_detail_obj.urls.add.visit_soap}}";
+
+      xhr.get({
+
+        url: "{{visit_soap_obj.urls.del}}",
+
+        load: function(json){
+                 var jsondata = JSON.parse(json);
+
+                  if( jsondata.success == true ){
+                    publishInfo( jsondata.error_message );
+//                     summaryTab.set('href',"{{patient_detail_obj.urls.summary.visit}}");
+//                     visitTree.refresh();
+//                     parentTab.removeChild( editTab );
+//                     editTab.destroyRecursive();
+                    registry.byId( domAttr.get(editTab,'id') ).set('href', jsondata.redirectUrl);
+                  }
+
+                  else{
+                    publishError("ERROR ! :" + jsondata.error_message );
+                  }
+            }
+      });
+  });
+
+</script>

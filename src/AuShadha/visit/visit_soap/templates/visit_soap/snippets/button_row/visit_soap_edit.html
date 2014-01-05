@@ -1,0 +1,22 @@
+<span>
+{% if perms.visit_soap.change_visitsoap %}
+  <button data-dojo-type = "dijit/form/Button" 
+          data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+          type           = "submit" 
+          name           = "editButton" 
+          value          = "Edit">
+    Edit
+  </button>
+{%endif%}
+
+{% if perms.visit_soap.delete_visitsoap %}
+  <button data-dojo-type  = "dijit/form/Button" 
+          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
+          type            = "button"
+          name            = "delVisitSOAP"
+          id              = "delVisitSOAPBtn_{{visit_soap_obj.id}}">
+    Delete
+    {% include 'visit_soap/snippets/js/visit_soap_delete_validate.html' %}
+  </button>
+{% endif %}
+</span>
