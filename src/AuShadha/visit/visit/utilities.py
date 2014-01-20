@@ -1,5 +1,6 @@
-from AuShadha.apps.ui.ui import ui as UI
+from django.contrib.auth.decorators import login_required
 
+from AuShadha.apps.ui.ui import ui as UI
 #from .models import VisitDetail, VisitComplaint
 
 PatientDetail = UI.get_module("PatientRegistration")
@@ -133,6 +134,17 @@ def render_patient_visits_pdf(request, id):
     else:
         return HttpResponseRedirect('/login')
 
+
+def has_previous_visits(visit_id):
+  visit_detail_obj = VisitDetail.objects.get(pk = int(visit_id) )
+  patient_detail_obj = visit_detail_obj.patient_detail
+  all_visits = VisitDetail.objects.get(patient_detail = patient_detail_obj).order_by('visit_date')
+
+  for v in all_visits:
+    if (v.visit_date <= visit_detail_obj.visit_date) and (v != visit_detail_obj):
+      return True
+    else:
+      continue
 
 
 #@login_required

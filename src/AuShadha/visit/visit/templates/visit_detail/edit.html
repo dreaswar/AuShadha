@@ -168,25 +168,29 @@
 
         </div>
 
-        {% if perms.visit_soap %}
-            <div data-dojo-type="dojox/layout/ContentPane"
-                data-dojo-props="'title': 'SOAP', 
+        {% comment %}
+          {% if perms.visit_soap %}
+          {% if visit_detail_obj.has_previous_visits %}
+              <div data-dojo-type="dojox/layout/ContentPane"
+                  data-dojo-props="'title': 'SOAP', 
 
-                                  'href': '{%url 'visit_soap_add' visit_detail_obj.id %}' , 
+                                    'href': '{%url 'visit_soap_add' visit_detail_obj.id %}' , 
 
-                                  {% if visit_detail_obj.consult_nature != 'initial' %} 
-                                    'selected': true,
-                                  {%else %} 
-                                    'selected': false,
-                                  {%endif %} 
+                                    {% if visit_detail_obj.consult_nature != 'initial' %} 
+                                      'selected': true,
+                                    {%else %} 
+                                      'selected': false,
+                                    {%endif %} 
 
-                                  'disabled': false
-                                  "
-                class="subTabContainer"
-                >
+                                    'disabled': false
+                                    "
+                  class="subTabContainer"
+                  >
 
-            </div>
-        {% endif %}
+              </div>
+          {% endif %}
+          {% endif %}
+        {% endcomment %}
 
     </div>
 

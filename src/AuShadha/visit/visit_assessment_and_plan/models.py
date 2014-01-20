@@ -43,19 +43,19 @@ class VisitAssessmentAndPlan(AuShadhaBaseModel):
       self.__model_label__ = "visit_assessment_and_plan"
       self._parent_model = 'visit_detail'
 
-    case_summary = models.TextField("Case Summary", 
+    case_summary = models.TextField("Case Summary & Assessment", 
                                     max_length=1000, 
-                                    help_text="Restrict to 1000 words"
+                                    help_text="Restrict to 1000 words. \nSummarise the case and your assessment"
                                     )
     
     possible_diagnosis = models.TextField("Possible Diagnosis", 
                                           max_length=1000, 
-                                          help_text="Restrict to 1000 words"
+                                          help_text="Restrict to 1000 words\nPlease enter in separate lines"
                                           )
     
     plan = models.TextField("Plan", 
                             max_length=1000, 
-                            help_text="Restrict to 1000 words"
+                            help_text="Restrict to 1000 words\nPlease enter in separate lines"
                             )
     
     visit_detail = models.ForeignKey('visit.VisitDetail')
@@ -66,7 +66,7 @@ class VisitAssessmentAndPlan(AuShadhaBaseModel):
     def __unicode__(self):
         return '%s\n%s\n%s\n%s\nSeen On: %s' % (
             self.case_summary,
-            self.verbose_diagnosis,
+            self.possible_diagnosis,
             self.plan,
             self.visit_detail,
             self.visit_detail.visit_date.date().isoformat()

@@ -40,20 +40,24 @@ from .models import VisitComplaint
 
 def check_duplicates(complaint_to_check, visit_obj):
 
-    for complaint in VisitComplaint.objects.filter(visit_detail = visit_obj):
+    all_complaints = VisitComplaint.objects.filter(visit_detail = visit_obj)
 
-        if complaint.complaint != complaint_to_check.complaint:
-            continue
+    if all_complaints:
+      for complaint in all_complaints:
 
-        else:
-            if not getattr(complaint_to_check, 'id', None):
-                return False
-            else:
-                if complaint.id == complaint_to_check.id:
-                    continue
-                else:
-                    return False
-    return True
+          if complaint.complaint != complaint_to_check.complaint:
+              continue
+
+          else:
+              if not getattr(complaint_to_check, 'id', None):
+                  return False
+              else:
+                  if complaint.id == complaint_to_check.id:
+                      continue
+                  else:
+                      return False
+    else:
+      return True
 
 
 @login_required
@@ -71,8 +75,8 @@ def get_all_patient_complaints(request, visit_id = None):
         if not getattr(visit_detail_obj, 'urls', None):
           visit_detail_obj.save()
     
-    #except(AttributeError, NameError, TypeError, ValueError, KeyError):
-        #raise Http404("ERROR:: Bad request.Invalid arguments passed")
+    except(AttributeError, NameError, TypeError, ValueError, KeyError):
+        raise Http404("ERROR:: Bad request.Invalid arguments passed")
     
     except(VisitDetail.DoesNotExist):
         raise Http404("ERROR:: Visit requested does not exist.")
@@ -199,11 +203,12 @@ def import_active_complaints(request, visit_id = None):
 
         success = True
         error_message = "Successfully imported complaints"
+        data = {'success': success, 'error_message': error_message, 'return_data': complaint_data }
 
     else:
         success = False
         error_message = "No Active Complaints to import..."
+        data = {'success': success, 'error_message': error_message, 'return_data': complaint_data }
 
-    data = {'success': success, 'error_message': error_message, 'return_data': complaint_data }
     json = simplejson.dumps(data)
     return HttpResponse(json, content_type="application/json")  

@@ -185,7 +185,7 @@
             var jsondata = JSON.parse(json);
             if ( jsondata.success == true ) {
 
-              if (jsondata.return_data.length  ) {
+              if (jsondata.return_data  ) {
 //                 importBtn.set('style' , {'display':'none'});
                 complaintStore.newItem(jsondata.return_data);
                 complaintGrid.render();

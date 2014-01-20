@@ -60,6 +60,8 @@ MusculoSkeletalExam = UI.get_module("OPD_Visit_MusculoSkeletalExam")
 NeuroExam = UI.get_module("OPD_Visit_NeuroExam")
 VascExam = UI.get_module("OPD_Visit_VascExam")
 
+VisitAssesmentAndPlan = UI.get_module("OPD_VisitAssessmentAndPlan")
+
 
 # views start here;;
 @login_required
@@ -199,7 +201,8 @@ def visit_summary(request, patient_id = None):
                           'sys': SysExam.objects.filter(visit_detail = visit),
                           'neuro': NeuroExam.objects.filter(visit_detail = visit),
                           'vasc': VascExam.objects.filter(visit_detail = visit),
-                          'musculoskeletal': MusculoSkeletalExam.objects.filter(visit_detail = visit)
+                          'musculoskeletal': MusculoSkeletalExam.objects.filter(visit_detail = visit),
+                          'visit_assessment_and_plan': VisitAssesmentAndPlan.objects.filter(visit_detail = visit),
                          }
         visit_obj_list.append( dict_to_append )
 
@@ -587,8 +590,8 @@ def visit_detail_edit(request, visit_id = None):
         else:
             raise Http404(" Error ! Unsupported Request..")          
 
-    except (TypeError, NameError, ValueError, AttributeError, KeyError):
-        raise Http404("Error ! Invalid Request Parameters. ")
+    #except (TypeError, NameError, ValueError, AttributeError, KeyError):
+        #raise Http404("Error ! Invalid Request Parameters. ")
 
     except (VisitDetail.DoesNotExist):
         raise Http404("Requested Patient Does not exist.")    

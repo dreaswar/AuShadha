@@ -545,6 +545,42 @@
 
                 </div>
 
+                <div>
+                    <span class="opdVisitNotesHeader"> Assessment &amp; Plan  </span>
+
+                    {% if obj.visit_assessment_and_plan %}
+
+                        <span class="opdVisitNotesSubHeader"> Summary &amp; Assessment </span>
+                        <p> 
+                          {% if obj.visit_assessment_and_plan.0.case_summary %}
+                            {{obj.visit_assessment_and_plan.0.case_summary}} 
+                          {% else %}  
+                            <p class="suggestion_text"> No Case Summary Recorded </p>
+                          {% endif %}
+                        </p>
+
+                        <span class="opdVisitNotesSubHeader"> Possible Diagnosis </span>
+                        <p> 
+                          {% if obj.visit_assessment_and_plan.0.possible_diagnosis %}
+                            {{obj.visit_assessment_and_plan.0.possible_diagnosis}} </p>
+                          {% else %}
+                            <p class="suggestion_text"> No Diagnosis Recorded </p>
+                          {% endif %}
+
+                        <span class="opdVisitNotesSubHeader"> Plan </span>
+                        {% if obj.visit_assessment_and_plan.0.plan %}
+                          <p> {{obj.visit_assessment_and_plan.0.plan}} </p>
+                        {% else %}
+                            <p class="suggestion_text"> No Plan Recorded </p>
+                        {% endif %}
+
+                    {% else %}
+                        <p class="suggestion_text"> No Assessment &amp; Plan Recorded </p>
+                    {% endif %}
+                </div>
+
+
+
             </div>
 
         </fieldset>
