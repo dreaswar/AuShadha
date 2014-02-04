@@ -126,7 +126,18 @@ function(
 
       constructor: function( json, parentTab, redirectToMainTab ){
         // creates the pane and its widgets recursively
-        
+
+
+        if (json.dojoConfig ) {
+          for ( var x=0; x< json.dojoConfig.length; x++ ) {
+            dojoConfig.packages.push(json.dojoConfig[x]);
+            require(json.dojoConfig[x]);
+          }
+        }
+        else {
+          console.log("djConfig not set for additional modules. Scripts if any will not load from them");
+        }
+
         if (parentTab){
           pane.parentTab = parentTab;
         }
@@ -156,6 +167,7 @@ function(
         else {
           alert("This redirect directive will not work now.... Currently directives of 0 or 1 are supported ")
         }
+
 
         pane.container.id = json.id;
         pane.container.title = json.title;
@@ -611,25 +623,58 @@ function(
                         }
 
                         else if ( widgetQ.widget.type == 'grid' ){
+
+                          if (! widgetQ.widget.gridStrModule ) {
+
                             require(['aushadha/grid/generic_grid_setup',
                                     'aushadha/grid/grid_structures'],
-                            function(genericGridSetup, gridStr){ 
+
+                              function(genericGridSetup, gridStr){ 
+
                                 try {
                                   console.log(genericGridSetup);
                                   console.log(gridStr[widgetQ.widget.str]);
-                                  genericGridSetup.setupGrid(widgetQ.widget.url,
-                                                            widgetQ.widget.id,
-                                                            gridStr[widgetQ.widget.str],
-                                                            widgetQ.widget.activateRowClick,
-                                                            widgetQ.widget.title,
-                                                            widgetQ.widget.storeToUse
-                                  );                                      
-                                } 
+                                    genericGridSetup.setupGrid(widgetQ.widget.url,
+                                                              widgetQ.widget.id,
+                                                              gridStr[widgetQ.widget.str],
+                                                              widgetQ.widget.activateRowClick,
+                                                              widgetQ.widget.title,
+                                                              widgetQ.widget.storeToUse
+                                    );
+                                  } 
+
+                                catch (err) {
+                                  console.error(err);
+                                }
+                              });
+                          } 
+
+                          else {
+
+                            require(dojoConfig, 
+                                    ['aushadha/grid/generic_grid_setup',
+                                      widgetQ.widget.gridStrModule
+                                    ],
+
+                              function(genericGridSetup, gridStr){ 
+
+                                try {
+                                  console.log(genericGridSetup);
+                                  console.log(gridStr[widgetQ.widget.str]);
+                                    genericGridSetup.setupGrid(widgetQ.widget.url,
+                                                              widgetQ.widget.id,
+                                                              gridStr[widgetQ.widget.str],
+                                                              widgetQ.widget.activateRowClick,
+                                                              widgetQ.widget.title,
+                                                              widgetQ.widget.storeToUse
+                                    );
+                                  } 
+
                                 catch (err) {
                                   console.error(err);
                                 }
                             });
-
+                          }
                         }
 
                         else if ( widgetQ.widget.type == 'dynamic_pane_grid' ){
