@@ -97,7 +97,7 @@ STATICFILES_DIRS = (
 
     # LIST ALL ADD - ON MODULE PATHS HERE USING FORMAT BELOW
     #os.path.join(PARENT_ROOT, '<PATH TO THE ADD-ON MEDIA DIRECTORY>'),
-    os.path.join(PARENT_ROOT, 'aushadha_demographics_us/demographics/media'),
+    #os.path.join(PARENT_ROOT, 'aushadha_demographics_us/demographics/media'),
 
 )
 
