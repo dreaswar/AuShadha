@@ -147,12 +147,7 @@ TEMPLATE_DIRS = (
     
     os.path.join(ROOT_PATH, 'patient/templates/'),
 
-    os.path.join(ROOT_PATH, 'aushadha_demographics_us/demographics/templates/'),
-    os.path.join(ROOT_PATH, 'aushadha_demographics_us/contact/templates/'),    
-    os.path.join(ROOT_PATH, 'aushadha_demographics_us/phone/templates/'),    
-    os.path.join(ROOT_PATH, 'aushadha_demographics_us/guardian/templates/'),    
-    os.path.join(ROOT_PATH, 'aushadha_demographics_us/email_and_fax/templates/'),
-    os.path.join(ROOT_PATH, 'aushadha_demographics_us/insurance/templates/'),    
+    os.path.join(ROOT_PATH, 'demographics/demographics/templates/'),
 
     os.path.join(ROOT_PATH, 'history/medical_history/templates/'),
     os.path.join(ROOT_PATH, 'history/surgical_history/templates/'),
@@ -234,12 +229,11 @@ INSTALLED_APPS = (
 #    'admission.admission_inv',
 
     # Custom Apps for Patient Demographics
-    'aushadha_demographics_us.demographics',
-    'aushadha_demographics_us.contact',
-    'aushadha_demographics_us.phone',
-    'aushadha_demographics_us.guardian',
-    'aushadha_demographics_us.email_and_fax',
-    'aushadha_demographics_us.insurance',
+    'demographics.demographics',
+    'demographics.contact',
+    'demographics.phone',
+    'demographics.guardian',
+    #'demographics.email_and_fax',
 
     # AuShadha stock apps for History
     'history.medical_history',
