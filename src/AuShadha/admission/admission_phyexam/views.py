@@ -10,7 +10,7 @@
 
 # General Module imports-----------------------------------
 import StringIO
-import ho.pisa as pisa
+#import ho.pisa as pisa
 from reportlab.pdfgen import canvas
 from datetime import datetime, date, time
 import yaml
