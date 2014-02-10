@@ -5,7 +5,7 @@
 ################################################################################
 
 
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 import AuShadha.settings
 
 from .views import *

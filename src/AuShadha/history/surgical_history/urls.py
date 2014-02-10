@@ -6,7 +6,7 @@
 # License      : GNU-GPL Version 3, see AuShadha/LICENSE.txt
 ################################################################################
 
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from django.contrib import admin
 import AuShadha.settings
 
