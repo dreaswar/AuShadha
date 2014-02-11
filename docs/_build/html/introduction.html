@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction to AuShadha &mdash; AuShadha 0.1 documentation</title>
+    <title>Introduction to AuShadha Project &mdash; AuShadha 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="AuShadha 0.1 documentation" href="index.html" />
-    <link rel="next" title="&lt;no title&gt;" href="dependencies.html" />
+    <link rel="next" title="Installation of AuShadha" href="installation.html" />
     <link rel="prev" title="Welcome to AuShadha’s documentation!" href="index.html" /> 
   </head>
   <body>
@@ -35,7 +35,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="dependencies.html" title="&lt;no title&gt;"
+          <a href="installation.html" title="Installation of AuShadha"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to AuShadha’s documentation!"
@@ -49,8 +49,102 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="introduction-to-aushadha">
-<h1>Introduction to AuShadha<a class="headerlink" href="#introduction-to-aushadha" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="introduction-to-aushadha-project">
+<h1>Introduction to AuShadha Project<a class="headerlink" href="#introduction-to-aushadha-project" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="aushadha-means-medicine-in-sanskrit">
+<h2>AuShadha (औषध): Means medicine in Sanskrit.<a class="headerlink" href="#aushadha-means-medicine-in-sanskrit" title="Permalink to this headline">¶</a></h2>
+<p>This is a Open Source Electornic Medical Records (EMR) &amp; Public Health Management System for Small Clinics. It might be even suited for speciality medical practice after some customisation. It is developed with Python, Django and Dojo. For Development the code uses sqlite3 database. Deployment will use PostgreSQL.</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>AuShadha code is licensed under GNU-GPL Version 3. Django, Dojo, Icons and other thrid party modules are licensed as per their authors. This should be honoured.</p>
+</div>
+<div class="section" id="aims">
+<h2>Aims<a class="headerlink" href="#aims" title="Permalink to this headline">¶</a></h2>
+<p>There are many great Open Source EMR and Clinic Management projects, but most of them have very poor front ends. As in life, beauty and usability are key in medical practice. It is natural that more visually appealing it is more you want to use it. AuShadha will strive to achieve a balance between back and front end design. To achieve that aim Django and Dojo has been chosen. AuShadha is designed by me, a Medical Doctor in association with other Developers, so usability and practicability will always be foremost.AuShadha benefits from inputs, feature requests from my medical colleagues as the development progresses.</p>
+</div>
+<div class="section" id="how-to-test">
+<h2>How to Test<a class="headerlink" href="#how-to-test" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>For AuShadha requirements please refer to REQUIREMENTS.txt in docs/</li>
+<li>AuShadha has been tested and developed with Python 2.7, Django 1.6x and Dojo 1.8x in Linux. It should work as long as dependencies are satisfied.</li>
+<li>Ideally create a Python Virtual Environment. If virtualenv is not installed, please run in Debian systems sudo easy_install virtualenv</li>
+<li>After installing virtualenv, Create a Python Virtual Environment virtualenv python_env</li>
+<li>Change the working directory to the virtualenv folder cd python_env and activate it source bin/activate</li>
+<li>With Python pip installed, run pip install -r ../docs/REQUIREMENTS.txt if you are in python_env directory . This will install all the necessary dependencies you need.</li>
+</ol>
+<p>You may need to install Python development libraries if you are on Linux.</p>
+<p><cite>$ apt-get install python-dev</cite> #in debian systems.</p>
+<p><cite>$ yum install python-devel</cite> #in Redhat-like systems.</p>
+<ol class="arabic simple" start="7">
+<li>cd into src/AuShadha directory cd src/AuShadha</li>
+<li>run python manage.py runserver</li>
+<li>Use your browser to navigate to <a class="reference external" href="http://localhost:8000/AuShadha/">http://localhost:8000/AuShadha/</a> . You will be greeted with a login page. Use username = admin, password = admin for a trial run.</li>
+<li>Please read the issues, license before using. Currently AuShadha is under active development and is not fit in anyway for real world use.</li>
+</ol>
+</div>
+<div class="section" id="project-structure">
+<h2>Project Structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="2">
+<li>docs : Contains the Requirements.txt, License.txt</li>
+<li>src : Project Source Code, Media files(Icons,Images, File uploads), Javscript</li>
+<li>README.md</li>
+<li>LICENSE.txt</li>
+</ol>
+</div>
+<div class="section" id="plan">
+<h2>Plan<a class="headerlink" href="#plan" title="Permalink to this headline">¶</a></h2>
+<p>AuShadha project is split between AuShadha-stock ( which contains AuShadha-core and some Stock applications) and Au-Pluggable ( the pluggable modules for AuShadha ). User can freely mix and match the modules he wants to create his own AuShadha brew.</p>
+<p>In other words he is not stuck with what the developer has packaged and is free to repackage it in any way he wants. The AuShadha-core will help him / her create pluggable applications that integrate well into AuShadha, but user is also free to create a completely different Django application. As long as he / she sticks to the Django pluggable practices the application can be easily integrated into AuShadha. Ofcourse if he were to use AuShadha-core&#8217;s API to develop he can do it more easily.
+AuShadha-core API is very young, mostly untested. It does not force the developer to re-learn anything that would not be useful outside AuShadha.</p>
+<div class="section" id="completed-modules">
+<h3>Completed Modules<a class="headerlink" href="#completed-modules" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>AuShadha-core</li>
+<li>AuShadha-PatientRegistration</li>
+<li>AuShadha-Contact</li>
+<li>AuShadha-Phone</li>
+<li>AuShadha-Guardian</li>
+<li>AuShadha-Demographics</li>
+<li>AuShadha-MedicationList</li>
+<li>AuShadha-AllergyList</li>
+<li>AuShadha-History</li>
+<li>AuShadha-OPD_Visit</li>
+</ol>
+</div>
+</div>
+<div class="section" id="pluggable-modules-under-developement">
+<h2>Pluggable Modules under Developement<a class="headerlink" href="#pluggable-modules-under-developement" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>currently under development</li>
+</ul>
+<ol class="arabic simple">
+<li>aushadha_demographics_us</li>
+<li>aushadha_demographics_india</li>
+</ol>
+</div>
+<div class="section" id="pluggable-modules-planned">
+<h2>Pluggable Modules Planned<a class="headerlink" href="#pluggable-modules-planned" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>aushadha_obs_and_gyn_india</li>
+<li>aushadha_immunisation_india</li>
+<li>aushadha_neonatal_india</li>
+</ol>
+</div>
+<div class="section" id="for-developers">
+<h2>For Developers<a class="headerlink" href="#for-developers" title="Permalink to this headline">¶</a></h2>
+<p>Suggestions and participation are welcome.</p>
+<p>Please email me at <a class="reference external" href="mailto:dreaswar&#37;&#52;&#48;gmail&#46;com">dreaswar<span>&#64;</span>gmail<span>&#46;</span>com</a> or Google Groups at <a class="reference external" href="mailto:aushadha&#37;&#52;&#48;googlegroups&#46;com">aushadha<span>&#64;</span>googlegroups<span>&#46;</span>com</a></p>
+<p>Visit project website at <a class="reference external" href="http://aushadha.org">http://aushadha.org</a>.</p>
+<p>Follow the Project news at <a class="reference external" href="http://www.facebook.com/AuShadha/">http://www.facebook.com/AuShadha/</a></p>
+</div>
+<div class="section" id="repository">
+<h2>Repository:<a class="headerlink" href="#repository" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://github.com/dreaswar/AuShadha">http://github.com/dreaswar/AuShadha</a></li>
+<li><a class="reference external" href="http://github.com/dreaswar/Au-Pluggables">http://github.com/dreaswar/Au-Pluggables</a></li>
+</ol>
+</div>
 </div>
 
 
@@ -59,12 +153,32 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction to AuShadha Project</a><ul>
+<li><a class="reference internal" href="#aushadha-means-medicine-in-sanskrit">AuShadha (औषध): Means medicine in Sanskrit.</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#aims">Aims</a></li>
+<li><a class="reference internal" href="#how-to-test">How to Test</a></li>
+<li><a class="reference internal" href="#project-structure">Project Structure</a></li>
+<li><a class="reference internal" href="#plan">Plan</a><ul>
+<li><a class="reference internal" href="#completed-modules">Completed Modules</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pluggable-modules-under-developement">Pluggable Modules under Developement</a></li>
+<li><a class="reference internal" href="#pluggable-modules-planned">Pluggable Modules Planned</a></li>
+<li><a class="reference internal" href="#for-developers">For Developers</a></li>
+<li><a class="reference internal" href="#repository">Repository:</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Welcome to AuShadha&#8217;s documentation!</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="dependencies.html"
-                        title="next chapter">&lt;no title&gt;</a></p>
+  <p class="topless"><a href="installation.html"
+                        title="next chapter">Installation of AuShadha</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/introduction.txt"
@@ -94,7 +208,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="dependencies.html" title="&lt;no title&gt;"
+          <a href="installation.html" title="Installation of AuShadha"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to AuShadha’s documentation!"
