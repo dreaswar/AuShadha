@@ -10,6 +10,14 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   
+   Introduction <introduction>
+   Installation <installation>
+   Dependencies <dependencies>
+   AuShadha-Core <aushadha-core>
+   AuShadha-Stock <aushadha-stock>
+   AuShadha-Pluggables <aushadha-pluggables>
+   Resources <resources>
 
 
 
