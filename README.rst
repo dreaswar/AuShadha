@@ -3,22 +3,22 @@ Introduction to AuShadha Project
 
 
 AuShadha (औषध): Means medicine in Sanskrit.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is a Open Source Electornic Medical Records (EMR) & Public Health Management System for Small Clinics. It might be even suited for speciality medical practice after some customisation. It is developed with Python, Django and Dojo. For Development the code uses sqlite3 database. Deployment will use PostgreSQL. 
     
 License
-^^^^^^^
+^^^^^^^^
 
 AuShadha code is licensed under GNU-GPL Version 3. Django, Dojo, Icons and other thrid party modules are licensed as per their authors. This should be honoured.
     
 Aims
-^^^^
+^^^^^^
 
 There are many great Open Source EMR and Clinic Management projects, but most of them have very poor front ends. As in life, beauty and usability are key in medical practice. It is natural that more visually appealing it is more you want to use it. AuShadha will strive to achieve a balance between back and front end design. To achieve that aim Django and Dojo has been chosen. AuShadha is designed by me, a Medical Doctor in association with other Developers, so usability and practicability will always be foremost.AuShadha benefits from inputs, feature requests from my medical colleagues as the development progresses.
     
 How to Test
-^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 1. For AuShadha requirements please refer to REQUIREMENTS.txt in docs/
 
@@ -50,7 +50,7 @@ Installing Dependencies:
 8. cd into src/AuShadha directory  `cd src/AuShadha`
 
 
-Prepare and Download Dojo Javascript Library:
+Prepare and Download Dojo Javascript Library
 ----------------------------------------------
 
 9. Latest Dojo Library can be downloaded at : http://dojotoolkit.org/download/
@@ -66,7 +66,7 @@ Prepare and Download Dojo Javascript Library:
 
 
 
-Prepare the database and install the fixtures:
+Prepare the database and install the fixtures
 -----------------------------------------------
 
 
@@ -74,7 +74,7 @@ Prepare the database and install the fixtures:
 
 
 
-See it in action & login:
+See it in action & login
 ----------------------------
 
 10. Use your browser to navigate to http://localhost:8000/AuShadha/ 
@@ -90,7 +90,7 @@ See it in action & login:
 
 
 Project Structure
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 2. docs : Contains the Requirements.txt, License.txt
 
@@ -105,7 +105,7 @@ Project Structure
 
 
 Plan
-^^^^
+^^^^^
 
 AuShadha project is split between AuShadha-stock ( which contains AuShadha-core and some Stock applications) and Au-Pluggable ( the pluggable modules for AuShadha ). 
 
@@ -165,7 +165,7 @@ Visit project website at http://aushadha.org.
 Follow the Project news at http://www.facebook.com/AuShadha/
 
 
-Repository: 
+Repository
 ^^^^^^^^^^^^^
 
 1. http://github.com/dreaswar/AuShadha 
@@ -173,7 +173,7 @@ Repository:
 2. http://github.com/dreaswar/Au-Pluggables
 
 
-The Documentation @readTheDocs:
+The Documentation @readTheDocs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 https://readthedocs.org/projects/aushadha/
