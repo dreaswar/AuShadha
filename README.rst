@@ -131,7 +131,7 @@ It does not force the developer to re-learn anything that would not be useful ou
 
 
 Completed Modules
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 1. AuShadha ( or AuShadha-core ) with its bundled core-apps
 2. AuShadha-PatientRegistration (aushadha_patient )
