@@ -7,11 +7,13 @@ AuShadha (औषध): Means medicine in Sanskrit.
 
 This is a Open Source Electornic Medical Records (EMR) & Public Health Management System for Small Clinics. It might be even suited for speciality medical practice after some customisation. It is developed with Python, Django and Dojo. For Development the code uses sqlite3 database. Deployment will use PostgreSQL. 
     
+
 License
 ^^^^^^^^
 
 AuShadha code is licensed under GNU-GPL Version 3. Django, Dojo, Icons and other thrid party modules are licensed as per their authors. This should be honoured.
     
+
 Aims
 ^^^^^^
 
@@ -24,8 +26,10 @@ How to Test
 
 2. AuShadha has been tested and developed with Python 2.7, Django 1.6x and Dojo 1.8x in Linux. It should work as long as dependencies are satisfied.
 
+
 Creating a Virtual Environment to run:
 ---------------------------------------
+
 3. Ideally create a Python Virtual Environment. If virtualenv is not installed, please run in Debian systems sudo easy_install virtualenv
 
 4. After installing virtualenv, Create a Python Virtual Environment virtualenv python_env
@@ -52,6 +56,7 @@ Installing Dependencies:
 
 Prepare and Download Dojo Javascript Library
 ----------------------------------------------
+
 
 9. Latest Dojo Library can be downloaded at : http://dojotoolkit.org/download/
 
@@ -142,10 +147,12 @@ Completed Modules
 
 Pluggable Modules under Developement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 - currently under development
 
 1. aushadha_demographics_us
 2. aushadha_demographics_in
+
 
 Pluggable Modules Planned
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -156,6 +163,7 @@ Pluggable Modules Planned
 
 For Developers
 ^^^^^^^^^^^^^^^^^^^^^
+
 Suggestions and participation are welcome.  
 
 Please email me at dreaswar@gmail.com or Google Groups at aushadha@googlegroups.com
