@@ -51,6 +51,63 @@
             
   <div class="section" id="installation-of-aushadha">
 <h1>Installation of AuShadha<a class="headerlink" href="#installation-of-aushadha" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-test">
+<h2>How to Test<a class="headerlink" href="#how-to-test" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>For AuShadha requirements please refer to REQUIREMENTS.txt in docs/</li>
+<li>AuShadha has been tested and developed with Python 2.7, Django 1.6x and Dojo 1.8x in Linux. It should work as long as dependencies are satisfied.</li>
+</ol>
+<div class="section" id="creating-a-virtual-environment-to-run">
+<h3>Creating a Virtual Environment to run:<a class="headerlink" href="#creating-a-virtual-environment-to-run" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple" start="3">
+<li>Ideally create a Python Virtual Environment. If virtualenv is not installed, please run in Debian systems sudo easy_install virtualenv</li>
+<li>After installing virtualenv, Create a Python Virtual Environment virtualenv python_env</li>
+<li>Change the working directory to the virtualenv folder cd python_env and activate it source bin/activate</li>
+</ol>
+</div>
+<div class="section" id="installing-dependencies">
+<h3>Installing Dependencies:<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="6">
+<li><p class="first">With Python pip installed, run pip install -r ../docs/REQUIREMENTS.txt if you are in python_env directory . This will install all the necessary dependencies you need.</p>
+</li>
+<li><p class="first">You may need to install Python development libraries if you are on Linux.</p>
+<blockquote>
+<div><p><cite>$ apt-get install python-dev</cite> #in debian systems.</p>
+<p><cite>$ yum install python-devel</cite> #in Redhat-like systems.</p>
+</div></blockquote>
+</li>
+<li><p class="first">cd into src/AuShadha directory  <cite>cd src/AuShadha</cite></p>
+</li>
+</ol>
+</div>
+<div class="section" id="prepare-and-download-dojo-javascript-library">
+<h3>Prepare and Download Dojo Javascript Library<a class="headerlink" href="#prepare-and-download-dojo-javascript-library" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="9">
+<li><p class="first">Latest Dojo Library can be downloaded at : <a class="reference external" href="http://dojotoolkit.org/download/">http://dojotoolkit.org/download/</a></p>
+<p>Download the latest Dojo library and extract it into <cite>AuShadha/src/AuShadha/AuShadha/media/plugins/dojo/</cite></p>
+<p>After extracting the folder structure should be like: dojo/dojo/ dojo/dojox/ dojo/dijit/</p>
+<p>AuShadha has been tested with Dojo 1.8.1</p>
+</li>
+</ol>
+</div>
+<div class="section" id="prepare-the-database-and-install-the-fixtures">
+<h3>Prepare the database and install the fixtures<a class="headerlink" href="#prepare-the-database-and-install-the-fixtures" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple" start="9">
+<li>run <cite>$ python manage.py syncdb &amp;&amp; python manage.py runserver</cite></li>
+</ol>
+</div>
+<div class="section" id="see-it-in-action-login">
+<h3>See it in action &amp; login<a class="headerlink" href="#see-it-in-action-login" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="10">
+<li><p class="first">Use your browser to navigate to <a class="reference external" href="http://localhost:8000/AuShadha/">http://localhost:8000/AuShadha/</a></p>
+<p>You will be greeted with a login page. Use username = admin, password = admin for a trial run.</p>
+</li>
+<li><p class="first">Please read the issues, license before using.</p>
+<p>Currently AuShadha is under active development and is not fit in anyway for real world use.</p>
+</li>
+</ol>
+</div>
+</div>
 </div>
 
 
@@ -59,6 +116,21 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation of AuShadha</a><ul>
+<li><a class="reference internal" href="#how-to-test">How to Test</a><ul>
+<li><a class="reference internal" href="#creating-a-virtual-environment-to-run">Creating a Virtual Environment to run:</a></li>
+<li><a class="reference internal" href="#installing-dependencies">Installing Dependencies:</a></li>
+<li><a class="reference internal" href="#prepare-and-download-dojo-javascript-library">Prepare and Download Dojo Javascript Library</a></li>
+<li><a class="reference internal" href="#prepare-the-database-and-install-the-fixtures">Prepare the database and install the fixtures</a></li>
+<li><a class="reference internal" href="#see-it-in-action-login">See it in action &amp; login</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="introduction.html"
                         title="previous chapter">Introduction to AuShadha Project</a></p>
