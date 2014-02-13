@@ -38,13 +38,16 @@ You may need to install Python development libraries if you are on Linux.
 
 `$ yum install python-devel` #in Redhat-like systems.
 
-7. cd into src/AuShadha directory cd src/AuShadha
+7. cd into src/AuShadha directory  `cd src/AuShadha`
 
-8. run python manage.py runserver
+8. Download the latest Dojo library and extract it into `AuShadha/src/AuShadha/AuShadha/media/plugins/dojo/` (AuShadha has been tested with Dojo 1.8.1 )
 
-9. Use your browser to navigate to http://localhost:8000/AuShadha/ . You will be greeted with a login page. Use username = admin, password = admin for a trial run.
+9. run `$ python manage.py syncdb && python manage.py runserver`
 
-10. Please read the issues, license before using. Currently AuShadha is under active development and is not fit in anyway for real world use.
+10. Use your browser to navigate to http://localhost:8000/AuShadha/ . You will be greeted with a login page. Use username = admin, password = admin for a trial run.
+
+11. Please read the issues, license before using. Currently AuShadha is under active development and is not fit in anyway for real world use.
+
 
 Project Structure
 ^^^^^^^^^^^^^^^^^
