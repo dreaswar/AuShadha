@@ -16,9 +16,21 @@ from .json import ModelInstanceJson
 class ModelInstanceSummary(object):
   
   """
-   
    Returns a summary of the model instance along with its related models
-   
+
+   So can be implemented this way
+
+    def main():
+      from patient.models import PatientDetail
+      from demographics.contact.models import Contact
+      p = PatientDetail.objects.get(pk = 1)
+      c = Contact(address_type = 'home',address="sds")
+      c.patient_detail = p
+      c.save()
+      d = ModelInstanceSummary(p)
+      return d
+    main()
+
   """
 
 
@@ -87,16 +99,3 @@ class ModelInstanceSummary(object):
       queryset_name = "%s_obj" %(model_label)
       queryset = rel_objs['queryset']
       self.variable[queryset_name] = queryset
-
-
-def main():
-  from patient.models import PatientDetail
-  from demographics.contact.models import Contact
-  p = PatientDetail.objects.get(pk = 1)
-  c = Contact(address_type = 'home',address="sds")
-  c.patient_detail = p
-  c.save()
-  d = ModelInstanceSummary(p)
-  return d
-
-#main()

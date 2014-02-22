@@ -1,190 +1,356 @@
-<div id="patientHistoryContainer">
+<div>
+        <script type="text/javascript" >
 
-{%comment %}
-  <div id="patientDemographicsContainer"> 
-    <div>
-    {% if pat_demographics_obj %}
-      <ul>
-      {% for obj in pat_demographics_obj %}
-        <li> {{obj.formatted_obj_data}} </li>
-      {% endfor %}
-    {% else %}
-      No Demographics data
-    {% endif %}
-    </div>
-    <div>
-    {% if pat_contact_obj %}
-      <ul>
-      {% for obj in pat_contact_obj %}
-        <li> {{obj}} </li>
-      {% endfor %}
-    {% else %}
-      No Contact data
-    {% endif %}
-    </div>
-    <div>
-    {% if pat_guardian_obj %}
-      <ul>
-      {% for obj in pat_guardian_obj %}
-        <li> {{obj}} </li>
-      {% endfor %}
-    {% else %}
-      No Guardian data
-    {% endif %}
-    </div>
-  </div>
-{% endcomment %}
+        require(['dojo/request',
+                 'dojo/json',
+                 'dijit/registry',
+                 'dojo/dom',
+                 'dojo/dom-attr',
+                 'dojo/dom-class',
+                 'dojo/dom-construct',
+                 'dojo/on',
+                 'dojo/query',
+                 'aushadha/panes/dynamic_html_pane_creator',
+                 'dojo/NodeList-traverse',
+                 'dojo/NodeList-data',
+                 'dojo/domReady!'
+                ],
 
-  <div id="patientFamilyHistoryContainer"> 
-    {% if pat_family_history_obj %}
-      <ul>
-      {% for obj in pat_family_history_obj %}
-        <li> {{obj.formatted_obj_data}} </li>
-      {% endfor %}
-    {% else %}
-      No Family History Recorded
-    {% endif %}
-  </div>
+        function(request,
+                    JSON, 
+                    registry, 
+                    dom, 
+                    domAttr,
+                    domClass,
+                    domConstruct,
+                    on,
+                    query,
+                    createDynamicHTMLPane 
+                    ) {
 
-  <div id="patientSocialHistoryContainer"> 
-    {% if pat_social_history_obj %}
-      <ul>
-      {% for obj in pat_social_history_obj %}
-        <li> {{obj.formatted_obj_data}} </li>
-      {% endfor %}
-    {% else %}
-      No Social History data
-    {% endif %}
-  </div>
+            query('.patient_detail_summary_reload_menu').
+            forEach(
+                function(node) {
+                    on(node, 
+                       'click', 
+                       function() {
+                           var href = domAttr.get(node, 'data-url');
+                           registry.byId("PATIENT_CENTER_CP_TC_SUMMARY_CP").set('href', href);
+                       }
+                    )
+                });
 
-  <div id="patientMedicalHistoryContainer"> 
-    {% if pat_medical_history_obj %}
-      <ul>
-      {% for obj in pat_medical_history_obj %}
-        <li> {{obj.formatted_obj_data}} </li>
-      {% endfor %}
-    {% else %}
-      No Medical History data
-    {% endif %}
-  </div>
+            query('.patient_detail_edit_menu').
+            forEach(
+                function ( node ) {
+                  var href = domAttr.get(node, 'data-url');
+                  on( node, 
+                      'click', 
+                      function ( ) { 
+                         request(href).
+                         then(
+                             function(json){
+                                var jsondata = JSON.parse(json);
+                                var args = { title     : jsondata.title, 
+                                            domId     : jsondata.id,
+                                            url       : jsondata.url,
+                                            parentTab : registry.byId( jsondata.parentTab )
+                                        };
+                                createDynamicHTMLPane( args );
+                             },
 
-  <div id="patientSurgicalHistoryContainer"> 
-  {% if pat_surgical_history_obj %}
-      <ul>
-      {% for obj in pat_surgical_history_obj %}
-        <li> {{obj.formatted_obj_data}} </li>
-      {% endfor %}
-    {% else %}
-      No Surgical History data
-    {% endif %}
-  </div>
+                             function(err){
+                                publishError(err.response.text);
+                             }
 
-</div>
+                         );
+                  });
 
-<div id="patientMedicationsContainer">
-  
-  <div id="patientMedicationListContainer"> 
-    {% if pat_medication_list_obj %}
-      <table class="content_pane_table">
-      <thead> 
-        <th> No </th> 
-        <th> Drug </th>
-        <th> Strength </th> 
-        <th> Dosage </th> 
-        <th> Prescribed by </th> 
-        <th> Date of Prescription </th> 
-        <th> Active ? </th>
-      </thead>
-      <tbody>
-      {% for obj in pat_medication_list_obj %}
-        <tr class="{%cycle 'even_row' 'odd_row' %}"> 
-          <td> {{forloop.counter}} </td>
-          <td> {{obj.medication}} </td>
-          <td> {{obj.strength}} </td>
-          <td> {{obj.dosage}} </td>
-          <td> {{obj.prescribed_by}} </td>
-          <td> {{obj.prescription_date.date.isoformat}} </td>
-            {% if obj.currently_active %}
-              <td class="normal_value_indicator_text">  Active  </td> 
-            {% else %}
-              <td class="abnormal_value_indicator_text"> Not Active </td>
-            {% endif %}
-          </td>
-        </tr>
-      {% endfor %}
-        </tbody>
-        </table>
-    {% else %}
-      No Medication
-    {% endif %}
-  </div>
-  
-    <div id="patientAllergyListContainer"> 
-    {% if pat_allergy_obj %}
-      <table class="content_pane_table">
-      <thead> 
-        <th> No </th> <th> Drug</th> <th> Reaction </th>
-      </thead>
-        <tbody>
-          {% for obj in pat_allergy_obj %}
-            <tr class="{%cycle 'even_row' 'odd_row' %}"> 
-              <td> {{forloop.counter}}       </td>
-              <td> {{obj.allergic_to}}              </td>
-              <td> {{obj.reaction_observed}} </td>
-            </tr>
+                });
+
+        });
+
+        </script>
+
+        <div class="patient_detail_summary_reload_menu"
+          style="background-image: url('{{STATIC_URL}}/images/generic/document/actions/reload.png');
+                  background-color: none;
+                  background-repeat: no-repeat;
+                  background-size: 16px 16px;
+                  width: 16px;
+                  height: 16px;
+                  float: right;
+                  position: relative;
+                  margin: 0px 2px 0px 2px;
+                  cursor: pointer;
+                  "
+          title = "Reload the Summary pane. Useful if the pane does not auto-update itself"
+          data-url= "{%url 'render_patient_summary_with_id'  patient_detail_obj.id %}"
+          >
+
+      </div>
+
+      <div class="patient_detail_print_menu"
+          style="background-image: url('{{STATIC_URL}}/images/generic/document/actions/print.png');
+                  background-color: none;
+                  background-repeat: no-repeat;
+                  background-size: 16px 16px;
+                  width: 16px;
+                  height: 16px;
+                  float: right;
+                  position: relative;
+                  margin: 0px 2px 0px 2px;
+                  cursor: pointer;
+                  "
+          title = "Print the Summary"
+          data-url= ""
+          onclick="alert('Will be implemented shortly');"
+          >
+
+      </div>
+
+      <div class="patient_detail_export_menu"
+          style="background-image: url('{{STATIC_URL}}/images/generic/document/actions/export.png');
+                  background-color: none;
+                  background-repeat: no-repeat;
+                  background-size: 16px 16px;
+                  width: 16px;
+                  height: 16px;
+                  float: right;
+                  position: relative;
+                  margin: 0px 2px 0px 2px;
+                  cursor: pointer;
+                  "
+          title = "Export the Summary"
+          data-url= ""
+          onclick="alert('Will be implemented shortly');"
+          >
+
+      </div>
+
+
+  <div id="patientHistoryContainer">
+
+    <div id="patientDemographicsContainer"> 
+
+      <div>
+        <h4> Demographics </h4>
+        {% if demographics_obj %}
+          <ul>
+          {% for obj in demographics_obj %}
+            <li> {{obj.formatted_obj_data}} </li>
           {% endfor %}
-        </tbody>
-      </table>
-    {% else %}
-      No Recorded Allergies
-    {% endif %}
+        {% else %}
+          <p class="suggestion_text">  Demographics data </p>
+        {% endif %}
+      </div>
+
+      <div>
+        <h4> Contact </h4>
+        {% if contact_obj %}
+          <ul>
+          {% for obj in contact_obj %}
+            <li> {{obj|title}} </li>
+          {% endfor %}
+        {% else %}
+          <p class="suggestion_text">   No Contact data </p>
+        {% endif %}
+      </div>
+
+      <div>
+        <h4> Phone </h4>
+        {% if phone_obj %}
+          <ul>
+          {% for obj in phone_obj %}
+            <li> {{obj|title}} </li>
+          {% endfor %}
+        {% else %}
+          <p class="suggestion_text">   No Phone data </p>
+        {% endif %}
+      </div>
+
+      <div>
+        <h4> Guardian </h4>
+        {% if guardian_obj %}
+          <ul>
+          {% for obj in guardian_obj %}
+            <li> {{obj|title}} </li>
+          {% endfor %}
+        {% else %}
+          <p class="suggestion_text">   No Guardian data </p>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <div id="patientFamilyHistoryContainer"> 
+      <h4> Family History </h4>
+      {% if family_history_obj %}
+        <ul>
+        {% for obj in family_history_obj %}
+          <li> {{obj.formatted_obj_data}} </li>
+        {% endfor %}
+      {% else %}
+        <p class="suggestion_text"> Family History Recorded </p>
+      {% endif %}
+
+    </div>
+
+    <div id="patientSocialHistoryContainer"> 
+      <h4> Social History </h4>
+      {% if social_history_obj %}
+        <ul>
+        {% for obj in social_history_obj %}
+          <li> {{obj.formatted_obj_data}} </li>
+        {% endfor %}
+      {% else %}
+        <p class="suggestion_text"> Social History data </p>
+      {% endif %}
+    </div>
+
+    <div id="patientMedicalHistoryContainer"> 
+      <h4> Medical History </h4>
+      {% if medical_history_obj %}
+        <ul>
+        {% for obj in medical_history_obj %}
+          <li> {{obj.formatted_obj_data}} </li>
+        {% endfor %}
+      {% else %}
+        <p class="suggestion_text"> Medical History data </p>
+      {% endif %}
+    </div>
+
+    <div id="patientSurgicalHistoryContainer"> 
+      <h4> Surgical History </h4>
+      {% if pat_surgical_history_obj %}
+          <ul>
+          {% for obj in pat_surgical_history_obj %}
+            <li> {{obj.formatted_obj_data}} </li>
+          {% endfor %}
+        {% else %}
+          <p class="suggestion_text"> Surgical History data </p>
+        {% endif %}
+    </div>
+
   </div>
-</div>
 
+  <div id="patientMedicationsContainer">
 
-<div id="patientPreventivesContainer">
-  
-  <div id="patientImmunisationContainer"> 
-    {% if pat_immunisation_obj %}
-      <ul>
-      {% for obj in pat_immunisation_obj %}
-        <li> {{obj.formatted_obj_data}} </li>
-      {% endfor %}
-    {% else %}
-      No Immunisation data
-    {% endif %}
+    <div id="patientMedicationListContainer"> 
+
+      <h4> Medication List </h4>
+      {% if medication_list_obj %}
+        <table class="content_pane_table">
+        <thead> 
+          <th> No </th> 
+          <th> Drug </th>
+          <th> Strength </th> 
+          <th> Dosage </th> 
+          <th> Prescribed by </th> 
+          <th> Date of Prescription </th> 
+          <th> Active ? </th>
+        </thead>
+        <tbody>
+        {% for obj in medication_list_obj %}
+          <tr class="{%cycle 'even_row' 'odd_row' %}"> 
+            <td> {{forloop.counter}} </td>
+            <td> {{obj.medication}} </td>
+            <td> {{obj.strength}} </td>
+            <td> {{obj.dosage}} </td>
+            <td> {{obj.prescribed_by}} </td>
+            <td> {{obj.prescription_date.date.isoformat}} </td>
+              {% if obj.currently_active %}
+                <td class="normal_value_indicator_text">  Active  </td> 
+              {% else %}
+                <td class="abnormal_value_indicator_text"> Not Active </td>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+          </tbody>
+          </table>
+      {% else %}
+        <p class="suggestion_text"> No Medication Recorded </p>
+      {% endif %}
+
+    </div>
+
+    <div id="patientAllergyListContainer"> 
+      <h4> Allergies </h4>
+      {% if allergy_obj %}
+        <table class="content_pane_table">
+        <thead> 
+          <th> No </th> <th> Drug</th> <th> Reaction </th>
+        </thead>
+          <tbody>
+            {% for obj in allergy_obj %}
+              <tr class="{%cycle 'even_row' 'odd_row' %}"> 
+                <td> {{forloop.counter}}       </td>
+                <td> {{obj.allergic_to}}              </td>
+                <td> {{obj.reaction_observed}} </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p class="suggestion_text"> No Recorded Allergies </p>
+      {% endif %}
+    </div>
+
   </div>
 
-  <div id="patientObstetricHistoryDetailContainer"> 
-    {% if pat_obstetric_history_detail_obj %}
-      <ul>
-      {% for obj in pat_obstetric_history_detail_obj %}
-        <li> {{obj.formatted_obj_data}} </li>
-      {% endfor %}
-    {% else %}
-      No Obstetric History data
-    {% endif %}
+
+  <div id="patientPreventivesContainer">
+
+    <div id="patientImmunisationContainer"> 
+      <h4> Immunisation </h4>
+      {% if immunisation_obj %}
+        <ul>
+        {% for obj in immunisation_obj %}
+          <li> {{obj.formatted_obj_data}} </li>
+        {% endfor %}
+      {% else %}
+        <p class="suggestion_text"> No Immunisation data </p>
+      {% endif %}
+    </div>
+
+    <div id="patientObstetricHistoryDetailContainer"> 
+
+    </div>
+
+    <div id="patientMedicalPreventivesContainer"> 
+
+    </div>
+
   </div>
 
-  <div id="patientMedicalPreventivesContainer"> 
-  
+  <div id="patientVisitDetailContainer"> 
+      <h4> OPD Visits </h4>
+      {% if visit_detail_obj %}
+        <ul>
+        {% for obj in visit_detail_obj %}
+          <li> {{obj.visit_date.date}} - {{obj.op_surgeon}} </li>
+        {% endfor %}
+        </ul>
+      {% else %}
+        <p class="suggestion_text" > No Visit Recorded </p>
+      {% endif %}
   </div>
-  
-</div>
 
+  <div id="patientInvContainer">
 
-<div id="patientInvContainer">
-  
-</div>
+  </div>
 
-<div id="patientImagingContainer">
-  
-</div>
+  <div id="patientImagingContainer">
+    
+  </div>
 
-<div id="patientProceduresContainer">
-  
-</div>
+  <div id="patientProceduresContainer">
+    
+  </div>
 
-<div id="patientCodingContainer">
-  
+  <div id="patientCodingContainer">
+    
+  </div>
+
 </div>
