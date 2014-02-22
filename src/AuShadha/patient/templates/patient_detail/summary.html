@@ -327,11 +327,11 @@
   <div id="patientVisitDetailContainer"> 
       <h4> OPD Visits </h4>
       {% if visit_detail_obj %}
-        <ul>
+      <ul>
         {% for obj in visit_detail_obj %}
-          <li> {{obj.visit_date.date}} - {{obj.op_surgeon}} </li>
+          <li> {{obj.visit_date.date}} - &nbsp; <i>{{obj.op_surgeon}}</i> </li>
         {% endfor %}
-        </ul>
+      </ul>
       {% else %}
         <p class="suggestion_text" > No Visit Recorded </p>
       {% endif %}
