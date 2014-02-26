@@ -12,6 +12,7 @@ from django.core.exceptions import ValidationError
 from django import forms
 
 from django.utils import simplejson
+from django.utils.safestring import mark_safe
 from django.core.serializers import json
 from django.core.serializers.json import DjangoJSONEncoder
 
@@ -31,6 +32,7 @@ class AuShadhaBaseModel(models.Model):
         self.__model_label__ = "AuShadhaBaseModel"
         self._parent_model = None
         self.urls={}
+        self.field_list = []
 
     class Meta:
       abstract = True
@@ -96,22 +98,54 @@ class AuShadhaBaseModel(models.Model):
         return "/AuShadha/%s_json/%s/" % (self.__model_label__, self.id)
 
     def _field_list(self):
-        self.field_list = []
-        print self._meta.fields
-        for field in self._meta.fields:
-            self.field_list.append(field)
-        return self.field_list
 
-    def _formatted_obj_data(self):
+        for f in self._meta.fields:
+            self.field_list.append(f)
+        #return self.field_list
+
+
+    def formatted_obj_data_as_table(self):
+
+      '''
+       Return formatted data as mark_safe HTML table 
+      '''
+      pass
+
+    def formatted_obj_data(self):
+
+      '''
+       Return formatted data as mark_safe HTML paragraph
+      '''
+
+      try:
         if not self.field_list:
-            _field_list()
-        str_obj = "<ul>"
-        for obj in self._field_list:
-            _str += "<li>" + obj + "<li>"
-            str_obj += _str
-        str_obj += "</ul>"
-        return str_obj
+            self._field_list()
 
+        str_obj = "<p>"
+        for obj in self.field_list:
+
+            if obj.__class__.__name__ not in ['AutoField','ForeignKey']:
+              field_name = (obj.name).replace('_',' ').title()
+              field_value = (obj.value_to_string(self)).replace('_',' ').title()
+
+              if field_value in['',None]:
+                field_value = '--'
+
+              if field_value == True:
+                field_value = "Yes"
+              elif field_value == False:
+                field_value = "No"
+
+              _str = "<span> %s: %s </span></br>" %(field_name, field_value)
+              str_obj += _str
+
+            else:
+              continue
+        str_obj += "</p>"
+        return mark_safe(str_obj)
+
+      except (Exception) as e:
+        raise e
 
     #def generate_json_for_datagrid(self):
         #"""Returns the JSON formatted Values of a specific Django Model
