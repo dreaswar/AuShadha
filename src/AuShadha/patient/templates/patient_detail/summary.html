@@ -258,12 +258,12 @@
             <td> {{obj.strength}} </td>
             <td> {{obj.dosage}} </td>
             <td> {{obj.prescribed_by}} </td>
-            <td> {{obj.prescription_date.date.isoformat}} </td>
-              {% if obj.currently_active %}
-                <td class="normal_value_indicator_text">  Active  </td> 
-              {% else %}
-                <td class="abnormal_value_indicator_text"> Not Active </td>
-              {% endif %}
+            <td> {{obj.prescription_date}} </td>
+            {% if obj.currently_active %}
+              <td class="normal_value_indicator_text">  Active  </td> 
+            {% else %}
+              <td class="abnormal_value_indicator_text"> Not Active </td>
+            {% endif %}
             </td>
           </tr>
         {% endfor %}
