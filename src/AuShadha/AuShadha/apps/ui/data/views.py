@@ -6,10 +6,14 @@
 # License      : GNU-GPL Version 3,Please see AuShadha/LICENSE.txt for details
 ################################################################################
 
+"""
+  Module which setsup the UI on load
+"""
 
 # General Module imports-----------------------------------
 from datetime import datetime, date, time
 import importlib
+
 
 ## General Django Imports----------------------------------
 from django.shortcuts import render_to_response
@@ -19,24 +23,10 @@ from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
-##from django.core.context_processors import csrf
-#from django.contrib.auth.models import User
-##from django.views.decorators.csrf import csrf_exempt
-##from django.views.decorators.cache import never_cache
-##from django.views.decorators.csrf import csrf_protect
-##from django.views.decorators.debug import sensitive_post_parameters
-##from django.core.paginator import Paginator
-##from django.template.response import TemplateResponse
-##from django.contrib.sites.models import get_current_site
-##import urlparse
-##from django.core import serializers
-##from django.core.serializers import json
-##from django.core.serializers.json import DjangoJSONEncoder
-
 from AuShadha import settings
 from AuShadha.apps.ui.ui import ui as UI
 
-## Views start here -----------------------------------------
+
 
 
 def serialise_ui(UI):
