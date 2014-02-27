@@ -11,8 +11,8 @@
 
  | Defines the ModelInstanceSummary class
  | Useful for generation of data presentation to user as a Summary.  
- 
- | For eg: > 
+
+ | For eg: >
            > A Patient may have medications, histories, admission, opd visits etc...
 
            > The Instance of ModelInstanceSummary when called returns the related objects.
@@ -38,7 +38,6 @@ class ModelInstanceSummary(object):
   
   """
    Returns a summary of the model instance along with its related models
-
    So can be implemented this way
 
     def main():
@@ -52,7 +51,6 @@ class ModelInstanceSummary(object):
       return d()
 
     main() --> Returns the Summary
-
   """
 
 
@@ -71,7 +69,6 @@ class ModelInstanceSummary(object):
     # Creates the ModelInstanceJson Instance
     j = ModelInstanceJson(self.instance)
     self.related_model_paths = j.related_object_list
-
 
     # Build a basic Dictionary for module path and field names
     # This inturn calls the _extend_module_path_map() method 
