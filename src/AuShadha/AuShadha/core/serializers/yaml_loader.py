@@ -1,14 +1,18 @@
 ###############################################################################
-#
-#
-#
-#
 # Borrowed from SO query: 
 # http://stackoverflow.com/questions/528281/how-can-i-include-an-yaml-file-inside-another
 ###############################################################################
 
+"""
+ Defines a custom PyYAML Loader class that will have and !!include tag for 
+ including files on markup. 
+ Yet to test. 
+ Hopefully this may be included later after some testing. 
+"""
+
 import yaml
 import os.path
+
 
 class Loader(yaml.Loader):
 

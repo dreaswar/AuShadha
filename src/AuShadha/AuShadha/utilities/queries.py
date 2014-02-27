@@ -7,6 +7,11 @@
 # License     : GNU-GPL Version 3, See AuShadha/License.txt
 ################################################################################
 
+"""
+ These are Queries that have been left here. 
+ They are old code that needs to be moved into the respective app/queries.py module.
+"""
+
 #from django.utils import simplejson
 
 #from AuShadha.apps.ui.ui import ui as UI

@@ -1,15 +1,20 @@
 ################################################################################
 # Project: AuShadha
-# Description: Pane of the UI
+# Description: Pane of the Search UI
 # Author ; Dr.Easwar T.R
 # Date: 04-11-2013
 # License: GNU-GPL Version3, see LICENSE.txt for details
 ################################################################################
 
+""" 
+  Views to generate the UI for Search Pane
+"""
+
+# General Imports
 from cStringIO import StringIO
 import yaml
 
-# General Django Imports----------------------------------
+# Django Imports
 from django.http import Http404, HttpResponse
 from django.utils import simplejson
 from django.core.urlresolvers import reverse
@@ -19,11 +24,13 @@ from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 
+#AuShadha imports
 from AuShadha.apps.clinic.models import Clinic
 from AuShadha.apps.ui.ui import ui as UI
 
-#from patient.models import PatientDetail
+
 PatientDetail = UI.get_module("PatientRegistration")
+
 try:
   from patient import MODULE_LABEL
 except (ImportError, AttributeError):
@@ -32,9 +39,12 @@ except (ImportError, AttributeError):
 
 
 
-
 @login_required
 def render_aushadha_search_form(request):
+  '''
+   Renders the AuShadha Search Form
+  '''
+
   user = request.user
   
   if request.method == 'GET' and request.is_ajax():
@@ -48,7 +58,9 @@ def render_aushadha_search_form(request):
 
 @login_required
 def render_aushadha_search_pane(request):
-  
+  '''
+    Renders the AuShadha search pane
+  '''
   user = request.user
   
   if request.method == 'GET' and request.is_ajax():
