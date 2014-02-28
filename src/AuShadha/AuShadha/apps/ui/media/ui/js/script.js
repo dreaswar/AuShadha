@@ -6,7 +6,7 @@
  *   4) creates a wireframe UI with regions and blocks
  *   5) uses the search module to fill it with Search functionality
  * 
- */
+*/
 
   require([
           "dojo/dom",
