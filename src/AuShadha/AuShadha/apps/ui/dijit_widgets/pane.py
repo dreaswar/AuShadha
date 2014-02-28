@@ -25,7 +25,7 @@ from AuShadha.apps.ui.ui import ui as UI
 
 @login_required
 def render_aushadha_ui_pane(request):
-  
+  ''' Renders the AuShadha UI '''
   user = request.user
   
   if request.method == 'GET' and request.is_ajax():

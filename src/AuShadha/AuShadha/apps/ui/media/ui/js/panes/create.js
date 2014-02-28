@@ -62,7 +62,7 @@ define(['dojo/dom',
 
               var appObj = window.INSTALLED_APPS ? window.INSTALLED_APPS: [];
 
-              console.log( appObj );
+//               console.log( appObj );
 
               var centerMainPane = registry.byId('centerMainPane');
               var centerTopTabPane= registry.byId("centerTopTabPane");
