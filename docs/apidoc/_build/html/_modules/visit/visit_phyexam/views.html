@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>visit.visit_phyexam.views &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for visit.visit_phyexam.views</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Physical Examination Views for AuShadha</span>
+<span class="c"># Takes care of all the Physical Examination Related Data.</span>
+<span class="c"># Author    : Dr.Easwar T.R</span>
+<span class="c"># Copyright : 2012</span>
+<span class="c"># Date      : 2012-12-31</span>
+<span class="c"># License   : GNU-GPL Version 3</span>
+<span class="c">################################################################################</span>
+
+
+<span class="c"># General Module imports-----------------------------------</span>
+<span class="kn">import</span> <span class="nn">StringIO</span>
+<span class="c">#import ho.pisa as pisa</span>
+<span class="c">#from reportlab.pdfgen import canvas</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="c"># General Django Imports----------------------------------</span>
+
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span><span class="p">,</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.forms.models</span> <span class="kn">import</span> <span class="n">modelformset_factory</span>
+<span class="kn">from</span> <span class="nn">django.forms.formsets</span> <span class="kn">import</span> <span class="n">formset_factory</span>
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">RequestContext</span>
+<span class="c">#from django.contrib.auth.models import User</span>
+<span class="kn">from</span> <span class="nn">django.template.loader</span> <span class="kn">import</span> <span class="n">render_to_string</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="c">#from django.core.context_processors  import csrf</span>
+<span class="c">#from django.views.decorators.csrf    import csrf_exempt</span>
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">loader</span><span class="p">,</span> <span class="n">Context</span>
+
+<span class="c"># Application Specific Model Imports-----------------------</span>
+
+<span class="c">#from AuShadha.settings import LOGIN_URL</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+
+<span class="c">#from patient.models import *</span>
+<span class="c">#from patient.views import *</span>
+<span class="c">#from admission.models import *</span>
+<span class="c">#from visit.models import *</span>
+
+<span class="n">PatientDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;PatientRegistration&quot;</span><span class="p">)</span>
+<span class="n">AdmissionDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;Admission&quot;</span><span class="p">)</span>
+<span class="n">VisitDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">VitalExam</span><span class="p">,</span> <span class="n">GenExam</span><span class="p">,</span> <span class="n">SysExam</span><span class="p">,</span> <span class="n">NeuroExam</span><span class="p">,</span> <span class="n">VascExam</span><span class="p">,</span> <span class="n">MusculoSkeletalExam</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">VitalExamForm</span><span class="p">,</span> <span class="n">GenExamForm</span><span class="p">,</span> <span class="n">SysExamForm</span><span class="p">,</span> <span class="n">NeuroExamForm</span><span class="p">,</span> <span class="n">VascExamForm</span><span class="p">,</span> <span class="n">MusculoSkeletalExamForm</span>
+
+<span class="kn">from</span> <span class="nn">.utilities</span> <span class="kn">import</span> <span class="n">visit_detail_has_exam</span>
+
+<span class="n">EXAM_NAME_MODEL_MAP</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s">&#39;vitals&#39;</span><span class="p">:</span> <span class="n">VitalExam</span><span class="p">,</span>
+                        <span class="s">&#39;sys&#39;</span><span class="p">:</span> <span class="n">SysExam</span><span class="p">,</span>
+                        <span class="s">&#39;gen&#39;</span><span class="p">:</span> <span class="n">GenExam</span><span class="p">,</span>
+                        <span class="s">&#39;neuro&#39;</span><span class="p">:</span> <span class="n">NeuroExam</span><span class="p">,</span>
+                        <span class="s">&#39;vasc&#39;</span><span class="p">:</span> <span class="n">VascExam</span><span class="p">,</span>
+                        <span class="s">&#39;musculoskeletal&#39;</span><span class="p">:</span> <span class="n">MusculoSkeletalExam</span>
+                      <span class="p">}</span>
+
+<span class="n">EXAM_NAME_MODEL_FORM_MAP</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="n">VitalExam</span><span class="p">:</span> <span class="n">VitalExamForm</span><span class="p">,</span>
+                        <span class="n">SysExam</span><span class="p">:</span> <span class="n">SysExamForm</span><span class="p">,</span>
+                        <span class="n">GenExam</span><span class="p">:</span> <span class="n">GenExamForm</span><span class="p">,</span>
+                        <span class="n">NeuroExam</span><span class="p">:</span> <span class="n">NeuroExamForm</span><span class="p">,</span>
+                        <span class="n">VascExam</span><span class="p">:</span> <span class="n">VascExamForm</span><span class="p">,</span>
+                        <span class="n">MusculoSkeletalExam</span><span class="p">:</span> <span class="n">MusculoSkeletalExamForm</span>
+                      <span class="p">}</span>
+
+
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="visit_phyexam_template"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.views.visit_phyexam_template">[docs]</a><span class="k">def</span> <span class="nf">visit_phyexam_template</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">exam_name</span><span class="p">,</span> <span class="n">visit_id</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;GET&quot;</span><span class="p">:</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">visit_id</span><span class="p">:</span>
+                <span class="n">visit_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">visit_id</span> <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">visit_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;visit_id&#39;</span><span class="p">)</span> <span class="p">)</span>
+
+            <span class="n">visit_detail_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">visit_id</span><span class="p">)</span>
+            <span class="n">exam_class</span> <span class="o">=</span> <span class="n">EXAM_NAME_MODEL_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">exam_name</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">exam_class</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Invalid Exam Requested&quot;</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">template_file</span> <span class="o">=</span> <span class="s">&#39;visit_phyexam/</span><span class="si">%s</span><span class="s">_exam/template.html&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">exam_name</span><span class="p">)</span>
+                <span class="c">#template = loader.get_template(template_file)</span>
+                <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;user&#39;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+                                                    <span class="s">&#39;exam_name&#39;</span><span class="p">:</span> <span class="n">exam_name</span> <span class="p">,</span>
+                                                    <span class="s">&#39;visit_detail_obj&#39;</span><span class="p">:</span> <span class="n">visit_detail_obj</span>
+                                                    <span class="p">})</span>
+                <span class="c">#rendered_html = template.render(variable)</span>
+                <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="n">template_file</span><span class="p">,</span> <span class="n">variable</span> <span class="p">)</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;ERROR! &quot;</span> <span class="p">,</span> <span class="n">ex</span><span class="p">)</span>
+
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Invalid Exam template. &quot;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request Method&quot;</span><span class="p">)</span>
+
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="visit_phyexam_json"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.views.visit_phyexam_json">[docs]</a><span class="k">def</span> <span class="nf">visit_phyexam_json</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">exam_name</span><span class="p">,</span> <span class="n">visit_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">visit_id</span><span class="p">:</span>
+          <span class="n">visit_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">visit_id</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">visit_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;visit_id&#39;</span><span class="p">))</span>          
+
+        <span class="n">visit_detail_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">visit_id</span><span class="p">)</span>
+        <span class="n">patient_detail_obj</span> <span class="o">=</span> <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">patient_detail</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">visit_detail_obj</span><span class="p">,</span> <span class="s">&#39;urls&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">):</span>
+          <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    
+    <span class="k">except</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;ERROR:: Bad request.Invalid arguments passed&quot;</span><span class="p">)</span>
+    
+    <span class="k">except</span><span class="p">(</span><span class="n">VisitDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;ERROR:: Patient requested does not exist.&quot;</span><span class="p">)</span>
+
+    <span class="n">exam_class</span> <span class="o">=</span> <span class="n">EXAM_NAME_MODEL_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">exam_name</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">exam_form_class</span> <span class="o">=</span> <span class="n">EXAM_NAME_MODEL_FORM_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">exam_class</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">exam_class</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Invalid Exam Requested&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">exam_objs</span> <span class="o">=</span> <span class="n">exam_class</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">visit_detail</span> <span class="o">=</span> <span class="n">visit_detail_obj</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">exam_objs</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">exam_objs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s">&#39;urls&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">):</span>
+              <span class="n">obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="n">data_to_append</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">id</span>
+            <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;edit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">&#39;visit_phyexam_edit&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">exam_name</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">id</span><span class="p">])</span>
+            <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;del&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">&#39;visit_phyexam_del&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">exam_name</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">id</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">exam_name</span> <span class="o">==</span> <span class="s">&#39;vasc&#39;</span><span class="p">:</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">location</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;side&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">side</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;character&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">character</span>
+
+            <span class="k">elif</span> <span class="n">exam_name</span> <span class="o">==</span> <span class="s">&#39;gen&#39;</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="k">elif</span> <span class="n">exam_name</span> <span class="o">==</span> <span class="s">&#39;sys&#39;</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="k">elif</span> <span class="n">exam_name</span> <span class="o">==</span> <span class="s">&#39;vitals&#39;</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="k">elif</span> <span class="n">exam_name</span> <span class="o">==</span> <span class="s">&#39;neuro&#39;</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_to_append</span><span class="p">)</span>
+
+    <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="visit_phyexam_list"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.views.visit_phyexam_list">[docs]</a><span class="k">def</span> <span class="nf">visit_phyexam_list</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">exam_name</span><span class="p">,</span> <span class="n">visit_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+  <span class="k">pass</span>
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="visit_phyexam_add"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.views.visit_phyexam_add">[docs]</a><span class="k">def</span> <span class="nf">visit_phyexam_add</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">exam_name</span><span class="p">,</span> <span class="n">visit_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+  
+  <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+  <span class="k">try</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">visit_id</span><span class="p">:</span>
+        <span class="n">visit_id</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">visit_id</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">visit_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;visit_id&#39;</span><span class="p">)</span> <span class="p">)</span>
+      <span class="n">visit_detail_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="n">visit_id</span><span class="p">)</span>
+ 
+  <span class="k">except</span> <span class="p">(</span><span class="ne">NameError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Error! : Bad Parameters supplied ! &quot;</span><span class="p">)</span>
+  
+  <span class="k">except</span> <span class="p">(</span><span class="n">VisitDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+      <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Error! : Requested Visit Does not Exist !&quot;</span><span class="p">)</span>
+  
+  <span class="n">exam_class</span> <span class="o">=</span> <span class="n">EXAM_NAME_MODEL_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">exam_name</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+  <span class="n">exam_form_class</span> <span class="o">=</span> <span class="n">EXAM_NAME_MODEL_FORM_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">exam_class</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">exam_class</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Invalid Exam Requested&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+      <span class="n">exam_obj</span> <span class="o">=</span> <span class="n">exam_class</span><span class="p">(</span><span class="n">visit_detail</span> <span class="o">=</span> <span class="n">visit_detail_obj</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">visit_detail_obj</span><span class="p">,</span><span class="s">&#39;urls&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">):</span>
+      <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="nf">add_phyexam</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;GET&#39;</span><span class="p">:</span>
+            <span class="n">exam_form</span> <span class="o">=</span> <span class="n">exam_form_class</span><span class="p">(</span><span class="n">instance</span> <span class="o">=</span> <span class="n">exam_obj</span><span class="p">,</span> <span class="n">auto_id</span> <span class="o">=</span> <span class="bp">False</span> <span class="p">)</span>
+            <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;user&#39;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span> 
+                                                <span class="s">&#39;visit_detail_obj&#39;</span><span class="p">:</span> <span class="n">visit_detail_obj</span><span class="p">,</span> 
+                                                <span class="s">&#39;visit_phyexam_form&#39;</span><span class="p">:</span> <span class="n">exam_form</span><span class="p">,</span>
+                                                <span class="s">&#39;exam_obj&#39;</span><span class="p">:</span> <span class="n">exam_obj</span><span class="p">,</span>
+                                                <span class="s">&#39;visit_phyexam_action&#39;</span><span class="p">:</span> <span class="s">&#39;add&#39;</span><span class="p">,</span>
+                                                <span class="s">&#39;exam_name&#39;</span><span class="p">:</span> <span class="n">exam_name</span>
+                                                <span class="p">})</span>
+            <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">&#39;visit_phyexam/add_or_edit_form.html&#39;</span><span class="p">,</span> <span class="n">variable</span> <span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;POST&#39;</span><span class="p">:</span>
+            <span class="n">exam_form</span> <span class="o">=</span> <span class="n">exam_form_class</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">exam_obj</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">exam_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+                <span class="n">saved_exam</span> <span class="o">=</span> <span class="n">exam_form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+                <span class="n">saved_exam</span><span class="o">.</span><span class="n">visit_detail</span> <span class="o">=</span> <span class="n">visit_detail_obj</span>
+                <span class="n">saved_exam</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+                <span class="n">success</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="n">error_message</span><span class="o">=</span> <span class="s">&quot;Exam Saved Successfully&quot;</span>
+                <span class="n">form_errors</span> <span class="o">=</span> <span class="bp">None</span>
+                <span class="n">redirectUrl</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">&#39;visit_phyexam_edit&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">exam_name</span><span class="p">,</span> <span class="n">saved_exam</span><span class="o">.</span><span class="n">id</span><span class="p">])</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;Error! Exam Could not be saved&quot;</span>
+                <span class="n">form_errors</span> <span class="o">=</span>  <span class="n">aumodelformerrorformatter_factory</span><span class="p">(</span><span class="n">exam_form</span><span class="p">)</span>
+                <span class="n">error_message</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">+</span> <span class="n">form_errors</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+                <span class="n">redirectUrl</span> <span class="o">=</span> <span class="bp">None</span>
+
+
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;success&#39;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span> 
+                    <span class="s">&#39;error_message&#39;</span><span class="p">:</span> <span class="n">error_message</span><span class="p">,</span> 
+                    <span class="s">&#39;form_errors&#39;</span><span class="p">:</span> <span class="n">form_errors</span><span class="p">,</span>
+                    <span class="s">&#39;redirectUrl&#39;</span><span class="p">:</span> <span class="n">redirectUrl</span>
+                    <span class="p">}</span>
+            <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span> <span class="o">=</span> <span class="s">&#39;json/application&#39;</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request&quot;</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">exam_name</span> <span class="o">!=</span> <span class="s">&#39;vasc&#39;</span> <span class="p">:</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">visit_detail_has_exam</span><span class="p">(</span><span class="n">exam_class</span><span class="p">,</span> <span class="n">visit_detail_obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">add_phyexam</span><span class="p">()</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">visit_phyexam_id</span>  <span class="o">=</span>  <span class="nb">unicode</span><span class="p">(</span> <span class="n">visit_detail_has_exam</span><span class="p">(</span><span class="n">exam_class</span><span class="p">,</span> <span class="n">visit_detail_obj</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="n">visit_phyexam_edit</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">exam_name</span><span class="p">,</span> <span class="n">visit_phyexam_id</span><span class="p">)</span>
+
+  <span class="k">elif</span> <span class="n">exam_name</span> <span class="o">==</span> <span class="s">&#39;vasc&#39;</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">add_phyexam</span><span class="p">()</span>
+
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="visit_phyexam_edit"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.views.visit_phyexam_edit">[docs]</a><span class="k">def</span> <span class="nf">visit_phyexam_edit</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">exam_name</span> <span class="p">,</span> <span class="n">visit_phyexam_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+  <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+  <span class="n">exam_class</span> <span class="o">=</span> <span class="n">EXAM_NAME_MODEL_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">exam_name</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>    
+  <span class="n">exam_form_class</span> <span class="o">=</span> <span class="n">EXAM_NAME_MODEL_FORM_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">exam_class</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+  <span class="k">try</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">visit_phyexam_id</span><span class="p">:</span>
+        <span class="n">visit_phyexam_id</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">visit_phyexam_id</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">visit_phyexam_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;visit_phyexam_id&#39;</span><span class="p">)</span> <span class="p">)</span>
+
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">exam_class</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Invalid Exam Requested&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="n">exam_obj</span> <span class="o">=</span> <span class="n">exam_class</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="n">visit_phyexam_id</span><span class="p">)</span>
+          <span class="n">visit_detail_obj</span> <span class="o">=</span> <span class="n">exam_obj</span><span class="o">.</span><span class="n">visit_detail</span>
+
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">exam_obj</span><span class="p">,</span><span class="s">&#39;urls&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">):</span>
+          <span class="n">exam_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">visit_detail_obj</span><span class="p">,</span><span class="s">&#39;urls&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">):</span>
+          <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+  <span class="k">except</span> <span class="p">(</span><span class="ne">NameError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Error! : Bad Parameters supplied ! &quot;</span><span class="p">)</span>
+
+  <span class="k">except</span> <span class="p">(</span><span class="n">exam_class</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+      <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Error! : Requested Examination Does not Exist !&quot;</span><span class="p">)</span>
+
+
+  <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;GET&#39;</span><span class="p">:</span>
+      <span class="n">exam_form</span> <span class="o">=</span> <span class="n">exam_form_class</span><span class="p">(</span><span class="n">instance</span> <span class="o">=</span> <span class="n">exam_obj</span><span class="p">,</span> <span class="n">auto_id</span> <span class="o">=</span> <span class="bp">False</span> <span class="p">)</span>
+      <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;user&#39;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span> 
+                                          <span class="s">&#39;visit_detail_obj&#39;</span><span class="p">:</span> <span class="n">visit_detail_obj</span><span class="p">,</span> 
+                                          <span class="s">&#39;visit_phyexam_form&#39;</span><span class="p">:</span> <span class="n">exam_form</span><span class="p">,</span>
+                                          <span class="s">&#39;exam_obj&#39;</span><span class="p">:</span> <span class="n">exam_obj</span><span class="p">,</span>
+                                          <span class="s">&#39;visit_phyexam_action&#39;</span><span class="p">:</span> <span class="s">&#39;edit&#39;</span><span class="p">,</span>
+                                          <span class="s">&#39;exam_name&#39;</span><span class="p">:</span> <span class="n">exam_name</span>
+                                          <span class="p">})</span>
+      <span class="k">if</span> <span class="n">exam_name</span> <span class="o">!=</span> <span class="s">&#39;vasc&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">&#39;visit_phyexam/add_or_edit_form.html&#39;</span><span class="p">,</span> <span class="n">variable</span> <span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">&#39;visit_phyexam/snippets/forms/vasc.html&#39;</span><span class="p">,</span> <span class="n">variable</span> <span class="p">)</span>
+
+  <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="n">exam_form</span> <span class="o">=</span> <span class="n">exam_form_class</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">exam_obj</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="n">exam_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">saved_exam</span> <span class="o">=</span> <span class="n">exam_form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="n">saved_exam</span><span class="o">.</span><span class="n">visit_detail</span> <span class="o">=</span> <span class="n">visit_detail_obj</span>
+            <span class="n">saved_exam</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="n">success</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">error_message</span><span class="o">=</span> <span class="s">&quot;Exam Saved Successfully&quot;</span>
+            <span class="n">form_errors</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="n">redirectUrl</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">&#39;visit_phyexam_edit&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">exam_name</span><span class="p">,</span> <span class="n">saved_exam</span><span class="o">.</span><span class="n">id</span><span class="p">])</span>
+
+      <span class="k">else</span><span class="p">:</span>
+            <span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;Error! Exam Could not be saved&quot;</span>
+            <span class="n">form_errors</span> <span class="o">=</span>  <span class="n">aumodelformerrorformatter_factory</span><span class="p">(</span><span class="n">exam_form</span><span class="p">)</span>
+            <span class="n">error_message</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">+</span> <span class="n">form_errors</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+            <span class="n">redirectUrl</span> <span class="o">=</span> <span class="bp">None</span>
+
+
+      <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;success&#39;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span> 
+              <span class="s">&#39;error_message&#39;</span><span class="p">:</span> <span class="n">error_message</span><span class="p">,</span> 
+              <span class="s">&#39;form_errors&#39;</span><span class="p">:</span> <span class="n">form_errors</span><span class="p">,</span>
+              <span class="s">&#39;redirectUrl&#39;</span><span class="p">:</span> <span class="n">redirectUrl</span>
+              <span class="p">}</span>
+      <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span> <span class="o">=</span> <span class="s">&#39;json/application&#39;</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request&quot;</span><span class="p">)</span>
+
+
+
+
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="visit_phyexam_del"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.views.visit_phyexam_del">[docs]</a><span class="k">def</span> <span class="nf">visit_phyexam_del</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">exam_name</span><span class="p">,</span> <span class="n">visit_phyexam_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+  
+  <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+  <span class="n">exam_class</span> <span class="o">=</span> <span class="n">EXAM_NAME_MODEL_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">exam_name</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>    
+  <span class="n">exam_form_class</span> <span class="o">=</span> <span class="n">EXAM_NAME_MODEL_FORM_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">exam_class</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+  <span class="k">try</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">visit_phyexam_id</span><span class="p">:</span>
+        <span class="n">visit_phyexam_id</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">visit_phyexam_id</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">visit_phyexam_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;visit_phyexam_id&#39;</span><span class="p">)</span> <span class="p">)</span>
+
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">exam_class</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Invalid Exam Requested&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="n">exam_obj</span> <span class="o">=</span> <span class="n">exam_class</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="n">visit_phyexam_id</span><span class="p">)</span>
+          <span class="n">visit_detail_obj</span> <span class="o">=</span> <span class="n">exam_obj</span><span class="o">.</span><span class="n">visit_detail</span>
+
+      <span class="c">#if not getattr(exam_obj,&#39;urls&#39;,None):</span>
+          <span class="c">#exam_obj.save()</span>
+
+      <span class="c">#if not getattr(visit_detail_obj,&#39;urls&#39;,None):</span>
+          <span class="c">#visit_detail_obj.save()</span>
+
+      <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;GET&quot;</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+
+        <span class="n">exam_obj</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;Successfully Deleted Exam&quot;</span>
+
+        <span class="k">if</span> <span class="n">exam_name</span> <span class="o">!=</span> <span class="s">&#39;vasc&#39;</span><span class="p">:</span>
+            <span class="n">redirectUrl</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">&#39;visit_phyexam_add&#39;</span><span class="p">,</span><span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">exam_name</span><span class="p">,</span> <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">id</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">redirectUrl</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;success&#39;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span> 
+                <span class="s">&#39;error_message&#39;</span><span class="p">:</span> <span class="n">error_message</span><span class="p">,</span> 
+                <span class="s">&#39;redirectUrl&#39;</span><span class="p">:</span> <span class="n">redirectUrl</span>
+                <span class="p">}</span>
+        <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&#39;application/json&#39;</span><span class="p">)</span>
+
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot; Error ! Unsupported Request..&quot;</span><span class="p">)</span>
+
+  <span class="k">except</span> <span class="p">(</span><span class="ne">NameError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Error! : Bad Parameters supplied ! &quot;</span><span class="p">)</span>
+
+  <span class="k">except</span> <span class="p">(</span><span class="n">exam_class</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Error! : Requested Examination Does not Exist !&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

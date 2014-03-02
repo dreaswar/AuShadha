@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>patient.models &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for patient.models</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># PROJECT      : AuShadha</span>
+<span class="c"># Description  : Patient Models for managing patient </span>
+<span class="c"># Author       : Dr. Easwar T R</span>
+<span class="c"># Date         : 16-09-2013</span>
+<span class="c"># Licence      : GNU GPL V3. Please see AuShadha/LICENSE.txt</span>
+<span class="c">################################################################################</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+
+<span class="kn">from</span> <span class="nn">AuShadha.utilities.urls</span> <span class="kn">import</span> <span class="n">generic_url_maker</span>
+<span class="kn">from</span> <span class="nn">AuShadha.utilities.queries</span> <span class="kn">import</span> <span class="n">has_contact</span><span class="p">,</span>\
+                              <span class="n">has_phone</span><span class="p">,</span>\
+                              <span class="n">has_guardian</span><span class="p">,</span>\
+                              <span class="n">has_active_admission</span><span class="p">,</span>\
+                              <span class="n">has_active_visit</span><span class="p">,</span> \
+                              <span class="n">adm_for_pat</span><span class="p">,</span>\
+                              <span class="n">visit_for_pat</span><span class="p">,</span>\
+                              <span class="n">can_add_new_visit</span><span class="p">,</span>\
+                              <span class="n">get_patient_complaints</span>
+
+<span class="kn">from</span> <span class="nn">AuShadha.apps.aushadha_base_models.models</span> <span class="kn">import</span> <span class="n">AuShadhaBaseModel</span><span class="p">,</span><span class="n">AuShadhaBaseModelForm</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.clinic.models</span> <span class="kn">import</span> <span class="n">Clinic</span>
+<span class="kn">from</span> <span class="nn">dijit_fields_constants</span> <span class="kn">import</span> <span class="n">PATIENT_DETAIL_FORM_CONSTANTS</span>
+<span class="kn">from</span> <span class="nn">AuShadha.settings</span> <span class="kn">import</span> <span class="n">APP_ROOT_URL</span>
+
+<span class="n">DEFAULT_PATIENT_DETAIL_FORM_EXCLUDES</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;parent_clinic&#39;</span><span class="p">,)</span>
+
+
+<div class="viewcode-block" id="PatientDetail"><a class="viewcode-back" href="../../patient.html#patient.models.PatientDetail">[docs]</a><span class="k">class</span> <span class="nc">PatientDetail</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Patient Model definition for Registration, Name entry and Hospital ID Generation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+   <span class="c"># Some data to Generate the URLS</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">PatientDetail</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;patient&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;parent_clinic&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span> <span class="o">=</span> <span class="p">[</span>
+                                    <span class="s">&#39;contact&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;phone&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;guardian&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;demographics&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;email_and_fax&#39;</span><span class="p">,</span>
+
+                                    <span class="s">&#39;admission&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;visit&#39;</span><span class="p">,</span>
+
+                                    <span class="s">&#39;medical_history&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;surgical_history&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;social_history&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;family_history&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;immunisation&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;obstetric_history_detail&#39;</span><span class="p">,</span>
+
+                                    <span class="s">&#39;medication_list&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;allergy_list&#39;</span>
+                       <span class="p">]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_extra_url_actions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;transfer_patient&#39;</span><span class="p">,</span><span class="s">&#39;transfer_clinic&#39;</span><span class="p">,</span><span class="s">&#39;refer&#39;</span><span class="p">]</span>
+
+
+      <span class="c"># Instance Methods imported from AuShadha.utilities.queries</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">has_active_admission</span> <span class="o">=</span> <span class="n">has_active_admission</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">has_active_visit</span> <span class="o">=</span> <span class="n">has_active_visit</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">has_contact</span> <span class="o">=</span> <span class="n">has_contact</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">has_guardian</span> <span class="o">=</span> <span class="n">has_guardian</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">has_phone</span> <span class="o">=</span> <span class="n">has_phone</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">can_add_new_visit</span> <span class="o">=</span> <span class="n">can_add_new_visit</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">get_patient_complaints</span> <span class="o">=</span> <span class="n">get_patient_complaints</span>
+
+
+    <span class="c"># Model attributes</span>
+    <span class="n">patient_hospital_id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s">&#39;Hospital ID&#39;</span><span class="p">,</span>
+                                           <span class="n">max_length</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+                                           <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">middle_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                                   <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Please enter Initials / Middle Name&quot;</span><span class="p">,</span>
+                                   <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+                                   <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+                                 <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                 <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                 <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Enter Initials / Last Name&quot;</span>
+                                 <span class="p">)</span>
+    <span class="n">full_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                                 <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                 <span class="n">null</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                 <span class="n">blank</span><span class="o">=</span><span class="bp">False</span>
+                                 <span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">sex</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                           <span class="n">choices</span><span class="o">=</span><span class="p">((</span><span class="s">&quot;Male&quot;</span><span class="p">,</span> <span class="s">&quot;Male&quot;</span><span class="p">),</span>
+                                    <span class="p">(</span><span class="s">&quot;Female&quot;</span><span class="p">,</span> <span class="s">&quot;Female&quot;</span><span class="p">),</span>
+                                    <span class="p">(</span><span class="s">&quot;Others&quot;</span><span class="p">,</span> <span class="s">&quot;Others&quot;</span><span class="p">)</span>
+                                    <span class="p">),</span>
+                           <span class="n">default</span> <span class="o">=</span> <span class="s">&quot;Male&quot;</span><span class="p">)</span>
+    <span class="n">parent_clinic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Clinic</span><span class="p">)</span>
+
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Patient - Basic Data&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Patient - Basic Data&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;first_name&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;middle_name&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;last_name&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="s">&#39;sex&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;patient_hospital_id&#39;</span>
+                    <span class="p">)</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;patient_hospital_id&#39;</span><span class="p">,</span> <span class="s">&#39;parent_clinic&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="PatientDetail.get_all_json_exportable_fields"><a class="viewcode-back" href="../../patient.html#patient.models.PatientDetail.get_all_json_exportable_fields">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_json_exportable_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Gets the JSON exportable fields and its values as key, value pair</span>
+<span class="sd">        This skips AutoField, OneToOneField type of field</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+      <span class="n">exportable_fields</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">get_fields_with_model</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;OneToOneField&#39;</span><span class="p">]:</span>
+          <span class="n">exportable_fields</span><span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value_from_object</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="k">continue</span>
+      <span class="k">return</span> <span class="n">exportable_fields</span>
+
+</div>
+<div class="viewcode-block" id="PatientDetail.get_all_related_fields"><a class="viewcode-back" href="../../patient.html#patient.models.PatientDetail.get_all_related_fields">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_related_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Gets the related fields (basically ForeignKey) </span>
+<span class="sd">        These are the keys used to add / list / json/ tree/ summary stuff in related models</span>
+<span class="sd">        This should be useful later in URL creation automagically</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+
+      <span class="n">related_field_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+      <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">get_all_related_objects</span><span class="p">():</span>
+          <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">model</span><span class="p">,</span><span class="s">&#39;__model_label__&#39;</span><span class="p">):</span>
+            <span class="n">model_label</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="s">&#39;__model_label__&#39;</span><span class="p">)</span>
+            <span class="n">related_field_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model_label</span><span class="p">)</span>
+          <span class="k">else</span><span class="p">:</span>
+            <span class="k">continue</span>
+      <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">related_field_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+      <span class="k">print</span> <span class="s">&quot;_can_add_list_or_json, Updated&quot;</span>
+      <span class="k">return</span> <span class="n">related_field_list</span>
+
+</div>
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">middle_name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">middle_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+                                 <span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">middle_name</span><span class="p">:</span>
+          <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+          <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">middle_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+
+
+<div class="viewcode-block" id="PatientDetail.check_before_you_add"><a class="viewcode-back" href="../../patient.html#patient.models.PatientDetail.check_before_you_add">[docs]</a>    <span class="k">def</span> <span class="nf">check_before_you_add</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks whether the patient has already been registered in the</span>
+<span class="sd">        database before adding.</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+      <span class="n">all_pat</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+      <span class="n">hosp_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">patient_hospital_id</span>
+      <span class="n">id_list</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="k">if</span> <span class="n">all_pat</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">all_pat</span><span class="p">:</span>
+            <span class="n">id_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">patient_hospital_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">hosp_id</span> <span class="ow">in</span> <span class="n">id_list</span><span class="p">:</span>
+            <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;Patient is already registered&quot;</span>
+            <span class="k">print</span> <span class="n">error</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="k">return</span> <span class="bp">True</span>
+</div>
+<div class="viewcode-block" id="PatientDetail.save"><a class="viewcode-back" href="../../patient.html#patient.models.PatientDetail.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          Custom Save Method needs to be defined.</span>
+<span class="sd">          This should check for:</span>
+<span class="sd">          1. Whether the patient is registered before.</span>
+<span class="sd">          2. Patient DOB / Age Verfication and attribute setting</span>
+<span class="sd">          3. Setting the full_name attribute</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_before_you_add</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_full_name</span><span class="p">()</span>
+    <span class="c">#     self._set_age()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PatientDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+</div>
+    <span class="k">def</span> <span class="nf">_field_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">field_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_list</span>
+
+    <span class="k">def</span> <span class="nf">_formatted_obj_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_list</span><span class="p">:</span>
+            <span class="n">_field_list</span><span class="p">()</span>
+        <span class="n">str_obj</span> <span class="o">=</span> <span class="s">&quot;&lt;ul&gt;&quot;</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_field_list</span><span class="p">:</span>
+            <span class="n">_str</span> <span class="o">+=</span> <span class="s">&quot;&lt;li&gt;&quot;</span> <span class="o">+</span> <span class="n">obj</span> <span class="o">+</span> <span class="s">&quot;&lt;li&gt;&quot;</span>
+            <span class="n">str_obj</span> <span class="o">+=</span> <span class="n">_str</span>
+        <span class="n">str_obj</span> <span class="o">+=</span> <span class="s">&quot;&lt;/ul&gt;&quot;</span>
+        <span class="k">return</span> <span class="n">str_obj</span>
+
+
+    <span class="k">def</span> <span class="nf">_set_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Defines and sets the Full Name for a Model on save.</span>
+<span class="sd">            This stores the value under the self.full_name attribute.</span>
+<span class="sd">            This is mainly intented for name display and search</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">middle_name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">full_name</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">middle_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+                                     <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">full_name</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+                                     <span class="p">)</span>
+          <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">middle_name</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">full_name</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">middle_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+                                     <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_name</span>
+
+
+    <span class="k">def</span> <span class="nf">_set_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot; Check DOB and Age. See Which one to set. </span>
+<span class="sd">            Dont set age if DOB is given. </span>
+<span class="sd">            Dont allow age &gt; 120 to be set.</span>
+<span class="sd">            This should be called before Form &amp; Model save.</span>
+<span class="sd">            If this returns false, the save should fail raising proper Exception</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date_of_birth</span><span class="p">:</span>
+            <span class="n">min_allowed_dob</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span> <span class="mo">01</span><span class="p">,</span> <span class="mo">01</span><span class="p">)</span>
+            <span class="n">max_allowed_dob</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date_of_birth</span> <span class="o">&gt;=</span> <span class="n">min_allowed_dob</span> <span class="ow">and</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">date_of_birth</span> <span class="o">&lt;=</span> <span class="n">max_allowed_dob</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%.2f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="nb">round</span><span class="p">((</span><span class="n">max_allowed_dob</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">date_of_birth</span><span class="p">)</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="mf">365.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+                <span class="k">return</span> <span class="bp">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                    <span class="s">&quot;Invalid Date: Date should be from January 01 1900 to Today&#39;s Date&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">120</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">date_of_bith</span> <span class="o">=</span> <span class="bp">None</span>
+                <span class="k">return</span> <span class="bp">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid Date of Birth / Age Supplied&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">False</span>
+
+
+
+</div>
+<div class="viewcode-block" id="PatientDetailForm"><a class="viewcode-back" href="../../patient.html#patient.models.PatientDetailForm">[docs]</a><span class="k">class</span> <span class="nc">PatientDetailForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ModelForm for Patient Basic Data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Patient Detail Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">PATIENT_DETAIL_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="PatientDetailForm.Meta"><a class="viewcode-back" href="../../patient.html#patient.models.PatientDetailForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">PatientDetail</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="n">DEFAULT_PATIENT_DETAIL_FORM_EXCLUDES</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

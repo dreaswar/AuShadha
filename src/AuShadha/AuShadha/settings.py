@@ -264,7 +264,11 @@ INSTALLED_APPS = (
     #'phyexam',
 )
 
-ENABLED_APPS = yaml.load( open('AuShadha/configure.yaml').read() ) # This settings doesnt do anything now. 
+try:
+  ENABLED_APPS = yaml.load( open('AuShadha/configure.yaml').read() ) # This settings doesnt do anything now. 
+except(IOError):
+  ENABLED_APPS = list(INSTALLED_APPS)
+  pass # Stupid hack just to let sphinx-apidoc pass this
 
 
 # A sample logging configuration. The only tangible logging

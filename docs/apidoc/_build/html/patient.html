@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>patient package &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="index.html" />
+    <link rel="next" title="patient.dijit_widgets package" href="patient.dijit_widgets.html" />
+    <link rel="prev" title="medication_list.dijit_widgets package" href="medication_list.dijit_widgets.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="patient.dijit_widgets.html" title="patient.dijit_widgets package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="medication_list.dijit_widgets.html" title="medication_list.dijit_widgets package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="patient-package">
+<h1>patient package<a class="headerlink" href="#patient-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="patient.dijit_widgets.html">patient.dijit_widgets package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="patient.dijit_widgets.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patient.dijit_widgets.html#patient-dijit-widgets-forms-module">patient.dijit_widgets.forms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patient.dijit_widgets.html#module-patient.dijit_widgets.pane">patient.dijit_widgets.pane module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patient.dijit_widgets.html#module-patient.dijit_widgets.tree">patient.dijit_widgets.tree module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patient.dijit_widgets.html#module-patient.dijit_widgets">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="patient-admin-module">
+<h2>patient.admin module<a class="headerlink" href="#patient-admin-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-patient.aushadha">
+<span id="patient-aushadha-module"></span><h2>patient.aushadha module<a class="headerlink" href="#module-patient.aushadha" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-patient.dijit_fields_constants">
+<span id="patient-dijit-fields-constants-module"></span><h2>patient.dijit_fields_constants module<a class="headerlink" href="#module-patient.dijit_fields_constants" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-patient.models">
+<span id="patient-models-module"></span><h2>patient.models module<a class="headerlink" href="#module-patient.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="patient.models.PatientDetail">
+<em class="property">class </em><tt class="descclassname">patient.models.</tt><tt class="descname">PatientDetail</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/patient/models.html#PatientDetail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.models.PatientDetail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>Patient Model definition for Registration, Name entry and Hospital ID Generation</p>
+<dl class="exception">
+<dt id="patient.models.PatientDetail.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#patient.models.PatientDetail.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="patient.models.PatientDetail.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">PatientDetail.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#patient.models.PatientDetail.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="patient.models.PatientDetail.check_before_you_add">
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">check_before_you_add</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/patient/models.html#PatientDetail.check_before_you_add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.models.PatientDetail.check_before_you_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether the patient has already been registered in the
+database before adding.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="patient.models.PatientDetail.get_absolute_url">
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#patient.models.PatientDetail.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="patient.models.PatientDetail.get_all_json_exportable_fields">
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">get_all_json_exportable_fields</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/patient/models.html#PatientDetail.get_all_json_exportable_fields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.models.PatientDetail.get_all_json_exportable_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the JSON exportable fields and its values as key, value pair
+This skips AutoField, OneToOneField type of field</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="patient.models.PatientDetail.get_all_related_fields">
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">get_all_related_fields</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/patient/models.html#PatientDetail.get_all_related_fields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.models.PatientDetail.get_all_related_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the related fields (basically ForeignKey) 
+These are the keys used to add / list / json/ tree/ summary stuff in related models
+This should be useful later in URL creation automagically</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="patient.models.PatientDetail.get_sex_display">
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">get_sex_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#patient.models.PatientDetail.get_sex_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="patient.models.PatientDetail.objects">
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3eb8350&gt;</em><a class="headerlink" href="#patient.models.PatientDetail.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="patient.models.PatientDetail.obstetrichistorydetail_set">
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">obstetrichistorydetail_set</tt><a class="headerlink" href="#patient.models.PatientDetail.obstetrichistorydetail_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="patient.models.PatientDetail.parent_clinic">
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">parent_clinic</tt><a class="headerlink" href="#patient.models.PatientDetail.parent_clinic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="patient.models.PatientDetail.save">
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">save</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/patient/models.html#PatientDetail.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.models.PatientDetail.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom Save Method needs to be defined.
+This should check for:
+1. Whether the patient is registered before.
+2. Patient DOB / Age Verfication and attribute setting
+3. Setting the full_name attribute</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="patient.models.PatientDetailForm">
+<em class="property">class </em><tt class="descclassname">patient.models.</tt><tt class="descname">PatientDetailForm</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/patient/models.html#PatientDetailForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.models.PatientDetailForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm</span></tt></a></p>
+<p>ModelForm for Patient Basic Data</p>
+<dl class="class">
+<dt id="patient.models.PatientDetailForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="reference internal" href="_modules/patient/models.html#PatientDetailForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.models.PatientDetailForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="patient.models.PatientDetailForm.Meta.exclude">
+<tt class="descname">exclude</tt><em class="property"> = ('parent_clinic',)</em><a class="headerlink" href="#patient.models.PatientDetailForm.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="patient.models.PatientDetailForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#patient.models.PatientDetailForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#patient.models.PatientDetail" title="patient.models.PatientDetail"><tt class="xref py py-class docutils literal"><span class="pre">PatientDetail</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="patient.models.PatientDetailForm.base_fields">
+<tt class="descclassname">PatientDetailForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'patient_hospital_id': &lt;django.forms.fields.CharField object at 0x3eb84d0&gt;, 'first_name': &lt;django.forms.fields.CharField object at 0x3eb8590&gt;, 'middle_name': &lt;django.forms.fields.CharField object at 0x3eb8650&gt;, 'last_name': &lt;django.forms.fields.CharField object at 0x3eb8710&gt;, 'age': &lt;django.forms.fields.CharField object at 0x3eb87d0&gt;, 'sex': &lt;django.forms.fields.TypedChoiceField object at 0x3eb8890&gt;}</em><a class="headerlink" href="#patient.models.PatientDetailForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="patient.models.PatientDetailForm.declared_fields">
+<tt class="descclassname">PatientDetailForm.</tt><tt class="descname">declared_fields</tt><em class="property"> = {}</em><a class="headerlink" href="#patient.models.PatientDetailForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="patient.models.PatientDetailForm.dijit_fields">
+<tt class="descclassname">PatientDetailForm.</tt><tt class="descname">dijit_fields</tt><em class="property"> = {'first_name': {'max_length': 30, 'data-dojo-props': &quot;'required' :'true' ,'regExp':'[\\\\w]+','invalidMessage':'Invalid Character' &quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'last_name': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'[\\\\w]+','invalidMessage' : 'Invalid Character'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'middle_name': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'[\\\\w]+','invalidMessage' : 'Invalid Character'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'age': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'\\\\d{1,3}','invalidMessage' : 'Invalid Character. Only Numbers are allowed'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'sex': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'','invalidMessage' : ''&quot;, 'data-dojo-type': 'dijit.form.Select'}, 'patient_hospital_id': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'[\\\\w]+','invalidMessage' : 'Invalid Character'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}}</em><a class="headerlink" href="#patient.models.PatientDetailForm.dijit_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="patient.models.PatientDetailForm.media">
+<tt class="descclassname">PatientDetailForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#patient.models.PatientDetailForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-patient.queries">
+<span id="patient-queries-module"></span><h2>patient.queries module<a class="headerlink" href="#module-patient.queries" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-patient.setup">
+<span id="patient-setup-module"></span><h2>patient.setup module<a class="headerlink" href="#module-patient.setup" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-patient.tests">
+<span id="patient-tests-module"></span><h2>patient.tests module<a class="headerlink" href="#module-patient.tests" title="Permalink to this headline">¶</a></h2>
+<p>This file demonstrates writing tests using the unittest module. These will
+pass when you run &#8220;manage.py test&#8221;.</p>
+<p>Replace this with more appropriate tests for your application.</p>
+<dl class="class">
+<dt id="patient.tests.SimpleTest">
+<em class="property">class </em><tt class="descclassname">patient.tests.</tt><tt class="descname">SimpleTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/patient/tests.html#SimpleTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.tests.SimpleTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="patient.tests.SimpleTest.test_basic_addition">
+<tt class="descname">test_basic_addition</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/patient/tests.html#SimpleTest.test_basic_addition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.tests.SimpleTest.test_basic_addition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests that 1 + 1 always equals 2.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-patient.urls">
+<span id="patient-urls-module"></span><h2>patient.urls module<a class="headerlink" href="#module-patient.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-patient.utilities">
+<span id="patient-utilities-module"></span><h2>patient.utilities module<a class="headerlink" href="#module-patient.utilities" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="patient.utilities.check_before_adding">
+<tt class="descclassname">patient.utilities.</tt><tt class="descname">check_before_adding</tt><big>(</big><em>patient_obj</em><big>)</big><a class="reference internal" href="_modules/patient/utilities.html#check_before_adding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.utilities.check_before_adding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="patient.utilities.get_all_complaints">
+<tt class="descclassname">patient.utilities.</tt><tt class="descname">get_all_complaints</tt><big>(</big><em>visit</em><big>)</big><a class="reference internal" href="_modules/patient/utilities.html#get_all_complaints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.utilities.get_all_complaints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="patient.utilities.return_patient_json">
+<tt class="descclassname">patient.utilities.</tt><tt class="descname">return_patient_json</tt><big>(</big><em>patient</em>, <em>success=True</em><big>)</big><a class="reference internal" href="_modules/patient/utilities.html#return_patient_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.utilities.return_patient_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-patient.views">
+<span id="patient-views-module"></span><h2>patient.views module<a class="headerlink" href="#module-patient.views" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="patient.views.patient_detail_add">
+<tt class="descclassname">patient.views.</tt><tt class="descname">patient_detail_add</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/patient/views.html#patient_detail_add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.views.patient_detail_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="patient.views.patient_detail_del">
+<tt class="descclassname">patient.views.</tt><tt class="descname">patient_detail_del</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/patient/views.html#patient_detail_del"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.views.patient_detail_del" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="patient.views.patient_detail_edit">
+<tt class="descclassname">patient.views.</tt><tt class="descname">patient_detail_edit</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/patient/views.html#patient_detail_edit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.views.patient_detail_edit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="patient.views.render_patient_info">
+<tt class="descclassname">patient.views.</tt><tt class="descname">render_patient_info</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/patient/views.html#render_patient_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.views.render_patient_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="patient.views.render_patient_json">
+<tt class="descclassname">patient.views.</tt><tt class="descname">render_patient_json</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/patient/views.html#render_patient_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.views.render_patient_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="patient.views.render_patient_summary">
+<tt class="descclassname">patient.views.</tt><tt class="descname">render_patient_summary</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/patient/views.html#render_patient_summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#patient.views.render_patient_summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-patient">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-patient" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">patient package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#patient-admin-module">patient.admin module</a></li>
+<li><a class="reference internal" href="#module-patient.aushadha">patient.aushadha module</a></li>
+<li><a class="reference internal" href="#module-patient.dijit_fields_constants">patient.dijit_fields_constants module</a></li>
+<li><a class="reference internal" href="#module-patient.models">patient.models module</a></li>
+<li><a class="reference internal" href="#module-patient.queries">patient.queries module</a></li>
+<li><a class="reference internal" href="#module-patient.setup">patient.setup module</a></li>
+<li><a class="reference internal" href="#module-patient.tests">patient.tests module</a></li>
+<li><a class="reference internal" href="#module-patient.urls">patient.urls module</a></li>
+<li><a class="reference internal" href="#module-patient.utilities">patient.utilities module</a></li>
+<li><a class="reference internal" href="#module-patient.views">patient.views module</a></li>
+<li><a class="reference internal" href="#module-patient">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="medication_list.dijit_widgets.html"
+                        title="previous chapter">medication_list.dijit_widgets package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="patient.dijit_widgets.html"
+                        title="next chapter">patient.dijit_widgets package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/patient.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="patient.dijit_widgets.html" title="patient.dijit_widgets package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="medication_list.dijit_widgets.html" title="medication_list.dijit_widgets package"
+             >previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

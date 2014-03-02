@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>history.obs_and_gyn.models &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for history.obs_and_gyn.models</h1><div class="highlight"><pre>
+<span class="c">#</span>
+<span class="c"># PROJECT: AuShadha</span>
+<span class="c">#          Models for managing patient Obstetric and Gynaecology history</span>
+<span class="c"># Author : Dr. Easwar T R</span>
+<span class="c"># Date   : 28-08-2012</span>
+<span class="c"># Licence: GNU GPL V3. Please see AuShadha/LICENSE.txt</span>
+<span class="c">#</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.forms</span> <span class="kn">import</span> <span class="n">ModelForm</span>
+<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
+<span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="kn">from</span> <span class="nn">AuShadha.apps.aushadha_base_models.models</span> <span class="kn">import</span> <span class="n">AuShadhaBaseModel</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.clinic.models</span> <span class="kn">import</span> <span class="n">Clinic</span>
+<span class="kn">from</span> <span class="nn">patient.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span><span class="p">,</span> <span class="n">generic_url_maker</span>
+
+
+<span class="c"># Obstetric Models Start here #################</span>
+<div class="viewcode-block" id="ObstetricHistoryDetail"><a class="viewcode-back" href="../../../history.obs_and_gyn.html#history.obs_and_gyn.models.ObstetricHistoryDetail">[docs]</a><span class="k">class</span> <span class="nc">ObstetricHistoryDetail</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Inherits from the AuShadha Base Model.</span>
+
+<span class="sd">    This defines the Obstetric History that the patient has had. The</span>
+<span class="sd">    patient automatically belongs to a Clinic and has some add, edit,</span>
+<span class="sd">    del methods defined on him.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">ObstetricHistoryDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;obstetric_history_detail&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;patient_detail&#39;</span>
+
+    <span class="n">never_been_pregnant</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span>
+        <span class="s">&#39;Never been pregnant&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">adoped_children</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span>
+        <span class="s">&quot;Adopted Children ?&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">adoped_children_names</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&quot;Adopted Children Names&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Not Applicable&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">pregnancy_listing</span>      <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">help_text</span><span class="o">=</span><span class="s">&#39;&#39;&#39;List all pregnancies in order,including still, premature births, ectopics and abortions&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span>
+                                              <span class="p">)</span>
+    <span class="n">patient_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">PatientDetail</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">patient_detail</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="ObstetricHistory"><a class="viewcode-back" href="../../../history.obs_and_gyn.html#history.obs_and_gyn.models.ObstetricHistory">[docs]</a><span class="k">class</span> <span class="nc">ObstetricHistory</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">ObstetricHistory</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;obstetric_history&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;obstetric_detail&#39;</span>
+
+    <span class="n">year</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">()</span>
+    <span class="n">sex</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                           <span class="n">choices</span><span class="o">=</span><span class="p">((</span><span class="s">&quot;m&quot;</span><span class="p">,</span> <span class="s">&quot;Male&quot;</span><span class="p">),</span>
+                                    <span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span> <span class="s">&quot;Female&quot;</span><span class="p">),</span>
+                                    <span class="p">(</span><span class="s">&quot;o&quot;</span><span class="p">,</span> <span class="s">&quot;Others&quot;</span><span class="p">)</span>
+                                    <span class="p">)</span>
+                           <span class="p">)</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DecimalField</span><span class="p">(</span><span class="n">decimal_places</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_digits</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">type_of_delivery</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+                                        <span class="n">choices</span><span class="o">=</span><span class="p">((</span><span class="s">&quot;normal&quot;</span><span class="p">,</span> <span class="s">&quot;Normal&quot;</span><span class="p">),</span>
+                                                 <span class="p">(</span><span class="s">&#39;cs&#39;</span><span class="p">,</span> <span class="s">&quot;Caesarian Section&quot;</span><span class="p">)</span>
+                                                 <span class="p">)</span>
+                                        <span class="p">)</span>
+    <span class="n">length_of_pregnancy</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">problems</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;None&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">breast_feeding</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="s">&quot;Periods of exclusive breast feeding&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">obstetric_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">ObstetricHistoryDetail</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obstetric_detail</span><span class="p">)</span>
+
+
+
+<span class="c"># Obstetric Modelform ##################################</span></div>
+<div class="viewcode-block" id="ObstetricHistoryDetailForm"><a class="viewcode-back" href="../../../history.obs_and_gyn.html#history.obs_and_gyn.models.ObstetricHistoryDetailForm">[docs]</a><span class="k">class</span> <span class="nc">ObstetricHistoryDetailForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ObstetricHistoryDetailForm.Meta"><a class="viewcode-back" href="../../../history.obs_and_gyn.html#history.obs_and_gyn.models.ObstetricHistoryDetailForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">ObstetricHistoryDetail</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;patient_detail&#39;</span><span class="p">,</span> <span class="s">&#39;parent_clinic&#39;</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ObstetricHistoryDetailForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">text_fields</span> <span class="o">=</span> <span class="p">[{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;never_been_pregnant&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.CheckBox&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; :false&quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;adoped_children&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.CheckBox&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; :false &quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;adoped_children_names&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.ValidationTextBox&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; : false, disabled:true&quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;pregnancy_listing&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.Textarea&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; :false, &#39;placeHolder&#39;: &#39;List all pregnancies in order including still, premature births,ectopics and abortions&#39;&quot;</span>
+                        <span class="p">}</span>
+                       <span class="p">]</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">text_fields</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">widget</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span>
+                <span class="s">&#39;data-dojo-type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">[</span><span class="s">&#39;data-dojo-type&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span>
+                <span class="s">&#39;data-dojo-props&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">[</span><span class="s">&#39;data-dojo-props&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span>
+                <span class="s">&#39;max_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">[</span><span class="s">&#39;max_length&#39;</span><span class="p">]</span>
+
+</div>
+<div class="viewcode-block" id="ObstetricHistoryForm"><a class="viewcode-back" href="../../../history.obs_and_gyn.html#history.obs_and_gyn.models.ObstetricHistoryForm">[docs]</a><span class="k">class</span> <span class="nc">ObstetricHistoryForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ObstetricHistoryForm.Meta"><a class="viewcode-back" href="../../../history.obs_and_gyn.html#history.obs_and_gyn.models.ObstetricHistoryForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">ObstetricHistory</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;parent_clinic&#39;</span><span class="p">,</span> <span class="s">&#39;obstetric_detail&#39;</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ObstetricHistoryForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">text_fields</span> <span class="o">=</span> <span class="p">[{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;year&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.Select&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; :true&quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;sex&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.Select&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; :true &quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;weight&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.ValidationTextBox&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; : true&quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;type_of_delivery&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.Select&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; :true&quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;length_of_pregnancy&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.ValidationTextBox&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; : true&quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;problems&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.Textarea&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; :false&quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;name&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.ValidationTextBox&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; : true&quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;age&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.ValidationTextBox&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; :true&quot;</span>
+                        <span class="p">},</span>
+                       <span class="p">{</span><span class="s">&quot;field&quot;</span><span class="p">:</span> <span class="s">&#39;breast_feeding&#39;</span><span class="p">,</span>
+                        <span class="s">&#39;max_length&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-type&quot;</span><span class="p">:</span> <span class="s">&quot;dijit.form.ValidationTextBox&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;data-dojo-props&quot;</span><span class="p">:</span> <span class="s">r&quot;&#39;required&#39; : true&quot;</span>
+                        <span class="p">}</span>
+                       <span class="p">]</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">text_fields</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">widget</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span>
+                <span class="s">&#39;data-dojo-type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">[</span><span class="s">&#39;data-dojo-type&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span>
+                <span class="s">&#39;data-dojo-props&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">[</span><span class="s">&#39;data-dojo-props&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span>
+                <span class="s">&#39;max_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">[</span><span class="s">&#39;max_length&#39;</span><span class="p">]</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

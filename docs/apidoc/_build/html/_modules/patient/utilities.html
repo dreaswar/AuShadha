@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>patient.utilities &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for patient.utilities</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : Utilities for Patient</span>
+<span class="c"># Author      : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.</span>
+<span class="c"># Date        : 16-09-2013</span>
+<span class="c">################################################################################</span>
+
+
+<span class="c"># General Module imports-----------------------------------</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+
+<span class="c"># General Django Imports----------------------------------</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span><span class="p">,</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">RequestContext</span>
+<span class="c">#from django.core.context_processors import csrf</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+
+<span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_exempt</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.cache</span> <span class="kn">import</span> <span class="n">never_cache</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_protect</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.debug</span> <span class="kn">import</span> <span class="n">sensitive_post_parameters</span>
+
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="kn">from</span> <span class="nn">django.core</span> <span class="kn">import</span> <span class="n">serializers</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers</span> <span class="kn">import</span> <span class="n">json</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers.json</span> <span class="kn">import</span> <span class="n">DjangoJSONEncoder</span>
+
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+
+
+<span class="c"># Application Specific Model Imports-----------------------</span>
+<span class="kn">import</span> <span class="nn">AuShadha.settings</span> <span class="kn">as</span> <span class="nn">settings</span>
+<span class="kn">from</span> <span class="nn">AuShadha.settings</span> <span class="kn">import</span> <span class="n">APP_ROOT_URL</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.serializers.data_grid</span> <span class="kn">import</span> <span class="n">generate_json_for_datagrid</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.data.json</span> <span class="kn">import</span> <span class="n">ModelInstanceJson</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.data.summary</span> <span class="kn">import</span> <span class="n">ModelInstanceSummary</span>
+<span class="kn">from</span> <span class="nn">AuShadha.utilities.forms</span> <span class="kn">import</span> <span class="n">aumodelformerrorformatter_factory</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.clinic.models</span> <span class="kn">import</span> <span class="n">Clinic</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span><span class="p">,</span> <span class="n">PatientDetailForm</span>
+<span class="kn">from</span> <span class="nn">patient.dijit_widgets.tree</span> <span class="kn">import</span> <span class="n">PatientTree</span>
+
+<span class="n">Demographics</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Demographics&#39;</span><span class="p">)</span>
+<span class="n">Contact</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Contact&#39;</span><span class="p">)</span>
+<span class="n">Phone</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Phone&#39;</span><span class="p">)</span>
+<span class="n">Guardian</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Guardian&#39;</span><span class="p">)</span>
+<span class="n">EmailAndFax</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;EmailAndFax&#39;</span><span class="p">)</span>
+
+<span class="n">MedicalHistory</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;MedicalHistory&#39;</span><span class="p">)</span>
+<span class="n">SurgicalHistory</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;SurgicalHistory&#39;</span><span class="p">)</span>
+<span class="n">SocialHistory</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;SocialHistory&#39;</span><span class="p">)</span>
+<span class="n">FamilyHistory</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;FamilyHistory&#39;</span><span class="p">)</span>
+<span class="n">Immunisation</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Immunisation&#39;</span><span class="p">)</span>
+
+<span class="n">Allergy</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;AllergyList&#39;</span><span class="p">)</span>
+<span class="n">MedicationList</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;MedicationList&quot;</span><span class="p">)</span>
+
+<span class="n">AdmissionDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;Admission&quot;</span><span class="p">)</span>
+
+<span class="n">VisitDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit&quot;</span><span class="p">)</span>
+<span class="n">VisitImaging</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit_Imaging&quot;</span><span class="p">)</span>
+<span class="n">VisitInv</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit_Inv&quot;</span><span class="p">)</span>
+<span class="n">VisitComplaint</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit_Complaint&quot;</span><span class="p">)</span>
+
+<span class="c">################ Some Utilities #################################################</span>
+
+<div class="viewcode-block" id="check_before_adding"><a class="viewcode-back" href="../../patient.html#patient.utilities.check_before_adding">[docs]</a><span class="k">def</span> <span class="nf">check_before_adding</span><span class="p">(</span><span class="n">patient_obj</span><span class="p">):</span>
+    <span class="n">patient_object</span> <span class="o">=</span> <span class="n">patient_obj</span>
+    <span class="n">patient_id</span> <span class="o">=</span> <span class="n">patient_object</span><span class="o">.</span><span class="n">patient_hospital_id</span>
+    <span class="n">all_patients</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">active_admissions</span> <span class="o">=</span> <span class="n">AdmissionDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+        <span class="n">patient_detail</span><span class="o">=</span><span class="n">patient_object</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">admission_closed</span><span class="o">=</span><span class="s">&#39;False&#39;</span><span class="p">)</span>
+    <span class="n">active_visit</span> <span class="o">=</span> <span class="n">patient_object</span><span class="o">.</span><span class="n">has_active_visit</span><span class="p">()</span>
+    <span class="n">id_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">all_patients</span><span class="p">:</span>
+        <span class="n">id_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">patient</span><span class="o">.</span><span class="n">patient_hospital_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">patient_id</span> <span class="ow">in</span> <span class="n">id_list</span><span class="p">:</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;This ID is already Taken. Please renter and retry&quot;</span>
+        <span class="c">#print error</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">active_visit</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">active_admissions</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s">&#39;All checked.. Everything ok.. &#39;</span>
+                <span class="k">return</span> <span class="bp">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="s">&#39;This patient has active admissions. Please discharge and retry.&#39;</span>
+                <span class="c">#print error</span>
+                <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;This patient has active visit. Please discharge and retry.&quot;</span>
+            <span class="c">#print error</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+</div>
+<div class="viewcode-block" id="return_patient_json"><a class="viewcode-back" href="../../patient.html#patient.utilities.return_patient_json">[docs]</a><span class="k">def</span> <span class="nf">return_patient_json</span><span class="p">(</span><span class="n">patient</span><span class="p">,</span><span class="n">success</span> <span class="o">=</span> <span class="bp">True</span><span class="p">):</span>
+   <span class="n">p</span> <span class="o">=</span> <span class="n">ModelInstanceJson</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">p</span><span class="p">()</span>
+
+</div>
+<div class="viewcode-block" id="get_all_complaints"><a class="viewcode-back" href="../../patient.html#patient.utilities.get_all_complaints">[docs]</a><span class="k">def</span> <span class="nf">get_all_complaints</span><span class="p">(</span><span class="n">visit</span><span class="p">):</span>
+
+    <span class="n">v_id</span> <span class="o">=</span> <span class="n">visit</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">pat_obj</span>  <span class="o">=</span> <span class="n">visit</span><span class="o">.</span><span class="n">patient_detail</span>
+
+    <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">patient_detail</span> <span class="o">=</span> <span class="n">pat_obj</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-visit_date&#39;</span><span class="p">)</span>
+    <span class="n">visit_complaint_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">visit_obj</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">visit</span> <span class="ow">in</span> <span class="n">visit_obj</span><span class="p">:</span>
+            <span class="n">visit_complaints</span> <span class="o">=</span> <span class="n">VisitComplaint</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">visit</span> <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">visit_complaints</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">complaint</span> <span class="ow">in</span> <span class="n">visit_complaints</span><span class="p">:</span>
+                    <span class="n">dict_to_append</span> <span class="o">=</span> <span class="p">{}</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;complaint&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">complaint</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">duration</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;visit_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">visit_date</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;is_active&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">is_active</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;visit_fu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">has_fu_visits</span><span class="p">()</span>
+
+                    <span class="n">visit_complaint_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_to_append</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">visit_complaint_list</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

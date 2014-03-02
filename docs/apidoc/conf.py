@@ -73,7 +73,7 @@ release = ''
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', '../../src/AuShadha/AuShadha/app_template','../../.git','**configure.yaml','../../src/AuShadha/AuShadha/settings.py']
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.

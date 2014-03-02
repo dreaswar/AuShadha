@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>admission.admission.dijit_widgets.tree &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for admission.admission.dijit_widgets.tree</h1><div class="highlight"><pre>
+<span class="c"># General Module imports-----------------------------------</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+
+<span class="c"># General Django Imports----------------------------------</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span><span class="p">,</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">RequestContext</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+
+<span class="c">#from django.core.context_processors import csrf</span>
+<span class="c">#from django.views.decorators.csrf import csrf_exempt</span>
+<span class="c">#from django.views.decorators.cache import never_cache</span>
+<span class="c">#from django.views.decorators.csrf import csrf_protect</span>
+<span class="c">#from django.views.decorators.debug import sensitive_post_parameters</span>
+<span class="c">#from django.core import serializers</span>
+<span class="c">#from django.core.serializers import json</span>
+<span class="c">#from django.core.serializers.json import DjangoJSONEncoder</span>
+
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+
+<span class="c"># Application Specific Model Imports-----------------------</span>
+<span class="kn">import</span> <span class="nn">AuShadha.settings</span> <span class="kn">as</span> <span class="nn">settings</span>
+<span class="kn">from</span> <span class="nn">AuShadha.settings</span> <span class="kn">import</span> <span class="n">APP_ROOT_URL</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.views.dijit_tree</span> <span class="kn">import</span> <span class="n">DijitTreeNode</span><span class="p">,</span> <span class="n">DijitTree</span>
+
+
+
+
+<div class="viewcode-block" id="AdmissionTree"><a class="viewcode-back" href="../../../../admission.admission.dijit_widgets.html#admission.admission.dijit_widgets.tree.AdmissionTree">[docs]</a><span class="k">class</span> <span class="nc">AdmissionTree</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Defines the Dijit UI for Admission Tree</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">request</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">request</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+      <span class="k">except</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span><span class="ne">ValueError</span><span class="p">,</span><span class="ne">NameError</span><span class="p">,</span><span class="ne">TypeError</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid User or no user supplied&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__call__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+      <span class="n">admission_tree_node</span> <span class="o">=</span> <span class="n">DijitTree</span><span class="p">()</span>
+
+      <span class="n">admission_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Admissions&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;application&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;ADMISSION&quot;</span>
+                                  <span class="p">})</span>
+
+      <span class="n">active_admission_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Active Admissions&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;admission_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;ACTIVE_ADMISSIONS&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;admission&quot;</span>
+                                            <span class="p">})</span>
+      <span class="n">admission_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">active_admission_node</span><span class="p">)</span>
+
+      <span class="n">inactive_admission_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Previous Admissions&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;admission_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;PREVIOUS_ADMISSIONS&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;admission&quot;</span>
+                                            <span class="p">})</span>
+      <span class="n">admission_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">inactive_admission_node</span><span class="p">)</span>
+      
+      <span class="n">admission_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">admission_node</span><span class="p">)</span>
+      
+      <span class="n">history_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;History&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;application&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;HISTORY&quot;</span>
+                                  <span class="p">})</span>
+
+      <span class="n">medical_history_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Medical History&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;medical_history_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;MEDICAL_HISTORY&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;medical_history&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;standard&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;grid&#39;</span><span class="p">,</span><span class="s">&#39;button&#39;</span><span class="p">]</span>
+                                            <span class="p">})</span>
+      <span class="n">history_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">medical_history_node</span><span class="p">)</span>
+
+      <span class="n">surgical_history_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Surgical History&quot;</span><span class="p">,</span>
+                                              <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;surgical_history_module&quot;</span><span class="p">,</span>
+                                              <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;SURGICAL_HISTORY&quot;</span><span class="p">,</span>
+                                              <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                              <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;surgical_history&quot;</span><span class="p">,</span>
+                                              <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;standard&quot;</span><span class="p">,</span>
+                                              <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;grid&#39;</span><span class="p">,</span><span class="s">&#39;button&#39;</span><span class="p">]</span>
+                                            <span class="p">})</span>
+      <span class="n">history_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">surgical_history_node</span><span class="p">)</span>
+
+      <span class="n">family_history_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Family History&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;family_history_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;FAMILY_HISTORY&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;family_history&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;standard&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;grid&#39;</span><span class="p">,</span><span class="s">&#39;button&#39;</span><span class="p">]</span>
+                                          <span class="p">})</span>
+      <span class="n">history_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">family_history_node</span><span class="p">)</span>
+
+      <span class="n">social_history_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Social History&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;social_history_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;SOCIAL_HISTORY&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;social_history&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;standard&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;form&#39;</span><span class="p">]</span>
+                                          <span class="p">})</span>
+      <span class="n">history_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">social_history_node</span><span class="p">)</span>
+
+      <span class="n">contact_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Contact&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;contact_module&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;CONTACT&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;contact&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;standard&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;grid&#39;</span><span class="p">,</span><span class="s">&#39;button&#39;</span><span class="p">]</span>
+                                  <span class="p">})</span>
+      <span class="n">phone_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Phone&quot;</span><span class="p">,</span>
+                                  <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;phone_module&quot;</span><span class="p">,</span>
+                                  <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;PHONE&quot;</span><span class="p">,</span>
+                                  <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                  <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;phone&quot;</span><span class="p">,</span>
+                                  <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;standard&quot;</span><span class="p">,</span>
+                                  <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;grid&#39;</span><span class="p">,</span><span class="s">&#39;button&#39;</span><span class="p">]</span>
+                                <span class="p">})</span>
+      <span class="n">guardian_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Guardian&quot;</span><span class="p">,</span>
+                                     <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;guardian_module&quot;</span><span class="p">,</span>
+                                     <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;GUARDIAN&quot;</span><span class="p">,</span>
+                                     <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                     <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;guardian&quot;</span><span class="p">,</span>
+                                     <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;standard&quot;</span><span class="p">,</span>
+                                     <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;grid&#39;</span><span class="p">,</span><span class="s">&#39;button&#39;</span><span class="p">]</span>
+                                    <span class="p">})</span>
+
+      <span class="n">demographics_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Demographics&quot;</span><span class="p">,</span>
+                                         <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;demographics_module&quot;</span><span class="p">,</span>
+                                         <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;DEMOGRAPHICS&quot;</span><span class="p">,</span>
+                                         <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                         <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;demographics&quot;</span><span class="p">,</span>
+                                         <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;composite&quot;</span><span class="p">,</span>
+                                         <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;form&#39;</span><span class="p">],</span>
+                                         <span class="s">&#39;linked_modules&#39;</span><span class="p">:[</span><span class="n">contact_node</span><span class="p">(),</span><span class="n">phone_node</span><span class="p">(),</span><span class="n">guardian_node</span><span class="p">()]</span>
+                                        <span class="p">})</span>
+
+      <span class="c">#demographics_node.add_child_node(contact_node)</span>
+      <span class="c">#demographics_node.add_child_node(phone_node)</span>
+      <span class="c">#demographics_node.add_child_node(guardian_node)</span>
+
+      <span class="n">history_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">demographics_node</span><span class="p">)</span>
+
+      <span class="n">admission_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">history_node</span><span class="p">)</span>
+
+      <span class="n">allergy_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;Allergy&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;allergy_list_module&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;allergy_list&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;ALLERGY&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;standard&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;grid&#39;</span><span class="p">,</span><span class="s">&#39;button&#39;</span><span class="p">]</span>
+                                  <span class="p">})</span>
+
+      <span class="n">medication_list_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;Medications&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;application&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;medication_list_module&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;medication_list&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;id&quot;</span> <span class="p">:</span> <span class="s">&quot;MEDICATIONS&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;composite&quot;</span><span class="p">,</span>
+                                            <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;grid&#39;</span><span class="p">,</span><span class="s">&#39;button&#39;</span><span class="p">],</span>
+                                            <span class="s">&quot;linked_modules&quot;</span><span class="p">:[</span><span class="n">allergy_node</span><span class="p">()]</span>
+                                          <span class="p">})</span>
+      <span class="n">admission_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">medication_list_node</span><span class="p">)</span>
+
+      <span class="n">preventives_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Preventives&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;application&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;PREVENTIVES&quot;</span>
+                                      <span class="p">})</span>
+
+      <span class="n">immunisation_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Immunisation&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;immunisation_module&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;IMMUNISATION&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;module_type&quot;</span><span class="p">:</span> <span class="s">&quot;sub_module&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;module_name&quot;</span><span class="p">:</span> <span class="s">&quot;immunisation&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;ui_layout&quot;</span><span class="p">:</span> <span class="s">&quot;standard&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;widgets&quot;</span><span class="p">:[</span><span class="s">&#39;grid&#39;</span><span class="p">,</span><span class="s">&#39;button&#39;</span><span class="p">],</span>
+                                        <span class="p">})</span>
+      <span class="n">preventives_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">immunisation_node</span><span class="p">)</span>
+
+      <span class="n">admission_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">preventives_node</span><span class="p">)</span>
+
+      <span class="c">#medical_preventives_node = DijitTreeNode({&quot;name&quot;: &quot;Medical&quot;,</span>
+                                                <span class="c">#&quot;type&quot;: &quot;medical_preventives_module&quot;,</span>
+                                                <span class="c">#&quot;id&quot;: &quot;MEDICAL_PREVENTIVES&quot;</span>
+                                                <span class="c">#})</span>
+
+      <span class="c">#surgical_preventives_node = DijitTreeNode({&quot;name&quot;: &quot;Surgical&quot;,</span>
+                                                  <span class="c">#&quot;type&quot;: &quot;surgical_preventives_module&quot;,</span>
+                                                  <span class="c">#&quot;id&quot;: &quot;SURGICAL_PREVENTIVES&quot;</span>
+                                                <span class="c">#})</span>
+
+      <span class="c">#obs_and_gyn_preventives_node = DijitTreeNode({&quot;name&quot;: &quot;Obs &amp; Gyn&quot;,</span>
+                                                    <span class="c">#&quot;type&quot;: &quot;obs_and_gyn_preventives_module&quot;,</span>
+                                                    <span class="c">#&quot;id&quot;: &quot;OBS_PREVENTIVES&quot;</span>
+                                                    <span class="c">#})</span>
+
+      <span class="c">#admission_node = DijitTreeNode({&quot;name&quot; : &quot;AdmissionDetails&quot;, </span>
+                                      <span class="c">#&quot;type&quot; :&quot;application&quot;, </span>
+                                      <span class="c">#&quot;id&quot;   :&quot;ADM&quot;</span>
+                                      <span class="c">#})</span>
+
+      <span class="c">#visit_node = DijitTreeNode({&quot;name&quot;  : &quot;OPD Visits&quot;, </span>
+                                  <span class="c">#&quot;type&quot;:&quot;application&quot;, </span>
+                                  <span class="c">#&quot;id&quot;:&quot;VISIT&quot;</span>
+                                  <span class="c">#})</span>
+
+      <span class="n">investigation_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Investigation&quot;</span><span class="p">,</span> 
+                                          <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;application&quot;</span><span class="p">,</span> 
+                                          <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;INV&quot;</span>
+                                          <span class="p">})</span>
+      <span class="n">admission_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">investigation_node</span><span class="p">)</span>
+
+      <span class="n">imaging_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Imaging&quot;</span><span class="p">,</span> 
+                                    <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;application&quot;</span><span class="p">,</span> 
+                                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;IMAG&quot;</span>
+                                    <span class="p">})</span>
+      <span class="n">admission_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">imaging_node</span><span class="p">)</span>
+
+      <span class="n">procedure_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">({</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Procedures&quot;</span><span class="p">,</span> 
+                                      <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;application&quot;</span><span class="p">,</span> 
+                                      <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;PROCEDURES&quot;</span>
+                                      <span class="p">})</span>
+      <span class="n">admission_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span><span class="n">procedure_node</span><span class="p">)</span>
+
+      <span class="c">#calendar_node = DijitTreeNode({&quot;name&quot;  : &quot;Calendar&quot; , </span>
+                                    <span class="c">#&quot;type&quot;:&quot;application&quot;, </span>
+                                    <span class="c">#&quot;id&quot;:&quot;CAL&quot; </span>
+                                  <span class="c">#})</span>
+
+      <span class="c">#media_node = DijitTreeNode({&quot;name&quot;: &quot;Media&quot;, </span>
+                                  <span class="c">#&quot;type&quot;: &quot;application&quot;, </span>
+                                  <span class="c">#&quot;id&quot;: &quot;MEDIA&quot;</span>
+                                <span class="c">#})</span>
+
+      <span class="c">#documents_node = DijitTreeNode({&quot;name&quot;: &quot;Documents&quot;,</span>
+                                      <span class="c">#&quot;type&quot;: &quot;patient_documents_module&quot;,</span>
+                                      <span class="c">#&quot;id&quot;: &quot;DOCS&quot;</span>
+                                    <span class="c">#})</span>
+      <span class="c">#images_node = DijitTreeNode({&quot;name&quot;: &quot;Images&quot;,</span>
+                                    <span class="c">#&quot;type&quot;: &quot;patient_images_module&quot;,</span>
+                                    <span class="c">#&quot;id&quot;: &quot;IMAGES&quot;</span>
+                                  <span class="c">#})</span>
+
+      <span class="c">#coding_node = DijitTreeNode({&quot;name&quot;: &quot;Coding&quot;,</span>
+                                    <span class="c">#&quot;type&quot;: &quot;application&quot;,</span>
+                                    <span class="c">#&quot;id&quot;: &quot;CODING&quot;</span>
+                                  <span class="c">#})</span>
+
+      <span class="c">#icd_10_node = DijitTreeNode({&quot;name&quot;: &quot;ICD 10&quot;,</span>
+                                    <span class="c">#&quot;type&quot;: &quot;icd10_module&quot;,</span>
+                                    <span class="c">#&quot;id&quot;: &quot;ICD_10&quot;</span>
+                                    <span class="c">#})</span>
+
+      <span class="c">#icd_10_pcs_node = DijitTreeNode({&quot;name&quot;: &quot;ICD 10 PC&quot;,</span>
+                                        <span class="c">#&quot;type&quot;: &quot;icd10_pcs_module&quot;,</span>
+                                        <span class="c">#&quot;id&quot;: &quot;ICD_10_PROCEDURE_CODES&quot;</span>
+                                      <span class="c">#})</span>
+
+      <span class="n">json</span> <span class="o">=</span> <span class="n">admission_tree_node</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+      <span class="k">return</span> <span class="n">json</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

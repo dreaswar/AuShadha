@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.apps.clinic package &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="index.html" />
+    <link rel="up" title="AuShadha.apps package" href="AuShadha.apps.html" />
+    <link rel="next" title="AuShadha.apps.search package" href="AuShadha.apps.search.html" />
+    <link rel="prev" title="AuShadha.apps.aushadha_users package" href="AuShadha.apps.aushadha_users.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.search.html" title="AuShadha.apps.search package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.aushadha_users.html" title="AuShadha.apps.aushadha_users package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.apps.html" accesskey="U">AuShadha.apps package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="aushadha-apps-clinic-package">
+<h1>AuShadha.apps.clinic package<a class="headerlink" href="#aushadha-apps-clinic-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="aushadha-apps-clinic-admin-module">
+<h2>AuShadha.apps.clinic.admin module<a class="headerlink" href="#aushadha-apps-clinic-admin-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.apps.clinic.models">
+<span id="aushadha-apps-clinic-models-module"></span><h2>AuShadha.apps.clinic.models module<a class="headerlink" href="#module-AuShadha.apps.clinic.models" title="Permalink to this headline">¶</a></h2>
+<p>Models to handle the Clinic, Address, Staff and Departments
+User permissions, roles are set here. 
+Basic data about the Clinic is set here.</p>
+<dl class="class">
+<dt id="AuShadha.apps.clinic.models.Address">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.clinic.models.</tt><tt class="descname">Address</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/models.html#Address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.models.Address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>Basic Contact attributes of the Clinic</p>
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Address.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Address.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Address.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Address.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Address.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Address.clinic">
+<tt class="descclassname">Address.</tt><tt class="descname">clinic</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Address.clinic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Address.get_absolute_url">
+<tt class="descclassname">Address.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Address.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Address.objects">
+<tt class="descclassname">Address.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3e8a590&gt;</em><a class="headerlink" href="#AuShadha.apps.clinic.models.Address.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.apps.clinic.models.Clinic">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.clinic.models.</tt><tt class="descname">Clinic</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/models.html#Clinic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>Model class for Clinic</p>
+<p>Defines the clinic</p>
+<blockquote>
+<div><p>&#8211; name of clinic        &#8211;&gt; Name</p>
+<p class="attribution">&mdash;nature_of_clinic      &#8211;&gt; Whether its primary center / referral centre</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8211; _can_add_list_or_json &#8211;&gt; A Zope like way to set what can be contained inside this. </dt>
+<dd>Objects explicitly named here will be used while setting
+CRUD Urls through the generate_urls() method of super.
+| #FIXME: A better method  / atleast name can be evolved to
+|        indicate this. :)</dd>
+</dl>
+<p class="attribution">&mdash;_extra_url_actions    &#8211;&gt; Other actions that are specific to this model and that can be used
+to generate_urls().</p>
+</div></blockquote>
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Clinic.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Clinic.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Clinic.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Clinic.address_set">
+<tt class="descclassname">Clinic.</tt><tt class="descname">address_set</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.address_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Clinic.department_set">
+<tt class="descclassname">Clinic.</tt><tt class="descname">department_set</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.department_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Clinic.email_set">
+<tt class="descclassname">Clinic.</tt><tt class="descname">email_set</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.email_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Clinic.fax_set">
+<tt class="descclassname">Clinic.</tt><tt class="descname">fax_set</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.fax_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Clinic.get_absolute_url">
+<tt class="descclassname">Clinic.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Clinic.get_nature_of_clinic_display">
+<tt class="descclassname">Clinic.</tt><tt class="descname">get_nature_of_clinic_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.get_nature_of_clinic_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Clinic.objects">
+<tt class="descclassname">Clinic.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3e83e90&gt;</em><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Clinic.patientdetail_set">
+<tt class="descclassname">Clinic.</tt><tt class="descname">patientdetail_set</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.patientdetail_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Clinic.phone_set">
+<tt class="descclassname">Clinic.</tt><tt class="descname">phone_set</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.phone_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Clinic.website_set">
+<tt class="descclassname">Clinic.</tt><tt class="descname">website_set</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Clinic.website_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.apps.clinic.models.Department">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.clinic.models.</tt><tt class="descname">Department</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/models.html#Department"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.models.Department" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>Basic Contact attributes of the Clinic</p>
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Department.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Department.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Department.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Department.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Department.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Department.clinic">
+<tt class="descclassname">Department.</tt><tt class="descname">clinic</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Department.clinic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Department.get_absolute_url">
+<tt class="descclassname">Department.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Department.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Department.objects">
+<tt class="descclassname">Department.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3e90a50&gt;</em><a class="headerlink" href="#AuShadha.apps.clinic.models.Department.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Department.staff_set">
+<tt class="descclassname">Department.</tt><tt class="descname">staff_set</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Department.staff_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.apps.clinic.models.Email">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.clinic.models.</tt><tt class="descname">Email</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/models.html#Email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.models.Email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>Basic Contact attributes of the Clinic</p>
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Email.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Email.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Email.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Email.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Email.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Email.clinic">
+<tt class="descclassname">Email.</tt><tt class="descname">clinic</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Email.clinic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Email.get_absolute_url">
+<tt class="descclassname">Email.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Email.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Email.objects">
+<tt class="descclassname">Email.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3e90210&gt;</em><a class="headerlink" href="#AuShadha.apps.clinic.models.Email.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.apps.clinic.models.Fax">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.clinic.models.</tt><tt class="descname">Fax</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/models.html#Fax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.models.Fax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>Basic Contact attributes of the Clinic</p>
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Fax.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Fax.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Fax.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Fax.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Fax.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Fax.clinic">
+<tt class="descclassname">Fax.</tt><tt class="descname">clinic</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Fax.clinic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Fax.get_absolute_url">
+<tt class="descclassname">Fax.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Fax.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Fax.objects">
+<tt class="descclassname">Fax.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3e8add0&gt;</em><a class="headerlink" href="#AuShadha.apps.clinic.models.Fax.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.apps.clinic.models.Phone">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.clinic.models.</tt><tt class="descname">Phone</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/models.html#Phone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.models.Phone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>Basic Contact attributes of the Clinic</p>
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Phone.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Phone.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Phone.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Phone.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Phone.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Phone.clinic">
+<tt class="descclassname">Phone.</tt><tt class="descname">clinic</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Phone.clinic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Phone.get_absolute_url">
+<tt class="descclassname">Phone.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Phone.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Phone.objects">
+<tt class="descclassname">Phone.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3e8a9d0&gt;</em><a class="headerlink" href="#AuShadha.apps.clinic.models.Phone.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.apps.clinic.models.Staff">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.clinic.models.</tt><tt class="descname">Staff</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/models.html#Staff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.models.Staff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>Basic Contact attributes of the Clinic</p>
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Staff.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Staff.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Staff.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Staff.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Staff.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Staff.department">
+<tt class="descclassname">Staff.</tt><tt class="descname">department</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Staff.department" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Staff.get_absolute_url">
+<tt class="descclassname">Staff.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Staff.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Staff.get_clinic_staff_role_display">
+<tt class="descclassname">Staff.</tt><tt class="descname">get_clinic_staff_role_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Staff.get_clinic_staff_role_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Staff.is_staff_provider">
+<tt class="descclassname">Staff.</tt><tt class="descname">is_staff_provider</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/models.html#Staff.is_staff_provider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.models.Staff.is_staff_provider" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Staff.objects">
+<tt class="descclassname">Staff.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3e90fd0&gt;</em><a class="headerlink" href="#AuShadha.apps.clinic.models.Staff.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Staff.staff_detail">
+<tt class="descclassname">Staff.</tt><tt class="descname">staff_detail</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Staff.staff_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.apps.clinic.models.Website">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.clinic.models.</tt><tt class="descname">Website</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/models.html#Website"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.models.Website" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>Basic Contact attributes of the Clinic</p>
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Website.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Website.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="AuShadha.apps.clinic.models.Website.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Website.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Website.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Website.clinic">
+<tt class="descclassname">Website.</tt><tt class="descname">clinic</tt><a class="headerlink" href="#AuShadha.apps.clinic.models.Website.clinic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.clinic.models.Website.get_absolute_url">
+<tt class="descclassname">Website.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.clinic.models.Website.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.clinic.models.Website.objects">
+<tt class="descclassname">Website.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3e90650&gt;</em><a class="headerlink" href="#AuShadha.apps.clinic.models.Website.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.apps.clinic.tests">
+<span id="aushadha-apps-clinic-tests-module"></span><h2>AuShadha.apps.clinic.tests module<a class="headerlink" href="#module-AuShadha.apps.clinic.tests" title="Permalink to this headline">¶</a></h2>
+<p>This file demonstrates writing tests using the unittest module. These will
+pass when you run &#8220;manage.py test&#8221;.</p>
+<p>Replace this with more appropriate tests for your application.</p>
+<dl class="class">
+<dt id="AuShadha.apps.clinic.tests.SimpleTest">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.clinic.tests.</tt><tt class="descname">SimpleTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/tests.html#SimpleTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.tests.SimpleTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="AuShadha.apps.clinic.tests.SimpleTest.test_basic_addition">
+<tt class="descname">test_basic_addition</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/clinic/tests.html#SimpleTest.test_basic_addition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.clinic.tests.SimpleTest.test_basic_addition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests that 1 + 1 always equals 2.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="aushadha-apps-clinic-urls-module">
+<h2>AuShadha.apps.clinic.urls module<a class="headerlink" href="#aushadha-apps-clinic-urls-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.apps.clinic.views">
+<span id="aushadha-apps-clinic-views-module"></span><h2>AuShadha.apps.clinic.views module<a class="headerlink" href="#module-AuShadha.apps.clinic.views" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.apps.clinic">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-AuShadha.apps.clinic" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AuShadha.apps.clinic package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#aushadha-apps-clinic-admin-module">AuShadha.apps.clinic.admin module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.clinic.models">AuShadha.apps.clinic.models module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.clinic.tests">AuShadha.apps.clinic.tests module</a></li>
+<li><a class="reference internal" href="#aushadha-apps-clinic-urls-module">AuShadha.apps.clinic.urls module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.clinic.views">AuShadha.apps.clinic.views module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.clinic">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="AuShadha.apps.aushadha_users.html"
+                        title="previous chapter">AuShadha.apps.aushadha_users package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="AuShadha.apps.search.html"
+                        title="next chapter">AuShadha.apps.search package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/AuShadha.apps.clinic.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.search.html" title="AuShadha.apps.search package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.aushadha_users.html" title="AuShadha.apps.aushadha_users package"
+             >previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.apps.html" >AuShadha.apps package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

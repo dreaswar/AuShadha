@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.core.serializers.data_grid &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.core.serializers.data_grid</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : Serializing methods for Dojo Datagrid</span>
+<span class="c"># Author      : Dr. Easwar T.R</span>
+<span class="c"># Date        : 25-09-2013</span>
+<span class="c"># License     : GNU-GPL Version 3 , See AuShadha/LICENSE.txt</span>
+<span class="c">################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  This module and its classes used to generated Dijit DataGrid JSON</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c">#Django Imports</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="kn">from</span> <span class="nn">django.core</span> <span class="kn">import</span> <span class="n">serializers</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers</span> <span class="kn">import</span> <span class="n">json</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers.json</span> <span class="kn">import</span> <span class="n">DjangoJSONEncoder</span>
+
+<div class="viewcode-block" id="generate_json_for_datagrid"><a class="viewcode-back" href="../../../../AuShadha.core.serializers.html#AuShadha.core.serializers.data_grid.generate_json_for_datagrid">[docs]</a><span class="k">def</span> <span class="nf">generate_json_for_datagrid</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">success</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">error_message</span><span class="o">=</span><span class="s">&quot;Saved Successfully&quot;</span><span class="p">,</span> <span class="n">form_errors</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Returns the JSON formatted Values of a specific Django Model Instance</span>
+<span class="sd">      for use with Dojo Grid. A few default DOJO Grid Values are specified, rest</span>
+<span class="sd">      are instance specific and are generated on the fly. It assumes the presence</span>
+<span class="sd">      of get_edit_url and get_del_url in the model instances passed to it via</span>
+<span class="sd">      obj.</span>
+
+<span class="sd">      ARGUMENTS: obj           : model instace / queryset</span>
+<span class="sd">                success       : A success message</span>
+<span class="sd">                error_message : Error Message if any.</span>
+<span class="sd">                form_errors   : Form Validation Errors from Django while saving can be passed.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c">#print &quot;TRYING TO RETURN JSON FOR OBJECT: &quot;, obj</span>
+    <span class="n">json_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c"># Find out if the Object is an iterable one that is a Django Query Object..</span>
+        <span class="c">#   If iterable iterate over the fields of _meta attribute</span>
+        <span class="c">#   set a basic attribute dictionary and getattr method specifying</span>
+        <span class="c">#   default fallbacks</span>
+        <span class="n">iterable</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">iterable</span><span class="p">:</span>
+
+            <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">:</span>
+                <span class="c">#print element._meta.fields</span>
+                <span class="c">#print &quot;APP LABEL IS&quot;, element._meta.app_label</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;success&#39;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span>
+                        <span class="s">&#39;error_message&#39;</span><span class="p">:</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">error_message</span><span class="p">),</span>
+                        <span class="s">&#39;form_errors&#39;</span><span class="p">:</span> <span class="n">form_errors</span><span class="p">,</span>
+                        <span class="s">&#39;edit&#39;</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s">&#39;get_edit_url()&#39;</span><span class="p">,</span> <span class="n">element</span><span class="o">.</span><span class="n">get_edit_url</span><span class="p">()),</span>
+                        <span class="s">&#39;del&#39;</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s">&#39;get_del_url()&#39;</span><span class="p">,</span> <span class="n">element</span><span class="o">.</span><span class="n">get_del_url</span><span class="p">()),</span>
+                        <span class="s">&#39;patient_detail&#39;</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s">&#39;patient_detail.__unicode__()&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+                        <span class="p">}</span>
+
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+                    <span class="c">#print &quot;CURRENT ITERATING FIELD NAME IS : &quot;, i</span>
+                    <span class="c">#print &quot;DATA DICTIONARY NOW IS &quot;, data.keys()</span>
+
+                    <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="c">#print &quot;Dealing with object: &quot;, i</span>
+                        <span class="c">#print &quot;Trying to add it Name attribute: &quot;, i.name</span>
+                        <span class="c">#print &quot;Class of the i object is: &quot;, i.name.__class__</span>
+
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&#39;aushadhabasemodel_ptr&#39;</span><span class="p">:</span>
+                                <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;AuShadhaBaseModel&quot;</span>
+                            <span class="k">elif</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;administrator&quot;</span><span class="p">:</span>
+                                <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+                                    <span class="n">element</span><span class="p">,</span> <span class="s">&#39;__unicode__()&#39;</span><span class="p">,</span> <span class="n">element</span><span class="o">.</span><span class="n">administrator</span><span class="o">.</span><span class="n">__unicode__</span><span class="p">())</span>
+                            <span class="k">elif</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;vaccine_detail&quot;</span><span class="p">:</span>
+                                <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+                                    <span class="n">element</span><span class="p">,</span> <span class="s">&#39;__unicode__()&#39;</span><span class="p">,</span> <span class="n">element</span><span class="o">.</span><span class="n">vaccine_detail</span><span class="o">.</span><span class="n">vaccine_name</span><span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+                        <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+                            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Error In serialization..&quot;</span><span class="p">)</span>
+
+                <span class="n">json_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="c">#print obj._meta.fields</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;success&#39;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span>
+                <span class="s">&#39;error_message&#39;</span><span class="p">:</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">error_message</span><span class="p">),</span>
+                <span class="s">&#39;form_errors&#39;</span><span class="p">:</span> <span class="n">form_errors</span><span class="p">,</span>
+                <span class="s">&#39;edit&#39;</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s">&#39;get_edit_url()&#39;</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_edit_url</span><span class="p">()),</span>
+                <span class="s">&#39;del&#39;</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s">&#39;get_del_url()&#39;</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_del_url</span><span class="p">()),</span>
+                <span class="s">&#39;patient_detail&#39;</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s">&#39;patient_detail.__unicode__()&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+                <span class="p">}</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+            <span class="c">#print &quot;CURRENT ITERATING FIELD NAME IS : &quot;, i</span>
+            <span class="c">#print &quot;DATA DICTIONARY NOW IS &quot;, data.keys()</span>
+
+            <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="c">#print &quot;Adding &quot;, i.name</span>
+                <span class="c">#print i.name.__class__</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&#39;aushadhabasemodel_ptr&#39;</span><span class="p">:</span>
+                        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;AuShadhaBaseModel&quot;</span>
+                    <span class="k">elif</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;administrator&quot;</span><span class="p">:</span>
+                        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+                            <span class="n">obj</span><span class="p">,</span> <span class="s">&#39;username&#39;</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">administrator</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;vaccine_detail&quot;</span><span class="p">:</span>
+                        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+                            <span class="n">obj</span><span class="p">,</span> <span class="s">&#39;vaccine_name&#39;</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">vaccine_detail</span><span class="o">.</span><span class="n">vaccine_name</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+                <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Error In serialization..&quot;</span><span class="p">)</span>
+
+        <span class="n">json_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">json_data</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="n">cls</span><span class="o">=</span><span class="n">DjangoJSONEncoder</span><span class="p">)</span>
+
+<span class="c">#    json_serializer = serializers.get_serializer(&#39;json&#39;)()</span>
+<span class="c">#    json_data = json_serializer.serialize(json_data, ensure_ascii = False)</span>
+<span class="c">#    json_data = simplejson.dumps(json_data)</span>
+<span class="c">#    print &quot;RETURNED JSON IS &quot;, unicode(json_data)</span>
+
+    <span class="k">return</span> <span class="n">json_data</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

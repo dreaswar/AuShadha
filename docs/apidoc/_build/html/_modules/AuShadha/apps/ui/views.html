@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.apps.ui.views &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.apps.ui.views</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : Views for Initial UI Loading</span>
+<span class="c"># Author      : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.</span>
+<span class="c"># Date        : 16-09-2013</span>
+<span class="c">################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"> Views to deal with rendering of the UI </span>
+<span class="sd"> the AuShadha/ui/home path ends at home()</span>
+<span class="sd"> </span>
+<span class="sd"> The home() sets the variable to be returned. </span>
+<span class="sd"> Finds out the INSTALLED_APPS and returns that as JSON</span>
+<span class="sd"> </span>
+<span class="sd"> The main UI pane itself is generated at ./dijit_widgets/pane.py</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="c"># General Module imports-----------------------------------</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="c"># General Django Imports----------------------------------</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span><span class="p">,</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">RequestContext</span>
+<span class="c">#from django.core.context_processors import csrf</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_exempt</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.cache</span> <span class="kn">import</span> <span class="n">never_cache</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_protect</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.debug</span> <span class="kn">import</span> <span class="n">sensitive_post_parameters</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="kn">from</span> <span class="nn">django.core</span> <span class="kn">import</span> <span class="n">serializers</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers</span> <span class="kn">import</span> <span class="n">json</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers.json</span> <span class="kn">import</span> <span class="n">DjangoJSONEncoder</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+
+
+<span class="c"># Application Specific Model Imports-----------------------</span>
+<span class="kn">import</span> <span class="nn">AuShadha.settings</span> <span class="kn">as</span> <span class="nn">settings</span>
+<span class="kn">from</span> <span class="nn">AuShadha.settings</span> <span class="kn">import</span> <span class="n">APP_ROOT_URL</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.serializers.data_grid</span> <span class="kn">import</span> <span class="n">generate_json_for_datagrid</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.views.dijit_tree</span> <span class="kn">import</span> <span class="n">DijitTreeNode</span><span class="p">,</span> <span class="n">DijitTree</span>
+<span class="kn">from</span> <span class="nn">AuShadha.utilities.forms</span> <span class="kn">import</span> <span class="n">aumodelformerrorformatter_factory</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.clinic.models</span> <span class="kn">import</span> <span class="n">Clinic</span>
+
+
+<span class="c"># OLD STYLE IMPORTS. NOT TO BE USED #</span>
+<span class="c">#from .models import PatientDetail, PatientDetailForm</span>
+<span class="c">#from demographics.demographics.models import Demographics</span>
+<span class="c">#from demographics.contact.models import Contact</span>
+<span class="c">#from demographics.phone.models import Phone</span>
+<span class="c">#from demographics.guardian.models import Guardian</span>
+<span class="c">#from demographics.email_and_fax.models import EmailAndFax</span>
+<span class="c">#from history.medical_history.models import MedicalHistory</span>
+<span class="c">#from history.surgical_history.models import SurgicalHistory</span>
+<span class="c">#from history.social_history.models import SocialHistory</span>
+<span class="c">#from history.family_history.models import FamilyHistory</span>
+<span class="c">#from history.obs_and_gyn.models import ObstetricHistoryDetail</span>
+<span class="c">#from immunisation.models import Immunisation</span>
+<span class="c">#from allergy_list.models import Allergy</span>
+<span class="c">#from medication_list.models import MedicationList</span>
+<span class="c">#from admission.models import AdmissionDetail, AdmissionDetailForm</span>
+<span class="c">#from visit.models import VisitDetail, VisitImaging, VisitInv</span>
+
+
+
+<span class="c"># Views start here -----------------------------------------</span>
+
+
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="home"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.views.home">[docs]</a><span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+
+  <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">      Handles request to render the home page at ui/base.html </span>
+<span class="sd">      Finds out the INSTALLED_APPS and generates label attribute</span>
+<span class="sd">      based on the MODULE_LABEL attribute on the app set in __init__.py</span>
+
+<span class="sd">      If MODULE_LABEL is not set it is set to None.</span>
+<span class="sd">      The INSTALLED_APPS is iterated over and collected.</span>
+<span class="sd">      Template variable is generated and ui/base.html is rendered and returned</span>
+
+<span class="sd">      installed_apps variable generated by this is not very important as</span>
+<span class="sd">      that implementation is not done by views.installed_apps method. </span>
+
+<span class="sd">      The main duty of this function is to verify the user credential and render the ui/base.html</span>
+<span class="sd">      template. </span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+
+  <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;GET&quot;</span><span class="p">:</span>
+    <span class="n">installed_apps</span> <span class="o">=</span><span class="p">[]</span>
+    <span class="n">apps</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">INSTALLED_APPS</span>
+
+    <span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">apps</span><span class="p">:</span>
+      <span class="c">#Hack to avoid core modules. This way the UI atleast starts with core modules</span>
+      <span class="c">#as dependencies</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">app</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;AuShadha&#39;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s">&#39;MODULE_LABEL&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">label</span><span class="p">:</span>
+          <span class="n">installed_apps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+    <span class="n">installed_apps</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">installed_apps</span><span class="p">)</span>
+    <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;user&#39;</span><span class="p">:</span><span class="n">user</span><span class="p">,</span><span class="s">&#39;installed_apps&#39;</span><span class="p">:</span><span class="n">installed_apps</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">&#39;ui/base.html&#39;</span><span class="p">,</span><span class="n">variable</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request Method&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

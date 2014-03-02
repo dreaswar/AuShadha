@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>patient.tests &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for patient.tests</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;This file demonstrates writing tests using the unittest module. These will</span>
+<span class="sd">pass when you run &quot;manage.py test&quot;.</span>
+
+<span class="sd">Replace this with more appropriate tests for your application.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="c">#from .models import PatientDetail</span>
+
+<span class="n">DIJIT_TREE_LIST</span> <span class="o">=</span> <span class="p">[</span> 
+                    <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;History&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;module&#39;</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&quot;HISTORY&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;Investigation&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;module&#39;</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;INV&#39;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;Imaging&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;module&#39;</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;IMAGING&#39;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;Procedure&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;module&#39;</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;PROCEDURES&#39;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;Visit&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;module&#39;</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;VISIT&#39;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;Admission&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;module&#39;</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;ADMISSION&#39;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;Immunisation&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;module&#39;</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;IMMUNISATION&#39;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;Coding&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;module&#39;</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;CODING&#39;</span><span class="p">}</span>
+                  <span class="p">]</span>
+
+<div class="viewcode-block" id="SimpleTest"><a class="viewcode-back" href="../../patient.html#patient.tests.SimpleTest">[docs]</a><span class="k">class</span> <span class="nc">SimpleTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SimpleTest.test_basic_addition"><a class="viewcode-back" href="../../patient.html#patient.tests.SimpleTest.test_basic_addition">[docs]</a>    <span class="k">def</span> <span class="nf">test_basic_addition</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tests that 1 + 1 always equals 2.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="c">#class PatientJson(object):</span>
+
+    <span class="c">#&quot;&quot;&quot;</span>
+    <span class="c">#Exports a Patient model as JSON for Dijit Grid </span>
+    <span class="c">#&quot;&quot;&quot;</span>
+  
+    <span class="c">#def __init__(self,instance):</span>
+      <span class="c">#self.model = instance.__class__</span>
+      <span class="c">#self.instance = instance</span>
+      <span class="c">#if not getattr(self.instance,&#39;urls&#39;,None):</span>
+        <span class="c">#self.instance.save()</span>
+      <span class="c">#self.urls = self.instance.urls</span>
+      <span class="c">#self.exportable_fields = {}</span>
+      <span class="c">#self.related_field_list = []</span>
+      <span class="c">#self.related_object_list = []</span>
+      <span class="c">#self.get_all_json_exportable_fields()</span>
+      <span class="c">#self.get_all_related_fields()</span>
+
+
+    <span class="c">#def __call__(self):</span>
+      <span class="c">#return self.as_json()</span>
+    
+    <span class="c">#def __unicode__(self):</span>
+      <span class="c">#return unicode(self.__call__())</span>
+
+    <span class="c">#def as_json(self):</span>
+      <span class="c">#return simplejson.dumps(self.exportable_fields)</span>
+
+    <span class="c">#def get_all_json_exportable_fields(self):</span>
+      <span class="c">#&quot;&quot;&quot; </span>
+        <span class="c">#Gets the JSON exportable fields and its values as key, value pair</span>
+        <span class="c">#This skips AutoField, OneToOneField type of field</span>
+      <span class="c">#&quot;&quot;&quot;</span>
+      <span class="c">#for item in self.instance._meta.get_fields_with_model():</span>
+        <span class="c">#if item[0].serialize:</span>
+          <span class="c">#self.exportable_fields[item[0].name] = item[0].value_from_object(self.instance)</span>
+        <span class="c">#else:</span>
+          <span class="c">#continue</span>
+      <span class="c">#self.exportable_fields[&#39;id&#39;] = self.instance.id</span>
+      <span class="c">#self.exportable_fields[&#39;urls&#39;] = self.urls</span>
+
+    <span class="c">#def get_all_related_fields(self):</span>
+      <span class="c">#&quot;&quot;&quot; </span>
+        <span class="c">#Gets the related fields (basically ForeignKey) </span>
+        <span class="c">#These are the keys used to add / list / json/ tree/ summary stuff in related models</span>
+        <span class="c">#This should be useful later in URL creation automagically</span>
+      <span class="c">#&quot;&quot;&quot;</span>
+
+      <span class="c">#for item in self.instance._meta.get_all_related_objects():</span>
+          <span class="c">#i  = &#39;.&#39;.join(item.name.split(&#39;:&#39;))</span>
+          <span class="c">#self.related_object_list.append(i)</span>
+
+      <span class="c">#for item in self.related_field_list:</span>
+        <span class="c">#if item not in self.instance._can_add_list_or_json:</span>
+          <span class="c">#self.instance._can_add_list_or_json.append(item)</span>
+      <span class="c">#print &quot;_can_add_list_or_json, Updated&quot;</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.utilities package &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="index.html" />
+    <link rel="up" title="AuShadha package" href="AuShadha.html" />
+    <link rel="next" title="admission package" href="admission.html" />
+    <link rel="prev" title="AuShadha.core.views package" href="AuShadha.core.views.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="admission.html" title="admission package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.core.views.html" title="AuShadha.core.views package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" accesskey="U">AuShadha package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="aushadha-utilities-package">
+<h1>AuShadha.utilities package<a class="headerlink" href="#aushadha-utilities-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.utilities.forms">
+<span id="aushadha-utilities-forms-module"></span><h2>AuShadha.utilities.forms module<a class="headerlink" href="#module-AuShadha.utilities.forms" title="Permalink to this headline">¶</a></h2>
+<p>Defines a generic AuShadhaModelForm error formatter and its factory
+Returns a well formatted error_message on Form Submit errors
+with relevent CSS styles.</p>
+<dl class="class">
+<dt id="AuShadha.utilities.forms.AuModelFormErrorFormatter">
+<em class="property">class </em><tt class="descclassname">AuShadha.utilities.forms.</tt><tt class="descname">AuModelFormErrorFormatter</tt><big>(</big><em>form</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/forms.html#AuModelFormErrorFormatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.forms.AuModelFormErrorFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Generic Form Error Formatter.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.forms.aumodelformerrorformatter_factory">
+<tt class="descclassname">AuShadha.utilities.forms.</tt><tt class="descname">aumodelformerrorformatter_factory</tt><big>(</big><em>form</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/forms.html#aumodelformerrorformatter_factory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.forms.aumodelformerrorformatter_factory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.utilities.queries">
+<span id="aushadha-utilities-queries-module"></span><h2>AuShadha.utilities.queries module<a class="headerlink" href="#module-AuShadha.utilities.queries" title="Permalink to this headline">¶</a></h2>
+<p>These are Queries that have been left here. 
+They are old code that needs to be moved into the respective app/queries.py module.</p>
+<dl class="function">
+<dt id="AuShadha.utilities.queries.adm_for_pat">
+<tt class="descclassname">AuShadha.utilities.queries.</tt><tt class="descname">adm_for_pat</tt><big>(</big><em>patient</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/queries.html#adm_for_pat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.queries.adm_for_pat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of admissions for a patient after calling
+has_active_admission.</p>
+<p>If no admission it returns the None. Useful for Templates
+manipulation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.queries.can_add_new_visit">
+<tt class="descclassname">AuShadha.utilities.queries.</tt><tt class="descname">can_add_new_visit</tt><big>(</big><em>patient</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/queries.html#can_add_new_visit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.queries.can_add_new_visit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries whether a given patient Can add a new visit.
+Takes a patient instance as a argument.
+Basically checks whether he/she has an active admission.</p>
+<dl class="docutils">
+<dt>If the visit adding model is changed and new visit addition is not</dt>
+<dd>permitted if an active visit is there that logic can also go here</dd>
+</dl>
+<p>Returns Boolean</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.queries.get_patient_complaints">
+<tt class="descclassname">AuShadha.utilities.queries.</tt><tt class="descname">get_patient_complaints</tt><big>(</big><em>patient</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/queries.html#get_patient_complaints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.queries.get_patient_complaints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.queries.has_active_admission">
+<tt class="descclassname">AuShadha.utilities.queries.</tt><tt class="descname">has_active_admission</tt><big>(</big><em>patient</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/queries.html#has_active_admission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.queries.has_active_admission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries whether a given patient has an active admission.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.queries.has_active_visit">
+<tt class="descclassname">AuShadha.utilities.queries.</tt><tt class="descname">has_active_visit</tt><big>(</big><em>patient</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/queries.html#has_active_visit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.queries.has_active_visit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries whether a given patient has a active visit.
+Returns Boolean. 
+Returns False in case of error.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.queries.has_contact">
+<tt class="descclassname">AuShadha.utilities.queries.</tt><tt class="descname">has_contact</tt><big>(</big><em>patient</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/queries.html#has_contact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.queries.has_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a Boolean whether a particular patient has a contact or not
+in Database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.queries.has_guardian">
+<tt class="descclassname">AuShadha.utilities.queries.</tt><tt class="descname">has_guardian</tt><big>(</big><em>patient</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/queries.html#has_guardian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.queries.has_guardian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a Boolean whether a particular patient has a contact or not
+in Database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.queries.has_phone">
+<tt class="descclassname">AuShadha.utilities.queries.</tt><tt class="descname">has_phone</tt><big>(</big><em>patient</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/queries.html#has_phone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.queries.has_phone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a Boolean whether a particular patient has a contact or not
+in Database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.queries.visit_for_pat">
+<tt class="descclassname">AuShadha.utilities.queries.</tt><tt class="descname">visit_for_pat</tt><big>(</big><em>patient</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/queries.html#visit_for_pat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.queries.visit_for_pat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Details the visit details for each patient.
+This is useful for display on the Patient List table in</p>
+<blockquote>
+<div>template.</div></blockquote>
+<dl class="docutils">
+<dt>Can just call this method and format a table with</dt>
+<dd>results for a quick view.</dd>
+<dt>Can use the return value of &#8220;VisitObject&#8221; </dt>
+<dd>to call the is_visit_active method if needed</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.utilities.urls">
+<span id="aushadha-utilities-urls-module"></span><h2>AuShadha.utilities.urls module<a class="headerlink" href="#module-AuShadha.utilities.urls" title="Permalink to this headline">¶</a></h2>
+<p>Module defines the class and its factory that generates URL based on the actions an 
+object can have / actions that can be performed on an object.</p>
+<p>This is not intended to replace Django&#8217;s reverse / {%url%} template tag, rather
+this was an attempt to create something that was more like Zope with each object
+being aware internally of the actions that can be done on/by it</p>
+<dl class="class">
+<dt id="AuShadha.utilities.urls.UrlGenerator">
+<em class="property">class </em><tt class="descclassname">AuShadha.utilities.urls.</tt><tt class="descname">UrlGenerator</tt><big>(</big><em>instance</em>, <em>parent=None</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/urls.html#UrlGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.urls.UrlGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Generates URL for the classes based on action, id and a parent class attribute</p>
+<dl class="attribute">
+<dt id="AuShadha.utilities.urls.UrlGenerator.parented_actions">
+<tt class="descname">parented_actions</tt><em class="property"> = ['add', 'list', 'json', 'tree', 'sidebar', 'summary', 'pane']</em><a class="headerlink" href="#AuShadha.utilities.urls.UrlGenerator.parented_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.utilities.urls.UrlGenerator.parentless_actions">
+<tt class="descname">parentless_actions</tt><em class="property"> = ['edit', 'del', 'info']</em><a class="headerlink" href="#AuShadha.utilities.urls.UrlGenerator.parentless_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.utilities.urls.UrlGenerator.return_urlDict">
+<tt class="descname">return_urlDict</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/urls.html#UrlGenerator.return_urlDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.urls.UrlGenerator.return_urlDict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.urls.generic_url_maker">
+<tt class="descclassname">AuShadha.utilities.urls.</tt><tt class="descname">generic_url_maker</tt><big>(</big><em>instance</em>, <em>action</em>, <em>id</em>, <em>root_object=False</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/urls.html#generic_url_maker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.urls.generic_url_maker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the URL Pattern for any AuShadha Object
+Following the naming conventions
+instance   : an instance of a Django Model
+action     : action that URL will commit : add/edit/delete/list/
+root_object: for the list option is root_object is False, instance id will be appended to URL else no id</p>
+<blockquote>
+<div>will be appended.
+Eg:: to list all patients, under a clinic once a queryset is done
+the id will be that of the clinic. But for the root object clinic since there is no db_relationship
+that fetches a list of clinics, all clinics are fetched and listed.</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.utilities.urls.urlgenerator_factory">
+<tt class="descclassname">AuShadha.utilities.urls.</tt><tt class="descname">urlgenerator_factory</tt><big>(</big><em>instance</em>, <em>parent=None</em><big>)</big><a class="reference internal" href="_modules/AuShadha/utilities/urls.html#urlgenerator_factory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.utilities.urls.urlgenerator_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the generated URL as a String</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.utilities">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-AuShadha.utilities" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AuShadha.utilities package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-AuShadha.utilities.forms">AuShadha.utilities.forms module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.utilities.queries">AuShadha.utilities.queries module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.utilities.urls">AuShadha.utilities.urls module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.utilities">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="AuShadha.core.views.html"
+                        title="previous chapter">AuShadha.core.views package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="admission.html"
+                        title="next chapter">admission package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/AuShadha.utilities.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="admission.html" title="admission package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.core.views.html" title="AuShadha.core.views package"
+             >previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

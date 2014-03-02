@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>visit.visit package &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="index.html" />
+    <link rel="up" title="visit package" href="visit.html" />
+    <link rel="next" title="visit.visit.dijit_widgets package" href="visit.visit.dijit_widgets.html" />
+    <link rel="prev" title="visit package" href="visit.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="visit.visit.dijit_widgets.html" title="visit.visit.dijit_widgets package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="visit.html" title="visit package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="visit.html" accesskey="U">visit package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="visit-visit-package">
+<h1>visit.visit package<a class="headerlink" href="#visit-visit-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="visit.visit.dijit_widgets.html">visit.visit.dijit_widgets package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visit.visit.dijit_widgets.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visit.visit.dijit_widgets.html#module-visit.visit.dijit_widgets.pane">visit.visit.dijit_widgets.pane module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visit.visit.dijit_widgets.html#module-visit.visit.dijit_widgets.tree">visit.visit.dijit_widgets.tree module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visit.visit.dijit_widgets.html#module-visit.visit.dijit_widgets">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-visit.visit.aushadha">
+<span id="visit-visit-aushadha-module"></span><h2>visit.visit.aushadha module<a class="headerlink" href="#module-visit.visit.aushadha" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-visit.visit.dijit_fields_constants">
+<span id="visit-visit-dijit-fields-constants-module"></span><h2>visit.visit.dijit_fields_constants module<a class="headerlink" href="#module-visit.visit.dijit_fields_constants" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-visit.visit.models">
+<span id="visit-visit-models-module"></span><h2>visit.visit.models module<a class="headerlink" href="#module-visit.visit.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="visit.visit.models.VisitDetail">
+<em class="property">class </em><tt class="descclassname">visit.visit.models.</tt><tt class="descname">VisitDetail</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel</span></tt></a></p>
+<p>VisitDetail(id, patient_detail_id, visit_date, op_surgeon_id, referring_doctor, consult_nature, booking_category, consult_reason, status, is_active, remarks)</p>
+<dl class="exception">
+<dt id="visit.visit.models.VisitDetail.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="visit.visit.models.VisitDetail.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">VisitDetail.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_absolute_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_absolute_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_all_patient_complaints_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_all_patient_complaints_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_all_patient_complaints_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_all_patient_complaints_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_all_visit_hpi_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_all_visit_hpi_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_all_visit_hpi_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_all_visit_hpi_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_all_visit_ros_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_all_visit_ros_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_all_visit_ros_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_all_visit_ros_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_booking_category_display">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_booking_category_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#visit.visit.models.VisitDetail.get_booking_category_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_consult_nature_display">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_consult_nature_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#visit.visit.models.VisitDetail.get_consult_nature_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_consult_reason_display">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_consult_reason_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#visit.visit.models.VisitDetail.get_consult_reason_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_edit_pane_header_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_edit_pane_header_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_edit_pane_header_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_edit_pane_header_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_next_by_visit_date">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_next_by_visit_date</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#visit.visit.models.VisitDetail.get_next_by_visit_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_previous_by_visit_date">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_previous_by_visit_date</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#visit.visit.models.VisitDetail.get_previous_by_visit_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_status_display">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_status_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#visit.visit.models.VisitDetail.get_status_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_visit_complaints">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_visit_complaints</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_visit_complaints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_visit_complaints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_visit_detail_close_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_visit_detail_close_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_visit_detail_close_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_visit_detail_close_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_visit_detail_visit_follow_up_add_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_visit_detail_visit_follow_up_add_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_visit_detail_visit_follow_up_add_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_visit_detail_visit_follow_up_add_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_visit_phyexam_add_gen_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_visit_phyexam_add_gen_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_visit_phyexam_add_gen_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_visit_phyexam_add_gen_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_visit_phyexam_add_neuro_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_visit_phyexam_add_neuro_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_visit_phyexam_add_neuro_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_visit_phyexam_add_neuro_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_visit_phyexam_add_sys_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_visit_phyexam_add_sys_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_visit_phyexam_add_sys_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_visit_phyexam_add_sys_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_visit_phyexam_add_vasc_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_visit_phyexam_add_vasc_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_visit_phyexam_add_vasc_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_visit_phyexam_add_vasc_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.get_visit_phyexam_add_vitals_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">get_visit_phyexam_add_vitals_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.get_visit_phyexam_add_vitals_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.get_visit_phyexam_add_vitals_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.has_fu_visits">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">has_fu_visits</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.has_fu_visits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.has_fu_visits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.has_previous_visits">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">has_previous_visits</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.has_previous_visits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.has_previous_visits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.import_active_complaints_url">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">import_active_complaints_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.import_active_complaints_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.import_active_complaints_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetail.objects">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x65c68d0&gt;</em><a class="headerlink" href="#visit.visit.models.VisitDetail.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetail.op_surgeon">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">op_surgeon</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.op_surgeon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetail.patient_detail">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">patient_detail</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.patient_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetail.phyexambasemodel_set">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">phyexambasemodel_set</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.phyexambasemodel_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.save">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">save</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.visit_nature">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">visit_nature</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.visit_nature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.visit_nature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.visit_nature_change">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">visit_nature_change</tt><big>(</big><em>nature</em><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.visit_nature_change"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.visit_nature_change" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.visit_status">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">visit_status</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.visit_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.visit_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="visit.visit.models.VisitDetail.visit_status_change">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">visit_status_change</tt><big>(</big><em>status</em><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetail.visit_status_change"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetail.visit_status_change" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetail.visitassessmentandplan_set">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">visitassessmentandplan_set</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.visitassessmentandplan_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetail.visitcomplaint_set">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">visitcomplaint_set</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.visitcomplaint_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetail.visithpi_set">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">visithpi_set</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.visithpi_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetail.visitros_set">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">visitros_set</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.visitros_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetail.visitsoap_set">
+<tt class="descclassname">VisitDetail.</tt><tt class="descname">visitsoap_set</tt><a class="headerlink" href="#visit.visit.models.VisitDetail.visitsoap_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="visit.visit.models.VisitDetailForm">
+<em class="property">class </em><tt class="descclassname">visit.visit.models.</tt><tt class="descname">VisitDetailForm</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetailForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetailForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm"><tt class="xref py py-class docutils literal"><span class="pre">AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm</span></tt></a></p>
+<dl class="class">
+<dt id="visit.visit.models.VisitDetailForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="reference internal" href="_modules/visit/visit/models.html#VisitDetailForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.models.VisitDetailForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="visit.visit.models.VisitDetailForm.Meta.exclude">
+<tt class="descname">exclude</tt><em class="property"> = ('patient_detail',)</em><a class="headerlink" href="#visit.visit.models.VisitDetailForm.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetailForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#visit.visit.models.VisitDetailForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#visit.visit.models.VisitDetail" title="visit.visit.models.VisitDetail"><tt class="xref py py-class docutils literal"><span class="pre">VisitDetail</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetailForm.base_fields">
+<tt class="descclassname">VisitDetailForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'visit_date': &lt;django.forms.fields.DateTimeField object at 0x65c6b50&gt;, 'op_surgeon': &lt;django.forms.models.ModelChoiceField object at 0x65c6850&gt;, 'referring_doctor': &lt;django.forms.fields.CharField object at 0x63e2590&gt;, 'consult_nature': &lt;django.forms.fields.TypedChoiceField object at 0x63e2290&gt;, 'booking_category': &lt;django.forms.fields.TypedChoiceField object at 0x63e2390&gt;, 'consult_reason': &lt;django.forms.fields.TypedChoiceField object at 0x63e2210&gt;, 'status': &lt;django.forms.fields.TypedChoiceField object at 0x63e22d0&gt;, 'remarks': &lt;django.forms.fields.CharField object at 0x63e2410&gt;}</em><a class="headerlink" href="#visit.visit.models.VisitDetailForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetailForm.declared_fields">
+<tt class="descclassname">VisitDetailForm.</tt><tt class="descname">declared_fields</tt><em class="property"> = {'op_surgeon': &lt;django.forms.models.ModelChoiceField object at 0x65c6850&gt;}</em><a class="headerlink" href="#visit.visit.models.VisitDetailForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetailForm.dijit_fields">
+<tt class="descclassname">VisitDetailForm.</tt><tt class="descname">dijit_fields</tt><em class="property"> = {'status': {'max_length': 100, 'data-dojo-props': &quot;'required' :true&quot;, 'data-dojo-type': 'dijit.form.Select'}, 'remarks': {'max_length': 150, 'data-dojo-props': &quot;'required' :false&quot;, 'data-dojo-type': 'dijit.form.Textarea'}, 'visit_date': {'max_length': 100, 'data-dojo-props': &quot;'required' :true&quot;, 'data-dojo-type': 'dijit.form.DateTextBox'}, 'consult_reason': {'max_length': 100, 'data-dojo-props': &quot;'required' :true&quot;, 'data-dojo-type': 'dijit.form.Select'}, 'consult_nature': {'max_length': 100, 'data-dojo-props': &quot;'required' :true&quot;, 'data-dojo-type': 'dijit.form.Select'}, 'referring_doctor': {'max_length': 100, 'data-dojo-props': &quot;'required' :false&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'booking_category': {'max_length': 100, 'data-dojo-props': &quot;'required' :true&quot;, 'data-dojo-type': 'dijit.form.Select'}, 'op_surgeon': {'max_length': 100, 'data-dojo-props': &quot;'required' : true&quot;, 'data-dojo-type': 'dijit.form.Select'}}</em><a class="headerlink" href="#visit.visit.models.VisitDetailForm.dijit_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="visit.visit.models.VisitDetailForm.media">
+<tt class="descclassname">VisitDetailForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#visit.visit.models.VisitDetailForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-visit.visit.queries">
+<span id="visit-visit-queries-module"></span><h2>visit.visit.queries module<a class="headerlink" href="#module-visit.visit.queries" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-visit.visit.tests">
+<span id="visit-visit-tests-module"></span><h2>visit.visit.tests module<a class="headerlink" href="#module-visit.visit.tests" title="Permalink to this headline">¶</a></h2>
+<p>This file demonstrates writing tests using the unittest module. These will
+pass when you run &#8220;manage.py test&#8221;.</p>
+<p>Replace this with more appropriate tests for your application.</p>
+<dl class="class">
+<dt id="visit.visit.tests.SimpleTest">
+<em class="property">class </em><tt class="descclassname">visit.visit.tests.</tt><tt class="descname">SimpleTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/visit/visit/tests.html#SimpleTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.tests.SimpleTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="visit.visit.tests.SimpleTest.test_basic_addition">
+<tt class="descname">test_basic_addition</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/visit/visit/tests.html#SimpleTest.test_basic_addition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.tests.SimpleTest.test_basic_addition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests that 1 + 1 always equals 2.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-visit.visit.urls">
+<span id="visit-visit-urls-module"></span><h2>visit.visit.urls module<a class="headerlink" href="#module-visit.visit.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-visit.visit.utilities">
+<span id="visit-visit-utilities-module"></span><h2>visit.visit.utilities module<a class="headerlink" href="#module-visit.visit.utilities" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="visit.visit.utilities.get_all_complaints">
+<tt class="descclassname">visit.visit.utilities.</tt><tt class="descname">get_all_complaints</tt><big>(</big><em>visit</em><big>)</big><a class="reference internal" href="_modules/visit/visit/utilities.html#get_all_complaints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.utilities.get_all_complaints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.utilities.has_previous_visits">
+<tt class="descclassname">visit.visit.utilities.</tt><tt class="descname">has_previous_visits</tt><big>(</big><em>visit_id</em><big>)</big><a class="reference internal" href="_modules/visit/visit/utilities.html#has_previous_visits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.utilities.has_previous_visits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.utilities.render_patient_visits_pdf">
+<tt class="descclassname">visit.visit.utilities.</tt><tt class="descname">render_patient_visits_pdf</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/utilities.html#render_patient_visits_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.utilities.render_patient_visits_pdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.utilities.render_visit_pdf">
+<tt class="descclassname">visit.visit.utilities.</tt><tt class="descname">render_visit_pdf</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/utilities.html#render_visit_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.utilities.render_visit_pdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-visit.visit.views">
+<span id="visit-visit-views-module"></span><h2>visit.visit.views module<a class="headerlink" href="#module-visit.visit.views" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="visit.visit.views.get_visit_detail_edit_pane_header">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">get_visit_detail_edit_pane_header</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#get_visit_detail_edit_pane_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.get_visit_detail_edit_pane_header" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Utility for returning header for Visit Detail Editing pane when called</dt>
+<dd>on double click of the Visit Grid</dd>
+<dt>Used for returning the headers that can be directed to the grid </dt>
+<dd>double click function to render the HTML from visit_detail_edit</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.render_visit_json">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">render_visit_json</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#render_visit_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.render_visit_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.render_visit_list">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">render_visit_list</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#render_visit_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.render_visit_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>View for Generating Visit List Takes on Request Object as argument.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.render_visit_tree">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">render_visit_tree</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#render_visit_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.render_visit_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.visit_detail_add">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">visit_detail_add</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#visit_detail_add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.visit_detail_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new VisitDetail Object
+Takes request and id of PatientDetail object
+the nature of visit is defaulted to &#8216;initial&#8217;.
+Implementation of separate visits for &#8216;initial&#8217; , &#8216;fu&#8217; etc.. can be implemented later.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.visit_detail_close">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">visit_detail_close</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#visit_detail_close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.visit_detail_close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.visit_detail_del">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">visit_detail_del</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#visit_detail_del"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.visit_detail_del" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.visit_detail_edit">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">visit_detail_edit</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#visit_detail_edit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.visit_detail_edit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.visit_detail_list">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">visit_detail_list</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#visit_detail_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.visit_detail_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.visit_json">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">visit_json</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#visit_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.visit_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.visit_list">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">visit_list</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#visit_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.visit_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="visit.visit.views.visit_summary">
+<tt class="descclassname">visit.visit.views.</tt><tt class="descname">visit_summary</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/visit/visit/views.html#visit_summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#visit.visit.views.visit_summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-visit.visit">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-visit.visit" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">visit.visit package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-visit.visit.aushadha">visit.visit.aushadha module</a></li>
+<li><a class="reference internal" href="#module-visit.visit.dijit_fields_constants">visit.visit.dijit_fields_constants module</a></li>
+<li><a class="reference internal" href="#module-visit.visit.models">visit.visit.models module</a></li>
+<li><a class="reference internal" href="#module-visit.visit.queries">visit.visit.queries module</a></li>
+<li><a class="reference internal" href="#module-visit.visit.tests">visit.visit.tests module</a></li>
+<li><a class="reference internal" href="#module-visit.visit.urls">visit.visit.urls module</a></li>
+<li><a class="reference internal" href="#module-visit.visit.utilities">visit.visit.utilities module</a></li>
+<li><a class="reference internal" href="#module-visit.visit.views">visit.visit.views module</a></li>
+<li><a class="reference internal" href="#module-visit.visit">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="visit.html"
+                        title="previous chapter">visit package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="visit.visit.dijit_widgets.html"
+                        title="next chapter">visit.visit.dijit_widgets package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/visit.visit.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="visit.visit.dijit_widgets.html" title="visit.visit.dijit_widgets package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="visit.html" title="visit package"
+             >previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="visit.html" >visit package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

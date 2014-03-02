@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.apps.aushadha_users.models &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.apps.aushadha_users.models</h1><div class="highlight"><pre>
+<span class="c">##########################################################################</span>
+<span class="c"># Project: AuShadha Project User Models to customise Django User Model</span>
+<span class="c">#           and enable role and permission sharing</span>
+<span class="c"># License: GNU-GPL Version 3</span>
+<span class="c"># Author : Dr.Easwar T.R</span>
+<span class="c"># Date   : 03-09-2012</span>
+<span class="c">##########################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"> Defining the models for AuShadha users</span>
+<span class="sd"> </span>
+<span class="sd"> This is a custom class to bind a logged in user to a Clinic and a Role</span>
+<span class="sd"> </span>
+<span class="sd"> All AuShadha uses should therefore be logged in and should have a role</span>
+<span class="sd"> </span>
+<span class="sd"> Fine grained permissions throughout the application can be set on role and</span>
+<span class="sd">   permissions defined here</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.forms</span> <span class="kn">import</span> <span class="n">ModelForm</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">REDIRECT_FIELD_NAME</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.forms</span> <span class="kn">import</span> <span class="n">AuthenticationForm</span>
+
+
+<span class="n">AUSHADHA_USER_ROLES</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;audhadha_admin&#39;</span><span class="p">,</span> <span class="s">&#39;AuShadha Admin&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="s">&#39;aushadha_user&#39;</span><span class="p">,</span> <span class="s">&#39;AuShadha User&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="s">&#39;aushadha_staff&#39;</span><span class="p">,</span> <span class="s">&#39;AuShadha Staff &#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="s">&#39;aushadha_developer&#39;</span><span class="p">,</span> <span class="s">&#39;AuShadha Developer&#39;</span><span class="p">),</span>
+                       <span class="p">)</span>
+
+
+
+<div class="viewcode-block" id="AuShadhaUser"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_users.html#AuShadha.apps.aushadha_users.models.AuShadhaUser">[docs]</a><span class="k">class</span> <span class="nc">AuShadhaUser</span><span class="p">(</span><span class="n">User</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">     Defines AuShadhaUser class</span>
+<span class="sd">     This is a model inheriting from User class that defines who uses AuShadha</span>
+<span class="sd">     The user can have many roles pertaining to usage of the software. </span>
+<span class="sd">     This is NOT the permission on the Clinic / the Patient. </span>
+<span class="sd">     This is for managing / using AuShadha</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">aushadha_user_role</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s">&quot;AuShadha User Role&quot;</span><span class="p">,</span>
+                                          <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;&quot;&quot; Users Role in AuShadha Software.</span>
+<span class="s">                                                           This is different from the role in the Clinic&quot;&quot;&quot;</span><span class="p">,</span>
+                                          <span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                                          <span class="n">choices</span><span class="o">=</span><span class="n">AUSHADHA_USER_ROLES</span><span class="p">,</span>
+                                          <span class="n">default</span><span class="o">=</span><span class="s">&quot;aushadha_user&quot;</span>
+                                          <span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="AuShadhaUserForm"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_users.html#AuShadha.apps.aushadha_users.models.AuShadhaUserForm">[docs]</a><span class="k">class</span> <span class="nc">AuShadhaUserForm</span><span class="p">(</span><span class="n">AuthenticationForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Defines ModelForm for AuShadhaUser</span>
+<span class="sd">      Generates the ModelForm for Login and authentication</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">AuShadhaUser</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

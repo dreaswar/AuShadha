@@ -1,0 +1,746 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>visit.visit_procedures.models &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for visit.visit_procedures.models</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project      : AuShadha</span>
+<span class="c"># Description  : Models for AuShadha OPD Visits.</span>
+<span class="c"># Author       : Dr. Easwar TR </span>
+<span class="c"># Date         : 17-09-2013</span>
+<span class="c"># LICENSE      : GNU-GPL Version 3, Please see AuShadha/LICENSE.txt</span>
+<span class="c">################################################################################</span>
+
+<span class="c"># General Imports</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+
+<span class="c"># Django Specific Imports</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.forms</span> <span class="kn">import</span> <span class="n">ModelForm</span><span class="p">,</span> <span class="n">ModelChoiceField</span><span class="p">,</span> <span class="n">Textarea</span><span class="p">,</span> <span class="n">TextInput</span>
+
+<span class="c"># Application model imports</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.aushadha_base_models.models</span> <span class="kn">import</span> <span class="n">AuShadhaBaseModel</span><span class="p">,</span><span class="n">AuShadhaBaseModelForm</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.clinic.models</span> <span class="kn">import</span> <span class="n">Clinic</span><span class="p">,</span> <span class="n">Staff</span>
+
+<span class="kn">from</span> <span class="nn">registry.inv_and_imaging.models</span> <span class="kn">import</span> <span class="n">ImagingInvestigationRegistry</span><span class="p">,</span> <span class="n">LabInvestigationRegistry</span>
+<span class="c">#from patient.models import PatientDetail</span>
+<span class="c">#from admission.models import AdmissionDetail</span>
+
+<span class="n">PatientDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;PatientRegistration&quot;</span><span class="p">)</span>
+<span class="n">AdmissionDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;Admission&quot;</span><span class="p">)</span>
+
+
+<span class="kn">from</span> <span class="nn">dijit_fields_constants</span> <span class="kn">import</span> <span class="n">VISIT_DETAIL_FORM_CONSTANTS</span><span class="p">,</span>\
+                                   <span class="n">VISIT_COMPLAINTS_FORM_CONSTANTS</span><span class="p">,</span>\
+                                   <span class="n">VISIT_HPI_FORM_CONSTANTS</span><span class="p">,</span>\
+                                   <span class="n">VISIT_PAST_HISTORY_FORM_CONSTANTS</span><span class="p">,</span>\
+                                   <span class="n">VISIT_IMAGING_FORM_CONSTANTS</span><span class="p">,</span>\
+                                   <span class="n">VISIT_INVESTIGATION_FORM_CONSTANTS</span><span class="p">,</span>\
+                                   <span class="n">VISIT_ROS_FORM_CONSTANTS</span><span class="p">,</span>\
+                                   <span class="n">VISIT_FOLLOW_UP_FORM_CONSTANTS</span><span class="p">,</span>\
+                                   <span class="n">VISIT_SOAP_FORM_CONSTANTS</span>
+
+<span class="n">DEFAULT_VISIT_DETAIL_FORM_EXCLUDES</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;patient_detail&#39;</span><span class="p">,)</span>
+
+<span class="n">CONSULT_NATURE_CHOICES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&#39;initial&#39;</span><span class="p">,</span> <span class="s">&#39;Initial&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;fu&#39;</span><span class="p">,</span> <span class="s">&#39;Follow-Up&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;na&#39;</span><span class="p">,</span> <span class="s">&#39;Non-Appointment / Walk-in&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;emer&#39;</span><span class="p">,</span> <span class="s">&#39;Emergency&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;pre_op&#39;</span><span class="p">,</span> <span class="s">&#39;Pre-OP Counsel&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;post_op&#39;</span><span class="p">,</span> <span class="s">&#39;Post-OP Review&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">CONSULT_STATUS_CHOICES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&#39;waiting&#39;</span><span class="p">,</span> <span class="s">&#39;Waiting&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;examining&#39;</span><span class="p">,</span> <span class="s">&#39;Examining&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;review_awaited&#39;</span><span class="p">,</span> <span class="s">&#39;Review Awaited&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;inv_awaited&#39;</span><span class="p">,</span> <span class="s">&#39;Investigations Awaited&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;consults_awaited&#39;</span><span class="p">,</span> <span class="s">&#39;Consults Awaited&#39;</span><span class="p">),</span>
+
+    <span class="p">(</span><span class="s">&#39;admission&#39;</span><span class="p">,</span> <span class="s">&#39;Admission&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;discharged&#39;</span><span class="p">,</span> <span class="s">&#39;Discharged&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;no_show&#39;</span><span class="p">,</span> <span class="s">&#39;No Show&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+
+
+
+<div class="viewcode-block" id="VisitDetail"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail">[docs]</a><span class="k">class</span> <span class="nc">VisitDetail</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;visit&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;patient_detail&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;complaint&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;follow_up&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;ros&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;hpi&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;soap&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;phy_exam&#39;</span><span class="p">,</span>
+                                    <span class="c">#&#39;past_history&#39;,</span>
+                                    <span class="c">#&#39;inv&#39;,</span>
+                                    <span class="c">#&#39;imaging&#39;,</span>
+                                    <span class="c">#&#39;procedure&#39;,</span>
+                                    <span class="c">#&#39;discharge&#39;</span>
+                                    <span class="p">]</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">_extra_url_actions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;close&#39;</span><span class="p">,</span><span class="s">&#39;change_nature&#39;</span><span class="p">]</span>
+
+    <span class="n">patient_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">PatientDetail</span><span class="p">)</span>
+    <span class="n">visit_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+    <span class="n">op_surgeon</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Staff</span><span class="p">)</span>
+    <span class="n">referring_doctor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Self&quot;</span><span class="p">)</span>
+    <span class="n">consult_nature</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">CONSULT_NATURE_CHOICES</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">CONSULT_STATUS_CHOICES</span><span class="p">)</span>
+    <span class="n">is_active</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">remarks</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="s">&quot;NAD&quot;</span><span class="p">,</span><span class="n">help_text</span><span class="o">=</span><span class="s">&quot;limit to 200 words&quot;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Visit Details&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Visit Details&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">(</span><span class="si">%s</span><span class="s">): </span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">patient_detail</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit_date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">op_surgeon</span><span class="p">)</span>
+
+<div class="viewcode-block" id="VisitDetail.get_absolute_url"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.get_absolute_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit/detail/</span><span class="si">%d</span><span class="s">/&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_visit_detail_close_url"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.get_visit_detail_close_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_detail_close_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&#39;/AuShadha/visit/detail/close/</span><span class="si">%d</span><span class="s">/&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Visit is already not active. Cannot Close&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_visit_detail_visit_follow_up_add_url"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.get_visit_detail_visit_follow_up_add_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_detail_visit_follow_up_add_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># if self.patient_detail.has_active_visit():</span>
+            <span class="c"># return self.patient_detail.get_patient_visit_add_url()</span>
+        <span class="c"># else:</span>
+            <span class="c"># return False</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit/follow_up/add/?visit_id=</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.has_fu_visits"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.has_fu_visits">[docs]</a>    <span class="k">def</span> <span class="nf">has_fu_visits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+            <span class="n">fu</span> <span class="o">=</span> <span class="n">VisitFollowUp</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                <span class="n">visit_detail</span><span class="o">=</span><span class="n">visit_obj</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-visit_date&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">fu</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">fu</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">except</span><span class="p">(</span><span class="n">VisitDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Not Visit Detail with ID:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.visit_nature"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.visit_nature">[docs]</a>    <span class="k">def</span> <span class="nf">visit_nature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">consult_nature</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.visit_nature_change"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.visit_nature_change">[docs]</a>    <span class="k">def</span> <span class="nf">visit_nature_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nature</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">consult_nature</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">nature</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR:: Invalid CONSULT_NATURE_CHOICE supplied..&quot;</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">consult_nature</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;initial&#39;</span><span class="p">,</span> <span class="s">&#39;fu&#39;</span><span class="p">,</span> <span class="s">&#39;na&#39;</span><span class="p">,</span> <span class="s">&#39;emer&#39;</span><span class="p">,</span> <span class="s">&#39;pre_op&#39;</span><span class="p">,</span> <span class="s">&#39;post_op&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">consult_nature</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR:: Invalid Consult Nature Change Requested..&quot;</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.visit_status"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.visit_status">[docs]</a>    <span class="k">def</span> <span class="nf">visit_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.visit_status_change"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.visit_status_change">[docs]</a>    <span class="k">def</span> <span class="nf">visit_status_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR:: Invalid CONSULT_STATUS_CHOICE supplied..&quot;</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;discharged&#39;</span><span class="p">,</span> <span class="s">&#39;admission&#39;</span><span class="p">,</span> <span class="s">&#39;review_awaited&#39;</span><span class="p">,</span> <span class="s">&#39;inv_awaited&#39;</span><span class="p">,</span> <span class="s">&#39;consults_awaited&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;discharged&#39;</span> <span class="ow">or</span> \
+               <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;admission&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_close_visit</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR:: Invalid Consult Status Change Requested..&quot;</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</div>
+    <span class="k">def</span> <span class="nf">_close_visit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c">#id = self.id</span>
+        <span class="c">#visit_obj      = VisitDetail.objects.get(pk = id)</span>
+        <span class="c">#visit_followup = VisitFollowUp.objects.filter(visit_detail = visit_obj)</span>
+        <span class="c"># if visit_followup:</span>
+            <span class="c"># for fu in visit_followup:</span>
+                <span class="c">#fu.status = &#39;discharged&#39;</span>
+                <span class="c"># fu.save()</span>
+        <span class="k">print</span> <span class="s">&quot;Trying to Close a visit with ID&quot;</span>
+        <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;dont_check_status&#39;</span><span class="p">:</span> <span class="s">&quot;yes&quot;</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_close_all_active_visits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">patient_detail</span>
+        <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">is_active</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">visit_obj</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">visit</span> <span class="ow">in</span> <span class="n">visit_obj</span><span class="p">:</span>
+                <span class="n">visit</span><span class="o">.</span><span class="n">_close_visit</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+<div class="viewcode-block" id="VisitDetail.save"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c"># if self.op_surgeon.clinic_staff_role == &#39;doctor&#39;:</span>
+        <span class="n">consult_nature</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">consult_nature</span>
+        <span class="k">print</span> <span class="s">&quot;Calling save method with args&quot;</span>
+        <span class="k">print</span> <span class="s">&quot;kwargs dont_check_status is set to: &quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;dont_check_status&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;dont_check_status&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="s">&#39;yes&#39;</span><span class="p">:</span>
+                <span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;dont_check_status&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s">&#39;discharged&#39;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">print</span> <span class="s">&quot;Closing the visit and saving the changes&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;no_show&#39;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;discharged&#39;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;admission&#39;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">force_update</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># if not self.patient_detail.has_active_visit():</span>
+                <span class="c">#self.consult_nature = &#39;initial&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c"># else:</span>
+            <span class="c">#raise Exception(&quot;User is not a Provider. Only Doctors can save Visits. &quot;)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_visit_complaints"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetail.get_visit_complaints">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_complaints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+        <span class="n">v_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">v_id</span><span class="p">)</span>
+            <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">visit_obj</span><span class="o">.</span><span class="n">patient_detail</span>
+        <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid ID. Raised Error&quot;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">(</span><span class="n">VisitDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid Visit. No Such Visit recorded&quot;</span><span class="p">)</span>
+        <span class="c">#visit_fu            = VisitFollowUp.objects.filter(visit_detail = visit_obj)</span>
+        <span class="n">visit_complaints</span> <span class="o">=</span> <span class="n">VisitComplaint</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="n">visit_detail</span><span class="o">=</span><span class="n">visit_obj</span><span class="p">)</span>
+        <span class="n">visit_complaint_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">visit_complaints</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">complaint</span> <span class="ow">in</span> <span class="n">visit_complaints</span><span class="p">:</span>
+                <span class="n">dict_to_append</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;complaint&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">complaint</span>
+                <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">duration</span>
+                <span class="n">dict_to_append</span><span class="p">[</span>
+                    <span class="s">&#39;visit_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">visit_date</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+                <span class="n">dict_to_append</span><span class="p">[</span>
+                    <span class="s">&#39;visit_active&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">is_active</span>
+                <span class="n">visit_complaint_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_to_append</span><span class="p">)</span>
+        <span class="c">#json = simplejson.dumps(visit_complaint_list)</span>
+        <span class="c"># return json</span>
+        <span class="k">return</span> <span class="n">visit_complaint_list</span>
+</div></div>
+<div class="viewcode-block" id="VisitComplaint"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitComplaint">[docs]</a><span class="k">class</span> <span class="nc">VisitComplaint</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitComplaint</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;complaint&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;visit_detail&#39;</span>
+
+    <span class="n">complaint</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 30 words&#39;</span><span class="p">)</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 30 words&#39;</span><span class="p">)</span>
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="c">#base_model = models.OneToOneField(AuShadhaBaseModel, parent_link=True)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> : </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">complaint</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">duration</span><span class="p">)</span>
+
+    <span class="c">#def save(self, *args, **kwargs):</span>
+        <span class="c">#super(VisitComplaint, self).save(*args, **kwargs)</span>
+
+    <span class="c"># def get_edit_url(self):</span>
+        <span class="c"># return &#39;/AuShadha/visit/complaint/edit/%s/&#39; %(self.id)</span>
+
+    <span class="c"># def get_del_url(self):</span>
+        <span class="c"># return &#39;/AuShadha/visit/complaint/del/%s/&#39; %(self.id)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Presenting Complaint&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Presenting Complaint&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span> <span class="s">&#39;created_at&#39;</span><span class="p">,</span> <span class="s">&#39;complaint&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="VisitFollowUp"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitFollowUp">[docs]</a><span class="k">class</span> <span class="nc">VisitFollowUp</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Model to describe the Follow up OPD Visit Notes  or SOAP notes.&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitFollowUp</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>      
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;follow_up&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;visit_detail&#39;</span>
+
+    <span class="n">visit_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+    <span class="n">op_surgeon</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Staff</span><span class="p">)</span>
+    <span class="n">consult_nature</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">CONSULT_NATURE_CHOICES</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">CONSULT_STATUS_CHOICES</span><span class="p">)</span>
+    <span class="n">subjective</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&quot;Subjective&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Restrict to 1000 words&quot;</span><span class="p">)</span>
+    <span class="n">objective</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&quot;Objective&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Restrict to 1000 words&quot;</span><span class="p">)</span>
+    <span class="n">assessment</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&quot;Assessment&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Restrict to 1000 words&quot;</span><span class="p">)</span>
+    <span class="n">plan</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&quot;Plan&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Restrict to 1000 words&quot;</span><span class="p">)</span>
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="s">Seen by: </span><span class="si">%s</span><span class="se">\n</span><span class="s">Seen On: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">subjective</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assessment</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">plan</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visit_detail</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">op_surgeon</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visit_date</span><span class="o">.</span><span class="n">date</span><span class="p">(</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="VisitFollowUp.get_edit_url"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitFollowUp.get_edit_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_edit_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit/follow_up/edit/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitFollowUp.get_del_url"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitFollowUp.get_del_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_del_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit/follow_up/del/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitFollowUp.formatted_obj"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitFollowUp.formatted_obj">[docs]</a>    <span class="k">def</span> <span class="nf">formatted_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;&#39;&#39;&lt;b&gt; Seen On   :&lt;/b&gt; </span><span class="si">%s</span><span class="se">\n</span><span class="s">&lt;/br&gt;</span>
+<span class="s">              &lt;b&gt; Seen by   :&lt;/b&gt; </span><span class="si">%s</span><span class="se">\n</span><span class="s">&lt;/br&gt;</span>
+<span class="s">              &lt;b&gt; Subjective:&lt;/b&gt; </span><span class="si">%s</span><span class="se">\n</span><span class="s">&lt;/br&gt;</span>
+<span class="s">              &lt;b&gt; Objective :&lt;/b&gt; </span><span class="si">%s</span><span class="se">\n</span><span class="s">&lt;/br&gt;</span>
+<span class="s">              &lt;b&gt; Assessment:&lt;/b&gt; </span><span class="si">%s</span><span class="se">\n</span><span class="s">&lt;/br&gt;</span>
+<span class="s">              &lt;b&gt; Plan      :&lt;/b&gt; </span><span class="si">%s</span><span class="se">\n</span><span class="s">&lt;/br&gt;</span>
+<span class="s">            &#39;&#39;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">visit_date</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">op_surgeon</span><span class="p">,</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">subjective</span><span class="p">,</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="p">,</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">assessment</span><span class="p">,</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">plan</span>
+                   <span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitFollowUp.save"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitFollowUp.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;no_show&#39;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;discharged&#39;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;admission&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">_close_all_active_visits</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">VisitFollowUp</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="s">&quot;Related VisitDetail is not active.Cannot add VisitFollowUp&quot;</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="VisitSOAP"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitSOAP">[docs]</a><span class="k">class</span> <span class="nc">VisitSOAP</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Model to describe the Follow up OPD Visit Notes  or SOAP notes.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitSOAP</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>      
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;soap&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;visit_detail&#39;</span>
+
+    <span class="n">subjective</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&quot;Subjective&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Restrict to 1000 words&quot;</span><span class="p">)</span>
+    <span class="n">objective</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&quot;Objective&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Restrict to 1000 words&quot;</span><span class="p">)</span>
+    <span class="n">assessment</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&quot;Assessment&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Restrict to 1000 words&quot;</span><span class="p">)</span>
+    <span class="n">plan</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&quot;Plan&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;Restrict to 1000 words&quot;</span><span class="p">)</span>
+
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="s">Seen by: </span><span class="si">%s</span><span class="se">\n</span><span class="s">Created On: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">subjective</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assessment</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">plan</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visit_detail</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">op_surgeon</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">created_at</span><span class="o">.</span><span class="n">date</span><span class="p">(</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+        <span class="p">)</span>
+
+
+</div>
+<div class="viewcode-block" id="VisitHPI"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitHPI">[docs]</a><span class="k">class</span> <span class="nc">VisitHPI</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitHPI</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>      
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;hpi&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;visit_detail&#39;</span>
+    
+    <span class="n">hpi</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;History of Presenting Illness&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 1000 words&#39;</span><span class="p">)</span>
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hpi</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="c">#unique_together   = (&#39;hpi&#39;, &#39;visit_detail&#39;)</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;History of Presenting Illness&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;History of Presenting Illness&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span> <span class="s">&#39;created_at&#39;</span><span class="p">,</span> <span class="s">&#39;hpi&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="VisitPastHistory"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitPastHistory">[docs]</a><span class="k">class</span> <span class="nc">VisitPastHistory</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitPastHistory</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>      
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;past_history&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;visit_detail&#39;</span>
+
+
+    <span class="n">past_history</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Past History &#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 1000 words&#39;</span><span class="p">)</span>
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span>
+        <span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">past_history</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="c">#unique_together   = (&#39;past_history&#39;, &#39;visit_detail&#39;)</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Past History&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Past History&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span> <span class="s">&#39;created_at&#39;</span><span class="p">,</span> <span class="s">&#39;past_history&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="VisitImaging"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitImaging">[docs]</a><span class="k">class</span> <span class="nc">VisitImaging</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitImaging</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>      
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;imaging&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;visit_detail&#39;</span>
+
+    <span class="n">modality</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="s">&#39;inv_and_imaging.ImagingInvestigationRegistry&#39;</span><span class="p">)</span>
+    <span class="n">finding</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Finding&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 1000 words&#39;</span><span class="p">)</span>
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;&#39;&#39;</span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s">(</span><span class="si">%s</span><span class="s">)&#39;&#39;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">modality</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">finding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">created_at</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span> <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__trimmed_unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;&#39;&#39;</span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s"> ... </span><span class="se">\n</span><span class="s">(</span><span class="si">%s</span><span class="s">)&#39;&#39;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">modality</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">finding</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">created_at</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span> <span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Imaging Studies&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Imaging Studies&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span> <span class="s">&#39;created_at&#39;</span><span class="p">,</span> <span class="s">&#39;modality&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="VisitROS"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitROS">[docs]</a><span class="k">class</span> <span class="nc">VisitROS</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitROS</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;visit_ros&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;visit_detail&#39;</span>
+
+    <span class="n">const_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Constitutional&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">eye_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Eyes&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">ent_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Ear, Nose, Throat&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">cvs_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Cardiovascular&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">resp_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Respiratory&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">gi_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Gastrointestinal&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">gu_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Genitourinary&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">ms_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Musculoskeletal&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">integ_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Integumentary/ Breast&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">neuro_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Neurological&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">psych_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Psychiatric&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">endocr_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Endocrine&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">hemat_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Haematological&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+    <span class="n">immuno_symp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Immunologic/ Allergic&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Nil&quot;</span><span class="p">)</span>
+
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span>
+        <span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;&#39;&#39;</span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"></span>
+<span class="s">              </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span>
+<span class="s">              </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span>
+<span class="s">              </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"></span>
+<span class="s">              </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s"></span>
+<span class="s">           &#39;&#39;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">const_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">eye_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">ent_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">cvs_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">resp_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">gi_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">gu_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">ms_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">integ_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">neuro_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">psych_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">endocr_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">hemat_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">immuno_symp</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">created_at</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Visit Review of Systems&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Visit Review of Systems&quot;</span>
+
+</div>
+<div class="viewcode-block" id="VisitInv"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitInv">[docs]</a><span class="k">class</span> <span class="nc">VisitInv</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitInv</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;inv&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;visit_detail&#39;</span>    
+
+    <span class="n">investigation</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="s">&#39;inv_and_imaging.LabInvestigationRegistry&#39;</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s">&#39;Findings&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s"> </span><span class="se">\n</span><span class="s">(</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">investigation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">created_at</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Lab Investigation&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Lab Investigation&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span> <span class="s">&#39;created_at&#39;</span><span class="p">,</span> <span class="s">&#39;investigation&#39;</span><span class="p">)</span>
+
+
+
+</div>
+<div class="viewcode-block" id="VisitDetailForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetailForm">[docs]</a><span class="k">class</span> <span class="nc">VisitDetailForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+    
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Detail Form&quot;</span>
+
+    <span class="n">op_surgeon</span> <span class="o">=</span> <span class="n">ModelChoiceField</span><span class="p">(</span>
+        <span class="n">queryset</span><span class="o">=</span><span class="n">Staff</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">clinic_staff_role</span><span class="o">=</span><span class="s">&#39;doctor&#39;</span><span class="p">))</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_DETAIL_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitDetailForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitDetailForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitDetail</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="n">DEFAULT_VISIT_DETAIL_FORM_EXCLUDES</span>
+
+</div></div>
+<div class="viewcode-block" id="VisitComplaintAddForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitComplaintAddForm">[docs]</a><span class="k">class</span> <span class="nc">VisitComplaintAddForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Complaint Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_COMPLAINTS_FORM_CONSTANTS</span>
+
+
+<div class="viewcode-block" id="VisitComplaintAddForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitComplaintAddForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitComplaint</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,)</span>
+
+</div></div>
+<div class="viewcode-block" id="VisitComplaintEditForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitComplaintEditForm">[docs]</a><span class="k">class</span> <span class="nc">VisitComplaintEditForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Complaint Form&quot;</span>
+    
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_COMPLAINTS_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitComplaintEditForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitComplaintEditForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitComplaint</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,)</span>
+
+</div></div>
+<div class="viewcode-block" id="VisitHPIForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitHPIForm">[docs]</a><span class="k">class</span> <span class="nc">VisitHPIForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit HPI Form&quot;</span>
+    
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_HPI_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitHPIForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitHPIForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitHPI</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span><span class="s">&#39;patient_detail&#39;</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="VisitPastHistoryForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitPastHistoryForm">[docs]</a><span class="k">class</span> <span class="nc">VisitPastHistoryForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Past History Form&quot;</span>
+    
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_PAST_HISTORY_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitPastHistoryForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitPastHistoryForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitPastHistory</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span><span class="s">&#39;patient_detail&#39;</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="VisitImagingForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitImagingForm">[docs]</a><span class="k">class</span> <span class="nc">VisitImagingForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Imaging Form&quot;</span>
+    
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_IMAGING_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitImagingForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitImagingForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitImaging</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span><span class="s">&#39;patient_detail&#39;</span><span class="p">)</span>
+
+
+</div></div>
+<div class="viewcode-block" id="VisitInvForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitInvForm">[docs]</a><span class="k">class</span> <span class="nc">VisitInvForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Investigation Form&quot;</span>
+    
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_INVESTIGATION_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitInvForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitInvForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitInv</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span><span class="s">&#39;patient_detail&#39;</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="VisitROSForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitROSForm">[docs]</a><span class="k">class</span> <span class="nc">VisitROSForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit ROS Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_ROS_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitROSForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitROSForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitROS</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span> <span class="s">&#39;parent_clinic&#39;</span><span class="p">,</span> <span class="s">&#39;created_at&#39;</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="VisitFollowUpForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitFollowUpForm">[docs]</a><span class="k">class</span> <span class="nc">VisitFollowUpForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Follow Up Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_FOLLOW_UP_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitFollowUpForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitFollowUpForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitFollowUp</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span> <span class="s">&#39;parent_clinic&#39;</span><span class="p">,</span> <span class="s">&#39;created_at&#39;</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="VisitSOAPForm"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitSOAPForm">[docs]</a><span class="k">class</span> <span class="nc">VisitSOAPForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit SOAP Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_SOAP_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitSOAPForm.Meta"><a class="viewcode-back" href="../../../visit.visit_procedures.html#visit.visit_procedures.models.VisitSOAPForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitSOAP</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span> <span class="s">&#39;parent_clinic&#39;</span><span class="p">,</span> <span class="s">&#39;created_at&#39;</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>visit.visit_complaints.models &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for visit.visit_complaints.models</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project      : AuShadha</span>
+<span class="c"># Description  : Models for AuShadha OPD Visits.</span>
+<span class="c"># Author       : Dr. Easwar TR </span>
+<span class="c"># Date         : 17-09-2013</span>
+<span class="c"># LICENSE      : GNU-GPL Version 3, Please see AuShadha/LICENSE.txt</span>
+<span class="c">################################################################################</span>
+
+<span class="c"># General Imports</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+
+<span class="c"># Django Specific Imports</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.forms</span> <span class="kn">import</span> <span class="n">ModelForm</span><span class="p">,</span> <span class="n">ModelChoiceField</span><span class="p">,</span> <span class="n">Textarea</span><span class="p">,</span> <span class="n">TextInput</span>
+
+<span class="c"># Application model imports</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.aushadha_base_models.models</span> <span class="kn">import</span> <span class="n">AuShadhaBaseModel</span><span class="p">,</span><span class="n">AuShadhaBaseModelForm</span>
+
+<span class="c">#from AuShadha.apps.clinic.models import Clinic, Staff</span>
+
+
+<span class="n">VisitDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit&quot;</span><span class="p">)</span>
+
+
+<span class="kn">from</span> <span class="nn">dijit_fields_constants</span> <span class="kn">import</span> <span class="n">VISIT_COMPLAINTS_FORM_CONSTANTS</span>
+
+<span class="n">DEFAULT_VISIT_COMPLAINTS_FORM_EXCLUDES</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,)</span>
+
+
+
+<div class="viewcode-block" id="VisitComplaint"><a class="viewcode-back" href="../../../visit.visit_complaints.html#visit.visit_complaints.models.VisitComplaint">[docs]</a><span class="k">class</span> <span class="nc">VisitComplaint</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitComplaint</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;complaint&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;visit_detail&#39;</span>
+
+    <span class="n">complaint</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 30 words&#39;</span><span class="p">)</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 30 words&#39;</span><span class="p">)</span>
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;visit.VisitDetail&#39;</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="c">#base_model = models.OneToOneField(AuShadhaBaseModel, parent_link=True)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> : </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">complaint</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">duration</span><span class="p">)</span>
+
+    <span class="c">#def save(self, *args, **kwargs):</span>
+        <span class="c">#super(VisitComplaint, self).save(*args, **kwargs)</span>
+
+    <span class="c"># def get_edit_url(self):</span>
+        <span class="c"># return &#39;/AuShadha/visit/complaint/edit/%s/&#39; %(self.id)</span>
+
+    <span class="c"># def get_del_url(self):</span>
+        <span class="c"># return &#39;/AuShadha/visit/complaint/del/%s/&#39; %(self.id)</span>
+
+<div class="viewcode-block" id="VisitComplaint.get_all_patient_complaints_url"><a class="viewcode-back" href="../../../visit.visit_complaints.html#visit.visit_complaints.models.VisitComplaint.get_all_patient_complaints_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_patient_complaints_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_complaints/complaint/get/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitComplaint.import_active_complaints_url"><a class="viewcode-back" href="../../../visit.visit_complaints.html#visit.visit_complaints.models.VisitComplaint.import_active_complaints_url">[docs]</a>    <span class="k">def</span> <span class="nf">import_active_complaints_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_complaints/complaint/import_active_complaints/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Presenting Complaint&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Presenting Complaint&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,</span> <span class="s">&#39;created_at&#39;</span><span class="p">,</span> <span class="s">&#39;complaint&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="VisitComplaintAddForm"><a class="viewcode-back" href="../../../visit.visit_complaints.html#visit.visit_complaints.models.VisitComplaintAddForm">[docs]</a><span class="k">class</span> <span class="nc">VisitComplaintAddForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Complaint Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_COMPLAINTS_FORM_CONSTANTS</span>
+
+
+<div class="viewcode-block" id="VisitComplaintAddForm.Meta"><a class="viewcode-back" href="../../../visit.visit_complaints.html#visit.visit_complaints.models.VisitComplaintAddForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitComplaint</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,)</span>
+
+</div></div>
+<div class="viewcode-block" id="VisitComplaintEditForm"><a class="viewcode-back" href="../../../visit.visit_complaints.html#visit.visit_complaints.models.VisitComplaintEditForm">[docs]</a><span class="k">class</span> <span class="nc">VisitComplaintEditForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Complaint Form&quot;</span>
+    
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_COMPLAINTS_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitComplaintEditForm.Meta"><a class="viewcode-back" href="../../../visit.visit_complaints.html#visit.visit_complaints.models.VisitComplaintEditForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitComplaint</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>
