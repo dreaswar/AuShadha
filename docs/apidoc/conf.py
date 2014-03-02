@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # AuShadha documentation build configuration file, created by
-# sphinx-quickstart on Thu Feb 27 16:23:40 2014.
+# sphinx-quickstart on Fri Feb 28 23:51:42 2014.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -15,10 +15,13 @@
 import sys
 import os
 
+os.environ['DJANGO_SETTINGS_MODULE'] = 'AuShadha.settings'
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../../src/AuShadha/'))
+
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
 # -- General configuration ------------------------------------------------
 
@@ -70,7 +73,7 @@ release = ''
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_build', '../../src/AuShadha/AuShadha/app_template','../../.git','**configure.yaml','../../src/AuShadha/AuShadha/settings.py']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.

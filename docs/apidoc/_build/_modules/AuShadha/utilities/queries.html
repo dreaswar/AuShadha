@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.utilities.queries &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.utilities.queries</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : Generic Queries for models </span>
+<span class="c">#               A dump for useful functions used everywhere</span>
+<span class="c"># Author      : Dr. Easwar T.R</span>
+<span class="c"># Date        : 19-09-2013</span>
+<span class="c"># License     : GNU-GPL Version 3, See AuShadha/License.txt</span>
+<span class="c">################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"> These are Queries that have been left here. </span>
+<span class="sd"> They are old code that needs to be moved into the respective app/queries.py module.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c">#from django.utils import simplejson</span>
+
+<span class="c">#from AuShadha.apps.ui.ui import ui as UI</span>
+
+<span class="c">#PatientDetail = UI.get_module(&quot;PatientRegistration&quot;)</span>
+<span class="c">#AdmissionDetail = UI.get_module(&quot;Admission&quot;)</span>
+<span class="c">#VisitDetail = UI.get_module(&quot;OPD_Visit&quot;)</span>
+<span class="c">#VisitComplaint = UI.get_module(&quot;OPD_Visit_Complaint&quot;)</span>
+<span class="c">#Contact = UI.get_module(&quot;Contact&quot;)</span>
+<span class="c">#Phone = UI.get_module(&quot;Phone&quot;)</span>
+<span class="c">#Guardian = UI.get_module(&quot;Guardian&quot;)</span>
+
+<div class="viewcode-block" id="has_active_admission"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.queries.has_active_admission">[docs]</a><span class="k">def</span> <span class="nf">has_active_admission</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+    
+    <span class="sd">&quot;&quot;&quot;Queries whether a given patient has an active admission.&quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">patient.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span>
+    <span class="kn">from</span> <span class="nn">admission.admission.models</span> <span class="kn">import</span> <span class="n">AdmissionDetail</span>
+
+    <span class="n">patient_id</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">patient_id</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="n">adm_obj</span> <span class="o">=</span> <span class="n">AdmissionDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+        <span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">admission_closed</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">adm_obj</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="adm_for_pat"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.queries.adm_for_pat">[docs]</a><span class="k">def</span> <span class="nf">adm_for_pat</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+    
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Returns the number of admissions for a patient after calling</span>
+<span class="sd">      has_active_admission.</span>
+
+<span class="sd">      If no admission it returns the None. Useful for Templates</span>
+<span class="sd">      manipulation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">patient.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span>
+    <span class="kn">from</span> <span class="nn">admission.admission.models</span> <span class="kn">import</span> <span class="n">AdmissionDetail</span>
+
+    <span class="n">patient_id</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">patient_id</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">if</span> <span class="n">has_active_admission</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;0&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">all_adm_obj</span> <span class="o">=</span> <span class="n">AdmissionDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">all_adm_obj</span>
+</div>
+<div class="viewcode-block" id="has_active_visit"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.queries.has_active_visit">[docs]</a><span class="k">def</span> <span class="nf">has_active_visit</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+    
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Queries whether a given patient has a active visit.</span>
+<span class="sd">      Returns Boolean. </span>
+<span class="sd">      Returns False in case of error.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">patient.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span>
+    <span class="kn">from</span> <span class="nn">visit.visit.models</span> <span class="kn">import</span> <span class="n">VisitDetail</span>
+
+    <span class="n">patient_id</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">patient_id</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+        <span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">,</span> <span class="n">is_active</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">visit_obj</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+</div>
+<div class="viewcode-block" id="can_add_new_visit"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.queries.can_add_new_visit">[docs]</a><span class="k">def</span> <span class="nf">can_add_new_visit</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Queries whether a given patient Can add a new visit.</span>
+<span class="sd">      Takes a patient instance as a argument.</span>
+<span class="sd">      Basically checks whether he/she has an active admission.</span>
+
+<span class="sd">      If the visit adding model is changed and new visit addition is not</span>
+<span class="sd">          permitted if an active visit is there that logic can also go here</span>
+
+<span class="sd">      Returns Boolean</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">patient.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span>
+    <span class="kn">from</span> <span class="nn">admission.admission.models</span> <span class="kn">import</span> <span class="n">AdmissionDetail</span>
+    <span class="kn">from</span> <span class="nn">visit.visit.models</span> <span class="kn">import</span> <span class="n">VisitDetail</span>
+    <span class="kn">from</span> <span class="nn">visit.visit_complaints.models</span> <span class="kn">import</span> <span class="n">VisitComplaint</span>
+
+    <span class="n">patient_id</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">patient_id</span><span class="p">)</span>
+
+    <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="c"># if not has_active_visit(patient):</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">has_active_admission</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="c"># else:</span>
+        <span class="c"># return False</span>
+
+</div>
+<div class="viewcode-block" id="visit_for_pat"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.queries.visit_for_pat">[docs]</a><span class="k">def</span> <span class="nf">visit_for_pat</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+    
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Details the visit details for each patient.</span>
+<span class="sd">      This is useful for display on the Patient List table in</span>
+<span class="sd">        template. </span>
+<span class="sd">      Can just call this method and format a table with</span>
+<span class="sd">        results for a quick view. </span>
+<span class="sd">      Can use the return value of &quot;VisitObject&quot; </span>
+<span class="sd">        to call the is_visit_active method if needed</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c">#from patient.models import PatientDetail</span>
+    <span class="c">#from admission.models import AdmissionDetail</span>
+    <span class="c">#from visit.models import VisitDetail, VisitComplaint</span>
+
+    <span class="n">patient_id</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">patient_id</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">visit_obj</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">visit_obj</span>
+
+</div>
+<div class="viewcode-block" id="get_patient_complaints"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.queries.get_patient_complaints">[docs]</a><span class="k">def</span> <span class="nf">get_patient_complaints</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+
+    <span class="kn">from</span> <span class="nn">patient.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span>
+    <span class="kn">from</span> <span class="nn">admission.admission.models</span> <span class="kn">import</span> <span class="n">AdmissionDetail</span>
+    <span class="kn">from</span> <span class="nn">visit.visit.models</span> <span class="kn">import</span> <span class="n">VisitDetail</span>
+    <span class="kn">from</span> <span class="nn">visit.visit_complaints.models</span> <span class="kn">import</span> <span class="n">VisitComplaint</span>
+
+    <span class="n">p_id</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">p_id</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid ID. Raised Error&quot;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">(</span><span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid Patient. No Such Patient on record&quot;</span><span class="p">)</span>
+    <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+        <span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-visit_date&#39;</span><span class="p">)</span>
+    <span class="n">visit_complaint_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">visit_obj</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">visit</span> <span class="ow">in</span> <span class="n">visit_obj</span><span class="p">:</span>
+            <span class="n">visit_complaints</span> <span class="o">=</span> <span class="n">VisitComplaint</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                <span class="n">visit_detail</span><span class="o">=</span><span class="n">visit</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">visit_complaints</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">complaint</span> <span class="ow">in</span> <span class="n">visit_complaints</span><span class="p">:</span>
+                    <span class="n">dict_to_append</span> <span class="o">=</span> <span class="p">{}</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;complaint&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">complaint</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">duration</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span>
+                        <span class="s">&#39;visit_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">visit_date</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span>
+                        <span class="s">&#39;is_active&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">is_active</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span>
+                        <span class="s">&#39;visit_fu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">has_fu_visits</span><span class="p">()</span>
+                    <span class="n">visit_complaint_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_to_append</span><span class="p">)</span>
+    <span class="c">#json = simplejson.dumps(visit_complaint_list)</span>
+    <span class="c">#return json</span>
+    <span class="k">return</span> <span class="n">visit_complaint_list</span>
+
+
+
+</div>
+<div class="viewcode-block" id="has_contact"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.queries.has_contact">[docs]</a><span class="k">def</span> <span class="nf">has_contact</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns a Boolean whether a particular patient has a contact or not</span>
+<span class="sd">    in Database.&quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">patient.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span>
+    <span class="kn">from</span> <span class="nn">demographics.contact.models</span> <span class="kn">import</span> <span class="n">Contact</span>
+
+    <span class="n">patient_id</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">patient_id</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="n">contact</span> <span class="o">=</span> <span class="n">Contact</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">contact</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">contact</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="has_phone"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.queries.has_phone">[docs]</a><span class="k">def</span> <span class="nf">has_phone</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns a Boolean whether a particular patient has a contact or not</span>
+<span class="sd">    in Database.&quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">patient.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span>
+    <span class="kn">from</span> <span class="nn">demographics.phone.models</span> <span class="kn">import</span> <span class="n">Phone</span>
+
+    <span class="n">patient_id</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">Phone</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">patient_id</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="n">phone</span> <span class="o">=</span> <span class="n">Phone</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">phone</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">phone</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="has_guardian"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.queries.has_guardian">[docs]</a><span class="k">def</span> <span class="nf">has_guardian</span><span class="p">(</span><span class="n">patient</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Returns a Boolean whether a particular patient has a contact or not</span>
+<span class="sd">    in Database.&quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">patient.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span>
+    <span class="kn">from</span> <span class="nn">demographics.guardian.models</span> <span class="kn">import</span> <span class="n">Guardian</span>
+
+    <span class="n">patient_id</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">patient_id</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="n">guardian</span> <span class="o">=</span> <span class="n">Guardian</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">guardian</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">guardian</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

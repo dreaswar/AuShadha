@@ -19,6 +19,8 @@ from AuShadha.apps.clinic.models import Staff
 from registry.inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
 
 #from patient.models import PatientDetail
+#print "Trying to import PatientRegistration class"
+
 PatientDetail = UI.get_module('PatientRegistration')
 
 

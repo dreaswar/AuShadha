@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.core.views package &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="index.html" />
+    <link rel="up" title="AuShadha.core package" href="AuShadha.core.html" />
+    <link rel="next" title="AuShadha.utilities package" href="AuShadha.utilities.html" />
+    <link rel="prev" title="AuShadha.core.serializers package" href="AuShadha.core.serializers.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.utilities.html" title="AuShadha.utilities package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.core.serializers.html" title="AuShadha.core.serializers package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.core.html" accesskey="U">AuShadha.core package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="aushadha-core-views-package">
+<h1>AuShadha.core.views package<a class="headerlink" href="#aushadha-core-views-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.core.views.dijit_tree">
+<span id="aushadha-core-views-dijit-tree-module"></span><h2>AuShadha.core.views.dijit_tree module<a class="headerlink" href="#module-AuShadha.core.views.dijit_tree" title="Permalink to this headline">¶</a></h2>
+<p>This module and its classes used to generated DijitTree widgets</p>
+<dl class="docutils">
+<dt>This has now been partly replaced with PyYAML based markup and parsing</dt>
+<dd>to generate the JSON for the same. Part of the code is still used to construct 
+the tree using YAML</dd>
+</dl>
+<dl class="class">
+<dt id="AuShadha.core.views.dijit_tree.DijitTree">
+<em class="property">class </em><tt class="descclassname">AuShadha.core.views.dijit_tree.</tt><tt class="descname">DijitTree</tt><big>(</big><em>attrs=None</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>The DijitTree Class which generates the Tree.</p>
+<p>Takes parameters of &#8216;identifier&#8217; and &#8216;label&#8217; which should usually default to
+&#8216;id&#8217; and &#8216;name&#8217;. These are sane defaults.</p>
+<dl class="docutils">
+<dt>As of now it is assumed that &#8216;id&#8217; attribute is unique and checks for duplicate &#8216;id&#8217;</dt>
+<dd>whenever a branch is added / child node is added. DuplicateIDError is raised when &#8216;id&#8217; 
+clashes</dd>
+</dl>
+<p>A tree instance can add branches with DijitTreeNode instances using add_child_node method.</p>
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTree.add_child_node">
+<tt class="descname">add_child_node</tt><big>(</big><em>attrs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTree.add_child_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTree.add_child_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTree.build_id_registry">
+<tt class="descname">build_id_registry</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTree.build_id_registry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTree.build_id_registry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTree.check_for_basic_attrs">
+<tt class="descname">check_for_basic_attrs</tt><big>(</big><em>attrs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTree.check_for_basic_attrs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTree.check_for_basic_attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTree.check_for_duplicates">
+<tt class="descname">check_for_duplicates</tt><big>(</big><em>branch_id</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTree.check_for_duplicates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTree.check_for_duplicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTree.to_json">
+<tt class="descname">to_json</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTree.to_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTree.to_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.core.views.dijit_tree.DijitTreeNode">
+<em class="property">class </em><tt class="descclassname">AuShadha.core.views.dijit_tree.</tt><tt class="descname">DijitTreeNode</tt><big>(</big><em>attrs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTreeNode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTreeNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Class Based representation of a Tree Node</p>
+<p>Tree Node instances can be added to a Tree Instance with the add_child_node method</p>
+<p>__init__ takes dictionary with compulsary attrs of &#8216;id&#8217;,&#8217;name&#8217;, and &#8216;type&#8217;</p>
+<p>These can be changed by subclassing the node / changing the self.basic_node_attrs</p>
+<p>Extra attributes can always be added. There is no restriction</p>
+<dl class="docutils">
+<dt>Child nodes can be added by using the add_child_node method. This takes the same </dt>
+<dd>attrs as the DijitTreeNode class and checks for repetition of &#8216;id&#8217; attribute. 
+DuplicateIDError is raised if &#8216;id&#8217; is repeated.</dd>
+</dl>
+<p>Child node can be removed / edited / added as per requirement.</p>
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTreeNode.add_child_node">
+<tt class="descname">add_child_node</tt><big>(</big><em>attrs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTreeNode.add_child_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTreeNode.add_child_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTreeNode.check_node_attr">
+<tt class="descname">check_node_attr</tt><big>(</big><em>attrs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTreeNode.check_node_attr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTreeNode.check_node_attr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTreeNode.get_item_by_id">
+<tt class="descname">get_item_by_id</tt><big>(</big><em>node_id</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTreeNode.get_item_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTreeNode.get_item_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTreeNode.is_id_unique">
+<tt class="descname">is_id_unique</tt><big>(</big><em>attrs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTreeNode.is_id_unique"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTreeNode.is_id_unique" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.core.views.dijit_tree.DijitTreeNode.to_json">
+<tt class="descname">to_json</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/core/views/dijit_tree.html#DijitTreeNode.to_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.views.dijit_tree.DijitTreeNode.to_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="aushadha-core-views-generic-view-class-module">
+<h2>AuShadha.core.views.generic_view_class module<a class="headerlink" href="#aushadha-core-views-generic-view-class-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.core.views">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-AuShadha.core.views" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AuShadha.core.views package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-AuShadha.core.views.dijit_tree">AuShadha.core.views.dijit_tree module</a></li>
+<li><a class="reference internal" href="#aushadha-core-views-generic-view-class-module">AuShadha.core.views.generic_view_class module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.core.views">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="AuShadha.core.serializers.html"
+                        title="previous chapter">AuShadha.core.serializers package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="AuShadha.utilities.html"
+                        title="next chapter">AuShadha.utilities package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/AuShadha.core.views.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.utilities.html" title="AuShadha.utilities package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.core.serializers.html" title="AuShadha.core.serializers package"
+             >previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.core.html" >AuShadha.core package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

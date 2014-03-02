@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>visit.visit_phyexam.validator &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for visit.visit_phyexam.validator</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="Validator"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator">[docs]</a><span class="k">class</span> <span class="nc">Validator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Validates a field for values</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">accepted_methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;is_in_range&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;is_greater&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;is_lesser&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;is_later&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;is_in_between&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;is_earlier&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;is_true_or_false&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;is_equal_to&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;is_not_equal_to&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;contains_text&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;in_list&#39;</span><span class="p">,</span>
+                      <span class="bp">None</span>
+                     <span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+               <span class="n">method</span><span class="p">,</span>
+               <span class="n">value_to_validate</span><span class="p">,</span> 
+               <span class="n">constraints</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+               <span class="n">value_to_compare</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">accepted_methods</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">method_map</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;is_in_range&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">is_in_range</span><span class="p">,</span>
+                        <span class="s">&#39;is_greater&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">is_greater</span><span class="p">,</span>
+                        <span class="s">&#39;is_lesser&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">is_lesser</span><span class="p">,</span>
+                        <span class="s">&#39;is_later&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">is_later</span><span class="p">,</span>
+                        <span class="s">&#39;is_in_between&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">,</span>
+                        <span class="s">&#39;is_earlier&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">is_earlier</span><span class="p">,</span>
+                        <span class="s">&#39;is_true_or_false&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">is_true_or_false</span><span class="p">,</span>
+                        <span class="s">&#39;is_equal_to&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">is_equal_to</span><span class="p">,</span>
+                        <span class="s">&#39;is_not_equal_to&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">is_not_equal_to</span><span class="p">,</span>
+                        <span class="s">&#39;contains_text&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">,</span>
+                        <span class="s">&#39;in_list&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">in_list</span><span class="p">,</span>
+                        <span class="bp">None</span><span class="p">:</span><span class="bp">None</span>
+                        <span class="p">}</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">method_to_call</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">method_map</span><span class="p">[</span><span class="n">method</span><span class="p">]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span> <span class="o">=</span> <span class="n">constraints</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="o">=</span> <span class="n">value_to_validate</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">value_to_compare</span> <span class="o">=</span> <span class="n">value_to_compare</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">print</span> <span class="s">&quot;ERROR! You have asked for validation with &quot;</span><span class="p">,</span> <span class="n">method</span>
+      <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid Method. Not in accepted validator list&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">attr</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="s">&#39;method_to_call&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">attr</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">attr</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span>
+
+<div class="viewcode-block" id="Validator.is_in_range"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator.is_in_range">[docs]</a>  <span class="k">def</span> <span class="nf">is_in_range</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;int&#39;</span><span class="p">:</span>
+      <span class="n">max_v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">[</span><span class="s">&#39;max&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">[</span><span class="s">&#39;min&#39;</span><span class="p">],</span> <span class="n">max_v</span> <span class="p">):</span>
+        <span class="k">print</span> <span class="s">&quot;Value is in range&quot;</span>
+        <span class="k">return</span> <span class="bp">True</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Value not in range&quot;</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;float&#39;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">[</span><span class="s">&#39;max&#39;</span><span class="p">])</span> <span class="ow">and</span> \
+         <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">[</span><span class="s">&#39;min&#39;</span><span class="p">]):</span>
+          <span class="k">return</span> <span class="bp">True</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Validator.is_equal_to"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator.is_equal_to">[docs]</a>  <span class="k">def</span> <span class="nf">is_equal_to</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_compare</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Validator.is_not_equal_to"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator.is_not_equal_to">[docs]</a>  <span class="k">def</span> <span class="nf">is_not_equal_to</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_compare</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Validator.is_greater"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator.is_greater">[docs]</a>  <span class="k">def</span> <span class="nf">is_greater</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_compare</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Validator.is_lesser"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator.is_lesser">[docs]</a>  <span class="k">def</span> <span class="nf">is_lesser</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_compare</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Validator.is_earlier"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator.is_earlier">[docs]</a>  <span class="k">def</span> <span class="nf">is_earlier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value_to_validate</span> <span class="o">&lt;</span><span class="n">value_to_compare</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Validator.is_later"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator.is_later">[docs]</a>  <span class="k">def</span> <span class="nf">is_later</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_compare</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Validator.is_true_or_false"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator.is_true_or_false">[docs]</a>  <span class="k">def</span> <span class="nf">is_true_or_false</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Validator.in_list"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.Validator.in_list">[docs]</a>  <span class="k">def</span> <span class="nf">in_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_validate</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_to_compare</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">False</span>
+</div></div>
+<div class="viewcode-block" id="validator_factory"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.validator.validator_factory">[docs]</a><span class="k">def</span> <span class="nf">validator_factory</span><span class="p">(</span><span class="n">method</span><span class="p">,</span><span class="n">value</span><span class="p">,</span><span class="n">constraints</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">value_to_compare</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot; Returns a instantiated Validator Class &quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="n">Validator</span><span class="p">(</span><span class="n">method</span><span class="p">,</span><span class="n">value</span><span class="p">,</span><span class="n">constraints</span><span class="p">,</span><span class="n">value_to_compare</span><span class="p">)</span><span class="o">.</span><span class="n">__call__</span><span class="p">()</span>
+</pre></div></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

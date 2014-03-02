@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.core.views.dijit_tree &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.core.views.dijit_tree</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : Constructing a Dijit Tree  </span>
+<span class="c"># Author      : Dr. Easwar T.R</span>
+<span class="c"># Date        : 25-09-2013</span>
+<span class="c"># License     : GNU-GPL Version 3 , See AuShadha/LICENSE.txt</span>
+<span class="c">################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  This module and its classes used to generated DijitTree widgets</span>
+
+<span class="sd">  This has now been partly replaced with PyYAML based markup and parsing</span>
+<span class="sd">    to generate the JSON for the same. Part of the code is still used to construct </span>
+<span class="sd">    the tree using YAML</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">json</span> <span class="kn">as</span> <span class="nn">JSON</span>
+<span class="c">#from django.utils import simplejson</span>
+<span class="c">#from django.core import serializers</span>
+<span class="c">#from django.core.serializers import json</span>
+<span class="c">#from django.core.serializers.json import DjangoJSONEncoder</span>
+
+
+<div class="viewcode-block" id="DijitTreeNode"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTreeNode">[docs]</a><span class="k">class</span> <span class="nc">DijitTreeNode</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class Based representation of a Tree Node</span>
+
+<span class="sd">    Tree Node instances can be added to a Tree Instance with the add_child_node method</span>
+
+<span class="sd">    __init__ takes dictionary with compulsary attrs of &#39;id&#39;,&#39;name&#39;, and &#39;type&#39;</span>
+
+<span class="sd">    These can be changed by subclassing the node / changing the self.basic_node_attrs</span>
+
+<span class="sd">    Extra attributes can always be added. There is no restriction</span>
+
+<span class="sd">    Child nodes can be added by using the add_child_node method. This takes the same </span>
+<span class="sd">        attrs as the DijitTreeNode class and checks for repetition of &#39;id&#39; attribute. </span>
+<span class="sd">        DuplicateIDError is raised if &#39;id&#39; is repeated. </span>
+
+<span class="sd">    Child node can be removed / edited / added as per requirement. </span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">attrs</span><span class="p">):</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">basic_node_attrs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">extra_node_attrs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;len&#39;</span><span class="p">,</span><span class="s">&#39;addUrl&#39;</span><span class="p">,</span><span class="s">&#39;children&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="o">=</span><span class="p">{}</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_node_attr</span><span class="p">(</span><span class="n">attrs</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">node</span> <span class="o">=</span> <span class="n">attrs</span>
+      <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">attrs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s">&#39;id&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;InvalidInstantiationAttributes&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">:</span>
+        <span class="n">old_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span><span class="s">&#39;id&#39;</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">old_val</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Node has not been set&quot;</span><span class="p">)</span>
+
+  
+  <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">index</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+      <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+  
+  <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="s">&quot;__repr__ function returning the self.node attribute&quot;</span>
+
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span>
+
+<div class="viewcode-block" id="DijitTreeNode.to_json"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTreeNode.to_json">[docs]</a>  <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">JSON</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+
+  <span class="c">#def set(self,key,value):</span>
+    <span class="c">#return self.__setitem__(key,value)</span>
+
+  <span class="c">#def get(self,index):</span>
+    <span class="c">#return self.__getitem__(index)</span>
+</div>
+<div class="viewcode-block" id="DijitTreeNode.get_item_by_id"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTreeNode.get_item_by_id">[docs]</a>  <span class="k">def</span> <span class="nf">get_item_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node_id</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="DijitTreeNode.check_node_attr"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTreeNode.check_node_attr">[docs]</a>  <span class="k">def</span> <span class="nf">check_node_attr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">basic_node_attrs</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">attrs</span><span class="p">[</span><span class="n">attr</span><span class="p">]:</span>
+        <span class="k">continue</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</div>
+<div class="viewcode-block" id="DijitTreeNode.is_id_unique"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTreeNode.is_id_unique">[docs]</a>  <span class="k">def</span> <span class="nf">is_id_unique</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">attrs</span><span class="p">):</span>
+    <span class="n">id_val</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">id_val</span><span class="p">):</span>
+      <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;DuplicateIDError: &quot;</span><span class="o">+</span> <span class="n">id_val</span><span class="o">+</span><span class="s">&#39;. Registry already has following keys: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;children&#39;</span><span class="p">):</span>
+        <span class="n">children</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="s">&#39;children&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">children</span><span class="p">:</span>
+          <span class="k">for</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">id_val</span><span class="p">:</span>
+              <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;DuplicateIDError&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+              <span class="k">continue</span>
+      <span class="k">return</span> <span class="bp">True</span>
+</div>
+<div class="viewcode-block" id="DijitTreeNode.add_child_node"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTreeNode.add_child_node">[docs]</a>  <span class="k">def</span> <span class="nf">add_child_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">attrs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_node_attr</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_id_unique</span><span class="p">(</span><span class="n">attrs</span><span class="p">):</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;children&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="s">&#39;children&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="s">&#39;children&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attrs</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">AttributeError</span>
+
+
+
+
+</div></div>
+<div class="viewcode-block" id="DijitTree"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTree">[docs]</a><span class="k">class</span> <span class="nc">DijitTree</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The DijitTree Class which generates the Tree.</span>
+
+<span class="sd">    Takes parameters of &#39;identifier&#39; and &#39;label&#39; which should usually default to</span>
+<span class="sd">    &#39;id&#39; and &#39;name&#39;. These are sane defaults. </span>
+
+<span class="sd">    As of now it is assumed that &#39;id&#39; attribute is unique and checks for duplicate &#39;id&#39;</span>
+<span class="sd">      whenever a branch is added / child node is added. DuplicateIDError is raised when &#39;id&#39; </span>
+<span class="sd">      clashes</span>
+
+<span class="sd">    A tree instance can add branches with DijitTreeNode instances using add_child_node method. </span>
+<span class="sd">  </span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">attrs</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">basic_tree_attrs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;identifier&#39;</span><span class="p">,</span><span class="s">&#39;label&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">basic_branch_attrs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">,</span><span class="s">&#39;name&#39;</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">extra_branch_attrs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;addUrl&#39;</span><span class="p">,</span><span class="s">&#39;children&#39;</span><span class="p">,</span><span class="s">&#39;len&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="o">=</span><span class="p">[]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">attrs</span><span class="p">:</span>
+      <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;identifier&#39;</span><span class="p">:</span><span class="s">&#39;id&#39;</span><span class="p">,</span><span class="s">&#39;label&#39;</span><span class="p">:</span><span class="s">&#39;name&#39;</span><span class="p">,</span><span class="s">&#39;items&#39;</span><span class="p">:[]}</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_for_basic_attrs</span><span class="p">(</span><span class="n">attrs</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span><span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s">&#39;identifier&#39;</span><span class="p">]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span>
+      <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;items&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s">&#39;items&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">build_id_registry</span><span class="p">()</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">print</span> <span class="s">&quot;Initialised an empty tree&quot;</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">node</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;identifier&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span><span class="s">&#39;label&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">,</span><span class="s">&#39;items&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">}</span>
+
+<div class="viewcode-block" id="DijitTree.check_for_basic_attrs"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTree.check_for_basic_attrs">[docs]</a>  <span class="k">def</span> <span class="nf">check_for_basic_attrs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">attrs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">basic_tree_attrs</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Checking for attribute: &quot;</span><span class="p">,</span> <span class="n">attr</span>
+        <span class="k">continue</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Basic Attributes Not Supplied while creating a tree&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</div>
+<div class="viewcode-block" id="DijitTree.check_for_duplicates"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTree.check_for_duplicates">[docs]</a>  <span class="k">def</span> <span class="nf">check_for_duplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">branch_id</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">branch_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;DuplicateIDError&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="DijitTree.build_id_registry"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTree.build_id_registry">[docs]</a>  <span class="k">def</span> <span class="nf">build_id_registry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">tree_branch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+        <span class="n">ids_to_append</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_for_duplicates</span><span class="p">(</span><span class="n">tree_branch</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]):</span>
+          <span class="n">ids_to_append</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tree_branch</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">tree_branch</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;children&#39;</span><span class="p">):</span>
+          <span class="n">children</span> <span class="o">=</span> <span class="n">tree_branch</span><span class="p">[</span><span class="s">&#39;children&#39;</span><span class="p">]</span>
+          <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_for_duplicates</span><span class="p">(</span><span class="n">child</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]):</span>
+              <span class="n">ids_to_append</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ids_to_append</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;NoItemsInTree: Cannot Check empty tree&quot;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="DijitTree.add_child_node"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTree.add_child_node">[docs]</a>  <span class="k">def</span> <span class="nf">add_child_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">attrs</span><span class="p">):</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span><span class="n">DijitTreeNode</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Not a DijitTreeNode Instance&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">node</span>
+        <span class="n">branch_id</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+        <span class="n">id_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]]</span>
+
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;children&#39;</span><span class="p">):</span>
+          <span class="n">children</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s">&#39;children&#39;</span><span class="p">]</span>
+          <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+            <span class="n">id_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">id_list</span><span class="p">:</span>
+          <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_for_duplicates</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id_registry</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">continue</span>
+          <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;DuplicateIDError&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+</div>
+  <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="s">&quot;__repr__ function returning the self.node attribute&quot;</span>
+
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span>
+
+<div class="viewcode-block" id="DijitTree.to_json"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTree.to_json">[docs]</a>  <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">JSON</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+
+
+
+<span class="c">################################################################################</span>
+
+
+
+
+
+
+    <span class="c">#if self.check_node_attr(attrs):</span>
+      <span class="c">#self.node = attrs</span>
+      <span class="c">#for k,v in attrs.iteritems():</span>
+        <span class="c">#if k == &#39;id&#39; and not self.id_registry.has_key(v):</span>
+          <span class="c">#self.id_registry[v] = self.node</span>
+    <span class="c">#else:</span>
+      <span class="c">#raise Exception(&quot;InvalidInstantiationAttributes&quot;)</span>
+
+  <span class="c">#def __setitem__(self,key,value):</span>
+    <span class="c">#if self.node:</span>
+        <span class="c">#old_val = self.__getitem__(key)</span>
+        <span class="c">#self.node[key] = value</span>
+        <span class="c">#if key ==&#39;id&#39;:</span>
+          <span class="c">#self.id_registry.pop(old_val)</span>
+          <span class="c">#self.id_registry[value] = self.node</span>
+    <span class="c">#else:</span>
+      <span class="c">#raise Exception(&quot;Node has not been set&quot;)</span>
+
+  
+  <span class="c">#def __getitem__(self,index):</span>
+    <span class="c">#if self.node:</span>
+      <span class="c">#try:</span>
+        <span class="c">#return self.node[index]</span>
+      <span class="c">#except KeyError:</span>
+        <span class="c">#raise KeyError</span>
+  
+
+  <span class="c">##def set(self,key,value):</span>
+    <span class="c">##return self.__setitem__(key,value)</span>
+
+  <span class="c">##def get(self,index):</span>
+    <span class="c">##return self.__getitem__(index)</span>
+
+  <span class="c">#def get_item_by_id(self,node_id):</span>
+    <span class="c">#return self.id_registry.get(node_id)</span>
+
+  <span class="c">#def check_node_attr(self, attrs):</span>
+    <span class="c">#if isinstance(attrs,DijitTreeNode):</span>
+      <span class="c">#attrs = attrs.node</span>
+
+    <span class="c">#for attr in self.basic_node_attrs:</span>
+      <span class="c">#if attrs[attr]:</span>
+        <span class="c">#continue</span>
+      <span class="c">#else:</span>
+        <span class="c">#return False</span>
+    <span class="c">#return True</span>
+  
+  <span class="c">#def check_branch_attr(self, attrs):</span>
+    <span class="c">#if isinstance(attrs,DijitTreeNode):</span>
+      <span class="c">#attrs = attrs.node</span>
+    <span class="c">#for attr in self.basic_branch_attrs:</span>
+      <span class="c">#if attrs[attr]:</span>
+        <span class="c">#continue</span>
+      <span class="c">#else:</span>
+        <span class="c">#return False</span>
+    <span class="c">#return True</span>
+
+  <span class="c">#def is_id_unique(self,attrs):</span>
+    <span class="c">#id_val = attrs[&#39;id&#39;]</span>
+    <span class="c">#if self.id_registry.has_key(id_val):</span>
+      <span class="c">#raise Exception(&quot;DuplicateIDError&quot;)</span>
+    <span class="c">#else:</span>
+      <span class="c">#if self.node.has_key(&#39;items&#39;):</span>
+        <span class="c">#items = self.node[&#39;items&#39;]</span>
+        <span class="c">#if items:</span>
+          <span class="c">#for item in items:</span>
+            <span class="c">#if item.has_key(&#39;children&#39;):</span>
+              <span class="c">#children = item[&#39;children&#39;]</span>
+              <span class="c">#if children:</span>
+                <span class="c">#for child in children:</span>
+                  <span class="c">#if child[&#39;id&#39;] == id_val:</span>
+                    <span class="c">#raise Exception(&quot;DuplicateIDError&quot;)</span>
+                  <span class="c">#else:</span>
+                    <span class="c">#continue</span>
+      <span class="c">#return True</span>
+
+  <span class="c">#def get_child_node_by_id(self,branch_id):</span>
+    <span class="c">#if self.branch_dict.has_key(branch_id):</span>
+      <span class="c">#return self.branch_dict[branch_id]</span>
+    <span class="c">#else:</span>
+      <span class="c">#return None</span>
+
+  <span class="c">#def add_child_node(self,attrs):</span>
+    <span class="c">#if self.check_branch_attr(attrs) and self.is_id_unique(attrs):</span>
+      <span class="c">#attr_id = attrs[&#39;id&#39;]</span>
+
+      <span class="c">#if not self.node.has_key(&#39;items&#39;):</span>
+        <span class="c">#self.node[&#39;items&#39;] = [] </span>
+
+      <span class="c">#if not isinstance(attrs,DijitTreeNode):</span>
+        <span class="c">#self.branch_dict[attr_id] = DijitTreeNode(attrs)</span>
+        <span class="c">#self.node[&#39;items&#39;].append(attrs)</span>
+      <span class="c">#else:</span>
+        <span class="c">#self.branch_dict[attr_id] = attrs</span>
+        <span class="c">#self.node[&#39;items&#39;].append(attrs.node)</span>
+
+    <span class="c">#else:</span>
+      <span class="c">#raise AttributeError</span>
+
+  <span class="c">#def update_child_node(self,branch_id,attrs):</span>
+    <span class="c">#branch = self.get_child_node_by_id(branch_id)</span>
+    <span class="c">#if branch:</span>
+      <span class="c">#attr_id = attrs[&#39;id&#39;]</span>
+      <span class="c">#if self.check_branch_attr(attrs) and attr_id != branch_id:</span>
+          <span class="c">#if self.is_id_unique(attrs):</span>
+            <span class="c">#self.branch_dict.pop(branch_id)</span>
+            <span class="c">#if not isinstance(attrs,DijitTreeNode):</span>
+              <span class="c">#self.branch_dict[attr_id]= DijitTreeNode(attrs)</span>
+            <span class="c">#else:</span>
+              <span class="c">#self.branch_dict[attr_id] = attrs</span>
+            <span class="c">##if not self.node.has_key(&#39;items&#39;):</span>
+              <span class="c">##self.node[&#39;items&#39;] = []</span>
+            <span class="c">##self.node[&#39;items&#39;] = self.branch_dict.values()</span>
+          <span class="c">#else:</span>
+            <span class="c">#raise Exception(&quot;DuplicateIDError: While updating&quot;)</span>
+      <span class="c">#else:</span>
+        <span class="c">#raise Exception(&quot;InvalidBranchAttributes&quot;)</span>
+    <span class="c">#else:</span>
+      <span class="c">#raise Exception(&quot;InvalidBranchId&quot;)</span>
+
+
+  <span class="c">#def del_child_node(self,branch_id):</span>
+    <span class="c">#branch = self.get_child_node_by_id(branch_id)</span>
+    <span class="c">#if branch:</span>
+      <span class="c">#self.branch_dict.pop(branch_id)</span>
+    <span class="c">#else:</span>
+      <span class="c">#raise Exception(&quot;InvalidBranchId&quot;)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>
