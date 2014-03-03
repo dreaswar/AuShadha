@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.core.serializers package &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="index.html" />
+    <link rel="up" title="AuShadha.core package" href="AuShadha.core.html" />
+    <link rel="next" title="AuShadha.core.views package" href="AuShadha.core.views.html" />
+    <link rel="prev" title="AuShadha.core package" href="AuShadha.core.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.core.views.html" title="AuShadha.core.views package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.core.html" title="AuShadha.core package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.core.html" accesskey="U">AuShadha.core package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="aushadha-core-serializers-package">
+<h1>AuShadha.core.serializers package<a class="headerlink" href="#aushadha-core-serializers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.core.serializers.data_grid">
+<span id="aushadha-core-serializers-data-grid-module"></span><h2>AuShadha.core.serializers.data_grid module<a class="headerlink" href="#module-AuShadha.core.serializers.data_grid" title="Permalink to this headline">¶</a></h2>
+<p>This module and its classes used to generated Dijit DataGrid JSON</p>
+<dl class="function">
+<dt id="AuShadha.core.serializers.data_grid.generate_json_for_datagrid">
+<tt class="descclassname">AuShadha.core.serializers.data_grid.</tt><tt class="descname">generate_json_for_datagrid</tt><big>(</big><em>obj</em>, <em>success=True</em>, <em>error_message='Saved Successfully'</em>, <em>form_errors=None</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/serializers/data_grid.html#generate_json_for_datagrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.serializers.data_grid.generate_json_for_datagrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the JSON formatted Values of a specific Django Model Instance
+for use with Dojo Grid. A few default DOJO Grid Values are specified, rest
+are instance specific and are generated on the fly. It assumes the presence
+of get_edit_url and get_del_url in the model instances passed to it via
+obj.</p>
+<dl class="docutils">
+<dt>ARGUMENTS: obj <span class="classifier-delimiter">:</span> <span class="classifier">model instace / queryset</span></dt>
+<dd>success       : A success message
+error_message : Error Message if any.
+form_errors   : Form Validation Errors from Django while saving can be passed.</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.core.serializers.yaml_loader">
+<span id="aushadha-core-serializers-yaml-loader-module"></span><h2>AuShadha.core.serializers.yaml_loader module<a class="headerlink" href="#module-AuShadha.core.serializers.yaml_loader" title="Permalink to this headline">¶</a></h2>
+<p>Defines a custom PyYAML Loader class that will have and !!include tag for 
+including files on markup. 
+Yet to test. 
+Hopefully this may be included later after some testing.</p>
+<dl class="class">
+<dt id="AuShadha.core.serializers.yaml_loader.Loader">
+<em class="property">class </em><tt class="descclassname">AuShadha.core.serializers.yaml_loader.</tt><tt class="descname">Loader</tt><big>(</big><em>stream</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/serializers/yaml_loader.html#Loader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.serializers.yaml_loader.Loader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">yaml.loader.Loader</span></tt></p>
+<dl class="method">
+<dt id="AuShadha.core.serializers.yaml_loader.Loader.include">
+<tt class="descname">include</tt><big>(</big><em>node</em><big>)</big><a class="reference internal" href="_modules/AuShadha/core/serializers/yaml_loader.html#Loader.include"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.core.serializers.yaml_loader.Loader.include" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.core.serializers.yaml_loader.Loader.yaml_constructors">
+<tt class="descname">yaml_constructors</tt><em class="property"> = {u'tag:yaml.org,2002:omap': &lt;unbound method SafeConstructor.construct_yaml_omap&gt;, u'tag:yaml.org,2002:python/dict': &lt;unbound method Constructor.construct_yaml_map&gt;, u'tag:yaml.org,2002:python/complex': &lt;unbound method Constructor.construct_python_complex&gt;, u'tag:yaml.org,2002:seq': &lt;unbound method SafeConstructor.construct_yaml_seq&gt;, u'tag:yaml.org,2002:set': &lt;unbound method SafeConstructor.construct_yaml_set&gt;, u'tag:yaml.org,2002:python/float': &lt;unbound method Constructor.construct_yaml_float&gt;, '!include': &lt;unbound method Loader.include&gt;, u'tag:yaml.org,2002:python/long': &lt;unbound method Constructor.construct_python_long&gt;, u'tag:yaml.org,2002:pairs': &lt;unbound method SafeConstructor.construct_yaml_pairs&gt;, u'tag:yaml.org,2002:bool': &lt;unbound method SafeConstructor.construct_yaml_bool&gt;, u'tag:yaml.org,2002:timestamp': &lt;unbound method SafeConstructor.construct_yaml_timestamp&gt;, u'tag:yaml.org,2002:python/none': &lt;unbound method Constructor.construct_yaml_null&gt;, u'tag:yaml.org,2002:python/str': &lt;unbound method Constructor.construct_python_str&gt;, u'tag:yaml.org,2002:null': &lt;unbound method SafeConstructor.construct_yaml_null&gt;, u'tag:yaml.org,2002:python/int': &lt;unbound method Constructor.construct_yaml_int&gt;, u'tag:yaml.org,2002:float': &lt;unbound method SafeConstructor.construct_yaml_float&gt;, u'tag:yaml.org,2002:python/bool': &lt;unbound method Constructor.construct_yaml_bool&gt;, u'tag:yaml.org,2002:map': &lt;unbound method SafeConstructor.construct_yaml_map&gt;, None: &lt;unbound method SafeConstructor.construct_undefined&gt;, u'tag:yaml.org,2002:python/list': &lt;unbound method Constructor.construct_yaml_seq&gt;, u'tag:yaml.org,2002:python/tuple': &lt;unbound method Constructor.construct_python_tuple&gt;, u'tag:yaml.org,2002:str': &lt;unbound method SafeConstructor.construct_yaml_str&gt;, u'tag:yaml.org,2002:int': &lt;unbound method SafeConstructor.construct_yaml_int&gt;, u'tag:yaml.org,2002:binary': &lt;unbound method SafeConstructor.construct_yaml_binary&gt;, u'tag:yaml.org,2002:python/unicode': &lt;unbound method Constructor.construct_python_unicode&gt;}</em><a class="headerlink" href="#AuShadha.core.serializers.yaml_loader.Loader.yaml_constructors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.core.serializers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-AuShadha.core.serializers" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AuShadha.core.serializers package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-AuShadha.core.serializers.data_grid">AuShadha.core.serializers.data_grid module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.core.serializers.yaml_loader">AuShadha.core.serializers.yaml_loader module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.core.serializers">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="AuShadha.core.html"
+                        title="previous chapter">AuShadha.core package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="AuShadha.core.views.html"
+                        title="next chapter">AuShadha.core.views package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/AuShadha.core.serializers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.core.views.html" title="AuShadha.core.views package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.core.html" title="AuShadha.core package"
+             >previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.core.html" >AuShadha.core package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

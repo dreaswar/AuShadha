@@ -1,131 +1,114 @@
+#################################################################################
+# Project     : AuShadha
+# Description : Admin Models for Clinic
+# Author      : Weldan Jamili, Dr.Easwar T.R (see credits)
+# License     : GNU-GPL Version 3 , see docs/LICENSE.txt
+# Date        : 30-09-2013
+################################################################################
+
+"""
+  Admin site for Clinic module
+"""
+
+
 from django.contrib import admin
+
 from AuShadha.apps.clinic.models import Clinic, Department, Phone, Fax, Email, Website, Staff
 
 
-"""
-Admin site for Clinic module
-"""
-
-"""
-To Show the Departments Add Form
-"""
-
-
 class DepartmentInline(admin.StackedInline):
+    """
+      To Show the Departments Add Form
+    """
     model = Department
 
 
-"""
-to show add clinic phone numbers form
-from add clinic form 
-"""
-
-
 class PhoneInline(admin.StackedInline):
+    """
+      to show add clinic phone numbers form
+      from add clinic form 
+    """
     model = Phone
 
-"""
-to show add clinic fax numbers form
-from add clinic form 
-"""
-
-
 class FaxInline(admin.StackedInline):
+    """
+      to show add clinic fax numbers form
+      from add clinic form 
+    """
     model = Fax
 
-"""
-to show add clinic email addresses form
-from add clinic form 
-"""
-
-
 class EmailInline(admin.StackedInline):
+    """
+      to show add clinic email addresses form
+      from add clinic form 
+    """
     model = Email
-
-"""
-to show add clinic website address form
-from add clinic form 
-"""
 
 
 class WebsiteInline(admin.StackedInline):
+    """
+      to show add clinic website address form
+      from add clinic form 
+    """
     model = Website
 
-"""
-to show add clinic staff form
-from add clinic form 
-"""
-
-
 class StaffInline(admin.StackedInline):
+    """
+      to show add clinic staff form
+      from add clinic form 
+    """
     model = Staff
 
 
-"""
-clinic module
-"""
-
-
 class ClinicAdmin(admin.ModelAdmin):
+    """
+      clinic module
+    """
     inlines = [DepartmentInline, PhoneInline, FaxInline,
                EmailInline, WebsiteInline, ]
     extra = 0
 
 
-#
-
-
-""" Department Admin. To be removed later. """
-
-
 class DepartmentAdmin(admin.ModelAdmin):
+    """ Department Admin. To be removed later. """
     inlines = [StaffInline]
 
 
-"""
-phone module for clinic
-will remove this if not needed 
-(since we can manage this from AuShadha.apps.clinic form)
-"""
-
-
 class PhoneAdmin(admin.ModelAdmin):
+    """
+      phone module for clinic
+      will remove this if not needed 
+      (since we can manage this from AuShadha.apps.clinic form)
+    """
     pass
-
-"""
-fax module for clinic
-will remove this if not needed 
-(since we can manage this from AuShadha.apps.clinic form)
-"""
-
 
 class FaxAdmin(admin.ModelAdmin):
+    """
+      fax module for clinic
+      will remove this if not needed 
+      (since we can manage this from AuShadha.apps.clinic form)
+    """
     pass
-
-"""
-email module for clinic
-will remove this if not needed 
-(since we can manage this from AuShadha.apps.clinic form)
-"""
-
 
 class EmailAdmin(admin.ModelAdmin):
+    """
+      email module for clinic
+      will remove this if not needed 
+      (since we can manage this from AuShadha.apps.clinic form)
+    """
     pass
-
-"""
-website module for clinic
-will remove this if not needed 
-(since we can manage this from AuShadha.apps.clinic form)
-"""
-
 
 class WebsiteAdmin(admin.ModelAdmin):
+    """
+      website module for clinic
+      will remove this if not needed 
+      (since we can manage this from AuShadha.apps.clinic form)
+    """
     pass
-
-""" Staff Admin """
 
 
 class StaffAdmin(admin.ModelAdmin):
+    """ Staff Admin """
     pass
 
 

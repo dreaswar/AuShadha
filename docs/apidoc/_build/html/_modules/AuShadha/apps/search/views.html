@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.apps.search.views &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.apps.search.views</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : Views for Search App</span>
+<span class="c"># Author      : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.</span>
+<span class="c"># Date        : 16-09-2013</span>
+<span class="c">################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">  Holds the views for the Search application.</span>
+<span class="sd">  This application will search Db for Patients </span>
+<span class="sd">  Can be configured to search for anything</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c"># General Module imports-----------------------------------</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="c"># General Django Imports----------------------------------</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span><span class="p">,</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">RequestContext</span>
+<span class="c">#from django.core.context_processors import csrf</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_exempt</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.cache</span> <span class="kn">import</span> <span class="n">never_cache</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_protect</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.debug</span> <span class="kn">import</span> <span class="n">sensitive_post_parameters</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="kn">from</span> <span class="nn">django.core</span> <span class="kn">import</span> <span class="n">serializers</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers</span> <span class="kn">import</span> <span class="n">json</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers.json</span> <span class="kn">import</span> <span class="n">DjangoJSONEncoder</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+
+
+<span class="c"># AuShadha imports</span>
+<span class="kn">import</span> <span class="nn">AuShadha.settings</span> <span class="kn">as</span> <span class="nn">settings</span>
+<span class="kn">from</span> <span class="nn">AuShadha.settings</span> <span class="kn">import</span> <span class="n">APP_ROOT_URL</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.serializers.data_grid</span> <span class="kn">import</span> <span class="n">generate_json_for_datagrid</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.views.dijit_tree</span> <span class="kn">import</span> <span class="n">DijitTreeNode</span><span class="p">,</span> <span class="n">DijitTree</span>
+<span class="kn">from</span> <span class="nn">AuShadha.utilities.forms</span> <span class="kn">import</span> <span class="n">aumodelformerrorformatter_factory</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.clinic.models</span> <span class="kn">import</span> <span class="n">Clinic</span>
+
+<span class="c"># Relative imports with UI.get_module()</span>
+<span class="n">PatientDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;PatientRegistration&quot;</span><span class="p">)</span>
+<span class="n">Demographics</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;Demographics&quot;</span><span class="p">)</span>
+<span class="n">Contact</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;Contact&quot;</span><span class="p">)</span>
+<span class="n">Phone</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;Phone&quot;</span><span class="p">)</span>
+<span class="n">EmailAndFax</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;EmailAndFax&quot;</span><span class="p">)</span>
+<span class="n">Guardian</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;Guardian&quot;</span><span class="p">)</span>
+
+
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="aushadha_patient_search"><a class="viewcode-back" href="../../../../AuShadha.apps.search.html#AuShadha.apps.search.views.aushadha_patient_search">[docs]</a><span class="k">def</span> <span class="nf">aushadha_patient_search</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">patient_id</span><span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">   Searches for Patients</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="c"># FIXME Dojo sends REST queries with * suffix. This has to be split and dealt with before json generation is done.</span>
+
+  <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+
+  <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;GET&quot;</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">patient_id</span><span class="p">:</span>
+          <span class="k">try</span><span class="p">:</span>
+              <span class="n">name</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">))</span>
+              <span class="c">#print &quot;You have queried Patients with Full Name containing: &quot;, name</span>
+          <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+              <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span>
+                  <span class="s">&quot;Bad Parameters.. No Search Results Could be returned. &quot;</span><span class="p">)</span>
+          <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&quot;*&quot;</span><span class="p">:</span>
+              <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+          <span class="k">elif</span> <span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span> <span class="o">==</span> <span class="s">&quot;*&quot;</span><span class="p">:</span>
+              <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+              <span class="c">#print &quot;Name after stripping trailing &#39;*&#39; is: &quot;, name</span>
+              <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">full_name__icontains</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+          <span class="k">else</span><span class="p">:</span>
+              <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">full_name__icontains</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+          <span class="n">json</span> <span class="o">=</span> <span class="p">[]</span>
+
+          <span class="k">if</span> <span class="n">pat_obj</span><span class="p">:</span>
+              <span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">pat_obj</span><span class="p">:</span>
+                  <span class="n">data_to_append</span> <span class="o">=</span> <span class="p">{}</span>
+                  <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">full_name</span>
+                  <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+                  <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;hospital_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">patient_hospital_id</span>
+                  <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">age</span>
+                  <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">sex</span>
+                  <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">full_name</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span> <span class="o">+</span> \
+                      <span class="n">patient</span><span class="o">.</span><span class="n">age</span>       <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> \
+                      <span class="n">patient</span><span class="o">.</span><span class="n">sex</span>       <span class="o">+</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> \
+                      <span class="n">patient</span><span class="o">.</span><span class="n">patient_hospital_id</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span>
+                  <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;paneUrl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">&#39;render_patient_pane_with_id&#39;</span><span class="p">,</span> 
+                                                      <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;patient_id&#39;</span><span class="p">:</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span><span class="p">}</span>
+                                                      <span class="p">)</span>
+                  <span class="n">json</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_to_append</span><span class="p">)</span>
+          <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+          <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+
+      <span class="k">elif</span> <span class="n">patient_id</span><span class="p">:</span>
+
+          <span class="k">try</span><span class="p">:</span>
+            <span class="n">patient_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">patient_id</span> <span class="p">)</span>
+            <span class="n">patient</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span> <span class="n">patient_id</span><span class="p">)</span>
+            <span class="n">json</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">if</span> <span class="n">patient</span><span class="p">:</span>
+                <span class="n">data_to_append</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">full_name</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;hospital_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">patient_hospital_id</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">age</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">sex</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">patient</span><span class="o">.</span><span class="n">full_name</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span> <span class="o">+</span> \
+                    <span class="n">patient</span><span class="o">.</span><span class="n">age</span>       <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> \
+                    <span class="n">patient</span><span class="o">.</span><span class="n">sex</span>       <span class="o">+</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> \
+                    <span class="n">patient</span><span class="o">.</span><span class="n">patient_hospital_id</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span>
+                <span class="n">data_to_append</span><span class="p">[</span><span class="s">&#39;paneUrl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span> <span class="s">&#39;render_patient_pane_with_id&#39;</span><span class="p">,</span> 
+                                                      <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;patient_id&#39;</span><span class="p">:</span> <span class="n">patient</span><span class="o">.</span><span class="n">id</span><span class="p">}</span> 
+                                                    <span class="p">)</span>
+
+                <span class="n">json</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_to_append</span><span class="p">)</span>
+
+            <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+
+          <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+              <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;ERROR ! Bad Parameters. No Patients in result.&quot;</span><span class="p">)</span>
+
+          <span class="k">except</span><span class="p">(</span><span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+              <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;ERROR! Patient Does Not Exist&quot;</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request Method&quot;</span><span class="p">)</span>
+
+
+<span class="c">########################## OLD CODE. NEEDS TO BE RELOOKED. THIS WAS THE EARLY ADVANCED SEARCH IMPLEMENTATION #############</span>
+
+<span class="c">#@login_required</span>
+<span class="c">#def aushadha_advanced_patient_search(request, search_by, search_for):</span>
+    <span class="c">#if request.user:</span>
+        <span class="c">#user = request.user</span>
+        <span class="c">#search_by = request.GET[&#39;search_by&#39;]</span>
+        <span class="c">#search_for = request.GET[&#39;search_for&#39;]</span>
+
+        <span class="c">#if search_by == &quot;first_name&quot;:</span>
+            <span class="c">#try:</span>
+                <span class="c">#patient_obj = PatientDetail.objects.filter(</span>
+                    <span class="c">#first_name__icontains=search_for)</span>
+                <span class="c">#variable = RequestContext(</span>
+                    <span class="c">#request, {&#39;patient_obj&#39;: patient_obj, &#39;user&#39;: user})</span>
+                <span class="c">#return render_to_response(&#39;patient/patient_search_result.html&#39;, variable)</span>
+            <span class="c">#except ValueError or TypeError or AttributeError:</span>
+                <span class="c">#raise Http404(&quot;Please enter a correct search term&quot;)</span>
+
+        <span class="c">#elif search_by == &quot;middle_name&quot;:</span>
+            <span class="c">#try:</span>
+                <span class="c">#patient_obj = PatientDetail.objects.filter(</span>
+                    <span class="c">#middle_name__icontains=search_for)</span>
+                <span class="c">#variable = RequestContext(</span>
+                    <span class="c">#request, {&#39;patient_obj&#39;: patient_obj, &#39;user&#39;: user})</span>
+                <span class="c">#return render_to_response(&#39;patient/patient_search_result.html&#39;, variable)</span>
+            <span class="c">#except ValueError or TypeError or AttributeError:</span>
+                <span class="c">#raise Http404(&quot;Please enter a correct search term&quot;)</span>
+
+        <span class="c">#elif search_by == &quot;last_name&quot;:</span>
+            <span class="c">#try:</span>
+                <span class="c">#patient_obj = PatientDetail.objects.filter(</span>
+                    <span class="c">#last_name__icontains=search_for)</span>
+                <span class="c">#variable = RequestContext(</span>
+                    <span class="c">#request, {&#39;patient_obj&#39;: patient_obj, &#39;user&#39;: user})</span>
+                <span class="c">#return render_to_response(&#39;patient/patient_search_result.html&#39;, variable)</span>
+            <span class="c">#except ValueError or TypeError or AttributeError:</span>
+                <span class="c">#raise Http404(&quot;Please enter a correct search term&quot;)</span>
+
+        <span class="c">#elif search_by == &quot;hospital_id&quot;:</span>
+            <span class="c">#try:</span>
+                <span class="c">#patient_obj = PatientDetail.objects.filter(</span>
+                    <span class="c">#patient_hospital_id__icontains=search_for)</span>
+                <span class="c">#variable = RequestContext(</span>
+                    <span class="c">#request, {&#39;patient_obj&#39;: patient_obj, &#39;user&#39;: user})</span>
+                <span class="c">#return render_to_response(&#39;patient/patient_search_result.html&#39;, variable)</span>
+            <span class="c">#except ValueError or TypeError or AttributeError:</span>
+                <span class="c">#raise Http404(&quot;Please enter a correct search term&quot;)</span>
+
+        <span class="c">#elif search_by == &quot;phone&quot;:</span>
+            <span class="c">#try:</span>
+                <span class="c">#phone_obj = Phone.objects.filter(</span>
+                    <span class="c">#phone__icontains=search_for)</span>
+                <span class="c">#variable = RequestContext(</span>
+                    <span class="c">#request, {&#39;phone_obj&#39;: phone_obj, &#39;user&#39;: user})</span>
+                <span class="c">#return render_to_response(&#39;patient/patient_search_result.html&#39;, variable)</span>
+            <span class="c">#except ValueError or TypeError or AttributeError:</span>
+                <span class="c">#raise Http404(&quot;Please enter a correct search term&quot;)</span>
+
+        <span class="c">#elif search_by == &quot;guardian_name&quot;:</span>
+            <span class="c">#try:</span>
+                <span class="c">#guardian_obj = Guardian.objects.filter(</span>
+                    <span class="c">#guardian_name__icontains=search_for)</span>
+                <span class="c">#variable = RequestContext(</span>
+                    <span class="c">#request, {&#39;guardian_obj&#39;: guardian_obj, &#39;user&#39;: user})</span>
+                <span class="c">#return render_to_response(&#39;patient/patient_search_result.html&#39;, variable)</span>
+            <span class="c">#except ValueError or TypeError or AttributeError:</span>
+                <span class="c">#raise Http404(&quot;Please enter a correct search term&quot;)</span>
+
+        <span class="c">#elif search_by == &quot;city&quot;:</span>
+            <span class="c">#try:</span>
+                <span class="c">#contact_obj = Contact.objects.filter(</span>
+                    <span class="c">#city__icontains=search_for)</span>
+                <span class="c">#variable = RequestContext(</span>
+                    <span class="c">#request, {&#39;contact_obj&#39;: contact_obj, &#39;user&#39;: user})</span>
+                <span class="c">#return render_to_response(&#39;patient/patient_search_result.html&#39;, variable)</span>
+            <span class="c">#except ValueError or TypeError or AttributeError:</span>
+                <span class="c">#raise Http404(&quot;Please enter a correct search term&quot;)</span>
+
+    <span class="c">#else:</span>
+        <span class="c">#raise Http404(&quot;Please Log in&quot;)</span>
+
+
+
+
+
+<span class="c">#@login_required</span>
+<span class="c">#def patient_id_autocompleter(request, patient_id=None):</span>
+    <span class="c">#if request.method == &quot;GET&quot; and request.is_ajax():</span>
+        <span class="c">#request_copy = request.GET.copy()</span>
+        <span class="c">#if not patient_id:</span>
+            <span class="c">#patient_id = request_copy.get(&#39;patient_id&#39;)</span>
+        <span class="c">#else:</span>
+            <span class="c">#patient_id = int(patient_id)</span>
+        <span class="c">#patient_id_list = []</span>
+        <span class="c">#if patient_id != &quot;*&quot;:</span>
+            <span class="c">#pat_obj = PatientDetail.objects.get(pk=patient_id)</span>
+            <span class="c">#if pat_obj:</span>
+                <span class="c">#dict_to_append = {}</span>
+                <span class="c">#dict_to_append[</span>
+                    <span class="c">#&#39;patient_hospital_id&#39;] = pat_obj.patient_hospital_id</span>
+                <span class="c">#dict_to_append[&#39;patient_id&#39;] = pat_obj.id</span>
+                <span class="c">#dict_to_append[&#39;name&#39;] = unicode(</span>
+                    <span class="c">#pat_obj.patient_hospital_id) + &quot;-&quot; + pat_obj.__unicode__()</span>
+                <span class="c">#dict_to_append[&#39;patient_name&#39;] = pat_obj.__unicode__()</span>
+                <span class="c">#dict_to_append[&#39;first_name&#39;] = pat_obj.first_name</span>
+                <span class="c">#dict_to_append[&#39;middle_name&#39;] = pat_obj.middle_name</span>
+                <span class="c">#dict_to_append[&#39;last_name&#39;] = pat_obj.last_name</span>
+                <span class="c">#dict_to_append[&#39;age&#39;] = pat_obj.age</span>
+                <span class="c">#dict_to_append[&#39;sex&#39;] = pat_obj.sex</span>
+                <span class="c">#patient_id_list.append(dict_to_append)</span>
+            <span class="c">#else:</span>
+                <span class="c">#dict_to_append = {&quot;patient_name&quot;: &quot;No-Result&quot;,</span>
+                                  <span class="c">#&quot;name&quot;: &quot;No Patients Recorded.&quot;,</span>
+                                  <span class="c">#&quot;patient_id&quot;: &quot;No-Result&quot;,</span>
+                                  <span class="c">#&quot;patient_hospital_id&quot;: &quot;&quot;,</span>
+                                  <span class="c">#&quot;first_name&quot;: &quot;&quot;,</span>
+                                  <span class="c">#&quot;middle_name&quot;: &quot;&quot;,</span>
+                                  <span class="c">#&quot;last_name&quot;: &quot;&quot;,</span>
+                                  <span class="c">#&quot;age&quot;: &quot;&quot;,</span>
+                                  <span class="c">#&quot;sex&quot;: &quot;&quot;,</span>
+                                  <span class="c">#}</span>
+                <span class="c">#patient_id_list.append(dict_to_append)</span>
+        <span class="c">#else:</span>
+            <span class="c">#dict_to_append = {&quot;patient_name&quot;: &quot;No-Result&quot;,</span>
+                              <span class="c">#&quot;name&quot;: &quot;No Patients Recorded.&quot;,</span>
+                              <span class="c">#&quot;patient_id&quot;: &quot;No-Result&quot;,</span>
+                              <span class="c">#&quot;patient_hospital_id&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;first_name&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;middle_name&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;last_name&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;age&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;sex&quot;: &quot;&quot;,</span>
+                              <span class="c">#}</span>
+            <span class="c">#patient_id_list.append(dict_to_append)</span>
+        <span class="c">#json = simplejson.dumps(patient_id_list)</span>
+        <span class="c">#str_to_construct = simplejson.dumps(patient_id_list)</span>
+        <span class="c">#f = open(</span>
+            <span class="c">#os.path.join(settings.CUSTOM_SCRIPT_ROOT, &#39;patient_id_list.json&#39;), &#39;w&#39;)</span>
+        <span class="c">#f.write(str_to_construct)</span>
+        <span class="c">#f.close()</span>
+        <span class="c">#return HttpResponse(json, content_type=&#39;application/json&#39;)</span>
+    <span class="c">#else:</span>
+        <span class="c">#raise Http404(&quot;Bad Request..&quot;)</span>
+
+
+<span class="c">#@login_required</span>
+<span class="c">#def hospital_id_autocompleter(request, patient_hospital_id=None):</span>
+
+    <span class="c">#if request.method == &quot;GET&quot; and request.is_ajax():</span>
+        <span class="c">#request_copy = request.GET.copy()</span>
+
+        <span class="c">#if not patient_hospital_id:</span>
+            <span class="c">#hospital_id = request_copy.get(&#39;patient_hospital_id&#39;)</span>
+        <span class="c">#else:</span>
+            <span class="c">#hospital_id = unicode(patient_hospital_id)</span>
+
+        <span class="c">#if hospital_id == &quot;*&quot;:</span>
+            <span class="c">#pat_obj = PatientDetail.objects.all()</span>
+        <span class="c">#else:</span>
+            <span class="c">#if hospital_id[-1:] == &quot;*&quot;:</span>
+                <span class="c">#hospital_id = hospital_id[:-1]</span>
+            <span class="c">#pat_obj = PatientDetail.objects.filter(</span>
+                <span class="c">#patient_hospital_id__startswith=hospital_id)</span>
+        <span class="c">#hospital_id_list = []</span>
+
+        <span class="c">#if pat_obj:</span>
+            <span class="c">#for pat in pat_obj:</span>
+                <span class="c">#dict_to_append = {}</span>
+                <span class="c">#dict_to_append[&#39;patient_hospital_id&#39;] = pat.patient_hospital_id</span>
+                <span class="c">#dict_to_append[&#39;patient_id&#39;] = pat.id</span>
+                <span class="c">#dict_to_append[&#39;name&#39;] = unicode(</span>
+                    <span class="c">#pat.patient_hospital_id) + &quot;-&quot; + pat.__unicode__()</span>
+                <span class="c">#dict_to_append[&#39;patient_name&#39;] = pat.__unicode__()</span>
+                <span class="c">#dict_to_append[&#39;first_name&#39;] = pat.first_name</span>
+                <span class="c">#dict_to_append[&#39;middle_name&#39;] = pat.middle_name</span>
+                <span class="c">#dict_to_append[&#39;last_name&#39;] = pat.last_name</span>
+                <span class="c">#dict_to_append[&#39;age&#39;] = pat.age</span>
+                <span class="c">#dict_to_append[&#39;sex&#39;] = pat.sex</span>
+                <span class="c">#hospital_id_list.append(dict_to_append)</span>
+        <span class="c">#else:</span>
+            <span class="c">#dict_to_append = {&quot;patient_name&quot;: &quot;No-Result&quot;,</span>
+                              <span class="c">#&quot;name&quot;: &quot;No Patients Recorded.&quot;,</span>
+                              <span class="c">#&quot;patient_id&quot;: &quot;No-Result&quot;,</span>
+                              <span class="c">#&quot;patient_hospital_id&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;first_name&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;middle_name&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;last_name&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;age&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;sex&quot;: &quot;&quot;,</span>
+                              <span class="c">#}</span>
+            <span class="c">#hospital_id_list.append(dict_to_append)</span>
+        <span class="c">#json = simplejson.dumps(hospital_id_list)</span>
+
+<span class="c">##    str_to_construct = &quot;var PATIENT_LIST = &quot; + str(hospital_id_list) +&quot;;&quot;</span>
+        <span class="c">#str_to_construct = simplejson.dumps(hospital_id_list)</span>
+        <span class="c">#f = open(</span>
+            <span class="c">#os.path.join(settings.CUSTOM_SCRIPT_ROOT, &#39;patient_list.json&#39;), &#39;w&#39;)</span>
+        <span class="c">#f.write(str_to_construct)</span>
+        <span class="c">#f.close()</span>
+        <span class="c">#return HttpResponse(json, content_type=&#39;application/json&#39;)</span>
+    <span class="c">#else:</span>
+        <span class="c">#raise Http404(&quot;Bad Request..&quot;)</span>
+
+
+<span class="c">#@login_required</span>
+<span class="c">#def patient_name_autocompleter(request, patient_name=None):</span>
+
+    <span class="c">#if request.method == &quot;GET&quot; and request.is_ajax():</span>
+        <span class="c">#request_copy = request.GET.copy()</span>
+        <span class="c">#patient_name_list = []</span>
+        <span class="c">#patient_id = None</span>
+
+        <span class="c">#if request.GET.get(&#39;patient_id&#39;):</span>
+            <span class="c">#patient_id = int(request.GET.get(&#39;patient_id&#39;))</span>
+        <span class="c">#if not patient_name:</span>
+            <span class="c">#patient_name = request_copy.get(&#39;patient_name&#39;)</span>
+        <span class="c">#else:</span>
+            <span class="c">#patient_name = unicode(patient_name)</span>
+
+        <span class="c">#if patient_name == &quot;*&quot;:</span>
+            <span class="c">#pat_obj = PatientDetail.objects.all()</span>
+        <span class="c">#else:</span>
+            <span class="c">#if patient_name[-1:] == &quot;*&quot;:</span>
+                <span class="c">#patient_name = patient_name[:-1]</span>
+            <span class="c">#if not patient_id:</span>
+                <span class="c">#pat_obj = PatientDetail.objects.filter(</span>
+                    <span class="c">#full_name__icontains=patient_name)</span>
+            <span class="c">#else:</span>
+                <span class="c">#pat_obj = PatientDetail.objects.filter(</span>
+                    <span class="c">#full_name__icontains=patient_name).filter(pk=patient_id)</span>
+
+        <span class="c">#if pat_obj:</span>
+            <span class="c">#for pat in pat_obj:</span>
+                <span class="c">#dict_to_append = {}</span>
+                <span class="c">#dict_to_append[&#39;patient_id&#39;] = pat.id</span>
+                <span class="c">#dict_to_append[&#39;patient_hospital_id&#39;] = pat.patient_hospital_id</span>
+                <span class="c">#dict_to_append[&#39;patient_name&#39;] = pat.full_name</span>
+                <span class="c">#dict_to_append[&#39;first_name&#39;] = pat.first_name</span>
+                <span class="c">#dict_to_append[&#39;middle_name&#39;] = pat.middle_name</span>
+                <span class="c">#dict_to_append[&#39;last_name&#39;] = pat.last_name</span>
+                <span class="c">#dict_to_append[&#39;age&#39;] = pat.age</span>
+                <span class="c">#dict_to_append[&#39;sex&#39;] = pat.sex</span>
+                <span class="c">#patient_name_list.append(dict_to_append)</span>
+        <span class="c">#else:</span>
+            <span class="c">#dict_to_append = {&quot;patient_name&quot;: &quot;No-Result&quot;,</span>
+                              <span class="c">#&quot;name&quot;: &quot;No Patients Recorded.&quot;,</span>
+                              <span class="c">#&quot;patient_id&quot;: &quot;No-Result&quot;,</span>
+                              <span class="c">#&quot;patient_hospital_id&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;first_name&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;middle_name&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;last_name&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;age&quot;: &quot;&quot;,</span>
+                              <span class="c">#&quot;sex&quot;: &quot;&quot;,</span>
+                              <span class="c">#}</span>
+            <span class="c">#patient_name_list.append(dict_to_append)</span>
+        <span class="c">#json = simplejson.dumps(patient_name_list)</span>
+
+        <span class="c">#str_to_construct = simplejson.dumps(patient_name_list)</span>
+        <span class="c">#f = open(</span>
+            <span class="c">#os.path.join(settings.CUSTOM_SCRIPT_ROOT, &#39;patient_name_list.json&#39;), &#39;w&#39;)</span>
+        <span class="c">#f.write(str_to_construct)</span>
+        <span class="c">#f.close()</span>
+        <span class="c">#return HttpResponse(json, content_type=&#39;application/json&#39;)</span>
+    <span class="c">#else:</span>
+        <span class="c">#raise Http404(&quot;Bad Request..&quot;)</span>
+</pre></div></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

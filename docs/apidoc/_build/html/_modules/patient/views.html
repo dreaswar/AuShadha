@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>patient.views &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for patient.views</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : Views for Patient addition, editing, deleting, JSON export</span>
+<span class="c"># Author      : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.</span>
+<span class="c"># Date        : 16-09-2013</span>
+<span class="c">################################################################################</span>
+
+
+
+<span class="c">########################### General Module imports #############################</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+
+
+<span class="c">########################### General Django Imports #############################</span>
+
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span><span class="p">,</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">RequestContext</span>
+<span class="c">#from django.core.context_processors import csrf</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_exempt</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.cache</span> <span class="kn">import</span> <span class="n">never_cache</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.csrf</span> <span class="kn">import</span> <span class="n">csrf_protect</span>
+<span class="kn">from</span> <span class="nn">django.views.decorators.debug</span> <span class="kn">import</span> <span class="n">sensitive_post_parameters</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="kn">from</span> <span class="nn">django.core</span> <span class="kn">import</span> <span class="n">serializers</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers</span> <span class="kn">import</span> <span class="n">json</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers.json</span> <span class="kn">import</span> <span class="n">DjangoJSONEncoder</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+
+
+<span class="c">##################### Application Specific Model Imports #######################</span>
+
+<span class="kn">import</span> <span class="nn">AuShadha.settings</span> <span class="kn">as</span> <span class="nn">settings</span>
+<span class="kn">from</span> <span class="nn">AuShadha.settings</span> <span class="kn">import</span> <span class="n">APP_ROOT_URL</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.serializers.data_grid</span> <span class="kn">import</span> <span class="n">generate_json_for_datagrid</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.views.dijit_tree</span> <span class="kn">import</span> <span class="n">DijitTreeNode</span><span class="p">,</span> <span class="n">DijitTree</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.data.json</span> <span class="kn">import</span> <span class="n">ModelInstanceJson</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.data.summary</span> <span class="kn">import</span> <span class="n">ModelInstanceSummary</span>
+<span class="kn">from</span> <span class="nn">AuShadha.utilities.forms</span> <span class="kn">import</span> <span class="n">aumodelformerrorformatter_factory</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.clinic.models</span> <span class="kn">import</span> <span class="n">Clinic</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+
+
+<span class="c">######################## Import Models using UI.get_module() ###################</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">PatientDetail</span><span class="p">,</span> <span class="n">PatientDetailForm</span>
+<span class="kn">from</span> <span class="nn">dijit_widgets.tree</span> <span class="kn">import</span> <span class="n">PatientTree</span>
+
+<span class="n">Demographics</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Demographics&#39;</span><span class="p">)</span>
+<span class="n">Contact</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Contact&#39;</span><span class="p">)</span>
+<span class="n">Phone</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Phone&#39;</span><span class="p">)</span>
+<span class="n">Guardian</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Guardian&#39;</span><span class="p">)</span>
+<span class="n">EmailAndFax</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;EmailAndFax&#39;</span><span class="p">)</span>
+
+<span class="n">MedicalHistory</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;MedicalHistory&#39;</span><span class="p">)</span>
+<span class="n">SurgicalHistory</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;SurgicalHistory&#39;</span><span class="p">)</span>
+<span class="n">SocialHistory</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;SocialHistory&#39;</span><span class="p">)</span>
+<span class="n">FamilyHistory</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;FamilyHistory&#39;</span><span class="p">)</span>
+<span class="n">Immunisation</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;Immunisation&#39;</span><span class="p">)</span>
+
+<span class="n">Allergy</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;AllergyList&#39;</span><span class="p">)</span>
+<span class="n">MedicationList</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;MedicationList&quot;</span><span class="p">)</span>
+
+<span class="n">AdmissionDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;Admission&quot;</span><span class="p">)</span>
+
+<span class="n">VisitDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit&quot;</span><span class="p">)</span>
+<span class="n">VisitImaging</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit_Imaging&quot;</span><span class="p">)</span>
+<span class="n">VisitInv</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit_Inv&quot;</span><span class="p">)</span>
+
+
+<span class="c">############### THESE ARE OLD IMPORTS  ##########################################</span>
+ 
+ <span class="c"># With the new way of module import these are now obsolete. </span>
+ <span class="c"># They are kept here purely in case something goes wrong.</span>
+ <span class="c"># Modules and Classes are now imported by the UI.get_module method</span>
+ <span class="c"># This loosely couples all modules and all the classes and allows developer to </span>
+ <span class="c"># import modules interchangebly without causing ImportError</span>
+ 
+<span class="c">#from demographics.demographics.models import Demographics</span>
+<span class="c">#from demographics.contact.models import Contact</span>
+<span class="c">#from demographics.phone.models import Phone</span>
+<span class="c">#from demographics.guardian.models import Guardian</span>
+<span class="c">#from demographics.email_and_fax.models import EmailAndFax</span>
+<span class="c">#from history.medical_history.models import MedicalHistory</span>
+<span class="c">#from history.surgical_history.models import SurgicalHistory</span>
+<span class="c">#from history.social_history.models import SocialHistory</span>
+<span class="c">#from history.family_history.models import FamilyHistory</span>
+<span class="c">#from history.obs_and_gyn.models import ObstetricHistoryDetail</span>
+<span class="c">#from immunisation.models import Immunisation</span>
+<span class="c">#from allergy_list.models import Allergy</span>
+<span class="c">#from medication_list.models import MedicationList</span>
+<span class="c">#from admission.models import AdmissionDetailForm</span>
+<span class="c">#from visit.models import VisitDetail, VisitImaging, VisitInv</span>
+
+
+
+<span class="c">#################### Import Utilities ##########################################</span>
+
+<span class="kn">from</span> <span class="nn">.utilities</span> <span class="kn">import</span> <span class="n">check_before_adding</span><span class="p">,</span> <span class="n">return_patient_json</span>
+
+
+
+
+
+<span class="c">######################### Views start here ######################################</span>
+
+
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="render_patient_json"><a class="viewcode-back" href="../../patient.html#patient.views.render_patient_json">[docs]</a><span class="k">def</span> <span class="nf">render_patient_json</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span><span class="s">&#39;GET&#39;</span><span class="p">:</span>
+      <span class="n">all_p</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">all_p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+          <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+          <span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">all_p</span><span class="p">:</span>
+              <span class="k">print</span> <span class="s">&quot;Evaluating Patient: &quot;</span>
+              <span class="k">print</span> <span class="n">patient</span>
+              <span class="n">json</span> <span class="o">=</span> <span class="n">ModelInstanceJson</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span><span class="o">.</span><span class="n">return_data</span><span class="p">()</span>
+              <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+      <span class="c">#print &quot;\n&quot;</span>
+      <span class="c">#print &quot;-&quot; *100</span>
+      <span class="c">#print &quot;Printing Sample Patient JSON&quot;</span>
+      <span class="c">#print &quot;-&quot; *100</span>
+      <span class="c">#print (simplejson.dumps(data[0]))</span>
+      <span class="c">#print &quot;-&quot; *100</span>
+      <span class="c">#print &quot;\n&quot;</span>
+      <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request Method&quot;</span><span class="p">)</span>
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="render_patient_summary"><a class="viewcode-back" href="../../patient.html#patient.views.render_patient_summary">[docs]</a><span class="k">def</span> <span class="nf">render_patient_summary</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">patient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;GET&quot;</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+
+        <span class="k">if</span> <span class="n">patient_id</span><span class="p">:</span>
+            <span class="n">patient_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">patient_id</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">patient_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;patient_id&#39;</span><span class="p">))</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">patient_id</span><span class="p">)</span>
+            <span class="n">var</span> <span class="o">=</span> <span class="n">ModelInstanceSummary</span><span class="p">(</span><span class="n">pat_obj</span><span class="p">)</span><span class="o">.</span><span class="n">variable</span>
+            <span class="n">var</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">user</span>
+            <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+            <span class="k">print</span> <span class="s">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span>
+            <span class="k">print</span> <span class="n">var</span>
+            <span class="k">print</span> <span class="s">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span>
+            <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">&#39;patient_detail/summary.html&#39;</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
+
+        <span class="k">except</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;ERROR! Bad Request Parameters&quot;</span><span class="p">)</span>
+
+        <span class="k">except</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;ERROR! Requested Patient Data Does not exist&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request&quot;</span><span class="p">)</span>
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="render_patient_info"><a class="viewcode-back" href="../../patient.html#patient.views.render_patient_info">[docs]</a><span class="k">def</span> <span class="nf">render_patient_info</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">patient_id</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;GET&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">patient_id</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">patient_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">patient_id</span> <span class="p">)</span>
+        <span class="n">patient_detail_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="n">patient_id</span> <span class="p">)</span>
+      <span class="k">except</span> <span class="p">(</span><span class="ne">NameError</span><span class="p">,</span><span class="ne">ValueError</span><span class="p">,</span><span class="ne">TypeError</span><span class="p">,</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request Parameters&quot;</span><span class="p">)</span>
+      <span class="k">except</span><span class="p">(</span><span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Requested Patient Does Not Exist&quot;</span><span class="p">)</span>
+      <span class="c">#data = {&#39;success&#39;: True, </span>
+              <span class="c">#&#39;error_message&#39;: &#39;Successfully retrieved patient info&#39;,</span>
+              <span class="c">#&#39;info&#39;: patient_detail_obj.__unicode__()</span>
+              <span class="c">#}</span>
+      <span class="c">#json = simplejson.dumps(data)</span>
+      <span class="c">#return HttpResponse(json, content_type=&#39;application/json&#39;)</span>
+      <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span>
+                                <span class="p">{</span><span class="s">&#39;info&#39;</span><span class="p">:</span> <span class="n">patient_detail_obj</span><span class="p">}</span>
+                                <span class="p">)</span>
+      <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span> <span class="s">&#39;patient_detail/info.html&#39;</span><span class="p">,</span> <span class="n">variable</span> <span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s">&#39;login&#39;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="patient_detail_add"><a class="viewcode-back" href="../../patient.html#patient.views.patient_detail_add">[docs]</a><span class="k">def</span> <span class="nf">patient_detail_add</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">clinic_id</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+
+    <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+    <span class="k">print</span> <span class="s">&quot;Received a request to add a New Patient....&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">clinic_id</span> <span class="p">:</span>
+        <span class="n">clinic_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">clinic_id</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">clinic_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;clinic_id&#39;</span><span class="p">))</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span><span class="ne">NameError</span><span class="p">,</span><span class="ne">AttributeError</span><span class="p">,</span><span class="ne">ValueError</span><span class="p">,</span><span class="ne">TypeError</span><span class="p">):</span>
+        <span class="n">clinic_id</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="n">clinic</span> <span class="o">=</span> <span class="n">Clinic</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="n">clinic_id</span><span class="p">)</span>          
+      <span class="n">patient_detail_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="p">(</span><span class="n">parent_clinic</span> <span class="o">=</span> <span class="n">clinic</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;GET&quot;</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+          <span class="n">patient_detail_form</span> <span class="o">=</span> <span class="n">PatientDetailForm</span><span class="p">(</span>
+              <span class="n">instance</span><span class="o">=</span><span class="n">patient_detail_obj</span><span class="p">)</span>
+          <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span>
+                                    <span class="p">{</span><span class="s">&quot;user&quot;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+                                    <span class="s">&quot;patient_detail_obj&quot;</span><span class="p">:</span> <span class="n">patient_detail_obj</span><span class="p">,</span>
+                                    <span class="s">&quot;patient_detail_form&quot;</span><span class="p">:</span> <span class="n">patient_detail_form</span>
+                                    <span class="p">}</span>
+                                    <span class="p">)</span>
+          <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">&#39;patient_detail/add.html&#39;</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
+
+      <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;POST&quot;</span>  <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+          <span class="n">patient_detail_form</span> <span class="o">=</span> <span class="n">PatientDetailForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span>
+                                                  <span class="n">instance</span> <span class="o">=</span> <span class="n">patient_detail_obj</span><span class="p">)</span>
+          <span class="k">if</span> <span class="n">patient_detail_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+              <span class="n">saved_patient</span> <span class="o">=</span> <span class="n">patient_detail_form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+              <span class="n">saved_patient</span><span class="o">.</span><span class="n">parent_clinic</span> <span class="o">=</span> <span class="n">clinic</span>
+              <span class="n">saved_patient</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+              <span class="n">success</span> <span class="o">=</span> <span class="bp">True</span>
+              <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;Patient Saved Successfully&quot;</span>
+              <span class="n">form_errors</span> <span class="o">=</span> <span class="bp">None</span>
+              <span class="c">#json = return_patient_json(saved_patient,success)</span>
+          <span class="k">else</span><span class="p">:</span>
+              <span class="n">form_errors</span> <span class="o">=</span> <span class="n">aumodelformerrorformatter_factory</span><span class="p">(</span><span class="n">patient_detail_form</span><span class="p">)</span>
+              <span class="n">saved_patient</span> <span class="o">=</span> <span class="bp">None</span>
+              <span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
+          <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;success&#39;</span><span class="p">:</span><span class="n">success</span><span class="p">,</span>
+                  <span class="s">&#39;error_message&#39;</span><span class="p">:</span><span class="n">form_errors</span><span class="p">,</span>
+                  <span class="s">&#39;form_errors&#39;</span><span class="p">:</span> <span class="n">form_errors</span>
+                  <span class="p">}</span>
+          <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+      <span class="k">else</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&#39;Bad Request:: Unsupported Request Method.&#39;</span><span class="p">)</span>
+
+    <span class="k">except</span><span class="p">(</span><span class="n">Clinic</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="n">saved_patient</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;success&#39;</span><span class="p">:</span><span class="n">success</span><span class="p">,</span><span class="s">&#39;error_message&#39;</span><span class="p">:</span><span class="s">&quot;No Clinic by the specified id&quot;</span><span class="p">}</span>
+        <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&#39;application/json&#39;</span><span class="p">)</span>
+
+
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="patient_detail_edit"><a class="viewcode-back" href="../../patient.html#patient.views.patient_detail_edit">[docs]</a><span class="k">def</span> <span class="nf">patient_detail_edit</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">:</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+            <span class="n">patient_detail_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">patient_detail_obj</span><span class="p">,</span><span class="s">&#39;urls&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">):</span>
+              <span class="n">patient_detail_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+              <span class="c">#print &quot;*&quot; * 100</span>
+              <span class="c">#print patient_detail_obj.urls[&#39;info&#39;]</span>
+              <span class="c">#print &quot;*&quot; * 100</span>
+        
+        <span class="k">except</span> <span class="ne">TypeError</span> <span class="ow">or</span> <span class="ne">ValueError</span> <span class="ow">or</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;BadRequest&quot;</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;BadRequest: Patient detail Data Does Not Exist&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;GET&quot;</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+
+            <span class="n">patient_detail_edit_form</span> <span class="o">=</span> <span class="n">PatientDetailForm</span><span class="p">(</span><span class="n">auto_id</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="n">patient_detail_obj</span><span class="p">)</span>
+
+            <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span>
+                                      <span class="p">{</span><span class="s">&quot;user&quot;</span>   <span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+                                        <span class="s">&quot;patient_detail_obj&quot;</span> <span class="p">:</span> <span class="n">patient_detail_obj</span><span class="p">,</span>
+                                        <span class="s">&quot;patient_detail_edit_form&quot;</span>   <span class="p">:</span> <span class="n">patient_detail_edit_form</span>
+                                        <span class="p">}</span>
+                                      <span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">&#39;patient_detail/edit.html&#39;</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;POST&#39;</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+            <span class="n">patient_detail_edit_form</span> <span class="o">=</span> <span class="n">PatientDetailForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="n">patient_detail_obj</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">patient_detail_edit_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+                <span class="n">detail_object</span> <span class="o">=</span> <span class="n">patient_detail_edit_form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+                <span class="n">success</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;Patient Edited Successfully&quot;</span>
+                <span class="n">form_errors</span> <span class="o">=</span> <span class="bp">None</span>
+                <span class="c">#json = return_patient_json(detail_object, success=True)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;Error:: Patient Detail could not be edited.&quot;</span>
+                <span class="n">form_errors</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+                <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">patient_detail_edit_form</span><span class="o">.</span><span class="n">errors</span><span class="p">:</span>
+                    <span class="n">form_errors</span> <span class="o">+=</span> <span class="s">&#39;&lt;p&gt;&#39;</span> <span class="o">+</span> <span class="n">error</span> <span class="o">+</span> <span class="s">&#39;&lt;/p&gt;&#39;</span>
+                <span class="c">#json = return_patient_json(detail_object=None, success=False)</span>
+
+            <span class="n">data</span>  <span class="o">=</span> <span class="p">{</span><span class="s">&#39;success&#39;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span> 
+                     <span class="s">&#39;error_message&#39;</span><span class="p">:</span> <span class="n">error_message</span><span class="p">,</span> 
+                     <span class="s">&#39;form_errors&#39;</span><span class="p">:</span> <span class="n">form_errors</span> 
+                    <span class="p">}</span>
+            <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&#39;application/json&#39;</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;BadRequest: Unsupported Request Method&quot;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="patient_detail_del"><a class="viewcode-back" href="../../patient.html#patient.views.patient_detail_del">[docs]</a><span class="k">def</span> <span class="nf">patient_detail_del</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span> <span class="ow">and</span> <span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;GET&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="nb">id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+                <span class="n">patient_detail_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span> <span class="ow">or</span> <span class="ne">ValueError</span> <span class="ow">or</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+                    <span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
+                    <span class="n">error_message</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;</span>
+<span class="s">                            ERROR!! Bad Request. Please refresh page and try again.</span>
+<span class="s">                           &#39;&#39;&#39;</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;success&quot;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span> <span class="s">&quot;error_message&quot;</span><span class="p">:</span> <span class="n">error_message</span><span class="p">}</span>
+                    <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;BadRequest&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+                    <span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
+                    <span class="n">error_message</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;</span>
+<span class="s">                            ERROR!! Requested Patient Data Does not Exist.</span>
+<span class="s">                            Refresh Page and try again..</span>
+<span class="s">                           &#39;&#39;&#39;</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;success&quot;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span> <span class="s">&quot;error_message&quot;</span><span class="p">:</span> <span class="n">error_message</span><span class="p">}</span>
+                    <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span>
+                        <span class="s">&quot;BadRequest: Patient detail Data Does Not Exist&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+                <span class="n">patient_detail_obj</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+                    <span class="n">success</span> <span class="o">=</span> <span class="bp">True</span>
+                    <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;Patient Deleted Successfully&quot;</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;success&quot;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span> <span class="s">&quot;error_message&quot;</span><span class="p">:</span> <span class="n">error_message</span><span class="p">}</span>
+                    <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">is_ajax</span><span class="p">():</span>
+                    <span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
+                    <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;ERROR ! No Priviliges to Delete...&quot;</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;success&quot;</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span> <span class="s">&quot;error_message&quot;</span><span class="p">:</span> <span class="n">error_message</span><span class="p">}</span>
+                    <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;BadRequest: Unsupported Request Method&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Server Error: No Permission to delete.&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

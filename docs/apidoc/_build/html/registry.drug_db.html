@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>registry.drug_db package &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="index.html" />
+    <link rel="up" title="registry package" href="registry.html" />
+    <link rel="next" title="registry.icd10 package" href="registry.icd10.html" />
+    <link rel="prev" title="registry package" href="registry.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="registry.icd10.html" title="registry.icd10 package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="registry.html" title="registry package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="registry.html" accesskey="U">registry package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="registry-drug-db-package">
+<h1>registry.drug_db package<a class="headerlink" href="#registry-drug-db-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-registry.drug_db.admin">
+<span id="registry-drug-db-admin-module"></span><h2>registry.drug_db.admin module<a class="headerlink" href="#module-registry.drug_db.admin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="registry.drug_db.admin.FDADrugsAdmin">
+<em class="property">class </em><tt class="descclassname">registry.drug_db.admin.</tt><tt class="descname">FDADrugsAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="reference internal" href="_modules/registry/drug_db/admin.html#FDADrugsAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#registry.drug_db.admin.FDADrugsAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.contrib.admin.options.ModelAdmin</span></tt></p>
+<dl class="attribute">
+<dt id="registry.drug_db.admin.FDADrugsAdmin.list_display">
+<tt class="descname">list_display</tt><em class="property"> = ['drug_name', 'active_ingredient', 'dosage', 'form']</em><a class="headerlink" href="#registry.drug_db.admin.FDADrugsAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="registry.drug_db.admin.FDADrugsAdmin.media">
+<tt class="descname">media</tt><a class="headerlink" href="#registry.drug_db.admin.FDADrugsAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-registry.drug_db.models">
+<span id="registry-drug-db-models-module"></span><h2>registry.drug_db.models module<a class="headerlink" href="#module-registry.drug_db.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="registry.drug_db.models.FDADrugs">
+<em class="property">class </em><tt class="descclassname">registry.drug_db.models.</tt><tt class="descname">FDADrugs</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/registry/drug_db/models.html#FDADrugs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#registry.drug_db.models.FDADrugs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<p>The FDA Drug DB as on 26-01-2013. This is subject to change.
+This is meant mostly as an autocompleter and has not been tested.
+Please refer, test and confirm for yourself before implementation.</p>
+<dl class="exception">
+<dt id="registry.drug_db.models.FDADrugs.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#registry.drug_db.models.FDADrugs.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="registry.drug_db.models.FDADrugs.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">FDADrugs.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#registry.drug_db.models.FDADrugs.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="registry.drug_db.models.FDADrugs.objects">
+<tt class="descclassname">FDADrugs.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3ea5550&gt;</em><a class="headerlink" href="#registry.drug_db.models.FDADrugs.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-registry.drug_db.tests">
+<span id="registry-drug-db-tests-module"></span><h2>registry.drug_db.tests module<a class="headerlink" href="#module-registry.drug_db.tests" title="Permalink to this headline">¶</a></h2>
+<p>This file demonstrates writing tests using the unittest module. These will
+pass when you run &#8220;manage.py test&#8221;.</p>
+<p>Replace this with more appropriate tests for your application.</p>
+<dl class="class">
+<dt id="registry.drug_db.tests.SimpleTest">
+<em class="property">class </em><tt class="descclassname">registry.drug_db.tests.</tt><tt class="descname">SimpleTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/registry/drug_db/tests.html#SimpleTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#registry.drug_db.tests.SimpleTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="registry.drug_db.tests.SimpleTest.test_basic_addition">
+<tt class="descname">test_basic_addition</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/registry/drug_db/tests.html#SimpleTest.test_basic_addition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#registry.drug_db.tests.SimpleTest.test_basic_addition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests that 1 + 1 always equals 2.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-registry.drug_db.views">
+<span id="registry-drug-db-views-module"></span><h2>registry.drug_db.views module<a class="headerlink" href="#module-registry.drug_db.views" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-registry.drug_db">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-registry.drug_db" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">registry.drug_db package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-registry.drug_db.admin">registry.drug_db.admin module</a></li>
+<li><a class="reference internal" href="#module-registry.drug_db.models">registry.drug_db.models module</a></li>
+<li><a class="reference internal" href="#module-registry.drug_db.tests">registry.drug_db.tests module</a></li>
+<li><a class="reference internal" href="#module-registry.drug_db.views">registry.drug_db.views module</a></li>
+<li><a class="reference internal" href="#module-registry.drug_db">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="registry.html"
+                        title="previous chapter">registry package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="registry.icd10.html"
+                        title="next chapter">registry.icd10 package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/registry.drug_db.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="registry.icd10.html" title="registry.icd10 package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="registry.html" title="registry package"
+             >previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="registry.html" >registry package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

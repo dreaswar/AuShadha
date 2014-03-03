@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.utilities.urls &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.utilities.urls</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : URL Generator Class for AuShadha</span>
+<span class="c"># Author      : Dr. Easwar T.R</span>
+<span class="c"># Date        : 26-09-2013</span>
+<span class="c"># License     : GNU-GPL Version 3, see AuShadha/LICENSE.txt </span>
+<span class="c">################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"> Module defines the class and its factory that generates URL based on the actions an </span>
+<span class="sd"> object can have / actions that can be performed on an object.</span>
+<span class="sd"> </span>
+<span class="sd"> This is not intended to replace Django&#39;s reverse / {%url%} template tag, rather</span>
+<span class="sd"> this was an attempt to create something that was more like Zope with each object</span>
+<span class="sd"> being aware internally of the actions that can be done on/by it</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">AuShadha.settings</span> <span class="kn">import</span> <span class="n">APP_ROOT_URL</span>
+
+<div class="viewcode-block" id="UrlGenerator"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.urls.UrlGenerator">[docs]</a><span class="k">class</span> <span class="nc">UrlGenerator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  
+  <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Generates URL for the classes based on action, id and a parent class attribute</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="c">#FIXME: This needs to be converted into more elegant code with Zope like awareness built</span>
+          <span class="c">#into the Model class itself with options to override it at instance level</span>
+  
+  <span class="c">#Parented actions are actions that require a relation to a higher model</span>
+  <span class="c"># This is to say we are adding this object under that</span>
+  <span class="c"># For eg: adding a Contact to the Patient , Listing contacts of a Patients</span>
+  <span class="n">parented_actions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;add&#39;</span><span class="p">,</span><span class="s">&#39;list&#39;</span><span class="p">,</span><span class="s">&#39;json&#39;</span><span class="p">,</span><span class="s">&#39;tree&#39;</span><span class="p">,</span><span class="s">&#39;sidebar&#39;</span><span class="p">,</span><span class="s">&#39;summary&#39;</span><span class="p">,</span><span class="s">&#39;pane&#39;</span><span class="p">]</span>
+  
+  <span class="c"># These are actions that act on the object themselves</span>
+  <span class="c"># Editing / deleting / getting the object are examples</span>
+  <span class="n">parentless_actions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;edit&#39;</span><span class="p">,</span><span class="s">&#39;del&#39;</span><span class="p">,</span><span class="s">&#39;info&#39;</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">instance</span><span class="p">,</span>
+               <span class="n">parent</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">urlDict</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s">&#39;summary&#39;</span><span class="p">:{},</span>
+                    <span class="s">&#39;pane&#39;</span>   <span class="p">:{},</span>                    
+                    <span class="s">&#39;tree&#39;</span>   <span class="p">:{},</span>
+                    <span class="s">&#39;sidebar&#39;</span><span class="p">:{},</span>
+                    <span class="s">&#39;json&#39;</span>   <span class="p">:{},</span>
+                    <span class="s">&#39;list&#39;</span>   <span class="p">:{},</span>
+                    <span class="s">&#39;add&#39;</span>    <span class="p">:{},</span>
+                    <span class="s">&#39;edit&#39;</span>   <span class="p">:{},</span>
+                    <span class="s">&#39;del&#39;</span>    <span class="p">:{},</span>
+                    <span class="s">&#39;info&#39;</span>   <span class="p">:{}</span>
+                  <span class="p">}</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">root_url</span> <span class="o">=</span> <span class="n">APP_ROOT_URL</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">instance_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">app_label</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">app_label</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">model_label</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">__model_label__</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">parent_model</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">_parent_model</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">can_add_list_or_json</span> <span class="o">=</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span><span class="s">&#39;_can_add_list_or_json&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">extra_url_actions</span> <span class="o">=</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span><span class="s">&#39;_extra_url_actions&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parentless_actions</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root_url</span><span class="p">,</span>
+                                  <span class="bp">self</span><span class="o">.</span><span class="n">app_label</span><span class="p">,</span>
+                                  <span class="bp">self</span><span class="o">.</span><span class="n">model_label</span><span class="p">,</span>
+                                  <span class="n">action</span><span class="p">,</span>
+                                  <span class="bp">self</span><span class="o">.</span><span class="n">instance_id</span>
+                                <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">urlDict</span><span class="p">[</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="n">url</span>
+
+    <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parented_actions</span><span class="p">:</span>
+        <span class="n">parent_label</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="s">&#39;__model_label__&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+        <span class="n">parent_id</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="s">&#39;id&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">parent_id</span><span class="p">:</span> 
+          <span class="n">parent_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">parent_id</span><span class="p">)</span>
+
+        <span class="c">#print &quot;Received Parent: &quot;, parent</span>
+        <span class="c">#print &quot;Parent is of type: &quot;, type(parent)</span>
+        <span class="c">#print parent.__model_label__</span>
+        <span class="c">#print &quot;Parent Label generated is: &quot;, parent_label</span>
+        <span class="c">#print &quot;Parent ID is: &quot;, parent_id</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">urlDict</span><span class="p">[</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">can_add_list_or_json</span><span class="p">:</span>
+          <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s">&#39;add&#39;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">_can_add_list_or_json</span><span class="p">:</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root_url</span><span class="p">,</span>
+                                              <span class="n">m</span><span class="p">,</span>
+                                              <span class="n">action</span><span class="p">,</span>
+                                              <span class="bp">self</span><span class="o">.</span><span class="n">instance_id</span>
+                                          <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">urlDict</span><span class="p">[</span><span class="n">action</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">url</span>
+
+          <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">_can_add_list_or_json</span><span class="p">:</span>
+              <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/?</span><span class="si">%s</span><span class="s">_id=</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root_url</span><span class="p">,</span>
+                                            <span class="n">m</span><span class="p">,</span>
+                                            <span class="n">action</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">model_label</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">instance_id</span>
+                                        <span class="p">)</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">urlDict</span><span class="p">[</span><span class="n">action</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">url</span>
+
+        <span class="c">#if self.extra_url_actions:</span>
+          <span class="c">#self.urlDict[action] = {}</span>
+          <span class="c">#for m in instance._extra_url_actions:</span>
+              <span class="c">#url = &quot;%s%s/%s/%s/?%s_id=%s/&quot; %(self.root_url,</span>
+                                           <span class="c">#self.app_label,</span>
+                                           <span class="c">#self.model_label,</span>
+                                           <span class="c">#m,</span>
+                                           <span class="c">#self.model_label,</span>
+                                           <span class="c">#self.instance_id</span>
+                                        <span class="c">#)</span>
+              <span class="c">#self.urlDict[action][m] = url</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">parent_label</span> <span class="ow">and</span> <span class="n">parent_id</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">app_label</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_label</span><span class="p">:</span>
+                  <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/?</span><span class="si">%s</span><span class="s">_id=</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root_url</span><span class="p">,</span>
+                                                  <span class="bp">self</span><span class="o">.</span><span class="n">app_label</span><span class="p">,</span>
+                                                  <span class="bp">self</span><span class="o">.</span><span class="n">model_label</span><span class="p">,</span>
+                                                  <span class="n">action</span><span class="p">,</span>
+                                                  <span class="n">parent_label</span><span class="p">,</span>
+                                                  <span class="n">parent_id</span>
+                                            <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                  <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/?</span><span class="si">%s</span><span class="s">_id=</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root_url</span><span class="p">,</span>
+                                                  <span class="bp">self</span><span class="o">.</span><span class="n">app_label</span><span class="p">,</span>
+                                                  <span class="n">action</span><span class="p">,</span>
+                                                  <span class="n">parent_label</span><span class="p">,</span>
+                                                  <span class="n">parent_id</span>
+                                            <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">urlDict</span><span class="p">[</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="n">url</span>
+            <span class="k">else</span><span class="p">:</span>
+              <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;NoParentModelLabelError&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">urlDict</span>
+
+<div class="viewcode-block" id="UrlGenerator.return_urlDict"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.urls.UrlGenerator.return_urlDict">[docs]</a>  <span class="k">def</span> <span class="nf">return_urlDict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">urlDict</span>
+
+</div></div>
+<div class="viewcode-block" id="urlgenerator_factory"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.urls.urlgenerator_factory">[docs]</a><span class="k">def</span> <span class="nf">urlgenerator_factory</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span><span class="n">parent</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the generated URL as a String</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="n">UrlGenerator</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span><span class="n">parent</span><span class="p">)()</span>
+
+
+</div>
+<div class="viewcode-block" id="generic_url_maker"><a class="viewcode-back" href="../../../AuShadha.utilities.html#AuShadha.utilities.urls.generic_url_maker">[docs]</a><span class="k">def</span> <span class="nf">generic_url_maker</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">root_object</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Returns the URL Pattern for any AuShadha Object</span>
+<span class="sd">      Following the naming conventions</span>
+<span class="sd">      instance   : an instance of a Django Model</span>
+<span class="sd">      action     : action that URL will commit : add/edit/delete/list/</span>
+<span class="sd">      root_object: for the list option is root_object is False, instance id will be appended to URL else no id</span>
+<span class="sd">                   will be appended.</span>
+<span class="sd">                   Eg:: to list all patients, under a clinic once a queryset is done</span>
+<span class="sd">                   the id will be that of the clinic. But for the root object clinic since there is no db_relationship</span>
+<span class="sd">                   that fetches a list of clinics, all clinics are fetched and listed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># FIXME:: may be better to rely on django.contrib.contenttypes.ContentType</span>
+              <span class="c"># to do a similar thing rather than using _meta</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">root_object</span><span class="p">:</span>
+        <span class="c">#url = unicode(APP_ROOT_URL) + unicode(instance._meta.app_label)+ &quot;/&quot; + unicode(action) +&quot;/&quot; + unicode(id) +&quot;/&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">APP_ROOT_URL</span><span class="p">)</span>              <span class="o">+</span> \
+            <span class="nb">unicode</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">app_label</span><span class="p">)</span>  <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> \
+            <span class="nb">unicode</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">__model_label__</span><span class="p">)</span>  <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> \
+            <span class="nb">unicode</span><span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="nb">unicode</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span>
+    <span class="k">if</span> <span class="n">root_object</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">APP_ROOT_URL</span><span class="p">)</span> <span class="o">+</span> <span class="nb">unicode</span><span class="p">(</span>
+            <span class="n">instance</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">app_label</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span>
+    <span class="k">return</span> <span class="n">url</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

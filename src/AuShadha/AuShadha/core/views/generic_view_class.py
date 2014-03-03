@@ -3,14 +3,14 @@
 # This is a ' Experimental Effort ' to do something like Django Class Based Views.
 #
 # Eventually I hope to do something Generic Class Based Views dont. Something
-# specific to AuShadha .....
+#   specific to AuShadha .....
 #
-# phyexam.presentation_classes.PhyExamBasePresentationClass was a sandbox which 
-# works well. 
+# visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass was a sandbox 
+#   which works well. 
 #
 # This is an attempt to make it Project wide. PhyExamBasePresentationClass
-# has been imported here just to extend it. Actually when it is implemented fully,
-# this will be the base class
+#   has been imported here just to extend it. Actually when it is implemented fully,
+#   this will be the base class
 #
 #################################################################################
 
@@ -26,14 +26,15 @@ from AuShadha.utilities.forms import AuModelFormErrorFormatter,aumodelformerrorf
 
 class SingleModelInstanceView(object):
 
-    """Creates a Class Based Representation of Single Model Instance for
-    manipulation and HTML Formatting.
+    """
+      Creates a Class Based Representation of Single Model Instance for
+      manipulation and HTML Formatting.
 
-    This is used for HTML, JSON, XML generation and Formatting.
+      This is used for HTML, JSON, XML generation and Formatting.
 
-    Subclasses can generate appropriate HTML forms with Dijit Widgets and do validation.
+      Subclasses can generate appropriate HTML forms with Dijit Widgets and do validation.
 
-    Template rendering is done and rendered templates are stored as instance attributes.
+      Template rendering is done and rendered templates are stored as instance attributes.
 
     """
 

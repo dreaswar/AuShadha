@@ -6,31 +6,41 @@
 # License     : GNU-GPL Version 3 , See AuShadha/LICENSE.txt
 ################################################################################
 
+"""
+  This module and its classes used to generated DijitTree widgets
+
+  This has now been partly replaced with PyYAML based markup and parsing
+    to generate the JSON for the same. Part of the code is still used to construct 
+    the tree using YAML
+
+"""
+
 import json as JSON
 #from django.utils import simplejson
 #from django.core import serializers
 #from django.core.serializers import json
 #from django.core.serializers.json import DjangoJSONEncoder
 
+
 class DijitTreeNode(object):
 
   """
-   Class Based representation of a Tree Node
-   
-   Tree Node instances can be added to a Tree Instance with the add_child_node method
-   
-   __init__ takes dictionary with compulsary attrs of 'id','name', and 'type'
-   
-   These can be changed by subclassing the node / changing the self.basic_node_attrs
-   
-   Extra attributes can always be added. There is no restriction
-   
-   Child nodes can be added by using the add_child_node method. This takes the same 
-      attrs as the DijitTreeNode class and checks for repetition of 'id' attribute. 
-      DuplicateIDError is raised if 'id' is repeated. 
-   
-   Child node can be removed / edited / added as per requirement. 
-   
+    Class Based representation of a Tree Node
+
+    Tree Node instances can be added to a Tree Instance with the add_child_node method
+
+    __init__ takes dictionary with compulsary attrs of 'id','name', and 'type'
+
+    These can be changed by subclassing the node / changing the self.basic_node_attrs
+
+    Extra attributes can always be added. There is no restriction
+
+    Child nodes can be added by using the add_child_node method. This takes the same 
+        attrs as the DijitTreeNode class and checks for repetition of 'id' attribute. 
+        DuplicateIDError is raised if 'id' is repeated. 
+
+    Child node can be removed / edited / added as per requirement. 
+
   """
 
   def __init__(self,attrs):

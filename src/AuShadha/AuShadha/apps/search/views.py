@@ -1,10 +1,15 @@
 ################################################################################
 # Project     : AuShadha
-# Description : Views for Initial UI Loading
+# Description : Views for Search App
 # Author      : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
 # Date        : 16-09-2013
 ################################################################################
 
+""" 
+  Holds the views for the Search application.
+  This application will search Db for Patients 
+  Can be configured to search for anything
+"""
 
 # General Module imports-----------------------------------
 from datetime import datetime, date, time
@@ -16,22 +21,19 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 #from django.core.context_processors import csrf
 from django.contrib.auth.models import User
-
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
-
 from django.utils import simplejson
 from django.core import serializers
 from django.core.serializers import json
 from django.core.serializers.json import DjangoJSONEncoder
-
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
 
-# Application Specific Model Imports-----------------------
+# AuShadha imports
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.apps.ui.ui import ui as UI
@@ -40,7 +42,7 @@ from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 from AuShadha.apps.clinic.models import Clinic
 
-#from patient.models import PatientDetail
+# Relative imports with UI.get_module()
 PatientDetail = UI.get_module("PatientRegistration")
 Demographics = UI.get_module("Demographics")
 Contact = UI.get_module("Contact")
@@ -49,18 +51,20 @@ EmailAndFax = UI.get_module("EmailAndFax")
 Guardian = UI.get_module("Guardian")
 
 
-# Views start here -----------------------------------------
-
-
 @login_required
 def aushadha_patient_search(request, patient_id= None):
+  '''
+   Searches for Patients
+  '''
   # FIXME Dojo sends REST queries with * suffix. This has to be split and dealt with before json generation is done.
+
   user = request.user
+
   if request.method == "GET" and request.is_ajax():
       if not patient_id:
           try:
               name = unicode(request.GET.get('name'))
-              print "You have queried Patients with Full Name containing: ", name
+              #print "You have queried Patients with Full Name containing: ", name
           except(TypeError, ValueError, NameError, KeyError):
               raise Http404(
                   "Bad Parameters.. No Search Results Could be returned. ")
@@ -68,13 +72,12 @@ def aushadha_patient_search(request, patient_id= None):
               pat_obj = PatientDetail.objects.all()
           elif name[-1:] == "*":
               name = name[0:-1]
-              print "Name after stripping trailing '*' is: ", name
-              pat_obj = PatientDetail.objects.filter(
-                  full_name__icontains=name)
+              #print "Name after stripping trailing '*' is: ", name
+              pat_obj = PatientDetail.objects.filter(full_name__icontains=name)
           else:
-              pat_obj = PatientDetail.objects.filter(
-                  full_name__icontains=name)
+              pat_obj = PatientDetail.objects.filter(full_name__icontains=name)
           json = []
+
           if pat_obj:
               for patient in pat_obj:
                   data_to_append = {}
@@ -131,7 +134,7 @@ def aushadha_patient_search(request, patient_id= None):
     raise Http404("Bad Request Method")
 
 
-########################## OLD CODE NEEDS TO BE RELOOKED. THIS WAS THE EARLY ADVANCED SEARCH IMPLEMENTATION #############
+########################## OLD CODE. NEEDS TO BE RELOOKED. THIS WAS THE EARLY ADVANCED SEARCH IMPLEMENTATION #############
 
 #@login_required
 #def aushadha_advanced_patient_search(request, search_by, search_for):

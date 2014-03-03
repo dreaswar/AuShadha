@@ -6,12 +6,15 @@
 # License      : GNU-GPL Version 3,Please see AuShadha/LICENSE.txt for details
 ################################################################################
 
+"""
+  Module which sets up the UI on load
+"""
 
-# General Module imports-----------------------------------
+# General Module imports
 from datetime import datetime, date, time
 import importlib
 
-## General Django Imports----------------------------------
+# General Django Imports
 from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
@@ -19,24 +22,9 @@ from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
-##from django.core.context_processors import csrf
-#from django.contrib.auth.models import User
-##from django.views.decorators.csrf import csrf_exempt
-##from django.views.decorators.cache import never_cache
-##from django.views.decorators.csrf import csrf_protect
-##from django.views.decorators.debug import sensitive_post_parameters
-##from django.core.paginator import Paginator
-##from django.template.response import TemplateResponse
-##from django.contrib.sites.models import get_current_site
-##import urlparse
-##from django.core import serializers
-##from django.core.serializers import json
-##from django.core.serializers.json import DjangoJSONEncoder
-
+#AuShadha imports
 from AuShadha import settings
 from AuShadha.apps.ui.ui import ui as UI
-
-## Views start here -----------------------------------------
 
 
 def serialise_ui(UI):
@@ -53,7 +41,7 @@ def serialise_ui(UI):
 
 @login_required
 def installed_apps(request):
-  
+
   """ 
 
     Generates the Installed App list from settings.ENABLED_APPS 
@@ -66,13 +54,13 @@ def installed_apps(request):
 
     Ideally this function will only pass the serialized value, at the most 
     filtering 'django' and 'aushadha' packages
-    
+
     Once the UI.registry can be improved to take in arbitraty class instances, 
     the ui_sections hack which has been used in each module's __init__.py can 
     be removed. 
 
   """ 
-  
+
   user = request.user
 
   if request.method == "GET":
@@ -83,6 +71,7 @@ def installed_apps(request):
     for app in apps:
       main_module = app.split('.')[0]
       app_name = app.split('.')[-1]
+
       #Hack to avoid core modules. This way the UI atleast starts with core modules
       #as dependencies
       if  main_module not in ['django','AuShadha'] or app_name in ['search']:
@@ -93,7 +82,7 @@ def installed_apps(request):
           url = ui_sections['widgets']['tree']
         else:
           url = None
-        #print label
+
         if label:
           apps = {}
           apps['app'] = label
@@ -108,7 +97,6 @@ def installed_apps(request):
             }
     json = simplejson.dumps(data)
     return HttpResponse(json, content_type='application/json')
+
   else:
     raise Http404("Bad Request Method")
-
-

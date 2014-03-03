@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>visit.visit.utilities &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for visit.visit.utilities</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+<span class="c">#from .models import VisitDetail, VisitComplaint</span>
+
+<span class="n">PatientDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;PatientRegistration&quot;</span><span class="p">)</span>
+<span class="n">VisitDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit&quot;</span><span class="p">)</span>
+<span class="n">VisitComplaint</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit_Complaint&quot;</span><span class="p">)</span>
+
+
+
+
+<div class="viewcode-block" id="get_all_complaints"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.utilities.get_all_complaints">[docs]</a><span class="k">def</span> <span class="nf">get_all_complaints</span><span class="p">(</span><span class="n">visit</span><span class="p">):</span>
+
+    <span class="n">v_id</span> <span class="o">=</span> <span class="n">visit</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">pat_obj</span>  <span class="o">=</span> <span class="n">visit</span><span class="o">.</span><span class="n">patient_detail</span>
+
+    <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">patient_detail</span> <span class="o">=</span> <span class="n">pat_obj</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-visit_date&#39;</span><span class="p">)</span>
+    <span class="n">visit_complaint_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">visit_obj</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">visit</span> <span class="ow">in</span> <span class="n">visit_obj</span><span class="p">:</span>
+            <span class="n">visit_complaints</span> <span class="o">=</span> <span class="n">VisitComplaint</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">visit</span> <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">visit_complaints</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">complaint</span> <span class="ow">in</span> <span class="n">visit_complaints</span><span class="p">:</span>
+                    <span class="n">dict_to_append</span> <span class="o">=</span> <span class="p">{}</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;complaint&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">complaint</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">duration</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;visit_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">visit_date</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;is_active&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">is_active</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span>
+                    <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;visit_fu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">has_fu_visits</span><span class="p">()</span>
+
+                    <span class="n">visit_complaint_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_to_append</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">visit_complaint_list</span>
+    
+
+<span class="c">####################################### PDF Render #############################</span>
+
+<span class="c"># Will be removed</span>
+<span class="c"># Better to rely on plain HTML</span>
+<span class="c"># This is lot of work and not an absolute necessity</span>
+<span class="c"># Add more complexity, external dependency to the project</span>
+<span class="c"># Cumbersome to style it with current tools</span>
+<span class="c"># Creates a significant additional skillset to learn with a very limited use case </span>
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="render_visit_pdf"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.utilities.render_visit_pdf">[docs]</a><span class="k">def</span> <span class="nf">render_visit_pdf</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">:</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+            <span class="n">visit_detail_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span>
+                <span class="s">&#39;Error!!:: AttributeError/ ValueError/ TypeError/ DoesNotExist&#39;</span><span class="p">)</span>
+        <span class="n">pat_detail_obj</span> <span class="o">=</span> <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">patient_detail</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;GET&#39;</span><span class="p">:</span>
+            <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span>
+                                      <span class="p">{</span><span class="s">&#39;user&#39;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+                                       <span class="s">&#39;pat_detail_obj&#39;</span><span class="p">:</span> <span class="n">pat_detail_obj</span><span class="p">,</span>
+                                       <span class="s">&#39;visit_detail_obj&#39;</span><span class="p">:</span> <span class="n">visit_detail_obj</span><span class="p">,</span>
+                                       <span class="p">}</span>
+                                      <span class="p">)</span>
+            <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">&#39;visit_detail/visit_pdf_template.html&#39;</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;POST&#39;</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request..&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s">&#39;/login&#39;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="render_patient_visits_pdf"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.utilities.render_patient_visits_pdf">[docs]</a><span class="k">def</span> <span class="nf">render_patient_visits_pdf</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">:</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+            <span class="n">patient_detail_obj</span> <span class="o">=</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="n">PatientDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span>
+                <span class="s">&#39;Error!!:: AttributeError/ ValueError/ TypeError/ DoesNotExist&#39;</span><span class="p">)</span>
+        <span class="n">visit_detail_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="n">patient_detail</span><span class="o">=</span><span class="n">patient_detail_obj</span><span class="p">)</span>
+        <span class="n">visit_obj_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">visit_detail_obj</span><span class="p">:</span>
+            <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;Listing the Visits&quot;</span>
+            <span class="k">for</span> <span class="n">visit</span> <span class="ow">in</span> <span class="n">visit_detail_obj</span><span class="p">:</span>
+                <span class="n">dict_to_append</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">visit_complaint_obj</span> <span class="o">=</span> <span class="n">VisitComplaint</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                    <span class="n">visit_detail</span><span class="o">=</span><span class="n">visit</span><span class="p">)</span>
+                <span class="n">visit_hpi_obj</span> <span class="o">=</span> <span class="n">VisitHPI</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                    <span class="n">visit_detail</span><span class="o">=</span><span class="n">visit</span><span class="p">)</span>
+                <span class="n">visit_ros_obj</span> <span class="o">=</span> <span class="n">VisitROS</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                    <span class="n">visit_detail</span><span class="o">=</span><span class="n">visit</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">visit_ros_obj</span><span class="p">:</span>
+                    <span class="n">visit_ros_obj</span> <span class="o">=</span> <span class="n">visit_ros_obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">dict_to_append</span><span class="p">[</span><span class="n">visit</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;complaint&#39;</span><span class="p">:</span> <span class="n">visit_complaint_obj</span><span class="p">,</span>
+                                         <span class="s">&#39;hpi&#39;</span><span class="p">:</span> <span class="n">visit_hpi_obj</span><span class="p">,</span>
+                                         <span class="s">&#39;ros&#39;</span><span class="p">:</span> <span class="n">format_ros</span><span class="p">(</span><span class="n">visit_ros_obj</span><span class="p">)</span>
+                                         <span class="p">}</span>
+                <span class="n">visit_obj_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_to_append</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">error_message</span> <span class="o">=</span> <span class="s">&quot;No Visits Recorded&quot;</span>
+
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;GET&#39;</span><span class="p">:</span>
+            <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span>
+                <span class="n">request</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;user&#39;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+                          <span class="s">&#39;visit_detail_obj&#39;</span><span class="p">:</span> <span class="n">visit_detail_obj</span><span class="p">,</span>
+                          <span class="s">&#39;visit_obj_list&#39;</span><span class="p">:</span> <span class="n">visit_obj_list</span><span class="p">,</span>
+                          <span class="s">&#39;patient_detail_obj&#39;</span><span class="p">:</span> <span class="n">patient_detail_obj</span><span class="p">,</span>
+                          <span class="s">&#39;error_message&#39;</span><span class="p">:</span> <span class="n">error_message</span><span class="p">,</span>
+                          <span class="s">&#39;pagesize&#39;</span><span class="p">:</span> <span class="s">&quot;A4&quot;</span>
+                          <span class="p">})</span>
+
+            <span class="n">template</span> <span class="o">=</span> <span class="n">get_template</span><span class="p">(</span>
+                <span class="s">&#39;visit_detail/patient_visit_pdf_template.html&#39;</span><span class="p">)</span>
+            <span class="n">html</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
+            <span class="n">pdf</span> <span class="o">=</span> <span class="n">pisa</span><span class="o">.</span><span class="n">pisaDocument</span><span class="p">(</span>
+                <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;UTF-8&quot;</span><span class="p">)),</span> <span class="n">result</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">pdf</span><span class="o">.</span><span class="n">err</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(),</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">&#39;application/pdf&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&quot;Error Generating PDF.. </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">html</span><span class="p">))</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request..&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s">&#39;/login&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="has_previous_visits"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.utilities.has_previous_visits">[docs]</a><span class="k">def</span> <span class="nf">has_previous_visits</span><span class="p">(</span><span class="n">visit_id</span><span class="p">):</span>
+  <span class="n">visit_detail_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">visit_id</span><span class="p">)</span> <span class="p">)</span>
+  <span class="n">patient_detail_obj</span> <span class="o">=</span> <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">patient_detail</span>
+  <span class="n">all_visits</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">patient_detail</span> <span class="o">=</span> <span class="n">patient_detail_obj</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;visit_date&#39;</span><span class="p">)</span>
+
+  <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">all_visits</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">visit_date</span> <span class="o">&lt;=</span> <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">visit_date</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v</span> <span class="o">!=</span> <span class="n">visit_detail_obj</span><span class="p">):</span>
+      <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">continue</span>
+
+
+<span class="c">#@login_required</span>
+<span class="c">#def visit_summary(request, patient_id = None):</span>
+
+    <span class="c">#user = request.user</span>
+
+    <span class="c">#if request.method == &quot;GET&quot; and request.is_ajax():</span>
+        <span class="c">#try:</span>
+            <span class="c">#if patient_id:</span>
+              <span class="c">#patient_id = int(patient_id)</span>
+            <span class="c">#else:</span>
+              <span class="c">#patient_id = int(request.GET.get(&#39;patient_id&#39;) )</span>
+            <span class="c">#print &quot;Listing Summary for patient with ID: &quot; + str(patient_id)</span>
+            <span class="c">#patient_detail_obj = PatientDetail.objects.get(pk=patient_id)</span>
+            <span class="c">#visit_detail_obj = VisitDetail.objects.filter(</span>
+                <span class="c">#patient_detail=patient_detail_obj).order_by(&#39;-visit_date&#39;)</span>
+        <span class="c">#except (TypeError, NameError, ValueError, AttributeError, KeyError):</span>
+            <span class="c">#raise Http404(&quot;Error ! Invalid Request Parameters. &quot;)</span>
+        <span class="c">#except (PatientDetail.DoesNotExist):</span>
+            <span class="c">#raise Http404(&quot;Requested Patient Does not exist.&quot;)</span>
+
+        <span class="c">#visit_obj_list = []</span>
+        <span class="c">#if visit_detail_obj:</span>
+            <span class="c">#error_message = &quot;Listing the Visits in &quot;, visit_detail_obj</span>
+            <span class="c">#print &quot;Listing the Visits in &quot;, visit_detail_obj</span>
+            <span class="c">#for visit in visit_detail_obj:</span>
+                <span class="c">#dict_to_append = OrderedDict()</span>
+                <span class="c">#dict_to_append[visit] = None</span>
+                <span class="c">#print &quot;Aggregating sub-modules in visit: &quot;, visit</span>
+                <span class="c">#visit_complaint_obj = VisitComplaint.objects.filter(</span>
+                    <span class="c">#visit_detail=visit)</span>
+                <span class="c">#visit_hpi_obj = VisitHPI.objects.filter(</span>
+                    <span class="c">#visit_detail=visit)</span>
+                <span class="c">#visit_ros_obj = VisitROS.objects.filter(</span>
+                    <span class="c">#visit_detail=visit)</span>
+                <span class="c">#vital_exam_obj = VitalExam_FreeModel.objects.filter(</span>
+                    <span class="c">#visit_detail=visit)</span>
+                <span class="c">#gen_exam_obj = GenExam_FreeModel.objects.filter(</span>
+                    <span class="c">#visit_detail=visit)</span>
+                <span class="c">#sys_exam_obj = SysExam_FreeModel.objects.filter(</span>
+                    <span class="c">#visit_detail=visit)</span>
+                <span class="c">#neuro_exam_obj = PeriNeuroExam_FreeModel.objects.filter(</span>
+                    <span class="c">#visit_detail=visit)</span>
+                <span class="c">#vasc_exam_obj = VascExam_FreeModel.objects.filter(</span>
+                    <span class="c">#visit_detail=visit)</span>
+
+                <span class="c">#if visit_hpi_obj:</span>
+                    <span class="c">#visit_hpi_obj = visit_hpi_obj[0]</span>
+
+                <span class="c">#if visit_ros_obj:</span>
+                    <span class="c">#visit_ros_obj = visit_ros_obj[0]</span>
+                    <span class="c">#v_ros = visitrospresentationclass_factory(visit_ros_obj)</span>
+                <span class="c">#else:</span>
+                  <span class="c">#v_ros = &quot;No Review of System Recorded&quot;</span>
+
+                <span class="c">#if vital_exam_obj:</span>
+                    <span class="c">#vital_exam_obj = vital_exam_obj[0]</span>
+                    <span class="c">#vf = vitalexamobjpresentationclass_factory(vital_exam_obj)</span>
+                <span class="c">#else:</span>
+                    <span class="c">#vf = &quot;No Vitals Recorded&quot;</span>
+
+                <span class="c">#if gen_exam_obj:</span>
+                    <span class="c">#gen_exam_obj = gen_exam_obj[0]</span>
+                    <span class="c">#gf = genexamobjpresentationclass_factory(gen_exam_obj)</span>
+                <span class="c">#else:</span>
+                    <span class="c">#gf = &quot;No General Examination Recorded&quot;</span>
+
+                <span class="c">#if sys_exam_obj:</span>
+                    <span class="c">#sys_exam_obj = sys_exam_obj[0]</span>
+                    <span class="c">#sf = sysexamobjpresentationclass_factory(sys_exam_obj)</span>
+                <span class="c">#else:</span>
+                    <span class="c">#sf = &quot;No Systemic Examination Recorded&quot;</span>
+
+                <span class="c">#if neuro_exam_obj:</span>
+                    <span class="c">#neuro_exam_obj = neuro_exam_obj[0]</span>
+                    <span class="c">#nf = neuroexamobjpresentationclass_factory(neuro_exam_obj)</span>
+                <span class="c">#else:</span>
+                    <span class="c">#nf = &quot;No Neurological Examination Recorded&quot;</span>
+
+                <span class="c">#if vasc_exam_obj:</span>
+                    <span class="c">#vasc_f = vascexamobjpresentationclass_querysetfactory(vasc_exam_obj)</span>
+                <span class="c">#else:</span>
+                    <span class="c">#vasc_f = &quot;No Vascular Examination Recorded&quot;</span>
+
+                <span class="c">#d = OrderedDict()</span>
+                <span class="c">#d[&#39;complaint&#39;]= visit_complaint_obj</span>
+                <span class="c">#d[&#39;hpi&#39;]= visit_hpi_obj</span>
+                <span class="c">#d[&#39;ros&#39;]= v_ros</span>
+                <span class="c">#d[&#39;vitals&#39;]= vf</span>
+                <span class="c">#d[&#39;gen_exam&#39;]=gf</span>
+                <span class="c">#d[&#39;sys_exam&#39;]=sf</span>
+                <span class="c">#d[&#39;neuro_exam&#39;]=nf</span>
+                <span class="c">#d[&#39;vasc_exam&#39;]=vasc_f</span>
+                <span class="c">#dict_to_append[visit] = d</span>
+                <span class="c">#visit_obj_list.append(dict_to_append)</span>
+                <span class="c">##print &quot;Vascular Exam is: &quot;</span>
+                <span class="c">##print vasc_f</span>
+        <span class="c">#else:</span>
+            <span class="c">#error_message = &quot;No Visits Recorded&quot;</span>
+        <span class="c">#variable = RequestContext(</span>
+            <span class="c">#request, {&#39;user&#39;: user,</span>
+                      <span class="c">#&#39;visit_detail_obj&#39;: visit_detail_obj,</span>
+                      <span class="c">#&#39;visit_obj_list&#39;: visit_obj_list,</span>
+                      <span class="c">#&#39;patient_detail_obj&#39;: patient_detail_obj,</span>
+                      <span class="c">#&#39;error_ message&#39;: error_message</span>
+                      <span class="c">#})</span>
+        <span class="c">#return render_to_response(&#39;visit_detail/summary.html&#39;, variable)</span>
+    <span class="c">#else:</span>
+        <span class="c">#raise Http404(&quot; Error ! Unsupported Request..&quot;)</span>
+</pre></div></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

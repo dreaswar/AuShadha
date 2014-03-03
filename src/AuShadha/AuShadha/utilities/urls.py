@@ -6,15 +6,34 @@
 # License     : GNU-GPL Version 3, see AuShadha/LICENSE.txt 
 ################################################################################
 
+"""
+ Module defines the class and its factory that generates URL based on the actions an 
+ object can have / actions that can be performed on an object.
+ 
+ This is not intended to replace Django's reverse / {%url%} template tag, rather
+ this was an attempt to create something that was more like Zope with each object
+ being aware internally of the actions that can be done on/by it
+
+"""
 
 
 from AuShadha.settings import APP_ROOT_URL
 
 class UrlGenerator(object):
+  
   """ 
     Generates URL for the classes based on action, id and a parent class attribute
   """
+  #FIXME: This needs to be converted into more elegant code with Zope like awareness built
+          #into the Model class itself with options to override it at instance level
+  
+  #Parented actions are actions that require a relation to a higher model
+  # This is to say we are adding this object under that
+  # For eg: adding a Contact to the Patient , Listing contacts of a Patients
   parented_actions = ['add','list','json','tree','sidebar','summary','pane']
+  
+  # These are actions that act on the object themselves
+  # Editing / deleting / getting the object are examples
   parentless_actions = ['edit','del','info']
 
   def __init__(self,
@@ -149,7 +168,7 @@ def generic_url_maker(instance, action, id, root_object=False):
                    that fetches a list of clinics, all clinics are fetched and listed.
     """
     # FIXME:: may be better to rely on django.contrib.contenttypes.ContentType
-    # to do a similar thing rather than using _meta
+              # to do a similar thing rather than using _meta
 
     if not root_object:
         #url = unicode(APP_ROOT_URL) + unicode(instance._meta.app_label)+ "/" + unicode(action) +"/" + unicode(id) +"/"

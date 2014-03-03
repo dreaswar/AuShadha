@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.apps.ui.ui &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.apps.ui.ui</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : Provides the UI app for AuShadha. The Core UI and its elements. </span>
+<span class="c"># License     : GNU-GPL Version 3, see LICENSE.txt for details</span>
+<span class="c"># Author      : Dr. Easwar T.R</span>
+<span class="c"># Date        : 15-10-2013</span>
+<span class="c">################################################################################</span>
+
+
+
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="kn">from</span> <span class="nn">AuShadha.settings</span> <span class="kn">import</span> <span class="n">INSTALLED_APPS</span><span class="p">,</span> <span class="n">ENABLED_APPS</span><span class="p">,</span> <span class="n">UI_INITIALIZED</span><span class="p">,</span> <span class="n">APP_ROOT_URL</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.views.dijit_tree</span> <span class="kn">import</span> <span class="n">DijitTree</span><span class="p">,</span> <span class="n">DijitTreeNode</span>
+
+
+<span class="c">###################### EXPERIMENTAL CODE #######################################</span>
+
+<div class="viewcode-block" id="UIClass"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.UIClass">[docs]</a><span class="k">class</span> <span class="nc">UIClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  
+  <span class="sd">&quot;&quot;&quot; </span>
+
+<span class="sd">    The parent UIClass that all UIClass objects inherit from. </span>
+
+<span class="sd">    This is meant to pass the metadata for UI along with the ModelClass it is registered for</span>
+
+<span class="sd">    This metadata is passed to UI along with AuShadhaUI object instance </span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+  
+
+</div>
+<div class="viewcode-block" id="Containers"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.Containers">[docs]</a><span class="k">class</span> <span class="nc">Containers</span><span class="p">:</span>
+
+  <span class="n">dijit_class_name</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;BorderContainer&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;TabContainer&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;ContentPane&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;StackContainer&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;Dialog&#39;</span><span class="p">,</span>
+                      <span class="s">&#39;Tooltip&#39;</span>
+                      <span class="p">]</span>
+
+  <span class="n">available_positions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;leading&#39;</span><span class="p">,</span><span class="s">&#39;top&#39;</span><span class="p">,</span><span class="s">&#39;center&#39;</span><span class="p">,</span><span class="s">&#39;trailing&#39;</span><span class="p">,</span><span class="s">&#39;bottom&#39;</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">container_layout</span> <span class="o">=</span><span class="p">{}</span>
+
+<div class="viewcode-block" id="Containers.create_main_container"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.Containers.create_main_container">[docs]</a>  <span class="k">def</span> <span class="nf">create_main_container</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">container_layout</span><span class="p">[</span><span class="s">&#39;BorderContainer&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_layout</span>
+
+</div></div>
+<div class="viewcode-block" id="Tree"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.Tree">[docs]</a><span class="k">class</span> <span class="nc">Tree</span><span class="p">:</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+  <span class="n">structure_node</span> <span class="o">=</span> <span class="p">[</span><span class="n">DijitTree</span><span class="p">]</span> <span class="c"># for Tree Structure as instance of DijitTree</span>
+</div>
+<div class="viewcode-block" id="Grid"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.Grid">[docs]</a><span class="k">class</span> <span class="nc">Grid</span><span class="p">:</span> 
+  <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+  <span class="n">structure</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+</div>
+<div class="viewcode-block" id="Widgets"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.Widgets">[docs]</a><span class="k">class</span> <span class="nc">Widgets</span><span class="p">:</span>
+  <span class="n">available_widgets</span> <span class="o">=</span> <span class="p">[</span><span class="n">Containers</span><span class="p">,</span><span class="n">Tree</span><span class="p">,</span> <span class="n">Grid</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="Layout"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.Layout">[docs]</a><span class="k">class</span> <span class="nc">Layout</span><span class="p">:</span>
+  <span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;column&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">Containers</span><span class="p">,]}</span>
+
+
+
+<span class="c">################################################################################</span>
+
+
+
+
+
+</div>
+<div class="viewcode-block" id="AlreadyRegisteredException"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.AlreadyRegisteredException">[docs]</a><span class="k">class</span> <span class="nc">AlreadyRegisteredException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;AlreadyRegisteredException&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="s">&quot;AlreadyRegisteredException&quot;</span><span class="p">)</span>
+
+
+</div>
+<div class="viewcode-block" id="NotRegisteredException"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.NotRegisteredException">[docs]</a><span class="k">class</span> <span class="nc">NotRegisteredException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role_name</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">module_role</span> <span class="o">=</span> <span class="n">role_name</span>
+
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="ne">Exception</span><span class="p">(</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">: Module not Registered ! &quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">module_role</span><span class="p">)</span> <span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="ne">Exception</span><span class="p">(</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">: Module not Registered ! &quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">module_role</span><span class="p">)</span> <span class="p">)</span>
+
+
+</div>
+<div class="viewcode-block" id="RoleRegistry"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.RoleRegistry">[docs]</a><span class="k">class</span> <span class="nc">RoleRegistry</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  
+  <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Registers accepted Roles on UI. Things like PatientRegistration, Admission, OPD Visits, Medical History </span>
+
+<span class="sd">    Basically any function a module is supposed to perform. </span>
+
+<span class="sd">    The UI will allow registration of one module for each function even if many that perform the same function are</span>
+<span class="sd">    installed. </span>
+<span class="sd">    </span>
+<span class="sd">    In case a module that is already set is overridden, a check will be made for database consistency and then a module will be </span>
+<span class="sd">    chosen. Supposed there are two modules for History : H_1 and H_2</span>
+<span class="sd">    </span>
+<span class="sd">    In a situation where H_1 and H_2 both seek registration, </span>
+<span class="sd">    </span>
+<span class="sd">    If any other module; Admission module for example depends on H_1, then it will be registered in preference. </span>
+<span class="sd">    </span>
+<span class="sd">    In case there is a clash with some other module an Exception will be raised and registration prevented.</span>
+<span class="sd">    </span>
+<span class="sd">    UI_INSTALLATION_STATE variable will be set to False</span>
+<span class="sd">  </span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c">#self.roles = [</span>
+                  <span class="c">#&#39;PatientRegistration&#39;,</span>
+                  <span class="c">#&#39;Admission&#39;,</span>
+                  <span class="c">#&#39;OpdVisits&#39;,</span>
+                  <span class="c">#&#39;MedicalHistory&#39;,</span>
+                  <span class="c">#&#39;SurgicalHistory&#39;,</span>
+                  <span class="c">#&#39;FamilyHistory&#39;,</span>
+                  <span class="c">#&#39;SocialHistory&#39;,</span>
+                  <span class="c">#&#39;MedicationList&#39;,</span>
+                  <span class="c">#&#39;AllergyList&#39;,</span>
+                  <span class="c">#&#39;LabInvestigations&#39;,</span>
+                  <span class="c">#&#39;ImagingStudies&#39;,</span>
+                  <span class="c">#&#39;Demographics&#39;,</span>
+                  <span class="c">#&#39;Contact&#39;,</span>
+                  <span class="c">#&#39;Phone&#39;,</span>
+                  <span class="c">#&#39;Guardian&#39;,</span>
+                  <span class="c">#&#39;EmailAndFax&#39;,</span>
+                  <span class="c">#&#39;Immunisation&#39;,</span>
+                  <span class="c">#&#39;PhysicalExamination&#39;</span>
+                <span class="c">#]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">roles</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">ENABLED_APPS</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">app</span><span class="p">[</span><span class="s">&#39;role&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">roles</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">roles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">app</span><span class="p">[</span><span class="s">&#39;role&#39;</span><span class="p">]</span> <span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Skipping role and the app as the app role is duplication in configure.yaml&quot;</span>
+
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">roles</span>
+
+<div class="viewcode-block" id="RoleRegistry.register_role"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.RoleRegistry.register_role">[docs]</a>  <span class="k">def</span> <span class="nf">register_role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">role</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">roles</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">roles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">role</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="n">AlreadyRegisteredException</span><span class="p">(</span><span class="s">&quot;AlreadyRegisteredException&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="RoleRegistry.unregister_role"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.RoleRegistry.unregister_role">[docs]</a>  <span class="k">def</span> <span class="nf">unregister_role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">role</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">roles</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="n">NotRegisteredException</span><span class="p">(</span><span class="s">&quot;NotRegisteredException&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">roles</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">role</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+</div>
+<div class="viewcode-block" id="RoleRegistry.update_role"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.RoleRegistry.update_role">[docs]</a>  <span class="k">def</span> <span class="nf">update_role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">role</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">roles</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="n">NotRegisteredException</span><span class="p">(</span><span class="s">&quot;NotRegisteredException&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">roles</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">role</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+
+
+
+
+</div></div>
+<div class="viewcode-block" id="ModuleRegistry"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.ModuleRegistry">[docs]</a><span class="k">class</span> <span class="nc">ModuleRegistry</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  
+  <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Aggregates all the installed_modules on settings.py and checks the __init__.py for imports / registration </span>
+<span class="sd">    </span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">modules</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">enabled_apps</span> <span class="o">=</span> <span class="n">ENABLED_APPS</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">registered_modules</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">ENABLED_APPS</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span> <span class="n">app</span><span class="p">[</span><span class="s">&#39;app&#39;</span><span class="p">]</span> <span class="p">)</span>
+      <span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">)</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">app</span><span class="p">[</span><span class="s">&#39;app&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">app</span><span class="p">[</span><span class="s">&#39;app&#39;</span><span class="p">]</span> <span class="p">)</span>
+        <span class="k">print</span> <span class="s">&quot;*&quot;</span> <span class="o">*</span><span class="mi">100</span>
+        <span class="k">print</span> <span class="nb">type</span><span class="p">(</span> <span class="n">app</span><span class="p">[</span><span class="s">&#39;app&#39;</span><span class="p">]</span> <span class="p">)</span>
+
+    <span class="c">#for module in INSTALLED_APPS:</span>
+      <span class="c">#try:</span>
+        <span class="c">#module = importlib.import_module(module)</span>
+      <span class="c">#except(ImportError) as ex:</span>
+        <span class="c">#raise ImportError(ex)</span>
+      
+      <span class="c">#if not module in self.modules:</span>
+        <span class="c">#self.modules.append(module)</span>
+        <span class="c">#print &quot;*&quot; *100</span>
+        <span class="c">#print type(module)</span>
+  
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">modules</span>
+
+
+
+
+</div>
+<div class="viewcode-block" id="AuShadhaUI"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.AuShadhaUI">[docs]</a><span class="k">class</span> <span class="nc">AuShadhaUI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The UI Object which will help registration of the elements of UI and installed modules</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">registry</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="c">#self.mass_register()</span>
+
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">registry</span>
+  
+<div class="viewcode-block" id="AuShadhaUI.mass_register"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.AuShadhaUI.mass_register">[docs]</a>  <span class="k">def</span> <span class="nf">mass_register</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ENABLED_APPS</span><span class="p">:</span>
+      <span class="n">app</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;app&#39;</span><span class="p">]</span>
+      <span class="n">import_from</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;module&#39;</span><span class="p">]</span>
+      <span class="n">role</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;role&#39;</span><span class="p">]</span>
+      <span class="n">class_name</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;class_name&#39;</span><span class="p">]</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Trying to import&quot;</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="s">&quot; module&quot;</span>
+        <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span> <span class="n">app</span> <span class="p">)</span> 
+        <span class="k">print</span> <span class="n">module</span>
+        <span class="k">print</span> <span class="nb">dir</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+        <span class="n">model_file</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">import_from</span> <span class="p">)</span>
+        <span class="k">print</span> <span class="n">model_file</span>
+        <span class="n">cl</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model_file</span><span class="p">,</span> <span class="n">class_name</span> <span class="p">)</span>
+        <span class="k">print</span> <span class="n">cl</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">role</span><span class="p">,</span><span class="n">cl</span><span class="p">)</span>
+      <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">)</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="AuShadhaUI.register"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.AuShadhaUI.register">[docs]</a>  <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">class_obj</span> <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Registers a module with the UI for a particular role. &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">role</span><span class="p">):</span>
+      <span class="k">raise</span> <span class="n">AlreadyRegisteredException</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">registry</span><span class="p">[</span><span class="n">role</span><span class="p">]</span>  <span class="o">=</span> <span class="n">class_obj</span>
+</div>
+<div class="viewcode-block" id="AuShadhaUI.check_registry"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.AuShadhaUI.check_registry">[docs]</a>  <span class="k">def</span> <span class="nf">check_registry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Checks the registry and raises an AlreadyRegisteredException if the module is registered already &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+  </div>
+<div class="viewcode-block" id="AuShadhaUI.update_module"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.AuShadhaUI.update_module">[docs]</a>  <span class="k">def</span> <span class="nf">update_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">,</span> <span class="n">module_role</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Update a particular module and its role &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+  </div>
+<div class="viewcode-block" id="AuShadhaUI.delete_module"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.AuShadhaUI.delete_module">[docs]</a>  <span class="k">def</span> <span class="nf">delete_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Registers a module with the UI for a particular role. &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+  </div>
+<div class="viewcode-block" id="AuShadhaUI.get_module"><a class="viewcode-back" href="../../../../AuShadha.apps.ui.html#AuShadha.apps.ui.ui.AuShadhaUI.get_module">[docs]</a>  <span class="k">def</span> <span class="nf">get_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Gets a Module registered for a particular role. &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="n">module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">role</span><span class="p">)</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">module</span> <span class="ow">and</span> <span class="n">UI_INITIALIZED</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="n">NotRegisteredException</span><span class="p">(</span><span class="n">role</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">module</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span><span class="ne">ImportError</span><span class="p">,</span><span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+
+
+<span class="c">#Creates an instance of the AuShadhaUI</span></div></div>
+<span class="n">ui</span> <span class="o">=</span> <span class="n">AuShadhaUI</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

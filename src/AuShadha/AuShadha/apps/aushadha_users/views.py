@@ -1,53 +1,49 @@
-# --------------------------------------------------------------
+##################################################################
 # Views User Authentication and login / logout
-# Author: Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
-# License: GNU-GPL Version 3
-# Date: 01-01-2013
-# ---------------------------------------------------------------
+# Author  : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
+# License : GNU-GPL Version 3
+# Date    : 01-01-2013
+##################################################################
 
+# Import Stdlib
 import os
 import sys
+import urlparse
+from datetime import datetime, date, time
 
-# General Django Imports----------------------------------
+
+# General Django Imports
 
 from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 #from django.core.context_processors import csrf
-
 from django.contrib.auth.models import User
-
 from django.core.urlresolvers import reverse
-
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
-
 from django.core.paginator import Paginator
-
 from django.utils import simplejson
 from django.core import serializers
 from django.core.serializers import json
 from django.core.serializers.json import DjangoJSONEncoder
-
 from django.contrib.auth.views import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.forms import AuthenticationForm
 from django.template.response import TemplateResponse
 from django.contrib.sites.models import get_current_site
-import urlparse
 
-# General Module imports-----------------------------------
-from datetime import datetime, date, time
 
-# Application Specific Model Imports-----------------------
+
+# AuShadha Imports
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.apps.aushadha_users.models import AuShadhaUser, AuShadhaUserForm
 
-# Views start here -----------------------------------------
+
 
 
 @sensitive_post_parameters()
@@ -119,6 +115,6 @@ def login_view(request, template_name='registration/login.html',
 def logout_view(request):
     """View for logging out of AuShadha."""
     logout(request)
-    return HttpResponseRedirect('/AuShadha/')
-#    return HttpResponseRedirect('/login/')
+    #return HttpResponseRedirect('/AuShadha/')
+    return HttpResponseRedirect('/login/')
 # Create your views here.

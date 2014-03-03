@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>visit.visit_phyexam.presentation_classes &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for visit.visit_phyexam.presentation_classes</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Presentation classes for AuShadhaModels.</span>
+<span class="c"># </span>
+<span class="c"># This will format, pass validation output and generate HTML, JSON ouputs</span>
+<span class="c"># This is attempt to make something simple rather than use Django Class based</span>
+<span class="c">#   views.</span>
+<span class="c">#</span>
+<span class="c"># Author: Dr.Easwar T.R</span>
+<span class="c"># License: GNU-GPL Version 3</span>
+<span class="c"># Date : 09-09-2013</span>
+<span class="c">################################################################################</span>
+
+
+<span class="kn">from</span> <span class="nn">phy_exam_constants</span> <span class="kn">import</span> <span class="n">PC</span>
+<span class="kn">from</span> <span class="nn">validator</span> <span class="kn">import</span> <span class="n">validator_factory</span>
+
+<div class="viewcode-block" id="PhyExamBasePresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass">[docs]</a><span class="k">class</span> <span class="nc">PhyExamBasePresentationClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Creates a Class Based Representation of Physical Examination Object for manipulation</span>
+<span class="sd">      and HTML Formatting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">field_names</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">field_map</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">templates</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;add&#39;</span> <span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;edit&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;list&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;object&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exam_instance</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exam</span> <span class="o">=</span> <span class="n">exam_instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exam</span><span class="o">.</span><span class="n">__model_label__</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__app_label__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exam</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">app_label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exam</span><span class="o">.</span><span class="n">_meta</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="ow">in</span> <span class="n">PC</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">field_map</span> <span class="o">=</span> <span class="n">PC</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+<span class="s">                            Invalid Model Supplied. </span>
+<span class="s">                            This does not have a Presentation Model Registered.</span>
+<span class="s">                          &quot;&quot;&quot;</span>
+                          <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">field_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                  <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_map</span><span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+                  <span class="n">f</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">value_from_object</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exam</span><span class="p">)</span>
+                  <span class="n">f</span><span class="p">[</span><span class="s">&#39;class_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+                  <span class="n">f_validator</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;validator&#39;</span><span class="p">]</span>
+                  <span class="n">f_constraints</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;constraints&#39;</span><span class="p">]</span>
+                  <span class="n">f_compare_with</span>  <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;default&#39;</span><span class="p">]</span>
+
+                  <span class="c">#print &quot;Calling Factory Validator with Validator: &quot;, f_validator</span>
+                  <span class="c">#print &quot;Calling Factory Validator with Value of : &quot;, f[&#39;value&#39;]</span>
+                  <span class="c">#print &quot;Calling Factory Validator with Constraints: &quot;, f_constraints</span>
+                  <span class="c">#print &quot;Calling Factory Validator with Compare with: &quot;, f_compare_with</span>
+
+                  <span class="n">f</span><span class="p">[</span><span class="s">&#39;is_abnormal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">validator_factory</span><span class="p">(</span><span class="n">f_validator</span><span class="p">,</span>
+                                                      <span class="n">f</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">],</span>
+                                                      <span class="n">f_constraints</span><span class="p">,</span>
+                                                      <span class="n">f_compare_with</span><span class="p">)</span>
+                  <span class="c">#print &quot;Validator returned: &quot; , f[&#39;is_abnormal&#39;]</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span><span class="ne">NameError</span><span class="p">,</span><span class="ne">ValueError</span><span class="p">):</span>
+                  <span class="k">continue</span>
+            <span class="k">except</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+                <span class="k">print</span> <span class="s">&quot;AttributeError Raised....&quot;</span>
+                <span class="k">continue</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_html_div</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__call__</span><span class="p">()</span>
+
+    <span class="c"># def template_render(self):</span>
+        <span class="c"># try:</span>
+            <span class="c"># self.templates.object.render()</span>
+        <span class="c"># except(&#39;TemplateDoesNotExist&#39;):</span>
+            <span class="c"># return None</span>
+
+<div class="viewcode-block" id="PhyExamBasePresentationClass.build_html_div"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass.build_html_div">[docs]</a>    <span class="k">def</span> <span class="nf">build_html_div</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_map</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span>
+            <span class="n">class_name</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;class_name&#39;</span><span class="p">]</span>
+            <span class="n">is_abnormal</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;is_abnormal&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">class_name</span> <span class="o">==</span> <span class="s">&quot;BooleanField&quot;</span><span class="p">:</span> 
+                  <span class="n">value</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&quot;Present&quot;</span><span class="p">)</span>
+                  <span class="n">delimitter</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+                  <span class="n">unit</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                  <span class="n">value</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                  <span class="n">unit</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s">&#39;unit&#39;</span><span class="p">])</span>
+                  <span class="n">delimitter</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s">&#39;delimitter&#39;</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">is_abnormal</span><span class="p">:</span>
+                    <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;abnormal_value_indicator_text&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">class_name</span> <span class="o">==</span> <span class="s">&quot;BooleanField&quot;</span><span class="p">:</span>
+                  <span class="n">value</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&quot;Not Present&quot;</span><span class="p">)</span>
+                  <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                  <span class="n">value</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&quot;--Not Recorded--&quot;</span><span class="p">)</span>
+                  <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;suggestion_text&#39;</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">delimitter</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+            <span class="n">line</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;&lt;p&gt; &lt;span class=&#39;label_text&#39;&gt;</span><span class="si">%s</span><span class="s">:&lt;/span&gt; </span>
+<span class="s">                          &lt;span class=&quot;</span><span class="si">%s</span><span class="s">&quot;&gt;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">  &lt;/span&gt; </span>
+<span class="s">                      &lt;/p&gt;</span>
+<span class="s">                   &quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">html_class</span><span class="p">,</span><span class="n">value</span><span class="p">,</span> <span class="n">delimitter</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+            <span class="n">paragraph</span> <span class="o">+=</span> <span class="n">line</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;&quot;&lt;div&gt; </span><span class="si">%s</span><span class="s"> &lt;/div&gt;&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="PhyExamBasePresentationClass.build_table_header"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass.build_table_header">[docs]</a>    <span class="k">def</span> <span class="nf">build_table_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_map</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+          <span class="n">label</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">k</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+          <span class="n">header</span> <span class="o">+=</span> <span class="s">&#39;&lt;th&gt;&#39;</span><span class="o">+</span><span class="n">label</span><span class="o">+</span><span class="s">&#39;&lt;/th&gt;&#39;</span>
+        <span class="k">return</span> <span class="s">&quot;&lt;thead&gt; &lt;tr&gt; </span><span class="si">%s</span><span class="s"> &lt;/th&gt; &lt;/thead&gt;&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="PhyExamBasePresentationClass.build_table_rows"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass.build_table_rows">[docs]</a>    <span class="k">def</span> <span class="nf">build_table_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_map</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+          <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+          <span class="n">label</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+          <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span>
+          <span class="n">class_name</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;class_name&#39;</span><span class="p">]</span>
+          <span class="n">is_abnormal</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;is_abnormal&#39;</span><span class="p">]</span>
+          <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+              <span class="k">if</span> <span class="n">class_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&quot;BooleanField&quot;</span><span class="p">:</span>
+                <span class="n">value</span><span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s">&#39;unit&#39;</span><span class="p">])</span>
+                <span class="n">delimitter</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s">&#39;delimitter&#39;</span><span class="p">])</span>                
+              <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Present&quot;</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+                <span class="n">delimitter</span> <span class="o">=</span> <span class="s">&#39; &#39;</span>
+              <span class="k">if</span> <span class="n">is_abnormal</span><span class="p">:</span>
+                  <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;abnormal_value_indicator_text&#39;</span>
+          <span class="k">else</span><span class="p">:</span>
+              <span class="k">if</span> <span class="n">class_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&quot;BooleanField&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&quot;--Not Recorded--&quot;</span><span class="p">)</span>
+                <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;suggestion_text&#39;</span>
+              <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&quot;Not Present&quot;</span><span class="p">)</span>
+                <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+              <span class="n">unit</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+              <span class="n">delimitter</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+          <span class="n">line</span> <span class="o">+=</span> <span class="s">&quot;&quot;&quot;&lt;td class=&#39;</span><span class="si">%s</span><span class="s">&#39;&gt;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&lt;/td&gt;</span>
+<span class="s">                  &quot;&quot;&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">html_class</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">delimitter</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">&quot;&lt;tr &gt; </span><span class="si">%s</span><span class="s"> &lt;/tr&gt;&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="PhyExamBasePresentationClass.build_html_table"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass.build_html_table">[docs]</a>    <span class="k">def</span> <span class="nf">build_html_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">header</span> <span class="o">=</span> <span class="s">&#39;&lt;thead&gt; &lt;tr&gt;&#39;</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_map</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+          <span class="n">header</span> <span class="o">+=</span> <span class="s">&#39;&lt;th&gt;&#39;</span><span class="o">+</span><span class="n">k</span><span class="o">+</span><span class="s">&#39;&lt;/th&gt;&#39;</span>
+        <span class="n">header</span> <span class="o">+=</span> <span class="s">&#39;&lt;/tr&gt;&lt;/thead&gt;&#39;</span>
+
+        <span class="n">body</span> <span class="o">=</span> <span class="s">&#39;&lt;tbody&gt;&#39;</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_map</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="s">&#39;&lt;tr&gt;&#39;</span>
+            <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s">&#39;unit&#39;</span><span class="p">])</span>
+                <span class="n">delimitter</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s">&#39;delimitter&#39;</span><span class="p">])</span>
+                <span class="n">is_abnormal</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;is_abnormal&#39;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">is_abnormal</span><span class="p">:</span>
+                    <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;abnormal_value_indicator_text&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&quot;--Not Recorded--&quot;</span><span class="p">)</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">delimitter</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">html_class</span> <span class="o">=</span> <span class="s">&#39;suggestion_text&#39;</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;&lt;td class=&#39;label_text&#39;&gt;</span><span class="si">%s</span><span class="s">:&lt;/td&gt; </span>
+<span class="s">                      &lt;td class=&quot;</span><span class="si">%s</span><span class="s">&quot;&gt;</span><span class="si">%s</span><span class="s">&lt;/td&gt;</span>
+<span class="s">                      &lt;td&gt; </span><span class="si">%s</span><span class="s">  &lt;/td&gt;</span>
+<span class="s">                      &lt;td&gt; </span><span class="si">%s</span><span class="s">  &lt;/td&gt; </span>
+<span class="s">                   &quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">html_class</span><span class="p">,</span><span class="n">value</span><span class="p">,</span> <span class="n">delimitter</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+            <span class="n">row</span> <span class="o">+=</span> <span class="p">(</span><span class="n">line</span><span class="o">+</span><span class="s">&#39;&lt;/tr&gt;&#39;</span><span class="p">)</span>
+            <span class="n">body</span> <span class="o">+=</span> <span class="n">row</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;&quot;&lt;table class=&#39;content_pane_table&#39;&gt; </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> &lt;/table&gt;&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">header</span><span class="p">,</span><span class="n">body</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="PhyExamBasePresentationClass.return_object_json"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass.return_object_json">[docs]</a>    <span class="k">def</span> <span class="nf">return_object_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="PhyExamBasePresentationClass.return_object_grid_structure"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass.return_object_grid_structure">[docs]</a>    <span class="k">def</span> <span class="nf">return_object_grid_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+</div></div>
+<div class="viewcode-block" id="VisitComplaintsPresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.VisitComplaintsPresentationClass">[docs]</a><span class="k">class</span> <span class="nc">VisitComplaintsPresentationClass</span><span class="p">(</span><span class="n">PhyExamBasePresentationClass</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Creates a Class Based Representation of Visit Complaints for manipulation</span>
+<span class="sd">      and HTML Formatting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># templates = {</span>
+                            <span class="c">#&#39;add&#39; :get_template(&#39;visit/complaints/add.html&#39;),</span>
+                            <span class="c">#&#39;edit&#39;:get_template(&#39;visit/complaints/edit.html&#39;),</span>
+                            <span class="c">#&#39;list&#39;:get_template(&#39;visit/complaints/list.html&#39;),</span>
+                            <span class="c">#&#39;object&#39;: get_template(&#39;visit/complaints/complaint.html&#39;)</span>
+                            <span class="c">#}</span>
+
+    <span class="c"># def template_render(self):</span>
+        <span class="c"># try:</span>
+            <span class="c"># self.templates.object.render()</span>
+        <span class="c"># except(&#39;TemplateDoesNotExist&#39;):</span>
+            <span class="c"># return None</span>
+</div>
+<div class="viewcode-block" id="VisitROSPresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.VisitROSPresentationClass">[docs]</a><span class="k">class</span> <span class="nc">VisitROSPresentationClass</span><span class="p">(</span><span class="n">PhyExamBasePresentationClass</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Creates a Class Based Representation of Visit ROS</span>
+<span class="sd">      and HTML Formatting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># templates = {</span>
+                            <span class="c">#&#39;add&#39; :get_template(&#39;visit/ros/add.html&#39;),</span>
+                            <span class="c">#&#39;edit&#39;:get_template(&#39;visit/ros/edit.html&#39;),</span>
+                            <span class="c">#&#39;list&#39;:get_template(&#39;visit/ros/list.html&#39;),</span>
+                            <span class="c">#&#39;object&#39;: get_template(&#39;visit/ros/ros.html&#39;)</span>
+                            <span class="c">#}</span>
+
+    <span class="c"># def template_render(self):</span>
+        <span class="c"># try:</span>
+            <span class="c"># self.templates.object.render()</span>
+        <span class="c"># except(&#39;TemplateDoesNotExist&#39;):</span>
+            <span class="c"># return None</span>
+</div>
+<div class="viewcode-block" id="VisitHPIPresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.VisitHPIPresentationClass">[docs]</a><span class="k">class</span> <span class="nc">VisitHPIPresentationClass</span><span class="p">(</span><span class="n">PhyExamBasePresentationClass</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Creates a Class Based Representation of Visit HPI</span>
+<span class="sd">      and HTML Formatting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># templates = {</span>
+                            <span class="c">#&#39;add&#39; :get_template(&#39;visit/hpi/add.html&#39;),</span>
+                            <span class="c">#&#39;edit&#39;:get_template(&#39;visit/hpi/edit.html&#39;),</span>
+                            <span class="c">#&#39;list&#39;:get_template(&#39;visit/hpi/list.html&#39;),</span>
+                            <span class="c">#&#39;object&#39;: get_template(&#39;visit/hpi/hpi.html&#39;)</span>
+                            <span class="c">#}</span>
+
+    <span class="c"># def template_render(self):</span>
+        <span class="c"># try:</span>
+            <span class="c"># self.templates.object.render()</span>
+        <span class="c"># except(&#39;TemplateDoesNotExist&#39;):</span>
+            <span class="c"># return None</span>
+</div>
+<div class="viewcode-block" id="VitalExamObjPresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.VitalExamObjPresentationClass">[docs]</a><span class="k">class</span> <span class="nc">VitalExamObjPresentationClass</span><span class="p">(</span><span class="n">PhyExamBasePresentationClass</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Creates a Class Based Representation of Vital Object for manipulation</span>
+<span class="sd">      and HTML Formatting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># templates = {</span>
+                            <span class="c">#&#39;add&#39; :get_template(&#39;phyexam/vitals/add.html&#39;),</span>
+                            <span class="c">#&#39;edit&#39;:get_template(&#39;phyexam/vitals/edit.html&#39;),</span>
+                            <span class="c">#&#39;list&#39;:get_template(&#39;phyexam/vitals/list.html&#39;),</span>
+                            <span class="c">#&#39;object&#39;: get_template(&#39;phyexam/vitals/vital.html&#39;)</span>
+                            <span class="c">#}</span>
+
+    <span class="c"># def template_render(self):</span>
+        <span class="c"># try:</span>
+            <span class="c"># self.templates.object.render()</span>
+        <span class="c"># except(&#39;TemplateDoesNotExist&#39;):</span>
+            <span class="c"># return None</span>
+</div>
+<div class="viewcode-block" id="GenExamObjPresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.GenExamObjPresentationClass">[docs]</a><span class="k">class</span> <span class="nc">GenExamObjPresentationClass</span><span class="p">(</span><span class="n">PhyExamBasePresentationClass</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Creates a Class Based Representation of Vital Object for manipulation</span>
+<span class="sd">      and HTML Formatting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># templates = {</span>
+                            <span class="c">#&#39;add&#39; :get_template(&#39;phyexam/gen_exam/add.html&#39;),</span>
+                            <span class="c">#&#39;edit&#39;:get_template(&#39;phyexam/gen_exam/edit.html&#39;),</span>
+                            <span class="c">#&#39;list&#39;:get_template(&#39;phyexam/gen_exam/list.html&#39;),</span>
+                            <span class="c">#&#39;object&#39;: get_template(&#39;phyexam/gen_exam/gen_exam.html&#39;)</span>
+                            <span class="c">#}</span>
+
+    <span class="c"># def template_render(self):</span>
+        <span class="c"># try:</span>
+            <span class="c"># self.templates.object.render()</span>
+        <span class="c"># except(&#39;TemplateDoesNotExist&#39;):</span>
+            <span class="c"># return None</span>
+
+</div>
+<div class="viewcode-block" id="SysExamObjPresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.SysExamObjPresentationClass">[docs]</a><span class="k">class</span> <span class="nc">SysExamObjPresentationClass</span><span class="p">(</span><span class="n">PhyExamBasePresentationClass</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Creates a Class Based Representation of Vital Object for manipulation</span>
+<span class="sd">      and HTML Formatting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># templates = {</span>
+                            <span class="c">#&#39;add&#39; :get_template(&#39;phyexam/sys_exam/add.html&#39;),</span>
+                            <span class="c">#&#39;edit&#39;:get_template(&#39;phyexam/sys_exam/edit.html&#39;),</span>
+                            <span class="c">#&#39;list&#39;:get_template(&#39;phyexam/sys_exam/list.html&#39;),</span>
+                            <span class="c">#&#39;object&#39;: get_template(&#39;phyexam/sys_exam/sys_exam.html&#39;)</span>
+                            <span class="c">#}</span>
+
+    <span class="c"># def template_render(self):</span>
+        <span class="c"># try:</span>
+            <span class="c"># self.templates.object.render()</span>
+        <span class="c"># except(&#39;TemplateDoesNotExist&#39;):</span>
+            <span class="c"># return None</span>
+</div>
+<div class="viewcode-block" id="MusExamObjPresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.MusExamObjPresentationClass">[docs]</a><span class="k">class</span> <span class="nc">MusExamObjPresentationClass</span><span class="p">(</span><span class="n">PhyExamBasePresentationClass</span><span class="p">):</span>
+    <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="PeriNeuroExamObjPresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.PeriNeuroExamObjPresentationClass">[docs]</a><span class="k">class</span> <span class="nc">PeriNeuroExamObjPresentationClass</span><span class="p">(</span><span class="n">PhyExamBasePresentationClass</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Creates a Class Based Representation of Vital Object for manipulation</span>
+<span class="sd">      and HTML Formatting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># templates = {</span>
+                            <span class="c">#&#39;add&#39; :get_template(&#39;phyexam/neuro_exam/add.html&#39;),</span>
+                            <span class="c">#&#39;edit&#39;:get_template(&#39;phyexam/neuro_exam/edit.html&#39;),</span>
+                            <span class="c">#&#39;list&#39;:get_template(&#39;phyexam/neuro_exam/list.html&#39;),</span>
+                            <span class="c">#&#39;object&#39;: get_template(&#39;phyexam/neuro_exam/neuro_exam.html&#39;)</span>
+                            <span class="c">#}</span>
+
+    <span class="c"># def template_render(self):</span>
+        <span class="c"># try:</span>
+            <span class="c"># self.templates.object.render()</span>
+        <span class="c"># except(&#39;TemplateDoesNotExist&#39;):</span>
+            <span class="c"># return None</span>
+</div>
+<div class="viewcode-block" id="VascExamObjPresentationClass"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.VascExamObjPresentationClass">[docs]</a><span class="k">class</span> <span class="nc">VascExamObjPresentationClass</span><span class="p">(</span><span class="n">PhyExamBasePresentationClass</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Creates a Class Based Representation of Vital Object for manipulation</span>
+<span class="sd">      and HTML Formatting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># templates = {</span>
+                            <span class="c">#&#39;add&#39; :get_template(&#39;phyexam/vasc_exam/add.html&#39;),</span>
+                            <span class="c">#&#39;edit&#39;:get_template(&#39;phyexam/vasc_exam/edit.html&#39;),</span>
+                            <span class="c">#&#39;list&#39;:get_template(&#39;phyexam/vasc_exam/list.html&#39;),</span>
+                            <span class="c">#&#39;object&#39;: get_template(&#39;phyexam/vasc_exam/vasc_exam.html&#39;)</span>
+                            <span class="c">#}</span>
+
+    <span class="c"># def template_render(self):</span>
+        <span class="c"># try:</span>
+            <span class="c"># self.templates.object.render()</span>
+        <span class="c"># except(&#39;TemplateDoesNotExist&#39;):</span>
+            <span class="c"># return None</span>
+
+
+<span class="c">########################## Factory Functions...##################################</span>
+</div>
+<div class="viewcode-block" id="visitrospresentationclass_factory"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.visitrospresentationclass_factory">[docs]</a><span class="k">def</span> <span class="nf">visitrospresentationclass_factory</span><span class="p">(</span><span class="n">instance</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">VisitROSPresentationClass</span><span class="p">(</span><span class="n">instance</span><span class="p">)()</span>
+</div>
+<div class="viewcode-block" id="vitalexamobjpresentationclass_factory"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.vitalexamobjpresentationclass_factory">[docs]</a><span class="k">def</span> <span class="nf">vitalexamobjpresentationclass_factory</span><span class="p">(</span><span class="n">instance</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">VitalExamObjPresentationClass</span><span class="p">(</span><span class="n">instance</span><span class="p">)()</span>
+</div>
+<div class="viewcode-block" id="genexamobjpresentationclass_factory"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.genexamobjpresentationclass_factory">[docs]</a><span class="k">def</span> <span class="nf">genexamobjpresentationclass_factory</span><span class="p">(</span><span class="n">instance</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">GenExamObjPresentationClass</span><span class="p">(</span><span class="n">instance</span><span class="p">)()</span>
+</div>
+<div class="viewcode-block" id="sysexamobjpresentationclass_factory"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.sysexamobjpresentationclass_factory">[docs]</a><span class="k">def</span> <span class="nf">sysexamobjpresentationclass_factory</span><span class="p">(</span><span class="n">instance</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">GenExamObjPresentationClass</span><span class="p">(</span><span class="n">instance</span><span class="p">)()</span>
+</div>
+<div class="viewcode-block" id="musexamobjpresentationclass_factory"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.musexamobjpresentationclass_factory">[docs]</a><span class="k">def</span> <span class="nf">musexamobjpresentationclass_factory</span><span class="p">(</span><span class="n">instance</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">MusExamObjPresentationClass</span><span class="p">(</span><span class="n">instance</span><span class="p">)()</span>
+</div>
+<div class="viewcode-block" id="neuroexamobjpresentationclass_factory"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.neuroexamobjpresentationclass_factory">[docs]</a><span class="k">def</span> <span class="nf">neuroexamobjpresentationclass_factory</span><span class="p">(</span><span class="n">instance</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">PeriNeuroExamObjPresentationClass</span><span class="p">(</span><span class="n">instance</span><span class="p">)()</span>
+</div>
+<div class="viewcode-block" id="vascexamobjpresentationclass_factory"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.vascexamobjpresentationclass_factory">[docs]</a><span class="k">def</span> <span class="nf">vascexamobjpresentationclass_factory</span><span class="p">(</span><span class="n">instance</span><span class="p">):</span>
+  <span class="n">v</span> <span class="o">=</span> <span class="n">VascExamObjPresentationClass</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">v</span>
+</div>
+<div class="viewcode-block" id="vascexamobjpresentationclass_querysetfactory"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.presentation_classes.vascexamobjpresentationclass_querysetfactory">[docs]</a><span class="k">def</span> <span class="nf">vascexamobjpresentationclass_querysetfactory</span><span class="p">(</span><span class="n">queryset</span><span class="p">):</span>
+  <span class="n">h_head</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+  <span class="n">h_rows</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+  
+  <span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">:</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">vascexamobjpresentationclass_factory</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;Passing &quot;</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">__class__</span> <span class="p">,</span> <span class="s">&quot; to &quot;</span><span class="p">,</span> <span class="n">h</span><span class="o">.</span><span class="n">__class__</span>
+    <span class="k">print</span> <span class="s">&quot;Returning fieldmap of: &quot;</span>
+    <span class="k">print</span> <span class="n">h</span><span class="o">.</span><span class="n">field_map</span>
+    <span class="c">#print instance</span>
+    <span class="c">#print instance.__class__</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">h_head</span><span class="p">:</span>
+      <span class="n">h_head</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">build_table_header</span><span class="p">()</span>
+    <span class="n">h_rows</span> <span class="o">+=</span> <span class="n">h</span><span class="o">.</span><span class="n">build_table_rows</span><span class="p">()</span>
+
+  <span class="c">#print h_rows</span>
+  <span class="k">return</span> <span class="s">&quot;&lt;table class=&#39;content_pane_table&#39;&gt; </span><span class="si">%s</span><span class="s"> &lt;tbody&gt; </span><span class="si">%s</span><span class="s"> &lt;/tbody&gt; &lt;/table&gt;&quot;</span> <span class="o">%</span><span class="p">(</span> <span class="n">h_head</span><span class="p">,</span><span class="n">h_rows</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

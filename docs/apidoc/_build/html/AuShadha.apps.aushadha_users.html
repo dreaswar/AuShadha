@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.apps.aushadha_users package &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="index.html" />
+    <link rel="up" title="AuShadha.apps package" href="AuShadha.apps.html" />
+    <link rel="next" title="AuShadha.apps.clinic package" href="AuShadha.apps.clinic.html" />
+    <link rel="prev" title="AuShadha.apps.aushadha_base_models package" href="AuShadha.apps.aushadha_base_models.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.clinic.html" title="AuShadha.apps.clinic package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.aushadha_base_models.html" title="AuShadha.apps.aushadha_base_models package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.apps.html" accesskey="U">AuShadha.apps package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="aushadha-apps-aushadha-users-package">
+<h1>AuShadha.apps.aushadha_users package<a class="headerlink" href="#aushadha-apps-aushadha-users-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="aushadha-apps-aushadha-users-admin-module">
+<h2>AuShadha.apps.aushadha_users.admin module<a class="headerlink" href="#aushadha-apps-aushadha-users-admin-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.apps.aushadha_users.models">
+<span id="aushadha-apps-aushadha-users-models-module"></span><h2>AuShadha.apps.aushadha_users.models module<a class="headerlink" href="#module-AuShadha.apps.aushadha_users.models" title="Permalink to this headline">¶</a></h2>
+<p>Defining the models for AuShadha users</p>
+<p>This is a custom class to bind a logged in user to a Clinic and a Role</p>
+<p>All AuShadha uses should therefore be logged in and should have a role</p>
+<dl class="docutils">
+<dt>Fine grained permissions throughout the application can be set on role and</dt>
+<dd>permissions defined here</dd>
+</dl>
+<dl class="class">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUser">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.aushadha_users.models.</tt><tt class="descname">AuShadhaUser</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_users/models.html#AuShadhaUser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt></p>
+<p>Defines AuShadhaUser class
+This is a model inheriting from User class that defines who uses AuShadha
+The user can have many roles pertaining to usage of the software. 
+This is NOT the permission on the Clinic / the Patient. 
+This is for managing / using AuShadha</p>
+<dl class="exception">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUser.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUser.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUser.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">AuShadhaUser.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUser.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUser.get_absolute_url">
+<tt class="descclassname">AuShadhaUser.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUser.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUser.get_aushadha_user_role_display">
+<tt class="descclassname">AuShadhaUser.</tt><tt class="descname">get_aushadha_user_role_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUser.get_aushadha_user_role_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUser.objects">
+<tt class="descclassname">AuShadhaUser.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.contrib.auth.models.UserManager object at 0x3e83310&gt;</em><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUser.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUser.staff_set">
+<tt class="descclassname">AuShadhaUser.</tt><tt class="descname">staff_set</tt><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUser.staff_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUser.user_ptr">
+<tt class="descclassname">AuShadhaUser.</tt><tt class="descname">user_ptr</tt><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUser.user_ptr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUserForm">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.aushadha_users.models.</tt><tt class="descname">AuShadhaUserForm</tt><big>(</big><em>request=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_users/models.html#AuShadhaUserForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUserForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.forms.AuthenticationForm</span></tt></p>
+<p>Defines ModelForm for AuShadhaUser
+Generates the ModelForm for Login and authentication</p>
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUserForm.base_fields">
+<tt class="descname">base_fields</tt><em class="property"> = {'username': &lt;django.forms.fields.CharField object at 0x3d64890&gt;, 'password': &lt;django.forms.fields.CharField object at 0x3d64a10&gt;}</em><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUserForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUserForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUserForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_users.models.AuShadhaUserForm.model">
+<tt class="descname">model</tt><a class="headerlink" href="#AuShadha.apps.aushadha_users.models.AuShadhaUserForm.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#AuShadha.apps.aushadha_users.models.AuShadhaUser" title="AuShadha.apps.aushadha_users.models.AuShadhaUser"><tt class="xref py py-class docutils literal"><span class="pre">AuShadhaUser</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.apps.aushadha_users.tests">
+<span id="aushadha-apps-aushadha-users-tests-module"></span><h2>AuShadha.apps.aushadha_users.tests module<a class="headerlink" href="#module-AuShadha.apps.aushadha_users.tests" title="Permalink to this headline">¶</a></h2>
+<p>This file demonstrates writing tests using the unittest module. These will
+pass when you run &#8220;manage.py test&#8221;.</p>
+<p>Replace this with more appropriate tests for your application.</p>
+<dl class="class">
+<dt id="AuShadha.apps.aushadha_users.tests.SimpleTest">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.aushadha_users.tests.</tt><tt class="descname">SimpleTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_users/tests.html#SimpleTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_users.tests.SimpleTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_users.tests.SimpleTest.test_basic_addition">
+<tt class="descname">test_basic_addition</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_users/tests.html#SimpleTest.test_basic_addition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_users.tests.SimpleTest.test_basic_addition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests that 1 + 1 always equals 2.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="aushadha-apps-aushadha-users-urls-module">
+<h2>AuShadha.apps.aushadha_users.urls module<a class="headerlink" href="#aushadha-apps-aushadha-users-urls-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.apps.aushadha_users.views">
+<span id="aushadha-apps-aushadha-users-views-module"></span><h2>AuShadha.apps.aushadha_users.views module<a class="headerlink" href="#module-AuShadha.apps.aushadha_users.views" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="AuShadha.apps.aushadha_users.views.login_view">
+<tt class="descclassname">AuShadha.apps.aushadha_users.views.</tt><tt class="descname">login_view</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_users/views.html#login_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_users.views.login_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the login form and handles the login action.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AuShadha.apps.aushadha_users.views.logout_view">
+<tt class="descclassname">AuShadha.apps.aushadha_users.views.</tt><tt class="descname">logout_view</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_users/views.html#logout_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_users.views.logout_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>View for logging out of AuShadha.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.apps.aushadha_users">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-AuShadha.apps.aushadha_users" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AuShadha.apps.aushadha_users package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#aushadha-apps-aushadha-users-admin-module">AuShadha.apps.aushadha_users.admin module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.aushadha_users.models">AuShadha.apps.aushadha_users.models module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.aushadha_users.tests">AuShadha.apps.aushadha_users.tests module</a></li>
+<li><a class="reference internal" href="#aushadha-apps-aushadha-users-urls-module">AuShadha.apps.aushadha_users.urls module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.aushadha_users.views">AuShadha.apps.aushadha_users.views module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.aushadha_users">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="AuShadha.apps.aushadha_base_models.html"
+                        title="previous chapter">AuShadha.apps.aushadha_base_models package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="AuShadha.apps.clinic.html"
+                        title="next chapter">AuShadha.apps.clinic package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/AuShadha.apps.aushadha_users.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.clinic.html" title="AuShadha.apps.clinic package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.aushadha_base_models.html" title="AuShadha.apps.aushadha_base_models package"
+             >previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.apps.html" >AuShadha.apps package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

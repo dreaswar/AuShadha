@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.apps.clinic.models &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.apps.clinic.models</h1><div class="highlight"><pre>
+<span class="c">#################################################################################</span>
+<span class="c"># Project     : AuShadha</span>
+<span class="c"># Description : Models for Clinic, Departments and Staff</span>
+<span class="c"># Author      : Weldan Jamili, Dr.Easwar T.R (see credits)</span>
+<span class="c"># License     : GNU-GPL Version 3 , see docs/LICENSE.txt</span>
+<span class="c"># Date        : 30-09-2013</span>
+<span class="c">################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"> </span>
+<span class="sd"> Models to handle the Clinic, Address, Staff and Departments</span>
+<span class="sd"> User permissions, roles are set here. </span>
+<span class="sd"> Basic data about the Clinic is set here.</span>
+<span class="sd"> </span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c"># Import Django modules</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="c"># AuShadha Imports</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.aushadha_users.models</span> <span class="kn">import</span> <span class="n">AuShadhaUser</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.aushadha_base_models.models</span> <span class="kn">import</span> <span class="n">AuShadhaBaseModel</span><span class="p">,</span> <span class="n">AuShadhaBaseModelForm</span>
+
+
+<span class="n">CLINIC_NATURE_CHOICES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&quot;primary_health_centre&quot;</span><span class="p">,</span> <span class="s">&quot;Primary Health Centre&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;community_health_centre&#39;</span><span class="p">,</span> <span class="s">&quot;Community Health Centre&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&quot;poly_clinic&quot;</span><span class="p">,</span> <span class="s">&quot;Poly Clinic&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&quot;speciality_clinic&quot;</span><span class="p">,</span> <span class="s">&quot;Speciality Clinic&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;district_hospital&#39;</span><span class="p">,</span> <span class="s">&quot;District Hospital&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;tertiary_referral_centre&#39;</span><span class="p">,</span> <span class="s">&quot;Tertiary Referral Centre&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">CLINIC_STAFF_ROLE</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&quot;non_clinical_staff&quot;</span><span class="p">,</span> <span class="s">&quot;Non Clinical Staff&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;secretary&#39;</span><span class="p">,</span> <span class="s">&#39;Secretary&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;clinic_admin&#39;</span><span class="p">,</span> <span class="s">&quot;Clinic Administrator&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;clinical_staff&#39;</span><span class="p">,</span> <span class="s">&quot;Clinical Staff&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;nurse&#39;</span><span class="p">,</span> <span class="s">&quot;Nurse&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;physio&#39;</span><span class="p">,</span> <span class="s">&quot;Physiotherapist&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&quot;doctor&quot;</span><span class="p">,</span> <span class="s">&quot;Doctor&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="Clinic"><a class="viewcode-back" href="../../../../AuShadha.apps.clinic.html#AuShadha.apps.clinic.models.Clinic">[docs]</a><span class="k">class</span> <span class="nc">Clinic</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+  <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">   Model class for Clinic</span>
+
+<span class="sd">   Defines the clinic</span>
+
+<span class="sd">    -- name of clinic        --&gt; Name</span>
+
+<span class="sd">    -- nature_of_clinic      --&gt; Whether its primary center / referral centre</span>
+
+<span class="sd">    -- _can_add_list_or_json --&gt; A Zope like way to set what can be contained inside this. </span>
+<span class="sd">                                 Objects explicitly named here will be used while setting</span>
+<span class="sd">                                 CRUD Urls through the generate_urls() method of super.</span>
+<span class="sd">                                 | #FIXME: A better method  / atleast name can be evolved to</span>
+<span class="sd">                                 |        indicate this. :)</span>
+
+<span class="sd">    -- _extra_url_actions    --&gt; Other actions that are specific to this model and that can be used</span>
+<span class="sd">                                 to generate_urls(). </span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+  
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+      <span class="nb">super</span><span class="p">(</span><span class="n">Clinic</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;clinic&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;clinic&#39;</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span> <span class="o">=</span> <span class="p">[</span>
+                          <span class="s">&#39;patient&#39;</span><span class="p">,</span>
+                          <span class="s">&#39;phone&#39;</span><span class="p">,</span>
+                          <span class="s">&#39;address&#39;</span><span class="p">,</span>
+                          <span class="s">&#39;website&#39;</span><span class="p">,</span>
+                          <span class="s">&#39;email&#39;</span><span class="p">,</span>
+                          <span class="s">&#39;fax&#39;</span><span class="p">,</span>
+                          <span class="s">&#39;department&#39;</span>
+                      <span class="p">]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_extra_url_actions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;transfer_patient&#39;</span><span class="p">,</span><span class="s">&#39;transfer_clinic&#39;</span><span class="p">,</span><span class="s">&#39;refer&#39;</span><span class="p">]</span>
+
+
+  <span class="n">name_of_clinic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+  <span class="n">nature_of_clinic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">choices</span> <span class="o">=</span> <span class="n">CLINIC_NATURE_CHOICES</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> (</span><span class="si">%s</span><span class="s">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name_of_clinic</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nature_of_clinic</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="Address"><a class="viewcode-back" href="../../../../AuShadha.apps.clinic.html#AuShadha.apps.clinic.models.Address">[docs]</a><span class="k">class</span> <span class="nc">Address</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Basic Contact attributes of the Clinic</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+      <span class="nb">super</span><span class="p">(</span><span class="n">Address</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;address&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;clinic&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_extra_url_actions</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+    <span class="n">building_no</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span> <span class="s">&#39;Tamil Nadu&#39;</span><span class="p">)</span>    
+    <span class="n">street_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">city_or_town</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span> <span class="s">&#39;Coimbatore&#39;</span><span class="p">)</span>
+    <span class="n">district</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span> <span class="s">&#39;Coimbatore&#39;</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span> <span class="s">&#39;Tamil Nadu&#39;</span><span class="p">)</span>
+    <span class="n">country</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="s">&#39;India&#39;</span><span class="p">)</span>
+    <span class="n">postal_code</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s">&quot;Postal Code&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">clinic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Clinic</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> - </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="se">\n</span><span class="s"> </span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s"> -</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">building_no</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">street_name</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">city_or_town</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">district</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">country</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">postal_code</span>
+                                            <span class="p">)</span>
+
+
+</div>
+<div class="viewcode-block" id="Phone"><a class="viewcode-back" href="../../../../AuShadha.apps.clinic.html#AuShadha.apps.clinic.models.Phone">[docs]</a><span class="k">class</span> <span class="nc">Phone</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Basic Contact attributes of the Clinic</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+      <span class="nb">super</span><span class="p">(</span><span class="n">Phone</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;phone&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;clinic&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;phone&#39;</span><span class="p">]</span>
+
+
+    <span class="n">country_code</span>    <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">max_length</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">91</span><span class="p">)</span>
+    <span class="n">area_code</span>    <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">max_length</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">422</span><span class="p">)</span>
+    <span class="n">phone_number</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">clinic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Clinic</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">-</span><span class="si">%s</span><span class="s">-</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">country_code</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">area_code</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">phone_number</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="Fax"><a class="viewcode-back" href="../../../../AuShadha.apps.clinic.html#AuShadha.apps.clinic.models.Fax">[docs]</a><span class="k">class</span> <span class="nc">Fax</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Basic Contact attributes of the Clinic</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">Fax</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;fax&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;clinic&#39;</span>
+
+
+    <span class="n">fax_number</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">clinic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Clinic</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">fax_number</span>
+</div>
+<div class="viewcode-block" id="Email"><a class="viewcode-back" href="../../../../AuShadha.apps.clinic.html#AuShadha.apps.clinic.models.Email">[docs]</a><span class="k">class</span> <span class="nc">Email</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Basic Contact attributes of the Clinic</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+      <span class="nb">super</span><span class="p">(</span><span class="n">Email</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;email&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;clinic&#39;</span>
+
+
+    <span class="n">email_address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">clinic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Clinic</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">email_address</span>
+
+</div>
+<div class="viewcode-block" id="Website"><a class="viewcode-back" href="../../../../AuShadha.apps.clinic.html#AuShadha.apps.clinic.models.Website">[docs]</a><span class="k">class</span> <span class="nc">Website</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Basic Contact attributes of the Clinic</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+      <span class="nb">super</span><span class="p">(</span><span class="n">Website</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;website&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;clinic&#39;</span>
+
+
+    <span class="n">website_address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">clinic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Clinic</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">website_address</span>
+
+</div>
+<div class="viewcode-block" id="Department"><a class="viewcode-back" href="../../../../AuShadha.apps.clinic.html#AuShadha.apps.clinic.models.Department">[docs]</a><span class="k">class</span> <span class="nc">Department</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Basic Contact attributes of the Clinic</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">Department</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;department&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;clinic&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;staff&#39;</span><span class="p">]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_extra_url_actions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;assign_hod&#39;</span><span class="p">,</span><span class="s">&#39;transfer_department&#39;</span><span class="p">]</span>
+
+
+    <span class="n">name_of_department</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">clinic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Clinic</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name_of_department</span>
+
+</div>
+<div class="viewcode-block" id="Staff"><a class="viewcode-back" href="../../../../AuShadha.apps.clinic.html#AuShadha.apps.clinic.models.Staff">[docs]</a><span class="k">class</span> <span class="nc">Staff</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Basic Contact attributes of the Clinic</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+  
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">Staff</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;staff&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;department&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_extra_url_actions</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+    <span class="n">staff_detail</span>  <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">AuShadhaUser</span><span class="p">)</span>
+    <span class="n">clinic_staff_role</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s">&quot;Staff Role&quot;</span><span class="p">,</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                                         <span class="n">help_text</span><span class="o">=</span><span class="s">&quot; This is the Role of the Staff in the Clinic&quot;</span><span class="p">,</span>
+                                         <span class="n">choices</span><span class="o">=</span><span class="n">CLINIC_STAFF_ROLE</span><span class="p">)</span>
+    <span class="n">is_staff_hod</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="s">&quot;Is Staff Head of the Department&quot;</span><span class="p">)</span>
+    <span class="n">department</span>    <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Department</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">staff_detail</span><span class="o">.</span><span class="n">username</span>
+
+<div class="viewcode-block" id="Staff.is_staff_provider"><a class="viewcode-back" href="../../../../AuShadha.apps.clinic.html#AuShadha.apps.clinic.models.Staff.is_staff_provider">[docs]</a>    <span class="k">def</span> <span class="nf">is_staff_provider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">staff_obj</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">staff_role</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clinic_staff_role</span>
+        <span class="k">if</span> <span class="n">staff_role</span> <span class="o">==</span> <span class="s">&#39;doctor&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

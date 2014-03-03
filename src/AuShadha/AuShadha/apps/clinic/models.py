@@ -6,8 +6,18 @@
 # Date        : 30-09-2013
 ################################################################################
 
+"""
+ 
+ Models to handle the Clinic, Address, Staff and Departments
+ User permissions, roles are set here. 
+ Basic data about the Clinic is set here.
+ 
+"""
+
+# Import Django modules
 from django.db import models
-#from django.contrib.auth.models import User
+
+# AuShadha Imports
 from AuShadha.apps.aushadha_users.models import AuShadhaUser
 from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 
@@ -32,8 +42,28 @@ CLINIC_STAFF_ROLE = (
 )
 
 
-# clinic model
 class Clinic(AuShadhaBaseModel):
+
+  """
+
+   Model class for Clinic
+
+   Defines the clinic
+
+    -- name of clinic        --> Name
+
+    -- nature_of_clinic      --> Whether its primary center / referral centre
+
+    -- _can_add_list_or_json --> A Zope like way to set what can be contained inside this. 
+                                 Objects explicitly named here will be used while setting
+                                 CRUD Urls through the generate_urls() method of super.
+                                 | #FIXME: A better method  / atleast name can be evolved to
+                                 |        indicate this. :)
+
+    -- _extra_url_actions    --> Other actions that are specific to this model and that can be used
+                                 to generate_urls(). 
+
+  """
   
   def __init__(self, *args, **kwargs):
 
@@ -61,6 +91,10 @@ class Clinic(AuShadhaBaseModel):
 
 
 class Address(AuShadhaBaseModel):
+
+    """
+     Basic Contact attributes of the Clinic
+    """
 
     def __init__(self, *args, **kwargs):
 
@@ -91,8 +125,12 @@ class Address(AuShadhaBaseModel):
                                             )
 
 
-# phone model
+
 class Phone(AuShadhaBaseModel):
+
+    """
+     Basic Contact attributes of the Clinic
+    """
 
     def __init__(self, *args, **kwargs):
 
@@ -112,8 +150,11 @@ class Phone(AuShadhaBaseModel):
         return '%s-%s-%s' % (self.country_code, self.area_code,self.phone_number)
 
 
-# fax model
 class Fax(AuShadhaBaseModel):
+
+    """
+     Basic Contact attributes of the Clinic
+    """
 
     def __init__(self, *args, **kwargs):
       super(Fax,self).__init__(*args, **kwargs)
@@ -128,8 +169,11 @@ class Fax(AuShadhaBaseModel):
     def __unicode__(self):
         return '%s' % self.fax_number
 
-# email model
 class Email(AuShadhaBaseModel):
+
+    """
+     Basic Contact attributes of the Clinic
+    """
 
     def __init__(self, *args, **kwargs):
 
@@ -144,8 +188,12 @@ class Email(AuShadhaBaseModel):
     def __unicode__(self):
         return '%s' % self.email_address
 
-# website model
+
 class Website(AuShadhaBaseModel):
+
+    """
+     Basic Contact attributes of the Clinic
+    """
 
     def __init__(self, *args, **kwargs):
 
@@ -160,8 +208,12 @@ class Website(AuShadhaBaseModel):
     def __unicode__(self):
         return '%s' % self.website_address
 
-# Model for Departments in the Clinic
+
 class Department(AuShadhaBaseModel):
+
+    """
+     Basic Contact attributes of the Clinic
+    """
 
     def __init__(self, *args, **kwargs):
       super(Department,self).__init__(*args, **kwargs)
@@ -178,8 +230,11 @@ class Department(AuShadhaBaseModel):
         return "%s" % self.name_of_department
 
 
-# staff model
 class Staff(AuShadhaBaseModel):
+
+    """
+     Basic Contact attributes of the Clinic
+    """
   
     def __init__(self, *args, **kwargs):
       super(Staff,self).__init__(*args, **kwargs)

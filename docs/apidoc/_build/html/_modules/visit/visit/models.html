@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>visit.visit.models &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for visit.visit.models</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project      : AuShadha</span>
+<span class="c"># Description  : Models for AuShadha OPD Visits.</span>
+<span class="c"># Author       : Dr. Easwar TR </span>
+<span class="c"># Date         : 17-09-2013</span>
+<span class="c"># LICENSE      : GNU-GPL Version 3, Please see AuShadha/LICENSE.txt</span>
+<span class="c">################################################################################</span>
+
+<span class="c"># General Imports</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+
+<span class="c"># Django Specific Imports</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.forms</span> <span class="kn">import</span> <span class="n">ModelForm</span><span class="p">,</span> <span class="n">ModelChoiceField</span><span class="p">,</span> <span class="n">Textarea</span><span class="p">,</span> <span class="n">TextInput</span>
+
+<span class="c"># Application model imports</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.aushadha_base_models.models</span> <span class="kn">import</span> <span class="n">AuShadhaBaseModel</span><span class="p">,</span><span class="n">AuShadhaBaseModelForm</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.clinic.models</span> <span class="kn">import</span> <span class="n">Clinic</span><span class="p">,</span> <span class="n">Staff</span>
+
+<span class="kn">from</span> <span class="nn">registry.inv_and_imaging.models</span> <span class="kn">import</span> <span class="n">ImagingInvestigationRegistry</span><span class="p">,</span> <span class="n">LabInvestigationRegistry</span>
+<span class="c">#from patient.models import PatientDetail</span>
+<span class="c">#from admission.models import AdmissionDetail</span>
+
+<span class="n">PatientDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;PatientRegistration&quot;</span><span class="p">)</span>
+<span class="n">AdmissionDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;Admission&quot;</span><span class="p">)</span>
+<span class="n">VisitComplaint</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&#39;OPD_Visit_Complaint&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">dijit_fields_constants</span> <span class="kn">import</span> <span class="n">VISIT_DETAIL_FORM_CONSTANTS</span>
+
+<span class="n">DEFAULT_VISIT_DETAIL_FORM_EXCLUDES</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;patient_detail&#39;</span><span class="p">,)</span>
+
+
+<span class="n">CONSULT_NATURE_CHOICES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&#39;initial&#39;</span><span class="p">,</span> <span class="s">&#39;Initial&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;fu&#39;</span><span class="p">,</span> <span class="s">&#39;Follow-Up&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;emer&#39;</span><span class="p">,</span> <span class="s">&#39;Emergency&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+
+
+<span class="n">CONSULT_BOOKING_CATEGORY_CHOICES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&#39;appointment&#39;</span><span class="p">,</span> <span class="s">&quot;Appointment&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;telephonic&#39;</span><span class="p">,</span> <span class="s">&#39;Telephonic / Web&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;na&#39;</span><span class="p">,</span> <span class="s">&#39;Walk-in / Emergency&#39;</span><span class="p">),</span>    
+    <span class="p">(</span><span class="s">&#39;referral&#39;</span><span class="p">,</span> <span class="s">&#39;Referral&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;starred&#39;</span><span class="p">,</span> <span class="s">&#39;Starred&#39;</span><span class="p">),</span>        
+<span class="p">)</span>
+
+
+<span class="n">CONSULT_REASON_CHOICES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&#39;opd_consult&#39;</span><span class="p">,</span> <span class="s">&quot;OPD Consult&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;inv_review&#39;</span><span class="p">,</span><span class="s">&quot;Investigations Review&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;emergency&#39;</span><span class="p">,</span><span class="s">&quot;Emergency&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;pre_op&#39;</span><span class="p">,</span><span class="s">&quot;Pre-op Counselling&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;post_op&#39;</span><span class="p">,</span><span class="s">&quot;Post-op Counselling&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;dressing&#39;</span><span class="p">,</span><span class="s">&quot;Dressing&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;minor_opd_procedures&#39;</span><span class="p">,</span><span class="s">&quot;Minor OPD Procedures&quot;</span><span class="p">),</span>    
+    <span class="p">(</span><span class="s">&#39;prescription_top_up&#39;</span><span class="p">,</span><span class="s">&quot;Prescription Top Up&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;admission&#39;</span><span class="p">,</span><span class="s">&quot;Admission&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;others&#39;</span><span class="p">,</span><span class="s">&quot;Others&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">CONSULT_STATUS_CHOICES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&#39;waiting&#39;</span><span class="p">,</span> <span class="s">&#39;Waiting&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;examining&#39;</span><span class="p">,</span> <span class="s">&#39;Examining&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;review_awaited&#39;</span><span class="p">,</span> <span class="s">&#39;Review Awaited&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;admission&#39;</span><span class="p">,</span> <span class="s">&#39;Admission&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;discharged&#39;</span><span class="p">,</span> <span class="s">&#39;Discharged&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;no_show&#39;</span><span class="p">,</span> <span class="s">&#39;No Show&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+
+
+
+
+
+
+<div class="viewcode-block" id="VisitDetail"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail">[docs]</a><span class="k">class</span> <span class="nc">VisitDetail</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;visit&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;patient_detail&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;visit_complaint&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;visit_follow_up&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;visit_ros&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;visit_hpi&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;visit_phyexam&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;vitals&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;gen&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;sys&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;neuro&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;vasc&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;visit_assessment_and_plan&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;visit_soap&#39;</span><span class="p">,</span>
+                                    <span class="c">#&#39;past_history&#39;,</span>
+                                    <span class="c">#&#39;visit_inv&#39;,</span>
+                                    <span class="c">#&#39;visit_imaging&#39;,</span>
+                                    <span class="c">#&#39;visit_procedures&#39;,</span>
+                                    <span class="c">#&#39;discharge&#39;</span>
+                                    <span class="p">]</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">_extra_url_actions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;close&#39;</span><span class="p">,</span><span class="s">&#39;change_nature&#39;</span><span class="p">]</span>
+
+    <span class="n">patient_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">PatientDetail</span><span class="p">)</span>
+    <span class="n">visit_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+    <span class="n">op_surgeon</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Staff</span><span class="p">)</span>
+
+    <span class="n">referring_doctor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+                                        <span class="n">default</span><span class="o">=</span><span class="s">&quot;Self&quot;</span>
+                                        <span class="p">)</span>                          <span class="c"># Should be an FK to referring doctors model / Contacts</span>
+
+    <span class="n">consult_nature</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+                                      <span class="n">choices</span><span class="o">=</span><span class="n">CONSULT_NATURE_CHOICES</span>
+                                      <span class="p">)</span>                            <span class="c"># Should be an FK to appointment model</span>
+    
+    <span class="n">booking_category</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+                                        <span class="n">choices</span><span class="o">=</span><span class="n">CONSULT_BOOKING_CATEGORY_CHOICES</span>
+                                        <span class="p">)</span>                          <span class="c"># Should ideally be an FK to appointment model</span>
+    
+    <span class="n">consult_reason</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+                                      <span class="n">choices</span><span class="o">=</span><span class="n">CONSULT_REASON_CHOICES</span>
+                                      <span class="p">)</span>                            <span class="c"># Should be an FK to appointment model</span>
+    
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+                              <span class="n">choices</span><span class="o">=</span><span class="n">CONSULT_STATUS_CHOICES</span>
+                              <span class="p">)</span>                                    <span class="c"># Should update via FK the appointment model</span>
+
+    <span class="n">is_active</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="n">remarks</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                               <span class="n">default</span><span class="o">=</span><span class="s">&quot;NAD&quot;</span><span class="p">,</span>
+                               <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;limit to 200 words&quot;</span>
+                               <span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Visit Details&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Visit Details&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">(</span><span class="si">%s</span><span class="s">): </span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">patient_detail</span><span class="p">,</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> 
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">visit_date</span><span class="p">,</span> 
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">op_surgeon</span>
+                                   <span class="p">)</span>
+
+<div class="viewcode-block" id="VisitDetail.get_absolute_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_absolute_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit/detail/</span><span class="si">%d</span><span class="s">/&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_all_patient_complaints_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_all_patient_complaints_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_patient_complaints_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_complaints/complaint/get/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.import_active_complaints_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.import_active_complaints_url">[docs]</a>    <span class="k">def</span> <span class="nf">import_active_complaints_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_complaints/complaint/import_active_complaints/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_all_visit_hpi_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_all_visit_hpi_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_visit_hpi_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_hpi/hpi/get_all_visit_hpi/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_all_visit_ros_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_all_visit_ros_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_visit_ros_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_ros/ros/get_all_visit_ros/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_edit_pane_header_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_edit_pane_header_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_edit_pane_header_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit/get/visit_detail/edit_pane_header/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_visit_detail_close_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_visit_detail_close_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_detail_close_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&#39;/AuShadha/visit/visit/detail/close/</span><span class="si">%d</span><span class="s">/&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Visit is already not active. Cannot Close&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_visit_detail_visit_follow_up_add_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_visit_detail_visit_follow_up_add_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_detail_visit_follow_up_add_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># if self.patient_detail.has_active_visit():</span>
+            <span class="c"># return self.patient_detail.get_patient_visit_add_url()</span>
+        <span class="c"># else:</span>
+            <span class="c"># return False</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit/follow_up/add/?visit_id=</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+    </div>
+<div class="viewcode-block" id="VisitDetail.get_visit_phyexam_add_vitals_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_visit_phyexam_add_vitals_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_phyexam_add_vitals_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_phyexam/vitals/add/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    </div>
+<div class="viewcode-block" id="VisitDetail.get_visit_phyexam_add_gen_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_visit_phyexam_add_gen_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_phyexam_add_gen_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_phyexam/gen/add/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    </div>
+<div class="viewcode-block" id="VisitDetail.get_visit_phyexam_add_sys_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_visit_phyexam_add_sys_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_phyexam_add_sys_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_phyexam/sys/add/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    </div>
+<div class="viewcode-block" id="VisitDetail.get_visit_phyexam_add_neuro_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_visit_phyexam_add_neuro_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_phyexam_add_neuro_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_phyexam/neuro/add/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    </div>
+<div class="viewcode-block" id="VisitDetail.get_visit_phyexam_add_vasc_url"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_visit_phyexam_add_vasc_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_phyexam_add_vasc_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;/AuShadha/visit_phyexam/vasc/add/</span><span class="si">%s</span><span class="s">/&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="VisitDetail.has_fu_visits"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.has_fu_visits">[docs]</a>    <span class="k">def</span> <span class="nf">has_fu_visits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+            <span class="n">fu</span> <span class="o">=</span> <span class="n">VisitFollowUp</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">visit_detail</span><span class="o">=</span><span class="n">visit_obj</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-visit_date&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">fu</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">fu</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">except</span><span class="p">(</span><span class="n">VisitDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Not Visit Detail with ID:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.visit_nature"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.visit_nature">[docs]</a>    <span class="k">def</span> <span class="nf">visit_nature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">consult_nature</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.visit_nature_change"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.visit_nature_change">[docs]</a>    <span class="k">def</span> <span class="nf">visit_nature_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nature</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">consult_nature</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">nature</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR:: Invalid CONSULT_NATURE_CHOICE supplied..&quot;</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">consult_nature</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;initial&#39;</span><span class="p">,</span> <span class="s">&#39;fu&#39;</span><span class="p">,</span><span class="s">&#39;emer&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">consult_nature</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR:: Invalid Consult Nature Change Requested..&quot;</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.visit_status"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.visit_status">[docs]</a>    <span class="k">def</span> <span class="nf">visit_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.visit_status_change"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.visit_status_change">[docs]</a>    <span class="k">def</span> <span class="nf">visit_status_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR:: Invalid CONSULT_STATUS_CHOICES supplied..&quot;</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;discharged&#39;</span><span class="p">,</span> <span class="s">&#39;admission&#39;</span><span class="p">,</span> <span class="s">&#39;review_awaited&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;discharged&#39;</span> <span class="ow">or</span> \
+               <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;admission&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_close_visit</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR:: Invalid Consult Status Change Requested..&quot;</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</div>
+    <span class="k">def</span> <span class="nf">_close_visit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c">#id = self.id</span>
+        <span class="c">#visit_obj      = VisitDetail.objects.get(pk = id)</span>
+        <span class="c">#visit_followup = VisitFollowUp.objects.filter(visit_detail = visit_obj)</span>
+        <span class="c"># if visit_followup:</span>
+            <span class="c"># for fu in visit_followup:</span>
+                <span class="c">#fu.status = &#39;discharged&#39;</span>
+                <span class="c"># fu.save()</span>
+        <span class="k">print</span> <span class="s">&quot;Trying to Close a visit with ID&quot;</span>
+        <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;dont_check_status&#39;</span><span class="p">:</span> <span class="s">&quot;yes&quot;</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_close_all_active_visits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pat_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">patient_detail</span>
+        <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="n">patient_detail</span><span class="o">=</span><span class="n">pat_obj</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">is_active</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">visit_obj</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">visit</span> <span class="ow">in</span> <span class="n">visit_obj</span><span class="p">:</span>
+                <span class="n">visit</span><span class="o">.</span><span class="n">_close_visit</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+<div class="viewcode-block" id="VisitDetail.save"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="c"># if self.op_surgeon.clinic_staff_role == &#39;doctor&#39;:</span>
+        <span class="n">consult_nature</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">consult_nature</span>
+        <span class="k">print</span> <span class="s">&quot;Calling save method with args&quot;</span>
+        <span class="k">print</span> <span class="s">&quot;kwargs dont_check_status is set to: &quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;dont_check_status&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;dont_check_status&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="s">&#39;yes&#39;</span><span class="p">:</span>
+                <span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;dont_check_status&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s">&#39;discharged&#39;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">print</span> <span class="s">&quot;Closing the visit and saving the changes&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;no_show&#39;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;discharged&#39;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;admission&#39;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">force_update</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># if not self.patient_detail.has_active_visit():</span>
+                <span class="c">#self.consult_nature = &#39;initial&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">VisitDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c"># else:</span>
+            <span class="c">#raise Exception(&quot;User is not a Provider. Only Doctors can save Visits. &quot;)</span>
+</div>
+<div class="viewcode-block" id="VisitDetail.get_visit_complaints"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.get_visit_complaints">[docs]</a>    <span class="k">def</span> <span class="nf">get_visit_complaints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+        <span class="n">v_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">visit_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">v_id</span><span class="p">)</span>
+            <span class="n">pat_obj</span> <span class="o">=</span> <span class="n">visit_obj</span><span class="o">.</span><span class="n">patient_detail</span>
+        
+        <span class="k">except</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid ID. Raised Error&quot;</span><span class="p">)</span>
+        
+        <span class="k">except</span><span class="p">(</span><span class="n">VisitDetail</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid Visit. No Such Visit recorded&quot;</span><span class="p">)</span>
+
+        <span class="c">#visit_fu            = VisitFollowUp.objects.filter(visit_detail = visit_obj)</span>
+        <span class="n">visit_complaints</span> <span class="o">=</span> <span class="n">VisitComplaint</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">visit_detail</span><span class="o">=</span><span class="n">visit_obj</span><span class="p">)</span>
+        <span class="n">visit_complaint_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">visit_complaints</span><span class="p">:</span>
+
+            <span class="k">for</span> <span class="n">complaint</span> <span class="ow">in</span> <span class="n">visit_complaints</span><span class="p">:</span>
+                <span class="n">dict_to_append</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;complaint&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">complaint</span>
+                <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">duration</span>
+                <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;visit_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">visit_date</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+                <span class="n">dict_to_append</span><span class="p">[</span><span class="s">&#39;visit_active&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">complaint</span><span class="o">.</span><span class="n">visit_detail</span><span class="o">.</span><span class="n">is_active</span>
+                <span class="n">visit_complaint_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_to_append</span><span class="p">)</span>
+
+        <span class="c">#json = simplejson.dumps(visit_complaint_list)</span>
+        <span class="c"># return json</span>
+        <span class="k">return</span> <span class="n">visit_complaint_list</span>
+
+</div>
+<div class="viewcode-block" id="VisitDetail.has_previous_visits"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetail.has_previous_visits">[docs]</a>    <span class="k">def</span> <span class="nf">has_previous_visits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">visit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+
+      <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Invalid Visit Id: Null&quot;</span><span class="p">)</span>
+
+      <span class="n">visit_detail_obj</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">visit_id</span><span class="p">)</span> <span class="p">)</span>
+      <span class="n">patient_detail_obj</span> <span class="o">=</span> <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">patient_detail</span>
+      <span class="n">all_visits</span> <span class="o">=</span> <span class="n">VisitDetail</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">patient_detail</span> <span class="o">=</span> <span class="n">patient_detail_obj</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;visit_date&#39;</span><span class="p">)</span>
+
+      <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">all_visits</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">visit_date</span> <span class="o">&lt;=</span> <span class="n">visit_detail_obj</span><span class="o">.</span><span class="n">visit_date</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v</span> <span class="o">!=</span> <span class="n">visit_detail_obj</span><span class="p">):</span>
+          <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="k">continue</span>
+
+
+
+</div></div>
+<div class="viewcode-block" id="VisitDetailForm"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetailForm">[docs]</a><span class="k">class</span> <span class="nc">VisitDetailForm</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">):</span>
+    
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Visit Detail Form&quot;</span>
+
+    <span class="n">op_surgeon</span> <span class="o">=</span> <span class="n">ModelChoiceField</span><span class="p">(</span><span class="n">queryset</span><span class="o">=</span><span class="n">Staff</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">clinic_staff_role</span><span class="o">=</span><span class="s">&#39;doctor&#39;</span><span class="p">))</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VISIT_DETAIL_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VisitDetailForm.Meta"><a class="viewcode-back" href="../../../visit.visit.html#visit.visit.models.VisitDetailForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VisitDetail</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="n">DEFAULT_VISIT_DETAIL_FORM_EXCLUDES</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

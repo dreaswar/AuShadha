@@ -156,8 +156,8 @@ TEMPLATE_DIRS = (
     #os.path.join(ROOT_PATH, 'history/obs_and_gyn/templates/'),    
 
     os.path.join(ROOT_PATH, 'immunisation/templates/'),
-    os.path.join(ROOT_PATH, 'medication_list/templates/'),    
-    os.path.join(ROOT_PATH, 'allergy_list/templates/'),    
+    os.path.join(ROOT_PATH, 'medication_list/templates/'),
+    os.path.join(ROOT_PATH, 'allergy_list/templates/'),
 
     os.path.join(ROOT_PATH, 'visit/visit/templates/'),
     os.path.join(ROOT_PATH, 'visit/visit_complaints/templates/'),
@@ -213,7 +213,7 @@ INSTALLED_APPS = (
     'registry.icd10_pcs',
     'registry.drug_db',
     'registry.inv_and_imaging',
-    'registry.vaccine_registry',    
+    'registry.vaccine_registry',
 
     # Custom Apps for Patient Registration
     'patient',
@@ -264,14 +264,18 @@ INSTALLED_APPS = (
     #'phyexam',
 )
 
-ENABLED_APPS = yaml.load( open('AuShadha/configure.yaml').read() ) # This settings doesnt do anything now. 
+try:
+  ENABLED_APPS = yaml.load( open('AuShadha/configure.yaml').read() ) # This settings doesnt do anything now. 
+except(IOError):
+  ENABLED_APPS = list(INSTALLED_APPS)
+  pass # Stupid hack just to let sphinx-apidoc pass this
 
 
 # A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
+#   performed by this configuration is to send an email to
+#   the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
+#   more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

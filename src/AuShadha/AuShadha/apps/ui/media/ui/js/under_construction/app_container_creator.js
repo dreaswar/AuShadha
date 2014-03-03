@@ -1,10 +1,13 @@
-/*//////////////////////////////////////////////////////////////////////////////
+/* This creates a container for the pane and creates a basic UI with layout dijits
+ * It calls the appropriate URL, receives a JSON which will have a pane attribute
+ * 
+ * The pane attribute has all the UI related configuration which is then parsed and 
+ * UI created.
  * 
  * 
  * 
  * 
- * 
-*///////////////////////////////////////////////////////////////////////////////
+*/
 
 
 define(

@@ -1,3 +1,7 @@
+"""
+  AuShadhaUser Admin
+"""
+
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
@@ -8,11 +12,6 @@ from AuShadha.apps.aushadha_users.models import AuShadhaUser
 
 class AuShadhaUserInline(admin.StackedInline):
     model = AuShadhaUser
-
-
-"""
-AuShadhaUser Admin
-"""
 
 
 class AuShadhaUserCreationForm(ModelForm):

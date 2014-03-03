@@ -6,6 +6,11 @@
 #                Please see AuShadha/LICENSE 
 ################################################################################
 
+"""
+ Defines a generic AuShadhaModelForm error formatter and its factory
+ Returns a well formatted error_message on Form Submit errors
+ with relevent CSS styles.
+"""
 
 class AuModelFormErrorFormatter(object):
 

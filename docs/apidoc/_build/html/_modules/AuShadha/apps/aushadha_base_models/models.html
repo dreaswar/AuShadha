@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.apps.aushadha_base_models.models &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for AuShadha.apps.aushadha_base_models.models</h1><div class="highlight"><pre>
+<span class="c">#######################################################################################</span>
+<span class="c"># PROJECT      : AuShadha</span>
+<span class="c"># Description  : AuShadhaBaseModel and AuShadhaBaseModelForm which all models inherit</span>
+<span class="c"># Author       : Dr. Easwar T R</span>
+<span class="c"># Date         : 16-09-2013</span>
+<span class="c"># Licence      : GNU GPL V3. Please see AuShadha/LICENSE.txt</span>
+<span class="c">#######################################################################################</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd"> This module houses the BaseClass for AuShadha Model and ModelForm. These inherit from </span>
+<span class="sd"> Django models.Model class and forms.ModelForm class respectively.</span>
+
+<span class="sd"> The AuShadhaBaseModel is an abstract base class that all AuShadha apps can inherit from</span>
+<span class="sd"> Models defined throughout the app can inherit from this class. </span>
+<span class="sd"> </span>
+<span class="sd"> The AuShadhaBaseModelForm is a base class for all ModelForms which will help generate</span>
+<span class="sd">   Dijit Form Widgets automatically. ModelForms defined throughout can inherit from it</span>
+<span class="sd">   to autogenerate Dijit Widgets as per the dijit_fields_constants.py file definitions</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="c"># Django imports</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.forms</span> <span class="kn">import</span> <span class="n">ModelForm</span>
+<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
+<span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="kn">from</span> <span class="nn">django.utils.safestring</span> <span class="kn">import</span> <span class="n">mark_safe</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers</span> <span class="kn">import</span> <span class="n">json</span>
+<span class="kn">from</span> <span class="nn">django.core.serializers.json</span> <span class="kn">import</span> <span class="n">DjangoJSONEncoder</span>
+
+
+<span class="c"># AuShadha app imports</span>
+
+<span class="kn">import</span> <span class="nn">AuShadha.settings</span>
+<span class="kn">from</span> <span class="nn">AuShadha.utilities.urls</span> <span class="kn">import</span> <span class="n">generic_url_maker</span><span class="p">,</span> <span class="n">UrlGenerator</span><span class="p">,</span> <span class="n">urlgenerator_factory</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.serializers.data_grid</span> <span class="kn">import</span> <span class="n">generate_json_for_datagrid</span>
+
+
+
+<div class="viewcode-block" id="AuShadhaBaseModel"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel">[docs]</a><span class="k">class</span> <span class="nc">AuShadhaBaseModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Description:</span>
+<span class="sd">      -----------</span>
+
+<span class="sd">        Abstract Base AuShadha Model From which all AuShadha Models Derive.</span>
+<span class="sd">        This has several methods that can be inherited and used throughout.</span>
+
+<span class="sd">        More specifically, the generate_urls method and the self.urls variable are</span>
+<span class="sd">        meant to be a substitute for Django&#39;s reverse method to yeild the URL for </span>
+<span class="sd">        a given object. This allows dictionary like querying in Django template to</span>
+<span class="sd">        get the url for an object rather than use the {%url%} template tag. It is not</span>
+<span class="sd">        any significant advantage. Just an attempt to make it a little simpler. </span>
+
+
+<span class="sd">      Attributes Defined here:</span>
+<span class="sd">      -------------------------</span>
+
+<span class="sd">        1) self.__model_label__ --&gt; Like the __app_label__ attribute which Django sets, this</span>
+<span class="sd">                                    sets a label for the model. Unlike the class __name__ this is</span>
+<span class="sd">                                    just a string. </span>
+
+<span class="sd">                                    Main purpose is to allow construction of URLS for the object</span>
+<span class="sd">                                    along with the _parent_model Attribute.</span>
+
+
+<span class="sd">        2) self._parent_model --&gt; Attribute that sets the parent model that the model is contained in</span>
+<span class="sd">                                  This is almost a Zope like __contained_in__ attribute. </span>
+
+<span class="sd">                                  Aside from ForeignKey which can be used to trace a model relationship back, </span>
+<span class="sd">                                  this explicitly sets the container-contained relationship. </span>
+
+<span class="sd">                                  So there is no doubt which is the container model in case there are more than</span>
+<span class="sd">                                  on ForeignKey relationship.This allows construction of URLS by the generate_urls method.</span>
+
+
+<span class="sd">        3) self.urls --&gt; A Dictionary that holds all the URLS for an object constructed at runtime</span>
+<span class="sd">                          with all the possible actions on an object. This is an experimental attempt</span>
+<span class="sd">                          to use this in place of Django&#39;s reverse method / the {% url %} template tag. </span>
+
+<span class="sd">                          The self.save() will call the self.generate_urls() and that will set the self.urls attribute.</span>
+<span class="sd">                          This allows the dictionaly like access from template as opposed to the a little ugly </span>
+<span class="sd">                          {% url %} template tags with all the *args and **kwargs</span>
+
+<span class="sd">                          This indirectly calls the urlgenerator_factory which does the setting of URLS as per actions</span>
+<span class="sd">                          like &#39;add&#39;, &#39;edit&#39;, &#39;delete&#39;, &#39;json&#39;, &#39;summary&#39;, &#39;pane&#39; etc..</span>
+
+<span class="sd">                          This is far from clean / elegant as it stands now, but it works.</span>
+
+
+<span class="sd">        4) field_list --&gt; This Attribute helps collect the fields in the model class. It is useful for returning </span>
+<span class="sd">                          formatted presentation of the object from formatted_obj_data method. </span>
+
+<span class="sd">                          Eventually this method will be ported over to a separate Presentation class that</span>
+<span class="sd">                          deals with only how an object is presented back as HTML / JSON / other formats. </span>
+<span class="sd">                          The HTML will include CSS inbuilt based on default values (min, max, range, True, False etc..)</span>
+
+<span class="sd">                          An early attempt at this is in visit.visit_phyexam.presentation_class.py where all the </span>
+<span class="sd">                          exam findings are verified againts default values and appropriate CSS styles are generated</span>
+<span class="sd">                          for HTML. This does not use template as variable comparison based on Python types are</span>
+<span class="sd">                          difficult and range comparison does not work. This code of course can be put in views.py to help</span>
+<span class="sd">                          generate template variables but the Class based approach for presentation seems clean. </span>
+
+<span class="sd">                          The disadvantage of this is that the Designer will have to meddle with Python code / ask the developer</span>
+<span class="sd">                          to handle that should he change the CSS style / attributes later. For this purpose a template based </span>
+<span class="sd">                          approach stub has been started in the Presentation class which can be expanded later. </span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">         Class is Initialized with the attributes of __model_label__ , _parent_model, urls and field_list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;AuShadhaBaseModel&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">urls</span><span class="o">=</span><span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="AuShadhaBaseModel.Meta"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+      <span class="n">abstract</span> <span class="o">=</span> <span class="bp">True</span>
+</div>
+    <span class="k">def</span> <span class="nf">_field_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Holds the model field list. &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">field_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<div class="viewcode-block" id="AuShadhaBaseModel.save"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Saves a model and sets the urls attribute&quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">generate_urls</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the unicode representation of the Model as the __model_label__ Attribute&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_generate_and_assign_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">parent</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot; Generates and Assigns URL to the Model Object&quot;&quot;&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">urls</span> <span class="o">=</span> <span class="n">urlgenerator_factory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">parent</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="AuShadhaBaseModel.generate_urls"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.generate_urls">[docs]</a>    <span class="k">def</span> <span class="nf">generate_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">          Generates and Assigns URL to the Model Object</span>
+<span class="sd">          As of now this needs to be called as needed on instances. </span>
+
+<span class="sd">          #TODO: The result is not saved as a model attribute</span>
+
+<span class="sd">          #FIXME: Calling methods on serial instances somehow replaces the self.urls in </span>
+<span class="sd">                  called previously. Currently it is therefore best to call it once and</span>
+<span class="sd">                  save in a variable and use it. </span>
+
+<span class="sd">                  If _parent_model is not set, it will raise an Exception</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+      <span class="n">parent</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="s">&#39;_parent_model&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="n">parent</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+          <span class="n">parent_field</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">parent</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_generate_and_assign_urls</span><span class="p">(</span><span class="n">parent_field</span><span class="p">)</span>        
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+          <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">parent</span><span class="p">:</span>
+            <span class="n">p_field</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">item</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">p_field</span><span class="p">:</span>
+              <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">_generate_and_assign_urls</span><span class="p">(</span><span class="n">p_field</span><span class="p">)</span>
+              <span class="k">break</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;NoParentModelURLError&quot;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="AuShadhaBaseModel.get_formatted_obj"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_formatted_obj">[docs]</a>    <span class="k">def</span> <span class="nf">get_formatted_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="AuShadhaBaseModel.formatted_obj_data_as_table"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.formatted_obj_data_as_table">[docs]</a>    <span class="k">def</span> <span class="nf">formatted_obj_data_as_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="sd">&#39;&#39;&#39; Return formatted data as mark_safe HTML table &#39;&#39;&#39;</span>
+
+      <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="AuShadhaBaseModel.formatted_obj_data"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.formatted_obj_data">[docs]</a>    <span class="k">def</span> <span class="nf">formatted_obj_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+      <span class="sd">&#39;&#39;&#39;Return formatted data as mark_safe HTML paragraph &#39;&#39;&#39;</span>
+
+      <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_list</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_field_list</span><span class="p">()</span>
+
+        <span class="n">str_obj</span> <span class="o">=</span> <span class="s">&quot;&lt;p&gt;&quot;</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_list</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;AutoField&#39;</span><span class="p">,</span><span class="s">&#39;ForeignKey&#39;</span><span class="p">]:</span>
+              <span class="n">field_name</span> <span class="o">=</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;_&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+              <span class="n">field_value</span> <span class="o">=</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">value_to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;_&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+              <span class="k">if</span> <span class="n">field_value</span> <span class="ow">in</span><span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">]:</span>
+                <span class="n">field_value</span> <span class="o">=</span> <span class="s">&#39;--&#39;</span>
+
+              <span class="k">if</span> <span class="n">field_value</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+                <span class="n">field_value</span> <span class="o">=</span> <span class="s">&quot;Yes&quot;</span>
+              <span class="k">elif</span> <span class="n">field_value</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+                <span class="n">field_value</span> <span class="o">=</span> <span class="s">&quot;No&quot;</span>
+
+              <span class="n">_str</span> <span class="o">=</span> <span class="s">&quot;&lt;span&gt; </span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s"> &lt;/span&gt;&lt;/br&gt;&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">field_value</span><span class="p">)</span>
+              <span class="n">str_obj</span> <span class="o">+=</span> <span class="n">_str</span>
+
+            <span class="k">else</span><span class="p">:</span>
+              <span class="k">continue</span>
+        <span class="n">str_obj</span> <span class="o">+=</span> <span class="s">&quot;&lt;/p&gt;&quot;</span>
+        <span class="k">return</span> <span class="n">mark_safe</span><span class="p">(</span><span class="n">str_obj</span><span class="p">)</span>
+
+      <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">e</span>
+
+
+    <span class="c"># Some URL methods. Not needed now as it has been replaced with the urls attribute.</span>
+    <span class="c"># Left here as hooks</span>
+    <span class="c"># The get_edit_url and get_del_url may be useful if one wants to generate urls for editing / deleting</span>
+    <span class="c">#   without meddling with the urls Attribute.</span>
+</div>
+<div class="viewcode-block" id="AuShadhaBaseModel.get_absolute_url"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_absolute_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="AuShadhaBaseModel.get_edit_url"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_edit_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_edit_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">generic_url_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&quot;edit&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="AuShadhaBaseModel.get_del_url"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_del_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_del_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">generic_url_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&quot;del&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="AuShadhaBaseModel.get_object_json_url"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_object_json_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_object_json_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;/AuShadha/</span><span class="si">%s</span><span class="s">_json/</span><span class="si">%s</span><span class="s">/&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+
+
+
+</div></div>
+<div class="viewcode-block" id="AuShadhaBaseModelForm"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm">[docs]</a><span class="k">class</span> <span class="nc">AuShadhaBaseModelForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class for all AuShadha ModelForms.</span>
+
+<span class="sd">    Classes inheriting from this shall define two class attributes:</span>
+
+<span class="sd">      1) dijit_fields : </span>
+<span class="sd">                      &gt;&gt; a dictionary of Dijit Form Fields</span>
+<span class="sd">                      &gt;&gt; defaults to dijit_fields_constants.py file in same directory</span>
+<span class="sd">                         from which the constant can be imported</span>
+<span class="sd">                      &gt;&gt; Not supplying this raised a &quot;No Dijisable Dictionary Supplied&quot; Exception</span>
+
+<span class="sd">      2) __form_name__ : </span>
+<span class="sd">                      &gt;&gt; a string describing the form</span>
+
+
+<span class="sd">    Class Meta: attributes are the same as ModelForm</span>
+
+<span class="sd">    __init__ Call self.generate_dijit_form which generates the Dijitised form</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="p">{}</span> <span class="c">#FIXME This should be a instance variable. Realised it too late. Has to migrate it inside __init__ !!</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;AuShadhaBaseModelForm&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AuShadhaBaseModelForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">generate_dijit_form</span><span class="p">()</span>
+
+<div class="viewcode-block" id="AuShadhaBaseModelForm.generate_dijit_form"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.generate_dijit_form">[docs]</a>    <span class="k">def</span> <span class="nf">generate_dijit_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dijit_fields</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">value_dict</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dijit_fields</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                <span class="k">for</span> <span class="n">prop_key</span><span class="p">,</span> <span class="n">prop_val</span> <span class="ow">in</span> <span class="n">value_dict</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="n">prop_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_val</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;No Text Fields ! &quot;</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;No Dijisable Dictionary Supplied&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="AuShadhaBaseModelForm.Meta"><a class="viewcode-back" href="../../../../AuShadha.apps.aushadha_base_models.html#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">AuShadhaBaseModel</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

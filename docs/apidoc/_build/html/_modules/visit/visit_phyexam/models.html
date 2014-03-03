@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>visit.visit_phyexam.models &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for visit.visit_phyexam.models</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Physical Examination Models for AuShadha</span>
+<span class="c"># Takes care of all the Physical Examination Related Data.</span>
+<span class="c"># Author    : Dr.Easwar T.R</span>
+<span class="c"># Copyright : 2012</span>
+<span class="c"># Date      : 2012-12-31</span>
+<span class="c"># License   : GNU-GPL Version 3</span>
+<span class="c">################################################################################</span>
+
+<span class="c"># General Imports</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="c"># General Django Imports</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.forms</span> <span class="kn">import</span> <span class="n">ModelForm</span><span class="p">,</span><span class="n">Textarea</span><span class="p">,</span><span class="n">CharField</span><span class="p">,</span><span class="n">Widget</span><span class="p">,</span><span class="n">TextInput</span><span class="p">,</span><span class="n">HiddenInput</span><span class="p">,</span><span class="n">ModelChoiceField</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
+
+<span class="c"># Application specific django imports::</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.aushadha_base_models.models</span> <span class="kn">import</span> <span class="n">AuShadhaBaseModel</span><span class="p">,</span><span class="n">AuShadhaBaseModelForm</span>
+<span class="c">#from AuShadha.apps.aushadha_users.models import AuShadhaUser</span>
+<span class="c">#from AuShadha.apps.clinic.models import Clinic, Staff</span>
+
+<span class="c">#from physician.models import *</span>
+<span class="c">#from patient.models import PatientDetail</span>
+<span class="c">#from admission.models import AdmissionDetail</span>
+<span class="c">#from visit.models import VisitDetail</span>
+
+<span class="c">#PatientDetail  = UI.get_module(&quot;PatientRegistration&quot;)</span>
+<span class="c">#AdmissionDetail = UI.get_module(&quot;Admission&quot;)</span>
+
+<span class="n">VisitDetail</span> <span class="o">=</span> <span class="n">UI</span><span class="o">.</span><span class="n">get_module</span><span class="p">(</span><span class="s">&quot;OPD_Visit&quot;</span><span class="p">)</span>
+
+
+<span class="c"># Imports the needed Constants</span>
+<span class="kn">from</span> <span class="nn">.phyexam_constants</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.phy_exam_constants</span> <span class="kn">import</span> <span class="n">PC</span>
+<span class="kn">from</span> <span class="nn">presentation_classes</span> <span class="kn">import</span> <span class="n">vitalexamobjpresentationclass_factory</span><span class="p">,</span>\
+                                 <span class="n">genexamobjpresentationclass_factory</span><span class="p">,</span>\
+                                 <span class="n">sysexamobjpresentationclass_factory</span><span class="p">,</span>\
+                                 <span class="n">musexamobjpresentationclass_factory</span><span class="p">,</span>\
+                                 <span class="n">neuroexamobjpresentationclass_factory</span><span class="p">,</span>\
+                                 <span class="n">vascexamobjpresentationclass_factory</span><span class="p">,</span>\
+                                 <span class="n">vascexamobjpresentationclass_querysetfactory</span>
+
+<span class="kn">from</span> <span class="nn">dijit_fields_constants</span> <span class="kn">import</span> <span class="n">VITAL_FORM_CONSTANTS</span><span class="p">,</span> \
+                                    <span class="n">GEN_EXAM_FORM_CONSTANTS</span><span class="p">,</span> \
+                                    <span class="n">SYS_EXAM_FORM_CONSTANTS</span><span class="p">,</span> \
+                                    <span class="n">MUSCULOSKELETAL_EXAM_FORM_CONSTANTS</span><span class="p">,</span>\
+                                    <span class="n">NEURO_EXAM_FORM_CONSTANTS</span><span class="p">,</span>\
+                                    <span class="n">VASCULAR_EXAM_FORM_CONSTANTS</span><span class="p">,</span>\
+                                    <span class="n">PHY_EXAM_BASE_MODEL_FORM_CONSTANTS</span>
+
+<span class="c"># Constants</span>
+
+<span class="n">DEFAULT_VITALS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;sys_bp&#39;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="s">&#39;dia_bp&#39;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+    <span class="s">&#39;pulse_rate&#39;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+    <span class="s">&#39;resp_rate&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s">&#39;gcs&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s">&#39;height&#39;</span><span class="p">:</span> <span class="mf">0.00</span><span class="p">,</span>
+    <span class="s">&#39;weight&#39;</span><span class="p">:</span> <span class="mf">0.00</span><span class="p">,</span>
+    <span class="s">&#39;bmi&#39;</span><span class="p">:</span> <span class="mf">0.00</span><span class="p">,</span>
+    <span class="s">&#39;remarks&#39;</span><span class="p">:</span> <span class="s">&quot;NAD&quot;</span>
+<span class="p">}</span>
+
+<span class="n">DEFAULT_PHYEXAM_FORM_EXCLUDES</span> <span class="o">=</span> <span class="p">(</span>
+                                 <span class="s">&#39;visit_detail&#39;</span><span class="p">,</span>
+                                 <span class="s">&#39;remarks&#39;</span>
+                                 <span class="p">)</span>
+
+<span class="n">VASC_EXAM_FORM_EXCLUDES</span> <span class="o">=</span> <span class="p">(</span>
+                          <span class="s">&#39;visit_detail&#39;</span><span class="p">,</span>
+                          <span class="s">&#39;remarks&#39;</span>
+                          <span class="p">)</span>
+
+
+<span class="c">############################################################</span>
+<span class="c"># PHYEXAM MODELS </span>
+<span class="c">############################################################</span>
+
+<div class="viewcode-block" id="PhyExamBaseModel"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.PhyExamBaseModel">[docs]</a><span class="k">class</span> <span class="nc">PhyExamBaseModel</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">PhyExamBaseModel</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;phyexam&quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,]</span>
+
+    <span class="n">remarks</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;NAD&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="n">modified_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="n">visit_detail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;visit.VisitDetail&#39;</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="c">#physician = models.ForeignKey(Staff)</span>
+
+    <span class="c">#base_model = models.OneToOneField(&#39;aushadha_base_models.AuShadhaBaseModel&#39;, parent_link=True)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;Created at: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">created_at</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="VitalExam"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.VitalExam">[docs]</a><span class="k">class</span> <span class="nc">VitalExam</span><span class="p">(</span><span class="n">PhyExamBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VitalExam</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;vital&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,]</span>
+
+    <span class="n">sys_bp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="s">&#39;Systolic B.P&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">120</span> <span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;mmHg&quot;</span><span class="p">)</span>
+    <span class="n">dia_bp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="s">&#39;Diastolic B.P&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;mmHg&quot;</span><span class="p">)</span>
+    <span class="n">pulse_rate</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="s">&#39;Pulse Rate&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">82</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;per min.&quot;</span><span class="p">)</span>
+    <span class="n">resp_rate</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="s">&#39;Respiratory Rate&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;per min.&quot;</span><span class="p">)</span>
+    <span class="n">gcs</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="s">&#39;GCS&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;out of 15&quot;</span><span class="p">)</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span> <span class="s">&quot;in Cms.&quot;</span><span class="p">)</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;in Kg.&quot;</span><span class="p">)</span>
+    <span class="n">bmi</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DecimalField</span><span class="p">(</span><span class="s">&#39;BMI&#39;</span><span class="p">,</span> <span class="n">decimal_places</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_digits</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DecimalField</span><span class="p">(</span><span class="s">&#39;Temparature&#39;</span><span class="p">,</span> <span class="n">decimal_places</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_digits</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s">&quot;in Farenheit&quot;</span><span class="p">)</span>
+    <span class="n">phy_exam_base_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="s">&#39;PhyExamBaseModel&#39;</span><span class="p">,</span> <span class="n">parent_link</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Vital&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Vital&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;sys_bp&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;dia_bp&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;pulse_rate&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;resp_rate&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;height&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;weight&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;bmi&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;gcs&#39;</span>
+                  <span class="p">]</span>
+
+<div class="viewcode-block" id="VitalExam.present"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.VitalExam.present">[docs]</a>    <span class="k">def</span> <span class="nf">present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">vitalexamobjpresentationclass_factory</span><span class="p">(</span> <span class="n">VitalExam</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="GenExam"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.GenExam">[docs]</a><span class="k">class</span> <span class="nc">GenExam</span><span class="p">(</span><span class="n">PhyExamBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenExam</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;gen&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,]</span>
+
+
+    <span class="n">pallor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">icterus</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">cyanosis</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">clubbing</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">lymphadenopathy</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">edema</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">phy_exam_base_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="s">&#39;PhyExamBaseModel&#39;</span><span class="p">,</span> <span class="n">parent_link</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;General Examination&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;General Examination&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;pallor&#39;</span><span class="p">,</span> <span class="s">&#39;icterus&#39;</span><span class="p">,</span> <span class="s">&#39;cyanosis&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;clubbing&#39;</span><span class="p">,</span> <span class="s">&#39;lymphadenopathy&#39;</span><span class="p">,</span> <span class="s">&#39;edema&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="GenExam.present"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.GenExam.present">[docs]</a>    <span class="k">def</span> <span class="nf">present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">genexamobjpresentationclass_factory</span><span class="p">(</span> <span class="n">GenExam</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="SysExam"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.SysExam">[docs]</a><span class="k">class</span> <span class="nc">SysExam</span><span class="p">(</span><span class="n">PhyExamBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SysExam</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;sys&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,]</span>
+
+    <span class="n">heent</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">HEENT_EX</span><span class="p">)</span>
+    <span class="n">cns</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">CNS_EX</span><span class="p">)</span>
+    <span class="n">cvs</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">CVS_EX</span><span class="p">)</span>
+    <span class="n">respiratory_system</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">RESP_EX</span><span class="p">)</span>
+    <span class="n">git_and_gut</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">GIT_GUT_EX</span><span class="p">)</span>
+    <span class="n">phy_exam_base_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="s">&#39;PhyExamBaseModel&#39;</span><span class="p">,</span> <span class="n">parent_link</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;System Examination&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;System Examination&quot;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;heent&#39;</span><span class="p">,</span> <span class="s">&#39;cns&#39;</span><span class="p">,</span> <span class="s">&#39;cvs&#39;</span><span class="p">,</span> <span class="s">&#39;respiratory_system&#39;</span><span class="p">,</span> <span class="s">&#39;git_and_gut&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="SysExam.present"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.SysExam.present">[docs]</a>    <span class="k">def</span> <span class="nf">present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sysexamobjpresentationclass_factory</span><span class="p">(</span> <span class="n">SysExam</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="NeuroExam"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.NeuroExam">[docs]</a><span class="k">class</span> <span class="nc">NeuroExam</span><span class="p">(</span><span class="n">PhyExamBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NeuroExam</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;neuro&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,]</span>
+
+    <span class="n">plantar</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Plantar Reflex&#39;</span><span class="p">,</span>
+                               <span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                               <span class="n">default</span><span class="o">=</span><span class="s">&quot;Bilateral Flexor response&quot;</span><span class="p">,</span>
+                                       <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 30 words&#39;</span><span class="p">)</span>
+
+    <span class="n">abdominal</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Abdominal Reflex&#39;</span><span class="p">,</span>
+                                 <span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                                 <span class="n">default</span><span class="o">=</span><span class="s">&quot;Ellicited well in all four quadrants&quot;</span><span class="p">,</span>
+                                 <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 30 words&#39;</span>
+                                 <span class="p">)</span>
+
+    <span class="n">cremasteric</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Present&quot;</span><span class="p">)</span>
+
+    <span class="n">anal_wink</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;Present&quot;</span><span class="p">)</span>
+
+    <span class="n">motor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Motor Exam&#39;</span><span class="p">,</span>
+                             <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                             <span class="n">default</span><span class="o">=</span><span class="s">&quot;Normal Bulk, Tone and Power in all four limbs. No Fasciculations&quot;</span><span class="p">,</span>
+                             <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 100 words&#39;</span><span class="p">)</span>
+
+    <span class="n">sensory</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Sensory Exam&#39;</span><span class="p">,</span>
+                               <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                               <span class="n">default</span><span class="o">=</span><span class="s">&quot;Normal Sensation in all four limbs. Perianal sensation intact&quot;</span><span class="p">,</span>
+                                       <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 100 words&#39;</span><span class="p">)</span>
+
+    <span class="n">dtr</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Deep Tendon Reflex&#39;</span><span class="p">,</span>
+                           <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+                           <span class="n">default</span><span class="o">=</span><span class="s">&quot;Equally ellicitable in all four limbs. No Clonus&quot;</span><span class="p">,</span>
+                           <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 50 words&#39;</span>
+                           <span class="p">)</span>
+
+    <span class="n">cranial_nerve</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Cranial Nerve Exam&#39;</span><span class="p">,</span>
+                                     <span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                                     <span class="n">default</span><span class="o">=</span><span class="s">&quot;All Cranial Nerves NAD&quot;</span><span class="p">,</span>
+                                     <span class="n">help_text</span><span class="o">=</span><span class="s">&#39;limit to 30 words&#39;</span><span class="p">)</span>
+
+    <span class="n">phy_exam_base_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="s">&#39;PhyExamBaseModel&#39;</span><span class="p">,</span> <span class="n">parent_link</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Neuro Examination&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Neuro Examination&quot;</span>
+
+<div class="viewcode-block" id="NeuroExam.present"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.NeuroExam.present">[docs]</a>    <span class="k">def</span> <span class="nf">present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">neuroexamobjpresentationclass_factory</span><span class="p">(</span> <span class="n">NeuroExam</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="MusculoSkeletalExam"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.MusculoSkeletalExam">[docs]</a><span class="k">class</span> <span class="nc">MusculoSkeletalExam</span><span class="p">(</span><span class="n">PhyExamBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MusculoSkeletalExam</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;musculoskeletal&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,]</span>
+
+    <span class="n">ms_exam</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Findings&#39;</span><span class="p">,</span>
+                               <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                               <span class="n">default</span> <span class="o">=</span> <span class="s">&quot;NAD&quot;</span><span class="p">)</span>
+
+    <span class="n">phy_exam_base_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="s">&#39;PhyExamBaseModel&#39;</span><span class="p">,</span> <span class="n">parent_link</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Musculo Skeletal Examination&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Musculo Skeletal Examination&quot;</span>
+
+<div class="viewcode-block" id="MusculoSkeletalExam.present"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.MusculoSkeletalExam.present">[docs]</a>    <span class="k">def</span> <span class="nf">present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">musexamobjpresentationclass_factory</span><span class="p">(</span> <span class="n">MusculoSkeletalExam</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="p">)</span>
+
+
+</div></div>
+<div class="viewcode-block" id="VascExam"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.VascExam">[docs]</a><span class="k">class</span> <span class="nc">VascExam</span><span class="p">(</span><span class="n">PhyExamBaseModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VascExam</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&#39;vasc&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;visit_detail&#39;</span><span class="p">,]</span>
+
+<span class="c">#  pulse      = models.BooleanField()</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
+                                <span class="n">choices</span><span class="o">=</span><span class="p">((</span><span class="s">&#39;DP&#39;</span><span class="p">,</span> <span class="s">&quot;Dorsalis Pedis&quot;</span><span class="p">),</span>
+                                         <span class="p">(</span><span class="s">&quot;PT&quot;</span><span class="p">,</span> <span class="s">&quot;Posterior Tibial&quot;</span><span class="p">),</span>
+                                         <span class="p">(</span><span class="s">&#39;P&#39;</span><span class="p">,</span> <span class="s">&quot;Popliteal&quot;</span><span class="p">),</span>
+                                         <span class="p">(</span><span class="s">&#39;F&#39;</span><span class="p">,</span> <span class="s">&quot;Femoral&quot;</span><span class="p">),</span>
+                                         <span class="p">(</span><span class="s">&#39;SC&#39;</span><span class="p">,</span> <span class="s">&quot;Sub-Clavian&quot;</span><span class="p">),</span>
+                                         <span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&quot;Axillary&quot;</span><span class="p">),</span>
+                                         <span class="p">(</span><span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&quot;Brachial&quot;</span><span class="p">),</span>
+                                         <span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="s">&quot;Radial&quot;</span><span class="p">),</span>
+                                         <span class="p">(</span><span class="s">&#39;U&#39;</span><span class="p">,</span> <span class="s">&quot;Ulnar&quot;</span><span class="p">)</span>
+                                        <span class="p">)</span>
+                               <span class="p">)</span>
+
+    <span class="n">side</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">EXAMINATION_SIDES</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&#39;Right&#39;</span><span class="p">)</span>
+
+    <span class="n">character</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                                 <span class="n">choices</span><span class="o">=</span><span class="p">((</span><span class="s">&#39;bounding&#39;</span><span class="p">,</span> <span class="s">&#39;Bounding&#39;</span><span class="p">),</span>
+                                          <span class="p">(</span><span class="s">&#39;normal&#39;</span><span class="p">,</span> <span class="s">&#39;Normal&#39;</span><span class="p">),</span>
+                                          <span class="p">(</span><span class="s">&#39;weak&#39;</span><span class="p">,</span> <span class="s">&#39;Weak&#39;</span><span class="p">),</span>
+                                          <span class="p">(</span><span class="s">&#39;absent&#39;</span><span class="p">,</span> <span class="s">&quot;Absent&quot;</span><span class="p">)</span>
+                                          <span class="p">),</span>
+                                 <span class="n">default</span> <span class="o">=</span> <span class="s">&#39;Normal&#39;</span>
+                                 <span class="p">)</span>
+
+    <span class="n">phy_exam_base_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="s">&#39;PhyExamBaseModel&#39;</span><span class="p">,</span> <span class="n">parent_link</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;Vascular Examination&quot;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&quot;Vascular Examination&quot;</span>
+
+<div class="viewcode-block" id="VascExam.present"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.VascExam.present">[docs]</a>    <span class="k">def</span> <span class="nf">present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">vascexamobjpresentationclass_factory</span><span class="p">(</span> <span class="n">VascExam</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c">##############################################################</span>
+<span class="c"># MODEL FORMS</span>
+<span class="c">##############################################################</span>
+
+</div></div>
+<div class="viewcode-block" id="PhyExamBaseModelForm"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.PhyExamBaseModelForm">[docs]</a><span class="k">class</span> <span class="nc">PhyExamBaseModelForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Base class for all Physical Examination Forms.&quot;&quot;&quot;</span>
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">PHY_EXAM_BASE_MODEL_FORM_CONSTANTS</span>
+
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Physical Examination Base Form&quot;</span>
+
+<div class="viewcode-block" id="PhyExamBaseModelForm.Meta"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.PhyExamBaseModelForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">PhyExamBaseModel</span>
+        <span class="c">#exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES</span>
+</div>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PhyExamBaseModelForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">generate_dijit_form</span><span class="p">()</span>
+
+<div class="viewcode-block" id="PhyExamBaseModelForm.generate_dijit_form"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.PhyExamBaseModelForm.generate_dijit_form">[docs]</a>    <span class="k">def</span> <span class="nf">generate_dijit_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dijit_fields</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">value_dict</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dijit_fields</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                <span class="k">for</span> <span class="n">prop_key</span><span class="p">,</span> <span class="n">prop_val</span> <span class="ow">in</span> <span class="n">value_dict</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="n">prop_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_val</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;No Text Fields ! &quot;</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;No Dijisable Dictionary Supplied&quot;</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="VitalExamForm"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.VitalExamForm">[docs]</a><span class="k">class</span> <span class="nc">VitalExamForm</span><span class="p">(</span><span class="n">PhyExamBaseModelForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Describes the Vital Monitoring signs ModelForm.&quot;&quot;&quot;</span>
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Vital Signs Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VITAL_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VitalExamForm.Meta"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.VitalExamForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VitalExam</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="n">DEFAULT_PHYEXAM_FORM_EXCLUDES</span>
+
+</div></div>
+<div class="viewcode-block" id="GenExamForm"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.GenExamForm">[docs]</a><span class="k">class</span> <span class="nc">GenExamForm</span><span class="p">(</span><span class="n">PhyExamBaseModelForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Describes the General Exam Monitoring ModelForm.&quot;&quot;&quot;</span>
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;General Examination Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">GEN_EXAM_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="GenExamForm.Meta"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.GenExamForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">GenExam</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="n">DEFAULT_PHYEXAM_FORM_EXCLUDES</span>
+
+</div></div>
+<div class="viewcode-block" id="SysExamForm"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.SysExamForm">[docs]</a><span class="k">class</span> <span class="nc">SysExamForm</span><span class="p">(</span><span class="n">PhyExamBaseModelForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Describes the Systemic Exam Monitoring ModelForm.&quot;&quot;&quot;</span>
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Systemic Examination Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">SYS_EXAM_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="SysExamForm.Meta"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.SysExamForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">SysExam</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="n">DEFAULT_PHYEXAM_FORM_EXCLUDES</span>
+
+</div></div>
+<div class="viewcode-block" id="MusculoSkeletalExamForm"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.MusculoSkeletalExamForm">[docs]</a><span class="k">class</span> <span class="nc">MusculoSkeletalExamForm</span><span class="p">(</span><span class="n">PhyExamBaseModelForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Describes the Musculoskeletal Exam Monitoring ModelForm.&quot;&quot;&quot;</span>
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Musculoskeletal Examination Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">MUSCULOSKELETAL_EXAM_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="MusculoSkeletalExamForm.Meta"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.MusculoSkeletalExamForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">MusculoSkeletalExam</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="n">DEFAULT_PHYEXAM_FORM_EXCLUDES</span>
+
+
+</div></div>
+<div class="viewcode-block" id="NeuroExamForm"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.NeuroExamForm">[docs]</a><span class="k">class</span> <span class="nc">NeuroExamForm</span><span class="p">(</span><span class="n">PhyExamBaseModelForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Describes the Neurological Exam Monitoring ModelForm.&quot;&quot;&quot;</span>
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Neurological Examination Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">NEURO_EXAM_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="NeuroExamForm.Meta"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.NeuroExamForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">NeuroExam</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="n">DEFAULT_PHYEXAM_FORM_EXCLUDES</span>
+
+</div></div>
+<div class="viewcode-block" id="VascExamForm"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.VascExamForm">[docs]</a><span class="k">class</span> <span class="nc">VascExamForm</span><span class="p">(</span><span class="n">PhyExamBaseModelForm</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Describes the Vascular Exam Monitoring ModelForm.&quot;&quot;&quot;</span>
+    <span class="n">__form_name__</span> <span class="o">=</span> <span class="s">&quot;Vascular Examination Form&quot;</span>
+
+    <span class="n">dijit_fields</span> <span class="o">=</span> <span class="n">VASCULAR_EXAM_FORM_CONSTANTS</span>
+
+<div class="viewcode-block" id="VascExamForm.Meta"><a class="viewcode-back" href="../../../visit.visit_phyexam.html#visit.visit_phyexam.models.VascExamForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">VascExam</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="n">DEFAULT_PHYEXAM_FORM_EXCLUDES</span>
+        <span class="c">#exclude = VASC_EXAM_FORM_EXCLUDES</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

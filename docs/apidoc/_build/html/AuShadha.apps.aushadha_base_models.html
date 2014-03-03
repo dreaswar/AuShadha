@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AuShadha.apps.aushadha_base_models package &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="index.html" />
+    <link rel="up" title="AuShadha.apps package" href="AuShadha.apps.html" />
+    <link rel="next" title="AuShadha.apps.aushadha_users package" href="AuShadha.apps.aushadha_users.html" />
+    <link rel="prev" title="AuShadha.apps package" href="AuShadha.apps.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.aushadha_users.html" title="AuShadha.apps.aushadha_users package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.html" title="AuShadha.apps package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.apps.html" accesskey="U">AuShadha.apps package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="aushadha-apps-aushadha-base-models-package">
+<h1>AuShadha.apps.aushadha_base_models package<a class="headerlink" href="#aushadha-apps-aushadha-base-models-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.apps.aushadha_base_models.models">
+<span id="aushadha-apps-aushadha-base-models-models-module"></span><h2>AuShadha.apps.aushadha_base_models.models module<a class="headerlink" href="#module-AuShadha.apps.aushadha_base_models.models" title="Permalink to this headline">¶</a></h2>
+<p>This module houses the BaseClass for AuShadha Model and ModelForm. These inherit from 
+Django models.Model class and forms.ModelForm class respectively.</p>
+<p>The AuShadhaBaseModel is an abstract base class that all AuShadha apps can inherit from
+Models defined throughout the app can inherit from this class.</p>
+<dl class="docutils">
+<dt>The AuShadhaBaseModelForm is a base class for all ModelForms which will help generate</dt>
+<dd>Dijit Form Widgets automatically. ModelForms defined throughout can inherit from it
+to autogenerate Dijit Widgets as per the dijit_fields_constants.py file definitions</dd>
+</dl>
+<dl class="class">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.aushadha_base_models.models.</tt><tt class="descname">AuShadhaBaseModel</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<blockquote>
+<div><p>Abstract Base AuShadha Model From which all AuShadha Models Derive.
+This has several methods that can be inherited and used throughout.</p>
+<p>More specifically, the generate_urls method and the self.urls variable are
+meant to be a substitute for Django&#8217;s reverse method to yeild the URL for 
+a given object. This allows dictionary like querying in Django template to
+get the url for an object rather than use the {%url%} template tag. It is not
+any significant advantage. Just an attempt to make it a little simpler.</p>
+</div></blockquote>
+<blockquote>
+<div><ol class="arabic">
+<li><dl class="first docutils">
+<dt>self.__model_label__ &#8211;&gt; Like the __app_label__ attribute which Django sets, this</dt>
+<dd><p class="first">sets a label for the model. Unlike the class __name__ this is
+just a string.</p>
+<p class="last">Main purpose is to allow construction of URLS for the object
+along with the _parent_model Attribute.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>self._parent_model &#8211;&gt; Attribute that sets the parent model that the model is contained in</dt>
+<dd><p class="first">This is almost a Zope like __contained_in__ attribute.</p>
+<p>Aside from ForeignKey which can be used to trace a model relationship back, 
+this explicitly sets the container-contained relationship.</p>
+<p class="last">So there is no doubt which is the container model in case there are more than
+on ForeignKey relationship.This allows construction of URLS by the generate_urls method.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>self.urls &#8211;&gt; A Dictionary that holds all the URLS for an object constructed at runtime</dt>
+<dd><p class="first">with all the possible actions on an object. This is an experimental attempt
+to use this in place of Django&#8217;s reverse method / the {% url %} template tag.</p>
+<p>The self.save() will call the self.generate_urls() and that will set the self.urls attribute.
+This allows the dictionaly like access from template as opposed to the a little ugly 
+{% url %} template tags with all the <a href="#id1"><span class="problematic" id="id2">*</span></a>args and <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs</p>
+<p>This indirectly calls the urlgenerator_factory which does the setting of URLS as per actions
+like &#8216;add&#8217;, &#8216;edit&#8217;, &#8216;delete&#8217;, &#8216;json&#8217;, &#8216;summary&#8217;, &#8216;pane&#8217; etc..</p>
+<p class="last">This is far from clean / elegant as it stands now, but it works.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>field_list &#8211;&gt; This Attribute helps collect the fields in the model class. It is useful for returning </dt>
+<dd><p class="first">formatted presentation of the object from formatted_obj_data method.</p>
+<p>Eventually this method will be ported over to a separate Presentation class that
+deals with only how an object is presented back as HTML / JSON / other formats. 
+The HTML will include CSS inbuilt based on default values (min, max, range, True, False etc..)</p>
+<p>An early attempt at this is in visit.visit_phyexam.presentation_class.py where all the 
+exam findings are verified againts default values and appropriate CSS styles are generated
+for HTML. This does not use template as variable comparison based on Python types are
+difficult and range comparison does not work. This code of course can be put in views.py to help
+generate template variables but the Class based approach for presentation seems clean.</p>
+<p class="last">The disadvantage of this is that the Designer will have to meddle with Python code / ask the developer
+to handle that should he change the CSS style / attributes later. For this purpose a template based 
+approach stub has been started in the Presentation class which can be expanded later.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<dl class="class">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.Meta.abstract">
+<tt class="descname">abstract</tt><em class="property"> = False</em><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.Meta.abstract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.formatted_obj_data">
+<tt class="descclassname">AuShadhaBaseModel.</tt><tt class="descname">formatted_obj_data</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.formatted_obj_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.formatted_obj_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return formatted data as mark_safe HTML paragraph</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.formatted_obj_data_as_table">
+<tt class="descclassname">AuShadhaBaseModel.</tt><tt class="descname">formatted_obj_data_as_table</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.formatted_obj_data_as_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.formatted_obj_data_as_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return formatted data as mark_safe HTML table</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.generate_urls">
+<tt class="descclassname">AuShadhaBaseModel.</tt><tt class="descname">generate_urls</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.generate_urls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.generate_urls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates and Assigns URL to the Model Object
+As of now this needs to be called as needed on instances.</p>
+<p>#TODO: The result is not saved as a model attribute</p>
+<dl class="docutils">
+<dt>#FIXME: Calling methods on serial instances somehow replaces the self.urls in </dt>
+<dd><p class="first">called previously. Currently it is therefore best to call it once and
+save in a variable and use it.</p>
+<p class="last">If _parent_model is not set, it will raise an Exception</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_absolute_url">
+<tt class="descclassname">AuShadhaBaseModel.</tt><tt class="descname">get_absolute_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.get_absolute_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_del_url">
+<tt class="descclassname">AuShadhaBaseModel.</tt><tt class="descname">get_del_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.get_del_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_del_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_edit_url">
+<tt class="descclassname">AuShadhaBaseModel.</tt><tt class="descname">get_edit_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.get_edit_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_edit_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_formatted_obj">
+<tt class="descclassname">AuShadhaBaseModel.</tt><tt class="descname">get_formatted_obj</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.get_formatted_obj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_formatted_obj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_object_json_url">
+<tt class="descclassname">AuShadhaBaseModel.</tt><tt class="descname">get_object_json_url</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.get_object_json_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.get_object_json_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.save">
+<tt class="descclassname">AuShadhaBaseModel.</tt><tt class="descname">save</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModel.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves a model and sets the urls attribute</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.aushadha_base_models.models.</tt><tt class="descname">AuShadhaBaseModelForm</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModelForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<p>Base class for all AuShadha ModelForms.</p>
+<p>Classes inheriting from this shall define two class attributes:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><dl class="first docutils">
+<dt>dijit_fields <span class="classifier-delimiter">:</span> <span class="classifier"></span></dt>
+<dd><p class="first">&gt;&gt; a dictionary of Dijit Form Fields
+&gt;&gt; defaults to dijit_fields_constants.py file in same directory</p>
+<blockquote>
+<div><p>from which the constant can be imported</p>
+</div></blockquote>
+<p class="last">&gt;&gt; Not supplying this raised a &#8220;No Dijisable Dictionary Supplied&#8221; Exception</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>__form_name__ <span class="classifier-delimiter">:</span> <span class="classifier"></span></dt>
+<dd><p class="first last">&gt;&gt; a string describing the form</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p>Class Meta: attributes are the same as ModelForm</p>
+<p>__init__ Call self.generate_dijit_form which generates the Dijitised form</p>
+<dl class="class">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModelForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel" title="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModel"><tt class="xref py py-class docutils literal"><span class="pre">AuShadhaBaseModel</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.base_fields">
+<tt class="descclassname">AuShadhaBaseModelForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {}</em><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.declared_fields">
+<tt class="descclassname">AuShadhaBaseModelForm.</tt><tt class="descname">declared_fields</tt><em class="property"> = {}</em><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.dijit_fields">
+<tt class="descclassname">AuShadhaBaseModelForm.</tt><tt class="descname">dijit_fields</tt><em class="property"> = {}</em><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.dijit_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.generate_dijit_form">
+<tt class="descclassname">AuShadhaBaseModelForm.</tt><tt class="descname">generate_dijit_form</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/models.html#AuShadhaBaseModelForm.generate_dijit_form"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.generate_dijit_form" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.media">
+<tt class="descclassname">AuShadhaBaseModelForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.models.AuShadhaBaseModelForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.apps.aushadha_base_models.tests">
+<span id="aushadha-apps-aushadha-base-models-tests-module"></span><h2>AuShadha.apps.aushadha_base_models.tests module<a class="headerlink" href="#module-AuShadha.apps.aushadha_base_models.tests" title="Permalink to this headline">¶</a></h2>
+<p>This file demonstrates writing tests using the unittest module. These will
+pass when you run &#8220;manage.py test&#8221;.</p>
+<p>Replace this with more appropriate tests for your application.</p>
+<dl class="class">
+<dt id="AuShadha.apps.aushadha_base_models.tests.SimpleTest">
+<em class="property">class </em><tt class="descclassname">AuShadha.apps.aushadha_base_models.tests.</tt><tt class="descname">SimpleTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/tests.html#SimpleTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.tests.SimpleTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="AuShadha.apps.aushadha_base_models.tests.SimpleTest.test_basic_addition">
+<tt class="descname">test_basic_addition</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/AuShadha/apps/aushadha_base_models/tests.html#SimpleTest.test_basic_addition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AuShadha.apps.aushadha_base_models.tests.SimpleTest.test_basic_addition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests that 1 + 1 always equals 2.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-AuShadha.apps.aushadha_base_models.views">
+<span id="aushadha-apps-aushadha-base-models-views-module"></span><h2>AuShadha.apps.aushadha_base_models.views module<a class="headerlink" href="#module-AuShadha.apps.aushadha_base_models.views" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-AuShadha.apps.aushadha_base_models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-AuShadha.apps.aushadha_base_models" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AuShadha.apps.aushadha_base_models package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.aushadha_base_models.models">AuShadha.apps.aushadha_base_models.models module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.aushadha_base_models.tests">AuShadha.apps.aushadha_base_models.tests module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.aushadha_base_models.views">AuShadha.apps.aushadha_base_models.views module</a></li>
+<li><a class="reference internal" href="#module-AuShadha.apps.aushadha_base_models">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="AuShadha.apps.html"
+                        title="previous chapter">AuShadha.apps package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="AuShadha.apps.aushadha_users.html"
+                        title="next chapter">AuShadha.apps.aushadha_users package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/AuShadha.apps.aushadha_base_models.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.aushadha_users.html" title="AuShadha.apps.aushadha_users package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="AuShadha.apps.html" title="AuShadha.apps package"
+             >previous</a> |</li>
+        <li><a href="index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="AuShadha.html" >AuShadha package</a> &raquo;</li>
+          <li><a href="AuShadha.apps.html" >AuShadha.apps package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>
