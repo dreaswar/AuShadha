@@ -23,11 +23,23 @@ panes:
     type: cp
     splitter: False
     html: "ICD10 Disease Codes"
-    widgets: []
+    widgets: 
+      - id: ICD10_SEARCH_WIDGET
+        type: search
+        labelAttr: 'name'
+        url: "{%url 'icd10_diagnosis_search'  %}"
+        hasDownArrow: !!bool False
+        autoComplete: !!bool False
+        searchAttr:  name
+        placeHolder: "ICD 10 Disease Codes"
+        style:
+           height: 2.2em
+           width: 40em
+
     panes: []
     class: topContentPane selected
     style: 
-      height: 1.8em
+      height: 2.2em
 
   - id : ICD10_CENTER_BC
     region: center

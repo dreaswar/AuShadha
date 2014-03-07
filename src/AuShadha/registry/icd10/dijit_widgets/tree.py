@@ -71,7 +71,7 @@ class ICD10Tree( object ):
 
       y =  self.yaml_file
       icd10_tree_node = DijitTree()
-      print y      
+#      print y      
       for node in y[self.node_name]:
         for k, v in node.iteritems():
           c  =  DijitTreeNode( v )

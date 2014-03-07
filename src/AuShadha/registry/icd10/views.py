@@ -63,6 +63,7 @@ def get_all_section_json(request):
     pass
 
 
+
 @login_required
 def get_all_diagnosis_json(request):
 
@@ -82,6 +83,42 @@ def get_all_diagnosis_json(request):
 
     else:
        return Http404("Bad Request Method")
+
+
+@login_required
+def icd10_diagnosis_search(request):
+    
+    import random
+
+    user = request.user
+    search_for = request.GET.get('name')
+
+    if request.method == 'GET':
+
+
+        if search_for == '*' or search_for == ' ':
+          diagnosis = Diagnosis.objects.all()[:100]
+
+        else:
+           search_for = search_for.split('*')[0]
+           print "Searching for ICD10 code containing ", search_for
+           diagnosis = Diagnosis.objects.filter(diag_code__icontains = search_for)[:100]
+
+        data = []
+        print diagnosis
+	for d in diagnosis:
+	   data_to_append = {}
+	   data_to_append['diag_name'] = d.diag_name.title()
+	   data_to_append['diag_code'] = d.diag_code
+	   data_to_append['name'] = '%s - %s ' %(d.diag_name, d.diag_code)
+	   data.append(data_to_append)
+        json = simplejson.dumps(data)
+        print json
+	return HttpResponse(json, content_type = 'application/json')
+
+    else:
+       return Http404("Bad Request Method")
+
 
 
 @login_required

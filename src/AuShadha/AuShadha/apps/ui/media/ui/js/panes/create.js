@@ -134,6 +134,8 @@ define(['dojo/dom',
 
         console.log("Creating pane with domId: " + domId);
 
+        // This Basically parses the json.pane from the AuShadha/apps/search/views's render_search_pane and creates a search UI with 
+        // search forms, widgets etc..
         function runMainModulePaneCreator(){
 
           if ( loadFirst == true ){
