@@ -1,0 +1,86 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+# YAML
+
+depends_on: [ search ]
+load_after: search
+load_first: !!bool False
+
+id       : ICD10
+type     : bc
+title    : "ICD 10" 
+url      : {}
+closable : !!bool True
+widgets: []
+panes:
+
+  - id : ICD10_TOP_CP
+    region: top
+    type: cp
+    splitter: False
+    html: "ICD10 Disease Codes"
+    widgets: []
+    panes: []
+    class: topContentPane selected
+    style: 
+      height: 1.8em
+
+  - id : ICD10_CENTER_BC
+    region: center
+    type: bc
+    splitter: False
+    widgets: []
+    panes: 
+    
+      - id : ICD10_CP_1
+        region: leading
+        type: cp
+        splitter: True
+        style: 
+          width: 40em
+        panes: []
+        widgets:
+        
+         - id: ICD10_LEADING_CP_TREE
+           type: tree
+           url: "{%url 'render_icd10_tree' %}"
+           mainTabPane: PATIENT_CENTER_CP_TC
+           title: "ICD 10"
+
+
+      - id : ICD10_CP_2
+        region: center
+        type: cp
+        widgets: []
+        splitter: True
+        class: widgetContainer
+        panes: 
+
+          - id: ICD10_SECTION_TREE
+            type: dom
+            domType: div
+            widgets: []
+            panes: []
+            
+            
+
+      - id: ICD10_CP_3
+        region: trailing
+        type: cp
+        widgets: []
+        splitter: True
+        style:
+          width: 35em
+        class: widgetContainer
+        panes: 
+
+          - id: ICD10_DIAGNOSIS_TREE
+            type: dom
+            domType: div
+            widgets: []
+            panes: []
+

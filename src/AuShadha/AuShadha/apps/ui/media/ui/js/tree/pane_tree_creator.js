@@ -24,7 +24,10 @@ define([
     "dijit/layout/TabContainer",
 
     'aushadha/grid/grid_structures',
-    'aushadha/panes/dynamic_html_pane_creator'
+    'aushadha/panes/dynamic_html_pane_creator',
+
+    'dojo/NodeList-traverse',
+    'dojo/NodeList-data'
 
   ], 
 
@@ -58,6 +61,7 @@ define([
     function onDblClickOnTree(item, mainTabPaneDomNodeId){
         require(['aushadha/under_construction/pane_and_widget_creator'],
         function(paneAndWidgetCreator){
+           
 
           if ( !item.returns || item.returns[0] == 'json' ) {
 
@@ -74,7 +78,15 @@ define([
                   // expected its better for UI purposes to open set redirect to true
                   // this can be customised in the tree.yaml 
 
-                  paneAndWidgetCreator.constructor( jsondata.pane , mainTabPaneDomNodeId, redirect );
+                  // If Dijit is present already and you want to dump the JSON there
+                  
+                  // If not Dijit is present and it needs to be created
+ 		    if ( item.target_node ) {
+		      registry.byId( item.target_node[0]).set('href', item.ondblclick[0] );
+		    }
+		    else {
+                      paneAndWidgetCreator.constructor( jsondata.pane , mainTabPaneDomNodeId, redirect );
+                    }
 
                 },
 
@@ -86,13 +98,40 @@ define([
             }
 
           else if ( item.returns[0] == 'html' ) {
-            var args = { title: item.name[0], 
-                         domId: item.id[0],
-                         url: item.ondblclick[0],
-                         parentTab: registry.byId( mainTabPaneDomNodeId )
-                    };              
-            console.log(args);
-            createDynamicHTMLPane( args );
+
+	    if ( item.target_node ) {
+		      registry.byId( item.target_node[0]).set('href', item.ondblclick[0] );
+	    }
+
+	    else {
+		    var args = { title: item.name[0], 
+				 domId: item.id[0],
+				 url: item.ondblclick[0],
+				 parentTab: registry.byId( mainTabPaneDomNodeId )
+			    };              
+		    console.log(args);
+		    createDynamicHTMLPane( args );
+            }
+          }
+
+          else if ( item.returns[0] == 'widget' ) {
+              
+             if ( item.widget_type[0] == 'tree' ) {
+
+                   if ( registry.byId(item.target_node[0] )  ){
+
+                      parent_dom =  query( "#"+item.target_node[0] ).parents('.widgetContainer')[0];
+                      target_node_type = query( "#"+item.target_node[0] )[0].tagName.toLowerCase();
+                      console.log(parent_dom);
+                      console.log(target_node_type);
+                      registry.byId(item.target_node[0]).destroyRecursive(false);
+                      domConstruct.create(target_node_type, { id: item.target_node[0] }, parent_dom, 0 );
+
+                   }
+
+                   buildTree(item.ondblclick[0],item.target_node[0],'PATIENT_CENTER_CP_TC' ,"Sections" );
+             }             
+
           }
 
         });
@@ -121,6 +160,7 @@ define([
 
                                             if ( item.ondblclick ) {
                                               onDblClickOnTree(item, mainTabPaneDomNodeId);
+                                              console.log(item);
                                             }
 
                                 }

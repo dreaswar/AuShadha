@@ -136,10 +136,7 @@
       <div>
         <h4> Demographics </h4>
         {% if demographics_obj %}
-          <ul>
-          {% for obj in demographics_obj %}
-            <li> {{obj.formatted_obj_data}} </li>
-          {% endfor %}
+            {{demographics_obj.0.formatted_obj_data}}
         {% else %}
           <p class="suggestion_text">  Demographics data </p>
         {% endif %}

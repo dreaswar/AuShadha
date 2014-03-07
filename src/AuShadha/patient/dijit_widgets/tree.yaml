@@ -255,6 +255,20 @@ visits: &VISITS
   redirect: !!int 1
   returns: json
 
+icd_10: &ICD_10
+   name: "ICD 10"
+   type: application
+   module_type: icd10_module
+   module_name: icd10
+   id: ICD_10
+   ondblclick: {%url 'render_icd10_pane' %}
+   onclick: null
+   onrclick: null
+   redirect: 1
+   returns: json
+
+
+
 #   tree: &PATIENT_TREE
 #     !!python/object/new:patient.dijit_widgets.tree.PatientTree []
 # 

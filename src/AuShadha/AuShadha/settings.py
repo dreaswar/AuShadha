@@ -144,6 +144,7 @@ TEMPLATE_DIRS = (
 
     os.path.join(ROOT_PATH, 'apps/ui/templates/ui/'),
     os.path.join(ROOT_PATH, 'apps/ui/media/ui/'),
+    os.path.join(ROOT_PATH, 'registry/icd10/templates/icd10/'),
     
     os.path.join(ROOT_PATH, 'patient/templates/'),
 
