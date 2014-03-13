@@ -100,6 +100,10 @@ define([
           else if ( item.returns[0] == 'html' ) {
 
 	    if ( item.target_node ) {
+//                      console.log(item.target_node);
+//                      console.log(item.target_node[0]);
+//                      console.log(registry.byId(item.target_node[0]) );
+//                      debugger;
 		      registry.byId( item.target_node[0]).set('href', item.ondblclick[0] );
 	    }
 

@@ -1,0 +1,23 @@
+<script type="text/javascript">
+  require(
+   
+   ['aushadha/tree/pane_tree_creator'],
+   
+   function(paneTreeCreator){
+    
+   });
+
+</script>
+
+{% if sections %}
+
+ {% for section in sections %}
+    <p> <span> {{forloop.counter}}) {{section.desc}} </span> </p>
+ {% endfor %}
+
+{% else %}
+ <p> No sections recorded for this Chapter </p>
+
+{% endif %}
+
+   

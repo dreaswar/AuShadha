@@ -50,7 +50,7 @@ class PcsRow(models.Model):
 
 # Define the Unicode method ::
     def __unicode__(self):
-        return "%s: %s" % (self.pcsRow_id, self.pcsTable_fk)
+        return "%s" % (self.pcsRow_id)
 
 
 class BodyPart(models.Model):
@@ -65,7 +65,7 @@ class BodyPart(models.Model):
 
 # Define the Unicode method ::
     def __unicode__(self):
-        return "%s: %s" % (self.body_part, self.pcsRow_fk)
+        return "%s" % (self.body_part)
 
 
 class Approach(models.Model):
@@ -80,7 +80,7 @@ class Approach(models.Model):
 
 # Define the Unicode method ::
     def __unicode__(self):
-        return "%s: %s" % (self.approach, self.pcsRow_fk)
+        return "%s" % (self.approach)
 
 
 class Device(models.Model):
@@ -95,7 +95,7 @@ class Device(models.Model):
 
 # Define the Unicode method ::
     def __unicode__(self):
-        return "%s: %s" % (self.device, self.pcsRow_fk)
+        return "%s" % (self.device)
 
 
 class Qualifier(models.Model):
@@ -110,4 +110,4 @@ class Qualifier(models.Model):
 
 # Define the Unicode method ::
     def __unicode__(self):
-        return "%s: %s" % (self.qualifier, self.pcsRow_fk)
+        return "%s" % (self.qualifier)

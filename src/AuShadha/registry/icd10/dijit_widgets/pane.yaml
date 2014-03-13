@@ -24,6 +24,7 @@ panes:
     splitter: False
     html: "ICD10 Disease Codes"
     widgets: 
+
       - id: ICD10_SEARCH_WIDGET
         type: search
         labelAttr: 'name'
@@ -36,6 +37,18 @@ panes:
            height: 2.2em
            width: 40em
 
+      - id: ICD10_ADD_DIAGNOSIS_BUTTON
+        type: button
+        label: Add Diagnosis
+        title: Add Diagnosis
+        onchange: null
+        onclick: null
+        style: 
+           position: relative
+           top: -10px
+           float: right
+
+ 
     panes: []
     class: topContentPane selected
     style: 

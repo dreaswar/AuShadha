@@ -22,6 +22,7 @@ urlpatterns = patterns('',
                       url(r'^AuShadha/ui/'    , include('AuShadha.apps.ui.urls') ),
 
                       url(r'^AuShadha/icd10/'    , include('registry.icd10.urls') ),
+                      url(r'^AuShadha/icd10_pcs/'    , include('registry.icd10_pcs.urls') ),
 
                       url(r'^AuShadha/pat/'    , include('patient.urls') ),
                       url(r'^AuShadha/patient/', include('patient.urls') ),

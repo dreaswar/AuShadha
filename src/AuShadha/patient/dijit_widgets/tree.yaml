@@ -267,7 +267,19 @@ icd_10: &ICD_10
    redirect: 1
    returns: json
 
+icd_10_pcs: &ICD_10_PC
+   name: "ICD 10 PCS"
+   type: application
+   id: ICD_10_PCS
+   module_type: icd10_pcs_module
+   module_name: icd10_pcs
+   ondblclick: {%url 'render_icd10_pcs_pane' %}
+   onrclick: null
+   onclick: null
+   redirect: 1
+   returns: json
 
+   
 
 #   tree: &PATIENT_TREE
 #     !!python/object/new:patient.dijit_widgets.tree.PatientTree []

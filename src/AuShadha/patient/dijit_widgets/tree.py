@@ -75,6 +75,7 @@ class PatientTree( object ):
       #admission_node =  DijitTreeNode( y['admissions'])
       visit_node=  DijitTreeNode( y['visits'])
       icd10_node = DijitTreeNode( y['icd_10'] )
+      icd10_pcs_node = DijitTreeNode( y['icd_10_pcs'] )
 
       #procedure_node = DijitTreeNode( y['procedures'] )
       #imaging_node = DijitTreeNode( y['imaging'] )
@@ -87,6 +88,7 @@ class PatientTree( object ):
       #patient_tree_node.add_child_node( admission_node )
       patient_tree_node.add_child_node( visit_node )
       patient_tree_node.add_child_node( icd10_node )
+      patient_tree_node.add_child_node( icd10_pcs_node )
       #patient_tree_node.add_child_node( procedure_node )
       #patient_tree_node.add_child_node( imaging_node )
       #patient_tree_node.add_child_node( investigation_node )
