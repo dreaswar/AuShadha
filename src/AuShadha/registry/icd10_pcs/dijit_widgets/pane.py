@@ -20,7 +20,7 @@ from django.shortcuts import render_to_response
 
 from AuShadha.apps.ui.ui import ui as UI
 
-from registry.icd10_pcs.models import PcsTable, PcsRow, Approach, Device, Qualifier, BodyPart
+from registry.icd10_pcs.models import RootXML, PcsTable, PcsRow, Axis, Label, Title, Definition
 
 @login_required
 def render_icd10_pcs_related_items(request, node_id ):

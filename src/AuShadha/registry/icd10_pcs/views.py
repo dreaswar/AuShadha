@@ -28,31 +28,13 @@ from AuShadha.core.serializers.data_grid import generate_json_for_datagrid
 from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 
 
-from .models import PcsTable, PcsRow, BodyPart, Approach, Device, Qualifier
-
+from .models import RootXML, PcsTable, PcsRow, Axis, Title, Label, Definition
 
 # Views start here -----------------------------------------
 
 @login_required
 def get_all_pcstables_json(request):
-    user = request.user
-
-    if request.method == 'GET':
-        all_pcstables = PcsTable.objects.all()
-        data = []
-        for d in all_pcstabls:
-           data_to_append = {}
-           data_to_append['section'] = d.section
-           data_to_append['body_system'] = d.body_system
-           data_to_append['operation'] = d.operation
-           data.append(data_to_append)
-
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type = 'application/json')
-
-    else:
-       return Http404("Bad Request Method")   
-
+    pass
 
 @login_required
 def get_all_pcsrows_json(request):
@@ -108,17 +90,7 @@ def get_qualifiers_for_pcsrow(request, pcsrow_id):
 
 @login_required
 def compose_icd10_pcs_code(request):
-    user = request.user
-
-    if request.method == 'GET':
-        data = []
-        # Do your stuff here
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type = 'application/json')
-
-    else:
-       return Http404("Bad Request Method")
-
+    pass
 
 @login_required
 def icd10_pcs_code_search(request):

@@ -27,13 +27,15 @@ import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
-from registry.icd10_pcs.models import PcsTable, PcsRow, BodyPart, Approach, Device, Qualifier
+from registry.icd10_pcs.models import RootXML, PcsTable, PcsRow, Axis, Title, Label, Definition
+from registry.icd10_pcs.queries import section_list as UNIQUE_SECTION_LIST
+from registry.icd10_pcs.queries import return_tables_items_by_section_name, return_tables_by_axis_name
+from registry.icd10_pcs.queries import section_mapper, body_system_mapper 
 
-
-class ICD10PcsTree( object ):
+class ICD10PCSTree( object ):
 
     """
-     Defines the Dijit UI for ICD 10 PCS Code Tree
+     Defines the Dijit UI for ICD 10 PCS
     """
 
     def __init__(self, *args, **kwargs):
@@ -41,10 +43,10 @@ class ICD10PcsTree( object ):
       try:
         self.request = kwargs.get('request')
       except KeyError:
-        raise Exception("ICD10 PCS Tree Object should be initialized with a HttpRequest object at a named parameter")
+        raise Exception("ICD10 Tree Object should be initialized with a HttpRequest object at a named parameter")
 
-      self.node_name = kwargs.get( 'node_name', 'pcstables' )
-      self.yaml_path =  kwargs.get( 'yaml_path','registry/icd10_pcs/dijit_widgets/tree.yaml' )
+      self.node_name = kwargs.get('node_name', 'pcs_tables')
+      self.yaml_path =  kwargs.get('yaml_path','registry/icd10_pcs/dijit_widgets/tree.yaml')
       self.variables = RequestContext(self.request, kwargs)
 
       try:
@@ -70,65 +72,159 @@ class ICD10PcsTree( object ):
     def __call__(self):
 
       y =  self.yaml_file
-      icd10_tree_node = DijitTree()
-      print y      
+      icd10_pcs_tree_node = DijitTree()
+
       for node in y[self.node_name]:
         for k, v in node.iteritems():
           c  =  DijitTreeNode( v )
-          icd10_tree_node.add_child_node(c)
+          icd10_pcs_tree_node.add_child_node(c)
 
-      json = icd10_tree_node.to_json()
+      json = icd10_pcs_tree_node.to_json()
       return json
 
 
 
 @login_required
-def render_icd10_pcs_tree(request,node_name = 'pcstables', parent_node_id = None):
+def render_icd10_pcs_tree(request):
 
   if request.method == "GET" and request.is_ajax():
-      print "Received request to build ICD10 Pcs tree"
+      print "Received request to build ICD10 Chapter tree"
       user = request.user
-  
-      if node_name == 'pcstables':
-        node_obj = PcsTable.objects.all()
-
-      else:
-        if parent_node_id:
-          try:
-            parent_node_id = int(parent_node_id)
-            if node_name == 'pcsrows':
-              parent_node_obj = PcsTable.objects.get(pk = parent_node_id)
-            else:
-              parent_node_obj = PcsRow.objects.get(pk  = parent_node_id)
-
-          except (ValueError, TypeError, NameError, AttributeError):
-            raise Http404("Bad Request Parameters: raises ServerErrors !")
-        else:
-            raise Http404("Bad Request Parameters: No Parent Node ID supplied")
-
-
-        if node_name == 'pcsrows':
-          node_obj = PcsRow.objects.filter(pcsTable_fk = parent_node_obj)
-        elif node_name == 'devices':
-          node_obj = Device.objects.filter(pcsRow_fk = parent_node_obj)
-        elif node_name == 'approaches':
-          node_obj = Approach.objects.filter(pcsRow_fk = parent_node_obj)
-        elif node_name == 'bodyparts':
-          node_obj = BodyPart.objects.filter(pcsRow_fk = parent_node_obj)
-        elif node_name == 'qualifiers':
-          node_obj = Qualifier.objects.filter(pcsRow_fk = parent_node_obj)
-        else:
-          raise Http404("Bad Request Parameters: Requested node name is not valid")
-
+      all_pcs_tables = PcsTable.objects.all()
       d = {'request' : request,
            'user': user,
-           'node_obj': node_obj,
-           'node_name': node_name
-          }
-      print "*" *100
-      print node_obj
-      tree = ICD10PcsTree(**d)()
+           'node_obj': all_pcs_tables,
+           'node_name': 'pcs_tables'
+      }
+      tree = ICD10PCSTree(**d)()
       return HttpResponse(tree, content_type="application/json")    
 
   else:
-      raise Http404("Bad Request: Only GET request is accepted")
+      raise Http404("Bad Request")
+
+
+@login_required
+def render_all_section_tree(request):
+    
+    """ Renders all sections as Dijit Tree widget """
+    
+    if request.method == 'GET' and request.is_ajax():
+       user = request.user
+       global UNIQUE_SECTION_LIST
+       section_dict_list = []
+       for item in UNIQUE_SECTION_LIST:
+          section_dict_list.append({'id': item['name'].replace(' ' ,'_'),
+                                   'name': item['code'] + "-" + item['name'],
+                                   'widget_id': item['name'].replace(' ','_')
+                                  })
+       d = {'request': request, 
+            'user': user,
+            'node_obj': section_dict_list,
+            'node_name': 'section_list'
+       }
+       tree = ICD10PCSTree(**d)()
+       return HttpResponse(tree, content_type="application/json")
+    else:
+       raise Http404("Invalid Request Method")
+
+
+
+@login_required
+def render_per_section_body_system_tree(request, section):
+   
+    """ Renders body system list as Dijit Tree. This is filtered per section name"""
+
+    section_name = section.replace('_', ' ')
+
+    if request.method == 'GET' and request.is_ajax():
+       user = request.user
+       body_systems = []
+       for b in section_mapper[section_name]['body_system']:
+           body_systems.append({'widget_id': b[0].id, 
+                                'id': b[0].id, 
+                                'name': b[0].code +"-"+ b[0].text, 
+                                'section': b[0].fk.pcsTable_fk.get_section_name()})
+       d = {'request': request, 
+            'user': user,
+            'node_obj': body_systems,
+            'node_name': 'body_system'
+       }
+       tree = ICD10PCSTree(**d)()
+       return HttpResponse(tree, content_type="application/json")
+
+    else:
+       raise Http404("Invalid Request Method")
+
+
+
+@login_required
+def render_per_body_system_operation_tree(request,body_system):
+    
+    """ Renders operation list as Dijit Tree. This is filtered per Body System Name"""
+
+    if request.method == 'GET' and request.is_ajax():
+       user = request.user
+       try:
+         body_system_id = int(body_system)
+         body_system_obj = Label.objects.get(pk= body_system_id)
+         body_system = body_system_obj.fk.pcsTable_fk.get_body_system_name()
+         sec = body_system_obj.fk.pcsTable_fk.get_section_name()
+
+       except(Label.DoesNotExist):
+         raise Http404("Bad Request: Invalid object request")
+      
+       except(ValueError,TypeError,NameError):
+          raise Http404("Bad Request: Invalid Request Parameters")
+
+       operations = []
+
+       for o in body_system_mapper[sec][body_system]['operation']:
+           operations.append({'widget_id': o.id, 
+                              'id': o.id, 
+                              'name': o.code + "-" + o.text, 
+                              'section':sec })
+       d = {'request': request, 
+            'user': user,
+            'node_obj': operations,
+            'node_name': 'operation'
+       }
+       tree = ICD10PCSTree(**d)()
+       return HttpResponse(tree, content_type="application/json")
+
+    else:
+       raise Http404("Invalid Request Method")
+
+
+@login_required
+def render_per_operation_pcs_row(request, operation):
+
+  if request.method == 'GET':
+      try:
+        operation_id = int(operation)
+        operation_obj = Label.objects.get(pk = operation_id)
+        table_obj = operation_obj.fk.pcsTable_fk
+        all_pcs_rows = PcsRow.objects.filter(fk = table_obj)      
+
+      except (ValueError,NameError,TypeError):
+          raise Http404 ("Bad Request Parameters")
+
+      except (Label.DoesNotExist):
+          raise Http404 ("Label Object Does not Exist! ")    
+
+      variable = RequestContext(request, {'user': request.user, 
+                                        'pcs_rows': all_pcs_rows,
+                                        'operation_obj': operation_obj,
+                                        'table_obj': table_obj})
+      return render_to_response('icd10_pcs/pcs_row.html', variable)
+
+  else:
+      raise Http404("Bad Request Method")
+
+@login_required
+def render_pcs_rows_for_pcs_table(request,pcs_table_id):
+
+    """" Render PCS Row Dijit Tree with all the residual code for a PcsTable"""
+
+    pass
+
+

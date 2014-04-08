@@ -1,0 +1,32 @@
+<div>
+	{% if pcs_rows %}
+
+	  {% for row in pcs_rows %}
+
+          <div style="border:solid 1px #759DC0; border-radius: 5px; background: #CFE5FA; margin-bottom: 10px; font-family: Helvetica, Sans-serif, Droid-Sans, Tahoma;">
+            {% for a in row.axis_set.all %}
+               
+              <div style="margin-left: 3px; position:relative; left: 1px; padding: 2px;">
+	       {% for t in a.title_set.all %}
+                <p>  <b> {{t.text}} </b> </p>
+               {% endfor %}
+
+               <div style="margin-left: 10px; position:relative; left: 5px;">
+ 	       {% for l in a.label_set.all %}
+                  <p> <b> {{l.code}}</b> - {{l.text}} </p>
+               {% endfor %}
+               
+ 	       {% for d in a.definition_set.all %}
+                  <p> <i> {{d.text}} </i> </p>
+               {% endfor %}
+               </div>
+              </div>
+            {% endfor %}     
+           </div>
+
+	   {% endfor %}
+          
+	{% else %}
+	 <p class='suggestion_text'> No Rows Specified in coding </p>
+	{% endif %}
+</div>

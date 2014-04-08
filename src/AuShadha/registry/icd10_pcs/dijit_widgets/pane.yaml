@@ -49,7 +49,6 @@ panes:
            width: 40em
 
 
- 
     panes: []
     class: topContentPane selected
     style: 
@@ -67,22 +66,24 @@ panes:
         type: cp
         splitter: True
         style: 
-          width: 40em
+          width: 25em
         panes: []
         widgets:
         
          - id: ICD10_PCS_CP_1_TREE
            type: tree
-           url: "{%url 'render_icd10_pcs_tree' %}"
+           url: "{%url 'render_all_section_tree' %}"
            mainTabPane: PATIENT_CENTER_CP_TC
            title: "ICD 10 Procedure"
 
 
       - id : ICD10_PCS_CP_2
-        region: center
+        region: leading
         type: cp
         widgets: []
         splitter: True
+        style:
+          width: 25em
         class: widgetContainer
         panes: 
 
@@ -94,17 +95,31 @@ panes:
             
             
 
-      - id: ICD10_CP_3
+      - id: ICD10_PCS_CP_3
+        region: center
+        type: cp
+        widgets: []
+        splitter: True
+        class: widgetContainer
+        panes: 
+
+          - id: ICD10_PCS_CP_3_TREE
+            type: dom
+            domType: div
+            widgets: []
+            panes: []
+
+      - id: ICD10_PCS_CP_4
         region: trailing
         type: cp
         widgets: []
         splitter: True
         style:
-          width: 35em
+          width: 25em
         class: widgetContainer
         panes: 
 
-          - id: ICD10_PCS_CP_3_TREE
+          - id: ICD10_PCS_CP_4_TREE
             type: dom
             domType: div
             widgets: []
