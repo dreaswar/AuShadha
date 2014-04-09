@@ -77,6 +77,13 @@ def generate_body_system_operation_mapper():
     global body_system_mapper
     global all_tables
 
+    def build_op_list():
+          for o in op:
+            if o.fk.pcsTable_fk.get_section_name() == sec:
+                if not o.id in body_system_mapper[sec][bs_name].get('operation_id'):
+                    body_system_mapper[sec][bs_name]['operation'].append(o) 
+                    body_system_mapper[sec][bs_name]['operation_id'].append(o.id)
+
     for table in all_tables:
        sec = table.get_section_name()
        bs = table.get_body_system()
@@ -87,19 +94,10 @@ def generate_body_system_operation_mapper():
           body_system_mapper[sec] = {bs_name:{}}      
 
        if body_system_mapper[sec].get(bs_name):
-          for o in op:
-            if o.fk.pcsTable_fk.get_section_name() == sec:
-                if not o.id in body_system_mapper[sec][bs_name].get('operation_id'):
-                    body_system_mapper[sec][bs_name]['operation'].append(o) 
-                    body_system_mapper[sec][bs_name]['operation_id'].append(o.id)
+          build_op_list()
        else:
           body_system_mapper[sec][bs_name] = {'operation':[],'operation_id': []}   
-          for o in op:
-            if o.fk.pcsTable_fk.get_section_name() == sec:
-                if not o.id in body_system_mapper[sec][bs_name].get('operation_id'):
-                    body_system_mapper[sec][bs_name]['operation'].append(o) 
-                    body_system_mapper[sec][bs_name]['operation_id'].append(o.id)
-
+          build_op_list()
 
 
 def return_tables_items_by_section_name(section_name):
@@ -134,7 +132,19 @@ def return_tables_by_axis_name(axis_name,axis_type='section'):
     return table_list
 
 
+
+# This is an interim arranagement to test the code
+# This function can be replaced with a JSON from its own output. 
+# This JSON file can be loaded at runtime and accessed by the views
+
 def main():
+
+  """
+      Checks the QUERIED value and updates all the dictionary and lists. This can then be accessed by the views. 
+      However, this will rerun every time the server is restarted. 
+      This is not optimal and should be replaced
+  """
+
   print("Starting to query and aggregate ICD10PCS codes. This has not been done before. This will take time.")
   global QUERIED
   if not QUERIED:
