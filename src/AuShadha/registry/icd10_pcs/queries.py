@@ -69,7 +69,11 @@ def generate_table_wise_axis_names():
               section_mapper[s]['operation'].append(op) 
               section_mapper[s]['operation_names'].append(op_name)
        else:
-          section_mapper[s] = {'body_system':[bs],'body_system_names': [bs_name],'operation':[op],'operation_names': [op_name]}   
+          section_mapper[s] = {'body_system':[bs],
+                               'body_system_names': [bs_name],
+                               'operation':[op],
+                               'operation_names': [op_name]
+                              }   
 
 
 def generate_body_system_operation_mapper():
@@ -116,7 +120,10 @@ def return_tables_items_by_section_name(section_name):
        if table.get_operation_name() not in operation_list:
            operation_list.append(table.get_operation_name())
 
-    return {'tables': table_list, 'body_systems': body_system_list, 'operations': operation_list}
+    return {'tables': table_list, 
+	    'body_systems': body_system_list,
+            'operations': operation_list
+           }
 
 
 
@@ -125,7 +132,10 @@ def return_tables_by_axis_name(axis_name,axis_type='section'):
     """ Returns collection of tables for a Axis  name """
 
     table_list = []
-    mapper = {'section': 'get_section_name', 'body_system': 'get_body_system_name', 'operation': 'get_operation_name'}
+    mapper = {'section': 'get_section_name', 
+              'body_system': 'get_body_system_name', 
+              'operation': 'get_operation_name'
+             }
     for table in all_tables:
        if getattr(table, mapper[axis_type],None)() == axis_name:
            table_list.append(table)
@@ -140,7 +150,8 @@ def return_tables_by_axis_name(axis_name,axis_type='section'):
 def main():
 
   """
-      Checks the QUERIED value and updates all the dictionary and lists. This can then be accessed by the views. 
+      Checks the QUERIED value and updates all the dictionary and lists.
+      This can then be accessed by the views. 
       However, this will rerun every time the server is restarted. 
       This is not optimal and should be replaced
   """
