@@ -1,0 +1,92 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+# YAML
+
+depends_on: [ search ]
+load_after: search
+load_first: !!bool False
+
+id       : FDA_DRUG_DB
+type     : bc
+title    : "FDA Drug Database" 
+url      : "{%url 'render_fda_drug_db_pane' %}"
+closable : !!bool True
+widgets: []
+panes:
+
+  - id : FDA_DRUG_DB_TOP_CP
+    region: top
+    type: cp
+    splitter: False
+    html: "FDA Drug Database"
+    widgets: []
+    panes: []
+    class: topContentPane selected
+    style: 
+      height: 2.2em
+
+  - id : FDA_DRUG_DB_CENTER_BC
+    region: center
+    type: bc
+    splitter: False
+    widgets: []
+    panes: 
+    
+      - id : FDA_DRUG_DB_CP_1
+        region: leading
+        type: cp
+        splitter: True
+        style: 
+          width: 25em
+        panes: []
+        widgets:
+           - id: FDA_DRUG_DB_SEARCH_WIDGET
+             type: search
+             labelAttr: 'name'
+             url: "{%url 'fda_drug_db_search'  %}"
+             hasDownArrow: !!bool False
+             autoComplete: !!bool False
+             searchAttr:  name
+             placeHolder: "Search FDA Drug DB"
+             style:
+                 height: 2em
+                 width: 20em
+        
+      - id : FDA_DRUG_DB_BC_2
+        region: center
+        type: bc
+        widgets: []
+        splitter: True
+        class: widgetContainer
+        panes: 
+
+          - id: FDA_DRUG_DB_GRID_CONTAINER_CP
+            region: center
+            type: cp
+            panes: []
+            splitter: True
+            widgets: 
+              - id: FDA_DRUG_DB_GRID
+                type: grid
+                url: "{%url 'fda_drug_db_json_all_drugs' %}"
+                str: FDA_DRUG_DB
+                activateRowClick: True
+                title: FDA Drug Database
+                storeToUse: FDA_DRUG_DB
+                style:
+                   minHeight: 20em
+            panes: []
+
+          - id: FDA_DRUG_DB_SUMMARY_CONTAINER_CP
+            region: bottom
+            type: cp
+            panes: []
+            splitter: True
+            widgets: [] 
+            style: 
+               height: 10em
+

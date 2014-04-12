@@ -18,7 +18,7 @@ from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel
 from AuShadha.apps.clinic.models import Clinic
 
 
-class FDADrugs(models.Model):
+class FDADrugs(AuShadhaBaseModel):
 
     '''
     The FDA Drug DB as on 26-01-2013. This is subject to change.
@@ -26,7 +26,11 @@ class FDADrugs(models.Model):
     Please refer, test and confirm for yourself before implementation.
     '''
 
-    __model_label__ = "fda_drugs"
+    def __init__(self, *args, **kwargs):
+        super(FDADrugs, self).__init__(*args, **kwargs)
+        self.__model_label__ = "fda_drug_db"
+        self._parent_model = 'parent_clinic'
+        self._can_add_list_or_json = ['fda_drug_db' ]
 
     drug_name = models.CharField(
         'Drug Name', max_length=100, null=True, blank=True)

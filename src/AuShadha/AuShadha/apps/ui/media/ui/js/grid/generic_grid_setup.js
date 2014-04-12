@@ -151,12 +151,15 @@ define(["dojo/dom",
                         store: dataStore = ObjectStore({
                             objectStore: window.gridStore[storeToUse]
                         }),
-                        /*,
+                        /*
                         query: {
                             search_field: 'id',
                             search_for: "*"
                         },
                         */
+                        query: {id: '*'}, 
+                        rowsPerPage: 25,
+                        keepRows: 75, 
                         clientSort: true,
                         autoWidth: true,
                         selectionMode: "single",
