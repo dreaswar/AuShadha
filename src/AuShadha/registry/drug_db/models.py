@@ -45,8 +45,10 @@ class FDADrugs(AuShadhaBaseModel):
     def __unicode__(self):
         return "%s - %s, %s \t (%s)" % (self.drug_name, self.dosage, self.form, self.active_ingredient)
 
+    def get_absolute_url(self):
+        return "%s/%s/%s" %(self._meta.app_label, self.__model_label__, self.id)
+
     class Meta:
         verbose_name = 'FDA Drugs'
         verbose_name_plural = "FDA Drugs"
-        ordering = [
-            'drug_name', 'active_ingredient', 'dosage', 'form']
+        ordering = [ 'drug_name', 'active_ingredient', 'dosage', 'form']

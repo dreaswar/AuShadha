@@ -36,25 +36,43 @@ panes:
     widgets: []
     panes: 
     
-      - id : FDA_DRUG_DB_CP_1
+      - id : FDA_DRUG_DB_TC_1
         region: leading
-        type: cp
+        type: tc
+        tabPosition: top
+        tabStrip: True
+        nested: True
         splitter: True
         style: 
           width: 25em
-        panes: []
-        widgets:
-           - id: FDA_DRUG_DB_SEARCH_WIDGET
-             type: search
-             labelAttr: 'name'
-             url: "{%url 'fda_drug_db_search'  %}"
-             hasDownArrow: !!bool False
-             autoComplete: !!bool False
-             searchAttr:  name
-             placeHolder: "Search FDA Drug DB"
-             style:
-                 height: 2em
-                 width: 20em
+        widgets: []
+        panes:
+           - id: FDA_DRUG_DB_SEARCH_CP 
+             type: cp
+             title: Search
+             widgets: 
+
+                 - id: FDA_DRUG_DB_SEARCH_WIDGET
+                   type: search
+                   labelAttr: 'active_ingredient'
+                   url: "{%url 'fda_drug_db_search'  %}"
+                   hasDownArrow: !!bool False
+                   autoComplete: !!bool True
+                   searchAttr:  name
+                   placeHolder: "Search FDA Drug DB"
+                   style:
+                     height: 2em
+                     width: 20em
+
+           - id: FDA_DRUG_DB_ADVANCED_SEARCH_CP
+             type: cp
+             title: Advanced Search
+             widgets: []
+             panes: []
+             url: null
+             content: Advanced Search will be implemented here shortly
+             class: suggestion_text
+
         
       - id : FDA_DRUG_DB_BC_2
         region: center
@@ -69,7 +87,9 @@ panes:
             type: cp
             panes: []
             splitter: True
+            panes: []
             widgets: 
+
               - id: FDA_DRUG_DB_GRID
                 type: grid
                 url: "{%url 'fda_drug_db_json_all_drugs' %}"
@@ -79,14 +99,49 @@ panes:
                 storeToUse: FDA_DRUG_DB
                 style:
                    minHeight: 20em
-            panes: []
+                   
 
-          - id: FDA_DRUG_DB_SUMMARY_CONTAINER_CP
+          - id: FDA_DRUG_DB_BOTTOM_TC
             region: bottom
-            type: cp
-            panes: []
+            type: tc
             splitter: True
+            tabPosition: top
+            tabStrip: True
+            nested: True
+            closable: False
             widgets: [] 
             style: 
-               height: 10em
+               height: 20em
+            panes:
+
+              - id: FDA_DRUG_SUMMARY_CP
+                type: cp
+                title: Summary
+                closable: False
+                url: null
+                content: Select a Drug for the summary to display here
+                class: suggestion_text
+                panes: []
+                widgets: []
+
+              - id: FDA_DRUG_INTERACTIONS_CP
+                type: cp
+                title: Drug Interactions
+                closable: null
+                url: null
+                content: Select a Drug to display known drug interactions here
+                class: suggestion_text
+                panes: []
+                widgets: []
+ 
+              - id: FDA_DRUG_ALERTS_CP
+                type: cp
+                title: Alerts
+                closable: null
+                url: null
+                content: Select a Drug to display Alerts here
+                class: suggestion_text
+                panes: []
+                widgets: []
+             
 

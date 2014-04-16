@@ -51,7 +51,7 @@ def fda_drug_db_json_all_drugs(request):
         query_start = int(query_index[0])
         query_end = int(query_index[1])
         print("Querying ", query_start, " to Query end ", query_end)
-        drugs = all_drugs[query_start:query_end]
+        drugs = all_drugs[query_start:query_end+1]
 
      else:
         drugs = all_drugs[:len(drugs)-1]
@@ -99,7 +99,35 @@ def fda_drug_db_json_for_a_drug(request,drug_id):
 
 @login_required
 def fda_drug_db_search(request):
-  pass
+
+    user = request.user
+    search_for = request.GET.get('name')
+
+    if request.method == 'GET':
+
+        if search_for == '*' or search_for == ' ':
+          drugs = FDADrugs.objects.all()[:25]
+
+        else:
+           search_for = search_for.split('*')[0]
+           print( "Searching for FDA Drugs containing ", search_for)
+           drugs = FDADrugs.objects.filter(drug_name__istartswith = search_for)[:25]
+
+        data = []
+        print drugs
+	for d in drugs:
+	   data_to_append = {}
+	   data_to_append['drug_name'] = d.drug_name.title()
+	   data_to_append['dosage'] = d.dosage
+	   data_to_append['id'] = d.id
+           data_to_append['absolute_url'] = d.get_absolute_url()
+	   data_to_append['active_ingredient'] = '%s - %s as %s ' %(d.drug_name.title(), d.dosage,d.form)
+	   data.append(data_to_append)
+        json_data = simplejson.dumps(data)
+	return HttpResponse(json_data, content_type = 'application/json')
+
+    else:
+       return Http404("Bad Request Method")
 
 @login_required
 def fda_drug_db_advanced_search(request,search_for):
