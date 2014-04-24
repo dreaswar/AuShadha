@@ -19,8 +19,8 @@ urlpatterns = patterns('',
 	url(r'fda_drug/summary/(?P<drug_id>\d+)/$', fda_drug_summary, name = 'fda_drug_summary'),
 
 	url(r'fda_drug_db/search/$', fda_drug_db_search, name = 'fda_drug_db_search'),
-	url(r'advanced_search/active_ingredient/(?P<search_for>\w+)/$', fda_drug_db_advanced_search, name = 'fda_drug_db_advanced_search'),
-	url(r'advanced_search/drug_name/(?P<search_for>\w+)/$', fda_drug_db_advanced_search, name = 'fda_drug_db_advanced_search'),
+	url(r'fda_drug_db/advanced_search/$', fda_drug_db_advanced_search, name = 'fda_drug_db_advanced_search'),
+	url(r'fda_drug_db/advanced_search/$', fda_drug_db_advanced_search, name = 'fda_drug_db_advanced_search'),
 
 )
 

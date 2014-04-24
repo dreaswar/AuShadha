@@ -10,6 +10,12 @@ depends_on: [ search ]
 load_after: search
 load_first: !!bool False
 
+#This is required for DOJO to load the additional scripts provided by this module
+dojoConfig: 
+  - name: fda_drug_db
+    location: {{STATIC_URL}}fda_drug_db
+    main: main
+
 id       : FDA_DRUG_DB
 type     : bc
 title    : "FDA Drug Database" 
@@ -17,17 +23,6 @@ url      : "{%url 'render_fda_drug_db_pane' %}"
 closable : !!bool True
 widgets: []
 panes:
-
-  - id : FDA_DRUG_DB_TOP_CP
-    region: top
-    type: cp
-    splitter: False
-    html: "FDA Drug Database"
-    widgets: []
-    panes: []
-    class: topContentPane selected
-    style: 
-      height: 2.2em
 
   - id : FDA_DRUG_DB_CENTER_BC
     region: center
@@ -69,9 +64,7 @@ panes:
              title: Advanced Search
              widgets: []
              panes: []
-             url: null
-             content: Advanced Search will be implemented here shortly
-             class: suggestion_text
+             url: "{%url 'fda_drug_db_advanced_search' %}"
 
         
       - id : FDA_DRUG_DB_BC_2
@@ -93,13 +86,14 @@ panes:
               - id: FDA_DRUG_DB_GRID
                 type: grid
                 url: "{%url 'fda_drug_db_json_all_drugs' %}"
+                gridStrModule: fda_drug_db/grid_structures
                 str: FDA_DRUG_DB
                 activateRowClick: True
                 title: FDA Drug Database
                 storeToUse: FDA_DRUG_DB
                 style:
                    minHeight: 20em
-                   
+                  
 
           - id: FDA_DRUG_DB_BOTTOM_TC
             region: bottom
@@ -107,7 +101,7 @@ panes:
             splitter: True
             tabPosition: top
             tabStrip: True
-            nested: True
+            nested: False
             closable: False
             widgets: [] 
             style: 
@@ -143,5 +137,3 @@ panes:
                 class: suggestion_text
                 panes: []
                 widgets: []
-             
-

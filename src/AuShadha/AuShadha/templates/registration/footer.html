@@ -1,0 +1,42 @@
+	 <i>
+			<p> AuShadha and its Logo &copy; 
+				<a href="http://www.dreaswar.com" target="_blank" title="Dr. Easwar's Website & Blog"> 
+				   Dr. Easwar T.R 2012 
+				</a>
+				&nbsp; | &nbsp; 
+				<a   id='aushadha_license_clickable' 
+				     href="#"
+				     title="License &amp; Credits"
+				     data-dojo-id="aushadha_license_clickable"
+				     onClick="aushadha_license_text_dialog.show();"
+				     style="cursor:pointer; font-weight:bold;"
+				 > 
+				 <img src="http://www.gnu.org/graphics/gplv3-127x51.png" style="width:32px; height:16px;">
+				 License &amp; Credits
+				</a>
+
+				<!--START OF DIALOG DIV 	 -->
+				<div  data-dojo-type  = "dijit/Dialog" 
+				      style           = "display:none;" 
+				      data-dojo-id    = 'aushadha_license_text_dialog'
+				      data-dojo-props = "title:'PLEASE READ' "
+				> 
+							{% include 'about_credits_and_license.html' %}
+				</div>
+				<!--  END OF DIALOG DIV -->
+
+			</p>
+			&nbsp; | &nbsp; 
+			<a href="mailto:dreaswar@gmail.com">dreaswar.gmail.com </a> 
+			&nbsp; | &nbsp; 
+			<a href='http://www.facebook.com/AuShadha/' target="_blank" title="Facebook Page"> Facebook </a>
+			&nbsp; | &nbsp; 
+			<a href="http://dreaswar.github.com/AuShadha/" target="_blank"> 
+				<img src="http://octodex.github.com/images/original.jpg" 
+					style="width:16px; height: 16px;" 
+					title="Github Repo"
+					alt=""> GitHub 
+			</a>
+			&nbsp; | &nbsp; 
+         </i>
+

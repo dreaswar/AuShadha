@@ -95,9 +95,12 @@ STATICFILES_DIRS = (
     os.path.join(ROOT_PATH, 'media/custom/styles'),
     os.path.join(ROOT_PATH, 'apps/ui/media'),
 
+
     # LIST ALL ADD - ON MODULE PATHS HERE USING FORMAT BELOW
     #os.path.join(PARENT_ROOT, '<PATH TO THE ADD-ON MEDIA DIRECTORY>'),
     #os.path.join(PARENT_ROOT, 'aushadha_demographics_us/demographics/media'),
+
+    os.path.join(PARENT_ROOT, 'registry/drug_db/media/drug_db/js'),
 
 )
 
@@ -146,6 +149,7 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'apps/ui/media/ui/'),
     os.path.join(ROOT_PATH, 'registry/icd10/templates/icd10/'),
     os.path.join(ROOT_PATH, 'registry/icd10_pcs/templates/icd10_pcs/'),
+    os.path.join(ROOT_PATH, 'registry/drug_db/templates/drug_db/'),
 
     os.path.join(ROOT_PATH, 'patient/templates/'),
 

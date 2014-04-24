@@ -130,8 +130,37 @@ def fda_drug_db_search(request):
        return Http404("Bad Request Method")
 
 @login_required
-def fda_drug_db_advanced_search(request,search_for):
-  pass
+def fda_drug_db_advanced_search(request):
+    user = request.user
+
+    if request.method == 'GET' and request.is_ajax():
+       variable = RequestContext(request, {'user': user})
+       return render_to_response('drug_db/fda_drugs/advanced_search.html', variable)
+
+    elif request.method == 'POST' and request.is_ajax():
+        filter_by = request.POST.get('fda_drug_db_filter_by', None)   
+        filter_criteria = request.POST.get('fda_drug_db_filter_criteria', None)
+        search_for = request.POST.get('fda_drug_db_search_for', None)
+        pregnancy_warn = request.POST.get('fda_drug_db_pregnancy_warn', None)
+        data = []
+        if filter_by and search_for:
+           d = {filter_by+"__i"+filter_criteria : search_for}
+           drugs = FDADrugs.objects.filter(**d)
+           if drugs:
+             for d in drugs:
+   	         data_to_append = {}
+	         data_to_append['drug_name'] = d.drug_name.title()
+	         data_to_append['dosage'] = d.dosage
+	         data_to_append['id'] = d.id
+                 data_to_append['absolute_url'] = d.get_absolute_url()
+	         data_to_append['active_ingredient'] = '%s - %s as %s ' %(d.drug_name.title(), d.dosage,d.form)
+	         data.append(data_to_append)
+        json_data = simplejson.dumps(data)
+	return HttpResponse(json_data, content_type = 'application/json')
+                    
+    else:
+       raise Http404("Bad Request. Handles only GET / POST via Ajax")
+
 
 
 

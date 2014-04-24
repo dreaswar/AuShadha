@@ -555,18 +555,12 @@ a{
 
 #editPatientDialog, 
 #jsonMessageDialog,
-#loginDialog{
+{
   background : white;
   opacity    : 100;
 }
 
-#loginDiv{
-    position            : absolute;
-    top                  : 10px;
-    left                 : 5px;
-    height               : 80px;
-    width                : 80px;
-}
+
 
 
 /*TABLES*/

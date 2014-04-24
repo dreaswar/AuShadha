@@ -1,0 +1,124 @@
+<div data-dojo-id="FDA_DRUG_DB_ADVANCED_SEARCH_FORM"
+     name="FDA_DRUG_DB_ADVANCED_SEARCH_FORM"
+     id="FDA_DRUG_DB_ADVANCED_SEARCH_FORM"
+     data-dojo-type="dijit/form/Form"
+     action="{%url 'fda_drug_db_advanced_search' %}"
+     method="post"
+>
+  <script type="dojo/on" data-dojo-event="submit" data-dojo-args="evt">
+
+   if (this.validate()) {
+
+     require(['dojo/on', 
+              'dojo/dom', 
+              'dojo/dom-attr', 
+              'dojo/dom-style', 
+              'dojo/request', 
+              'dojo/json', 
+              'dojo/parser',
+              'dijit/form/Form', 
+              'dijit/registry',
+              'dijit/form/Button',
+              'dijit/form/Select',
+              'dijit/form/ValidationTextBox',
+              'dojo/dom-form'
+              ],
+
+     function(on,
+              dom,
+              domAttr,
+              domStyle,
+              request,
+              JSON,
+              parser,
+              Form,
+              registry,
+              Button,
+              Select,
+              ValidationTextBox, 
+              domForm
+             ){
+
+	       evt.preventDefault();
+	       request.post("{%url 'fda_drug_db_advanced_search' %}",
+                   { handleAs: 'json',
+                     data: domForm.toObject('FDA_DRUG_DB_ADVANCED_SEARCH_FORM'), 
+                     method: 'post'
+                   }).then(
+                       
+                      function(data) {console.log(data); }
+                   );
+	       alert("Advanced Search form has been Submitted");      
+
+     });
+  } else {
+    publishError("Please correct errors and resubmit form!")
+  }
+  </script>
+
+  <div> 
+
+    <label for="advanced_search_fda_drug_db_filter_by_select"> Filter By: </label>
+    <select id="advanced_search_fda_drug_db_filter_by_select" 
+            name="fda_drug_db_filter_by"
+            data-dojo-type="dijit/form/Select" 
+            data-dojo-props="required: true"
+    > 
+       <option value="drug_name" selected="selected"> Drug Name </option>
+       <option value="active_ingredient"> Active Ingredient </option>
+    </select>
+    </div>
+
+    <div>
+    <select id="advanced_search_fda_drug_db_filter_criteria_select" 
+            name="fda_drug_db_filter_criteria"
+            data-dojo-type="dijit/form/Select" 
+            data-dojo-props="required: true"
+    > 
+       <option value="equals" selected="selected"> Equals the term .. </option>
+       <option value="startswith"> Starts with.. </option>
+       <option value="endswith"> Ends with.. </option>
+       <option value="contains"> Contains the term .. </option>
+
+    </select>
+    </div>
+
+    <div>
+    <label for="advanced_search_fda_drug_db_case_sensitive_checkbox"> Case Sensitive</label>
+    <input data-dojo-type="dijit/form/CheckBox" 
+           data-dojo-props="required: false"
+           type="checkbox" 
+           name="fda_drug_db_case_sensitive" 
+           id="advanced_search_fda_drug_db_case_sensitive_checkbox" 
+           > 
+
+    </div>
+
+
+  <div> 
+    <input data-dojo-type="dijit/form/ValidationTextBox" 
+           data-dojo-props="required: true, placeHolder: 'Search For'"
+           type="text" 
+           name="fda_drug_db_search_for" 
+           id="advanced_search_fda_drug_db_search_for_text_box" 
+           value=""> 
+
+    <label for="advanced_search_fda_drug_db_pregnancy_warn_checkbox"> Pregnant ?</label>
+    <input data-dojo-type="dijit/form/CheckBox" 
+           data-dojo-props="required: false"
+           type="checkbox" 
+           name="fda_drug_db_pregnancy_warn" 
+           id="advanced_search_fda_drug_db_pregnancy_warn_checkbox" 
+           > 
+    </div>
+ 
+    <div>
+    <input data-dojo-type="dijit/form/Button"
+           data-dojo-props="label: 'Search'" 
+           type="submit" 
+           name="advanced_search_fda_drug_db_search_form_submit_button" 
+           value="Search">
+    </div>
+
+
+</div>

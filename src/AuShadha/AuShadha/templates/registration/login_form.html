@@ -1,0 +1,124 @@
+<div style="position:relative; 
+           width: auto; 
+           margin-left: auto; 
+           margin-right: auto; 
+           vertical-align: middle; 
+           text-align: center;
+           padding:20px;
+           margin-top: 20px; 
+           margin-bottom: 20px;
+	   border : solid #ddd 2px;
+	   border-radius: 4px;
+	   box-shadow: 1px 1px 10px #aaa;
+	   background: #fff;
+	   height: auto;
+         "
+  >
+
+ <img src="{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_256.png" 
+      alt="AuShadha" title="AuShadha Open Source EMR"
+           >
+
+<div data-dojo-type = "dijit/form/Form" 
+   id             = "loginForm" 
+   data-dojo-id   = "loginForm"
+   encType        = "multipart/form-data" 
+   action         = "" 
+   method         = ""
+   style="width: 30%; margin-left: auto; margin-right: auto; vertical-align: middle; text-align: center;"
+   >
+
+  <script type="dojo/method" data-dojo-event="onSubmit">
+
+     if ( this.validate() ){ 
+	 handleLogin(); 
+	 return false;
+     }
+     else{
+       require(["dijit/registry"],
+       function(registry){
+	 var dialog = registry.byId( "dialogJsonMessage" );
+	 dialog.set( 'title'  , "ERROR! " );
+	 dialog.set( 'content', "<p class='error_text'> Form contains invalid data. Please correct</p>" );
+	 dialog.show();
+       });
+      return false;
+     }
+  </script>
+
+
+	<table style="width: 40%; margin-left: auto; margin-right: auto;">
+	    <tr style  = "padding: 10px;">
+		<td style="padding: 10px;"> <label for="id_username"> User Name </label></td>
+		<td  style="padding: 10px;"> 
+		{% csrf_token %} 
+		     <input type = "text" 
+			    data-dojo-type  = "dijit/form/ValidationTextBox"
+			    data-dojo-props = "required:true" 
+			    id     = "id_username" 
+			    name   = "username" 
+			    value  = "">
+		</td>
+	     </tr>
+
+	     <tr  style="padding: 10px;">
+		<td  style="padding: 10px;"> 
+		   <label for="id_password">  Password  </label> 
+		</td>
+
+		<td  style="padding: 10px;">
+		    <input type            = "password" 
+			   data-dojo-type  = "dijit/form/ValidationTextBox"
+			   data-dojo-props = "required:true" 
+			   id              = "id_password" 
+			   name            = "password" 
+			   value           = ""> 
+		</td>
+	      </tr>
+	      <input type  = "hidden" name  = "next" value = "{{ next }}" >
+	</table>
+
+	<button data-dojo-type = "dijit/form/Button" 
+		type           = "submit" 
+		value          = "Login" 
+		name           = "submitLoginForm"
+	   >
+	      <img src   = "{{STATIC_URL}}/images/access_key_small.png" 
+		   alt   = "Login" 
+		   title = "Login" 
+		   class = "small_img"
+		   style = "padding-right:2px;">
+	      Login
+	</button>  
+
+	<button data-dojo-type = "dijit/form/Button" 
+		data-dojo-id   = "applyForRegistration"
+		type           = "button" 
+		value          = "Register" 
+		name           = "applyForRegistration"
+	 >
+	    <img src   = "{{STATIC_URL}}/images/patient_data.png" 
+		 alt   = "Register" 
+		 title = "Register" 
+		 class = "small_img"
+		 style = "padding-right:2px;">
+		Register
+
+	     <script type="dojo/on" data-dojo-event="click">
+		require(["dijit/Dialog"], 
+		function(Dialog){
+				var dialog = new Dialog({
+			  title : "Sorry..",
+			  content: "Dear User, This feature will be implemented soon\
+				    \nThanks for your patience",
+			  style  : "width: 30em; height: auto;"
+			  });
+				dialog.show();
+			});
+	     </script>
+	</button>  		
+
+
+</div>
+
+</div>
