@@ -32,14 +32,14 @@ class FDADrugs(AuShadhaBaseModel):
         self._parent_model = 'parent_clinic'
         self._can_add_list_or_json = ['fda_drug_db' ]
 
-    drug_name = models.CharField(
-        'Drug Name', max_length=100, null=True, blank=True)
-    dosage = models.CharField(
-        'Dosage', max_length=100, null=True, blank=True)
-    form = models.CharField(
-        'Form', max_length=100, null=True, blank=True)
-    active_ingredient = models.CharField(
-        'Active Ingredient', max_length=100, null=True, blank=True)
+    drug_name = models.TextField(
+        'Drug Name', max_length=1000, null=True, blank=True)
+    dosage = models.TextField(
+        'Dosage', max_length=1000, null=True, blank=True)
+    form = models.TextField(
+        'Form', max_length=1000, null=True, blank=True)
+    active_ingredient = models.TextField(
+        'Active Ingredient', max_length=1000, null=True, blank=True)
 
     # Define the Unicode method ::
     def __unicode__(self):

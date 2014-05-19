@@ -26,14 +26,37 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+
+# Preferred DB for running AuShadha is PostgreSQL. 
+
+# ========================== Set up PG for your OS ==========================
+# Please see your OS website for instructions on setting up PG 
+# PG should be is setup and accesible from command line as >> psql prompt
+
+
+# ========================== Set up a System user with same name as the Post gres user ================
+# Create an OS user with <adduser> command from terminal
+# Create a /home/<user_name> directory for the user and run chown -R <user_name> /home/<user_name>
+# The username used by default for DB and user is 'aushadha' with password of aushadha
+
+
+# =========================== Create an empty DB and Grant permissions =================================
+# From terminal run the createuser to create and user with username 'aushadha'
+# Run psql to get into the pg command line from the user that is allowed to run psql
+# Run the following:
+#         CREATE DATABASE aushadha WITH OWNER aushadha;
+#         GRANT ALL ON DATABASE aushadha TO <system_os_user> WITH GRANT OPTION;
+
+
+
 DATABASES = {
     'default': {
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # Or path to database file if using sqlite3.
-        'NAME': 'AuShadha.db',
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'NAME': 'aushadha',
+        'USER': 'aushadha',                      # Not used with sqlite3.
+        'PASSWORD': 'aushadha',                  # Not used with sqlite3.
         # Set to empty string for localhost. Not used with sqlite3.
         'HOST': '',
         # Set to empty string for default. Not used with sqlite3.
@@ -197,8 +220,8 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
 
     # Core Django Apps used 
-    'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',

@@ -73,7 +73,7 @@ def render_icd10_pcs_pane(request):
       pane_yaml = yaml.load( rendered_pane ) 
 
       app_object = {}
-      app_object['app'] = 'ICD_10'
+      app_object['app'] = 'ICD_10_PCS'
       app_object['ui_sections'] = {
                                   'app_type': 'sub_module',
                                   'load_after': 'patient',

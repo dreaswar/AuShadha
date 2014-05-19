@@ -157,7 +157,7 @@ class Title(models.Model):
     __model_label__ = "title"
 
     index = models.PositiveIntegerField(max_length = 200, unique = True)
-    text = models.CharField(max_length = 100, null = True, blank = True)
+    text = models.TextField(max_length = 1000, null = True, blank = True)
     fk = models.ForeignKey(Axis,null=True,blank=True)
     
     def __unicode__(self):
@@ -176,7 +176,7 @@ class Label(models.Model):
     __model_label__ = "label"
 
     index = models.PositiveIntegerField(max_length = 200, unique = True)
-    text = models.CharField(max_length = 100, null = True, blank = True)
+    text = models.TextField(max_length = 1000, null = True, blank = True)
     code = models.CharField(max_length = 100, null = True, blank=True)
     fk = models.ForeignKey(Axis,null=True,blank=True)
 
@@ -194,7 +194,7 @@ class Definition(models.Model):
     __model_label__ = "definition"
 
     index = models.PositiveIntegerField(max_length = 200, unique = True)
-    text = models.CharField(max_length = 100, null = True, blank = True)
+    text = models.TextField(max_length = 1000, null = True, blank = True)
     fk = models.ForeignKey(Axis,null=True,blank=True)
 
     def __unicode__(self):

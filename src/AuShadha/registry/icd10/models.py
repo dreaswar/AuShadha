@@ -29,20 +29,20 @@ class Chapter(models.Model):
 
     __model_label__ = "icd10_chapter"
 
-    chapter_name = models.CharField(
-        'Chapter Name', max_length=100, null=True, blank=True)
-    chapter_desc = models.CharField(
-        'Chapter Description', max_length=100, null=True, blank=True)
-    includes = models.CharField(
-        'Includes', max_length=100, null=True, blank=True)
-    useAdditionalCode = models.CharField(
-        'Use Additional Codes', max_length=100, null=True, blank=True)
-    excludes1 = models.CharField(
-        'Excludes 1', max_length=100, null=True, blank=True)
-    excludes2 = models.CharField(
-        'Excludes 2', max_length=100, null=True, blank=True)
-    sectionIndex = models.CharField(
-        'Section Index', max_length=100, null=True, blank=True)
+    chapter_name = models.TextField(
+        'Chapter Name', max_length=1000, null=True, blank=True)
+    chapter_desc = models.TextField(
+        'Chapter Description', max_length=1000, null=True, blank=True)
+    includes = models.TextField(
+        'Includes', max_length=1000, null=True, blank=True)
+    useAdditionalCode = models.TextField(
+        'Use Additional Codes', max_length=1000, null=True, blank=True)
+    excludes1 = models.TextField(
+        'Excludes 1', max_length=1000, null=True, blank=True)
+    excludes2 = models.TextField(
+        'Excludes 2', max_length=1000, null=True, blank=True)
+    sectionIndex = models.TextField(
+        'Section Index', max_length=1000, null=True, blank=True)
 
 # Define the Unicode method ::
     def __unicode__(self):

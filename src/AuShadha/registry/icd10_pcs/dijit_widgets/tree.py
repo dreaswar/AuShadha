@@ -113,10 +113,12 @@ def render_all_section_tree(request):
        global UNIQUE_SECTION_LIST
        section_dict_list = []
        for item in UNIQUE_SECTION_LIST:
-          section_dict_list.append({'id': item['name'].replace(' ' ,'_'),
+          if item['name'] is None: item['name'] = 'None'
+          section_dict_list.append({'id': item['name'].replace(' ' ,'_').replace(',',''),
                                    'name': item['code'] + "-" + item['name'],
                                    'widget_id': item['name'].replace(' ','_')
                                   })
+       print(section_dict_list)
        d = {'request': request, 
             'user': user,
             'node_obj': section_dict_list,

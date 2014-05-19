@@ -1,1842 +1,6 @@
 [
 {
     "pk": 1, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_permission", 
-        "name": "Can add permission", 
-        "content_type": 1
-    }
-},
-{
-    "pk": 2, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_permission", 
-        "name": "Can change permission", 
-        "content_type": 1
-    }
-},
-{
-    "pk": 3, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_permission", 
-        "name": "Can delete permission", 
-        "content_type": 1
-    }
-},
-{
-    "pk": 4, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_group", 
-        "name": "Can add group", 
-        "content_type": 2
-    }
-},
-{
-    "pk": 5, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_group", 
-        "name": "Can change group", 
-        "content_type": 2
-    }
-},
-{
-    "pk": 6, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_group", 
-        "name": "Can delete group", 
-        "content_type": 2
-    }
-},
-{
-    "pk": 7, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_user", 
-        "name": "Can add user", 
-        "content_type": 3
-    }
-},
-{
-    "pk": 8, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_user", 
-        "name": "Can change user", 
-        "content_type": 3
-    }
-},
-{
-    "pk": 9, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_user", 
-        "name": "Can delete user", 
-        "content_type": 3
-    }
-},
-{
-    "pk": 10, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_contenttype", 
-        "name": "Can add content type", 
-        "content_type": 4
-    }
-},
-{
-    "pk": 11, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_contenttype", 
-        "name": "Can change content type", 
-        "content_type": 4
-    }
-},
-{
-    "pk": 12, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_contenttype", 
-        "name": "Can delete content type", 
-        "content_type": 4
-    }
-},
-{
-    "pk": 13, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_session", 
-        "name": "Can add session", 
-        "content_type": 5
-    }
-},
-{
-    "pk": 14, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_session", 
-        "name": "Can change session", 
-        "content_type": 5
-    }
-},
-{
-    "pk": 15, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_session", 
-        "name": "Can delete session", 
-        "content_type": 5
-    }
-},
-{
-    "pk": 16, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_site", 
-        "name": "Can add site", 
-        "content_type": 6
-    }
-},
-{
-    "pk": 17, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_site", 
-        "name": "Can change site", 
-        "content_type": 6
-    }
-},
-{
-    "pk": 18, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_site", 
-        "name": "Can delete site", 
-        "content_type": 6
-    }
-},
-{
-    "pk": 19, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_logentry", 
-        "name": "Can add log entry", 
-        "content_type": 7
-    }
-},
-{
-    "pk": 20, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_logentry", 
-        "name": "Can change log entry", 
-        "content_type": 7
-    }
-},
-{
-    "pk": 21, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_logentry", 
-        "name": "Can delete log entry", 
-        "content_type": 7
-    }
-},
-{
-    "pk": 22, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_aushadhauser", 
-        "name": "Can add user", 
-        "content_type": 8
-    }
-},
-{
-    "pk": 23, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_aushadhauser", 
-        "name": "Can change user", 
-        "content_type": 8
-    }
-},
-{
-    "pk": 24, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_aushadhauser", 
-        "name": "Can delete user", 
-        "content_type": 8
-    }
-},
-{
-    "pk": 25, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_clinic", 
-        "name": "Can add clinic", 
-        "content_type": 9
-    }
-},
-{
-    "pk": 26, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_clinic", 
-        "name": "Can change clinic", 
-        "content_type": 9
-    }
-},
-{
-    "pk": 27, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_clinic", 
-        "name": "Can delete clinic", 
-        "content_type": 9
-    }
-},
-{
-    "pk": 28, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_department", 
-        "name": "Can add department", 
-        "content_type": 10
-    }
-},
-{
-    "pk": 29, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_department", 
-        "name": "Can change department", 
-        "content_type": 10
-    }
-},
-{
-    "pk": 30, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_department", 
-        "name": "Can delete department", 
-        "content_type": 10
-    }
-},
-{
-    "pk": 31, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_phone", 
-        "name": "Can add phone", 
-        "content_type": 11
-    }
-},
-{
-    "pk": 32, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_phone", 
-        "name": "Can change phone", 
-        "content_type": 11
-    }
-},
-{
-    "pk": 33, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_phone", 
-        "name": "Can delete phone", 
-        "content_type": 11
-    }
-},
-{
-    "pk": 34, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_fax", 
-        "name": "Can add fax", 
-        "content_type": 12
-    }
-},
-{
-    "pk": 35, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_fax", 
-        "name": "Can change fax", 
-        "content_type": 12
-    }
-},
-{
-    "pk": 36, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_fax", 
-        "name": "Can delete fax", 
-        "content_type": 12
-    }
-},
-{
-    "pk": 37, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_email", 
-        "name": "Can add email", 
-        "content_type": 13
-    }
-},
-{
-    "pk": 38, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_email", 
-        "name": "Can change email", 
-        "content_type": 13
-    }
-},
-{
-    "pk": 39, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_email", 
-        "name": "Can delete email", 
-        "content_type": 13
-    }
-},
-{
-    "pk": 40, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_website", 
-        "name": "Can add website", 
-        "content_type": 14
-    }
-},
-{
-    "pk": 41, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_website", 
-        "name": "Can change website", 
-        "content_type": 14
-    }
-},
-{
-    "pk": 42, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_website", 
-        "name": "Can delete website", 
-        "content_type": 14
-    }
-},
-{
-    "pk": 43, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_staff", 
-        "name": "Can add staff", 
-        "content_type": 15
-    }
-},
-{
-    "pk": 44, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_staff", 
-        "name": "Can change staff", 
-        "content_type": 15
-    }
-},
-{
-    "pk": 45, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_staff", 
-        "name": "Can delete staff", 
-        "content_type": 15
-    }
-},
-{
-    "pk": 46, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_aushadhabasemodel", 
-        "name": "Can add au shadha base model", 
-        "content_type": 16
-    }
-},
-{
-    "pk": 47, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_aushadhabasemodel", 
-        "name": "Can change au shadha base model", 
-        "content_type": 16
-    }
-},
-{
-    "pk": 48, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_aushadhabasemodel", 
-        "name": "Can delete au shadha base model", 
-        "content_type": 16
-    }
-},
-{
-    "pk": 49, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientdetail", 
-        "name": "Can add patient detail", 
-        "content_type": 17
-    }
-},
-{
-    "pk": 50, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientdetail", 
-        "name": "Can change patient detail", 
-        "content_type": 17
-    }
-},
-{
-    "pk": 51, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientdetail", 
-        "name": "Can delete patient detail", 
-        "content_type": 17
-    }
-},
-{
-    "pk": 52, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientguardian", 
-        "name": "Can add Guardian Details", 
-        "content_type": 18
-    }
-},
-{
-    "pk": 53, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientguardian", 
-        "name": "Can change Guardian Details", 
-        "content_type": 18
-    }
-},
-{
-    "pk": 54, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientguardian", 
-        "name": "Can delete Guardian Details", 
-        "content_type": 18
-    }
-},
-{
-    "pk": 55, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientcontact", 
-        "name": "Can add Address", 
-        "content_type": 19
-    }
-},
-{
-    "pk": 56, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientcontact", 
-        "name": "Can change Address", 
-        "content_type": 19
-    }
-},
-{
-    "pk": 57, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientcontact", 
-        "name": "Can delete Address", 
-        "content_type": 19
-    }
-},
-{
-    "pk": 58, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientphone", 
-        "name": "Can add Phone", 
-        "content_type": 20
-    }
-},
-{
-    "pk": 59, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientphone", 
-        "name": "Can change Phone", 
-        "content_type": 20
-    }
-},
-{
-    "pk": 60, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientphone", 
-        "name": "Can delete Phone", 
-        "content_type": 20
-    }
-},
-{
-    "pk": 61, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientemailfax", 
-        "name": "Can add Email, Web and Fax", 
-        "content_type": 21
-    }
-},
-{
-    "pk": 62, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientemailfax", 
-        "name": "Can change Email, Web and Fax", 
-        "content_type": 21
-    }
-},
-{
-    "pk": 63, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientemailfax", 
-        "name": "Can delete Email, Web and Fax", 
-        "content_type": 21
-    }
-},
-{
-    "pk": 64, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientdemographicsdata", 
-        "name": "Can add patient demographics data", 
-        "content_type": 22
-    }
-},
-{
-    "pk": 65, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientdemographicsdata", 
-        "name": "Can change patient demographics data", 
-        "content_type": 22
-    }
-},
-{
-    "pk": 66, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientdemographicsdata", 
-        "name": "Can delete patient demographics data", 
-        "content_type": 22
-    }
-},
-{
-    "pk": 67, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientallergies", 
-        "name": "Can add patient allergies", 
-        "content_type": 23
-    }
-},
-{
-    "pk": 68, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientallergies", 
-        "name": "Can change patient allergies", 
-        "content_type": 23
-    }
-},
-{
-    "pk": 69, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientallergies", 
-        "name": "Can delete patient allergies", 
-        "content_type": 23
-    }
-},
-{
-    "pk": 70, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientimmunisation", 
-        "name": "Can add patient immunisation", 
-        "content_type": 24
-    }
-},
-{
-    "pk": 71, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientimmunisation", 
-        "name": "Can change patient immunisation", 
-        "content_type": 24
-    }
-},
-{
-    "pk": 72, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientimmunisation", 
-        "name": "Can delete patient immunisation", 
-        "content_type": 24
-    }
-},
-{
-    "pk": 73, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_vaccineregistry", 
-        "name": "Can add vaccine registry", 
-        "content_type": 25
-    }
-},
-{
-    "pk": 74, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_vaccineregistry", 
-        "name": "Can change vaccine registry", 
-        "content_type": 25
-    }
-},
-{
-    "pk": 75, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_vaccineregistry", 
-        "name": "Can delete vaccine registry", 
-        "content_type": 25
-    }
-},
-{
-    "pk": 76, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientmedicationlist", 
-        "name": "Can add patient medication list", 
-        "content_type": 26
-    }
-},
-{
-    "pk": 77, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientmedicationlist", 
-        "name": "Can change patient medication list", 
-        "content_type": 26
-    }
-},
-{
-    "pk": 78, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientmedicationlist", 
-        "name": "Can delete patient medication list", 
-        "content_type": 26
-    }
-},
-{
-    "pk": 79, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientfamilyhistory", 
-        "name": "Can add patient family history", 
-        "content_type": 27
-    }
-},
-{
-    "pk": 80, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientfamilyhistory", 
-        "name": "Can change patient family history", 
-        "content_type": 27
-    }
-},
-{
-    "pk": 81, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientfamilyhistory", 
-        "name": "Can delete patient family history", 
-        "content_type": 27
-    }
-},
-{
-    "pk": 82, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientsocialhistory", 
-        "name": "Can add patient social history", 
-        "content_type": 28
-    }
-},
-{
-    "pk": 83, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientsocialhistory", 
-        "name": "Can change patient social history", 
-        "content_type": 28
-    }
-},
-{
-    "pk": 84, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientsocialhistory", 
-        "name": "Can delete patient social history", 
-        "content_type": 28
-    }
-},
-{
-    "pk": 85, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patienticd10", 
-        "name": "Can add patient ic d10", 
-        "content_type": 29
-    }
-},
-{
-    "pk": 86, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patienticd10", 
-        "name": "Can change patient ic d10", 
-        "content_type": 29
-    }
-},
-{
-    "pk": 87, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patienticd10", 
-        "name": "Can delete patient ic d10", 
-        "content_type": 29
-    }
-},
-{
-    "pk": 88, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientcpc", 
-        "name": "Can add patient cpc", 
-        "content_type": 30
-    }
-},
-{
-    "pk": 89, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientcpc", 
-        "name": "Can change patient cpc", 
-        "content_type": 30
-    }
-},
-{
-    "pk": 90, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientcpc", 
-        "name": "Can delete patient cpc", 
-        "content_type": 30
-    }
-},
-{
-    "pk": 91, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientmedicalhistory", 
-        "name": "Can add patient medical history", 
-        "content_type": 31
-    }
-},
-{
-    "pk": 92, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientmedicalhistory", 
-        "name": "Can change patient medical history", 
-        "content_type": 31
-    }
-},
-{
-    "pk": 93, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientmedicalhistory", 
-        "name": "Can delete patient medical history", 
-        "content_type": 31
-    }
-},
-{
-    "pk": 94, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_patientsurgicalhistory", 
-        "name": "Can add patient surgical history", 
-        "content_type": 32
-    }
-},
-{
-    "pk": 95, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_patientsurgicalhistory", 
-        "name": "Can change patient surgical history", 
-        "content_type": 32
-    }
-},
-{
-    "pk": 96, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_patientsurgicalhistory", 
-        "name": "Can delete patient surgical history", 
-        "content_type": 32
-    }
-},
-{
-    "pk": 97, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_physiciandetail", 
-        "name": "Can add physician detail", 
-        "content_type": 33
-    }
-},
-{
-    "pk": 98, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_physiciandetail", 
-        "name": "Can change physician detail", 
-        "content_type": 33
-    }
-},
-{
-    "pk": 99, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_physiciandetail", 
-        "name": "Can delete physician detail", 
-        "content_type": 33
-    }
-},
-{
-    "pk": 100, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_labinvestigationregistry", 
-        "name": "Can add Lab Investigation Registry", 
-        "content_type": 34
-    }
-},
-{
-    "pk": 101, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_labinvestigationregistry", 
-        "name": "Can change Lab Investigation Registry", 
-        "content_type": 34
-    }
-},
-{
-    "pk": 102, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_labinvestigationregistry", 
-        "name": "Can delete Lab Investigation Registry", 
-        "content_type": 34
-    }
-},
-{
-    "pk": 103, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_imaginginvestigationregistry", 
-        "name": "Can add Imaging Investigation Registry", 
-        "content_type": 35
-    }
-},
-{
-    "pk": 104, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_imaginginvestigationregistry", 
-        "name": "Can change Imaging Investigation Registry", 
-        "content_type": 35
-    }
-},
-{
-    "pk": 105, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_imaginginvestigationregistry", 
-        "name": "Can delete Imaging Investigation Registry", 
-        "content_type": 35
-    }
-},
-{
-    "pk": 106, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_admission", 
-        "name": "Can add Admission Basic Data", 
-        "content_type": 36
-    }
-},
-{
-    "pk": 107, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_admission", 
-        "name": "Can change Admission Basic Data", 
-        "content_type": 36
-    }
-},
-{
-    "pk": 108, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_admission", 
-        "name": "Can delete Admission Basic Data", 
-        "content_type": 36
-    }
-},
-{
-    "pk": 109, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_admissioncomplaint", 
-        "name": "Can add Presenting Complaints", 
-        "content_type": 37
-    }
-},
-{
-    "pk": 110, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_admissioncomplaint", 
-        "name": "Can change Presenting Complaints", 
-        "content_type": 37
-    }
-},
-{
-    "pk": 111, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_admissioncomplaint", 
-        "name": "Can delete Presenting Complaints", 
-        "content_type": 37
-    }
-},
-{
-    "pk": 112, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_admissionhpi", 
-        "name": "Can add History of Presenting Illness", 
-        "content_type": 38
-    }
-},
-{
-    "pk": 113, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_admissionhpi", 
-        "name": "Can change History of Presenting Illness", 
-        "content_type": 38
-    }
-},
-{
-    "pk": 114, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_admissionhpi", 
-        "name": "Can delete History of Presenting Illness", 
-        "content_type": 38
-    }
-},
-{
-    "pk": 115, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_admissionpasthistory", 
-        "name": "Can add Past History", 
-        "content_type": 39
-    }
-},
-{
-    "pk": 116, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_admissionpasthistory", 
-        "name": "Can change Past History", 
-        "content_type": 39
-    }
-},
-{
-    "pk": 117, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_admissionpasthistory", 
-        "name": "Can delete Past History", 
-        "content_type": 39
-    }
-},
-{
-    "pk": 118, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_admissionimaging", 
-        "name": "Can add Imaging Studies", 
-        "content_type": 40
-    }
-},
-{
-    "pk": 119, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_admissionimaging", 
-        "name": "Can change Imaging Studies", 
-        "content_type": 40
-    }
-},
-{
-    "pk": 120, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_admissionimaging", 
-        "name": "Can delete Imaging Studies", 
-        "content_type": 40
-    }
-},
-{
-    "pk": 121, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_admissioninv", 
-        "name": "Can add Lab Investigation", 
-        "content_type": 41
-    }
-},
-{
-    "pk": 122, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_admissioninv", 
-        "name": "Can change Lab Investigation", 
-        "content_type": 41
-    }
-},
-{
-    "pk": 123, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_admissioninv", 
-        "name": "Can delete Lab Investigation", 
-        "content_type": 41
-    }
-},
-{
-    "pk": 124, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_visitdetail", 
-        "name": "Can add Visit Details", 
-        "content_type": 42
-    }
-},
-{
-    "pk": 125, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_visitdetail", 
-        "name": "Can change Visit Details", 
-        "content_type": 42
-    }
-},
-{
-    "pk": 126, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_visitdetail", 
-        "name": "Can delete Visit Details", 
-        "content_type": 42
-    }
-},
-{
-    "pk": 127, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_visitcomplaint", 
-        "name": "Can add Presenting Complaint", 
-        "content_type": 43
-    }
-},
-{
-    "pk": 128, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_visitcomplaint", 
-        "name": "Can change Presenting Complaint", 
-        "content_type": 43
-    }
-},
-{
-    "pk": 129, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_visitcomplaint", 
-        "name": "Can delete Presenting Complaint", 
-        "content_type": 43
-    }
-},
-{
-    "pk": 130, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_visitfollowup", 
-        "name": "Can add visit follow up", 
-        "content_type": 44
-    }
-},
-{
-    "pk": 131, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_visitfollowup", 
-        "name": "Can change visit follow up", 
-        "content_type": 44
-    }
-},
-{
-    "pk": 132, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_visitfollowup", 
-        "name": "Can delete visit follow up", 
-        "content_type": 44
-    }
-},
-{
-    "pk": 133, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_visitsoap", 
-        "name": "Can add visit soap", 
-        "content_type": 45
-    }
-},
-{
-    "pk": 134, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_visitsoap", 
-        "name": "Can change visit soap", 
-        "content_type": 45
-    }
-},
-{
-    "pk": 135, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_visitsoap", 
-        "name": "Can delete visit soap", 
-        "content_type": 45
-    }
-},
-{
-    "pk": 136, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_visithpi", 
-        "name": "Can add History of Presenting Illness", 
-        "content_type": 46
-    }
-},
-{
-    "pk": 137, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_visithpi", 
-        "name": "Can change History of Presenting Illness", 
-        "content_type": 46
-    }
-},
-{
-    "pk": 138, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_visithpi", 
-        "name": "Can delete History of Presenting Illness", 
-        "content_type": 46
-    }
-},
-{
-    "pk": 139, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_visitpasthistory", 
-        "name": "Can add Past History", 
-        "content_type": 47
-    }
-},
-{
-    "pk": 140, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_visitpasthistory", 
-        "name": "Can change Past History", 
-        "content_type": 47
-    }
-},
-{
-    "pk": 141, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_visitpasthistory", 
-        "name": "Can delete Past History", 
-        "content_type": 47
-    }
-},
-{
-    "pk": 142, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_visitimaging", 
-        "name": "Can add Imaging Studies", 
-        "content_type": 48
-    }
-},
-{
-    "pk": 143, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_visitimaging", 
-        "name": "Can change Imaging Studies", 
-        "content_type": 48
-    }
-},
-{
-    "pk": 144, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_visitimaging", 
-        "name": "Can delete Imaging Studies", 
-        "content_type": 48
-    }
-},
-{
-    "pk": 145, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_visitros", 
-        "name": "Can add Visit Review of Systems", 
-        "content_type": 49
-    }
-},
-{
-    "pk": 146, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_visitros", 
-        "name": "Can change Visit Review of Systems", 
-        "content_type": 49
-    }
-},
-{
-    "pk": 147, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_visitros", 
-        "name": "Can delete Visit Review of Systems", 
-        "content_type": 49
-    }
-},
-{
-    "pk": 148, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_visitinv", 
-        "name": "Can add Lab Investigation", 
-        "content_type": 50
-    }
-},
-{
-    "pk": 149, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_visitinv", 
-        "name": "Can change Lab Investigation", 
-        "content_type": 50
-    }
-},
-{
-    "pk": 150, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_visitinv", 
-        "name": "Can delete Lab Investigation", 
-        "content_type": 50
-    }
-},
-{
-    "pk": 151, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_obstetrichistorydetail", 
-        "name": "Can add obstetric history detail", 
-        "content_type": 51
-    }
-},
-{
-    "pk": 152, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_obstetrichistorydetail", 
-        "name": "Can change obstetric history detail", 
-        "content_type": 51
-    }
-},
-{
-    "pk": 153, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_obstetrichistorydetail", 
-        "name": "Can delete obstetric history detail", 
-        "content_type": 51
-    }
-},
-{
-    "pk": 154, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_obstetrichistory", 
-        "name": "Can add obstetric history", 
-        "content_type": 52
-    }
-},
-{
-    "pk": 155, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_obstetrichistory", 
-        "name": "Can change obstetric history", 
-        "content_type": 52
-    }
-},
-{
-    "pk": 156, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_obstetrichistory", 
-        "name": "Can delete obstetric history", 
-        "content_type": 52
-    }
-},
-{
-    "pk": 157, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_phyexam", 
-        "name": "Can add Physical Examination", 
-        "content_type": 53
-    }
-},
-{
-    "pk": 158, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_phyexam", 
-        "name": "Can change Physical Examination", 
-        "content_type": 53
-    }
-},
-{
-    "pk": 159, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_phyexam", 
-        "name": "Can delete Physical Examination", 
-        "content_type": 53
-    }
-},
-{
-    "pk": 160, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_vitalexam", 
-        "name": "Can add Vital", 
-        "content_type": 54
-    }
-},
-{
-    "pk": 161, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_vitalexam", 
-        "name": "Can change Vital", 
-        "content_type": 54
-    }
-},
-{
-    "pk": 162, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_vitalexam", 
-        "name": "Can delete Vital", 
-        "content_type": 54
-    }
-},
-{
-    "pk": 163, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_genexam", 
-        "name": "Can add General Examination", 
-        "content_type": 55
-    }
-},
-{
-    "pk": 164, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_genexam", 
-        "name": "Can change General Examination", 
-        "content_type": 55
-    }
-},
-{
-    "pk": 165, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_genexam", 
-        "name": "Can delete General Examination", 
-        "content_type": 55
-    }
-},
-{
-    "pk": 166, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_sysexam", 
-        "name": "Can add System Examination", 
-        "content_type": 56
-    }
-},
-{
-    "pk": 167, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_sysexam", 
-        "name": "Can change System Examination", 
-        "content_type": 56
-    }
-},
-{
-    "pk": 168, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_sysexam", 
-        "name": "Can delete System Examination", 
-        "content_type": 56
-    }
-},
-{
-    "pk": 169, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_perineuroexam", 
-        "name": "Can add Peripheral Neuro Examination", 
-        "content_type": 57
-    }
-},
-{
-    "pk": 170, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_perineuroexam", 
-        "name": "Can change Peripheral Neuro Examination", 
-        "content_type": 57
-    }
-},
-{
-    "pk": 171, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_perineuroexam", 
-        "name": "Can delete Peripheral Neuro Examination", 
-        "content_type": 57
-    }
-},
-{
-    "pk": 172, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_vascexam", 
-        "name": "Can add Vascular Examination", 
-        "content_type": 58
-    }
-},
-{
-    "pk": 173, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_vascexam", 
-        "name": "Can change Vascular Examination", 
-        "content_type": 58
-    }
-},
-{
-    "pk": 174, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_vascexam", 
-        "name": "Can delete Vascular Examination", 
-        "content_type": 58
-    }
-},
-{
-    "pk": 175, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_chapter", 
-        "name": "Can add chapter", 
-        "content_type": 59
-    }
-},
-{
-    "pk": 176, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_chapter", 
-        "name": "Can change chapter", 
-        "content_type": 59
-    }
-},
-{
-    "pk": 177, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_chapter", 
-        "name": "Can delete chapter", 
-        "content_type": 59
-    }
-},
-{
-    "pk": 178, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_section", 
-        "name": "Can add section", 
-        "content_type": 60
-    }
-},
-{
-    "pk": 179, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_section", 
-        "name": "Can change section", 
-        "content_type": 60
-    }
-},
-{
-    "pk": 180, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_section", 
-        "name": "Can delete section", 
-        "content_type": 60
-    }
-},
-{
-    "pk": 181, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_diagnosis", 
-        "name": "Can add diagnosis", 
-        "content_type": 61
-    }
-},
-{
-    "pk": 182, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_diagnosis", 
-        "name": "Can change diagnosis", 
-        "content_type": 61
-    }
-},
-{
-    "pk": 183, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_diagnosis", 
-        "name": "Can delete diagnosis", 
-        "content_type": 61
-    }
-},
-{
-    "pk": 184, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_pcstable", 
-        "name": "Can add pcs table", 
-        "content_type": 62
-    }
-},
-{
-    "pk": 185, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_pcstable", 
-        "name": "Can change pcs table", 
-        "content_type": 62
-    }
-},
-{
-    "pk": 186, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_pcstable", 
-        "name": "Can delete pcs table", 
-        "content_type": 62
-    }
-},
-{
-    "pk": 187, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_pcsrow", 
-        "name": "Can add pcs row", 
-        "content_type": 63
-    }
-},
-{
-    "pk": 188, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_pcsrow", 
-        "name": "Can change pcs row", 
-        "content_type": 63
-    }
-},
-{
-    "pk": 189, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_pcsrow", 
-        "name": "Can delete pcs row", 
-        "content_type": 63
-    }
-},
-{
-    "pk": 190, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_bodypart", 
-        "name": "Can add body part", 
-        "content_type": 64
-    }
-},
-{
-    "pk": 191, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_bodypart", 
-        "name": "Can change body part", 
-        "content_type": 64
-    }
-},
-{
-    "pk": 192, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_bodypart", 
-        "name": "Can delete body part", 
-        "content_type": 64
-    }
-},
-{
-    "pk": 193, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_approach", 
-        "name": "Can add approach", 
-        "content_type": 65
-    }
-},
-{
-    "pk": 194, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_approach", 
-        "name": "Can change approach", 
-        "content_type": 65
-    }
-},
-{
-    "pk": 195, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_approach", 
-        "name": "Can delete approach", 
-        "content_type": 65
-    }
-},
-{
-    "pk": 196, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_device", 
-        "name": "Can add device", 
-        "content_type": 66
-    }
-},
-{
-    "pk": 197, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_device", 
-        "name": "Can change device", 
-        "content_type": 66
-    }
-},
-{
-    "pk": 198, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_device", 
-        "name": "Can delete device", 
-        "content_type": 66
-    }
-},
-{
-    "pk": 199, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_qualifier", 
-        "name": "Can add qualifier", 
-        "content_type": 67
-    }
-},
-{
-    "pk": 200, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_qualifier", 
-        "name": "Can change qualifier", 
-        "content_type": 67
-    }
-},
-{
-    "pk": 201, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_qualifier", 
-        "name": "Can delete qualifier", 
-        "content_type": 67
-    }
-},
-{
-    "pk": 202, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "add_fdadrugs", 
-        "name": "Can add FDA Drugs", 
-        "content_type": 68
-    }
-},
-{
-    "pk": 203, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "change_fdadrugs", 
-        "name": "Can change FDA Drugs", 
-        "content_type": 68
-    }
-},
-{
-    "pk": 204, 
-    "model": "auth.permission", 
-    "fields": {
-        "codename": "delete_fdadrugs", 
-        "name": "Can delete FDA Drugs", 
-        "content_type": 68
-    }
-},
-{
-    "pk": 1, 
     "model": "auth.user", 
     "fields": {
         "username": "admin", 
@@ -1845,12 +9,12 @@
         "is_active": true, 
         "is_superuser": true, 
         "is_staff": true, 
-        "last_login": "2013-08-26T05:45:52.776Z", 
+        "last_login": "2014-05-19T06:54:44.700Z", 
         "groups": [], 
         "user_permissions": [], 
-        "password": "pbkdf2_sha256$10000$Y8OX27vRXl4D$Wh589fzlBVY9AYKDFxdpem2FO4hujSvtbFoPLTk17p4=", 
+        "password": "pbkdf2_sha256$12000$pq8H2HbpIIry$jpVbX1rzG3kyELSOQZy57J9+hAK25scs1jXhM0zu7bA=", 
         "email": "dreaswar@gmail.com", 
-        "date_joined": "2013-08-26T05:01:00.081Z"
+        "date_joined": "2014-05-19T05:25:50.499Z"
     }
 },
 {
@@ -1859,218 +23,61 @@
     "fields": {
         "username": "dreaswar", 
         "first_name": "Easwar", 
-        "last_name": "TR", 
-        "is_active": true, 
-        "is_superuser": true, 
-        "is_staff": true, 
-        "last_login": "2013-08-26T05:47:18Z", 
-        "groups": [], 
-        "user_permissions": [], 
-        "password": "pbkdf2_sha256$10000$dWHtZ08YbiOb$km4QfAV1DUgdgaipoXABIN55xfQvKhW6NqVXpwICkC8=", 
-        "email": "dreaswar@gmail.com", 
-        "date_joined": "2013-08-26T05:47:18Z"
-    }
-},
-{
-    "pk": 3, 
-    "model": "auth.user", 
-    "fields": {
-        "username": "richard", 
-        "first_name": "Richard", 
         "last_name": "", 
         "is_active": true, 
         "is_superuser": true, 
         "is_staff": true, 
-        "last_login": "2013-08-26T05:47:48Z", 
-        "groups": [], 
-        "user_permissions": [], 
-        "password": "pbkdf2_sha256$10000$9vH31uoqpjMM$JN1djZOkb9flgj29138hBspxcREwY2nTsOYuaYX6lXc=", 
-        "email": "someemail@dmail.com", 
-        "date_joined": "2013-08-26T05:47:48Z"
-    }
-},
-{
-    "pk": 4, 
-    "model": "auth.user", 
-    "fields": {
-        "username": "dummy_user", 
-        "first_name": "Dummy ", 
-        "last_name": "Doc", 
-        "is_active": true, 
-        "is_superuser": true, 
-        "is_staff": false, 
-        "last_login": "2013-08-26T05:48:20Z", 
+        "last_login": "2014-05-19T07:03:19Z", 
         "groups": [], 
         "user_permissions": [
-            106, 
-            107, 
-            108, 
-            109, 
-            110, 
-            111, 
-            112, 
-            113, 
-            114, 
-            118, 
-            119, 
-            120, 
-            121, 
-            122, 
-            123, 
-            115, 
-            116, 
-            117, 
-            103, 
-            104, 
-            105, 
-            100, 
-            101, 
-            102, 
-            154, 
-            155, 
-            156, 
-            151, 
-            152, 
-            153, 
-            67, 
-            68, 
-            69, 
-            55, 
-            56, 
-            57, 
-            88, 
-            89, 
-            90, 
-            64, 
-            65, 
-            66, 
-            49, 
-            50, 
-            51, 
-            61, 
-            62, 
-            63, 
-            79, 
-            80, 
-            81, 
-            52, 
-            53, 
-            54, 
-            85, 
-            86, 
-            87, 
-            70, 
-            71, 
-            72, 
-            91, 
-            92, 
-            93, 
-            76, 
-            77, 
-            78, 
-            58, 
-            59, 
-            60, 
-            82, 
-            83, 
-            84, 
-            94, 
-            95, 
-            96, 
-            73, 
-            74, 
-            75, 
-            163, 
-            164, 
-            165, 
-            169, 
-            170, 
-            171, 
-            157, 
-            158, 
-            159, 
-            166, 
-            167, 
-            168, 
-            172, 
-            173, 
-            174, 
-            160, 
-            161, 
-            162, 
+            19, 
+            20, 
+            21, 
             97, 
             98, 
             99, 
-            127, 
-            128, 
-            129, 
-            124, 
-            125, 
-            126, 
-            130, 
-            131, 
-            132, 
-            136, 
-            137, 
-            138, 
-            142, 
-            143, 
-            144, 
-            148, 
-            149, 
-            150, 
-            139, 
-            140, 
-            141, 
-            145, 
-            146, 
-            147, 
-            133, 
-            134, 
-            135
-        ], 
-        "password": "pbkdf2_sha256$10000$lTEC8QluKxR2$l73N9qXgyxj83nW8HaceZJdMrCIlNXYn/DFVMqrFsm8=", 
-        "email": "someemail@dmail.com", 
-        "date_joined": "2013-08-26T05:48:20Z"
-    }
-},
-{
-    "pk": 5, 
-    "model": "auth.user", 
-    "fields": {
-        "username": "secretary", 
-        "first_name": "secretary", 
-        "last_name": "secretary", 
-        "is_active": true, 
-        "is_superuser": false, 
-        "is_staff": false, 
-        "last_login": "2013-08-26T05:48:50Z", 
-        "groups": [], 
-        "user_permissions": [
+            94, 
+            95, 
+            96, 
+            100, 
+            101, 
+            102, 
             106, 
             107, 
             108, 
-            109, 
-            110, 
-            111, 
             112, 
             113, 
             114, 
-            118, 
-            119, 
-            120, 
-            121, 
-            122, 
-            123, 
-            115, 
-            116, 
-            117, 
-            25, 
-            26, 
-            27, 
+            103, 
+            104, 
+            105, 
+            109, 
+            110, 
+            111, 
+            142, 
+            143, 
+            144, 
+            22, 
+            23, 
+            24, 
+            7, 
+            8, 
+            9, 
+            4, 
+            5, 
+            6, 
+            10, 
+            11, 
+            12, 
             28, 
             29, 
             30, 
+            25, 
+            26, 
+            27, 
+            43, 
+            44, 
+            45, 
             37, 
             38, 
             39, 
@@ -2080,75 +87,114 @@
             31, 
             32, 
             33, 
-            43, 
-            44, 
-            45, 
+            46, 
+            47, 
+            48, 
             40, 
             41, 
             42, 
-            103, 
-            104, 
-            105, 
-            100, 
-            101, 
-            102, 
-            154, 
-            155, 
-            156, 
-            151, 
-            152, 
-            153, 
-            67, 
-            68, 
-            69, 
-            55, 
-            56, 
-            57, 
-            88, 
-            89, 
-            90, 
-            64, 
-            65, 
-            66, 
-            49, 
-            50, 
-            51, 
-            61, 
-            62, 
-            63, 
+            118, 
+            119, 
+            120, 
+            1, 
+            2, 
+            3, 
+            115, 
+            116, 
+            117, 
             79, 
             80, 
             81, 
+            136, 
+            137, 
+            138, 
+            124, 
+            125, 
+            126, 
+            49, 
+            50, 
+            51, 
+            55, 
+            56, 
+            57, 
             52, 
             53, 
             54, 
-            85, 
-            86, 
-            87, 
-            70, 
-            71, 
-            72, 
-            91, 
-            92, 
-            93, 
+            67, 
+            68, 
+            69, 
             76, 
             77, 
             78, 
-            58, 
-            59, 
-            60, 
-            82, 
-            83, 
-            84, 
-            94, 
-            95, 
-            96, 
             73, 
             74, 
             75, 
+            64, 
+            65, 
+            66, 
+            61, 
+            62, 
+            63, 
+            58, 
+            59, 
+            60, 
+            70, 
+            71, 
+            72, 
+            145, 
+            146, 
+            147, 
+            85, 
+            86, 
+            87, 
+            82, 
+            83, 
+            84, 
+            127, 
+            128, 
+            129, 
+            139, 
+            140, 
+            141, 
+            91, 
+            92, 
+            93, 
+            121, 
+            122, 
+            123, 
+            13, 
+            14, 
+            15, 
+            16, 
+            17, 
+            18, 
+            133, 
+            134, 
+            135, 
+            130, 
+            131, 
+            132, 
+            88, 
+            89, 
+            90, 
+            184, 
+            185, 
+            186, 
+            178, 
+            179, 
+            180, 
+            148, 
+            149, 
+            150, 
+            151, 
+            152, 
+            153, 
             163, 
             164, 
             165, 
+            172, 
+            173, 
+            174, 
             169, 
             170, 
             171, 
@@ -2158,46 +204,553 @@
             166, 
             167, 
             168, 
-            172, 
-            173, 
-            174, 
+            175, 
+            176, 
+            177, 
             160, 
             161, 
             162, 
+            154, 
+            155, 
+            156, 
+            181, 
+            182, 
+            183
+        ], 
+        "password": "pbkdf2_sha256$12000$ztnRuQgtbyKW$Vtf7KSZMObhsmwHG9R/OxbsVgcm+HKvGUjK3BegLZUQ=", 
+        "email": "dreaswar@gmail.com", 
+        "date_joined": "2014-05-19T07:03:19Z"
+    }
+},
+{
+    "pk": 3, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "dmoco", 
+        "first_name": "Derek ", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-05-19T07:03:48Z", 
+        "groups": [], 
+        "user_permissions": [
+            19, 
+            20, 
+            21, 
             97, 
             98, 
             99, 
-            127, 
-            128, 
-            129, 
-            124, 
-            125, 
-            126, 
-            130, 
-            131, 
-            132, 
-            136, 
-            137, 
-            138, 
+            94, 
+            95, 
+            96, 
+            100, 
+            101, 
+            102, 
+            106, 
+            107, 
+            108, 
+            112, 
+            113, 
+            114, 
+            103, 
+            104, 
+            105, 
+            109, 
+            110, 
+            111, 
             142, 
             143, 
             144, 
-            148, 
-            149, 
-            150, 
-            139, 
-            140, 
-            141, 
+            22, 
+            23, 
+            24, 
+            7, 
+            8, 
+            9, 
+            4, 
+            5, 
+            6, 
+            10, 
+            11, 
+            12, 
+            28, 
+            29, 
+            30, 
+            25, 
+            26, 
+            27, 
+            43, 
+            44, 
+            45, 
+            37, 
+            38, 
+            39, 
+            34, 
+            35, 
+            36, 
+            31, 
+            32, 
+            33, 
+            46, 
+            47, 
+            48, 
+            40, 
+            41, 
+            42, 
+            118, 
+            119, 
+            120, 
+            1, 
+            2, 
+            3, 
+            115, 
+            116, 
+            117, 
+            79, 
+            80, 
+            81, 
+            136, 
+            137, 
+            138, 
+            124, 
+            125, 
+            126, 
+            49, 
+            50, 
+            51, 
+            55, 
+            56, 
+            57, 
+            52, 
+            53, 
+            54, 
+            67, 
+            68, 
+            69, 
+            76, 
+            77, 
+            78, 
+            73, 
+            74, 
+            75, 
+            64, 
+            65, 
+            66, 
+            61, 
+            62, 
+            63, 
+            58, 
+            59, 
+            60, 
+            70, 
+            71, 
+            72, 
             145, 
             146, 
             147, 
+            85, 
+            86, 
+            87, 
+            82, 
+            83, 
+            84, 
+            127, 
+            128, 
+            129, 
+            139, 
+            140, 
+            141, 
+            91, 
+            92, 
+            93, 
+            121, 
+            122, 
+            123, 
+            13, 
+            14, 
+            15, 
+            16, 
+            17, 
+            18, 
             133, 
             134, 
-            135
+            135, 
+            130, 
+            131, 
+            132, 
+            88, 
+            89, 
+            90, 
+            184, 
+            185, 
+            186, 
+            178, 
+            179, 
+            180, 
+            148, 
+            149, 
+            150, 
+            151, 
+            152, 
+            153, 
+            163, 
+            164, 
+            165, 
+            172, 
+            173, 
+            174, 
+            169, 
+            170, 
+            171, 
+            157, 
+            158, 
+            159, 
+            166, 
+            167, 
+            168, 
+            175, 
+            176, 
+            177, 
+            160, 
+            161, 
+            162, 
+            154, 
+            155, 
+            156, 
+            181, 
+            182, 
+            183
         ], 
-        "password": "pbkdf2_sha256$10000$VozKkYY5MXlr$z54exaaoT5DdnysKWPFbADQPQkkpBATTwtw2v2pukh0=", 
-        "email": "someemail@dmail.com", 
-        "date_joined": "2013-08-26T05:48:50Z"
+        "password": "pbkdf2_sha256$12000$5fgv0ZEo5XBa$5+ZcC8rVuQa0n03nbzw5HCySxkpBOwAzqw8bEy6h8oc=", 
+        "email": "", 
+        "date_joined": "2014-05-19T07:03:48Z"
+    }
+},
+{
+    "pk": 4, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "richard", 
+        "first_name": "Richard", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-05-19T07:04:15Z", 
+        "groups": [], 
+        "user_permissions": [
+            19, 
+            20, 
+            21, 
+            97, 
+            98, 
+            99, 
+            94, 
+            95, 
+            96, 
+            100, 
+            101, 
+            102, 
+            106, 
+            107, 
+            108, 
+            112, 
+            113, 
+            114, 
+            103, 
+            104, 
+            105, 
+            109, 
+            110, 
+            111, 
+            142, 
+            143, 
+            144, 
+            22, 
+            23, 
+            24, 
+            7, 
+            8, 
+            9, 
+            4, 
+            5, 
+            6, 
+            10, 
+            11, 
+            12, 
+            28, 
+            29, 
+            30, 
+            25, 
+            26, 
+            27, 
+            43, 
+            44, 
+            45, 
+            37, 
+            38, 
+            39, 
+            34, 
+            35, 
+            36, 
+            31, 
+            32, 
+            33, 
+            46, 
+            47, 
+            48, 
+            40, 
+            41, 
+            42, 
+            118, 
+            119, 
+            120, 
+            1, 
+            2, 
+            3, 
+            115, 
+            116, 
+            117, 
+            79, 
+            80, 
+            81, 
+            136, 
+            137, 
+            138, 
+            124, 
+            125, 
+            126, 
+            49, 
+            50, 
+            51, 
+            55, 
+            56, 
+            57, 
+            52, 
+            53, 
+            54, 
+            67, 
+            68, 
+            69, 
+            76, 
+            77, 
+            78, 
+            73, 
+            74, 
+            75, 
+            64, 
+            65, 
+            66, 
+            61, 
+            62, 
+            63, 
+            58, 
+            59, 
+            60, 
+            70, 
+            71, 
+            72, 
+            145, 
+            146, 
+            147, 
+            85, 
+            86, 
+            87, 
+            82, 
+            83, 
+            84, 
+            127, 
+            128, 
+            129, 
+            139, 
+            140, 
+            141, 
+            91, 
+            92, 
+            93, 
+            121, 
+            122, 
+            123, 
+            13, 
+            14, 
+            15, 
+            16, 
+            17, 
+            18, 
+            133, 
+            134, 
+            135, 
+            130, 
+            131, 
+            132, 
+            88, 
+            89, 
+            90, 
+            184, 
+            185, 
+            186, 
+            178, 
+            179, 
+            180, 
+            148, 
+            149, 
+            150, 
+            151, 
+            152, 
+            153, 
+            163, 
+            164, 
+            165, 
+            172, 
+            173, 
+            174, 
+            169, 
+            170, 
+            171, 
+            157, 
+            158, 
+            159, 
+            166, 
+            167, 
+            168, 
+            175, 
+            176, 
+            177, 
+            160, 
+            161, 
+            162, 
+            154, 
+            155, 
+            156, 
+            181, 
+            182, 
+            183
+        ], 
+        "password": "pbkdf2_sha256$12000$zCl5mtwaWAMU$oKy1yISeU6ZK7KpDjz/14fnAjhxAASWQUbb5aMjSUvA=", 
+        "email": "", 
+        "date_joined": "2014-05-19T07:04:15Z"
+    }
+},
+{
+    "pk": 5, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "secretary", 
+        "first_name": "Secretary", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": true, 
+        "last_login": "2014-05-19T07:04:44Z", 
+        "groups": [], 
+        "user_permissions": [
+            97, 
+            98, 
+            99, 
+            94, 
+            95, 
+            96, 
+            100, 
+            101, 
+            102, 
+            106, 
+            107, 
+            108, 
+            112, 
+            113, 
+            114, 
+            103, 
+            104, 
+            105, 
+            109, 
+            110, 
+            111, 
+            142, 
+            143, 
+            144, 
+            115, 
+            116, 
+            117, 
+            136, 
+            137, 
+            138, 
+            124, 
+            125, 
+            126, 
+            145, 
+            146, 
+            147, 
+            85, 
+            86, 
+            87, 
+            82, 
+            83, 
+            84, 
+            127, 
+            128, 
+            129, 
+            139, 
+            140, 
+            141, 
+            91, 
+            92, 
+            93, 
+            121, 
+            122, 
+            123, 
+            133, 
+            134, 
+            135, 
+            130, 
+            131, 
+            132, 
+            88, 
+            89, 
+            90, 
+            184, 
+            185, 
+            186, 
+            178, 
+            179, 
+            180, 
+            148, 
+            149, 
+            150, 
+            151, 
+            152, 
+            153, 
+            163, 
+            164, 
+            165, 
+            172, 
+            173, 
+            174, 
+            169, 
+            170, 
+            171, 
+            157, 
+            158, 
+            159, 
+            166, 
+            167, 
+            168, 
+            175, 
+            176, 
+            177, 
+            160, 
+            161, 
+            162, 
+            154, 
+            155, 
+            156, 
+            181, 
+            182, 
+            183
+        ], 
+        "password": "pbkdf2_sha256$12000$MYtBrlGktFv0$Of5voyRcRvxq5A1RDd8ESisbG+dPB5gATRDN7AUthOE=", 
+        "email": "", 
+        "date_joined": "2014-05-19T07:04:44Z"
     }
 }
 ]
