@@ -30,12 +30,12 @@ class RootXML(models.Model):
     """
     __model_label__ = 'root_xml'
 
-    index = models.PositiveIntegerField(max_length = 200, unique= True)
+#    index = models.PositiveIntegerField(max_length = 200, unique= True, primary_key = True)
     fk = models.CharField(max_length = 30, null = True, blank = True)
     path = models.CharField(max_length = 100)
 
     def __unicode__(self):
-        return "%s: @ %s" % (self.path, self.index)
+        return "%s: @ %s" % (self.path, self.id)
     
     def get_unique_section_labels(self):
         all_tables = PcsTable.objects.all()
@@ -59,9 +59,10 @@ class PcsTable(models.Model):
 
     __model_label__ = "pcs_table"
 
-    index = models.PositiveIntegerField(max_length = 200, unique = True)
+#    index = models.PositiveIntegerField(max_length = 200, unique = True, primary_key = True)
     fk = models.ForeignKey(RootXML, null=True,blank =True)
     
+
     def _get_name(self, name):
         label_map = {'section': 0, 'body_system': 1, 'operation': 2}
         try:
@@ -69,7 +70,7 @@ class PcsTable(models.Model):
         except KeyError:
          raise Exception("Invalid Name key")
 
-        id = self.id
+        id = self.pk
         table_obj = PcsTable.objects.get(pk= id)
         axis = Axis.objects.filter(pcsTable_fk = table_obj)
         label_obj = Label.objects.filter(fk = axis[label_index])
@@ -117,13 +118,13 @@ class PcsRow(models.Model):
 
     __model_label__ = "pcs_row"
 
-    index = models.PositiveIntegerField(max_length = 200, unique = True)
+#    index = models.PositiveIntegerField(max_length = 200, unique = True, primary_key=True)
     fk = models.ForeignKey(PcsTable,null=True,blank=True)
     
     def __unicode__(self):
-        return "%s" % (self.index)
+        return "%d" % (self.id)
     
-        
+       
 
 
 class Axis(models.Model):
@@ -135,14 +136,14 @@ class Axis(models.Model):
 
     __model_label__ = "axis"
 
-    index = models.PositiveIntegerField(max_length = 200, unique = True)
+#    index = models.PositiveIntegerField(max_length = 200, unique = True, primary_key = True)
     positions = models.CharField(max_length = 30, null = True, blank = True)
     values = models.CharField(max_length = 30, null = True, blank=True)
     pcsTable_fk = models.ForeignKey(PcsTable,null=True,blank=True)
     pcsRow_fk = models.ForeignKey(PcsRow,null=True,blank=True)
    
     def __unicode__(self):
-        return "%s %s %s" % (self.index, self.positions, self.values)
+        return "%s %s" % (self.positions, self.values)
 
     
 
@@ -156,14 +157,14 @@ class Title(models.Model):
 
     __model_label__ = "title"
 
-    index = models.PositiveIntegerField(max_length = 200, unique = True)
+#    index = models.PositiveIntegerField(max_length = 200, unique = True, primary_key=True)
     text = models.TextField(max_length = 1000, null = True, blank = True)
     fk = models.ForeignKey(Axis,null=True,blank=True)
     
     def __unicode__(self):
-        return "%s %s" % (self.index, self.text)
+        return "%s" % (self.text)
 
-   
+  
 
 
 class Label(models.Model):
@@ -175,13 +176,14 @@ class Label(models.Model):
 
     __model_label__ = "label"
 
-    index = models.PositiveIntegerField(max_length = 200, unique = True)
+#    index = models.PositiveIntegerField(max_length = 200, unique = True, primary_key=True)
     text = models.TextField(max_length = 1000, null = True, blank = True)
     code = models.CharField(max_length = 100, null = True, blank=True)
     fk = models.ForeignKey(Axis,null=True,blank=True)
 
     def __unicode__(self):
-        return "%s %s %s" % (self.index, self.text, self.code)
+        return "%s %s" % ( self.text, self.code)
+
 
 
 class Definition(models.Model):
@@ -193,9 +195,11 @@ class Definition(models.Model):
 
     __model_label__ = "definition"
 
-    index = models.PositiveIntegerField(max_length = 200, unique = True)
+#    index = models.PositiveIntegerField(max_length = 200, unique = True,primary_key=True)
     text = models.TextField(max_length = 1000, null = True, blank = True)
     fk = models.ForeignKey(Axis,null=True,blank=True)
 
     def __unicode__(self):
-        return "%s %s" % (self.index, self.text)
+        return "%s" % (self.text)
+
+

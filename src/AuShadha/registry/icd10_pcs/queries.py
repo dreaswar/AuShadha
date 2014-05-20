@@ -84,9 +84,9 @@ def generate_body_system_operation_mapper():
     def build_op_list():
           for o in op:
             if o.fk.pcsTable_fk.get_section_name() == sec:
-                if not o.id in body_system_mapper[sec][bs_name].get('operation_id'):
+                if not o.pk in body_system_mapper[sec][bs_name].get('operation_id'):
                     body_system_mapper[sec][bs_name]['operation'].append(o) 
-                    body_system_mapper[sec][bs_name]['operation_id'].append(o.id)
+                    body_system_mapper[sec][bs_name]['operation_id'].append(o.pk)
 
     for table in all_tables:
        sec = table.get_section_name()

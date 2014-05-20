@@ -142,8 +142,8 @@ def render_per_section_body_system_tree(request, section):
        user = request.user
        body_systems = []
        for b in section_mapper[section_name]['body_system']:
-           body_systems.append({'widget_id': b[0].id, 
-                                'id': b[0].id, 
+           body_systems.append({'widget_id': b[0].pk, 
+                                'id': b[0].pk, 
                                 'name': b[0].code +"-"+ b[0].text, 
                                 'section': b[0].fk.pcsTable_fk.get_section_name()})
        d = {'request': request, 
@@ -181,8 +181,8 @@ def render_per_body_system_operation_tree(request,body_system):
        operations = []
 
        for o in body_system_mapper[sec][body_system]['operation']:
-           operations.append({'widget_id': o.id, 
-                              'id': o.id, 
+           operations.append({'widget_id': o.pk, 
+                              'id': o.pk, 
                               'name': o.code + "-" + o.text, 
                               'section':sec })
        d = {'request': request, 
