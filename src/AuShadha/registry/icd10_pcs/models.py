@@ -70,8 +70,8 @@ class PcsTable(models.Model):
         except KeyError:
          raise Exception("Invalid Name key")
 
-        id = self.pk
-        table_obj = PcsTable.objects.get(pk= id)
+        idx = self.pk
+        table_obj = PcsTable.objects.get(pk= idx)
         axis = Axis.objects.filter(pcsTable_fk = table_obj)
         label_obj = Label.objects.filter(fk = axis[label_index])
         label = label_obj[0].text
