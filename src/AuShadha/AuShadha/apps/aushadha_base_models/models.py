@@ -52,7 +52,7 @@ class AuShadhaBaseModel(models.Model):
         This has several methods that can be inherited and used throughout.
 
         More specifically, the generate_urls method and the self.urls variable are
-        meant to be a substitute for Django's reverse method to yeild the URL for 
+        meant to be a substitute for Django's reverse method to yield the URL for 
         a given object. This allows dictionary like querying in Django template to
         get the url for an object rather than use the {%url%} template tag. It is not
         any significant advantage. Just an attempt to make it a little simpler. 
