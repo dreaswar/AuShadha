@@ -62,6 +62,20 @@ DATABASES = {
         # Set to empty string for default. Not used with sqlite3.
         'PORT': '',
     }
+
+#    'default': {
+        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#        'ENGINE': 'django.db.backends.sqlite3',
+        # Or path to database file if using sqlite3.
+#        'NAME': 'AuShadha.db',
+#        'USER': '',                      # Not used with sqlite3.
+#        'PASSWORD': '',                  # Not used with sqlite3.
+        # Set to empty string for localhost. Not used with sqlite3.
+#        'HOST': '',
+        # Set to empty string for default. Not used with sqlite3.
+#        'PORT': '',
+#    }
+
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -124,6 +138,7 @@ STATICFILES_DIRS = (
     #os.path.join(PARENT_ROOT, 'aushadha_demographics_us/demographics/media'),
 
     os.path.join(PARENT_ROOT, 'registry/drug_db/media/drug_db/js'),
+    os.path.join(PARENT_ROOT, 'registry/icd10_pcs/media/icd10_pcs/js'),
 
 )
 

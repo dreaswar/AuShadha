@@ -31,11 +31,11 @@ class RootXML(models.Model):
     __model_label__ = 'root_xml'
 
 #    index = models.PositiveIntegerField(max_length = 200, unique= True, primary_key = True)
-    fk = models.CharField(max_length = 30, null = True, blank = True)
+    #fk = models.CharField(max_length = 30, null = True, blank = True)
     path = models.CharField(max_length = 100)
 
     def __unicode__(self):
-        return "%s: @ %s" % (self.path, self.id)
+        return "%s: @ %s" % (self.path, self.pk)
     
     def get_unique_section_labels(self):
         all_tables = PcsTable.objects.all()
@@ -59,7 +59,7 @@ class PcsTable(models.Model):
 
     __model_label__ = "pcs_table"
 
-#    index = models.PositiveIntegerField(max_length = 200, unique = True, primary_key = True)
+    #index = models.PositiveIntegerField(max_length = 200, unique = True, primary_key = True)
     fk = models.ForeignKey(RootXML, null=True,blank =True)
     
 
@@ -72,8 +72,8 @@ class PcsTable(models.Model):
 
         idx = self.pk
         table_obj = PcsTable.objects.get(pk= idx)
-        axis = Axis.objects.filter(pcsTable_fk = table_obj)
-        label_obj = Label.objects.filter(fk = axis[label_index])
+        axis = Axis.objects.filter(pcsTable_fk = table_obj).order_by('pk')
+        label_obj = Label.objects.filter(fk = axis[label_index]).order_by('pk')
         label = label_obj[0].text
         if label == 'None' or label is None:
            return None, label_obj
@@ -123,8 +123,6 @@ class PcsRow(models.Model):
     
     def __unicode__(self):
         return "%d" % (self.id)
-    
-       
 
 
 class Axis(models.Model):

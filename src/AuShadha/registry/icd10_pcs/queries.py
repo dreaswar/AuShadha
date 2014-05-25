@@ -121,7 +121,7 @@ def return_tables_items_by_section_name(section_name):
            operation_list.append(table.get_operation_name())
 
     return {'tables': table_list, 
-	    'body_systems': body_system_list,
+            'body_systems': body_system_list,
             'operations': operation_list
            }
 

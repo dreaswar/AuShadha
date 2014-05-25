@@ -113,7 +113,7 @@ def icd10_pcs_code_search(request):
         #Do your stuff here
         json = simplejson.dumps(data)
         print json
-	return HttpResponse(json, content_type = 'application/json')
+        return HttpResponse(json, content_type = 'application/json')
 
     else:
        return Http404("Bad Request Method")
