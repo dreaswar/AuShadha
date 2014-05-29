@@ -42,12 +42,12 @@ panes:
         panes: []
         widgets:
         
-         - id: ICD10_PCS_CP_1_TREE &ICD10_PCS_CP_1_TREE_ID
+         - id: ICD10_PCS_CP_1_TREE
            type: custom_widget
            js_path: icd10_pcs/tree/main
            args:
               widget_type: icd10_pcs_tree
-              id: ICD10_PCS_CP_1_TREE_ID
+              id: ICD10_PCS_CP_1_TREE
               url: "{%url 'render_all_section_tree' %}"
               mainTabPane: PATIENT_CENTER_CP_TC
               title: "ICD 10 Procedure"

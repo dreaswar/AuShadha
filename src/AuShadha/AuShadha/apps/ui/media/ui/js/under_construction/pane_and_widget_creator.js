@@ -796,6 +796,7 @@ function(
                               require(dojoConfig,
                                       [widgetQ.widget.js_path], 
                               function(w) { 
+                                  console.log(widgetQ.widget.args);
                                   w(widgetQ.widget.args);  
                               });
 

@@ -1,4 +1,4 @@
-require(['dojo/dom',
+define(['dojo/dom',
          'dojo/on',
          'dojo/request',
          'dojo/json',
@@ -24,16 +24,17 @@ function(dom,
          ready, 
          parser, 
          registry,
-         paneTreeCreator){
+         icd10pcsTree){
 
-
-    var icd10tree =  paneTreeCreator(args.url, args.id,args.mainTabPane,args.title );
-    icd10tree.tree.onDbClick = onTreeDblClick;
+    var treeMaker = function(args){
+      icd10pcsTree(args.url,args.id,args.mainTabPane,args.title);
+//      on(icd10pcsTree.tree,'dblclick', onTreeDblClick);
+      icd10pcsTree.tree.onDblClick = onTreeDblClick;
+     }
+    
     function onTreeDblClick(){
-
         alert("Hello. You just clicked on the Tree !!. This was supposed to do something useful\nHowever, that something is under construction ");
     }
 
-
-
+    return treeMaker;
 });

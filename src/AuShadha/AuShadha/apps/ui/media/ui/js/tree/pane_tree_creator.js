@@ -204,8 +204,11 @@ define([
             tree._load();
         }
 
+        buildTree.tree = tree;
+
     }
 
+    console.log(buildTree.tree);
     return buildTree;
 
 });
