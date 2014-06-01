@@ -129,7 +129,9 @@ define([
                       console.log(parent_dom);
                       console.log(target_node_type);
                       registry.byId(item.target_node[0]).destroyRecursive(false);
+                      console.log("Finished destroying " + item.target_node[0]);
                       domConstruct.create(target_node_type, { id: item.target_node[0] }, parent_dom, 0 );
+                      console.log("Recreated DOM Node " + item.target_node[0]);
 
                    }
 
@@ -158,19 +160,15 @@ define([
 
         var mainTabPaneDomNodeId = mainTabPaneDomNode ? domAttr.get(mainTabPaneDomNode,'id'): false ;
 
-        var tree = new Tree({model   : treeModel,
-                             showRoot: false,
-                             onDblClick: function(item,node,evt){
-
-                                            if ( item.ondblclick ) {
-                                              onDblClickOnTree(item, mainTabPaneDomNodeId);
-                                              console.log(item);
-                                            }
-
-                                }
-                            },
-                            domNode);
-
+        var tree = new Tree({model: treeModel, showRoot: false},domNode);
+        tree.on('dblclick', 
+                function(item,node,evt) { 
+                   if (item.ondblclick) {
+                     onDblClickOnTree(item, mainTabPaneDomNodeId);
+                     console.log(item);
+                   }
+                }
+        );
         tree.startup();
 //      tree.expandAll();
         tree.collapseAll();

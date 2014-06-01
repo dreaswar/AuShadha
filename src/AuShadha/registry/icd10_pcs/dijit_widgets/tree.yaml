@@ -24,8 +24,9 @@
        onclick: null
        returns: widget
        #returns: html
-       widget_type: tree
+       widget_type: custom_tree_widget
        target_node: ICD10_PCS_CP_2_TREE
+
 {% endfor %}
 
 {% endif %}
@@ -44,7 +45,7 @@
        onclick: null
        returns: widget
        #returns: html
-       widget_type: tree
+       widget_type: custom_tree_widget
        target_node: ICD10_PCS_CP_3_TREE
 {% endfor %}
 
