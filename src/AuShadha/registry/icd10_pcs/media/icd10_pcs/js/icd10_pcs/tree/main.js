@@ -42,10 +42,13 @@ function(win,
          registry,
          query) {
 
-    var mainTabPane;
+    var mainTabPane,treeRootTitle;
+
     var defaultTreeTitle = 'ICD10 PCS Tree';
+    var defaultMainTabPane = 'PATIENT_CENTER_CP_TC';
+
     var treeContainerBcDomId = 'ICD10_PCS_CENTER_BC';
-    var codeGeneratorDomId = 'ICD_10_PCS_BOTTOM_CP';
+    var codeGeneratorDomId = 'ICD10_PCS_BOTTOM_CP';
     var treeDomIds = ['ICD10_PCS_CP_1_TREE','ICD10_PCS_CP_2_TREE','ICD10_PCS_CP_3_TREE'];
     var pcsRowDomId = 'ICD10_PCS_CP_4';
 
@@ -53,8 +56,8 @@ function(win,
     var buildTree = function (args) {
         var url = args.url;
         var domNode = args.id;
-        mainTabPane = args.mainTabPane? args.mainTabPane: 'PATIENT_CENTER_CP_TC';
-        var treeRootTitle = args.title?args.title: defaultTreeTitle;
+        mainTabPane = args.mainTabPane? args.mainTabPane: defaultMainTabPane;
+        treeRootTitle = args.title?args.title: defaultTreeTitle;
 
         // Create the store
         var treeStore = new ItemFileReadStore({url: url,
@@ -138,7 +141,7 @@ function(win,
                 }
 
                 // Make the new tree
-                treeMaker({url: url, id: targetNodeId, mainTabPane: mainTabPane, title: treeRoottitle });
+                treeMaker({url: url, id: targetNodeId, mainTabPane: mainTabPane, title: treeRootTitle });
 
                 // This will set the pcsRowDomId to ''
                 registry.byId(pcsRowDomId).set('content', '');
@@ -158,6 +161,6 @@ function(win,
 
     }
 
-    // Return the factory
+ //Return the factory
     return treeMaker;
 });
