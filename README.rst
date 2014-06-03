@@ -20,9 +20,46 @@ There are many great Open Source EMR and Clinic Management projects, but most of
 How to Test
 ^^^^^^^^^^^
 
+Setup the PostgreSQL database for your OS
+------------------------------------------
+Please refer to your OS notes on how to do this.  
+AuShadha has been tested with PostgreSQL Server version 9.3  
+Once you have installed Postgres server and pgadmin3 client you should be able to run `psql` from terminal and get a prompt
+
+Creating and AuShadha PostgreSQL database
+------------------------------------------
+Preferred DB for running AuShadha is PostgreSQL. 
+
+1. Set up PG for your OS
+Please see your OS website for instructions on setting up PG 
+PG should be is setup and accesible from command line as >> psql prompt
+
+
+2. Set up a System user with same name as the Postgres user
+Create an OS user with `<adduser>` command from terminal
+Create a `/home/<user_name>` directory for the user and run `chown -R <user_name> /home/<user_name>`
+The username used by default for DB and user is `'aushadha'` with password of `aushadha`
+
+
+3. Create an empty DB and Grant permissions
+
+From terminal run the `createuser` to create and user with username `'aushadha'`
+Run `psql` to get into the pg command line from the user that is allowed to run `psql`
+
+4. Run the following  
+
+`CREATE DATABASE aushadha WITH OWNER aushadha;`  
+
+`GRANT ALL ON DATABASE aushadha TO <system_os_user> WITH GRANT OPTION;`  
+
+
+
+Installing Dependencies for AuShadha
+-------------------------------------
+
 1. For AuShadha requirements please refer to REQUIREMENTS.txt in docs/
 
-2. AuShadha has been tested and developed with Python 2.7, Django 1.6x and Dojo 1.8x in Linux. It should work as long as dependencies are satisfied.
+2. AuShadha has been tested and developed with Python 2.7, Django 1.6x and Dojo 1.9x in Linux. It should work as long as dependencies are satisfied.
 
 3. Ideally create a Python Virtual Environment. If virtualenv is not installed, please run in Debian systems sudo easy_install virtualenv
 
@@ -81,8 +118,13 @@ Completed Modules
 6. AuShadha-Demographics
 7. AuShadha-MedicationList
 8. AuShadha-AllergyList
-9. AuShadha-History
-10. AuShadha-OPD_Visit
+9. AuShadha-History ( Medical History, Surgical History, Social History, Family History )
+10. AuShadha-Immunisation 
+11. AuShadha-OPD_Visit Management ( Complaints, HPI, ROS, Physical Exam System Wise ) 
+12. AuShadha-ICD10-Disease Code Browser
+13. AuShadha-ICD10-PCS (Procedure Coding System Browser)
+14. AuShadha-FDA-Drug List Browser
+
 
 
 Pluggable Modules under Developement
