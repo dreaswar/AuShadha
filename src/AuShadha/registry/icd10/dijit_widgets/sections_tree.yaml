@@ -1,0 +1,45 @@
+# MODEL_YAML:
+#   name: --
+#   type: application will list the item on the tree as a root node
+#   id: SOME_ID
+#   module_type: sub_module / main_module / module_name in verbose way
+#   module_name: module-name
+#   ondblclick: null URL on dblclick
+#   onrclick: null URL on Right click
+#   onclick: null  URL on click
+#   redirect: 1  to redirect to new pane as maintab or not -- 0/1
+#   returns: HTML / JSON
+
+
+{% if sections %}
+
+sections:
+ {% for section in sections %}
+   - section_{{section.desc}}: 
+        name: "{{section.desc}}"
+        type: application
+        id: SECTION_{{section.id}}
+        redirect: 0
+        ondblclick: {%url 'get_diagnosis_for_section' section.id 'tree' %}
+        onrclick: null
+        onclick: null
+        returns: widget
+        widget_type: custom_tree_widget
+        target_node: ICD10_DIAGNOSIS_TREE
+ {% endfor %}
+
+{% else %}
+
+sections:
+     name: No Sections Recorded
+     type: application
+     id: SECTION_NULL
+     redirect: 0
+     ondblclick: null
+     onrclick: null
+     onclick: null
+     returns: json
+
+{% endif %}
+
+

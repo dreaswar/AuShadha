@@ -101,7 +101,7 @@ class DijitTreeNode(object):
 
   def check_node_attr(self, attrs):
     for attr in self.basic_node_attrs:
-      if attrs[attr]:
+      if attrs.has_key(attr):
         continue
       else:
         return False

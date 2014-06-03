@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
    
    Introduction <introduction>
+   Setting up PostgreSQL Database Server <postgres-setup>
    Installation <installation>
    Dependencies <dependencies>
    AuShadha-Core <aushadha-core>

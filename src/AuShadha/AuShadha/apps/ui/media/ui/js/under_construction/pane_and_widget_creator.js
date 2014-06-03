@@ -791,7 +791,14 @@ function(
                             });
                         }
 
-                        else if ( widgetQ.widget.type == 'something_else' ){
+                        else if ( widgetQ.widget.type == 'custom_widget' ){
+
+                              require(dojoConfig,
+                                      [widgetQ.widget.js_path], 
+                              function(w) { 
+                                  console.log(widgetQ.widget.args);
+                                  w(widgetQ.widget.args);  
+                              });
 
                         }
 

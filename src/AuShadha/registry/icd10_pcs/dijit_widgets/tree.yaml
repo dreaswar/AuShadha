@@ -1,0 +1,72 @@
+# MODEL_YAML:
+#   name: --
+#   type: application will list the item on the tree as a root node
+#   id: SOME_ID
+#   module_type: sub_module / main_module / module_name in verbose way
+#   module_name: module-name
+#   ondblclick: null URL on dblclick
+#   onrclick: null URL on Right click
+#   onclick: null  URL on click
+#   redirect: 1  to redirect to new pane as maintab or not -- 0/1
+#   returns: HTML / JSON
+
+{% if node_name == 'section_list' %}
+
+{{node_name}}:
+{% for section in node_obj %}
+  - {{section.id}}: 
+       name: {{section.name}}
+       type: application
+       id: {{section.id}}
+       redirect: 0
+       ondblclick: {%url "render_per_section_body_system_tree" section.id %}
+       onrclick: null
+       onclick: null
+       returns: widget
+       #returns: html
+       widget_type: custom_tree_widget
+       target_node: ICD10_PCS_CP_2_TREE
+
+{% endfor %}
+
+{% endif %}
+
+{% if node_name == 'body_system' %}
+
+{{node_name}}:
+{% for body_system in node_obj %}
+  - {{body_system.name}}: 
+       name: {{body_system.name}}
+       type: application
+       id: {{body_system.widget_id}}
+       redirect: 0
+       ondblclick: {%url "render_per_body_system_operation_tree" body_system.id %}
+       onrclick: null
+       onclick: null
+       returns: widget
+       #returns: html
+       widget_type: custom_tree_widget
+       target_node: ICD10_PCS_CP_3_TREE
+{% endfor %}
+
+{% endif %}
+
+{% if node_name == 'operation' %}
+
+{{node_name}}:
+{% for operation in node_obj %}
+  - {{operation.name}}: 
+       name: {{operation.name}}
+       type: application
+       id: {{operation.widget_id}}
+       redirect: 0
+       ondblclick: {%url "render_per_operation_pcs_row" operation.id %}
+       onrclick: null
+       onclick: null
+       returns: html
+       target_node: ICD10_PCS_CP_4
+{% endfor %}
+
+{% endif %}
+
+

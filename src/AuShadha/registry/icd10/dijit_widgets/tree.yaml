@@ -1,0 +1,45 @@
+# MODEL_YAML:
+#   name: --
+#   type: application will list the item on the tree as a root node
+#   id: SOME_ID
+#   module_type: sub_module / main_module / module_name in verbose way
+#   module_name: module-name
+#   ondblclick: null URL on dblclick
+#   onrclick: null URL on Right click
+#   onclick: null  URL on click
+#   redirect: 1  to redirect to new pane as maintab or not -- 0/1
+#   returns: HTML / JSON
+
+
+{% if all_chapters %}
+
+chapters:
+ {% for chapter in all_chapters %}
+   - chapter_{{chapter.chapter_name}}: 
+        name: "{{chapter.chapter_name}}-{{chapter.chapter_desc}}"
+        type: application
+        id: CHAPTER_{{chapter.id}}
+        redirect: 0
+        ondblclick: {%url 'get_sections_for_chapter' chapter.id 'tree' %}
+        onrclick: null
+        onclick: null
+        returns: widget
+        widget_type: custom_tree_widget
+        target_node: ICD10_SECTION_TREE
+
+ {% endfor %}
+
+{% else %}
+
+chapters:
+     name: No Chapters Recorded
+     type: application
+     id: CHAPTER_NULL
+     redirect: 0
+     ondblclick: null
+     onrclick: null
+     onclick: null
+     returns: json
+
+{% endif %}
+

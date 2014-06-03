@@ -1,0 +1,44 @@
+# MODEL_YAML:
+#   name: --
+#   type: application will list the item on the tree as a root node
+#   id: SOME_ID
+#   module_type: sub_module / main_module / module_name in verbose way
+#   module_name: module-name
+#   ondblclick: null URL on dblclick
+#   onrclick: null URL on Right click
+#   onclick: null  URL on click
+#   redirect: 1  to redirect to new pane as maintab or not -- 0/1
+#   returns: HTML / JSON
+
+
+{% if diagnosis %}
+
+diagnosis:
+ {% for diag in diagnosis %}
+   - diagnosis_{{diag.diag_name}}: 
+        name: "{{diag.diag_name}} - {{diag.diag_code}}"
+        type: application
+        id: DIAG_{{diag.id}}
+        redirect: 0
+        ondblclick: null
+        onrclick: null
+        onclick: null
+        returns: null
+        widget_type: custom_tree_widget
+        target_node: null
+ {% endfor %}
+
+{% else %}
+
+diagnosis:
+     name: No Diagnosis Recorded
+     type: application
+     id: DIAGNOSIS_NULL
+     redirect: 0
+     ondblclick: null
+     onrclick: null
+     onclick: null
+     returns: json
+
+{% endif %}
+

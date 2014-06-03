@@ -149,9 +149,6 @@ def render_patient_summary(request, patient_id=None):
             var = ModelInstanceSummary(pat_obj).variable
             var['user']  = user
             variable = RequestContext(request, var)
-            print "*" * 50
-            print var
-            print "*" * 50
             return render_to_response('patient_detail/summary.html', variable)
 
         except(AttributeError, NameError, KeyError, TypeError, ValueError):

@@ -1,0 +1,139 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+# YAML
+
+depends_on: [ search ]
+load_after: search
+load_first: !!bool False
+
+#This is required for DOJO to load the additional scripts provided by this module
+dojoConfig: 
+  - name: fda_drug_db
+    location: {{STATIC_URL}}fda_drug_db
+    main: main
+
+id       : FDA_DRUG_DB
+type     : bc
+title    : "FDA Drug Database" 
+url      : "{%url 'render_fda_drug_db_pane' %}"
+closable : !!bool True
+widgets: []
+panes:
+
+  - id : FDA_DRUG_DB_CENTER_BC
+    region: center
+    type: bc
+    splitter: False
+    widgets: []
+    panes: 
+    
+      - id : FDA_DRUG_DB_TC_1
+        region: leading
+        type: tc
+        tabPosition: top
+        tabStrip: True
+        nested: True
+        splitter: True
+        style: 
+          width: 25em
+        widgets: []
+        panes:
+           - id: FDA_DRUG_DB_SEARCH_CP 
+             type: cp
+             title: Search
+             widgets: 
+
+                 - id: FDA_DRUG_DB_SEARCH_WIDGET
+                   type: search
+                   labelAttr: 'active_ingredient'
+                   url: "{%url 'fda_drug_db_search'  %}"
+                   hasDownArrow: !!bool False
+                   autoComplete: !!bool True
+                   searchAttr:  name
+                   placeHolder: "Search FDA Drug DB"
+                   style:
+                     height: 2em
+                     width: 20em
+
+           - id: FDA_DRUG_DB_ADVANCED_SEARCH_CP
+             type: cp
+             title: Advanced Search
+             widgets: []
+             panes: []
+             url: "{%url 'fda_drug_db_advanced_search' %}"
+
+        
+      - id : FDA_DRUG_DB_BC_2
+        region: center
+        type: bc
+        widgets: []
+        splitter: True
+        class: widgetContainer
+        panes: 
+
+          - id: FDA_DRUG_DB_GRID_CONTAINER_CP
+            region: center
+            type: cp
+            panes: []
+            splitter: True
+            panes: []
+            widgets: 
+
+              - id: FDA_DRUG_DB_GRID
+                type: grid
+                url: "{%url 'fda_drug_db_json_all_drugs' %}"
+                gridStrModule: fda_drug_db/grid_structures
+                str: FDA_DRUG_DB
+                activateRowClick: True
+                title: FDA Drug Database
+                storeToUse: FDA_DRUG_DB
+                style:
+                   minHeight: 20em
+                  
+
+          - id: FDA_DRUG_DB_BOTTOM_TC
+            region: bottom
+            type: tc
+            splitter: True
+            tabPosition: top
+            tabStrip: True
+            nested: False
+            closable: False
+            widgets: [] 
+            style: 
+               height: 20em
+            panes:
+
+              - id: FDA_DRUG_SUMMARY_CP
+                type: cp
+                title: Summary
+                closable: False
+                url: null
+                content: Select a Drug for the summary to display here
+                class: suggestion_text
+                panes: []
+                widgets: []
+
+              - id: FDA_DRUG_INTERACTIONS_CP
+                type: cp
+                title: Drug Interactions
+                closable: null
+                url: null
+                content: Select a Drug to display known drug interactions here
+                class: suggestion_text
+                panes: []
+                widgets: []
+ 
+              - id: FDA_DRUG_ALERTS_CP
+                type: cp
+                title: Alerts
+                closable: null
+                url: null
+                content: Select a Drug to display Alerts here
+                class: suggestion_text
+                panes: []
+                widgets: []

@@ -1,6 +1,6 @@
 ################################################################################
 # Project     : AuShadha
-# Description : Provides the UI app for AuShadha. The Core UI and its elements. 
+# Description : Sets up the applications to be loaded. Registers the applications for a role
 # Date        : 15-10-2013
 #
 # This code is generously borrowed from Django's own admin app 
@@ -23,7 +23,9 @@ from AuShadha.apps.ui.ui import ui as UI
 
 def autoload():
     """
-    Autogenerate registry
+    Autogenerate application registry.
+    Iterates through the application's aushadha.py and 
+    registers apps for various roles in AuShadha
     """
     def load_modules():
 

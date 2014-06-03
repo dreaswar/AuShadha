@@ -1,0 +1,63 @@
+
+<div>
+{% if node_obj %}
+   
+     <div class="pcsRows" style="position:relative; left: 0; border: solid 1px #ddd; background: #eee; width: 90%; padding: 10px; "> 
+       {% for row in rows_obj %}
+    
+         <h4> {{row.id}} </h4>
+
+         <div style="position:relative; left: 20px; border: solid 1px #aaa; border-radius: 10px; width: 90%; padding: 10px; ">
+
+		 <p> <h5> Device </h5>
+		       {% if row.device_set.all %} 
+			     {% for device in row.device_set.all %}
+			       <p> {{device}} </p>
+			     {% endfor %}
+		       {% else %} 
+			     No Devices 
+		       {% endif %} 
+		 </p>
+
+		 <p> <h5> Approach </h5>
+		      {% if row.approach_set.all %}
+			 {% for approach in row.approach_set.all %}
+			  <p> {{approach}} </p>
+			 {% endfor %}
+		      {% else %}
+			 <p> No Approaches </p>
+		      {% endif %}
+		 </p>
+		
+		 <p> <h5> Body Part </h5>
+		      {% if row.bodypart_set.all %}
+			 {% for bodypart in row.bodypart_set.all %}
+			   <p>{{bodypart}}</p>
+			 {% endfor %}
+		      {%else %}
+			 <p> No Body part entry </p>
+		      {% endif %}
+		</p>
+		
+		 <p> <h5> Qualifiers</h5>
+		      {% if row.qualifier_set.all %}
+			{% for qualifier in row.qualifier_set.all %}
+			     <p> {{qualifier}}</p>
+			{% endfor %}
+		      {% else %} 
+			<p> No Qualifier entry </p>
+		      {% endif %}
+  		  </p>
+          </div>
+       {% endfor %}
+
+    </div>
+
+
+{% else %}
+
+<p class="suggestion_text"> No Code Recorded </p>
+
+{% endif %}
+
+</div>

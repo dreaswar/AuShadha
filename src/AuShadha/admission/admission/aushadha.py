@@ -13,5 +13,4 @@ from .models import AdmissionDetail
 
 from AuShadha.apps.ui.ui import ui as UI
 
-print 'Trying to register AdmissionDetail class'
 UI.register('Admission', AdmissionDetail)
