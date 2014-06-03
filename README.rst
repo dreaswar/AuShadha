@@ -5,7 +5,7 @@ Introduction to AuShadha Project
 AuShadha (औषध): Means medicine in Sanskrit.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is a Open Source Electornic Medical Records (EMR) & Public Health Management System for Small Clinics. It might be even suited for speciality medical practice after some customisation. It is developed with Python, Django and Dojo. For Development the code uses sqlite3 database. Deployment will use PostgreSQL. 
+This is a Open Source Electornic Medical Records (EMR) & Public Health Management System for Small Clinics. It might be even suited for speciality medical practice after some customisation. It is developed with Python, Django and Dojo. Development and Deployment will use PostgreSQL. However the option to use sqlite DB is entirely open for small installtions who are not anticipating traffic. 
     
 License
 ^^^^^^^
@@ -30,27 +30,24 @@ Creating and AuShadha PostgreSQL database
 ------------------------------------------
 Preferred DB for running AuShadha is PostgreSQL. 
 
-1. Set up PG for your OS
-Please see your OS website for instructions on setting up PG 
-PG should be is setup and accesible from command line as >> psql prompt
+1. Set up PG for your OS  
+     Please see your OS website for instructions on setting up PG   
+     PG should be is setup and accesible from command line as >> psql prompt  
 
 
-2. Set up a System user with same name as the Postgres user
-Create an OS user with `<adduser>` command from terminal
-Create a `/home/<user_name>` directory for the user and run `chown -R <user_name> /home/<user_name>`
-The username used by default for DB and user is `'aushadha'` with password of `aushadha`
-
+2. Set up a System user with same name as the Postgres user  
+     Create an OS user with `<adduser>` command from terminal  
+     Create a `/home/<user_name>` directory for the user and run `chown -R <user_name> /home/<user_name>`  
+     The username used by default for DB and user is `'aushadha'` with password of `aushadha`  
 
 3. Create an empty DB and Grant permissions
-
-From terminal run the `createuser` to create and user with username `'aushadha'`
-Run `psql` to get into the pg command line from the user that is allowed to run `psql`
+     From terminal run the `createuser` to create and user with username `'aushadha'`  
+     Run `psql` to get into the pg command line from the user that is allowed to run `psql`  
 
 4. Run the following  
+    `CREATE DATABASE aushadha WITH OWNER aushadha;`  
 
-`CREATE DATABASE aushadha WITH OWNER aushadha;`  
-
-`GRANT ALL ON DATABASE aushadha TO <system_os_user> WITH GRANT OPTION;`  
+    `GRANT ALL ON DATABASE aushadha TO <system_os_user> WITH GRANT OPTION;`  
 
 
 
