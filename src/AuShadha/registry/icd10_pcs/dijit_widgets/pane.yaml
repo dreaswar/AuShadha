@@ -87,15 +87,16 @@ panes:
             widgets: []
             panes: []
 
+
       - id: ICD10_PCS_CP_4
         region: trailing
         type: cp
         widgets: []
         splitter: True
-        style:
-          width: "40%"
         class: widgetContainer
         panes: [] 
+        style:
+           width: "40%"
 
   - id: ICD10_PCS_BOTTOM_CP
     type: cp

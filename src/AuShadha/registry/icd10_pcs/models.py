@@ -108,7 +108,25 @@ class PcsTable(models.Model):
         return self.get_table_name()
 
 
+    def get_unique_body_regions(self):
+         idx = self.id
+         body_system_list = []
+         table = PcsTable.objects.get(pk = idx)
+         rows = PcsRow.objects.filter(fk = table).order_by('pk')
+         for row in rows:
+            axis = Axis.objects.filter(pcsRow_fk = row).order_by('pk')
+            for a in axis:
+                title = Title.objects.filter(fk = a)
+                for t in title:
+                   if t.text in ['Body System', 'Body Part', "Body Region", "Body System / Region"]:
+                      labels = Label.objects.filter(fk = t.fk)
+                      for l in labels:
+                          if l.text not in body_system_list:
+                              body_system_list.append(l.text)
+         return sorted(body_system_list)
 
+                      
+         
 class PcsRow(models.Model):
 
     """

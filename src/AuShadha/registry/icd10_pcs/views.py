@@ -69,7 +69,7 @@ def get_pcsrows_for_pcstable(request, pcstable_id):
 
 
 @login_required
-def get_bodyparts_for_pcsrow(request, pcsrow_id):
+def get_bodyparts_for_pcsrow(request, pcsrow_id=None):
   pass
 
 
