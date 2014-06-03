@@ -24,7 +24,7 @@ chapters:
         onrclick: null
         onclick: null
         returns: widget
-        widget_type: tree
+        widget_type: custom_tree_widget
         target_node: ICD10_SECTION_TREE
 
  {% endfor %}

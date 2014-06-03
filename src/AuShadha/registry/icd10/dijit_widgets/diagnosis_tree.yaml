@@ -24,7 +24,7 @@ diagnosis:
         onrclick: null
         onclick: null
         returns: null
-        widget_type: null
+        widget_type: custom_tree_widget
         target_node: null
  {% endfor %}
 

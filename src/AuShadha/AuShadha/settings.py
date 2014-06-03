@@ -139,6 +139,7 @@ STATICFILES_DIRS = (
 
     os.path.join(PARENT_ROOT, 'registry/drug_db/media/drug_db/js'),
     os.path.join(PARENT_ROOT, 'registry/icd10_pcs/media/icd10_pcs/js'),
+    os.path.join(PARENT_ROOT, 'registry/icd10/media/icd10/js'),
 
 )
 
