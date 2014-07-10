@@ -39,34 +39,59 @@ panes:
         nested: True
         splitter: True
         style: 
-          width: 25em
+          width: "45%" 
         widgets: []
         panes:
+
            - id: FDA_DRUG_DB_SEARCH_CP 
              type: cp
              title: Search
              widgets: 
 
                  - id: FDA_DRUG_DB_SEARCH_WIDGET
-                   type: search
-                   labelAttr: 'active_ingredient'
-                   url: "{%url 'fda_drug_db_search'  %}"
-                   hasDownArrow: !!bool False
-                   autoComplete: !!bool True
-                   searchAttr:  name
-                   placeHolder: "Search FDA Drug DB"
-                   style:
-                     height: 2em
-                     width: 20em
+                   type: custom_widget
+                   js_path: fda_drug_db/search/main
+                   args:
+                      id: FDA_DRUG_DB_SEARCH_WIDGET
+                      type: fda_drug_db_search
+                      labelAttr: 'active_ingredient'
+                      url: "{%url 'fda_drug_db_search'  %}"
+                      hasDownArrow: !!bool False
+                      autoComplete: !!bool True
+                      searchAttr:  drug_name
+                      placeHolder: "Drug's Chemical / Brand name as in FDA"
+                      style:
+                         height: 2em
+                         width: 20em 
 
-           - id: FDA_DRUG_DB_ADVANCED_SEARCH_CP
+#           - id: FDA_DRUG_DB_ADVANCED_SEARCH_CP
+#             type: cp
+#             title: Advanced Search
+#             widgets: []
+#             panes: []
+#             url: "{%url 'fda_drug_db_advanced_search' %}"
+
+           - id: FDA_DRUG_DB_GRID_CONTAINER_CP
              type: cp
-             title: Advanced Search
-             widgets: []
+             title: Drug Grid
              panes: []
-             url: "{%url 'fda_drug_db_advanced_search' %}"
+             widgets: 
 
-        
+              - id: FDA_DRUG_DB_GRID
+                type: custom_widget
+                js_path: fda_drug_db/grid/main
+                args:
+                   widget_type: fda_drug_db_grid
+                   url: "{%url 'fda_drug_db_json_all_drugs' %}"
+                   gridStrModule: fda_drug_db/grid/grid_structures
+                   str: FDA_DRUG_DB
+                   gridDomNode: FDA_DRUG_DB_GRID
+                   activateRowClick: True
+                   title: FDA Drug Database
+                   storeToUse: FDA_DRUG_DB
+                   style:
+                     minHeight: 20em
+       
       - id : FDA_DRUG_DB_BC_2
         region: center
         type: bc
@@ -75,28 +100,8 @@ panes:
         class: widgetContainer
         panes: 
 
-          - id: FDA_DRUG_DB_GRID_CONTAINER_CP
-            region: center
-            type: cp
-            panes: []
-            splitter: True
-            panes: []
-            widgets: 
-
-              - id: FDA_DRUG_DB_GRID
-                type: grid
-                url: "{%url 'fda_drug_db_json_all_drugs' %}"
-                gridStrModule: fda_drug_db/grid_structures
-                str: FDA_DRUG_DB
-                activateRowClick: True
-                title: FDA Drug Database
-                storeToUse: FDA_DRUG_DB
-                style:
-                   minHeight: 20em
-                  
-
-          - id: FDA_DRUG_DB_BOTTOM_TC
-            region: bottom
+          - id: FDA_DRUG_DB_CENTER_TC
+            region: center 
             type: tc
             splitter: True
             tabPosition: top
@@ -108,32 +113,50 @@ panes:
                height: 20em
             panes:
 
-              - id: FDA_DRUG_SUMMARY_CP
-                type: cp
-                title: Summary
+              - id: FDA_DRUG_REFERENCE_BC
+                type: bc 
+                title: Reference
                 closable: False
-                url: null
-                content: Select a Drug for the summary to display here
-                class: suggestion_text
-                panes: []
                 widgets: []
+                panes: 
+                  - id: FDA_DRUG_SUMMARY_CP
+                    type: cp
+                    url: null
+                    region: center
+                    splitter: False
+                    content: Select a Drug for the summary to display here
+                    panes: []
+                    widgets: []
 
-              - id: FDA_DRUG_INTERACTIONS_CP
-                type: cp
-                title: Drug Interactions
-                closable: null
-                url: null
-                content: Select a Drug to display known drug interactions here
-                class: suggestion_text
-                panes: []
-                widgets: []
+                  - id: FDA_DRUG_DB_DRUGBANK_DISCLAIMER
+                    type: cp
+                    region: bottom
+                    splitter: False
+                    style:
+                      background: "#ddd" 
+                      height: 20px
+                    content: This is a reference with data from DrugBankCa. Please refer to http://www.drugbank.ca for detailed info
+                    class: suggestion_text
+                    panes: []
+                    widgets: []
+
+
+#              - id: FDA_DRUG_INTERACTIONS_CP
+#                type: cp
+#                title: Drug Interactions
+#                closable: null
+#                url: null
+#                content: Select a Drug to display known drug interactions here
+#                class: suggestion_text
+#                panes: []
+#                widgets: []
  
-              - id: FDA_DRUG_ALERTS_CP
-                type: cp
-                title: Alerts
-                closable: null
-                url: null
-                content: Select a Drug to display Alerts here
-                class: suggestion_text
-                panes: []
-                widgets: []
+#              - id: FDA_DRUG_ALERTS_CP
+#                type: cp
+#                title: Alerts
+#                closable: null
+#                url: null
+#                content: Select a Drug to display Alerts here
+#                class: suggestion_text
+#                panes: []
+#                widgets: []

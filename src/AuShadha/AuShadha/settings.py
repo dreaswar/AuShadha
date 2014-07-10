@@ -137,6 +137,7 @@ STATICFILES_DIRS = (
     #os.path.join(PARENT_ROOT, '<PATH TO THE ADD-ON MEDIA DIRECTORY>'),
     #os.path.join(PARENT_ROOT, 'aushadha_demographics_us/demographics/media'),
 
+    os.path.join(PARENT_ROOT, 'registry/drug_db/drugbankca/media/drugbankcadrugs/js'),
     os.path.join(PARENT_ROOT, 'registry/drug_db/media/drug_db/js'),
     os.path.join(PARENT_ROOT, 'registry/icd10_pcs/media/icd10_pcs/js'),
     os.path.join(PARENT_ROOT, 'registry/icd10/media/icd10/js'),
@@ -189,6 +190,7 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'registry/icd10/templates/icd10/'),
     os.path.join(ROOT_PATH, 'registry/icd10_pcs/templates/icd10_pcs/'),
     os.path.join(ROOT_PATH, 'registry/drug_db/templates/drug_db/'),
+    os.path.join(ROOT_PATH, 'registry/drug_db/drugbankca/templates/drugbankca/'),
 
     os.path.join(ROOT_PATH, 'patient/templates/'),
 
@@ -257,6 +259,7 @@ INSTALLED_APPS = (
     'registry.icd10',
     'registry.icd10_pcs',
     'registry.drug_db',
+    'registry.drug_db.drugbankca',
     'registry.inv_and_imaging',
     'registry.vaccine_registry',
 

@@ -60,6 +60,11 @@ def fda_drug_db_json_all_drugs(request):
         data = []
         for drug in drugs:
            json_data = ModelInstanceJson(drug).return_data()
+#           json_data['url'] = reverse('drugbankcadrugs_summary_by_drug_name',kwargs={'drug_name':drug.drug_name} )
+           json_data['url'] = reverse('drugbankcadrugs_summary_by_drug_name')+"?drug_name="+drug.drug_name+"&active_ingredient="+drug.active_ingredient
+           json_data['updateDom'] = 'FDA_DRUG_SUMMARY_CP'
+           print("UpdateDom is : " + json_data['updateDom'])
+           print("Drug Summary URL is: " + json_data['url'])
            data.append(json_data)
      else:
         data = {}
@@ -101,7 +106,7 @@ def fda_drug_db_json_for_a_drug(request,drug_id):
 def fda_drug_db_search(request):
 
     user = request.user
-    search_for = request.GET.get('name')
+    search_for = request.GET.get('drug_name')
 
     if request.method == 'GET':
 
@@ -122,6 +127,7 @@ def fda_drug_db_search(request):
 	   data_to_append['id'] = d.id
            data_to_append['absolute_url'] = d.get_absolute_url()
 	   data_to_append['active_ingredient'] = '%s - %s as %s ' %(d.drug_name.title(), d.dosage,d.form)
+           data_to_append['url'] = reverse('drugbankcadrugs_summary_by_drug_name')+"?drug_name="+d.drug_name+"&active_ingredient="+d.active_ingredient
 	   data.append(data_to_append)
         json_data = simplejson.dumps(data)
 	return HttpResponse(json_data, content_type = 'application/json')

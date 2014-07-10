@@ -52,3 +52,7 @@ class FDADrugs(AuShadhaBaseModel):
         verbose_name = 'FDA Drugs'
         verbose_name_plural = "FDA Drugs"
         ordering = [ 'drug_name', 'active_ingredient', 'dosage', 'form']
+
+
+
+

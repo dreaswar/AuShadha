@@ -160,6 +160,7 @@ Of course if he were to use AuShadha-core's API to develop he can do it more eas
 
 AuShadha-core API is very young, mostly untested. It is very thin layer on top of Django. 
 
+<<<<<<< HEAD
 It does not force the developer to re-learn anything that would not be useful outside AuShadha. 
 
 
@@ -193,6 +194,23 @@ Completed Modules
 12. AuShadha-ICD10-Disease Code Browser
 13. AuShadha-ICD10-PCS (Procedure Coding System Browser)
 14. AuShadha-FDA-Drug List Browser
+=======
+1. AuShadha-core  
+2. AuShadha-PatientRegistration  
+3. AuShadha-Contact  
+4. AuShadha-Phone  
+5. AuShadha-Guardian  
+6. AuShadha-Demographics  
+7. AuShadha-MedicationList  
+8. AuShadha-AllergyList  
+9. AuShadha-History ( Medical History, Surgical History, Social History, Family History )  
+10. AuShadha-Immunisation   
+11. AuShadha-OPD_Visit Management ( Complaints, HPI, ROS, Physical Exam System Wise )   
+12. AuShadha-ICD10-Disease Code Browser  
+13. AuShadha-ICD10-PCS (Procedure Coding System Browser)   
+14. AuShadha-FDA-Drug List Browser  
+
+>>>>>>> au_pluggable
 
 >>>>>>> au_pluggable
 
