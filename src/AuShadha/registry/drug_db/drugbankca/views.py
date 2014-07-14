@@ -37,6 +37,15 @@ from .models import DrugBankCaDrugs
 
 
 @login_required
+def get_drugbankca_publications(request):
+
+    if request.method == 'GET':
+       variable = RequestContext(request, {'user': user})
+       return render_to_response('drugbankca/publications.html', variable)
+    else:  
+       raise Http404("Bad Request Method")
+
+@login_required
 def drugbankcadrugs_json_for_a_drug(request,drug_id=None):
     pass
 

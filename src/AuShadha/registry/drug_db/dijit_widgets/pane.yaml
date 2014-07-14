@@ -139,6 +139,15 @@ panes:
                     class: suggestion_text
                     panes: []
                     widgets: []
+             
+                  - id: DRUG_BANK_PUBLICATIONS_DIALOG_BUTTON
+                    type: custom_widget
+                    js_path: fda_drug_db/button/drugbankca_publications_dialog
+                    args:
+                      - id: DRUG_BANK_PUBLICATIONS_DIALOG_BUTTON
+                        url: "{%url 'get_drugbankca_publications' %}"
+                        label: Publications
+                             
 
 
 #              - id: FDA_DRUG_INTERACTIONS_CP

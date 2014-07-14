@@ -9,10 +9,16 @@ from dijit_widgets.tree import render_drugbankcadrugs_tree
 from .views import drugbankcadrugs_json_for_a_drug,\
                    drugbankcadrugs_summary_by_drug_id,\
                    drugbankcadrugs_summary_by_drug_name,\
-                   drugbankcadrugs_search
+                   drugbankcadrugs_search, \
+                   get_drugbankca_publications
 
 
 urlpatterns = patterns('',
+
+	url(r'get/publications/$', 
+            get_drugbankca_publications, 
+            name = 'get_drugbankca_publications'
+           ),
 
 	url(r'render/pane/$', 
             render_drugbankcadrugs_pane, 
