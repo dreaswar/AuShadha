@@ -117,7 +117,6 @@ panes:
                 type: bc 
                 title: Reference
                 closable: False
-                widgets: []
                 panes: 
                   - id: FDA_DRUG_SUMMARY_CP
                     type: cp
@@ -128,19 +127,32 @@ panes:
                     panes: []
                     widgets: []
 
-                  - id: FDA_DRUG_DB_DRUGBANK_DISCLAIMER
-                    type: cp
+                  - id: FDA_DRUG_DB_DRUGBANK_DISCLAIMER_AND_PUBLICATIONS
+                    type: bc
                     region: bottom
-                    splitter: False
+                    splitter: True 
                     style:
                       background: "#ddd" 
-                      height: 20px
-                    content: This is a reference with data from DrugBankCa. Please refer to http://www.drugbank.ca for detailed info
-                    class: suggestion_text
-                    panes: []
+                      height: 2em
                     widgets: []
-
-
+                    panes: 
+                       - id: FDA_DRUG_DB_DRUGBANK_DISCLAIMER
+                         type: cp
+                         region: center
+                         splitter: False
+                         panes: []
+                         class: suggestion_text
+                         content: This is a reference with data from DrugBankCa. Please refer to http://www.drugbank.ca for detailed info
+                         widgets:
+                            - id: DRUG_BANK_PUBLICATIONS_DIALOG_BUTTON
+                              type: custom_widget
+                              js_path: fda_drug_db/button/drugbankca_publications_dialog
+                              args:
+                                - id: DRUG_BANK_PUBLICATIONS_DIALOG_BUTTON
+                                  url: "{%url 'get_drugbankca_publications' %}"
+                                  label: Publications
+             
+                             
 #              - id: FDA_DRUG_INTERACTIONS_CP
 #                type: cp
 #                title: Drug Interactions
