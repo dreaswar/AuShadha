@@ -40,6 +40,7 @@ from .models import DrugBankCaDrugs
 def get_drugbankca_publications(request):
 
     if request.method == 'GET':
+       user = request.user
        variable = RequestContext(request, {'user': user})
        return render_to_response('drugbankca/publications.html', variable)
     else:  
