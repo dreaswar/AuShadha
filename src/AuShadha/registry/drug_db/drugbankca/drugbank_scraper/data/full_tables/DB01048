@@ -1,0 +1,208 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Abacavir</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01048</strong>&#160; (APRD00216)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Abacavir (<span class="caps">ABC</span>) is a powerful nucleoside analog reverse transcriptase inhibitor (<span class="caps">NRTI</span>) used to treat <span class="caps">HIV</span> and <span class="caps">AIDS</span>. [Wikipedia] Chemically, it is a synthetic carbocyclic nucleoside and is the enantiomer with 1S, 4R absolute configuration on the cyclopentene ring. In vivo, abacavir sulfate dissociates to its free base, abacavir.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01048/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01048/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01048.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01048.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01048.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01048.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01048.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01048">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>ABC </td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Abacavir Sulfate </strong>
+          <div class="cas">188062-50-2</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000871/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000871/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: WMHSRBZIJNQHKT-WOIBLURINA-N</li>
+              <li>Monoisotopic Mass: 670.275797698</li>
+              <li>Average Mass: 670.743</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000871">DBSALT000871</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Ziagen</td><td>ViiV Healthcare Company</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Epzicom</td><td>Abacavir Sulfate + Lamivudine</td></tr><tr><td>Kivexa</td><td>Abacavir Sulfate + Lamivudine</td></tr><tr><td>Trizivir</td><td>Abacavir Sulfate + Lamivudine + Zidovudine</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-hiv-agents">Anti-HIV Agents</a></li>
+<li><a href="/mesh/reverse-transcriptase-inhibitors">Reverse Transcriptase Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>136470-78-5</td></tr><tr><th>Weight</th><td>Average: 286.3323<br>Monoisotopic: 286.154209228</td></tr><tr><th>Chemical Formula</th><td>C<sub>14</sub>H<sub>18</sub>N<sub>6</sub>O</td></tr><tr><th>InChI Key</th><td>MCGSCOLBFJQGHM-SCZZXKLOSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C14H18N6O/c15-14-18-12(17-9-2-3-9)11-13(19-14)20(7-16-11)10-4-1-8(5-10)6-21/h1,4,7-10,21H,2-3,5-6H2,(H3,15,17,18,19)/t8-,10+/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">[(1S,4R)-4-[2-amino-6-(cyclopropylamino)-9H-purin-9-yl]cyclopent-2-en-1-yl]methanol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC1=NC2=C(N=CN2[C@@H]2C[C@H](CO)C=C2)C(NC2CC2)=N1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organooxygen Compounds</td></tr><tr><th>Class</th><td>Carbohydrates and Carbohydrate Conjugates</td></tr><tr><th>Subclass</th><td>Glycosyl Compounds</td></tr><tr><th>Direct parent</th><td>Purine Nucleosides and Analogues</td></tr><tr><th>Alternative parents</th><td>Purines and Purine Derivatives; Aminopyrimidines and Derivatives; Primary Aromatic Amines; N-substituted Imidazoles; Cyclic Alcohols and Derivatives; Primary Alcohols; Polyamines; Secondary Amines</td></tr><tr><th>Substituents</th><td>purine; imidazopyrimidine; aminopyrimidine; n-substituted imidazole; primary aromatic amine; pyrimidine; cyclic alcohol; imidazole; azole; secondary amine; primary alcohol; polyamine; primary amine; alcohol; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the purine nucleosides and analogues. These are compounds comprising a purine base attached to a sugar.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of HIV-1 infection, in combination with other antiretroviral agents.</td></tr><tr><th>Pharmacodynamics</th><td>Abacavir is a nucleoside reverse transcriptase inhibitor (NRTI) with activity against Human Immunodeficiency Virus Type 1 (HIV-1). Abacavir is phosphorylated to active metabolites that compete for incorporation into viral DNA. They inhibit the HIV reverse transcriptase enzyme competitively and act as a chain terminator of DNA synthesis. The concentration of drug necessary to effect viral replication by 50 percent (EC50) ranged from 3.7 to 5.8 &#956;M (1 &#956;M = 0.28 mcg/mL) and 0.07 to 1.0 &#956;M against HIV-1IIIB and HIV-1BaL, respectively, and was 0.26 &#177; 0.18 &#956;M against 8 clinical isolates.  Abacavir had synergistic activity in cell culture in combination with the nucleoside reverse transcriptase inhibitor (NRTI) zidovudine, the non-nucleoside reverse transcriptase inhibitor (NNRTI) nevirapine, and the protease inhibitor (PI) amprenavir; and additive activity in combination with the NRTIs didanosine, emtricitabine, lamivudine, stavudine, tenofovir, and zalcitabine. </td></tr><tr><th>Mechanism of action</th><td>Abacavir is a carbocyclic synthetic nucleoside analogue and an antiviral agent. Intracellularly, abacavir is converted by cellular enzymes to the active metabolite carbovir triphosphate, an analogue of deoxyguanosine-5'-triphosphate (dGTP). Carbovir triphosphate inhibits the activity of HIV-1 reverse transcriptase (RT) both by competing with the natural substrate dGTP and by its incorporation into viral DNA. Viral DNA growth is terminated because the incorporated nucleotide lacks a 3'-OH group, which is needed to form the 5&#8242; to 3&#8242; phosphodiester linkage essential for DNA chain elongation. </td></tr><tr><th>Absorption</th><td>Rapid and extensive after oral administration (83% bioavailability, tablet). When a 300 mg tablet is given twice daily to subjects, the peak plasma concentration (Cmax) was 3.0 &#177; 0.89 mcg/mL and the area under the curve (AUC 0-12 hours) was 6.02 &#177; 1.73 mcg&#8226;hr/mL. </td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>0.86 &#177; 0.15 L/kg [IV administration]</li>
+</ul></td></tr><tr><th>Protein binding</th><td>Moderate (approximately 50%). Binding of abacavir to plasma protein was independent of concentration. 
+</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic, by alcohol dehydrogenase and glucuronosyltransferase to a 5&#8242;-carboxylic acid metabolite and 5&#8242;-glucuronide metabolite, respectively. These metabolites have no antiviral activity. Abacavir is not significantly metabolized by cytochrome P450 enzymes.</p></td></tr><tr><th>Route of elimination</th><td>Elimination of abacavir was quantified in a mass balance study following administration of a 600-mg dose of 14C-abacavir: 99% of the radioactivity was recovered, 1.2% was excreted in the urine as abacavir, 30% as the 5&#8242;-carboxylic acid metabolite, 36% as the 5&#8242;-glucuronide metabolite, and 15% as unidentified minor metabolites in the urine. Fecal elimination accounted for 16% of the dose. Renal excretion of unchanged abacavir is a minor route of elimination in humans.</td></tr><tr><th>Half life</th><td>1.54 &#177; 0.63 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>0.80 &#177; 0.24 L/hr/kg [asymptomatic, <span class="caps">HIV</span>-1-infected adult patients receiving single (IV dose of 150&#160;mg]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Some myocardial degeneration has been noticed in rats and mice. The most commonly reported adverse reactions of at least moderate intensity (incidence &#8805;10%) in adult HIV-1 clinical trials were nausea, headache, malaise and fatigue, nausea and vomiting, and dreams/sleep disorders. Serious hypersensitivity reactions have been associated with abacavir which has been strongly linked to the presence of the HLA-B*57:01 allele. This reaction manifests itself in patients within the first 6 weeks of treatment. Patients should be tested for the presence of this allele as recommended by the U.S Food and Drug Administration (FDA). </td></tr><tr><th>Affected organisms</th><td><ul><li>Human Immunodeficiency Virus</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="snp-fx"><thead><tr><th>Interacting Gene/Enzyme</th><th>SNP RS ID</th><th>Allele name</th><th>Defining change</th><th>Adverse Reaction</th><th>Reference(s)</th></tr></thead><tbody><tr><td>HLA class I histocompatibility antigen protein P5<br>Gene symbol: HCP5<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/Q6MZN7" target="_blank">Q6MZN7 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs2395029" target="_blank">rs2395029 <span class="glyphicon glyphicon-new-window"> </span></a></td><td>HLA-B*5701</td><td>G allele</td><td>Presence of this SNP is predicative of hypersenitivity reaction when abacavir is given to HIV+ patients.</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/18684101" target="_blank" title='# Colombo S, Rauch A, Rotger M, Fellay J, Martinez R, Fux C, Thurnheer C, Gunthard HF, Goldstein DB, Furrer H, Telenti A: The HCP5 single-nucleotide polymorphism: a simple screening tool for prediction of hypersensitivity reaction to abacavir. J Infect Dis. 2008 Sep 15;198(6):864-7. doi: 10.1086/591184. "Pubmed":http://www.ncbi.nlm.nih.gov/pubmed/18684101'>18684101 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr></tbody></table></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9383</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5808</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.5551</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9155</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6573</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7734</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8595</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7376</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.538</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8707</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7852</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8667</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.559</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8683</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6662
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8649
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9806
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4758 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8918
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8734
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Viiv healthcare co</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li>Dept Health Central Pharmacy</li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li>
+<li>Tya Pharmaceuticals</li>
+<li>ViiV Healthcare ULC</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Oral</td><td>20 mg/mL</td></tr><tr><td>Tablet</td><td>Oral</td><td>300 mg</td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Epzicom tablet</td><td>35.78USD</td><td>tablet</td></tr><tr><td>Ziagen 300 mg tablet</td><td>10.46USD</td><td>tablet</td></tr><tr><td>Ziagen 20 mg/ml Solution</td><td>0.7USD</td><td>ml</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>6641843</td><td>2000-02-04</td><td>2020-02-04</td></tr><tr><td>United States</td><td>5089500</td><td>1992-12-26</td><td>2009-12-26</td></tr><tr><td>Canada</td><td>2289753</td><td>2007-01-23</td><td>2018-05-14</td></tr><tr><td>Canada</td><td>1340589</td><td>1999-06-08</td><td>2016-06-08</td></tr><tr><td>Canada</td><td>2216634</td><td>2004-07-20</td><td>2016-03-28</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>165 &#176;C</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>water solubility</td><td>77 mg/mL (sulfate salt)</td><td>FDA label </td></tr><tr><td>logP</td><td>1.20 </td><td>FDA label</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.21e+00 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.61</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.39</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-2.4</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>15.41</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>5.77</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>101.88</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>82.62</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>30.43</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p><a href="http://www.drugsyn.org/Abacavir.htm">DrugSyn.org</a></p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=5034394&amp;tbm=pts" target="_blank">US5034394 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Zucman D, Truchis P, Majerholc C, Stegman S, Caillat-Zucman S: Prospective screening for human leukocyte antigen-B*5701 avoids abacavir hypersensitivity reaction in the ethnically mixed French <span class="caps">HIV</span> population. J Acquir Immune Defic Syndr. 2007 May 1;45(1):1-3. <a href="http://www.ncbi.nlm.nih.gov/pubmed/17356469">Pubmed</a></li>
+	<li><span class="caps">FDA</span> label</li>
+	<li>http://pharmgkb.org/pathway/PA166104634#</li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D07057" target="_blank">D07057 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07624" target="_blank">C07624 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=441300" target="_blank">441300 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46505718" target="_blank">46505718 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.58649.html" target="_blank">58649 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=2360" target="_blank">2360 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1380" target="_blank">CHEMBL1380 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000704" target="_blank">DAP000704 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA448004" target="_blank">PA448004 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2240358" target="_blank">2240358 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic/abavir.htm" target="_blank">http://www.rxlist.com/cgi/generic/abavir.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/abacavir.html" target="_blank">http://www.drugs.com/cdi/abacavir.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PDRhealth</td><td><a class="wishart-link-out" href="http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/cx1527.shtml" target="_blank">http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/cx1527.shtml <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Abacavir" target="_blank">Abacavir <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>J05AF06<ul class="atc-drug-tree"><li><a href="/atc/J#J">J &#8212; ANTIINFECTIVES FOR SYSTEMIC USE</a></li><li><a href="/atc/J05#J05">J05 &#8212; ANTIVIRALS FOR SYSTEMIC USE</a></li><li><a href="/atc/J05A#J05A">J05A &#8212; DIRECT ACTING ANTIVIRALS</a></li><li><a href="/atc/J05AF#J05AF">J05AF &#8212; Nucleoside and nucleotide reverse transcriptase inhibitors</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>08:18.08.20</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB01048.pdf?1265922803">show</a>(118 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB01048.pdf?1265922742">show</a>(34.7 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00701">Amprenavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Amprenavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB01072">Atazanavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Atazanavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB01264">Darunavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Darunavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB00898">Ethanol</a></td><td>Abacavir is partly metabolized through the alcohol dehydrogenase enzyme system. Alcohol increases the area under the curve (about 41%) of Abacavir. Interaction does not appear to be clinically significant. </td></tr><tr><td><a href="/drugs/DB01319">Fosamprenavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Fosamprenavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB01004">Ganciclovir</a></td><td>The adverse/toxic effects of reverse transcriptase inhibitors (nucleoside), such as Abacavir, may be enhanced by Ganciclovir. There is a risk of hematologic toxicity. Diligent monitoring during concomitant therapy is required.</td></tr><tr><td><a href="/drugs/DB00224">Indinavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Indinavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB01601">Lopinavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Lopinavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB00220">Nelfinavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Nelfinavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB00811">Ribavirin</a></td><td>Ribavirin may increase the hepatotoxicity of reverse transcriptase inhibitors (nucleoside) such as Abacavir. Lactic acidosis may occur. Consider modifying therapy.</td></tr><tr><td><a href="/drugs/DB01693">Ribavirin Monophosphate</a></td><td>Ribavirin Monophosphate may increase the hepatotoxicity of reverse transcriptase inhibitors (nucleoside) such as Abacavir. Lactic acidosis may occur. Consider modifying therapy.</td></tr><tr><td><a href="/drugs/DB00503">Ritonavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Ritonavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB01232">Saquinavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Saquinavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB00932">Tipranavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Tipranavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB01610">Valganciclovir</a></td><td>The adverse/toxic effects of reverse transcriptase inhibitors (nucleoside), such as Abacavir, may be enhanced by Valganciclovir. There is a risk of hematologic toxicity. Diligent monitoring during concomitant therapy is recommended. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Abacavir is partly metabolised through the alcohol-dehydrogenase enzyme system.</li>
+<li>Alcohol significantly increases abacavir's area under the curve (about 41%).</li>
+<li>Avoid alcohol.</li>
+<li>Take without regard to meals.</li></ul></td></tr></tbody></table>

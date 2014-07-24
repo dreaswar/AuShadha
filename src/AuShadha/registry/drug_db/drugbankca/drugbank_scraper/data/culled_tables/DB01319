@@ -1,0 +1,168 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Fosamprenavir</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01319</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Fosamprenavir is a prodrug of amprenavir, an inhibitor of human immunodeficiency virus (<span class="caps">HIV</span>) protease.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01319/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01319/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01319.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01319.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01319.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01319.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01319.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01319">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Lexiva</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Telzir</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/prodrugs">Prodrugs</a></li></ul></td></tr><tr><th>CAS number</th><td>226700-79-4</td></tr><tr><th>Weight</th><td>Average: 585.607<br>Monoisotopic: 585.190986967</td></tr><tr><th>Chemical Formula</th><td>C<sub>25</sub>H<sub>36</sub>N<sub>3</sub>O<sub>9</sub>PS</td></tr><tr><th>InChI Key</th><td>MLBVMOWEQCZNCC-OEMFJLHTSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C25H36N3O9PS/c1-18(2)15-28(39(33,34)22-10-8-20(26)9-11-22)16-24(37-38(30,31)32)23(14-19-6-4-3-5-7-19)27-25(29)36-21-12-13-35-17-21/h3-11,18,21,23-24H,12-17,26H2,1-2H3,(H,27,29)(H2,30,31,32)/t21-,23-,24+/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">{[(2R,3S)-1-[N-(2-methylpropyl)(4-aminobenzene)sulfonamido]-3-({[(3S)-oxolan-3-yloxy]carbonyl}amino)-4-phenylbutan-2-yl]oxy}phosphonic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC(C)CN(C[C@@H](OP(O)(O)=O)[C@H](CC1=CC=CC=C1)NC(=O)O[C@H]1CCOC1)S(=O)(=O)C1=CC=C(N)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Benzenesulfonamides</td></tr><tr><th>Direct parent</th><td>Aminobenzenesulfonamides</td></tr><tr><th>Alternative parents</th><td>Amphetamines and Derivatives; Sulfonylanilines; Phosphoethanolamines; Organic Phosphoric Acids; Primary Aromatic Amines; Tetrahydrofurans; Sulfonamides; Oxolanes; Sulfonyls; Carbamic Acids and Derivatives; Ethers; Polyamines</td></tr><tr><th>Substituents</th><td>phosphoethanolamine; aniline; organic phosphate; phosphoric acid ester; primary aromatic amine; sulfonamide; sulfonic acid derivative; sulfonyl; tetrahydrofuran; oxolane; carbamic acid derivative; polyamine; ether; organonitrogen compound; primary amine; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the aminobenzenesulfonamides. These are organic compounds containing a benzenesulfonamide moiety with an amine group attached to the benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Indicated in combination with other antiretroviral agents for the treatment of human immunodeficiency virus (HIV-1) infection, as well as postexposure prophylaxis of HIV infection in individuals who have had occupational or nonoccupational exposure to potentially infectious body fluids of a person known to be infected with HIV when that exposure represents a substantial risk for HIV transmission. The use of fosamprenavir is pending revision due to a potential association between the drug and myocardial infarction and dyslipidemia in HIV infected adults.</td></tr><tr><th>Pharmacodynamics</th><td>Fosamprenavir is a pro-drug of the protease inhibitor and antiretroviral drug amprenavir. It has little or no antiviral activity until it is hydrolyzed by cellular phosphatases into amprenavir, which is the active ingredient. That metabolization increases the duration that amprenavir is available, making fosamprenavir a slow-release version of amprenavir and thus reducing the number of pills required versus standard amprenavir.</td></tr><tr><th>Mechanism of action</th><td>Fosamprenavir is a prodrug that is rapidly hydrolyzed to amprenavir by cellular phosphatases in the gut epithelium as it is absorbed. Amprenavir is an inhibitor of HIV-1 protease. During HIV replication, HIV protease cleaves viral polypeptide products of the Gag and Gag-Pol genes to form structural proteins of the virion core and essential viral enzymes. Amprenavir interferes with this process by binding to the active site of HIV-1 protease, thereby preventing the processing of viral Gag and Gag-Pol polyprotein precursors, resulting in the formation of immature non-infectious viral particles.</td></tr><tr><th>Absorption</th><td>The absolute oral bioavailability of amprenavir after administration of fosamprenavir in humans has not been established. After administration of a single 1,400 mg dose in the fasted state, fosamprenavir oral suspension (50 mg/mL) and fosamprenavir tablets (700 mg) provided similar amprenavir exposures (AUC), however, the C<sub>max</sub> of amprenavir after administration of the suspension formulation was 14.5 % higher compared with the tablet.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Very high (approximately 90%); primarily bound to alpha 1 -acid glycoprotein. Higher amounts of unbound amprenavir present as amprenavir serum concentrations increase.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>In the gut epithelium during absorption, fosamprenavir is rapidly and almost completely hydrolyzed to amprenavir and inorganic phosphate prior to reaching the systemic circulation. Amprenavir is metabolized in the liver by the cytochrome P450 3A4 (CYP3A4) enzyme system.</p></td></tr><tr><th>Route of elimination</th><td>Excretion of unchanged amprenavir in urine and feces is minimal. The renal elimination of unchanged amprenavir represents approximately 1% of the administered dose; therefore, renal impairment is not expected to significantly impact the elimination of amprenavir. Amprenavir, the active metabolite of fosamprenavir, is metabolized in the liver by the cytochrome P450 enzyme system.</td></tr><tr><th>Half life</th><td>The plasma elimination half-life of amprenavir (the active metabolite) is approximately 7.7 hours.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Human Immunodeficiency Virus</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.6363</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.5379</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.6992</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6482</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7374</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7819</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8671</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Substrate</td>
+        <td>0.5877</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.6061</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5805</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7454</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6627</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8835</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6591</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6317</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6969</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.598
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.78
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5018 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9846
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8356
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Viiv healthcare co</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li>Dept Health Central Pharmacy</li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li>
+<li>ViiV Healthcare ULC</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Suspension</td><td>Oral</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01048">Abacavir</a></td><td>The serum concentration of Abacavir may be decreased by protease inhibitors such as Fosamprenavir. The antiviral response should be closely monitored.</td></tr><tr><td><a href="/drugs/DB01418">Acenocoumarol</a></td><td>The protease inhibitor, fosamprenavir, may increase the anticoagulant effect of acenocoumarol.</td></tr><tr><td><a href="/drugs/DB00404">Alprazolam</a></td><td>Fosamprenavir may increase the effect and toxicity of the benzodiazepine, alprazolam.</td></tr><tr><td><a href="/drugs/DB01370">Aluminium</a></td><td>The antiacid decreases the absorption of amprenavir</td></tr><tr><td><a href="/drugs/DB01118">Amiodarone</a></td><td>The protease inhibitor, fosamprenavir, may increase the effect and toxicity of amiodarone.</td></tr><tr><td><a href="/drugs/DB01125">Anisindione</a></td><td>The protease inhibitor, fosamprenavir, may increase the anticoagulant effect of anisindione.</td></tr><tr><td><a href="/drugs/DB00637">Astemizole</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01076">Atorvastatin</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of atorvastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of atorvastatin if fosamprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01244">Bepridil</a></td><td>Amprenavir increases the effect and toxicity of bepridil</td></tr><tr><td><a href="/drugs/DB01558">Bromazepam</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of bromazepam by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of bromazepam if fosamprenavir is initiated, discontinued or dose changed. Dosage adjustments may be required. </td></tr><tr><td><a href="/drugs/DB01373">Calcium</a></td><td>The antiacid decreases the absorption of amprenavir</td></tr><tr><td><a href="/drugs/DB00604">Cisapride</a></td><td>Amprenavir increases the effect and toxicity of cisapride</td></tr><tr><td><a href="/drugs/DB00628">Clorazepate</a></td><td>Fosamprenavir may increase the effect and toxicity of the benzodiazepine, clorazepate.</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>The protease inhibitor, fosamprenavir, may increase the effect of cyclosporine.</td></tr><tr><td><a href="/drugs/DB01219">Dantrolene</a></td><td>Fosamprenavir may increase the serum concentration of dantrolene by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of dantrolene if fosamprenavir is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00705">Delavirdine</a></td><td>Decreased levels of delavirdine with increased levels of amprenavir</td></tr><tr><td><a href="/drugs/DB00829">Diazepam</a></td><td>Fosamprenavir may increase the effect and toxicity of the benzodiazepine, diazepam.</td></tr><tr><td><a href="/drugs/DB00266">Dicoumarol</a></td><td>The protease inhibitor, fosamprenavir, may increase the anticoagulant effect of dicumarol.</td></tr><tr><td><a href="/drugs/DB00320">Dihydroergotamine</a></td><td>Amprenavir increases the effect and toxicity of ergot derivative</td></tr><tr><td><a href="/drugs/DB00696">Ergotamine</a></td><td>Amprenavir increases the effect and toxicity of ergot derivative</td></tr><tr><td><a href="/drugs/DB06414">Etravirine</a></td><td>Fosamprenavir, when administered concomitantly with etravirine, may experience an increase in the serum concentration of its active metabolits. It is recommended to avoid this combination. </td></tr><tr><td><a href="/drugs/DB00813">Fentanyl</a></td><td>The protease inhibitor, fosamprenavir, may increase the effect and toxicity of fentanyl.</td></tr><tr><td><a href="/drugs/DB00690">Flurazepam</a></td><td>Fosamprenavir may increase the effect and toxicity of the benzodiazepine, flurazepam.</td></tr><tr><td><a href="/drugs/DB02703">Fusidic Acid</a></td><td>The protease inhibitor, fosamprenavir, may increase the effect and toxicity of fusidic acid.</td></tr><tr><td><a href="/drugs/DB00227">Lovastatin</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the effect and toxicity of lovastatin by decreasing its metabolism. Concomitant therapy is contraindicated.</td></tr><tr><td><a href="/drugs/DB08815">Lurasidone</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB01378">Magnesium</a></td><td>The antiacid decreases the absorption of amprenavir</td></tr><tr><td><a href="/drugs/DB01377">Magnesium oxide</a></td><td>The antiacid decreases the absorption of amprenavir</td></tr><tr><td><a href="/drugs/DB00333">Methadone</a></td><td>The protease inhibitor, fosamprenavir, may decrease the effect of methadone.</td></tr><tr><td><a href="/drugs/DB00683">Midazolam</a></td><td>Fosamprenavir may increase the effect and toxicity of the benzodiazepine, midazolam.</td></tr><tr><td><a href="/drugs/DB01100">Pimozide</a></td><td>Amprenavir increases the effect and toxicity of pimozide</td></tr><tr><td><a href="/drugs/DB00243">Ranolazine</a></td><td>Increased levels of ranolazine - risk of toxicity</td></tr><tr><td><a href="/drugs/DB00615">Rifabutin</a></td><td>Amprenavir increases the effect and toxicity of rifabutin</td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin may decrease the effectiveness of fosamprenavir.</td></tr><tr><td><a href="/drugs/DB00203">Sildenafil</a></td><td>The protease inhibitor, fosamprenavir, may increase the effect and toxicity of sildenafil.</td></tr><tr><td><a href="/drugs/DB00641">Simvastatin</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of simvastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of simvastatin if fosamprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01323">St. John's Wort</a></td><td>St. John's Wort decreases the effect of indinavir</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>The protease inhibitor, Fosamprenavir, may increase the blood concentration of Tacrolimus. Monitor for changes in the therapeutic/toxic effects of Tacrolimus if Fosamprenavir therapy is initiated, discontinued or altered.</td></tr><tr><td><a href="/drugs/DB00820">Tadalafil</a></td><td>Fosamprenavir may reduce the metabolism of Tadalafil. Concomitant therapy should be avoided if possible due to high risk of Tadalafil toxicity.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Fosmprenavir may increase the serum concentration of Tamoxifen by decreasing its metabolism. Monitor for increased adverse/toxic effects of Tamoxifen. </td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Fosamprenavir, a CYP3A4 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP3A4 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Fosamprenavir is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Fosamprevavir may increase the plasma concentration of Telithromycin. Consider alternate therapy or monitor therapeutic/adverse effects.</td></tr><tr><td><a href="/drugs/DB06287">Temsirolimus</a></td><td>Fosamprenavir may inhibit the metabolism and clearance of Temsirolimus. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00444">Teniposide</a></td><td>The strong CYP3A4 inhibitor, Fosamprenavir, may decrease the metabolism and clearance of Teniposide, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Teniposide if Fosamprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00342">Terfenadine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00906">Tiagabine</a></td><td>The strong CYP3A4 inhibitor, Fosamprenavir, may decrease the metabolism and clearance of Tiagabine, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Tiagabine if Fosamprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00932">Tipranavir</a></td><td>Tipranavir, co-administered with Ritonavir, may decrease the plasma concentration of Fosamprenavir. Consider alternate therapy. </td></tr><tr><td><a href="/drugs/DB01036">Tolterodine</a></td><td>Fosamprenavir may decrease the metabolism and clearance of Tolterodine. Adjust Tolterodine dose and monitor for efficacy and toxicity.</td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Fosamprenavir may increase Tramadol toxicity by decreasing Tramadol metabolism and clearance. </td></tr><tr><td><a href="/drugs/DB00656">Trazodone</a></td><td>The protease inhibitor, Fosamprenavir, may increase the efficacy/toxicity of Trazodone by inhibiting Trazodone metabolism and clearance. Monitor for changes in Trazodone efficacy/toxicity if Fosamprenavir is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00897">Triazolam</a></td><td>Fosamprenavir may increase the effect and toxicity of the benzodiazepine, triazolam.</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>The strong CYP3A4 inhibitor, Fosamprenavir, may decrease the metabolism and clearance of Trimipramine, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in therapeutic and adverse effects of Trimipramine if Fosamprenavir is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00862">Vardenafil</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may reduce the metabolism and clearance of Vardenafil. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of Vardenafil.</td></tr><tr><td><a href="/drugs/DB00285">Venlafaxine</a></td><td>Fosamprenavir, a CYP3A4 inhibitor, may decrease the metabolism and clearance of Venlafaxine, a CYP3A4 substrate. Monitor for changes in therapeutic/adverse effects of Venlafaxine if Fosamprenavir is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00661">Verapamil</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of Veramapil, a CYP3A4 substrate, by decreasing its metabolism and clearance. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Verapamil if Fosamprenavir is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00570">Vinblastine</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may decrease the metabolism of Vinblastine. Consider alternate therapy to avoid Vinblastine toxicity. Monitor for changes in the therapeutic/adverse effects of Vinblastine if Fosamprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00541">Vincristine</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of Vincristine by decreasing its metabolism. Consider alternate therapy to avoid Vincristine toxicity. Monitor for changes in the therapeutic and adverse effects of Vincristine if Fosamprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00361">Vinorelbine</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of Vinorelbine by decreasing its metabolism. Consider alternate therapy to avoid Vinorelbine toxicity. Monitor for changes in the therapeutic and adverse effects of Vinorelbine if Fosamprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole may increase the serum concentration of fosamprenavir by decreasing its metabolism. Fosamprenavir may increase the serum concentration of voriconazole. Monitor for changes in the therapeutic and adverse effects of both agents if concomitant therapy is initiated, discontinued or if doses are changed. </td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>The protease inhibitor, fosamprenavir, may increase the anticoagulant effect of warfarin.</td></tr><tr><td><a href="/drugs/DB00425">Zolpidem</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zolpidem by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zolpidem if fosamprenavir is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00909">Zonisamide</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if fosamprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01198">Zopiclone</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zopiclone by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zopiclone if fosamprenavir is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid alcohol, especially with the oral solution since it contains propylene glycol which competes with alcohol for alcohol dehydrogenase metabolism.</li>
+<li>Take with or without food, however avoid lipid-rich meals.</li>
+<li>Vitamin E increases fosamprenavir bioavailability.</li></ul></td></tr></tbody></table>

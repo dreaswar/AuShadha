@@ -1,0 +1,195 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Pentamidine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00738</strong>&#160; (APRD00303, EXPT02625)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Antiprotozoal agent effective in trypanosomiasis, leishmaniasis, and some fungal infections; used in treatment of pneumocystis pneumonia in <span class="caps">HIV</span>-infected patients. It may cause diabetes mellitus, central nervous system damage, and other toxic effects. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00738/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00738/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00738.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00738.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00738.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00738.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00738.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00738">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Pentamidin</td><td>German</td><td>INN</td></tr><tr><td>Pentamidina</td><td>Spanish</td><td>INN</td></tr><tr><td>Pentamidindiisetionat</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>PH: Ph. Eur. 7</td></tr><tr><td>Pentamidine</td><td>French</td><td>INN</td></tr><tr><td>Pentamidinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Pentamidine Isethionate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000967/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000967/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000967">DBSALT000967</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>NebuPent</td><td>APP</td></tr><tr><td>Pentacarinat</td><td>Sanofi-Aventis</td></tr><tr><td>Pentacrinat</td><td>Abbot</td></tr><tr><td>Pentam</td><td>Abbot</td></tr><tr><td>Pentam 300</td><td>Abbot</td></tr><tr><td>Pentamidine isethionate</td><td>Abbot</td></tr><tr><td>Pneumopent</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antifungal-agents">Antifungal Agents</a></li>
+<li><a href="/mesh/antiprotozoal-agents">Antiprotozoal Agents</a></li>
+<li><a href="/mesh/trypanocidal-agents">Trypanocidal Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>100-33-4</td></tr><tr><th>Weight</th><td>Average: 340.4195<br>Monoisotopic: 340.189926032</td></tr><tr><th>Chemical Formula</th><td>C<sub>19</sub>H<sub>24</sub>N<sub>4</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>XDRYMKDFEDOLFX-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C19H24N4O2/c20-18(21)14-4-8-16(9-5-14)24-12-2-1-3-13-25-17-10-6-15(7-11-17)19(22)23/h4-11H,1-3,12-13H2,(H3,20,21)(H3,22,23)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">4-{[5-(4-carbamimidoylphenoxy)pentyl]oxy}benzene-1-carboximidamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC(=N)C1=CC=C(OCCCCCOC2=CC=C(C=C2)C(N)=N)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Phenol Ethers</td></tr><tr><th>Direct parent</th><td>Phenol Ethers</td></tr><tr><th>Alternative parents</th><td>Alkyl Aryl Ethers; Carboxamidines; Polyamines</td></tr><tr><th>Substituents</th><td>alkyl aryl ether; ether; polyamine; amidine; carboxylic acid amidine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenol ethers. These are aromatic compounds containing an ether group substituted with a benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of pneumonia due to <i>Pneumocystis carinii</i>.</td></tr><tr><th>Pharmacodynamics</th><td>Pentamidine is an antiprotozoal agent. It is an aromatic diamidine, and is known to have activity against <i>Pneumocystis carinii</i>. The exact nature of its antiprotozoal action is unknown. <i>in vitro</i> studies with mammalian tissues and the protozoan <i>Crithidia oncopelti</i> indicate that the drug interferes with nuclear metabolism producing inhibition of the synthesis of DNA, RNA, phospholipids and proteins. Little is known about the drug's pharmacokinetics. The medication is also useful in Leishmaniasis and in prophylaxis against sleeping sickness caused by <i>Trypanosoma brucei gambiense</i>. Hydration before treatment lessens the incidence and severity of side effects, which include liver or kidney dysfunction, hypertension, hypotension, hypoglycemia, hypocalemia, leukopenia, thrombcytopenia, anemia, and allergic reaction. It is generally well-tolerated.</td></tr><tr><th>Mechanism of action</th><td>The mode of action of pentamidine is not fully understood. It is thought that the drug interferes with nuclear metabolism producing inhibition of the synthesis of DNA, RNA, phospholipids, and proteins.</td></tr><tr><th>Absorption</th><td>Absorbed poorly through the gastrointestinal tract and is usually administered parenterally.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>69%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic.</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>9.1-13.2 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Symptoms of overdose include pain, nausea, anorexia, hypotension, fever, rash, bad taste in mouth, confusion/hallucinations, dizziness, and diarrhea.</td></tr><tr><th>Affected organisms</th><td><ul><li>Pneumocystis carinii</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9416</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9133</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8957</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.5352</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8571</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8382</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6653</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7898</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9115</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7339</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5272</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7439</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7676</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6581</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8661</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.5621</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9132
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8395
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9818
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.2925 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.7428
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7711
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>App pharmaceuticals llc</li>
+<li>Armour pharmaceutical co</li>
+<li>Baxter healthcare corp anesthesia and critical care</li>
+<li>Hospira inc</li>
+<li>Watson laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li>APPD</li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Powder, for solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Nebupent 300 mg inhal powder</td><td>122.84USD</td><td>each</td></tr><tr><td>Pentam 300 vial</td><td>94.8USD</td><td>vial</td></tr><tr><td>Pentamidine 300 mg vial</td><td>45.31USD</td><td>vial</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>186.0 &#176;C (decomposes)</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>water solubility</td><td>Complete</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>4</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>2.36e-02 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>1.32</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>2.32</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-4.2</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest basic)</td><td>12.13</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>118.2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>10</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>120.53</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>38.85</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Nguewa PA, Fuertes MA, Cepeda V, Iborra S, Carrion J, Valladares B, Alonso C, Perez JM: Pentamidine is an antiparasitic and apoptotic drug that selectively modifies ubiquitin. Chem Biodivers. 2005 Oct;2(10):1387-400. <a href="http://www.ncbi.nlm.nih.gov/pubmed/17191940">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07420" target="_blank">C07420 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=4735" target="_blank">4735 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46508562" target="_blank">46508562 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.4573.html" target="_blank">4573 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=45081" target="_blank">45081 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL55" target="_blank">CHEMBL55 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000764" target="_blank">DAP000764 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA450850" target="_blank">PA450850 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=PNT" target="_blank">PNT <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2183080" target="_blank">2183080 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/pentam.htm" target="_blank">http://www.rxlist.com/cgi/generic3/pentam.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/pentamidine.html" target="_blank">http://www.drugs.com/cdi/pentamidine.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Pentamidine" target="_blank">Pentamidine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>P01CX01<ul class="atc-drug-tree"><li><a href="/atc/P#P">P &#8212; ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS</a></li><li><a href="/atc/P01#P01">P01 &#8212; ANTIPROTOZOALS</a></li><li><a href="/atc/P01C#P01C">P01C &#8212; AGENTS AGAINST LEISHMANIASIS AND TRYPANOSOMIASIS</a></li><li><a href="/atc/P01CX#P01CX">P01CX &#8212; Other agents against leishmaniasis and trypanosomiasis</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>08:30.92</li></ul></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1RKW" target="_blank">1RKW <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00738.pdf?1265922736">show</a>(50.6 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB06697">Artemether</a></td><td>Additive QTc-prolongation may occur. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB06708">Lumefantrine</a></td><td>Additive QTc-prolongation may occur. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00933">Mesoridazine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01369">Quinupristin</a></td><td>This combination presents an increased risk of toxicity</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>Additive QTc-prolongation may occur increasing the risk of serious ventricular arrhythmias. Concomitant therapy should be used with caution.</td></tr><tr><td><a href="/drugs/DB06402">Telavancin</a></td><td>Additive QTc-prolongation may occur. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00679">Thioridazine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01623">Thiothixene</a></td><td>May cause additive QTc-prolonging effects. Increased risk of ventricular arrhythmias. Consider alternate therapy. Thorough risk:benefit assessment is required prior to co-administration. </td></tr><tr><td><a href="/drugs/DB00208">Ticlopidine</a></td><td>Ticlopidine may decrease the metabolism and clearance of Pentamidine. Consider alternate therapy or monitor for adverse/toxic effects of Pentamidine if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00539">Toremifene</a></td><td>Additive QTc-prolongation may occur, increasing the risk of serious ventricular arrhythmias. Consider alternate therapy. A thorough risk:benefit assessment is required prior to co-administration.</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>Additive QTc-prolongation may occur, increasing the risk of serious ventricular arrhythmias. Concomitant therapy should be used with caution.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB02546">Vorinostat</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB00943">Zalcitabine</a></td><td>Additive risk of pancreatitis. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00246">Ziprasidone</a></td><td>Additive QTc-prolonging effects may increase the risk of severe arrhythmias. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB01624">Zuclopenthixol</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or use caution and monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB08919">Zuclopenthixol acetate</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or use caution and monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB08920">Zuclopenthixol decanoate</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or use caution and monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

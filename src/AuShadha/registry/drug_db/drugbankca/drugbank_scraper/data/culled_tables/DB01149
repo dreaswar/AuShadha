@@ -1,0 +1,220 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Nefazodone</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01149</strong>&#160; (APRD00402)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, withdrawn</td></tr><tr><th>Description</th><td><p>Nefazodone hydrochloride (trade name Serzone) is an antidepressant drug marketed by Bristol-Myers Squibb. Its sale was discontinued in 2003 in some countries, due to the small possibility of hepatic (liver) injury, which could lead to the need for a liver transplant, or even death. The incidence of severe liver damage is approximately 1 in 250,000 to 300,000 patient-years. On May 20, 2004, Bristol-Myers Squibb discontinued the sale of Serzone in the United States. [Wikipedia]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01149/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01149/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01149.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01149.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01149.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01149.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01149.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01149">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Nefazodona</td><td>Spanish</td><td>INN</td></tr><tr><td>Nefazodonum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Nefazodone Hydrochloride</strong>
+          <div class="cas">82752-99-6</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000406/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000406/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: DYCKFEBIOUQECE-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 505.201130739</li>
+              <li>Average Mass: 506.468</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000406">DBSALT000406</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Dutonin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Serzone</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antidepressive-agents-second-generation">Antidepressive Agents, Second-Generation</a></li>
+<li><a href="/mesh/antidepressive-agents">Antidepressive Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>83366-66-9</td></tr><tr><th>Weight</th><td>Average: 470.007<br>Monoisotopic: 469.224453</td></tr><tr><th>Chemical Formula</th><td>C<sub>25</sub>H<sub>32</sub>ClN<sub>5</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>VRBKIVRKKCLPHA-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C25H32ClN5O2/c1-2-24-27-31(25(32)30(24)18-19-33-23-10-4-3-5-11-23)13-7-12-28-14-16-29(17-15-28)22-9-6-8-21(26)20-22/h3-6,8-11,20H,2,7,12-19H2,1H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-{3-[4-(3-chlorophenyl)piperazin-1-yl]propyl}-3-ethyl-4-(2-phenoxyethyl)-4,5-dihydro-1H-1,2,4-triazol-5-one</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCC1=NN(CCCN2CCN(CC2)C2=CC(Cl)=CC=C2)C(=O)N1CCOC1=CC=CC=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Piperazines</td></tr><tr><th>Subclass</th><td>Phenylpiperazines</td></tr><tr><th>Direct parent</th><td>Phenylpiperazines</td></tr><tr><th>Alternative parents</th><td>Phenol Ethers; Alkyl Aryl Ethers; Chlorobenzenes; Aryl Chlorides; Diazinanes; Triazoles; Tertiary Amines; Polyamines; Organochlorides</td></tr><tr><th>Substituents</th><td>phenol ether; alkyl aryl ether; chlorobenzene; aryl halide; 1,4-diazinane; benzene; aryl chloride; azole; 1,2,4-triazole; tertiary amine; ether; polyamine; amine; organochloride; organonitrogen compound; organohalogen</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenylpiperazines. These are compounds containing a phenylpiperazine skeleton, which consists of a piperazine bound to a phenyl group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of depression.</td></tr><tr><th>Pharmacodynamics</th><td>Nefazodone, an antidepressant synthetically derived phenylpiperazine, is used to treat major depression. Although it is structurally similar to trazodone, nefazodone has a mechanism of action different from other antidepressants and, hence, lacks the risk for major cardiovascular toxicity seen with tricyclics and insomnia and inhibition of REM sleep seen with the selective serotonin reuptake inhibitors.</td></tr><tr><th>Mechanism of action</th><td>Within the serotonergic system, nefazodone acts as an antagonist at type 2 serotonin (5-HT<sub>2</sub>) post-synaptic receptors and, like fluoxetine-type antidepressants, inhibits pre-synaptic serotonin (5-HT) reuptake. These mechanisms increase the amount of serotonin available to interact with 5-HT receptors. Within the noradrenergic system, nefazodone inhibits norepinephrine uptake minimally. Nefazodone also antagonizes alpha(1)-adrenergic receptors, producing sedation, muscle relaxation, and a variety of cardiovascular effects. Nefazodone's affinity for benzodiazepine, cholinergic, dopaminergic, histaminic, and beta or alpha(2)-adrenergic receptors is not significant.</td></tr><tr><th>Absorption</th><td>Nefazodone is rapidly and completely absorbed. Its absolute bioavailability is low (about 20%).</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>0.22 to 0.87 L/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td>Greater than 99% (in vitro, human plasma proteins).</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Nefazodone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET00379">hydroxynefazodone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/381">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Nefazodone is extensively metabolized after oral administration by n-dealkylation and aliphatic and aromatic hydroxylation, and less than 1% of administered nefazodone is excreted unchanged in urine.</td></tr><tr><th>Half life</th><td>2-4 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Cases of life-threatening hepatic failure have been reported in patients treated
+with nefazodone.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9744</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5296</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5809</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8564</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8373</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5685</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7898</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9115</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.7506</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7931</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5999</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8799</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5434</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8711</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.8028</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.5208
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7388
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.9067 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Strong inhibitor 
+        </td>
+        <td>
+            0.8749
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.7288
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Dr reddys laboratories inc</li>
+<li>Ivax pharmaceuticals inc sub teva pharmaceuticals usa</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Ranbaxy laboratories ltd</li>
+<li>Roxane laboratories inc</li>
+<li>Sandoz inc</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Watson laboratories inc</li>
+<li>Bristol myers squibb co pharmaceutical research institute</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.aqpharmaceuticals.com">AQ Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li>Eon Labs</li>
+<li>Ivax Pharmaceuticals</li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.parpharm.com">Par Pharmaceuticals</a></li>
+<li><a href="http://www.pharmapacllc.com">Pharma Pac LLC</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li>Va Cmop Dallas</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>100 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>150 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>200 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>250 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>50 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB05812">Abiraterone</a></td><td>Strong CYP3A4 inhibitors may increase levels of abiraterone. Monitor concomitant therapy closely. </td></tr><tr><td><a href="/drugs/DB00918">Almotriptan</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB00673">Aprepitant</a></td><td>This CYP3A4 inhibitor increases the effect and toxicity of aprepitant</td></tr><tr><td><a href="/drugs/DB00637">Astemizole</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01076">Atorvastatin</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of atorvastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of atorvastatin if nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01558">Bromazepam</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of bromazepam by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of bromazepam if nefazodone is initiated, discontinued or dose changed. Dosage adjustments may be required. </td></tr><tr><td><a href="/drugs/DB00490">Buspirone</a></td><td>Nefazodone increases the effect of buspirone</td></tr><tr><td><a href="/drugs/DB06772">Cabazitaxel</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor may increase concentrations of cabazitaxel. Avoid concomitant therapy.</td></tr><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>Nefazodone increases the effect of carbamazepine</td></tr><tr><td><a href="/drugs/DB00439">Cerivastatin</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of cerivastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of cerivastatin if nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01166">Cilostazol</a></td><td>Nefazodone increases the effect of cilostazol</td></tr><tr><td><a href="/drugs/DB00604">Cisapride</a></td><td>Nefazodone increases serum levels of cisapride</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>The antidepressant increases the effect and toxicity of cyclosporine</td></tr><tr><td><a href="/drugs/DB06695">Dabigatran etexilate</a></td><td>P-Glycoprotein inducers such as nefazodone may decrease the serum concentration of dabigatran etexilate. This combination should be avoided.</td></tr><tr><td><a href="/drugs/DB08912">Dabrafenib</a></td><td>Strong CYP3A4 inhibitors may increase levels of dabrafenib. Consider alternate therapy. </td></tr><tr><td><a href="/drugs/DB01219">Dantrolene</a></td><td>Nefazodone may increase the serum concentration of dantrolene by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of dantrolene if nefazodone is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00496">Darifenacin</a></td><td>This potent CYP3A4 inhibitor slows darifenacin/solifenacin metabolism</td></tr><tr><td><a href="/drugs/DB06700">Desvenlafaxine</a></td><td>Increased risk of serotonin syndrome. Monitor for symptoms of serotonin syndrome.</td></tr><tr><td><a href="/drugs/DB00320">Dihydroergotamine</a></td><td>Possible ergotism and severe ischemia with this combination</td></tr><tr><td><a href="/drugs/DB04855">Dronedarone</a></td><td>Nefazodone is a strong CYP3A4 inhibitor in which concomitant use with dronedarone will significantly increase its exposure. Avoid concomitant use. </td></tr><tr><td><a href="/drugs/DB00216">Eletriptan</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB00700">Eplerenone</a></td><td>Nefazodone increases the effect and toxicity of eplerenone</td></tr><tr><td><a href="/drugs/DB00696">Ergotamine</a></td><td>Possible ergotism and severe ischemia with this combination</td></tr><tr><td><a href="/drugs/DB00530">Erlotinib</a></td><td>This CYP3A4 inhibitor increases levels/toxicity of erlotinib</td></tr><tr><td><a href="/drugs/DB00998">Frovatriptan</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB01247">Isocarboxazid</a></td><td>Possible severe adverse reaction with this combination</td></tr><tr><td><a href="/drugs/DB00601">Linezolid</a></td><td>Combination associated with possible serotoninergic syndrome</td></tr><tr><td><a href="/drugs/DB00455">Loratadine</a></td><td>Increased risk of cardiotoxicity</td></tr><tr><td><a href="/drugs/DB00227">Lovastatin</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of lovastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of lovastatin if nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00952">Naratriptan</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB06589">Pazopanib</a></td><td>Affects CYP3A4 metabolism therefore will decrease levels or effect of pazopanib. Consider alternate therapy. </td></tr><tr><td><a href="/drugs/DB00780">Phenelzine</a></td><td>Possible severe adverse reaction with this combination</td></tr><tr><td><a href="/drugs/DB01100">Pimozide</a></td><td>Nefazodone may increase the effect and toxicity of pimozide.</td></tr><tr><td><a href="/drugs/DB08901">Ponatinib</a></td><td>Strong CYP3A4 inhibitors may increase levels of ponatinib. Monitor concomitant therapy closely. </td></tr><tr><td><a href="/drugs/DB01367">Rasagiline</a></td><td>Possible severe adverse reaction with this combination</td></tr><tr><td><a href="/drugs/DB00953">Rizatriptan</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB06335">Saxagliptin</a></td><td>Nefazodone is an inhibitor of CYP3A4 which increases exposure of saxagliptin. Decrease dose of saxagliptin to 2.5 mg per day. </td></tr><tr><td><a href="/drugs/DB01105">Sibutramine</a></td><td>Risk of serotoninergic syndrome</td></tr><tr><td><a href="/drugs/DB00641">Simvastatin</a></td><td>Nefazodone may increase the effect and toxicity of simvastatin. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of simvastatin if nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01591">Solifenacin</a></td><td>This potent CYP3A4 inhibitor slows darifenacin/solifenacin metabolism</td></tr><tr><td><a href="/drugs/DB01323">St. John's Wort</a></td><td>St. John's Wort increases the effect and toxicity of the SSRI, nefazodone.</td></tr><tr><td><a href="/drugs/DB00669">Sumatriptan</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB01268">Sunitinib</a></td><td>Possible increase in sunitinib levels</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>Nefazodone may increase the blood concentration of Tacrolimus. Monitor for changes in the therapeutic/toxic effects of Tacrolimus if Nefazodone therapy is initiated, discontinued or altered.</td></tr><tr><td><a href="/drugs/DB00820">Tadalafil</a></td><td>Nefazodone may reduce the metabolism of Tadalafil. Concomitant therapy should be avoided if possible due to high risk of Tadalafil toxicity.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Nefazodone may increase the serum concentration of Tamoxifen by decreasing its metabolism. Monitor for increased adverse/toxic effects of Tamoxifen. </td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Nefazodone, a CYP3A4 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP3A4 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Nefazodone is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Co-administration may result in altered plasma concentrations of Nefazodone and/or Telithromycin. Consider alternate therapy or monitor the therapeutic/adverse effects of both agents.</td></tr><tr><td><a href="/drugs/DB06287">Temsirolimus</a></td><td>Nefazodone may inhibit the metabolism and clearance of Temsirolimus. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00444">Teniposide</a></td><td>The strong CYP3A4 inhibitor, Nefazodone, may decrease the metabolism and clearance of Teniposide, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Teniposide if Nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00857">Terbinafine</a></td><td>Terbinafine may reduce the metabolism and clearance of Nefazodone. Consider alternate therapy or monitor for therapeutic/adverse effects of Nefazodone if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00342">Terfenadine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00906">Tiagabine</a></td><td>The strong CYP3A4 inhibitor, Nefazodone, may decrease the metabolism and clearance of Tiagabine, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Tiagabine if Nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01036">Tolterodine</a></td><td>Nefazodone may decrease the metabolism and clearance of Tolterodine. Adjust Tolterodine dose and monitor for efficacy and toxicity.</td></tr><tr><td><a href="/drugs/DB06212">Tolvaptan</a></td><td>Nefazodone is a strong inhibitor of CYP3A4 and will increase serum concentrations of tolvaptan. </td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Nefazodone may increase tramadol toxicity by decreasing tramadol metabolism and clearance. Increased risk of serotonin syndrome. Monitor for tramadol toxicity and symptoms of serotonin syndrome.</td></tr><tr><td><a href="/drugs/DB00752">Tranylcypromine</a></td><td>Increased risk of serotonin syndrome. Use caution during concomitant therapy and monitor for symptoms of serotonin syndrome.</td></tr><tr><td><a href="/drugs/DB00656">Trazodone</a></td><td>Increased risk of serotonin syndrome. The CYP3A4 inhibitor, Nefazodone, may increase Trazodone efficacy/toxicity by decreasing Trazodone metabolism and clearance. Consider alternate therapy or monitor for symtpoms of sertonin syndrome and changes in Trazodone efficacy/toxicity if Nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00897">Triazolam</a></td><td>Nefazodone increases the effect of triazolam</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>Increased risk of serotonin syndrome. Monitor for symptoms of serotonin syndrome. Nefazodone, a strong CYP3A4 inhibitor, may also decrease the metabolism and clearance of Trimipramine, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in therapeutic and adverse effects of Trimipramine if Nefazodone is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00427">Triprolidine</a></td><td>The CNS depressants, Triprolidine and Nefazodone, may increase adverse/toxic effects due to additivity. Monitor for increased CNS depressant effects during concomitant therapy. </td></tr><tr><td><a href="/drugs/DB00862">Vardenafil</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may reduce the metabolism and clearance of Vardenafil. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of Vardenafil.</td></tr><tr><td><a href="/drugs/DB08881">Vemurafenib</a></td><td>Strong CYP3A4 inhibitors may increase levels of vemurafenib. Monitor concomitant therapy closely. </td></tr><tr><td><a href="/drugs/DB00285">Venlafaxine</a></td><td>Increased risk of serotonin syndrome. Monitor for symptoms of serotonin syndrome.</td></tr><tr><td><a href="/drugs/DB00661">Verapamil</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of Veramapil, a CYP3A4 substrate, by decreasing its metabolism and clearance. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Verapamil if Nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00570">Vinblastine</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may decrease the metabolism of Vinblastine. Consider alternate therapy to avoid Vinblastine toxicity. Monitor for changes in the therapeutic/adverse effects of Vinblastine if Nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00541">Vincristine</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of Vincristine by decreasing its metabolism. Consider alternate therapy to avoid Vincristine toxicity. Monitor for changes in the therapeutic and adverse effects of Vincristine if Nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00361">Vinorelbine</a></td><td>Nafazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of Vinorelbine by decreasing its metabolism. Consider alternate therapy to avoid Vinorelbine toxicity. Monitor for changes in the therapeutic and adverse effects of Vinorelbine if Nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of nefazodone by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of nefazodone if voriconazole is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00315">Zolmitriptan</a></td><td>Use of two serotonin modulators, such as zolmitriptan and nafazodone, may increase the risk of serotonin syndrome. Consider alternate therapy or monitor for serotonin syndrome during concomitant therapy.</td></tr><tr><td><a href="/drugs/DB00425">Zolpidem</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of zolpidem by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zolpidem if nefazodone is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00909">Zonisamide</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01198">Zopiclone</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of zopiclone by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zopiclone if nefazodone is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid alcohol.</li>
+<li>Avoid avocado.</li>
+<li>Limit garlic, ginger, gingko, and horse chestnut.</li>
+<li>Take this medication either consistently with or without food as instructed by your doctor.</li></ul></td></tr></tbody></table>

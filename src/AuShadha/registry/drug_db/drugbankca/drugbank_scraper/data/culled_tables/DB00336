@@ -1,0 +1,169 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Nitrofural</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00336</strong>&#160; (APRD00050)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A topical anti-infective agent effective against gram-negative and gram-positive bacteria. It is used for superficial wounds, burns, ulcers, and skin infections. Nitrofurazone has also been administered orally in the treatment of trypanosomiasis. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00336/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00336/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00336.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00336.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00336.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00336.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00336.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00336">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Furacilin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Nitrofurazone</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Furacin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Furaderm</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-infective-agents">Anti-Infective Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>59-87-0</td></tr><tr><th>Weight</th><td>Average: 198.1362<br>Monoisotopic: 198.0389047</td></tr><tr><th>Chemical Formula</th><td>C<sub>6</sub>H<sub>6</sub>N<sub>4</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>IAIWVQXQOWNYOU-FPYGCLRLSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C6H6N4O4/c7-6(11)9-8-3-4-1-2-5(14-4)10(12)13/h1-3H,(H3,7,9,11)/b8-3+</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">[(E)-[(5-nitrofuran-2-yl)methylidene]amino]urea</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC(=O)N\N=C\C1=CC=C(O1)[N+]([O-])=O</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB00336.gif?1265922771">show</a>(8.69 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Furans</td></tr><tr><th>Subclass</th><td>Nitrofurans</td></tr><tr><th>Direct parent</th><td>Nitrofurans</td></tr><tr><th>Alternative parents</th><td>Semicarbazones; Hydrazones; Nitronic Acids; Aldimines; Nitro Compounds; Polyamines; Organic Oxoazanium Compounds</td></tr><tr><th>Substituents</th><td>semicarbazone; hydrazone; semicarbazide; nitronic acid; nitro compound; aldimine; polyamine; organic oxoazanium; amine; organonitrogen compound; imine</td></tr><tr><th>Classification description</th><td>This compound belongs to the nitrofurans. These are compounds containing a furan ring which bears a nitro group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatement of bacterial skin infections including pyodermas, infected dermatoses and infections of cuts, wounds, burns and ulcers due to susceptible organisms.</td></tr><tr><th>Pharmacodynamics</th><td>Nitrofurazone is a topical antibacterial agent indicated as an adjunctive therapy for second and third degree burns when resistance to other agents is a real or potential problem. Nitrofurazone is also indicated in skin grafting when bacterial contamination may cause graft rejection or donor site infection, especially in hospitals with a history of resistant bacteria.</td></tr><tr><th>Mechanism of action</th><td>The exact mechanism of action is unknown. Nitrofurazone inhibits several bacterial enzymes, especially those involved in the aerobic and anaerobic degradation of glucose and pyruvate. This activity is believed also to affect pyruvate dehydrogenase, citrate synthetase, malate dehydrogenase, glutathione reductase, and pyruvate decarboxylase.</td></tr><tr><th>Absorption</th><td>Well absorbed.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Nitrofurans, including nitrofural, undergo metabolic reduction at the nitro group to generate reactive species which can covalently bind to cellular macromolecules (Polnaszek et al., 1984; Kutcher &amp; McCalla, 1984; McCalla 1979; McCalla et al., 1975).</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>5 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Rat LD<sub>50</sub> = 590 mg/kg; Allergic contact dermatitis is the most frequently reported adverse effect, occurring in approximately 1 % of patients treated.</td></tr><tr><th>Affected organisms</th><td><ul><li>Gram negative and gram positive bacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.5716</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9214</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5694</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.7552</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9271</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9278</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9347</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.769</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8326</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6211</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9107</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9379</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9026</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8418</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9287</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9234
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.692
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.7708
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5276 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9188
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9311
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Shire development inc</li>
+<li>Sherwood medical co</li>
+<li>Ambix laboratories div organics corp america</li>
+<li>Lannett co inc</li>
+<li>Perrigo new york inc</li>
+<li>Taro pharmaceuticals usa inc</li>
+<li>Wendt laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.gallipot.com">Gallipot</a></li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.tarousa.com">Taro Pharmaceuticals USA</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr><tr><td>Dressing</td><td>Topical</td><td></td></tr><tr><td>Liquid</td><td>Intramuscular</td><td></td></tr><tr><td>Ointment</td><td>Topical</td><td></td></tr><tr><td>Powder</td><td>Oral</td><td></td></tr><tr><td>Powder</td><td>Topical</td><td></td></tr><tr><td>Powder, for solution</td><td>Oral</td><td></td></tr><tr><td>Solution</td><td>Intrauterine</td><td></td></tr><tr><td>Solution</td><td>Intravenous</td><td></td></tr><tr><td>Solution</td><td>Oral</td><td></td></tr><tr><td>Solution</td><td>Topical</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

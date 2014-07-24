@@ -1,0 +1,196 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Olopatadine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00768</strong>&#160; (APRD00310)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Used to treat allergic conjunctivitis (itching eyes), olopatadine inhibits the release of histamine from mast cells. It is a relatively selective histamine H1 antagonist that inhibits the in vivo and in vitro type 1 immediate hypersensitivity reaction including inhibition of histamine induced effects on human conjunctival epithelial cells.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00768/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00768/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00768.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00768.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00768.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00768.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00768.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00768">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Olopatadin</td><td>German</td><td>INN</td></tr><tr><td>Olopatadina</td><td>Spanish</td><td>INN</td></tr><tr><td>Olopatadine</td><td>French</td><td>INN</td></tr><tr><td>Olopatadinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Olopatadine Hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000685/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000685/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: HVRLZEKDTUEKQH-NOILCQHBSA-N</li>
+              <li>Monoisotopic Mass: 373.144471346</li>
+              <li>Average Mass: 373.873</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000685">DBSALT000685</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Alchek</td><td>Apex</td></tr><tr><td>Alerchek</td><td>Indoco</td></tr><tr><td>Allelock</td><td>Dae Woong</td></tr><tr><td>Opatanol</td><td>Alcon</td></tr><tr><td>Pataday</td><td>Alcon</td></tr><tr><td>Patanase</td><td>Alcon</td></tr><tr><td>Patanol</td><td>Alcon</td></tr><tr><td>Patanol S</td><td>Alcon</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/histamine-h1-antagonists">Histamine H1 Antagonists</a></li>
+<li><a href="/mesh/histamine-antagonists">Histamine Antagonists</a></li></ul></td></tr><tr><th>CAS number</th><td>113806-05-6</td></tr><tr><th>Weight</th><td>Average: 337.4122<br>Monoisotopic: 337.167793607</td></tr><tr><th>Chemical Formula</th><td>C<sub>21</sub>H<sub>23</sub>NO<sub>3</sub></td></tr><tr><th>InChI Key</th><td>JBIMVDZLSHOPLA-LSCVHKIXSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C21H23NO3/c1-22(2)11-5-8-18-17-7-4-3-6-16(17)14-25-20-10-9-15(12-19(18)20)13-21(23)24/h3-4,6-10,12H,5,11,13-14H2,1-2H3,(H,23,24)/b18-8-</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-[(2Z)-2-[3-(dimethylamino)propylidene]-9-oxatricyclo[9.4.0.0^{3,8}]pentadeca-1(11),3(8),4,6,12,14-hexaen-5-yl]acetic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN(C)CC\C=C1\C2=CC=CC=C2COC2=C1C=C(CC(O)=O)C=C2</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Benzoxepines</td></tr><tr><th>Subclass</th><td>Dibenzoxepines</td></tr><tr><th>Direct parent</th><td>Dibenzoxepines</td></tr><tr><th>Alternative parents</th><td>Alkyl Aryl Ethers; Benzene and Substituted Derivatives; Tertiary Amines; Carboxylic Acids; Polyamines; Enolates</td></tr><tr><th>Substituents</th><td>alkyl aryl ether; benzene; tertiary amine; polyamine; enolate; carboxylic acid derivative; carboxylic acid; ether; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the dibenzoxepines. These are compounds containing a dibenzoxepine moiety, which consists of two benzene connected by an oxazepine ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of ocular itching associated with allergic conjunctivitis.</td></tr><tr><th>Pharmacodynamics</th><td>Used to treat allergic conjunctivitis (itching eyes), olopatadine inhibits the release of histamine from mast cells. It is a relatively selective histamine H1 antagonist that inhibits the in vivo and in vitro type 1 immediate hypersensitivity reaction including inhibition of histamine induced effects on human conjunctival epithelial cells.</td></tr><tr><th>Mechanism of action</th><td>Olopatadine is a selective histamine H1 antagonist that binds to the histamine H1 receptor. This blocks the action of endogenous histamine, which subsequently leads to temporary relief of the negative symptoms brought on by histamine. Olopatadine is devoid of effects on alpha-adrenergic, dopamine and muscarinic type 1 and 2 receptors.</td></tr><tr><th>Absorption</th><td>Ophthalmic use of olopatadine usually does not produce measurable plasma concentrations.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>The mono-desmethyl and the N-oxide metabolites have been detected at low concentrations in the urine.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Olopatadine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00913">Mono-desmethyl olopatadine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/934">Details</a></td></tr><tr><td>Olopatadine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00970">Olopatadine n-oxide</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/992">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Elimination was predominantly through renal excretion.</td></tr><tr><th>Half life</th><td>3 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9747</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.6925</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.7249</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8607</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5948</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8196</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5413</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7691</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.7242</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.7906</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8316</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6567</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8466</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8222</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8676</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8032
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8499
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.6088
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.7626 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8082
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.5
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Alcon inc</li>
+<li>Alcon laboratories inc</li>
+<li>Alcon Laboratories, Inc.</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.alcon.com">Alcon Laboratories</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Redpharm Drug</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Liquid</td><td>Ophthalmic</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td>Searched, but no interactions found.</td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

@@ -1,0 +1,196 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Melphalan</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01042</strong>&#160; (APRD00118)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An alkylating nitrogen mustard that is used as an antineoplastic in the form of the levo isomer &#8211; melphalan, the racemic mixture &#8211; merphalan, and the dextro isomer &#8211; medphalan; toxic to bone marrow, but little vesicant action; potential carcinogen. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01042/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01042/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01042.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01042.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01042.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01042.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01042.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01042">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>L-PAM</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>L-Phenylalanine mustard</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>L-Sarcolysine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>p-Bis(beta-chloroethyl)aminophenylalanine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>p-N,N-bis(2-chloroethyl)amino-L-phenylalanine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Phenylalanine mustard</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Phenylalanine nitrogen mustard</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Melphalan hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT001019/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT001019/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT001019">DBSALT001019</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Alkeran</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>148-82-3</td></tr><tr><th>Weight</th><td>Average: 305.2<br>Monoisotopic: 304.074533244</td></tr><tr><th>Chemical Formula</th><td>C<sub>13</sub>H<sub>18</sub>Cl<sub>2</sub>N<sub>2</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>SGDBTWWWUNNDEQ-LBPRGKRZSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C13H18Cl2N2O2/c14-5-7-17(8-6-15)11-3-1-10(2-4-11)9-12(16)13(18)19/h1-4,12H,5-9,16H2,(H,18,19)/t12-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2S)-2-amino-3-{4-[bis(2-chloroethyl)amino]phenyl}propanoic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">N[C@@H](CC1=CC=C(C=C1)N(CCCl)CCCl)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Phenylpropanoids and Polyketides</td></tr><tr><th>Class</th><td>Phenylpropanoic Acids</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Phenylpropanoic Acids</td></tr><tr><th>Alternative parents</th><td>Alpha Amino Acids and Derivatives; Amphetamines and Derivatives; Nitrogen Mustard Compounds; Amino Fatty Acids; Polyamines; Carboxylic Acids; Enolates; Monoalkylamines; Organochlorides; Alkyl Chlorides</td></tr><tr><th>Substituents</th><td>nitrogen mustard; benzene; tertiary amine; carboxylic acid derivative; carboxylic acid; enolate; polyamine; organonitrogen compound; organochloride; organohalogen; amine; primary amine; primary aliphatic amine; alkyl halide; alkyl chloride</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenylpropanoic acids. These are compounds whose structure contain a benzene ring conjugated to a propanoic acid.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the palliative treatment of multiple myeloma and for the palliation of non-resectable epithelial carcinoma of the ovary. Has also been used alone or as part of various chemotherapeutic regimens as an adjunct to surgery in the treatment of breast cancer, alone or in combination regimens for palliative treatment of locally recurrent or unresectable in-transit metastatic melanoma of the extremities, as well as for the treatment of amyloidosis with prednisone.</td></tr><tr><th>Pharmacodynamics</th><td>Melphalan is an antineoplastic in the class of alkylating agents and is used to treat various forms of cancer. Alkylating agents are so named because of their ability to add alkyl groups to many electronegative groups under conditions present in cells. They stop tumor growth by cross-linking guanine bases in DNA double-helix strands - directly attacking DNA. This makes the strands unable to uncoil and separate. As this is necessary in DNA replication, the cells can no longer divide. In addition, these drugs add methyl or other alkyl groups onto molecules where they do not belong which in turn inhibits their correct utilization by base pairing and causes a miscoding of DNA. Alkylating agents are cell cycle-nonspecific. Alkylating agents work by three different mechanisms all of which achieve the same end result - disruption of DNA function and cell death.</td></tr><tr><th>Mechanism of action</th><td>Alkylating agents work by three different mechanisms: 1) attachment of alkyl groups to DNA bases (primarily at the N-7 position of guanine and to a lesser extent, at the N-3 position of adenine), forming monoadducts and resulting in the DNA being fragmented by repair enzymes in their attempts to replace the alkylated bases, preventing DNA synthesis and RNA transcription from the affected DNA, 2) DNA damage via the formation of cross-links (bonds between atoms in the DNA) which prevents DNA from being separated for synthesis or transcription, and 3) the induction of mispairing of the nucleotides leading to mutations.</td></tr><tr><th>Absorption</th><td>Incomplete, variable, 25-89% post oral dose</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>0.5 L/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td>Moderate to high (60 to 90%), primarily to albumin and, to a lesser extent, alpha 1-acid glycoprotein. 30% is irreversibly bound.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Melphalan is not actively metabolised, it spontaneously degrades to mono and dihydroxy products.</p></td></tr><tr><th>Route of elimination</th><td>The 24-hour urinary excretion of parent drug in these patients was 10% &#177; 4.5%, suggesting that renal clearance is not a major route of elimination of parent drug.</td></tr><tr><th>Half life</th><td>1.5 (&#177;0.83) hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Vomiting, ulceration of the mouth, diarrhea, and hemorrhage of the gastrointestinal tract; The principal toxic effect is bone marrow suppression. LD<sub>50</sub>=11.2 mg/kg (orally in rat)</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9523</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.6073</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.983</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9192</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.811</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8457</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7432</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7553</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.779</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9348</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9193</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.7959</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9863</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9108
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7873
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9746
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          3.9179 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8187
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8488
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Glaxosmithkline</li>
+<li>Bioniche pharma usa llc</li>
+<li>Synerx pharma llc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Antibioticos Ltd.</li>
+<li><a href="http://www.bionichepharmausa.com">Bioniche Pharma</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.catalent.com">Catalent Pharma Solutions</a></li>
+<li><a href="http://www.generamedix.com">Generamedix Inc.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.nervianoms.com">Nerviano Medical Science S.R.L.</a></li>
+<li>Oso Biopharmaceuticals Manufacturing LLC</li>
+<li>Pharmaceutical Utilization Management Program VA Inc.</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB06769">Bendamustine</a></td><td>Increases toxicity through pharmacodynamic synergism. Additive myelosuppression.</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Melphalan increases toxicity of cyclosporine</td></tr><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take on an empty stomach. Food decreases bioavailabilty by approximately 30%. Increase liquid intake.</li></ul></td></tr></tbody></table>

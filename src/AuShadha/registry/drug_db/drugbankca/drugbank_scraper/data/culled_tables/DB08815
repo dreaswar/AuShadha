@@ -1,0 +1,189 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Lurasidone</strong></td></tr><tr><th>Accession Number</th><td><strong>DB08815</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Lurasidone is an atypical antipsychotic developed by Dainippon Sumitomo Pharma. It was approved by the U.S. Food and Drug Administration (<span class="caps">FDA</span>) for treatment of schizophrenia on October 29, 2010 and is currently pending approval for the treatment of bipolar disorder in the United States. (Wikipedia)</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB08815/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB08815/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08815.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08815.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08815.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08815.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08815.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB08815">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Lurasidone Hydrochloride </strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000113/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000113/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: NEKCRUIRPWNMLK-SCIYSFAVSA-N</li>
+              <li>Monoisotopic Mass: 528.232574845</li>
+              <li>Average Mass: 529.137</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000113">DBSALT000113</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Latuda </td><td>Sunovion Pharmaceuticals Inc.</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>367514-87-2</td></tr><tr><th>Weight</th><td>Average: 492.676<br>Monoisotopic: 492.255897106</td></tr><tr><th>Chemical Formula</th><td>C<sub>28</sub>H<sub>36</sub>N<sub>4</sub>O<sub>2</sub>S</td></tr><tr><th>InChI Key</th><td>PQXKDMSYBGKCJA-CVTJIBDQSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C28H36N4O2S/c33-27-24-18-9-10-19(15-18)25(24)28(34)32(27)17-21-6-2-1-5-20(21)16-30-11-13-31(14-12-30)26-22-7-3-4-8-23(22)35-29-26/h3-4,7-8,18-21,24-25H,1-2,5-6,9-17H2/t18-,19+,20-,21-,24+,25-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(1R,2S,6R,7S)-4-{[(1R,2R)-2-{[4-(1,2-benzothiazol-3-yl)piperazin-1-yl]methyl}cyclohexyl]methyl}-4-azatricyclo[5.2.1.0&#178;,&#8310;]decane-3,5-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">O=C1[C@H]2[C@@H]3CC[C@@H](C3)[C@H]2C(=O)N1C[C@@H]1CCCC[C@H]1CN1CCN(CC1)C1=NSC2=CC=CC=C12</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Isoindoles and Derivatives</td></tr><tr><th>Subclass</th><td>Isoindolines</td></tr><tr><th>Direct parent</th><td>Isoindolones</td></tr><tr><th>Alternative parents</th><td>Benzothiazoles; Aminothiazoles; Pyrrolidones; Benzene and Substituted Derivatives; Piperazines; N-substituted Carboxylic Acid Imides; Diazinanes; Tertiary Carboxylic Acid Amides; Lactams; Tertiary Amines; Polyamines; Carboxylic Acids; Isoindlines</td></tr><tr><th>Substituents</th><td>1,4-diazinane; carboxylic acid imide, n-substituted; piperazine; pyrrolidone; benzene; 1,2-thiazolamine; tertiary carboxylic acid amide; carboxylic acid imide; thiazole; azole; pyrrolidine; carboxamide group; lactam; tertiary amine; polyamine; carboxylic acid derivative; carboxylic acid; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the isoindolones. These are aromatic polycyclic compounds that an isolindole bearing a ketone.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Treatment of schizophrenia. </td></tr><tr><th>Pharmacodynamics</th><td>Lurasidone is a benzothiazol derivative that is an antagonist and binds with high affinity to Dopamine-2 (D2) (Ki = 0.994 nM), 5-HT2A (Ki = 0.47 nM) receptors, and 5-HT7 receptors (Ki = 0.495 nM).  It also binds with moderate affinity to alpha-2C adrenergic receptors (Ki = 10.8 nM) and is a partial agonist at 5-HT1A receptors (Ki = 6.38 nM). Its actions on histaminergic and muscarinic receptors are negligible. </td></tr><tr><th>Mechanism of action</th><td>Lurasidone is an atypical antipsychotic that is a D2 and 5-HT2A (mixed serotonin and dopamine activity) to improve cognition. It is thought that antagonism of serotonin receptors can improve negative symptoms of psychoses and reduce the extrapyramidal side effects that are often associated with typical antipsychotics. </td></tr><tr><th>Absorption</th><td>Lurasidone is readily absorbed and quickly reaches maximal concentrations (Cmax) within 1-4 hours. When taken with food, there is a two-fold increase in exposure and  time to maximal concentration is increased by 0.5-1.5 hours. This occurs regardless of fat or caloric content.  
+Bioavailability = 9-19%. </td></tr><tr><th>Volume of distribution</th><td><p>6173 L</p></td></tr><tr><th>Protein binding</th><td>~99% bound to serum proteins. </td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Lurasidone is metabolized by CYP3A4 in which its major active metabolite is referred to as ID-14283 (25% of parent exposure). Its two minor metabolites are referred to as ID14326 and ID11614 which make up 3% and 1% of parent exposure respectively. Its two non-active metabolites are referred to as ID-20219 and ID-20220.   </p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Lurasidone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00890">ID11614</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/911">Details</a></td></tr><tr><td>Lurasidone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00891">ID14326</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/912">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Urine (~9%) and feces (~80%) </td></tr><tr><th>Half life</th><td>40 mg dose= 18 hours 
+120 mg - 160 mg dose = 29-37 hours </td></tr><tr><th>Clearance</th><td><p>3902 mL/min</p></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9907</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5257</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6029</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6713</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.73</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5487</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7897</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.8918</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5922</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.677</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6714</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8292</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.7439</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7835</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.8126</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6477
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8986
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9959
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4051 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.6636
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.5858
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>20 mg, 40 mg, 80 mg, 120 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01072">Atazanavir</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB01128">Bicalutamide</a></td><td>CYP3A4 Inhibitors like bicalutamide may increase the serum concentration of lurasidone. Limit adult lurasidone dose to 40 mg/day in patients receiving a moderate CYP3A4 inhibitor.</td></tr><tr><td><a href="/drugs/DB00559">Bosentan</a></td><td>Concomitant therapy with a CYP3A4 substrate and inducer will decrease levels of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>Concomitant therapy with a CYP3A4 inducer will decrease levels of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB00446">Chloramphenicol</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB01211">Clarithromycin</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB00257">Clotrimazole</a></td><td>CYP3A4 Inhibitors (Moderate) such as clotrimazole may increase the serum concentration of lurasidone. Limit adult lurasidone dose to 40 mg/day in patients receiving a moderate CYP3A4 inhibitor. </td></tr><tr><td><a href="/drugs/DB00872">Conivaptan</a></td><td>CYP3A4 Inhibitors (Strong) may increase the serum concentration of Lurasidone. Avoid use of lurasidone in patients receiving strong CYP3A4 inhibitors. </td></tr><tr><td><a href="/drugs/DB01264">Darunavir</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB00705">Delavirdine</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB01234">Dexamethasone</a></td><td>Concomitant therapy with a CYP3A4 inducer will decrease levels of lurasidone. Coadministration with lurasidone is contraindicated. Will decrease Cmax of lurasidone by 85%.</td></tr><tr><td><a href="/drugs/DB00988">Dopamine</a></td><td>Dopamine increases toxicity (enhanced hypotensive effects) of lurasidone. </td></tr><tr><td><a href="/drugs/DB00668">Epinephrine</a></td><td>Epinephrine increases toxicity (enhance hypotensive effects) of lurasidone by pharmacodynamic synergism. </td></tr><tr><td><a href="/drugs/DB06414">Etravirine</a></td><td>Concomitant therapy with a CYP3A4 inducer will decrease levels of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB06414">Etravirine</a></td><td>Lurasidone, when used concomitantly with etravirine (a strong CYP3A4 inducer), may experience a decrease in serum concentration. It is recommended to avoid concurrent therapy.</td></tr><tr><td><a href="/drugs/DB01319">Fosamprenavir</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>Concomitant therapy with a CYP3A4 inducer will decrease levels of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB00619">Imatinib</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB00224">Indinavir</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB01167">Itraconazole</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB01233">Metoclopramide</a></td><td>Increases toxicity and risk of extrapyramidal effects of lurasidone by antidopaminergic effects. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00607">Nafcillin</a></td><td>Concomitant therapy will decrease levels of lurasidone via effects on CYP 3A4. Concomitant therapy is contraindicated. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>When taken with food, there is a two-fold increase in exposure and  time to maximal concentration is increased by 0.5-1.5 hours. </li></ul></td></tr></tbody></table>

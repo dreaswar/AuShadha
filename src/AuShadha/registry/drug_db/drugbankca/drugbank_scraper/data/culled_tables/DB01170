@@ -1,0 +1,189 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Guanethidine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01170</strong>&#160; (APRD01007)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An antihypertensive agent that acts by inhibiting selectively transmission in post-ganglionic adrenergic nerves. It is believed to act mainly by preventing the release of norepinephrine at nerve endings and causes depletion of norepinephrine in peripheral sympathetic nerve terminals as well as in tissues. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01170/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01170/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01170.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01170.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01170.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01170.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01170.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01170">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>(2-(Octahydro-1-azocinyl)ethyl)guanidine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>2-(1-N,N-Heptamethyleneimino)ethylguanidine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>2-(1'-Azacyclooctyl)ethylguanidine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>N-(2-Perhydroazocin-1-ylethyl)guanidine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Guanethidine monosulfate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT001071/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT001071/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT001071">DBSALT001071</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Ismedine</td><td>Chen Ho</td></tr><tr><td>Ismelin</td><td>Amdipharm</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antihypertensive-agents">Antihypertensive Agents</a></li>
+<li><a href="/mesh/adrenergic-agents">Adrenergic Agents</a></li>
+<li><a href="/mesh/sympatholytics">Sympatholytics</a></li></ul></td></tr><tr><th>CAS number</th><td>645-43-2</td></tr><tr><th>Weight</th><td>Average: 198.3085<br>Monoisotopic: 198.184446724</td></tr><tr><th>Chemical Formula</th><td>C<sub>10</sub>H<sub>22</sub>N<sub>4</sub></td></tr><tr><th>InChI Key</th><td>ACGDKVXYNVEAGU-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C10H22N4/c11-10(12)13-6-9-14-7-4-2-1-3-5-8-14/h1-9H2,(H4,11,12,13)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-[2-(azocan-1-yl)ethyl]guanidine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC(N)=NCCN1CCCCCCC1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organonitrogen Compounds</td></tr><tr><th>Class</th><td>Guanidines</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Guanidines</td></tr><tr><th>Alternative parents</th><td>Tertiary Amines; Polyamines; Amidines</td></tr><tr><th>Substituents</th><td>amidine; polyamine; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the guanidines. These are compounds containing a guanidine moiety, with the general structure (R1R2N)(R3R4N)C=N-R5.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of moderate and severe hypertension, either alone or as an adjunct, and for the treatment of renal hypertension.</td></tr><tr><th>Pharmacodynamics</th><td>High blood pressure can cause the heart and arteries to not function properly. This can damage the blood vessels of the brain, heart, and kidneys, resulting in a stroke, heart failure, or kidney failure. High blood pressure may also increase the risk of heart attacks. These problems may be less likely to occur if blood pressure is controlled. Guanethidine works by decreasing the heart rate and relaxing the blood vessels so that blood can flow more easily through the body, thereby reducing these risks. It is a postganglionic sympathetic nerve terminal blocker that prevents the release of norepinephrine from nerve terminals.</td></tr><tr><th>Mechanism of action</th><td>Guanethidine acts at the sympathetic neuroeffector junction by inhibiting or interfering with the release and/or distribution of norepinephrine, rather than acting at the effector cell by inhibiting the association of norepinephrine with its receptors. It is taken up by norepinephrine transporters. It becomes concentrated in NE transmitter vesicles, replacing NE in these vesicles. This leads to a gradual depletion of NE stores in the nerve endings. Once inside the terminal it blocks the release of noradrenaline in response to arrival of an action potential. In contrast to ganglionic blocking agents, Guanethidine suppresses equally the responses mediated by alpha-and beta-adrenergic receptors but does not produce parasympathetic blockade. Since sympathetic blockade results in modest decreases in peripheral resistance and cardiac output, Guanethidine lowers blood pressure in the supine position. It further reduces blood pressure by decreasing the degree of vasoconstriction that normally results from reflex sympathetic nervous activity upon assumption of the upright posture, thus reducing venous return and cardiac output more.</td></tr><tr><th>Absorption</th><td>3-30% of oral dose (poor and highly variable)</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Guanethidine is converted by the liver to three metabolites, which are excreted in the urine. The metabolites are pharmacologically less active than the parent compound.</p></td></tr><tr><th>Route of elimination</th><td>Ismelin is converted by the liver to three metabolites, which are excreted in the urine.</td></tr><tr><th>Half life</th><td>1.5 days</td></tr><tr><th>Clearance</th><td><ul>
+	<li>Renal cl=56 ml/min</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Side effects include drowsiness, dizziness, tiredness or confusion. LD<sub>50</sub>=1000 mg/kg (mouse, oral)</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.945</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9015</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5683</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7743</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9342</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5063</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7586</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8981</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.6426</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7884</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.908</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9363</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.939</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9611</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9748</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6626
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9595
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9883
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4210 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.6083
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8115
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Watson laboratories inc</li>
+<li>Novartis pharmaceuticals corp</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.novartis.com">Novartis AG</a></li>
+<li>Professional Co.</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01063">Acetophenazine</a></td><td>Acetophenazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01246">Alimemazine</a></td><td>Trimeprazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00321">Amitriptyline</a></td><td>The tricyclic antidepressant, amitriptyline, decreases the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00543">Amoxapine</a></td><td>The tricyclic antidepressant, amoxapine, decreases the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00182">Amphetamine</a></td><td>Amphetamine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00865">Benzphetamine</a></td><td>Benzphetamine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00477">Chlorpromazine</a></td><td>Chlorpromazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01239">Chlorprothixene</a></td><td>Chlorprothixene may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01242">Clomipramine</a></td><td>The tricyclic antidepressant, clomipramine, decreases the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01151">Desipramine</a></td><td>The tricyclic antidepressant, desipramine, decreases the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01191">Dexfenfluramine</a></td><td>Dexfenfluramine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01576">Dextroamphetamine</a></td><td>Dextroamphetamine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00937">Diethylpropion</a></td><td>Diethylpropion may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00841">Dobutamine</a></td><td>Dobutamine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00988">Dopamine</a></td><td>Dopamine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01142">Doxepin</a></td><td>The tricyclic antidepressant, doxepin, decreases the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01363">Ephedra</a></td><td>Ephedra may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01364">Ephedrine</a></td><td>Ephedrine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00668">Epinephrine</a></td><td>Epinephrine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00392">Ethopropazine</a></td><td>Ethopropazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00574">Fenfluramine</a></td><td>Fenfluramine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00623">Fluphenazine</a></td><td>Fluphenazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00502">Haloperidol</a></td><td>Haloperidol may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00458">Imipramine</a></td><td>The tricyclic antidepressant, imipramine, may increase the sympathomimetic effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01247">Isocarboxazid</a></td><td>Isocarboxazid may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00579">Mazindol</a></td><td>Mazindol may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00933">Mesoridazine</a></td><td>Mesoridazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00610">Metaraminol</a></td><td>Metaraminol may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01577">Methamphetamine</a></td><td>Methamphetamine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00902">Methdilazine</a></td><td>Methdilazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01403">Methotrimeprazine</a></td><td>Methotrimeprazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00723">Methoxamine</a></td><td>Methoxamine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00422">Methylphenidate</a></td><td>Methylphenidate may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00368">Norepinephrine</a></td><td>Norepinephrine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00540">Nortriptyline</a></td><td>The tricyclic antidepressant, nortriptyline, decreases the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01626">Pargyline</a></td><td>Pargyline may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00850">Perphenazine</a></td><td>Perphenazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01579">Phendimetrazine</a></td><td>Phendimetrazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00780">Phenelzine</a></td><td>Phenelzine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00830">Phenmetrazine</a></td><td>Phenmetrazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00191">Phentermine</a></td><td>Phentermine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00388">Phenylephrine</a></td><td>Phenylephrine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00397">Phenylpropanolamine</a></td><td>Phenylpropanolamine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00433">Prochlorperazine</a></td><td>Prochlorperazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00420">Promazine</a></td><td>Promazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01069">Promethazine</a></td><td>Promethazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01608">Propericiazine</a></td><td>Propericiazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00777">Propiomazine</a></td><td>Propiomazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00344">Protriptyline</a></td><td>The tricyclic antidepressant, protriptyline, decreases the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00852">Pseudoephedrine</a></td><td>Pseudoephedrine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00372">Thiethylperazine</a></td><td>Thiethylperazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00679">Thioridazine</a></td><td>Thioridazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01623">Thiothixene</a></td><td>Thiothixene may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00752">Tranylcypromine</a></td><td>Tranylcypromine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00831">Trifluoperazine</a></td><td>Trifluoperazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00508">Triflupromazine</a></td><td>Triflupromazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>The tricyclic antidepressant, trimipramine, decreases the effect of guanethidine.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take without regard to meals.</li></ul></td></tr></tbody></table>

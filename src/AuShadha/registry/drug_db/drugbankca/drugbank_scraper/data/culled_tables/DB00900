@@ -1,0 +1,181 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Didanosine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00900</strong>&#160; (APRD00240, DB02392)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A dideoxynucleoside compound in which the 3'-hydroxy group on the sugar moiety has been replaced by a hydrogen. This modification prevents the formation of phosphodiester linkages which are needed for the completion of nucleic acid chains. Didanosine is a potent inhibitor of <span class="caps">HIV</span> replication, acting as a chain-terminator of viral <span class="caps">DNA</span> by binding to reverse transcriptase; ddI is then metabolized to dideoxyadenosine triphosphate, its putative active metabolite. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00900/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00900/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00900.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00900.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00900.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00900.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00900.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00900">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Dideoxyinosine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>HSDB</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Videx</td><td>Bristol-Myers Squibb</td></tr><tr><td>Videx EC</td><td>Bristol-Myers Squibb</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-hiv-agents">Anti-HIV Agents</a></li>
+<li><a href="/mesh/antimetabolites">Antimetabolites</a></li>
+<li><a href="/mesh/reverse-transcriptase-inhibitors">Reverse Transcriptase Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>69655-05-6</td></tr><tr><th>Weight</th><td>Average: 236.2273<br>Monoisotopic: 236.09094027</td></tr><tr><th>Chemical Formula</th><td>C<sub>10</sub>H<sub>12</sub>N<sub>4</sub>O<sub>3</sub></td></tr><tr><th>InChI Key</th><td>BXZVVICBKDXVGW-NKWVEPMBSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C10H12N4O3/c15-3-6-1-2-7(17-6)14-5-13-8-9(14)11-4-12-10(8)16/h4-7,15H,1-3H2,(H,11,12,16)/t6-,7+/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">9-[(2R,5S)-5-(hydroxymethyl)oxolan-2-yl]-6,9-dihydro-3H-purin-6-one</div></td></tr><tr><th>SMILES</th><td><div class="wrap">OC[C@@H]1CC[C@@H](O1)N1C=NC2=C1NC=NC2=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organooxygen Compounds</td></tr><tr><th>Class</th><td>Carbohydrates and Carbohydrate Conjugates</td></tr><tr><th>Subclass</th><td>Glycosyl Compounds</td></tr><tr><th>Direct parent</th><td>Purine Nucleosides and Analogues</td></tr><tr><th>Alternative parents</th><td>Hypoxanthines; Pyrimidones; N-substituted Imidazoles; Tetrahydrofurans; Oxolanes; Polyamines; Primary Alcohols; Ethers</td></tr><tr><th>Substituents</th><td>purinone; hypoxanthine; purine; imidazopyrimidine; pyrimidone; n-substituted imidazole; pyrimidine; tetrahydrofuran; azole; imidazole; oxolane; polyamine; primary alcohol; ether; amine; organonitrogen compound; alcohol</td></tr><tr><th>Classification description</th><td>This compound belongs to the purine nucleosides and analogues. These are compounds comprising a purine base attached to a sugar.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For use, in combination with other antiretroviral agents, in the treatment of HIV-1 infection in adults.</td></tr><tr><th>Pharmacodynamics</th><td>Didanosine is a nucleoside reverse transcriptase inhibitor (NRTI) with activity against Human Immunodeficiency Virus Type 1 (HIV-1). Didanosine differs from other nucleoside analogues, as it does not have any of the regular bases, instead it has hypoxanthine attached to the sugar ring. Didanosine is phosphorylated to active metabolites that compete for incorporation into viral DNA. They inhibit the HIV reverse transcriptase enzyme competitively and act as a chain terminator of DNA synthesis. Didanosine is effective against HIV, and usually used in combination with other antiviral therapy. Switching from long term AZT treatment to didanosine has been shown to be beneficial. Didanosine has weak acid stability and therefore, it is often combined with an antacid.</td></tr><tr><th>Mechanism of action</th><td>Didanosine (ddI) is metabolized intracellularly by a series of cellular enzymes to its active moiety, dideoxyadenosine triphosphate (ddATP), which inhibits the HIV reverse transcriptase enzyme competitively by competing with natural dATP. It also acts as a chain terminator by its incorporation into viral DNA as the lack of a 3'-OH group in the incorporated nucleoside analogue prevents the formation of the 5' to 3' phosphodiester linkage essential for DNA chain elongation, and therefore, the viral DNA growth is terminated.</td></tr><tr><th>Absorption</th><td>Rapidly absorbed (bioavailability 30-40%) with peak plasma concentrations appearing within 0.5 and 1.5 hrs.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Low (</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Rapidly metabolized intracellularly to its active moiety, 2,3-dideoxyadenosine-5-triphosphate (ddA-TP). It is then further metabolized hepatically to yield hypoxanthine, xanthine, and uric acid.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Didanosine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00493">Hypoxanthine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/507">Details</a></td></tr><tr><td>Didanosine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00498">Uric acid</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/512">Details</a></td></tr><tr><td>Didanosine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00499">Xanthine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/513">Details</a></td></tr><tr><td>Didanosine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00689">2,3-dideoxyadenosine-5-triphosphate</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/710">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Based on data from in vitro and animal studies, it is presumed that the metabolism of didanosine in man occurs by the same pathways responsible for the elimination of endogenous purines. Purines are eliminated by the kidneys.</td></tr><tr><th>Half life</th><td>30 minutes in plasma and more than 12 hours in intracellular environment.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Side effects include pancreatitis, peripheral neuropathy, diarrhea, hyperuricemia and hepatic dysfunction</td></tr><tr><th>Affected organisms</th><td><ul><li>Human Immunodeficiency Virus</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.996</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.823</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.9019</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.5948</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.945</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6378</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8049</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8065</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7777</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5234</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6934</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9064</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9145</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8646</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9608</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7288</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.8682
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9094
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.8478
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.0874 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9451
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8735
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Aurobindo pharma ltd</li>
+<li>Barr laboratories inc</li>
+<li>Matrix laboratories ltd</li>
+<li>Bristol myers squibb co</li>
+<li>Bristol myers squibb co pharmaceutical research institute</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Advanced Pharmaceutical Services Inc.</li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.aqpharmaceuticals.com">AQ Pharmaceuticals Inc.</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li>Barr Pharmaceuticals</li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li>Dept Health Central Pharmacy</li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.prepaksys.com">Prepak Systems Inc.</a></li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule, coated</td><td>Oral</td><td></td></tr><tr><td>Powder, for solution</td><td>Oral</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01004">Ganciclovir</a></td><td>The antiviral agent, ganciclovir, may increase the effect and toxicity of didanosine.</td></tr><tr><td><a href="/drugs/DB00300">Tenofovir</a></td><td>Tenofovir may decrease the therapeutic effects and increase the adverse effects of Didanosine. Monitor for changes in virologic response and Didanosine toxicity during concomitant therapy.</td></tr><tr><td><a href="/drugs/DB00932">Tipranavir</a></td><td>Tipranavir may decrease the concentration of Didanosine.</td></tr><tr><td><a href="/drugs/DB00684">Tobramycin</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB00685">Trovafloxacin</a></td><td>Didanosine may decrease the absorption of orally administered Trovafloxacin. The Didanosine formulation contains magnesium and aluminum ions that intefere with Trovafloxacin absorption. Administer Trovafloxacin 2 hours before or 6 hours after the Didanosine dose to minimize the interaction. This interaction is not observed with enteric coated Didanosine. </td></tr><tr><td><a href="/drugs/DB01610">Valganciclovir</a></td><td>The adverse/toxic effects of Didanosine, a reverse transcriptase inhibitor (nucleoside), may be enhanced by Valganciclovir. There is a significant risk of hematologic toxicity. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Didanosine may interfere with the absorption of orally administered voriconazole. Enteric coated didanosine does not exert this effect. Didanosine buffered formulations should be administered at least 2 hours from oral voriconazole administration. </td></tr><tr><td><a href="/drugs/DB00943">Zalcitabine</a></td><td>Additive toxicities (peripheral neuropathy)</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid alcohol.</li>
+<li>Take on empty stomach: 1 hour before or 2 hours after meals.</li></ul></td></tr></tbody></table>

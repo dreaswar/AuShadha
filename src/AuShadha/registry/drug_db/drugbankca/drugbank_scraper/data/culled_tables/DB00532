@@ -1,0 +1,164 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Mephenytoin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00532</strong>&#160; (APRD00512)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>investigational, withdrawn</td></tr><tr><th>Description</th><td><p>Mephenytoin is a hydantoin-derivative anticonvulsant used to control various partial seizures. It is generally reserved for treatment of individuals refractory to less toxic agents. Mephenytoin and oxazolidinedione derivatives are associated with higher incidences of blood dyscrasias compared to other anticonvulsants. As such, these agents should not be used concurrently.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00532/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00532/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00532.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00532.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00532.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00532.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00532.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00532">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Mesantoin</td><td>Novartis</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anticonvulsants">Anticonvulsants</a></li></ul></td></tr><tr><th>CAS number</th><td>50-12-4</td></tr><tr><th>Weight</th><td>Average: 218.2518<br>Monoisotopic: 218.105527702</td></tr><tr><th>Chemical Formula</th><td>C<sub>12</sub>H<sub>14</sub>N<sub>2</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>GMHKMTDVRCWUDX-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C12H14N2O2/c1-3-12(9-7-5-4-6-8-9)10(15)14(2)11(16)13-12/h4-8H,3H2,1-2H3,(H,13,16)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">5-ethyl-3-methyl-5-phenylimidazolidine-2,4-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCC1(NC(=O)N(C)C1=O)C1=CC=CC=C1</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB00532.gif?1265922772">show</a>(8.17 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Azolidines</td></tr><tr><th>Subclass</th><td>Imidazolidines</td></tr><tr><th>Direct parent</th><td>Phenylhydantoins</td></tr><tr><th>Alternative parents</th><td>Phenylimidazolidines; Ureides; N-substituted Carboxylic Acid Imides; Benzene and Substituted Derivatives; Tertiary Carboxylic Acid Amides; Tertiary Amines; Carboxylic Acids; Polyamines</td></tr><tr><th>Substituents</th><td>phenylimidazolidine; ureide; carboxylic acid imide, n-substituted; benzene; tertiary carboxylic acid amide; carboxamide group; tertiary amine; carboxylic acid derivative; carboxylic acid; polyamine; organonitrogen compound; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenylhydantoins. These are heterocyclic aromatic compounds containing an imiazolidinedione moiety substituted by a phenyl group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of refractory partial epilepsy.</td></tr><tr><th>Pharmacodynamics</th><td>Mephenytoin is an antiepileptic drug which can be useful in the treatment of epilepsy. The primary site of action appears to be the motor cortex where spread of seizure activity is inhibited. Possibly by promoting sodium efflux from neurons, mephenytoin tends to stabilize the threshold against hyperexcitability caused by excessive stimulation or environmental changes capable of reducing membrane sodium gradient. This includes the reduction of posttetanic potentiation at synapses. Loss of posttetanic potentiation prevents cortical seizure foci from detonating adjacent cortical areas. Mephenytoin reduces the maximal activity of brain stem centers responsible for the tonic phase of tonic-clonic (grand mal) seizures.</td></tr><tr><th>Mechanism of action</th><td>The mechanism of action of mephenytoin is not definitely known, but extensive research strongly suggests that its main mechanism is to block frequency-, use- and voltage-dependent neuronal sodium channels, and therefore limit repetitive firing of action potentials.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>1.4 L/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Mephenytoin</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li>
+<li><a href="/biodb/bio_entities/BE0003549" target="_blank">Cytochrome P450 2B6</a></li></ul></td><td><a href="/metabolites/DBMET00056">Nirvanol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/56">Details</a></td></tr><tr><td>Mephenytoin</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003536" target="_blank">Cytochrome P450 2C19</a></li></ul></td><td><a href="/metabolites/DBMET00057"><i>S</i>-4-Hydroxymephenytoin</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/57">Details</a></td></tr><tr><td>Mephenytoin</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003549" target="_blank">Cytochrome P450 2B6</a></li></ul></td><td><a href="/metabolites/DBMET00278"><i>S</i>-Nirvanol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/279">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>Approximately 7 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="snp-fx"><thead><tr><th>Interacting Gene/Enzyme</th><th>SNP RS ID</th><th>Allele name</th><th>Defining change</th><th>Effect</th><th>Reference(s)</th></tr></thead><tbody><tr><td>Cytochrome P450 2C19<br>Gene symbol: CYP2C19<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/P33261" target="_blank">P33261 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs4986893" target="_blank">rs4986893 <span class="glyphicon glyphicon-new-window"> </span></a></td><td>CYP2C19*3</td><td>A Allele, homozygote</td><td>Poor metabolizer, lower dose requirement</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/7969038" target="_blank" title="De Morais SM, Wilkinson GR, Blaisdell J, Meyer UA, Nakamura K, Goldstein JA: Identification of a new genetic defect responsible for the polymorphism of (S)-mephenytoin metabolism in Japanese. Mol Pharmacol. 1994 Oct;46(4):594-8.">7969038 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9771</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.6007</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.5353</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8782</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8593</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9017</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7827</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9117</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6645</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9046</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9232</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9026</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8812</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9185</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8301
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7739
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9654
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.3788 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9518
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8827
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Novartis pharmaceuticals corp</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00404">Alprazolam</a></td><td>Mephenytoin may increase the metabolism of alprazolam via CYP3A4.</td></tr><tr><td><a href="/drugs/DB01223">Aminophylline</a></td><td>Decreased effect of both products</td></tr><tr><td><a href="/drugs/DB01118">Amiodarone</a></td><td>Increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00673">Aprepitant</a></td><td>The CYP3A4 inducer, mephenytoin, may decrease the effect of aprepitant.</td></tr><tr><td><a href="/drugs/DB00443">Betamethasone</a></td><td>The enzyme inducer, mephenytoin, may decrease the effect of the corticosteroid, betamethasone.</td></tr><tr><td><a href="/drugs/DB01101">Capecitabine</a></td><td>Capecitabine increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00446">Chloramphenicol</a></td><td>Increases phenytoin, modifies chloramphenicol</td></tr><tr><td><a href="/drugs/DB00475">Chlordiazepoxide</a></td><td>Mephenytoin may increase the metabolism of chlordiazepoxide via CYP3A4.</td></tr><tr><td><a href="/drugs/DB01114">Chlorphenamine</a></td><td>The antihistamine increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00501">Cimetidine</a></td><td>Increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00537">Ciprofloxacin</a></td><td>Decreases the hydantoin effect</td></tr><tr><td><a href="/drugs/DB00882">Clomifene</a></td><td>The enzyme inducer, mephenytoin, decreases the effect of the hormone agent, clomifene.</td></tr><tr><td><a href="/drugs/DB00628">Clorazepate</a></td><td>Mephenytoin may increase the metabolism of clorazepate via CYP3A4.</td></tr><tr><td><a href="/drugs/DB00363">Clozapine</a></td><td>Hydantoin decreases the effect of clozapine</td></tr><tr><td><a href="/drugs/DB00286">Conjugated Estrogens</a></td><td>The enzyme inducer, mephenytoin, decreases the effect of the hormone agent, conjugated estrogens.</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>The hydantoin decreases the effect of cyclosporine</td></tr><tr><td><a href="/drugs/DB01234">Dexamethasone</a></td><td>The enzyme inducer, mephenytoin, may decrease the effect of the corticosteroid, dexamethasone.</td></tr><tr><td><a href="/drugs/DB00829">Diazepam</a></td><td>Mephenytoin may increase the metabolism of diazepam via CYP3A4.</td></tr><tr><td><a href="/drugs/DB00255">Diethylstilbestrol</a></td><td>The enzyme inducer, mephenytoin, decreases the effect of the hormone agent, diethylstilbestrol.</td></tr><tr><td><a href="/drugs/DB00280">Disopyramide</a></td><td>The hydantoin decreases the effect of disopyramide</td></tr><tr><td><a href="/drugs/DB00822">Disulfiram</a></td><td>Increases the effect of phenytoin</td></tr><tr><td><a href="/drugs/DB00254">Doxycycline</a></td><td>The anticonvulsant, mephenytoin, decreases the effect of doxycycline.</td></tr><tr><td><a href="/drugs/DB00783">Estradiol</a></td><td>The enzyme inducer, mephenytoin, decreases the effect of the hormone agent, estradiol.</td></tr><tr><td><a href="/drugs/DB00977">Ethinyl Estradiol</a></td><td>This product may cause a slight decrease of contraceptive effect</td></tr><tr><td><a href="/drugs/DB00949">Felbamate</a></td><td>Increased phenytoin levels and decreased felbamate levels</td></tr><tr><td><a href="/drugs/DB01023">Felodipine</a></td><td>The hydantoin decreases the effect of felodipine</td></tr><tr><td><a href="/drugs/DB00196">Fluconazole</a></td><td>Increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00687">Fludrocortisone</a></td><td>The enzyme inducer, mephenytoin, may decrease the effect of the corticosteroid, fludrocortisone.</td></tr><tr><td><a href="/drugs/DB00544">Fluorouracil</a></td><td>Fluorouracil increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00472">Fluoxetine</a></td><td>Fluoxetine increases the effect of phenytoin</td></tr><tr><td><a href="/drugs/DB00690">Flurazepam</a></td><td>Mephenytoin may increase the metabolism of flurazepam via CYP3A4.</td></tr><tr><td><a href="/drugs/DB00176">Fluvoxamine</a></td><td>Increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00158">Folic Acid</a></td><td>Folic acid decreases the levels of hydantoin</td></tr><tr><td><a href="/drugs/DB00695">Furosemide</a></td><td>The hydantoin decreases the effect of furosemide</td></tr><tr><td><a href="/drugs/DB00996">Gabapentin</a></td><td>Increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00317">Gefitinib</a></td><td>The CYP3A4 inducer, mephenytoin, may decrease the serum concentration and therapeutic effects of gefitinib.</td></tr><tr><td><a href="/drugs/DB00741">Hydrocortisone</a></td><td>The enzyme inducer, mephenytoin, may decrease the effect of the corticosteroid, hydrocortisone.</td></tr><tr><td><a href="/drugs/DB00619">Imatinib</a></td><td>The hydantoin decreases the levels of imatinib</td></tr><tr><td><a href="/drugs/DB00951">Isoniazid</a></td><td>Isoniazid increases the effect of phenytoin in 20% of patients</td></tr><tr><td><a href="/drugs/DB01167">Itraconazole</a></td><td>Phenytoin decreases the effect of itraconazole</td></tr><tr><td><a href="/drugs/DB00555">Lamotrigine</a></td><td>Phenytoin may reduce levels of lamotrigine</td></tr><tr><td><a href="/drugs/DB00367">Levonorgestrel</a></td><td>Phenytoin decreases the contraceptive effect</td></tr><tr><td><a href="/drugs/DB00643">Mebendazole</a></td><td>The hydantoin decreases the efficiency of mebendazole</td></tr><tr><td><a href="/drugs/DB00603">Medroxyprogesterone Acetate</a></td><td>The enzyme inducer, mephenytoin, decreases the effect of the hormone agent, medroxyprogesterone.</td></tr><tr><td><a href="/drugs/DB00351">Megestrol acetate</a></td><td>The enzyme inducer, mephenytoin, decreases the effect of the hormone agent, megestrol.</td></tr><tr><td><a href="/drugs/DB00333">Methadone</a></td><td>The hydantoin decreases the effect of methadone</td></tr><tr><td><a href="/drugs/DB00563">Methotrexate</a></td><td>The antineoplasic agent decreases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00553">Methoxsalen</a></td><td>The hydantoin decreases the effect of psoralene</td></tr><tr><td><a href="/drugs/DB00379">Mexiletine</a></td><td>The hydantoin decreases the effect of mexiletine</td></tr><tr><td><a href="/drugs/DB00683">Midazolam</a></td><td>Mephenytoin may increase the metabolism of midazolam via CYP3A4.</td></tr><tr><td><a href="/drugs/DB00370">Mirtazapine</a></td><td>The hydantoins may reduce mirtazapine plasma concentrations and pharmacological effects</td></tr><tr><td><a href="/drugs/DB00717">Norethindrone</a></td><td>This product may cause a slight decrease of contraceptive effect</td></tr><tr><td><a href="/drugs/DB00338">Omeprazole</a></td><td>Omeprazole increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00776">Oxcarbazepine</a></td><td>Oxcarbazepine increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB01303">Oxtriphylline</a></td><td>Decreased effect of both products</td></tr><tr><td><a href="/drugs/DB03585">Oxyphenbutazone</a></td><td>The NSAID, oxyphenbutazone, may increase the hydantoin effect of mephenytoin.</td></tr><tr><td><a href="/drugs/DB00812">Phenylbutazone</a></td><td>The NSAID, phenylbutazone, may increase the hydantoin effect of mephenytoin.</td></tr><tr><td><a href="/drugs/DB00860">Prednisolone</a></td><td>The enzyme inducer, mephenytoin, may decrease the effect of the corticosteroid, prednisolone.</td></tr><tr><td><a href="/drugs/DB00635">Prednisone</a></td><td>The enzyme inducer, mephenytoin, may decrease the effect of the corticosteroid, prednisone.</td></tr><tr><td><a href="/drugs/DB01224">Quetiapine</a></td><td>Phenytoin decreases the effect of quetiapine</td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin decreases the effect of the hydantoin</td></tr><tr><td><a href="/drugs/DB00277">Theophylline</a></td><td>Decreased effect of both products</td></tr><tr><td><a href="/drugs/DB00208">Ticlopidine</a></td><td>Ticlopidine increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00620">Triamcinolone</a></td><td>The enzyme inducer, mephenytoin, may decrease the effect of the corticosteroid, triamcinolone.</td></tr><tr><td><a href="/drugs/DB00897">Triazolam</a></td><td>Mephenytoin may increase the metabolism of triazolam via CYP3A4.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

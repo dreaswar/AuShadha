@@ -1,0 +1,205 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Fludarabine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01073</strong>&#160; (APRD00594)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Fludarabine (marketed as fludarabine phosphate under the trade name Fludara) is a chemotherapy drug used in the treatment of hematological malignancies. [Wikipedia]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01073/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01073/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01073.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01073.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01073.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01073.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01073.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01073">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>FAMP</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Fludarabine 5'-monophosphate</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Fludarabine phosphate</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Fludarabine monophosphate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000425/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000425/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: GIUYCYHIANZCFB-FJFJXFQQSA-N</li>
+              <li>Monoisotopic Mass: 365.053662512</li>
+              <li>Average Mass: 365.2117</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000425">DBSALT000425</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Fludara</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Fludura</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents">Antineoplastic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>75607-67-9</td></tr><tr><th>Weight</th><td>Average: 365.2117<br>Monoisotopic: 365.053662512</td></tr><tr><th>Chemical Formula</th><td>C<sub>10</sub>H<sub>13</sub>FN<sub>5</sub>O<sub>7</sub>P</td></tr><tr><th>InChI Key</th><td>GIUYCYHIANZCFB-FJFJXFQQSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C10H13FN5O7P/c11-10-14-7(12)4-8(15-10)16(2-13-4)9-6(18)5(17)3(23-9)1-22-24(19,20)21/h2-3,5-6,9,17-18H,1H2,(H2,12,14,15)(H2,19,20,21)/t3-,5-,6+,9-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">{[(2R,3S,4S,5R)-5-(6-amino-2-fluoro-9H-purin-9-yl)-3,4-dihydroxyoxolan-2-yl]methoxy}phosphonic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC1=C2N=CN([C@@H]3O[C@H](COP(O)(O)=O)[C@@H](O)[C@@H]3O)C2=NC(F)=N1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organooxygen Compounds</td></tr><tr><th>Class</th><td>Carbohydrates and Carbohydrate Conjugates</td></tr><tr><th>Subclass</th><td>Glycosyl Compounds</td></tr><tr><th>Direct parent</th><td>Purine Ribonucleoside Monophosphates</td></tr><tr><th>Alternative parents</th><td>Pentose Phosphates; Monosaccharide Phosphates; Purines and Purine Derivatives; Halopyrimidines; Aminopyrimidines and Derivatives; Primary Aromatic Amines; N-substituted Imidazoles; Organophosphate Esters; Aryl Fluorides; Organic Phosphoric Acids; Oxolanes; Tetrahydrofurans; Secondary Alcohols; 1,2-Diols; Ethers; Polyamines; Organofluorides</td></tr><tr><th>Substituents</th><td>pentose phosphate; pentose-5-phosphate; monosaccharide phosphate; pentose monosaccharide; imidazopyrimidine; purine; aminopyrimidine; halopyrimidine; monosaccharide; aryl fluoride; primary aromatic amine; n-substituted imidazole; aryl halide; pyrimidine; phosphoric acid ester; organic phosphate; azole; oxolane; imidazole; tetrahydrofuran; secondary alcohol; 1,2-diol; polyamine; ether; alcohol; amine; organofluoride; organohalogen; primary amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the purine ribonucleoside monophosphates. These are nucleotides consisting of a purine base linked to a ribose to which one monophosphate group is attached.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of adult patients with B-cell chronic lymphocytic leukemia (CLL) who have not responded to or whose disease has progressed during treatment with at least one standard alkylating-agent containing regimen</td></tr><tr><th>Pharmacodynamics</th><td>Fludarabine is a chemotherapy drug used in the treatment of chronic lymphocytic leukemia. It acts at DNA polymerase alpha, ribonucleotide reductase and DNA primase, results in the inhibition of DNA synthesis, and destroys the cancer cells.</td></tr><tr><th>Mechanism of action</th><td>Fludarabine phosphate is rapidly dephosphorylated to 2-fluoro-ara-A and then phosphorylated intracellularly by deoxycytidine kinase to the active triphosphate, 2-fluoro-ara-ATP. This metabolite appears to act by inhibiting DNA polymerase alpha, ribonucleotide reductase and DNA primase, thus inhibiting DNA synthesis. The mechanism of action of this antimetabolite is not completely characterized and may be multi-faceted.</td></tr><tr><th>Absorption</th><td>Bioavailability is 55% following oral administration.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>19-29%</td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>20 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>117-145 mL/min [patients with B-cell <span class="caps">CLL</span> receiving IV administration of a single dose of 40 mg/m2]</li>
+</ul></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.5639</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9233</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7128</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6729</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8877</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9758</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9454</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.879</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8252</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5202</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7718</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8907</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8648</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8716</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8466</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9276</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7735
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8925
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.2806 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.98
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7675
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Genzyme corp</li>
+<li>Actavis totowa llc</li>
+<li>App pharmaceuticals llc</li>
+<li>Hospira inc</li>
+<li>Sandoz inc</li>
+<li>Teva parenteral medicines inc</li>
+<li>Sanofi aventis us llc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://www.bayerhealthcare.com">Bayer Healthcare</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.ebewe.at">Ebewe Pharma</a></li>
+<li><a href="http://www.genzyme.ca">Genzyme Inc.</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.sagentpharma.com">Sagent Pharmaceuticals</a></li>
+<li><a href="http://www.sanofi-aventis.com">Sanofi-Aventis Inc.</a></li>
+<li>Sicor Pharmaceuticals</li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Powder, for solution</td><td>Intravenous</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00975">Dipyridamole</a></td><td>Dipyridamole may decrease the effect of fludarabine.</td></tr><tr><td><a href="/drugs/DB00552">Pentostatin</a></td><td>Unacceptable pulmonary toxicity</td></tr><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Food slightly increases product bioavailability.</li>
+<li>Take without regard to meals.</li></ul></td></tr></tbody></table>

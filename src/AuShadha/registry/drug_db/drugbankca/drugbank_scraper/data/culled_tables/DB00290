@@ -1,0 +1,199 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Bleomycin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00290</strong>&#160; (APRD00453, EXPT00718)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A complex of related glycopeptide antibiotics from <i>Streptomyces verticillus</i> consisting of bleomycin A2 and B2 (B2 <span class="caps">CAS</span> # 9060-10-0). It inhibits <span class="caps">DNA</span> metabolism and is used as an antineoplastic, especially for solid tumors. Bleomycin A2 is used as the representative structure for Bleomycin.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00290/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00290/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00290.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00290.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00290.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00290.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00290.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00290">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Bleocin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Bleomicin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Bleomicina</td><td>Spanish</td><td>INN</td></tr><tr><td>Bleomycin A2</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Bleomycine</td><td>French</td><td>INN</td></tr><tr><td>Bleomycinum</td><td>Latin</td><td>INN</td></tr><tr><td>BLM</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Bleomycin sulfate</strong>
+          <div class="cas">9041-93-4</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000196/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000196/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: </li>
+              <li>Monoisotopic Mass: </li>
+              <li>Average Mass: </li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000196">DBSALT000196</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Blenoxane</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Bleo</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antibiotics-antineoplastic">Antibiotics, Antineoplastic</a></li></ul></td></tr><tr><th>CAS number</th><td>11056-06-7</td></tr><tr><th>Weight</th><td>Average: 1415.552<br>Monoisotopic: 1414.518979905</td></tr><tr><th>Chemical Formula</th><td>C<sub>55</sub>H<sub>84</sub>N<sub>17</sub>O<sub>21</sub>S<sub>3</sub></td></tr><tr><th>InChI Key</th><td>OYVAGSVQBOHSSS-WXFSZRTFSA-O</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C55H83N17O21S3/c1-20-33(69-46(72-44(20)58)25(12-31(57)76)64-13-24(56)45(59)82)50(86)71-35(41(26-14-61-19-65-26)91-54-43(39(80)37(78)29(15-73)90-54)92-53-40(81)42(93-55(60)88)38(79)30(16-74)89-53)51(87)66-22(3)36(77)21(2)47(83)70-34(23(4)75)49(85)63-10-8-32-67-28(18-94-32)52-68-27(17-95-52)48(84)62-9-7-11-96(5)6/h14,17-19,21-25,29-30,34-43,53-54,64,73-75,77-81H,7-13,15-16,56H2,1-6H3,(H13-,57,58,59,60,61,62,63,65,66,69,70,71,72,76,82,83,84,85,86,87,88)/p+1/t21-,22+,23+,24-,25-,29?,30?,34-,35-,36-,37?,38?,39?,40?,41-,42?,43?,53?,54?/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(3-{[2-(2-{2-[(2S,3R)-2-[(2S,3S,4R)-4-[(2S,3R)-2-({6-amino-2-[(1S)-1-{[(2S)-2-amino-2-carbamoylethyl]amino}-2-carbamoylethyl]-5-methylpyrimidin-4-yl}formamido)-3-[(3-{[4-(carbamoyloxy)-3,5-dihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy}-4,5-dihydroxy-6-(hydroxymethyl)oxan-2-yl)oxy]-3-(1H-imidazol-5-yl)propanamido]-3-hydroxy-2-methylpentanamido]-3-hydroxybutanamido]ethyl}-1,3-thiazol-4-yl)-1,3-thiazol-4-yl]formamido}propyl)dimethylsulfanium</div></td></tr><tr><th>SMILES</th><td><div class="wrap">C[C@@H](O)[C@H](NC(=O)[C@@H](C)[C@H](O)[C@@H](C)NC(=O)[C@@H](NC(=O)C1=C(C)C(N)=NC(=N1)[C@H](CC(N)=O)NC[C@H](N)C(N)=O)[C@@H](OC1OC(CO)C(O)C(O)C1OC1OC(CO)C(O)C(OC(N)=O)C1O)C1=CN=CN1)C(=O)NCCC1=NC(=CS1)C1=NC(=CS1)C(=O)NCCC[S+](C)C</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Hybrid Glycopeptides</td></tr><tr><th>Alternative parents</th><td>Dihexoses; N-acyl-alpha Amino Acids and Derivatives; O-glycosyl Compounds; Alpha Amino Acid Amides; Gamma Amino Acids and Derivatives; Beta Amino Acids and Derivatives; Pyrimidinecarboxylic Acids and Derivatives; Thiazolecarboxamides; Aminopyrimidines and Derivatives; 2,4-disubstituted Thiazoles; Oxanes; Primary Aromatic Amines; Imidazoles; 1,2-Diols; Secondary Carboxylic Acid Amides; Secondary Alcohols; Primary Carboxylic Acid Amides; Carbamic Acids and Derivatives; Carboxylic Acids; Dialkyl Ethers; Primary Alcohols; Enolates; Polyamines; Acetals; Dialkylamines; Monoalkylamines</td></tr><tr><th>Substituents</th><td>hexose disaccharide; o-glycosyl compound; glycosyl compound; n-acyl-alpha amino acid or derivative; alpha-amino acid amide; gamma amino acid or derivative; beta amino acid or derivative; disaccharide; alpha-amino acid or derivative; pyrimidine-6-carboxylic acid or derivative; thiazolecarboxylic acid or derivative; thiazolecarboxamide; 2,4-disubstituted 1,3-thiazole; aminopyrimidine; saccharide; oxane; primary aromatic amine; pyrimidine; imidazole; thiazole; azole; polyol; secondary alcohol; carboxamide group; primary carboxylic acid amide; 1,2-diol; carbamic acid derivative; secondary carboxylic acid amide; enolate; secondary aliphatic amine; secondary amine; acetal; ether; primary alcohol; dialkyl ether; polyamine; carboxylic acid; primary amine; alcohol; amine; primary aliphatic amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the hybrid glycopeptides. These are compounds containing a carbohydrate component linked linked to an hybrid peptide component.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For palliative treatment in the management malignant neoplasm (trachea, bronchus, lung), squamous cell carcinoma, and lymphomas.</td></tr><tr><th>Pharmacodynamics</th><td>Bleomycin is an antibiotic which has been shown to have antitumor activity. Bleomycin selectively inhibits the synthesis of deoxyribonucleic acid (DNA). The guanine and cytosine content correlates with the degree of mitomycin-induced cross-linking. At high concentrations of the drug, cellular RNA and protein synthesis are also suppressed. Bleomycin has been shown <i>in vitro</i> to inhibit B cell, T cell, and macrophage proliferation and impair antigen presentation, as well as the secretion of interferon gamma, TNFa, and IL-2. The antibiotic antitumor drugs are cell cycle-nonspecific except for Bleomycin (which has major effects in G2 and M phases).</td></tr><tr><th>Mechanism of action</th><td>Although the exact mechanism of action of bleomycin is unknown, available evidence would seem to indicate that the main mode of action is the inhibition of DNA synthesis with some evidence of lesser inhibition of RNA and protein synthesis. DNA cleavage by bleomycin depends on oxygen and metal ions, at least in vitro. It is believed that bleomycin chelates  metal ions (primarily iron) producing a pseudoenzyme that reacts with oxygen to produce superoxide and hydroxide free radicals that cleave DNA.</td></tr><tr><th>Absorption</th><td>Systemic absorption is approximately 45%.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>1%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p></td></tr><tr><th>Route of elimination</th><td>It was reported that patients with moderately severe renal failure excreted less than 20% of the dose in the urine.</td></tr><tr><th>Half life</th><td>115 minutes</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Excessive exposure may cause fever, chills, nausea, vomiting, mental, confusion, and wheezing. Bleomycin may cause irritation to eyes, skin and respiratory tract. It may also cause a darkening or thickening of the skin. It may cause an allergic reaction.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="snp-fx"><thead><tr><th>Interacting Gene/Enzyme</th><th>SNP RS ID</th><th>Allele name</th><th>Defining change</th><th>Effect</th><th>Reference(s)</th></tr></thead><tbody><tr><td>Bleomycin hydrolase<br>Gene symbol: BLMH<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/Q13867" target="_blank">Q13867 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs10500565" target="_blank">rs10500565 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>A Allele</td><td>Improved response to bleomycin</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/18398146" target="_blank" title="de Haas EC, Zwart N, Meijer C, Nuver J, Boezen HM, Suurmeijer AJ, Hoekstra HJ, van der Steege G, Sleijfer DT, Gietema JA: Variation in bleomycin hydrolase gene is associated with reduced survival after chemotherapy for testicular germ cell cancer. J Clin Oncol. 2008 Apr 10;26(11):1817-23.">18398146 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>Bleomycin hydrolase<br>Gene symbol: BLMH<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/Q13867" target="_blank">Q13867 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs10500565" target="_blank">rs10500565 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>G Allele</td><td>Reduced response to bleomycin, higher prevalence of relapse</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/18398146" target="_blank" title="de Haas EC, Zwart N, Meijer C, Nuver J, Boezen HM, Suurmeijer AJ, Hoekstra HJ, van der Steege G, Sleijfer DT, Gietema JA: Variation in bleomycin hydrolase gene is associated with reduced survival after chemotherapy for testicular germ cell cancer. J Clin Oncol. 2008 Apr 10;26(11):1817-23.">18398146 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.8877</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9732</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6551</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.853</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8781</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8454</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9331</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7773</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7966</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6154</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7423</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7035</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8678</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6794</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.67</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8609</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.772
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8957
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.8863
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.6132 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.991
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6172
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Bristol myers squibb co pharmaceutical research institute</li>
+<li>App pharmaceuticals llc</li>
+<li>Bedford laboratories div ben venue laboratories inc</li>
+<li>Hospira inc</li>
+<li>Pharmachemie bv</li>
+<li>Teva parenteral medicines inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.meadjohnson.com">Mead Johnson and Co.</a></li>
+<li><a href="http://www.nipponkayaku.co.jp">Nippon Kayaku Co. Ltd.</a></li>
+<li>Sicor Pharmaceuticals</li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Powder, for solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB08870">Brentuximab vedotin</a></td><td>Pulmonary toxicity of bleomycin may be increased. Avoid combination.</td></tr><tr><td><a href="/drugs/DB00390">Digoxin</a></td><td>The antineoplasic agent decreases the effect of digoxin</td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>The antineoplasic agent decreases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB01097">Leflunomide</a></td><td>Immunosuppressants like bleomycin may enhance the adverse/toxic effect of Leflunomide. Specifically, the risk for hematologic toxicity such as pancytopenia, agranulocytosis, and/or thrombocytopenia may be increased. Consider eliminating the use of a leflunomide loading dose in patients who are receiving other immunosuppressants in order to reduce the risk for serious adverse events such as hematologic toxicity. </td></tr><tr><td><a href="/drugs/DB00108">Natalizumab</a></td><td>Immunosuppressants like bleomycin may enhance the adverse/toxic effect of Natalizumab. Specifically, the risk of concurrent infection may be increased. Patients receiving natalizumab should not use concurrent immunosuppressants.</td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>The antineoplasic agent decreases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00337">Pimecrolimus</a></td><td>Pimecrolimus may enhance the adverse/toxic effect of immunosuppressants like bleomycin. This combination is contraindicated</td></tr><tr><td><a href="/drugs/DB01656">Roflumilast</a></td><td>Roflumilast may enhance the immunosuppressive effect of Immunosuppressants.The Canadian product monograph (Daxas brand) recommends avoiding concurrent use with immunosuppressants. U.S. prescribing information (Daliresp brand) does not include such a warning.</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>Tacrolimus (Topical) may enhance the adverse/toxic effect of Immunosuppressants. Avoid use of tacrolimus ointment in patients receiving immunosuppressants. </td></tr><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

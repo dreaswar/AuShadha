@@ -1,0 +1,189 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Orlistat</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01083</strong>&#160; (APRD00255)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Orlistat is a drug designed to treat obesity. Its primary function is preventing the absorption of fats from the human diet, thereby reducing caloric intake. Orlistat works by inhibiting pancreatic lipase, an enzyme that breaks down triglycerides in the intestine. Without this enzyme, triglycerides from the diet are prevented from being hydrolyzed into absorbable free fatty acids and are excreted undigested.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01083/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01083/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01083.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01083.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01083.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01083.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01083.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01083">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>(-)-Tetrahydrolipstatin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Orlipastat</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Orlipastatum</td><td>Latin</td><td>INN</td></tr><tr><td>Tetrahydrolipstatin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Alli</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Xenical</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/enzyme-inhibitors">Enzyme Inhibitors</a></li>
+<li><a href="/mesh/anti-obesity-agents">Anti-Obesity Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>96829-58-2</td></tr><tr><th>Weight</th><td>Average: 495.7348<br>Monoisotopic: 495.392373811</td></tr><tr><th>Chemical Formula</th><td>C<sub>29</sub>H<sub>53</sub>NO<sub>5</sub></td></tr><tr><th>InChI Key</th><td>AHLBNYSZXLDEJQ-FWEHEUNISA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C29H53NO5/c1-5-7-9-11-12-13-14-15-16-18-24(34-29(33)26(30-22-31)20-23(3)4)21-27-25(28(32)35-27)19-17-10-8-6-2/h22-27H,5-21H2,1-4H3,(H,30,31)/t24-,25-,26-,27-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2S)-1-[(2S,3S)-3-hexyl-4-oxooxetan-2-yl]tridecan-2-yl (2S)-2-formamido-4-methylpentanoate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCCCCCCCCCC[C@@H](C[C@@H]1OC(=O)[C@H]1CCCCCC)OC(=O)[C@H](CC(C)C)NC=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>N-acyl-alpha Amino Acids and Derivatives</td></tr><tr><th>Alternative parents</th><td>Alpha Amino Acid Esters; Secondary Carboxylic Acid Amides; Oxetanes; Lactones; Carboxylic Acid Esters; Enolates; Carboxylic Acids; Polyamines; Ethers</td></tr><tr><th>Substituents</th><td>carboxylic acid ester; lactone; oxetane; secondary carboxylic acid amide; polyamine; ether; enolate; carboxylic acid; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the n-acyl-alpha amino acids and derivatives. These are compounds containing an alpha amino acid (or a derivative thereof) which bears an acyl group at his terminal nitrogen atom.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For obesity management including weight loss and weight maintenance when used in conjunction with a reduced-calorie diet. Also used to reduce the risk for weight regain after prior weight loss. Use of orlistat is pending revision due to reports of liver-related adverse events.</td></tr><tr><th>Pharmacodynamics</th><td>Orlistat is a lipase inhibitor for obesity management that acts by
+inhibiting the absorption of dietary fats. At the recommended
+therapeutic dose of 120 mg three times a day, orlistat inhibits
+dietary fat absorption by approximately 30%. It works by inhibiting pancreatic lipase, an enzyme that breaks down fat in the intestine. Without this enzyme, fat from the diet is excreted
+undigested and not absorbed by the body. Because some vitamins are fat soluble, the effect of orlistat is to reduce their body
+absorption. Therefore the drug should only be taken in conjuction with fatty meals, and a multivitamin tablet containing these vitamins (D E K and beta-carotene) should be taken once a day, at least 2 hours before or after taking the drug. In the March 15, 2004 issue of Cancer Research, [1] Steven J. Kridel <i>et al.</i> state that orlistat may also inhibit growth of prostate cancer, and in theory may be useful in treating other cancers, by interfering with the metabolism of fats.</td></tr><tr><th>Mechanism of action</th><td>Orlistat is a reversible inhibitor of lipases. It exerts its therapeutic activity in the lumen of the stomach and small intestine by forming a covalent bond with the active serine residue site of gastric and pancreatic lipases. The inactivated enzymes are thus unavailable to hydrolyze dietary fat in the form of triglycerides into absorbable free fatty acids and monoglycerides. As undigested triglycerides are not absorbed, the resulting caloric deficit may have a positive effect on weight control.</td></tr><tr><th>Absorption</th><td>Systemic absorption of orlistat is minimal, however systemic absorption of the drug is not needed for activity.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>&gt;99% bound to plasma proteins (lipoproteins and albumin were major binding proteins).</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Metabolized primarily within the gastrointestinal wall forming relatively inactive metabolites. Metabolites M1 (4-member lactone ring hydrolyzed) and M3 (M1 with N-formyl leucine moiety cleaved) accounted for approximately 42% of total radioactivity in plasma. M1 and M3 have an open beta-lactone ring and extremely weak lipase inhibitory activity (1000- and 2500-fold less than orlistat, respectively).</p></td></tr><tr><th>Route of elimination</th><td>Following a single oral dose of 360 mg 14C-orlistat in both normal weight and obese subjects, fecal excretion of the unabsorbed drug was found to be the major route of elimination. Orlistat and its M1 and M3 metabolites were also subject to biliary excretion.</td></tr><tr><th>Half life</th><td>1 to 2 hours.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>The results of a massive overdose of Xenical are unknown, although the drug seems relatively harmless.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9728</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.5923</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5611</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5411</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6242</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5301</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9097</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.854</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.826</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5867</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8458</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8305</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8869</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7315</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8308</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.907</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7333
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8628
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.7808
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.3363 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9671
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9395
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Glaxosmithkline consumer healthcare</li>
+<li>Hoffmann la roche inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.roche.com">F Hoffmann La Roche Ltd.</a></li>
+<li><a href="http://www.roche.com">F Hoffmann-La Roche Ltd.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Xenical 120 mg capsule</td><td>4.44USD</td><td>capsule</td></tr><tr><td>Alli 60 mg capsule</td><td>0.67USD</td><td>capsule</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>6004996</td><td>1998-07-06</td><td>2018-07-06</td></tr><tr><td>United States</td><td>4598089</td><td>1992-12-18</td><td>2009-12-18</td></tr><tr><td>Canada</td><td>2383036</td><td>2006-01-10</td><td>2020-09-11</td></tr><tr><td>Canada</td><td>2258095</td><td>2000-02-22</td><td>2018-01-24</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>water solubility</td><td>Practically insoluble</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>8.6</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>9.19e-05 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>7.61</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>8.11</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-6.7</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>12.74</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>-0.91</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>81.7</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>23</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>139.94</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>61.12</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Vilmos Keri, &#8220;Preparation of orlistat and orlistat crystalline forms.&#8221; U.S. Patent US20030149095, issued August 07, 2003.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=20030149095&amp;tbm=pts" target="_blank">US20030149095 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Torgerson JS, Hauptman J, Boldrin MN, Sjostrom L: XENical in the prevention of diabetes in obese subjects (<span class="caps">XENDOS</span>) study: a randomized study of orlistat as an adjunct to lifestyle changes for the prevention of type 2 diabetes in obese patients. Diabetes Care. 2004 Jan;27(1):155-61. <a href="http://www.ncbi.nlm.nih.gov/pubmed/14693982">Pubmed</a></li>
+	<li>Mancini MC, Halpern A: Pharmacological treatment of obesity. Arq Bras Endocrinol Metabol. 2006 Apr;50(2):377-89. Epub 2006 May 23. <a href="http://www.ncbi.nlm.nih.gov/pubmed/16767304">Pubmed</a></li>
+	<li>Menendez JA, Vellon L, Lupu R: Antitumoral actions of the anti-obesity drug orlistat (XenicalTM) in breast cancer cells: blockade of cell cycle progression, promotion of apoptotic cell death and PEA3-mediated transcriptional repression of Her2/neu (erbB-2) oncogene. Ann Oncol. 2005 Aug;16(8):1253-67. Epub 2005 May 3. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15870086">Pubmed</a></li>
+	<li>Garcia SB, Barros LT, Turatti A, Martinello F, Modiano P, Ribeiro-Silva A, Vespucio MV, Uyemura SA: The anti-obesity agent Orlistat is associated to increase in colonic preneoplastic markers in rats treated with a chemical carcinogen. Cancer Lett. 2006 Aug 28;240(2):221-4. Epub 2005 Dec 27. <a href="http://www.ncbi.nlm.nih.gov/pubmed/16377080">Pubmed</a></li>
+	<li>Drew BS, Dixon AF, Dixon JB: Obesity management: update on orlistat. Vasc Health Risk Manag. 2007;3(6):817-21. <a href="http://www.ncbi.nlm.nih.gov/pubmed/18200802">Pubmed</a></li>
+	<li>Wong NN, Cheng-Lai A: Orlistat. Heart Dis. 2000 Mar-Apr;2(2):174-81. <a href="http://www.ncbi.nlm.nih.gov/pubmed/11728255">Pubmed</a></li>
+	<li>Hvizdos KM, Markham A: Orlistat: a review of its use in the management of obesity. Drugs. 1999 Oct;58(4):743-60. <a href="http://www.ncbi.nlm.nih.gov/pubmed/10551441">Pubmed</a></li>
+	<li>Lucas KH, Kaplan-Machlis B: Orlistat&#8212;a novel weight loss therapy. Ann Pharmacother. 2001 Mar;35(3):314-28. <a href="http://www.ncbi.nlm.nih.gov/pubmed/11261530">Pubmed</a></li>
+	<li>Curran MP, Scott LJ: Orlistat: a review of its use in the management of patients with obesity. Drugs. 2004;64(24):2845-64. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15563254">Pubmed</a></li>
+	<li>Ballinger A, Peikin SR: Orlistat: its current status as an anti-obesity drug. Eur J Pharmacol. 2002 Apr 12;440(2-3):109-17. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12007529">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=3034010" target="_blank">3034010 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46508309" target="_blank">46508309 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.2298564.html" target="_blank">2298564 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=24567" target="_blank">24567 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000053" target="_blank">DAP000053 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA164776864" target="_blank">PA164776864 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2240325" target="_blank">2240325 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic/orlistat.htm" target="_blank">http://www.rxlist.com/cgi/generic/orlistat.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/orlistat.html" target="_blank">http://www.drugs.com/orlistat.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PDRhealth</td><td><a class="wishart-link-out" href="http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/xen1529.shtml" target="_blank">http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/xen1529.shtml <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Orlistat" target="_blank">Orlistat <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>A08AB01<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A08#A08">A08 &#8212; ANTIOBESITY PREPARATIONS, EXCL. DIET PRODUCTS</a></li><li><a href="/atc/A08A#A08A">A08A &#8212; ANTIOBESITY PREPARATIONS, EXCL. DIET PRODUCTS</a></li><li><a href="/atc/A08AB#A08AB">A08AB &#8212; Peripherally acting antiobesity products</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>56:92.00</li></ul></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1N8S" target="_blank">1N8S <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB01083.pdf?1265922811">show</a>(82.5 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB01083.pdf?1265922747">show</a>(114 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01418">Acenocoumarol</a></td><td>Orlistat may increase the anticoagulant effect of acenocoumarol.</td></tr><tr><td><a href="/drugs/DB01125">Anisindione</a></td><td>Orlistat may increase the anticoagulant effect of anisindione.</td></tr><tr><td><a href="/drugs/DB02300">Calcipotriol</a></td><td>Orlistat may decrease the serum concentration of fat soluble vitamins like vitamin D. Hence, this applies to calcipotriol, a synthetic derivative of vitamin D. Administer oral fat soluble vitamins at least 2 hours before or after the administration of orlistat. Avoid concomitant administration due to the risk of impaired vitamin absorption. Similar precautions do not apply to parenterally administered fat soluble vitamins. </td></tr><tr><td><a href="/drugs/DB00169">Cholecalciferol</a></td><td>Orlistat may decrease the serum concentration of Vitamin D analogs. More specifically, orlistat may impair absorption of Vitamin D analogs such as cholecalciferol. Monitor clinical response (plasma calcium concentrations) to orally administered vitamin D analogs closely if used with orlistat. When this combination must be used, consider administering the vitamin D analog at least 2 hours before or after the administration of orlistat. </td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Orlistat decreases the effect of cyclosporine</td></tr><tr><td><a href="/drugs/DB00266">Dicoumarol</a></td><td>Orlistat may increase the anticoagulant effect of dicumarol.</td></tr><tr><td><a href="/drugs/DB00162">Vitamin A</a></td><td>Orlistat may impair the absorption of vitamin A, a fat soluble vitamin. Oral vitamin A should be administered 2 hours prior to or post orlistat administration. </td></tr><tr><td><a href="/drugs/DB00163">Vitamin E</a></td><td>Orlistat may impair the absorption of vitamin E, a fat soluble vitamin. Oral vitamin E should be administered 2 hours prior to or post orlistat administration.
+</td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>Orlistat may increase the anticoagulant effect of warfarin.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take with meals, or upto 1 hour after a meal. If patient misses a meal, or has a fat-free meal, he/she may skip the corresponding dose.</li></ul></td></tr></tbody></table>

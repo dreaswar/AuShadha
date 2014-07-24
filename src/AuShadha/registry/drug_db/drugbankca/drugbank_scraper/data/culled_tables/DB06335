@@ -1,0 +1,193 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Saxagliptin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB06335</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Saxagliptin (rINN) is an orally active hypoglycemic (anti-diabetic drug) of the new dipeptidyl peptidase-4 (<span class="caps">DPP</span>-4) inhibitor class of drugs. <span class="caps">FDA</span> approved on July 31, 2009.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB06335/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB06335/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06335.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06335.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06335.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06335.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06335.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB06335">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Onglyza</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Saxagliptin Hydrochloride </strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000158/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000158/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: TUAZNHHHYVBVBR-NHKADLRUSA-N</li>
+              <li>Monoisotopic Mass: 351.171354798</li>
+              <li>Average Mass: 351.871</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000158">DBSALT000158</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Onglyza</td><td>Bristol-Myers Squibb</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Kombiglyze </td><td>Saxagliptin and metformin hydrochloride </td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/dipeptidyl-peptidase-iv-inhibitors">Dipeptidyl-Peptidase IV Inhibitors</a></li>
+<li><a href="/mesh/antidiabetic-agents">Antidiabetic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>361442-04-8</td></tr><tr><th>Weight</th><td>Average: 315.41<br>Monoisotopic: 315.194677059</td></tr><tr><th>Chemical Formula</th><td>C<sub>18</sub>H<sub>25</sub>N<sub>3</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>QGJUIPDUBHWZPV-SGTAVMJGSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C18H25N3O2/c19-8-13-2-12-3-14(12)21(13)16(22)15(20)17-4-10-1-11(5-17)7-18(23,6-10)9-17/h10-15,23H,1-7,9,20H2/t10?,11?,12-,13+,14+,15-,17?,18?/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(1S,3S,5S)-2-[(2S)-2-amino-2-(3-hydroxyadamantan-1-yl)acetyl]-2-azabicyclo[3.1.0]hexane-3-carbonitrile</div></td></tr><tr><th>SMILES</th><td><div class="wrap">N[C@H](C(=O)N1[C@H]2C[C@H]2C[C@H]1C#N)C12CC3CC(CC(O)(C3)C1)C2</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Alpha Amino Acid Amides</td></tr><tr><th>Alternative parents</th><td>N-Acylpiperidines; Cyclohexanols; Pyrrolidines; Tertiary Alcohols; Tertiary Carboxylic Acid Amides; Tertiary Amines; Cyclic Alcohols and Derivatives; Nitriles; Enolates; Polyamines; Carboxylic Acids; Monoalkylamines</td></tr><tr><th>Substituents</th><td>n-acyl-piperidine; cyclohexanol; piperidine; tertiary carboxylic acid amide; pyrrolidine; tertiary alcohol; cyclic alcohol; tertiary amine; carboxamide group; carboxylic acid; carbonitrile; enolate; polyamine; nitrile; amine; alcohol; organonitrogen compound; primary amine; primary aliphatic amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the alpha amino acid amides. These are amide derivatives of alpha amino acids.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Treatment of type 2 diabetes mellitus to improve glycemic control in combination with other agents or as monotherapy. </td></tr><tr><th>Pharmacodynamics</th><td>Post-administration of saxagliptin, GLP-1 and GIP levels rise up to 2- to 3- fold. Because it is very selective of DPP-4 inhibition, there are fewer systemic side effects. Saxagliptin inhibits DPP-4 enzyme activity for a 24-hour period. It also decreased glucagon concentrations and increased glucose-dependent insulin secretion from pancreatic beta cells. The half maximal inhibitory concentration (IC50) is 0.5 nmol/L.  Saxagliptin did not prolong the QTc interval to a clinically significant degree. </td></tr><tr><th>Mechanism of action</th><td>Saxagliptin is a dipeptidyl peptidase-4 (DPP-4) inhibitor antidiabetic for the treatment of type 2 diabetes. DPP-4 inhibitors are a class of compounds that work by affecting the action of natural hormones in the body called incretins. Incretins decrease blood sugar by increasing consumption of sugar by the body, mainly through increasing insulin production in the pancreas, and by reducing production of sugar by the liver. [Bristol-Myers Squibb Press Release]
+DPP-4 is a membrane associated peptidase which is found in many tissues, lymphocytes and plasma. DPP-4 has two main mechanisms of action, an enzymatic function and another mechanism where DPP-4 binds adenosine deaminase, which conveys intracellular signals via dimerization when activated. Saxagliptin forms a reversible, histidine-assisted covalent bond between its nitrile group and the S630 hydroxyl oxygen on DPP-4. The inhibition of DPP-4 increases levels active of glucagon like peptide 1 (GLP-1), which inhibits glucagon production from pancreatic alpha cells and increases production of insulin from pancreatic beta cells.
+</td></tr><tr><th>Absorption</th><td>Following a 5 mg single oral dose of saxagliptin to healthy subjects, the mean plasma AUC values for saxagliptin and its active metabolite were 78 ng&#8226;h/mL and 214 ng&#8226;h/mL, respectively. The corresponding plasma Cmax values were 24 ng/mL and 47 ng/mL, respectively. Saxagliptin did not accumulate following repeated doses. The median time to maximum concentration (Tmax) following the 5 mg once daily dose was 2 hours for saxagliptin and 4 hours for its active metabolite.
+Bioavailability, 2.5 - 50 mg dose = 67% </td></tr><tr><th>Volume of distribution</th><td><p>151 L</p></td></tr><tr><th>Protein binding</th><td>The in vitro protein binding of saxagliptin and its active metabolite in human serum is negligible (</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>The metabolism of saxagliptin is primarily mediated by cytochrome P450 3A4/5 (CYP3A4/5). 50% of the absorbed dose will undergo hepatic metabolism. The major metabolite of saxagliptin, 5-hydroxy saxagliptin, is also a DPP4 inhibitor, which is one-half as potent as saxagliptin. </p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Saxagliptin</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li>
+<li><a href="/biodb/bio_entities/BE0002362" target="_blank">Cytochrome P450 3A5</a></li></ul></td><td><a href="/metabolites/DBMET00459">5-hydroxy saxagliptin</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/468">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Saxagliptin is eliminated by both renal and hepatic pathways. Following a single 50 mg dose of 14C-saxagliptin, 24%, 36%, and 75% of the dose was excreted in the urine as saxagliptin, its active metabolite, and total radioactivity, respectively. A total of 22% of the administered radioactivity was recovered in feces representing the fraction of the saxagliptin dose excreted in bile and/or unabsorbed drug from the gastrointestinal tract.</td></tr><tr><th>Half life</th><td>Saxagliptin = 2.5 hours;
+5-hydroxy saxagliptin = 3.1 hours; </td></tr><tr><th>Clearance</th><td><p>Renal clearance, single 50 mg dose = 14 L/h</p></td></tr><tr><th>Toxicity</th><td>Adverse reactions reported in &#8805;5% of patients treated with saxagliptin and more commonly than in patients treated with placebo are: upper respiratory tract infection, urinary tract infection, and headache.</td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9894</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8823</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5446</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5909</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.696</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7875</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7903</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8618</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7519</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5944</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8448</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8017</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8198</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.81</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8641</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9032</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7569
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9122
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.7529 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9912
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.832
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Bristol myers squibb co</li></ul></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>2.5 mg, 5 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01211">Clarithromycin</a></td><td>Clarithromycin is an inhibitor of CYP3A4 which increases exposure of saxagliptin. Decrease dose of saxagliptin to 2.5 mg per day. </td></tr><tr><td><a href="/drugs/DB00872">Conivaptan</a></td><td>CYP3A4 Inhibitors (Strong) may increase the serum concentration of Saxagliptin. Limit saxagliptin dose to 2.5 mg/day and monitor for increased saxagliptin levels/effects (e.g., hypoglycemia) with concomitant administration of a strong CYP3A4 inhibitor (e.g., ketoconazole). Monitor for decreased saxagliptin levels/effects with discontinuation of concomitant CYP3A4 inhibitor. </td></tr><tr><td><a href="/drugs/DB00343">Diltiazem</a></td><td>Diltiazem is a moderate inhibitor of CYP3A4 and increases AUC of saxagliptin by 109%. Exposure of the active metabolite decreased by 34%. However, these changes in pharmacokinetics are not clinical significant. </td></tr><tr><td><a href="/drugs/DB00199">Erythromycin</a></td><td>Erythromycin is an inhibitor of CYP3A4 which increases exposure of saxagliptin. Decrease dose of saxagliptin to 2.5 mg per day. </td></tr><tr><td><a href="/drugs/DB00224">Indinavir</a></td><td>Indinavir is an inhibitor of CYP3A4 which increases exposure of saxagliptin. Decrease dose of saxagliptin to 2.5 mg per day. </td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Ketoconazole is a strong inhibitor of CYP3A4/5 which increases exposure of saxagliptin. The exposure of the active metabolite, 5-hydroxy saxagliptin, also decreases. Decrease dose of saxagliptin to 2.5 mg per day. </td></tr><tr><td><a href="/drugs/DB01149">Nefazodone</a></td><td>Nefazodone is an inhibitor of CYP3A4 which increases exposure of saxagliptin. Decrease dose of saxagliptin to 2.5 mg per day. </td></tr><tr><td><a href="/drugs/DB00220">Nelfinavir</a></td><td>Nelfinavir is an inhibitor of CYP3A4 which increases exposure of saxagliptin. Decrease dose of saxagliptin to 2.5 mg per day. </td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin is a strong inducer of CYP3A4 which decreases exposure of saxagliptin. The exposure of the active metabolite, 5-hydroxy saxagliptin, also increases. </td></tr><tr><td><a href="/drugs/DB00503">Ritonavir</a></td><td>Ritonavir is an inhibitor of CYP3A4 which increases exposure of saxagliptin. Decrease dose of saxagliptin to 2.5 mg per day. </td></tr><tr><td><a href="/drugs/DB00641">Simvastatin</a></td><td>Simvastatin is a moderate inhibitor of CYP3A4 and increases AUC of saxagliptin by 12%. Exposure of the active metabolite decreased by 2%. However, these changes in pharmacokinetics are not clinical significant. </td></tr><tr><td><a href="/drugs/DB00052">Somatropin recombinant</a></td><td>Somatropin may antagonize the hypoglycemic effect of saxagliptin. Monitor for changes in fasting and postprandial blood sugars.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of saxagliptin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of saxagliptin if voriconazole is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Administration with a high-fat meal resulted in an increase in Tmax of saxagliptin by approximately 20 minutes as compared to fasted conditions. There was a 27% increase in the AUC of saxagliptin when given with a meal as compared to fasted conditions.</li></ul></td></tr></tbody></table>

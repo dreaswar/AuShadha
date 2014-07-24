@@ -1,0 +1,247 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Levetiracetam</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01202</strong>&#160; (APRD01068)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Levetiracetam is an anticonvulsant medication used to treat epilepsy. Levetiracetam may selectively prevent hypersynchronization of epileptiform burst firing and propagation of seizure activity. Levetiracetam binds to the synaptic vesicle protein SV2A, which is thought to be involved in the regulation of vesicle exocytosis. Although the molecular significance of levetiracetam binding to synaptic vesicle protein SV2A is not understood, levetiracetam and related analogs showed a rank order of affinity for SV2A which correlated with the potency of their antiseizure activity in audiogenic seizure-prone mice.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01202/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01202/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01202.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01202.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01202.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01202.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01202.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01202">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Levetiracetam</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>INN</td></tr><tr><td>Levetiracetamum</td><td>Latin</td><td>INN</td></tr><tr><td>Levitiracetam</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Keppra</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Levetiractam</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/nootropic-agents">Nootropic Agents</a></li>
+<li><a href="/mesh/anticonvulsants">Anticonvulsants</a></li></ul></td></tr><tr><th>CAS number</th><td>102767-28-2</td></tr><tr><th>Weight</th><td>Average: 170.209<br>Monoisotopic: 170.105527702</td></tr><tr><th>Chemical Formula</th><td>C<sub>8</sub>H<sub>14</sub>N<sub>2</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>HPHUVLMMVZITSG-ZCFIWIBFSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C8H14N2O2/c1-2-6(8(9)12)10-5-3-4-7(10)11/h6H,2-5H2,1H3,(H2,9,12)/t6-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2R)-2-(2-oxopyrrolidin-1-yl)butanamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC[C@@H](N1CCCC1=O)C(N)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Pyrrolidines</td></tr><tr><th>Subclass</th><td>Pyrrolidones</td></tr><tr><th>Direct parent</th><td>Pyrrolidones</td></tr><tr><th>Alternative parents</th><td>Tertiary Carboxylic Acid Amides; Tertiary Amines; Primary Carboxylic Acid Amides; Lactams; Polyamines; Enolates; Carboxylic Acids</td></tr><tr><th>Substituents</th><td>tertiary carboxylic acid amide; tertiary amine; lactam; primary carboxylic acid amide; carboxamide group; carboxylic acid derivative; enolate; polyamine; carboxylic acid; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the pyrrolidones. These are compounds containing a pyrrolidine ring which bears a ketone.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used as adjunctive therapy in the treatment of partial onset seizures in adults and children 4 years of age and older with epilepsy.</td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td>The precise mechanism(s) by which levetiracetam exerts its antiepileptic effect is unknown. The antiepileptic activity of levetiracetam was assessed in a number of animal models of epileptic seizures. Levetiracetam did not inhibit single seizures induced by maximal stimulation with electrical current or different chemoconvulsants and showed only minimal activity in submaximal stimulation and in threshold tests. Protection was observed, however, against secondarily generalized activity from focal seizures induced by pilocarpine and kainic acid, two chemoconvulsants that induce seizures that mimic some features of human complex partial seizures with secondary generalization. Levetiracetam also displayed inhibitory properties in the kindling model in rats, another model of human complex partial seizures, both during kindling development and in the fully kindled state. The predictive value of these animal models for specific types of human epilepsy is uncertain. Levetiracetam is thought to stimulate synaptic vesicle protein 2A (SV2A), inhibiting neurotransmitter release.</td></tr><tr><th>Absorption</th><td>Rapidly and almost completely absorbed after oral administration (99%). Peak plasma concentrations occurring in about an hour following oral administration in fasted subjects.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Very low (</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>The major metabolic pathway of levetiracetam (24% of dose) is an enzymatic hydrolysis of the acetamide group. No CYP450 metabolism detected.</p></td></tr><tr><th>Route of elimination</th><td>Sixty-six percent (66%) of the dose is renally excreted unchanged. The metabolites have no known pharmacological activity and are renally excreted. The mechanism of excretion is glomerular filtration with subsequent partial tubular reabsorption.</td></tr><tr><th>Half life</th><td>6-8 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>0.96 mL/min/kg</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Side effects include aggression, agitation, coma, drowsiness, reduced consciousness, slowed breathing</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.988</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9821</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6114</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5137</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5612</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8786</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7024</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8801</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8184</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5191</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9394</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7603</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9471</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8459</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9669</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9502</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8783
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9094
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9305
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.1707 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9206
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8735
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Ucb inc</li>
+<li>Nexus pharmaceuticals inc</li>
+<li>Sun pharmaceutical industries ltd</li>
+<li>Actavis mid atlantic llc</li>
+<li>Amneal pharmaceuticals</li>
+<li>Aurobindo pharma usa inc</li>
+<li>Cypress pharmaceutical inc</li>
+<li>Roxane laboratories inc</li>
+<li>Silarx pharmaceuticals inc</li>
+<li>Taro pharmaceutical industries ltd</li>
+<li>Tolmar inc</li>
+<li>Wockhardt eu operations (swiss) ag</li>
+<li>Apotex inc</li>
+<li>Aurobindo pharma ltd</li>
+<li>Boca pharmacal inc</li>
+<li>Cobalt laboratories inc</li>
+<li>Dr reddys laboratories ltd</li>
+<li>Invagen pharmaceuticals inc</li>
+<li>Lupin ltd</li>
+<li>Methapharm inc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Orchid healthcare</li>
+<li>Sandoz inc</li>
+<li>Solco healthcare us llc</li>
+<li>Teva pharmaceuticals usa</li>
+<li>Torrent pharmaceuticals ltd</li>
+<li>Watson laboratories inc</li>
+<li>Watson laboratories inc florida</li>
+<li>Wockhardt ltd</li>
+<li>Zydus pharmaceuticals usa inc</li>
+<li>UCB Inc.</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li><a href="http://www.atlanticbiologicals.com">Atlantic Biologicals Corporation</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li><a href="http://www.bocapharmacal.com">Boca Pharmacal</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.caremark.com">Caremark LLC</a></li>
+<li><a href="http://www.catalent.com">Catalent Pharma Solutions</a></li>
+<li><a href="http://www.cipla.com">Cipla Ltd.</a></li>
+<li><a href="http://www.cobaltpharma.com">Cobalt Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.cypressrx.com">Cypress Pharmaceutical Inc.</a></li>
+<li>D.M. Graham Laboratories Inc.</li>
+<li>Dept Health Central Pharmacy</li>
+<li>DispenseXpress Inc.</li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li>Fleming and Co.</li>
+<li><a href="http://www.glenmark-generics.com">Glenmark Generics Ltd.</a></li>
+<li><a href="http://www.greenstonellc.com">Greenstone LLC</a></li>
+<li><a href="http://www.innoviantpharmacy.com">Innoviant Pharmacy Inc.</a></li>
+<li><a href="http://www.invagen.com">InvaGen Pharmaceuticals Inc.</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.lupinpharmaceuticals.com">Lupin Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li>Oso Biopharmaceuticals Manufacturing LLC</li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li>Pharmaceutical Association</li>
+<li>Pharmacy Service Center</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.prepaksys.com">Prepak Systems Inc.</a></li>
+<li>Quality Care</li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.roxane.com">Roxane Labs</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.silarx.com">Silarx Pharmaceuticals</a></li>
+<li><a href="http://www.legacypharmaceuticals.com">Solco Healthcare US LLC</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li><a href="http://www.sunpharma.com">Sun Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.tarousa.com">Taro Pharmaceuticals USA</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.tolmar.com">Tolmar Inc.</a></li>
+<li><a href="http://www.torrentpharma.com">Torrent Pharmaceuticals</a></li>
+<li><a href="http://www.ucb.com">UCB Pharma</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li>Vangard Labs Inc.</li>
+<li><a href="http://www.vistapharm.com">Vistapharm Inc.</a></li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>Concomitant therapy may results in additive adverse CNS effects.</td></tr><tr><td><a href="/drugs/DB00427">Triprolidine</a></td><td>The CNS depressants, Triprolidine and Levetiracetam, may increase adverse/toxic effects due to additivity. Monitor for increased CNS depressant effects during concomitant therapy. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take without regard to meals. Food does not affect bioavailabilty.</li></ul></td></tr></tbody></table>

@@ -1,0 +1,263 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Amantadine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00915</strong>&#160; (APRD00787)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An antiviral that is used in the prophylactic or symptomatic treatment of influenza A. It is also used as an antiparkinsonian agent, to treat extrapyramidal reactions, and for postherpetic neuralgia. The mechanisms of its effects in movement disorders are not well understood but probably reflect an increase in synthesis and release of dopamine, with perhaps some inhibition of dopamine uptake. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00915/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00915/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00915.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00915.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00915.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00915.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00915.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00915">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>1-adamantanamine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>1-adamantylamine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>1-aminoadamantane</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Amantidine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Aminoadamantane</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Amantadine hydrochloride</strong>
+          <div class="cas">665-66-7</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000203/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000203/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: WOLHOYHSEKDWQH-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 187.112777288</li>
+              <li>Average Mass: 187.71</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000203">DBSALT000203</a></td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Amantadine sulfate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000830/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000830/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000830">DBSALT000830</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Endantadine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>PK-Merz</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Symadine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Symmetrel</td><td>Endo Pharmaceuticals</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antiviral-agents">Antiviral Agents</a></li>
+<li><a href="/mesh/dopamine-agents">Dopamine Agents</a></li>
+<li><a href="/mesh/antiparkinson-agents">Antiparkinson Agents</a></li>
+<li><a href="/mesh/analgesics-non-narcotic">Analgesics, Non-Narcotic</a></li></ul></td></tr><tr><th>CAS number</th><td>768-94-5</td></tr><tr><th>Weight</th><td>Average: 151.2487<br>Monoisotopic: 151.136099549</td></tr><tr><th>Chemical Formula</th><td>C<sub>10</sub>H<sub>17</sub>N</td></tr><tr><th>InChI Key</th><td>DKNWSYNQZKUICI-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C10H17N/c11-10-4-7-1-8(5-10)3-9(2-7)6-10/h7-9H,1-6,11H2</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">adamantan-1-amine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC12CC3CC(CC(C3)C1)C2</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB00915.gif?1265922773">show</a>(7.71 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organonitrogen Compounds</td></tr><tr><th>Class</th><td>Amines</td></tr><tr><th>Subclass</th><td>Polyamines</td></tr><tr><th>Direct parent</th><td>Polyamines</td></tr><tr><th>Alternative parents</th><td>Monoalkylamines</td></tr><tr><th>Substituents</th><td>primary aliphatic amine; primary amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the polyamines. These are compounds containing more than one amine group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the chemoprophylaxis, prophylaxis, and treatment of signs and symptoms of infection caused by various strains of influenza A virus. Also for the treatment of parkinsonism and drug-induced extrapyramidal reactions.</td></tr><tr><th>Pharmacodynamics</th><td>Amantadine is an antiviral drug which also acts as an antiparkinson agent, for which it is usually combined with L-DOPA when L-DOPA responses decline (probably due to tolerance). It is a derivate of adamantane, like a similar drug rimantadine. The mechanism of action of amantadine in the treatment of Parkinson's disease and drug-induced extrapyramidal reactions is not known. It has been shown to cause an increase in dopamine release in the animal brain, and does not possess anticholinergic activity.</td></tr><tr><th>Mechanism of action</th><td>The mechanism of its antiparkinsonic effect is not fully understood, but it appears to be releasing dopamine from the nerve endings of the brain cells, together with stimulation of norepinephrine response. It also has NMDA receptor antagonistic effects. The antiviral mechanism seems to be unrelated. The drug interferes with a viral protein, M2 (an ion channel), which is needed for the viral particle to become "uncoated" once it is taken inside the cell by endocytosis.</td></tr><tr><th>Absorption</th><td>Amantadine is well absorbed orally from the gastrointestinal tract.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>3 to 8 L/kg [healthy subjects]</li>
+</ul></td></tr><tr><th>Protein binding</th><td>Approximately 67% bound to plasma proteins over a concentration range of 0.1 to 2.0 &#181;g/mL.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>No appreciable metabolism, although negligible amounts of an acetyl metabolite have been identified.</p></td></tr><tr><th>Route of elimination</th><td>It is primarily excreted unchanged in the urine by glomerular filtration and tubular secretion.</td></tr><tr><th>Half life</th><td>Mean half-lives ranged from 10 to 14 hours, however renal function impairment causes a severe increase in half life to 7 to 10 days.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>0.2 &#8211; 0.3 L/hr/kg</li>
+	<li>0.10 +/- 0.04 L/hr/kg [healthy, elderly male]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Deaths have been reported from overdose with amantadine. The lowest reported acute lethal dose was 2 grams. Drug overdose has resulted in cardiac, respiratory, renal or central nervous system toxicity. Cardiac dysfunction includes arrhythmia, tachycardia and hypertension. Pulmonary edema and respiratory distress (including ARDS) have been reported. Renal dysfunction including increased BUN, decreased creatinine clearance and renal insufficiency can occur. Central nervous system effects that have been reported include insomnia, anxiety, aggressive behavior, hypertonia, hyperkinesia, tremor, confusion, disorientation, depersonalization, fear, delirium, hallucination, psychotic reactions, lethargy, somnolence and coma. Seizures may be exacerbated in patients with prior history of seizure disorders. Hyperthermia has also been observed in cases where a drug overdose has occurred.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li>
+<li>Various viruses</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9903</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9769</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.6248</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.7275</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9277</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8549</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7474</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8306</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7092</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6561</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9046</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.831</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.5886</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7836
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7647
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9456
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.2564 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9779
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8695
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Actavis totowa llc</li>
+<li>Banner pharmacaps inc</li>
+<li>Sandoz inc</li>
+<li>Usl pharma inc</li>
+<li>Watson laboratories inc</li>
+<li>Solvay pharmaceuticals</li>
+<li>Endo pharmaceuticals inc</li>
+<li>Actavis mid atlantic llc</li>
+<li>Carolina medical products co</li>
+<li>Hi tech pharmacal co inc</li>
+<li>Mikart inc</li>
+<li>Pharmaceutical assoc inc div beach products</li>
+<li>Silarx pharmaceuticals inc</li>
+<li>Teva pharmaceuticals usa</li>
+<li>Vintage pharmaceuticals llc</li>
+<li>Wockhardt eu operations (swiss) ag</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Anip Acquisition Co.</li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.banpharm.com">Banner Pharmacaps Inc.</a></li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://www.carolinamedical.com">Carolina Medical Products Co.</a></li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.endo.com">Endo Pharmaceuticals Inc.</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li>Heartland Repack Services LLC</li>
+<li><a href="http://www.hitechpharm.com">Hi Tech Pharmacal Co. Inc.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.lannett.com">Lannett Co. Inc.</a></li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.mikart.com">Mikart Inc.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.patientfirst.com">Patient First Corp.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li>Pharmaceutical Association</li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Redpharm Drug</li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.spectrumpharm.com">Spectrum Pharmaceuticals</a></li>
+<li>Tya Pharmaceuticals</li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li><a href="http://www.urlpharma.com">United Research Laboratories Inc.</a></li>
+<li><a href="http://www.upsher-smith.com">Upsher Smith Laboratories</a></li>
+<li>USL Pharma Inc.</li>
+<li>Vangard Labs Inc.</li>
+<li>Vintage Pharmaceuticals Inc.</li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr><tr><td>Syrup</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00843">Donepezil</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00674">Galantamine</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01043">Memantine</a></td><td>Increased risk of CNS adverse effects with this association</td></tr><tr><td><a href="/drugs/DB01267">Paliperidone</a></td><td>The atypical antipsychotic agent, paliperidone, may decrease the therapeutic effect of the anti-Parkinson's agent, amantadine. This interaction may be due to the dopamine antagonist properties of paliperidone. Consider an alternate antipsychotic in those with Parkinson's disease or consider using clozapine or quetiapine if an atypical antipsychotic is necessary. </td></tr><tr><td><a href="/drugs/DB00989">Rivastigmine</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01623">Thiothixene</a></td><td>Thiothixene may antaonize the effects of the anti-Parkinsonian agent, Amantadine. Consider alternate therapy or monitor for decreased effects of both agents. </td></tr><tr><td><a href="/drugs/DB00246">Ziprasidone</a></td><td>The atypical antipsychotic, ziprasidone, may antagonize the effect of the dopamine agonist, amantadine. Consider alternate therapy or monitor for worsening of movement disorder. </td></tr><tr><td><a href="/drugs/DB01624">Zuclopenthixol</a></td><td>Antagonism may occur between zuclopenthixol, a dopamine D2 receptor antagonist, and amantadine, a dopamine agonist. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of both agents if concurrent therapy is initiated, discontinued or dose(s) changed. </td></tr><tr><td><a href="/drugs/DB08919">Zuclopenthixol acetate</a></td><td>Antagonism may occur between zuclopenthixol, a dopamine D2 receptor antagonist, and amantadine, a dopamine agonist. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of both agents if concurrent therapy is initiated, discontinued or dose(s) changed. </td></tr><tr><td><a href="/drugs/DB08920">Zuclopenthixol decanoate</a></td><td>Antagonism may occur between zuclopenthixol, a dopamine D2 receptor antagonist, and amantadine, a dopamine agonist. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of both agents if concurrent therapy is initiated, discontinued or dose(s) changed. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid alcohol.</li>
+<li>Take without regard to meals.</li></ul></td></tr></tbody></table>

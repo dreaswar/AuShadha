@@ -1,0 +1,189 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Hydroxyurea</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01005</strong>&#160; (APRD00023)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An antineoplastic agent that inhibits <span class="caps">DNA</span> synthesis through the inhibition of ribonucleoside diphosphate reductase. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01005/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01005/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01005.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01005.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01005.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01005.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01005.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01005">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Carbamohydroxamic Acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Carbamohydroximic Acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Carbamoyl Oxime</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Carbamyl Hydroxamate</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Hydroxycarbamide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>INN</td></tr><tr><td>N-Carbamoylhydroxylamine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>N-Hydroxyurea</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Droxia</td><td>Bristol-Myers Squibb</td></tr><tr><td>Hydrea</td><td>Bristol-Myers Squibb</td></tr><tr><td>Litalir</td><td>Bristol-Myers Squibb</td></tr><tr><td>Onco-Carbide</td><td>Teofarma</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents">Antineoplastic Agents</a></li>
+<li><a href="/mesh/enzyme-inhibitors">Enzyme Inhibitors</a></li>
+<li><a href="/mesh/nucleic-acid-synthesis-inhibitors">Nucleic Acid Synthesis Inhibitors</a></li>
+<li><a href="/mesh/antisickling-agents">Antisickling Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>127-07-1</td></tr><tr><th>Weight</th><td>Average: 76.0547<br>Monoisotopic: 76.027277382</td></tr><tr><th>Chemical Formula</th><td>CH<sub>4</sub>N<sub>2</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>VSNHCAURESNICA-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/CH4N2O2/c2-1(4)3-5/h5H,(H3,2,3,4)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">hydroxyurea</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC(=O)NO</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organonitrogen Compounds</td></tr><tr><th>Class</th><td>Amines</td></tr><tr><th>Subclass</th><td>Polyamines</td></tr><tr><th>Direct parent</th><td>Polyamines</td></tr><tr><th>Alternative parents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Substituents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Classification description</th><td>This compound belongs to the polyamines. These are compounds containing more than one amine group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For management of melanoma, resistant chronic myelocytic leukemia, and recurrent, metastatic, or inoperable carcinoma of the ovary and Sickle-cell anemia.</td></tr><tr><th>Pharmacodynamics</th><td>Hydroxyurea has dose-dependent synergistic activity with cisplatin <i>in vitro</i>. <i>In vivo</i> Hydroxyurea showed activity in combination with cisplatin against the LX-1 and CALU-6 human lung xenografts, but minimal activity was seen with the NCI-H460 or NCI-H520 xenografts. Hydroxyurea was synergistic with cisplatin in the Lewis lung murine xenograft. Sequential exposure to Hydroxyurea 4 hours before cisplatin produced the greatest interaction.</td></tr><tr><th>Mechanism of action</th><td>Hydroxyurea is converted to a free radical nitroxide (NO) in vivo, and transported by diffusion into cells where it quenches the tyrosyl free radical at the active site of the M2 protein subunit of ribonucleotide reductase, inactivating the enzyme. The entire replicase complex, including ribonucleotide reductase, is inactivated and DNA synthesis is selectively inhibited, producing cell death in S phase and synchronization of the fraction of cells that survive. Repair of DNA damaged by chemicals or irradiation is also inhibited by hydroxyurea, offering potential synergy between hydroxyurea and radiation or alkylating agents. Hydroxyurea also increases the level of fetal hemoglobin, leading to a reduction in the incidence of vasoocclusive crises in sickle cell anemia. Levels of fetal hemoglobin increase in response to activation of soluble guanylyl cyclase (sGC) by hydroxyurea-derived NO.</td></tr><tr><th>Absorption</th><td>Well absorbed from the gastrointestinal tract.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic.</p></td></tr><tr><th>Route of elimination</th><td>Renal excretion is a pathway of elimination.</td></tr><tr><th>Half life</th><td>3-4 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral, mouse: LD<sub>50</sub> = 7330 mg/kg; Oral, rat: LD<sub>50</sub> = 5760 mg/kg
+Teratogenicity: Teratogenic effects have occurred in experimental animals.Hydroxyurea use during a small number of human pregnancies has been reported. Adverse effects have not been observed in any of the exposed newborns.
+Reproductive Effects: Adverse reproductive effects have occurred in experimental animals.
+Mutagenicity: Mutagenic effects have occurred in experimental animals.Mutagenic effects have occurred in humans.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9154</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9382</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7235</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.8437</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9736</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9946</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9697</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8063</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8363</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7784</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9077</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.927</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9026</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9072</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9778</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.8685
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.6129
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.7305
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.1524 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9846
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9715
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Bristol myers squibb co</li>
+<li>Barr laboratories inc</li>
+<li>Duramed pharmaceuticals inc sub barr laboratories inc</li>
+<li>Par pharmaceutical inc</li>
+<li>Roxane laboratories inc</li>
+<li>Hospira inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li>Barr Pharmaceuticals</li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.duramed.ca">Duramed</a></li>
+<li>E.R. Squibb and Sons LLC</li>
+<li>Kaiser Foundation Hospital</li>
+<li>Liberty Pharmaceuticals</li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.medisca.com">Medisca Inc.</a></li>
+<li>MGI Pharma</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.parpharm.com">Par Pharmaceuticals</a></li>
+<li>Pharmaceutical Utilization Management Program VA Inc.</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.roxane.com">Roxane Labs</a></li>
+<li><a href="http://www.urlpharma.com">United Research Laboratories Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><ul><li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/6588">MS/MS Spectrum GC-MS </a></li></ul></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB08879">Belimumab</a></td><td> Belimumab increases the immunosupressive effect. Interaction is significant so monitor closely. </td></tr><tr><td><a href="/drugs/DB06769">Bendamustine</a></td><td>May increase risk of myelosuppression. </td></tr><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take without regard to meals. Drink liberally.</li></ul></td></tr></tbody></table>

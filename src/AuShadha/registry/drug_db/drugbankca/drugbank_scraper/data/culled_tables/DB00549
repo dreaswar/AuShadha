@@ -1,0 +1,177 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Zafirlukast</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00549</strong>&#160; (APRD00377)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Zafirlukast is an oral leukotriene receptor antagonist (<span class="caps">LTRA</span>) for the maintenance treatment of asthma, often used in conjunction with an inhaled steroid and/or long-acting bronchodilator. It is available as a tablet and is usually dosed twice daily. Another leukotriene receptor antagonist is montelukast (Singulair), which is usually taken just once daily.</p>
+<p>Zafirlukast blocks the action of the cysteinyl leukotrienes on the CysLT1 receptors, thus reducing constriction of the airways, build-up of mucus in the lungs and inflammation of the breathing passages.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00549/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00549/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00549.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00549.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00549.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00549.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00549.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00549">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>ICI-204,219</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Accolate</td><td>AstraZeneca </td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-asthmatic-agents">Anti-Asthmatic Agents</a></li>
+<li><a href="/mesh/leukotriene-antagonists">Leukotriene Antagonists</a></li></ul></td></tr><tr><th>CAS number</th><td>107753-78-6</td></tr><tr><th>Weight</th><td>Average: 575.675<br>Monoisotopic: 575.209006493</td></tr><tr><th>Chemical Formula</th><td>C<sub>31</sub>H<sub>33</sub>N<sub>3</sub>O<sub>6</sub>S</td></tr><tr><th>InChI Key</th><td>YEEZWCHGZNKEEK-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C31H33N3O6S/c1-20-8-4-7-11-29(20)41(37,38)33-30(35)22-13-12-21(28(17-22)39-3)16-23-19-34(2)27-15-14-24(18-26(23)27)32-31(36)40-25-9-5-6-10-25/h4,7-8,11-15,17-19,25H,5-6,9-10,16H2,1-3H3,(H,32,36)(H,33,35)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">cyclopentyl N-{3-[(2-methoxy-4-{[(2-methylbenzene)sulfonyl]carbamoyl}phenyl)methyl]-1-methyl-1H-indol-5-yl}carbamate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">COC1=C(CC2=CN(C)C3=C2C=C(NC(=O)OC2CCCC2)C=C3)C=CC(=C1)C(=O)NS(=O)(=O)C1=CC=CC=C1C</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Phenylpropanoids and Polyketides</td></tr><tr><th>Class</th><td>Stilbenes</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Stilbenes</td></tr><tr><th>Alternative parents</th><td>Benzenesulfonamides; Phenylcarbamates; Indoles; Benzamides; Anisoles; Benzoyl Derivatives; Toluenes; Alkyl Aryl Ethers; N-methylpyrroles; Sulfonyls; Sulfonamides; Carbamic Acids and Derivatives; Polyamines; Carboxylic Acid Amides; Enolates</td></tr><tr><th>Substituents</th><td>benzenesulfonamide; phenylcarbamate; benzamide; indole or derivative; indole; anisole; benzoyl; phenol ether; alkyl aryl ether; toluene; n-methylpyrrole; n-substituted pyrrole; benzene; substituted pyrrole; sulfonamide; pyrrole; sulfonyl; sulfonic acid derivative; carboxamide group; carbamic acid derivative; polyamine; carboxylic acid derivative; ether; enolate; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the stilbenes. These are organic compounds containing a 1,2-diphenylethylene moiety. Stilbenes (C6-C2-C6 ) are derived from the common phenylpropene (C6-C3) skeleton building block. The introduction of one or more hydroxyl groups  to a phenyl ring lead to stilbenoids.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the prophylaxis and chronic treatment of asthma.</td></tr><tr><th>Pharmacodynamics</th><td>Zafirlukast is a synthetic, selective peptide leukotriene receptor antagonist (LTRA) indicated for the prophylaxis and chronic treatment of asthma. Patients with asthma were found in one study to be 25-100 times more sensitive to the bronchoconstricting activity of inhaled LTD<sub>4</sub> than nonasthmatic subjects. <i>In vitro</i> studies demonstrated that zafirlukast antagonized the contractile activity of three leukotrienes (LTC<sub>4</sub>, LTD<sub>4</sub> and LTE<sub>4</sub>) in conducting airway smooth muscle from laboratory animals and humans. Zafirlukast prevented intradermal LTD<sub>4</sub>-induced increases in cutaneous vascular permeability and inhibited inhaled LTD<sub>4</sub>-induced influx of eosinophils into animal lungs.</td></tr><tr><th>Mechanism of action</th><td>Zafirlukast is a selective and competitive receptor antagonist of leukotriene D4 and E4 (LTD<sub>4</sub> and LTE4), components of slow-reacting substance of anaphylaxis (SRSA). Cysteinyl leukotriene production and receptor occupation have been correlated with the pathophysiology of asthma, including airway edema, smooth muscle constriction, and altered cellular activity associated with the inflammatory process, which contribute to the signs and symptoms of asthma.</td></tr><tr><th>Absorption</th><td>Rapidly absorbed following oral administration, reduced following a high-fat or high-protein meal.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>70 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td>99%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Zafirlukast</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET00307">Zafirlukast metabolite M5</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/308">Details</a></td></tr><tr><td>Zafirlukast</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01250">Zafirlukast metabolite M1</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1406">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01250">Zafirlukast metabolite M1</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003608" target="_blank">Arylamine N-acetyltransferase 1</a></li>
+<li><a href="/biodb/bio_entities/BE0003607" target="_blank">Arylamine N-acetyltransferase 2</a></li></ul></td><td><a href="/metabolites/DBMET01251">Zafirlukast metabolite M2</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1407">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01251">Zafirlukast metabolite M2</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01252">Zafirlukast metabolite M4</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1408">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01252">Zafirlukast metabolite M4</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01253">Zafirlukast metabolite M3</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1409">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00307">Zafirlukast metabolite M5</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01254">Zafirlukast metabolite M8</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1410">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01254">Zafirlukast metabolite M8</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01253">Zafirlukast metabolite M3</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1411">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>The most common metabolic products are hydroxylated metabolites which are excreted in the feces.</td></tr><tr><th>Half life</th><td>10 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>apparent oral CL=20 L/h</li>
+	<li>11.4 L/h [7-11 yrs]</li>
+	<li>9.2 L/h [5-6 yrs]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Side effects include rash and upset stomach.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.8849</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9153</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6613</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.7027</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6249</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8915</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8475</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5189</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5322</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5261</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.646</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8263</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5826</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.7904</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.9189</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6072
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7292
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9972
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5723 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9216
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.7693
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Astrazeneca uk ltd</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.astrazeneca.ca">AstraZeneca Inc.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.iprpharmaceuticals.com">IPR Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li>Zeneca Pharma Inc.</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>10 mg, 20 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01418">Acenocoumarol</a></td><td>Zafirlukast may inhibit the metabolism of the vitamin K antagonist Acenocoumarol and increase INR and risk of bleeding.</td></tr><tr><td><a href="/drugs/DB01223">Aminophylline</a></td><td>Zafirlukast serum concentrations may be decreased by the theophylline derivative Aminophylline.</td></tr><tr><td><a href="/drugs/DB01101">Capecitabine</a></td><td>Capecitabine, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if capecitabine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00604">Cisapride</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00705">Delavirdine</a></td><td>Delavirdine, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00199">Erythromycin</a></td><td>Erythromycin may decrease the serum concentration and effect of zafirlukast.</td></tr><tr><td><a href="/drugs/DB00322">Floxuridine</a></td><td>Floxuridine, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if floxuridine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00196">Fluconazole</a></td><td>Fluconazole, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if fluconazole is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00544">Fluorouracil</a></td><td>Fluorouracil, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if fluorouracil is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01241">Gemfibrozil</a></td><td>Gemfibrozil, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if gemfibrozil is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Ketoconazole, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if ketoconazole is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00622">Nicardipine</a></td><td>Nicardipine, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if nicardipine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01656">Roflumilast</a></td><td>Increases roflumilast levels. </td></tr><tr><td><a href="/drugs/DB06268">Sitaxentan</a></td><td>Sitaxentan, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if sitaxentan is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00359">Sulfadiazine</a></td><td>Sulfadiazine, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if sulfadiazine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00263">Sulfisoxazole</a></td><td>Sulfisoxazole, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if sulfisoxazole is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00277">Theophylline</a></td><td>Zafirlukast serum concentrations may be decreased by Theophylline.</td></tr><tr><td><a href="/drugs/DB01124">Tolbutamide</a></td><td>Tolbutamide, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if tolbutamide is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take on empty stomach: 1 hour before or 2 hours after meals.</li></ul></td></tr></tbody></table>

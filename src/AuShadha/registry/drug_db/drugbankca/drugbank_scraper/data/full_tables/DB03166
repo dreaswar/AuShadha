@@ -1,0 +1,174 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Acetic acid</strong></td></tr><tr><th>Accession Number</th><td><strong>DB03166</strong>&#160; (DB04184, EXPT00423)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Acetic acid is a product of the oxidation of ethanol and of the destructive distillation of wood. It is used locally, occasionally internally, as a counterirritant and also as a reagent. (Stedman, 26th ed) Acetic acid otic (for the ear) is an antibiotic that treats infections caused by bacteria or fungus.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB03166/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB03166/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03166.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03166.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03166.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03166.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03166.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB03166">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Ethanoat</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Ethanoate</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Acetasol</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Borofair</td><td>Major Pharma</td></tr><tr><td>Volsol</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>VoSoL</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/indicators-and-reagents">Indicators and Reagents</a></li>
+<li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>64-19-7</td></tr><tr><th>Weight</th><td>Average: 59.044<br>Monoisotopic: 59.01330434</td></tr><tr><th>Chemical Formula</th><td>C<sub>2</sub>H<sub>3</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>QTBSBXVTEAMEQO-UHFFFAOYSA-M</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C2H4O2/c1-2(3)4/h1H3,(H,3,4)/p-1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">acetate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC([O-])=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organonitrogen Compounds</td></tr><tr><th>Class</th><td>Amines</td></tr><tr><th>Subclass</th><td>Polyamines</td></tr><tr><th>Direct parent</th><td>Polyamines</td></tr><tr><th>Alternative parents</th><td>Enolates; Carboxylic Acid Salts</td></tr><tr><th>Substituents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Classification description</th><td>This compound belongs to the polyamines. These are compounds containing more than one amine group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used to treat infections in the ear canal.</td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Bacteria</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>Fatty Acid Biosynthesis</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00456?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00456</a></td></tr><tr><td>Salla Disease/Infantile Sialic Acid Storage Disease</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00240?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00240</a></td></tr><tr><td>Heroin Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00407?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00407</a></td></tr><tr><td>Disulfiram Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00429?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00429</a></td></tr><tr><td>Amino Sugar Metabolism</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00045?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00045</a></td></tr><tr><td>Aspartate Metabolism</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00067?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00067</a></td></tr><tr><td>G(M2)-Gangliosidosis: Variant B, Tay-sachs disease</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00534?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00534</a></td></tr><tr><td>Canavan Disease</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00175?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00175</a></td></tr><tr><td>Pyruvate Dehydrogenase Complex Deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00212?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00212</a></td></tr><tr><td>Pyruvate Decarboxylase E1 Component Deficiency (PDHE1 Deficiency)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00334?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00334</a></td></tr><tr><td>Pyruvate kinase deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00559?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00559</a></td></tr><tr><td>Ethanol Degradation</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00449?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00449</a></td></tr><tr><td>Tay-Sachs Disease</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00390?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00390</a></td></tr><tr><td>Sialuria or French Type Sialuria</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00216?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00216</a></td></tr><tr><td>Heroin Metabolism Pathway</td><td>Drug metabolism</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00623?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00623</a></td></tr><tr><td>Primary hyperoxaluria II, PH2</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00558?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00558</a></td></tr><tr><td>Hypoacetylaspartia</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00192?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00192</a></td></tr><tr><td>Sjogren Larsson Syndrome</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00217?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00217</a></td></tr><tr><td>Leigh Syndrome</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00196?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00196</a></td></tr><tr><td>Pyruvate Metabolism</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00060?highlight%5Bcompounds%5D%5B%5D=DB03166&amp;highlight%5Bproteins%5D%5B%5D=DB03166">SMP00060</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9502</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9742</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5968</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.8714</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.99</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.992</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9466</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7913</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9384</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7921</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8774</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9482</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9667</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9786</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9854</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9818</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9635
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Carcinogens  
+        </td>
+        <td>
+            0.6222
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Ready biodegradable 
+        </td>
+        <td>
+            0.9758
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.6315 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9666
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9889
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.bbraun.com">B. Braun Melsungen AG</a></li>
+<li><a href="http://www.bausch.com">Bausch &amp; Lomb Inc.</a></li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.hitechpharm.com">Hi Tech Pharmacal Co. Inc.</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.tarousa.com">Taro Pharmaceuticals USA</a></li>
+<li>Vintage Pharmaceuticals Inc.</li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>16.6 &#176;C</td><td>PhysProp</td></tr><tr><td>boiling point</td><td>117.9 &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>1E+006 mg/L (at 25 &#176;C)</td><td>MERCK INDEX (1996)</td></tr><tr><td>logP</td><td>-0.17</td><td>HANSCH,C ET AL. (1995)</td></tr><tr><td>logS</td><td>1.22</td><td>ADME Research, USCD</td></tr><tr><td>pKa</td><td>4.76 (at 25 &#176;C)</td><td>SERJEANT,EP &amp; DEMPSEY,B (1979)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>4.90e+02 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-0.29</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-0.22</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>0.8</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>4.54</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>40.13</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>23.48</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>4.96</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Earl M. Chamberlin, Warren K. Russ, Jr., George G. Hazen, &#8220;Process for preparing [1-oxo-2-cyclopentyl (or 2-isopropyl)-2-methyl-6,7-dichloro-5-indanyloxy] acetic acid.&#8221; U.S. Patent US3950408, issued April, 1928.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=3950408&amp;tbm=pts" target="_blank">US3950408 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li><a href="http://www.emedicinehealth.com/drug-acetic_acid_otic/article_em.htm">eMedicine</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00010" target="_blank">D00010 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C00033" target="_blank">C00033 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=30089" target="_blank">30089 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL539" target="_blank">CHEMBL539 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA448021" target="_blank">PA448021 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>IUPHAR</td><td><a class="wishart-link-out" href="http://www.iuphar-db.org/DATABASE/LigandDisplayForward?ligandId=1058" target="_blank">1058 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Guide to Pharmacology</td><td><a class="wishart-link-out" href="http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=1058" target="_blank">1058 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=ACY" target="_blank">ACY <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/acetic-acid-solution.html" target="_blank">http://www.drugs.com/cdi/acetic-acid-solution.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Acetic_acid" target="_blank">Acetic_acid <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>S02AA10<ul class="atc-drug-tree"><li><a href="/atc/S#S">S &#8212; SENSORY ORGANS</a></li><li><a href="/atc/S02#S02">S02 &#8212; OTOLOGICALS</a></li><li><a href="/atc/S02A#S02A">S02A &#8212; ANTIINFECTIVES</a></li><li><a href="/atc/S02AA#S02AA">S02AA &#8212; Antiinfectives</a></li></ul>G01AD02<ul class="atc-drug-tree"><li><a href="/atc/G#G">G &#8212; GENITO URINARY SYSTEM AND SEX HORMONES</a></li><li><a href="/atc/G01#G01">G01 &#8212; GYNECOLOGICAL ANTIINFECTIVES AND ANTISEPTICS</a></li><li><a href="/atc/G01A#G01A">G01A &#8212; ANTIINFECTIVES AND ANTISEPTICS, EXCL. COMBINATIONS WITH CORTICOSTEROIDS</a></li><li><a href="/atc/G01AD#G01AD">G01AD &#8212; Organic acids</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1JBE" target="_blank">1JBE <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

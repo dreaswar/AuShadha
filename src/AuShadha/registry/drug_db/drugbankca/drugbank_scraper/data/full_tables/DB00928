@@ -1,0 +1,184 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Azacitidine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00928</strong>&#160; (APRD00809)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>A pyrimidine nucleoside analogue that inhibits <span class="caps">DNA</span> methyltransferase, impairing <span class="caps">DNA</span> methylation. It is also an antimetabolite of cytidine, incorporated primarily into <span class="caps">RNA</span>. Azacytidine has been used as an antineoplastic agent. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00928/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00928/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00928.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00928.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00928.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00928.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00928.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00928">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>5 AZC</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Azacitidina</td><td>Spanish</td><td>INN</td></tr><tr><td>Azacitidinum</td><td>Latin</td><td>INN</td></tr><tr><td>Azacytidine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Ladakamycin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Mylosar</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Vidaza</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/enzyme-inhibitors">Enzyme Inhibitors</a></li>
+<li><a href="/mesh/antimetabolites-antineoplastic">Antimetabolites, Antineoplastic</a></li></ul></td></tr><tr><th>CAS number</th><td>320-67-2</td></tr><tr><th>Weight</th><td>Average: 244.2047<br>Monoisotopic: 244.080769514</td></tr><tr><th>Chemical Formula</th><td>C<sub>8</sub>H<sub>12</sub>N<sub>4</sub>O<sub>5</sub></td></tr><tr><th>InChI Key</th><td>NMUSYJAQQFHJEW-KVTDHHQDSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C8H12N4O5/c9-7-10-2-12(8(16)11-7)6-5(15)4(14)3(1-13)17-6/h2-6,13-15H,1H2,(H2,9,11,16)/t3-,4-,5-,6-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">4-amino-1-[(2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)oxolan-2-yl]-1,2-dihydro-1,3,5-triazin-2-one</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC1=NC(=O)N(C=N1)[C@@H]1O[C@H](CO)[C@@H](O)[C@H]1O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organooxygen Compounds</td></tr><tr><th>Class</th><td>Carbohydrates and Carbohydrate Conjugates</td></tr><tr><th>Subclass</th><td>Glycosyl Compounds</td></tr><tr><th>Direct parent</th><td>Pyrimidine Nucleosides and Analogues</td></tr><tr><th>Alternative parents</th><td>Pentoses; Triazinones; Aminotriazines; Primary Aromatic Amines; Tetrahydrofurans; Oxolanes; Secondary Alcohols; 1,2-Diols; Ethers; Primary Alcohols; Polyamines</td></tr><tr><th>Substituents</th><td>pentose monosaccharide; amino-1,3,5-triazine; triazinone; triazine; primary aromatic amine; monosaccharide; tetrahydrofuran; oxolane; secondary alcohol; 1,2-diol; ether; polyamine; primary alcohol; alcohol; organonitrogen compound; amine; primary amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the pyrimidine nucleosides and analogues. These are compounds comprising a pyrimidine base attached to a sugar.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For treatment of patients with the following French-American-British myelodysplastic syndrome subtypes: refractory anemia or refractory anemia with ringed sideroblasts (if accompanied by neutropenia or thrombocytopenia or requiring transfusions), refractory anemia with excess blasts, refractory anemia with excess blasts in transformation (now classified as acute myelogenous leukemia with multilineage dysplasia), and chronic myelomonocytic leukemia.</td></tr><tr><th>Pharmacodynamics</th><td>Azacitidine is believed to exert its antineoplastic effects by causing hypomethylation of DNA and direct cytotoxicity on abnormal hematopoietic cells in the bone marrow. The concentration of azacitidine required for maximum inhibition of DNA methylation in vitro does not cause major suppression of DNA synthesis. Hypomethylation may restore normal function to genes that are critical for differentiation and proliferation. The cytotoxic effects of azacitidine cause the death of rapidly dividing cells, including cancer cells that are no longer responsive to normal growth control mechanisms. Non-proliferating cells are relatively insensitive to azacitidine. Upon uptake into cells, azacitidine is phosphorylated to 5-azacytidine monophosphate by uridine-cytidine kinase, then to diphosphate by pyrimidine monophosphate kinases and triphosphate by diphosphate kinases. 5-Azacitidine triphosphate is incorporated into RNA, leading to the disruption of nuclear and cytoplasmic RNA metabolism and inhibition of protein synthesis. 5-Azacytidine diphosphate is reduced to 5-aza-deoxycytidine diphosphate by ribonucleotide reductase. The resultant metabolite is phosphorylated to 5-azadeoxycitidine triphosphate by nucleoside diphosphate kinases. 5-azadeoxycitidine triphosphate is then incoporated into DNA, leading to inhibition of DNA synthesis. Azacitidine is most toxic during the S-phase of the cell cycle.</td></tr><tr><th>Mechanism of action</th><td>Azacitidine (5-azacytidine) is a chemical analogue of the cytosine nucleoside used in DNA and RNA. Azacitidine is thought to induce antineoplastic activity via two mechanisms; inhibition of DNA methyltransferase at low doses, causing hypomethylation of DNA, and direct cytotoxicity in abnormal hematopoietic cells in the bone marrow through its incorporation into DNA and RNA at high doses, resulting in cell death. As azacitidine is a ribonucleoside, it incoporates into RNA to a larger extent than into DNA. The incorporation into RNA leads to the dissembly of polyribosomes, defective methylation and acceptor function of transfer RNA, and inhibition of the production of protein. Its incorporation into DNA leads to a covalent binding with DNA methyltransferases, which prevents DNA synthesis and subsequent cytotoxicity.</td></tr><tr><th>Absorption</th><td>Azacitidine is rapidly absorbed after subcutaneous administration. The bioavailability of subcutaneous azacitidine relative to IV azacitidine is approximately 89%, based on area under the curve.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>76 &#177; 26 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>An in vitro study of azacitidine incubation in human liver fractions indicated that azacitidine may be metabolized by the liver. The potential of azacitidine to inhibit cytochrome P450 (CYP) enzymes is not known.</p></td></tr><tr><th>Route of elimination</th><td>Following IV administration of radioactive azacitidine to 5 cancer patients, the cumulative urinary excretion was 85% of the radioactive dose.
+Fecal excretion accounted for </td></tr><tr><th>Half life</th><td>Mean elimination half-life is approximately 4 hours.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>167 +/- 49 L/h</li>
+</ul></td></tr><tr><th>Toxicity</th><td>One case of overdose with azacitidine was reported during clinical trials. A patient experienced diarrhea, nausea, and vomiting after receiving a single IV dose of approximately 290 mg/m2, almost 4 times the recommended starting dose.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9509</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8753</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8715</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.7879</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9591</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9671</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9355</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8103</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8572</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6067</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9436</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9438</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9329</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9617</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9839</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.8058
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9182
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.8432
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.7991 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9794
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8996
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Celgene corp</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.celgene.com">Celgene</a></li>
+<li>Pharmion LLC</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection, powder, for solution</td><td>Subcutaneous</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Vidaza 100 mg vial</td><td>588.23USD</td><td>vial</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>229 &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>8.9E+004 mg/L</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>-3.5</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.21e+01 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-2.5</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-3.1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-1.3</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>12.55</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>-0.38</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>8</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>140.97</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>52.19</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>21.5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Lorenzo  DE <span class="caps">FERRA</span>, Maurizio <span class="caps">ZENONI</span>, Stefano <span class="caps">TURCHETTA</span>, Mauro <span class="caps">ANIBALDI</span>, Ettore <span class="caps">AMMIRATI</span>, Paolo <span class="caps">BRANDI</span>, Giorgio <span class="caps">BERARDI</span>, &#8220;<span class="caps">PROCESS</span> <span class="caps">FOR</span> <span class="caps">THE</span> <span class="caps">SYNTHESIS</span> OF <span class="caps">AZACITIDINE</span> <span class="caps">AND</span> <span class="caps">DECITABINE</span>.&#8221; U.S. Patent US20110245485, issued October 06, 2011.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=20110245485&amp;tbm=pts" target="_blank">US20110245485 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Cihak A: Biological effects of 5-azacytidine in eukaryotes. Oncology. 1974;30(5):405-22. <a href="http://www.ncbi.nlm.nih.gov/pubmed/4142650">Pubmed</a></li>
+	<li>Kaminskas E, Farrell AT, Wang YC, Sridhara R, Pazdur R: <span class="caps">FDA</span> drug approval summary: azacitidine (5-azacytidine, Vidaza) for injectable suspension. Oncologist. 2005 Mar;10(3):176-82. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15793220">Pubmed</a></li>
+	<li>Leone G, Voso MT, Teofili L, Lubbert M: Inhibitors of <span class="caps">DNA</span> methylation in the treatment of hematological malignancies and <span class="caps">MDS</span>. Clin Immunol. 2003 Oct;109(1):89-102. <a href="http://www.ncbi.nlm.nih.gov/pubmed/14585280">Pubmed</a></li>
+	<li>Ghoshal K, Bai S: <span class="caps">DNA</span> methyltransferases as targets for cancer therapy. Drugs Today (Barc). 2007 Jun;43(6):395-422. <a href="http://www.ncbi.nlm.nih.gov/pubmed/17612710">Pubmed</a></li>
+	<li>Silverman LR, Demakos EP, Peterson BL, Kornblith AB, Holland JC, Odchimar-Reissig R, Stone RM, Nelson D, Powell BL, DeCastro CM, Ellerton J, Larson RA, Schiffer CA, Holland JF: Randomized controlled trial of azacitidine in patients with the myelodysplastic syndrome: a study of the cancer and leukemia group B. J Clin Oncol. 2002 May 15;20(10):2429-40. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12011120">Pubmed</a></li>
+	<li>Silverman LR: Targeting hypomethylation of <span class="caps">DNA</span> to achieve cellular differentiation in myelodysplastic syndromes (<span class="caps">MDS</span>). Oncologist. 2001;6 Suppl 5:8-14. <a href="http://www.ncbi.nlm.nih.gov/pubmed/11700387">Pubmed</a></li>
+	<li>Issa JP, Kantarjian H: Azacitidine. Nat Rev Drug Discov. 2005 May;Suppl:S6-7. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15962522">Pubmed</a></li>
+	<li>O&#8217;Dwyer K, Maslak P: Azacitidine and the beginnings of therapeutic epigenetic modulation. Expert Opin Pharmacother. 2008 Aug;9(11):1981-6. <a href="http://www.ncbi.nlm.nih.gov/pubmed/18627335">Pubmed</a></li>
+	<li>Siddiqui MA, Scott LJ: Azacitidine: in myelodysplastic syndromes. Drugs. 2005;65(13):1781-9; discussion 1790-1. <a href="http://www.ncbi.nlm.nih.gov/pubmed/16114977">Pubmed</a></li>
+	<li>Abdulhaq H, Rossetti JM: The role of azacitidine in the treatment of myelodysplastic syndromes. Expert Opin Investig Drugs. 2007 Dec;16(12):1967-75. <a href="http://www.ncbi.nlm.nih.gov/pubmed/18042004">Pubmed</a></li>
+	<li>Keating GM: Azacitidine: a review of its use in higher-risk myelodysplastic syndromes/acute myeloid leukaemia. Drugs. 2009;69(17):2501-18. doi: 10.2165/11202840-000000000-00000. <a href="http://www.ncbi.nlm.nih.gov/pubmed/19911860">Pubmed</a></li>
+	<li>Sullivan M, Hahn K, Kolesar JM: Azacitidine: a novel agent for myelodysplastic syndromes. Am J Health Syst Pharm. 2005 Aug 1;62(15):1567-73. <a href="http://www.ncbi.nlm.nih.gov/pubmed/16030365">Pubmed</a></li>
+	<li>Dapp MJ, Clouser CL, Patterson S, Mansky LM: 5-Azacytidine can induce lethal mutagenesis in human immunodeficiency virus type 1. J Virol. 2009 Nov;83(22):11950-8. Epub 2009 Sep 2. <a href="http://www.ncbi.nlm.nih.gov/pubmed/19726509">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D03021" target="_blank">D03021 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C11262" target="_blank">C11262 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=9444" target="_blank">9444 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46509032" target="_blank">46509032 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.9072.html" target="_blank">9072 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=2038" target="_blank">2038 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1489" target="_blank">CHEMBL1489 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000640" target="_blank">DAP000640 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA451996" target="_blank">PA451996 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/vidaza.htm" target="_blank">http://www.rxlist.com/cgi/generic3/vidaza.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/azacitidine.html" target="_blank">http://www.drugs.com/cdi/azacitidine.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Azacitidine" target="_blank">Azacitidine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00928.pdf?1265922809">show</a>(194 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00928.pdf?1265922746">show</a>(68.8 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

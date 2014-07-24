@@ -1,0 +1,279 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Cimetidine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00501</strong>&#160; (APRD00568)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A histamine congener, it competitively inhibits histamine binding to histamine H2 receptors. Cimetidine has a range of pharmacological actions. It inhibits gastric acid secretion, as well as pepsin and gastrins output. It also blocks the activity of cytochrome P-450 which might explain proposals for use in neoadjuvant therapy. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00501/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00501/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00501.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00501.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00501.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00501.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00501.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00501">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Cimetidin</td><td>German</td><td>INN</td></tr><tr><td>Cimetidina</td><td>Spanish</td><td>INN</td></tr><tr><td>Cim&#233;tidine</td><td>French</td><td>INN</td></tr><tr><td>Cimetidinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Cimetidine Hydrochloride</strong>
+          <div class="cas">70059-30-2</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000287/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000287/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: QJHCNBWLPSXHBL-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 288.092392971</li>
+              <li>Average Mass: 288.8</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000287">DBSALT000287</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Cimetag</td><td>Julphar</td></tr><tr><td>Tagamet</td><td>GlaxoSmithKline</td></tr><tr><td>Tagamet HB</td><td>GlaxoSmithKline</td></tr><tr><td>Tagamet HB200</td><td>GlaxoSmithKline</td></tr><tr><td>Ulcedine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Ulcerfen</td><td>Finadiet</td></tr><tr><td>Ulcimet</td><td>Farmasa</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/adjuvants">Adjuvants</a></li></ul></td></tr><tr><th>CAS number</th><td>51481-61-9</td></tr><tr><th>Weight</th><td>Average: 252.339<br>Monoisotopic: 252.115715232</td></tr><tr><th>Chemical Formula</th><td>C<sub>10</sub>H<sub>16</sub>N<sub>6</sub>S</td></tr><tr><th>InChI Key</th><td>AQIXAKUUQRKLND-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C10H16N6S/c1-8-9(16-7-15-8)5-17-4-3-13-10(12-2)14-6-11/h7H,3-5H2,1-2H3,(H,15,16)(H2,12,13,14)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(Z)-1-cyano-2-methyl-3-(2-{[(5-methyl-1H-imidazol-4-yl)methyl]sulfanyl}ethyl)guanidine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">C\N=C(\NCCSCC1=C(C)NC=N1)NC#N</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB00501.gif?1265922772">show</a>(10 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Azoles</td></tr><tr><th>Subclass</th><td>Imidazoles</td></tr><tr><th>Direct parent</th><td>Imidazoles</td></tr><tr><th>Alternative parents</th><td>Guanidines; Nitriles; Polyamines; Thioethers; Amidines</td></tr><tr><th>Substituents</th><td>guanidine; amidine; thioether; nitrile; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the imidazoles. These are compounds containing an imidazole ring, which is an aromatic five-member ring with two nitrogen atoms at positions 1 and 3, and three carbon atoms.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment and the management of acid-reflux disorders (GERD), peptic ulcer disease, heartburn, and acid indigestion.</td></tr><tr><th>Pharmacodynamics</th><td>Cimetidine is a histamine H<sub>2</sub>-receptor antagonist. It reduces basal and nocturnal gastric acid secretion and a reduction in gastric volume, acidity, and amount of gastric acid released in response to stimuli including food, caffeine, insulin, betazole, or pentagastrin. It is used to treat gastrointestinal disorders such as gastric or duodenal ulcer, gastroesophageal reflux disease, and pathological hypersecretory conditions. Cimetidine inhibits many of the isoenzymes of the hepatic CYP450 enzyme system. Other actions of Cimetidine include an increase in gastric bacterial flora such as nitrate-reducing organisms.</td></tr><tr><th>Mechanism of action</th><td>Cimetidine binds to an H<sub>2</sub>-receptor located on the basolateral membrane of the gastric parietal cell, blocking histamine effects. This competitive inhibition results in reduced gastric acid secretion and a reduction in gastric volume and acidity.</td></tr><tr><th>Absorption</th><td>Rapid 60-70%</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>15-20%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p></td></tr><tr><th>Route of elimination</th><td>The principal route of excretion of cimetidine is the urine.</td></tr><tr><th>Half life</th><td>2 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Symptoms of overdose include nausea, vomiting, diarrhea, increased saliva production, difficulty breathing, and a fast heartbeat.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>Cimetidine Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00232?highlight%5Bcompounds%5D%5B%5D=DB00501&amp;highlight%5Bproteins%5D%5B%5D=DB00501">SMP00232</a></td></tr><tr><td>Cimetidine Metabolism Pathway</td><td>Drug metabolism</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00617?highlight%5Bcompounds%5D%5B%5D=DB00501&amp;highlight%5Bproteins%5D%5B%5D=DB00501">SMP00617</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9855</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.6782</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6358</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7887</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8781</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8382</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7233</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8048</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5795</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.907</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5773</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8309</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9575</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.837
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9579
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.7341 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.7983
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8745
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Glaxosmithkline</li>
+<li>Apotex inc</li>
+<li>Contract pharmacal corp</li>
+<li>Dava pharmaceuticals inc</li>
+<li>Endo pharmaceuticals inc</li>
+<li>Ivax pharmaceuticals inc sub teva pharmaceuticals usa</li>
+<li>Lek pharmaceuticals d d</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>L perrigo co</li>
+<li>Perrigo co</li>
+<li>Pliva inc</li>
+<li>Roxane laboratories inc</li>
+<li>Sandoz inc</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Watson laboratories inc</li>
+<li>Hospira inc</li>
+<li>Luitpold pharmaceuticals inc</li>
+<li>Teva parenteral medicines inc</li>
+<li>Actavis mid atlantic llc</li>
+<li>Duramed pharmaceuticals inc sub barr laboratories inc</li>
+<li>Hi tech pharmacal co inc</li>
+<li>Novex pharma</li>
+<li>Pharmaceutical assoc inc div beach products</li>
+<li>Teva pharmaceuticals usa</li>
+<li>Wockhardt eu operations (swiss) ag</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Advanced Pharmaceutical Services Inc.</li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.amneal.com">Amneal Pharmaceuticals</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li>Apotheca Inc.</li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.chcsct.com">Central Texas Community Health Centers</a></li>
+<li>Comprehensive Consultant Services Inc.</li>
+<li><a href="http://www.darbydental.com">Darby Dental Supply Co. Inc.</a></li>
+<li><a href="http://www.davapharma.com">DAVA Pharmaceuticals</a></li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.endo.com">Endo Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.ghc.org">Group Health Cooperative</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li>Heartland Repack Services LLC</li>
+<li><a href="http://www.hitechpharm.com">Hi Tech Pharmacal Co. Inc.</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li>Ivax Pharmaceuticals</li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.keltman.com">Keltman Pharmaceuticals Inc.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.lek.si">Lek Pharmaceuticals Inc.</a></li>
+<li>Liberty Pharmaceuticals</li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.medisca.com">Medisca Inc.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li>Novex Pharma</li>
+<li>Novopharm Ltd.</li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li>PCA LLC</li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.perrigo.com">Perrigo Co.</a></li>
+<li><a href="http://www.pharmapacllc.com">Pharma Pac LLC</a></li>
+<li>Pharmaceutical Association</li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.pharmpakinc.com">Pharmpak Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.pliva.com">Pliva Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li><a href="http://www.prepaksys.com">Prepak Systems Inc.</a></li>
+<li>Prescription Dispensing Service Inc.</li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li><a href="http://www.sanofi-aventis.com">Sanofi-Aventis Inc.</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li>St Mary's Medical Park Pharmacy</li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li>Torpharm Inc.</li>
+<li>Tya Pharmaceuticals</li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li><a href="http://www.urlpharma.com">United Research Laboratories Inc.</a></li>
+<li>Va Cmop Dallas</li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection</td><td>Intravenous</td><td>6 mg/ml</td></tr><tr><td>Solution</td><td>Oral</td><td>300 mg/5 ml</td></tr><tr><td>Solution</td><td>Oral</td><td>300 mg/ml</td></tr><tr><td>Tablet, film coated</td><td>Oral</td><td>200 mg</td></tr><tr><td>Tablet, film coated</td><td>Oral</td><td>300 mg</td></tr><tr><td>Tablet, film coated</td><td>Oral</td><td>400 mg</td></tr><tr><td>Tablet, film coated</td><td>Oral</td><td>800 mg</td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Cimetidine 800 mg tablet</td><td>2.7USD</td><td>tablet</td></tr><tr><td>Tagamet 400 mg tablet</td><td>2.51USD</td><td>tablet</td></tr><tr><td>Cimetidine 150 mg/ml vial</td><td>1.67USD</td><td>ml</td></tr><tr><td>Cimetidine powder</td><td>1.48USD</td><td>g</td></tr><tr><td>Cimetidine 400 mg tablet</td><td>1.44USD</td><td>tablet</td></tr><tr><td>Tagamet 300 mg tablet</td><td>1.28USD</td><td>tablet</td></tr><tr><td>Cimetidine 300 mg tablet</td><td>0.93USD</td><td>tablet</td></tr><tr><td>Cimetidine 200 mg tablet</td><td>0.46USD</td><td>tablet</td></tr><tr><td>Cimetidine HCl 300 mg/5ml Solution</td><td>0.38USD</td><td>ml</td></tr><tr><td>Tagamet hb 200 mg tablet</td><td>0.37USD</td><td>tablet</td></tr><tr><td>Apo-Cimetidine 800 mg Tablet</td><td>0.27USD</td><td>tablet</td></tr><tr><td>Mylan-Cimetidine 800 mg Tablet</td><td>0.27USD</td><td>tablet</td></tr><tr><td>Acid reducer 200 mg tablet</td><td>0.21USD</td><td>tablet</td></tr><tr><td>Apo-Cimetidine 600 mg Tablet</td><td>0.18USD</td><td>tablet</td></tr><tr><td>Mylan-Cimetidine 600 mg Tablet</td><td>0.18USD</td><td>tablet</td></tr><tr><td>Novo-Cimetine 600 mg Tablet</td><td>0.18USD</td><td>tablet</td></tr><tr><td>Nu-Cimet 600 mg Tablet</td><td>0.18USD</td><td>tablet</td></tr><tr><td>Apo-Cimetidine 400 mg Tablet</td><td>0.14USD</td><td>tablet</td></tr><tr><td>Mylan-Cimetidine 400 mg Tablet</td><td>0.14USD</td><td>tablet</td></tr><tr><td>Novo-Cimetine 400 mg Tablet</td><td>0.14USD</td><td>tablet</td></tr><tr><td>Nu-Cimet 400 mg Tablet</td><td>0.14USD</td><td>tablet</td></tr><tr><td>Apo-Cimetidine 200 mg Tablet</td><td>0.09USD</td><td>tablet</td></tr><tr><td>Apo-Cimetidine 300 mg Tablet</td><td>0.09USD</td><td>tablet</td></tr><tr><td>Mylan-Cimetidine 300 mg Tablet</td><td>0.09USD</td><td>tablet</td></tr><tr><td>Novo-Cimetine 300 mg Tablet</td><td>0.09USD</td><td>tablet</td></tr><tr><td>Nu-Cimet 300 mg Tablet</td><td>0.09USD</td><td>tablet</td></tr><tr><td>Heartburn relief 200 mg tablet</td><td>0.08USD</td><td>tablet</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>142 &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>9380 mg/L (at 25 &#176;C)</td><td>MCFARLAND,JW ET AL. (2001)</td></tr><tr><td>logP</td><td>0.40</td><td>HANSCH,C ET AL. (1995)</td></tr><tr><td>logS</td><td>-1.35</td><td>ADME Research, USCD</td></tr><tr><td>Caco2 permeability</td><td>-5.89</td><td>ADME Research, USCD</td></tr><tr><td>pKa</td><td>6.8</td><td>TOMLINSON,E &amp; HAFKENSCHEID,TL (1986)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>8.16e-01 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.44</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-0.11</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-2.5</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>13.38</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>6.91</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>88.89</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>70.32</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>27.47</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Saburo Uchikuga, Tomoyasu Tashiro, Yasuko Osawa, &#8220;Process for preparing the H.sub.2 -receptor antagonist cimetidine.&#8221; U.S. Patent US4413129, issued March, 1972.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=4413129&amp;tbm=pts" target="_blank">US4413129 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Michnovicz JJ, Galbraith RA: Cimetidine inhibits catechol estrogen metabolism in women. Metabolism. 1991 Feb;40(2):170-4. <a href="http://www.ncbi.nlm.nih.gov/pubmed/1988774">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00295" target="_blank">D00295 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=2756" target="_blank">2756 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46505360" target="_blank">46505360 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.2654.html" target="_blank">2654 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=22889" target="_blank">22889 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=3699" target="_blank">3699 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL30" target="_blank">CHEMBL30 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000338" target="_blank">DAP000338 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA449001" target="_blank">PA449001 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>IUPHAR</td><td><a class="wishart-link-out" href="http://www.iuphar-db.org/DATABASE/LigandDisplayForward?ligandId=1231" target="_blank">1231 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Guide to Pharmacology</td><td><a class="wishart-link-out" href="http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=1231" target="_blank">1231 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=749494" target="_blank">749494 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic/cimet.htm" target="_blank">http://www.rxlist.com/cgi/generic/cimet.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/cimetidine.html" target="_blank">http://www.drugs.com/cdi/cimetidine.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Cimetidine" target="_blank">Cimetidine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>A02BA01<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A02#A02">A02 &#8212; DRUGS FOR ACID RELATED DISORDERS</a></li><li><a href="/atc/A02B#A02B">A02B &#8212; DRUGS FOR PEPTIC ULCER AND GASTRO-OESOPHAGEAL REFLUX DISEASE (GORD)</a></li><li><a href="/atc/A02BA#A02BA">A02BA &#8212; H2-receptor antagonists</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>56:28.12</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00501.pdf?1265922808">show</a>(420 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00501.pdf?1265922745">show</a>(73.4 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01418">Acenocoumarol</a></td><td>Cimetidine may increase the anticoagulant effect of acenocoumarol.</td></tr><tr><td><a href="/drugs/DB00802">Alfentanil</a></td><td>Increases the effect of the narcotic</td></tr><tr><td><a href="/drugs/DB00404">Alprazolam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, alprazolam.</td></tr><tr><td><a href="/drugs/DB01223">Aminophylline</a></td><td>Cimetidine may increase the serum concentration of aminophylline by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of aminophylline if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00321">Amitriptyline</a></td><td>Cimetidine may increase the effect of the tricyclic antidepressant, amitriptyline, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of amitriptyline if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00543">Amoxapine</a></td><td>Cimetidine may increase the effect of the tricyclic antidepressant, amoxapine, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of amoxapine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01125">Anisindione</a></td><td>Cimetidine may increase the anticoagulant effect of anisindione.</td></tr><tr><td><a href="/drugs/DB00637">Astemizole</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01072">Atazanavir</a></td><td>This gastric pH modifier decreases the levels/effects of atazanavir</td></tr><tr><td><a href="/drugs/DB06769">Bendamustine</a></td><td>CA1A2 hepatic enzyme metabolism is affected by increased amounts of bendamustine by cimetidine. In addition, decreased conversion of bendamustine to active metabolites occurs. Amounts of active metabolites may be decreased. Decreased conversion of bendamustine to active metabolites also occurs. </td></tr><tr><td><a href="/drugs/DB01558">Bromazepam</a></td><td>Co-administration with cimetidine will cause a reduction in bromazepam clearance and increases half-life. </td></tr><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>Cimetidine may increase the serum concentration of carbamazepine during the first few days of concomitant therapy. Monitor for changes in the therapeutic and adverse effects of carbamazepine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00262">Carmustine</a></td><td>Increases myelosuppression caused by carmustine</td></tr><tr><td><a href="/drugs/DB01066">Cefditoren</a></td><td>H2-Antagonists such as cimetidine may decrease the serum concentration of cefditoren. Cefditoren prescribing information recommends to avoid concomitant use with H2-antagonists (eg, famotidine, ranitidine) and antacids as well. Consider alternative methods to minimize/control acid reflux (eg, diet modification) or alternative antimicrobial therapy if use of H2-antagonists can not be avoided.</td></tr><tr><td><a href="/drugs/DB00475">Chlordiazepoxide</a></td><td>Cimetidine may increase the effect of the benzodiazepine, chlordiazepoxide.</td></tr><tr><td><a href="/drugs/DB01242">Clomipramine</a></td><td>Cimetidine may increase the effect of the tricyclic antidepressant, clomipramine, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of clomipramine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01068">Clonazepam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, clonazepam.</td></tr><tr><td><a href="/drugs/DB00628">Clorazepate</a></td><td>Cimetidine may increase the effect of the benzodiazepine, clorazepate.</td></tr><tr><td><a href="/drugs/DB00363">Clozapine</a></td><td>Cimetidine may increase the serum concentratin of clozapine. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of clozapine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00318">Codeine</a></td><td>Cimetidine may decrease the therapeutic effect of codeine by decreasing its metabolism to its active metabolite, morphine. Monitor for changes in the therapeutic effect of codeine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01151">Desipramine</a></td><td>Cimetidine may increase the effect of the tricyclic antidepressant, desipramine, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of desipramine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00647">Dextropropoxyphene</a></td><td>Cimetidine, a moderate CYP3A4 inhibitor, may decrease the metabolism of propoxyphene. Monitor for changes in the therapeutic and adverse effects of propoxyphene if cimetidine is intitiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00829">Diazepam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, diazepam.</td></tr><tr><td><a href="/drugs/DB00266">Dicoumarol</a></td><td>Cimetidine may increase the anticoagulant effect of dicumarol.</td></tr><tr><td><a href="/drugs/DB01341">Dihydroquinidine barbiturate</a></td><td>Increases the effect of quinidine</td></tr><tr><td><a href="/drugs/DB00204">Dofetilide</a></td><td>Increases effect/toxicity of dofetilide</td></tr><tr><td><a href="/drugs/DB00843">Donepezil</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01142">Doxepin</a></td><td>Cimetidine may increase the effect of the tricyclic antidepressant, doxepin, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of doxepin if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00651">Dyphylline</a></td><td>Increases the effect of theophylline</td></tr><tr><td><a href="/drugs/DB06210">Eltrombopag</a></td><td>Affects hepatic CYP1A2 metabolism, will decrease effect/level of eltrombopag.
+Affects hepatic CYP2C9/10 metabolism, will decrease effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB00467">Enoxacin</a></td><td>Cimetidine may decrease the absorption of enoxacin.</td></tr><tr><td><a href="/drugs/DB00445">Epirubicin</a></td><td>Cimetidine can increase epirubicin levels</td></tr><tr><td><a href="/drugs/DB01215">Estazolam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, estazolam.</td></tr><tr><td><a href="/drugs/DB00754">Ethotoin</a></td><td>Increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00813">Fentanyl</a></td><td>Cimetidine, a moderate CYP3A4 inhibitor, may decrease the metabolism of fentanyl. Closely monitor changes in the therapeutic and adverse effects of fentanyl if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01195">Flecainide</a></td><td>Cimetidine, a moderate CYP2D6 inhibitor, may decrease the metabolism of flecainide.</td></tr><tr><td><a href="/drugs/DB00690">Flurazepam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, flurazepam.</td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>Cimetidine may increase the serum concentration of fosphenytoin by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of fosphenytoin if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00674">Galantamine</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00801">Halazepam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, halazepam.</td></tr><tr><td><a href="/drugs/DB01452">Heroin</a></td><td>Cimetidine increases the effect of the narcotic</td></tr><tr><td><a href="/drugs/DB00458">Imipramine</a></td><td>Cimetidine may increase the effect of the tricyclic antidepressant, imipramine, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of imipramine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01167">Itraconazole</a></td><td>The H2-receptor antagonist, cimetidine, may decrease the absorption of itraconazole.</td></tr><tr><td><a href="/drugs/DB01587">Ketazolam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, ketazolam.</td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>The H2-receptor antagonist, cimetidine, may decrease the absorption of ketoconazole.</td></tr><tr><td><a href="/drugs/DB00598">Labetalol</a></td><td>Cimetidine may increase the serum concentration of labetolol by decreasing its metabolism.</td></tr><tr><td><a href="/drugs/DB00281">Lidocaine</a></td><td>Increases the effect and toxicity of lidocaine</td></tr><tr><td><a href="/drugs/DB00532">Mephenytoin</a></td><td>Increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00331">Metformin</a></td><td>Cimetidine may increase the therapeutic and adverse effects of metformin by increasing its serum concentration. Consider alternate therapy.</td></tr><tr><td><a href="/drugs/DB00333">Methadone</a></td><td>Cimetidine, a moderate CYP3A4 inhibitor, may increase the serum concentration of metahdone, a CYP3A4 substrate. Monitor for changes in the therapeutic and adverse effects of methadone if cimetidine is initiatied, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00264">Metoprolol</a></td><td>Cimetidine may increase the serum concentration of metoprolol by decreasing its metabolism.</td></tr><tr><td><a href="/drugs/DB00683">Midazolam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, midazolam.</td></tr><tr><td><a href="/drugs/DB01171">Moclobemide</a></td><td>Cimetidine may increase the serum concentration of moclobemide by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of moclobemide if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00844">Nalbuphine</a></td><td>Increases the effect of the narcotic</td></tr><tr><td><a href="/drugs/DB01115">Nifedipine</a></td><td>Cimetidine may increase the effect of the calcium channel blocker, nifedipine.</td></tr><tr><td><a href="/drugs/DB00393">Nimodipine</a></td><td>Cimetidine increases the effect of the calcium channel blocker, nimodipine.</td></tr><tr><td><a href="/drugs/DB01054">Nitrendipine</a></td><td>Cimetidine increases the effect of the calcium channel blocker, nitrendipine. </td></tr><tr><td><a href="/drugs/DB00540">Nortriptyline</a></td><td>Cimetidine may increase the effect of the tricyclic antidepressant, nortriptyline, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of nortriptyline if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01303">Oxtriphylline</a></td><td>Cimetidine may increase the serum concentration of oxtriphylline by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of oxtriphylline if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00497">Oxycodone</a></td><td>Cimetidine, a moderate CYP3A4 inhibitor, may decrease the metabolism of oxycodone. Monitor for changes in the therapeutic and adverse effects of oxycodone if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01192">Oxymorphone</a></td><td>Increases the effect of the narcotic</td></tr><tr><td><a href="/drugs/DB06589">Pazopanib</a></td><td>Affects CYP3A4 metabolism therefore will decrease levels or effect of pazopanib. Consider alternate therapy. </td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>Cimetidine may increase the therapeutic effect of phenytoin.</td></tr><tr><td><a href="/drugs/DB01263">Posaconazole</a></td><td>Significant decrease of posaconazole levels</td></tr><tr><td><a href="/drugs/DB00413">Pramipexole</a></td><td>Cimetidine may increase the effect and toxicity of pramipexole.</td></tr><tr><td><a href="/drugs/DB01588">Prazepam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, prazepam.</td></tr><tr><td><a href="/drugs/DB01035">Procainamide</a></td><td>The histamine H2-receptor antagonist, cimetidine, may increase the effect of procainamide.</td></tr><tr><td><a href="/drugs/DB00571">Propranolol</a></td><td>Cimetidine may increase the serum concentration of propranolol by decreasing its metabolism.</td></tr><tr><td><a href="/drugs/DB00344">Protriptyline</a></td><td>Cimetidine may increase the effect of tricyclic antidepressant, protriptyline, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of trimipramine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01589">Quazepam</a></td><td>Cimetidine may increase the effect of the benzodiazepine, quazepam.</td></tr><tr><td><a href="/drugs/DB00908">Quinidine</a></td><td>Cimetidine may increase the serum concentration of quinidine. Monitor for changes in the therapeutic and adverse effects of quinidine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01346">Quinidine barbiturate</a></td><td>Increases the effect of quinidine</td></tr><tr><td><a href="/drugs/DB00989">Rivastigmine</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01656">Roflumilast</a></td><td>Increases roflumilast levels. </td></tr><tr><td><a href="/drugs/DB00203">Sildenafil</a></td><td>Increases the effect and toxicity of sildenafil</td></tr><tr><td><a href="/drugs/DB00708">Sufentanil</a></td><td>Increases the effect of the narcotic</td></tr><tr><td><a href="/drugs/DB00382">Tacrine</a></td><td>The metabolism of Tacrine, a CYP1A2 substrate, may be reduced by Cimetidine, a CYP1A2 inhibitors. Monitor the efficacy and toxicity of Tacrine if Cimetidine is initiated, discontinued or if the dose is changed.</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>Cimetidine may increase the blood concentration of Tacrolimus. Monitor for changes in the therapeutic/toxic effects of Tacrolimus if Cimetidine therapy is initiated, discontinued or altered.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Cimetidine may decrease the therapeutic effect of Tamoxifen by decreasing the production of active metabolites. Consider alternate therapy. </td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Cimetidine, a CYP3A4/2D6 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP3A4/2D6 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Cimetidine is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00342">Terfenadine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00277">Theophylline</a></td><td>Cimetidine may increase the effect of theophylline.</td></tr><tr><td><a href="/drugs/DB00208">Ticlopidine</a></td><td>Cimetidine may increase Ticlopidine levels. Avoid concomitant therapy. </td></tr><tr><td><a href="/drugs/DB00373">Timolol</a></td><td>Cimetidine may increase the serum concentration of timolol by decreasing its metabolism.</td></tr><tr><td><a href="/drugs/DB00697">Tizanidine</a></td><td>Cimetidine may decrease the metabolism and clearance of Tizanidine. Consider alternate therapy or use caution during co-administration.</td></tr><tr><td><a href="/drugs/DB00797">Tolazoline</a></td><td>Anticipated loss of efficacy of tolazoline</td></tr><tr><td><a href="/drugs/DB01036">Tolterodine</a></td><td>Cimetidine may decrease the metabolism and clearance of Tolterodine. Adjust Tolterodine dose and monitor for efficacy and toxicity.</td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Cimetidine may increase Tramadol toxicity by decreasing Tramadol metabolism and clearance. Cimetidine may decrease the effect of Tramadol by decreasing active metabolite production. </td></tr><tr><td><a href="/drugs/DB00656">Trazodone</a></td><td>The CYP3A4 inhibitor, Cimetidine, may increase Trazodone efficacy/toxicity by decreasing Trazodone metabolism and clearance. Monitor for changes in Trazodone efficacy/toxicity if Cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00897">Triazolam</a></td><td>Cimetidine may increase the serum concentration of triazolam by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of triazolam if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>Cimetidine may increase the effect of tricyclic antidepressant, trimipramine, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of trimipramine if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB06684">Vilazodone</a></td><td>Cimetidine may decrease the metabolism of Selective Serotonin Reuptake Inhibitors. Consider using an alternative H2-antagonist to avoid the risk of selective serotonin reuptake inhibitor (SSRI) toxicity. Monitor for increased therapeutic or toxic effects of SSRI if cimetidine is initiated/dose increased, or decreased effects if cimetidine is discontinued/dose decreased. </td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>Cimetidine may increase the serum concentration of warfarin. Monitor for changes in prothrombin time and therapeutic and adverse effects of warfarin if cimetidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00962">Zaleplon</a></td><td>Cimetidine may increase the serum concentration of zaleplon by decreasing its metabolism. Reduce the initial dose of zaleplon to 5 mg in patients receiving cimetidine.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid alcohol.</li>
+<li>Best effect when taken with food.</li>
+<li>Limit caffeine intake.</li></ul></td></tr></tbody></table>

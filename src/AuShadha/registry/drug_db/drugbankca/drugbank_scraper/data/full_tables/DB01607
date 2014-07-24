@@ -1,0 +1,163 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Ticarcillin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01607</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An antibiotic derived from penicillin similar to carbenicillin in action.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01607/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01607/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01607.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01607.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01607.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01607.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01607.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01607">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Ticarcilina</td><td>Spanish</td><td>INN</td></tr><tr><td>Ticarcillin supplement</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Ticarcilline</td><td>French</td><td>INN</td></tr><tr><td>Ticarcillinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Timentin</td><td>Ticarcillin + Clavulanate</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li>
+<li><a href="/mesh/penicillins">Penicillins</a></li></ul></td></tr><tr><th>CAS number</th><td>34787-01-4</td></tr><tr><th>Weight</th><td>Average: 384.427<br>Monoisotopic: 384.044977634</td></tr><tr><th>Chemical Formula</th><td>C<sub>15</sub>H<sub>16</sub>N<sub>2</sub>O<sub>6</sub>S<sub>2</sub></td></tr><tr><th>InChI Key</th><td>OHKOGUYZJXTSFX-KZFFXBSXSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C15H16N2O6S2/c1-15(2)9(14(22)23)17-11(19)8(12(17)25-15)16-10(18)7(13(20)21)6-3-4-24-5-6/h3-5,7-9,12H,1-2H3,(H,16,18)(H,20,21)(H,22,23)/t7-,8-,9+,12-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2S,5R,6R)-6-[(2R)-2-carboxy-2-(thiophen-3-yl)acetamido]-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@H]2NC(=O)[C@H](C(O)=O)C1=CSC=C1)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Lactams</td></tr><tr><th>Subclass</th><td>Beta Lactams</td></tr><tr><th>Direct parent</th><td>Penicillins</td></tr><tr><th>Alternative parents</th><td>N-acyl-alpha Amino Acids and Derivatives; Dicarboxylic Acids and Derivatives; Thiazolidines; Tertiary Carboxylic Acid Amides; Thiophenes; Tertiary Amines; Polyols; Secondary Carboxylic Acid Amides; Azetidines; Hemiaminals; Polyamines; Enolates; Carboxylic Acids; Thioethers; Aminals</td></tr><tr><th>Substituents</th><td>n-acyl-alpha amino acid or derivative; dicarboxylic acid derivative; thiazolidine; thiophene; tertiary carboxylic acid amide; hemiaminal; carboxamide group; tertiary amine; azetidine; secondary carboxylic acid amide; polyol; aminal; polyamine; thioether; carboxylic acid derivative; carboxylic acid; enolate; amine; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the penicillins. These are organic compounds containing the penicillin core structure, which is structurally characterized by a penam ring bearing two methyl groups at position 2, and an amide group at position 6 [starting from the sulfur atom at position 1].</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of bacterial infections.</td></tr><tr><th>Pharmacodynamics</th><td>Ticarcillin is a semisynthetic antibiotic with a broad spectrum of bactericidal activity against many gram-positive and gram-negative aerobic and anaerobic bacteria. Ticarcillin is, however, susceptible to degradation by &#223;-lactamases, and therefore, the spectrum of activity does not normally include organisms which produce these enzymes.</td></tr><tr><th>Mechanism of action</th><td>Ticarcillin's antibiotic properties arise from its ability to prevent cross-linking of peptidoglycan during cell wall synthesis when the bacteria tries to divide, causing death.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>45%</td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>1.1 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>As with other penicillins, neurotoxic reactions may arise when very high doses of ticarcillin are administered, especially in patients with impaired renal function. </td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.9432</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9921</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7652</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5239</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9303</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9878</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9685</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7871</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.857</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5961</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8764</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9219</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9317</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9171</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9318</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9875</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8681
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.6121
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9573
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.4591 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9997
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9124
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Glaxosmithkline</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>7.16e-02 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.99</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-3.7</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>3.09</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>-6.3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>124.01</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>87.93</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>36.14</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07139" target="_blank">C07139 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=36921" target="_blank">36921 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46505959" target="_blank">46505959 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.33876.html" target="_blank">33876 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=9587" target="_blank">9587 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1449" target="_blank">CHEMBL1449 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000458" target="_blank">DAP000458 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA451684" target="_blank">PA451684 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic/timentin.htm" target="_blank">http://www.rxlist.com/cgi/generic/timentin.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/ticarcillin.html" target="_blank">http://www.drugs.com/cdi/ticarcillin.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Ticarcillin" target="_blank">Ticarcillin <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>J01CA13<ul class="atc-drug-tree"><li><a href="/atc/J#J">J &#8212; ANTIINFECTIVES FOR SYSTEMIC USE</a></li><li><a href="/atc/J01#J01">J01 &#8212; ANTIBACTERIALS FOR SYSTEMIC USE</a></li><li><a href="/atc/J01C#J01C">J01C &#8212; BETA-LACTAM ANTIBACTERIALS, PENICILLINS</a></li><li><a href="/atc/J01CA#J01CA">J01CA &#8212; Penicillins with extended spectrum</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00479">Amikacin</a></td><td>Ticarcillin may reduce the serum concentration of Amikacin. Ticarcillin may inactivate Amikacin in vitro and the two agents should not be administered simultaneously through the same IV line. </td></tr><tr><td><a href="/drugs/DB00618">Demeclocycline</a></td><td>Demeclocycline may reduce the effect of Ticarcillin by inhibiting bacterial growth. Ticarcillin exerts its effects on actively growing bacteria. To achieve synergism, Ticarcillin should be administered at least 2 hours prior to using Demeclocycline.</td></tr><tr><td><a href="/drugs/DB00254">Doxycycline</a></td><td>Doxycycline may reduce the effect of Ticarcillin by inhibiting bacterial growth. Ticarcillin exerts its effects on actively growing bacteria. To achieve synergism, Ticarcillin should be administered at least 2 hours prior to using Doxycycline.</td></tr><tr><td><a href="/drugs/DB00977">Ethinyl Estradiol</a></td><td>This anti-infectious agent could decrease the effect of the oral contraceptive</td></tr><tr><td><a href="/drugs/DB02703">Fusidic Acid</a></td><td>Fusidic acid may reduce the effect of Ticarcillin by inhibiting bacterial growth. Ticarcillin exerts its effects on actively growing bacteria. To achieve synergism, Ticarcillin should be administered at least 2 hours prior to using Fusidic acid.</td></tr><tr><td><a href="/drugs/DB00798">Gentamicin</a></td><td>Ticarcillin may reduce the serum concentration of Gentamicin. Ticarcillin may inactivate Gentamicin in vitro and the two agents should not be administered simultaneously through the same IV line.</td></tr><tr><td><a href="/drugs/DB01172">Kanamycin</a></td><td>Ticarcillin may reduce the serum concentration of Kanamycin. Ticarcillin may inactivate Kanamycin in vitro and the two agents should not be administered simultaneously through the same IV line.</td></tr><tr><td><a href="/drugs/DB00563">Methotrexate</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01017">Minocycline</a></td><td>Minocycline may reduce the effect of Ticarcillin by inhibiting bacterial growth. Ticarcillin exerts its effects on actively growing bacteria. To achieve synergism, Ticarcillin should be administered at least 2 hours prior to using Minocycline.</td></tr><tr><td><a href="/drugs/DB00994">Neomycin</a></td><td>Ticarcillin may reduce the serum concentration of Neomycin. Ticarcillin may inactivate Neomycin in vitro and the two agents should not be administered simultaneously through the same IV line.</td></tr><tr><td><a href="/drugs/DB00595">Oxytetracycline</a></td><td>Oxytetracycline may reduce the effect of Ticarcillin by inhibiting bacterial growth. Ticarcillin exerts its effects on actively growing bacteria. To achieve synergism, Ticarcillin should be administered at least 2 hours prior to using Oxytetracycline.</td></tr><tr><td><a href="/drugs/DB01082">Streptomycin</a></td><td>Ticarcillin may reduce the serum concentration of Streptomycin. Ticarcillin may inactivate Streptomycin in vitro and the two agents should not be administered simultaneously through the same IV line.</td></tr><tr><td><a href="/drugs/DB00759">Tetracycline</a></td><td>Tetracycline may reduce the effect of Ticarcillin by inhibiting bacterial growth. Ticarcillin exerts its effects on actively growing bacteria. To achieve synergism, Ticarcillin should be administered at least 2 hours prior to using Tetracycline.</td></tr><tr><td><a href="/drugs/DB00684">Tobramycin</a></td><td>Ticarcillin may reduce the serum concentration of Tobramycin. Ticarcillin may inactivate Tobramycin in vitro and the two agents should not be administered simultaneously through the same IV line.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

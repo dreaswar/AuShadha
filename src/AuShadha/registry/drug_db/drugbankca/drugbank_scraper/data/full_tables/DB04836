@@ -1,0 +1,194 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Amineptine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB04836</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>illicit, withdrawn</td></tr><tr><th>Description</th><td><p>The Food and Drug Administration suspended the marketing authorisation for Survector in 1999 and France withdrew it from the market, however several developing countries continued to produce it up until 2005.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB04836/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB04836/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04836.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04836.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04836.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04836.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04836.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB04836">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Amineptine hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000803/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000803/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: VDPUXONTAVMIKZ-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 373.180856852</li>
+              <li>Average Mass: 373.916</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000803">DBSALT000803</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Directim</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Maneon</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Neolior</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Provector</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Survector</td><td>Servier</td></tr><tr><td>Viaspera</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>57574-09-1</td></tr><tr><th>Weight</th><td>Average: 373.916<br>Monoisotopic: 373.180856852</td></tr><tr><th>Chemical Formula</th><td>C<sub>22</sub>H<sub>28</sub>ClNO<sub>2</sub></td></tr><tr><th>InChI Key</th><td>VDPUXONTAVMIKZ-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C22H27NO2.ClH/c24-21(25)13-3-1-2-8-16-23-22-19-11-6-4-9-17(19)14-15-18-10-5-7-12-20(18)22;/h4-7,9-12,22-23H,1-3,8,13-16H2,(H,24,25);1H</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">N-(6-carboxyhexyl)tricyclo[9.4.0.0^{3,8}]pentadeca-1(11),3(8),4,6,12,14-hexaen-2-aminium chloride</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[Cl-].OC(=O)CCCCCC[NH2+]C1C2=CC=CC=C2CCC2=CC=CC=C12</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Dibenzocycloheptenes</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Dibenzocycloheptenes</td></tr><tr><th>Alternative parents</th><td>Carbocyclic Fatty Acids; Benzene and Substituted Derivatives; Carboxylic Acids; Enolates; Polyamines</td></tr><tr><th>Substituents</th><td>benzene; carboxylic acid derivative; polyamine; enolate; carboxylic acid; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the dibenzocycloheptenes. These are compounds containing a dibenzocycloheptene moiety, which consists of two benzene connected by a cycloheptene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of depression.</td></tr><tr><th>Pharmacodynamics</th><td>Amineptine is an atypical tricyclic antidepressant.</td></tr><tr><th>Mechanism of action</th><td>Amineptine selectively inhibits the reuptake of dopamine and to a lesser extent norepinephrine, thus exerting a powerful and fast-acting antidepressant effect.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic.</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>48 minutes for the parent drug and 2.5 hours for the metabolites.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.927</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9384</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5548</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.5457</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9324</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8538</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6998</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7559</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7653</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5897</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5434</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8792</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7593</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8446</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7073</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9165</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.6805
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8651
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.7096
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.9526 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9341
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6018
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>226-230</td><td>Melen,C., Danree, B.and Poignant, J.C.; US.Patent 3,758,528; September 11,1973; assigned to Societe en nom Collectif Science Union et Cie; Societe Francaise de Recherche Medicale Melen, C., Danree, B. and Poignant, J.C.; U.S. Patent 3,821,249; June 28, 1974; assigned to Societe en nom Collectif Science Union et Cie; Societe Francaise de Recherche Medicale</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.84e-05 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.99</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>2.74</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-7.3</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>4.41</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.46</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>53.91</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>8</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>112.63</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>39.95</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Melen,C., Danree, B.and Poignant, J.C.; US.Patent 3,758,528; September 11,1973; assigned to Societe en nom Collectif Science Union et Cie; Societe Francaise de Recherche Medicale. <br>
+Melen, C., Danree, B. and Poignant, J.C.; U.S. Patent 3,821,249; June 28, 1974; assigned to Societe en nom Collectif Science Union et Cie; Societe Francaise de Recherche Medicale.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=3758528&amp;tbm=pts" target="_blank">US3758528 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Vaugeois JM, Corera AT, Deslandes A, Costentin J: Although chemically related to amineptine, the antidepressant tianeptine is not a dopamine uptake inhibitor. Pharmacol Biochem Behav. 1999 Jun;63(2):285-90. <a href="http://www.ncbi.nlm.nih.gov/pubmed/10371658">Pubmed</a></li>
+	<li>Grupper C: [New iatrogenic acne: acne caused by amineptin (Survector)] Ann Dermatol Venereol. 1988;115(11):1174-6. <a href="http://www.ncbi.nlm.nih.gov/pubmed/2977079">Pubmed</a></li>
+	<li>Thioly-Bensoussan D, Charpentier A, Triller R, Thioly F, Blanchet P, Tricoire N, Noury JY, Grupper C: [Iatrogenic acne caused by amineptin (Survector). Apropos of 8 cases] Ann Dermatol Venereol. 1988;115(11):1177-80. <a href="http://www.ncbi.nlm.nih.gov/pubmed/2977080">Pubmed</a></li>
+	<li>Vexiau P, Gourmel B, Husson C, Castot A, Rybojad M, Julien R, Fiet J, Puissant A, Cathelineau G: [Severe lesions of acne type induced by chronic amineptin poisoning: apropos of 6 cases] Ann Dermatol Venereol. 1988;115(11):1180-2. <a href="http://www.ncbi.nlm.nih.gov/pubmed/2977081">Pubmed</a></li>
+	<li>Teillac D, Weber MJ, Lowenstein W, de Prost Y: [Acne caused by Survector] Ann Dermatol Venereol. 1988;115(11):1183-4. <a href="http://www.ncbi.nlm.nih.gov/pubmed/2977082">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=34869" target="_blank">34869 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46509012" target="_blank">46509012 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.32090.html" target="_blank">32090 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=32499" target="_blank">32499 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DCL000340" target="_blank">DCL000340 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Amineptine" target="_blank">Amineptine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>N06AA19<ul class="atc-drug-tree"><li><a href="/atc/N#N">N &#8212; NERVOUS SYSTEM</a></li><li><a href="/atc/N06#N06">N06 &#8212; PSYCHOANALEPTICS</a></li><li><a href="/atc/N06A#N06A">N06A &#8212; ANTIDEPRESSANTS</a></li><li><a href="/atc/N06AA#N06AA">N06AA &#8212; Non-selective monoamine reuptake inhibitors</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

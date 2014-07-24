@@ -1,0 +1,235 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Alendronate</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00630</strong>&#160; (APRD00561)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Alendronate is a nitrogen-containing, second generation bisphosphonate. Bisphosphonates were first used to treat Paget&#8217;s disease in 1971. This class of medications is comprised of inorganic pyrophosphate analogues that contain non-hydrolyzable P-C-P bonds. Similar to other bisphosphonates, alendronate has a high affinity for bone mineral and is taken up during osteoclast resorption. Alendronate inhibits farnesyl pyrophosphate synthetase, one of the enzymes in the mevalonic acid pathway involved in producing isoprenoid compounds that are essential for post-translational modification of small guanosine triphosphate (<span class="caps">GTP</span>)-binding proteins, such as Rho, Ras and Rab. Inhibition of this process interferes with osteoclast function and survival. Alendronate is used for the treatment of osteoporosis and Paget&#8217;s disease.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00630/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00630/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00630.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00630.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00630.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00630.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00630.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00630">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Acide Alendronique</td><td>French</td><td>INN</td></tr><tr><td>Acido Alendronico</td><td>Spanish</td><td>INN</td></tr><tr><td>Acidum Alendronicum</td><td>Latin</td><td>INN</td></tr><tr><td>Alendronic acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Alendronate Sodium</strong>
+          <div class="cas">121268-17-5</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000315/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000315/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: DCSBSVSZJRSITC-UHFFFAOYNA-M</li>
+              <li>Monoisotopic Mass: 325.0303635</li>
+              <li>Average Mass: 325.1237</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000315">DBSALT000315</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Alenotop</td><td>Pliva</td></tr><tr><td>Alned</td><td>Laboratorios Belmac</td></tr><tr><td>Arendal</td><td>Ivax</td></tr><tr><td>Beenos</td><td>Gedeon Richter</td></tr><tr><td>Berlex</td><td>Duncan</td></tr><tr><td>Binosto</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Denfos</td><td>Biofarma</td></tr><tr><td>Densidron</td><td>Mepha</td></tr><tr><td>Dronat</td><td>Farmavita</td></tr><tr><td>Durost</td><td>Perumed</td></tr><tr><td>Fixopan</td><td>Grupo Farma</td></tr><tr><td>Forosa</td><td>Kemofarmacija</td></tr><tr><td>Fosagen</td><td>Aspen Pharmacare</td></tr><tr><td>Fosalen</td><td>Teriak</td></tr><tr><td>Fosamax</td><td>Merck</td></tr><tr><td>Fosmin</td><td>Hospimedikka</td></tr><tr><td>Fostolin</td><td>Actavis</td></tr><tr><td>Fosval</td><td>Saval</td></tr><tr><td>Huesobone</td><td>Farmaceutica Latina</td></tr><tr><td>Lendrate</td><td>Actavis</td></tr><tr><td>Oseolen</td><td>Intipharma</td></tr><tr><td>Ostemax</td><td>Polpharma</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Fosamax Plus</td><td>Alendronic Acid and Colecalciferol</td></tr><tr><td>Fosavance</td><td>alendronate sodium + cholecalciferol</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/bone-density-conservation-agents">Bone Density Conservation Agents</a></li>
+<li><a href="/mesh/antihypocalcemic-agents">Antihypocalcemic Agents</a></li>
+<li><a href="/mesh/antiresorptives">Antiresorptives</a></li>
+<li><a href="/mesh/bisphosphonates">Bisphosphonates</a></li></ul></td></tr><tr><th>CAS number</th><td>66376-36-1</td></tr><tr><th>Weight</th><td>Average: 249.096<br>Monoisotopic: 249.016724799</td></tr><tr><th>Chemical Formula</th><td>C<sub>4</sub>H<sub>13</sub>NO<sub>7</sub>P<sub>2</sub></td></tr><tr><th>InChI Key</th><td>OGSPWJRAVKPPFI-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C4H13NO7P2/c5-3-1-2-4(6,13(7,8)9)14(10,11)12/h6H,1-3,5H2,(H2,7,8,9)(H2,10,11,12)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(4-amino-1-hydroxy-1-phosphonobutyl)phosphonic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NCCCC(O)(P(O)(O)=O)P(O)(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organophosphorus Compounds</td></tr><tr><th>Class</th><td>Organic Phosphonic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Organic Phosphonic Acids</td></tr><tr><th>Direct parent</th><td>Organic Phosphonic Acids</td></tr><tr><th>Alternative parents</th><td>Polyamines; Monoalkylamines</td></tr><tr><th>Substituents</th><td>polyamine; primary amine; primary aliphatic amine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the organic phosphonic acids. These are organic compounds containing phosphonic acid.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment and prevention of osteoporosis in women and Paget's disease of bone in both men and women.</td></tr><tr><th>Pharmacodynamics</th><td>Alendronate, a second-generation bisphosphonate is the first member of a group of drugs which strengthens bone. Alendronate is used to reduce hypercalcemia in tumor-induced bone disease, to treat corticosteroid-induced osteoporosis and Paget's disease, and to prevent osteoporosis in postmenopausal women.</td></tr><tr><th>Mechanism of action</th><td>The action of Alendronate on bone tissue is based partly on its affinity for hydroxyapatite, which is part of the mineral matrix of bone. Alendronate also targets farnesyl pyrophosphate (FPP) synthase. Nitrogen-containing bisphosphonates (such as pamidronate, alendronate, risedronate, ibandronate and zoledronate) appear to act as analogues of isoprenoid diphosphate lipids, thereby inhibiting FPP synthase, an enzyme in the mevalonate pathway. Inhibition of this enzyme in osteoclasts prevents the biosynthesis of isoprenoid lipids (FPP and GGPP) that are essential for the post-translational farnesylation and geranylgeranylation of small GTPase signalling proteins. This activity inhibits osteoclast activity and reduces bone resorption and turnover. In postmenopausal women, it reduces the elevated rate of bone turnover, leading to, on average, a net gain in bone mass.</td></tr><tr><th>Absorption</th><td>Relative to an intravenous (IV) reference dose, the mean oral bioavailability of alendronate in women was 0.7% for doses ranging from 5 to 40 mg when administered after an overnight fast and two hours before a standardized breakfast. Oral bioavailability of the 10 mg tablet in men (0.59%) was similar to that in women (0.78%) when administered after an overnight fast and 2 hours before breakfast.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>28 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td>78%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>There is no evidence that alendronate is metabolized in humans or animals.</p></td></tr><tr><th>Route of elimination</th><td>Following a single IV dose of [14C]alendronate, approximately 50% of the radioactivity was excreted in the urine within 72 hours and little or no radioactivity was recovered in the feces.</td></tr><tr><th>Half life</th><td>&gt;10 years</td></tr><tr><th>Clearance</th><td><ul>
+	<li>&lt;200 mL/min [A single 10&#160;mg IV dose]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Alendronate can damage the esophagus both by toxicity from the medication itself and by nonspecific irritation secondary to contact between the pill and the esophageal mucosa, similar to other cases of "pill esophagitis."</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.9554</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.7065</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7079</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6606</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.947</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9894</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9205</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8536</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7997</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6792</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7567</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9089</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9344</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9091</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8309</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9914</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7079
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7783
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Ready biodegradable 
+        </td>
+        <td>
+            0.6547
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.6956 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8571
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8929
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Merck and co inc</li>
+<li>Apotex inc</li>
+<li>Aurobindo pharma ltd</li>
+<li>Austarpharma llc</li>
+<li>Barr laboratories inc</li>
+<li>Cadista pharmaceuticals inc</li>
+<li>Dr reddys laboratories ltd</li>
+<li>Genpharm ulc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Sandoz inc</li>
+<li>Sun pharma global inc</li>
+<li>Teva pharmaceuticals usa</li>
+<li>Watson laboratories</li>
+<li>Watson laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li>Arrow Pharm Malta Ltd.</li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li>Barr Pharmaceuticals</li>
+<li><a href="http://www.cipla.com">Cipla Ltd.</a></li>
+<li><a href="http://www.cobaltpharma.com">Cobalt Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.merck.com">Merck &amp; Co.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li>Northstar Rx LLC</li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.sunpharma.com">Sun Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Oral</td><td>70 mg/75 ml</td></tr><tr><td>Tablet</td><td>Oral</td><td>10 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>35 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>40 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>5 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>70 mg</td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Fosamax Plus D 4 70-2800 mg-Unit tablet Disp Pack</td><td>107.66USD</td><td>disp</td></tr><tr><td>Fosamax Plus D 4 70-5600 mg-Unit tablet Disp Pack</td><td>107.66USD</td><td>disp</td></tr><tr><td>Fosamax 1 Package = 4 tablet (70 mg) Package</td><td>101.96USD</td><td>package</td></tr><tr><td>Fosamax 1 Package = 4 tablet (35 mg) Package</td><td>97.2USD</td><td>package</td></tr><tr><td>Alendronate Sodium 4 35 mg tablet Package</td><td>85.23USD</td><td>package</td></tr><tr><td>Alendronate Sodium 4 70 mg tablet Package</td><td>85.23USD</td><td>package</td></tr><tr><td>Fosamax 70 mg/75ml Solution 75ml Bottle</td><td>34.75USD</td><td>bottle</td></tr><tr><td>Fosamax plus d 70 mg-5600 iu</td><td>25.88USD</td><td>each</td></tr><tr><td>Fosamax 70 mg tablet</td><td>24.51USD</td><td>tablet</td></tr><tr><td>Fosamax 35 mg tablet</td><td>23.36USD</td><td>tablet</td></tr><tr><td>Fosamax plus d 70 mg-2800 iu</td><td>21.85USD</td><td>each</td></tr><tr><td>Alendronate sodium 35 mg tablet</td><td>20.49USD</td><td>tablet</td></tr><tr><td>Alendronate sodium 70 mg tablet</td><td>20.49USD</td><td>tablet</td></tr><tr><td>Fosamax 40 mg tablet</td><td>7.52USD</td><td>tablet</td></tr><tr><td>Alendronate sodium 40 mg tablet</td><td>6.73USD</td><td>tablet</td></tr><tr><td>Fosamax 5 mg tablet</td><td>3.4USD</td><td>tablet</td></tr><tr><td>Fosamax 10 mg tablet</td><td>3.4USD</td><td>tablet</td></tr><tr><td>Alendronate sodium 10 mg tablet</td><td>2.99USD</td><td>tablet</td></tr><tr><td>Alendronate sodium 5 mg tablet</td><td>2.99USD</td><td>tablet</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>5994329</td><td>1999-01-17</td><td>2019-01-17</td></tr><tr><td>United States</td><td>5358941</td><td>1992-12-02</td><td>2012-12-02</td></tr><tr><td>Canada</td><td>2190148</td><td>2006-02-14</td><td>2015-05-12</td></tr><tr><td>Canada</td><td>2294595</td><td>2001-08-21</td><td>2018-07-17</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>234 dec &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>1mg/L</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>-4.3</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>pKa</td><td>2.72 (at 25 &#176;C)</td><td>MERCK INDEX (1996)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.69e+01 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-1.3</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-4.2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-1.2</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>0.69</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.91</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>8</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>161.31</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>47.37</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>19.4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><ul><li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1828">MS/MS Spectrum Quattro_QQQ 10</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1829">MS/MS Spectrum Quattro_QQQ 25</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1830">MS/MS Spectrum Quattro_QQQ 40</a></li></ul></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Masahiko Dohi, Yuji Makino, Takao Hujii, &#8220;Sodium alendronate preparation for local administration.&#8221; U.S. Patent US5958908, issued September, 1997.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=5958908&amp;tbm=pts" target="_blank">US5958908 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Russell RG, Watts NB, Ebetino FH, Rogers MJ: Mechanisms of action of bisphosphonates: similarities and differences and their potential influence on clinical efficacy. Osteoporos Int. 2008 Jun;19(6):733-59. <a href="http://www.ncbi.nlm.nih.gov/pubmed/18214569">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07752" target="_blank">C07752 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=2088" target="_blank">2088 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46507199" target="_blank">46507199 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.2004.html" target="_blank">2004 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=25313" target="_blank">25313 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=2567" target="_blank">2567 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL870" target="_blank">CHEMBL870 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000182" target="_blank">DAP000182 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA448082" target="_blank">PA448082 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=AHD" target="_blank">AHD <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2261715" target="_blank">2261715 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic/alendron.htm" target="_blank">http://www.rxlist.com/cgi/generic/alendron.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/alendronate.html" target="_blank">http://www.drugs.com/cdi/alendronate.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Alendronate" target="_blank">Alendronate <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>M05BA04<ul class="atc-drug-tree"><li><a href="/atc/M#M">M &#8212; MUSCULO-SKELETAL SYSTEM</a></li><li><a href="/atc/M05#M05">M05 &#8212; DRUGS FOR TREATMENT OF BONE DISEASES</a></li><li><a href="/atc/M05B#M05B">M05B &#8212; DRUGS AFFECTING BONE STRUCTURE AND MINERALIZATION</a></li><li><a href="/atc/M05BA#M05BA">M05BA &#8212; Bisphosphonates</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>92:00.00</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00630.pdf?1265922797">show</a>(105 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00630.pdf?1265922737">show</a>(24.7 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01373">Calcium</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00258">Calcium Acetate</a></td><td>Calcium Salts may decrease the serum concentration of Bisphosphonate Derivatives such as alendronate. Avoid administration of oral calcium supplements within 30 minutes after alendronate. </td></tr><tr><td><a href="/drugs/DB01164">Calcium Chloride</a></td><td>Calcium salts may decrease the serum concentration of bisphosphonate derivatives. Avoid administration of oral calcium supplements within 30 minutes after alendronate/risedronate. </td></tr><tr><td><a href="/drugs/DB00586">Diclofenac</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00861">Diflunisal</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00749">Etodolac</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00573">Fenoprofen</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00712">Flurbiprofen</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB01050">Ibuprofen</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00328">Indomethacin</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00893">Iron Dextran</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00465">Ketorolac</a></td><td>Increased risk of gasrtic toxicity</td></tr><tr><td><a href="/drugs/DB01378">Magnesium</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00784">Mefenamic acid</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00461">Nabumetone</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00788">Naproxen</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00991">Oxaprozin</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB03585">Oxyphenbutazone</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00554">Piroxicam</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB00469">Tenoxicam</a></td><td>Increased risk of gastric toxicity</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take 30-60 minutes before breakfast.</li>
+<li>Take with a full glass of water.</li></ul></td></tr></tbody></table>

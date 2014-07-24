@@ -1,0 +1,197 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Aztreonam</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00355</strong>&#160; (APRD00815, EXPT00605)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A monocyclic beta-lactam antibiotic originally isolated from Chromobacterium violaceum. It is resistant to beta-lactamases and is used in gram-negative infections, especially of the meninges, bladder, and kidneys. It may cause a superinfection with gram-positive organisms. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00355/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00355/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00355.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00355.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00355.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00355.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00355.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00355">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>2-({[(1Z)-1-(2-amino-1,3-thiazol-4-yl) -2- {[(2S,3S)-2-methyl-4-oxo-1-sulfoazetidin-3-yl]amino} -2- oxoethylidene]amino}oxy)-2-methylpropanoic acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IUPAC</td></tr><tr><td>Aztreonam</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>DCIT, USAN, BAN, JP XV, USP 34</td></tr><tr><td>Aztr&#233;onam</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>French</td></tr><tr><td>Aztreonamum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Aztreonam Lysine</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT001061/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT001061/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT001061">DBSALT001061</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Azactam</td><td>Bristol Myers Squibb</td></tr><tr><td>Azenam</td><td>Aristo</td></tr><tr><td>Aztram</td><td>Shanxi C &amp; Y</td></tr><tr><td>Aztreo</td><td>Zydus Cadila</td></tr><tr><td>Aztreonam</td><td>APP</td></tr><tr><td>Bencipen</td><td>AC Farma</td></tr><tr><td>Cayston</td><td>Gilead</td></tr><tr><td>Primbactam</td><td>Menarini</td></tr><tr><td>Trezam</td><td>Glenmark</td></tr><tr><td>Vebac</td><td>Fahrenheit</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>78110-38-0</td></tr><tr><th>Weight</th><td>Average: 435.433<br>Monoisotopic: 435.051853925</td></tr><tr><th>Chemical Formula</th><td>C<sub>13</sub>H<sub>17</sub>N<sub>5</sub>O<sub>8</sub>S<sub>2</sub></td></tr><tr><th>InChI Key</th><td>WZPBZJONDBGPKJ-VEHQQRBSSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C13H17N5O8S2/c1-5-7(10(20)18(5)28(23,24)25)16-9(19)8(6-4-27-12(14)15-6)17-26-13(2,3)11(21)22/h4-5,7H,1-3H3,(H2,14,15)(H,16,19)(H,21,22)(H,23,24,25)/b17-8-/t5-,7-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2S,3S)-3-[(2Z)-2-(2-azaniumyl-1,3-thiazol-4-yl)-2-[(1-carboxy-1-methylethoxy)imino]acetamido]-2-methyl-4-oxoazetidine-1-sulfonate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">C[C@H]1[C@H](NC(=O)C(=N/OC(C)(C)C(=O)O)\C2=CSC([NH3+])=N2)C(=O)N1S([O-])(=O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Lactams</td></tr><tr><th>Subclass</th><td>Beta Lactams</td></tr><tr><th>Direct parent</th><td>Monobactams</td></tr><tr><th>Alternative parents</th><td>N-acyl-alpha Amino Acids and Derivatives; Alpha Amino Acid Amides; 2,4-disubstituted Thiazoles; Aminothiazoles; Organic Sulfites; Organic Sulfuric Acids and Derivatives; Secondary Carboxylic Acid Amides; Azetidines; Oxime Ethers; Enolates; Carboxylic Acids; Polyamines; Imines</td></tr><tr><th>Substituents</th><td>alpha-amino acid amide; alpha-amino acid or derivative; 2,4-disubstituted 1,3-thiazole; 1,3-thiazolamine; sulfuric acid derivative; azole; organic sulfite; thiazole; secondary carboxylic acid amide; oxime ether; carboxamide group; azetidine; enolate; polyamine; carboxylic acid derivative; carboxylic acid; organonitrogen compound; imine; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the monobactams. These are compounds comprising beta-lactam ring is alone and not fused to another ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of the following infections caused by susceptible gram-negative microorganisms: urinary tract infections, lower respiratory tract infections, septicemia, skin and skin-structure infections, intra-abdominal infections, and gynecologic infections.</td></tr><tr><th>Pharmacodynamics</th><td>Aztreonam is a monocyclic beta-lactam antibiotic (a monobactam) originally isolated from <i>Chromobacterium violaceum</i>. Aztreonam exhibits potent and specific activity in vitro against a wide spectrum of gram-negative aerobic pathogens including <i>Pseudomonas aeruginosa</i>. It has no useful activity against gram-positive bacteria or anaerobes, but has very broad spectrum against gram-negative aerobes, including <i>Pseudomonas aeruginosa</i>. This has given it the nickname "the magic bullet for aerobic gram-negative bacteria". Aztreonam, unlike the majority of beta-lactam antibiotics, does not induce beta-lactamase activity and its molecular structure confers a high degree of resistance to hydrolysis by beta-lactamases (such as penicillinases and cephalosporinases) produced by most gram-negative and gram-positive pathogens; it is, therefore, usually active against gram-negative aerobic microorganisms that are resistant to antibiotics hydrolyzed by beta-lactamases. It is active against many strains that are multiply-resistant to other antibiotics, such as certain cephalosporins, penicillin, and aminoglycosides. Aztreonam maintains its antimicrobial activity over a pH range of 6 to 8 in vitro, as well as in the presence of human serum and under anaerobic conditions.</td></tr><tr><th>Mechanism of action</th><td>The bactericidal action of aztreonam results from the inhibition of bacterial cell wall synthesis due to a high affinity of aztreonam for penicillin binding protein 3 (PBP3). By binding to PBP3, aztreonam inhibits the third and last stage of bacterial cell wall synthesis. Cell lysis is then mediated by bacterial cell wall autolytic enzymes such as autolysins. It is possible that aztreonam interferes with an autolysin inhibitor.</td></tr><tr><th>Absorption</th><td>Less than 1% absorbed from the gastrointestinal tract following oral administration. Completely absorbed following intramuscular administration.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>12.6 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td>Serum protein binding averaged 56% and is independent of dose. Impaired renal function, 36 to 43%.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Approximately 6 to 16% metabolized to inactive metabolites by hydrolysis of the beta-lactam bond, resulting in an open-ring compound.</p></td></tr><tr><th>Route of elimination</th><td>In healthy subjects, aztreonam is excreted in the urine about equally by active tubular secretion and glomerular filtration. Urinary excretion of a single parenteral dose was essentially complete by 12 hours after injection.</td></tr><tr><th>Half life</th><td>The serum half-life of aztreonam averaged 1.7 hours (1.5 to 2.0) in subjects with normal renal function, independent of the dose. In elderly patients and in patients with impaired renal function, the mean serum half-life of aztreonam increased (4.7 to 6 hours and 2.1 hours, respectively).</td></tr><tr><th>Clearance</th><td><ul>
+	<li>91 mL/min [healthy]</li>
+</ul></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.9601</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9657</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5885</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6472</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8047</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6293</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9324</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7736</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8142</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5784</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8562</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8404</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9023</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8306</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8763</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9005</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6319
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Carcinogens  
+        </td>
+        <td>
+            0.5839
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.8146
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.9822 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9967
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8329
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Gilead sciences inc</li>
+<li>Bristol myers squibb</li>
+<li>Bristol myers squibb co</li>
+<li>App pharmaceuticals llc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li>E.R. Squibb and Sons LLC</li>
+<li><a href="http://www.elan.com">Elan Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.gilead.com">Gilead Sciences Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00618">Demeclocycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00254">Doxycycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00977">Ethinyl Estradiol</a></td><td>This anti-infectious agent could decrease the effect of the oral contraceptive</td></tr><tr><td><a href="/drugs/DB01017">Minocycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00759">Tetracycline</a></td><td>Possible antagonism of action</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

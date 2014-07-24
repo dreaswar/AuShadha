@@ -1,0 +1,204 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Kanamycin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01172</strong>&#160; (APRD00026)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Kanamycin (also known as kanamycin A) is an aminoglycoside bacteriocidal antibiotic, available in oral, intravenous, and intramuscular forms, and used to treat a wide variety of infections. Kanamycin is isolated from the bacterium Streptomyces kanamyceticus and its most commonly used form is kanamycin sulfate.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01172/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01172/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01172.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01172.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01172.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01172.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01172.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01172">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>4,6-diamino-2-hydroxy-1,3-cyclohexane 3,6'diamino-3,6'-dideoxydi-&#945;-D-glucoside</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>4,6-diamino-2-hydroxy-1,3-cyclohexylene 3,6'-diamino-3,6'-dideoxydi-D-glucopyranoside</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Kanamycin A</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Kanamycin sulfate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000401/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000401/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: OOYGSFOGFJDDHP-KMCOLRRFSA-N</li>
+              <li>Monoisotopic Mass: 582.205437256</li>
+              <li>Average Mass: 582.577</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000401">DBSALT000401</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Efficin</td><td>Lupin</td></tr><tr><td>Kanamytrex</td><td>Alcon</td></tr><tr><td>Kancin</td><td>Alembic</td></tr><tr><td>Kancin-L</td><td>Atlantic</td></tr><tr><td>Kantrex</td><td>Merck</td></tr><tr><td>Winamycin</td><td>Winston</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li>
+<li><a href="/mesh/protein-synthesis-inhibitors">Protein Synthesis Inhibitors</a></li>
+<li><a href="/mesh/aminoglycosides">Aminoglycosides</a></li></ul></td></tr><tr><th>CAS number</th><td>8063-07-8</td></tr><tr><th>Weight</th><td>Average: 484.4986<br>Monoisotopic: 484.238058014</td></tr><tr><th>Chemical Formula</th><td>C<sub>18</sub>H<sub>36</sub>N<sub>4</sub>O<sub>11</sub></td></tr><tr><th>InChI Key</th><td>SBUJHOSQTJFQJX-LCMAVPODNA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1/C18H36N4O11/c19-2-6-10(25)12(27)13(28)18(30-6)33-16-5(21)1-4(20)15(14(16)29)32-17-11(26)8(22)9(24)7(3-23)31-17/h4-18,23-29H,1-3,19-22H2/t4-,5+,6-,7-,8+,9-,10-,11-,12+,13-,14-,15+,16-,17-,18-/s2</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2R,3S,4S,5R,6R)-2-(aminomethyl)-6-{[(1R,2R,3S,4R,6S)-4,6-diamino-3-{[(2S,3R,4S,5S,6R)-4-amino-3,5-dihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy}-2-hydroxycyclohexyl]oxy}oxane-3,4,5-triol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC[C@H]1O[C@H](O[C@@H]2[C@@H](N)C[C@@H](N)[C@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](N)[C@H]3O)[C@H]2O)[C@H](O)[C@@H](O)[C@@H]1O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organooxygen Compounds</td></tr><tr><th>Class</th><td>Carbohydrates and Carbohydrate Conjugates</td></tr><tr><th>Subclass</th><td>Amino Sugars</td></tr><tr><th>Direct parent</th><td>Aminocyclitol Glycosides</td></tr><tr><th>Alternative parents</th><td>Dihexoses; O-glycosyl Compounds; Aminocyclitols and Derivatives; Cyclohexanols; Oxanes; 1,2-Aminoalcohols; 1,2-Diols; Polyamines; Primary Alcohols; Acetals; Monoalkylamines</td></tr><tr><th>Substituents</th><td>o-glycosyl compound; glycosyl compound; disaccharide; aminocyclitol derivative; cyclitol derivative; cyclohexanol; oxane; cyclic alcohol; secondary alcohol; 1,2-aminoalcohol; polyol; 1,2-diol; polyamine; acetal; primary alcohol; ether; primary aliphatic amine; alcohol; organonitrogen compound; primary amine; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the aminocyclitol glycosides. These are organic compounds containing an amicocyclitol moiety glycosidially linked to a carbohydrate moiety.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For treatment of infections where one or more of the following are the known or suspected pathogens: <i>E. coli</i>, <i>Proteus</i> species (both indole-positive and indole-negative), <i>E. aerogenes, K. pneumoniae, S. marcescens,</i> and <i>Acinetobacter</i> species.</td></tr><tr><th>Pharmacodynamics</th><td>Kanamycin is an aminoglycoside antibiotic. Aminoglycosides work by binding to the bacterial 30S ribosomal subunit, causing misreading of t-RNA, leaving the bacterium unable to synthesize proteins vital to its growth. Aminoglycosides are useful primarily in infections involving aerobic, Gram-negative bacteria, such as Pseudomonas, Acinetobacter, and Enterobacter. In addition, some mycobacteria, including the bacteria that cause tuberculosis, are susceptible to aminoglycosides. Infections caused by Gram-positive bacteria can also be treated with aminoglycosides, but other types of antibiotics are more potent and less damaging to the host. In the past the aminoglycosides have been used in conjunction with penicillin-related antibiotics in streptococcal infections for their synergistic effects, particularly in endocarditis. Aminoglycosides are mostly ineffective against anaerobic bacteria, fungi and viruses.</td></tr><tr><th>Mechanism of action</th><td>Aminoglycosides like kanamycin "irreversibly" bind to specific 30S-subunit proteins and 16S rRNA. Specifically Kanamycin binds to four nucleotides of 16S rRNA and a single amino acid of protein S12. This interferes with decoding site in the vicinity of nucleotide 1400 in 16S rRNA of 30S subunit. This region interacts with the wobble base in the anticodon of tRNA. This leads to interference with the initiation complex, misreading of mRNA so incorrect amino acids are inserted into the polypeptide leading to nonfunctional or toxic peptides and the breakup of polysomes into nonfunctional monosomes.</td></tr><tr><th>Absorption</th><td>Kanamycin is rapidly absorbed after intramuscular injection and peak serum levels are generally reached within approximately one hour. Poor oral and topical absorption except with severe skin damage. </td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>2.5 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Mild and reversible nephrotoxicity may be observed in 5 - 25% of patients. Amikacin accumulates in proximal renal tubular cells. Tubular cell regeneration occurs despite continued drug exposure. Toxicity usually occurs several days following initiation of therapy. May cause irreversible ototoxicity. Otoxocity appears to be correlated to cumulative lifetime exposure. Drug accumulation in the endolymph and perilymph of the inner ear causes irreversible damage to hair cells of the cochlea or summit of ampullar cristae in the vestibular complex. High frequency hearing is lost first with progression leading to loss of low frequency hearing. Further toxicity may lead to retrograde degeneration of the 8th cranial (vestibulocochlear) nerve. Vestibular toxicity may cause vertigo, nausea, vomiting, dizziness and loss of balance.
+Oral LD50 is 17500 mg/kg in mice, over 4 g/kg in rats, and over 3 g/kg in rabbits.</td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>Kanamycin Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00255?highlight%5Bcompounds%5D%5B%5D=DB01172&amp;highlight%5Bproteins%5D%5B%5D=DB01172">SMP00255</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.9351</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9815</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7545</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5281</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7592</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.904</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8353</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8325</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8323</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6719</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9143</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9259</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9317</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.915</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.97</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9261</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7406
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9488
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.849
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.5431 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9772
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8151
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Apothecon inc div bristol myers squibb</li>
+<li>Baxter healthcare corp anesthesia and critical care</li>
+<li>Abraxis pharmaceutical products</li>
+<li>App pharmaceuticals llc</li>
+<li>International medication systems ltd</li>
+<li>Loch pharmaceuticals inc</li>
+<li>Pharmafair inc</li>
+<li>Solopak laboratories inc</li>
+<li>Warner chilcott div warner lambert co</li>
+<li>Watson laboratories inc</li>
+<li>King pharmaceuticals inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.gallipot.com">Gallipot</a></li>
+<li><a href="http://www.meadjohnson.com">Mead Johnson and Co.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection, solution</td><td>Intramuscular</td><td></td></tr><tr><td>Injection, solution</td><td>Intravenous</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Kanamycin sulfate powder</td><td>25.2USD</td><td>g</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>logP</td><td>-6.3</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>9.23e+01 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-3.1</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-7.1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-0.72</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>12.11</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.75</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>15</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>11</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>282.61</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>106.13</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>47.57</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Hamao Umezawa, Shinichi Kondo, &#8220;Method for production of kanamycin C and its derivatives.&#8221; U.S. Patent US4120955, issued December, 1975.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=4120955&amp;tbm=pts" target="_blank">US4120955 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C00304" target="_blank">C00304 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=17630" target="_blank">17630 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL176" target="_blank">CHEMBL176 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DNC000201" target="_blank">DNC000201 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA450137" target="_blank">PA450137 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/kanamycin.htm" target="_blank">http://www.rxlist.com/cgi/generic3/kanamycin.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/kanamycin.html" target="_blank">http://www.drugs.com/cdi/kanamycin.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Kanamycin" target="_blank">Kanamycin <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>A07AA08<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A07#A07">A07 &#8212; ANTIDIARRHEALS, INTESTINAL ANTIINFLAMMATORY/ANTIINFECTIVE AGENTS</a></li><li><a href="/atc/A07A#A07A">A07A &#8212; INTESTINAL ANTIINFECTIVES</a></li><li><a href="/atc/A07AA#A07AA">A07AA &#8212; Antibiotics</a></li></ul>J01GB04<ul class="atc-drug-tree"><li><a href="/atc/J#J">J &#8212; ANTIINFECTIVES FOR SYSTEMIC USE</a></li><li><a href="/atc/J01#J01">J01 &#8212; ANTIBACTERIALS FOR SYSTEMIC USE</a></li><li><a href="/atc/J01G#J01G">J01G &#8212; AMINOGLYCOSIDE ANTIBACTERIALS</a></li><li><a href="/atc/J01GB#J01GB">J01GB &#8212; Other aminoglycosides</a></li></ul>S01AA24<ul class="atc-drug-tree"><li><a href="/atc/S#S">S &#8212; SENSORY ORGANS</a></li><li><a href="/atc/S01#S01">S01 &#8212; OPHTHALMOLOGICALS</a></li><li><a href="/atc/S01A#S01A">S01A &#8212; ANTIINFECTIVES</a></li><li><a href="/atc/S01AA#S01AA">S01AA &#8212; Antibiotics</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1P87" target="_blank">1P87 <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB01172.pdf?1265922745">show</a>(71.9 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00887">Bumetanide</a></td><td>Increased ototoxicity</td></tr><tr><td><a href="/drugs/DB00493">Cefotaxime</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB01330">Cefotetan</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB01331">Cefoxitin</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB00438">Ceftazidime</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB01212">Ceftriaxone</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB01111">Colistimethate</a></td><td>Aminoglycosides may enhance the nephrotoxic effect of Colistimethate. Aminoglycosides may enhance the neuromuscular-blocking effect of Colistimethate. Due to the potential for additive or synergistic toxicities (including both nephrotoxicity and neuromuscular blockade) between colistimethate and the aminoglycoside antibiotics, this combination should be avoided whenever possible. If these agents must be used together, patients' renal and neuromuscular function should be monitored closely. </td></tr><tr><td><a href="/drugs/DB00903">Ethacrynic acid</a></td><td>Increased ototoxicity</td></tr><tr><td><a href="/drugs/DB00695">Furosemide</a></td><td>Increased ototoxicity</td></tr><tr><td><a href="/drugs/DB01607">Ticarcillin</a></td><td>Ticarcillin may reduce the serum concentration of Kanamycin. Ticarcillin may inactivate Kanamycin in vitro and the two agents should not be administered simultaneously through the same IV line.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

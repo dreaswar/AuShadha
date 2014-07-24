@@ -1,0 +1,337 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Lidocaine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00281</strong>&#160; (APRD00479, DB05291)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A local anesthetic and cardiac depressant used as an antiarrhythmia agent. Its actions are more intense and its effects more prolonged than those of procaine but its duration of action is shorter than that of bupivacaine or prilocaine. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00281/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00281/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00281.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00281.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00281.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00281.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00281.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00281">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>2-(Diethylamino)-2',6'-acetoxylidide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>2-(Diethylamino)-N-(2,6-dimethylphenyl)acetamide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>alpha-diethylamino-2,6-dimethylacetanilide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Lignocaine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>&#945;-diethylamino-2,6-dimethylacetanilide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Lidocaine hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000900/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000900/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000900">DBSALT000900</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>After Burn Double Strength Gel</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>After Burn Double Strength Spray</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>After Burn Gel</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>After Burn Spray</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Akten</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Alphacaine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Anestacon</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Anestacon Jelly</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>DermaFlex</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Dilocaine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Esracaine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>L-Caine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Laryng-O-Jet</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Lidoderm</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Lidoject-1</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Lidoject-2</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Norwood Sunburn Spray</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Solarcaine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Xylocaine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Xylocaine-MPF</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Xylocard</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zilactin-L</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zingo</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>0.4% Lidocaine Hydrochloride and 5% Dextrose Injection Usp</td><td>Dextrose + Lidocaine Hydrochloride</td></tr><tr><td>Alphacaine Hcl 2% W Epineph 1:100000</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Alphacaine Hcl 2% W Epineph 1:50000</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Arrow Central Venous Catheterization Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Arrow Multi-Lumen Central Venous Catheter Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Arrow Pneumothorax Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Arrow Two-Lumen Central Venous Cathetar Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Arrow Two-Lumen Jugular Catheterization Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Baciguent Plus Pain Reliever Ont</td><td>Bacitracin + Lidocaine</td></tr><tr><td>Bactine First Aid Spray Liq</td><td>Benzalkonium Chloride + Lidocaine Hydrochloride</td></tr><tr><td>Banana Boat Sooth-a-Caine W.Moist.Aloe V.Gel</td><td>Lidocaine + Menthol</td></tr><tr><td>Burncare Kit</td><td>Benzocaine + Lidocaine Hydrochloride</td></tr><tr><td>Caustinerf</td><td>Camphor + Chlorophenol + Lidocaine + Paraformaldehyde</td></tr><tr><td>Central Vein Catheterization Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Central Venous Catetherization Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Central Venous Catheter Expanded Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Central Venous Catheterization Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Continuous Epidural Anesthesia Tray</td><td>Lidocaine Hydrochloride + Sodium Chloride</td></tr><tr><td>EMLA</td><td>Lidocaine + Prilocaine</td></tr><tr><td>Epidural Anesthesia Tray</td><td>Iodine (Povidone-Iodine) + Lidocaine Hydrochloride + Sodium Chloride</td></tr><tr><td>Expanded Multi-Med Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Family Medic First Aid Treatment - Liq</td><td>Benzalkonium Chloride + Lidocaine Hydrochloride</td></tr><tr><td>Genetic Amniocentesis Tray Kit</td><td>Iodine (Povidone-Iodine) + Lidocaine Hydrochloride</td></tr><tr><td>Hydrocath Central Venous Catheter Kit</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Jamshidi Bone Marrow Biopsy Tray</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Jamshidi Menghini Soft Tissue Biopsy Tray</td><td>Lidocaine Hydrochloride + Povidone-Iodine + Sodium Chloride</td></tr><tr><td>Lidocaine 0.2% in 5% Dextrose Inj</td><td>Dextrose + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine 2% Sterile Injectable Solution</td><td>Epinephrine Racemic + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine 2% with Epinephrine 1:100000</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine and Epinephrine Inj.Usp2% 1:100000</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine Hcl 2%</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine Hcl 2% Epinephrine Inj</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine Hcl 2% W Epineph 1:100000inj</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine Hcl 2% W Epinephrine</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine Hcl 2% W Epinephrine 1:100000</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine Hcl 2% W Epinephrine 1:50000</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Lidocaine Inj 2%</td><td>Epinephrine Hcl + Lidocaine Hydrochloride</td></tr><tr><td>Lidosporin Cream</td><td>Gramicidin + Lidocaine Hydrochloride + Polymyxin B (Polymyxin B Sulfate)</td></tr><tr><td>Lidosporin Ear Drops</td><td>Lidocaine Hydrochloride + Polymyxin B (Polymyxin B Sulfate)</td></tr><tr><td>Multi-Lumen Central Venous Cathet Kit</td><td>Iodine (Povidone-Iodine) + Lidocaine Hydrochloride</td></tr><tr><td>Octocaine 100 Needleject Inj</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Oraqix</td><td>Lidocaine + Prilocaine</td></tr><tr><td>Otizol Hc Liq</td><td>Hydrocortisone (Hydrocortisone Acetate) + Lidocaine (Lidocaine Hydrochloride) + Neomycin (Neomycin Sulfate)</td></tr><tr><td>Ozonol Antibiotic Plus - Ointment</td><td>Bacitracin + Lidocaine Hydrochloride + Polymyxin B (Polymyxin B Sulfate)</td></tr><tr><td>Ozonol Antibiotic Plus Ont</td><td>Bacitracin + Lidocaine Hydrochloride + Polymyxin B Sulfate</td></tr><tr><td>Pacing Catheter Introducer Kit Acp-001px</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Paracentesis Tray W Boasberg Catheter Set</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Percutaneous Sheath Intro Kit Ak-09810-S</td><td>Iodine (Povidone-Iodine) + Lidocaine Hydrochloride (Povidone-Iodine)</td></tr><tr><td>Percutaneous Sheath Introducer Kit</td><td>Iodine (Povidone-Iodine) + Lidocaine Hydrochloride</td></tr><tr><td>Percutaneous Sheath Introducer Tray</td><td>Lidocaine Hydrochloride + Povidone-Iodine</td></tr><tr><td>Peritoneal Lavage Kit Inj</td><td>Iodine (Povidone-Iodine) + Lidocaine Hydrochloride</td></tr><tr><td>Pharmassist Soothenel Gel</td><td>Benzethonium Chloride + Lidocaine Hydrochloride</td></tr><tr><td>Pleura-Seal Thoracentesis Kit</td><td>Iodine (Povidone-Iodine) + Lidocaine Hydrochloride</td></tr><tr><td>Polyderm Antibiotic Ointment</td><td>Bacitracin + Lidocaine Hydrochloride + Polymyxin B Sulfate</td></tr><tr><td>Polysporin Antibiotic Burn Cream</td><td>Gramicidin + Lidocaine Hydrochloride + Polymyxin B (Polymyxin B Sulfate)</td></tr><tr><td>Polysporin Burn Formula Cream</td><td>Gramicidin + Lidocaine Hydrochloride + Polymyxin B (Polymyxin B Sulfate)</td></tr><tr><td>Racestyptine Cord</td><td>Aluminum Chloride + Lidocaine + Oxyquinoline Sulfate</td></tr><tr><td>Two-Lumen Central Venous Catheter Kit</td><td>Iodine (Povidone-Iodine) + Lidocaine Hydrochloride</td></tr><tr><td>Xylocaine - MPF 5% with Glucose 7.5%</td><td>Dextrose + Lidocaine Hydrochloride</td></tr><tr><td>Xylocaine 0.5% W Epinephrine 1:100000</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Xylocaine 0.5% W Epinephrine 1:200000</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Xylocaine MPF 1.5% with Epinephrine</td><td>Epinephrine + Lidocaine Hydrochloride</td></tr><tr><td>Xylocaine Oral Spray</td><td>Cetylpyridinium Chloride + Lidocaine Hydrochloride</td></tr><tr><td>Xylonor Spray</td><td>Cetrimonium Bromide + Lidocaine</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-arrhythmia-agents">Anti-Arrhythmia Agents</a></li>
+<li><a href="/mesh/voltage-gated-sodium-channel-blockers">Voltage-Gated Sodium Channel Blockers</a></li>
+<li><a href="/mesh/anesthetics-local">Anesthetics, Local</a></li></ul></td></tr><tr><th>CAS number</th><td>137-58-6</td></tr><tr><th>Weight</th><td>Average: 234.3373<br>Monoisotopic: 234.173213336</td></tr><tr><th>Chemical Formula</th><td>C<sub>14</sub>H<sub>22</sub>N<sub>2</sub>O</td></tr><tr><th>InChI Key</th><td>NNJVILVZKWQKPM-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C14H22N2O/c1-5-16(6-2)10-13(17)15-14-11(3)8-7-9-12(14)4/h7-9H,5-6,10H2,1-4H3,(H,15,17)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-(diethylamino)-N-(2,6-dimethylphenyl)acetamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCN(CC)CC(=O)NC1=C(C)C=CC=C1C</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB00281.gif?1265922771">show</a>(7.18 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Alpha Amino Acid Amides</td></tr><tr><th>Alternative parents</th><td>Anilides; Toluenes; Secondary Carboxylic Acid Amides; Tertiary Amines; Enolates; Carboxylic Acids; Polyamines</td></tr><tr><th>Substituents</th><td>acetanilide; toluene; benzene; carboxamide group; tertiary amine; secondary carboxylic acid amide; enolate; carboxylic acid; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the alpha amino acid amides. These are amide derivatives of alpha amino acids.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For production of local or regional anesthesia by infiltration techniques such as percutaneous injection and intravenous regional anesthesia by peripheral nerve block techniques such as brachial plexus and intercostal and by central neural techniques such as lumbar and caudal epidural blocks.</td></tr><tr><th>Pharmacodynamics</th><td>Lidocaine is an anesthetic agent indicated for production of local or regional anesthesia and in the treatment of ventricular tachycardia occurring during cardiac manipulation, such as surgery or catheterization, or which may occur during acute myocardial infarction, digitalis toxicity, or other cardiac diseases. The mode of action of the antiarrhythmic effect of Lidocaine appears to be similar to that of procaine, procainamide and quinidine. Ventricular excitability is depressed and the stimulation threshold of the ventricle is increased during diastole. The sinoatrial node is, however, unaffected. In contrast to the latter 3 drugs, Lidocaine in therapeutic doses does not produce a significant decrease in arterial pressure or in cardiac contractile force. In larger doses, lidocaine may produce circulatory depression, but the magnitude of the change is less than that found with comparable doses of procainamide.</td></tr><tr><th>Mechanism of action</th><td>Lidocaine stabilizes the neuronal membrane by inhibiting the ionic fluxes required for the initiation and conduction of impulses thereby effecting local anesthetic action. Lidocaine alters signal conduction in neurons by blocking the fast voltage gated sodium (Na+) channels in the neuronal cell membrane that are responsible for signal propagation. With sufficient blockage the membrane of the postsynaptic neuron will not depolarize and will thus fail to transmit an action potential. This creates the anaesthetic effect by not merely preventing pain signals from propagating to the brain but by aborting their birth in the first place.</td></tr><tr><th>Absorption</th><td>Information derived from diverse formulations, concentrations and usages reveals that lidocaine is completely absorbed following parenteral administration, its rate of absorption depending, for example, upon various factors such as the site of administration and the presence or absence of a vasoconstrictor agent.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>0.7 to 2.7 L/kg [healthy volunteers]</li>
+</ul></td></tr><tr><th>Protein binding</th><td>60-80%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Primarily hepatic.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Lidocaine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li>
+<li><a href="/biodb/bio_entities/BE0003612" target="_blank">Cytochrome P450 3A7</a></li></ul></td><td><a href="/metabolites/DBMET00256">3-hydroxylidocaine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/257">Details</a></td></tr><tr><td>Lidocaine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li>
+<li><a href="/biodb/bio_entities/BE0003612" target="_blank">Cytochrome P450 3A7</a></li></ul></td><td><a href="/metabolites/DBMET00257">monoethylglycinexylidide</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/258">Details</a></td></tr><tr><td>Lidocaine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01089">2,6-Dimethylaniline (2,6-Xylidine)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1159">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00256">3-hydroxylidocaine</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01090">3-Hydroxymonoethylglycinexylidide</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1160">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00257">monoethylglycinexylidide</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01090">3-Hydroxymonoethylglycinexylidide</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1161">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00257">monoethylglycinexylidide</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01089">2,6-Dimethylaniline (2,6-Xylidine)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1162">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00257">monoethylglycinexylidide</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01091">Glycinexylidide (GX)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1163">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01091">Glycinexylidide (GX)</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01089">2,6-Dimethylaniline (2,6-Xylidine)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1164">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01089">2,6-Dimethylaniline (2,6-Xylidine)</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01128">2-Amino-3-methylbenzoate</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1240">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01089">2,6-Dimethylaniline (2,6-Xylidine)</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01129">4-Hydroxy-2,6-dimethylaniline</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1241">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01089">2,6-Dimethylaniline (2,6-Xylidine)</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01128">2-Amino-3-methylbenzoate</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1242">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01089">2,6-Dimethylaniline (2,6-Xylidine)</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01128">2-Amino-3-methylbenzoate</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1243">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01089">2,6-Dimethylaniline (2,6-Xylidine)</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01129">4-Hydroxy-2,6-dimethylaniline</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1244">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01089">2,6-Dimethylaniline (2,6-Xylidine)</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01129">4-Hydroxy-2,6-dimethylaniline</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1245">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Lidocaine and its metabolites are excreted by the kidneys.</td></tr><tr><th>Half life</th><td>109 minutes</td></tr><tr><th>Clearance</th><td><ul>
+	<li>0.64 +/- 0.18 L/min</li>
+</ul></td></tr><tr><th>Toxicity</th><td>The oral LD 50 of lidocaine HCl in non-fasted female rats is 459 (346-773) mg/kg (as the salt) and 214 (159-324) mg/kg (as the salt) in fasted female rats. Symptoms of overdose include convulsions, hypoxia, acidosis, bradycardia, arrhythmias and cardiac arrest.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Lidocaine (Local Anaesthetic) Action Pathway</td><td>Drug action</td></tr><tr><td>Lidocaine (Antiarrhythmic) Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00328?highlight%5Bcompounds%5D%5B%5D=DB00281&amp;highlight%5Bproteins%5D%5B%5D=DB00281">SMP00328</a></td></tr><tr><td>Lidocaine (Local Anaesthetic) Metabolism Pathway</td><td>Drug metabolism</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00620?highlight%5Bcompounds%5D%5B%5D=DB00281&amp;highlight%5Bproteins%5D%5B%5D=DB00281">SMP00620</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Astrazeneca lp</li>
+<li>Noven pharmaceuticals inc</li>
+<li>Carlisle laboratories inc</li>
+<li>E fougera div altana inc</li>
+<li>Graham chemical co</li>
+<li>Taro pharmaceuticals usa inc</li>
+<li>Teikoku pharma usa inc</li>
+<li>Abbott laboratories pharmaceutical products div</li>
+<li>Abbott laboratories hosp products div</li>
+<li>Abraxis pharmaceutical products</li>
+<li>Akorn inc</li>
+<li>Baxter healthcare corp anesthesia and critical care</li>
+<li>Bel mar laboratories inc</li>
+<li>Dell laboratories inc</li>
+<li>Elkins sinn div ah robins co inc</li>
+<li>Gd searle llc</li>
+<li>Hospira inc</li>
+<li>International medication systems ltd</li>
+<li>International medication system</li>
+<li>Luitpold pharmaceuticals inc</li>
+<li>Miles laboratories inc</li>
+<li>Watson laboratories inc</li>
+<li>Wyeth ayerst laboratories</li>
+<li>Baxter healthcare corp</li>
+<li>B braun medical inc</li>
+<li>App pharmaceuticals llc</li>
+<li>Meridian medical technologies inc</li>
+<li>Dentsply pharmaceutical</li>
+<li>Polymedica industries inc</li>
+<li>Teva pharmaceuticals usa</li>
+<li>Hi tech pharmacal co inc</li>
+<li>Wockhardt eu operations (swiss) ag</li>
+<li>Actavis mid atlantic llc</li>
+<li>Vintage pharmaceuticals llc</li>
+<li>Roxane laboratories inc</li>
+<li>Kendall co</li>
+<li>Paco research corp</li>
+<li>Anesiva inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.4udr.com">4uOrtho LLC</a></li>
+<li><a href="http://www.aaronindustriesinc.com">A. Aarons Inc.</a></li>
+<li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li><a href="http://www.aerospaceaccessory.com">Aerospace Accessory Service Inc.</a></li>
+<li><a href="http://www.akorn.com">Akorn Inc.</a></li>
+<li>Amend</li>
+<li><a href="http://www.gotoadc.com">American Dental Cooperative Inc.</a></li>
+<li><a href="http://www.americanregent.com">American Regent</a></li>
+<li><a href="http://www.amphastar.com">Amphastar Pharmaceuticals</a></li>
+<li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://www.aristospharm.com">Aristos Pharmaceuticals</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.astrazeneca.ca">AstraZeneca Inc.</a></li>
+<li>Ato Zizine Sarl</li>
+<li>Auriga Pharmaceuticals LLC</li>
+<li>Avent Inc.</li>
+<li><a href="http://www.bbraun.com">B. Braun Melsungen AG</a></li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.benco.com">Benco Dental Co.</a></li>
+<li><a href="http://www.blairex.com">Blairex Labs</a></li>
+<li>Bradley Pharmaceuticals Inc.</li>
+<li><a href="http://www.bpirx.com">Breckenridge Pharmaceuticals</a></li>
+<li><a href="http://www.acellapharma.com">Brookstone Pharmaceuticals</a></li>
+<li>C.O. Truxton Inc.</li>
+<li><a href="http://www.cardent.com">Cardent International Inc.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.carestreamhealth.com">Carestream Health Inc.</a></li>
+<li>Carlisle Laboratories Inc.</li>
+<li><a href="http://www.catalent.com">Catalent Pharma Solutions</a></li>
+<li><a href="http://www.codman.com">Codman and Shurtleff Inc.</a></li>
+<li><a href="http://www.covidien.com">Covidien LP</a></li>
+<li><a href="http://www.cypressrx.com">Cypress Pharmaceutical Inc.</a></li>
+<li><a href="http://www.darbydental.com">Darby Dental Supply Co. Inc.</a></li>
+<li><a href="http://www.deltexpharma.com">Deltex Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.dentsply.com">DENTSPLY International</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li>Doak Dermatologics</li>
+<li><a href="http://dsclabs.com">DSC Laboratories</a></li>
+<li><a href="http://www.fougera.com">E. Fougera and Co.</a></li>
+<li>Eastman Kodak Co. Dental Products</li>
+<li><a href="http://www.endo.com">Endo Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.importfab.com">Enterprises Importfab Inc.</a></li>
+<li><a href="http://www.roche.com">F Hoffmann-La Roche Ltd.</a></li>
+<li>Fresca Gourmet Inc.</li>
+<li><a href="http://www.giv.com">General Injectables and Vaccines Inc.</a></li>
+<li><a href="http://www.groupeparima.com">Groupe Parima Inc.</a></li>
+<li>H Meer Dental Supply Co.</li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li><a href="http://www.henryschein.com">Henry Schein Inc.</a></li>
+<li><a href="http://www.hitechpharm.com">Hi Tech Pharmacal Co. Inc.</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.innoviantpharmacy.com">Innoviant Pharmacy Inc.</a></li>
+<li><a href="http://www.keltman.com">Keltman Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.kentdentalclinic.yp.ca">Kent Dental</a></li>
+<li><a href="http://www.klosterfrau.de">Klosterfrau Berlin GmbH</a></li>
+<li>Kylemore Pharmaceuticals</li>
+<li>Laboratorios Zeyco SA De CV</li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.luitpold.com">Luitpold Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li>Marlop Pharmaceuticals Inc.</li>
+<li>Martica Enterprises Inc.</li>
+<li><a href="http://www.mckesson.com">Mckesson Corp.</a></li>
+<li><a href="http://www.medcompnet.com">Medical Components Inc.</a></li>
+<li>Medical Techniques LLC</li>
+<li><a href="http://www.meritpharm.com">Merit Pharmaceuticals</a></li>
+<li>National Pharmaceuticals</li>
+<li>NeLLCor Puritan Bennett Mexico SA De CV</li>
+<li>Nord Ost Corp.</li>
+<li><a href="http://www.noven.com">Noven Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.novocol.com">Novocol Pharmaceutical Canada</a></li>
+<li><a href="http://www.nycomed.com">Nycomed Inc.</a></li>
+<li><a href="http://www.odanlab.com">Odan Laboratories Ltd.</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pattersondental.com">Patterson Dental Supply Inc.</a></li>
+<li><a href="http://www.pharmaderm.com">Pharmaderm</a></li>
+<li><a href="http://www.pharmedium.com">Pharmedium</a></li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li>Primedics Laboratories</li>
+<li><a href="http://www.puretekcorp.com">Puretek Corp.</a></li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li>Raz Co. Inc.</li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li><a href="http://www.risingpharma.com">Rising Pharmaceuticals</a></li>
+<li><a href="http://www.riversedgepharma.com">River's Edge Pharmaceuticals</a></li>
+<li><a href="http://www.roxane.com">Roxane Labs</a></li>
+<li>S&amp;P Healthcare</li>
+<li><a href="http://www.safcodental.com">Safco Dental Supply Co.</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.septodont.com">Septodont Inc.</a></li>
+<li><a href="http://www.sheffield-pharmaceuticals.com">Sheffield Laboratories Div Faria Limited LLC</a></li>
+<li><a href="http://www.smiths-medical.com">Smiths Medical ASD Inc.</a></li>
+<li>Sonar Products Inc.</li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li><a href="http://www.tarousa.com">Taro Pharmaceuticals USA</a></li>
+<li>Tech Group Tempe</li>
+<li><a href="http://www.teikoku.co.jp">Teikoku Seiyaku Co. Ltd.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li>Tri State Hospital Supply Corp.</li>
+<li>Veratex Corp.</li>
+<li>Vintage Pharmaceuticals Inc.</li>
+<li><a href="http://www.vyteris.com">Vyteris Inc.</a></li>
+<li><a href="http://www.wallachsurgical.com">Wallach Surgical Devices Inc.</a></li>
+<li><a href="http://www.welchallyn.com">Welch Allyn Inc.</a></li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Aerosol</td><td>Topical</td><td></td></tr><tr><td>Aerosol, metered</td><td>Topical</td><td></td></tr><tr><td>Cream</td><td>Topical</td><td></td></tr><tr><td>Gel</td><td>Topical</td><td></td></tr><tr><td>Jelly</td><td>Topical</td><td></td></tr><tr><td>Jelly</td><td>Urethral</td><td></td></tr><tr><td>Liquid</td><td>Buccal</td><td></td></tr><tr><td>Liquid</td><td>Dental</td><td></td></tr><tr><td>Liquid</td><td>Infiltration</td><td></td></tr><tr><td>Liquid</td><td>Intravenous</td><td></td></tr><tr><td>Liquid</td><td>Oral</td><td></td></tr><tr><td>Liquid</td><td>Topical</td><td></td></tr><tr><td>Lotion</td><td>Topical</td><td></td></tr><tr><td>Ointment</td><td>Topical</td><td></td></tr><tr><td>Solution</td><td>Infiltration</td><td></td></tr><tr><td>Solution</td><td>Intramuscular</td><td></td></tr><tr><td>Solution</td><td>Intravenous</td><td></td></tr><tr><td>Solution</td><td>Oral</td><td></td></tr><tr><td>Solution</td><td>Topical</td><td></td></tr><tr><td>Spray</td><td>Topical</td><td></td></tr><tr><td>Swab</td><td>Topical</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01193">Acebutolol</a></td><td>The beta-blocker, acebutolol, may increase the effect and toxicity of lidocaine. </td></tr><tr><td><a href="/drugs/DB01072">Atazanavir</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00335">Atenolol</a></td><td>The beta-blocker, atenolol, may increase the effect and toxicity of lidocaine.</td></tr><tr><td><a href="/drugs/DB00612">Bisoprolol</a></td><td>The beta-blocker, bisoprolol, may increase the effect and toxicity of lidocaine.</td></tr><tr><td><a href="/drugs/DB01136">Carvedilol</a></td><td>The beta-blocker, carvedilol, may increase the effect and toxicity of lidocaine.</td></tr><tr><td><a href="/drugs/DB00501">Cimetidine</a></td><td>Increases the effect and toxicity of lidocaine</td></tr><tr><td><a href="/drugs/DB01264">Darunavir</a></td><td>Possible increase in lidocaine levels</td></tr><tr><td><a href="/drugs/DB00187">Esmolol</a></td><td>The beta-blocker, esmolol, may increase the effect and toxicity of lidocaine.</td></tr><tr><td><a href="/drugs/DB06414">Etravirine</a></td><td>Lidocaine, when used concomitantly with etravirine, may experience a decrease in serum concentration. It is recommended to monitor lidocaine therapy.</td></tr><tr><td><a href="/drugs/DB00598">Labetalol</a></td><td>The beta-blocker, labetalol, may increase the effect and toxicity of lidocaine.</td></tr><tr><td><a href="/drugs/DB00264">Metoprolol</a></td><td>The beta-blocker, metoprolol, may increase the effect and toxicity of lidocaine</td></tr><tr><td><a href="/drugs/DB01203">Nadolol</a></td><td>The beta-blocker, nadolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01580">Oxprenolol</a></td><td>The beta-blocker increases the effect and toxicity of lidocaine</td></tr><tr><td><a href="/drugs/DB01359">Penbutolol</a></td><td>Penbutolol increases the volume of distribution of lidocaine in normal subjects. This could result in a requirement for higher loading doses of lidocaine.</td></tr><tr><td><a href="/drugs/DB00960">Pindolol</a></td><td>The beta-blocker increases the effect and toxicity of lidocaine</td></tr><tr><td><a href="/drugs/DB00571">Propranolol</a></td><td>The beta-blocker, propranolol, may increase the effect and toxicity of lidocaine.</td></tr><tr><td><a href="/drugs/DB01369">Quinupristin</a></td><td>This combination presents an increased risk of toxicity</td></tr><tr><td><a href="/drugs/DB00382">Tacrine</a></td><td>The metabolism of Tacrine, a CYP1A2 substrate, may be reduced by strong CYP1A2 inhibitors such as Lidocaine. Consider modifying therapy to avoid Tacrine toxicity. Monitor the efficacy and toxicity of Tacrine if Lidocaine is initiated, discontinued or if the dose is changed.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Lidocaine may decrease the therapeutic effect of Tamoxifen by decreasing the production of active metabolites. Consider alternate therapy.</td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Lidocaine, a CYP3A4/2D6 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP3A4/2D6 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Lidocaine is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Telithromycin may reduce clearance of Lidocaine. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Lidocaine if Telithromycin is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00857">Terbinafine</a></td><td>Terbinafine may reduce the metabolism and clearance of Lidocaine. Consider alternate therapy or monitor for therapeutic/adverse effects of Lidocaine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01623">Thiothixene</a></td><td>The strong CYP1A2 inhibitor, Lidocaine, may decrease the metabolism and clearance of Thiothixene, a CYP1A2 substrate. Consider alternate therapy or monitor for changes in Thiothixene therapeutic and adverse effects if Lidocaine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00373">Timolol</a></td><td>The beta-blocker, timolol, may increase the effect and toxicity of lidocaine.</td></tr><tr><td><a href="/drugs/DB00697">Tizanidine</a></td><td>Lidocaine may decrease the metabolism and clearance of Tizanidine. Consider alternate therapy or use caution during co-administration.</td></tr><tr><td><a href="/drugs/DB01036">Tolterodine</a></td><td>Lidocaine may decrease the metabolism and clearance of Tolterodine. Adjust Tolterodine dose and monitor for efficacy and toxicity.</td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Lidocaine may increase Tramadol toxicity by decreasing Tramadol metabolism and clearance. Lidocaine may decrease the effect of Tramadol by decreasing active metabolite production.</td></tr><tr><td><a href="/drugs/DB00656">Trazodone</a></td><td>The CYP3A4 inhibitor, Lidocaine, may increase Trazodone efficacy/toxicity by decreasing Trazodone metabolism and clearance. Monitor for changes in Trazodone efficacy/toxicity if Lidocaine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of lidocaine by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of lidocaine if voriconazole is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

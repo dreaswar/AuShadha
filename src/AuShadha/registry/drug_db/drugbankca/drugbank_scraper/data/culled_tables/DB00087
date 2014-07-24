@@ -1,0 +1,58 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Alemtuzumab</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00087</strong>&#160; (BIOD00109, BTD00109)</td></tr><tr><th>Type</th><td>biotech</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Humanized monoclonal antibody specific to lymphocyte antigens. It is a recombinant <span class="caps">DNA</span>-derived humanized monoclonal antibody (Campath-1H) that is directed against the 21-28 kD cell surface glycoprotein,CD52. The Campath-1H antibody is an IgG1 kappa with human variable framework and constant regions, and complementarity-determining regions from a murine (rat) monoclonal antibody (Campath-1G). Campath is produced in mammalian cell (Chinese hamster ovary) suspension culture in a medium containing neomycin.</p></td></tr><tr><th>Protein structure</th><td><a href="/system/protein_structures/full/DB00087.png?1266600384"><img alt="Db00087" src="/system/protein_structures/thumb/DB00087.png?1266600384"></a></td></tr><tr><th>Protein chemical formula</th><td>C<sub>6468</sub>H<sub>10066</sub>N<sub>1732</sub>O<sub>2005</sub>S<sub>40</sub></td></tr><tr><th>Protein average weight</th><td>145453.8000</td></tr><tr><th>Sequences</th><td><pre class="sequence">&gt;1CE1:H CAMPATH-1H:Heavy Chain 1
+QVQLQESGPGLVRPSQTLSLTCTVSGFTFTDFYMNWVRQPPGRGLEWIGFIRDKAKGYTT
+EYNPSVKGRVTMLVDTSKNQFSLRLSSVTAADTAVYYCAREGHTAAPFDYWGQGSLVTVS
+SASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQS
+SGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKVEPKSCDKTHTCPPCPAPELLG
+GPSVFLFPPKPKDTLMISRTPEVTCVVVDVSHEDPEVKFNWYVDGVEVHNAKTKPREEQY
+NSTYRVVSVLTVLHQDWLNGKEYKCKVSNKALPAPIEKTISKAKGQPREPQVYTLPPSRD
+ELTKNQVSLTCLVKGFYPSDIAVEWESNGQPENNYKTTPPVLDSDGSFFLYSKLTVDKSR
+WQQGNVFSCSVMHEALHNHYTQKSLSLSPGK</pre><pre class="sequence">&gt;1CE1:L CAMPATH-1H:Light Chain 1
+DIQMTQSPSSLSASVGDRVTITCKASQNIDKYLNWYQQKPGKAPKLLIYNTNNLQTGVPS
+RFSGSGSGTDFTFTISSLQPEDIATYYCLQHISRPRTFGQGTKVEIKRTVAAPSVFIFPP
+SDEQLKSGTASVVCLLNNFYPREAKVQWKVDNALQSGNSQESVTEQDSKDSTYSLSSTLT
+LSKADYEKHKVYACEVTHQGLSSPVTKSFNR</pre><pre class="sequence">&gt;1CE1:H CAMPATH-1H:Heavy Chain 2
+QVQLQESGPGLVRPSQTLSLTCTVSGFTFTDFYMNWVRQPPGRGLEWIGFIRDKAKGYTT
+EYNPSVKGRVTMLVDTSKNQFSLRLSSVTAADTAVYYCAREGHTAAPFDYWGQGSLVTVS
+SASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQS
+SGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKVEPKSCDKTHTCPPCPAPELLG
+GPSVFLFPPKPKDTLMISRTPEVTCVVVDVSHEDPEVKFNWYVDGVEVHNAKTKPREEQY
+NSTYRVVSVLTVLHQDWLNGKEYKCKVSNKALPAPIEKTISKAKGQPREPQVYTLPPSRD
+ELTKNQVSLTCLVKGFYPSDIAVEWESNGQPENNYKTTPPVLDSDGSFFLYSKLTVDKSR
+WQQGNVFSCSVMHEALHNHYTQKSLSLSPGK</pre><pre class="sequence">&gt;1CE1:L CAMPATH-1H:Light Chain 2
+DIQMTQSPSSLSASVGDRVTITCKASQNIDKYLNWYQQKPGKAPKLLIYNTNNLQTGVPS
+RFSGSGSGTDFTFTISSLQPEDIATYYCLQHISRPRTFGQGTKVEIKRTVAAPSVFIFPP
+SDEQLKSGTASVVCLLNNFYPREAKVQWKVDNALQSGNSQESVTEQDSKDSTYSLSSTLT
+LSKADYEKHKVYACEVTHQGLSSPVTKSFNR</pre><pre class="sequence">&gt;1bey_H|CAMPATH-1H|Humanized||VH-CH1 (VH(1-121)+CH1(122-210))|||||||219||||MW 23397.3|MW 23397.3|
+QVQLQESGPGLVRPSQTLSLTCTVSGFTFTDFYMNWVRQPPGRGLEWIGFIRDKAKGYTT
+EYNPSVKGRVTMLVDTSKNQFSLRLSSVTAADTAVYYCAREGHTAAPFDYWGQGSLVTVS
+SASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQS
+SGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKV</pre><pre class="sequence">&gt;1bey_L|CAMPATH-1H|Humanized||L-KAPPA (V-KAPPA(1-107)+C-KAPPA(108-214))|||||||214||||MW 23571.3|MW 23571.3|
+DIQMTQSPSSLSASVGDRVTITCKASQNIDKYLNWYQQKPGKAPKLLIYNTNNLQTGVPS
+RFSGSGSGTDFTFTISSLQPEDIATYYCLQHISRPRTFGQGTKVEIKRTVAAPSVFIFPP
+SDEQLKSGTASVVCLLNNFYPREAKVQWKVDNALQSGNSQESVTEQDSKDSTYSLSSTLT
+LSKADYEKHKVYACEVTHQGLSSPVTKSFNRGEC</pre><pre class="sequence">&gt;8005_H|alemtuzumab|||H-GAMMA-1 (VH(1-121)+CH1(122-219)+HINGE-REGION(220-220)+CH2(221-330)+CH3(331-437))|||||||437||||MW 47976.2|MW 47976.2|
+QVQLQESGPGLVRPSQTLSLTCTVSGFTFTDFYMNWVRQPPGRGLEWIGFIRDKAKGYTT
+EYNPSVKGRVTMLVDTSKNQFSLRLSSVTAADTAVYYCAREGHTAAPFDYWGQGSLVTVS
+SASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQS
+SGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKVEAPELLGGPSVFLFPPKPKDT
+LMISRTPEVTCVVVDVSHEDPEVKFNWYVDGVEVHNAKTKPREEQYNSTYRVVSVLTVLH
+QDWLNGKEYKCKVSNKALPAPIEKTISKAKGQPREPQVYTLPPSRDELTKNQVSLTCLVK
+GFYPSDIAVEWESNGQPENNYKTTPPVLDSDGSFFLYSKLTVDKSRWQQGNVFSCSVMHE
+ALHNHYTQKSLSLSPGK</pre><pre class="sequence">&gt;8005_L|alemtuzumab|||L-KAPPA (V-KAPPA(1-107)+C-KAPPA(108-214))|||||||214||||MW 23571.3|MW 23571.3|
+DIQMTQSPSSLSASVGDRVTITCKASQNIDKYLNWYQQKPGKAPKLLIYNTNNLQTGVPS
+RFSGSGSGTDFTFTISSLQPEDIATYYCLQHISRPRTFGQGTKVEIKRTVAAPSVFIFPP
+SDEQLKSGTASVVCLLNNFYPREAKVQWKVDNALQSGNSQESVTEQDSKDSTYSLSSTLT
+LSKADYEKHKVYACEVTHQGLSSPVTKSFNRGEC</pre><pre class="sequence">&gt;1ce1_H|CAMPATH-1H|Humanized||VH-CH1 (VH(1-121)+CH1(122-219))|||||||220||||MW 23526.4|MW 23526.4|
+QVQLQESGPGLVRPSQTLSLTCTVSGFTFTDFYMNWVRQPPGRGLEWIGFIRDKAKGYTT
+EYNPSVKGRVTMLVDTSKNQFSLRLSSVTAADTAVYYCAREGHTAAPFDYWGQGSLVTVS
+SASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQS
+SGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKVE</pre><pre class="sequence">&gt;1ce1_L|CAMPATH-1H|Humanized||L-KAPPA (V-KAPPA(1-107)+C-KAPPA(108-211))|||||||211||||MW 23282.0|MW 23282.0|
+DIQMTQSPSSLSASVGDRVTITCKASQNIDKYLNWYQQKPGKAPKLLIYNTNNLQTGVPS
+RFSGSGSGTDFTFTISSLQPEDIATYYCLQHISRPRTFGQGTKVEIKRTVAAPSVFIFPP
+SDEQLKSGTASVVCLLNNFYPREAKVQWKVDNALQSGNSQESVTEQDSKDSTYSLSSTLT
+LSKADYEKHKVYACEVTHQGLSSPVTKSFNR</pre><small><a class="btn btn-info btn-sm" href="/drugs/DB00087/polypeptide_sequences.fasta">Download FASTA Format</a></small></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Campath</td><td>ILEX Pharmaceuticals LP</td></tr><tr><td>MabCampath</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>216503-57-0</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Peptides</td></tr><tr><th>Alternative parents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Substituents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Classification description</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Alemtuzumab (Campath) is a monoclonal antibody therapy used for treatment of B-cell chronic lymphocytic leukemia.</td></tr><tr><th>Pharmacodynamics</th><td>Campath is used to treat leukemia by exploiting antibody mediated lysis of CD52 presenting cells. The CD52 antigen is a cell surface protein found on essentially all B and T lymphocytes, a majority of monocytes, macrophages and most granulocytes. The CD52 antigen is not present on erythrocytes or hematopoetic stem cells. In leukemia there is an excess of B and T cells, so Campath permits selective reduction of lymphocyte populations.</td></tr><tr><th>Mechanism of action</th><td>Campath binds to the CD52 antigen present on most B and T lymphocytes. This binding leads to antibody-dependent lysis of leukemic cells.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>0.18 L/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Most likely removed by opsonization via the reticuloendothelial system when bound to B or T lymphocytes</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>~288 hrs</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.bayerhealthcare.com">Bayer Healthcare</a></li>
+<li><a href="http://www.boehringer-ingelheim.com">Boehringer Ingelheim Ltd.</a></li>
+<li><a href="http://www.genzyme.ca">Genzyme Inc.</a></li>
+<li>ILEX Pharmaceuticals LP</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

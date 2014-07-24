@@ -1,0 +1,190 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Rilpivirine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB08864</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Rilpivirine is non-nucleoside reverse transcriptase inhibitor (<span class="caps">NNRTI</span>) which is used for the treatment of <span class="caps">HIV</span>-1 infections in treatment-naive patients. It is a diarylpyrimidine, a class of molecules that resemble pyrimidine nucleotides found in <span class="caps">DNA</span>. Because of its flexible chemical structure, resistance of rilpivirine is less likely to develop than other NNRTI&#8217;s. <span class="caps">FDA</span> approved on May 20, 2011.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB08864/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB08864/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08864.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08864.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08864.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08864.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08864.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB08864">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Rilpivirine Hydrochloride</strong>
+          <div class="cas">700361-47-3</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000152/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000152/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: KZVVGZKAVZUACK-BJILWQEISA-N</li>
+              <li>Monoisotopic Mass: 402.135972345</li>
+              <li>Average Mass: 402.879</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000152">DBSALT000152</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Edurant</td><td>Janssen Therapeutics</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Complera</td><td>emtricitabine/rilpivirine/tenofovir disoproxil fumarate</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>500287-72-9</td></tr><tr><th>Weight</th><td>Average: 366.4185<br>Monoisotopic: 366.159294606</td></tr><tr><th>Chemical Formula</th><td>C<sub>22</sub>H<sub>18</sub>N<sub>6</sub></td></tr><tr><th>InChI Key</th><td>YIBOMRUWOWDFLG-ONEGZZNKSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C22H18N6/c1-15-12-18(4-3-10-23)13-16(2)21(15)27-20-9-11-25-22(28-20)26-19-7-5-17(14-24)6-8-19/h3-9,11-13H,1-2H3,(H2,25,26,27,28)/b4-3+</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">4-{[4-({4-[(1E)-2-cyanoeth-1-en-1-yl]-2,6-dimethylphenyl}amino)pyrimidin-2-yl]amino}benzonitrile</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC1=CC(\C=C\C#N)=CC(C)=C1NC1=CC=NC(NC2=CC=C(C=C2)C#N)=N1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Benzonitriles</td></tr><tr><th>Direct parent</th><td>Benzonitriles</td></tr><tr><th>Alternative parents</th><td>Styrenes; Toluenes; Aminopyrimidines and Derivatives; Polyamines; Nitriles; Secondary Amines</td></tr><tr><th>Substituents</th><td>aminopyrimidine; toluene; pyrimidine; secondary amine; nitrile; carbonitrile; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the benzonitriles. These are organic compounds containing a benzene bearing a nitrile substituent.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Treatment of HIV-1 infections in treatment-naive patients with HIV-1 RNA &#8804;100,000 copies/mL in combination with at least 2 other antiretroviral agents. </td></tr><tr><th>Pharmacodynamics</th><td>Rilpivirine is the most potent NNRTI and has a EC50 of 0.73 nM in vitro against HIV-1 because its chemical structure allowed for better binding to reverse transcriptase. </td></tr><tr><th>Mechanism of action</th><td>Rilpivirine is an NNRTI which binds to reverse transcriptase which results in a block in RNA and DNA- dependent DNA polymerase activities. One such activity is HIV-1 replication. Intracellular phosphorylation is not necessary for its antiviral activity. Because of the structure of rilpivirine is flexible around the aromatic rings, the molecule can have multiple conformations so that can bind to residues in the reverse transcriptase enzyme which have a lower mutation rate. </td></tr><tr><th>Absorption</th><td>Rilpivirine demonstrates dose-dependent pharmacokinetics and does not change between subscutaneous, IV, and intramuscular administration. Absorption increases with meals.
+Tmax, oral administration = 4 hours;
+</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>&gt;99% protein bound. </td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Mainly hepatically metabolized by CYP3A4. Because it is highly protein bound, its free plasma concentration is very small thus is unlikely to inhibit cytochrome proteins to a clinically relevant degree despite being an inhibitor of CYP3A4, CYP2C19, and CYP2B6.  </p></td></tr><tr><th>Route of elimination</th><td>Excreted fecally (85%, 25% as unchanged drug) and urine (6%, </td></tr><tr><th>Half life</th><td>34-55 hours after oral administration </td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral, mouse: LD50 = 300 mg/kg; Oral, rabbit: LD50 = 3200 mg/kg; Oral, rat: LD50 = 980 mg/kg.</td></tr><tr><th>Affected organisms</th><td><ul><li>Human Immunodeficiency Virus</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9929</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8571</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.6609</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6933</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6604</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7001</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8261</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7898</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8322</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6778</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8256</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9105</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9202</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.806</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9013</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.5439</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6229
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9097
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.8139 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9027
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.841
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>25 mg </td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>Strong inducers of CYP3A4 decrease the exposure of rilpivirine thus decreasing efficacy. </td></tr><tr><td><a href="/drugs/DB00705">Delavirdine</a></td><td>Concentration of rilpivirine increases by affecting CYP3A4 metabolism. Concomitant use is contraindicated. Rilpivirine should not be used with other NNRTI's. </td></tr><tr><td><a href="/drugs/DB01234">Dexamethasone</a></td><td>Strong inducers of CYP3A4 decrease the exposure of rilpivirine thus decreasing efficacy. </td></tr><tr><td><a href="/drugs/DB00625">Efavirenz</a></td><td>Concentration of rilpivirine decreases by affecting CYP3A4 metabolism. Concomitant use is contraindicated. Rilpivirine should not be used with other NNRTI's. </td></tr><tr><td><a href="/drugs/DB00736">Esomeprazole</a></td><td>Proton-pump inhibitors increase gastric pH which causes a decrease in the exposure of rilpivirine thus reducing efficacy. </td></tr><tr><td><a href="/drugs/DB06414">Etravirine</a></td><td>Rilpivirine, when used concomitantly with etravirine, may experience a decrease in serum concentration. It is recommended to avoid concurrent therapy. Use of rilpivirine and other NNRTIs is containdicated. </td></tr><tr><td><a href="/drugs/DB00927">Famotidine</a></td><td>Histamine-2 receptor antagonists increase gastric pH which causes a decrease in the exposure of rilpivirine thus reducing efficacy. </td></tr><tr><td><a href="/drugs/DB00448">Lansoprazole</a></td><td>Proton-pump inhibitors increase gastric pH which causes a decrease in the exposure of rilpivirine thus reducing efficacy. </td></tr><tr><td><a href="/drugs/DB00333">Methadone</a></td><td>Dose adjustment and clinical monitoring of rilpivirine may be necessary if coadministered with methadone. </td></tr><tr><td><a href="/drugs/DB00338">Omeprazole</a></td><td>Proton-pump inhibitors increase gastric pH which causes a decrease in the exposure of rilpivirine thus reducing efficacy. </td></tr><tr><td><a href="/drugs/DB00776">Oxcarbazepine</a></td><td>Strong inducers of CYP3A4 decrease the exposure of rilpivirine thus decreasing efficacy. </td></tr><tr><td><a href="/drugs/DB00213">Pantoprazole</a></td><td>Proton-pump inhibitors increase gastric pH which causes a decrease in the exposure of rilpivirine thus reducing efficacy. </td></tr><tr><td><a href="/drugs/DB01174">Phenobarbital</a></td><td>Strong inducers of CYP3A4 decrease the exposure of rilpivirine thus decreasing efficacy. </td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>Strong inducers of CYP3A4 decrease the exposure of rilpivirine thus decreasing efficacy. </td></tr><tr><td><a href="/drugs/DB01129">Rabeprazole</a></td><td>Proton-pump inhibitors increase gastric pH which causes a decrease in the exposure of rilpivirine thus reducing efficacy. </td></tr><tr><td><a href="/drugs/DB00863">Ranitidine</a></td><td>Histamine-2 receptor antagonists increase gastric pH which causes a decrease in the exposure of rilpivirine thus reducing efficacy. </td></tr><tr><td><a href="/drugs/DB00615">Rifabutin</a></td><td>Strong inducers of CYP3A4 decrease the exposure of rilpivirine thus decreasing efficacy. </td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Strong inducers of CYP3A4 decrease the exposure of rilpivirine thus decreasing efficacy. </td></tr><tr><td><a href="/drugs/DB01201">Rifapentine</a></td><td>Strong inducers of CYP3A4 decrease the exposure of rilpivirine thus decreasing efficacy. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Absorption is increased by 40% if taken with food.</li>
+<li>Co-administration with St. John's wort decreases levels of rilpivirine by inducing CYP3A4 metabolism. Use is contraindicated. </li></ul></td></tr></tbody></table>

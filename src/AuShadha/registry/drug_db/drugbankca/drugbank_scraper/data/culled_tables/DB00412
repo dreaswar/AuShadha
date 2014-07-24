@@ -1,0 +1,217 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Rosiglitazone</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00412</strong>&#160; (APRD00403)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Rosiglitazone is an anti-diabetic drug in the thiazolidinedione class of drugs. It is marketed by the pharmaceutical company GlaxoSmithKline as a stand-alone drug (Avandia) and in combination with metformin (Avandamet) or with glimepiride (Avandaryl). Like other thiazolidinediones, the mechanism of action of rosiglitazone is by activation of the intracellular receptor class of the peroxisome proliferator-activated receptors (PPARs), specifically PPAR&#947;. Rosiglitazone is a selective ligand of PPAR&#947;, and has no PPAR&#945;-binding action. Apart from its effect on insulin resistance, it appears to have an anti-inflammatory effect: nuclear factor kappa-B (NF&#954;B) levels fall and inhibitor (I&#954;B) levels increase in patients on rosiglitazone. Recent research has suggested that rosiglitazone may also be of benefit to a subset of patients with Alzheimer&#8217;s disease not expressing the ApoE4 allele. This is the subject of a clinical trial currently underway.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00412/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00412/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00412.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00412.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00412.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00412.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00412.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00412">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>(&#177;)-5-[p-[2-(methyl-2-pyridylamino)ethoxy]benzyl]-2,4-thiazolidinedione</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>WHO</td></tr><tr><td>(RS)-5-{4-[2-(Methyl-2-pyridylamino)ethoxy]benzyl}-2,4-thiazolidinedion</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IUPAC</td></tr><tr><td>Rosiglitazon</td><td>German</td><td>INN</td></tr><tr><td>Rosiglitazona</td><td>Spanish</td><td>INN</td></tr><tr><td>Rosiglitazone</td><td><span class="wishart wishart-not-available">Not Available</span></td><td> DCF, BAN</td></tr><tr><td>Rosiglitazonum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Rosiglitazone Maleate</strong>
+          <div class="cas">155141-29-0</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000153/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000153/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: SUFUKZSWUHZXAV-BTJKTKAUNA-N</li>
+              <li>Monoisotopic Mass: 473.125670795</li>
+              <li>Average Mass: 473.499</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000153">DBSALT000153</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Avandia</td><td>GlaxoSmithKline</td></tr><tr><td>Blutab</td><td>Werrick</td></tr><tr><td>DH-Rosidia</td><td>Hasan</td></tr><tr><td>Diaben</td><td>Elea</td></tr><tr><td>Diaglinex</td><td>Farmindustria</td></tr><tr><td>Gaudil</td><td>Craveri</td></tr><tr><td>Gliximina</td><td>Denver</td></tr><tr><td>Naidi</td><td>Hisun</td></tr><tr><td>Rogelin</td><td>Torrent</td></tr><tr><td>Roglit</td><td>Gedeon Richter</td></tr><tr><td>Romerol</td><td>Drug International</td></tr><tr><td>Rosit</td><td>Delta</td></tr><tr><td>Rosix</td><td>Garmisch</td></tr><tr><td>Rossini</td><td>Trima</td></tr><tr><td>Sensulin</td><td>Square</td></tr><tr><td>Sheng Ao</td><td>Hengrui</td></tr><tr><td>Sheng Min</td><td>ShengJiTang Pharmaceutical</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Aromet</td><td>Rosiglitazone and Metformin</td></tr><tr><td>Avaglim</td><td>Rosiglitazone and Glimepiride</td></tr><tr><td>Avandamet</td><td>Rosiglitazone and Metformin </td></tr><tr><td>Avandaryl</td><td>Rosiglitazone and Glimepiride</td></tr><tr><td>Avglim</td><td>Rosiglitazone and Glimepiride</td></tr><tr><td>Glyros</td><td>Rosiglitazone and Glimepiride</td></tr><tr><td>Grexa Plus</td><td>Rosiglitazone and Glimepiride</td></tr><tr><td>Metiglit</td><td>Rosiglitazone and Metformin</td></tr><tr><td>Oramet Plus</td><td>Rosiglitazone and Metformin</td></tr><tr><td>Rogelin 2MF/4MF</td><td>Rosiglitazone and Metformin</td></tr><tr><td>Roglim</td><td>Rosiglitazone and Glimepiride</td></tr><tr><td>Rosiglim</td><td>Rosiglitazone and Glimepiride</td></tr><tr><td>Rosimet</td><td>Rosiglitazone and Metformin</td></tr><tr><td>Rotamin</td><td>Rosiglitazone and Metformin</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>122320-73-4</td></tr><tr><th>Weight</th><td>Average: 357.427<br>Monoisotopic: 357.114712179</td></tr><tr><th>Chemical Formula</th><td>C<sub>18</sub>H<sub>19</sub>N<sub>3</sub>O<sub>3</sub>S</td></tr><tr><th>InChI Key</th><td>YASAKCUCGLMORW-UHFFFAOYNA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1/C18H19N3O3S/c1-21(16-4-2-3-9-19-16)10-11-24-14-7-5-13(6-8-14)12-15-17(22)20-18(23)25-15/h2-9,15H,10-12H2,1H3,(H,20,22,23)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">5-[(4-{2-[methyl(pyridin-2-yl)amino]ethoxy}phenyl)methyl]-1,3-thiazolidine-2,4-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN(CCOC1=CC=C(CC2SC(=O)NC2=O)C=C1)C1=CC=CC=N1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Phenol Ethers</td></tr><tr><th>Direct parent</th><td>Phenol Ethers</td></tr><tr><th>Alternative parents</th><td>Thiazolidinediones; Aminopyridines and Derivatives; Alkyl Aryl Ethers; N-unsubstituted Carboxylic Acid Imides; Secondary Carboxylic Acid Amides; Tertiary Amines; Carboxylic Acids; Polyamines</td></tr><tr><th>Substituents</th><td>alkyl aryl ether; aminopyridine; thiazolidinedione; pyridine; thiazolidinone; thiazolidine; carboxylic acid imide, n-unsubstituted; secondary carboxylic acid amide; carboxamide group; tertiary amine; ether; carboxylic acid derivative; carboxylic acid; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenol ethers. These are aromatic compounds containing an ether group substituted with a benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Rosiglitazone is indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus. </td></tr><tr><th>Pharmacodynamics</th><td>When rosiglitazone is used as monotherapy, it is associated with increases in total cholesterol, LDL, and HDL. It is also associated with decreases in free fatty acids. Increases in LDL occurred primarily during the first 1 to 2 months of therapy with AVANDIA and LDL levels remained elevated above baseline throughout the trials. In contrast, HDL continued to rise over time. As a result, the LDL/HDL ratio peaked after 2 months of therapy and then appeared to decrease over time. </td></tr><tr><th>Mechanism of action</th><td>Rosiglitazone acts as a highly selective and potent agonist at peroxisome proliferator activated receptors (PPAR) in target tissues for insulin action such as adipose tissue, skeletal muscle, and liver. Activation of PPAR-gamma receptors regulates the transcription of insulin-responsive genes involved in the control of glucose production, transport, and utilization. In this way, rosiglitazone enhances tissue sensitivity to insulin.</td></tr><tr><th>Absorption</th><td>The absolute bioavailability of rosiglitazone is 99%. Peak plasma concentrations are observed about 1 hour after dosing. Administration of rosiglitazone with food resulted in no change in overall exposure (AUC), but there was an approximately 28% decrease in C<sub>max</sub> and a delay in T<sub>max</sub> (1.75 hours). These changes are not likely to be clinically significant; therefore, rosiglitazone may be administered with or without food. Maximum plasma concentration (Cmax) and the area under the curve (AUC) of rosiglitazone increase in a dose-proportional manner over the therapeutic dose range. </td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>17.6 L [oral volume of distribution Vss/F]</li>
+	<li>13.5 L [population mean, pediatric patients]</li>
+</ul></td></tr><tr><th>Protein binding</th><td>99.8% bound to plasma proteins, primarily albumin.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic. Rosiglitazone is extensively metabolized in the liver to inactive metabolites via N-demethylation, hydroxylation, and conjugation with sulfate and glucuronic acid. In vitro data have shown that Cytochrome (CYP) P450 isoenzyme 2C8 (CYP2C8) and to a minor extent CYP2C9 are involved in the hepatic metabolism of rosiglitazone.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Rosiglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li></ul></td><td><a href="/metabolites/DBMET00295"><i>N</i>-Desmethylrosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/296">Details</a></td></tr><tr><td>Rosiglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li></ul></td><td><a href="/metabolites/DBMET00296"><i>para</i>-Hydroxyrosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/297">Details</a></td></tr><tr><td>Rosiglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li></ul></td><td><a href="/metabolites/DBMET00470"><i>ortho</i>-Hydroxyrosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/479">Details</a></td></tr><tr><td>Rosiglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00942"><i>N</i>-Despyridinyl rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/963">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00295"><i>N</i>-Desmethylrosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00936"><i>N</i>-Desmethyl-<i>ortho</i>-hydroxy rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1192">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00470"><i>ortho</i>-Hydroxyrosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00936"><i>N</i>-Desmethyl-<i>ortho</i>-hydroxy rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1193">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00295"><i>N</i>-Desmethylrosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00938"><i>N</i>-Desmethyl-<i>para</i>-hydroxy rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1194">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00296"><i>para</i>-Hydroxyrosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00938"><i>N</i>-Desmethyl-<i>para</i>-hydroxy rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1195">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00936"><i>N</i>-Desmethyl-<i>ortho</i>-hydroxy rosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00937"><i>N</i>-Desmethyl-<i>ortho-O</i>-sulfate rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1198">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00470"><i>ortho</i>-Hydroxyrosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00968"><i>ortho-O</i>-Glucuronide rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1203">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00470"><i>ortho</i>-Hydroxyrosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00969"><i>ortho-O</i>-Sulfate rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1204">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00295"><i>N</i>-Desmethylrosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01111"><i>N</i>-Desmethyl glucuronide rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1205">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00296"><i>para</i>-Hydroxyrosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00981"><i>para-O</i>-Glucuronide rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1206">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00296"><i>para</i>-Hydroxyrosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01112"><i>para-O</i>-Sulfate rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1207">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00938"><i>N</i>-Desmethyl-<i>para</i>-hydroxy rosiglitazone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01113"><i>N</i>-Desmethyl <i>para-O</i>-sulfate rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1208">Details</a></td></tr><tr><td>Rosiglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01365">Phenoxyacetic acid derivative of rosiglitazone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1555">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Following oral or intravenous administration of [14C]rosiglitazone maleate, approximately 64% and 23% of the dose was eliminated in the urine and in the feces, respectively.</td></tr><tr><th>Half life</th><td>3-4 hours (single oral dose, independent of dose) </td></tr><tr><th>Clearance</th><td><ul>
+	<li>Oral clearance (CL) = 3.03 &#177; 0.87 L/hr [1 mg Fasting]</li>
+	<li>Oral CL = 2.89 &#177; 0.71 L/hr [2 mg Fasting]</li>
+	<li>Oral CL = 2.85 &#177; 0.69 L/hr [8 mg Fasting]</li>
+	<li>Oral CL = 2.97 &#177; 0.81 L/hr [8 mg Fed]</li>
+	<li>3.15 L/hr [Population mean, Pediatric patients]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Side effects include fluid retention, congestive heart failure (CHF), liver disease</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9861</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8994</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5451</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6535</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5274</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6289</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5203</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7418</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5744</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5391</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5783</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.846</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5884</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8309</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.7213</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.687
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9465
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.8635
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4515 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8055
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7768
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Sb pharmco puerto rico inc</li>
+<li>GlaxoSmithKline</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.atlanticbiologicals.com">Atlantic Biologicals Corporation</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li>Pharmacy Service Center</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li>Resource Optimization and Innovation LLC</li>
+<li>Searle and Co.</li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li>Tya Pharmaceuticals</li>
+<li>Vangard Labs Inc.</li>
+<li><a href="http://www.west-ward.com">West-Ward Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>2 mg, 4 mg, 8 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB06237">Avanafil</a></td><td>Co-administration with avanafil resulted in an approximate 2.0% increase in AUC0-inf and 14% decrease in Cmax of rosiglitazone. </td></tr><tr><td><a href="/drugs/DB00930">Colesevelam</a></td><td>Bile Acid Sequestrants may decrease the absorption of Antidiabetic Agents (Thiazolidinedione). Separate the dosing of bile acid sequestrants and thiazolidinediones by at least 2 hours. Monitor for reduced effects of the antidiabetic agents. </td></tr><tr><td><a href="/drugs/DB01241">Gemfibrozil</a></td><td>Increases the effect and toxicity of rosiglitazone/pioglitazone</td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Ketoconazole increases the effect of rosiglitazone</td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin reduces levels and efficacy of rosiglitazone</td></tr><tr><td><a href="/drugs/DB00052">Somatropin recombinant</a></td><td>Somatropin may antagonize the hypoglycemic effect of rosiglitazone. Monitor for changes in fasting and postprandial blood sugars.</td></tr><tr><td><a href="/drugs/DB00755">Tretinoin</a></td><td>The moderate CYP2C8 inhibitor, Rosiglitazone, may decrease the metabolism and clearance of oral Tretinoin. Monitor for changes in Tretinoin effectiveness and adverse/toxic effects if Rosiglitazone is initiated, discontinued to dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

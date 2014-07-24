@@ -1,0 +1,217 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Midodrine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00211</strong>&#160; (APRD01116)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An ethanolamine derivative that is an adrenergic alpha agonist. It is used as a vasoconstrictor agent in the treatment of hypotension. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00211/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00211/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00211.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00211.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00211.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00211.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00211.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00211">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Midodrin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Midodrina</td><td>Spanish</td><td>INN</td></tr><tr><td>Midodrinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Midodrine Hydrochloride</strong>
+          <div class="cas">3092-17-9</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000250/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000250/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: MGCQZNBCJBRZDT-UHFFFAOYNA-N</li>
+              <li>Monoisotopic Mass: 290.103334813</li>
+              <li>Average Mass: 290.743</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000250">DBSALT000250</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>ProAmatine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/vasoconstrictor-agents">Vasoconstrictor Agents</a></li>
+<li><a href="/mesh/sympathomimetics">Sympathomimetics</a></li>
+<li><a href="/mesh/adrenergic-alpha-1-receptor-agonists">Adrenergic alpha-1 Receptor Agonists</a></li></ul></td></tr><tr><th>CAS number</th><td>133163-28-7</td></tr><tr><th>Weight</th><td>Average: 254.2823<br>Monoisotopic: 254.126657074</td></tr><tr><th>Chemical Formula</th><td>C<sub>12</sub>H<sub>18</sub>N<sub>2</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>PTKSEFOSCHHMPD-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C12H18N2O4/c1-17-8-3-4-11(18-2)9(5-8)10(15)7-14-12(16)6-13/h3-5,10,15H,6-7,13H2,1-2H3,(H,14,16)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-amino-N-[2-(2,5-dimethoxyphenyl)-2-hydroxyethyl]acetamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">COC1=CC(C(O)CNC(=O)CN)=C(OC)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Alpha Amino Acid Amides</td></tr><tr><th>Alternative parents</th><td>Anisoles; Alkyl Aryl Ethers; Secondary Carboxylic Acid Amides; Secondary Alcohols; Enolates; Polyamines; Carboxylic Acids; Monoalkylamines</td></tr><tr><th>Substituents</th><td>phenol ether; anisole; alkyl aryl ether; benzene; secondary carboxylic acid amide; carboxamide group; secondary alcohol; enolate; carboxylic acid; polyamine; ether; primary amine; primary aliphatic amine; amine; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the alpha amino acid amides. These are amide derivatives of alpha amino acids.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of symptomatic orthostatic hypotension (OH).</td></tr><tr><th>Pharmacodynamics</th><td>Midodrine is a prodrug, i.e., the therapeutic effect of orally administered midodrine is due to the major metabolite desglymidodrine formed by deglycination of midodrine. Desglymidodrine diffuses poorly across the blood-brain barrier, and is therefore not associated with effects on the central nervous system. Administration of midodrine results in a rise in standing, sitting, and supine systolic and diastolic blood pressure in patients with orthostatic hypotension of various etiologies. Standing systolic blood pressure is elevated by approximately 15 to 30 mmHg at 1 hour after a 10-mg dose of midodrine, with some effect persisting for 2 to 3 hours. Midodrine has no clinically significant effect on standing or supine pulse rates in patients with autonomic failure.</td></tr><tr><th>Mechanism of action</th><td>Midodrine forms an active metabolite, desglymidodrine, that is an alpha<sub>1</sub>-agonist, and exerts its actions via activation of the alpha-adrenergic receptors of the arteriolar and venous vasculature, producing an increase in vascular tone and elevation of blood pressure. Desglymidodrine does not stimulate cardiac beta-adrenergic receptors.</td></tr><tr><th>Absorption</th><td>Rapidly absorbed following oral administration. The absolute bioavailability of midodrine (measured as desglymidodrine) is 93% and is not affected by food.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Thorough metabolic studies have not been conducted, but it appears that deglycination of midodrine to desglymidodrine takes place in many tissues, and both compounds are metabolized in part by the liver.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Midodrine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00829">desglymidodrine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/850">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>The plasma levels of the prodrug peak after about half an hour, and decline with a half-life of approximately 25 minutes, while the metabolite reaches peak blood concentrations about 1 to 2 hours after a dose of midodrine and has a half-life of about 3 to 4 hours.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>Renal cl=385 mL/minute</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Symptoms of overdose could include hypertension, piloerection (goosebumps), a sensation of coldness and urinary retention. The single doses that would be associated with symptoms of overdosage or would be potentially life- threatening are unknown. The oral LD<sub>50</sub> is approximately 30 to 50 mg/kg in rats, 675 mg/kg in mice, and 125 to 160 mg/kg in dogs. Desglymidodrine is dialyzable.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.7686</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.856</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7382</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.784</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9781</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9866</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8896</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8519</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7593</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5595</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8848</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9385</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8993</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.867</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9316</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.774
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8613
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9595
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.3137 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9772
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8604
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Apotex inc etobicoke site</li>
+<li>Impax pharmaceuticals</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Sandoz inc</li>
+<li>Upsher smith laboratories inc</li>
+<li>Shire development inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li>Eon Labs</li>
+<li><a href="http://www.globalphar.com">Global Pharmaceuticals</a></li>
+<li>Heartland Repack Services LLC</li>
+<li><a href="http://www.impaxlabs.com">Impax Laboratories Inc.</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.nycomed.com">Nycomed Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.shire.com">Shire Inc.</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li><a href="http://www.upsher-smith.com">Upsher Smith Laboratories</a></li>
+<li>Vangard Labs Inc.</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Proamatine 10 mg tablet</td><td>5.91USD</td><td>tablet</td></tr><tr><td>Midodrine hcl 10 mg tablet</td><td>4.93USD</td><td>tablet</td></tr><tr><td>Proamatine 5 mg tablet</td><td>3.08USD</td><td>tablet</td></tr><tr><td>Midodrine hcl 5 mg tablet</td><td>2.47USD</td><td>tablet</td></tr><tr><td>Proamatine 2.5 mg tablet</td><td>1.53USD</td><td>tablet</td></tr><tr><td>Midodrine hcl 2.5 mg tablet</td><td>1.23USD</td><td>tablet</td></tr><tr><td>Apo-Midodrine 5 mg Tablet</td><td>0.59USD</td><td>tablet</td></tr><tr><td>Apo-Midodrine 2.5 mg Tablet</td><td>0.35USD</td><td>tablet</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>200 to 203&#176;C</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>water solubility</td><td>Soluble</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>-0.5</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>pKa</td><td>7.8</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>4.45e+00 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-0.49</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-0.95</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-1.8</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>13.77</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>8.14</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>93.81</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>66.22</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>26.65</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Anup K. Ray, Hiren Patel, Mahendra R. Patel, &#8220;Synthesis of midodrine <span class="caps">HCI</span> from a novel intermediate 1-(2&#8217;,5&#8217;-dimethoxyphenyl)-2-azidoethanone.&#8221; U.S. Patent US6201153, issued July, 1965.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=6201153&amp;tbm=pts" target="_blank">US6201153 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Hebenstreit G: [Treatment of hypotension caused by psychopharmacological drugs (author&#8217;s transl)] Wien Med Wochenschr. 1981 Feb 28;131(4):109-12. <a href="http://www.ncbi.nlm.nih.gov/pubmed/6165144">Pubmed</a></li>
+	<li>Tsuda M, Terada T, Irie M, Katsura T, Niida A, Tomita K, Fujii N, Inui K: Transport characteristics of a novel peptide transporter 1 substrate, antihypotensive drug midodrine, and its amino acid derivatives. J Pharmacol Exp Ther. 2006 Jul;318(1):455-60. Epub 2006 Apr 5. <a href="http://www.ncbi.nlm.nih.gov/pubmed/16597710">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07890" target="_blank">C07890 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=4195" target="_blank">4195 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46507373" target="_blank">46507373 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.4050.html" target="_blank">4050 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=6933" target="_blank">6933 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1201212" target="_blank">CHEMBL1201212 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000229" target="_blank">DAP000229 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA164749381" target="_blank">PA164749381 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=1934406" target="_blank">1934406 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/midodrine.htm" target="_blank">http://www.rxlist.com/cgi/generic3/midodrine.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/midodrine.html" target="_blank">http://www.drugs.com/cdi/midodrine.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Midodrine" target="_blank">Midodrine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>C01CA17<ul class="atc-drug-tree"><li><a href="/atc/C#C">C &#8212; CARDIOVASCULAR SYSTEM</a></li><li><a href="/atc/C01#C01">C01 &#8212; CARDIAC THERAPY</a></li><li><a href="/atc/C01C#C01C">C01C &#8212; CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES</a></li><li><a href="/atc/C01CA#C01CA">C01CA &#8212; Adrenergic and dopaminergic agents</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>12:12.04</li>
+<li>12:12.00</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00443">Betamethasone</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01380">Cortisone acetate</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01234">Dexamethasone</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00841">Dobutamine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00988">Dopamine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01363">Ephedra</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01364">Ephedrine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00668">Epinephrine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01288">Fenoterol</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00687">Fludrocortisone</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00741">Hydrocortisone</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01247">Isocarboxazid</a></td><td>Possible hypertensive crisis with this combination</td></tr><tr><td><a href="/drugs/DB01064">Isoprenaline</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01365">Mephentermine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00610">Metaraminol</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00723">Methoxamine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00959">Methylprednisolone</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00368">Norepinephrine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00816">Orciprenaline</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01384">Paramethasone</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00780">Phenelzine</a></td><td>Possible hypertensive crisis with this combination</td></tr><tr><td><a href="/drugs/DB00388">Phenylephrine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00397">Phenylpropanolamine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01291">Pirbuterol</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00860">Prednisolone</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00635">Prednisone</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01366">Procaterol</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00852">Pseudoephedrine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01367">Rasagiline</a></td><td>Risk of hypertensive crisis.</td></tr><tr><td><a href="/drugs/DB01001">Salbutamol</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00871">Terbutaline</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00752">Tranylcypromine</a></td><td>The MAO inhibitor, Tranylcypromine, may increase the vasopressor effect of the alpha1-agonist, Midodrine. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00620">Triamcinolone</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>Trimipramine may increase the vasopressor effect of the alpha1-agonist, Midodrine. Avoid combination if possible. Monitor sympathetic response to therapy if used concomitantly. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take without regard to meals.</li></ul></td></tr></tbody></table>

@@ -1,0 +1,192 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Hexobarbital</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01355</strong>&#160; (EXPT03301)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A barbiturate that is effective as a hypnotic and sedative. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01355/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01355/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01355.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01355.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01355.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01355.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01355.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01355">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>5-(1-cyclohexen-1-yl)-1,5-dimethylbarbituric acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Hexobarbitone</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Methexenyl</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Methylhexabital</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Hexobarbital sodium</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000914/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000914/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000914">DBSALT000914</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Evipal</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Evipan</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Tobinal</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/hypnotics-and-sedatives">Hypnotics and Sedatives</a></li>
+<li><a href="/mesh/gaba-modulators">GABA Modulators</a></li>
+<li><a href="/mesh/barbiturates">Barbiturates</a></li>
+<li><a href="/mesh/adjuvants">Adjuvants</a></li></ul></td></tr><tr><th>CAS number</th><td>56-29-1</td></tr><tr><th>Weight</th><td>Average: 236.267<br>Monoisotopic: 236.116092388</td></tr><tr><th>Chemical Formula</th><td>C<sub>12</sub>H<sub>16</sub>N<sub>2</sub>O<sub>3</sub></td></tr><tr><th>InChI Key</th><td>UYXAWHWODHRRMR-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C12H16N2O3/c1-12(8-6-4-3-5-7-8)9(15)13-11(17)14(2)10(12)16/h6H,3-5,7H2,1-2H3,(H,13,15,17)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">5-(cyclohex-1-en-1-yl)-1,5-dimethyl-1,3-diazinane-2,4,6-trione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN1C(=O)NC(=O)C(C)(C1=O)C1=CCCCC1</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB01355.gif?1265922771">show</a>(9.16 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Diazines</td></tr><tr><th>Subclass</th><td>Pyrimidines and Pyrimidine Derivatives</td></tr><tr><th>Direct parent</th><td>Barbituric Acid Derivatives</td></tr><tr><th>Alternative parents</th><td>Ureides; Diazinanes; N-substituted Carboxylic Acid Imides; Tertiary Carboxylic Acid Amides; N-unsubstituted Carboxylic Acid Imides; Tertiary Amines; Secondary Carboxylic Acid Amides; Polyamines; Carboxylic Acids</td></tr><tr><th>Substituents</th><td>ureide; 1,3-diazinane; carboxylic acid imide, n-substituted; tertiary carboxylic acid amide; carboxylic acid imide, n-unsubstituted; tertiary amine; carboxamide group; secondary carboxylic acid amide; carboxylic acid derivative; polyamine; carboxylic acid; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the barbituric acid derivatives. These are compounds containing a perhydropyrimidine ring substituted at C-2, -4 and -6 by oxo groups.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the induction of anesthesia prior to the use of other general anesthetic agents and for induction of anesthesia for short surgical, diagnostic, or therapeutic procedures associated with minimal painful stimuli.</td></tr><tr><th>Pharmacodynamics</th><td>Hexobarbital is a barbiturate derivative having hypnotic and sedative effects. It was used in the 1940s-1950s as an agent for inducing anesthesia for surgery and has a relatively fast onset of effects and short duration of action. However it can be difficult to control the depth of anesthesia with hexobarbital which makes it quite dangerous, and it has now been replaced by safer drugs in human medicine, usually thiopental would be the barbiturate of choice for this application these days.</td></tr><tr><th>Mechanism of action</th><td>Hexobarbital binds at a distinct binding site associated with a Cl- ionopore at the GABA-A receptor, increasing the duration of time for which the Cl- ionopore is open. The post-synaptic inhibitory effect of GABA in the thalamus is, therefore, prolonged.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>25%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Hexobarbital</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003536" target="_blank">Cytochrome P450 2C19</a></li>
+<li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li></ul></td><td><a href="/metabolites/DBMET00109">3'-Hydroxyhexobarbital</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/109">Details</a></td></tr><tr><td>Hexobarbital</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0000017" target="_blank">Prostaglandin G/H synthase 1</a></li></ul></td><td><a href="/metabolites/DBMET00110">Epoxy-hexobarbital</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/110">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00109">3'-Hydroxyhexobarbital</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01214">3'-Oxohexobarbital</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1361">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01214">3'-Oxohexobarbital</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01215">Hexobarbital glutathione conjugate derivative</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1362">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00110">Epoxy-hexobarbital</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01216">Hexobarbital dihydrodiol derivative</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1363">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Symptoms of an overdose typically include sluggishness, incoordination, difficulty in thinking, slowness of speech, faulty judgment, drowsiness or coma, shallow breathing, staggering, and in severe cases coma and death.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9793</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9649</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.519</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5562</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7705</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8379</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7687</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7622</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.894</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.543</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7994</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5316</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9369</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6349</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9571</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8803</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7061
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8753
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9143
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5050 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9348
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8502
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>250 mg</td></tr></tbody></table></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>146.5 &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>435 mg/L (at 25 &#176;C)</td><td>YALKOWSKY,SH &amp; DANNENFELSER,RM (1992)</td></tr><tr><td>logP</td><td>1.98</td><td>SANGSTER (1994)</td></tr><tr><td>logS</td><td>-2.74</td><td>ADME Research, USCD</td></tr><tr><td>pKa</td><td>8.2</td><td>SANGSTER (1994)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.51e+00 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>1.8</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>1.25</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-2.2</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>8.41</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>66.48</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>61.95</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>24.14</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Takenoshita R, Toki S: [New aspects of hexobarbital metabolism: stereoselective metabolism, new metabolic pathway via <span class="caps">GSH</span> conjugation, and 3-hydroxyhexobarbital dehydrogenases] Yakugaku Zasshi. 2004 Dec;124(12):857-71. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15577260">Pubmed</a></li>
+	<li>Wahlstrom G: A study of the duration of acute tolerance induced with hexobarbital in male rats. Pharmacol Biochem Behav. 1998 Apr;59(4):945-8. <a href="http://www.ncbi.nlm.nih.gov/pubmed/9586853">Pubmed</a></li>
+	<li>Korkmaz S, Ljungblad E, Wahlstrom G: Interaction between flumazenil and the anesthetic effects of hexobarbital in the rat. Brain Res. 1995 Apr 10;676(2):371-7. <a href="http://www.ncbi.nlm.nih.gov/pubmed/7614008">Pubmed</a></li>
+	<li>Dall V, Orntoft U, Schmidt A, Nordholm L: Interaction of the competitive <span class="caps">AMPA</span> receptor antagonist <span class="caps">NBQX</span> with hexobarbital. Pharmacol Biochem Behav. 1993 Sep;46(1):73-6. <a href="http://www.ncbi.nlm.nih.gov/pubmed/8255925">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D01071" target="_blank">D01071 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C11723" target="_blank">C11723 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=5706" target="_blank">5706 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL7728" target="_blank">CHEMBL7728 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000688" target="_blank">DAP000688 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA449875" target="_blank">PA449875 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Hexobarbital" target="_blank">Hexobarbital <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>N05CA16<ul class="atc-drug-tree"><li><a href="/atc/N#N">N &#8212; NERVOUS SYSTEM</a></li><li><a href="/atc/N05#N05">N05 &#8212; PSYCHOLEPTICS</a></li><li><a href="/atc/N05C#N05C">N05C &#8212; HYPNOTICS AND SEDATIVES</a></li><li><a href="/atc/N05CA#N05CA">N05CA &#8212; Barbiturates, plain</a></li></ul>N01AF02<ul class="atc-drug-tree"><li><a href="/atc/N#N">N &#8212; NERVOUS SYSTEM</a></li><li><a href="/atc/N01#N01">N01 &#8212; ANESTHETICS</a></li><li><a href="/atc/N01A#N01A">N01A &#8212; ANESTHETICS, GENERAL</a></li><li><a href="/atc/N01AF#N01AF">N01AF &#8212; Barbiturates, plain</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01223">Aminophylline</a></td><td>The barbiturate, hexobarbital, decreases the effect of aminophylline.</td></tr><tr><td><a href="/drugs/DB00443">Betamethasone</a></td><td>The barbiturate, hexobarbital, may decrease the effect of the corticosteroid, betamethasone.</td></tr><tr><td><a href="/drugs/DB00882">Clomifene</a></td><td>The enzyme inducer, hexobarbital, decreases the effect of the hormone agent, clomifene.</td></tr><tr><td><a href="/drugs/DB00286">Conjugated Estrogens</a></td><td>The enzyme inducer, hexobarbital, decreases the effect of the hormone agent, conjugated estrogens.</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>The barbiturate, hexobarbital, increases the effect of cyclosporine.</td></tr><tr><td><a href="/drugs/DB01234">Dexamethasone</a></td><td>The barbiturate, hexobarbital, may decrease the effect of the corticosteroid, dexamethasone.</td></tr><tr><td><a href="/drugs/DB00255">Diethylstilbestrol</a></td><td>The enzyme inducer, hexobarbital, decreases the effect of the hormone agent, diethylstilbestrol.</td></tr><tr><td><a href="/drugs/DB00254">Doxycycline</a></td><td>The anticonvulsant, hexobarbital, decreases the effect of doxycycline.</td></tr><tr><td><a href="/drugs/DB00783">Estradiol</a></td><td>The enzyme inducer, hexobarbital, decreases the effect of the hormone agent, estradiol.</td></tr><tr><td><a href="/drugs/DB00977">Ethinyl Estradiol</a></td><td>This product may cause a slight decrease of contraceptive effect</td></tr><tr><td><a href="/drugs/DB01023">Felodipine</a></td><td>The barbiturate, hexobarbital, decreases the effect of felodipine.</td></tr><tr><td><a href="/drugs/DB00687">Fludrocortisone</a></td><td>The barbiturate, hexobarbital, may decrease the effect of the corticosteroid, fludrocortisone.</td></tr><tr><td><a href="/drugs/DB00158">Folic Acid</a></td><td>Folic acid decreases the effect of anticonvulsant, hexobarbital.</td></tr><tr><td><a href="/drugs/DB00317">Gefitinib</a></td><td>The CYP3A4 inducer, hexobarbital, may decrease the serum concentration and therapeutic effects of gefitinib.</td></tr><tr><td><a href="/drugs/DB00400">Griseofulvin</a></td><td>The barbiturate, hexobarbital, decreases the effect of griseofulvin.</td></tr><tr><td><a href="/drugs/DB00741">Hydrocortisone</a></td><td>The barbiturate, hexobarbital, may decrease the effect of the corticosteroid, hydrocortisone.</td></tr><tr><td><a href="/drugs/DB00367">Levonorgestrel</a></td><td>Phenobarbital decreases the effect of levonorgestrel</td></tr><tr><td><a href="/drugs/DB00603">Medroxyprogesterone Acetate</a></td><td>The enzyme inducer, hexobarbital, decreases the effect of the hormone agent, medroxyprogesterone.</td></tr><tr><td><a href="/drugs/DB00351">Megestrol acetate</a></td><td>The enzyme inducer, hexobarbital, decreases the effect of the hormone agent, megestrol.</td></tr><tr><td><a href="/drugs/DB00333">Methadone</a></td><td>The barbiturate, hexobarbital, decreases the effect of methadone.</td></tr><tr><td><a href="/drugs/DB00916">Metronidazole</a></td><td>The barbiturate, hexobarbital, decreases the effect of metronidazole.</td></tr><tr><td><a href="/drugs/DB01115">Nifedipine</a></td><td>The barbiturate, hexobarbital, decreases the effect of the calcium channel blocker, nifedipine.</td></tr><tr><td><a href="/drugs/DB00717">Norethindrone</a></td><td>This product may cause a slight decrease of contraceptive effect</td></tr><tr><td><a href="/drugs/DB01303">Oxtriphylline</a></td><td>The barbiturate, hexobarbital, decreases the effect of oxtriphylline.</td></tr><tr><td><a href="/drugs/DB00860">Prednisolone</a></td><td>The barbiturate, hexobarbital, may decrease the effect of the corticosteroid, prednisolone.</td></tr><tr><td><a href="/drugs/DB00635">Prednisone</a></td><td>The barbiturate, hexobarbital, may decrease the effect of the corticosteroid, prednisone.</td></tr><tr><td><a href="/drugs/DB00908">Quinidine</a></td><td>The anticonvulsant, hexobarbital, decreases the effect of quinidine.</td></tr><tr><td><a href="/drugs/DB00277">Theophylline</a></td><td>The barbiturate, hexobarbital, decreases the effect of theophylline.</td></tr><tr><td><a href="/drugs/DB00620">Triamcinolone</a></td><td>The barbiturate, hexobarbital, may decrease the effect of the corticosteroid, triamcinolone.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

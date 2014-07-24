@@ -1,0 +1,191 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Tiludronate</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01133</strong>&#160; (APRD01259)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Tiludronate is a bisphosphonate characterized by a (4-chlorophenylthio) group on the carbon atom of the basic P-C-P structure common to all bisphosphonates.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01133/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01133/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01133.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01133.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01133.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01133.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01133.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01133">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Acide tiludronique</td><td>French</td><td>INN</td></tr><tr><td>Acido tiludronico</td><td>Spanish</td><td>INN</td></tr><tr><td>Acidum tiludronicum</td><td>Latin</td><td>INN</td></tr><tr><td>Tiludronic acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Tiludronate Disodium</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000411/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000411/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: DKJJVAGXPKPDRL-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 317.928359441</li>
+              <li>Average Mass: 318.608</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000411">DBSALT000411</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Skelid</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/bone-density-conservation-agents">Bone Density Conservation Agents</a></li>
+<li><a href="/mesh/antihypocalcemic-agents">Antihypocalcemic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>89987-06-4</td></tr><tr><th>Weight</th><td>Average: 318.608<br>Monoisotopic: 317.928359441</td></tr><tr><th>Chemical Formula</th><td>C<sub>7</sub>H<sub>9</sub>ClO<sub>6</sub>P<sub>2</sub>S</td></tr><tr><th>InChI Key</th><td>DKJJVAGXPKPDRL-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C7H9ClO6P2S/c8-5-1-3-6(4-2-5)17-7(15(9,10)11)16(12,13)14/h1-4,7H,(H2,9,10,11)(H2,12,13,14)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">{[(4-chlorophenyl)sulfanyl](phosphono)methyl}phosphonic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">OP(O)(=O)C(SC1=CC=C(Cl)C=C1)P(O)(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Halobenzenes</td></tr><tr><th>Direct parent</th><td>Chlorobenzenes</td></tr><tr><th>Alternative parents</th><td>Aryl Chlorides; Organic Phosphonic Acids; Thioethers; Polyamines; Organochlorides</td></tr><tr><th>Substituents</th><td>aryl chloride; aryl halide; phosphonic acid derivative; phosphonic acid; thioether; polyamine; organohalogen; organochloride</td></tr><tr><th>Classification description</th><td>This compound belongs to the chlorobenzenes. These are compounds containing one or more chlorine atoms attached to a benzene moiety.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For treatment of Paget's disease of bone (osteitis deformans).</td></tr><tr><th>Pharmacodynamics</th><td>Tiludronate is a first generation (non-nitrogenous) bisphosphonate in the same family as etidronate and clodronate. Tiludronate affects calcium metabolism and inhibits bone resorption and soft tissue calcification. Of the tiludronate that is resorbed (from oral preparation) or infused (for intravenous drugs), about 50% is excreted unchanged by the kidney. The remainder has a very high affinity for bone tissue, and is rapidly absorbed onto the bone surface.</td></tr><tr><th>Mechanism of action</th><td>The bisphosphonate group binds strongly to the bone mineral, hydroxyapatite. This explains the specific pharmacological action of these compounds on mineralized tissues, especially bone. <i>In vitro</i> studies indicate that tiludronate acts primarily on bone through a mechanism that involves inhibition of osteoclastic activity with a probable reduction in the enzymatic and transport processes that lead to resorption of the mineralized matrix. Bone resorption occurs following recruitment, activation, and polarization of osteoclasts. Tiludronate appears to inhibit osteoclasts by at least two mechanisms: disruption of the cytoskeletal ring structure, possibly by inhibition of protein-tyrosine-phosphatase, thus leading to detachment of osteoclasts from the bone surface and the inhibition of the osteoclastic proton pump.</td></tr><tr><th>Absorption</th><td>The mean oral bioavailability in healthy male subjects is 6% after an oral dose equivalent to 400 mg tiludronic acid administered after an overnight fast and 4 hours before a standard breakfast. In single-dose studies, bioavailability was reduced by 90% when an oral dose equivalent to 400 mg tiludronic acid was administered with, or 2 hours after, a standard breakfast compared to the same dose administered after an overnight fast and 4 hours before a standard breakfast.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Approximately 90% bound to human serum protein (mainly albumin) at plasma concentrations between 1 and 10 mg/L.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>In vitro, tiludronic acid is not metabolized in human liver microsomes and hepatocytes. There is no evidence that tiludronate is metabolized in humans.</p></td></tr><tr><th>Route of elimination</th><td>The principal route of elimination of tiludronic acid is in the urine.</td></tr><tr><th>Half life</th><td>Half-life in healthy subjects is 50 hours following administration of a 400 mg single oral dose. Half-life in pagetic patients is about 150 hours following administration of 400 mg tiludronate a day for 12 days. In patients with renal insufficiency (creatinine clearance between 11 and 18 mL per minute [mL/min]), half-life is 205 hours from plasma after administration of a single, oral dose equivalent to 400 mg tiludronate.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>renal cl=10 mL/min [IV administration of 20-mg dose]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Based on the known action of tiludronate, hypocalcemia is a potential consequence of overdose. In one patient with hypercalcemia of malignancy, intravenous administration of high doses (800 mg/day total dose, 6 mg/kg/day for 2 days) was associated with acute renal failure and death.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.8821</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.92</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.69</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.82</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9497</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9907</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9293</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7291</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8201</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7084</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7348</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7404</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8875</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7287</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8637</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.871</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8148
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Carcinogens  
+        </td>
+        <td>
+            0.509
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9882
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.9059 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.939
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9362
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Sanofi aventis us llc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.sanofi-aventis.com">Sanofi-Aventis Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>200 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00258">Calcium Acetate</a></td><td>The divalent cation of oral Calcium Acetate may significantly decrease the absorption of Tiludronate by forming a nonabsorbable chelate. Oral dosing should be separated by at least 2 hours. </td></tr><tr><td><a href="/drugs/DB01164">Calcium Chloride</a></td><td>Calcium salts may decrease the serum concentration of bisphosphonate derivatives. Avoid administration of oral calcium supplements within 2 hours before or after tiludronate/clodronate/etidronate.</td></tr><tr><td><a href="/drugs/DB01377">Magnesium oxide</a></td><td>The divalent cation of oral Magnesium oxide may significantly decrease the absorption of Tiludronate by forming a nonabsorbable chelate. Oral dosing should be separated by at least 2 hours. </td></tr><tr><td><a href="/drugs/DB00653">Magnesium Sulfate</a></td><td>The divalent cation of oral Magnesium sulfate may significantly decrease the absorption of Tiludronate by forming a nonabsorbable chelate. Oral dosing should be separated by at least 2 hours. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Do not take aluminum or magnesium-containing antacids within 2 hours of taking tiludronate. </li>
+<li>Take on an empty stomach (at least 2 hours before or after meals) with a full glass of plain water. Other beverages may reduce drug absorption. </li></ul></td></tr></tbody></table>

@@ -1,0 +1,194 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Delavirdine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00705</strong>&#160; (APRD00149, DB08563)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A potent, non-nucleoside reverse transcriptase inhibitor with activity specific for <span class="caps">HIV</span>-1. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00705/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00705/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00705.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00705.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00705.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00705.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00705.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00705">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Delavirdin</td><td>German</td><td>INN</td></tr><tr><td>Delavirdina</td><td>Spanish</td><td>INN</td></tr><tr><td>Delavirdine</td><td>French</td><td>INN</td></tr><tr><td>Delavirdinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Delavirdine mesylate</strong>
+          <div class="cas">147221-93-0</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000038/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000038/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: MEPNHSOMXMALDZ-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 552.182474166</li>
+              <li>Average Mass: 552.667</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000038">DBSALT000038</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Rescriptor</td><td>ViiV Healthcare</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/reverse-transcriptase-inhibitors">Reverse Transcriptase Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>136817-59-9</td></tr><tr><th>Weight</th><td>Average: 456.561<br>Monoisotopic: 456.194359482</td></tr><tr><th>Chemical Formula</th><td>C<sub>22</sub>H<sub>28</sub>N<sub>6</sub>O<sub>3</sub>S</td></tr><tr><th>InChI Key</th><td>WHBIGIKBNXZKFE-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C22H28N6O3S/c1-15(2)24-19-5-4-8-23-21(19)27-9-11-28(12-10-27)22(29)20-14-16-13-17(26-32(3,30)31)6-7-18(16)25-20/h4-8,13-15,24-26H,9-12H2,1-3H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">N-{2-[(4-{3-[(propan-2-yl)amino]pyridin-2-yl}piperazin-1-yl)carbonyl]-1H-indol-5-yl}methanesulfonamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC(C)NC1=C(N=CC=C1)N1CCN(CC1)C(=O)C1=CC2=C(N1)C=CC(NS(C)(=O)=O)=C2</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Piperazines</td></tr><tr><th>Subclass</th><td>Pyridinylpiperazines</td></tr><tr><th>Direct parent</th><td>Pyridinylpiperazines</td></tr><tr><th>Alternative parents</th><td>Indolecarboxamides and Derivatives; Sulfanilides; Indoles; Pyrrole Carboxamides; Aminopyridines and Derivatives; Substituted Pyrroles; Diazinanes; Sulfonyls; Tertiary Carboxylic Acid Amides; Sulfonamides; Tertiary Amines; Enolates; Secondary Amines; Carboxylic Acids; Polyamines</td></tr><tr><th>Substituents</th><td>sulfanilide; indole or derivative; indole; pyrrole-2-carboxylic acid or derivative; pyrrole-2-carboxamide; aminopyridine; substituted pyrrole; 1,4-diazinane; pyridine; benzene; sulfonic acid derivative; pyrrole; tertiary carboxylic acid amide; sulfonyl; sulfonamide; tertiary amine; carboxamide group; polyamine; secondary amine; enolate; carboxylic acid derivative; carboxylic acid; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the pyridinylpiperazines. These are compounds containing a pyridinylpiperazine skeleton, which consists of a pyridine linked (not fused) to a piperazine by a bond by a single bond that is not part of a ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of HIV-1 infection in combination with appropriate antiretroviral agents when therapy is warranted</td></tr><tr><th>Pharmacodynamics</th><td>Delavirdine is a non-nucleoside reverse transcriptase inhibitor (nNRTI) with activity against Human Immunodeficiency Virus Type 1 (HIV-1). Delavirdine binds directly to reverse transcriptase (RT) and blocks the RNA-dependent and DNA-dependent DNA polymerase activities by causing a disruption of the enzyme's catalytic site. The activity of Delavirdine does not compete with template or nucleoside triphosphates. HIV-2 RT and eukaryotic DNA polymerases (such as human DNA polymerases alpha, beta, or sigma) are not inhibited by Delavirdine.</td></tr><tr><th>Mechanism of action</th><td>Delavirdine binds directly to viral reverse transcriptase (RT) and blocks the RNA-dependent and DNA-dependent DNA polymerase activities by disrupting the enzyme's catalytic site.</td></tr><tr><th>Absorption</th><td>Rapidly absorbed</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>98%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Delavirdine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET00360">N-desalkyl delavirdine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/362">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Delavirdine is extensively converted to several inactive metabolites by cytochrome P450 3A (CYP3A). Delavirdine was excreted in the milk of lactating rats at a concentration three to five times that of rat plasma.</td></tr><tr><th>Half life</th><td>5.8 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Major toxicity of delavirdine is rash and should be advised to promptly notify their physician should rash occur. The majority of rashes associated with delavirdine occur within 1 to 3 weeks after initiating treatment with delavirdine. The rash normally resolves in 3 to 14 days and may be treated symptomatically while therapy with delavirdine is continued. Any patient experiencing severe rash or rash accompanied by symptoms such as fever, blistering, oral lesions, conjunctivitis, swelling, muscle or joint aches should discontinue medication and consult a physician.</td></tr><tr><th>Affected organisms</th><td><ul><li>Human Immunodeficiency Virus</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.6449</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6231</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7103</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7647</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5644</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7808</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6717</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.8918</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6707</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6644</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6307</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8556</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6078</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6383</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.9308</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6189
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7517
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9891
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5840 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.7656
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6118
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Viiv healthcare co</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Agouron Pharmaceuticals Inc.</li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.pfizer.com">Pfizer Inc.</a></li>
+<li><a href="http://www.pharmaciaupjohn.com">Pharmacia Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>ViiV Healthcare ULC</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00404">Alprazolam</a></td><td>The antiviral agent, delavirdine, may increase the effect and toxicity of the benzodiazepine, alprazolam.</td></tr><tr><td><a href="/drugs/DB01370">Aluminium</a></td><td>The antiacid decreases the effect of delavirdine</td></tr><tr><td><a href="/drugs/DB00701">Amprenavir</a></td><td>Decreased levels of delavirdine with increased levels of amprenavir</td></tr><tr><td><a href="/drugs/DB00637">Astemizole</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01076">Atorvastatin</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of atorvastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of atorvastatin if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01558">Bromazepam</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of bromazepam by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of bromazepam if delavirdine is initiated, discontinued or dose changed. Dosage adjustments may be required. </td></tr><tr><td><a href="/drugs/DB01373">Calcium</a></td><td>The antiacid decreases the effect of delavirdine</td></tr><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>The anticonvulsant, carbamazepine, decreases the effect of delavirdine.</td></tr><tr><td><a href="/drugs/DB00395">Carisoprodol</a></td><td>Strong CYP2C19 inhibitors such as delavirdine may decrease the metabolism of CYP2C19 substrates such as carisoprodol. Consider an alternative for one of the interacting drugs in order to avoid toxicity of the substrate. Some combinations are specifically contraindicated by manufacturers. Suggested dosage adjustments are also offered by some manufacturers. Please review applicable package inserts. Monitor for increased effects of the CYP substrate if a CYP inhibitor is initiated/dose increased, and decreased effects if a CYP inhibitor is discontinued/dose decreased.</td></tr><tr><td><a href="/drugs/DB00604">Cisapride</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the metabolism of cisapride. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of cisapride if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01219">Dantrolene</a></td><td>Delavirdine may increase the serum concentration of dantrolene by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of dantrolene if delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00320">Dihydroergotamine</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of dihydroergotamine by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of dihydroergotamine if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01253">Ergonovine</a></td><td>The antiretroviral agent may increase the ergot derivative toxicity</td></tr><tr><td><a href="/drugs/DB00696">Ergotamine</a></td><td>The antiretroviral agent may increase the ergot derivative toxicity</td></tr><tr><td><a href="/drugs/DB06414">Etravirine</a></td><td>Etravirine, when used concomitantly with Delaviridine, may experience an increase in serum concentration.  
+Combination of two NNRTIs has not been demonstrated to be of benefit to HIV therapy. It is recommended to avoid this combination. </td></tr><tr><td><a href="/drugs/DB01319">Fosamprenavir</a></td><td>Decreased levels of delavirdine with increased levels of amprenavir</td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>The anticonvulsant, fosphenytoin, decreases the effect of delavirdine.</td></tr><tr><td><a href="/drugs/DB00224">Indinavir</a></td><td>Delavirdine may increase the effect of indinavir.</td></tr><tr><td><a href="/drugs/DB00227">Lovastatin</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of lovastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of lovastatin if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB08815">Lurasidone</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB01378">Magnesium</a></td><td>Magnesium antacids may decrease the absorption of delavirdine.</td></tr><tr><td><a href="/drugs/DB01377">Magnesium oxide</a></td><td>The antiacid decreases the effect of delavirdine</td></tr><tr><td><a href="/drugs/DB00353">Methylergometrine</a></td><td>The antiretroviral agent may increase the ergot derivative toxicity</td></tr><tr><td><a href="/drugs/DB00849">Methylphenobarbital</a></td><td>The anticonvulsant, methylphenobarbital, decreases the effect of delavirdine.</td></tr><tr><td><a href="/drugs/DB00247">Methysergide</a></td><td>The antiretroviral agent may increase the ergot derivative toxicity</td></tr><tr><td><a href="/drugs/DB00683">Midazolam</a></td><td>The antiviral agent, delavirdine, may increase the effect and toxicity of the benzodiazepine, midazolam.</td></tr><tr><td><a href="/drugs/DB01174">Phenobarbital</a></td><td>The anticonvulsant, phenobarbital, decreases the effect of delavirdine.</td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>The anticonvulsant, phenytoin, decreases the effect of delavirdine.</td></tr><tr><td><a href="/drugs/DB01369">Quinupristin</a></td><td>This combination presents an increased risk of toxicity</td></tr><tr><td><a href="/drugs/DB00615">Rifabutin</a></td><td>Rifabutin decreases the effect of delavirdine</td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin decreases the effect of delavirdine</td></tr><tr><td><a href="/drugs/DB08864">Rilpivirine</a></td><td>Concentration of rilpivirine increases by affecting CYP3A4 metabolism. Concomitant use is contraindicated. Rilpivirine should not be used with other NNRTI's. </td></tr><tr><td><a href="/drugs/DB00503">Ritonavir</a></td><td>Increases the effect of ritonavir</td></tr><tr><td><a href="/drugs/DB01232">Saquinavir</a></td><td>Increases the effect of saquinavir and hepatic toxicity</td></tr><tr><td><a href="/drugs/DB00641">Simvastatin</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of simvastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of simvastatin if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01323">St. John's Wort</a></td><td>St. John's Wort decreases the antiretroviral effect</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>The strong CYP3A4 inhibitor, Delavirdine, may decrease the metabolism and clearance of Tacrolimus, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in therapeutic and adverse effects of Tacrolimus if Delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00820">Tadalafil</a></td><td>Delavirdine may reduce the metabolism of Tadalafil. Concomitant therapy should be avoided if possible due to high risk of Tadalafil toxicity.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Delavirdine may decrease the therapeutic effect of Tamoxifen by decreasing the production of active metabolites. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Delavirdine, a CYP3A4/2D6 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP3A4/2D6 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Delavirdine is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Delavirdine may increase the plasma concentration of Telithromycin. Consider alternate therapy or monitor therapeutic/adverse effects.</td></tr><tr><td><a href="/drugs/DB06287">Temsirolimus</a></td><td>Delavirdine may inhibit the metabolism and clearance of Temsirolimus. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00444">Teniposide</a></td><td>The strong CYP3A4 inhibitor, Delavirdine, may decrease the metabolism and clearance of Teniposide, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Teniposide if Delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00342">Terfenadine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00906">Tiagabine</a></td><td>The strong CYP3A4 inhibitor, Delavirdine, may decrease the metabolism and clearance of Tiagabine, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Tiagabine if Delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00932">Tipranavir</a></td><td>Concomitant use may result in increased Tipranavir and decreased Delavirdine concentrations. Monitor for altered therapeutic and adverse effects of both agents if either agent is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB01124">Tolbutamide</a></td><td>Delavirdine, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of Tolbutamide, a CYP2C9 substrate. Consider alternate therapy or monitor for changes in Tolbutamide therapeutic and adverse effects if Delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB01036">Tolterodine</a></td><td>Delavirdine may decrease the metabolism and clearance of Tolterodine. Adjust Tolterodine dose and monitor for efficacy and toxicity.</td></tr><tr><td><a href="/drugs/DB00214">Torasemide</a></td><td>Delavirdine, a strong CYP2C9 inhibitor, may increase the serum concentration of Torasemide, a CYP2C9 substrate, by decreasing Torasemide metabolism and clearance. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of Torasemide if Delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Delavirdine may increase Tramadol toxicity by decreasing Tramadol metabolism and clearance. Delavirdine may decrease the effect of Tramadol by decreasing active metabolite production. </td></tr><tr><td><a href="/drugs/DB00656">Trazodone</a></td><td>The CYP3A4 inhibitor, Delavirdine, may increase Trazodone efficacy/toxicity by decreasing Trazodone metabolism and clearance. Consider alternate therapy or monitor for changes in Trazodone efficacy/toxicity if Delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00897">Triazolam</a></td><td>The antiviral agent, delavirdine, may increase the effect and toxicity of the benzodiazepine, triazolam.</td></tr><tr><td><a href="/drugs/DB00440">Trimethoprim</a></td><td>The strong CYP2C9 inhibitor, Delavirdine, may decrease the metabolism and clearance of Trimethoprim, a CYP2C9 substrate. Consider alternate therapy or monitor for changes in therapeutic and adverse effects of Trimethoprim if Delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>The strong CYP3A4/CYP2D6 inhibitor, Delavirdine, may decrease the metabolism and clearance of Trimipramine, a CYP3A4/CYP2D6 substrate. Consider alternate therapy or monitor for changes in therapeutic and adverse effects of Trimipramine if Delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00862">Vardenafil</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may reduce the metabolism and clearance of Vardenafil. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of Vardenafil.</td></tr><tr><td><a href="/drugs/DB00285">Venlafaxine</a></td><td>Delaviridine, a CYP2D6 and CYP3A4 inhibitor, may decrease the metabolism and clearance of Venlafaxine, a CYP2D6 and CYP3A4 substrate. Monitor for changes in therapeutic/adverse effects of Venlafaxine if Delavirdine is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00661">Verapamil</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of Veramapil, a CYP3A4 substrate, by decreasing its metabolism and clearance. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Verapamil if Delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00570">Vinblastine</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may decrease the metabolism of Vinblastine. Consider alternate therapy to avoid Vinblastine toxicity. Monitor for changes in the therapeutic/adverse effects of Vinblastine if Delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00541">Vincristine</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of Vincristine by decreasing its metabolism. Consider alternate therapy to avoid Vincristine toxicity. Monitor for changes in the therapeutic and adverse effects of Vincristine if Delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00361">Vinorelbine</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of Vinorelbine by decreasing its metabolism. Consider alternate therapy to avoid Vinorelbine toxicity. Monitor for changes in the therapeutic and adverse effects of Vinorelbine if Delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Delavirdine, a strong CYP2C9 inhibitor, may increase the serum concentration of voriconazole by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of voriconazole if delavirdine is initiated, discontinued or dose changed.	</td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>Delavirdine, a strong CYP2C9 inhibitor, may decrease the metabolism of warfarin. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of warfarin if delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00549">Zafirlukast</a></td><td>Delavirdine, a strong CYP2C9 inhibitor, may decrease the metabolism and clearance of zafirlukast. Consider alternate therapy or monitor for changes in zafirlukast therapeutic and adverse effects if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00425">Zolpidem</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of zolpidem by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zolpidem if delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00909">Zonisamide</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01198">Zopiclone</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of zopiclone by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zopiclone if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01624">Zuclopenthixol</a></td><td>Delavirdine, a strong CYP2D6 inhibitor, may increase the serum concentration of zuclopenthixol by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zuclopenthixol if delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB08919">Zuclopenthixol acetate</a></td><td>Delavirdine, a strong CYP2D6 inhibitor, may increase the serum concentration of zuclopenthixol by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zuclopenthixol if delavirdine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB08920">Zuclopenthixol decanoate</a></td><td>Delavirdine, a strong CYP2D6 inhibitor, may increase the serum concentration of zuclopenthixol by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zuclopenthixol if delavirdine is initiated, discontinued or dose changed. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take without regard to meals.</li></ul></td></tr></tbody></table>

@@ -1,0 +1,205 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Dobutamine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00841</strong>&#160; (APRD00122)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A beta-2 agonist catecholamine that has cardiac stimulant action without evoking vasoconstriction or tachycardia. It is proposed as a cardiotonic after myocardial infarction or open heart surgery. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00841/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00841/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00841.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00841.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00841.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00841.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00841.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00841">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Dobutamin</td><td>German</td><td>INN</td></tr><tr><td>Dobutamina</td><td>Spanish</td><td>INN</td></tr><tr><td>Dobutamine</td><td>French</td><td>DCF</td></tr><tr><td>Dobutaminum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Dobutamine hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000711/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000711/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: BQKADKWNRWCIJL-UHFFFAOYNA-N</li>
+              <li>Monoisotopic Mass: 337.144471346</li>
+              <li>Average Mass: 337.841</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000711">DBSALT000711</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Dobuject</td><td>Bayer</td></tr><tr><td>Dobusafe</td><td>Claris</td></tr><tr><td>Dobutamin</td><td>Sandoz</td></tr><tr><td>Dobutan</td><td>Demo</td></tr><tr><td>Dobutel</td><td>Novell</td></tr><tr><td>Dobutil</td><td>Meizler</td></tr><tr><td>Dobutrex</td><td>Lilly</td></tr><tr><td>Dopmin</td><td>Mylan Seiyaku</td></tr><tr><td>Inotrex</td><td>Lilly</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/sympathomimetics">Sympathomimetics</a></li>
+<li><a href="/mesh/cardiotonic-agents">Cardiotonic Agents</a></li>
+<li><a href="/mesh/adrenergic-beta-1-receptor-agonists">Adrenergic beta-1 Receptor Agonists</a></li></ul></td></tr><tr><th>CAS number</th><td>34368-04-2</td></tr><tr><th>Weight</th><td>Average: 301.3801<br>Monoisotopic: 301.167793607</td></tr><tr><th>Chemical Formula</th><td>C<sub>18</sub>H<sub>23</sub>NO<sub>3</sub></td></tr><tr><th>InChI Key</th><td>JRWZLRBJNMZMFE-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C18H23NO3/c1-13(2-3-14-4-7-16(20)8-5-14)19-11-10-15-6-9-17(21)18(22)12-15/h4-9,12-13,19-22H,2-3,10-11H2,1H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">4-(2-{[4-(4-hydroxyphenyl)butan-2-yl]amino}ethyl)benzene-1,2-diol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC(CCC1=CC=C(O)C=C1)NCCC1=CC(O)=C(O)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Phenols and Derivatives</td></tr><tr><th>Direct parent</th><td>Catecholamines and Derivatives</td></tr><tr><th>Alternative parents</th><td>Phenylpropylamines; Phenethylamines; Polyols; Polyamines; Enols; Dialkylamines</td></tr><tr><th>Substituents</th><td>phenethylamine; polyol; secondary amine; secondary aliphatic amine; enol; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the catecholamines and derivatives. These are compounds containing 4-(2-Aminoethyl)pyrocatechol [4-(2-aminoethyl)benzene-1,2-diol] or a derivative thereof formed by substitution.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For inotropic support in the short- term treatment of patients with cardiac decompensation due to depressed contractility resulting either from organic heart disease or from cardiac surgical procedures</td></tr><tr><th>Pharmacodynamics</th><td>Dobutamine is a direct-acting inotropic agent whose primary activity results from stimulation of the beta-adrenoceptors of the heart while producing comparatively mild chronotropic, hypertensive, arrhythmogenic, and vasodilative effects. Dobutamine acts primarily on beta-1 adrenergic receptors, with little effect on beta-2 or alpha receptors. It does not cause the release of endogenous norepinephrine, as does dopamine. Dobutamine is indicated when parenteral therapy is necessary for inotropic support in the short-term treatment of patients with cardiac decompensation due to depressed contractility resulting either from organic heart disease or from cardiac surgical procedures.</td></tr><tr><th>Mechanism of action</th><td>Dobutamine directly stimulates beta-1 receptors of the heart to increase myocardial contractility and stroke volume, resulting in increased cardiac output.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td>In human urine, the major excretion products are the conjugates of dobutamine and 3-O-methyl dobutamine.</td></tr><tr><th>Half life</th><td>2 minutes</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9937</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.7448</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5305</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7571</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8782</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8383</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6336</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7235</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.6265</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5296</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8231</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8827</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7215
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9306
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9256
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.2261 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.828
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.8367
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Astrazeneca lp</li>
+<li>Baxter healthcare corp anesthesia and critical care</li>
+<li>Bedford laboratories div ben venue laboratories inc</li>
+<li>Hospira inc</li>
+<li>Luitpold pharmaceuticals inc</li>
+<li>Marsam pharmaceuticals llc</li>
+<li>Teva parenteral medicines inc</li>
+<li>Watson laboratories inc</li>
+<li>Baxter healthcare corp</li>
+<li>Eli lilly and co</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Liquid</td><td>Intravenous</td><td></td></tr><tr><td>Solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Dobutamine 12.5 mg/ml vial</td><td>0.18USD</td><td>ml</td></tr><tr><td>Dobutamine 250 mg-d5w 500 ml</td><td>0.09USD</td><td>ml</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>184-186</td><td>J. Mills, R. R. Tuttle, U.S. Patent 3,987,200 (1976).</td></tr><tr><td>logP</td><td>3.6</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.37e-02 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>2.97</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>2.62</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-4.3</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>10.14</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.27</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>72.72</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>7</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>88.39</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>34.44</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>R. R. Tuttle, J. Mills, DE 2317710 (1973).<br>
+J. Mills, R. R. Tuttle, U.S. Patent 3,987,200 (1976).</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=5442120&amp;tbm=pts" target="_blank">US5442120 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D03879" target="_blank">D03879 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C06967" target="_blank">C06967 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=36811" target="_blank">36811 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46505241" target="_blank">46505241 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.33786.html" target="_blank">33786 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50028971" target="_blank">50028971 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=4670" target="_blank">4670 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL926" target="_blank">CHEMBL926 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000245" target="_blank">DAP000245 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA449381" target="_blank">PA449381 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>IUPHAR</td><td><a class="wishart-link-out" href="http://www.iuphar-db.org/DATABASE/LigandDisplayForward?ligandId=535" target="_blank">535 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Guide to Pharmacology</td><td><a class="wishart-link-out" href="http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=535" target="_blank">535 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2242010" target="_blank">2242010 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/dobutamine.htm" target="_blank">http://www.rxlist.com/cgi/generic3/dobutamine.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/dobutamine.html" target="_blank">http://www.drugs.com/cdi/dobutamine.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Dobutamine" target="_blank">Dobutamine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>C01CA07<ul class="atc-drug-tree"><li><a href="/atc/C#C">C &#8212; CARDIOVASCULAR SYSTEM</a></li><li><a href="/atc/C01#C01">C01 &#8212; CARDIAC THERAPY</a></li><li><a href="/atc/C01C#C01C">C01C &#8212; CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES</a></li><li><a href="/atc/C01CA#C01CA">C01CA &#8212; Adrenergic and dopaminergic agents</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>12:12.08.08</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00321">Amitriptyline</a></td><td>The tricyclic antidepressant, amitriptyline, increases the sympathomimetic effect, dobutamine.</td></tr><tr><td><a href="/drugs/DB00543">Amoxapine</a></td><td>The tricyclic antidepressant, amoxapine, increases the sympathomimetic effect of dobutamine.</td></tr><tr><td><a href="/drugs/DB01242">Clomipramine</a></td><td>The tricyclic antidepressant, clomipramine, increases the sympathomimetic effect of dobutamine.</td></tr><tr><td><a href="/drugs/DB01151">Desipramine</a></td><td>The tricyclic antidepressant, desipramine, increases the sympathomimetic effect of dobutamine.</td></tr><tr><td><a href="/drugs/DB01142">Doxepin</a></td><td>The tricyclic antidepressant, doxepin, increases the sympathomimetic effect of dobutamine.</td></tr><tr><td><a href="/drugs/DB00494">Entacapone</a></td><td>Entacapone increases the effect and toxicity of the sympathomimetic, dobutamine.</td></tr><tr><td><a href="/drugs/DB01170">Guanethidine</a></td><td>Dobutamine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB00458">Imipramine</a></td><td>The tricyclic antidepressant, imipramine, increases the sympathomimetic effect of dobutamine.</td></tr><tr><td><a href="/drugs/DB01247">Isocarboxazid</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00601">Linezolid</a></td><td>Possible increase of arterial pressure</td></tr><tr><td><a href="/drugs/DB00968">Methyldopa</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00211">Midodrine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01171">Moclobemide</a></td><td>Moclobemide increases the sympathomimetic effect of dobutamine.</td></tr><tr><td><a href="/drugs/DB00540">Nortriptyline</a></td><td>The tricyclic antidepressant, nortriptyline, increases the sympathomimetic effect of dobutamine.</td></tr><tr><td><a href="/drugs/DB00780">Phenelzine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01367">Rasagiline</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00206">Reserpine</a></td><td>Increased arterial pressure</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

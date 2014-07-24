@@ -1,0 +1,223 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Moexipril</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00691</strong>&#160; (APRD01120)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Moexipril is a non-sulfhydryl containing precursor of the active angiotensin-converting enzyme (<span class="caps">ACE</span>) inhibitor moexiprilat. It is used to treat high blood pressure (hypertension). It works by relaxing blood vessels, causing them to widen. Lowering high blood pressure helps prevent strokes, heart attacks and kidney problems.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00691/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00691/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00691.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00691.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00691.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00691.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00691.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00691">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Moexiprilum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Moexipril Hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000504/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000504/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: JXRAXHBVZQZSIC-JKVLGAQCSA-N</li>
+              <li>Monoisotopic Mass: 534.213279191</li>
+              <li>Average Mass: 535.029</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000504">DBSALT000504</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Univasc</td><td>Schwarz</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Uniretic</td><td>moexipril + hydrochlorothiazide</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/angiotensin-converting-enzyme-inhibitors">Angiotensin-Converting Enzyme Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>103775-10-6</td></tr><tr><th>Weight</th><td>Average: 498.5681<br>Monoisotopic: 498.236601452</td></tr><tr><th>Chemical Formula</th><td>C<sub>27</sub>H<sub>34</sub>N<sub>2</sub>O<sub>7</sub></td></tr><tr><th>InChI Key</th><td>UWWDHYUMIORJTA-HSQYWUDLSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C27H34N2O7/c1-5-36-27(33)21(12-11-18-9-7-6-8-10-18)28-17(2)25(30)29-16-20-15-24(35-4)23(34-3)14-19(20)13-22(29)26(31)32/h6-10,14-15,17,21-22,28H,5,11-13,16H2,1-4H3,(H,31,32)/t17-,21-,22-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(3S)-2-[(2S)-2-{[(2S)-1-ethoxy-1-oxo-4-phenylbutan-2-yl]amino}propanoyl]-6,7-dimethoxy-1,2,3,4-tetrahydroisoquinoline-3-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCOC(=O)[C@H](CCC1=CC=CC=C1)N[C@@H](C)C(=O)N1CC2=CC(OC)=C(OC)C=C2C[C@H]1C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Peptides</td></tr><tr><th>Alternative parents</th><td>Alpha Amino Acid Esters; Alpha Amino Acid Amides; Phenylpropylamines; Isoquinolines and Derivatives; Anisoles; Fatty Acid Esters; Alkyl Aryl Ethers; Dicarboxylic Acids and Derivatives; Tertiary Carboxylic Acid Amides; Tertiary Amines; Carboxylic Acid Esters; Enolates; Polyamines; Carboxylic Acids; Dialkylamines</td></tr><tr><th>Substituents</th><td>alpha-amino acid ester; alpha-amino acid amide; alpha-amino acid or derivative; phenylpropylamine; isoquinoline; anisole; phenol ether; fatty acid ester; alkyl aryl ether; benzene; dicarboxylic acid derivative; tertiary carboxylic acid amide; tertiary amine; carboxamide group; carboxylic acid ester; polyamine; ether; secondary amine; carboxylic acid; enolate; secondary aliphatic amine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the peptides. These are compounds containing an amide derived from two or more amino carboxylic acid molecules (the same or different) by formation of a covalent bond from the carbonyl carbon of one to the nitrogen atom of another.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of hypertension.</td></tr><tr><th>Pharmacodynamics</th><td>Moexipril is a non-sulfhydryl containing precursor of the active angiotensin-converting enzyme (ACE) inhibitor moexiprilat. It is used to treat high blood pressure (hypertension). It works by relaxing blood vessels, causing them to widen. Lowering high blood pressure helps prevent strokes, heart attacks and kidney problems.</td></tr><tr><th>Mechanism of action</th><td>Moexipril is a prodrug for moexiprilat, which inhibits ACE in humans and animals. The mechanism through which moexiprilat lowers blood pressure is believed to be primarily inhibition of ACE activity. ACE is a peptidyl dipeptidase that catalyzes the conversion of the inactive decapeptide angiotensin I to the vasoconstrictor substance angiotensin II. Angiotensin II is a potent peripheral vasoconstrictor that also stimulates aldosterone secretion by the adrenal cortex and provides negative feedback on renin secretion. ACE is identical to kininase II, an enzyme that degrades bradykinin, an endothelium-dependent vasodilator. Moexiprilat is about 1000 times as potent as moexipril in inhibiting ACE and kininase II. Inhibition of ACE results in decreased angiotensin II formation, leading to decreased vasoconstriction, increased plasma renin activity, and decreased aldosterone secretion. The latter results in diuresis and natriuresis and a small increase in serum potassium concentration (mean increases of about 0.25 mEq/L were seen when moexipril was used alone). Whether increased levels of bradykinin, a potent vasodepressor peptide, play a role in the therapeutic effects of moexipril remains to be elucidated. Although the principal mechanism of moexipril in blood pressure reduction is believed to be through the renin-angiotensin-aldosterone system, ACE inhibitors have some effect on blood pressure even in apparent low-renin hypertension.</td></tr><tr><th>Absorption</th><td>Moexipril is incompletely absorbed, with bioavailability as moexiprilat of about 13% compared to intravenous (I.V.) moexipril (both measuring the metabolite moexiprilat), and is markedly affected by food, which reduces C<sub>max</sub> and AUC by about 70% and 40%, respectively, after the ingestion of a low-fat breakfast or by 80% and 50%, respectively, after the ingestion of a high-fat breakfast.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>183 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td>Moexiprilat is approxomately 50% protein bound.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Rapidly converted to moexiprilat, the active metabolite. Conversion to the active metabolite is thought to require carboxyesterases and is likely to occur in organs or tissues, other than the gastrointestinal tract, in which carboxyesterases occur. The liver is thought to be one site of conversion, but not the primary site.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Moexipril</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01140">Moexiprilat</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1262">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Moexiprilat undergoes renal elimination.</td></tr><tr><th>Half life</th><td>Moexipril elimination half-life is approximately 1 hour. Moexiprilat elimination half-life is 2 to 9 hours.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>441 mL/min</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Human overdoses of moexipril have not been reported. In case reports of overdoses with other ACE inhibitors, hypotension has been the principal adverse effect noted. Single oral doses of 2 g/kg moexipril were associated with significant lethality in mice. Rats, however, tolerated single oral doses of up to 3 g/kg. Common adverse effects include cough, dizziness, diarrhea, flu syndrome, fatigue, pharyngitis, flushing, rash, and myalgia</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>Moexipril Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00151?highlight%5Bcompounds%5D%5B%5D=DB00691&amp;highlight%5Bproteins%5D%5B%5D=DB00691">SMP00151</a></td></tr><tr><td>Moexipril Metabolism Pathway</td><td>Drug metabolism</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00595?highlight%5Bcompounds%5D%5B%5D=DB00691&amp;highlight%5Bproteins%5D%5B%5D=DB00691">SMP00595</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.5775</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9022</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7313</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.9085</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5919</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8157</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8146</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8588</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8369</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.7014</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8205</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5961</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8261</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6592</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5935</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6861</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8358
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9378
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9762
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5131 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9715
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.8751
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Apotex inc</li>
+<li>Glenmark generics ltd</li>
+<li>Paddock laboratories inc</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Schwarz pharma inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.cobaltpharma.com">Cobalt Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.glenmark-generics.com">Glenmark Generics Ltd.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.paddocklabs.com">Paddock Labs</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li>Resource Optimization and Innovation LLC</li>
+<li>Schwarz Pharma Inc.</li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>15 mg</td></tr><tr><td>Tablet, film coated</td><td>Oral</td><td>7.5 mg</td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Univasc 15 mg tablet</td><td>2.44USD</td><td>tablet</td></tr><tr><td>Univasc 7.5 mg tablet</td><td>2.13USD</td><td>tablet</td></tr><tr><td>Moexipril hcl 15 mg tablet</td><td>1.48USD</td><td>tablet</td></tr><tr><td>Moexipril hcl 7.5 mg tablet</td><td>1.41USD</td><td>tablet</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>water solubility</td><td>Soluble (about 10% weight-to-volume) in distilled water at room temperature as HCl salt.</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>2.7</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>5.85e-03 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>1.52</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>1.5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-4.9</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>3.46</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>5.2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>7</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>114.4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>12</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>132.88</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>53.55</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Asmar R, Sayegh F, Tracz W, Hlawaty M, Olszowska M, Jourde M, Vincent M, Goujoun B, Maldonado J: Reversal of left ventricular hypertrophy with the <span class="caps">ACE</span> inhibitor moexipril in patients with essential hypertension. Acta Cardiol. 2002 Feb;57(1):31-2. <a href="http://www.ncbi.nlm.nih.gov/pubmed/11918132">Pubmed</a></li>
+	<li>Blacher J, Raison J, Amah G, Schiemann AL, Stimpel M, Safar ME: Increased arterial distensibility in postmenopausal hypertensive women with and without hormone replacement therapy after acute administration of the <span class="caps">ACE</span> inhibitor moexipril. Cardiovasc Drugs Ther. 1998 Sep;12(4):409-14. <a href="http://www.ncbi.nlm.nih.gov/pubmed/9825188">Pubmed</a></li>
+	<li>Brogden RN, Wiseman LR: Moexipril. A review of its use in the management of essential hypertension. Drugs. 1998 Jun;55(6):845-60. <a href="http://www.ncbi.nlm.nih.gov/pubmed/9617599">Pubmed</a></li>
+	<li>Cawello W, Boekens H, Waitzinger J, Miller U: Moexipril shows a long duration of action related to an extended pharmacokinetic half-life and prolonged <span class="caps">ACE</span> inhibition. Int J Clin Pharmacol Ther. 2002 Jan;40(1):9-17. <a href="http://www.ncbi.nlm.nih.gov/pubmed/11837383">Pubmed</a></li>
+	<li>Chrysant SG, Chrysant GS: Pharmacological and clinical profile of moexipril: a concise review. J Clin Pharmacol. 2004 Aug;44(8):827-36. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15286086">Pubmed</a></li>
+	<li>Chrysant SG, Chrysant GS: Pharmacological profile and clinical use of moexipril. Expert Rev Cardiovasc Ther. 2003 Sep;1(3):345-52. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15030263">Pubmed</a></li>
+	<li>Chrysant GS, Nguyen PK: Moexipril and left ventricular hypertrophy. Vasc Health Risk Manag. 2007;3(1):23-30. <a href="http://www.ncbi.nlm.nih.gov/pubmed/17583172">Pubmed</a></li>
+	<li>Grass GM, Morehead WT: Evidence for site-specific absorption of a novel <span class="caps">ACE</span> inhibitor. Pharm Res. 1989 Sep;6(9):759-65. <a href="http://www.ncbi.nlm.nih.gov/pubmed/2554270">Pubmed</a></li>
+	<li>Kalasz H, Petroianu G, Tekes K, Klebovich I, Ludanyi K, Gulyas Z: Metabolism of moexipril to moexiprilat: determination of in vitro metabolism using <span class="caps">HPLC</span>-ES-MS. Med Chem. 2007 Jan;3(1):101-6. <a href="http://www.ncbi.nlm.nih.gov/pubmed/17266629">Pubmed</a></li>
+	<li>Persson B, Stimpel M: Evaluation of the antihypertensive efficacy and tolerability of moexipril, a new <span class="caps">ACE</span> inhibitor, compared to hydrochlorothiazide in elderly patients. Eur J Clin Pharmacol. 1996;50(4):259-64. <a href="http://www.ncbi.nlm.nih.gov/pubmed/8803515">Pubmed</a></li>
+	<li>Spinar J, Vitovec J: <span class="caps">MORE</span>&#8212;MOexipril and REgression of left ventricle hypertrophy in combination therapy A multicentric open label clinical trial. Int J Cardiol. 2005 Apr 20;100(2):199-206. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15823625">Pubmed</a></li>
+	<li>Stimpel M, Koch B, Oparil S: Antihypertensive treatment in postmenopausal women: results from a prospective, randomized, double-blind, controlled study comparing an <span class="caps">ACE</span> inhibitor (moexipril) with a diuretic (hydrochlorothiazide). Cardiology. 1998 May;89(4):271-6. <a href="http://www.ncbi.nlm.nih.gov/pubmed/9643274">Pubmed</a></li>
+	<li>White CM: Pharmacologic, pharmacokinetic, and therapeutic differences among <span class="caps">ACE</span> inhibitors. Pharmacotherapy. 1998 May-Jun;18(3):588-99. <a href="http://www.ncbi.nlm.nih.gov/pubmed/9620109">Pubmed</a></li>
+	<li>White WB, Whelton A, Fox AA, Stimpel M, Kaihlanen PM: Tricenter assessment of the efficacy of the <span class="caps">ACE</span> inhibitor, moexipril, by ambulatory blood pressure monitoring. J Clin Pharmacol. 1995 Mar;35(3):233-8. <a href="http://www.ncbi.nlm.nih.gov/pubmed/7608310">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07704" target="_blank">C07704 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=91270" target="_blank">91270 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46508441" target="_blank">46508441 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.82418.html" target="_blank">82418 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50084673" target="_blank">50084673 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000586" target="_blank">DAP000586 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA164769059" target="_blank">PA164769059 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic2/moexip.htm" target="_blank">http://www.rxlist.com/cgi/generic2/moexip.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/moexipril.html" target="_blank">http://www.drugs.com/cdi/moexipril.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PDRhealth</td><td><a class="wishart-link-out" href="http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/uni1468.shtml" target="_blank">http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/uni1468.shtml <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Moexipril" target="_blank">Moexipril <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>C09AA13<ul class="atc-drug-tree"><li><a href="/atc/C#C">C &#8212; CARDIOVASCULAR SYSTEM</a></li><li><a href="/atc/C09#C09">C09 &#8212; AGENTS ACTING ON THE RENIN-ANGIOTENSIN SYSTEM</a></li><li><a href="/atc/C09A#C09A">C09A &#8212; ACE INHIBITORS, PLAIN</a></li><li><a href="/atc/C09AA#C09AA">C09AA &#8212; ACE inhibitors, plain</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>24:32.04</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00594">Amiloride</a></td><td>Increased risk of hyperkalemia</td></tr><tr><td><a href="/drugs/DB08822">Azilsartan medoxomil</a></td><td>Pharmacodynamic synergism: dual blockade of renin-angiotensin system. Increases risks of hypotension, hyperkalemia, renal impairment.  </td></tr><tr><td><a href="/drugs/DB06196">Icatibant</a></td><td>Icatibant may attenuate the antihypertensive effect of ACE inhibitors by pharmacodynamic antagonism. Monitor concomitant therapy closely. </td></tr><tr><td><a href="/drugs/DB01356">Lithium</a></td><td>The ACE inhibitor increases serum levels of lithium</td></tr><tr><td><a href="/drugs/DB01345">Potassium</a></td><td>Increased risk of hyperkalemia</td></tr><tr><td><a href="/drugs/DB01369">Quinupristin</a></td><td>This combination presents an increased risk of toxicity</td></tr><tr><td><a href="/drugs/DB00697">Tizanidine</a></td><td>Tizanidine increases the risk of hypotension with the ACE inhibitor</td></tr><tr><td><a href="/drugs/DB00374">Treprostinil</a></td><td>Additive hypotensive effect. Monitor antihypertensive therapy during concomitant use. </td></tr><tr><td><a href="/drugs/DB00384">Triamterene</a></td><td>Increased risk of hyperkalemia</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Herbs that may attenuate the antihypertensive effect of moexipril include: bayberry, blue cohash, cayenne, ephedra, ginger, ginseng (American), kola and licorice. </li>
+<li>High salt intake may attenuate the antihypertensive effect of moexipril.  </li>
+<li>Moexipril may decrease the excretion of potassium. Salt substitutes containing potassium may increase the risk of hyperkalemia. </li>
+<li>Take moexipril one hour before or two hours after meals. </li></ul></td></tr></tbody></table>

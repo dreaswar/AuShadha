@@ -1,0 +1,221 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Pioglitazone</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01132</strong>&#160; (APRD00653)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Pioglitazone is used for the treatment of diabetes mellitus type 2. Pioglitazone selectively stimulates nuclear receptor peroxisone proliferator-activated receptor gamma (<span class="caps">PPAR</span>-gamma). It modulates the transcription of the insulin-sensitive genes involved in the control of glucose and lipid metabolism in the lipidic, muscular tissues and in the liver.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01132/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01132/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01132.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01132.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01132.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01132.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01132.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01132">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Pioglitazona</td><td>Spanish</td><td>INN</td></tr><tr><td>Pioglitazone</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>INN, BAN</td></tr><tr><td>Pioglitazonum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Pioglitazone Hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000555/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000555/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: GHUUBYQTCDQWRA-UHFFFAOYNA-N</li>
+              <li>Monoisotopic Mass: 392.096140945</li>
+              <li>Average Mass: 392.9</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000555">DBSALT000555</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Actos</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Actost</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Glustin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>ActoplusMet</td><td>Pioglitazone + Metformin</td></tr><tr><td>Duetact</td><td>Glimepiride + Pioglitazone</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/hypoglycemic-agents">Hypoglycemic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>111025-46-8</td></tr><tr><th>Weight</th><td>Average: 356.439<br>Monoisotopic: 356.119463206</td></tr><tr><th>Chemical Formula</th><td>C<sub>19</sub>H<sub>20</sub>N<sub>2</sub>O<sub>3</sub>S</td></tr><tr><th>InChI Key</th><td>HYAFETHFCAUJAY-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C19H20N2O3S/c1-2-13-3-6-15(20-12-13)9-10-24-16-7-4-14(5-8-16)11-17-18(22)21-19(23)25-17/h3-8,12,17H,2,9-11H2,1H3,(H,21,22,23)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">5-({4-[2-(5-ethylpyridin-2-yl)ethoxy]phenyl}methyl)-1,3-thiazolidine-2,4-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCC1=CN=C(CCOC2=CC=C(CC3SC(=O)NC3=O)C=C2)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Phenol Ethers</td></tr><tr><th>Direct parent</th><td>Phenol Ethers</td></tr><tr><th>Alternative parents</th><td>Thiazolidinediones; Alkyl Aryl Ethers; Pyridines and Derivatives; N-unsubstituted Carboxylic Acid Imides; Secondary Carboxylic Acid Amides; Carboxylic Acids; Polyamines</td></tr><tr><th>Substituents</th><td>alkyl aryl ether; thiazolidinedione; pyridine; thiazolidinone; thiazolidine; carboxylic acid imide, n-unsubstituted; carboxamide group; secondary carboxylic acid amide; polyamine; ether; carboxylic acid; carboxylic acid derivative; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenol ethers. These are aromatic compounds containing an ether group substituted with a benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Treatment of Type II diabetes mellitus</td></tr><tr><th>Pharmacodynamics</th><td>Pioglitazone, a member of the drug group known as the thiazolidinediones or "insulin sensitizers", is not chemically or functionally related to the alpha-glucosidase inhibitors, the biguanides, or the sulfonylureas. Pioglitazone targets insulin resistance and, hence, is used alone or in combination with insulin, metformin, or asulfonylurea as an antidiabetic agent.</td></tr><tr><th>Mechanism of action</th><td>Pioglitazone acts as an agonist at peroxisome proliferator activated receptors (PPAR) in target tissues for insulin action such as adipose tissue, skeletal muscle, and liver. Activation of PPAR-gamma receptors increases the transcription of insulin-responsive genes involved in the control of glucose production, transport, and utilization. In this way, pioglitazone both enhances tissue sensitivity to insulin and reduces hepatic gluconeogenesis. Thus, insulin resistance associated with type 2 diabetes mellitus is improved without an increase in insulin secretion by pancreatic &#946; cells.</td></tr><tr><th>Absorption</th><td>Following oral administration, in the fasting state, pioglitazone is first measurable in serum within 30 minutes, with peak concentrations observed within 2 hours. Food slightly delays the time to peak serum concentration to 3 to 4 hours, but does not alter the extent of absorption.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>0.63 &#177; 0.41 L/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td>&gt; 99%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Pioglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01300">Pioglitazone metabolite M-I</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1468">Details</a></td></tr><tr><td>Pioglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET01301">Pioglitazone metabolite M-II</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1469">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01301">Pioglitazone metabolite M-II</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01302">Pioglitazone metabolite M-II metabolite</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1470">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01301">Pioglitazone metabolite M-II</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET01303">Pioglitazone metabolite M-XI</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1471">Details</a></td></tr><tr><td>Pioglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET01304">Pioglitazone metabolite M-VI</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1472">Details</a></td></tr><tr><td>Pioglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET01305">Pioglitazone metabolite M-V</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1473">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01305">Pioglitazone metabolite M-V</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01304">Pioglitazone metabolite M-VI</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1474">Details</a></td></tr><tr><td>Pioglitazone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET01306">Pioglitazone metabolite M-IV</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1475">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01306">Pioglitazone metabolite M-IV</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01307">Pioglitazone metabolite M-III</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1476">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01306">Pioglitazone metabolite M-IV</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET01303">Pioglitazone metabolite M-XI</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1477">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Following oral administration, approximately 15% to 30% of the pioglitazone dose is recovered in the urine. Renal elimination of pioglitazone is negligible, and the drug is excreted primarily as metabolites and their conjugates. It is presumed that most of the oral dose is excreted into the bile either unchanged or as metabolites and eliminated in the feces.</td></tr><tr><th>Half life</th><td>3-7 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>apparent cl=5 &#8211; 7 L/h [oral administration]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Hypogycemia; LD<sub>50</sub>=mg/kg (orally in rat)</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9952</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8753</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5659</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6358</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5708</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9673</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6018</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7898</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5267</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8384</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6353</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8085</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6967</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6035</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.8864</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7303
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9171
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.7884
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.0115 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9341
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8498
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Takeda pharmaceuticals north america inc</li>
+<li>Takeda Pharmaceuticals North America, Inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Advanced Pharmaceutical Services Inc.</li>
+<li><a href="http://www.aqpharmaceuticals.com">AQ Pharmaceuticals Inc.</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.atlanticbiologicals.com">Atlantic Biologicals Corporation</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li>Comprehensive Consultant Services Inc.</li>
+<li>DispenseXpress Inc.</li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li>Pharmacy Service Center</li>
+<li><a href="http://www.pplpho.org">Physician Partners Ltd.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li>Quality Care</li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.takeda.com">Takeda Pharmaceutical Co. Ltd.</a></li>
+<li>Vangard Labs Inc.</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00930">Colesevelam</a></td><td>Bile Acid Sequestrants may decrease the absorption of Antidiabetic Agents (Thiazolidinedione). Separate the dosing of bile acid sequestrants and thiazolidinediones by at least 2 hours. Monitor for reduced effects of the antidiabetic agents. </td></tr><tr><td><a href="/drugs/DB01241">Gemfibrozil</a></td><td>Gemfibrozil may increase the effect and toxicity of pioglitazone.</td></tr><tr><td><a href="/drugs/DB01296">Glucosamine</a></td><td>Possibly hyperglycemia</td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Ketoconazole increases the effect of pioglitazone</td></tr><tr><td><a href="/drugs/DB01357">Mestranol</a></td><td>Possible loss of contraceptive effect</td></tr><tr><td><a href="/drugs/DB00717">Norethindrone</a></td><td>Possible loss of contraceptive effect</td></tr><tr><td><a href="/drugs/DB00052">Somatropin recombinant</a></td><td>Somatropin may antagonize the hypoglycemic effect of pioglitazone. Monitor for changes in fasting and postprandial blood sugars.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Pioglitazone may decrease the therapeutic effect of Tamoxifen by decreasing the production of active metabolites. Consider alternate therapy.</td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Pioglitazone, a CYP2D6 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP2D6 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Pioglitazone is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Pioglitazone may decrease the effect of Tramadol by decreasing active metabolite production. </td></tr><tr><td><a href="/drugs/DB00755">Tretinoin</a></td><td>The moderate CYP2C8 inhibitor, Pioglitazone, may decrease the metabolism and clearance of oral Tretinoin. Monitor for changes in Tretinoin effectiveness and adverse/toxic effects if Pioglitazone is initiated, discontinued to dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take without regard to meals. Food slightly delays absorption rate but extent of absorption is not affected.</li></ul></td></tr></tbody></table>

@@ -1,0 +1,197 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Flunarizine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB04841</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Flunarizine is a selective calcium entry blocker with calmodulin binding properties and histamine H1 blocking activity. It is effective in the prophylaxis of migraine, occlusive peripheral vascular disease, vertigo of central and peripheral origin, and as an adjuvant in the therapy of epilepsy.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB04841/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB04841/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04841.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04841.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04841.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04841.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04841.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB04841">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Flunarizina</td><td>Spanish</td><td>INN</td></tr><tr><td>Flunarizinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Flunarizine dihydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000382/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000382/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: RXKMOPXNWTYEHI-RDRKJGRWSA-N</li>
+              <li>Monoisotopic Mass: 476.15976073</li>
+              <li>Average Mass: 477.417</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000382">DBSALT000382</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Flugeral</td><td>Italfarmaco</td></tr><tr><td>Fluxarten</td><td>GlaxoSmithKline</td></tr><tr><td>Gradient</td><td>Polifarma</td></tr><tr><td>Sibelium</td><td>Janssen</td></tr><tr><td>Zinasen</td><td>AtralCipan</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anticonvulsants">Anticonvulsants</a></li>
+<li><a href="/mesh/vasodilator-agents">Vasodilator Agents</a></li>
+<li><a href="/mesh/calcium-channel-blockers">Calcium Channel Blockers</a></li>
+<li><a href="/mesh/histamine-h1-antagonists">Histamine H1 Antagonists</a></li></ul></td></tr><tr><th>CAS number</th><td>52468-60-7</td></tr><tr><th>Weight</th><td>Average: 404.4948<br>Monoisotopic: 404.206405252</td></tr><tr><th>Chemical Formula</th><td>C<sub>26</sub>H<sub>26</sub>F<sub>2</sub>N<sub>2</sub></td></tr><tr><th>InChI Key</th><td>SMANXXCATUTDDT-QPJJXVBHSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C26H26F2N2/c27-24-12-8-22(9-13-24)26(23-10-14-25(28)15-11-23)30-19-17-29(18-20-30)16-4-7-21-5-2-1-3-6-21/h1-15,26H,16-20H2/b7-4+</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-[bis(4-fluorophenyl)methyl]-4-[(2E)-3-phenylprop-2-en-1-yl]piperazine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">FC1=CC=C(C=C1)C(N1CCN(C\C=C\C2=CC=CC=C2)CC1)C1=CC=C(F)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Diphenylmethanes</td></tr><tr><th>Direct parent</th><td>Diphenylmethanes</td></tr><tr><th>Alternative parents</th><td>Phenylpropenes; Styrenes; Fluorobenzenes; Aryl Fluorides; Piperazines; Diazinanes; Tertiary Amines; Polyamines; Organofluorides</td></tr><tr><th>Substituents</th><td>phenylpropene; styrene; fluorobenzene; piperazine; aryl fluoride; aryl halide; 1,4-diazinane; tertiary amine; polyamine; amine; organohalogen; organonitrogen compound; organofluoride</td></tr><tr><th>Classification description</th><td>This compound belongs to the diphenylmethanes. These are compounds containing a diphenylmethane moiety, which consists of a methane wherein two hydrogen atoms are replaced by two phenyl groups.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used in the prophylaxis of migraine, occlusive peripheral vascular disease, vertigo of central and peripheral origin, and as an adjuvant in the therapy of epilepsy.</td></tr><tr><th>Pharmacodynamics</th><td>Flunarizine is a selective calcium entry blocker with calmodulin binding properties and histamine H1 blocking activity.</td></tr><tr><th>Mechanism of action</th><td>Flunarizine inhibits the influx of extracellular calcium through myocardial and vascular membrane pores by physically plugging the channel. The decrease in intracellular calcium inhibits the contractile processes of smooth muscle cells, causing dilation of the coronary and systemic arteries, increased oxygen delivery to the myocardial tissue, decreased total peripheral resistance, decreased systemic blood pressure, and decreased afterload.</td></tr><tr><th>Absorption</th><td>85% following oral administration.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>99% bound to plasma proteins</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic, to two metabolites via N-dealylation and hydroxylation.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Flunarizine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li>
+<li><a href="/biodb/bio_entities/BE0003336" target="_blank">Cytochrome P450 2A6</a></li>
+<li><a href="/biodb/bio_entities/BE0003543" target="_blank">Cytochrome P450 1A1</a></li>
+<li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li></ul></td><td><a href="/metabolites/DBMET01197">Flunarizine metabolite M1</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1341">Details</a></td></tr><tr><td>Flunarizine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002363" target="_blank">Cytochrome P450 2D6</a></li></ul></td><td><a href="/metabolites/DBMET01198">Flunarizine metabolite M2</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1342">Details</a></td></tr><tr><td>Flunarizine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li>
+<li><a href="/biodb/bio_entities/BE0003543" target="_blank">Cytochrome P450 1A1</a></li>
+<li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li>
+<li><a href="/biodb/bio_entities/BE0003336" target="_blank">Cytochrome P450 2A6</a></li></ul></td><td><a href="/metabolites/DBMET01199">Flunarizine metabolite M3</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1343">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>18 days</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9574</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9789</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5893</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7209</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.9266</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6563</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7605</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8855</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.8918</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7208</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9107</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9229</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9323</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9034</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.7304</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8902
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9422
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.3271 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Strong inhibitor 
+        </td>
+        <td>
+            0.5261
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.7549
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Apo-Flunarizine 5 mg Capsule</td><td>0.75USD</td><td>capsule</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>251.5</td><td>Janssen, P.A.J.; U.S. Patent 3,773,939; November 20, 1973; assigned to Janssen Pharmaceutica N.V.</td></tr><tr><td>logP</td><td>5.78</td><td>BIOBYTE (1995)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.68e-03 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>5.3</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>6.17</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-5.4</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest basic)</td><td>7.6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>6.48</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>120.3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>44.2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Matthew Peterson, Julius Remenar, Carlos Sanrame, &#8220;<span class="caps">NOVEL</span> <span class="caps">FLUNARIZINE</span> <span class="caps">SALT</span> <span class="caps">FORMS</span> <span class="caps">AND</span> <span class="caps">METHODS</span> OF <span class="caps">MAKING</span> <span class="caps">AND</span> <span class="caps">USING</span> <span class="caps">THE</span> <span class="caps">SAME</span>.&#8221; U.S. Patent US20080200474, issued August 21, 2008.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=20080200474&amp;tbm=pts" target="_blank">US20080200474 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D01303" target="_blank">D01303 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=941361" target="_blank">941361 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46507129" target="_blank">46507129 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.819216.html" target="_blank">819216 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50017702" target="_blank">50017702 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000142" target="_blank">DAP000142 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA164776636" target="_blank">PA164776636 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=846341" target="_blank">846341 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Flunarizine" target="_blank">Flunarizine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>N07CA03<ul class="atc-drug-tree"><li><a href="/atc/N#N">N &#8212; NERVOUS SYSTEM</a></li><li><a href="/atc/N07#N07">N07 &#8212; OTHER NERVOUS SYSTEM DRUGS</a></li><li><a href="/atc/N07C#N07C">N07C &#8212; ANTIVERTIGO PREPARATIONS</a></li><li><a href="/atc/N07CA#N07CA">N07CA &#8212; Antivertigo preparations</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00427">Triprolidine</a></td><td>The CNS depressants, Triprolidine and Flunarizine, may increase adverse/toxic effects due to additivity. Monitor for increased CNS depressant effects during concomitant therapy. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid alcohol.</li>
+<li>Take without regard to meals.</li></ul></td></tr></tbody></table>

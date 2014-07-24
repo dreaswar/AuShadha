@@ -1,0 +1,167 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Tolcapone</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00323</strong>&#160; (APRD00445)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, withdrawn</td></tr><tr><th>Description</th><td><p>Tolcapone is a drug that inhibits the enzyme catechol-O-methyl transferase (<span class="caps">COMT</span>). It is used in the treatment of Parkinson&#8217;s disease as an adjunct to levodopa/carbidopa medication. It is a yellow, odorless, non-hygroscopic, crystalline compound. Tolcapone is associated with a risk of hepatotoxicity. [Wikipedia]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00323/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00323/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00323.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00323.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00323.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00323.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00323.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00323">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>(3,4-dihydroxy-5-nitrophenyl)(4-methylphenyl)methanone</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IUPAC</td></tr><tr><td>Tolcapon</td><td>German</td><td>INN</td></tr><tr><td>Tolcapona</td><td>Spanish</td><td>INN</td></tr><tr><td>Tolcapone</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>USAN, BAN, USP 34</td></tr><tr><td>Tolcaponum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Sen De Ning</td><td>Dexin Runsheng Pharmaceutical</td></tr><tr><td>Tasmar</td><td>Valeant</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antidyskinetics">Antidyskinetics</a></li></ul></td></tr><tr><th>CAS number</th><td>134308-13-7</td></tr><tr><th>Weight</th><td>Average: 273.2408<br>Monoisotopic: 273.063722467</td></tr><tr><th>Chemical Formula</th><td>C<sub>14</sub>H<sub>11</sub>NO<sub>5</sub></td></tr><tr><th>InChI Key</th><td>MIQPIUSUKVNLNT-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C14H11NO5/c1-8-2-4-9(5-3-8)13(17)10-6-11(15(19)20)14(18)12(16)7-10/h2-7,16,18H,1H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">5-[(4-methylphenyl)carbonyl]-3-nitrobenzene-1,2-diol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC1=CC=C(C=C1)C(=O)C1=CC(=C(O)C(O)=C1)[N+]([O-])=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Benzophenones</td></tr><tr><th>Direct parent</th><td>Benzophenones</td></tr><tr><th>Alternative parents</th><td>Diphenylmethanes; Nitrophenols and Derivatives; Acetophenones; Nitrobenzenes; Benzoyl Derivatives; Aminophenols; Catechols; Toluenes; Ketones; Polyols; Nitro Compounds; Nitronic Acids; Organic Oxoazanium Compounds; Enolates; Enols; Polyamines</td></tr><tr><th>Substituents</th><td>nitrophenol derivative; acetophenone; nitrobenzene; 1,2-diphenol; benzoyl; aminophenol; toluene; phenol derivative; nitronic acid; nitro compound; polyol; ketone; organic oxoazanium; enolate; polyamine; enol; carbonyl group; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the benzophenones. These are organic compounds containing a ketone attached to two phenyl groups.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used as an adjunct to levodopa/carbidopa therapy for the symptomatic treatment of Parkinson's Disease. This drug is generally reserved for patients with parkinsonian syndrome receiving levodopa/carbidopa who are experiencing symptom fluctuations and are not responding adequately to or are not candidates for other adjunctive therapies.</td></tr><tr><th>Pharmacodynamics</th><td>Tolcapone is a potent, selective, and reversible inhibitor of catechol-O-methyltransferase (COMT). In humans, COMT is distributed throughout various organs. COMT catalyzes the transfer of the methyl group of S-adenosyl-L-methionine to the phenolic group of substrates that contain a catechol structure. Physiological substrates of COMT include dopa, catecholamines (dopamine, norepinephrine, epinephrine) and their hydroxylated metabolites. The function of COMT is the elimination of biologically active catechols and some other hydroxylated metabolites. COMT is responsible for the elimination of biologically active catechols and some other hydroxylated metabolites. In the presence of a decarboxylase inhibitor, COMT becomes the major metabolizing enzyme for levodopa catalyzing it to 3-methoxy-4-hydroxy-L-phenylalanine (3-OMD) in the brain and periphery. When tolcapone is given in conjunction with levodopa and an aromatic amino acid decarboxylase inhibitor, such as carbidopa, plasma levels of levodopa are more sustained than after administration of levodopa and an aromatic amino acid decarboxylase inhibitor alone. It is believed that these sustained plasma levels of levodopa result in more constant dopaminergic stimulation in the brain, leading to greater effects on the signs and symptoms of Parkinson's disease in patients as well as increased levodopa adverse effects, sometimes requiring a decrease in the dose of levodopa.</td></tr><tr><th>Mechanism of action</th><td>The precise mechanism of action of tolcapone is unknown, but it is believed to be related to its ability to inhibit COMT and alter the plasma pharmacokinetics of levodopa, resulting in an increase in plasma levodopa concentrations. The inhibition of COMT also causes a reduction in circulating 3-OMD as a result of decreased peripheral metabolism of levodopa. This may lead to an increase distribution of levodopa into the CNS through the reduction of its competitive substrate, 3-OMD, for transport mechanisms. Sustained levodopa concentrations presumably result in more consistent dopaminergic stimulation, resulting in greater reduction in the manifestations of parkinsonian syndrome.</td></tr><tr><th>Absorption</th><td>Rapidly absorbed (absolute bioavailability is about 65%)</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>9 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td>&gt; 99.9% (to serum albumin)</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>The main metabolic pathway of tolcapone is glucuronidation</p></td></tr><tr><th>Route of elimination</th><td>Tolcapone is almost completely metabolized prior to excretion, with only a very small amount (0.5% of dose) found unchanged in urine. The glucuronide conjugate of tolcapone is mainly excreted in the urine but is also excreted in the bile.</td></tr><tr><th>Half life</th><td>2-3.5 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>7 L/h</li>
+</ul></td></tr><tr><th>Toxicity</th><td>LD<sub>50</sub> = 1600 mg/kg (Orally in rats)</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9041</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9418</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5422</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6612</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6371</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9128</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.933</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6554</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.894</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5245</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9199</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8317</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9135</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8762</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6585</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.5984</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9132
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.6079
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9433
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.2574 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8346
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8311
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Valeant pharmaceuticals international</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.legacypackaging.com">Legacy Pharmaceuticals Packaging LLC</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.valeant.com">Valeant Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet, film coated</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00614">Furazolidone</a></td><td>Tolcapone and Furazolidone decrease the metabolism of endogenous catecholamines. Concomitant therapy may result in increased catecholamine effects. Consider alternate therapy or use cautiously and monitor for increased catecholamine effects. </td></tr><tr><td><a href="/drugs/DB01247">Isocarboxazid</a></td><td>Tolcapone and Isocarboxazid decrease the metabolism of endogenous catecholamines. Concomitant therapy may result in increased catecholamine effects. Consider alternate therapy or use cautiously and monitor for increased catecholamine effects.</td></tr><tr><td><a href="/drugs/DB00601">Linezolid</a></td><td>Tolcapone and Linezolid decrease the metabolism of endogenous catecholamines. Concomitant therapy may result in increased catecholamine effects. Consider alternate therapy or use cautiously and monitor for increased catecholamine effects. </td></tr><tr><td><a href="/drugs/DB01171">Moclobemide</a></td><td>Tolcapone and Moclobemide decrease the metabolism of endogenous catecholamines. Concomitant therapy may result in increased catecholamine effects. Consider alternate therapy or use cautiously and monitor for increased catecholamine effects. </td></tr><tr><td><a href="/drugs/DB00780">Phenelzine</a></td><td>Tolcapone and Phenelzine decrease the metabolism of endogenous catecholamines. Concomitant therapy may result in increased catecholamine effects. Consider alternate therapy or use cautiously and monitor for increased catecholamine effects.</td></tr><tr><td><a href="/drugs/DB01168">Procarbazine</a></td><td>Tolcapone and Procarbazine decrease the metabolism of endogenous catecholamines. Concomitant therapy may result in increased catecholamine effects. Consider alternate therapy or use cautiously and monitor for increased catecholamine effects. </td></tr><tr><td><a href="/drugs/DB01367">Rasagiline</a></td><td>Tolcapone and Rasagiline decrease the metabolism of endogenous catecholamines. Concomitant therapy may result in increased catecholamine effects. Consider alternate therapy or use cautiously and monitor for increased catecholamine effects. </td></tr><tr><td><a href="/drugs/DB01037">Selegiline</a></td><td>Tolcapone and Selegiline decrease the metabolism of endogenous catecholamines. Concomitant therapy may result in increased catecholamine effects. Consider alternate therapy or use cautiously and monitor for increased catecholamine effects. </td></tr><tr><td><a href="/drugs/DB00752">Tranylcypromine</a></td><td>Tolcapone and Tranylcypromine decrease the metabolism of endogenous catecholamines. Concomitant therapy may result in increased catecholamine effects. Consider alternate therapy or use cautiously and monitor for increased catecholamine effects.</td></tr><tr><td><a href="/drugs/DB00427">Triprolidine</a></td><td>The CNS depressants, Triprolidine and Tolcapone, may increase adverse/toxic effects due to additivity. Monitor for increased CNS depressant effects during concomitant therapy. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

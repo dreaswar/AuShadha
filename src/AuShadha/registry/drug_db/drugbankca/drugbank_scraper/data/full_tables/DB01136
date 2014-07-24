@@ -1,0 +1,247 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Carvedilol</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01136</strong>&#160; (APRD00091)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Carvedilol is a non-selective beta blocker indicated in the treatment of mild to moderate congestive heart failure (<span class="caps">CHF</span>). It blocks beta-1 and beta-2 adrenergic receptors as well as the alpha-1 adrenergic receptors.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01136/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01136/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01136.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01136.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01136.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01136.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01136.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01136">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Carvedilolum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Coreg</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Coreg CR</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>COREGCR</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antihypertensive-agents">Antihypertensive Agents</a></li>
+<li><a href="/mesh/vasodilator-agents">Vasodilator Agents</a></li>
+<li><a href="/mesh/adrenergic-alpha-1-receptor-antagonists">Adrenergic alpha-1 Receptor Antagonists</a></li>
+<li><a href="/mesh/adrenergic-beta-antagonists">Adrenergic beta-Antagonists</a></li></ul></td></tr><tr><th>CAS number</th><td>72956-09-3</td></tr><tr><th>Weight</th><td>Average: 406.4742<br>Monoisotopic: 406.18925733</td></tr><tr><th>Chemical Formula</th><td>C<sub>24</sub>H<sub>26</sub>N<sub>2</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>OGHNVEJMJSYVRP-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C24H26N2O4/c1-28-21-10-4-5-11-22(21)29-14-13-25-15-17(27)16-30-23-12-6-9-20-24(23)18-7-2-3-8-19(18)26-20/h2-12,17,25-27H,13-16H2,1H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">[3-(9H-carbazol-4-yloxy)-2-hydroxypropyl][2-(2-methoxyphenoxy)ethyl]amine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">COC1=CC=CC=C1OCCNCC(O)COC1=CC=CC2=C1C1=CC=CC=C1N2</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Indoles and Derivatives</td></tr><tr><th>Subclass</th><td>Carbazoles</td></tr><tr><th>Direct parent</th><td>Carbazoles</td></tr><tr><th>Alternative parents</th><td>Indoles; Anisoles; Alkyl Aryl Ethers; Pyrroles; Secondary Alcohols; 1,2-Aminoalcohols; Polyols; Polyamines; Dialkylamines</td></tr><tr><th>Substituents</th><td>indole; phenol ether; anisole; alkyl aryl ether; benzene; pyrrole; 1,2-aminoalcohol; polyol; secondary alcohol; secondary amine; polyamine; secondary aliphatic amine; ether; amine; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the carbazoles. These are compounds containing a three ring system containing a pyrrole ring fused on either side to a benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of mild or moderate (NYHA class II or III) heart failure of ischemic or cardiomyopathic origin.</td></tr><tr><th>Pharmacodynamics</th><td>Carvedilol is a nonselective beta-adrenergic blocking agent with alpha1-blocking activity and is indicated for the treatment of hypertension and mild or moderate (NYHA class II or III) heart failure of ischemic or cardiomyopathic origin. Carvedilol is a racemic mixture in which nonselective b-adrenoreceptor blocking activity is present in the S(-) enantiomer and a-adrenergic blocking activity is present in both R(+) and S(-) enantiomers at equal potency. Carvedilol has no intrinsic sympathomimetic activity. The effect of carvedilol's b-adrenoreceptor blocking activity has been demonstrated in animal and human studies showing that carvedilol (1) reduces cardiac output in normal subjects; (2) reduces exercise-and/or isoproterenol-induced tachycardia and (3) reduces reflex orthostatic tachycardia.</td></tr><tr><th>Mechanism of action</th><td>Carvedilol is a racemic mixture in which nonselective beta-adrenoreceptor blocking activity is present in the S(-) enantiomer and alpha-adrenergic blocking activity is present in both R(+) and S(-) enantiomers at equal potency. Carvedilol's beta-adrenergic receptor blocking ability decreases the heart rate, myocardial contractility, and myocardial oxygen demand. Carvedilol also decreases systemic vascular resistance via its alpha adrenergic receptor blocking properties. Carvedilol and its metabolite BM-910228 (a less potent beta blocker, but more potent antioxidant) have been shown to restore the inotropic responsiveness to Ca<sup>2+</sup> in OH<sup>-</sup> free radical-treated myocardium. Carvedilol and its metabolites also prevent OH<sup>-</sup> radical-induced decrease in sarcoplasmic reticulum Ca<sup>2+</sup>-ATPase activity. Therefore, carvedilol and its metabolites may be beneficial in chronic heart failure by preventing free radical damage.</td></tr><tr><th>Absorption</th><td>Carvedilol is rapidly and extensively absorbed following oral administration, with an absolute bioavailability of approximately 25% to 35% due to a significant degree of first-pass metabolism.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>115 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td>98%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic. Carvedilol is metabolized primarily by aromatic ring oxidation and glucuronidation. The oxidative metabolites are further metabolized by conjugation via glucuronidation and sulfation. Demethylation and hydroxylation at the phenol ring produce three active metabolites with b-receptor blocking activity. The 4'-hydroxyphenyl metabolite is approximately 13 times more potent than carvedilol for b-blockade.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Carvedilol</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li>
+<li><a href="/biodb/bio_entities/BE0003543" target="_blank">Cytochrome P450 1A1</a></li></ul></td><td><a href="/metabolites/DBMET00115">8-Hydroxycarvedilol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/115">Details</a></td></tr><tr><td>Carvedilol</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002363" target="_blank">Cytochrome P450 2D6</a></li>
+<li><a href="/biodb/bio_entities/BE0003533" target="_blank">Cytochrome P450 2E1</a></li>
+<li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li></ul></td><td><a href="/metabolites/DBMET00116">4'-Hydroxycarvedilol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/116">Details</a></td></tr><tr><td>Carvedilol</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002363" target="_blank">Cytochrome P450 2D6</a></li>
+<li><a href="/biodb/bio_entities/BE0003533" target="_blank">Cytochrome P450 2E1</a></li>
+<li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li></ul></td><td><a href="/metabolites/DBMET00117">5'-Hydroxycarvedilol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/117">Details</a></td></tr><tr><td>Carvedilol</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li>
+<li><a href="/biodb/bio_entities/BE0002363" target="_blank">Cytochrome P450 2D6</a></li>
+<li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li>
+<li><a href="/biodb/bio_entities/BE0003533" target="_blank">Cytochrome P450 2E1</a></li></ul></td><td><a href="/metabolites/DBMET00118">O-Desmethylcarvedilol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/118">Details</a></td></tr><tr><td>Carvedilol</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0000017" target="_blank">Prostaglandin G/H synthase 1</a></li></ul></td><td><a href="/metabolites/DBMET00119">1-Hydroxycarvedilol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/119">Details</a></td></tr><tr><td>Carvedilol</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00745">4'-hydroxyphenyl Carvedilol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/766">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Carvedilol is extensively metabolized. Less than 2% of the dose was excreted unchanged in the urine.
+Carvedilol is metabolized primarily by aromatic ring oxidation and glucuronidation. The oxidative metabolites are further metabolized by conjugation via glucuronidation and sulfation. The metabolites of carvedilol are excreted primarily via the bile into the feces.</td></tr><tr><th>Half life</th><td>7-10 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>500-700 mL/min</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Not expected to be toxic following ingestion.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>Carvedilol Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00367?highlight%5Bcompounds%5D%5B%5D=DB01136&amp;highlight%5Bproteins%5D%5B%5D=DB01136">SMP00367</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="snp-fx"><thead><tr><th>Interacting Gene/Enzyme</th><th>SNP RS ID</th><th>Allele name</th><th>Defining change</th><th>Effect</th><th>Reference(s)</th></tr></thead><tbody><tr><td>Beta-1 adrenergic receptor<br>Gene symbol: ADRB1<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/P08588" target="_blank">P08588 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs1801253" target="_blank">rs1801253 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>C Allele</td><td>Improved response to blood pressure medication</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/12844134" target="_blank" title="Johnson JA, Zineh I, Puckett BJ, McGorray SP, Yarandi HN, Pauly DF: Beta 1-adrenergic receptor polymorphisms and antihypertensive response to metoprolol. Clin Pharmacol Ther. 2003 Jul;74(1):44-52.">12844134 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>Beta-1 adrenergic receptor<br>Gene symbol: ADRB1<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/P08588" target="_blank">P08588 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs1801252" target="_blank">rs1801252 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>A Allele</td><td>Improved response to blood pressure medication</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/12844134" target="_blank" title="Johnson JA, Zineh I, Puckett BJ, McGorray SP, Yarandi HN, Pauly DF: Beta 1-adrenergic receptor polymorphisms and antihypertensive response to metoprolol. Clin Pharmacol Ther. 2003 Jul;74(1):44-52.">12844134 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>Beta-1 adrenergic receptor<br>Gene symbol: ADRB1<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/P08588" target="_blank">P08588 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs1801253" target="_blank">rs1801253 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>G &gt; C</td><td>Better response to drug therapy</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/22192668" target="_blank" title='# Parvez B, Chopra N, Rowan S, Vaglio JC, Muhammad R, Roden DM, Darbar D: A common beta1-adrenergic receptor polymorphism predicts favorable response to rate-control therapy in atrial fibrillation. J Am Coll Cardiol. 2012 Jan 3;59(1):49-56. doi: 10.1016/j.jacc.2011.08.061. "Pubmed":http://www.ncbi.nlm.nih.gov/pubmed/22192668'>22192668 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9706</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.6814</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6308</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8552</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8729</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6521</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5405</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7517</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.8918</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5408</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.524</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8496</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7274</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5676</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6352</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6048</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8261
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9692
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.963
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4566 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.5725
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.8889
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Actavis elizabeth llc</li>
+<li>Apotex inc etobicoke site</li>
+<li>Aurobindo pharma ltd</li>
+<li>Caraco pharmaceutical laboratories ltd</li>
+<li>Dr reddys laboratories ltd</li>
+<li>Glenmark generics ltd</li>
+<li>Hikma pharmaceuticals</li>
+<li>Lupin ltd</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Pliva hrvatska doo</li>
+<li>Ranbaxy laboratories ltd</li>
+<li>Sandoz inc</li>
+<li>Taro pharmaceutical industries ltd</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Watson laboratories</li>
+<li>Wockhardt ltd</li>
+<li>Zydus pharmaceuticals usa inc</li>
+<li>Smithkline beecham corp dba glaxosmithkline</li>
+<li>Sb pharmco puerto rico inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li>Advantage Dose LLC</li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.atlanticbiologicals.com">Atlantic Biologicals Corporation</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li>Cadila Healthcare Ltd.</li>
+<li><a href="http://www.caraco.com">Caraco Pharmaceutical Labs</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.caremark.com">Caremark LLC</a></li>
+<li>Dept Health Central Pharmacy</li>
+<li>DHHS Program Support Center Supply Service Center</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.glenmark-generics.com">Glenmark Generics Ltd.</a></li>
+<li><a href="http://www.hikma.com">Hikma Pharmaceuticals</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.lupinpharmaceuticals.com">Lupin Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.mckesson.com">Mckesson Corp.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.ohmlabs.com">Ohm Laboratories Inc.</a></li>
+<li><a href="http://www.patheon.com">Patheon Inc.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.prepaksys.com">Prepak Systems Inc.</a></li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.shasun.com">Shasun Chemicals &amp; Drugs Ltd.</a></li>
+<li><a href="http://www.legacypharmaceuticals.com">Solco Healthcare US LLC</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.tarousa.com">Taro Pharmaceuticals USA</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li>Vangard Labs Inc.</li>
+<li><a href="http://www.west-ward.com">West-Ward Pharmaceuticals</a></li>
+<li><a href="http://www.zydususa.com">Zydus Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Coreg CR 10 mg 24 Hour Capsule</td><td>4.77USD</td><td>capsule</td></tr><tr><td>Coreg CR 20 mg 24 Hour Capsule</td><td>4.77USD</td><td>capsule</td></tr><tr><td>Coreg CR 40 mg 24 Hour Capsule</td><td>4.77USD</td><td>capsule</td></tr><tr><td>Coreg CR 80 mg 24 Hour Capsule</td><td>4.77USD</td><td>capsule</td></tr><tr><td>Coreg cr 10 mg capsule</td><td>4.59USD</td><td>capsule</td></tr><tr><td>Coreg cr 20 mg capsule</td><td>4.59USD</td><td>capsule</td></tr><tr><td>Coreg cr 40 mg capsule</td><td>4.59USD</td><td>capsule</td></tr><tr><td>Coreg cr 80 mg capsule</td><td>4.59USD</td><td>capsule</td></tr><tr><td>Coreg 12.5 mg tablet</td><td>2.54USD</td><td>tablet</td></tr><tr><td>Coreg 25 mg tablet</td><td>2.54USD</td><td>tablet</td></tr><tr><td>Coreg 3.125 mg tablet</td><td>2.54USD</td><td>tablet</td></tr><tr><td>Coreg 6.25 mg tablet</td><td>2.54USD</td><td>tablet</td></tr><tr><td>Carvedilol 12.5 mg tablet</td><td>2.18USD</td><td>tablet</td></tr><tr><td>Carvedilol 25 mg tablet</td><td>2.18USD</td><td>tablet</td></tr><tr><td>Carvedilol 3.125 mg tablet</td><td>2.18USD</td><td>tablet</td></tr><tr><td>Carvedilol 6.25 mg tablet</td><td>2.18USD</td><td>tablet</td></tr><tr><td>Apo-Carvedilol 12.5 mg Tablet</td><td>0.84USD</td><td>tablet</td></tr><tr><td>Apo-Carvedilol 25 mg Tablet</td><td>0.84USD</td><td>tablet</td></tr><tr><td>Apo-Carvedilol 3.125 mg Tablet</td><td>0.84USD</td><td>tablet</td></tr><tr><td>Apo-Carvedilol 6.25 mg Tablet</td><td>0.84USD</td><td>tablet</td></tr><tr><td>Phl-Carvedilol 12.5 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Phl-Carvedilol 3.125 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Phl-Carvedilol 6.25 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Pms-Carvedilol 12.5 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Pms-Carvedilol 25 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Pms-Carvedilol 3.125 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Pms-Carvedilol 6.25 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Ran-Carvedilol 12.5 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Ran-Carvedilol 25 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Ran-Carvedilol 3.125 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Ran-Carvedilol 6.25 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Ratio-Carvedilol 12.5 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Ratio-Carvedilol 25 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Ratio-Carvedilol 3.125 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr><tr><td>Ratio-Carvedilol 6.25 mg Tablet</td><td>0.79USD</td><td>tablet</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>7268156</td><td>2003-12-27</td><td>2023-12-27</td></tr><tr><td>United States</td><td>RE40000</td><td>1995-06-07</td><td>2015-06-07</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>114.5 &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>Practically insoluble (0.583 mg/L)</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>4.19</td><td>AVDEEF,A (1997)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>4.44e-03 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>3.05</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>3.42</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-5</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>14.03</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>8.74</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>75.74</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>10</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>115.64</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>45.03</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Ilan Kor, &#8220;Crystalline solids of carvedilol and processes for their preparation.&#8221; U.S. Patent US20030166702, issued September 04, 2003.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=20030166702&amp;tbm=pts" target="_blank">US20030166702 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Packer M, Fowler MB, Roecker EB, Coats AJ, Katus HA, Krum H, Mohacsi P, Rouleau JL, Tendera M, Staiger C, Holcslaw TL, Amann-Zalan I, DeMets DL: Effect of carvedilol on the morbidity of patients with severe chronic heart failure: results of the carvedilol prospective randomized cumulative survival (<span class="caps">COPERNICUS</span>) study. Circulation. 2002 Oct 22;106(17):2194-9. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12390947">Pubmed</a></li>
+	<li>Packer M, Coats AJ, Fowler MB, Katus HA, Krum H, Mohacsi P, Rouleau JL, Tendera M, Castaigne A, Roecker EB, Schultz MK, DeMets DL: Effect of carvedilol on survival in severe chronic heart failure. N Engl J Med. 2001 May 31;344(22):1651-8. <a href="http://www.ncbi.nlm.nih.gov/pubmed/11386263">Pubmed</a></li>
+	<li>Vanderhoff BT, Ruppel HM, Amsterdam PB: Carvedilol: the new role of beta blockers in congestive heart failure. Am Fam Physician. 1998 Nov 1;58(7):1627-34, 1641-2. <a href="http://www.ncbi.nlm.nih.gov/pubmed/9824960">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00255" target="_blank">D00255 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C06875" target="_blank">C06875 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=2585" target="_blank">2585 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46505146" target="_blank">46505146 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.2487.html" target="_blank">2487 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=25759" target="_blank">25759 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=3441" target="_blank">3441 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL723" target="_blank">CHEMBL723 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000135" target="_blank">DAP000135 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA448817" target="_blank">PA448817 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>IUPHAR</td><td><a class="wishart-link-out" href="http://www.iuphar-db.org/DATABASE/LigandDisplayForward?ligandId=551" target="_blank">551 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Guide to Pharmacology</td><td><a class="wishart-link-out" href="http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=551" target="_blank">551 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2252317" target="_blank">2252317 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/carvedilol.htm" target="_blank">http://www.rxlist.com/cgi/generic3/carvedilol.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/carvedilol.html" target="_blank">http://www.drugs.com/cdi/carvedilol.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Carvedilol" target="_blank">Carvedilol <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>C07AG02<ul class="atc-drug-tree"><li><a href="/atc/C#C">C &#8212; CARDIOVASCULAR SYSTEM</a></li><li><a href="/atc/C07#C07">C07 &#8212; BETA BLOCKING AGENTS</a></li><li><a href="/atc/C07A#C07A">C07A &#8212; BETA BLOCKING AGENTS</a></li><li><a href="/atc/C07AG#C07AG">C07AG &#8212; Alpha and beta blocking agents</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>24:04.00</li>
+<li>24:24.00</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB01136.pdf?1265922801">show</a>(1.25 MB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB01136.pdf?1265922740">show</a>(32.9 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00414">Acetohexamide</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00672">Chlorpropamide</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00215">Citalopram</a></td><td>The SSRI, citalopram, may increase the bradycardic effect of the beta-blocker, carvedilol.</td></tr><tr><td><a href="/drugs/DB00575">Clonidine</a></td><td>Increased hypertension when clonidine stopped</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Carvedilol may increase the therapeutic and adverse effects of cyclosporine.</td></tr><tr><td><a href="/drugs/DB00390">Digoxin</a></td><td>Carvedilol may increase the serum levels and effect of digoxin.</td></tr><tr><td><a href="/drugs/DB00320">Dihydroergotamine</a></td><td>Ischemia with risk of gangrene</td></tr><tr><td><a href="/drugs/DB00280">Disopyramide</a></td><td>The beta-blocker, carvedilol, may increase the toxicity of disopyramide.</td></tr><tr><td><a href="/drugs/DB00668">Epinephrine</a></td><td>Hypertension, then bradycardia</td></tr><tr><td><a href="/drugs/DB01253">Ergonovine</a></td><td>Ischemia with risk of gangrene</td></tr><tr><td><a href="/drugs/DB00696">Ergotamine</a></td><td>Ischemia with risk of gangrene</td></tr><tr><td><a href="/drugs/DB01175">Escitalopram</a></td><td>The SSRI, escitalopram, may increase the bradycardic effect of the beta-blocker, carvedilol.</td></tr><tr><td><a href="/drugs/DB06414">Etravirine</a></td><td>Carvedilol, when used concomitantly with etravirine (a CYP2C9 inhibitor), may experience an increase in serum concentration. 
+
+It is recommended to monitor for signs and symptoms of an increased response to carvedilol, such as orthostatic hypotension and bradycardia.  </td></tr><tr><td><a href="/drugs/DB01288">Fenoterol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00472">Fluoxetine</a></td><td>The SSRI, fluoxetine, may increase the bradycardic effect of the beta-blocker, carvedilol.</td></tr><tr><td><a href="/drugs/DB00983">Formoterol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB01120">Gliclazide</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01067">Glipizide</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01289">Glisoxepide</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01016">Glyburide</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01382">Glycodiazine</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01050">Ibuprofen</a></td><td>Risk of inhibition of renal prostaglandins</td></tr><tr><td><a href="/drugs/DB00328">Indomethacin</a></td><td>Risk of inhibition of renal prostaglandins</td></tr><tr><td><a href="/drugs/DB01306">Insulin Aspart</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01307">Insulin Detemir</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00047">Insulin Glargine</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01309">Insulin Glulisine</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00046">Insulin Lispro</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01064">Isoprenaline</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00281">Lidocaine</a></td><td>The beta-blocker, carvedilol, may increase the effect and toxicity of lidocaine.</td></tr><tr><td><a href="/drugs/DB00247">Methysergide</a></td><td>Ischemia with risk of gangrene</td></tr><tr><td><a href="/drugs/DB00816">Orciprenaline</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00715">Paroxetine</a></td><td>The SSRI, paroxetine, may increase the bradycardic effect of the beta-blocker, carvedilol.</td></tr><tr><td><a href="/drugs/DB00236">Pipobroman</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB01291">Pirbuterol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00554">Piroxicam</a></td><td>Risk of inhibition of renal prostaglandins</td></tr><tr><td><a href="/drugs/DB00457">Prazosin</a></td><td>Risk of hypotension at the beginning of therapy</td></tr><tr><td><a href="/drugs/DB01366">Procaterol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00912">Repaglinide</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01001">Salbutamol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00938">Salmeterol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB01104">Sertraline</a></td><td>The SSRI, sertraline, may increase the bradycardic effect of the beta-blocker, carvedilol.</td></tr><tr><td><a href="/drugs/DB01162">Terazosin</a></td><td>Increased risk of hypotension. Initiate concomitant therapy cautiously.</td></tr><tr><td><a href="/drugs/DB00857">Terbinafine</a></td><td>Terbinafine may reduce the metabolism and clearance of Carvedilol. Consider alternate therapy or monitor for therapeutic/adverse effects of Carvedilol if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00871">Terbutaline</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00839">Tolazamide</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01124">Tolbutamide</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01030">Topotecan</a></td><td>The p-glycoprotein inhibitor, Carvedilol, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00374">Treprostinil</a></td><td>Additive hypotensive effect. Monitor antihypertensive therapy during concomitant use. </td></tr><tr><td><a href="/drugs/DB00661">Verapamil</a></td><td>Increased effect of both drugs</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take with food, food slows the absorption rate and reduces the incidence of adverse effects (extent of absorption is not affected).</li></ul></td></tr></tbody></table>

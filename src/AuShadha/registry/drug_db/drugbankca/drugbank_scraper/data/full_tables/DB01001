@@ -1,0 +1,296 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Salbutamol</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01001</strong>&#160; (APRD00553)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Salbutamol is a short-acting, selective beta2-adrenergic receptor agonist used in the treatment of asthma and <span class="caps">COPD</span>. It is 29 times more selective for beta2 receptors than beta1 receptors giving it higher specificity for pulmonary beta receptors versus beta1-adrenergic receptors located in the heart. Salbutamol is formulated as a racemic mixture of the R- and S-isomers. The R-isomer has 150 times greater affinity for the beta2-receptor than the S-isomer and the S-isomer has been associated with toxicity. This lead to the development of levalbuterol, the single R-isomer of salbutamol. However, the high cost of levalbuterol compared to salbutamol has deterred wide-spread use of this enantiomerically pure version of the drug. Salbutamol is generally used for acute episodes of bronchospasm caused by bronchial asthma, chronic bronchitis and other chronic bronchopulmonary disorders such as chronic obstructive pulmonary disorder (<span class="caps">COPD</span>). It is also used prophylactically for exercise-induced asthma.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01001/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01001/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01001.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01001.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01001.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01001.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01001.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01001">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Albuterol</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>USAN</td></tr><tr><td>Levalbuterol</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Salbutamol Sulfate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000257/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000257/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: BNPSSFBOAGDEEL-UHFFFAOYNA-N</li>
+              <li>Monoisotopic Mass: 576.271666328</li>
+              <li>Average Mass: 576.7</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000257">DBSALT000257</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>AccuNeb</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Aerolin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Airomir</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Asmol</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Asthalin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Asthavent</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>ProAir</td><td>Teva</td></tr><tr><td>PROAIRHFA</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Proventil</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Salamol</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Ventilan</td><td>GlaxoSmithKline</td></tr><tr><td>Ventolin</td><td>GlaxoSmithKline</td></tr><tr><td>Ventoline</td><td>GlaxoSmithKline</td></tr><tr><td>VENTOLINHFA</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Ventorlin</td><td>GlaxoSmithKline</td></tr><tr><td>VoSpire</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Xopenex</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Combivent</td><td>Ipratropium Bromide + Salbutamol Sulfate</td></tr><tr><td>DuoNeb</td><td>Ipratropium bromide + Salbutamol</td></tr><tr><td>Gen-Combo Sterinebs</td><td>Ipratropium Bromide + Salbutamol Sulfate</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/adrenergic-beta-2-receptor-agonists">Adrenergic beta-2 Receptor Agonists</a></li>
+<li><a href="/mesh/bronchodilator-agents">Bronchodilator Agents</a></li>
+<li><a href="/mesh/tocolytic-agents">Tocolytic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>18559-94-9</td></tr><tr><th>Weight</th><td>Average: 239.3107<br>Monoisotopic: 239.152143543</td></tr><tr><th>Chemical Formula</th><td>C<sub>13</sub>H<sub>21</sub>NO<sub>3</sub></td></tr><tr><th>InChI Key</th><td>NDAUXUAQIAJITI-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C13H21NO3/c1-13(2,3)14-7-12(17)9-4-5-11(16)10(6-9)8-15/h4-6,12,14-17H,7-8H2,1-3H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">4-[2-(tert-butylamino)-1-hydroxyethyl]-2-(hydroxymethyl)phenol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC(C)(C)NCC(O)C1=CC(CO)=C(O)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Phenols and Derivatives</td></tr><tr><th>Direct parent</th><td>Phenols and Derivatives</td></tr><tr><th>Alternative parents</th><td>Secondary Alcohols; Polyols; 1,2-Aminoalcohols; Primary Alcohols; Enols; Dialkylamines; Polyamines</td></tr><tr><th>Substituents</th><td>1,2-aminoalcohol; secondary alcohol; polyol; secondary amine; enol; secondary aliphatic amine; polyamine; primary alcohol; alcohol; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenols and derivatives. These are compounds containing a phenol moiety, which is a benzene bearing an hydroxyl group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For symptomatic relief and prevention of bronchospasm due to bronchial asthma, chronic bronchitis, and other chronic bronchopulmonary disorders such as COPD. </td></tr><tr><th>Pharmacodynamics</th><td>Salbutamol (INN) or albuterol (USAN), a moderately selective beta(2)-receptor agonist similar in structure to terbutaline, is widely used as a bronchodilator to manage asthma and other chronic obstructive airway diseases. The R-isomer, levalbuterol, is responsible for bronchodilation while the S-isomer increases bronchial reactivity.  The R-enantiomer is sold in its pure form as Levalbuterol.  The manufacturer of levalbuterol, Sepracor, has implied (although not directly claimed) that the presence of only the R-enantiomer produces fewer side-effects.</td></tr><tr><th>Mechanism of action</th><td>Salbutamol is a beta(2)-adrenergic agonist and thus it stimulates beta(2)-adrenergic receptors. Binding of albuterol to beta(2)-receptors in the lungs results in relaxation of bronchial smooth muscles. It is believed that salbutamol increases cAMP production by activating adenylate cyclase, and the actions of salbutamol are mediated by cAMP. Increased intracellular cyclic AMP increases the activity of cAMP-dependent protein kinase A, which inhibits the phosphorylation of myosin and lowers intracellular calcium concentrations. A lowered intracellular calcium concentration leads to a smooth muscle relaxation and bronchodilation. In addition to bronchodilation, salbutamol inhibits the release of bronchoconstricting agents from mast cells, inhibits microvascular leakage, and enhances mucociliary clearance.   </td></tr><tr><th>Absorption</th><td>Systemic absorption is rapid following aerosol administration.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hydrolyzed by esterases in tissue and blood to the active compound colterol. The drug is also conjugatively metabolized to salbutamol 4'-O-sulfate.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Salbutamol</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01000">Salbutamol 4-O-sulfate</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1023">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Approximately 72% of the inhaled dose is excreted in the urine within 24 hours, 28% as unchanged drug and 44% as metabolite.</td></tr><tr><th>Half life</th><td>1.6 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>LD<sub>50</sub>=1100 mg/kg (orally in mice)</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9812</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9659</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7112</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.684</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8781</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9673</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8974</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7897</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7074</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9046</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9197</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9287</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9343</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8834</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8409
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8863
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9734
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5275 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9564
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9288
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Armstrong pharmaceuticals inc</li>
+<li>Genpharm inc</li>
+<li>Ivax pharmaceuticals inc sub teva pharmaceuticals usa</li>
+<li>Pliva inc</li>
+<li>Schering corp sub schering plough corp</li>
+<li>Glaxosmithkline</li>
+<li>Teva global respiratory research llc</li>
+<li>3m pharmaceuticals inc</li>
+<li>Dey lp</li>
+<li>Actavis mid atlantic llc</li>
+<li>Apotex inc richmond hill</li>
+<li>Apotex inc</li>
+<li>Bausch and lomb inc</li>
+<li>Cobalt laboratories inc</li>
+<li>Copley pharmaceutical inc</li>
+<li>Hi tech pharmacal co inc</li>
+<li>Holopack international</li>
+<li>Landela pharmaceutical</li>
+<li>Nephron pharmaceuticals corp</li>
+<li>Nephron corp</li>
+<li>Novex pharma</li>
+<li>Roxane laboratories inc</li>
+<li>Teva parenteral medicines inc</li>
+<li>Watson laboratories inc</li>
+<li>Wockhardt eu operations (swiss) ag</li>
+<li>Amneal pharmaceuticals</li>
+<li>Mova pharmaceuticals corp</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Vintage pharmaceuticals llc</li>
+<li>Vistapharm inc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Muro pharmaceutical inc</li>
+<li>Dava pharmaceuticals inc</li>
+<li>American therapeutics inc</li>
+<li>Mutual pharmaceutical co inc</li>
+<li>Sandoz inc</li>
+<li>Ucb inc</li>
+<li>Warner chilcott div warner lambert co</li>
+<li>Breath ltd</li>
+<li>Sepracor inc</li>
+<li>Teva Pharmaceuticals</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.3m.com">3M Health Care</a></li>
+<li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li>Advanced Pharmaceutical Services Inc.</li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li>Apotheca Inc.</li>
+<li><a href="http://www.apothecon.nl">Apothecon</a></li>
+<li><a href="http://www.armstrong-pharma.com">Armstrong Pharmaceuticals Inc.</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li>Aslung Pharmaceutical Lp</li>
+<li><a href="http://www.atlanticbiologicals.com">Atlantic Biologicals Corporation</a></li>
+<li>Automatic Liquid Packaging Inc.</li>
+<li><a href="http://www.bausch.com">Bausch &amp; Lomb Inc.</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.catalent.com">Catalent Pharma Solutions</a></li>
+<li>Charter Laboratories Inc.</li>
+<li><a href="http://www.cipla.com">Cipla Ltd.</a></li>
+<li><a href="http://www.cobaltpharma.com">Cobalt Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.davapharma.com">DAVA Pharmaceuticals</a></li>
+<li><a href="http://www.dey.com">Dey Pharma LP</a></li>
+<li>Direct Dispensing Inc.</li>
+<li>DispenseXpress Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li>Heartland Repack Services LLC</li>
+<li><a href="http://www.hitechpharm.com">Hi Tech Pharmacal Co. Inc.</a></li>
+<li>Holopack International Corp.</li>
+<li>Ivax Pharmaceuticals</li>
+<li>Kaiser Foundation Hospital</li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li>Mutual Pharmaceutical Co.</li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.nephronpharm.com">Nephron Pharmaceuticals Corp.</a></li>
+<li>Novopharm Ltd.</li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li>Odyssey Pharmaceuticals Inc.</li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.patientfirst.com">Patient First Corp.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.pplpho.org">Physician Partners Ltd.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.pliva.com">Pliva Inc.</a></li>
+<li><a href="http://www.prasco.com">Prasco Labs</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li>Quality Care</li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Redpharm Drug</li>
+<li><a href="http://www.rxelite.com">Rx Elite</a></li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li><a href="http://www.schering.de">Schering Corp.</a></li>
+<li><a href="http://www.sepracor.com">Sepracor Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.stratuspharmaceuticals.com">Stratus Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li><a href="http://www.urlpharma.com">United Research Laboratories Inc.</a></li>
+<li>Vintage Pharmaceuticals Inc.</li>
+<li><a href="http://www.vistapharm.com">Vistapharm Inc.</a></li>
+<li>Warrick Pharmaceuticals Corp.</li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Aerosol, metered</td><td>Respiratory (inhalation)</td><td></td></tr><tr><td>Liquid</td><td>Oral</td><td></td></tr><tr><td>Powder</td><td>Respiratory (inhalation)</td><td></td></tr><tr><td>Solution</td><td>Intramuscular</td><td></td></tr><tr><td>Solution</td><td>Intravenous</td><td></td></tr><tr><td>Solution</td><td>Oral</td><td></td></tr><tr><td>Solution</td><td>Respiratory (inhalation)</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Xopenex 0.63 mg/3 ml solution</td><td>64.2USD</td><td>ml</td></tr><tr><td>Proventil HFA 108 (90 Base)mcg/act Aerosol 6.7 gm Inhaler</td><td>55.09USD</td><td>inhaler</td></tr><tr><td>Xopenex HFA 45 mcg/act Aerosol 15 gm Inhaler</td><td>53.84USD</td><td>inhaler</td></tr><tr><td>AccuNeb 0.63 mg/3ml Neb. Solution 1 Box= 25 Vials</td><td>53.14USD</td><td>plastic</td></tr><tr><td>AccuNeb 1.25 mg/3ml Neb. Solution 1 Box= 25 Vials</td><td>53.14USD</td><td>plastic</td></tr><tr><td>ProAir HFA 108 (90 Base)mcg/act Aerosol 8.5 gm Inhaler</td><td>45.99USD</td><td>inhaler</td></tr><tr><td>Ventolin HFA 108 (90 Base)mcg/act Aerosol 18 gm Inhaler</td><td>39.99USD</td><td>inhaler</td></tr><tr><td>Proair hfa 90 mcg inhaler</td><td>12.62USD</td><td>g</td></tr><tr><td>Proventil hfa 90 mcg inhaler</td><td>8.07USD</td><td>g</td></tr><tr><td>Xopenex hfa 45 mcg inhaler</td><td>6.12USD</td><td>g</td></tr><tr><td>Xopenex 0.31 mg/3ml (1 Box = 24, 3ml Vials)</td><td>4.87USD</td><td>plastic</td></tr><tr><td>Xopenex 1.25 mg/3ml (1 Box = 24, 3ml Vials)</td><td>4.87USD</td><td>plastic</td></tr><tr><td>Xopenex 0.63 mg/3ml (1 Box = 24, 3ml Vials)</td><td>4.71USD</td><td>plastic</td></tr><tr><td>Xopenex 1.25 mg/3 ml solution</td><td>2.96USD</td><td>ml</td></tr><tr><td>Ventolin hfa 90 mcg inhaler</td><td>2.01USD</td><td>g</td></tr><tr><td>Xopenex 0.31 mg/3 ml solution</td><td>1.56USD</td><td>ml</td></tr><tr><td>Ventolin 5 mg/ml Solution</td><td>1.13USD</td><td>ml</td></tr><tr><td>Ventolin Nebules P.F. 2 mg/ml Unit Dose Solution</td><td>0.88USD</td><td>ml</td></tr><tr><td>Accuneb 0.63 mg/3 ml inh solution</td><td>0.68USD</td><td>ml</td></tr><tr><td>Accuneb 1.25 mg/3 ml inh solution</td><td>0.68USD</td><td>ml</td></tr><tr><td>Mylan-Salbutamol 5 mg/ml Solution</td><td>0.62USD</td><td>ml</td></tr><tr><td>Pms-Salbutamol 5 mg/ml Solution</td><td>0.62USD</td><td>ml</td></tr><tr><td>Ratio-Salbutamol 5 mg/ml Solution</td><td>0.62USD</td><td>ml</td></tr><tr><td>Sandoz Salbutamol 5 mg/ml Solution</td><td>0.62USD</td><td>ml</td></tr><tr><td>Mylan-Salbutamol Sterinebs P.F. 2 mg/ml Unit Dose Solution</td><td>0.48USD</td><td>ml</td></tr><tr><td>Pms-Salbutamol Polyneb 2 mg/ml Unit Dose Solution</td><td>0.48USD</td><td>ml</td></tr><tr><td>Ratio-Salbutamol Uni Dose P.F. 2 mg/ml Unit Dose Solution</td><td>0.48USD</td><td>ml</td></tr><tr><td>Ventolin Nebules P.F. 1 mg/ml Solution</td><td>0.47USD</td><td>ml</td></tr><tr><td>Mylan-Salbutamol Sterinebs P.F. 1 mg/ml Solution</td><td>0.25USD</td><td>ml</td></tr><tr><td>Pms-Salbutamol 1 mg/ml Solution</td><td>0.25USD</td><td>ml</td></tr><tr><td>Ratio-Salbutamol Sulf U.D.P.F. 1 mg/ml Solution</td><td>0.25USD</td><td>ml</td></tr><tr><td>Apo-Salvent 4 mg Tablet</td><td>0.22USD</td><td>tablet</td></tr><tr><td>Pms-Salbutamol 0.5 mg/ml Solution</td><td>0.16USD</td><td>ml</td></tr><tr><td>Ratio-Salbutamol Unit Dose P.F 0.5 mg/ml Solution</td><td>0.16USD</td><td>ml</td></tr><tr><td>Apo-Salvent 2 mg Tablet</td><td>0.13USD</td><td>tablet</td></tr><tr><td>Pms-Salbutamol 400 mcg/ml Liquid</td><td>0.05USD</td><td>ml</td></tr><tr><td>Ratio-Salbutamol Hfa 100 mcg/dose Metered Dose Aerosol</td><td>0.04USD</td><td>dose</td></tr><tr><td>Airomir Cfc-Free 100 mcg/dose Metered Dose Aerosol</td><td>0.03USD</td><td>dose</td></tr><tr><td>Apo-Salvent Cfc Free 100 mcg/dose Metered Dose Aerosol</td><td>0.03USD</td><td>dose</td></tr><tr><td>Ventolin Hfa 100 mcg/dose Metered Dose Aerosol</td><td>0.03USD</td><td>dose</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>7500444</td><td>2005-07-04</td><td>2025-07-04</td></tr><tr><td>United States</td><td>6352684</td><td>1992-11-28</td><td>2009-11-28</td></tr><tr><td>Canada</td><td>2125665</td><td>2001-06-12</td><td>2012-12-04</td></tr><tr><td>Canada</td><td>2125667</td><td>2000-06-13</td><td>2012-12-04</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>147-149</td><td>Lunts, L.H.C. and Toon, P.; U.S. Patent 3,644,353; February 22,1972; assigned to Allen
+&amp; Hanburys Ltd.</td></tr><tr><td>water solubility</td><td>1.41E+004 mg/L</td><td>YALKOWSKY,SH &amp; HE,Y (2003)</td></tr><tr><td>logP</td><td>1.4</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logS</td><td>-1.22</td><td>ADME Research, USCD</td></tr><tr><td>pKa</td><td>10.3</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>2.15e+00 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.44</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.34</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-2</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>10.12</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>72.72</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>67.87</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>26.86</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Toshikuni Kawazi, Masahiro Ono, Nobuko Inoue, &#8220;Salbutamol-containing plaster and method of producing same.&#8221; U.S. Patent US5068103, issued February, 1984.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=5068103&amp;tbm=pts" target="_blank">US5068103 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D02147" target="_blank">D02147 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=2083" target="_blank">2083 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46505312" target="_blank">46505312 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.1999.html" target="_blank">1999 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=25769" target="_blank">25769 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=2549" target="_blank">2549 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL714" target="_blank">CHEMBL714 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DNC000873" target="_blank">DNC000873 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA448068" target="_blank">PA448068 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>IUPHAR</td><td><a class="wishart-link-out" href="http://www.iuphar-db.org/DATABASE/LigandDisplayForward?ligandId=558" target="_blank">558 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Guide to Pharmacology</td><td><a class="wishart-link-out" href="http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=558" target="_blank">558 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=790419" target="_blank">790419 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic/duoneb.htm" target="_blank">http://www.rxlist.com/cgi/generic/duoneb.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Salbutamol" target="_blank">Salbutamol <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>R03CC02<ul class="atc-drug-tree"><li><a href="/atc/R#R">R &#8212; RESPIRATORY SYSTEM</a></li><li><a href="/atc/R03#R03">R03 &#8212; DRUGS FOR OBSTRUCTIVE AIRWAY DISEASES</a></li><li><a href="/atc/R03C#R03C">R03C &#8212; ADRENERGICS FOR SYSTEMIC USE</a></li><li><a href="/atc/R03CC#R03CC">R03CC &#8212; Selective beta-2-adrenoreceptor agonists</a></li></ul>R03AC02<ul class="atc-drug-tree"><li><a href="/atc/R#R">R &#8212; RESPIRATORY SYSTEM</a></li><li><a href="/atc/R03#R03">R03 &#8212; DRUGS FOR OBSTRUCTIVE AIRWAY DISEASES</a></li><li><a href="/atc/R03A#R03A">R03A &#8212; ADRENERGICS, INHALANTS</a></li><li><a href="/atc/R03AC#R03AC">R03AC &#8212; Selective beta-2-adrenoreceptor agonists</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>12:12.08.12</li>
+<li>48:12.04.12</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB01001.pdf?1265922739">show</a>(52.5 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00321">Amitriptyline</a></td><td>The tricyclic antidepressant, amitriptyline, increases the sympathomimetic effect of salbutamol.</td></tr><tr><td><a href="/drugs/DB00543">Amoxapine</a></td><td>The tricyclic antidepressant, amoxapine, increases the sympathomimetic effect of salbutamol.</td></tr><tr><td><a href="/drugs/DB00335">Atenolol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00612">Bisoprolol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB01136">Carvedilol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB01242">Clomipramine</a></td><td>The tricyclic antidepressant, clomipramine, increases the sympathomimetic effect of salbutamol.</td></tr><tr><td><a href="/drugs/DB01151">Desipramine</a></td><td>The tricyclic antidepressant, desipramine, increases the sympathomimetic effect of salbutamol.</td></tr><tr><td><a href="/drugs/DB01142">Doxepin</a></td><td>The tricyclic antidepressant, doxepin, increases the sympathomimetic effect of salbutamol.</td></tr><tr><td><a href="/drugs/DB00187">Esmolol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00458">Imipramine</a></td><td>The tricyclic antidepressant, imipramine, increases the sympathomimetic effect of salbutamol.</td></tr><tr><td><a href="/drugs/DB01247">Isocarboxazid</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00598">Labetalol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00601">Linezolid</a></td><td>Possible increase of arterial pressure</td></tr><tr><td><a href="/drugs/DB00968">Methyldopa</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00264">Metoprolol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00211">Midodrine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB01171">Moclobemide</a></td><td>Moclobemide increases the sympathomimetic effect of salbutamol.</td></tr><tr><td><a href="/drugs/DB01203">Nadolol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00540">Nortriptyline</a></td><td>The tricyclic antidepressant, nortriptyline, increases the sympathomimetic effect of salbutamol.</td></tr><tr><td><a href="/drugs/DB01580">Oxprenolol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00780">Phenelzine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00960">Pindolol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB00571">Propranolol</a></td><td>Antagonism</td></tr><tr><td><a href="/drugs/DB01367">Rasagiline</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00206">Reserpine</a></td><td>Increased arterial pressure</td></tr><tr><td><a href="/drugs/DB00373">Timolol</a></td><td>Antagonism</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

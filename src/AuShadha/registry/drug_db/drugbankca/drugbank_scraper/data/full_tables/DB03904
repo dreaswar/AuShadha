@@ -1,0 +1,221 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Urea</strong></td></tr><tr><th>Accession Number</th><td><strong>DB03904</strong>&#160; (EXPT03203)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>experimental</td></tr><tr><th>Description</th><td><p>A compound formed in the liver from ammonia produced by the deamination of amino acids. It is the principal end product of protein catabolism and constitutes about one half of the total urinary solids. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB03904/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB03904/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03904.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03904.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03904.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03904.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB03904.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB03904">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Pranactin-Citric</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>PYtest</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>57-13-6</td></tr><tr><th>Weight</th><td>Average: 60.0553<br>Monoisotopic: 60.03236276</td></tr><tr><th>Chemical Formula</th><td>CH<sub>4</sub>N<sub>2</sub>O</td></tr><tr><th>InChI Key</th><td>XSQUKJJJFZCRTK-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/CH4N2O/c2-1(3)4/h(H4,2,3,4)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">urea</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC(N)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organonitrogen Compounds</td></tr><tr><th>Class</th><td>Amines</td></tr><tr><th>Subclass</th><td>Polyamines</td></tr><tr><th>Direct parent</th><td>Polyamines</td></tr><tr><th>Alternative parents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Substituents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Classification description</th><td>This compound belongs to the polyamines. These are compounds containing more than one amine group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td><ul>
+<li>10% hydrate skin</li>
+<li>15% accelerate fibrin degradation</li>
+<li>20-30% are antipruritic, break down keratin, decrease the thickness of the stratum corneum and are used in scaling conditions such as ichthysosis</li>
+<li>40% are proteolytic and may be used to dissolve and peel dystrophic nails</li>
+</ul>
+<br>[Patient Self Care, 2010]</td></tr><tr><th>Pharmacodynamics</th><td>As a humectant, urea draws water into the striatum corneum.</td></tr><tr><th>Mechanism of action</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>Ethacrynic Acid Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00097?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00097</a></td></tr><tr><td>Argininosuccinic Aciduria</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00003?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00003</a></td></tr><tr><td>Chlorothiazide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00078?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00078</a></td></tr><tr><td>Polythiazide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00080?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00080</a></td></tr><tr><td>Methyclothiazide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00081?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00081</a></td></tr><tr><td>Bumetanide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00088?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00088</a></td></tr><tr><td>Bendroflumethiazide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00090?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00090</a></td></tr><tr><td>Quinethazone Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00091?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00091</a></td></tr><tr><td>Hydrochlorothiazide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00100?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00100</a></td></tr><tr><td>Cyclothiazide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00103?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00103</a></td></tr><tr><td>Metolazone Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00105?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00105</a></td></tr><tr><td>Hydroflumethiazide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00108?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00108</a></td></tr><tr><td>Indapamide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00110?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00110</a></td></tr><tr><td>Furosemide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00115?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00115</a></td></tr><tr><td>Torsemide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00118?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00118</a></td></tr><tr><td>Trichlormethiazide Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00121?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00121</a></td></tr><tr><td>Chlorthalidone Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00122?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00122</a></td></tr><tr><td>Triamterene Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00132?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00132</a></td></tr><tr><td>Amiloride Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00133?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00133</a></td></tr><tr><td>Spironolactone Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00134?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00134</a></td></tr><tr><td>Eplerenone Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00135?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00135</a></td></tr><tr><td>Arginine: Glycine Amidinotransferase Deficiency (AGAT Deficiency)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00362?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00362</a></td></tr><tr><td>L-arginine:glycine amidinotransferase deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00507?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00507</a></td></tr><tr><td>Ornithine Aminotransferase Deficiency (OAT Deficiency)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00363?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00363</a></td></tr><tr><td>Arginine and Proline Metabolism</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00020?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00020</a></td></tr><tr><td>D-Arginine and D-Ornithine Metabolism</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00036?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00036</a></td></tr><tr><td>Argininemia</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00357?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00357</a></td></tr><tr><td>Hyperornithinemia with gyrate atrophy (HOGA)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00505?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00505</a></td></tr><tr><td>Blue diaper syndrome</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00583?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00583</a></td></tr><tr><td>Carbamoyl Phosphate Synthetase Deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00002?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00002</a></td></tr><tr><td>Citrullinemia Type I</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00001?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00001</a></td></tr><tr><td>Creatine deficiency, guanidinoacetate methyltransferase deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00504?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00504</a></td></tr><tr><td>Urea Cycle</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00059?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00059</a></td></tr><tr><td>Glucose Transporter Defect (SGLT2)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00245?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00245</a></td></tr><tr><td>Prolidase Deficiency (PD)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00207?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00207</a></td></tr><tr><td>Guanidinoacetate Methyltransferase Deficiency (GAMT Deficiency)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00188?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00188</a></td></tr><tr><td>Ornithine Transcarbamylase Deficiency (OTC Deficiency)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00205?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00205</a></td></tr><tr><td>Hartnup Disorder</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00189?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00189</a></td></tr><tr><td>Kidney Function</td><td>Physiological</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00483?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00483</a></td></tr><tr><td>Renal Glucosuria</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00184?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00184</a></td></tr><tr><td>Hyperornithinemia-hyperammonemia-homocitrullinuria [HHH-syndrome]</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00506?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00506</a></td></tr><tr><td>Hyperprolinemia Type II</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00360?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00360</a></td></tr><tr><td>Hyperprolinemia Type I</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00361?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00361</a></td></tr><tr><td>Prolinemia Type II</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00208?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00208</a></td></tr><tr><td>Iminoglycinuria</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00193?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00193</a></td></tr><tr><td>Iminoglycinuria</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00584?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00584</a></td></tr><tr><td>Lysinuric Protein Intolerance</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00197?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00197</a></td></tr><tr><td>Lysinuric protein intolerance (LPI)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00585?highlight%5Bcompounds%5D%5B%5D=DB03904&amp;highlight%5Bproteins%5D%5B%5D=DB03904">SMP00585</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9513</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.981</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8956</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.8517</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.982</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9875</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9343</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7982</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.793</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8449</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9661</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8771</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9878</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.974</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9724</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9695</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9133
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.6955
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Ready biodegradable 
+        </td>
+        <td>
+            0.5354
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          0.8822 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.981
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9824
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Hospira inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.aaronindustriesinc.com">A. Aarons Inc.</a></li>
+<li><a href="http://www.aerosol.se">Aerosol Scandinavia Ab</a></li>
+<li>Allan Pharmaceutical LLC</li>
+<li><a href="http://www.americanspraytech.com">American Spraytech LLC</a></li>
+<li>APL Logistics WMS</li>
+<li>Avent Inc.</li>
+<li>Ballard Medical Products Inc.</li>
+<li>Bioglan Pharmaceuticals Co.</li>
+<li><a href="http://www.bpirx.com">Breckenridge Pharmaceuticals</a></li>
+<li><a href="http://www.cmic-vps.com">CMIC-VPS Corp.</a></li>
+<li><a href="http://www.collegiumpharma.com">Collegium Pharmaceutical Inc.</a></li>
+<li><a href="http://www.crownlaboratories.com">Crown Laboratories Inc.</a></li>
+<li><a href="http://www.cypressrx.com">Cypress Pharmaceutical Inc.</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://dsclabs.com">DSC Laboratories</a></li>
+<li><a href="http://www.fougera.com">E. Fougera and Co.</a></li>
+<li><a href="http://www.ethex.com">Ethex Corp.</a></li>
+<li><a href="http://usa.braccoimaging.com">EZ-EM Inc.</a></li>
+<li><a href="http://www.gordonlabs.co.uk">Gordon Laboratories</a></li>
+<li><a href="http://www.groupeparima.com">Groupe Parima Inc.</a></li>
+<li><a href="http://www.harmonylabs.com">Harmony Laboratories Inc.</a></li>
+<li><a href="http://www.hawthornrx.com">Hawthorn Pharmaceuticals</a></li>
+<li><a href="http://www.hitechpharm.com">Hi Tech Pharmacal Co. Inc.</a></li>
+<li><a href="http://www.hopepharm.com">Hope Pharmaceuticals</a></li>
+<li>Ivax Pharmaceuticals</li>
+<li><a href="http://www.jsjpharm.com">JSJ Pharmaceuticals Inc.</a></li>
+<li>Kylemore Pharmaceuticals</li>
+<li><a href="http://www.medimetriks.com">Medimetriks Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.meretek.com">Meretek Diagnostics Inc.</a></li>
+<li><a href="http://www.onsettx.com">Onset Therapeutics LLC</a></li>
+<li><a href="http://www.otsuka-us.com">Otsuka America</a></li>
+<li><a href="http://www.pegasuslabs.com">Pegasus Laboratories Inc.</a></li>
+<li><a href="http://www.perrigo.com">Perrigo Co.</a></li>
+<li><a href="http://www.pharmapacllc.com">Pharma Pac LLC</a></li>
+<li><a href="http://www.pharmaderm.com">Pharmaderm</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.prasco.com">Prasco Labs</a></li>
+<li><a href="http://www.pccarx.com">Professional Compounding Centers America LLC</a></li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.quinnova.com">Quinnova Pharmaceuticals</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li><a href="http://www.riversedgepharma.com">River's Edge Pharmaceuticals</a></li>
+<li><a href="http://www.seton.net">Seton Pharmaceuticals LLC</a></li>
+<li><a href="http://www.sheffield-pharmaceuticals.com">Sheffield Laboratories Div Faria Limited LLC</a></li>
+<li>Sonar Products Inc.</li>
+<li><a href="http://www.stratuspharmaceuticals.com">Stratus Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.tarousa.com">Taro Pharmaceuticals USA</a></li>
+<li><a href="http://www.truettlabs.com">Truett Laboratories</a></li></ul></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>132.7 &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>5.45E+005 mg/L (at 25 &#176;C)</td><td>YALKOWSKY,SH (1989)</td></tr><tr><td>logP</td><td>-2.11</td><td>HANSCH,C ET AL. (1995)</td></tr><tr><td>logS</td><td>0.96</td><td>ADME Research, USCD</td></tr><tr><td>Caco2 permeability</td><td>-5.34</td><td>ADME Research, USCD</td></tr><tr><td>pKa</td><td>0.1 (at 21 &#176;C)</td><td>PERRIN,DD (1965)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>4.12e+02 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-1.8</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-1.4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>0.84</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>15.73</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>-2.4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>69.11</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>13.14</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>5.1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><ul><li><a data-no-turbolink="true" href="/spectra/spectra/c_ms/15">Gas-MS Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/nmr_one_d/1227">13C NMR Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/nmr_one_d/1317">1H NMR Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/498">MS/MS Spectrum Quattro_QQQ 10</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/499">MS/MS Spectrum Quattro_QQQ 25</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/500">MS/MS Spectrum Quattro_QQQ 40</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/3931">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies	) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/6603">MS/MS Spectrum GC-MS </a></li></ul></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Ryo Yoshida, Haruhiko Katoh, Seizo Sumida, Ichiki Takemoto, Junya Takahashi, Katsuzo Kamoshita, &#8220;Urea derivatives, and their production and use.&#8221; U.S. Patent US4334912, issued 0000.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=4334912&amp;tbm=pts" target="_blank">US4334912 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00023" target="_blank">D00023 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C00086" target="_blank">C00086 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=1176" target="_blank">1176 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46508687" target="_blank">46508687 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=24961" target="_blank">24961 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16199" target="_blank">16199 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA451831" target="_blank">PA451831 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=URE" target="_blank">URE <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cons/urea-intravenous.html" target="_blank">http://www.drugs.com/cons/urea-intravenous.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1DDR" target="_blank">1DDR <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00374">Treprostinil</a></td><td>Additive hypotensive effect. Monitor antihypertensive therapy during concomitant use. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>
