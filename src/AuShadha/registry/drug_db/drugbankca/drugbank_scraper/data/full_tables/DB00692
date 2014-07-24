@@ -1,0 +1,195 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Phentolamine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00692</strong>&#160; (APRD00615)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A nonselective alpha-adrenergic antagonist. It is used in the treatment of hypertension and hypertensive emergencies, pheochromocytoma, vasospasm of raynaud disease and frostbite, clonidine withdrawal syndrome, impotence, and peripheral vascular disease. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00692/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00692/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00692.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00692.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00692.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00692.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00692.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00692">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Fentolamina</td><td>Spanish</td><td>INN</td></tr><tr><td>Phentolamin</td><td>German</td><td>INN</td></tr><tr><td>Phentolamine</td><td>French</td><td>INN</td></tr><tr><td>Phentolaminum</td><td>Latin</td><td>INN</td></tr><tr><td>Vesomax</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IS</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Phentolamine Mesylate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000980/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000980/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000980">DBSALT000980</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>OraVerse</td><td>Septodont</td></tr><tr><td>Regitin</td><td>Novartis</td></tr><tr><td>Regitina</td><td>Novartis</td></tr><tr><td>Regitine</td><td>Novartis</td></tr><tr><td>Rogitine</td><td>Paladin</td></tr><tr><td>Vigamed</td><td>Grupo Cimed</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Androskat</td><td>Phentolamine and Papaverine</td></tr><tr><td>Invicorp</td><td>Phentolamine and Aviptadil</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antihypertensive-agents">Antihypertensive Agents</a></li>
+<li><a href="/mesh/adrenergic-alpha-antagonists">Adrenergic alpha-Antagonists</a></li></ul></td></tr><tr><th>CAS number</th><td>50-60-2</td></tr><tr><th>Weight</th><td>Average: 281.3523<br>Monoisotopic: 281.152812245</td></tr><tr><th>Chemical Formula</th><td>C<sub>17</sub>H<sub>19</sub>N<sub>3</sub>O</td></tr><tr><th>InChI Key</th><td>MRBDMNSDAVCSSF-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C17H19N3O/c1-13-5-7-14(8-6-13)20(12-17-18-9-10-19-17)15-3-2-4-16(21)11-15/h2-8,11,21H,9-10,12H2,1H3,(H,18,19)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">3-[(4,5-dihydro-1H-imidazol-2-ylmethyl)(4-methylphenyl)amino]phenol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC1=CC=C(C=C1)N(CC1=NCCN1)C1=CC(O)=CC=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Phenols and Derivatives</td></tr><tr><th>Direct parent</th><td>Aminophenols</td></tr><tr><th>Alternative parents</th><td>Toluenes; Tertiary Amines; Polyamines; Enols; Carboxamidines</td></tr><tr><th>Substituents</th><td>toluene; tertiary amine; amidine; enol; polyamine; carboxylic acid amidine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the aminophenols. These are organic compounds containing an amino group attached to a phenol.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used as an aid for the diagnosis of pheochromocytoma, and may be administered immediately prior to or during pheochromocytomectomy to prevent or control paroxysmal hypertension resulting from anesthesia, stress, or operative manipulation of the tumor. Phentolamine has also been used to treat hypertensive crisis caused by sympathomimetic amines or catecholamine excess by certain foods or drugs in patients taking MAO inhibitors, or by clonidine withdrawal syndrome. Other indications include the prevention of dermal necrosis and sloughing following IV administration or extravasation of norepinephrine, decrease in impedance to left ventricular ejection and the infarct size in patients with MI associated with left ventricular failure, treatment of erectile dysfunction through self-injection of small doses combined with papaverine hydrochloride into the corpus cavernosum, and as an adjunct to the management of cocaine overdose to reverse coronary vasoconstriction following use of oxygen, benzodiazepines,and nitroglycerin. </td></tr><tr><th>Pharmacodynamics</th><td>Phentolamine is indicated for the control of episodes of hypertension and sweating that occur with a disease called pheochromocytoma. If tachycardia is excessive, it may be necessary to use a beta-blocking agent concomitantly. Phentolamine is a long-acting, adrenergic, alpha-receptor blocking agent which can produce and maintain "chemical sympathectomy" by oral administration. It increases blood flow to the skin, mucosa and abdominal viscera, and lowers both supine and erect blood pressures. It has no effect on the parasympathetic system. Phentolamine works by blocking alpha receptors in certain parts of the body. Alpha receptors are present in the muscle that lines the walls of blood vessels. When the receptors are blocked by Phentolamine, the muscle relaxes and the blood vessels widen. This widening of the blood vessels results in a lowering of blood pressure.</td></tr><tr><th>Mechanism of action</th><td>Phentolamine produces its therapeutic actions by competitively blocking alpha-adrenergic receptors (primarily excitatory responses of smooth muscle and exocrine glands), leading to a muscle relaxation and a widening of the blood vessels. This widening of the blood vessels results in a lowering of blood pressure. The action of phentolamine on the alpha adrenergic receptors is relatively transient and the blocking effect is incomplete. The drug is more effective in antagonizing responses to circulating epinephrine and/or norepinephrine than in antagonizing responses to mediator released at the adrenergic nerve ending. Phentolamine also stimulates &#946;-adrenergic receptors and produces a positive inotropic and chronotropic effect on the heart and increases cardiac output.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td>10-13% of the drug is excreted unchanged in urine, and the fate of the remainder of the drug is unknown.</td></tr><tr><th>Half life</th><td>19 minutes</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9293</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.838</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6104</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.772</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9329</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8031</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7497</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6892</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5668</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6313</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9046</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8931</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8454</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.831</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7661</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6266
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8555
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4366 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Strong inhibitor 
+        </td>
+        <td>
+            0.6149
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.59
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Novalar pharmaceuticals inc</li>
+<li>Bedford laboratories div ben venue laboratories inc</li>
+<li>Novartis pharmaceuticals corp</li>
+<li>Sanofi aventis us llc</li>
+<li>Glaxosmithkline</li>
+<li>Perrigo co</li>
+<li>Ranbaxy laboratories ltd</li>
+<li>Mcneil consumer healthcare</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.novalar.com">Novalar Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.novartis.com">Novartis AG</a></li>
+<li><a href="http://www.novocol.com">Novocol Pharmaceutical Canada</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Intravenous</td><td></td></tr><tr><td>Tablet, extended release</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Phentolamine 5 mg vial</td><td>84.0USD</td><td>vial</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>7575757</td><td>2005-04-21</td><td>2025-04-21</td></tr><tr><td>United States</td><td>6764678</td><td>2001-05-11</td><td>2021-05-11</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>174.5 &#176;C</td><td>PhysProp</td></tr><tr><td>logP</td><td>3.3</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>2.72e-01 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>2.91</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>2.52</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-3</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>9.78</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.02</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>47.86</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>84.25</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>31.37</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5775" target="_blank">5775 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46506535" target="_blank">46506535 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.5571.html" target="_blank">5571 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50008789" target="_blank">50008789 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000299" target="_blank">DAP000299 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA450926" target="_blank">PA450926 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>IUPHAR</td><td><a class="wishart-link-out" href="http://www.iuphar-db.org/DATABASE/LigandDisplayForward?ligandId=502" target="_blank">502 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Guide to Pharmacology</td><td><a class="wishart-link-out" href="http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=502" target="_blank">502 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2243737" target="_blank">2243737 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/phentol.htm" target="_blank">http://www.rxlist.com/cgi/generic3/phentol.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cons/phentolamine-injection.html" target="_blank">http://www.drugs.com/cons/phentolamine-injection.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Phentolamine" target="_blank">Phentolamine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>C04AB01<ul class="atc-drug-tree"><li><a href="/atc/C#C">C &#8212; CARDIOVASCULAR SYSTEM</a></li><li><a href="/atc/C04#C04">C04 &#8212; PERIPHERAL VASODILATORS</a></li><li><a href="/atc/C04A#C04A">C04A &#8212; PERIPHERAL VASODILATORS</a></li><li><a href="/atc/C04AB#C04AB">C04AB &#8212; Imidazoline derivatives</a></li></ul>V03AB36<ul class="atc-drug-tree"><li><a href="/atc/V#V">V &#8212; VARIOUS</a></li><li><a href="/atc/V03#V03">V03 &#8212; ALL OTHER THERAPEUTIC PRODUCTS</a></li><li><a href="/atc/V03A#V03A">V03A &#8212; ALL OTHER THERAPEUTIC PRODUCTS</a></li><li><a href="/atc/V03AB#V03AB">V03AB &#8212; Antidotes</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>12:16.00</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00692.pdf?1265922744">show</a>(73.3 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00820">Tadalafil</a></td><td>Tadalafil may enhance the hypotensive effect of Phentolamine. Monitor for hypotension during concomitant therapy.</td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Concomitant use of alpha1-adrenergic antagonists, Tamsulosin and Phentolamine, may result in additive antihypertensive effects. Combination therapy is not recommended.</td></tr><tr><td><a href="/drugs/DB00374">Treprostinil</a></td><td>Additive hypotensive effect. Monitor antihypertensive therapy during concomitant use. </td></tr><tr><td><a href="/drugs/DB00862">Vardenafil</a></td><td>Additive hypotensive effects of the PDE5 inhibitor, Vardenafil, and alpha1-blocker, Phentolamine, may occur. Monitor for hypotension during concomitant therapy. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

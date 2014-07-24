@@ -1,0 +1,197 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Idarubicin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01177</strong>&#160; (APRD00126)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An orally administered anthracycline antineoplastic. The compound has shown activity against breast cancer, lymphomas and leukemias, together with the potential for reduced cardiac toxicity. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01177/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01177/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01177.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01177.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01177.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01177.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01177.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01177">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Idarubicina</td><td>Spanish</td><td>INN</td></tr><tr><td>Idarubicine</td><td>French</td><td>INN</td></tr><tr><td>Idarubicinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Idarubicin Hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000341/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000341/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: JVHPTYWUBOQMBP-RVFAQHLVSA-N</li>
+              <li>Monoisotopic Mass: 533.145259206</li>
+              <li>Average Mass: 533.955</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000341">DBSALT000341</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Idamycin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antibiotics-antineoplastic">Antibiotics, Antineoplastic</a></li>
+<li><a href="/mesh/antibiotics">Antibiotics</a></li></ul></td></tr><tr><th>CAS number</th><td>58957-92-9</td></tr><tr><th>Weight</th><td>Average: 497.4939<br>Monoisotopic: 497.168581467</td></tr><tr><th>Chemical Formula</th><td>C<sub>26</sub>H<sub>27</sub>NO<sub>9</sub></td></tr><tr><th>InChI Key</th><td>XDXDZDZNSLXDNA-TZNDIEGXSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C26H27NO9/c1-10-21(29)15(27)7-17(35-10)36-16-9-26(34,11(2)28)8-14-18(16)25(33)20-19(24(14)32)22(30)12-5-3-4-6-13(12)23(20)31/h3-6,10,15-17,21,29,32-34H,7-9,27H2,1-2H3/t10-,15-,16-,17-,21+,26-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(7S,9S)-9-acetyl-7-{[(2R,4S,5S,6S)-4-amino-5-hydroxy-6-methyloxan-2-yl]oxy}-6,9,11-trihydroxy-5,7,8,9,10,12-hexahydrotetracene-5,12-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">C[C@@H]1O[C@H](C[C@H](N)[C@@H]1O)O[C@H]1C[C@@](O)(CC2=C1C(O)=C1C(=O)C3=CC=CC=C3C(=O)C1=C2O)C(C)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Phenylpropanoids and Polyketides</td></tr><tr><th>Class</th><td>Anthracyclines</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Anthracyclines</td></tr><tr><th>Alternative parents</th><td>Tetracenequinones; Anthraquinones; O-glycosyl Compounds; Tetralins; Amino Sugars; Hydroquinones; Oxanes; Tertiary Alcohols; Secondary Alcohols; Ketones; Polyols; 1,2-Aminoalcohols; Enolates; Dialkyl Ethers; Acetals; Polyamines; Enols; Monoalkylamines</td></tr><tr><th>Substituents</th><td>tetracenequinone; 1,4-anthraquinone; 9,10-anthraquinone; anthracene; glycosyl compound; o-glycosyl compound; tetralin; amino sugar; acene; hydroquinone; phenol derivative; benzene; oxane; saccharide; tertiary alcohol; 1,2-aminoalcohol; polyol; ketone; secondary alcohol; polyamine; enol; dialkyl ether; acetal; ether; enolate; primary amine; primary aliphatic amine; amine; carbonyl group; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the anthracyclines. These are polyketides containing a tetracenequinone&#160;ring structure with a sugar attached by glycosidic linkage.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of acute myeloid leukemia (AML) in adults. This includes French-American-British (FAB) classifications M1 through M7.</td></tr><tr><th>Pharmacodynamics</th><td>Idarubicin is an antineoplastic in the anthracycline class. General properties of drugs in this class include: interaction with DNA in a variety of different ways including intercalation (squeezing between the base pairs), DNA strand breakage and inhibition with the enzyme topoisomerase II. Most of these compounds have been isolated from natural sources and antibiotics. However, they lack the specificity of the antimicrobial antibiotics and thus produce significant toxicity. The anthracyclines are among the most important antitumor drugs available. Doxorubicin is widely used for the treatment of several solid tumors while daunorubicin and idarubicin are used exclusively for the treatment of leukemia. Idarubicin may also inhibit polymerase activity, affect regulation of gene expression, and produce free radical damage to DNA. Idarubicin possesses an antitumor effect against a wide spectrum of tumors, either grafted or spontaneous. The anthracyclines are cell cycle-nonspecific.</td></tr><tr><th>Mechanism of action</th><td>Idarubicin has antimitotic and cytotoxic activity through a number of proposed mechanisms of action: Idarubicin forms complexes with DNA by intercalation between base pairs, and it inhibits topoisomerase II activity by stabilizing the DNA-topoisomerase II complex, preventing the religation portion of the ligation-religation reaction that topoisomerase II catalyzes.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>97%</td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td>The drug is eliminated predominately by biliary and to a lesser extent by renal excretion, mostly in the form of idarubicinol.</td></tr><tr><th>Half life</th><td>22 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li>
+<li>Bacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.5153</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.975</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7492</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7862</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7328</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.956</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9214</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8004</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8937</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5419</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9106</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9439</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9382</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9316</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9514</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9516</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9107
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9456
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9762
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          4.3474 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9896
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.882
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Pharmacia and upjohn co</li>
+<li>App pharmaceuticals llc</li>
+<li>Bedford laboratories</li>
+<li>Teva parenteral medicines inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.greenstonellc.com">Greenstone LLC</a></li>
+<li><a href="http://www.pfizer.com">Pfizer Inc.</a></li>
+<li><a href="http://www.pharmaciaupjohn.com">Pharmacia Inc.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Powder, for solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the cardiotoxicity of Idarubicin. Signs and symptoms of cardiac dysfunction should be monitored for frequently. Increased risk of heart failure. Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

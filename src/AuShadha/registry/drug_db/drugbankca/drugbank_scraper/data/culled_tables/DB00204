@@ -1,0 +1,164 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Dofetilide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00204</strong>&#160; (APRD00367)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Dofetilide is a class <span class="caps">III</span> antiarrhythmic agent that is approved by the Food and Drug Administration (<span class="caps">FDA</span>) for the maintenance of sinus rhythm in individuals prone to the formation of atrial fibrillation and flutter, and for the chemical cardioversion to sinus rhythm from atrial fibrillation and flutter. [Wikipedia]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00204/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00204/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00204.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00204.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00204.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00204.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00204.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00204">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Dofetilida</td><td>Spanish</td><td>INN</td></tr><tr><td>Dofetilidum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Tikosyn</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-arrhythmia-agents">Anti-Arrhythmia Agents</a></li>
+<li><a href="/mesh/potassium-channel-blockers">Potassium Channel Blockers</a></li></ul></td></tr><tr><th>CAS number</th><td>115256-11-6</td></tr><tr><th>Weight</th><td>Average: 441.565<br>Monoisotopic: 441.139212369</td></tr><tr><th>Chemical Formula</th><td>C<sub>19</sub>H<sub>27</sub>N<sub>3</sub>O<sub>5</sub>S<sub>2</sub></td></tr><tr><th>InChI Key</th><td>IXTMWRCNAAVVAI-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C19H27N3O5S2/c1-22(13-12-16-4-6-17(7-5-16)20-28(2,23)24)14-15-27-19-10-8-18(9-11-19)21-29(3,25)26/h4-11,20-21H,12-15H2,1-3H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">N-[4-(2-{[2-(4-methanesulfonamidophenoxy)ethyl](methyl)amino}ethyl)phenyl]methanesulfonamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN(CCOC1=CC=C(NS(C)(=O)=O)C=C1)CCC1=CC=C(NS(C)(=O)=O)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Sulfanilides</td></tr><tr><th>Direct parent</th><td>Sulfanilides</td></tr><tr><th>Alternative parents</th><td>Phenethylamines; Phenol Ethers; Alkyl Aryl Ethers; Sulfonyls; Sulfonamides; Tertiary Amines; Polyamines</td></tr><tr><th>Substituents</th><td>phenol ether; alkyl aryl ether; sulfonyl; sulfonamide; sulfonic acid derivative; tertiary amine; polyamine; ether; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the sulfanilides. These are organic aromatic compounds containing a sulfanilide moiety, with the general structure RS(=O)(=O)NC1=CC=CC=C1.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the maintenance of normal sinus rhythm (delay in time to recurrence of atrial fibrillation/atrial flutter [AF/AFl]) in patients with atrial fibrillation/atrial flutter of greater than one week duration who have been converted to normal sinus rhythm</td></tr><tr><th>Pharmacodynamics</th><td>Dofetilide is an antiarrhythmic drug with Class III (cardiac action potential duration prolonging) properties and is indicated for the maintenance of normal sinus rhythm. Dofetilide increases the monophasic action potential duration in a predictable, concentration-dependent manner, primarily due to delayed repolarization. At concentrations covering several orders of magnitude, Dofetilide blocks only IKr with no relevant block of the other repolarizing potassium currents (e.g., IKs, IK1). At clinically relevant concentrations, Dofetilide has no effect on sodium channels (associated with Class I effect), adrenergic alpha-receptors, or adrenergic beta-receptors.</td></tr><tr><th>Mechanism of action</th><td>The mechanism of action of Dofetilide is a blockade of the cardiac ion channel carrying the rapid component of the delayed rectifier potassium current, IKr. This inhibition of potassium channels results in a prolongation of action potential duration and the effective refractory period of accessory pathways (both anterograde and retrograde conduction in the accessory pathway).</td></tr><tr><th>Absorption</th><td>&gt;90%</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>3 L/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td>60% -70%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>10 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9924</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9179</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6257</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6018</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6848</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7391</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7308</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7572</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6699</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6359</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5189</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7709</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.544</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7715</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.6823</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6193
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.6038
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5430 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Strong inhibitor 
+        </td>
+        <td>
+            0.8119
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.8258
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Pfizer pharmaceuticals production corp ltd</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.pfizer.com">Pfizer Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB06697">Artemether</a></td><td>Additive QTc-prolongation may occur. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00436">Bendroflumethiazide</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00880">Chlorothiazide</a></td><td>Thiazide diuretics such as chlorothiazide may enhance the QTc-prolonging effect of dofetilide. Thiazide diuretics may increase the serum concentration of dofetilide. The concomitant use of hydrochlorothiazide and dofetilide is contraindicated by the manufacturer of dofetilide. Monitor for increased risk of QTc-prolongation and associated ventricular arrythmias during concomitant use of dofetilide and thiazide diuretics.</td></tr><tr><td><a href="/drugs/DB00310">Chlorthalidone</a></td><td>Increased risk of cardiotoxicity and arrythmias</td></tr><tr><td><a href="/drugs/DB00501">Cimetidine</a></td><td>Increases effect/toxicity of dofetilide</td></tr><tr><td><a href="/drugs/DB01211">Clarithromycin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00199">Erythromycin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB08868">Fingolimod</a></td><td>Pharmacodynamic synergist. Contraindicated. Increased risk of bradycardia, AV block, and torsade de pointes. </td></tr><tr><td><a href="/drugs/DB00999">Hydrochlorothiazide</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00808">Indapamide</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01167">Itraconazole</a></td><td>This strong CYP3A4 inhibitor increases the effect and toxicity of dofetilide</td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>This strong CYP3A4 inhibitor increases the effect and toxicity of dofetilide</td></tr><tr><td><a href="/drugs/DB00933">Mesoridazine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00524">Metolazone</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01369">Quinupristin</a></td><td>This combination presents an increased risk of toxicity</td></tr><tr><td><a href="/drugs/DB00243">Ranolazine</a></td><td>Possible additive effect on QT prolongation</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>Additive QTc-prolongation may occur increasing the risk of serious ventricular arrhythmias. Concomitant therapy should be used with caution.</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00679">Thioridazine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01623">Thiothixene</a></td><td>May cause additive QTc-prolonging effects. Increased risk of ventricular arrhythmias. Consider alternate therapy. Thorough risk:benefit assessment is required prior to co-administration. </td></tr><tr><td><a href="/drugs/DB00539">Toremifene</a></td><td>Additive QTc-prolongation may occur, increasing the risk of serious ventricular arrhythmias. Consider alternate therapy. A thorough risk:benefit assessment is required prior to co-administration.</td></tr><tr><td><a href="/drugs/DB01021">Trichlormethiazide</a></td><td>Trichlormethiazide may increase Dofetilide serum concentrations and increase the QTc-prolonging effect of Dofetilide. Increased risk of ventricular arrhythmias. </td></tr><tr><td><a href="/drugs/DB00440">Trimethoprim</a></td><td>Trimethoprim may significantly reduced the clearance of Dofetilide. Trimethoprim is a cation transport inhibitor and may interfere with renal excretion of Dofetilide. Concomitant use is contraindicated.</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>Additive QTc-prolongation may occur, increasing the risk of serious ventricular arrhythmias. Concomitant therapy should be used with caution.</td></tr><tr><td><a href="/drugs/DB00661">Verapamil</a></td><td>Verapamil may increase the plamsa levels of Dofetilide. Increased risk of torsade de pointes. Concomitant therapy is contraindicated. </td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole may increase the serum concentration of dofetilide by decreasing its metabolism. Concomitant therapy is contraindicated. </td></tr><tr><td><a href="/drugs/DB02546">Vorinostat</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB00246">Ziprasidone</a></td><td>Additive QTc-prolonging effects may increase the risk of severe arrhythmias. Concomitant therapy is contraindicated.</td></tr><tr><td><a href="/drugs/DB01624">Zuclopenthixol</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or use caution and monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB08919">Zuclopenthixol acetate</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or use caution and monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB08920">Zuclopenthixol decanoate</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or use caution and monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

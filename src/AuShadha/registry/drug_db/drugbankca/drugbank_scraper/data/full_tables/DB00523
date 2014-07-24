@@ -1,0 +1,165 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Alitretinoin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00523</strong>&#160; (APRD00017)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>An important regulator of gene expression during growth and development, and in neoplasms. Tretinoin, also known as retinoic acid and derived from maternal vitamin A, is essential for normal growth; and embryonic development. An excess of tretinoin can be teratogenic. It is used in the treatment of psoriasis; acne vulgaris; and several other skin diseases. It has also been approved for use in promyelocytic leukemia (leukemia, promyelocytic, acute). [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00523/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00523/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00523.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00523.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00523.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00523.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00523.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00523">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>9-cis-Retinoic acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IS</td></tr><tr><td>Alitretinoin</td><td>German</td><td>INN</td></tr><tr><td>Alitretino&#237;na</td><td>Spanish</td><td>INN</td></tr><tr><td>Alitr&#233;tino&#239;ne</td><td>French</td><td>INN</td></tr><tr><td>Alitretinoinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Panretin</td><td>Eisai</td></tr><tr><td>Toctino</td><td>Basilea</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents">Antineoplastic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>5300-03-8</td></tr><tr><th>Weight</th><td>Average: 300.4351<br>Monoisotopic: 300.20893014</td></tr><tr><th>Chemical Formula</th><td>C<sub>20</sub>H<sub>28</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>SHGAZHPCJJPHSC-ZVCIMWCZSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C20H28O2/c1-15(8-6-9-16(2)14-19(21)22)11-12-18-17(3)10-7-13-20(18,4)5/h6,8-9,11-12,14H,7,10,13H2,1-5H3,(H,21,22)/b9-6+,12-11+,15-8-,16-14+</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2E,4E,6Z,8E)-3,7-dimethyl-9-(2,6,6-trimethylcyclohex-1-en-1-yl)nona-2,4,6,8-tetraenoic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">C\C(\C=C\C1=C(C)CCCC1(C)C)=C\C=C\C(\C)=C\C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Lipids</td></tr><tr><th>Class</th><td>Prenol Lipids</td></tr><tr><th>Subclass</th><td>Retinoids</td></tr><tr><th>Direct parent</th><td>Retinoids</td></tr><tr><th>Alternative parents</th><td>Diterpenes; Carbocyclic Fatty Acids; Branched Fatty Acids; Unsaturated Fatty Acids; Enones; Carboxylic Acids; Polyamines; Enolates</td></tr><tr><th>Substituents</th><td>enone; enolate; polyamine; carboxylic acid; carboxylic acid derivative</td></tr><tr><th>Classification description</th><td>This compound belongs to the retinoids. These are compounds that are related to vitamin A, especially retinol.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For topical treatment of cutaneous lesions in patients with AIDS-related Kaposi's sarcoma.</td></tr><tr><th>Pharmacodynamics</th><td>Alitretinoin (9-<i>cis</i>-retinoic acid) is a naturally-occurring endogenous retinoid indicated for topical treatment of cutaneous lesions in patients with AIDS-related Kaposi's sarcoma. Alitretinoin inhibits the growth of Kaposi's sarcoma (KS) cells <i>in vitro</i>.</td></tr><tr><th>Mechanism of action</th><td>Alitretinoin binds to and activates all known intracellular retinoid receptor subtypes (RARa, RARb, RARg, RXRa, RXRb and RXRg). Once activated these receptors function as transcription factors that regulate the expression of genes that control the process of cellular differentiation and proliferation in both normal and neoplastic cells.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9925</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9311</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.7603</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6144</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8912</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8088</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8639</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8221</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9115</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6025</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9046</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8831</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9301</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9252</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8944
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7081
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Ready biodegradable 
+        </td>
+        <td>
+            0.5554
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.1455 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9562
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9538
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Eisai inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.basilea.com">Basilea Pharmaceuticals Corp.</a></li>
+<li><a href="http://www.contractpharma.com">Contract Pharm</a></li>
+<li><a href="http://www.eisai.com">Eisai Inc.</a></li>
+<li><a href="http://www.ortho-mcneil.com">Ortho-McNeil-Janssen Pharmaceuticals Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr><tr><td>Cream</td><td>Topical</td><td></td></tr><tr><td>Gel</td><td>Topical</td><td></td></tr><tr><td>Liquid</td><td>Topical</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Retin-A Micro Pump 0.04% Gel 50 gm Bottle</td><td>246.73USD</td><td>bottle</td></tr><tr><td>Retin-A Micro Pump 0.1% Gel 50 gm Bottle</td><td>246.73USD</td><td>bottle</td></tr><tr><td>Retin-A Micro 0.04% Gel 45 gm Tube</td><td>212.3USD</td><td>tube</td></tr><tr><td>Retin-A Micro 0.1% Gel 45 gm Tube</td><td>212.3USD</td><td>tube</td></tr><tr><td>Retin-A 0.1% Cream 45 gm Tube</td><td>211.1USD</td><td>tube</td></tr><tr><td>Retin-A 0.05% Cream 45 gm Tube</td><td>181.16USD</td><td>tube</td></tr><tr><td>Retin-A 0.025% Cream 45 gm Tube</td><td>163.07USD</td><td>tube</td></tr><tr><td>Retin-A 0.025% Gel 45 gm Tube</td><td>162.79USD</td><td>tube</td></tr><tr><td>Retin-A 0.01% Gel 45 gm Tube</td><td>161.48USD</td><td>tube</td></tr><tr><td>Retin-A Micro 0.04% Gel 20 gm Tube</td><td>123.7USD</td><td>tube</td></tr><tr><td>Retin-A Micro 0.1% Gel 20 gm Tube</td><td>117.51USD</td><td>tube</td></tr><tr><td>Retin-A 0.1% Cream 20 gm Tube</td><td>112.51USD</td><td>tube</td></tr><tr><td>Retin-A 0.05% Cream 20 gm Tube</td><td>97.85USD</td><td>tube</td></tr><tr><td>Retin-A 0.025% Cream 20 gm Tube</td><td>85.59USD</td><td>tube</td></tr><tr><td>Retin-A 0.01% Gel 15 gm Tube</td><td>75.83USD</td><td>tube</td></tr><tr><td>Retin-A 0.025% Gel 15 gm Tube</td><td>69.01USD</td><td>tube</td></tr><tr><td>Panretin 0.1% gel</td><td>41.0USD</td><td>g</td></tr><tr><td>Vesanoid 10 mg capsule</td><td>31.54USD</td><td>capsule</td></tr><tr><td>Retin-a micro 0.04% gel</td><td>5.65USD</td><td>g</td></tr><tr><td>Retin-a micro 0.1% gel</td><td>5.65USD</td><td>g</td></tr><tr><td>Retin-a micro pump 0.04% gel</td><td>4.74USD</td><td>g</td></tr><tr><td>Retin-a micro pump 0.1% gel</td><td>4.74USD</td><td>g</td></tr><tr><td>Retin-a 0.05% cream</td><td>4.64USD</td><td>g</td></tr><tr><td>Retin-a 0.1% cream</td><td>4.51USD</td><td>g</td></tr><tr><td>Renova 0.02% cream</td><td>4.46USD</td><td>g</td></tr><tr><td>Renova pump 0.02% cream</td><td>4.28USD</td><td>g</td></tr><tr><td>Retin-a 0.025% cream</td><td>4.14USD</td><td>g</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>5932622</td><td>1996-08-03</td><td>2016-08-03</td></tr><tr><td>Canada</td><td>2301907</td><td>2009-02-10</td><td>2018-08-18</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>189-190 &#176;C</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>water solubility</td><td>0.6 mg/L</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>4.2</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>4.77e-03 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>5.66</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>5.01</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-4.8</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>37.3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>97.79</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>35.95</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Hector F. DeLuca, Praveen K. Tadikonda, &#8220;Method of synthesis of retinoic acid.&#8221; U.S. Patent US5808120, issued December, 1975.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=5808120&amp;tbm=pts" target="_blank">US5808120 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=31883" target="_blank">31883 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=50648" target="_blank">50648 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL705" target="_blank">CHEMBL705 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000275" target="_blank">DAP000275 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA164746900" target="_blank">PA164746900 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic2/alitre.htm" target="_blank">http://www.rxlist.com/cgi/generic2/alitre.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/alitretinoin.html" target="_blank">http://www.drugs.com/cdi/alitretinoin.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Alitretinoin" target="_blank">Alitretinoin <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>L01XX22<ul class="atc-drug-tree"><li><a href="/atc/L#L">L &#8212; ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS</a></li><li><a href="/atc/L01#L01">L01 &#8212; ANTINEOPLASTIC AGENTS</a></li><li><a href="/atc/L01X#L01X">L01X &#8212; OTHER ANTINEOPLASTIC AGENTS</a></li><li><a href="/atc/L01XX#L01XX">L01XX &#8212; Other antineoplastic agents</a></li></ul>D11AH04<ul class="atc-drug-tree"><li><a href="/atc/D#D">D &#8212; DERMATOLOGICALS</a></li><li><a href="/atc/D11#D11">D11 &#8212; OTHER DERMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/D11A#D11A">D11A &#8212; OTHER DERMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/D11AH#D11AH">D11AH &#8212; Agents for dermatitis, excluding corticosteroids</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>92:00.00</li>
+<li>84:16.00</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00523.pdf?1265922806">show</a>(21.8 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00523.pdf?1265922744">show</a>(37.3 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

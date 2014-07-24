@@ -1,0 +1,225 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Zonisamide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00909</strong>&#160; (APRD00004)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Zonisamide is a sulfonamide anticonvulsant approved for use as an adjunctive therapy in adults with partial-onset seizures. Zonisamide may be a carbonic anhydrase inhibitor although this is not one of the primary mechanisms of action. Zonisamide may act by blocking repetitive firing of voltage-gated sodium channels leading to a reduction of T-type calcium channel currents, or by binding allosterically to <span class="caps">GABA</span> receptors. This latter action may inhibit the uptake of the inhibitory neurotransmitter <span class="caps">GABA</span> while enhancing the uptake of the excitatory neurotransmitter glutamate.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00909/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00909/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00909.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00909.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00909.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00909.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00909.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00909">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Zonisamida</td><td>Spanish</td><td>INN</td></tr><tr><td>Zonisamidum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Exceglan</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Excegram</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Excegran</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zonegran</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antioxidants">Antioxidants</a></li>
+<li><a href="/mesh/anticonvulsants">Anticonvulsants</a></li></ul></td></tr><tr><th>CAS number</th><td>68291-97-4</td></tr><tr><th>Weight</th><td>Average: 212.226<br>Monoisotopic: 212.025562822</td></tr><tr><th>Chemical Formula</th><td>C<sub>8</sub>H<sub>8</sub>N<sub>2</sub>O<sub>3</sub>S</td></tr><tr><th>InChI Key</th><td>UBQNRHZMVUUOMG-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C8H8N2O3S/c9-14(11,12)5-7-6-3-1-2-4-8(6)13-10-7/h1-4H,5H2,(H2,9,11,12)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1,2-benzoxazol-3-ylmethanesulfonamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NS(=O)(=O)CC1=NOC2=CC=CC=C12</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Benzisoxazoles</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Benzisoxazoles</td></tr><tr><th>Alternative parents</th><td>Benzene and Substituted Derivatives; Sulfonyls; Sulfonamides; Isoxazoles; Polyamines</td></tr><tr><th>Substituents</th><td>benzene; isoxazole; azole; sulfonamide; sulfonic acid derivative; sulfonyl; polyamine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the benzisoxazoles. These are aromatic compounds containing a benzene ring fused to an isoxazole ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For use as adjunctive treatment of partial seizures in adults with epilepsy.</td></tr><tr><th>Pharmacodynamics</th><td>Zonisamide is an antiseizure drug chemically classified as a sulfonamide and unrelated to other antiseizure agents. The precise mechanism by which zonisamide exerts its antiseizure effect is unknown, although it is believed that the drug blocks sodium and calcium channels, which leads to the suppression of neuronal hypersynchronization (i.e. convulsions). Sonisamide has also been found to potentiate dopaminergic and serotonergic neurotransmission but does not appear to potentiate syanptic activity by GABA (gamma amino butyric acid).</td></tr><tr><th>Mechanism of action</th><td>Zonisamide binds to sodium channels and voltage sensitive calcium channels, which suppresses neuronal depolarization and hypersynchronization. Zonisamide also inhibits carbonic anhydrase to a weaker extent, but such an effect is not thought to contribute substantially to the drug's anticonvulsant activity.</td></tr><tr><th>Absorption</th><td>Variable, yet relatively rapid rate of absorption with a time to peak concentration of 2.8-3.9 hours. Food has no effect on the bioavailability of zonisamide.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>1.45 L/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td>40% (at concentrations of 1.0-7.0 &#181;g/mL)</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Primarily hepatic through cytochrome P450 isoenzyme 3A4 (CYP3A4). Undergoes acetylation and reduction, forming N-acetyl zonisamide, and the open-ring metabolite 2&#8211;sulfamoylacetyl phenol, respectively.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Zonisamide</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET00401">2-sulfamoylacetylphenol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/404">Details</a></td></tr><tr><td>Zonisamide</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00923">N-acetyl zonisamide</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/944">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Zonisamide is excreted primarily in urine as parent drug and as the glucuronide of a metabolite.</td></tr><tr><th>Half life</th><td>63 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>0.30 &#8211; 0.35 mL/min/kg [patients not receiving enzyme-inducing antiepilepsy drugs (AEDs)]</li>
+	<li>0.35 &#8211; 0.5 mL/min/kg [Concomitant administration of phenytoin and carbamazepine]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Symptoms of overdose include diminished breathing, loss of consciousness, low blood pressure, and slow heartbeat.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9755</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6385</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.8681</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9258</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9513</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8463</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8828</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5419</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5762</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.697</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8081</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6007</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8141</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7315</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6276
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7572
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9708
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.0592 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8549
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8937
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Eisai inc</li>
+<li>Alphapharm party ltd</li>
+<li>Apotex inc etobicoke site</li>
+<li>Banner pharmacaps inc</li>
+<li>Barr laboratories inc</li>
+<li>Corepharma llc</li>
+<li>Dr reddys laboratories ltd</li>
+<li>Glenmark generics inc usa</li>
+<li>Invagen pharmaceuticals inc</li>
+<li>Mutual pharmaceutical co inc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Roxane laboratories inc</li>
+<li>Sandoz inc</li>
+<li>Sun pharmaceutical industries ltd</li>
+<li>Teva pharmaceuticals usa</li>
+<li>Watson laboratories inc</li>
+<li>Wockhardt ltd</li>
+<li>Zydus pharmaceuticals usa inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.alphapharm.com.au">Alphapharm Party Ltd.</a></li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li>Barr Pharmaceuticals</li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.corepharma.com">Corepharma LLC</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li><a href="http://www.eisai.com">Eisai Inc.</a></li>
+<li><a href="http://www.elan.com">Elan Pharmaceuticals Inc.</a></li>
+<li>Eon Labs</li>
+<li>Genpharm LP</li>
+<li><a href="http://www.glenmark-generics.com">Glenmark Generics Ltd.</a></li>
+<li>Heartland Repack Services LLC</li>
+<li><a href="http://www.invagen.com">InvaGen Pharmaceuticals Inc.</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li><a href="http://www.sunpharma.com">Sun Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li>Vangard Labs Inc.</li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Zonegran 100 mg capsule</td><td>3.33USD</td><td>capsule</td></tr><tr><td>Zonisamide 100 mg capsule</td><td>2.24USD</td><td>capsule</td></tr><tr><td>Zonegran 50 mg capsule</td><td>1.22USD</td><td>capsule</td></tr><tr><td>Zonisamide 50 mg capsule</td><td>1.12USD</td><td>capsule</td></tr><tr><td>Zonegran 25 mg capsule</td><td>0.94USD</td><td>capsule</td></tr><tr><td>Zonisamide 25 mg capsule</td><td>0.56USD</td><td>capsule</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>161-163 &#176;C</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>water solubility</td><td>0.8 mg/mL</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>0.5</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>pKa</td><td>10.2</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>2.09e+00 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.67</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.11</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-2</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>9.84</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>-1.8</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>86.19</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>50.3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>19.48</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Tamar Nidam, &#8220;Novel sulfonation method for zonisamide intermediate in zonisamide synthesis and their novel crystal forms.&#8221; U.S. Patent US20030114682, issued June 19, 2003.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=20030114682&amp;tbm=pts" target="_blank">US20030114682 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Murata M, Horiuchi E, Kanazawa I: Zonisamide has beneficial effects on Parkinson&#8217;s disease patients. Neurosci Res. 2001 Dec;41(4):397-9. <a href="http://www.ncbi.nlm.nih.gov/pubmed/11755227">Pubmed</a></li>
+	<li>Gadde KM, Franciscy DM, Wagner HR 2nd, Krishnan KR: Zonisamide for weight loss in obese adults: a randomized controlled trial. <span class="caps">JAMA</span>. 2003 Apr 9;289(14):1820-5. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12684361">Pubmed</a></li>
+	<li>Hasegawa H: Utilization of zonisamide in patients with chronic pain or epilepsy refractory to other treatments: a retrospective, open label, uncontrolled study in a VA hospital. Curr Med Res Opin. 2004 May;20(5):577-80. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15140322">Pubmed</a></li>
+	<li>Leppik IE: Zonisamide: chemistry, mechanism of action, and pharmacokinetics. Seizure. 2004 Dec;13 Suppl 1:S5-9; discussion S10. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15511691">Pubmed</a></li>
+	<li>Ueda Y, Doi T, Tokumaru J, Willmore LJ: Effect of zonisamide on molecular regulation of glutamate and <span class="caps">GABA</span> transporter proteins during epileptogenesis in rats with hippocampal seizures. Brain Res Mol Brain Res. 2003 Aug 19;116(1-2):1-6. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12941455">Pubmed</a></li>
+	<li>Farooq MU, Moore PW, Bhatt A, Aburashed R, Kassab MY: Therapeutic role of zonisamide in neuropsychiatric disorders. Mini Rev Med Chem. 2008 Sep;8(10):968-75. <a href="http://www.ncbi.nlm.nih.gov/pubmed/18782051">Pubmed</a></li>
+	<li>Schulze-Bonhage A: Zonisamide in the treatment of epilepsy. Expert Opin Pharmacother. 2010 Jan;11(1):115-26. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20001433">Pubmed</a></li>
+	<li>Kothare SV, Kaleyias J: Zonisamide: review of pharmacology, clinical efficacy, tolerability, and safety. Expert Opin Drug Metab Toxicol. 2008 Apr;4(4):493-506. <a href="http://www.ncbi.nlm.nih.gov/pubmed/18433351">Pubmed</a></li>
+	<li>Peters DH, Sorkin EM: Zonisamide. A review of its pharmacodynamic and pharmacokinetic properties, and therapeutic potential in epilepsy. Drugs. 1993 May;45(5):760-87. <a href="http://www.ncbi.nlm.nih.gov/pubmed/7686468">Pubmed</a></li>
+	<li>Sobieszek G, Borowicz KK, Kimber-Trojnar Z, Malek R, Piskorska B, Czuczwar SJ: Zonisamide: a new antiepileptic drug. Pol J Pharmacol. 2003 Sep-Oct;55(5):683-9. <a href="http://www.ncbi.nlm.nih.gov/pubmed/14704463">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00538" target="_blank">D00538 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07504" target="_blank">C07504 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5734" target="_blank">5734 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46505278" target="_blank">46505278 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.5532.html" target="_blank">5532 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=10888" target="_blank">10888 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=10127" target="_blank">10127 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL750" target="_blank">CHEMBL750 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000500" target="_blank">DAP000500 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA451978" target="_blank">PA451978 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/zonisamide.htm" target="_blank">http://www.rxlist.com/cgi/generic3/zonisamide.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/zonisamide.html" target="_blank">http://www.drugs.com/cdi/zonisamide.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PDRhealth</td><td><a class="wishart-link-out" href="http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/zon1564.shtml" target="_blank">http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/zon1564.shtml <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Zonisamide" target="_blank">Zonisamide <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>N03AX15<ul class="atc-drug-tree"><li><a href="/atc/N#N">N &#8212; NERVOUS SYSTEM</a></li><li><a href="/atc/N03#N03">N03 &#8212; ANTIEPILEPTICS</a></li><li><a href="/atc/N03A#N03A">N03A &#8212; ANTIEPILEPTICS</a></li><li><a href="/atc/N03AX#N03AX">N03AX &#8212; Other antiepileptics</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00909.pdf?1265922804">show</a>(124 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00909.pdf?1265922743">show</a>(58.3 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00701">Amprenavir</a></td><td>Amprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if amprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01072">Atazanavir</a></td><td>Atazanavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if atazanavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01194">Brinzolamide</a></td><td>As both brinzolamide and zonisamide are carbonic anhydrase inhibitors, there is an increased risk of adverse effects.The development of acid-base disorders with concurrent use of ophthalmic and oral carbonic anhydrase inhibitors has been reported. Avoid concurrent use of different carbonic anhydrase inhibitors when possible.</td></tr><tr><td><a href="/drugs/DB01211">Clarithromycin</a></td><td>Clarithromcyin, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if clarithromycin is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00872">Conivaptan</a></td><td>Conivaptan, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if conivaptan is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01264">Darunavir</a></td><td>Darunavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if darunavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00705">Delavirdine</a></td><td>Delavirdine, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if delavirdine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01319">Fosamprenavir</a></td><td>Fosamprenavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if fosamprenavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00619">Imatinib</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00224">Indinavir</a></td><td>Indinavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if indinavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00951">Isoniazid</a></td><td>Isoniazid, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if isoniazid is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01167">Itraconazole</a></td><td>Itraconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if itraconazole is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Ketonconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if ketoconazole is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01601">Lopinavir</a></td><td>Lopinavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if lopinavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00358">Mefloquine</a></td><td>Mefloquine may decrease the serum concentration and therapeutic effect of zonisamide. Concomitant therapy is contraindicated in patients with history of convulsions. </td></tr><tr><td><a href="/drugs/DB01403">Methotrimeprazine</a></td><td>Additive CNS depressant effects. Reduce zonisamide dose by half upon initiation of methotrimeprazine. Zonisamide dose may be adjusted once methotrimeprazine dose has been established. Monitor for increased CNS depression.</td></tr><tr><td><a href="/drugs/DB01149">Nefazodone</a></td><td>Nefazodone, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if nefazodone is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00220">Nelfinavir</a></td><td>Nelfinavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if nelfinavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00622">Nicardipine</a></td><td>Nicardipine, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if nicardipine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01263">Posaconazole</a></td><td>Posaconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if posaconazole is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00908">Quinidine</a></td><td>Quinidine, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if quinidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00503">Ritonavir</a></td><td>Ritonavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if ritonavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01232">Saquinavir</a></td><td>Saquinavir, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if saquinavir is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Telithromycin, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if telithromycin is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00427">Triprolidine</a></td><td>The CNS depressants, Triprolidine and Zonisamide, may increase adverse/toxic effects due to additivity. Monitor for increased CNS depressant effects during concomitant therapy. </td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if voriconazole is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

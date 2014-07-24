@@ -1,0 +1,44 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Leuprolide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00007</strong>&#160; (BIOD00009, BTD00009)</td></tr><tr><th>Type</th><td>biotech</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Leuprolide belongs to the general class of drugs known as hormones or hormone antagonists. It is a synthetic 9 residue peptide analog of gonadotropin releasing hormone. Leuprolide is used to treat advanced prostate cancer. It is also used to treat uterine fibroids and endometriosis. Leuprolide is also under investigation for possible use in the treatment of mild to moderate Alzheimer&#8217;s disease.</p></td></tr><tr><th>Protein structure</th><td><a href="/system/protein_structures/full/DB00007.png?1330706510"><img alt="Db00007" src="/system/protein_structures/thumb/DB00007.png?1330706510"></a></td></tr><tr><th>Protein chemical formula</th><td>C<sub>59</sub>H<sub>84</sub>N<sub>16</sub>O<sub>12</sub></td></tr><tr><th>Protein average weight</th><td>1209.3983</td></tr><tr><th>Sequences</th><td><pre class="sequence">&gt;Leuprolide
+PHWSYLLR</pre><small><a class="btn btn-info btn-sm" href="/drugs/DB00007/polypeptide_sequences.fasta">Download FASTA Format</a></small></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Leuprorelin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Leuprolide acetate</strong>
+          <div class="cas">74381-53-6</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000105/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000105/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: RGLRXNKKBLIBQS-XNHQSDQCSA-N</li>
+              <li>Monoisotopic Mass: 1268.666591604</li>
+              <li>Average Mass: 1269.4502</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000105">DBSALT000105</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Eligard</td><td>Atrix Labs/QLT Inc</td></tr><tr><td>Enantone</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Leuplin</td><td>Takeda</td></tr><tr><td>LeuProMaxx</td><td>Baxter/Teva</td></tr><tr><td>Leupromer</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Lupron</td><td>Abbott/TAP Pharmaceuticals</td></tr><tr><td>Lutrate</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Memryte</td><td>Curaxis</td></tr><tr><td>Prostap 3</td><td>Takeda UK</td></tr><tr><td>Prostap SR</td><td>Takeda UK</td></tr><tr><td>Viadur</td><td>Bayer AG</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents-hormonal">Antineoplastic Agents, Hormonal</a></li>
+<li><a href="/mesh/fertility-agents-female">Fertility Agents, Female</a></li>
+<li><a href="/mesh/estrogen-antagonists">Estrogen Antagonists</a></li></ul></td></tr><tr><th>CAS number</th><td>53714-56-0</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Peptides</td></tr><tr><th>Alternative parents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Substituents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Classification description</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For treatment of prostate cancer, endometriosis, uterine fibroids and premature puberty</td></tr><tr><th>Pharmacodynamics</th><td>Used in the palliative treatment of advanced prostate cancer. Leuprolide is a luteinizing hormone agonist that results in suppression of testicular or follicular steroidogenesis.</td></tr><tr><th>Mechanism of action</th><td>Leuprolide binds to the gonadotropin releasing hormone receptor and acts as a potent inhibitor of gonadotropin secretion.</td></tr><tr><th>Absorption</th><td>Bioavailability by subcutaneous administration is comparable to that by intravenous administration.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>27 L [intravenous bolus administration to healthy male volunteers]</li>
+</ul></td></tr><tr><th>Protein binding</th><td>43% to 49%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Primarily degraded by peptidase and not by cytochrome P450 enzymes.</p></td></tr><tr><th>Route of elimination</th><td>Excretion in urine</td></tr><tr><th>Half life</th><td>~3 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>8.34 L/h [healthy male receiving a 1-mg IV bolus]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>In rats subcutaneous administration of 250 to 500 times the recommended human dose, expressed on a per body weight basis, resulted in dyspnea, decreased activity, and local irritation at the injection site. There is no evidence at present that there is a clinical counterpart of this phenomenon. In early clinical trials with leuprolide acetate doses as high as 20 mg/day for up to two years caused no adverse effects differing from those observed with the 1 mg/day dose.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.abbott.com">Abbott Laboratories Ltd.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li>Eon Labs</li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li>Oso Biopharmaceuticals Manufacturing LLC</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.sanofi-aventis.com">Sanofi-Aventis Inc.</a></li>
+<li><a href="http://www.sunpharma.com">Sun Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.takeda.com">Takeda Pharmaceutical Co. Ltd.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.tolmar.com">Tolmar Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Liquid</td><td>Subcutaneous</td><td></td></tr><tr><td>Suspension, extended release</td><td>Intramuscular</td><td></td></tr><tr><td>Suspension, extended release</td><td>Subcutaneous</td><td></td></tr></tbody></table></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

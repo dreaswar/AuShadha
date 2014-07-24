@@ -1,0 +1,160 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>(2s,3s)-1,4-Dimercaptobutane-2,3-Diol</strong></td></tr><tr><th>Accession Number</th><td><strong>DB02184</strong>&#160; (EXPT01293)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>experimental</td></tr><tr><th>Description</th><td><p>A reagent commonly used in biochemical studies as a protective agent to prevent the oxidation of SH (thiol) groups and for reducing disulphides to dithiols. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB02184/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB02184/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB02184.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB02184.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB02184.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB02184.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB02184.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB02184">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Weight</th><td>Average: 154.251<br>Monoisotopic: 154.012220944</td></tr><tr><th>Chemical Formula</th><td>C<sub>4</sub>H<sub>10</sub>O<sub>2</sub>S<sub>2</sub></td></tr><tr><th>InChI Key</th><td>VHJLVAABSRFDPM-QWWZWVQMSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C4H10O2S2/c5-3(1-7)4(6)2-8/h3-8H,1-2H2/t3-,4-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2S,3S)-1,4-disulfanylbutane-2,3-diol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">O[C@H](CS)[C@H](O)CS</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organooxygen Compounds</td></tr><tr><th>Class</th><td>Alcohols and Polyols</td></tr><tr><th>Subclass</th><td>Secondary Alcohols</td></tr><tr><th>Direct parent</th><td>Secondary Alcohols</td></tr><tr><th>Alternative parents</th><td>1,2-Diols; Alkylthiols; Polyamines</td></tr><tr><th>Substituents</th><td>polyamine; alkylthiol</td></tr><tr><th>Classification description</th><td>This compound belongs to the secondary alcohols. These are compounds containing a secondary alcohol functional group, with the general structure HOC(R)(R') (R,R'=alkyl, aryl).</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

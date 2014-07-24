@@ -1,0 +1,187 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Temafloxacin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01405</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>withdrawn</td></tr><tr><th>Description</th><td><p>Temafloxacin is a fluoroquinolone antibiotic drug which was withdrawn from sale in the U.S. shortly after its approval in 1992 because of serious adverse reactions resulting in three deaths. [Wikipedia]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01405/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01405/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01405.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01405.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01405.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01405.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01405.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01405">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Temafloxacina</td><td>Spanish</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Temafloxacine</td><td>French</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Temafloxacinum</td><td>Latin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Temafloxacin hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000794/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000794/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: QKDHBVNJCZBTMR-UHFFFAOYNA-N</li>
+              <li>Monoisotopic Mass: 417.130026072</li>
+              <li>Average Mass: 417.3811</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000794">DBSALT000794</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Omniflox</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>108319-06-8</td></tr><tr><th>Weight</th><td>Average: 417.3811<br>Monoisotopic: 417.130026072</td></tr><tr><th>Chemical Formula</th><td>C<sub>21</sub>H<sub>18</sub>F<sub>3</sub>N<sub>3</sub>O<sub>3</sub></td></tr><tr><th>InChI Key</th><td>QKDHBVNJCZBTMR-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C21H18F3N3O3/c1-11-9-26(5-4-25-11)19-8-18-13(7-16(19)24)20(28)14(21(29)30)10-27(18)17-3-2-12(22)6-15(17)23/h2-3,6-8,10-11,25H,4-5,9H2,1H3,(H,29,30)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-(2,4-difluorophenyl)-6-fluoro-7-(3-methylpiperazin-1-yl)-4-oxo-1,4-dihydroquinoline-3-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC1CN(CCN1)C1=C(F)C=C2C(=O)C(=CN(C2=C1)C1=C(F)C=C(F)C=C1)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Quinolines and Derivatives</td></tr><tr><th>Subclass</th><td>Phenylquinolines</td></tr><tr><th>Direct parent</th><td>Phenylquinolines</td></tr><tr><th>Alternative parents</th><td>Quinoline Carboxylic Acids; Fluoroquinolones; Hydroquinolones; Hydroquinolines; Pyridinecarboxylic Acids; Fluorobenzenes; Aryl Fluorides; Diazinanes; Piperazines; Tertiary Amines; Enolates; Polyamines; Dialkylamines; Carboxylic Acids; Organofluorides</td></tr><tr><th>Substituents</th><td>quinoline-3-carboxylic acid; fluoroquinolone; dihydroquinolone; dihydroquinoline; pyridine carboxylic acid; pyridine carboxylic acid or derivative; fluorobenzene; benzene; 1,4-diazinane; pyridine; aryl halide; aryl fluoride; piperazine; tertiary amine; polyamine; secondary amine; enolate; secondary aliphatic amine; carboxylic acid derivative; carboxylic acid; organonitrogen compound; amine; organohalogen; organofluoride</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenylquinolines. These are heterocyclic compounds containing a quinoline moiety substituted with a phenyl group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of lower respiratory tract infections, genital and urinary infections like prostatitis, and skin infections.</td></tr><tr><th>Pharmacodynamics</th><td>Temafloxacin (marketed by Abbott Laboratories as Omniflox), is a fluoroquinolone antibiotic drug which was withdrawn from sale in the U.S. shortly after its approval in 1992 because of serious adverse reactions resulting in three deaths. Flouroquinolones such as lomefloxacin possess excellent activity against gram-negative aerobic bacteria such as <i>E.coli</i> and <i>Neisseria gonorrhoea</i> as well as gram-positive bacteria including <i>S. pneumoniae</i> and <i>Staphylococcus aureus</i>. They also posses effective activity against shigella, salmonella, campylobacter, gonococcal organisms, and multi drug resistant pseudomonas and enterobacter.</td></tr><tr><th>Mechanism of action</th><td>The bactericidal action of temafloxacin results from interference with the activity of the bacterial enzymes DNA gyrase and topoisomerase IV, which are needed for the transcription and replication of bacterial DNA. DNA gyrase appears to be the primary quinolone target for gram-negative bacteria. Topoisomerase IV appears to be the preferential target in gram-positive organisms. Interference with these two topoisomerases results in strand breakage of the bacterial chromosome, supercoiling, and resealing. As a result DNA replication and transcription is inhibited.</td></tr><tr><th>Absorption</th><td>Studies in healthy volunteers indicate that the average bioavailability of temafloxacin exceeds 90%, with little intersubject variability.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic.</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>Approximately 8 hours in patients with normal renal function.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Severe adverse reactions, including allergic reactions and hemolytic anemia, developed in about fifty patients during the first four months of its use, leading to three patient deaths</td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9914</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9863</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7526</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8741</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8985</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9081</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7441</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8128</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9072</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7309</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8664</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9304</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9413</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9048</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8858</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6993</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9067
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8318
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.0973 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8332
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7289
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01373">Calcium</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00893">Iron Dextran</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01378">Magnesium</a></td><td>Formation of non-absorbable complexes</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

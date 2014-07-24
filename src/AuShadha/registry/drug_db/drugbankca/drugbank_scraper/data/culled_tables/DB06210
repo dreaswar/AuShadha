@@ -1,0 +1,193 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Eltrombopag</strong></td></tr><tr><th>Accession Number</th><td><strong>DB06210</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Eltrombopag is used to treat low blood platelet counts in adults with chronic immune (idiopathic) thrombocytopenia (<span class="caps">ITP</span>), when certain other medicines, or surgery to remove the spleen, have not worked well enough. <span class="caps">ITP</span> is a condition that may cause unusual bruising or bleeding due to an abnormally low number of platelets in the blood. Eltrombopag has also been recently approved (late 2012) for the treatment of thrombocytopenia (low blood platelet counts) in patients with chronic hepatitis C to allow them to initiate and maintain interferon-based therapy.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB06210/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB06210/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06210.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06210.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06210.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06210.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06210.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB06210">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Eltrombopagum</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Eltrombopag Olamine</strong>
+          <div class="cas">496775-62-3</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000063/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000063/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: TYYXAUPVEKKAFG-HTQZHWFGSA-N</li>
+              <li>Monoisotopic Mass: 564.269632914</li>
+              <li>Average Mass: 564.6327</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000063">DBSALT000063</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Promacta</td><td>GlaxoSmithKline</td></tr><tr><td>Revolade</td><td>GlaxoSmithKline</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/thrombopoietic-agents">Thrombopoietic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>496775-61-2</td></tr><tr><th>Weight</th><td>Average: 442.4666<br>Monoisotopic: 442.164105212</td></tr><tr><th>Chemical Formula</th><td>C<sub>25</sub>H<sub>22</sub>N<sub>4</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>XDXWLKQMMKQXPV-QYQHSDTDSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C25H22N4O4/c1-14-10-11-19(12-15(14)2)29-24(31)22(16(3)28-29)27-26-21-9-5-8-20(23(21)30)17-6-4-7-18(13-17)25(32)33/h4-13,26,30H,1-3H3,(H,32,33)/b27-22-</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">3-(3-{2-[(4Z)-1-(3,4-dimethylphenyl)-3-methyl-5-oxo-4,5-dihydro-1H-pyrazol-4-ylidene]hydrazin-1-yl}-2-hydroxyphenyl)benzoic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC1=NN(C(=O)\C1=N/NC1=C(O)C(=CC=C1)C1=CC=CC(=C1)C(O)=O)C1=CC=C(C)C(C)=C1</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB06210.png?1375815609">show</a>(91.2 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Biphenyls and Derivatives</td></tr><tr><th>Direct parent</th><td>Biphenyls and Derivatives</td></tr><tr><th>Alternative parents</th><td>Benzoic Acids; Aminophenols; Benzoyl Derivatives; Phenylhydrazines; Toluenes; Pyrazolones; Hydrazones; Polyols; Carboxylic Acids; Carboxylic Acid Amides; Enolates; Polyamines; Enols</td></tr><tr><th>Substituents</th><td>benzoic acid; benzoic acid or derivative; aminophenol; phenylhydrazine; benzoyl; phenol derivative; toluene; pyrazolinone; pyrazoline; hydrazone; polyol; carboxamide group; enol; polyamine; carboxylic acid; enolate; carboxylic acid derivative; organonitrogen compound; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the biphenyls and derivatives. These are organic compounds containing to benzene rings linked together by a C-C bond.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Thrombopoietin receptor agonists are pharmaceutical agents that stimulate platelet production in the bone marrow. In this, they differ from the previously discussed agents that act by attempting to curtail platelet destruction. </td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td>Eltrombopag is an orally bioavailable, small-molecule TPO-receptor agonist that interacts with the transmembrane domain of the human TPO-receptor. Eltrombopag is a stimulator of STAT and JAK phosphorylation. Unlike recombinant TPO or romiplostim, Eltrombopag does not activate the AKT pathway in any way. It should be noted that when given to patients with aplastic anemia, other lineages besides platelet count were increased, suggesting that either eltrombopag enhanced the effect of TPO in vivo; or there is a yet uncovered mechanism of action at work. </td></tr><tr><th>Absorption</th><td>Peak absorption of Eltrombopag occurs around 2-6 hours following oral administration, and the total oral absorption of drug-related material following a 75 mg dose was estimated to be at least 52%. </td></tr><tr><th>Volume of distribution</th><td><p>Based on a radiolabel study, the concentration of eltrombopag in blood cells is approximately 50% to 79% of plasma concentrations.</p></td></tr><tr><th>Protein binding</th><td>Eltrombopag is highly protein bound (&gt;99%).</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Eltrombopag is predominantly through pathways including cleavage, oxidation, and conjugation with glucuronic acid, glutathione, or cysteine. In vitro studies suggest that CYP1A2 and CYP2C8 are responsible for the oxidative metabolism of eltrombopag. UGT1A1 and UGT1A3 are responsible for the glucuronidation of eltrombopag.</p></td></tr><tr><th>Route of elimination</th><td>Eltrombopag is eliminated primarily via the feces (59%), along with 31% being renally excreted. </td></tr><tr><th>Half life</th><td>About 21-32 hours in healthy patients.
+About 26-35 hours in patients with idiopathic thrombocytopenic purpura.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Eltrombopag may cause hepatotoxicity, especially if administered in combination with interferon and ribavirin in patients with chronic hepatitis C (may increase the risk of hepatic decompensation).</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.6946</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.6616</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5811</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6578</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8297</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9187</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.944</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5991</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8495</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5424</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8173</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6357</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8982</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7625</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7595</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6304</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.5993
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.5481
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.1796 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9862
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.6936
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Glaxosmithkline</li></ul></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet, coated</td><td>Oral</td><td>100 mg (green)</td></tr><tr><td>Tablet, coated</td><td>Oral</td><td>12.5 mg (white)</td></tr><tr><td>Tablet, coated</td><td>Oral</td><td>25 mg (orange)</td></tr><tr><td>Tablet, coated</td><td>Oral</td><td>50 mg (blue)</td></tr><tr><td>Tablet, coated</td><td>Oral</td><td>75 mg (pink) </td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00316">Acetaminophen</a></td><td>Eltrombopag increases acetaminophen levels via decreasing metabolism. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00945">Acetylsalicylic acid</a></td><td>Decreases metabolism, will increase effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB06723">Aluminum hydroxide</a></td><td>Decreases levels of eltrombopag by GI absorption inhibition. </td></tr><tr><td><a href="/drugs/DB01118">Amiodarone</a></td><td>Affects hepatic enzyme CYP2C9/10 metabolism, increases effect/level of eltrombopag. </td></tr><tr><td><a href="/drugs/DB01351">Amobarbital</a></td><td>Affects hepatic CYP1A2 metabolism, will decrease effect/level of eltrombopag.
+Affects hepatic CYP2C9/10 metabolism, will decrease effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB01072">Atazanavir</a></td><td>Decreases metabolism, will increase effect/level of eltrombopag. UDP-glucuronosyltransferase inhibition.</td></tr><tr><td><a href="/drugs/DB01076">Atorvastatin</a></td><td>Eltrombopag increases levels of Atorvastatin via metabolism decrease.</td></tr><tr><td><a href="/drugs/DB00963">Bromfenac</a></td><td>Eltrombopag increases levels of Bromfenac via metabolism decrease.</td></tr><tr><td><a href="/drugs/DB00237">Butabarbital</a></td><td>Affects hepatic CYP1A2 metabolism, will decrease effect/level of eltrombopag.
+Affects hepatic CYP2C9/10 metabolism, will decrease effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB00241">Butalbital</a></td><td>Affects hepatic CYP1A2 metabolism, will decrease effect/level of eltrombopag.
+Affects hepatic CYP2C9/10 metabolism, will decrease effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB00258">Calcium Acetate</a></td><td>Calcium Salts such as calcium acetate may decrease the serum concentration of Eltrombopag. Separate administration of eltrombopag and any polyvalent cation (e.g., calcium-containing products) by at least 4 hours. </td></tr><tr><td><a href="/drugs/DB06724">Calcium carbonate</a></td><td>Decreases levels of eltrombopag by GI absorption inhibition. </td></tr><tr><td><a href="/drugs/DB01164">Calcium Chloride</a></td><td>Calcium salts such as calcium chloride may decrease the serum concentration of eltrombopag. Separate administration of eltrombopag and any polyvalent cation (e.g., calcium-containing products) by at least 4 hours. </td></tr><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>Affects hepatic CYP1A2 metabolism, will decrease effect/level of eltrombopag.
+Affects hepatic CYP2C9/10 metabolism, will decrease effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB00482">Celecoxib</a></td><td>Eltrombopag increases levels of Celecoxib via metabolism decrease.</td></tr><tr><td><a href="/drugs/DB00501">Cimetidine</a></td><td>Affects hepatic CYP1A2 metabolism, will decrease effect/level of eltrombopag.
+Affects hepatic CYP2C9/10 metabolism, will decrease effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB00537">Ciprofloxacin</a></td><td>Affects hepatic CYP1A2 metabolism, will increase effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB04272">Citric Acid</a></td><td>Levels of eltrombopag are decreased due to GI inhibition. Separate administration by at least 4 hours. </td></tr><tr><td><a href="/drugs/DB00586">Diclofenac</a></td><td>Eltrombopag increases levels of Diclofenac via metabolism decrease. UDP-glucuronosyltransferase inhibition.</td></tr><tr><td><a href="/drugs/DB00861">Diflunisal</a></td><td>Eltrombopag increases levels of Diflunisal via metabolism decrease. </td></tr><tr><td><a href="/drugs/DB00343">Diltiazem</a></td><td>Affects hepatic CYP1A2 metabolism, increases Eltrombopag level or affect.</td></tr><tr><td><a href="/drugs/DB00625">Efavirenz</a></td><td>Affects hepatic enzyme CYP2C9/10 metabolism and may increase the level of eltrombopag. </td></tr><tr><td><a href="/drugs/DB00467">Enoxacin</a></td><td>Affects hepatic enzyme CYP1A2 metabolism and may increase the level of eltrombopag. </td></tr><tr><td><a href="/drugs/DB00199">Erythromycin</a></td><td>Affects hepatic CYP1A2 metabolism, increases Eltrombopag level or affect.</td></tr><tr><td><a href="/drugs/DB00977">Ethinyl Estradiol</a></td><td>Affects hepatic CYP1A2 metabolism, increases Eltrombopag level or affect.</td></tr><tr><td><a href="/drugs/DB00749">Etodolac</a></td><td>Increases levels of Etodolac via metabolism decrease. UDP-glucuronosyltransferase inhibition. </td></tr><tr><td><a href="/drugs/DB00573">Fenoprofen</a></td><td>Increases levels of Fenoprofen via metabolism decrease. UDP-glucuronosyltransferase inhibition. </td></tr><tr><td><a href="/drugs/DB00813">Fentanyl</a></td><td>Increases levels of Fentanyl via metabolism decrease. UDP-glucuronosyltransferase inhibition. </td></tr><tr><td><a href="/drugs/DB00712">Flurbiprofen</a></td><td>Increases levels of Flurbiprofen via metabolism decrease. UDP-glucuronosyltransferase inhibition. </td></tr><tr><td><a href="/drugs/DB01095">Fluvastatin</a></td><td>Increases levels of Fluvastatin via metabolism decrease. OATP transporter protein inhibition.</td></tr><tr><td><a href="/drugs/DB00176">Fluvoxamine</a></td><td>Affects hepatic enzyme CYP1A2 metabolism and may increase the level of eltrombopag. </td></tr><tr><td><a href="/drugs/DB00176">Fluvoxamine</a></td><td>Affects hepatic CYP2C9/10 metabolism, will increase effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB00365">Grepafloxacin</a></td><td>Affects hepatic enzyme CYP1A2 metabolism and may increase the level of eltrombopag. </td></tr><tr><td><a href="/drugs/DB00956">Hydrocodone</a></td><td>Increases levels of Hydrocodone via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00327">Hydromorphone</a></td><td>Increases levels of Hydromorphone via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB01050">Ibuprofen</a></td><td>Increases levels of Ibuprofen via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00328">Indomethacin</a></td><td>Increases levels of Indomethacin via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00893">Iron Dextran</a></td><td>Levels of eltrombopag are decreased due to GI inhibition. Separate administration by at least 4 hours. </td></tr><tr><td><a href="/drugs/DB06790">Iron sucrose</a></td><td>Levels of eltrombopag are decreased due to GI inhibition. Separate administration by at least 4 hours. </td></tr><tr><td><a href="/drugs/DB00951">Isoniazid</a></td><td>Affects hepatic CYP1A2 metabolism, increases Eltrombopag level or affect.</td></tr><tr><td><a href="/drugs/DB01009">Ketoprofen</a></td><td>Increases levels of Ketoprofen via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00465">Ketorolac</a></td><td>Increases levels of Ketorolac via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB01097">Leflunomide</a></td><td>Affects hepatic CYP2C9/10 metabolism, will increase effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB00854">Levorphanol</a></td><td>Increases levels of Levorphanol via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00653">Magnesium Sulfate</a></td><td>Levels of eltrombopag are decreased due to GI inhibition. Separate administration by at least 4 hours. </td></tr><tr><td><a href="/drugs/DB00939">Meclofenamic acid</a></td><td>Increases levels of Meclofenamic acid via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00784">Mefenamic acid</a></td><td>Increases levels of Mefenamic acid via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00814">Meloxicam</a></td><td>Increases levels of Meloxicam via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00333">Methadone</a></td><td>Increases levels of Methadone via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00563">Methotrexate</a></td><td>Increases levels of Methotrexate via metabolism decrease. OATP transporter protein inhibition.</td></tr><tr><td><a href="/drugs/DB00379">Mexiletine</a></td><td>Affects hepatic CYP1A2 metabolism, increases Eltrombopag level or affect.</td></tr><tr><td><a href="/drugs/DB01110">Miconazole</a></td><td>Affects hepatic CYP2C9/10 metabolism, will increase effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB00295">Morphine</a></td><td>Eltrombopag increases Morphine levels via decreasing metabolism. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00454">Pethidine</a></td><td>Increases levels of Meperidine via metabolism decrease. UDP-glucuronosyltransferase inhibition with unclear significance. </td></tr><tr><td><a href="/drugs/DB00971">Selenium Sulfide</a></td><td>Levels of eltrombopag are decreased due to GI inhibition. Separate administration by at least 4 hours. </td></tr><tr><td><a href="/drugs/DB01390">Sodium bicarbonate</a></td><td>Levels of eltrombopag are decreased due to GI inhibition. Separate administration by at least 4 hours. </td></tr><tr><td><a href="/drugs/DB00755">Tretinoin</a></td><td>The moderate CYP2C8 inhibitor, Eltrombopag, may decrease the metabolism and clearance of oral Tretinoin. Monitor for changes in Tretinoin effectiveness and adverse/toxic effects if Eltrombopag is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00313">Valproic Acid</a></td><td>Affects hepatic CYP2C9/10 metabolism, will increase effect/level of eltrombopag.</td></tr><tr><td><a href="/drugs/DB00177">Valsartan</a></td><td>Eltrombopag may increase the therapeutic and/or toxic effects of Valsartan. Increased Valsartan serum concentrations may be caused by inhibition of hepatic uptake and decreased metabolism. Consider dose modification, alternate therapy or monitor for changes in the therapeutic and toxic effects of Valsartan if Eltrombopag is initiated, discontinued or dose changed.  </td></tr><tr><td><a href="/drugs/DB00744">Zileuton</a></td><td>Affects hepatic enzyme CYP1A2 metabolism and may increase the level of eltrombopag. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

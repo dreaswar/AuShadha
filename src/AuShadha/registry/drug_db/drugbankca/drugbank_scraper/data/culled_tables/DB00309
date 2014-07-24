@@ -1,0 +1,188 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Vindesine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00309</strong>&#160; (APRD00392)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Vinblastine derivative with antineoplastic activity against cancer. Major side effects are myelosuppression and neurotoxicity. Vindesine is used extensively in chemotherapy protocols (antineoplastic combined chemotherapy protocols). [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00309/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00309/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00309.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00309.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00309.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00309.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00309.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00309">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Desacetylvinblastine amide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Vindesine Sulfate</strong>
+          <div class="cas">59917-39-4</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000440/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000440/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: COFJBSXICYYSKG-FJFFLIEUSA-N</li>
+              <li>Monoisotopic Mass: 851.377528381</li>
+              <li>Average Mass: 852.005</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000440">DBSALT000440</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Eldesine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Eldisine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents-phytogenic">Antineoplastic Agents, Phytogenic</a></li>
+<li><a href="/mesh/tubulin-modulators">Tubulin Modulators</a></li></ul></td></tr><tr><th>CAS number</th><td>53643-48-4</td></tr><tr><th>Weight</th><td>Average: 753.9261<br>Monoisotopic: 753.410149139</td></tr><tr><th>Chemical Formula</th><td>C<sub>43</sub>H<sub>55</sub>N<sub>5</sub>O<sub>7</sub></td></tr><tr><th>InChI Key</th><td>HHJUWIANJFBDHT-KOTLKJBCSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C43H55N5O7/c1-6-39(52)21-25-22-42(38(51)55-5,33-27(13-17-47(23-25)24-39)26-11-8-9-12-30(26)45-33)29-19-28-31(20-32(29)54-4)46(3)35-41(28)15-18-48-16-10-14-40(7-2,34(41)48)36(49)43(35,53)37(44)50/h8-12,14,19-20,25,34-36,45,49,52-53H,6-7,13,15-18,21-24H2,1-5H3,(H2,44,50)/t25-,34+,35-,36-,39+,40-,41-,42+,43+/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">methyl (13S,15S,17S)-13-[(1R,9R,10S,11R,12R,19R)-10-carbamoyl-12-ethyl-10,11-dihydroxy-5-methoxy-8-methyl-8,16-diazapentacyclo[10.6.1.0^{1,9}.0^{2,7}.0^{16,19}]nonadeca-2(7),3,5,13-tetraen-4-yl]-17-ethyl-17-hydroxy-1,11-diazatetracyclo[13.3.1.0^{4,12}.0^{5,10}]nonadeca-4(12),5,7,9-tetraene-13-carboxylate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@@]12N3CC[C@@]11C4=CC(=C(OC)C=C4N(C)[C@@]1([H])[C@](O)([C@H](O)[C@]2(CC)C=CC3)C(N)=O)[C@]1(C[C@]2([H])CN(C[C@](O)(CC)C2)CCC2=C1NC1=CC=CC=C21)C(=O)OC</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Alkaloids and Derivatives</td></tr><tr><th>Class</th><td>Rhazinilam Alkaloids</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Rhazinilam Alkaloids</td></tr><tr><th>Alternative parents</th><td>Plumeran-type Alkaloids; Quinoline Carboxamides; Carbazoles; Indoles; Anisoles; Cyclohexanols; Alkyl Aryl Ethers; Tetrahydropyridines; Piperidines; Pyrrolidines; Tertiary Alcohols; Pyrroles; Tertiary Amines; Cyclic Alcohols and Derivatives; Primary Carboxylic Acid Amides; Carboxylic Acid Esters; 1,2-Diols; Carboxylic Acids; Enolates; Polyamines</td></tr><tr><th>Substituents</th><td>carbazole; quinoline-6-carboxamide; indole or derivative; indole; phenol ether; anisole; cyclohexanol; tetrahydropyridine; alkyl aryl ether; piperidine; benzene; cyclic alcohol; pyrrole; tertiary alcohol; pyrrolidine; 1,2-diol; tertiary amine; primary carboxylic acid amide; carboxylic acid ester; carboxamide group; secondary alcohol; polyamine; carboxylic acid derivative; carboxylic acid; ether; enolate; alcohol; organonitrogen compound; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the rhazinilam alkaloids.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of acute leukaemia, malignant lymphoma, Hodgkin's disease, acute erythraemia and acute panmyelosis</td></tr><tr><th>Pharmacodynamics</th><td>Vindesine is indicated for the treatment of acute lymphocytic leukemia of childhood that is resistant to vincristine and non-oat cell lung cancer.Vindesine causes the arrest of cells in metaphase mitosis. It is three times more potent than vincristine and nearly 10 times more potent than vinblastine in causing mitotic arrest in <i>in vitro</i> studies at doses designed to arrest from 10 to 15% of the cells in mitosis. Vindesine and vincristine are approximately equipotent at dose levels that arrest 40 to 50% of the cells in mitosis. Unlike vinblastine, vindesine produces very few postmetaphase cells. Vindesine has demonstrated activity in patients who have relapsed while receiving multiple-agent treatment that included vincristine.</td></tr><tr><th>Mechanism of action</th><td>Vindesine acts by causing the arrest of cells in metaphase mitosis through its inhibition tubulin mitotic funcitoning. The drug is cell-cycle specific for the S phase.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>65-75%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Vindesine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET00393">Unknown</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/401">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>24 hours.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Vindesine Action Pathway</td><td>Drug action</td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9027</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9821</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5154</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.9164</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5717</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6577</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8851</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8468</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.7597</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8766</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8798</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8911</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8814</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.811</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.933</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8682
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8976
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.9430 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9892
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6584
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00305">Mitomycin</a></td><td>Potentially severe lung toxicity</td></tr><tr><td><a href="/drugs/DB01369">Quinupristin</a></td><td>This combination presents an increased risk of toxicity</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

@@ -1,0 +1,213 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Zidovudine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00495</strong>&#160; (APRD00449)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A dideoxynucleoside compound in which the 3'-hydroxy group on the sugar moiety has been replaced by an azido group. This modification prevents the formation of phosphodiester linkages which are needed for the completion of nucleic acid chains. The compound is a potent inhibitor of <span class="caps">HIV</span> replication, acting as a chain-terminator of viral <span class="caps">DNA</span> during reverse transcription. It improves immunologic function, partially reverses the <span class="caps">HIV</span>-induced neurological dysfunction, and improves certain other clinical abnormalities associated with <span class="caps">AIDS</span>. Its principal toxic effect is dose-dependent suppression of bone marrow, resulting in anemia and leukopenia. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00495/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00495/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00495.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00495.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00495.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00495.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00495.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00495">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Azidothymidine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>AZT</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>ZDV</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Retrovir</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Combivir</td><td>Lamivudine + Zidovudine</td></tr><tr><td>Trizivir</td><td>Abacavir sulfate + Lamivudine + Zidovudine</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-hiv-agents">Anti-HIV Agents</a></li>
+<li><a href="/mesh/antimetabolites">Antimetabolites</a></li>
+<li><a href="/mesh/reverse-transcriptase-inhibitors">Reverse Transcriptase Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>30516-87-1</td></tr><tr><th>Weight</th><td>Average: 267.2413<br>Monoisotopic: 267.096753929</td></tr><tr><th>Chemical Formula</th><td>C<sub>10</sub>H<sub>13</sub>N<sub>5</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>HBOMLICNUCNMMY-XLPZGREQSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C10H13N5O4/c1-5-3-15(10(18)12-9(5)17)8-2-6(13-14-11)7(4-16)19-8/h3,6-8,16H,2,4H2,1H3,(H,12,17,18)/t6-,7+,8+/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-[(2R,4S,5S)-4-azido-5-(hydroxymethyl)oxolan-2-yl]-5-methyl-1,2,3,4-tetrahydropyrimidine-2,4-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC1=CN([C@H]2C[C@H](N=[N+]=[N-])[C@@H](CO)O2)C(=O)NC1=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organooxygen Compounds</td></tr><tr><th>Class</th><td>Carbohydrates and Carbohydrate Conjugates</td></tr><tr><th>Subclass</th><td>Glycosyl Compounds</td></tr><tr><th>Direct parent</th><td>Pyrimidine Nucleosides and Analogues</td></tr><tr><th>Alternative parents</th><td>Pyrimidones; Hydropyrimidines; Tetrahydrofurans; Oxolanes; Organic Azides; Polyamines; Primary Alcohols; Ethers</td></tr><tr><th>Substituents</th><td>pyrimidone; pyrimidine; hydropyrimidine; tetrahydrofuran; oxolane; azide; ether; polyamine; primary alcohol; organonitrogen compound; amine; alcohol</td></tr><tr><th>Classification description</th><td>This compound belongs to the pyrimidine nucleosides and analogues. These are compounds comprising a pyrimidine base attached to a sugar.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used in combination with other antiretroviral agents for the treatment of human immunovirus (HIV) infections.</td></tr><tr><th>Pharmacodynamics</th><td>Zidovudine is a nucleoside reverse transcriptase inhibitor (NRTI) with activity against Human Immunodeficiency Virus Type 1 (HIV-1). Zidovudine is phosphorylated to active metabolites that compete for incorporation into viral DNA. They inhibit the HIV reverse transcriptase enzyme competitively and act as a chain terminator of DNA synthesis. The lack of a 3'-OH group in the incorporated nucleoside analogue prevents the formation of the 5' to 3' phosphodiester linkage essential for DNA chain elongation, and therefore, the viral DNA growth is terminated.</td></tr><tr><th>Mechanism of action</th><td>Zidovudine, a structural analog of thymidine, is a prodrug that must be phosphorylated to its active 5&#8242;-triphosphate metabolite, zidovudine triphosphate (ZDV-TP). It inhibits the activity of HIV-1 reverse transcriptase (RT) via DNA chain termination after incorporation of the nucleotide analogue. It competes with the natural substrate dGTP and incorporates itself into viral DNA. It is also a weak inhibitor of cellular DNA polymerase &#945; and &#947;.  </td></tr><tr><th>Absorption</th><td>Rapid and nearly complete absorption from the gastrointestinal tract following oral administration; however, because of first-pass metabolism, systemic bioavailability of zidovudine capsules and solution is approximately 65% (range, 52 to 75%). Bioavailability in neonates up to 14 days of age is approximately 89%, and it decreases to approximately 61% and 65% in neonates over 14 days of age and children 3 months to 12 years, respectively. Administration with a high-fat meal may decrease the rate and extent of absorption.</td></tr><tr><th>Volume of distribution</th><td><p>Apparent volume of distribution, <span class="caps">HIV</span>-infected patients, IV administration = 1.6 &#177; 0.6 L/kg</p></td></tr><tr><th>Protein binding</th><td>30-38%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic. Metabolized by glucuronide conjugation to major, inactive metabolite, 3&#8242;-azido-3&#8242;-deoxy-5&#8242;- O-beta-D-glucopyranuronosylthymidine (GZDV). UGT2B7 is the primary UGT isoform that is responsible for glucuronidation. Compared to zidovudine, GZDV's area under the curve is approximately 3-fold greater. The cytochrome P450 isozymes are responsible for the reduction of the azido moiety to form 3'-amino-3'- deoxythymidine (AMT). </p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Zidovudine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00718">3'-azido-3'-deoxy-5'- O-beta-D-glucopyranuronosylthymidine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/739">Details</a></td></tr><tr><td>Zidovudine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00720">3&#8217;-amino-3&#8217;-deoxythimidine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/741">Details</a></td></tr><tr><td>Zidovudine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00721">3&#8217;-amino-3&#8217;-deoxythimidine glucuronide</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/742">Details</a></td></tr><tr><td>Zidovudine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00756">5&#8217;glucuronyl zidovudine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/776">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>As in adult patients, the major route of elimination was by metabolism to GZDV. After intravenous dosing, about 29% of the dose was excreted in the urine unchanged and about 45% of the dose was excreted as GZDV. </td></tr><tr><th>Half life</th><td>Elimination half life, HIV-infected patients, IV administration = 1.1 hours (range of 0.5 - 2.9 hours) </td></tr><tr><th>Clearance</th><td><ul>
+	<li>0.65&#160;+/- 0.29 L/hr/kg [<span class="caps">HIV</span>-infected, Birth to 14&#160;Days of Age]</li>
+	<li>1.14&#160;+/- 0.24 L/hr/kg [<span class="caps">HIV</span>-infected, 14&#160;Days to 3 Months of Age]</li>
+	<li>1.85 +/- 0.47 L/hr/kg [<span class="caps">HIV</span>-infected, 3 Months to 12&#160;Years of Age].<br>
+The transporters, ABCB1, ABCC4, ABCC5, and ABCG2 are involved with the clearance of zidovudine.</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Symptoms of overdose include fatigue, headache, nausea, and vomiting. LD<sub>50</sub> is 3084 mg/kg (orally in mice).</td></tr><tr><th>Affected organisms</th><td><ul><li>Human Immunodeficiency Virus</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9343</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.6224</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8728</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6959</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9118</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8981</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8798</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.663</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8987</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5329</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9355</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9143</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9315</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9175</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.848</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9585</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9107
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7484
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Ready biodegradable 
+        </td>
+        <td>
+            0.5673
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.0464 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.7124
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8821
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Viiv healthcare co</li>
+<li>Aurobindo pharma ltd inc</li>
+<li>Cipla ltd</li>
+<li>Pharmaforce inc</li>
+<li>Aurobindo pharma ltd</li>
+<li>Hetero drugs ltd unit iii</li>
+<li>Matrix laboratories ltd</li>
+<li>Ranbaxy laboratories ltd</li>
+<li>Roxane laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li>Apotheca Inc.</li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li>Aurolife Pharma LLC</li>
+<li><a href="http://www.camberpharma.com">Camber Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.cipla.com">Cipla Ltd.</a></li>
+<li><a href="http://www.davapharma.com">DAVA Pharmaceuticals</a></li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.greenstonellc.com">Greenstone LLC</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li><a href="http://www.heterodrugs.com">Hetero Drugs Ltd.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.matrixlabsindia.com">Matrix Laboratories Ltd.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li>Neuman Distributors Inc.</li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li>Pharmaceutical Utilization Management Program VA Inc.</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li><a href="http://www.prepaksys.com">Prepak Systems Inc.</a></li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Redpharm Drug</li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li>
+<li><a href="http://www.roxane.com">Roxane Labs</a></li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li>St Mary's Medical Park Pharmacy</li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li>Tya Pharmaceuticals</li>
+<li>ViiV Healthcare ULC</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td>100 mg</td></tr><tr><td>Injection, solution</td><td>Intravenous</td><td>10 mg/mL</td></tr><tr><td>Syrup</td><td>Oral</td><td>50 mg/5 mL</td></tr><tr><td>Tablet</td><td>Oral</td><td>300 mg </td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01117">Atovaquone</a></td><td>Atovaquone increases the effect and toxicity of zidovudine</td></tr><tr><td><a href="/drugs/DB01211">Clarithromycin</a></td><td>Clarithromycin may decrease the serum concentration of zidovudine. Increased myelosuppression in mice has been observed. Consider staggering doses during concomitant therapy and closely monitor response to zidovudine therapy.</td></tr><tr><td><a href="/drugs/DB00997">Doxorubicin</a></td><td>Additive myelosuppression may occur. Doxorubicin may decrease the efficacy of zidovudine. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB01004">Ganciclovir</a></td><td>Increased risk of hematologic toxicity. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00068">Interferon beta-1b</a></td><td>The interferon increases the effect and toxicity of zidovudine</td></tr><tr><td><a href="/drugs/DB00333">Methadone</a></td><td>Methadone increases the effect and toxicity of zidovudine</td></tr><tr><td><a href="/drugs/DB01032">Probenecid</a></td><td>Rash, malaise, myalgia</td></tr><tr><td><a href="/drugs/DB00811">Ribavirin</a></td><td>Increased risk or severity of anemia. Consider alternate therapy or monitor more closely for anemia. </td></tr><tr><td><a href="/drugs/DB00615">Rifabutin</a></td><td>The rifamycin decreases levels of zidovudine</td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin may decrease the serum concentration of zidovudine by increasing its metabolism. Monitor for changes in the serum concentration and therapeutic and adverse effects of zidovudine if rifampin is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01201">Rifapentine</a></td><td>Rifapentin may decrease the serum concentration of zidovudine by increasing its metabolism. Monitor for changes in the serum concentration and therapeutic and adverse effects of zidovudine if rifapentin is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00649">Stavudine</a></td><td>Zidovudine may decrease the efficacy of stavudine. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00932">Tipranavir</a></td><td>Tipranavir decreases the concentration of Zidovudine. </td></tr><tr><td><a href="/drugs/DB01610">Valganciclovir</a></td><td>The adverse/toxic effects of Zidovudine, a reverse transcriptase inhibitor (nucleoside), may be enhanced by Valganciclovir. There is a significant risk of hematologic toxicity. Concomitant therapy should be avoided.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

@@ -1,0 +1,199 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Pancuronium</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01337</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A bis-quaternary steroid that is a competitive nicotinic antagonist. As a neuromuscular blocking agent it is more potent than curare but has less effect on the circulatory system and on histamine release.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01337/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01337/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01337.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01337.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01337.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01337.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01337.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01337">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Bromure de pancuronium</td><td>French</td><td>INN</td></tr><tr><td>Bromuro de pancuronio</td><td>Spanish</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Pancuronium bromide</strong>
+          <div class="cas">15500-66-0</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000368/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000368/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: NPIJXCQZLFKBMV-YTGGZNJNSA-L</li>
+              <li>Monoisotopic Mass: 730.291983712</li>
+              <li>Average Mass: 732.67</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000368">DBSALT000368</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Mioblock</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Pavulon</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/neuromuscular-nondepolarizing-agents">Neuromuscular Nondepolarizing Agents</a></li>
+<li><a href="/mesh/nicotinic-antagonists">Nicotinic Antagonists</a></li></ul></td></tr><tr><th>CAS number</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Weight</th><td>Average: 572.8619<br>Monoisotopic: 572.455308418</td></tr><tr><th>Chemical Formula</th><td>C<sub>35</sub>H<sub>60</sub>N<sub>2</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>GVEAYVLWDAFXET-XGHATYIMSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C35H60N2O4/c1-24(38)40-32-21-26-13-14-27-28(35(26,4)23-31(32)37(6)19-11-8-12-20-37)15-16-34(3)29(27)22-30(33(34)41-25(2)39)36(5)17-9-7-10-18-36/h26-33H,7-23H2,1-6H3/q+2/t26-,27+,28-,29-,30-,31-,32-,33-,34-,35-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-[(1S,2S,4S,5S,7S,10R,11S,13S,14R,15S)-5,14-bis(acetyloxy)-2,15-dimethyl-4-(1-methylpiperidin-1-ium-1-yl)tetracyclo[8.7.0.0^{2,7}.0^{11,15}]heptadecan-13-yl]-1-methylpiperidin-1-ium</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@@]12C[C@@H]([C@H](OC(C)=O)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])CC[C@@]2([H])C[C@H](OC(C)=O)[C@H](C[C@]12C)[N+]1(C)CCCCC1)[N+]1(C)CCCCC1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Lipids</td></tr><tr><th>Class</th><td>Steroids and Steroid Derivatives</td></tr><tr><th>Subclass</th><td>Steroid Esters</td></tr><tr><th>Direct parent</th><td>Steroid Esters</td></tr><tr><th>Alternative parents</th><td>Androgens and Derivatives; Piperidines; Carboxylic Acid Esters; Ethers; Enolates; Polyamines</td></tr><tr><th>Substituents</th><td>piperidine; carboxylic acid ester; enolate; ether; carboxylic acid derivative; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the steroid esters. These are compounds containing a steroid moeity which bears a carboxylic acid ester group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used as a muscle relaxant during anesthesia and surgical procedures.</td></tr><tr><th>Pharmacodynamics</th><td>Pancuronium is a typical non-depolarising curare-mimetic muscle relaxant. It acts as a competitive acetylcholine antagonist on neuromuscular junctions, displacing acetylcholine (hence competitive) from its post-synaptic nicotinic acetylcholine receptors. It is, unlike suxamethonium, a non-depolarising agent, which means, that it causes no spontaneous depolarisations upon association with the nicotinic receptor in neuromuscular junction, thus producing no muscle fasciculations upon administration. Pancuronium has no hormonal activity. It exerts slight vagolytic activity (i.e. diminishing activity of the vagus nerve) and no ganglioplegic (i.e., blocking ganglions) activity.</td></tr><tr><th>Mechanism of action</th><td>Nondepolarizing neuromuscular blocking agents inhibit neuromuscular transmission by competing with acetylcholine for the cholinergic receptors of the motor end plate, thereby reducing the response of the end plate to acetylcholine. This type of neuromuscular block is usually antagonized by anticholinesterase agents.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>241 to 280 mL/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td>77 to 91%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic.</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>1.5 to 2.7 hours.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>Plasma cl=1.1&#8211;1.9 mL/minute/kg</li>
+</ul></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.8913</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.878</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5457</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.77</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6962</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6508</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6862</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8382</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7638</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.742</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9229</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9026</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8309</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9368</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7499
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9265
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.8557
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.6653 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9021
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7784
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Astrazeneca lp</li>
+<li>Elkins sinn div ah robins co inc</li>
+<li>Hospira inc</li>
+<li>Teva parenteral medicines inc</li>
+<li>Organon usa inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li>Elkins-Sinn Inc.</li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Liquid</td><td>Intravenous</td><td></td></tr><tr><td>Solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00479">Amikacin</a></td><td>The agent increases the effect of muscle relaxant</td></tr><tr><td><a href="/drugs/DB01223">Aminophylline</a></td><td>Theophylline decreases the effect of muscle relaxant</td></tr><tr><td><a href="/drugs/DB00993">Azathioprine</a></td><td>The agent decreases the effect of the muscle relaxant</td></tr><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>Decreases the effect of muscle relaxant</td></tr><tr><td><a href="/drugs/DB01190">Clindamycin</a></td><td>The agent increases the effect of muscle relaxant</td></tr><tr><td><a href="/drugs/DB01111">Colistimethate</a></td><td>Colistimethate may enhance the neuromuscular-blocking effect of Neuromuscular-Blocking Agents. If possible, avoid concomitant use of these products. Monitor for deeper, prolonged neuromuscular-blocking effects (respiratory paralysis) in patients receiving concomitant neuromuscular-blocking agents and polymyxin antibiotics (e.g., colistimethate, polymyxin B).</td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>Phenytoin decreases the effect of muscle relaxant</td></tr><tr><td><a href="/drugs/DB00798">Gentamicin</a></td><td>The agent increases the effect of muscle relaxant</td></tr><tr><td><a href="/drugs/DB01627">Lincomycin</a></td><td>The agent increases the effect of muscle relaxant</td></tr><tr><td><a href="/drugs/DB01033">Mercaptopurine</a></td><td>The agent dereases the effect of the muscle relaxant</td></tr><tr><td><a href="/drugs/DB00955">Netilmicin</a></td><td>The agent increases the effect of muscle relaxant</td></tr><tr><td><a href="/drugs/DB01303">Oxtriphylline</a></td><td>Theophylline decreases the effect of muscle relaxant</td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>Phenytoin decreases the effect of the muscle relaxant</td></tr><tr><td><a href="/drugs/DB00319">Piperacillin</a></td><td>The agent increases the effect of the muscle relaxant</td></tr><tr><td><a href="/drugs/DB00908">Quinidine</a></td><td>The quinine derivative increases the effect of the muscle relaxant</td></tr><tr><td><a href="/drugs/DB00468">Quinine</a></td><td>The quinine derivative increases the effect of the muscle relaxant</td></tr><tr><td><a href="/drugs/DB00277">Theophylline</a></td><td>Theophylline decreases the effect of the muscle relaxant</td></tr><tr><td><a href="/drugs/DB00684">Tobramycin</a></td><td>The agent increases the effect of the muscle relaxant</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

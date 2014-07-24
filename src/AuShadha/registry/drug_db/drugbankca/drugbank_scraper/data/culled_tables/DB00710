@@ -1,0 +1,198 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Ibandronate</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00710</strong>&#160; (APRD00231, DB04635)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Ibandronate is a nitrogen-containing bisphosphonate in the same class as alendronate and risedronate. Ibandronate inhibits osteoclast-mediated bone resorption. All of the bisphosphonates prevent the breakdown of bone by bone cells called osteoclasts. In persons who are at high risk for osteoporosis, bisphosphonates not only result in increased amounts of bone and bone strength, they also reduce the risk of hip fractures and other bone fractures.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00710/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00710/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00710.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00710.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00710.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00710.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00710.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00710">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Ibandronic Acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Ibandronate sodium</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000246/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000246/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: LXLBEOAZMZAZND-UHFFFAOYNA-M</li>
+              <li>Monoisotopic Mass: 341.076919762</li>
+              <li>Average Mass: 341.2108</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000246">DBSALT000246</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>ADRONiL</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Bondronat</td><td>Roche</td></tr><tr><td>Boniva</td><td>Roche, GlaxoSmithKline</td></tr><tr><td>Bonviva</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/bone-density-conservation-agents">Bone Density Conservation Agents</a></li>
+<li><a href="/mesh/antihypocalcemic-agents">Antihypocalcemic Agents</a></li>
+<li><a href="/mesh/antiresorptives">Antiresorptives</a></li>
+<li><a href="/mesh/bisphosphonates">Bisphosphonates</a></li></ul></td></tr><tr><th>CAS number</th><td>114084-78-5</td></tr><tr><th>Weight</th><td>Average: 319.2289<br>Monoisotopic: 319.094975119</td></tr><tr><th>Chemical Formula</th><td>C<sub>9</sub>H<sub>23</sub>NO<sub>7</sub>P<sub>2</sub></td></tr><tr><th>InChI Key</th><td>MPBVHIBUJCELCL-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C9H23NO7P2/c1-3-4-5-7-10(2)8-6-9(11,18(12,13)14)19(15,16)17/h11H,3-8H2,1-2H3,(H2,12,13,14)(H2,15,16,17)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">{1-hydroxy-3-[methyl(pentyl)amino]-1-phosphonopropyl}phosphonic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCCCCN(C)CCC(O)(P(O)(O)=O)P(O)(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organophosphorus Compounds</td></tr><tr><th>Class</th><td>Organic Phosphonic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Organic Phosphonic Acids</td></tr><tr><th>Direct parent</th><td>Organic Phosphonic Acids</td></tr><tr><th>Alternative parents</th><td>Tertiary Amines; Polyamines</td></tr><tr><th>Substituents</th><td>tertiary amine; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the organic phosphonic acids. These are organic compounds containing phosphonic acid.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment and prevention of osteoporosis in postmenopausal women.</td></tr><tr><th>Pharmacodynamics</th><td>Ibandronate is a nitrogen-containing bisphosphonate in the same class as alendronate and risedronate. Ibandronate inhibits osteoclast-mediated bone resorption. All of the bisphosphonates prevent the breakdown of bone by bone cells called osteoclasts. In persons who are at high risk for osteoporosis, bisphosphonates not only result in increased amounts of bone and bone strength, they also reduce the risk of hip fractures and other bone fractures.</td></tr><tr><th>Mechanism of action</th><td>The action of ibandronate on bone tissue is based partly on its affinity for hydroxyapatite, which is part of the mineral matrix of bone. Nitrogen-containing bisphosphonates (such as pamidronate, alendronate, risedronate, ibandronate and zoledronate) appear to act as analogues of isoprenoid diphosphate lipids, thereby inhibiting farnesyl pyrophosphate (FPP) synthase, an enzyme in the mevalonate pathway. Inhibition of this enzyme in osteoclasts prevents the biosynthesis of isoprenoid lipids (FPP and GGPP) that are essential for the post-translational farnesylation and geranylgeranylation of small GTPase signalling proteins. This activity inhibits osteoclast activity and reduces bone resorption and turnover. In postmenopausal women, it reduces the elevated rate of bone turnover, leading to, on average, a net gain in bone mass.</td></tr><tr><th>Absorption</th><td>Poorly absorbed (mean bioavailability following a 2.5 mg oral dose is about 0.6% compared to intravenous dosing). Absorption is impaired by any kind of food or drink other than plain water.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>90 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td>90.9 to 99.5% over an ibandronate concentration range of 2 to 10 ng/mL</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>No evidence of ibandronate being metabolized in humans.</p></td></tr><tr><th>Route of elimination</th><td>Ibandronate is eliminated by renal excretion. Unabsorbed ibandronate is eliminated unchanged in the feces.</td></tr><tr><th>Half life</th><td>10-60 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>84 to 160 mL/min [IV administration]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>LD<sub>50</sub> = 811 mg/kg (rat, oral), side effects include bronchitis, pneumonia and urinary tract infections.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Ibandronate Action Pathway</td><td>Drug action</td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.9664</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.5229</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6012</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6888</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8195</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9838</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9092</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8376</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7863</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5504</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.832</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8159</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8987</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8045</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8901</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9945</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6527
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.683
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.8346
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4278 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.6061
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.6622
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Hoffmann la roche inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.roche.com">F Hoffmann La Roche Ltd.</a></li>
+<li><a href="http://www.roche.com">F Hoffmann-La Roche Ltd.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.vetter-pharma.com">Vetter Pharma Fertigung GmbH and Co. KG</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection</td><td>Intravenous</td><td>1 mg/ml</td></tr><tr><td>Tablet, film coated</td><td>Oral</td><td>150 mg</td></tr><tr><td>Tablet, film coated</td><td>Oral</td><td>2.5 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01370">Aluminium</a></td><td>Formation of non absorbable complexes</td></tr><tr><td><a href="/drugs/DB01373">Calcium</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00258">Calcium Acetate</a></td><td>Calcium Salts may decrease the serum concentration of Bisphosphonate Derivatives such as ibandronate. Avoid administration of oral calcium supplements within 60 minutes after oral ibandronate. </td></tr><tr><td><a href="/drugs/DB01164">Calcium Chloride</a></td><td>Calcium salts may decrease the serum concentration of bisphosphonate derivatives. Avoid administration of oral calcium supplements within 60 minutes after oral ibandronate.</td></tr><tr><td><a href="/drugs/DB01592">Iron</a></td><td>Formation of non absorbable complexes</td></tr><tr><td><a href="/drugs/DB00893">Iron Dextran</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01378">Magnesium</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01377">Magnesium oxide</a></td><td>Formation of non absorbable complexes</td></tr><tr><td><a href="/drugs/DB00364">Sucralfate</a></td><td>Formation of non absorbable complexes</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take on an empty stomach. All foods markedly reduce (up to 90%) ibandronate bioavailabilty. Take with plain water (not mineralized) at least 1 hour before any food. Bioavailability and effect on bone density are both impaired if the patient eats or drinks in less than 1 hour after taking this product. Drink a large glass of water and stay in an upright position for at least 60 minutes after taking this product.</li></ul></td></tr></tbody></table>

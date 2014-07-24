@@ -1,0 +1,269 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Tetracycline</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00759</strong>&#160; (APRD00572)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Tetracycline is a broad spectrum polyketide antibiotic produced by the Streptomyces genus of Actinobacteria. It exerts a bacteriostatic effect on bacteria by binding reversible to the bacterial 30S ribosomal subunit and blocking incoming aminoacyl tRNA from binding to the ribosome acceptor site. It also binds to some extent to the bacterial 50S ribosomal subunit and may alter the cytoplasmic membrane causing intracellular components to leak from bacterial cells.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00759/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00759/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00759.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00759.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00759.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00759.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00759.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00759">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Anhydrotetracycline</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Deschlorobiomycin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Tetracycline hydrochloride</strong>
+          <div class="cas">64-75-5</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000361/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000361/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: YCIHPQHVWDULOY-FMZCEJRJSA-N</li>
+              <li>Monoisotopic Mass: 480.129943493</li>
+              <li>Average Mass: 480.896</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000361">DBSALT000361</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Achromycin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Helidac</td><td>Metronidazole + Bismuth subsalicylate + tetracycline hydrochloride</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li>
+<li><a href="/mesh/protein-synthesis-inhibitors">Protein Synthesis Inhibitors</a></li>
+<li><a href="/mesh/antiprotozoal-agents">Antiprotozoal Agents</a></li>
+<li><a href="/mesh/tetracyclines">Tetracyclines</a></li></ul></td></tr><tr><th>CAS number</th><td>60-54-8</td></tr><tr><th>Weight</th><td>Average: 444.4346<br>Monoisotopic: 444.153265754</td></tr><tr><th>Chemical Formula</th><td>C<sub>22</sub>H<sub>24</sub>N<sub>2</sub>O<sub>8</sub></td></tr><tr><th>InChI Key</th><td>OFVLGDICTFRJMM-WESIUVDSSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C22H24N2O8/c1-21(31)8-5-4-6-11(25)12(8)16(26)13-9(21)7-10-15(24(2)3)17(27)14(20(23)30)19(29)22(10,32)18(13)28/h4-6,9-10,15,25,27-28,31-32H,7H2,1-3H3,(H2,23,30)/t9-,10-,15-,21+,22-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(4S,4aS,5aS,6S,12aS)-4-(dimethylamino)-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-1,4,4a,5,5a,6,11,12a-octahydrotetracene-2-carboxamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@@]12C[C@@]3([H])C(=C(O)[C@]1(O)C(=O)C(C(N)=O)=C(O)[C@H]2N(C)C)C(=O)C1=C(O)C=CC=C1[C@@]3(C)O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Acenes and Derivatives</td></tr><tr><th>Subclass</th><td>Naphthacenes</td></tr><tr><th>Direct parent</th><td>Naphthacenes</td></tr><tr><th>Alternative parents</th><td>Anthracenecarboxylic Acids and Derivatives; Anthraquinones; Tetralins; Phenols and Derivatives; Tertiary Alcohols; Ketones; Polyols; Tertiary Amines; Primary Carboxylic Acid Amides; Enols; Carboxylic Acids; Polyamines; Enolates</td></tr><tr><th>Substituents</th><td>anthraquinone; tetralin; phenol derivative; benzene; tertiary alcohol; polyol; tertiary amine; carboxamide group; ketone; primary carboxylic acid amide; polyamine; enol; carboxylic acid derivative; enolate; carboxylic acid; amine; alcohol; carbonyl group; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the naphthacenes. These are compounds containing a naphthacene moiety, which is a polyaromatic hydrocarbon made of four linearly fused benzene rings.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used to treat bacterial infections such as Rocky Mountain spotted fever, typhus fever, tick fevers, Q fever, rickettsialpox and Brill-Zinsser disease. May be used to treat infections caused by Chlamydiae spp., B. burgdorferi (Lyme disease), and upper respiratory infections caused by typical (S. pneumoniae, H. influenzae, and M. catarrhalis) and atypical organisms (C. pneumoniae, M. pneumoniae, L. pneumophila). May also be used to treat acne. Tetracycline may be an alternative drug for people who are allergic to penicillin.</td></tr><tr><th>Pharmacodynamics</th><td>Tetracycline is a short-acting antibiotic that  inhibits bacterial growth by inhibiting translation. It binds to the 30S ribosomal subunit and prevents the amino-acyl tRNA from binding to the A site of the ribosome. It also binds to some extent to the 50S ribosomal subunit. This binding is reversible in nature. Additionally tetracycline may alter the cytoplasmic membrane of bacteria causing leakage of intracellular contents, such as nucleotides, from the cell. </td></tr><tr><th>Mechanism of action</th><td>Tetracycline passively diffuses through porin channels in the bacterial membrane and reversibly binds to the 30S ribosomal subunit, preventing binding of tRNA to the mRNA-ribosome complex, and thus interfering with protein synthesis.</td></tr><tr><th>Absorption</th><td>Bioavailability is less than 40% when administered via intramuscular injection, 100% intravenously, and 60-80% orally (fasting adults). Food and/or milk reduce GI absorption of oral preparations of tetracycline by 50% or more.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>20 - 67% protein bound</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Not metabolized</p></td></tr><tr><th>Route of elimination</th><td>They are concentrated by the liver in the bile and excreted in the urine and feces at high concentrations in a biologically active form.</td></tr><tr><th>Half life</th><td>6-12 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>LD<sub>50</sub>=808mg/kg (orally in mice)</td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>Tetracycline Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00294?highlight%5Bcompounds%5D%5B%5D=DB00759&amp;highlight%5Bproteins%5D%5B%5D=DB00759">SMP00294</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.8006</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9841</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.7439</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.791</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8025</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7562</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9437</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7897</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9117</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6758</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9046</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9089</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8686</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.781</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9132
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9314
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9906
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.7095 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9968
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7201
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Heritage pharmaceuticals inc</li>
+<li>Bristol laboratories inc div bristol myers co</li>
+<li>Warner chilcott div warner lambert co</li>
+<li>Pharmacia and upjohn co</li>
+<li>Solvay pharmaceuticals</li>
+<li>Wyeth ayerst laboratories</li>
+<li>Apothecon inc div bristol myers squibb</li>
+<li>Angus chemical co</li>
+<li>Pfipharmecs div pfizer inc</li>
+<li>On site therapeutics inc</li>
+<li>Shire development inc</li>
+<li>Lederle laboratories div american cyanamid co</li>
+<li>Pfizer laboratories div pfizer inc</li>
+<li>Storz ophthalmics inc sub american cyanamid co</li>
+<li>Par pharmaceutical</li>
+<li>Ivax pharmaceuticals inc sub teva pharmaceuticals usa</li>
+<li>Par pharmaceutical inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Advanced Pharmaceutical Services Inc.</li>
+<li><a href="http://www.aidarex.com">Aidarex Pharmacuticals LLC</a></li>
+<li>Apotheca Inc.</li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.axcan.com">Axcan Pharma Inc.</a></li>
+<li>Barr Pharmaceuticals</li>
+<li>Belgomex Sprl</li>
+<li><a href="http://www.bpipack.com">Blenheim Pharmacal</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li>C.O. Truxton Inc.</li>
+<li><a href="http://www.chcsct.com">Central Texas Community Health Centers</a></li>
+<li>Comprehensive Consultant Services Inc.</li>
+<li>Coupler Enterprises Inc.</li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.draxispharma.com">Draxis Specialty Pharmaceuticals Inc.</a></li>
+<li>E.R. Squibb and Sons LLC</li>
+<li><a href="http://www.gallipot.com">Gallipot</a></li>
+<li><a href="http://www.globalphar.com">Global Pharmaceuticals</a></li>
+<li><a href="http://www.gsms.us">Golden State Medical Supply Inc.</a></li>
+<li>Goldline Laboratories Inc.</li>
+<li><a href="http://www.ghc.org">Group Health Cooperative</a></li>
+<li><a href="http://www.hhlabs.com">H and H Laboratories</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li>Heartland Repack Services LLC</li>
+<li>Ivax Pharmaceuticals</li>
+<li>Kaiser Foundation Hospital</li>
+<li>Laboratorios Atral Sarl</li>
+<li>Liberty Pharmaceuticals</li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.medisca.com">Medisca Inc.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.parpharm.com">Par Pharmaceuticals</a></li>
+<li><a href="http://www.patientfirst.com">Patient First Corp.</a></li>
+<li>PCA LLC</li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li><a href="http://www.prepaksys.com">Prepak Systems Inc.</a></li>
+<li><a href="http://www.prometheuslabs.com">Prometheus Laboratories Inc.</a></li>
+<li>Proter SPA</li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li>Sino American Shanghai Squibb Pharmaceutical Ltd.</li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li>Talbert Medical Management Corp.</li>
+<li>Tya Pharmaceuticals</li>
+<li>Veratex Corp.</li>
+<li><a href="http://ir.wcrx.com">Warner Chilcott Co. Inc.</a></li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr><tr><td>Ointment</td><td>Ophthalmic</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Tetracycline hcl powder</td><td>2.14USD</td><td>g</td></tr><tr><td>Tetracycline powder</td><td>1.37USD</td><td>g</td></tr><tr><td>Tetracycline HCl 500 mg capsule</td><td>0.2USD</td><td>capsule</td></tr><tr><td>Tetracycline HCl 250 mg capsule</td><td>0.15USD</td><td>capsule</td></tr><tr><td>Apo-Tetra 250 mg Capsule</td><td>0.07USD</td><td>capsule</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>172.5 dec &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>231 mg/L (at 25 &#176;C)</td><td>YALKOWSKY,SH &amp; DANNENFELSER,RM (1992)</td></tr><tr><td>logP</td><td>-1.30</td><td>HANSCH,C ET AL. (1995)</td></tr><tr><td>logS</td><td>-3.12</td><td>ADME Research, USCD</td></tr><tr><td>pKa</td><td>3.3 (at 25 &#176;C)</td><td>SERJEANT,EP &amp; DEMPSEY,B (1979)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.33e+00 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-0.56</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-3.5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-2.5</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>-2.2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>8.24</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>9</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>181.62</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>114.19</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>43.03</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Thomas F. McNamara, Nungavaram S. Ramamurthy, Lorne M. Golub, &#8220;Non-antibacterial tetracycline compositions possessing anti-collagenolytic properties and methods of preparing and using same.&#8221; U.S. Patent US4704383, issued May, 1963.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=4704383&amp;tbm=pts" target="_blank">US4704383 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li><a href="http://en.wikipedia.org/wiki/Tetracycline">Link</a></li>
+	<li>Griffin MO, Fricovsky E, Ceballos G, Villarreal F: Tetracyclines: a pleitropic family of compounds with promising therapeutic properties. Review of the literature. Am J Physiol Cell Physiol. 2010 Sep;299(3):C539-48. Epub 2010 Jun 30. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20592239">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00201" target="_blank">D00201 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C06570" target="_blank">C06570 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280962" target="_blank">5280962 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46506693" target="_blank">46506693 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.4510286.html" target="_blank">4510286 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=27902" target="_blank">27902 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1440" target="_blank">CHEMBL1440 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP001527" target="_blank">DAP001527 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA451640" target="_blank">PA451640 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=ATC" target="_blank">ATC <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=527777" target="_blank">527777 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic2/tetcycl2.htm" target="_blank">http://www.rxlist.com/cgi/generic2/tetcycl2.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/tetracycline.html" target="_blank">http://www.drugs.com/tetracycline.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Tetracycline" target="_blank">Tetracycline <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>A01AB13<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A01#A01">A01 &#8212; STOMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/A01A#A01A">A01A &#8212; STOMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/A01AB#A01AB">A01AB &#8212; Antiinfectives and antiseptics for local oral treatment</a></li></ul>D06AA04<ul class="atc-drug-tree"><li><a href="/atc/D#D">D &#8212; DERMATOLOGICALS</a></li><li><a href="/atc/D06#D06">D06 &#8212; ANTIBIOTICS AND CHEMOTHERAPEUTICS FOR DERMATOLOGICAL USE</a></li><li><a href="/atc/D06A#D06A">D06A &#8212; ANTIBIOTICS FOR TOPICAL USE</a></li><li><a href="/atc/D06AA#D06AA">D06AA &#8212; Tetracycline and derivatives</a></li></ul>J01AA07<ul class="atc-drug-tree"><li><a href="/atc/J#J">J &#8212; ANTIINFECTIVES FOR SYSTEMIC USE</a></li><li><a href="/atc/J01#J01">J01 &#8212; ANTIBACTERIALS FOR SYSTEMIC USE</a></li><li><a href="/atc/J01A#J01A">J01A &#8212; TETRACYCLINES</a></li><li><a href="/atc/J01AA#J01AA">J01AA &#8212; Tetracyclines</a></li></ul>S01AA09<ul class="atc-drug-tree"><li><a href="/atc/S#S">S &#8212; SENSORY ORGANS</a></li><li><a href="/atc/S01#S01">S01 &#8212; OPHTHALMOLOGICALS</a></li><li><a href="/atc/S01A#S01A">S01A &#8212; ANTIINFECTIVES</a></li><li><a href="/atc/S01AA#S01AA">S01AA &#8212; Antibiotics</a></li></ul>S02AA08<ul class="atc-drug-tree"><li><a href="/atc/S#S">S &#8212; SENSORY ORGANS</a></li><li><a href="/atc/S02#S02">S02 &#8212; OTOLOGICALS</a></li><li><a href="/atc/S02A#S02A">S02A &#8212; ANTIINFECTIVES</a></li><li><a href="/atc/S02AA#S02AA">S02AA &#8212; Antiinfectives</a></li></ul>S03AA02<ul class="atc-drug-tree"><li><a href="/atc/S#S">S &#8212; SENSORY ORGANS</a></li><li><a href="/atc/S03#S03">S03 &#8212; OPHTHALMOLOGICAL AND OTOLOGICAL PREPARATIONS</a></li><li><a href="/atc/S03A#S03A">S03A &#8212; ANTIINFECTIVES</a></li><li><a href="/atc/S03AA#S03AA">S03AA &#8212; Antiinfectives</a></li></ul>A01AB21<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A01#A01">A01 &#8212; STOMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/A01A#A01A">A01A &#8212; STOMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/A01AB#A01AB">A01AB &#8212; Antiinfectives and antiseptics for local oral treatment</a></li></ul>S01AA02<ul class="atc-drug-tree"><li><a href="/atc/S#S">S &#8212; SENSORY ORGANS</a></li><li><a href="/atc/S01#S01">S01 &#8212; OPHTHALMOLOGICALS</a></li><li><a href="/atc/S01A#S01A">S01A &#8212; ANTIINFECTIVES</a></li><li><a href="/atc/S01AA#S01AA">S01AA &#8212; Antibiotics</a></li></ul>J01AA09<ul class="atc-drug-tree"><li><a href="/atc/J#J">J &#8212; ANTIINFECTIVES FOR SYSTEMIC USE</a></li><li><a href="/atc/J01#J01">J01 &#8212; ANTIBACTERIALS FOR SYSTEMIC USE</a></li><li><a href="/atc/J01A#J01A">J01A &#8212; TETRACYCLINES</a></li><li><a href="/atc/J01AA#J01AA">J01AA &#8212; Tetracyclines</a></li></ul>D06AA02<ul class="atc-drug-tree"><li><a href="/atc/D#D">D &#8212; DERMATOLOGICALS</a></li><li><a href="/atc/D06#D06">D06 &#8212; ANTIBIOTICS AND CHEMOTHERAPEUTICS FOR DERMATOLOGICAL USE</a></li><li><a href="/atc/D06A#D06A">D06A &#8212; ANTIBIOTICS FOR TOPICAL USE</a></li><li><a href="/atc/D06AA#D06AA">D06AA &#8212; Tetracycline and derivatives</a></li></ul>J01AA03<ul class="atc-drug-tree"><li><a href="/atc/J#J">J &#8212; ANTIINFECTIVES FOR SYSTEMIC USE</a></li><li><a href="/atc/J01#J01">J01 &#8212; ANTIBACTERIALS FOR SYSTEMIC USE</a></li><li><a href="/atc/J01A#J01A">J01A &#8212; TETRACYCLINES</a></li><li><a href="/atc/J01AA#J01AA">J01AA &#8212; Tetracyclines</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>08:12.24</li>
+<li>52:04.04</li></ul></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1P87" target="_blank">1P87 <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00759.pdf?1265922747">show</a>(73.8 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01418">Acenocoumarol</a></td><td>Tetracycline may increase the anticoagulant effect of acenocoumarol.</td></tr><tr><td><a href="/drugs/DB00459">Acitretin</a></td><td>Increased risk of intracranial hypertension</td></tr><tr><td><a href="/drugs/DB01370">Aluminium</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01060">Amoxicillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00415">Ampicillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01125">Anisindione</a></td><td>Tetracycline may increase the anticoagulant effect of anisindione.</td></tr><tr><td><a href="/drugs/DB01117">Atovaquone</a></td><td>Tetracycline may decrease the effect of atovaquone.</td></tr><tr><td><a href="/drugs/DB01574">Attapulgite</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01061">Azlocillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00355">Aztreonam</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01602">Bacampicillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01053">Benzylpenicillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00307">Bexarotene</a></td><td>Tetracycline may enhance the adverse/toxic effect of Retinoic Acid Derivatives. Due to the risk of developing pseudotumor cerebri (also known as intracranial hypertension), avoid this combination of drugs if possible. If used concomitantly, monitor for evidence of this interaction (eg, dizziness, diplopia, headache).  </td></tr><tr><td><a href="/drugs/DB01294">Bismuth Subsalicylate</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01373">Calcium</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00258">Calcium Acetate</a></td><td>Calcium salts such as calcium acetate may decrease the serum concentration of tetracycline derivatives such as tetracycline. In general, the coadministration of oral calcium salts and oral tetracycline derivatives should be avoided. Interactions may be able to be minimized by administering oral calcium preparations several hours before or after the dose of the oral tetracycline derivatives. Even with dose separation, therapy may still be compromised. Monitor for decreased therapeutic effect of oral tetracycline derivatives. </td></tr><tr><td><a href="/drugs/DB01164">Calcium Chloride</a></td><td>Calcium salts such as calcium chloride may decrease the serum concentration of tetracycline derivatives such as tetracycline. In general, the coadministration of oral calcium salts and oral tetracycline derivatives should be avoided. Interactions may be able to be minimized by administering oral calcium preparations several hours before or after the dose of the oral tetracycline derivatives. Even with dose separation, therapy may still be compromised. Monitor for decreased therapeutic effect of oral tetracycline derivatives. </td></tr><tr><td><a href="/drugs/DB00578">Carbenicillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00766">Clavulanate</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01147">Cloxacillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00930">Colesevelam</a></td><td>Bile acid sequestrants such as colesevelam may decrease the absorption of Tetracycline Derivatives. Monitor for decreased therapeutic effects of tetracycline derivatives if coadministered with a bile acid sequestrant. If these agents are used concomitantly, separate doses 2 or more hours to minimize the interaction. The manufacturer of colesevelam suggests that drugs should be administered at least 1 hour before or 4 hours after colesevelam.</td></tr><tr><td><a href="/drugs/DB01000">Cyclacillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00485">Dicloxacillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00266">Dicoumarol</a></td><td>Tetracycline may increase the anticoagulant effect of dicumarol.</td></tr><tr><td><a href="/drugs/DB01375">Dihydroxyaluminium</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00977">Ethinyl Estradiol</a></td><td>This anti-infectious agent could decrease the effect of the oral contraceptive</td></tr><tr><td><a href="/drugs/DB00926">Etretinate</a></td><td>Increased risk of intracranial hypertension</td></tr><tr><td><a href="/drugs/DB00301">Flucloxacillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00739">Hetacillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01592">Iron</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00893">Iron Dextran</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00982">Isotretinoin</a></td><td>Increased risk of intracranial hypertension</td></tr><tr><td><a href="/drugs/DB01378">Magnesium</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01397">Magnesium salicylate</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01357">Mestranol</a></td><td>This anti-infectious agent could decrease the effect of the oral contraceptive</td></tr><tr><td><a href="/drugs/DB02443">Methicillin Acyl-Serine</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00563">Methotrexate</a></td><td>Tetracycline may increase methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB01028">Methoxyflurane</a></td><td>Tetracycline may increase the renal toxicity of methoxyflurane.</td></tr><tr><td><a href="/drugs/DB00948">Mezlocillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00607">Nafcillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00713">Oxacillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00417">Penicillin V</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00319">Piperacillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01604">Pivampicillin</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01605">Pivmecillinam</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00881">Quinapril</a></td><td>Quinapril may decrease the absorption of tetracycline.</td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Tetracycline, a CYP3A4 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP3A4 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Tetracycline is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB01606">Tazobactam</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01607">Ticarcillin</a></td><td>Tetracycline may reduce the effect of Ticarcillin by inhibiting bacterial growth. Ticarcillin exerts its effects on actively growing bacteria. To achieve synergism, Ticarcillin should be administered at least 2 hours prior to using Tetracycline.</td></tr><tr><td><a href="/drugs/DB01036">Tolterodine</a></td><td>Tetracycline may decrease the metabolism and clearance of Tolterodine. Adjust Tolterodine dose and monitor for efficacy and toxicity.</td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Tetracycline may increase Tramadol toxicity by decreasing Tramadol metabolism and clearance.</td></tr><tr><td><a href="/drugs/DB00656">Trazodone</a></td><td>The CYP3A4 inhibitor, Tetracycline, may increase Trazodone efficacy/toxicity by decreasing Trazodone metabolism and clearance. Monitor for changes in Trazodone efficacy/toxicity if Tetracycline is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00755">Tretinoin</a></td><td>Demeclocycline may increase the adverse effects of oral Tretinoin. Increase risk of pseudotumour cerebri. Concurrent therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB01401">Trisalicylate-choline</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>Tetracycline may increase the anticoagulant effect of warfarin.</td></tr><tr><td><a href="/drugs/DB01593">Zinc</a></td><td>Formation of non-absorbable complexes</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid milk, calcium containing dairy products, iron, antacids, or aluminium salts 2 hours before or 6 hours after using antacids while on this medication.</li>
+<li>Take on empty stomach: 1 hour before or 2 hours after meals.</li>
+<li>Take with a full glass of water.</li></ul></td></tr></tbody></table>

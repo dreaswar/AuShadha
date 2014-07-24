@@ -1,0 +1,163 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Apixaban</strong></td></tr><tr><th>Accession Number</th><td><strong>DB06605</strong>&#160; (DB07828)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Apixaban is an oral, direct, and highly selective factor Xa (FXa) inhibitor (of both free and prothrombinase-bound FXa independently of antithrombin <span class="caps">III</span>) for the prevention and treatment of thromboembolic diseases. It is marketed under the name Eliquis. <span class="caps">FDA</span> approved on December 28, 2012.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB06605/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB06605/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06605.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06605.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06605.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06605.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06605.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB06605">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Eliquis</td><td>Bristol Myers Squibb</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>503612-47-3</td></tr><tr><th>Weight</th><td>Average: 459.4971<br>Monoisotopic: 459.190654313</td></tr><tr><th>Chemical Formula</th><td>C<sub>25</sub>H<sub>25</sub>N<sub>5</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>QNZCBYKSOIHPEH-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C25H25N5O4/c1-34-19-11-9-18(10-12-19)30-23-20(22(27-30)24(26)32)13-15-29(25(23)33)17-7-5-16(6-8-17)28-14-3-2-4-21(28)31/h5-12H,2-4,13-15H2,1H3,(H2,26,32)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-(4-methoxyphenyl)-7-oxo-6-[4-(2-oxopiperidin-1-yl)phenyl]-1H,4H,5H,6H,7H-pyrazolo[3,4-c]pyridine-3-carboxamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">COC1=CC=C(C=C1)N1N=C(C(N)=O)C2=C1C(=O)N(CC2)C1=CC=C(C=C1)N1CCCCC1=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Piperidines</td></tr><tr><th>Subclass</th><td>Phenylpiperidines</td></tr><tr><th>Direct parent</th><td>Phenylpiperidines</td></tr><tr><th>Alternative parents</th><td>Phenylpyrazoles; Pyridinecarboxamides; Anisoles; Delta Lactams; Alkyl Aryl Ethers; Piperidinones; Tertiary Carboxylic Acid Amides; Primary Carboxylic Acid Amides; Tertiary Amines; Carboxylic Acids; Enolates; Polyamines</td></tr><tr><th>Substituents</th><td>pyridinecarboxamide; anisole; phenol ether; delta-lactam; alkyl aryl ether; piperidinone; benzene; pyrazole; tertiary carboxylic acid amide; azole; lactam; primary carboxylic acid amide; tertiary amine; carboxamide group; ether; carboxylic acid; polyamine; enolate; carboxylic acid derivative; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenylpiperidines. These are compounds containing a phenylpiperidine skeleton, which consists of a piperidine bound to a phenyl group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Apixaban is to reduce the risk of stroke and systemic embolism in patients with nonvalvular atrial fibrillation. It has also been used to lower the risk of developing venous thrombosis post-orthopedic surgical procedures. </td></tr><tr><th>Pharmacodynamics</th><td>Apixaban acts by inhibiting coagulation, and thus prevents development of blood clots. As a result of FXa inhibition, apixaban prolongs clotting tests such as prothrombin time (PT), INR, and activated partial thromboplastin time (aPTT). Changes observed in these clotting tests at the expected therapeutic dose, however, are small, subject to a high degree of variability, and not useful in monitoring the anticoagulation effect of apixaban. The Rotachrom&#174;  Heparin chromogenic assay is not recommended for assessing the anticoagulant effect of apixaban. </td></tr><tr><th>Mechanism of action</th><td>Apixaban acts by directly inhibiting, in a reversible manner, free and clot-bound factor Xa to inhibit coagulation.</td></tr><tr><th>Absorption</th><td>Apixaban is absorbed in the stomach and small intestine. For doses up to 10 mg, the absolute bioavailability is about 50%. For oral administration, absorption is not affected by the presence of food, and it takes about 3-4 hours to achieve maximum plasma concentrations. For large oral doses equal or greater than 25 mg, absorption is dissolution limited and  bioavailability is decreased. Most of the absorption occurs in the distal small intestine and the ascending colon.</td></tr><tr><th>Volume of distribution</th><td><p>The steady state volume of distribution is 21 L.</p></td></tr><tr><th>Protein binding</th><td>Apixaban is about 87% plasma protein bound.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Apixaban mainly undergoes o-demethylation and hydroxylation to metabolites. The major site of biotransformation is at the 3-oxopiperidinyl moiety. The main enzyme responsible for metabolism is CYP3A4/5 while CYP1A2, 2C8, 2C9, 2C19, and 2J2 are minor metabolic enzymes. There are no active metabolites and unchanged apixaban is the primary circulating entity. </p></td></tr><tr><th>Route of elimination</th><td>25% of the administered dose is eliminated in the feces and urine. For elimination in the feces, it is excreted by the intestine and bile to the feces. </td></tr><tr><th>Half life</th><td>If administered orally, the half life is 12 hours (due to prolonged absorption). If administerd by I.V., the half-life is about 5 hours.</td></tr><tr><th>Clearance</th><td><p>About 27% of total apixaban is renally cleared.</p></td></tr><tr><th>Toxicity</th><td>Major bleeding events. </td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9974</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9329</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5308</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6144</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6804</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.594</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5628</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8528</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.811</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.764</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9271</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5555</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.6447</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.5062
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8796
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9965
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.3038 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8351
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6205
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>2.5 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>5 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB06695">Dabigatran etexilate</a></td><td>Concomitant therapy with another anticoagulant may increase bleed risk. Monitor closely for adverse effects. </td></tr><tr><td><a href="/drugs/DB01225">Enoxaparin</a></td><td>Due to pharmacodynamic interaction, a 50-60% increase in anti-Factor Xa activity may be observed with concomitant therapy. </td></tr><tr><td><a href="/drugs/DB06414">Etravirine</a></td><td>Apixaban, when administered concomitantly with etravirine (a strong CYP3A4 inducer), may experience a decrease in serum concentration. Concomitant use should be avoided. </td></tr><tr><td><a href="/drugs/DB01167">Itraconazole</a></td><td>Avoid combination. Otherwise, itraconazole will likely increase apixaban serum concentration.</td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Avoid combination. Otherwise, ketoconazole will likely increase apixaban serum concentration.</td></tr><tr><td><a href="/drugs/DB00788">Naproxen</a></td><td>Due to pharmacodynamic interaction, a 50-60% increase in anti-Factor Xa activity may be observed with concomitant therapy. </td></tr><tr><td><a href="/drugs/DB01263">Posaconazole</a></td><td>Avoid combination. Otherwise, posaconazole will likely increase apixaban serum concentration.</td></tr><tr><td><a href="/drugs/DB00503">Ritonavir</a></td><td>Avoid combination. Otherwise, ritonavir will likely increase apixaban serum concentration.</td></tr><tr><td><a href="/drugs/DB06228">Rivaroxaban</a></td><td>Avoid combination. Otherwise, excessive anticoagulation will likely occur.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Avoid combination. Otherwise, voriconazole will likely increase apixaban serum concentration.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Alfalfa, Anise, Bilberry may increase the adverse effects of apixaban.</li>
+<li>Grapefruit juice may increase apixaban serum concentration.</li>
+<li>St. John's wort will likely decrease apixaban serum concentration. Avoid combination if possible.</li></ul></td></tr></tbody></table>

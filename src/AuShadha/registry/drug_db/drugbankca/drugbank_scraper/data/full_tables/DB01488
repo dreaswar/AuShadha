@@ -1,0 +1,164 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Dimethyltryptamine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01488</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>experimental, illicit</td></tr><tr><th>Description</th><td><p>An N-methylated indoleamine derivative, a serotonergic hallucinogen found in several plants, especially Prestonia amazonica (Apocynaceae) and in mammalian brain, blood, and urine. It apparently acts as an agonist at some types of serotonin receptors and an antagonist at others. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01488/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01488/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01488.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01488.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01488.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01488.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01488.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01488">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/serotonin-receptor-agonists">Serotonin Receptor Agonists</a></li></ul></td></tr><tr><th>CAS number</th><td>61-50-7</td></tr><tr><th>Weight</th><td>Average: 188.2688<br>Monoisotopic: 188.131348522</td></tr><tr><th>Chemical Formula</th><td>C<sub>12</sub>H<sub>16</sub>N<sub>2</sub></td></tr><tr><th>InChI Key</th><td>DMULVCHRPCFFGV-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C12H16N2/c1-14(2)8-7-10-9-13-12-6-4-3-5-11(10)12/h3-6,9,13H,7-8H2,1-2H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">[2-(1H-indol-3-yl)ethyl]dimethylamine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN(C)CCC1=CNC2=CC=CC=C12</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB01488.gif?1265922772">show</a>(7.49 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Indoles and Derivatives</td></tr><tr><th>Subclass</th><td>Tryptamines and Derivatives</td></tr><tr><th>Direct parent</th><td>Tryptamines and Derivatives</td></tr><tr><th>Alternative parents</th><td>Indoles; Substituted Pyrroles; Benzene and Substituted Derivatives; Tertiary Amines; Polyamines</td></tr><tr><th>Substituents</th><td>indole; benzene; substituted pyrrole; pyrrole; tertiary amine; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the tryptamines and derivatives. These are compounds containing the tryptamine backbone, which is structurally characterized by an indole ring subsituted at the thrid position by an ethanamine.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Some people use this compound as a psychedelic inducing agent.</td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td>DMT acts as a non-selective agonist at most or all of the serotonin receptors.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9797</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.6601</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.634</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9304</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6713</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7268</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8154</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.5974</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5824</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8597</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9436</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8744</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.917</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.843</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8954</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.52
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9588
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9795
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.6187 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8972
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7733
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>46 &#176;C</td><td>PhysProp</td></tr><tr><td>pKa</td><td>8.68</td><td>MERCK INDEX (1996)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.69e+00 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>2.41</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>2.3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-2</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>17.16</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.55</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>19.03</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>60.44</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>22.32</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Strassman RJ, Qualls CR: Dose-response study of N,N-dimethyltryptamine in humans. I. Neuroendocrine, autonomic, and cardiovascular effects. Arch Gen Psychiatry. 1994 Feb;51(2):85-97. <a href="http://www.ncbi.nlm.nih.gov/pubmed/8297216">Pubmed</a></li>
+	<li>Callaway JC: A proposed mechanism for the visions of dream sleep. Med Hypotheses. 1988 Jun;26(2):119-24. <a href="http://www.ncbi.nlm.nih.gov/pubmed/3412201">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C08302" target="_blank">C08302 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=6089" target="_blank">6089 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46507463" target="_blank">46507463 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.5864.html" target="_blank">5864 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>IUPHAR</td><td><a class="wishart-link-out" href="http://www.iuphar-db.org/DATABASE/LigandDisplayForward?ligandId=141" target="_blank">141 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Guide to Pharmacology</td><td><a class="wishart-link-out" href="http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=141" target="_blank">141 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Dimethyltryptamine" target="_blank">Dimethyltryptamine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

@@ -1,0 +1,207 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Ganciclovir</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01004</strong>&#160; (APRD00263, EXPT01540)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>An acyclovir analog that is a potent inhibitor of the Herpesvirus family including cytomegalovirus. Ganciclovir is used to treat complications from <span class="caps">AIDS</span>-associated cytomegalovirus infections. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01004/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01004/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01004.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01004.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01004.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01004.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01004.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01004">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>2-(6-Amino-purin-9-ylmethoxy)-propane-1,3-diol</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>9-[(1,3-dihydroxy-2-propoxy)methyl]guanine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>GA2</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Gancyclovir</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Ganciclovir Sodium</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000309/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000309/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: JJICLMJFIKGAAU-UHFFFAOYSA-M</li>
+              <li>Monoisotopic Mass: 277.078698572</li>
+              <li>Average Mass: 277.2124</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000309">DBSALT000309</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Cytovene</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Cytovene IV</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Vitrasert</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zirgan</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antiviral-agents">Antiviral Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>82410-32-0</td></tr><tr><th>Weight</th><td>Average: 255.2306<br>Monoisotopic: 255.096753929</td></tr><tr><th>Chemical Formula</th><td>C<sub>9</sub>H<sub>13</sub>N<sub>5</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>IRSCQMHQWWYFCW-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C9H13N5O4/c10-9-12-7-6(8(17)13-9)11-3-14(7)4-18-5(1-15)2-16/h3,5,15-16H,1-2,4H2,(H3,10,12,13,17)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-amino-9-{[(1,3-dihydroxypropan-2-yl)oxy]methyl}-6,9-dihydro-1H-purin-6-one</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC1=NC2=C(N=CN2COC(CO)CO)C(=O)N1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Imidazopyrimidines</td></tr><tr><th>Subclass</th><td>Purines and Purine Derivatives</td></tr><tr><th>Direct parent</th><td>Hypoxanthines</td></tr><tr><th>Alternative parents</th><td>Pyrimidones; Trioses; N-substituted Imidazoles; Primary Aromatic Amines; Polyols; Primary Alcohols; Polyamines; Ethers</td></tr><tr><th>Substituents</th><td>pyrimidone; primary aromatic amine; pyrimidine; saccharide; triose monosaccharide; n-substituted imidazole; monosaccharide; imidazole; azole; polyol; ether; polyamine; primary alcohol; alcohol; primary amine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the hypoxanthines. These are compounds containing the purine derivative 1H-purin-6(9H)-one.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For induction and maintenance in the treatment of cytomegalovirus (CMV) retinitis in immunocompromised patients, including patients with acquired immunodeficiency syndrome (AIDS). Also used in the treatment of severe cytomegalovirus (CMV) disease, including CMV pneumonia, CMV gastrointestinal disease, and disseminated CMV infections, in immunocompromised patients.</td></tr><tr><th>Pharmacodynamics</th><td>Ganciclovir is a synthetic nucleoside analogue of 2'-deoxyguanosine that inhibits replication of herpes viruses both <i>in vitro</i> and <i>in vivo</i>. Sensitive human viruses include cytomegalovirus (CMV), herpes simplex virus -1 and -2 (HSV-1, HSV-2), Epstein-Barr virus (EBV) and varicella zoster virus (VZV), however clinical studies have been limited to assessment of efficacy in patients with CMV infection. Ganciclovir is a prodrug that is structurally similar to acyclovir. It inhibits virus replication by its encorporation into viral DNA. This encorporation inhibits dATP and leads to defective DNA, ceasing or retarding the viral machinery required to spread the virus to other cells.</td></tr><tr><th>Mechanism of action</th><td>Ganciclovir's antiviral activity inhibits virus replication. This inhibitory action is highly selective as the drug must be converted to the active form by a virus-encoded cellular enzyme, thymidine kinase (TK). TK catalyzes phosphorylation of ganciclovir to the monophosphate, which is then subsequently converted into the diphosphate by cellular guanylate kinase and into the triphosphate by a number of cellular enzymes. <i>In vitro</i>, ganciclovir triphosphate stops replication of herpes viral DNA. When used as a substrate for viral DNA polymerase, ganciclovir triphosphate competitively inhibits dATP leading to the formation of 'faulty' DNA. This is where ganciclovir triphosphate is incorporated into the DNA strand replacing many of the adenosine bases. This results in the prevention of DNA synthesis, as phosphodiester bridges can longer to be built, destabilizing the strand. Ganciclovir inhibits viral DNA polymerases more effectively than it does cellular polymerase, and chain elongation resumes when ganciclovir is removed.</td></tr><tr><th>Absorption</th><td>Poorly absorbed systemically following oral administration. Bioavailability under fasting conditions is approximately 5%, and when administered with food, 6 to 9% (about 30% with a fatty meal).</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>0.74 &#177; 0.15 L/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td>1 to 2%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Little to no metabolism, about 90% of plasma ganciclovir is eliminated unchanged in the urine.</p></td></tr><tr><th>Route of elimination</th><td>Renal excretion of unchanged drug by glomerular filtration and active tubular secretion is the major route of elimination of ganciclovir.</td></tr><tr><th>Half life</th><td>2.5 to 3.6 hours (mean 2.9 hours) when administered intravenously in adults. 3.1 to 5.5 hours when administered orally in adults. Renal function impairment causes a marked increase in half life (9 to 30 hours intravenously, 15.7 to 18.2 hours orally).</td></tr><tr><th>Clearance</th><td><ul>
+	<li>128 +/- 63 mL/min [Patients with Renal Impairment (Clcr=50-79 mL/min)]</li>
+	<li>57+/- 8 mL/min [Patients with Renal Impairment (Clcr=25-49 mL/min)]</li>
+	<li>30 +/- 13 mL/min [Patients with Renal Impairment (Clcr&lt;25 mL/min)]</li>
+	<li>4.7+/- 2.2 mL/min/kg [pediatric patients, aged 9 months to 12 years]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Oral, mouse LD<sub>50</sub>: &gt; 2g/kg. Intravenous, dog LD<sub>50</sub>: &gt; 150mg/kg. Symptoms of overdose include irreversible pancytopenia, worsening GI symptoms, and acute renal failure. Suspected cancer agent.</td></tr><tr><th>Affected organisms</th><td><ul><li>Human Herpes Virus</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9443</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9866</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8957</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5767</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.932</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8381</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8459</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8907</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8225</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5919</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.907</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.96</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.935</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6094
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8875
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9368
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.0348 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9611
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8943
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Roche palo alto llc</li>
+<li>Ranbaxy laboratories ltd</li>
+<li>Bausch and lomb inc</li>
+<li>App pharmaceuticals llc</li>
+<li>Bedford laboratories div ben venue laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.amp-us.com">Alliance Medical Products</a></li>
+<li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://www.bausch.com">Bausch &amp; Lomb Inc.</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.roche.com">F Hoffmann La Roche Ltd.</a></li>
+<li><a href="http://www.roche.com">F Hoffmann-La Roche Ltd.</a></li>
+<li><a href="http://www.jhppharma.com">JHP Pharmaceuticals LLC</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li><a href="http://www.siriontherapeutics.com">Sirion Therapeutics</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr><tr><td>Implant</td><td>Intravitreal</td><td></td></tr><tr><td>Powder, for solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01048">Abacavir</a></td><td>The adverse/toxic effects of reverse transcriptase inhibitors (nucleoside), such as Abacavir, may be enhanced by Ganciclovir. There is a risk of hematologic toxicity. Diligent monitoring during concomitant therapy is required.</td></tr><tr><td><a href="/drugs/DB00900">Didanosine</a></td><td>The antiviral agent, ganciclovir, may increase the effect and toxicity of didanosine.</td></tr><tr><td><a href="/drugs/DB01032">Probenecid</a></td><td>Probenecid increases the effect and toxicity of ganciclovir/valganciclovir</td></tr><tr><td><a href="/drugs/DB00495">Zidovudine</a></td><td>Increased risk of hematologic toxicity. Concomitant therapy should be avoided.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take with food, food increases bioavailability.</li></ul></td></tr></tbody></table>

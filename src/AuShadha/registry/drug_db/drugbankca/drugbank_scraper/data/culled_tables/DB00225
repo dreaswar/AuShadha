@@ -1,0 +1,189 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Gadodiamide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00225</strong>&#160; (APRD00990)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Gadodiamide is a gadolinium based contrast agent used in MR imaging procedures to assist in the visualization of blood vessels. It is commonly marketed under the trade name Omniscan. [Wikipedia]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00225/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00225/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00225.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00225.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00225.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00225.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00225.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00225">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Gadodiamide hydrate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000888/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000888/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000888">DBSALT000888</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Omniscan</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>122795-43-1</td></tr><tr><th>Weight</th><td>Average: 591.67<br>Monoisotopic: 592.112803052</td></tr><tr><th>Chemical Formula</th><td>C<sub>16</sub>H<sub>28</sub>GdN<sub>5</sub>O<sub>9</sub></td></tr><tr><th>InChI Key</th><td>XPCLDSMKWNNKOM-UHFFFAOYSA-K</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C16H29N5O8.Gd.H2O/c1-17-12(22)7-20(10-15(26)27)5-3-19(9-14(24)25)4-6-21(11-16(28)29)8-13(23)18-2;;/h3-11H2,1-2H3,(H,17,22)(H,18,23)(H,24,25)(H,26,27)(H,28,29);;1H2/q;+3;/p-3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">gadolinium(3+) ion 2-[bis({2-[(carboxylatomethyl)[(methylcarbamoyl)methyl]amino]ethyl})amino]acetate hydrate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">O.[Gd+3].CNC(=O)CN(CCN(CCN(CC([O-])=O)CC(=O)NC)CC([O-])=O)CC([O-])=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Alpha Amino Acid Amides</td></tr><tr><th>Alternative parents</th><td>Tricarboxylic Acids and Derivatives; Tertiary Amines; Secondary Carboxylic Acid Amides; Polyamines; Enolates; Carboxylic Acids; Carboxylic Acid Salts</td></tr><tr><th>Substituents</th><td>tricarboxylic acid derivative; secondary carboxylic acid amide; tertiary amine; carboxamide group; carboxylic acid salt; polyamine; enolate; carboxylic acid; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the alpha amino acid amides. These are amide derivatives of alpha amino acids.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For intravenous use in MRI to visualize lesions with abnormal vascularity (or those thought to cause abnormalities in the blood-brain barrier) in the brain (intracranial lesions), spine, and associated tissues.</td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td>Based on the behavior of protons when placed in a strong magnetic field, which is interpreted and transformed into images by magnetic resonance (MR) instruments. Paramagnetic agents have unpaired electrons that generate a magnetic field about 700 times larger than the proton's field, thus disturbing the proton's local magnetic field. When the local magnetic field around a proton is disturbed, its relaxation process is altered. MR images are based on proton density and proton relaxation dynamics. MR instruments can record 2 different relaxation processes, the T1 (spin-lattice or longitudinal relaxation time) and the T2 (spin-spin or transverse relaxation time). In magnetic resonance imaging (MRI), visualization of normal and pathological brain tissue depends in part on variations in the radiofrequency signal intensity that occur with changes in proton density, alteration of the T1, and variation in the T2. When placed in a magnetic field, gadodiamide shortens both the T1 and the T2 relaxation times in tissues where it accumulates. At clinical doses, gadodiamide primarily affects the T1 relaxation time, thus producing an increase in signal intensity. Gadodiamide does not cross the intact blood-brain barrier; therefore, it does not accumulate in normal brain tissue or in central nervous system (CNS) lesions that have not caused an abnormal blood-brain barrier (e.g., cysts, mature post-operative scars). Abnormal vascularity or disruption of the blood-brain barrier allows accumulation of gadodiamide in lesions such as neoplasms, abscesses, and subacute infarcts.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>200 &#177; 61 mL/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>There is no detectable biotransformation or decomposition of gadodiamide.</p></td></tr><tr><th>Route of elimination</th><td>Gadodiamide is eliminated primarily in the urine.</td></tr><tr><th>Half life</th><td>Two-compartment model with mean distribution and elimination half-lives (reported as mean &#177; SD) of 3.7 &#177; 2.7 minutes and 77.8 &#177; 16 minutes, respectively.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>Renal cl=1.7 mL/min/kg</li>
+	<li>Plasma cl=1.8 mL/min/kg</li>
+</ul></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.9808</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.62</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5605</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7041</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9016</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9571</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9031</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8265</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8189</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5872</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9416</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9189</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9566</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8972</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9864</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9927</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8343
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8563
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.7604
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.9159 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9582
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9424
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Ge healthcare</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Amersham Health Inc.</li>
+<li><a href="http://www.gehealthcare.com">GE Healthcare Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

@@ -1,0 +1,283 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Sumatriptan</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00669</strong>&#160; (APRD00379)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>A serotonin agonist that acts selectively at 5HT1 receptors. It is used in the treatment of migraine disorders. A transdermal patch version of sumatriptan is currently in phase I trials in the U.S. under the code name NP101 (NuPathe).</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00669/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00669/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00669.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00669.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00669.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00669.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00669.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00669">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>NP101</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Sumatriptan</td><td>German/French</td><td>INN</td></tr><tr><td>Sumatript&#225;n</td><td>Spanish</td><td>INN</td></tr><tr><td>Sumatriptan Succinate</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Sumatriptanum</td><td>Latin</td><td>INN</td></tr><tr><td>triptan</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Sumatriptan Succinate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT001003/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT001003/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT001003">DBSALT001003</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Adracon</td><td>Inti</td></tr><tr><td>ALSUMA</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Altaxa</td><td>Alapis Pharma</td></tr><tr><td>Apigrane</td><td>Advanced Pharmaceutical</td></tr><tr><td>Boots Pharmacy Migraine Relief</td><td>Boots</td></tr><tr><td>Cinie</td><td>Zentiva</td></tr><tr><td>Frimig</td><td>Orion</td></tr><tr><td>Illument</td><td>Pliva</td></tr><tr><td>Imigen</td><td>Mylan</td></tr><tr><td>Imigran</td><td>GlaxoSmithKline</td></tr><tr><td>Imigran mite</td><td>GlaxoSmithKline</td></tr><tr><td>Imigran Radis</td><td>GlaxoSmithKline</td></tr><tr><td>Imigrane</td><td>GlaxoSmithKline</td></tr><tr><td>Imitrex</td><td>GlaxoSmithKline</td></tr><tr><td>Imitrex Oral</td><td>GlaxoSmithKline</td></tr><tr><td>Migralgin</td><td>GMP</td></tr><tr><td>Migraneitor</td><td>Driburg</td></tr><tr><td>Nazdav</td><td>Dr. Reddy's</td></tr><tr><td>Sapphirex</td><td>Hemofarm</td></tr><tr><td>Sumatran</td><td>Rowex</td></tr><tr><td>Sumax</td><td>Libbs</td></tr><tr><td>Suminat</td><td>Sun</td></tr><tr><td>Youshu</td><td>Simcere</td></tr><tr><td>ZECUITY</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Treximet</td><td>Sumatriptan and Naproxen</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/vasoconstrictor-agents">Vasoconstrictor Agents</a></li>
+<li><a href="/mesh/serotonin-antagonists">Serotonin Antagonists</a></li>
+<li><a href="/mesh/serotonin-5-ht1-receptor-agonists">Serotonin 5-HT1 Receptor Agonists</a></li>
+<li><a href="/mesh/serotonin-receptor-agonists">Serotonin Receptor Agonists</a></li></ul></td></tr><tr><th>CAS number</th><td>103628-46-2</td></tr><tr><th>Weight</th><td>Average: 295.4<br>Monoisotopic: 295.135447621</td></tr><tr><th>Chemical Formula</th><td>C<sub>14</sub>H<sub>21</sub>N<sub>3</sub>O<sub>2</sub>S</td></tr><tr><th>InChI Key</th><td>KQKPFRSPSRPDEB-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C14H21N3O2S/c1-15-20(18,19)10-11-4-5-14-13(8-11)12(9-16-14)6-7-17(2)3/h4-5,8-9,15-16H,6-7,10H2,1-3H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-{3-[2-(dimethylamino)ethyl]-1H-indol-5-yl}-N-methylmethanesulfonamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CNS(=O)(=O)CC1=CC2=C(NC=C2CCN(C)C)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Indoles and Derivatives</td></tr><tr><th>Subclass</th><td>Tryptamines and Derivatives</td></tr><tr><th>Direct parent</th><td>Tryptamines and Derivatives</td></tr><tr><th>Alternative parents</th><td>Indoles; Benzene and Substituted Derivatives; Substituted Pyrroles; Sulfonamides; Sulfonyls; Tertiary Amines; Polyamines</td></tr><tr><th>Substituents</th><td>indole; substituted pyrrole; benzene; sulfonyl; sulfonamide; pyrrole; sulfonic acid derivative; tertiary amine; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the tryptamines and derivatives. These are compounds containing the tryptamine backbone, which is structurally characterized by an indole ring subsituted at the thrid position by an ethanamine.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of migraine attacks with or without aura.</td></tr><tr><th>Pharmacodynamics</th><td>Sumatriptan, an antimigraine drug, is a selective agonist of vascular serotonin ((5-hydroxytryptamine; 5-HT) type 1-like receptors, likely the 5-HT<sub>1D</sub> and 5-HT<sub>1B</sub> subtypes. It has no significant affinity (as measured using standard radioligand binding assays) or pharmacological activity at 5-HT2, 5-HT3 receptor subtypes or at alpha1-, alpha2-, or beta-adrenergic; dopamine1; dopamine2; muscarinic; or benzodiazepine receptors.</td></tr><tr><th>Mechanism of action</th><td>The 5-HT<sub>1B</sub> and 5-HT<sub>1D</sub> receptors function as autoreceptors, which inhibit the firing of serotonin neurons and a reduction in the synthesis and release of serotonin upon activation. After sumatriptan binds to these receptors, adenylate cyclase activity is inhibited via regulatory G proteins, incrases intracellular calcium, and affects other intracellular events. This results in vasoconstriction and inhibtion of sensory nociceptive (trigeminal) nerve firing and vasoactive neuropeptide release.</td></tr><tr><th>Absorption</th><td>Approximately 15% </td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>2.7 L/kg [subcutaneous dosing]</li>
+</ul></td></tr><tr><th>Protein binding</th><td>14%-21%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic. In vitro studies with human microsomes suggest that sumatriptan is metabolized by monoamine oxidase (MAO), predominantly the A isoenzyme.</p></td></tr><tr><th>Route of elimination</th><td>Only 3% of the dose is excreted in the urine as unchanged sumatriptan; 42% of the dose is excreted as the major metabolite, the indole acetic acid analogue of sumatriptan.</td></tr><tr><th>Half life</th><td>2.5 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>1200 mL/min [Following a 6-mg SC injection]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Symptoms of overdose include convulsions, tremor, paralysis, inactivity, ptosis, erythema of the extremities, abnormal respiration, cyanosis, ataxia, mydriasis, salivation, and lacrimation.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="snp-fx"><thead><tr><th>Interacting Gene/Enzyme</th><th>SNP RS ID</th><th>Allele name</th><th>Defining change</th><th>Effect</th><th>Reference(s)</th></tr></thead><tbody><tr><td>Guanine nucleotide-binding protein G(I)/G(S)/G(T) subunit beta-3<br>Gene symbol: GNB3<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/P16520" target="_blank">P16520 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs5443" target="_blank">rs5443 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>T Allele</td><td>Better response to drug treatment</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/17361120" target="_blank" title="Schurks M, Kurth T, Stude P, Rimmbach C, de Jesus J, Jonjic M, Diener HC, Rosskopf D: G protein beta3 polymorphism and triptan response in cluster headache. Clin Pharmacol Ther. 2007 Oct;82(4):396-401. Epub 2007 Mar 14.">17361120 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9626</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8957</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5914</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8782</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9081</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7344</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8014</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5913</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6029</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5603</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7898</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7422</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7428</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8309</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6974</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.649
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8134
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5404 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.5668
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7046
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Glaxosmithkline</li>
+<li>King pharmaceuticals inc</li>
+<li>App pharmaceuticals llc</li>
+<li>Bedford laboratories div ben venue laboratories inc</li>
+<li>Bedford laboratories</li>
+<li>Jhp pharmaceuticals llc</li>
+<li>Par pharmaceutical inc</li>
+<li>Sagent strides llc</li>
+<li>Sandoz canada inc</li>
+<li>Teva parenteral medicines inc</li>
+<li>Wockhardt ltd</li>
+<li>Zogenix inc</li>
+<li>Aurobindo pharma ltd</li>
+<li>Dr reddys laboratories inc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Orchid healthcare</li>
+<li>Ranbaxy laboratories ltd</li>
+<li>Roxane laboratories inc</li>
+<li>Sandoz inc</li>
+<li>Sun pharmaceutical industries ltd</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Watson laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.3m.com">3M Health Care</a></li>
+<li>Advanced Pharmaceutical Services Inc.</li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li>Apotheca Inc.</li>
+<li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.ascendtherapeutics.com">Ascend Therapeutics</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li><a href="http://www.azurpharma.com">AzurPharma Inc.</a></li>
+<li>Barr Pharmaceuticals</li>
+<li><a href="http://www.bayerhealthcare.com">Bayer Healthcare</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li>Bradley Pharmaceuticals Inc.</li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.caremark.com">Caremark LLC</a></li>
+<li><a href="http://www.cobaltpharma.com">Cobalt Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.contractpharma.com">Contract Pharm</a></li>
+<li><a href="http://www.curapharma.com">Cura Pharmaceutical Co. Inc.</a></li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li><a href="http://www.dptlabs.com">DPT Laboratories Ltd.</a></li>
+<li><a href="http://www.duramed.ca">Duramed</a></li>
+<li>Esprit Pharma Inc.</li>
+<li>Fielding Pharmaceutical Co.</li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.greenstonellc.com">Greenstone LLC</a></li>
+<li>Innovative Manufacturing and Distribution Services Inc.</li>
+<li><a href="http://www.jhppharma.com">JHP Pharmaceuticals LLC</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.besins-healthcare.com">Laboratoires Besins International</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.novartis.com">Novartis AG</a></li>
+<li><a href="http://www.novavax.com">Novavax Inc.</a></li>
+<li><a href="http://www.noven.com">Noven Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.novonordisk.com">Novo Nordisk Inc.</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.ohmlabs.com">Ohm Laboratories Inc.</a></li>
+<li><a href="http://www.orionpharma.com">Orion Corporation</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.parpharm.com">Par Pharmaceuticals</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li>Penn Labs</li>
+<li>Pharmaceutical Utilization Management Program VA Inc.</li>
+<li><a href="http://www.pharm-int.com">Pharmaceutics International Inc.</a></li>
+<li><a href="http://www.pharmaciaupjohn.com">Pharmacia Inc.</a></li>
+<li><a href="http://www.pharmpakinc.com">Pharmpak Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li><a href="http://www.qpharm.ca">QPharm Inc.</a></li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Redpharm Drug</li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li><a href="http://www.sunpharma.com">Sun Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li>Unimed Pharmaceuticals Inc.</li>
+<li><a href="http://www.upsher-smith.com">Upsher Smith Laboratories</a></li>
+<li><a href="http://ir.wcrx.com">Warner Chilcott Co. Inc.</a></li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li>
+<li><a href="http://www.zogenix.com">Zogenix Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Liquid</td><td>Subcutaneous</td><td></td></tr><tr><td>Patch, extended release</td><td>Transdermal</td><td></td></tr><tr><td>Spray</td><td>Nasal</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00215">Citalopram</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB06700">Desvenlafaxine</a></td><td>Increased risk of serotonin syndrome. Monitor for symptoms of serotonin syndrome.</td></tr><tr><td><a href="/drugs/DB00320">Dihydroergotamine</a></td><td>Possible severe and prolonged vasoconstriction</td></tr><tr><td><a href="/drugs/DB00696">Ergotamine</a></td><td>Possible severe and prolonged vasoconstriction</td></tr><tr><td><a href="/drugs/DB01175">Escitalopram</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB00472">Fluoxetine</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB00176">Fluvoxamine</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB01247">Isocarboxazid</a></td><td>The MAO inhibitor, isocarboxazid, may decrease the metabolism and clearance of the serotonin 5-HT receptor agonist, sumatriptan. Concomitant therapy is contraindicated.</td></tr><tr><td><a href="/drugs/DB01356">Lithium</a></td><td>Possible serotoninergic syndrome with this combination</td></tr><tr><td><a href="/drugs/DB00247">Methysergide</a></td><td>Possible severe and prolonged vasoconstriction</td></tr><tr><td><a href="/drugs/DB01149">Nefazodone</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB00715">Paroxetine</a></td><td>Increased risk of CNS adverse effects</td></tr><tr><td><a href="/drugs/DB00780">Phenelzine</a></td><td>The MAO inhibitor, phenelzine, may decrease the metabolism and clearance of the serotonin 5-HT receptor agonist, sumatriptan. Concomitant therapy is contraindicated.</td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Increased risk of serotonin syndrome. Monitor for symptoms of serotonin syndrome.</td></tr><tr><td><a href="/drugs/DB00752">Tranylcypromine</a></td><td>The MAO inhibitor, Tranylcypromine, may reduce the metabolism and clearance of the serotonin 5-HT1D receptor agonist, Sumatriptan. Risk of serotonin syndrome and Sumatriptan toxicity. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00656">Trazodone</a></td><td>Increased risk of serotonin syndrome. Monitor for symptoms of serotonin syndrome.</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>Increased risk of serotonin syndrome. Monitor for symptoms of serotonin syndrome. </td></tr><tr><td><a href="/drugs/DB00285">Venlafaxine</a></td><td>Increased risk of serotonin syndrome. Monitor for symptoms of serotonin syndrome.</td></tr><tr><td><a href="/drugs/DB06684">Vilazodone</a></td><td>Increased risk of serotonin syndrome</td></tr><tr><td><a href="/drugs/DB00315">Zolmitriptan</a></td><td>Concomitant use of two serotonin 5-HT1D receptor agonists, such as zolmitriptan and sumatriptan, may result in additive vasoconstrictive effects. Concomitant use within 24 hours is contraindicated.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

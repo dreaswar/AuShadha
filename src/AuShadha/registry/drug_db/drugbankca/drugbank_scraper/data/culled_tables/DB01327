@@ -1,0 +1,233 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Cefazolin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01327</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A semisynthetic cephalosporin analog with broad-spectrum antibiotic action due to inhibition of bacterial cell wall synthesis. It attains high serum levels and is excreted quickly via the urine. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01327/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01327/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01327.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01327.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01327.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01327.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01327.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01327">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Cefazoline</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>INN</td></tr><tr><td>Cephazolin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>CEZ</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Cefazolin sodium</strong>
+          <div class="cas">27164-46-1</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000310/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000310/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: FLKYBGKDCCEQQM-WYUVZMMLSA-M</li>
+              <li>Monoisotopic Mass: 476.011957689</li>
+              <li>Average Mass: 476.489</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000310">DBSALT000310</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Ancef</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Elzogram</td><td>Lilly</td></tr><tr><td>Kefzol</td><td>Lilly</td></tr><tr><td>Zolicef</td><td>Bristol-Myers Squibb</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li>
+<li><a href="/mesh/cephalosporins">Cephalosporins</a></li></ul></td></tr><tr><th>CAS number</th><td>25953-19-9</td></tr><tr><th>Weight</th><td>Average: 454.507<br>Monoisotopic: 454.030013046</td></tr><tr><th>Chemical Formula</th><td>C<sub>14</sub>H<sub>14</sub>N<sub>8</sub>O<sub>4</sub>S<sub>3</sub></td></tr><tr><th>InChI Key</th><td>MLYYVTUWGNIJIB-BXKDBHETSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C14H14N8O4S3/c1-6-17-18-14(29-6)28-4-7-3-27-12-9(11(24)22(12)10(7)13(25)26)16-8(23)2-21-5-15-19-20-21/h5,9,12H,2-4H2,1H3,(H,16,23)(H,25,26)/t9-,12-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(6R,7R)-3-{[(5-methyl-1,3,4-thiadiazol-2-yl)sulfanyl]methyl}-8-oxo-7-[2-(1H-1,2,3,4-tetrazol-1-yl)acetamido]-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@]12SCC(CSC3=NN=C(C)S3)=C(N1C(=O)[C@H]2NC(=O)CN1C=NN=N1)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Lactams</td></tr><tr><th>Subclass</th><td>Beta Lactams</td></tr><tr><th>Direct parent</th><td>Cephalosporins</td></tr><tr><th>Alternative parents</th><td>N-acyl-alpha Amino Acids and Derivatives; 1,3-Thiazines; Tetrazoles; Tertiary Carboxylic Acid Amides; Thiadiazoles; Hemiaminals; Azetidines; Tertiary Amines; Secondary Carboxylic Acid Amides; Enamines; Enolates; Carboxylic Acids; Polyamines; Aminals; Thioethers</td></tr><tr><th>Substituents</th><td>n-acyl-alpha amino acid or derivative; meta-thiazine; tertiary carboxylic acid amide; tetrazole; azole; thiadiazole; hemiaminal; carboxamide group; azetidine; tertiary amine; secondary carboxylic acid amide; aminal; enolate; thioether; enamine; carboxylic acid; carboxylic acid derivative; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the cephalosporins. These are compounds containing a 1,2-thiazine fused to a 2-azetidinone to for a oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylic acid moeity or a derivative thereof.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Mainly used to treat bacterial infections of the skin. It can also be used to treat moderately severe bacterial infections involving the lung, bone, joint, stomach, blood, heart valve, and urinary tract. It is clinically effective against infections caused by staphylococci and streptococci species of Gram positive bacteria. May be used for surgical prophylaxis; if required metronidazole may be added to cover B. fragilis.</td></tr><tr><th>Pharmacodynamics</th><td>Cefazolin (also known as cefazoline or cephazolin) is a semi-synthetic first generation cephalosporin for parenteral administration. Cefazolin has broad-spectrum antibiotic action due to inhibition of bacterial cell wall synthesis. It attains high serum levels and is excreted quickly via the urine.</td></tr><tr><th>Mechanism of action</th><td>In vitro tests demonstrate that the bactericidal action of cephalosporins results from inhibition of cell wall synthesis. By binding to specific penicillin-binding proteins (PBPs) located inside the bacterial cell wall, it inhibits the third and last stage of bacterial cell wall synthesis. Cell lysis is then mediated by bacterial cell wall autolytic enzymes such as autolysins.</td></tr><tr><th>Absorption</th><td>Not absorbed from GI tract. Must be administered parenterally. Peak serum concentrations attained 1-2 hours post intramuscular injection. </td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>74-86%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Not metabolized.</p></td></tr><tr><th>Route of elimination</th><td>Cefazolin is present in very low concentrations in the milk of nursing mothers. Cefazolin is excreted unchanged in the urine. In the first six hours approximately 60% of the drug is excreted in the urine and this increases to 70%-80% within 24 hours.</td></tr><tr><th>Half life</th><td>The serum half-life is approximately 1.8 hours following IV administration and approximately 2.0 hours following IM administration.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.5119</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.987</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7891</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7863</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8663</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9603</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8574</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7588</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.818</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5161</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8949</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8746</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9178</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8363</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9377</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6362</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6675
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8876
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.7464
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.2215 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8898
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8711
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Glaxosmithkline</li>
+<li>Baxter healthcare corp</li>
+<li>B braun medical inc</li>
+<li>Abraxis pharmaceutical products</li>
+<li>Acs dobfar spa</li>
+<li>App pharmaceuticals llc</li>
+<li>Aurobindo pharma ltd</li>
+<li>Bedford laboratories div ben venue laboratories inc</li>
+<li>Cephazone pharma llc</li>
+<li>Elkins sinn div ah robins co inc</li>
+<li>Hikma farmaceutica portugal lda</li>
+<li>Marsam pharmaceuticals llc</li>
+<li>Orchid healthcare</li>
+<li>Samson medical technologies llc</li>
+<li>Sandoz inc</li>
+<li>Steri pharma llc</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Eli lilly and co</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Antibioticos Ltd.</li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li><a href="http://www.bbraun.com">B. Braun Melsungen AG</a></li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li>BMH Ltd.</li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.cephazone.com">Cephazone Pharma LLC</a></li>
+<li><a href="http://www.curapharma.com">Cura Pharmaceutical Co. Inc.</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.lilly.com">Eli Lilly &amp; Co.</a></li>
+<li><a href="http://www.hanford.com">GC Hanford Manufacturing Co.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.hikma.com">Hikma Pharmaceuticals</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.meadjohnson.com">Mead Johnson and Co.</a></li>
+<li><a href="http://www.orchidpharma.com">Orchid Healthcare</a></li>
+<li><a href="http://www.pfizerah.com">Pfizer Animal Health</a></li>
+<li><a href="http://www.pfizer.com">Pfizer Inc.</a></li>
+<li>Pharmakon</li>
+<li><a href="http://www.pharmedium.com">Pharmedium</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li><a href="http://www.sagentpharma.com">Sagent Pharmaceuticals</a></li>
+<li><a href="http://www.samsonmt.com">Samson Medical Technologies</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.west-ward.com">West-Ward Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Powder, for solution</td><td>Intramuscular</td><td></td></tr><tr><td>Powder, for solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00479">Amikacin</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB00798">Gentamicin</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB00955">Netilmicin</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB01032">Probenecid</a></td><td>Probenecid may increase the serum level of cefazolin.</td></tr><tr><td><a href="/drugs/DB00684">Tobramycin</a></td><td>Increased risk of nephrotoxicity</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

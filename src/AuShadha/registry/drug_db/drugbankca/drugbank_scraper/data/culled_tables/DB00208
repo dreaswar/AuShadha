@@ -1,0 +1,216 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Ticlopidine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00208</strong>&#160; (APRD01257)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Ticlopidine is an effective inhibitor of platelet aggregation. It is a prodrug that is metabolised to an active form, which blocks the <span class="caps">ADP</span> receptor that is involved in GPIIb/IIIa receptor activation leading to platelet aggregation. Ticlopidine is marketed under the brand name Ticlid and is indicated for patients who cannot take aspirin or in whom aspirin has not worked to prevent a thrombotic stroke. The <span class="caps">FDA</span> label includes a black-box warning of neutropenia, aplastic anemia, thrombotic thrombocytopenia purpura, and agranulocytosis, so it is necessary to monitor patients&#8217; <span class="caps">WBC</span> and platelets when they are taking ticlopidine.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00208/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00208/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00208.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00208.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00208.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00208.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00208.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00208">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Ticlopidine Hydrochloride</strong>
+          <div class="cas">53885-35-1</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000179/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000179/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: MTKNGOHFNXIVOS-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 299.030225589</li>
+              <li>Average Mass: 300.247</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000179">DBSALT000179</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Ticlid</td><td>ROCHE PALO</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>55142-85-3</td></tr><tr><th>Weight</th><td>Average: 263.786<br>Monoisotopic: 263.05354785</td></tr><tr><th>Chemical Formula</th><td>C<sub>14</sub>H<sub>14</sub>ClNS</td></tr><tr><th>InChI Key</th><td>PHWBOXQYWZNQIN-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C14H14ClNS/c15-13-4-2-1-3-11(13)9-16-7-5-14-12(10-16)6-8-17-14/h1-4,6,8H,5,7,9-10H2</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">5-[(2-chlorophenyl)methyl]-4H,5H,6H,7H-thieno[3,2-c]pyridine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">ClC1=CC=CC=C1CN1CCC2=C(C1)C=CS2</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Thienopyridines</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Thienopyridines</td></tr><tr><th>Alternative parents</th><td>Chlorobenzenes; Aryl Chlorides; Pyridines and Derivatives; Thiophenes; Tertiary Amines; Polyamines; Organochlorides</td></tr><tr><th>Substituents</th><td>chlorobenzene; aryl halide; aryl chloride; benzene; pyridine; thiophene; tertiary amine; polyamine; organohalogen; amine; organochloride; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the thienopyridines. These are heterocyclic compounds containing a thiophene ring fused to a pyridine ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used in patients, who have had a stroke or stroke precursors and who cannot take aspirin or aspirin has not worked, to try to prevent another thrombotic stroke.
+</td></tr><tr><th>Pharmacodynamics</th><td>Ticlopidine is a prodrug that is metabolised to an as yet undetermined metabolite that acts as a platelet aggregation inhibitor. Inhibition of platelet aggregation causes a prolongation of bleeding time. In its prodrug form, ticlopidine has no significant in vitro activity at the concentrations attained in vivo.</td></tr><tr><th>Mechanism of action</th><td>The active metabolite of ticlopidine prevents binding of adenosine diphosphate (ADP) to its platelet receptor, impairing the ADP-mediated activation of the glycoprotein GPIIb/IIIa complex. It is proposed that the inhibition involves a defect in the mobilization from the storage sites of the platelet granules to the outer membrane. No direct interference occurs with the GPIIb/IIIa receptor. As the glycoprotein GPIIb/IIIa complex is the major receptor for fibrinogen, its impaired activation prevents fibrinogen binding to platelets and inhibits platelet aggregation. By blocking the amplification of platelet activation by released ADP, platelet aggregation induced by agonists other than ADP is also inhibited by the active metabolite of ticlopidine.</td></tr><tr><th>Absorption</th><td>Absorption is greater than 80%. Food increases absorption by approximately 20%.</td></tr><tr><th>Volume of distribution</th><td><p>The volume of distribution was not quantified.</p></td></tr><tr><th>Protein binding</th><td>Binds reversibly (98%) to plasma proteins, mainly to serum albumin and lipoproteins. The binding to albumin and lipoproteins is nonsaturable over a wide concentration range. Ticlopidine also binds to alpha-1 acid glycoprotein (about 15% or less).</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Ticlopidine is metabolized extensively by the liver with only trace amounts of intact drug detected. At least 20 metabolites have been identified. </p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Ticlopidine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0001075" target="_blank">Myeloperoxidase</a></li></ul></td><td><a href="/metabolites/DBMET00091">2-Chloroticlopidine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/91">Details</a></td></tr><tr><td>Ticlopidine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li>
+<li><a href="/biodb/bio_entities/BE0003536" target="_blank">Cytochrome P450 2C19</a></li></ul></td><td><a href="/metabolites/DBMET00092">2-Oxoticlopidine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/92">Details</a></td></tr><tr><td>Ticlopidine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0001075" target="_blank">Myeloperoxidase</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li>
+<li><a href="/biodb/bio_entities/BE0003536" target="_blank">Cytochrome P450 2C19</a></li></ul></td><td><a href="/metabolites/DBMET00093">Thienodihydropyridinium</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/93">Details</a></td></tr><tr><td>Ticlopidine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003536" target="_blank">Cytochrome P450 2C19</a></li>
+<li><a href="/biodb/bio_entities/BE0002363" target="_blank">Cytochrome P450 2D6</a></li></ul></td><td><a href="/metabolites/DBMET00094">Ticlopidine S-oxide</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/94">Details</a></td></tr><tr><td>Ticlopidine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0001075" target="_blank">Myeloperoxidase</a></li></ul></td><td><a href="/metabolites/DBMET00095">Dehydrogenated ticlopidine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/95">Details</a></td></tr><tr><td>Ticlopidine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0001075" target="_blank">Myeloperoxidase</a></li></ul></td><td><a href="/metabolites/DBMET00096">Ticlopidine N-oxide</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/96">Details</a></td></tr><tr><td>Ticlopidine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003536" target="_blank">Cytochrome P450 2C19</a></li></ul></td><td><a href="/metabolites/DBMET00097">di-Hydroxyticlopidine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/97">Details</a></td></tr><tr><td>Ticlopidine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00618">7-Hydroxyticlopidine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/637">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00092">2-Oxoticlopidine</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01202">Active metabolite of Ticlopidine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1346">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00094">Ticlopidine S-oxide</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01207">Ticlopidine S-oxide dimer</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1353">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00093">Thienodihydropyridinium</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li>
+<li><a href="/biodb/bio_entities/BE0003536" target="_blank">Cytochrome P450 2C19</a></li>
+<li><a href="/biodb/bio_entities/BE0001075" target="_blank">Myeloperoxidase</a></li></ul></td><td><a href="/metabolites/DBMET01208">Thienopyridinium</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1354">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00093">Thienodihydropyridinium</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET01209">Ticlopidine lactam analog (M8)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1355">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Ticlopidine is eliminated mostly in the urine (60%) and somewhat in the feces (23%).</td></tr><tr><th>Half life</th><td>Half-life following a single 250-mg dose is approximately 7.9 hours in subjects 20 to 43 years of age and 12.6 hours in subjects 65 to 76 years of age. With repeated dosing (250 mg twice a day), half-life is about 4 days in subjects 20 to 43 years of age and about 5 days in subjects 65 to 76 years of age.</td></tr><tr><th>Clearance</th><td><p>Ticlopidine clearance was not quantified, but clearance decreases with age.</p></td></tr><tr><th>Toxicity</th><td>Single oral doses of ticlopidine at 1600 mg/kg and 500 mg/kg were lethal to rats and mice, respectively. Symptoms of acute toxicity were GI hemorrhage, convulsions, hypothermia, dyspnea, loss of equilibrium and abnormal gait. The FDA label includes a black-box warning of neutropenia, aplastic anemia, thrombotic thrombocytopenia purpura, and agranulocytosis, so it is necessary to monitor patients' WBC and platelets when they are taking ticlopidine.
+</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Ticlopidine Action Pathway</td><td>Drug action</td></tr><tr><td>Ticlopidine Metabolism Pathway</td><td>Drug metabolism</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00611?highlight%5Bcompounds%5D%5B%5D=DB00208&amp;highlight%5Bproteins%5D%5B%5D=DB00208">SMP00611</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9902</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9906</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.6062</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6111</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8513</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8152</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8234</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9115</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5155</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9107</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.907</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9209</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8994</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8808</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.9666</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6773
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9414
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9959
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.2022 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Strong inhibitor 
+        </td>
+        <td>
+            0.6392
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6333
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Roche palo alto llc</li>
+<li>Actavis elizabeth llc</li>
+<li>Apotex inc</li>
+<li>Caraco pharmaceutical laboratories ltd</li>
+<li>Genpharm inc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Sandoz inc</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Watson laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li><a href="http://www.aqpharmaceuticals.com">AQ Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.caraco.com">Caraco Pharmaceutical Labs</a></li>
+<li>Eon Labs</li>
+<li><a href="http://www.roche.com">F Hoffmann-La Roche Ltd.</a></li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li>Torpharm Inc.</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>250MG</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00945">Acetylsalicylic acid</a></td><td>Increased effect of ticlopidine</td></tr><tr><td><a href="/drugs/DB00009">Alteplase</a></td><td>Increased bleeding risk. Monitor for signs of bleeding.</td></tr><tr><td><a href="/drugs/DB06403">ambrisentan</a></td><td>Ticlopidine may decrease the metabolism and clearance of Ambrisentan. Consider alternate therapy or monitor for adverse/toxic effects of Ambrisentan if Ticlopidine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB01223">Aminophylline</a></td><td>Ticlopidine increases the effect and toxicity of theophylline</td></tr><tr><td><a href="/drugs/DB00188">Bortezomib</a></td><td>Ticlopidine may decrease the metabolism and clearance of Bortezomib. Consider alternate therapy or monitor for adverse/toxic effects of Bortezomib if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>Ticlopidine increases the effect of carbamazepine</td></tr><tr><td><a href="/drugs/DB00395">Carisoprodol</a></td><td>Ticlopidine may decrease the metabolism and clearance of Carisoprodol. Consider alternate therapy or monitor for adverse/toxic effects of Carisoprodol if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01166">Cilostazol</a></td><td>Ticlopidine may decrease the metabolism and clearance of Cilostazol. Consider alternate therapy or monitor for adverse/toxic effects of Cilostazol if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00501">Cimetidine</a></td><td>Cimetidine may increase Ticlopidine levels. Avoid concomitant therapy. </td></tr><tr><td><a href="/drugs/DB00215">Citalopram</a></td><td>Ticlopidine may decrease the metabolism and clearance of Citalopram. Consider alternate therapy or monitor for adverse/toxic effects of Citalopram if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00349">Clobazam</a></td><td>Ticlopidine may decrease the metabolism and clearance of Clobazam. Consider alternate therapy or monitor for adverse/toxic effects of Clobazam if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01242">Clomipramine</a></td><td>Ticlopidine may decrease the metabolism and clearance of Clomipramine. Consider alternate therapy or monitor for adverse/toxic effects of Clomipramine if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Ticlopidine decreases the effect of cyclosporine</td></tr><tr><td><a href="/drugs/DB00829">Diazepam</a></td><td>Ticlopidine may decrease the metabolism and clearance of Diazepam. Consider alternate therapy or monitor for adverse/toxic effects of Diazepam if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00390">Digoxin</a></td><td>Ticlopidine may decrease Digoxin levels. Monitor for Digoxin levels with Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00651">Dyphylline</a></td><td>Ticlopidine increases the effect and toxicity of theophylline</td></tr><tr><td><a href="/drugs/DB01175">Escitalopram</a></td><td>Ticlopidine may decrease the metabolism and clearance of Escitalopram. Consider alternate therapy or monitor for adverse/toxic effects of Ambrisentan if Escitalopram is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00754">Ethotoin</a></td><td>Ticlopidine increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>Ticlopidine may decrease the metabolism and clearance of Fosphenytoin. Consider alternate therapy or monitor for adverse/toxic effects of Fosphenytoin if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01381">Ginkgo biloba</a></td><td>Additive anticoagulant/antiplatelet effects may increase bleed risk. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB01109">Heparin</a></td><td>Increased bleeding risk. Monitor aPTT.</td></tr><tr><td><a href="/drugs/DB01181">Ifosfamide</a></td><td>Ticlopidine may decrease the metabolism and clearance of Ifosfamide. Consider alternate therapy or monitor for adverse/toxic effects of Ifosfamide if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00458">Imipramine</a></td><td>Ticlopidine may decrease the metabolism and clearance of Imipramine. Consider alternate therapy or monitor for adverse/toxic effects of Imipramine if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00532">Mephenytoin</a></td><td>Ticlopidine increases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB05246">Methsuximide</a></td><td>Ticlopidine may decrease the metabolism and clearance of Methsuximide. Consider alternate therapy or monitor for adverse/toxic effects of Methsuximide if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01171">Moclobemide</a></td><td>Ticlopidine may decrease the metabolism and clearance of Moclobemide. Consider alternate therapy or monitor for adverse/toxic effects of Moclobemide if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00665">Nilutamide</a></td><td>Ticlopidine may decrease the metabolism and clearance of Nilutamide. Consider alternate therapy or monitor for adverse/toxic effects of Nilutamide if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01303">Oxtriphylline</a></td><td>Ticlopidine increases the effect and toxicity of theophylline</td></tr><tr><td><a href="/drugs/DB00738">Pentamidine</a></td><td>Ticlopidine may decrease the metabolism and clearance of Pentamidine. Consider alternate therapy or monitor for adverse/toxic effects of Pentamidine if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01174">Phenobarbital</a></td><td>Ticlopidine may decrease the metabolism and clearance of Phenobarbital. Consider alternate therapy or monitor for adverse/toxic effects of Phenobarbital if Ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>Ticlopidine may decrease the metabolism and clearance of phenytoin. Consider alternate therapy or monitor for adverse/toxic effects of phenytoin if ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01100">Pimozide</a></td><td>Avoid combination with pimozide and other major CYP3A4 substrates due to the potential increase of pimozide concentration.
+
+</td></tr><tr><td><a href="/drugs/DB00015">Reteplase</a></td><td>Increased bleeding risk. Monitor for signs of bleeding.</td></tr><tr><td><a href="/drugs/DB01390">Sodium bicarbonate</a></td><td>Sodium bicarbonate may decrease Ticlopidine levels. Administer agents 1 to 2 hours apart. </td></tr><tr><td><a href="/drugs/DB00086">Streptokinase</a></td><td>Increased bleeding risk. Monitor for signs of bleeding.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Ticlopidine may decrease the therapeutic effect of tamoxifen by decreasing the production of active metabolites. Consider alternate therapy.</td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Ticlopidine, a CYP2D6 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP2D6 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Ticlopidine is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00031">Tenecteplase</a></td><td>Increased bleeding risk. Monitor for signs of bleeding.</td></tr><tr><td><a href="/drugs/DB00277">Theophylline</a></td><td>Ticlopidine increases the effect and toxicity of theophylline</td></tr><tr><td><a href="/drugs/DB00679">Thioridazine</a></td><td>Ticlopidine may decrease the metabolism of thioridazine. Concomitant therapy is contraindicated.</td></tr><tr><td><a href="/drugs/DB00697">Tizanidine</a></td><td>Ticlopidine may decrease the metabolism and clearance of Tizanidine. Consider alternate therapy or use caution during co-administration.</td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Ticlopidine may decrease the effect of Tramadol by decreasing active metabolite production. </td></tr><tr><td><a href="/drugs/DB00374">Treprostinil</a></td><td>The prostacyclin analogue, Treprostinil, increases the risk of bleeding when combined with the antiplatelet agent, Ticlopidine. Monitor for increased bleeding during concomitant thearpy. </td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>The strong CYP2C19 inhibitor, ticlopidine, may decrease the metabolism and clearance of trimipramine, a CYP2C19 substrate. Consider alternate therapy or monitor for changes in therapeutic and adverse effects of trimipramine if ticlopidine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>Increased bleeding risk. Monitor INR.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>High fat meals will increase ticlopidine absorption. As well, food can help ticlopidine-induced stomach upset.</li></ul></td></tr></tbody></table>

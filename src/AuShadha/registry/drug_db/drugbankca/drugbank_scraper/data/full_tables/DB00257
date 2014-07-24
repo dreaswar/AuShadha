@@ -1,0 +1,222 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Clotrimazole</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00257</strong>&#160; (APRD00244)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An imidazole derivative with a broad spectrum of antimycotic activity. It inhibits biosynthesis of the sterol ergostol, an important component of fungal cell membranes. Its action leads to increased membrane permeability and apparent disruption of enzyme systems bound to the membrane. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00257/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00257/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00257.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00257.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00257.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00257.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00257.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00257">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>1-((2-Chlorophenyl)diphenylmethyl)-1H-imidazole</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>1-(o-Chloro-&#945;,&#945;-diphenylbenzyl)imidazole</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>1-(o-Chlorotrityl)imidazole</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>1-(&#945;-(2-Chlorophenyl)benzhydryl)imidazole</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Canesten</td><td>Bayer</td></tr><tr><td>Canifug</td><td>Dr. August Wolff</td></tr><tr><td>Clotrimaderm</td><td>Taro</td></tr><tr><td>Empecid</td><td>Bayer</td></tr><tr><td>FemCare</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Fungicip</td><td>Cipla</td></tr><tr><td>Gyne-Lotrimin</td><td>Schering-Plough</td></tr><tr><td>Lotrimin</td><td>Schering-Plough</td></tr><tr><td>Mycelex</td><td>Bayer</td></tr><tr><td>Myclo-Derm</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Myclo-Gyne</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Lotrisone</td><td>clotrimazole + betamethasone</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antifungal-agents">Antifungal Agents</a></li>
+<li><a href="/mesh/14-alpha-demethylase-inhibitors">14-alpha Demethylase Inhibitors</a></li>
+<li><a href="/mesh/anti-infective-agents-local">Anti-Infective Agents, Local</a></li></ul></td></tr><tr><th>CAS number</th><td>23593-75-1</td></tr><tr><th>Weight</th><td>Average: 344.837<br>Monoisotopic: 344.108026261</td></tr><tr><th>Chemical Formula</th><td>C<sub>22</sub>H<sub>17</sub>ClN<sub>2</sub></td></tr><tr><th>InChI Key</th><td>VNFPBHJOKIVQEB-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C22H17ClN2/c23-21-14-8-7-13-20(21)22(25-16-15-24-17-25,18-9-3-1-4-10-18)19-11-5-2-6-12-19/h1-17H</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-[(2-chlorophenyl)diphenylmethyl]-1H-imidazole</div></td></tr><tr><th>SMILES</th><td><div class="wrap">ClC1=CC=CC=C1C(N1C=CN=C1)(C1=CC=CC=C1)C1=CC=CC=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Halobenzenes</td></tr><tr><th>Direct parent</th><td>Chlorobenzenes</td></tr><tr><th>Alternative parents</th><td>Aryl Chlorides; N-substituted Imidazoles; Polyamines; Organochlorides</td></tr><tr><th>Substituents</th><td>aryl chloride; aryl halide; n-substituted imidazole; azole; imidazole; polyamine; organohalogen; organochloride; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the chlorobenzenes. These are compounds containing one or more chlorine atoms attached to a benzene moiety.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the local treatment of oropharyngeal candidiasis and vaginal yeast infections, also used in fungal infections of the skin such as ringworm, athlete's foot, and jock itch.</td></tr><tr><th>Pharmacodynamics</th><td>Clotrimazole, an imidazole derivative with a broad spectrum of antimycotic activity, inhibits biosynthesis of the sterol ergostol, an important component of fungal cell membranes. Its action leads to increased membrane permeability and apparent disruption of enzyme systems bound to the membrane. Betamethasone and clotrimazole are used together to treat cutaneous tinea infections. In studies in fungal cultures, the minimum fungicidal concentration of clotrimazole caused leakage of intracellular phosphorous compounds into the ambient medium with concomitant breakdown of cellular nucleic acids, and accelerated potassium etflux. Both of these events began rapidly and extensively after addition of the drug to the cultures. The primary action of clotrimazole is against dividing and growing organisms.</td></tr><tr><th>Mechanism of action</th><td>Clotrimazole interacts with yeast 14-&#945; demethylase, a cytochrome P-450 enzyme that converts lanosterol to ergosterol, an essential component of the membrane. In this way, clotrimazole inhibits ergosterol synthesis, resulting in increased cellular permeability. Clotrimazole may also inhibit endogenous respiration, interact with membrane phospholipids, inhibit the transformation of yeasts to mycelial forms and the uptake of purine, impair triglyceride and/or phospholipid biosynthesis, and inhibit the movement of calcium and potassium ions across the cell membrane by blocking the ion transport pathway known as the Gardos channel.</td></tr><tr><th>Absorption</th><td>Poorly and erratically absorbed orally, minimal vaginal or topical absorption.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>90%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic (metabolized to inactive metabolites)</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>2 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Symptoms of overdose include erythema, stinging, blistering, peeling, edema, pruritus, urticaria, burning, and general irritation of the skin, and cramps.</td></tr><tr><th>Affected organisms</th><td><ul><li>Yeast and other fungi</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9725</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9837</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.6858</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.7185</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6612</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7884</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5854</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7898</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9149</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6262</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9106</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8948</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8932</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8994</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8478</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.9799</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7428
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9018
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.7194 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9659
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6779
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Schering plough healthcare products inc</li>
+<li>Bayer pharmaceuticals corp</li>
+<li>Glenmark pharmaceuticals inc usa</li>
+<li>Nycomed us inc</li>
+<li>Taro pharmaceuticals usa inc</li>
+<li>Actavis mid atlantic llc</li>
+<li>Taro pharmaceuticals inc</li>
+<li>Schering corp sub schering plough corp</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Bayer healthcare pharmaceuticals inc</li>
+<li>Teva pharmaceuticals usa</li>
+<li>Paddock laboratories inc</li>
+<li>Roxane laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li>Alza Corp.</li>
+<li><a href="http://www.bayerhealthcare.com">Bayer Healthcare</a></li>
+<li><a href="http://www.bergenbrunswig.com">Bergen Brunswig</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.cvs.com">CVS Pharmacy</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.fougera.com">E. Fougera and Co.</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li>Ivax Pharmaceuticals</li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.mckesson.com">Mckesson Corp.</a></li>
+<li>McNeil Laboratories</li>
+<li><a href="http://www.medisca.com">Medisca Inc.</a></li>
+<li>Neuman Distributors Inc.</li>
+<li><a href="http://www.novartis.com">Novartis AG</a></li>
+<li><a href="http://www.nycomed.com">Nycomed Inc.</a></li>
+<li><a href="http://www.ortho-mcneil.com">Ortho Mcneil Janssen Pharmaceutical Inc.</a></li>
+<li><a href="http://www.paddocklabs.com">Paddock Labs</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pedinol.com">PEDiNOL</a></li>
+<li>Pharmaceutical Utilization Management Program VA Inc.</li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.riteaid.com">Rite Aid Corp.</a></li>
+<li><a href="http://www.roxane.com">Roxane Labs</a></li>
+<li>S&amp;P Healthcare</li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li><a href="http://www.schering.de">Schering Corp.</a></li>
+<li><a href="http://www.schering-plough.ca">Schering-Plough Inc.</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li><a href="http://www.tarousa.com">Taro Pharmaceuticals USA</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.walgreens.com">Walgreen Co.</a></li>
+<li>Warrick Pharmaceuticals Corp.</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Cream</td><td>Intravaginal</td><td></td></tr><tr><td>Cream</td><td>Topical</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Clotrimazole 70 10 mg Troche Bottle</td><td>117.04USD</td><td>bottle</td></tr><tr><td>Clotrimazole 1% Cream 45 gm Tube</td><td>49.99USD</td><td>tube</td></tr><tr><td>Clotrimazole 1% Cream 30 gm Tube</td><td>35.99USD</td><td>tube</td></tr><tr><td>Clotrimazole 1% Solution 30ml Bottle</td><td>24.99USD</td><td>bottle</td></tr><tr><td>Clotrimazole 1% Cream 15 gm Tube</td><td>17.99USD</td><td>tube</td></tr><tr><td>Clotrimazole 1% Solution 10ml Bottle</td><td>17.99USD</td><td>bottle</td></tr><tr><td>Clotrimazole powder</td><td>5.2USD</td><td>g</td></tr><tr><td>Mycelex 10 mg troche</td><td>1.85USD</td><td>troche</td></tr><tr><td>Clotrimazole 10 mg troche</td><td>1.61USD</td><td>troche</td></tr><tr><td>Mycelex-7 100 mg vaginal tablet</td><td>1.33USD</td><td>tablet</td></tr><tr><td>Lotrimin 1% cream</td><td>1.28USD</td><td>g</td></tr><tr><td>Gyne-lotrimin insert</td><td>1.03USD</td><td>insert</td></tr><tr><td>Mycelex 1% cream</td><td>0.9USD</td><td>g</td></tr><tr><td>Clotrimazole insert</td><td>0.86USD</td><td>insert</td></tr><tr><td>Lotrimin ultra 1% cream</td><td>0.68USD</td><td>g</td></tr><tr><td>Clotrimazole 1% cream</td><td>0.53USD</td><td>g</td></tr><tr><td>Clotrimazole 3 2% cream</td><td>0.5USD</td><td>g</td></tr><tr><td>Ra clotrimazole 3 cream</td><td>0.46USD</td><td>g</td></tr><tr><td>Ra athlete's 1% foot cream</td><td>0.37USD</td><td>g</td></tr><tr><td>Desenex 1% cream</td><td>0.33USD</td><td>g</td></tr><tr><td>CVS Pharmacy clotrimazole 1% cream</td><td>0.32USD</td><td>g</td></tr><tr><td>Antifungal 1% cream</td><td>0.27USD</td><td>g</td></tr><tr><td>Sm antifungal 1% cream</td><td>0.25USD</td><td>g</td></tr><tr><td>Ra clotrimazole af cream</td><td>0.24USD</td><td>g</td></tr><tr><td>Clotrim 1% vaginal cream</td><td>0.18USD</td><td>g</td></tr><tr><td>Lotrimin af 2% spray powder</td><td>0.05USD</td><td>g</td></tr><tr><td>Lotrimin af 2% liquid spray</td><td>0.04USD</td><td>g</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>154-156</td><td>Buechel, K.H., et al; South African Patent 69/0039; January 3, 1969; assigned to Farben- Buechel, K.H., Regel, E. and Plempel, M.; US. Patent 3,660,577; May 2,1972; and U.S. fabriken Bayer AG, Germany. 
+Patent 3,705,172; Dec. 5,1972; both assigned to Farbenfabriken Bayer A.G. (Germany).</td></tr><tr><td>water solubility</td><td>29.84 mg/mL</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>6.1</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.47e-03 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>5.48</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>5.84</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-5.4</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest basic)</td><td>6.62</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>17.82</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>103.76</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>36.25</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><ul><li><a data-no-turbolink="true" href="/spectra/spectra/nmr_one_d/1801">1H NMR Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1846">MS/MS Spectrum Quattro_QQQ 10</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1847">MS/MS Spectrum Quattro_QQQ 25</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1848">MS/MS Spectrum Quattro_QQQ 40</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/nmr_two_d/1741">[1H,13C] 2D NMR Spectrum</a></li></ul></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Buechel, K.H., et al; South African Patent 69/0039; January 3, 1969; assigned to Farben- Buechel, K.H., Regel, E. and Plempel, M.; US. Patent 3,660,577; May 2,1972; and U.S. fabriken Bayer AG, Germany. <br>
+Patent 3,705,172; Dec. 5,1972; both assigned to Farbenfabriken Bayer A.G. (Germany).</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=3705172&amp;tbm=pts" target="_blank">US3705172 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00282" target="_blank">D00282 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C06922" target="_blank">C06922 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=2812" target="_blank">2812 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46507927" target="_blank">46507927 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.2710.html" target="_blank">2710 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=31774" target="_blank">31774 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=3764" target="_blank">3764 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL104" target="_blank">CHEMBL104 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000138" target="_blank">DAP000138 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA449057" target="_blank">PA449057 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>IUPHAR</td><td><a class="wishart-link-out" href="http://www.iuphar-db.org/DATABASE/LigandDisplayForward?ligandId=2330" target="_blank">2330 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Guide to Pharmacology</td><td><a class="wishart-link-out" href="http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=2330" target="_blank">2330 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2229380" target="_blank">2229380 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic2/clotrimaz.htm" target="_blank">http://www.rxlist.com/cgi/generic2/clotrimaz.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/mtm/clotrimazole.html" target="_blank">http://www.drugs.com/mtm/clotrimazole.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Clotrimazole" target="_blank">Clotrimazole <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>A01AB18<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A01#A01">A01 &#8212; STOMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/A01A#A01A">A01A &#8212; STOMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/A01AB#A01AB">A01AB &#8212; Antiinfectives and antiseptics for local oral treatment</a></li></ul>D01AC01<ul class="atc-drug-tree"><li><a href="/atc/D#D">D &#8212; DERMATOLOGICALS</a></li><li><a href="/atc/D01#D01">D01 &#8212; ANTIFUNGALS FOR DERMATOLOGICAL USE</a></li><li><a href="/atc/D01A#D01A">D01A &#8212; ANTIFUNGALS FOR TOPICAL USE</a></li><li><a href="/atc/D01AC#D01AC">D01AC &#8212; Imidazole and triazole derivatives</a></li></ul>G01AF02<ul class="atc-drug-tree"><li><a href="/atc/G#G">G &#8212; GENITO URINARY SYSTEM AND SEX HORMONES</a></li><li><a href="/atc/G01#G01">G01 &#8212; GYNECOLOGICAL ANTIINFECTIVES AND ANTISEPTICS</a></li><li><a href="/atc/G01A#G01A">G01A &#8212; ANTIINFECTIVES AND ANTISEPTICS, EXCL. COMBINATIONS WITH CORTICOSTEROIDS</a></li><li><a href="/atc/G01AF#G01AF">G01AF &#8212; Imidazole derivatives</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>84:04.08.08</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00257.pdf?1265922797">show</a>(139 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00257.pdf?1265922737">show</a>(73.8 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB06274">Alvimopan</a></td><td>Decreases levels by P-glycoprotein (MDR-1) efflux transporter. Can significantly increase systemic exposure to P-glycoprotein substrates. </td></tr><tr><td><a href="/drugs/DB01222">Budesonide</a></td><td>CYP3A4 Inhibitors (Moderate) such as clotrimazole may increase the serum concentration of Budesonide (Systemic, Oral Inhalation). Consider reducing the oral budesonide dose when used together with a CYP3A4 inhibitor. This interaction is likely less severe with orally inhaled budesonide. Any patient receiving both budesonide and a moderate CYP3A4 inhibitor should be monitored closely for signs/symptoms of corticosteroid excess. </td></tr><tr><td><a href="/drugs/DB01394">Colchicine</a></td><td>CYP3A4 Inhibitors (Moderate) such as clotrimazole may increase the serum concentration of colchicine. Reduce colchicine dose (for gout flares: to 1.2 mg x 1 dose, with next dose no sooner than 3 days later; for Familial Mediterranean Fever: to no more than 1.2 mg/day) when using in combination with a moderate CYP3A4 inhibitor such as erythromycin or verapamil. Increase monitoring for colchicine-related toxicity when using such combinations. Use extra caution in patients with impaired renal and/or hepatic function. </td></tr><tr><td><a href="/drugs/DB01590">Everolimus</a></td><td>CYP3A4 Inhibitors (Moderate)such as clotrimazole may increase the serum concentration of everolimus. The prescribing information for the Afinitor branded everolimus product lists indication-specific recommendations for managing this interaction. </td></tr><tr><td><a href="/drugs/DB00813">Fentanyl</a></td><td>CYP3A4 Inhibitors (Moderate) such as clotrimazole may increase the serum concentration of fentanyl. Concurrent use of fentanyl with any CYP3A4 inhibitor may result in increased fentanyl concentrations and could increase or prolong adverse effects, including potentially fatal respiratory depression. Patients receiving fentanyl and any CYP3A4 inhibitor should be closely monitored for several days following initiation of the combination, and fentanyl dosage reductions should be made as appropriate. </td></tr><tr><td><a href="/drugs/DB01218">Halofantrine</a></td><td>CYP3A4 Inhibitors (Moderate) such as clotrmazole may increase the serum concentration of halofantrine. Extreme caution, with possibly increased monitoring of cardiac status (e.g., ECG), should be used with concurrent use of halofantrine with any moderate CYP3A4 inhibitor(s).
+</td></tr><tr><td><a href="/drugs/DB08815">Lurasidone</a></td><td>CYP3A4 Inhibitors (Moderate) such as clotrimazole may increase the serum concentration of lurasidone. Limit adult lurasidone dose to 40 mg/day in patients receiving a moderate CYP3A4 inhibitor. </td></tr><tr><td><a href="/drugs/DB00243">Ranolazine</a></td><td>CYP3A4 Inhibitors (Moderate) such as clotrimazole may increase the serum concentration of ranolazine. Limit the ranolazine dose to a maximum of 500mg twice daily in patients concurrently receiving moderate CYP3A4 inhibitors (e.g., diltiazem, verapamil, erythromycin, etc.). Monitor for increased effects/toxicity of ranolazine during concomitant use.</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>The antifungal, Clotrimazole, may increase serum concentrations of Tacrolimus. Monitor for changes in the therapeutic/toxic effects of Tacrolimus if Clotrimazole therapy is initiated, discontinued or altered. </td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Clotrimazole, a CYP3A4 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP3A4 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Clotrimazole is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB01036">Tolterodine</a></td><td>Clotrimazole may decrease the metabolism and clearance of Tolterodine. Adjust Tolterodine dose and monitor for efficacy and toxicity.</td></tr><tr><td><a href="/drugs/DB06212">Tolvaptan</a></td><td>CYP3A4 Inhibitors (Moderate) may increase the serum concentration of tolvaptan. Coadministration of a strong CYP3A4 inhibitor with tolvaptan is contraindicated. </td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Clotrimazole may increase Tramadol toxicity by decreasing Tramadol metabolism and clearance.</td></tr><tr><td><a href="/drugs/DB00656">Trazodone</a></td><td>The CYP3A4 inhibitor, Clotrimazole, may increase Trazodone efficacy/toxicity by decreasing Trazodone metabolism and clearance. Monitor for changes in Trazodone efficacy/toxicity if Clotrimazole is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

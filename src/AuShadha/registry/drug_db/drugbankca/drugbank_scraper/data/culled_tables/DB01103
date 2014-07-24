@@ -1,0 +1,193 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Quinacrine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01103</strong>&#160; (APRD00317)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An acridine derivative formerly widely used as an antimalarial but superseded by chloroquine in recent years. It has also been used as an anthelmintic and in the treatment of giardiasis and malignant effusions. It is used in cell biological experiments as an inhibitor of phospholipase A2. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01103/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01103/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01103.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01103.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01103.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01103.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01103.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01103">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Mepacrine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Quinacrine Dihydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000420/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000420/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: UDKVBVICMUEIKS-UHFFFAOYNA-N</li>
+              <li>Monoisotopic Mass: 471.161095782</li>
+              <li>Average Mass: 472.879</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000420">DBSALT000420</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Atabrine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents">Antineoplastic Agents</a></li>
+<li><a href="/mesh/enzyme-inhibitors">Enzyme Inhibitors</a></li>
+<li><a href="/mesh/antimalarials">Antimalarials</a></li>
+<li><a href="/mesh/antiprotozoal-agents">Antiprotozoal Agents</a></li>
+<li><a href="/mesh/antinematodal-agents">Antinematodal Agents</a></li>
+<li><a href="/mesh/anthelmintics">Anthelmintics</a></li>
+<li><a href="/mesh/anticestodal-agents">Anticestodal Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>83-89-6</td></tr><tr><th>Weight</th><td>Average: 399.957<br>Monoisotopic: 399.207740304</td></tr><tr><th>Chemical Formula</th><td>C<sub>23</sub>H<sub>30</sub>ClN<sub>3</sub>O</td></tr><tr><th>InChI Key</th><td>GPKJTRJOBQGKQK-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C23H30ClN3O/c1-5-27(6-2)13-7-8-16(3)25-23-19-11-9-17(24)14-22(19)26-21-12-10-18(28-4)15-20(21)23/h9-12,14-16H,5-8,13H2,1-4H3,(H,25,26)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">{4-[(6-chloro-2-methoxyacridin-9-yl)amino]pentyl}diethylamine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCN(CC)CCCC(C)NC1=C2C=C(OC)C=CC2=NC2=C1C=CC(Cl)=C2</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Quinolines and Derivatives</td></tr><tr><th>Subclass</th><td>Benzoquinolines</td></tr><tr><th>Direct parent</th><td>Acridines</td></tr><tr><th>Alternative parents</th><td>Hydroxyquinolines; Aminoquinolines and Derivatives; Anisoles; Aminopyridines and Derivatives; Alkyl Aryl Ethers; Chlorobenzenes; Aryl Chlorides; Tertiary Amines; Polyamines; Secondary Amines; Organochlorides</td></tr><tr><th>Substituents</th><td>hydroxyquinoline; aminoquinoline; anisole; phenol ether; aminopyridine; chlorobenzene; alkyl aryl ether; benzene; aryl halide; pyridine; aryl chloride; tertiary amine; secondary amine; ether; polyamine; organohalogen; organochloride; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the acridines. These are organic compounds containing the acridine moiety, a linear tricyclic heterocyle which consists of two benzene rings joined by a pyridine ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of giardiasis and cutaneous leishmaniasis and the management of malignant effusions.</td></tr><tr><th>Pharmacodynamics</th><td>Quinacrine has been used as an antimalarial drug and as an antibiotic. It is used to treat giardiasis, a protozoal infection of the intestinal tract, and certain types of lupus erythematosus, an inflammatory disease that affects the joints, tendons, and other connective tissues and organs. Quinacrine may be injected into the space surrounding the lungs to prevent reoccurrence of pneumothorax. The exact way in which quinacrine works is unknown. It appears to interfere with the parasite's metabolism.</td></tr><tr><th>Mechanism of action</th><td>The exact mechanism of antiparasitic action is unknown; however, quinacrine binds to deoxyribonucleic acid (DNA) in vitro by intercalation between adjacent base pairs, inhibiting transcription and translation to ribonucleic acid (RNA). Quinacrine does not appear to localize to the nucleus of Giaridia trophozoites, suggesting that DNA binding may not be the primary mechanism of its antimicrobial action. Fluorescence studies using Giardia suggest that the outer membranes may be involved. Quinacrine inhibits succinate oxidation and interferes with electron transport. In addition, by binding to nucleoproteins, quinacrine suppress the lupus erythematous cell factor and acts as a strong inhibitor of cholinesterase.</td></tr><tr><th>Absorption</th><td>Absorbed rapidly from the gastrointestinal tract following oral administration.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>80-90%</td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>5 to 14 days</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral, rat: LD<sub>50</sub> = 900 mg/kg; Oral, mouse: LD<sub>50</sub> = 1000 mg/kg. Symptoms of overdose include seizures, hypotension, cardiac arrhythmias, and cardiovascular collapse.</td></tr><tr><th>Affected organisms</th><td><ul><li>Parasitic protozoa and helminths</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9952</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9253</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.596</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8401</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7537</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8526</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6497</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8442</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.701</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9107</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9185</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8932</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9063</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.5494</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9107
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8806
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.8888 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Strong inhibitor 
+        </td>
+        <td>
+            0.585
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.8622
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.spectrumpharm.com">Spectrum Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00289">Atomoxetine</a></td><td>The CYP2D6 inhibitor could increase the effect and toxicity of atomoxetine</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

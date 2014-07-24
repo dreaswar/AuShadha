@@ -1,0 +1,193 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Bretylium</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01158</strong>&#160; (APRD00830)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Bretylium blocks the release of noradrenaline from the peripheral sympathetic nervous system, and is used in emergency medicine, cardiology, and other specialties for the acute management of ventricular tachycardia and ventricular fibrillation. The primary mode of action for bretylium is thought to be inhibition of voltage-gated K(+) channels. Recent evidence has shown that bretylium may also inhibit the Na,K-ATPase by binding to the extracellular K-site.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01158/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01158/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01158.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01158.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01158.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01158.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01158.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01158">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Bretylium tosylate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT001050/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT001050/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT001050">DBSALT001050</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Anxyrex</td><td>Sanofi-Aventis</td></tr><tr><td>Bretylol</td><td>ICI</td></tr><tr><td>Bromidem</td><td>Nycomed</td></tr><tr><td>Creosedin</td><td>AstraZeneca</td></tr><tr><td>Darenthin</td><td>Burroughs Wellcome</td></tr><tr><td>Lexotan</td><td>Roche</td></tr><tr><td>Xionil</td><td>Novartis</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antihypertensive-agents">Antihypertensive Agents</a></li>
+<li><a href="/mesh/anti-arrhythmia-agents">Anti-Arrhythmia Agents</a></li>
+<li><a href="/mesh/adrenergic-antagonists">Adrenergic Antagonists</a></li></ul></td></tr><tr><th>CAS number</th><td>59-41-6</td></tr><tr><th>Weight</th><td>Average: 243.163<br>Monoisotopic: 242.054437196</td></tr><tr><th>Chemical Formula</th><td>C<sub>11</sub>H<sub>17</sub>BrN</td></tr><tr><th>InChI Key</th><td>AAQOQKQBGPPFNS-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C11H17BrN/c1-4-13(2,3)9-10-7-5-6-8-11(10)12/h5-8H,4,9H2,1-3H3/q+1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">[(2-bromophenyl)methyl](ethyl)dimethylazanium</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC[N+](C)(C)CC1=CC=CC=C1Br</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Halobenzenes</td></tr><tr><th>Direct parent</th><td>Bromobenzenes</td></tr><tr><th>Alternative parents</th><td>Aryl Bromides; Polyamines; Organobromides</td></tr><tr><th>Substituents</th><td>aryl bromide; aryl halide; polyamine; organobromide; organohalogen; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the bromobenzenes. These are organic compounds containing a chlorine atom attached to a benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For use in the prophylaxis and therapy of ventricular fibrillation. Also used in the treatment of life-threatening ventricular arrhythmias, such as ventricular tachycardia, that have failed to respond to adequate doses of a first-line antiarrhythmic agent, such as lidocaine.</td></tr><tr><th>Pharmacodynamics</th><td>Bretylium is a bromobenzyl quaternary ammonium compound which selectively accumulates in sympathetic ganglia and their postganglionic adrenergic neurons where it inhibits norepinephrine release by depressing adrenergic nerve terminal excitability. Bretylium also suppresses ventricular fibrillation and ventricular arrhythmias.</td></tr><tr><th>Mechanism of action</th><td>Bretylium inhibits norepinephrine release by depressing adrenergic nerve terminal excitability. The mechanisms of the antifibrillatory and antiarrhythmic actions of bretylium are not established. In efforts to define these mechanisms, the following electrophysiologic actions of bretylium have been demonstrated in animal experiments: increase in ventricular fibrillation threshold, increase in action potential duration and effective refractory period without changes in heart rate, little effect on the rate of rise or amplitude of the cardiac action potential (Phase 0) or in resting membrane potential (Phase 4) in normal myocardium, decrease in the disparity in action potential duration between normal and infarcted regions, and increase in impulse formation and spontaneous firing rate of pacemaker tissue as well as increase ventricular conduction velocity.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>No metabolites have been identified following administration in man and laboratory animals.</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>The terminal half-life in four normal volunteers averaged 7.8&#177;0.6 hours (range 6.9-8.1). During hemodialysis, this patient's arterial and venous bretylium concentrations declined rapidly, resulting in a half-life of 13 hours.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral, mouse: LD<sub>50</sub> = 400 mg/kg. In the presence of life-threatening arrhythmias, underdosing with bretylium probably presents a greater risk to the patient than potential overdosage. However, one case of accidental overdose has been reported in which a rapidly injected intravenous bolus of 30 mg/kg was given instead of an intended 10 mg/kg dose during an episode of ventricular tachycardia. Marked hypertension resulted, followed by protracted refractory hypotension. The patient expired 18 hours later in asystole, complicated by renal failure and aspiration pneumonitis. Bretylium serum levels were 8000 ng/mL.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.8406</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9484</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.6831</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5105</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9789</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8742</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6279</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.861</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6999</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5132</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6973</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8505</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8475</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8038</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9752</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6854</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9045
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Carcinogens  
+        </td>
+        <td>
+            0.5905
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9157
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.6214 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9291
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6322
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Abraxis pharmaceutical products</li>
+<li>Astrazeneca lp</li>
+<li>Baxter healthcare corp anesthesia and critical care</li>
+<li>Hospira inc</li>
+<li>International medication system</li>
+<li>Luitpold pharmaceuticals inc</li>
+<li>Abbott laboratories pharmaceutical products div</li>
+<li>B braun medical inc</li>
+<li>Baxter healthcare corp</li></ul></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Liquid</td><td>Intramuscular</td><td></td></tr><tr><td>Solution</td><td>Intramuscular</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00604">Cisapride</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01211">Clarithromycin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00199">Erythromycin</a></td><td>Increased risk of cardiotoxicity and arryhthmias</td></tr><tr><td><a href="/drugs/DB01044">Gatifloxacin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00365">Grepafloxacin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01137">Levofloxacin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00933">Mesoridazine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00218">Moxifloxacin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00243">Ranolazine</a></td><td>Possible additive effect on QT prolongation</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00679">Thioridazine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

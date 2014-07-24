@@ -1,0 +1,194 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Colestipol</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00375</strong>&#160; (APRD00884)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Highly crosslinked and insoluble basic anion exchange resin used as anticholesteremic. It may also may reduce triglyceride levels. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00375/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00375/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00375.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00375.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00375.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00375.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00375.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00375">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Colestipolum</td><td>Latin</td><td>INN</td></tr><tr><td>Copolymer of bis(2-aminoethyl)amine and 2-(chloromethyl)oxirane</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IUPAC</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Colestipol Hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT001058/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT001058/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT001058">DBSALT001058</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Cholestabyl</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Colestid</td><td>Pfizer</td></tr><tr><td>Colestipol Hydrochloride</td><td>Global</td></tr><tr><td>Lestid</td><td>Pfizer</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anion-exchange-resins">Anion Exchange Resins</a></li>
+<li><a href="/mesh/hypolipidemic-agents">Hypolipidemic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>50925-79-6</td></tr><tr><th>Weight</th><td>Average: 281.826<br>Monoisotopic: 281.19823825</td></tr><tr><th>Chemical Formula</th><td>C<sub>11</sub>H<sub>28</sub>ClN<sub>5</sub>O</td></tr><tr><th>InChI Key</th><td>GMRWGQCZJGVHKL-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C8H23N5.C3H5ClO/c9-1-3-11-5-7-13-8-6-12-4-2-10;4-1-3-2-5-3/h11-13H,1-10H2;3H,1-2H2</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2-aminoethyl)[2-({2-[(2-aminoethyl)amino]ethyl}amino)ethyl]amine; 2-(chloromethyl)oxirane</div></td></tr><tr><th>SMILES</th><td><div class="wrap">ClCC1CO1.NCCNCCNCCNCCN</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Superclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Class</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Alternative parents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Substituents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Classification description</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For use, as adjunctive therapy to diet, for the reduction of elevated serum total and LDL-C in patients with primary hypercholesterolemia (elevated LDL-C) who do not respond adequately to diet.</td></tr><tr><th>Pharmacodynamics</th><td>Cholesterol is the major, and probably the sole precursor of bile acids. During normal digestion, bile acids are secreted via the bile from the liver and gall bladder into the intestines. Bile acids emulsify the fat and lipid materials present in food, thus facilitating absorption. A major portion of the bile acids secreted is reabsorbed from the intestines and returned via the portal circulation to the liver, thus completing the enterohepatic cycle. Only very small amounts of bile acids are found in normal serum. Colestipol hydrochloride binds bile acids in the intestine forming a complex that is excreted in the feces. This nonsystemic action results in a partial removal of the bile acids from the enterohepatic circulation, preventing their reabsorption. Since colestipol hydrochloride is an anion exchange resin, the chloride anions of the resin can be replaced by other anions, usually those with a greater affinity for the resin than the chloride ion.</td></tr><tr><th>Mechanism of action</th><td>Colestipol is a non-absorbed, lipid-lowering polymer that binds bile acids in the intestine, impeding their reabsorption. As the bile acid pool becomes depleted, the hepatic enzyme, cholesterol 7-(alpha)-hydroxylase, is upregulated, which increases the conversion of cholesterol to bile acids. This causes an increased demand for cholesterol in the liver cells, resulting in the dual effect of increasing transcription and activity of the cholesterol biosynthetic enzyme, hydroxymethyl-glutaryl-coenzyme A (HMG-CoA) reductase, and increasing the number of hepatic low-density lipoprotein (LDL) receptors. These compensatory effects result in increased clearance of LDL cholesterol (LDL-C) from the blood, resulting in decreased serum LDL-C levels. Serum triglyceride levels may increase or remain unchanged. The end result is increased clearance of LDL-cholesterol from the blood with decreased serum LDL-cholesterol.</td></tr><tr><th>Absorption</th><td>Not absorbed from the gastrointestinal tract.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Not applicable (not hydrolyzed by digestive enzymes and not absorbed).</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Not applicable (not hydrolyzed by digestive enzymes and not absorbed).</p></td></tr><tr><th>Route of elimination</th><td>Colestipol hydrochloride binds bile acids in the intestine forming a complex that is excreted in the feces. In humans, less than 0.17% of a single 14C-labeled colestipol hydrochloride dose is excreted in the urine when given following 60 days of chronic dosing of 20 grams of colestipol hydrochloride per day. The increased fecal loss of bile acids due to colestipol hydrochloride administration leads to an increased oxidation of cholesterol to bile acids.</td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral LD<sub>50</sub> in rats is &gt; 1000 mg/kg. Symptoms of overdose may include eye irritation, constipation, abdominal cramps, nausea, vomiting, diarrhea, and hypersensitivity. However, as colestipol is not absorbed, the risk of systemic toxicity is low.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9221</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8825</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5102</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6506</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9435</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.956</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6803</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8931</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7534</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7558</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7178</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8515</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8411</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7634</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8919</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9404</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9093
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.6451
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9346
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5333 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Strong inhibitor 
+        </td>
+        <td>
+            0.508
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7601
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Pharmacia and upjohn co</li>
+<li>Impax laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.catalent.com">Catalent Pharma Solutions</a></li>
+<li><a href="http://www.globalphar.com">Global Pharmaceuticals</a></li>
+<li><a href="http://www.greenstonellc.com">Greenstone LLC</a></li>
+<li><a href="http://www.impaxlabs.com">Impax Laboratories Inc.</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.patheon.com">Patheon Inc.</a></li>
+<li><a href="http://www.pharmaciaupjohn.com">Pharmacia Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Granule</td><td>Oral</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01418">Acenocoumarol</a></td><td>The bile acid sequestrant, colestipol, may decrease the anticoagulant effect of acenocoumarol by decreasing its absorption.</td></tr><tr><td><a href="/drugs/DB01125">Anisindione</a></td><td>The bile acid sequestrant, colestipol, may decrease the anticoagulant effect of anisindione by decreasing its absorption.</td></tr><tr><td><a href="/drugs/DB00880">Chlorothiazide</a></td><td>Bile acid sequestrants may decrease the absorption of thiazide diuretics such as chlorothiazide. The diuretic response is likewise decreased. Monitor for decreased therapeutic effects of thiazide diuretics if coadministered with a bile acid sequestrant. If these agents are used concomitantly, separate doses 2 or more hours to minimize the interaction. </td></tr><tr><td><a href="/drugs/DB00169">Cholecalciferol</a></td><td>Bile acid sequestrants such as colestipol may decrease the serum concentration of Vitamin D analogs such as cholecalciferol. More specifically, bile acid sequestrants may impair absorption of Vitamin D analogs. Avoid concomitant administration of vitamin D analogs and bile acid sequestrants. Monitor plasma calcium concentrations in patients receiving combined therapy with these agents. This is particularly important in patients receiving higher doses of a bile acid sequestant (i.e., 30 g/day or more of cholestyramine or equivalent) or in patients experiencing bile acid sequestrant-induced steatorrhea. Specific recommendations regarding the separation of administration of these agents are not defined; however, it would seem prudent to separate the administration of these agents by several hours to minimize the potential risk of interaction. Similar precautions do not apply to parenterally administered vitamin D analogs. </td></tr><tr><td><a href="/drugs/DB00266">Dicoumarol</a></td><td>The bile acid sequestrant, colestipol, may decrease the anticoagulant effect of dicumarol by decreasing its absorption.</td></tr><tr><td><a href="/drugs/DB00390">Digoxin</a></td><td>The resin decreases the effect of digoxin</td></tr><tr><td><a href="/drugs/DB01095">Fluvastatin</a></td><td>Increased/decreased effect according to spacing</td></tr><tr><td><a href="/drugs/DB00741">Hydrocortisone</a></td><td>Cholestyramine decreases the effect of hydrocortisone</td></tr><tr><td><a href="/drugs/DB00451">Levothyroxine</a></td><td>The resin, colestipol, decreases the absorption of the thyroid hormone, levothyroxine.</td></tr><tr><td><a href="/drugs/DB00279">Liothyronine</a></td><td>The resin, colestipol, decreases the absorption of the thyroid hormone, liothyronine.</td></tr><tr><td><a href="/drugs/DB01583">Liotrix</a></td><td>The resin, colestipol, decreases the absorption of the thyroid hormone, liotrix.</td></tr><tr><td><a href="/drugs/DB08827">Lomitapide</a></td><td>Bile acid sequestrants also used for treating high cholesterol may interfere with the absorption of oral medications, thus separate administration by 4 hours. </td></tr><tr><td><a href="/drugs/DB00481">Raloxifene</a></td><td>The resin decreases the effect of raloxifene</td></tr><tr><td><a href="/drugs/DB00605">Sulindac</a></td><td>The bile acid sequestrant, colestipol, may decrease the absorption of the NSAID, sulindac. Monitor for changes in the therapeutic and adverse effects of sulindac if colestipol is initiated, discontinued or dose changed. Administering the two agents 2 or more hours apart may reduce, but not eliminate, the risk of this interactions.</td></tr><tr><td><a href="/drugs/DB01584">Thyroglobulin</a></td><td>The resin, colestipol, decreases the absorption of the thyroid hormone, thyroglobulin.</td></tr><tr><td><a href="/drugs/DB01600">Tiaprofenic acid</a></td><td>The bile acid sequestrant, Colestipol, may reduce Tiaprofenic acid absorption and therapeutic effect.</td></tr><tr><td><a href="/drugs/DB00500">Tolmetin</a></td><td>Colestipol may decrease the absorption of Tolmetin. Monitor for changes in the therapeutic and adverse effects of Tolmetin if Colestipol is initiated, discontinued or dose changed. Spacing administration by at least 2 hours may reduce the risk of interaction. </td></tr><tr><td><a href="/drugs/DB00214">Torasemide</a></td><td>Colestipol may decrease the bioavailability of Torasemide by inhibiting Torasemide absorption. Monitor for changes in the therapeutic and adverse effects of Torasemide if Colestipol is initiated, discontinued or dose changed. Spacing administration by at least 2 hours may reduce the risk of interaction.</td></tr><tr><td><a href="/drugs/DB01021">Trichlormethiazide</a></td><td>The bile acid sequestrant, Colestipol, may inhibit the absorption of Trichlormethiazide.</td></tr><tr><td><a href="/drugs/DB01586">Ursodeoxycholic acid</a></td><td>The resin decreases the effect of ursodiol</td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>The bile acid sequestrant, colestipol, may decrease the anticoagulant effect of warfarin by decreasing its absorption.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take with food.</li></ul></td></tr></tbody></table>

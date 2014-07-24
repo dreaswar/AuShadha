@@ -1,0 +1,214 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Oxacillin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00713</strong>&#160; (APRD01149)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An antibiotic similar to flucloxacillin used in resistant staphylococci infections. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00713/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00713/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00713.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00713.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00713.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00713.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00713.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00713">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Oxacilina</td><td>Spanish</td><td>INN</td></tr><tr><td>Oxacillin</td><td>German</td><td>INN</td></tr><tr><td>Oxacilline</td><td>French</td><td>INN</td></tr><tr><td>Oxacillinum</td><td>Latin</td><td>INN</td></tr><tr><td>Oxazocilline</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IS</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Oxacillin Sodium</strong>
+          <div class="cas">1173-88-2</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000248/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000248/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: VDUVBBMAXXHEQP-SLINCCQESA-M</li>
+              <li>Monoisotopic Mass: 423.086486066</li>
+              <li>Average Mass: 423.418</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000248">DBSALT000248</a></td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Oxacillin Sodium Monohydrate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000974/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000974/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000974">DBSALT000974</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Bactocill</td><td>Baxter Healthcare</td></tr><tr><td>Biocilina</td><td>Biogalenic</td></tr><tr><td>Bristopen</td><td>Bristol-Myers Squibb</td></tr><tr><td>Dicloxal Ox</td><td>Magma</td></tr><tr><td>InfectoStaph</td><td>Infectopharm</td></tr><tr><td>Ocillina</td><td>CCPC</td></tr><tr><td>Oxacil</td><td>Unimed</td></tr><tr><td>Oxacilina</td><td>Billi Farmac&#234;utica</td></tr><tr><td>Oxacilin&#227;</td><td>Antibiotice</td></tr><tr><td>Oxagram</td><td>Medicef</td></tr><tr><td>Oxal</td><td>Endure Medical</td></tr><tr><td>Oxamicin</td><td>Ronava</td></tr><tr><td>Oxapen</td><td>Biolab</td></tr><tr><td>Oxipen</td><td>Behrens</td></tr><tr><td>Panadox</td><td>Shijiazhuang</td></tr><tr><td>Penstapho</td><td>Bristol-Myers Squibb</td></tr><tr><td>Prostafilina</td><td>Bristol-Myers Squibb</td></tr><tr><td>Prostaphlin</td><td>Bristol-Myers Squibb</td></tr><tr><td>Stafcil</td><td>Aurobindo</td></tr><tr><td>Staficilin-N</td><td>Bristol-Myers Squibb</td></tr><tr><td>Wydox</td><td>YSS</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Ampiox</td><td>Oxacillin and Ampicillin</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/penicillins">Penicillins</a></li></ul></td></tr><tr><th>CAS number</th><td>66-79-5</td></tr><tr><th>Weight</th><td>Average: 401.436<br>Monoisotopic: 401.104541423</td></tr><tr><th>Chemical Formula</th><td>C<sub>19</sub>H<sub>19</sub>N<sub>3</sub>O<sub>5</sub>S</td></tr><tr><th>InChI Key</th><td>UWYHMGVUTGAWSP-JKIFEVAISA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C19H19N3O5S/c1-9-11(12(21-27-9)10-7-5-4-6-8-10)15(23)20-13-16(24)22-14(18(25)26)19(2,3)28-17(13)22/h4-8,13-14,17H,1-3H3,(H,20,23)(H,25,26)/t13-,14+,17-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2S,5R,6R)-3,3-dimethyl-6-(5-methyl-3-phenyl-1,2-oxazole-4-amido)-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@H]2NC(=O)C1=C(C)ON=C1C1=CC=CC=C1)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Lactams</td></tr><tr><th>Subclass</th><td>Beta Lactams</td></tr><tr><th>Direct parent</th><td>Penicillins</td></tr><tr><th>Alternative parents</th><td>N-acyl-alpha Amino Acids and Derivatives; Benzene and Substituted Derivatives; Thiazolidines; Isoxazoles; Tertiary Carboxylic Acid Amides; Secondary Carboxylic Acid Amides; Azetidines; Tertiary Amines; Hemiaminals; Thioethers; Carboxylic Acids; Enolates; Polyamines; Aminals</td></tr><tr><th>Substituents</th><td>n-acyl-alpha amino acid or derivative; benzene; tertiary carboxylic acid amide; thiazolidine; azole; isoxazole; carboxamide group; tertiary amine; hemiaminal; azetidine; secondary carboxylic acid amide; aminal; polyamine; thioether; enolate; carboxylic acid derivative; carboxylic acid; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the penicillins. These are organic compounds containing the penicillin core structure, which is structurally characterized by a penam ring bearing two methyl groups at position 2, and an amide group at position 6 [starting from the sulfur atom at position 1].</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used in the treatment of resistant staphylococci infections.</td></tr><tr><th>Pharmacodynamics</th><td>Oxacillin is a penicillin beta-lactam antibiotic used in the treatment of bacterial infections caused by susceptible, usually gram-positive, organisms. The name "penicillin" can either refer to several variants of penicillin available, or to the group of antibiotics derived from the penicillins. Oxacillin has in vitro activity against gram-positive and gram-negative aerobic and anaerobic bacteria. The bactericidal activity of Oxacillin results from the inhibition of cell wall synthesis and is mediated through Oxacillin binding to penicillin binding proteins (PBPs). Oxacillin is stable against hydrolysis by a variety of beta-lactamases, including penicillinases, and cephalosporinases and extended spectrum beta-lactamases.</td></tr><tr><th>Mechanism of action</th><td>By binding to specific penicillin-binding proteins (PBPs) located inside the bacterial cell wall, Oxacillin inhibits the third and last stage of bacterial cell wall synthesis. Cell lysis is then mediated by bacterial cell wall autolytic enzymes such as autolysins; it is possible that Oxacillin interferes with an autolysin inhibitor.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>94.2 +/- 2.1% (binds to serum protein, mainly albumin)</td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td>Oxacillin Sodium is rapidly excreted as unchanged drug in the urine by glomerular filtration and active tubular secretion.</td></tr><tr><th>Half life</th><td>20 to 30 minutes</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.8002</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9923</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.7059</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6161</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.867</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.922</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9669</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8181</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8807</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5347</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5746</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8725</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9111</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8665</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.665</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9564</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7304
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.5273
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9759
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.6583 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9997
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8773
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Glaxosmithkline</li>
+<li>Apothecon inc div bristol myers squibb</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Baxter healthcare corp</li>
+<li>Apothecon sub bristol myers squibb co</li>
+<li>Elkins sinn div ah robins co inc</li>
+<li>Istituto biochimico italiano spa</li>
+<li>Marsam pharmaceuticals llc</li>
+<li>Sandoz inc</li>
+<li>Watson laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li>Carlisle Laboratories Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.meadjohnson.com">Mead Johnson and Co.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.antibiotice.ro">SC Antibiotice SA</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr><tr><td>Injection, solution</td><td>Intravenous bolus</td><td></td></tr><tr><td>Injection, solution</td><td>Intravenous drip</td><td></td></tr><tr><td>Solution</td><td>Intramuscular</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00618">Demeclocycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00254">Doxycycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00977">Ethinyl Estradiol</a></td><td>This anti-infectious agent could decrease the effect of the oral contraceptive</td></tr><tr><td><a href="/drugs/DB01017">Minocycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00759">Tetracycline</a></td><td>Possible antagonism of action</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

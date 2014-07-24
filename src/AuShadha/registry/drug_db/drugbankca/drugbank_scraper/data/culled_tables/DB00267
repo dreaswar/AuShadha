@@ -1,0 +1,188 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Cefmenoxime</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00267</strong>&#160; (APRD00851)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Cefmenoxime is a third-generation cephalosporin antibiotic. [Wikipedia]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00267/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00267/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00267.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00267.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00267.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00267.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00267.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00267">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Cefmenoxima</td><td>Spanish</td><td>INN</td></tr><tr><td>Cefmenoximum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Cefmenoxime hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000801/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000801/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: HZYJYGJIOCXOTH-FAIYLGIWSA-N</li>
+              <li>Monoisotopic Mass: 547.028154508</li>
+              <li>Average Mass: 548.019</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000801">DBSALT000801</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Bestcall</td><td>Takeda</td></tr><tr><td>Cefmax</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Tacef</td><td>Takeda</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li>
+<li><a href="/mesh/cephalosporins">Cephalosporins</a></li></ul></td></tr><tr><th>CAS number</th><td>65085-01-0</td></tr><tr><th>Weight</th><td>Average: 511.558<br>Monoisotopic: 511.051476769</td></tr><tr><th>Chemical Formula</th><td>C<sub>16</sub>H<sub>17</sub>N<sub>9</sub>O<sub>5</sub>S<sub>3</sub></td></tr><tr><th>InChI Key</th><td>HJJDBAOLQAWBMH-YCRCPZNHSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C16H17N9O5S3/c1-24-16(20-22-23-24)33-4-6-3-31-13-9(12(27)25(13)10(6)14(28)29)19-11(26)8(21-30-2)7-5-32-15(17)18-7/h5,9,13H,3-4H2,1-2H3,(H2,17,18)(H,19,26)(H,28,29)/b21-8-/t9-,13-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(6R,7R)-7-[(2Z)-2-(2-amino-1,3-thiazol-4-yl)-2-(methoxyimino)acetamido]-3-{[(1-methyl-1H-1,2,3,4-tetrazol-5-yl)sulfanyl]methyl}-8-oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@]12SCC(CSC3=NN=NN3C)=C(N1C(=O)[C@H]2NC(=O)C(=N/OC)\C1=CSC(N)=N1)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Lactams</td></tr><tr><th>Subclass</th><td>Beta Lactams</td></tr><tr><th>Direct parent</th><td>Cephalosporins</td></tr><tr><th>Alternative parents</th><td>N-acyl-alpha Amino Acids and Derivatives; Alpha Amino Acid Amides; 2,4-disubstituted Thiazoles; 1,3-Thiazines; Primary Aromatic Amines; Aminothiazoles; Tertiary Carboxylic Acid Amides; Tetrazoles; Secondary Carboxylic Acid Amides; Oxime Ethers; Hemiaminals; Tertiary Amines; Azetidines; Thioethers; Enamines; Enolates; Aminals; Carboxylic Acids; Polyamines; Imines</td></tr><tr><th>Substituents</th><td>n-acyl-alpha amino acid or derivative; alpha-amino acid amide; alpha-amino acid or derivative; 2,4-disubstituted 1,3-thiazole; 1,3-thiazolamine; primary aromatic amine; meta-thiazine; azole; thiazole; tertiary carboxylic acid amide; tetrazole; oxime ether; carboxamide group; tertiary amine; azetidine; secondary carboxylic acid amide; hemiaminal; thioether; enolate; aminal; polyamine; enamine; carboxylic acid derivative; carboxylic acid; primary amine; amine; organonitrogen compound; imine</td></tr><tr><th>Classification description</th><td>This compound belongs to the cephalosporins. These are compounds containing a 1,2-thiazine fused to a 2-azetidinone to for a oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylic acid moeity or a derivative thereof.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used to treat female gynecologic and obstetric infections caused by susceptible aerobic (including the gonococcus) and anaerobic bacteria.</td></tr><tr><th>Pharmacodynamics</th><td>Cefmenoxime is a semisynthetic beta-lactam cephalosporin antibiotic with activity similar to that of cefotaxime. It has broad spectrum activity against Gram positive and Gram negative bacteria.</td></tr><tr><th>Mechanism of action</th><td>The bactericidal activity of cefmenoxime results from the inhibition of cell wall synthesis via affinity for penicillin-binding proteins (PBPs). Cefmenoxime is stable in the presence of a variety of b-lactamases, including penicillinases and some cephalosporinases.</td></tr><tr><th>Absorption</th><td>Bioavailability is approximately 100% following intramuscular injection.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>50-70%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Not appreciably metabolized.</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>1 hour</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Information on cefmenoxime overdosage in humans is not available. However, with other b-lactam antibiotics, adverse effects following overdosage have included nausea, vomiting, epigastric distress, diarrhea, and convulsions.</td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.8906</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9756</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8215</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7149</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9087</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5588</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8324</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8348</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.818</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5135</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7839</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7802</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8903</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7598</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6053</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6981</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7685
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8748
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9608
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.0641 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.98
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7924
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Tap pharmaceutical products inc</li></ul></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Powder, for solution</td><td>Intramuscular</td><td></td></tr><tr><td>Powder, for solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

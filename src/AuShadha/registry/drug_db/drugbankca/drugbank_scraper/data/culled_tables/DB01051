@@ -1,0 +1,185 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Novobiocin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01051</strong>&#160; (APRD00694)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An antibiotic compound derived from Streptomyces niveus. It has a chemical structure similar to coumarin. Novobiocin binds to <span class="caps">DNA</span> gyrase, and blocks adenosine triphosphatase (ATPase) activity.  (From Reynolds, Martindale The Extra Pharmacopoeia, 30th ed, p189) [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01051/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01051/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01051.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01051.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01051.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01051.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01051.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01051">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Novobiocina</td><td>Spanish</td><td>INN</td></tr><tr><td>Novobiocine</td><td>French</td><td>INN</td></tr><tr><td>Novobiocinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Novobiocin sodium</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT001020/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT001020/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT001020">DBSALT001020</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Albamycin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Albacillin Suspension</td><td>Novobiocin (Novobiocin Sodium) + Penicillin G Procaine</td></tr><tr><td>Delta-Albaplex Tablets</td><td>Novobiocin (Novobiocin Sodium) + Prednisolone + Tetracycline Hydrochloride</td></tr><tr><td>Novodry Plus Suspension</td><td>Novobiocin (Novobiocin Sodium) + Penicillin G Procaine</td></tr><tr><td>Special Formula 17900-Forte Suspension</td><td>Dihydrostreptomycin (Dihydrostreptomycin Sulfate) + Hydrocortisone Acetate + Hydrocortisone Sodium Succinate + Novobiocin (Novobiocin Sodium) + Penicillin G Procaine + Polymyxin B Sulfate</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/enzyme-inhibitors">Enzyme Inhibitors</a></li>
+<li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li>
+<li><a href="/mesh/nucleic-acid-synthesis-inhibitors">Nucleic Acid Synthesis Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>303-81-1</td></tr><tr><th>Weight</th><td>Average: 612.6243<br>Monoisotopic: 612.231910004</td></tr><tr><th>Chemical Formula</th><td>C<sub>31</sub>H<sub>36</sub>N<sub>2</sub>O<sub>11</sub></td></tr><tr><th>InChI Key</th><td>YJQPYGGHQPGBLI-KGSXXDOSSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C31H36N2O11/c1-14(2)7-8-16-13-17(9-11-19(16)34)27(37)33-21-22(35)18-10-12-20(15(3)24(18)42-28(21)38)41-29-23(36)25(43-30(32)39)26(40-6)31(4,5)44-29/h7,9-13,23,25-26,29,34-36H,8H2,1-6H3,(H2,32,39)(H,33,37)/t23-,25+,26-,29-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(3R,4S,5R,6R)-5-hydroxy-6-[(4-hydroxy-3-{[4-hydroxy-3-(3-methylbut-2-en-1-yl)benzene]amido}-8-methyl-2-oxo-2H-chromen-7-yl)oxy]-3-methoxy-2,2-dimethyloxan-4-yl carbamate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CO[C@@H]1[C@@H](OC(N)=O)[C@@H](O)[C@H](OC2=C(C)C3=C(C=C2)C(O)=C(NC(=O)C2=CC=C(O)C(CC=C(C)C)=C2)C(=O)O3)OC1(C)C</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Phenylpropanoids and Polyketides</td></tr><tr><th>Class</th><td>Coumarins and Derivatives</td></tr><tr><th>Subclass</th><td>Coumarin Glycosides</td></tr><tr><th>Direct parent</th><td>Coumarin Glycosides</td></tr><tr><th>Alternative parents</th><td>Glycoamino Acids and Derivatives; O-glycosyl Compounds; Hexoses; Benzopyrans; Benzamides; Benzoyl Derivatives; Phenol Ethers; Toluenes; Pyranones and Derivatives; Phenols and Derivatives; Alkyl Aryl Ethers; Oxanes; Polyols; Secondary Alcohols; Secondary Carboxylic Acid Amides; Carbamic Acids and Derivatives; Carboxylic Acids; Enolates; Enols; Polyamines; Acetals</td></tr><tr><th>Substituents</th><td>glyco amino acid; glycosyl compound; o-glycosyl compound; hexose monosaccharide; benzopyran; benzamide; phenol ether; benzoyl; pyranone; phenol derivative; alkyl aryl ether; toluene; monosaccharide; saccharide; pyran; benzene; oxane; carboxamide group; carbamic acid derivative; secondary carboxylic acid amide; polyol; secondary alcohol; acetal; carboxylic acid; carboxylic acid derivative; ether; polyamine; enolate; enol; amine; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the coumarin glycosides. These are aromatic compounds containing a carbohydrate moiety glycosidically bound to a coumarin moiety.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of infections due to staphylococci and other susceptible organisms</td></tr><tr><th>Pharmacodynamics</th><td>Novobiocin is an aminocoumarin antibiotic that was produced by the actinomycete <i>Streptomyces niveus</i>. Novobiocin binds to DNA gyrase, and blocks adenosine triphosphatase (ATPase) activity. Other antibiotics in the aminocoumarin class include coumermycin A1 and clorobiocin.</td></tr><tr><th>Mechanism of action</th><td>Novobiocin is an aminocoumarin. Aminocoumarins are very potent inhibitors of bacterial DNA gyrase and work by inhibiting the GyrB subunit of the enzyme involved in energy tranduction. Novobiocin as well as the other aminocoumarin antibiotics act as competitive inhibitors of the ATPase reaction catalysed by GyrB.</td></tr><tr><th>Absorption</th><td>Oral bioavailability is negligible.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>95%</td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>6 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.6404</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9659</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.654</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7897</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5095</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.633</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9687</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8342</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8536</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5931</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8072</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7263</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.872</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7331</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7934</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7844</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.5713
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9321
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.2899 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9935
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9159
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Pharmacia and upjohn co</li></ul></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection, powder, for solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

@@ -1,0 +1,285 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Ondansetron</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00904</strong>&#160; (APRD00481)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A competitive serotonin type 3 receptor antagonist. It is effective in the treatment of nausea and vomiting caused by cytotoxic chemotherapy drugs, including cisplatin, and has reported anxiolytic and neuroleptic properties. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00904/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00904/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00904.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00904.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00904.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00904.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00904.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00904">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Ondansetron hydrochloride dihydrate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000921/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000921/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000921">DBSALT000921</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Zofran</td><td>GlaxoSmithKline</td></tr><tr><td>Zofran ODT</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zophren</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zuplenz</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antipsychotic-agents">Antipsychotic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>99614-02-5</td></tr><tr><th>Weight</th><td>Average: 293.363<br>Monoisotopic: 293.152812245</td></tr><tr><th>Chemical Formula</th><td>C<sub>18</sub>H<sub>19</sub>N<sub>3</sub>O</td></tr><tr><th>InChI Key</th><td>FELGMEQIXOGIFQ-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C18H19N3O/c1-12-19-9-10-21(12)11-13-7-8-16-17(18(13)22)14-5-3-4-6-15(14)20(16)2/h3-6,9-10,13H,7-8,11H2,1-2H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">9-methyl-3-[(2-methyl-1H-imidazol-1-yl)methyl]-2,3,4,9-tetrahydro-1H-carbazol-4-one</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN1C2=C(C3=CC=CC=C13)C(=O)C(CN1C=CN=C1C)CC2</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Indoles and Derivatives</td></tr><tr><th>Subclass</th><td>Carbazoles</td></tr><tr><th>Direct parent</th><td>Carbazoles</td></tr><tr><th>Alternative parents</th><td>Indoles; N-substituted Imidazoles; Benzene and Substituted Derivatives; N-methylpyrroles; Ketones; Polyamines</td></tr><tr><th>Substituents</th><td>indole; n-substituted pyrrole; n-methylpyrrole; benzene; n-substituted imidazole; substituted pyrrole; azole; pyrrole; imidazole; ketone; polyamine; organonitrogen compound; amine; carbonyl group</td></tr><tr><th>Classification description</th><td>This compound belongs to the carbazoles. These are compounds containing a three ring system containing a pyrrole ring fused on either side to a benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the prevention of nausea and vomiting associated with emetogenic cancer chemotherapy, postoperation, and radiation. Also used for the treatment of postoperative nausea and vomiting.</td></tr><tr><th>Pharmacodynamics</th><td>Ondansetron is a highly specific and selective serotonin 5-HT<sub>3</sub> receptor antagonist, not shown to have activity at other known serotonin receptors and with low affinity for dopamine receptors. The serontonin 5-HT<sub>3</sub> receptors are located on the nerve terminals of the vagus in the periphery, and centrally in the chemoreceptor trigger zone of the area postrema. The temporal relationship between the emetogenic action of emetogenic drugs and the release of serotonin, as well as the efficacy of antiemetic agents suggest that chemotherapeutic agents release serotonin from the enterochromaffin cells of the small intestine by causing degenerative changes in the GI tract. The serotonin then stimulates the vagal and splanchnic nerve receptors that project to the medullary vomiting center, as well as the 5-HT<sub>3</sub> receptors in the area postrema, thus initiating the vomiting reflex, causing nausea and vomiting.</td></tr><tr><th>Mechanism of action</th><td>Ondansetron is a selective serotonin 5-HT<sub>3</sub> receptor antagonist. The antiemetic activity of the drug is brought about through the inhibition of 5-HT<sub>3</sub> receptors present both centrally (medullary chemoreceptor zone) and peripherally (GI tract). This inhibition of 5-HT<sub>3</sub> receptors in turn inhibits the visceral afferent stimulation of the vomiting center, likely indirectly at the level of the area postrema, as well as through direct inhibition of serotonin activity within the area postrema and the chemoreceptor trigger zone.</td></tr><tr><th>Absorption</th><td>Ondansetron is well absorbed after oral administration and undergoes limited first-pass metabolism.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>70%-76% (Plasma protein binding)</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>5.7 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>0.38 L/h/kg [Normal Adult Volunteers (19-40 yrs)]</li>
+	<li>0.32 L/h/kg [Normal Adult Volunteers (61-74 yrs)]</li>
+	<li>0.26 L/h/kg [Normal Adult Volunteers (&gt;=75 yrs)]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Low blood pressure and fainting, sudden blindness, severe constipation</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9941</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9882</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.8867</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7019</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5833</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8807</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7955</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7456</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.8918</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.647</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9107</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8932</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9026</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8309</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.5954</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.5463
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9676
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9884
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4555 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.7054
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.7926
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Par pharmaceutical</li>
+<li>Aurobindo pharma ltd</li>
+<li>Barr laboratories inc</li>
+<li>Glenmark generics ltd</li>
+<li>Kv pharmaceutical co</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Par pharmaceutical inc</li>
+<li>Sandoz inc</li>
+<li>Sun pharmaceutical industries ltd</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Glaxosmithkline</li>
+<li>Akorn strides llc</li>
+<li>Apotex inc</li>
+<li>App pharmaceuticals llc</li>
+<li>Baxter healthcare corp anesthesia and critical care</li>
+<li>Bedford laboratories div ben venue laboratories inc</li>
+<li>Emcure pharmaceuticals ltd</li>
+<li>Gland pharma ltd</li>
+<li>Hikma farmaceutica (portugal) sa</li>
+<li>Hospira inc</li>
+<li>Lannett holdings inc</li>
+<li>Luitpold pharmaceuticals inc</li>
+<li>Pharmaforce inc</li>
+<li>Pliva hrvatska doo</li>
+<li>Sandoz canada inc</li>
+<li>Spectrum pharmaceuticals</li>
+<li>Wockhardt ltd</li>
+<li>Bedford laboratories</li>
+<li>Claris lifesciences ltd</li>
+<li>Teva parenteral medicines inc</li>
+<li>Baxter healthcare corp</li>
+<li>Apotex inc richmond hill</li>
+<li>Taro pharmaceuticals ireland ltd</li>
+<li>Roxane laboratories inc</li>
+<li>Taro pharmaceutical industries ltd</li>
+<li>Dr reddys laboratories ltd</li>
+<li>Natco pharma ltd</li>
+<li>West ward pharmaceutical corp</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.aceto.com">Aceto Pharma Inc.</a></li>
+<li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li><a href="http://www.aidarex.com">Aidarex Pharmacuticals LLC</a></li>
+<li><a href="http://www.akorn.com">Akorn Inc.</a></li>
+<li><a href="http://www.amerigenpharma.com">Amerigen Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li>Apotheca Inc.</li>
+<li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.ascendlaboratories.com">Ascend Laboratories LLC</a></li>
+<li><a href="http://www.atlanticbiologicals.com">Atlantic Biologicals Corporation</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.catalent.com">Catalent Pharma Solutions</a></li>
+<li><a href="http://www.clarislifesciences.com">Claris Lifesciences Inc.</a></li>
+<li><a href="http://www.curapharma.com">Cura Pharmaceutical Co. Inc.</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li><a href="http://www.emcure.co.in">Emcure Pharmaceuticals Ltd.</a></li>
+<li><a href="http://www.ethex.com">Ethex Corp.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.glenmark-generics.com">Glenmark Generics Ltd.</a></li>
+<li><a href="http://www.greenstonellc.com">Greenstone LLC</a></li>
+<li><a href="http://www.hikma.com">Hikma Pharmaceuticals</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li>Kali Laboratories Inc.</li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.lannett.com">Lannett Co. Inc.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.natcopharma.co.in">Natco Pharma Ltd.</a></li>
+<li>Northstar Rx LLC</li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li>Penn Labs</li>
+<li><a href="http://www.pfizer.com">Pfizer Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.pliva.com">Pliva Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li>Professional Co.</li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Redpharm Drug</li>
+<li><a href="http://www.roxane.com">Roxane Labs</a></li>
+<li><a href="http://www.sagentpharma.com">Sagent Pharmaceuticals</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li><a href="http://www.stridesarco.com">Strides Arcolab Limited</a></li>
+<li><a href="http://www.sunpharma.com">Sun Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.tarousa.com">Taro Pharmaceuticals USA</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li>
+<li><a href="http://www.west-ward.com">West-Ward Pharmaceuticals</a></li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Liquid</td><td>Intravenous</td><td></td></tr><tr><td>Liquid</td><td>Oral</td><td></td></tr><tr><td>Solution</td><td>Intravenous</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><ul><li><a data-no-turbolink="true" href="/spectra/spectra/nmr_one_d/2021">1H NMR Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/nmr_two_d/1956">[1H,13C] 2D NMR Spectrum</a></li></ul></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB06216">Asenapine</a></td><td>Additive QTc-prolongation may occur. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB08865">Crizotinib</a></td><td>Concurrent use with crizotinib may decrease QTc interval. Consider alternative therapy. </td></tr><tr><td><a href="/drugs/DB04953">Ezogabine</a></td><td>Concurrent use of ezogabine and ondansetron can increase QTc interval. Consider alternate therapy. </td></tr><tr><td><a href="/drugs/DB05039">Indacaterol</a></td><td>Both indacaterol and ondansetron prolong the QT interval. Consider alternate therapy. </td></tr><tr><td><a href="/drugs/DB06589">Pazopanib</a></td><td>Additive QTc-prolonging effects may increase the risk of severe arrhythmias. Concomitant therapy is contraindicated.</td></tr><tr><td><a href="/drugs/DB06402">Telavancin</a></td><td>Additive QTc-prolongation may occur. Concomitant therapy should be avoided. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take without regard to meals.</li></ul></td></tr></tbody></table>

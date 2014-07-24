@@ -1,0 +1,175 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Telmisartan</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00966</strong>&#160; (APRD01247)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Telmisartan is an angiotensin II receptor antagonist (<span class="caps">ARB</span>) used in the management of hypertension. Generally, angiotensin II receptor blockers (ARBs) such as telmisartan bind to the angiotensin II type 1 (AT1) receptors with high affinity, causing inhibition of the action of angiotensin II on vascular smooth muscle, ultimately leading to a reduction in arterial blood pressure. Recent studies suggest that telmisartan may also have <span class="caps">PPAR</span>-gamma agonistic properties that could potentially confer beneficial metabolic effects.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00966/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00966/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00966.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00966.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00966.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00966.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00966.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00966">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Micardis</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Pritor</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Micardis Plus</td><td>Hydrochlorothiazide + Telmisartan</td></tr><tr><td>Twynsta</td><td>Amlodipine + Telmisartan</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>144701-48-4</td></tr><tr><th>Weight</th><td>Average: 514.6169<br>Monoisotopic: 514.236876224</td></tr><tr><th>Chemical Formula</th><td>C<sub>33</sub>H<sub>30</sub>N<sub>4</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>RMMXLENWKUUMAY-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C33H30N4O2/c1-4-9-30-35-31-21(2)18-24(32-34-27-12-7-8-13-28(27)36(32)3)19-29(31)37(30)20-22-14-16-23(17-15-22)25-10-5-6-11-26(25)33(38)39/h5-8,10-19H,4,9,20H2,1-3H3,(H,38,39)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-(4-{[4-methyl-6-(1-methyl-1H-1,3-benzodiazol-2-yl)-2-propyl-1H-1,3-benzodiazol-1-yl]methyl}phenyl)benzoic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCCC1=NC2=C(C=C(C=C2C)C2=NC3=CC=CC=C3N2C)N1CC1=CC=C(C=C1)C1=CC=CC=C1C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Biphenyls and Derivatives</td></tr><tr><th>Direct parent</th><td>Biphenyls and Derivatives</td></tr><tr><th>Alternative parents</th><td>Benzimidazoles; Benzoic Acids; Benzoyl Derivatives; Toluenes; N-substituted Imidazoles; Carboxylic Acids; Polyamines; Enolates</td></tr><tr><th>Substituents</th><td>benzoic acid; benzoic acid or derivative; benzimidazole; benzoyl; toluene; n-substituted imidazole; imidazole; azole; enolate; carboxylic acid; polyamine; carboxylic acid derivative; organonitrogen compound; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the biphenyls and derivatives. These are organic compounds containing to benzene rings linked together by a C-C bond.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used alone or in combination with other classes of antihypertensives for the treatment of hypertension. Also used in the treatment of diabetic nephropathy in hypertensive patients with type 2 diabetes mellitus, as well as the treatment of congestive heart failure (only in patients who cannot tolerate ACE inhibitors).</td></tr><tr><th>Pharmacodynamics</th><td>Telmisartan is an orally active nonpeptide angiotensin II antagonist that acts on the AT<sub>1</sub> receptor subtype. It has the highest affinity for the AT<sub>1</sub> receptor among commercially available ARBS and has minimal affinity for the AT<sub>2</sub> receptor. New studies suggest that telmisartan may also have PPAR&#947; agonistic properties that could potentially confer beneficial metabolic effects, as PPAR&#947; is a nuclear receptor that regulates specific gene transcription, and whose target genes are involved in the regulation of glucose and lipid metabolism, as well as anti-inflammatory responses. This observation is currently being explored in clinical trials. Angiotensin II is formed from angiotensin I in a reaction catalyzed by angiotensin-converting enzyme (ACE, kininase II). Angiotensin II is the principal pressor agent of the renin-angiotensin system, with effects that include vasoconstriction, stimulation of synthesis and release of aldosterone, cardiac stimulation, and renal reabsorption of sodium. Telmisartan works by blocking the vasoconstrictor and aldosterone secretory effects of angiotensin II.</td></tr><tr><th>Mechanism of action</th><td>Telmisartan interferes with the binding of angiotensin II to the angiotensin II AT<sub>1</sub>-receptor by binding reversibly and selectively to the receptors in vascular smooth muscle and the adrenal gland. As angiotensin II is a vasoconstrictor, which also stimulates the synthesis and release of aldosterone, blockage of its effects results in decreases in systemic vascular resistance. Telmisartan does not inhibit the angiotensin converting enzyme, other hormone receptors, or ion channels. Studies also suggest that telmisartan is a partial agonist of PPAR&#947;, which is an established target for antidiabetic drugs. This suggests that telmisartan can improve carbohydrate and lipid metabolism, as well as control insulin resistance without causing the side effects that are associated with full PPAR&#947; activators.</td></tr><tr><th>Absorption</th><td>Absolute bioavailability depends on dosage. Food slightly decreases the bioavailability (a decrease of about 6% is seen when the 40-mg dose is administered with food).</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>500 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td>Highly bound to plasma proteins (&gt;99.5%), mainly albumin and a1-acid glycoprotein. Binding is not dose-dependent.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Minimally metabolized by conjugation to form a pharmacologically inactive acylglucuronide; the glucuronide of the parent compound is the only metabolite that has been identified in human plasma and urine. The cytochrome P450 isoenzymes are not involved in the metabolism of telmisartan.</p></td></tr><tr><th>Route of elimination</th><td>Following either intravenous or oral administration of 14C-labeled telmisartan, most of the administered dose (&gt;97%) was eliminated unchanged in feces via biliary excretion; only minute amounts were found in the urine (0.91% and 0.49% of total radioactivity, respectively).</td></tr><tr><th>Half life</th><td>Bi-exponential decay kinetics with a terminal elimination half-life of approximately 24 hours.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>&gt;800 mL/min</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Intravenous LD<sub>50</sub> in rats is 150-200 mg/kg in males and 200 to 250 mg/kg in females. Acute oral toxicity is low: no deaths and no changes occurred in rats or dogs at 2000 mg/kg, the highest dose tested. Limited data are available with regard to overdosage in humans. The most likely manifestations of overdosage with telmisartan would be hypotension, dizziness and tachycardia; bradycardia could occur from parasympathetic (vagal) stimulation.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>Telmisartan Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00164?highlight%5Bcompounds%5D%5B%5D=DB00966&amp;highlight%5Bproteins%5D%5B%5D=DB00966">SMP00164</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8794</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8957</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6061</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5261</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8653</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6047</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7876</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5255</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5699</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5481</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7796</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5509</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8309</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.601</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6432
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9094
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9862
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.8075 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9166
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7114
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Boehringer ingelheim</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.boehringer-ingelheim.com">Boehringer Ingelheim Ltd.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>20 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>40 mg</td></tr><tr><td>Tablet</td><td>Oral</td><td>80 mg</td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Micardis 30 40 mg tablet Box</td><td>110.11USD</td><td>box</td></tr><tr><td>Micardis HCT 30 40-12.5 mg tablet Box</td><td>106.34USD</td><td>box</td></tr><tr><td>Micardis HCT 30 80-12.5 mg tablet Box</td><td>106.18USD</td><td>box</td></tr><tr><td>Micardis 30 80 mg tablet Box</td><td>103.92USD</td><td>box</td></tr><tr><td>Micardis HCT 30 80-25 mg tablet Box</td><td>100.48USD</td><td>box</td></tr><tr><td>Micardis 30 20 mg tablet Box</td><td>99.7USD</td><td>box</td></tr><tr><td>Micardis 20 mg tablet</td><td>3.29USD</td><td>tablet</td></tr><tr><td>Micardis hct 40-12.5 mg tablet</td><td>3.29USD</td><td>tablet</td></tr><tr><td>Micardis hct 80-12.5 mg tablet</td><td>3.29USD</td><td>tablet</td></tr><tr><td>Micardis hct 80-25 mg tablet</td><td>3.29USD</td><td>tablet</td></tr><tr><td>Micardis 40 mg tablet</td><td>2.24USD</td><td>tablet</td></tr><tr><td>Micardis 80 mg tablet</td><td>2.24USD</td><td>tablet</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>6358986</td><td>2000-01-10</td><td>2020-01-10</td></tr><tr><td>United States</td><td>5591762</td><td>1994-01-07</td><td>2014-01-07</td></tr><tr><td>Canada</td><td>2060624</td><td>1999-12-21</td><td>2012-02-04</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>261-263 &#176;C</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>water solubility</td><td>Practically insoluble</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>7.7</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Caco2 permeability</td><td>-4.82</td><td>ADME Research, USCD</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>3.50e-03 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>6.66</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>6.04</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-5.2</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>3.65</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>6.13</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>72.94</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>7</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>164.49</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>58.61</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><ol>
+	<li>Kumar AS, Ghosh S, Mehta GN: Efficient and improved synthesis of Telmisartan. Beilstein J Org Chem. 2010 Mar 11;6:25. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20502601">Pubmed</a></li>
+</ol></span></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Sharpe M, Jarvis B, Goa KL: Telmisartan: a review of its use in hypertension. Drugs. 2001;61(10):1501-29. <a href="http://www.ncbi.nlm.nih.gov/pubmed/11558835">Pubmed</a></li>
+	<li>Smith DH: Treatment of hypertension with an angiotensin II-receptor antagonist compared with an angiotensin-converting enzyme inhibitor: a review of clinical studies of telmisartan and enalapril. Clin Ther. 2002 Oct;24(10):1484-501. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12462282">Pubmed</a></li>
+	<li>Kumar AS, Ghosh S, Mehta GN: Efficient and improved synthesis of Telmisartan. Beilstein J Org Chem. 2010 Mar 11;6:25. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20502601">Pubmed</a></li>
+	<li>Galzerano D, Capogrosso C, Di Michele S, Galzerano A, Paparello P, Lama D, Gaudio C: New standards in hypertension and cardiovascular risk management: focus on telmisartan. Vasc Health Risk Manag. 2010 Mar 24;6:113-33. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20448797">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00627" target="_blank">D00627 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07710" target="_blank">C07710 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=65999" target="_blank">65999 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46505370" target="_blank">46505370 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.59391.html" target="_blank">59391 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=9434" target="_blank">9434 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1017" target="_blank">CHEMBL1017 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000766" target="_blank">DAP000766 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA451605" target="_blank">PA451605 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>IUPHAR</td><td><a class="wishart-link-out" href="http://www.iuphar-db.org/DATABASE/LigandDisplayForward?ligandId=592" target="_blank">592 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Guide to Pharmacology</td><td><a class="wishart-link-out" href="http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=592" target="_blank">592 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2240770" target="_blank">2240770 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic2/telmisartan.htm" target="_blank">http://www.rxlist.com/cgi/generic2/telmisartan.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/telmisartan.html" target="_blank">http://www.drugs.com/cdi/telmisartan.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PDRhealth</td><td><a class="wishart-link-out" href="http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/mic1592.shtml" target="_blank">http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/mic1592.shtml <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Telmisartan" target="_blank">Telmisartan <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>C09CA07<ul class="atc-drug-tree"><li><a href="/atc/C#C">C &#8212; CARDIOVASCULAR SYSTEM</a></li><li><a href="/atc/C09#C09">C09 &#8212; AGENTS ACTING ON THE RENIN-ANGIOTENSIN SYSTEM</a></li><li><a href="/atc/C09C#C09C">C09C &#8212; ANGIOTENSIN II ANTAGONISTS, PLAIN</a></li><li><a href="/atc/C09CA#C09CA">C09CA &#8212; Angiotensin II antagonists, plain</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>24:32.08</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00966.pdf?1265922811">show</a>(47.4 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00966.pdf?1265922747">show</a>(101 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00945">Acetylsalicylic acid</a></td><td>Concomitant use of Telmisartan and Acetylsalicylic acid may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB01143">Amifostine</a></td><td>Telmisartan may increase the hypotensive effect of Amifostine. At chemotherapeutic doses of Amifostine, Telmisartan should be withheld for 24 hours prior to Amifostine administration. Use caution at lower doses of Amifostine. </td></tr><tr><td><a href="/drugs/DB00594">Amiloride</a></td><td>Telmisartan may increase the hyperkalemic effect of Amiloride. Monitor for increased serum potassium concentrations during concomitant therapy.</td></tr><tr><td><a href="/drugs/DB00482">Celecoxib</a></td><td>Concomitant use of Telmisartan and Celecoxib may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00586">Diclofenac</a></td><td>Concomitant use of Telmisartan and Diclofenac may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00861">Diflunisal</a></td><td>Concomitant use of Telmisartan and Diflunisal may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00390">Digoxin</a></td><td>Telmisartan may increase plasma Digoxin concentrations. Monitor Digoxin levels and adjust dose as required if Telmisartan is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01395">Drospirenone</a></td><td>Telmisartan may increase the hyperkalemic effect of Drospirenone. Monitor for increased serum potassium concentrations during concomitant therapy. </td></tr><tr><td><a href="/drugs/DB00573">Fenoprofen</a></td><td>Concomitant use of Telmisartan and Fenoprofen may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00712">Flurbiprofen</a></td><td>Concomitant use of Telmisartan and Flurbiprofen may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00328">Indomethacin</a></td><td>Concomitant use of Telmisartan and Indomethacin may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB01009">Ketoprofen</a></td><td>Concomitant use of Telmisartan and Ketoprofen may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00465">Ketorolac</a></td><td>Concomitant use of Telmisartan and Ketorolac may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB01356">Lithium</a></td><td>Telmisartan may increase serum Lithium concentrations. Monitor serum Lithium levels during concomitant therapy to avoid Lithium toxicity.</td></tr><tr><td><a href="/drugs/DB01283">Lumiracoxib</a></td><td>Concomitant use of Telmisartan and Lumiracoxib may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00939">Meclofenamic acid</a></td><td>Concomitant use of Telmisartan and Meclofenamic acid may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00814">Meloxicam</a></td><td>Concomitant use of Telmisartan and Meloxicam may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00461">Nabumetone</a></td><td>Concomitant use of Telmisartan and Nabumetone may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00788">Naproxen</a></td><td>Concomitant use of Telmisartan and Naproxen may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00991">Oxaprozin</a></td><td>Concomitant use of Telmisartan and Oxaprozin may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00554">Piroxicam</a></td><td>Concomitant use of Telmisartan and Piroxicam may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB01345">Potassium</a></td><td>Potassium may increase the hyperkalemic effect of Telmisartan. Monitor serum potassium levels during concomitant use.</td></tr><tr><td><a href="/drugs/DB00761">Potassium Chloride</a></td><td>Potassium Chloride may increase the hyperkalemic effect of Telmisartan. Monitor serum potassium levels during concomitant use. </td></tr><tr><td><a href="/drugs/DB00073">Rituximab</a></td><td>Telmisartan may increase the hypotensive effect of Rituximab. Telmisartan should be withheld prior to and throughout Rituximab administration. </td></tr><tr><td><a href="/drugs/DB00421">Spironolactone</a></td><td>Telmisartan may increase the hyperkalemic effect of Spironolactone. Monitor for increased serum potassium concentrations during concomitant therapy. </td></tr><tr><td><a href="/drugs/DB00605">Sulindac</a></td><td>Concomitant use of Telmisartan and Sulindac may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB01600">Tiaprofenic acid</a></td><td>Concomitant use of Telmisartan and Tiaprofenic acid may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00684">Tobramycin</a></td><td>Increased risk of nephrotoxicity</td></tr><tr><td><a href="/drugs/DB00500">Tolmetin</a></td><td>Concomitant use of Telmisartan and Tolmetin may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00519">Trandolapril</a></td><td>The angiotensin II receptor blocker, Telmisartan, may increase the adverse effects of Trandolapril. </td></tr><tr><td><a href="/drugs/DB00374">Treprostinil</a></td><td>Additive hypotensive effect. Monitor antihypertensive therapy during concomitant use. </td></tr><tr><td><a href="/drugs/DB00384">Triamterene</a></td><td>Telmisartan may increase the hyperkalemic effect of Triamterene. Monitor for increased serum potassium concentrations during concomitant therapy.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

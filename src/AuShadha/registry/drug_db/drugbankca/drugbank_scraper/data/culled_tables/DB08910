@@ -1,0 +1,167 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Pomalidomide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB08910</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Pomalidomide, an analogue of thalidomide, is an immunomodulatory antineoplastic agent. <span class="caps">FDA</span> approved on February 8, 2013.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB08910/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB08910/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08910.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08910.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08910.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08910.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08910.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB08910">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Imnovid</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Pomalyst</td><td>Celgene </td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/immunosuppressive-agents">Immunosuppressive Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>19171-19-8</td></tr><tr><th>Weight</th><td>Average: 273.2441<br>Monoisotopic: 273.074955855</td></tr><tr><th>Chemical Formula</th><td>C<sub>13</sub>H<sub>11</sub>N<sub>3</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>UVSMNLNDYGZFPF-UHFFFAOYNA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1/C13H11N3O4/c14-7-3-1-2-6-10(7)13(20)16(12(6)19)8-4-5-9(17)15-11(8)18/h1-3,8H,4-5,14H2,(H,15,17,18)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">4-amino-2-(2,6-dioxopiperidin-3-yl)-2,3-dihydro-1H-isoindole-1,3-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NC1=CC=CC2=C1C(=O)N(C1CCC(=O)NC1=O)C2=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Isoindoles and Derivatives</td></tr><tr><th>Subclass</th><td>Isoindolines</td></tr><tr><th>Direct parent</th><td>Isoindolones</td></tr><tr><th>Alternative parents</th><td>Isoindoles; Piperidinediones; Delta Lactams; Anilines; Aminopiperidines; Primary Aromatic Amines; N-substituted Carboxylic Acid Imides; N-unsubstituted Carboxylic Acid Imides; Tertiary Carboxylic Acid Amides; Secondary Carboxylic Acid Amides; Tertiary Amines; Polyamines; Carboxylic Acids; Isoindlines</td></tr><tr><th>Substituents</th><td>piperidinedione; 3-aminopiperidine; aniline; delta-lactam; piperidinone; primary aromatic amine; benzene; piperidine; carboxylic acid imide, n-substituted; carboxylic acid imide; carboxylic acid imide, n-unsubstituted; tertiary carboxylic acid amide; secondary carboxylic acid amide; tertiary amine; lactam; carboxamide group; polyamine; carboxylic acid derivative; carboxylic acid; primary amine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the isoindolones. These are aromatic polycyclic compounds that an isolindole bearing a ketone.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Pomalidomide is indicated for patients with multiple myeloma who have received at least two prior therapies including lenalidomide and bortezomib and have demonstrated disease progression on or within 60 days of completion of the last therapy.</td></tr><tr><th>Pharmacodynamics</th><td>Pomalidomide is more potent than thalidomide (100-times) and lenalidomide (10-times). </td></tr><tr><th>Mechanism of action</th><td>Promalidomide is an immunomodulatory agent with antineoplastic activity. It is shown to inhibit the proliferation and induce apoptosis of various tumour cells. Furthermore, promalidomide enhances T cell and natural killer (NK) cell-mediated immunity and inhibited the production of pro-inflammatory cytokines, like TNF-alpha or IL-6, by monocytes. The primary target of promalidomide is thought to be the protein cereblon. It binds to this target and inhibits ubiquitin ligase activity. It is also a transcriptional inhibitor of COX2. </td></tr><tr><th>Absorption</th><td>Pomalidomide is generally well absorbed. The major circulating component is the parent compound. 
+Tmax, single oral dose = 2 -3 hours. 
+When 4 mg of promalidomide is given to patients with multiple myeloma, the steady-state pharmacokinetic parameters are as follows:
+AUC(T) = 400 ng.hr/mL;
+Cmax = 75 ng/mL. 
+Promalidomide accumulates following multiple doses. </td></tr><tr><th>Volume of distribution</th><td><p>Mean apparent volume of distribution (Vd/F), steady-state = 62 &#8211; 138 L</p></td></tr><tr><th>Protein binding</th><td>12-44% protein bound. It is not concentration dependent. </td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Promalidomide is hepatically metabolized by CYP1A2 and CYP3A4. The metabolites are 26-fold less active than the parent compound. Minor contributions from CYP2C19 and CYP2D6 have been observed in vitro. </p></td></tr><tr><th>Route of elimination</th><td>When a single oral dose (2mg) is given to healthy subjects, 73% of the dose was eliminated in urine. 15% of the dose was eliminated in feces. 2% and 8% of the dose eliminated unchanged as pomalidomide in urine and feces, respectively. </td></tr><tr><th>Half life</th><td>Healthy subjects = 9.4 hours;
+Multiple myeloma patients = 7.5 hours. </td></tr><tr><th>Clearance</th><td><p>Total body clearance = 7-10 L/hour</p></td></tr><tr><th>Toxicity</th><td>Most common adverse reactions (&#8805;30%) included fatigue and asthenia, neutropenia, anemia, constipation, nausea, diarrhea, dyspnea, upper-respiratory tract infections, back pain and pyrexia. </td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9653</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8304</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6419</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5264</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5983</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9147</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.847</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.844</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8882</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5079</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8863</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8428</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9002</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8513</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7289</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8686</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7979
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9081
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9858
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5862 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9885
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7765
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td>1 mg, 2 mg, 3 mg, 4 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Strong CYP3A4 inhibitors may increase levels of pomalidomide. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Strong CYP3A4 inducers may decrease levels of pomalidomide. Concomitant therapy should be avoided. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

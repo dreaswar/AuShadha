@@ -1,0 +1,188 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Cefotiam</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00229</strong>&#160; (APRD00855)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>One of the cephalosporins that has a broad spectrum of activity against both gram-positive and gram-negative microorganisms. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00229/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00229/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00229.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00229.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00229.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00229.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00229.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00229">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Cefotiamum</td><td>Latin</td><td>INN</td></tr><tr><td>CTM</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Cefotiam hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000796/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000796/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: SVSFIELZISOJDT-XRZFDKQNSA-N</li>
+              <li>Monoisotopic Mass: 561.080190078</li>
+              <li>Average Mass: 562.089</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000796">DBSALT000796</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Ceradon</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Pansporin</td><td>Takeda Pharmaceutical</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li>
+<li><a href="/mesh/cephalosporins">Cephalosporins</a></li></ul></td></tr><tr><th>CAS number</th><td>61622-34-2</td></tr><tr><th>Weight</th><td>Average: 525.628<br>Monoisotopic: 525.103512339</td></tr><tr><th>Chemical Formula</th><td>C<sub>18</sub>H<sub>23</sub>N<sub>9</sub>O<sub>4</sub>S<sub>3</sub></td></tr><tr><th>InChI Key</th><td>QYQDKDWGWDOFFU-IUODEOHRSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C18H23N9O4S3/c1-25(2)3-4-26-18(22-23-24-26)34-7-9-6-32-15-12(14(29)27(15)13(9)16(30)31)21-11(28)5-10-8-33-17(19)20-10/h8,12,15H,3-7H2,1-2H3,(H2,19,20)(H,21,28)(H,30,31)/t12-,15-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(6R,7R)-7-[2-(2-amino-1,3-thiazol-4-yl)acetamido]-3-[({1-[2-(dimethylamino)ethyl]-1H-1,2,3,4-tetrazol-5-yl}sulfanyl)methyl]-8-oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@]12SCC(CSC3=NN=NN3CCN(C)C)=C(N1C(=O)[C@H]2NC(=O)CC1=CSC(N)=N1)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Lactams</td></tr><tr><th>Subclass</th><td>Beta Lactams</td></tr><tr><th>Direct parent</th><td>Cephalosporins</td></tr><tr><th>Alternative parents</th><td>N-acyl-alpha Amino Acids and Derivatives; 2,4-disubstituted Thiazoles; 1,3-Thiazines; Primary Aromatic Amines; Aminothiazoles; Tetrazoles; Tertiary Carboxylic Acid Amides; Hemiaminals; Azetidines; Tertiary Amines; Secondary Carboxylic Acid Amides; Polyamines; Carboxylic Acids; Enamines; Aminals; Enolates; Thioethers</td></tr><tr><th>Substituents</th><td>n-acyl-alpha amino acid or derivative; 2,4-disubstituted 1,3-thiazole; 1,3-thiazolamine; primary aromatic amine; meta-thiazine; thiazole; tertiary carboxylic acid amide; azole; tetrazole; secondary carboxylic acid amide; hemiaminal; azetidine; tertiary amine; carboxamide group; polyamine; aminal; enolate; thioether; enamine; carboxylic acid; carboxylic acid derivative; organonitrogen compound; amine; primary amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the cephalosporins. These are compounds containing a 1,2-thiazine fused to a 2-azetidinone to for a oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylic acid moeity or a derivative thereof.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For treatment of severe infections caused by susceptible bacteria.</td></tr><tr><th>Pharmacodynamics</th><td>Cefotiam is a third generation beta-lactam cephalosporin antibiotic. It has broad spectrum activity against Gram positive and Gram negative bacteria. It does not have activity against <i>Pseudomonas aeruginosa</i>. Cefotiam works by inhibiting bacterial cell wall biosynthesis.</td></tr><tr><th>Mechanism of action</th><td>The bactericidal activity of cefotiam results from the inhibition of cell wall synthesis via affinity for penicillin-binding proteins (PBPs).</td></tr><tr><th>Absorption</th><td>Rapidly absorbed following intramuscular injection. Bioavailability is 60% following intramuscular injection.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>40%</td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>Approximately 1 hour.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Adverse effects following overdosage include nausea, vomiting, epigastric distress, diarrhea, and convulsions.</td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.5528</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9865</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6981</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.9008</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7087</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.92</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8475</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8441</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8071</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.568</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.923</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9026</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8496</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7105</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6519
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9074
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.7808
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4511 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.891
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.806
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Takeda chemical industries ltd</li></ul></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

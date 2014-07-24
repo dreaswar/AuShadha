@@ -1,0 +1,209 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Isoetarine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00221</strong>&#160; (APRD00750)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Isoetarine is a selective adrenergic beta-2 agonist used as fast acting bronchodilator for emphysema, bronchitis and asthma. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00221/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00221/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00221.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00221.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00221.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00221.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00221.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00221">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Isoetarina</td><td>Spanish</td><td>INN</td></tr><tr><td>Isoetarinum</td><td>Latin</td><td>INN</td></tr><tr><td>Isoetharine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>USAN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Isoetarine hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000349/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000349/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: MUFDLGGSOCHQOC-UHFFFAOYNA-N</li>
+              <li>Monoisotopic Mass: 275.128821282</li>
+              <li>Average Mass: 275.772</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000349">DBSALT000349</a></td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Isoetharine mesylate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000886/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000886/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000886">DBSALT000886</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Bronkometer</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Bronkosol</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/adrenergic-beta-2-receptor-agonists">Adrenergic beta-2 Receptor Agonists</a></li>
+<li><a href="/mesh/bronchodilator-agents">Bronchodilator Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>530-08-5</td></tr><tr><th>Weight</th><td>Average: 239.3107<br>Monoisotopic: 239.152143543</td></tr><tr><th>Chemical Formula</th><td>C<sub>13</sub>H<sub>21</sub>NO<sub>3</sub></td></tr><tr><th>InChI Key</th><td>HUYWAWARQUIQLE-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C13H21NO3/c1-4-10(14-8(2)3)13(17)9-5-6-11(15)12(16)7-9/h5-8,10,13-17H,4H2,1-3H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">4-{1-hydroxy-2-[(propan-2-yl)amino]butyl}benzene-1,2-diol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCC(NC(C)C)C(O)C1=CC(O)=C(O)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Phenols and Derivatives</td></tr><tr><th>Direct parent</th><td>Catecholamines and Derivatives</td></tr><tr><th>Alternative parents</th><td>Amphetamines and Derivatives; Polyols; Secondary Alcohols; 1,2-Aminoalcohols; Dialkylamines; Polyamines; Enols</td></tr><tr><th>Substituents</th><td>1,2-aminoalcohol; polyol; secondary alcohol; secondary aliphatic amine; polyamine; enol; secondary amine; amine; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the catecholamines and derivatives. These are compounds containing 4-(2-Aminoethyl)pyrocatechol [4-(2-aminoethyl)benzene-1,2-diol] or a derivative thereof formed by substitution.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of asthma, wheezing, and chronic asthmatic bronchitis.</td></tr><tr><th>Pharmacodynamics</th><td>Isoetharine is a relatively selective beta2-adrenergic bronchodilator. Isoetharine is indicated for the relief of bronchospasm associated with chronic obstructive pulmonary disease. Adrenergic bronchodilators are breathed in through the mouth to open up the bronchial tubes (air passages) of the lungs.</td></tr><tr><th>Mechanism of action</th><td>The pharmacologic effects of isoetharine are attributable to stimulation through beta-adrenergic receptors of intracellular adenyl cyclase, the enzyme that catalyzes the conversion of adenosine triphosphate (ATP) to cyclic AMP. Increased cyclic AMP levels are associated with relaxation of bronchial smooth muscle and inhibition of release of mediators of immediate hypersensitivity from cells, especially from mast cells.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Signs of overdose include tachycardia, palpitations, nausea, headache, and epinephrine-like side effects.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9956</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9488</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5564</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5499</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.882</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.962</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9379</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8052</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5843</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5841</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7285</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8126</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7513</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8375</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8819</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7781</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7703
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8754
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9363
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4960 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9676
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7683
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Nephron corp</li>
+<li>Sanofi aventis us llc</li>
+<li>Alpharma us pharmaceuticals division</li>
+<li>Astrazeneca lp</li>
+<li>Baxter healthcare corp</li>
+<li>Dey lp</li>
+<li>International medication systems ltd</li>
+<li>Parke davis pharmaceutical research div warner lambert co</li>
+<li>Roxane laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.nephronpharm.com">Nephron Pharmaceuticals Corp.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Respiratory (inhalation)</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>water solubility</td><td>Appreciable</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>2.2</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>3.18e+00 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.63</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>1.05</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-1.9</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>10.01</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.01</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>72.72</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>67.34</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>26.39</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Emerman CL, Cydulka RK, Effron D, Lukens TW, Gershman H, Boehm SP: A randomized, controlled comparison of isoetharine and albuterol in the treatment of acute asthma. Ann Emerg Med. 1991 Oct;20(10):1090-3. <a href="http://www.ncbi.nlm.nih.gov/pubmed/1928879">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D04625" target="_blank">D04625 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07053" target="_blank">C07053 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=3762" target="_blank">3762 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46505384" target="_blank">46505384 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.3630.html" target="_blank">3630 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000935" target="_blank">DAP000935 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA450103" target="_blank">PA450103 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/mtm/isoetharine-inhalation.html" target="_blank">http://www.drugs.com/mtm/isoetharine-inhalation.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Isoetharine" target="_blank">Isoetharine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>R03AC07<ul class="atc-drug-tree"><li><a href="/atc/R#R">R &#8212; RESPIRATORY SYSTEM</a></li><li><a href="/atc/R03#R03">R03 &#8212; DRUGS FOR OBSTRUCTIVE AIRWAY DISEASES</a></li><li><a href="/atc/R03A#R03A">R03A &#8212; ADRENERGICS, INHALANTS</a></li><li><a href="/atc/R03AC#R03AC">R03AC &#8212; Selective beta-2-adrenoreceptor agonists</a></li></ul>R03CC06<ul class="atc-drug-tree"><li><a href="/atc/R#R">R &#8212; RESPIRATORY SYSTEM</a></li><li><a href="/atc/R03#R03">R03 &#8212; DRUGS FOR OBSTRUCTIVE AIRWAY DISEASES</a></li><li><a href="/atc/R03C#R03C">R03C &#8212; ADRENERGICS FOR SYSTEMIC USE</a></li><li><a href="/atc/R03CC#R03CC">R03CC &#8212; Selective beta-2-adrenoreceptor agonists</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00221.pdf?1265922743">show</a>(6.51 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00494">Entacapone</a></td><td>Entacapone increases the effect and toxicity of the sympathomimetic, isoetharine.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

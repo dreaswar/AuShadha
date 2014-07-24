@@ -1,0 +1,165 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Gadoversetamide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00538</strong>&#160; (APRD00993)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Gadoversetamide is a gadolinium compound used as a contrast agent in magnetic resonance imaging (<span class="caps">MRI</span>), particularly imaging of the brain, spine and liver. It is marketed under the trade name OptiMARK.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00538/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00538/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00538.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00538.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00538.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00538.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00538.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00538">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Gadoversetamid</td><td>German</td><td>INN</td></tr><tr><td>Gadoversetamida</td><td>Spanish</td><td>INN</td></tr><tr><td>Gadoversetamide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>INN, BAN, USAN</td></tr><tr><td>Gadoversetamidum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>OptiMARK</td><td>Mallinckrodt</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/contrast-media">Contrast Media</a></li></ul></td></tr><tr><th>CAS number</th><td>131069-91-5</td></tr><tr><th>Weight</th><td>Average: 661.76<br>Monoisotopic: 662.154667866</td></tr><tr><th>Chemical Formula</th><td>C<sub>20</sub>H<sub>34</sub>GdN<sub>5</sub>O<sub>10</sub></td></tr><tr><th>InChI Key</th><td>HBEAOBRDTOXWRZ-UHFFFAOYSA-K</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C20H37N5O10.Gd/c1-34-9-3-21-16(26)11-24(14-19(30)31)7-5-23(13-18(28)29)6-8-25(15-20(32)33)12-17(27)22-4-10-35-2;/h3-15H2,1-2H3,(H,21,26)(H,22,27)(H,28,29)(H,30,31)(H,32,33);/q;+3/p-3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">gadolinium(3+) ion 2-[bis({2-[(carboxylatomethyl)({[(2-methoxyethyl)carbamoyl]methyl})amino]ethyl})amino]acetate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[Gd+3].COCCNC(=O)CN(CCN(CCN(CC([O-])=O)CC(=O)NCCOC)CC([O-])=O)CC([O-])=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Alpha Amino Acid Amides</td></tr><tr><th>Alternative parents</th><td>Tricarboxylic Acids and Derivatives; Tertiary Amines; Secondary Carboxylic Acid Amides; Polyamines; Ethers; Enolates; Carboxylic Acids; Carboxylic Acid Salts</td></tr><tr><th>Substituents</th><td>tricarboxylic acid derivative; secondary carboxylic acid amide; tertiary amine; carboxamide group; carboxylic acid salt; polyamine; enolate; carboxylic acid; ether; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the alpha amino acid amides. These are amide derivatives of alpha amino acids.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Gadoversetamide is an MRI contrast agent used for MRI diagnostic procedures to provide increased enhancement and visualization of lesions of the brain, spine and liver, including tumors.</td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td>Based on the behavior of protons when placed in a strong magnetic field, which is interpreted and transformed into images by magnetic resonance (MR) instruments. MR images are based primarily on proton density and proton relaxation dynamics. MR instruments are sensitive to two different relaxation processes, the T1 (spin-lattice or longitudinal relaxation time) and T2 (spin-spin or transverse relaxation time). Paramagnetic agents contain one or more unpaired electrons that enhance the T1 and T2 relaxation rates of protons in their molecular environment. In MRI, visualization of normal and pathological brain, spinal and hepatic tissue depends in part on variations in the radio frequency signal intensity that occur with changes in proton density, alteration of the T1, and variation in T2. When placed in a magnetic field, gadoversetamide shortens the T1 and T2 relaxation times in tissues where it accumulates. At the recommended dose, the effect is primarily on T1 relaxation time, and produces an increase in signal intensity (brightness). Gadoversetamide does not cross the intact blood-brain barrier; therefore, it does not accumulate in normal brain tissue or in CNS lesions that may have a normal blood-brain barrier (e.g., cysts, mature post-operative scars). Abnormal vascularity or disruption of the blood-brain barrier allows accumulation of gadoversetamide in lesions such as neoplasms, abscesses, and subacute infarcts.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>162 &#177; 25 mL/kg [normal subjects]</li>
+</ul></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>None detected</p></td></tr><tr><th>Route of elimination</th><td>The mean cumulative urinary excretion of gadoversetamide at 72 hours was approximately 93.5% for renal impaired patients and 95.8% for subjects with normal renal function</td></tr><tr><th>Half life</th><td>Distribution 13.3 &#177; 6.8 (mean) minutes, elimination 103.6 &#177; 19.5 (mean) minutes.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>72 +/- 16.3 mL/hr/kg [healthy]</li>
+</ul></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.9122</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8868</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5196</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7041</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6432</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9129</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8953</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8552</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8151</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5786</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9171</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8749</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9323</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8211</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9656</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9637</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7751
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8075
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.5115
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.0763 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9576
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8903
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Mallinckrodt inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.mallinckrodt.com">Mallinckrodt Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

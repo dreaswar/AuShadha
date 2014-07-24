@@ -1,0 +1,308 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Diclofenac</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00586</strong>&#160; (APRD00527)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A non-steroidal anti-inflammatory agent (<span class="caps">NSAID</span>) with antipyretic and analgesic actions. It is primarily available as the sodium salt. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00586/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00586/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00586.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00586.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00586.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00586.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00586.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00586">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Diclofenac Acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>ISV-205</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Diclofenac potassium</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000864/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000864/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000864">DBSALT000864</a></td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Diclofenac sodium</strong>
+          <div class="cas">15307-79-6</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000466/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000466/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: KPHWPUGNDIVLNH-UHFFFAOYSA-M</li>
+              <li>Monoisotopic Mass: 316.998628658</li>
+              <li>Average Mass: 318.13</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000466">DBSALT000466</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Aclonac</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Allvoran</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>CAMBIA</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Cataflam</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Dyloject</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Ecofenac</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Effekton</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Flector</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Nu-Diclo</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Pennsaid</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Primofenac</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Prophenatin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Rhumalgan</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Solaraze</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Voltaren</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Voltaren Emulgel</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Voltarol</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zipsor</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zorvolex</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-inflammatory-agents-non-steroidal">Anti-Inflammatory Agents, Non-Steroidal</a></li>
+<li><a href="/mesh/cyclooxygenase-inhibitors">Cyclooxygenase Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>15307-86-5</td></tr><tr><th>Weight</th><td>Average: 296.149<br>Monoisotopic: 295.016684015</td></tr><tr><th>Chemical Formula</th><td>C<sub>14</sub>H<sub>11</sub>Cl<sub>2</sub>NO<sub>2</sub></td></tr><tr><th>InChI Key</th><td>DCOPUUMXTXDBNB-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C14H11Cl2NO2/c15-10-5-3-6-11(16)14(10)17-12-7-2-1-4-9(12)8-13(18)19/h1-7,17H,8H2,(H,18,19)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-{2-[(2,6-dichlorophenyl)amino]phenyl}acetic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">OC(=O)CC1=CC=CC=C1NC1=C(Cl)C=CC=C1Cl</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Phenylacetic Acid Derivatives</td></tr><tr><th>Direct parent</th><td>Phenylacetic Acid Derivatives</td></tr><tr><th>Alternative parents</th><td>Dichlorobenzenes; Aryl Chlorides; Enolates; Secondary Amines; Carboxylic Acids; Polyamines; Organochlorides</td></tr><tr><th>Substituents</th><td>1,3-dichlorobenzene; chlorobenzene; aryl halide; aryl chloride; enolate; polyamine; secondary amine; carboxylic acid derivative; carboxylic acid; amine; organohalogen; organonitrogen compound; organochloride</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenylacetic acid derivatives. These are compounds containing a phenylacetic acid moiety, which consists of a phenyl group substituted at the second position by an acetic acid.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the acute and chronic treatment of signs and symptoms of osteoarthritis and rheumatoid arthritis.</td></tr><tr><th>Pharmacodynamics</th><td>Diclofenac is an acetic acid nonsteroidal antiinflammatory drug (NSAID) with analgesic and antipyretic properties. Diclofenac is used to treat pain, dysmenorrhea, ocular inflammation, osteoarthritis, rheumatoid arthritis, ankylosing spondylitis, and actinic keratosis</td></tr><tr><th>Mechanism of action</th><td>The antiinflammatory effects of diclofenac are believed to be due to inhibition of both leukocyte migration and the enzyme cylooxygenase (COX-1 and COX-2), leading to the peripheral inhibition of prostaglandin synthesis. As prostaglandins sensitize pain receptors, inhibition of their synthesis is responsible for the analgesic effects of diclofenac. Antipyretic effects may be due to action on the hypothalamus, resulting in peripheral dilation, increased cutaneous blood flow, and subsequent heat dissipation.</td></tr><tr><th>Absorption</th><td>Completely absorbed from the gastrointestinal tract.</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>1.3 L/kg</li>
+</ul></td></tr><tr><th>Protein binding</th><td>More than 99%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Diclofenac</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li></ul></td><td><a href="/metabolites/DBMET00144">4'-Hydroxydiclofenac</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/144">Details</a></td></tr><tr><td>Diclofenac</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003679" target="_blank">UDP-glucuronosyltransferase 2B7</a></li>
+<li><a href="/biodb/bio_entities/BE0003541" target="_blank">UDP-glucuronosyltransferase 1-1</a></li></ul></td><td><a href="/metabolites/DBMET00145">Diclofenac acyl glucuronide</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/145">Details</a></td></tr><tr><td>Diclofenac</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0000017" target="_blank">Prostaglandin G/H synthase 1</a></li></ul></td><td><a href="/metabolites/DBMET00146">3'-Hydroxydiclofenac</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/146">Details</a></td></tr><tr><td>Diclofenac</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET00147">5-Hydroxydiclofenac</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/147">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00144">4'-Hydroxydiclofenac</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01258">4',5-Dihydroxydiclofenac</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1416">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00147">5-Hydroxydiclofenac</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01258">4',5-Dihydroxydiclofenac</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1417">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Diclofenac is eliminated through metabolism and subsequent urinary and biliary excretion of the glucuronide and the sulfate conjugates of the metabolites. Little or no free unchanged diclofenac is excreted in the urine. Approximately 65% of the dose is excreted in the urine and approximately 35% in the bile as conjugates of unchanged diclofenac plus metabolites.</td></tr><tr><th>Half life</th><td>2 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>oral cl=622 mL/min [healthy]</li>
+	<li>renal cl &lt;1 mL/min [healthy]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Symptoms of overdose include loss of consciousness, increased intracranial pressure, and aspiration pneumonitis. LD<sub>50</sub>=390mg/kg (orally in mice)</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Diclofenac Action Pathway</td><td>Drug action</td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9548</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9541</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.8867</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.7976</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8254</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9548</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9086</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7779</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6724</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5923</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6786</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.848</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8947</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8647</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6607</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9133
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.6706
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9719
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          3.6447 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9514
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.868
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Institut biochemique sa</li>
+<li>Xanodyne pharmaceutics inc</li>
+<li>Nautilus neurosciences inc</li>
+<li>Novartis pharmaceuticals corp</li>
+<li>Apotex inc</li>
+<li>Mutual pharmaceutical co inc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Sandoz inc</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Watson laboratories inc</li>
+<li>Nycomed us inc</li>
+<li>Novartis consumer health inc</li>
+<li>Akorn inc</li>
+<li>Alcon inc</li>
+<li>Apotex inc richmond hill</li>
+<li>Bausch and lomb inc</li>
+<li>Falcon pharmaceuticals ltd</li>
+<li>Nexus pharmaceuticals inc</li>
+<li>Mallinckrodt inc</li>
+<li>Actavis elizabeth llc</li>
+<li>Alphapharm party ltd</li>
+<li>Carlsbad technology inc</li>
+<li>Nostrum laboratories inc</li>
+<li>Pliva inc</li>
+<li>Roxane laboratories inc</li>
+<li>Teva pharmaceuticals usa</li>
+<li>Unique pharmaceutical laboratories</li>
+<li>Biovail laboratories inc</li>
+<li>Dexcel ltd</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.4udr.com">4uOrtho LLC</a></li>
+<li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li>Advanced Pharmaceutical Services Inc.</li>
+<li>Advantage Dose LLC</li>
+<li><a href="http://www.aidarex.com">Aidarex Pharmacuticals LLC</a></li>
+<li><a href="http://www.akorn.com">Akorn Inc.</a></li>
+<li><a href="http://www.alcon.com">Alcon Laboratories</a></li>
+<li><a href="http://www.almirall.de">Almirall Hermal GmbH</a></li>
+<li><a href="http://www.alpharma.com">Alpharma Pharmaceuticals LLC</a></li>
+<li><a href="http://www.altergon.it">Altergon Italia SRL</a></li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li>Apotheca Inc.</li>
+<li>Apothecary Shop Wholesale</li>
+<li><a href="http://www.aqpharmaceuticals.com">AQ Pharmaceuticals Inc.</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.bausch.com">Bausch &amp; Lomb Inc.</a></li>
+<li>Bioglan Pharmaceuticals Co.</li>
+<li><a href="http://www.biovail.com">Biovail Pharmaceuticals</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.carlsbadtech.com">Carlsbad Technology Inc.</a></li>
+<li><a href="http://www.cibavision.com">Ciba Vision Canada Inc.</a></li>
+<li><a href="http://www.corepharma.com">Corepharma LLC</a></li>
+<li><a href="http://www.dexcel.com">Dexcel Ltd.</a></li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.endo.com">Endo Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.falconpharma.com">Falcon Pharmaceuticals Ltd.</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li>Heartland Repack Services LLC</li>
+<li><a href="http://www.indoco.com">Indoco Remedies Limited</a></li>
+<li><a href="http://www.innoviantpharmacy.com">Innoviant Pharmacy Inc.</a></li>
+<li><a href="http://www.jbcpl.com">J.B. Chemicals &amp; Pharmaceuticals</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.keltman.com">Keltman Pharmaceuticals Inc.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.mckesson.com">Mckesson Corp.</a></li>
+<li><a href="http://www.medvantx.com">Medvantx Inc.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.nautilusneurosciences.com">Nautilus Neurosciences Inc.</a></li>
+<li><a href="http://www.nexuspharma.net">Nexus Pharmaceuticals</a></li>
+<li><a href="http://www.novartis.com">Novartis AG</a></li>
+<li>Novopharm Ltd.</li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.packpharma.com">Pack Pharmaceuticals</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.patheon.com">Patheon Inc.</a></li>
+<li>PCA LLC</li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li>Pharmaceutical Utilization Management Program VA Inc.</li>
+<li><a href="http://www.pharmaderm.com">Pharmaderm</a></li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.pliva.com">Pliva Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.prepaksys.com">Prepak Systems Inc.</a></li>
+<li>Prescription Dispensing Service Inc.</li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Redpharm Drug</li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li>St Mary's Medical Park Pharmacy</li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li><a href="http://www.teikoku.co.jp">Teikoku Seiyaku Co. Ltd.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li>Va Cmop Dallas</li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li>
+<li><a href="http://www.xanodyne.com">Xanodyne Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.ysp.com.cn">Yung Shin Pharmaceutical Industry Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Ophthalmic</td><td></td></tr><tr><td>Solution</td><td>Topical</td><td></td></tr><tr><td>Suppository</td><td>Rectal</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr><tr><td>Tablet, coated</td><td>Oral</td><td></td></tr><tr><td>Tablet, extended release</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00630">Alendronate</a></td><td>Increased risk of gastric toxicity</td></tr><tr><td><a href="/drugs/DB01125">Anisindione</a></td><td>The NSAID, diclofenac, may increase the anticoagulant effect of anisindione.</td></tr><tr><td><a href="/drugs/DB08822">Azilsartan medoxomil</a></td><td>Increases toxicity of each. May deteriorate renal function, particularly in volume depleted or elderly patients. Decreases effects of azilsartan by antagonism. </td></tr><tr><td><a href="/drugs/DB00930">Colesevelam</a></td><td>Bile acid sequestrants may decrease the absorption of Nonsteroidal Anti-Inflammatory Agents. Monitor for decreased serum concentrations/therapeutic effects of nonsteroidal anti-inflammatory agents (NSAID) if coadministered with bile acid sequestrants. Separating the administration of doses by 2 or more hours may reduce (but not eliminate) the risk of interaction. The manufacturer of colesevelam recommends that drugs should be administered at least 1 hour before or 4 hours after colesevelam. </td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Monitor for nephrotoxicity</td></tr><tr><td><a href="/drugs/DB00266">Dicoumarol</a></td><td>The NSAID, diclofenac, may increase the anticoagulant effect of dicumarol.</td></tr><tr><td><a href="/drugs/DB06781">Difluprednate</a></td><td>NSAIDs may slow healing. </td></tr><tr><td><a href="/drugs/DB06210">Eltrombopag</a></td><td>Eltrombopag increases levels of Diclofenac via metabolism decrease. UDP-glucuronosyltransferase inhibition.</td></tr><tr><td><a href="/drugs/DB01381">Ginkgo biloba</a></td><td>Additive anticoagulant/antiplatelet effects may increase bleed risk. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB01356">Lithium</a></td><td>The NSAID, diclofenac, may decrease the renal excretion of lithium. Increased risk of lithium toxicity.</td></tr><tr><td><a href="/drugs/DB00563">Methotrexate</a></td><td>The NSAID, diclofenac, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB06813">Pralatrexate</a></td><td>NSAIDs increase the risk of toxicity due to impairment of renal clearance of pralatrexate thus increasing exposure. Monitor for adverse effects or adjust dose of pralatrexate. </td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin, a CYP2C9 inducer, may increase the metabolism of diclofenac.</td></tr><tr><td><a href="/drugs/DB00382">Tacrine</a></td><td>The metabolism of Tacrine, a CYP1A2 substrate, may be reduced by Diclofenac, a CYP1A2 inhibitors. Monitor the efficacy and toxicity of Tacrine if Diclofenac is initiated, discontinued or if the dose is changed.</td></tr><tr><td><a href="/drugs/DB00966">Telmisartan</a></td><td>Concomitant use of Telmisartan and Diclofenac may increase the risk of acute renal failure and hyperkalemia. Monitor renal function at the beginning and during treatment. </td></tr><tr><td><a href="/drugs/DB00373">Timolol</a></td><td>The NSAID, Diclofenac, may antagonize the antihypertensive effect of Timolol.</td></tr><tr><td><a href="/drugs/DB00697">Tizanidine</a></td><td>Diclofenac may decrease the metabolism and clearance of Tizanidine. Consider alternate therapy or use caution during co-administration.</td></tr><tr><td><a href="/drugs/DB00519">Trandolapril</a></td><td>The NSAID, Diclofenac, may reduce the antihypertensive effect of Trandolapril. Consider alternate therapy or monitor for changes in Trandolapril efficacy if Diclofenac is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00374">Treprostinil</a></td><td>The prostacyclin analogue, Treprostinil, may increase the risk of bleeding when combined with the NSAID, Diclofenac. Monitor for increased bleeding during concomitant thearpy. </td></tr><tr><td><a href="/drugs/DB06684">Vilazodone</a></td><td>Increased risk of bleeding with concomitant use of NSAIDs with vilazodone.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole, a strong CYP2C9 inhibitor, may increase the serum concentration of diclofenac by decreasing its metabolism. Renal impairment may increase the risk of diclofenac adverse effects. Monitor for changes in therapeutic and adverse effects of diclofenac if voriconazole is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>The antiplatelet effects of oral diclofenac may increase the bleed risk associated with warfarin. Consider alternate therapy or monitor for signs and symptoms of bleeding during concomitant therapy.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid alcohol.</li>
+<li>Take with food to reduce irritation.</li></ul></td></tr></tbody></table>

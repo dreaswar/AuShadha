@@ -1,0 +1,211 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Mitoxantrone</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01204</strong>&#160; (APRD00371)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>An anthracenedione-derived antineoplastic agent. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01204/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01204/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01204.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01204.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01204.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01204.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01204.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01204">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Mitoxantrone hydrochloride</strong>
+          <div class="cas">70476-82-3</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000121/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000121/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: ZAHQPTJLOCWVPG-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 516.154240126</li>
+              <li>Average Mass: 517.403</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000121">DBSALT000121</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Novantrone</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents">Antineoplastic Agents</a></li>
+<li><a href="/mesh/analgesics">Analgesics</a></li></ul></td></tr><tr><th>CAS number</th><td>65271-80-9</td></tr><tr><th>Weight</th><td>Average: 444.4809<br>Monoisotopic: 444.200884648</td></tr><tr><th>Chemical Formula</th><td>C<sub>22</sub>H<sub>28</sub>N<sub>4</sub>O<sub>6</sub></td></tr><tr><th>InChI Key</th><td>KKZJGLLVHKMTCM-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C22H28N4O6/c27-11-9-23-5-7-25-13-1-2-14(26-8-6-24-10-12-28)18-17(13)21(31)19-15(29)3-4-16(30)20(19)22(18)32/h1-4,23-30H,5-12H2</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1,4-dihydroxy-5,8-bis({2-[(2-hydroxyethyl)amino]ethyl}amino)-9,10-dihydroanthracene-9,10-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">OCCNCCNC1=C2C(=O)C3=C(O)C=CC(O)=C3C(=O)C2=C(NCCNCCO)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Acenes and Derivatives</td></tr><tr><th>Subclass</th><td>Anthracenes</td></tr><tr><th>Direct parent</th><td>Anthraquinones</td></tr><tr><th>Alternative parents</th><td>Hydroquinones; Polyols; 1,2-Aminoalcohols; Ketones; Polyamines; Enols; Dialkylamines; Primary Alcohols</td></tr><tr><th>Substituents</th><td>hydroquinone; phenol derivative; benzene; ketone; 1,2-aminoalcohol; polyol; primary alcohol; secondary aliphatic amine; polyamine; secondary amine; enol; amine; alcohol; carbonyl group; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the anthraquinones. These are organic compounds containing anthracene-9,10-quinone, an anthracene derivative with two ketone groups attached to the central benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of secondary (chronic) progressive, progressive relapsing, or worsening relapsing-remitting multiple sclerosis</td></tr><tr><th>Pharmacodynamics</th><td>Mitoxantrone has been shown in vitro to inhibit B cell, T cell, and macrophage proliferation and impair antigen presentation, as well as the secretion of interferon gamma, TNFa, and IL-2.</td></tr><tr><th>Mechanism of action</th><td>Mitoxantrone, a DNA-reactive agent that intercalates into deoxyribonucleic acid (DNA) through hydrogen bonding, causes crosslinks and strand breaks. Mitoxantrone also interferes with ribonucleic acid (RNA) and is a potent inhibitor of topoisomerase II, an enzyme responsible for uncoiling and repairing damaged DNA. It has a cytocidal effect on both proliferating and nonproliferating cultured human cells, suggesting lack of cell cycle phase specificity.</td></tr><tr><th>Absorption</th><td>Poorly absorbed following oral administration</td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>1000 L/m2</li>
+</ul></td></tr><tr><th>Protein binding</th><td>78%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>75 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>21.3 L/hr/m2 [Elderly patients with breast cancer receiving IV administration of 15-90 mg/m2]</li>
+	<li>28.3 L/hr/m2 [Non-elderly patients with nasopharyngeal carcinoma receiving IV administration of 15-90 mg/m2]</li>
+	<li>16.2 L/hr/m2 [Non-elderly patients with  malignant lymphoma receiving IV administration of 15-90 mg/m2]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Severe leukopenia with infection.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.7557</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.7979</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8957</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8417</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8674</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8381</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7735</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7907</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7013</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9107</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9026</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8544</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9211</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9108
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8742
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9727
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.3061 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Strong inhibitor 
+        </td>
+        <td>
+            0.5839
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6894
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>App pharmaceuticals llc</li>
+<li>Bedford laboratories div ben venue laboratories inc</li>
+<li>Bioniche pharma usa llc</li>
+<li>Fresenius kabi oncology plc</li>
+<li>Hospira inc</li>
+<li>Teva parenteral medicines inc</li>
+<li>Emd serono inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.emdcanada.com">EMD Canada Inc.</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li>Otn Generics Inc.</li>
+<li><a href="http://www.pierre-fabre.com">Pierre Fabre</a></li>
+<li>Sicor Pharmaceuticals</li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.wyeth.com">Wyeth Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Novantrone 2 mg/ml Concentrate 10ml Vial</td><td>1649.32USD</td><td>vial</td></tr><tr><td>Novantrone 2 mg/ml vial</td><td>158.59USD</td><td>ml</td></tr><tr><td>Mitoxantrone 20 mg/10 ml vial</td><td>42.0USD</td><td>ml</td></tr><tr><td>Mitoxantrone 25 mg/12.5 ml vial</td><td>37.5USD</td><td>ml</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>liquid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>logP</td><td>-3.1</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>7.34e-01 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>0.91</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>1.19</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-2.8</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>9.78</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.08</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>10</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>8</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>163.18</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>12</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>123.53</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>48.49</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p><a href="http://www.drugsyn.org/Mitoxantrone.htm">DrugSyn.org</a></p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=4197249&amp;tbm=pts" target="_blank">US4197249 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Fox EJ: Management of worsening multiple sclerosis with mitoxantrone: a review. Clin Ther. 2006 Apr;28(4):461-74. <a href="http://www.ncbi.nlm.nih.gov/pubmed/16750460">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C11195" target="_blank">C11195 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=4212" target="_blank">4212 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46504608" target="_blank">46504608 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.4067.html" target="_blank">4067 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=50729" target="_blank">50729 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL58" target="_blank">CHEMBL58 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000057" target="_blank">DAP000057 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA450526" target="_blank">PA450526 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2244614" target="_blank">2244614 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic2/mitoxantrone.htm" target="_blank">http://www.rxlist.com/cgi/generic2/mitoxantrone.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/mitoxantrone.html" target="_blank">http://www.drugs.com/cdi/mitoxantrone.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Mitoxantrone" target="_blank">Mitoxantrone <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>AHFS Codes</th><td><ul><li>10:00.00</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB01204.pdf?1265922800">show</a>(1.3 MB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB01204.pdf?1265922739">show</a>(53.2 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

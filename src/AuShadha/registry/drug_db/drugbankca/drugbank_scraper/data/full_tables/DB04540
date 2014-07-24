@@ -1,0 +1,161 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Cholesterol</strong></td></tr><tr><th>Accession Number</th><td><strong>DB04540</strong>&#160; (EXPT00945)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>experimental</td></tr><tr><th>Description</th><td><p>The principal sterol of all higher animals, distributed in body tissues, especially the brain and spinal cord, and in animal fats and oils. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB04540/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB04540/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04540.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04540.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04540.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04540.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04540.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB04540">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>57-88-5</td></tr><tr><th>Weight</th><td>Average: 386.6535<br>Monoisotopic: 386.354866094</td></tr><tr><th>Chemical Formula</th><td>C<sub>27</sub>H<sub>46</sub>O</td></tr><tr><th>InChI Key</th><td>HVYWMOMLDIMFJA-MFYRMPRMSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C27H46O/c1-18(2)7-6-8-19(3)23-11-12-24-22-10-9-20-17-21(28)13-15-26(20,4)25(22)14-16-27(23,24)5/h9,18-19,21-25,28H,6-8,10-17H2,1-5H3/t19-,21-,22+,23-,24+,25-,26-,27-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(1R,2S,5R,10S,11S,14R,15R)-2,15-dimethyl-14-[(2R)-6-methylheptan-2-yl]tetracyclo[8.7.0.0^{2,7}.0^{11,15}]heptadec-7-en-5-ol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC(C)CCC[C@@H](C)[C@H]1CC[C@H]2[C@@H]3CC=C4C[C@H](O)CC[C@@]4(C)[C@@H]3CC[C@]12C</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Lipids</td></tr><tr><th>Class</th><td>Steroids and Steroid Derivatives</td></tr><tr><th>Subclass</th><td>Cholesterols and Derivatives</td></tr><tr><th>Direct parent</th><td>Cholesterols and Derivatives</td></tr><tr><th>Alternative parents</th><td>Hydroxysteroids; Cyclohexanols; Cyclic Alcohols and Derivatives; Polyamines</td></tr><tr><th>Substituents</th><td>3-hydroxy-steroid; cyclohexanol; cyclic alcohol; secondary alcohol; polyamine; alcohol</td></tr><tr><th>Classification description</th><td>This compound belongs to the cholesterols and derivatives. These are compounds containing an hydroxylated chloestane moeity.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>11-beta-hydroxylase deficiency (CYP11B1)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00575?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00575</a></td></tr><tr><td>Adrenal Hyperplasia Type 5 or Congenital Adrenal Hyperplasia due to 17 Alpha-hydroxylase Deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00372?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00372</a></td></tr><tr><td>17-alpha-hydroxylase deficiency (CYP17)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00566?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00566</a></td></tr><tr><td>Adrenal Hyperplasia Type 3 or Congenital Adrenal Hyperplasia due to 21-hydroxylase Deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00373?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00373</a></td></tr><tr><td>21-hydroxylase deficiency (CYP21)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00576?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00576</a></td></tr><tr><td>Bile Acid Biosynthesis</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00035?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00035</a></td></tr><tr><td>Lysosomal Acid Lipase Deficiency (Wolman Disease)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00319?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00319</a></td></tr><tr><td>Congenital Bile Acid Synthesis Defect Type II</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00314?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00314</a></td></tr><tr><td>Congenital Bile Acid Synthesis Defect Type III</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00318?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00318</a></td></tr><tr><td>Mevalonic aciduria</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00510?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00510</a></td></tr><tr><td>Pravastatin Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00089?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00089</a></td></tr><tr><td>Rosuvastatin Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00092?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00092</a></td></tr><tr><td>Alendronate Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00095?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00095</a></td></tr><tr><td>Ibandronate Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00079?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00079</a></td></tr><tr><td>Simvastatin Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00082?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00082</a></td></tr><tr><td>Lovastatin Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00099?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00099</a></td></tr><tr><td>Zoledronate Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00107?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00107</a></td></tr><tr><td>Cerivastatin Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00111?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00111</a></td></tr><tr><td>Risedronate Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00112?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00112</a></td></tr><tr><td>Pamidronate Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00117?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00117</a></td></tr><tr><td>Fluvastatin Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00119?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00119</a></td></tr><tr><td>Atorvastatin Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00131?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00131</a></td></tr><tr><td>Congenital Lipoid Adrenal Hyperplasia (CLAH) or Lipoid CAH</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00371?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00371</a></td></tr><tr><td>Steroid Biosynthesis</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00023?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00023</a></td></tr><tr><td>Chondrodysplasia Punctata II, X Linked Dominant (CDPX2)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00388?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00388</a></td></tr><tr><td>Cerebrotendinous Xanthomatosis (CTX)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00315?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00315</a></td></tr><tr><td>CHILD Syndrome</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00387?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00387</a></td></tr><tr><td>Cholesteryl ester storage disease</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00508?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00508</a></td></tr><tr><td>Corticosterone methyl oxidase I deficiency (CMO I)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00577?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00577</a></td></tr><tr><td>Corticosterone methyl oxidase II deficiency - CMO II</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00578?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00578</a></td></tr><tr><td>Desmosterolosis</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00386?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00386</a></td></tr><tr><td>Wolman disease</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00511?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00511</a></td></tr><tr><td>Familial Hypercholanemia (FHCA)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00317?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00317</a></td></tr><tr><td>Hyper-IgD syndrome</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00509?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00509</a></td></tr><tr><td>Hypercholesterolemia</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00209?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00209</a></td></tr><tr><td>Smith-Lemli-Opitz Syndrome (SLOS)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00389?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00389</a></td></tr><tr><td>Steroidogenesis</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00130?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00130</a></td></tr><tr><td>Zellweger Syndrome</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00316?highlight%5Bcompounds%5D%5B%5D=DB04540&amp;highlight%5Bproteins%5D%5B%5D=DB04540">SMP00316</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9749</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.8184</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6477</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6404</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.529</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7691</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8257</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8794</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.7439</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9355</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9194</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9519</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9177</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8638</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6721</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8888
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.932
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9825
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.8078 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.773
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7552
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>148.5 &#176;C</td><td>PhysProp</td></tr><tr><td>boiling point</td><td>360 &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>0.095 mg/L (at 30 &#176;C)</td><td>YALKOWSKY,SH &amp; DANNENFELSER,RM (1992)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>2.79e-05 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>7.02</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>7.11</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-7.1</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>18.2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>-1.4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>20.23</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>120.62</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>49.99</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Tatu Miettenen, Ingmar Wester, Hannu Vanhanen, &#8220;Substance for lowering high cholesterol level in serum and methods for preparing and using the same.&#8221; U.S. Patent US6174560, issued February, 1944.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=6174560&amp;tbm=pts" target="_blank">US6174560 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00040" target="_blank">D00040 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C00187" target="_blank">C00187 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=46937002" target="_blank">46937002 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46508234" target="_blank">46508234 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.298.html" target="_blank">298 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=20192" target="_blank">20192 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16113" target="_blank">16113 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=CLR" target="_blank">CLR <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1LRI" target="_blank">1LRI <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

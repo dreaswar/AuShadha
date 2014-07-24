@@ -1,0 +1,274 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Allopurinol</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00437</strong>&#160; (APRD00435, DB03027)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A xanthine oxidase inhibitor that decreases uric acid production. It also acts as an antimetabolite on some simpler organisms. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00437/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00437/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00437.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00437.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00437.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00437.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00437.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00437">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>4-HPP</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>4-Hydroxypyrazolopyrimidine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Allopurinolum</td><td>Latin</td><td>INN</td></tr><tr><td>Alopurinol</td><td>Spanish</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Allopurinol Sodium</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000350/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000350/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: PTJRZVJXXNYNLN-UHFFFAOYSA-M</li>
+              <li>Monoisotopic Mass: 158.020455413</li>
+              <li>Average Mass: 158.0933</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000350">DBSALT000350</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Adenock</td><td>Tanabe</td></tr><tr><td>Allohexal</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Alloril</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Aloprim</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Aluron</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Milurit</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Progout</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zyloprim</td><td>Wellcome</td></tr><tr><td>Zyloric</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Zyrik</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/gout-suppressants">Gout Suppressants</a></li>
+<li><a href="/mesh/enzyme-inhibitors">Enzyme Inhibitors</a></li>
+<li><a href="/mesh/antimetabolites">Antimetabolites</a></li>
+<li><a href="/mesh/free-radical-scavengers">Free Radical Scavengers</a></li></ul></td></tr><tr><th>CAS number</th><td>315-30-0</td></tr><tr><th>Weight</th><td>Average: 136.1115<br>Monoisotopic: 136.03851077</td></tr><tr><th>Chemical Formula</th><td>C<sub>5</sub>H<sub>4</sub>N<sub>4</sub>O</td></tr><tr><th>InChI Key</th><td>OFCNXPDARWKPPY-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C5H4N4O/c10-5-3-1-8-9-4(3)6-2-7-5/h1-2H,(H2,6,7,8,9,10)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1H,2H,4H-pyrazolo[3,4-d]pyrimidin-4-one</div></td></tr><tr><th>SMILES</th><td><div class="wrap">O=C1N=CN=C2NNC=C12</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB00437.gif?1265922773">show</a>(7.32 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Pyrazolopyrimidines</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Pyrazolopyrimidines</td></tr><tr><th>Alternative parents</th><td>Pyrimidones; Pyrazoles; Polyamines</td></tr><tr><th>Substituents</th><td>pyrimidone; pyrimidine; pyrazole; azole; polyamine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the pyrazolopyrimidines. These are compounds containing a pyrazolopyrimidine skeleton, which consists of a pyrazole fused to a pyrimidine.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of hyperuricemia associated with primary or secondary gout. Also indicated for the treatment of primary or secondary uric acid nephropathy, with or without the symptoms of gout, as well as chemotherapy-induced hyperuricemia and recurrent renal calculi.</td></tr><tr><th>Pharmacodynamics</th><td>Allopurinol, a structural analog of the natural purine base hypoxanthine, is used to prevent gout and renal calculi due to either uric acid or calcium oxalate and to treat uric acid nephropathy, hyperuricemia, and some solid tumors.</td></tr><tr><th>Mechanism of action</th><td>Allopurinol and its active metabolite, oxypurinol, inhibits the enzyme xanthine oxidase, blocking the conversion of the oxypurines hypoxanthine and xanthine to uric acid. Elevated concentrations of oxypurine and oxypurine inhibition of xanthine oxidase through negative feedback results in a decrease in the concentrations of uric acid in the serum and urine. Allopurinol also facilitates the incorporation of hypoxanthine and xanthine into DNA and RNA, leading to a feedback inhibition of de novo purin synthesis and a decrease in serum uric acid concentrations as a result of an increase in nucleotide concentration.</td></tr><tr><th>Absorption</th><td>Approximately 80-90% absorbed from the gastrointestinal tract.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Allopurinol and oxypurinol are not bound to plasma proteins</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Allopurinol</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003539" target="_blank">Aldehyde oxidase</a></li></ul></td><td><a href="/metabolites/DBMET00414">oxypurinol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/417">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Approximately  20% of the ingested allopurinol is excreted in the feces.</td></tr><tr><th>Half life</th><td>1-3 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>LD<sub>50</sub>=214 mg/kg (in mice)</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.997</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9885</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6232</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.7409</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9135</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9858</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8653</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8635</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8256</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6242</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8817</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9472</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.923</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9198</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.858</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9169</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7089
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.921
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9675
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.1087 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9511
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9448
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Apotex inc etobicoke site</li>
+<li>Caraco pharmaceutical laboratories ltd</li>
+<li>Mutual pharmaceutical co inc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Northstar healthcare holdings ltd</li>
+<li>Par pharmaceutical inc</li>
+<li>Purepac pharmaceutical co</li>
+<li>Sandoz inc</li>
+<li>Superpharm corp</li>
+<li>Vintage pharmaceuticals inc</li>
+<li>Watson laboratories inc</li>
+<li>Abbott laboratories pharmaceutical products div</li>
+<li>Dr reddys laboratories louisiana llc</li>
+<li>Prometheus laboratories inc</li>
+<li>Bedford laboratories</li>
+<li>Bioniche pharma usa llc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Advanced Pharmaceutical Services Inc.</li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.ascendlaboratories.com">Ascend Laboratories LLC</a></li>
+<li><a href="http://BASF%20Corp.">BASF Corp.</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.bionichepharmausa.com">Bioniche Pharma</a></li>
+<li><a href="http://www.biotestpharma.com">Biotest Pharmaceuticals</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.caraco.com">Caraco Pharmaceutical Labs</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li>Comprehensive Consultant Services Inc.</li>
+<li>Dept Health Central Pharmacy</li>
+<li>DHHS Program Support Center Supply Service Center</li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li><a href="http://www.dsm.com">DSM Corp.</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li>Heartland Repack Services LLC</li>
+<li>Kaiser Foundation Hospital</li>
+<li>Liberty Pharmaceuticals</li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li>Mutual Pharmaceutical Co.</li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li>Neighborcare Repackaging Inc.</li>
+<li>Northstar Rx LLC</li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.paddocklabs.com">Paddock Labs</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.parpharm.com">Par Pharmaceuticals</a></li>
+<li>PCA LLC</li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.piramalpharmasolutions.com">Piramal Healthcare</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li><a href="http://www.prepaksys.com">Prepak Systems Inc.</a></li>
+<li><a href="http://www.prescript.net">Prescript Pharmaceuticals</a></li>
+<li><a href="http://www.prometheuslabs.com">Prometheus Laboratories Inc.</a></li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.spectrumpharm.com">Spectrum Pharmaceuticals</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li>Va Cmop Dallas</li>
+<li>Vangard Labs Inc.</li>
+<li>Vintage Pharmaceuticals Inc.</li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Aloprim 500 mg vial</td><td>612.3USD</td><td>vial</td></tr><tr><td>Allopurinol sodium 500 mg vial</td><td>583.14USD</td><td>vial</td></tr><tr><td>Allopurinol powder</td><td>18.41USD</td><td>g</td></tr><tr><td>Zyloprim 300 mg tablet</td><td>1.89USD</td><td>tablet</td></tr><tr><td>Zyloprim 100 mg tablet</td><td>0.82USD</td><td>tablet</td></tr><tr><td>Allopurinol 300 mg tablet</td><td>0.46USD</td><td>tablet</td></tr><tr><td>Allopurinol 100 mg tablet</td><td>0.24USD</td><td>tablet</td></tr><tr><td>Apo-Allopurinol 300 mg Tablet</td><td>0.22USD</td><td>tablet</td></tr><tr><td>Novo-Purol 300 mg Tablet</td><td>0.22USD</td><td>tablet</td></tr><tr><td>Apo-Allopurinol 200 mg Tablet</td><td>0.14USD</td><td>tablet</td></tr><tr><td>Novo-Purol 200 mg Tablet</td><td>0.14USD</td><td>tablet</td></tr><tr><td>Apo-Allopurinol 100 mg Tablet</td><td>0.08USD</td><td>tablet</td></tr><tr><td>Novo-Purol 100 mg Tablet</td><td>0.08USD</td><td>tablet</td></tr><tr><td>Suspendol-s liquid</td><td>0.04USD</td><td>ml</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>350 &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>569 mg/L (at 25 &#176;C)</td><td>YALKOWSKY,SH &amp; DANNENFELSER,RM (1992)</td></tr><tr><td>logP</td><td>-0.55</td><td>BUNDGAARD,H &amp; FALCH,E (1985)</td></tr><tr><td>logS</td><td>-2.38</td><td>ADME Research, USCD</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>5.88e+00 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-1.7</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-1.8</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-1.4</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>7.83</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>2.57</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>65.85</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>54.24</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>11.67</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Druey, J. and Schmidt, P.; US. Patent 2868,803; January 13,1959; assigned to Ciba Pharmaceutical Products Inc.<br>
+Hitchings, G.H. and Falco, EA.; U.S. Patent 3,474,098; October 21,1969; assigned to Bur-<br>
+roughs Wellcome &amp; Co.<br>
+Cresswell, R.M.and Mentha, J.W.; US.Patent4,146,713; March27,1979; assigned to Bur-<br>
+roughs Wellcome &amp; Co.</p></span></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Pacher P, Nivorozhkin A, Szabo C: Therapeutic effects of xanthine oxidase inhibitors: renaissance half a century after the discovery of allopurinol. Pharmacol Rev. 2006 Mar;58(1):87-114. <a href="http://www.ncbi.nlm.nih.gov/pubmed/16507884">Pubmed</a></li>
+	<li>Schlesinger N: Diagnosing and treating gout: a review to aid primary care physicians. Postgrad Med. 2010 Mar;122(2):157-61. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20203467">Pubmed</a></li>
+	<li>Suzuki I, Yamauchi T, Onuma M, Nozaki S: Allopurinol, an inhibitor of uric acid synthesis&#8212;can it be used for the treatment of metabolic syndrome and related disorders? Drugs Today (Barc). 2009 May;45(5):363-78. <a href="http://www.ncbi.nlm.nih.gov/pubmed/19584965">Pubmed</a></li>
+	<li>Terkeltaub R: Update on gout: new therapeutic strategies and options. Nat Rev Rheumatol. 2010 Jan;6(1):30-8. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20046204">Pubmed</a></li>
+	<li>George J, Struthers AD: Role of urate, xanthine oxidase and the effects of allopurinol in vascular oxidative stress. Vasc Health Risk Manag. 2009;5(1):265-72. Epub 2009 Apr 8. <a href="http://www.ncbi.nlm.nih.gov/pubmed/19436671">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00224" target="_blank">D00224 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=2094" target="_blank">2094 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46508516" target="_blank">46508516 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.2010.html" target="_blank">2010 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50241255" target="_blank">50241255 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=40279" target="_blank">40279 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1467" target="_blank">CHEMBL1467 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000773" target="_blank">DAP000773 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA448320" target="_blank">PA448320 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=7HP" target="_blank">7HP <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=555681" target="_blank">555681 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic/allopur.htm" target="_blank">http://www.rxlist.com/cgi/generic/allopur.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/allopurinol.html" target="_blank">http://www.drugs.com/allopurinol.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PDRhealth</td><td><a class="wishart-link-out" href="http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/zyl1508.shtml" target="_blank">http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/zyl1508.shtml <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Allopurinol" target="_blank">Allopurinol <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>M04AA01<ul class="atc-drug-tree"><li><a href="/atc/M#M">M &#8212; MUSCULO-SKELETAL SYSTEM</a></li><li><a href="/atc/M04#M04">M04 &#8212; ANTIGOUT PREPARATIONS</a></li><li><a href="/atc/M04A#M04A">M04A &#8212; ANTIGOUT PREPARATIONS</a></li><li><a href="/atc/M04AA#M04AA">M04AA &#8212; Preparations inhibiting uric acid production</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>92:00.00</li></ul></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1IOL" target="_blank">1IOL <span class="glyphicon glyphicon-new-window"> </span></a></li>
+<li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1V97" target="_blank">1V97 <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00437.pdf?1265922739">show</a>(75.9 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01418">Acenocoumarol</a></td><td>Allopurinol may increase the anticoagulant effect of acenocoumarol.</td></tr><tr><td><a href="/drugs/DB01125">Anisindione</a></td><td>Allopurinol may increase the anticoagulant effect of anisindione.</td></tr><tr><td><a href="/drugs/DB00993">Azathioprine</a></td><td>Allopurinol may increase the effect of thiopurine, azathioprine.</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Allopurinol increases the effect and toxicity of cyclosporine</td></tr><tr><td><a href="/drugs/DB00266">Dicoumarol</a></td><td>Allopurinol may increase the anticoagulant effect of dicumarol.</td></tr><tr><td><a href="/drugs/DB01033">Mercaptopurine</a></td><td>Allopurinol may increase the effect of thiopurine, mercaptopurine.</td></tr><tr><td><a href="/drugs/DB00519">Trandolapril</a></td><td>The ACE inhibitor, Trandolapril, may increase the risk of hypersensitivity reactions to Allopurinol. </td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>Allopurinol may increase the anticoagulant effect of warfarin. Monitor for changes in prothrombin times and therapeutic effects of warfarin if allopurinol is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid alcohol.</li>
+<li>Take with a full glass of water.</li>
+<li>Take with food.</li></ul></td></tr></tbody></table>

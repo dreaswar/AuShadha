@@ -1,0 +1,192 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Lomitapide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB08827</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Lomitapide is a microsomal triglyceride transfer protein (<span class="caps">MTP</span>) inhibitor used in homozygous familial hypercholesterolemia (HoFH) patients. It is marketed under the name Juxtapid&#174;.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB08827/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB08827/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08827.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08827.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08827.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08827.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08827.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB08827">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Lomitapide mesylate</strong>
+          <div class="cas">202914-84-9</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000110/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000110/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: QKVKOFVWUHNEBX-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 789.267111357</li>
+              <li>Average Mass: 789.826</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000110">DBSALT000110</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Juxtapid</td><td>AEGERION PHARMACEUTICALS INC</td></tr><tr><td>Lojuxta</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/hypolipidemic-agents">Hypolipidemic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>182431-12-5</td></tr><tr><th>Weight</th><td>Average: 693.7204<br>Monoisotopic: 693.278996673</td></tr><tr><th>Chemical Formula</th><td>C<sub>39</sub>H<sub>37</sub>F<sub>6</sub>N<sub>3</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>MBBCVAKAJPKAKM-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C39H37F6N3O2/c40-38(41,42)25-46-36(50)37(33-13-5-3-10-30(33)31-11-4-6-14-34(31)37)21-7-8-22-48-23-19-28(20-24-48)47-35(49)32-12-2-1-9-29(32)26-15-17-27(18-16-26)39(43,44)45/h1-6,9-18,28H,7-8,19-25H2,(H,46,50)(H,47,49)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">N-(2,2,2-trifluoroethyl)-9-[4-(4-{2-[4-(trifluoromethyl)phenyl]benzamido}piperidin-1-yl)butyl]-9H-fluorene-9-carboxamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">FC(F)(F)CNC(=O)C1(CCCCN2CCC(CC2)NC(=O)C2=C(C=CC=C2)C2=CC=C(C=C2)C(F)(F)F)C2=CC=CC=C2C2=CC=CC=C12</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Superclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Class</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Alternative parents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Substituents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Classification description</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used in homozygous familial hypercholesterolemia (HoFH) patients to reduce low-density lipoprotein cholesterol (LDL-C), total cholesterol (TC), apolipoprotein B (apo B), and non-high-density lipoprotein cholesterol (non-HDL-C).</td></tr><tr><th>Pharmacodynamics</th><td>Lomitapide directly inhibits microsomal triglyceride transfer protein (MTP).</td></tr><tr><th>Mechanism of action</th><td>Within the lumen of the endoplasmic reticulum, lomitapide inhibits microsomal triglyceride transfer protein (MTP), which prevents the formation of apolipoprotein B, and, thus, the formation of VLDL and chylomicrons as well. Altogether, this leads to a reduction of low-density lipoprotein cholesterol.</td></tr><tr><th>Absorption</th><td>In healthy patients, time to maximum lomitapide concentration is about 6 hours with a single dose of 60 mg. Lomitapide has an approximate absolute bioavailability of 7%.</td></tr><tr><th>Volume of distribution</th><td><p>The steady state volume of distribution is about 985-1292 L.</p></td></tr><tr><th>Protein binding</th><td>Plasma protein binding is about 99.8%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Lomitapide is mainly metabolized by CYP3A4 to it's inactive metabolites, M1 and M3. CYP enzymes that metabolize lomitapide to a minor extent include CYP 1A2,2B6,2C8,2C19.</p></td></tr><tr><th>Route of elimination</th><td>About 52.9-59.5% is eliminated by the urine and 33.4-35.1% is eliminated by the feces.</td></tr><tr><th>Half life</th><td>Lomitapide half-life is about 39.7 hours.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Contra-indicated in pregnancy, and moderate to severe hepatic insufficiency (Child-Pugh category B or C). Severe GI adverse reactions may occur.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td>10 mg</td></tr><tr><td>Capsule</td><td>Oral</td><td>20 mg</td></tr><tr><td>Capsule</td><td>Oral</td><td>5 mg</td></tr></tbody></table></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>5712279</td><td>2012-12-12</td><td>2015-02-21</td></tr><tr><td>United States</td><td>5739135</td><td>2012-12-12</td><td>2015-04-14</td></tr><tr><td>United States</td><td>6492365</td><td>2012-12-12</td><td>2019-12-10</td></tr><tr><td>United States</td><td>7932268</td><td>2012-12-12</td><td>2027-08-19</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>logP</td><td>7.7</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>pKa (strongest acidic)</td><td>10.35</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.02</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>61.44</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>12</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>181.73</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>68.08</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Cuchel M, Meagher EA, du Toit Theron H, Blom DJ, Marais AD, Hegele RA, Averna MR, Sirtori CR, Shah PK, Gaudet D, Stefanutti C, Vigna GB, Du Plessis AM, Propert KJ, Sasiela WJ, Bloedon LT, Rader DJ: Efficacy and safety of a microsomal triglyceride transfer protein inhibitor in patients with homozygous familial hypercholesterolaemia: a single-arm, open-label, phase 3 study. Lancet. 2012 Nov 1. pii: S0140-6736(12)61731-0. doi: 10.1016/S0140-6736(12)61731-0. <a href="http://www.ncbi.nlm.nih.gov/pubmed/23122768">Pubmed</a></li>
+	<li>Cuchel M, Bloedon LT, Szapary PO, Kolansky DM, Wolfe ML, Sarkis A, Millar JS, Ikewaki K, Siegelman ES, Gregg RE, Rader DJ: Inhibition of microsomal triglyceride transfer protein in familial hypercholesterolemia. N Engl J Med. 2007 Jan 11;356(2):148-56. <a href="http://www.ncbi.nlm.nih.gov/pubmed/17215532">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D09637" target="_blank">D09637 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=72297" target="_blank">72297 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL354541" target="_blank">CHEMBL354541 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/juxtapid-drug.htm" target="_blank">http://www.rxlist.com/juxtapid-drug.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/juxtapid.html" target="_blank">http://www.drugs.com/juxtapid.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Lomitapide" target="_blank">Lomitapide <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>C10AX12<ul class="atc-drug-tree"><li><a href="/atc/C#C">C &#8212; CARDIOVASCULAR SYSTEM</a></li><li><a href="/atc/C10#C10">C10 &#8212; LIPID MODIFYING AGENTS</a></li><li><a href="/atc/C10A#C10A">C10A &#8212; LIPID MODIFYING AGENTS, PLAIN</a></li><li><a href="/atc/C10AX#C10AX">C10AX &#8212; Other lipid modifying agents</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>24:06.92</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB08827.pdf?1357250953">show</a>(930 KB)</td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01076">Atorvastatin</a></td><td>Atorvastatin, and other weak CYP3A4 inhibitors (such as amiodarone, amlodipine, alprazolam, bicalutamide, cilostazol, cimetidine, cyclosporine, fluoxetine, fluvoxamine, ginko, goldenseal, isoniazide, lapatinib, nilotinib, oral contraceptives, pazopanib, ranitidine, ranolazine, tipranavir/ritonavir, ticagrelor, zileuton) increase lomitapide levels by 2-fold. Thus lomipatide should be dosed at a maximum of 30mg daily when used concomitantly with weak inhibitors of CYP3A4.</td></tr><tr><td><a href="/drugs/DB08873">Boceprevir</a></td><td>Boceprevir increases levels of lomipatide by 27 folds by inhibiting CYP3A4 metabolism. Concomitant therapy of Boceprevir and strong CYP3A4 inhibitors (such as clarithromycin, conivaptan, indinavir, intraconazole, ketoconazole, lopinavir/ritonavir, mibefradil, nefazodone, nelfinavir, posaconazole, ritonavir, saquinavir, telaprevir, telithromycin, variconazole) with lomipatide is contraindicated. </td></tr><tr><td><a href="/drugs/DB01432">Cholestyramine</a></td><td>Bile acid sequestrants also used for treating high cholesterol may interfere with the absorption of oral medications, thus separate administration by 4 hours. </td></tr><tr><td><a href="/drugs/DB00537">Ciprofloxacin</a></td><td>The effect of coadminstration of lomipatide with ciproflaxacin, and other moderate CYP3A4 inhibitors (such as aprepitant, amprenavir, atazanavir, ciprofloxacin, crizotinib, darunavir/ritonavir, diltiazem, erythromycin, fluconazole, fosamprenavir, imatinib, verapamil) is unknown. However, as coadministration is likely to increase serum concentrations of lomipatide, concomitant use is contraindicated.  </td></tr><tr><td><a href="/drugs/DB00375">Colestipol</a></td><td>Bile acid sequestrants also used for treating high cholesterol may interfere with the absorption of oral medications, thus separate administration by 4 hours. </td></tr><tr><td><a href="/drugs/DB08865">Crizotinib</a></td><td>Strong CYP3A4 inhibitors may increase levels of crizotinib. Concomitant therapy is contraindicated. </td></tr><tr><td><a href="/drugs/DB06695">Dabigatran etexilate</a></td><td>Dabigatran is a p-glycoprotien (P-gp) substrate. Levels of dabigatran may increase if coadministered with lomipatide, which is a P-gp inhibitor. Thus, it is recommended to dose reduce P-gp substrates (such as ambrisentan, aliskiren, colchicine, digoxin, everolimus, fexofenadine, imatinib, lapatinib, maraviroc, nilotinib, posaconazole, ranolazine, saxagliptin, sirolimus, sitagliptin, talinolol, tolvaptan, topotecan) with the concomitant use of lomipatide.  </td></tr><tr><td><a href="/drugs/DB00227">Lovastatin</a></td><td>Lovastatin plasma concentrations may increase by lomitapide.</td></tr><tr><td><a href="/drugs/DB00641">Simvastatin</a></td><td>Simvastatin plasma concentrations are doubled by lomitapide. To prevent dose related adverse effects such as myopathy and rhabdomyolysis it is recommended to reduce the dose of simvastatin by 50%. See FDA label for additional dosage instructions. 
+</td></tr><tr><td><a href="/drugs/DB05521">Telaprevir</a></td><td>Telaprevir increases levels by affecting CYP3A4 metabolism. Concomitant therapy is contraindicated. </td></tr><tr><td><a href="/drugs/DB08816">Ticagrelor</a></td><td>Ticagrelor increases levels of lomitapide by affecting CYP3A4 enzyme metabolism. Concomitant therapy is contraindicated. </td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>Warfarin plasma concentrations may increase by lomitapide by 30%..
+INR levels may increase by 22%. Regular INR monitoring is required. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Avoid grapefruit juice, which will likely increase lomitapide plasma concentrations.</li>
+<li>When taking lomitapide with food, the risk of GI side effects is increased.</li></ul></td></tr></tbody></table>

@@ -1,0 +1,210 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Finasteride</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01216</strong>&#160; (APRD00632, DB07774)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An orally active testosterone 5-alpha-reductase inhibitor. It is used as a surgical alternative for treatment of benign prostatic hyperplasia. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01216/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01216/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01216.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01216.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01216.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01216.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01216.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01216">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Finasterida</td><td>Spanish</td><td>INN</td></tr><tr><td>Finasteridum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Finastid</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Finpecia</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Propecia</td><td>Merck</td></tr><tr><td>Proscar</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/5-alpha-reductase-inhibitors">5-alpha Reductase Inhibitors</a></li>
+<li><a href="/mesh/skin-and-mucous-membrane-agents">Skin and Mucous Membrane Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>98319-26-7</td></tr><tr><th>Weight</th><td>Average: 372.5441<br>Monoisotopic: 372.277678406</td></tr><tr><th>Chemical Formula</th><td>C<sub>23</sub>H<sub>36</sub>N<sub>2</sub>O<sub>2</sub></td></tr><tr><th>InChI Key</th><td>DBEPLOCGEIEOCV-WSBQPABSSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C23H36N2O2/c1-21(2,3)25-20(27)17-8-7-15-14-6-9-18-23(5,13-11-19(26)24-18)16(14)10-12-22(15,17)4/h11,13-18H,6-10,12H2,1-5H3,(H,24,26)(H,25,27)/t14-,15-,16-,17+,18+,22-,23+/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(1S,2R,7R,10S,11S,14S,15S)-N-tert-butyl-2,15-dimethyl-5-oxo-6-azatetracyclo[8.7.0.0^{2,7}.0^{11,15}]heptadec-3-ene-14-carboxamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@@]12CC[C@H](C(=O)NC(C)(C)C)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])CC[C@@]2([H])NC(=O)C=C[C@]12C</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Lipids</td></tr><tr><th>Class</th><td>Steroids and Steroid Derivatives</td></tr><tr><th>Subclass</th><td>Ketosteroids</td></tr><tr><th>Direct parent</th><td>Ketosteroids</td></tr><tr><th>Alternative parents</th><td>Azasteroids and Derivatives; Other Steroids and Derivatives; Sesquiterpenes; Tetrahydropyridines; Secondary Carboxylic Acid Amides; Enolates; Carboxylic Acids; Polyamines</td></tr><tr><th>Substituents</th><td>sesquiterpene backbone; tetrahydropyridine; secondary carboxylic acid amide; carboxamide group; carboxylic acid derivative; polyamine; enolate; carboxylic acid; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the ketosteroids. These are steroid derivatives comprising a ketone group attached to steroid skeleton.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of symptomatic benign prostatic hyperplasia (BPH) in men with an enlarged prostate to: Improve symptoms, reduce the risk of acute urinary retention, reduce the risk of the need for surgery including transurethral resection of the prostate. Also used for the stimulation of regrowth of hair in men with mild to moderate androgenetic alopecia (male pattern alopecia, hereditary alopecia, common male baldness).</td></tr><tr><th>Pharmacodynamics</th><td>Finasteride is a synthetic 4-azasteroid compound. This drug is a competitive and specific inhibitor of Type II 5a-reductase, an intracellular enzyme that converts the androgen testosterone into 5&#945;-dihydrotestosterone (DHT). Two distinct isozymes are found in mice, rats, monkeys, and humans: Type I and II. Each of these isozymes is differentially expressed in tissues and developmental stages. In humans, Type I 5a-reductase is predominant in the sebaceous glands of most regions of skin, including scalp, and liver. Type I 5a-reductase is responsible for approximately one-third of circulating DHT. The Type II 5a-reductase isozyme is primarily found in prostate, seminal vesicles, epididymides, and hair follicles as well as liver, and is responsible for two-thirds of circulating DHT. Although finasteride is 100-fold more selective for type II 5a-reductase than for the type I isoenzyme, chronic treatment with this drug may have some effect on type I 5a-reductase.</td></tr><tr><th>Mechanism of action</th><td>The mechanism of action of Finasteride is based on its preferential inhibition of Type II 5a-reductase through the formation of a stable complex with the enzyme. Inhibition of Type II 5a-reductase blocks the peripheral conversion of testosterone to DHT, resulting in significant decreases in serum and tissue DHT concentrations, minimal to moderate increase in serum testosterone concentrations, and substantial increases in prostatic testosterone concetrations. As DHT appears to be the principal androgen responsible for stimulation of prostatic growth, a decrease in DHT concentrations will result in a decrease in prostatic volume (approximately 20-30% after 6-24 months of continued therapy). In men with androgenic alopecia, the mechanism of action has not been fully determined, but finasteride has shown to decrease scalp DHT concentration to the levels found in hairy scalp, reduce serum DHT, increase hair regrowth, and slow hair loss.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>44 to 96 L</li>
+</ul></td></tr><tr><th>Protein binding</th><td>Approximately 90%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Drug is extensively metabolized, primarily in the liver via CYP3A4. Two metabolites have been identified with &#8804;20% of the activity of finasteride.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Finasteride</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET00369">omega-hydroxyfinasteride</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/371">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Following an oral dose of 14C-finasteride in man (n = 6), a mean of 39% (range, 32 to 46%) of the dose was excreted in the urine in the form of metabolites; 57% (range, 51 to 64%) was excreted in the feces. Urinary excretion of metabolites was decreased in patients with renal impairment. This decrease was associated with an increase in fecal excretion of metabolites.</td></tr><tr><th>Half life</th><td>4.5 hours (range 3.3-13.4 hours)</td></tr><tr><th>Clearance</th><td><ul>
+	<li>165 mL/min [healthy young subjects]</li>
+</ul></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9952</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9777</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5496</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7639</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7258</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5558</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7854</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8062</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.7407</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8948</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.923</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8994</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9176</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7841</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8581
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9436
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.9188 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9901
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8734
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Accord healthcare inc usa</li>
+<li>Actavis totowa llc</li>
+<li>Aurobindo pharma ltd</li>
+<li>Dr reddys laboratories inc</li>
+<li>Dr reddys laboratories ltd</li>
+<li>Gedeon richter usa inc</li>
+<li>Hetero drugs ltd unit iii</li>
+<li>Ivax pharmaceuticals inc sub teva pharmaceuticals usa</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Zydus pharmaceuticals usa inc</li>
+<li>Merck research laboratories div merck co inc</li>
+<li>Merck and co inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.accord-healthcare.com">Accord Healthcare</a></li>
+<li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li>Advanced Pharmaceutical Services Inc.</li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.aqpharmaceuticals.com">AQ Pharmaceuticals Inc.</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.atlanticbiologicals.com">Atlantic Biologicals Corporation</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li>Barr Pharmaceuticals</li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li>Chemical Works Of Gedeon Richter Ltd.</li>
+<li><a href="http://www.cipla.com">Cipla Ltd.</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li><a href="http://www.greenstonellc.com">Greenstone LLC</a></li>
+<li><a href="http://www.intaspharma.com">Intas Pharmaceuticals Ltd.</a></li>
+<li>Kansas City Vaccine Co.</li>
+<li><a href="http://www.merck.com">Merck &amp; Co.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li>Northstar Rx LLC</li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Proscar 5 mg tablet</td><td>3.64USD</td><td>tablet</td></tr><tr><td>Finasteride 5 mg tablet</td><td>3.19USD</td><td>tablet</td></tr><tr><td>Propecia 1 mg tablet</td><td>2.74USD</td><td>tablet</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>5942519</td><td>1998-10-23</td><td>2018-10-23</td></tr><tr><td>United States</td><td>6046183</td><td>1994-03-20</td><td>2011-03-20</td></tr><tr><td>Canada</td><td>2173457</td><td>1999-03-23</td><td>2014-10-11</td></tr><tr><td>Canada</td><td>1331601</td><td>1994-08-23</td><td>2011-08-23</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>252-254 &#176;C</td><td>PhysProp</td></tr><tr><td>water solubility</td><td>11.7 mg/L</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>3.03</td><td>HANSCH,C ET AL. (1995)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.98e-03 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>3.53</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>3.07</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-5.3</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>14.53</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>2.22</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>58.2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>108.2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>43.93</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Roman Davis, Alan Millar, &#8220;Method for preparing finasteride.&#8221; U.S. Patent US5670643, issued October, 1992.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=5670643&amp;tbm=pts" target="_blank">US5670643 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Suzuki R, Satoh H, Ohtani H, Hori S, Sawada Y: Saturable binding of finasteride to steroid 5alpha-reductase as determinant of nonlinear pharmacokinetics. Drug Metab Pharmacokinet. 2010;25(2):208-13. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20460827">Pubmed</a></li>
+	<li>Smith AB, Carson CC: Finasteride in the treatment of patients with benign prostatic hyperplasia: a review. Ther Clin Risk Manag. 2009 Jun;5(3):535-45. Epub 2009 Jul 12. <a href="http://www.ncbi.nlm.nih.gov/pubmed/19707263">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00321" target="_blank">D00321 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=57363" target="_blank">57363 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46507645" target="_blank">46507645 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.51714.html" target="_blank">51714 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=5062" target="_blank">5062 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL710" target="_blank">CHEMBL710 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000045" target="_blank">DAP000045 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA449627" target="_blank">PA449627 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=FIT" target="_blank">FIT <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2238213" target="_blank">2238213 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/propecia.htm" target="_blank">http://www.rxlist.com/cgi/generic3/propecia.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/finasteride.html" target="_blank">http://www.drugs.com/cdi/finasteride.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Finasteride" target="_blank">Finasteride <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>D11AX10<ul class="atc-drug-tree"><li><a href="/atc/D#D">D &#8212; DERMATOLOGICALS</a></li><li><a href="/atc/D11#D11">D11 &#8212; OTHER DERMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/D11A#D11A">D11A &#8212; OTHER DERMATOLOGICAL PREPARATIONS</a></li><li><a href="/atc/D11AX#D11AX">D11AX &#8212; Other dermatologicals</a></li></ul>G04CB01<ul class="atc-drug-tree"><li><a href="/atc/G#G">G &#8212; GENITO URINARY SYSTEM AND SEX HORMONES</a></li><li><a href="/atc/G04#G04">G04 &#8212; UROLOGICALS</a></li><li><a href="/atc/G04C#G04C">G04C &#8212; DRUGS USED IN BENIGN PROSTATIC HYPERTROPHY</a></li><li><a href="/atc/G04CB#G04CB">G04CB &#8212; Testosterone-5-alpha reductase inhibitors</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>84:92.00</li>
+<li>92:00.00</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB01216.pdf?1265922798">show</a>(103 KB)</td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

@@ -1,0 +1,217 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Tenofovir</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00300</strong>&#160; (APRD01248)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Tenofovir disoproxil fumarate (a prodrug of tenofovir), marketed by Gilead Sciences under the trade name Viread&#174;, belongs to a class of antiretroviral drugs known as nucleotide analogue reverse transcriptase inhibitors (nRTIs), which block reverse transcriptase, an enzyme crucial to viral production in <span class="caps">HIV</span>-infected people. [Wikipedia] In vivo tenofovir disoproxil fumarate is converted to tenofovir, an acyclic nucleoside phosphonate (nucleotide) analog of adenosine 5&#8217;-monophosphate.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00300/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00300/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00300.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00300.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00300.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00300.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00300.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00300">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Tenofovir Disoproxil Fumarate</strong>
+          <div class="cas">202138-50-9</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000172/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000172/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: VCMJCVGFSROFHV-WZGZYPNHSA-N</li>
+              <li>Monoisotopic Mass: 635.183987333</li>
+              <li>Average Mass: 635.5149</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000172">DBSALT000172</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Viread</td><td>Gilead Sciences</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Atripla</td><td>Efavirenz, Emtricitabine, and Tenofovir</td></tr><tr><td>Complera</td><td>Emtricitabine, Rilpivirine, and Tenofovir</td></tr><tr><td>Stribild </td><td>Elvitegravir, Cobicistat, Emtricitabine, and Tenofovir</td></tr><tr><td>Truvada</td><td>Emtricitabine and Tenofovir</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-hiv-agents">Anti-HIV Agents</a></li>
+<li><a href="/mesh/reverse-transcriptase-inhibitors">Reverse Transcriptase Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>147127-20-6</td></tr><tr><th>Weight</th><td>Average: 287.2123<br>Monoisotopic: 287.078340473</td></tr><tr><th>Chemical Formula</th><td>C<sub>9</sub>H<sub>14</sub>N<sub>5</sub>O<sub>4</sub>P</td></tr><tr><th>InChI Key</th><td>SGOIRFVFHAKUTI-ZCFIWIBFSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C9H14N5O4P/c1-6(18-5-19(15,16)17)2-14-4-13-7-8(10)11-3-12-9(7)14/h3-4,6H,2,5H2,1H3,(H2,10,11,12)(H2,15,16,17)/t6-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">({[(2R)-1-(6-amino-9H-purin-9-yl)propan-2-yl]oxy}methyl)phosphonic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">C[C@H](CN1C=NC2=C1N=CN=C2N)OCP(O)(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Imidazopyrimidines</td></tr><tr><th>Subclass</th><td>Purines and Purine Derivatives</td></tr><tr><th>Direct parent</th><td>Purines and Purine Derivatives</td></tr><tr><th>Alternative parents</th><td>Aminopyrimidines and Derivatives; Primary Aromatic Amines; N-substituted Imidazoles; Organic Phosphonic Acids; Ethers; Polyamines</td></tr><tr><th>Substituents</th><td>aminopyrimidine; pyrimidine; n-substituted imidazole; primary aromatic amine; phosphonic acid; azole; phosphonic acid derivative; imidazole; ether; polyamine; primary amine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the purines and purine derivatives. These are aromatic heterocyclic compounds containing a purine moiety, which is formed a pyrimidine-ring ring fused to an imidazole ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Tenofovir is indicated in combination with other antiretroviral agents for the treatment of HIV-1 infection in adults and pediatric patients 2 years of age and older. It is also indicated for the treatment of chronic hepatitis B in adults and pediatric patients 12 years of age and older. </td></tr><tr><th>Pharmacodynamics</th><td>Tenofovir belongs to a class of antiretroviral drugs known as nucleotide analogue reverse transcriptase inhibitors (NtRTIs), which block reverse transcriptase, an enzyme crucial to viral production in HIV-infected people. Tenofovir is currently in late-stage clinical trials for the treatment of hepatitis B. Tenofovir disoproxil fumarate is an acyclic nucleoside phosphonate diester analog of adenosine monophosphate. Tenofovir requires initial diester hydrolysis for conversion to tenofovir and subsequent phosphorylations by cellular enzymes to form tenofovir diphosphate. Tenofovir diphosphate is a weak inhibitor of mammalian DNA polymerases &#945;, &#946;, and mitochondrial DNA polymerase &#947;.</td></tr><tr><th>Mechanism of action</th><td>Tenofovir inhibits the activity of HIV reverse transcriptase by competing with the natural substrate deoxyadenosine 5&#8217;-triphosphate and, after incorporation into DNA, by DNA chain termination. Specifically, the drugs are analogues of the naturally occurring deoxynucleotides  needed to synthesize the viral DNA and they compete with the natural deoxynucleotides for incorporation into the growing viral DNA chain. However, unlike the natural deoxynucleotides substrates, NRTIs and NTRTIs (nucleoside/tide reverse transcriptase inhibitors) lack a 3'-hydroxyl group on the deoxyribose moiety. As a result, following incorporation of an NRTI or an NtRTI, the next incoming deoxynucleotide cannot form the next 5'-3' phosphodiester  bond needed to extend the DNA chain. Thus, when an NRTI or NtRTI is incorporated, viral DNA synthesis is halted, a process known as chain termination. All NRTIs and NtRTIs are classified as competitive substrate inhibitors. </td></tr><tr><th>Absorption</th><td>Tenofovir disoproxil fumarate is the water soluble diester prodrug of the active ingredient tenofoir. The oral bioavailability in fasted patients is approximately 25%. When a single oral dose (300 mg) is given to HIV-1 infected subjects in the fasted state, the maximum serum concentration was achieved in 1.0 &#177; 0.4 hours (Tmax). Cmax and AUC values are 0.30 &#177; 0.09 &#181;g/mL and 2.29 &#177; 0.69 &#181;g&#8729;hr/mL. Administration of food (high fat meal containing 40 to 50% fat) increases the oral bioavailability, with an increase in the AUC of approximately 40%. Cmax is lower in the oral powder, compared to the tablet formulation. However, the mean AUC is similar between the two formulations. </td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>1.3 &#177; 0.6 L/kg [tenofovir 1.0 mg/kg IV]</li>
+	<li>1.2 &#177; 0.4 L/kg [tenofovir 3.0 mg/kg IV]</li>
+</ul></td></tr><tr><th>Protein binding</th><td>Very low: </td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>The cytochrome P450 enzyme system is not involved with the metabolism of tenofovir disoproxil or tenofovir. </p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Tenofovir</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0001262" target="_blank">Adenylate kinase isoenzyme 1</a></li>
+<li><a href="/biodb/bio_entities/BE0004477" target="_blank">Adenylate kinase 2, mitochondrial</a></li></ul></td><td><a href="/metabolites/DBMET01176">Tenofovir Monophosphate</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1319">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01176">Tenofovir Monophosphate</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003106" target="_blank">Nucleoside diphosphate kinase A</a></li>
+<li><a href="/biodb/bio_entities/BE0003281" target="_blank">Nucleoside diphosphate kinase B</a></li></ul></td><td><a href="/metabolites/DBMET01177">Tenofovir Diphosphate</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1320">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>When tenofovir is given IV, 70-80% of the dose is recovered in the urine as unchanged drug within 72 hours of administration. Tenofovir is eliminated by a combination of glomerular filtration and active tubular secretion. There may be competition for elimination with other compounds that are also renally eliminated.</td></tr><tr><th>Half life</th><td>When a single oral dose is given, the terminal elimination half-life is approximately 17 hours. </td></tr><tr><th>Clearance</th><td><p>The following are renal clearance (CL renal) parameters for subjects with varying degrees of renal function:</p>
+<ul>
+	<li>243.5 &#177; 33.3 mL/min [baseline creatinine clearance &gt;80 mL/min]</li>
+	<li>168.6 &#177; 27.5 mL/min [baseline creatinine clearance 50-80 mL/min]</li>
+	<li>100.6 &#177; 27.5 mL/min [baseline creatinine clearance 30-49 mL/min]</li>
+	<li>43.0 &#177; 31.2 mL/min [baseline creatinine clearance 12-29 mL/min] <br>
+The following are clearance (CL/F) parameters for subjects with varying degrees of renal function:</li>
+	<li>1043.7 &#177; 115.4 [baseline creatinine clearance &gt;80 mL/min]</li>
+	<li>807.7 &#177; 279.2 [baseline creatinine clearance 50-80 mL/min]</li>
+	<li>444.4 &#177; 209.8 [baseline creatinine clearance 30-49 mL/min]</li>
+	<li>177.0 &#177; 97.1 [baseline creatinine clearance 12-29 mL/min]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Limited clinical experience at doses higher than the therapeutic dose of tenofovir 300 mg is available. In Study 901 tenofovir disoproxil fumarate 600 mg was administered to 8 patients orally for 28 days. No severe adverse reactions were reported. The effects of higher doses are not known.</td></tr><tr><th>Affected organisms</th><td><ul><li>Human Immunodeficiency Virus</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Tenofovir Action Pathway</td><td>Drug action</td></tr><tr><td>Tenofovir Metabolism Pathway</td><td>Drug metabolism</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00630?highlight%5Bcompounds%5D%5B%5D=DB00300&amp;highlight%5Bproteins%5D%5B%5D=DB00300">SMP00630</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.5998</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9194</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.617</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7203</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8706</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.948</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8985</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8609</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9117</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6458</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7177</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7873</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8271</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7634</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8353</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.85</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.511
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7811
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9914
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4903 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8936
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7957
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Gilead sciences inc</li>
+<li>Gilead Sciences, Inc.</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li>Dept Health Central Pharmacy</li>
+<li><a href="http://www.gilead.com">Gilead Sciences Inc.</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.nycomed.com">Nycomed Inc.</a></li>
+<li><a href="http://www.patheon.com">Patheon Inc.</a></li>
+<li>PCA LLC</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Quality Care</li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Powder</td><td>Oral</td><td>40 mg/g</td></tr><tr><td>Tablet</td><td>Oral</td><td>150 mg, 200 mg, 250 mg, 300 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01072">Atazanavir</a></td><td>Concomitant therapy may result in decreased serum levels of Atazanavir and increased levels of Tenofovir. Concomitant therapy should only be used with the inclusion of Ritonavir.</td></tr><tr><td><a href="/drugs/DB00900">Didanosine</a></td><td>Tenofovir may decrease the therapeutic effects and increase the adverse effects of Didanosine. Monitor for changes in virologic response and Didanosine toxicity during concomitant therapy.</td></tr><tr><td><a href="/drugs/DB01610">Valganciclovir</a></td><td>The excretion rates of Valganciclovir and/or Tenofovir may decrease as both drugs are eliminated by active tubular secretion. Monitor for increased serum concentrations and toxicity of both agents.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>When given with a high-fat meal, the oral bioavailability, AUC, and Cmax increased. </li></ul></td></tr></tbody></table>

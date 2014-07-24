@@ -1,0 +1,196 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Nalbuphine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00844</strong>&#160; (APRD01132)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A narcotic used as a pain medication. It appears to be an agonist at kappa opioid receptors and an antagonist or partial agonist at mu opioid receptors. Nalbuphine is the only opioid analgesic that is not a controlled substance in the United States.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00844/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00844/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00844.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00844.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00844.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00844.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00844.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00844">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Nalbufina</td><td>Spanish</td><td>INN</td></tr><tr><td>Nalbuphin</td><td>German</td><td>INN</td></tr><tr><td>Nalbuphine</td><td>French</td><td>INN</td></tr><tr><td>Nalbuphinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Nalbuphine hydrochloride</strong>
+          <div class="cas">23277-43-2</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000125/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000125/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: YZLZPSJXMWGIFH-BCXQGASESA-N</li>
+              <li>Monoisotopic Mass: 393.170686096</li>
+              <li>Average Mass: 393.904</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000125">DBSALT000125</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Mexifen</td><td>Medicus</td></tr><tr><td>Nalbuphine</td><td>Mylan</td></tr><tr><td>Nalpain</td><td>Orpha-Devel</td></tr><tr><td>Nubain</td><td>Sandoz</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>20594-83-6</td></tr><tr><th>Weight</th><td>Average: 357.4434<br>Monoisotopic: 357.194008357</td></tr><tr><th>Chemical Formula</th><td>C<sub>21</sub>H<sub>27</sub>NO<sub>4</sub></td></tr><tr><th>InChI Key</th><td>NETZHAKZCGBWSS-CEDHKZHLSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C21H27NO4/c23-14-5-4-13-10-16-21(25)7-6-15(24)19-20(21,17(13)18(14)26-19)8-9-22(16)11-12-2-1-3-12/h4-5,12,15-16,19,23-25H,1-3,6-11H2/t15-,16+,19-,20-,21+/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(1S,5R,13R,14S,17S)-4-(cyclobutylmethyl)-12-oxa-4-azapentacyclo[9.6.1.0^{1,13}.0^{5,17}.0^{7,18}]octadeca-7,9,11(18)-triene-10,14,17-triol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">O[C@H]1CC[C@@]2(O)[C@H]3CC4=CC=C(O)C5=C4[C@@]2(CCN3CC2CCC2)[C@H]1O5</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Alkaloids and Derivatives</td></tr><tr><th>Class</th><td>Morphinans</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Morphinans</td></tr><tr><th>Alternative parents</th><td>Benzylisoquinolines; Phenanthrenes and Derivatives; Tetralins; Benzofurans; Phenols and Derivatives; Alkyl Aryl Ethers; Cyclohexanols; Piperidines; Tertiary Alcohols; Cyclic Alcohols and Derivatives; Polyols; Tertiary Amines; Enols; Polyamines</td></tr><tr><th>Substituents</th><td>phenanthrene; tetralin; benzofuran; phenol derivative; cyclohexanol; alkyl aryl ether; benzene; piperidine; tertiary alcohol; cyclic alcohol; tertiary amine; secondary alcohol; polyol; ether; polyamine; enol; alcohol; organonitrogen compound; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the morphinans. These are polycyclic compounds with a four-ring skeleton with three condensed six-member rings forming a partially hydrogenated phenanthrene moiety, one of which is aromatic while the two others are alicyclic.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the relief of moderate to severe pain.</td></tr><tr><th>Pharmacodynamics</th><td>Nalbuphine is a synthetic opioid agonist-antagonist analgesic of the phenanthrene series. Nalbuphine's analgesic potency is essentially equivalent to that of morphine on a milligram basis. The opioid antagonist activity of nalbuphine is one-fourth as potent as nalorphine and 10 times that of pentazocine. Nalbuphine by itself has potent opioid antagonist activity at doses equal to or lower than its analgesic dose. When administered following or concurrent with mu agonist opioid analgesics (e.g., morphine, oxymorphone, fentanyl), nalbuphine may partially reverse or block opioid-induced respiratory depression from the mu agonist analgesic. Nalbuphine may precipitate withdrawal in patients dependent on opioid drugs. Nalbuphine should be used with caution in patients who have been receiving mu opioid analgesics on a regular basis.</td></tr><tr><th>Mechanism of action</th><td>The exact mechanism of action is unknown, but is believed to interact with an opiate receptor site in the CNS (probably in or associated with the limbic system). The opiate antagonistic effect may result from competitive inhibition at the opiate receptor, but may also be a result of other mechanisms. Nalbuphine is thought primarily to be a kappa agonist. It is also a partial mu antagonist analgesic, with some binding to the delta receptor and minimal agonist activity at the sigma receptor.</td></tr><tr><th>Absorption</th><td>The mean absolute bioavailability was 81% and 83% for the 10 and 20 mg intramuscular doses, respectively, and 79% and 76% following 10 and 20 mg of subcutaneous nalbuphine.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Not appreciably bound.</td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>The plasma half-life of nalbuphine is 5 hours, and in clinical studies the duration of analgesic activity has been reported to range from 3 to 6 hours.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral, acute LD50 is 1100 mg/kg in dog. Symptoms of overdose include primarily sleepiness and mild dysphoria.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.968</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9642</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.7337</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8532</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8781</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8923</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5431</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8645</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.5896</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5919</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9046</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9421</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9029</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.93</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9562</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6897
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9598
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9796
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.6502 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.747
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8054
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><ul><li>Barr Pharmaceuticals</li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.endo.com">Endo Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.mckesson.com">Mckesson Corp.</a></li>
+<li>Neuman Distributors Inc.</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li>Quality Care</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Solution</td><td>Intramuscular</td><td>10 and 20mg/mL</td></tr><tr><td>Solution</td><td>Intravenous</td><td></td></tr><tr><td>Solution</td><td>Intravenous</td><td>10 and 20mg/mL</td></tr><tr><td>Solution</td><td>Subcutaneous</td><td>10 and 20mg/mL</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB06274">Alvimopan</a></td><td>Increases levels by receptor binding competition. Discontinue opioid administration at least 7 days prior to administrating Alvimopan. </td></tr><tr><td><a href="/drugs/DB00501">Cimetidine</a></td><td>Increases the effect of the narcotic</td></tr><tr><td><a href="/drugs/DB00427">Triprolidine</a></td><td>The CNS depressants, Triprolidine and Nalbuphine, may increase adverse/toxic effects due to additivity. Monitor for increased CNS depressant effects during concomitant therapy. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

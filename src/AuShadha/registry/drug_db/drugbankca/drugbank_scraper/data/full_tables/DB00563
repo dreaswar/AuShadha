@@ -1,0 +1,254 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Methotrexate</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00563</strong>&#160; (APRD00353)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An antineoplastic antimetabolite with immunosuppressant properties. It is an inhibitor of tetrahydrofolate dehydrogenase and prevents the formation of tetrahydrofolate, necessary for synthesis of thymidylate, an essential component of <span class="caps">DNA</span>. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00563/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00563/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00563.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00563.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00563.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00563.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00563.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00563">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>4-amino-10-methylfolic acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Amethopterin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Methotrexat</td><td>German</td><td>INN</td></tr><tr><td>M&#233;thotrexate</td><td>French</td><td>INN</td></tr><tr><td>Methotrexatum</td><td>Latin</td><td>INN</td></tr><tr><td>Metotrexato</td><td>Spanish</td><td>INN</td></tr><tr><td>MTX</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Methotrexate Sodium</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000115/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000115/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: DASQOOZCTWOQPA-GXKRWWSZSA-L</li>
+              <li>Monoisotopic Mass: 498.13520514</li>
+              <li>Average Mass: 498.4029</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000115">DBSALT000115</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Abitrexate</td><td>Teva</td></tr><tr><td>Alltrex</td><td>Naprod</td></tr><tr><td>Artrait</td><td>TRB</td></tr><tr><td>Atrexel</td><td>Schering-Plough</td></tr><tr><td>Bendatrexat</td><td>Bendalis</td></tr><tr><td>Carditrex</td><td>Cadila</td></tr><tr><td>Dermotrex</td><td>East West</td></tr><tr><td>Ebetrex</td><td>Ebewe</td></tr><tr><td>Emtexate</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Ledertrexate</td><td>Biodim</td></tr><tr><td>Maxtrex</td><td>Pfizer</td></tr><tr><td>Meisusheng</td><td>Hospira</td></tr><tr><td>Mexate</td><td>Cadila HC</td></tr><tr><td>Otrexup</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Rheumatrex</td><td>Wyeth KK</td></tr><tr><td>Trexall</td><td>Barr</td></tr><tr><td>Trexan</td><td>Atafarm</td></tr><tr><td>Zexate</td><td>Dabur Pharma</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antirheumatic-agents">Antirheumatic Agents</a></li>
+<li><a href="/mesh/dermatologic-agents">Dermatologic Agents</a></li>
+<li><a href="/mesh/immunosuppressive-agents">Immunosuppressive Agents</a></li>
+<li><a href="/mesh/enzyme-inhibitors">Enzyme Inhibitors</a></li>
+<li><a href="/mesh/folic-acid-antagonists">Folic Acid Antagonists</a></li>
+<li><a href="/mesh/nucleic-acid-synthesis-inhibitors">Nucleic Acid Synthesis Inhibitors</a></li>
+<li><a href="/mesh/antimetabolites-antineoplastic">Antimetabolites, Antineoplastic</a></li>
+<li><a href="/mesh/abortifacient-agents-nonsteroidal">Abortifacient Agents, Nonsteroidal</a></li>
+<li><a href="/mesh/abortifacient-agents">Abortifacient Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>59-05-2</td></tr><tr><th>Weight</th><td>Average: 454.4393<br>Monoisotopic: 454.171315854</td></tr><tr><th>Chemical Formula</th><td>C<sub>20</sub>H<sub>22</sub>N<sub>8</sub>O<sub>5</sub></td></tr><tr><th>InChI Key</th><td>FBOZXECLQNJBKD-ZDUSSCGKSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C20H22N8O5/c1-28(9-11-8-23-17-15(24-11)16(21)26-20(22)27-17)12-4-2-10(3-5-12)18(31)25-13(19(32)33)6-7-14(29)30/h2-5,8,13H,6-7,9H2,1H3,(H,25,31)(H,29,30)(H,32,33)(H4,21,22,23,26,27)/t13-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2S)-2-[(4-{[(2,4-diaminopteridin-6-yl)methyl](methyl)amino}phenyl)formamido]pentanedioic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN(CC1=CN=C2N=C(N)N=C(N)C2=N1)C1=CC=C(C=C1)C(=O)N[C@@H](CCC(O)=O)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB00563.gif?1265922771">show</a>(10.1 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Benzamides</td></tr><tr><th>Direct parent</th><td>Hippuric Acid Derivatives</td></tr><tr><th>Alternative parents</th><td>N-acyl-alpha Amino Acids; Pteridines and Derivatives; Benzoyl Derivatives; Aminopyrimidines and Derivatives; Amino Fatty Acids; Primary Aromatic Amines; Dicarboxylic Acids and Derivatives; Pyrazines; Tertiary Amines; Polyols; Secondary Carboxylic Acid Amides; Enolates; Carboxylic Acids; Polyamines</td></tr><tr><th>Substituents</th><td>alpha-amino acid or derivative; pteridine; benzoyl; aminopyrimidine; pyrimidine; pyrazine; dicarboxylic acid derivative; primary aromatic amine; tertiary amine; polyol; secondary carboxylic acid amide; carboxamide group; polyamine; enolate; carboxylic acid; carboxylic acid derivative; amine; primary amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the hippuric acid derivatives. These are compounds containing an hippuric acid or a derivative, with a structure characterized the presence of a benzoyl group linked to the N-terminal of a glycine.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Methotrexate is indicated in the treatment of gestational choriocarcinoma, chorioadenoma destruens and hydatidiform mole. In acute lymphocytic leukemia, methotrexate is indicated in the prophylaxis of meningeal leukemia and is used in maintenance therapy in combination with other chemotherapeutic agents.  Methotrexate is also indicated in the treatment of meningeal leukemia. Methotrexate is used alone or in combination with other anticancer agents in the treatment of breast cancer, epidermoid cancers of the head and neck, advanced mycosis fungoides (cutaneous T cell lymphoma), and lung cancer, particularly squamous cell and small cell types.  Methotrexate is also used in combination with other chemotherapeutic agents in the treatment of advanced stage non-Hodgkin&#8217;s lymphomas. Methotrexate is indicated in the symptomatic control of severe, recalcitrant, disabling psoriasis. Methotrexate is indicated in the management of selected adults with severe, active rheumatoid arthritis (ACR criteria), or children with active polyarticular-course juvenile rheumatoid arthritis. </td></tr><tr><th>Pharmacodynamics</th><td>Methotrexate is an antineoplastic anti-metabolite. Anti-metabolites masquerade as purine or pyrimidine - which become the building blocks of DNA. They prevent these substances becoming incorporated in to DNA during the "S" phase (of the cell cycle), stopping normal development and division. Methotrexate inhibits folic acid reductase which is responsible for the conversion of folic acid to tetrahydrofolic acid. At two stages in the biosynthesis of purines and at one stage in the synthesis of pyrimidines, one-carbon transfer reactions occur which require specific coenzymes synthesized in the cell from tetrahydrofolic acid. Tetrahydrofolic acid itself is synthesized in the cell from folic acid with the help of an enzyme, folic acid reductase. Methotrexate looks a lot like folic acid to the enzyme, so it binds to it quite strongly and inhibits the enzyme. Thus, DNA synthesis cannot proceed because the coenzymes needed for one-carbon transfer reactions are not produced from tetrahydrofolic acid because there is no tetrahydrofolic acid. Methotrexate selectively affects the most rapidly dividing cells (neoplastic and psoriatic cells). Methotrexate is also indicated in the management of severe, active, classical, or definite rheumatoid arthritis.</td></tr><tr><th>Mechanism of action</th><td>Methotrexate anti-tumor activity is a result of the inhibition of folic acid reductase, leading to inhibition of DNA synthesis and inhibition of cellular replication. The mechanism involved in its activity against rheumatoid arthritis is not known.</td></tr><tr><th>Absorption</th><td>Oral absorption is dose dependent in adults and leukemic pediatric patients. In adults, peak serum levels are reached within one to two hours. At doses of 30 mg/m^2 or less, methotrexate is generally well absorbed with a mean bioavailability of 60%. At doses greater than 80 mg/m^2, the absorption of the doses is significantly less due to a saturation effect. </td></tr><tr><th>Volume of distribution</th><td><ul>
+	<li>0.18 L/kg [initial volume of distribution (Vd)]</li>
+	<li>0.4 &#8211; 0.8 L/kg [steady state Vd] <br>
+Methotrexate competes with reduced folates for active transport across cell membranes by means of a single carrier-mediated active transport process.  At serum concentrations greater than 100 micromolar, passive diffusion becomes a major pathway by which effective intracellular concentrations can be achieved. Methotrexate does not cross the blood-brain-barrier.</li>
+</ul></td></tr><tr><th>Protein binding</th><td>50% bound to protein, primarily to albumin</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Methotrexate undergoes hepatic and intracellular metabolism to polyglutamated forms which can be converted back to methotrexate by hydroxylase enzymes. These polyglutamates act as inhibitors of dihydrofolate reductase and thymidylate synthetase.  A small amount of metabolism to 7-hydroxymethotrexate may occur at doses commonly prescribed. Furthermore, intestinal flora partially metabolizes methotrexate after oral administration. </p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Methotrexate</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003539" target="_blank">Aldehyde oxidase</a></li></ul></td><td><a href="/metabolites/DBMET00467">7-hydroxymethotrexate</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/476">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Renal excretion is the primary route of elimination and is dependent upon dosage and route of administration. IV administration, 80% to 90% of the administered dose is excreted unchanged in the urine within 24 hours. There is limited biliary excretion amounting to 10% or less of the administered dose.</td></tr><tr><th>Half life</th><td>Low doses (less than 30 mg/m^2): 3 to 10 hours; High doses: 8 to 15 hours.</td></tr><tr><th>Clearance</th><td><p>Methotrexate clearance rates vary widely and are generally decreased at higher doses. Delayed drug clearance has been identified as one of the major factors responsible for methotrexate toxicity.</p></td></tr><tr><th>Toxicity</th><td>Symptoms of overdose include bone marrow suppression and gastrointestinal toxicity. LD<sub>50</sub>=43mg/kg(orally in rat).</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th><th>SMPDB ID</th></tr></thead><tbody><tr><td>Methotrexate Action Pathway</td><td>Drug action</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00432?highlight%5Bcompounds%5D%5B%5D=DB00563&amp;highlight%5Bproteins%5D%5B%5D=DB00563">SMP00432</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="snp-fx"><thead><tr><th>Interacting Gene/Enzyme</th><th>SNP RS ID</th><th>Allele name</th><th>Defining change</th><th>Adverse Reaction</th><th>Reference(s)</th></tr></thead><tbody><tr><td>Canalicular multispecific organic anion transporter 1<br>Gene symbol: ABCC2<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/Q92887" target="_blank">Q92887 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>ABCC2 IVS 23+56</td><td>T allele</td><td>General toxicity (gastrointestinal and hepatotoxicity)</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/18381794" target="_blank" title="Ranganathan P, Culverhouse R, Marsh S, Mody A, Scott-Horton TJ, Brasington R, Joseph A, Reddy V, Eisen S, McLeod HL: Methotrexate (MTX) pathway gene polymorphisms and their effects on MTX toxicity in Caucasian and African American patients with rheumatoid arthritis. J Rheumatol. 2008 Apr;35(4):572-9. Epub 2008 Mar 15.">18381794 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>Methylenetetrahydrofolate reductase<br>Gene symbol: MTHFR<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/P42898" target="_blank">P42898 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs1801133" target="_blank">rs1801133 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>T allele</td><td>Mucositis, hepatic toxicity, thrombocytopenia, alopecia</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/17488658" target="_blank" title="Gemmati D, Ongaro A, Tognazzo S, Catozzi L, Federici F, Mauro E, Della Porta M, Campioni D, Bardi A, Gilli G, Pellati A, Caruso A, Scapoli GL, De Mattei M: Methylenetetrahydrofolate reductase C677T and A1298C gene variants in adult non-Hodgkin's lymphoma patients: association with toxicity and survival. Haematologica. 2007 Apr;92(4):478-85.">17488658 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr></tbody></table></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.8261</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9467</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7754</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8172</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7752</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9879</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8886</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.85</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7968</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5177</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.907</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8333</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9739</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9132
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9517
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9741
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          3.4955 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9564
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.6958
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Abic ltd</li>
+<li>Pharmacia and upjohn co</li>
+<li>Hospira inc</li>
+<li>App pharmaceuticals llc</li>
+<li>Abraxis pharmaceutical products</li>
+<li>Bedford laboratories div ben venue laboratories inc</li>
+<li>Norbrook laboratories ltd</li>
+<li>Pharmachemie usa inc</li>
+<li>Bioniche pharma usa llc</li>
+<li>Ebewe pharma ges mbh nfg kg</li>
+<li>Pharmachemie bv</li>
+<li>Bristol laboratories inc div bristol myers co</li>
+<li>Bristol myers co</li>
+<li>Bristol myers squibb</li>
+<li>Barr laboratories inc</li>
+<li>Dava pharmaceuticals inc</li>
+<li>Duramed pharmaceuticals inc sub barr laboratories inc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Roxane laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Apotheca Inc.</li>
+<li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li>Barr Pharmaceuticals</li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li>Bigmar Bioren Pharmaceuticals Sa</li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.davapharma.com">DAVA Pharmaceuticals</a></li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.duramed.ca">Duramed</a></li>
+<li><a href="http://www.ebewe.at">Ebewe Pharma</a></li>
+<li><a href="http://www.excella-pharma-source.de">Excella GmbH</a></li>
+<li><a href="http://www.gallipot.com">Gallipot</a></li>
+<li><a href="http://www.generamedix.com">Generamedix Inc.</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li><a href="http://www.intaspharma.com">Intas Pharmaceuticals Ltd.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.worldoftest.com">Qualitest</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li><a href="http://www.remedyrepack.com">Remedy Repack</a></li>
+<li><a href="http://www.roxane.com">Roxane Labs</a></li>
+<li><a href="http://www.spectrumpharm.com">Spectrum Pharmaceuticals</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li><a href="http://www.wyeth.com">Wyeth Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection, powder, lyophilized, for solution</td><td>Parenteral</td><td>1 g</td></tr><tr><td>Injection, solution</td><td>Parenteral</td><td>25 mg/mL; 50 mg/2 mL; 100 mg/4 mL; 200 mg/8 mL; 250 mg/10 mL; 1 g/40 mL   </td></tr><tr><td>Tablet</td><td>Oral</td><td>2.5 mg, 5 mg, 7.5 mg, 10 mg, 15 mg </td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>Methotrexate powder</td><td>261.33USD</td><td>g</td></tr><tr><td>Rheumatrex 8 2.5 mg tablet Disp Pack</td><td>169.98USD</td><td>disp</td></tr><tr><td>Rheumatrex 24 2.5 mg tablet Disp Pack</td><td>129.06USD</td><td>disp</td></tr><tr><td>Rheumatrex 20 2.5 mg tablet Disp Pack</td><td>107.59USD</td><td>disp</td></tr><tr><td>Rheumatrex 12 2.5 mg tablet Disp Pack</td><td>63.65USD</td><td>disp</td></tr><tr><td>Methotrexate Sodium 25 mg/ml (pf) Solution 40ml Vial</td><td>58.99USD</td><td>vial</td></tr><tr><td>Trexall 15 mg tablet</td><td>25.98USD</td><td>tablet</td></tr><tr><td>Methotrexate Sodium 25 mg/ml (pf) Solution 10ml Vial</td><td>24.99USD</td><td>vial</td></tr><tr><td>Trexall 10 mg tablet</td><td>17.67USD</td><td>tablet</td></tr><tr><td>Methotrexate Sodium 25 mg/ml Solution 1 Vial = 2ml</td><td>15.11USD</td><td>vial</td></tr><tr><td>Methotrexate Sodium 25 mg/ml (pf) Solution 2ml Vial</td><td>14.99USD</td><td>vial</td></tr><tr><td>Trexall 7.5 mg tablet</td><td>12.99USD</td><td>tablet</td></tr><tr><td>Rheumatrex 2.5 mg tablet</td><td>11.23USD</td><td>tablet</td></tr><tr><td>Trexall 5 mg tablet</td><td>8.66USD</td><td>tablet</td></tr><tr><td>Methotrexate Sod. (Preserved) 25 mg/ml</td><td>8.38USD</td><td>ml</td></tr><tr><td>Methotrexate Sod.(Unpreserved) 25 mg/ml</td><td>4.56USD</td><td>ml</td></tr><tr><td>Methotrexate 2.5 mg tablet</td><td>2.71USD</td><td>tablet</td></tr><tr><td>Methotrexate 10 mg Tablet</td><td>2.58USD</td><td>tablet</td></tr><tr><td>Ratio-Methotrexate Sodium 2.5 mg Tablet</td><td>0.66USD</td><td>tablet</td></tr><tr><td>Apo-Methotrexate 2.5 mg Tablet</td><td>0.66USD</td><td>tablet</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>195 &#176;C</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>water solubility</td><td>2600 mg/L</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>-1.85</td><td>HANSCH,C ET AL. (1995)</td></tr><tr><td>Caco2 permeability</td><td>-5.92</td><td>ADME Research, USCD</td></tr><tr><td>pKa</td><td>4.7</td><td>SANGSTER (1994)</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>1.71e-01 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-0.91</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-0.5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-3.4</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>3.41</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>2.81</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>12</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>210.54</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>9</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>119.21</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>44.54</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p><a href="http://www.drugsyn.org/Methotrexate.htm">DrugSyn.org</a></p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=2512572&amp;tbm=pts" target="_blank">US2512572 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Klareskog L, van der Heijde D, de Jager JP, Gough A, Kalden J, Malaise M, Martin Mola E, Pavelka K, Sany J, Settas L, Wajdula J, Pedersen R, Fatenejad S, Sanda M: Therapeutic effect of the combination of etanercept and methotrexate compared with each treatment alone in patients with rheumatoid arthritis: double-blind randomised controlled trial. Lancet. 2004 Feb 28;363(9410):675-81. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15001324">Pubmed</a></li>
+	<li>Johnston A, Gudjonsson JE, Sigmundsdottir H, Ludviksson BR, Valdimarsson H: The anti-inflammatory action of methotrexate is not mediated by lymphocyte apoptosis, but by the suppression of activation and adhesion molecules. Clin Immunol. 2005 Feb;114(2):154-63. <a href="http://www.ncbi.nlm.nih.gov/pubmed/15639649">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00142" target="_blank">D00142 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C01937" target="_blank">C01937 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=126941" target="_blank">126941 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46507678" target="_blank">46507678 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.112728.html" target="_blank">112728 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=18050" target="_blank">18050 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=6837" target="_blank">6837 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL34259" target="_blank">CHEMBL34259 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DNC000933" target="_blank">DNC000933 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA450428" target="_blank">PA450428 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=MTX" target="_blank">MTX <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2244798" target="_blank">2244798 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic/mtx.htm" target="_blank">http://www.rxlist.com/cgi/generic/mtx.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/methotrexate.html" target="_blank">http://www.drugs.com/methotrexate.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PDRhealth</td><td><a class="wishart-link-out" href="http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/met1257.shtml" target="_blank">http://www.pdrhealth.com/drug_info/rxdrugprofiles/drugs/met1257.shtml <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Methotrexate" target="_blank">Methotrexate <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>L01BA01<ul class="atc-drug-tree"><li><a href="/atc/L#L">L &#8212; ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS</a></li><li><a href="/atc/L01#L01">L01 &#8212; ANTINEOPLASTIC AGENTS</a></li><li><a href="/atc/L01B#L01B">L01B &#8212; ANTIMETABOLITES</a></li><li><a href="/atc/L01BA#L01BA">L01BA &#8212; Folic acid analogues</a></li></ul>L04AX03<ul class="atc-drug-tree"><li><a href="/atc/L#L">L &#8212; ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS</a></li><li><a href="/atc/L04#L04">L04 &#8212; IMMUNOSUPPRESSANTS</a></li><li><a href="/atc/L04A#L04A">L04A &#8212; IMMUNOSUPPRESSANTS</a></li><li><a href="/atc/L04AX#L04AX">L04AX &#8212; Other immunosuppressants</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>10:00.00</li></ul></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1MVT" target="_blank">1MVT <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00563.pdf?1265922800">show</a>(518 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00563.pdf?1265922740">show</a>(77 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00945">Acetylsalicylic acid</a></td><td>Acetylsalicylic acid increases the effect and toxicity of methotrexate.</td></tr><tr><td><a href="/drugs/DB00459">Acitretin</a></td><td>Acitretin/etretinate increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01060">Amoxicillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00415">Ampicillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01602">Bacampicillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01053">Benzylpenicillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01294">Bismuth Subsalicylate</a></td><td>The salicylate, bismuth subsalicylate, increases the effect and toxicity of methotrexate.</td></tr><tr><td><a href="/drugs/DB00578">Carbenicillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01432">Cholestyramine</a></td><td>Decreased levels of methotrexate</td></tr><tr><td><a href="/drugs/DB00537">Ciprofloxacin</a></td><td>Ciprofloxacine may decrease the metabolism of methotrexate. Monitor for changes adverse effects of methotrexate if ciprofloxacin is initiated.</td></tr><tr><td><a href="/drugs/DB00515">Cisplatin</a></td><td>Cisplatin increases methotrexate toxicity</td></tr><tr><td><a href="/drugs/DB00766">Clavulanate</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01147">Cloxacillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Cyclosporine may increase the effect and toxicity of methotrexate.</td></tr><tr><td><a href="/drugs/DB00586">Diclofenac</a></td><td>The NSAID, diclofenac, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00485">Dicloxacillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00861">Diflunisal</a></td><td>The NSAID, diflunisal, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity. </td></tr><tr><td><a href="/drugs/DB00390">Digoxin</a></td><td>The antineoplasic agent decreases the effect of digoxin</td></tr><tr><td><a href="/drugs/DB00254">Doxycycline</a></td><td>The tetracycline, doxycycline, may increase methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB06210">Eltrombopag</a></td><td>Increases levels of Methotrexate via metabolism decrease. OATP transporter protein inhibition.</td></tr><tr><td><a href="/drugs/DB00754">Ethotoin</a></td><td>The antineoplasic agent decreases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00749">Etodolac</a></td><td>The NSAID, etodolac, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00926">Etretinate</a></td><td>Acitretin/etretinate increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00573">Fenoprofen</a></td><td>The NSAID, fenoprofen, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00301">Flucloxacillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00712">Flurbiprofen</a></td><td>The NSAID, flurbiprofen, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>The antineoplasic agent decreases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB01611">Hydroxychloroquine</a></td><td>Hydroxychloroquine increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01050">Ibuprofen</a></td><td>The NSAID, ibuprofen, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00328">Indomethacin</a></td><td>The NSAID, indomethacin, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB01009">Ketoprofen</a></td><td>The NSAID, ketoprofen, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00465">Ketorolac</a></td><td>The NSAID, ketorolac, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB01397">Magnesium salicylate</a></td><td>The salicylate, magnesium salicylate, increases the effect and toxicity of methotrexate.</td></tr><tr><td><a href="/drugs/DB00939">Meclofenamic acid</a></td><td>The NSAID, meclofenamic acid, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00784">Mefenamic acid</a></td><td>The NSAID, mefenamic acid, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00532">Mephenytoin</a></td><td>The antineoplasic agent decreases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB02443">Methicillin Acyl-Serine</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00948">Mezlocillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00461">Nabumetone</a></td><td>The NSAID, nabumetone, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00607">Nafcillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00788">Naproxen</a></td><td>The NSAID, naproxen, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00338">Omeprazole</a></td><td>Omeprazole increases the levels of methotrexate</td></tr><tr><td><a href="/drugs/DB00991">Oxaprozin</a></td><td>The NSAID, oxaprozin, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00417">Penicillin V</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00812">Phenylbutazone</a></td><td>The NSAID, phenylbutazone, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>The antineoplasic agent decreases the effect of hydantoin</td></tr><tr><td><a href="/drugs/DB00319">Piperacillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00554">Piroxicam</a></td><td>The NSAID, piroxicam, may decrease the renal excretion of methotrexate. Increased risk of methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB01604">Pivampicillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01032">Probenecid</a></td><td>Probenecid increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01168">Procarbazine</a></td><td>Increased nephrotoxicity with this combination</td></tr><tr><td><a href="/drugs/DB06372">Rilonacept</a></td><td>Rilonacept and methotrexate both increase immunosuppressive effects; combination may increase risk of myelosuppression. </td></tr><tr><td><a href="/drugs/DB00533">Rofecoxib</a></td><td>Rofecoxib increases the levels of methotrexate</td></tr><tr><td><a href="/drugs/DB01398">Salicylate-sodium</a></td><td>The salicylate, salicylate-sodium, increases the effect and toxicity of methotrexate.</td></tr><tr><td><a href="/drugs/DB01399">Salsalate</a></td><td>The salicylate, salsalate, increases the effect and toxicity of methotrexate.</td></tr><tr><td><a href="/drugs/DB01298">Sulfacytine</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00359">Sulfadiazine</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB06150">Sulfadimethoxine</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01299">Sulfadoxine</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01581">Sulfamerazine</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01582">Sulfamethazine</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00576">Sulfamethizole</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01015">Sulfamethoxazole</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00891">Sulfapyridine</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB06147">Sulfathiazole</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00263">Sulfisoxazole</a></td><td>The sulfamide increases the toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00605">Sulindac</a></td><td>The NSAID, sulindac, may decrease the clearance methotrexate. Consider alternate therapy, especially in patients receiving high antineoplastic doses of methotrexate. Otherwise, monitor for hematologic and renal toxicities.</td></tr><tr><td><a href="/drugs/DB00469">Tenoxicam</a></td><td>Tenoxicam may increase the serum concentration of Methotrexate by reducing renal tubular secretion of Methotrexate. Monitor for changes in Methotrexate therapeutic and adverse effects if Tenoxicam is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00759">Tetracycline</a></td><td>Tetracycline may increase methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB01600">Tiaprofenic acid</a></td><td>Tiaprofenic acid may decrease renal excretion of methotrexate. Consider alternate therapy or monitor for methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB01607">Ticarcillin</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB00500">Tolmetin</a></td><td>Tolmetin may decrease the renal excretion of Methotrexate. Alternate therapy should be considered. Otherwise, monitor for hemotologic and renal toxicities.</td></tr><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events.</td></tr><tr><td><a href="/drugs/DB00440">Trimethoprim</a></td><td>Trimethoprim may increase the adverse/toxic effects of Methotrexate (e.g. bone marrow suppression). Concomitant use should be avoided or closely monitored for Methotrexate toxicity.</td></tr><tr><td><a href="/drugs/DB01401">Trisalicylate-choline</a></td><td>The salicylate, trisalicylate-choline, increases the effect and toxicity of methotrexate.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Milk appears to reduce its absorption.</li>
+<li>Take without regard to meals. Limit caffeine intake.</li></ul></td></tr></tbody></table>

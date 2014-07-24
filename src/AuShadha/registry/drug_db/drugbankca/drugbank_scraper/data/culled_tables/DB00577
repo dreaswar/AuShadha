@@ -1,0 +1,234 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Valaciclovir</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00577</strong>&#160; (APRD00697)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Valaciclovir (<span class="caps">INN</span>) or valacyclovir (<span class="caps">USAN</span>) is an antiviral drug used in the management of herpes simplex and herpes zoster (shingles). It is a prodrug, being converted in vivo to aciclovir. It is marketed by GlaxoSmithKline under the trade name Valtrex or Zelitrex. [Wikipedia]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00577/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00577/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00577.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00577.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00577.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00577.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00577.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00577">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Valaciclovirum</td><td>Latin</td><td>INN</td></tr><tr><td>Valacyclovir</td><td>French/German/Spanish</td><td>USAN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Valaciclovir Hydrochloride</strong>
+          <div class="cas">124832-27-5</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000289/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000289/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: ZCDDBUOENGJMLV-QRPNPIFTSA-N</li>
+              <li>Monoisotopic Mass: 360.131280897</li>
+              <li>Average Mass: 360.797</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000289">DBSALT000289</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Bagovir</td><td>Bago</td></tr><tr><td>Cycloval</td><td>GMP</td></tr><tr><td>Mitanga</td><td>Aversi</td></tr><tr><td>Ovalac</td><td>Beximco</td></tr><tr><td>Pervioral</td><td>Royal Pharma</td></tr><tr><td>Revira</td><td>Square</td></tr><tr><td>Vacyless</td><td>Yung Shin</td></tr><tr><td>Vadiral</td><td>Gynopharm</td></tr><tr><td>Valdacir</td><td>Actavis</td></tr><tr><td>Valotix</td><td>Rowex</td></tr><tr><td>Valtrex</td><td>GlaxoSmithKline</td></tr><tr><td>Valvir</td><td>Soho</td></tr><tr><td>Valztrex</td><td>Northia</td></tr><tr><td>Viramixal</td><td>Panalab</td></tr><tr><td>Viropel</td><td>Pelpharma</td></tr><tr><td>Vociflon</td><td>Pharmathen</td></tr><tr><td>Zelitrex</td><td>GlaxoSmithKline</td></tr><tr><td>Zelivire</td><td>Ranbaxy</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antiviral-agents">Antiviral Agents</a></li>
+<li><a href="/mesh/prodrugs">Prodrugs</a></li></ul></td></tr><tr><th>CAS number</th><td>124832-26-4</td></tr><tr><th>Weight</th><td>Average: 324.3357<br>Monoisotopic: 324.154603158</td></tr><tr><th>Chemical Formula</th><td>C<sub>13</sub>H<sub>20</sub>N<sub>6</sub>O<sub>4</sub></td></tr><tr><th>InChI Key</th><td>HDOVUKNUBWVHOX-QMMMGPOBSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C13H20N6O4/c1-7(2)8(14)12(21)23-4-3-22-6-19-5-16-9-10(19)17-13(15)18-11(9)20/h5,7-8H,3-4,6,14H2,1-2H3,(H3,15,17,18,20)/t8-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-[(2-amino-6-oxo-6,9-dihydro-3H-purin-9-yl)methoxy]ethyl (2S)-2-amino-3-methylbutanoate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC(C)[C@H](N)C(=O)OCCOCN1C=NC2=C1NC(N)=NC2=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Alpha Amino Acid Esters</td></tr><tr><th>Alternative parents</th><td>Hypoxanthines; Fatty Acid Esters; Pyrimidones; N-substituted Imidazoles; Primary Aromatic Amines; Carboxylic Acid Esters; Polyamines; Enolates; Ethers; Monoalkylamines</td></tr><tr><th>Substituents</th><td>hypoxanthine; imidazopyrimidine; purine; pyrimidone; fatty acid ester; n-substituted imidazole; primary aromatic amine; pyrimidine; azole; imidazole; carboxylic acid ester; polyamine; ether; enolate; primary aliphatic amine; primary amine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the alpha amino acid esters. These are ester derivatives of alpha amino acids.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment or suppression of cold sores (herpes labialis), herpes zoster (shingles), genital herpes in immunocompetent individuals, and recurrent genital herpes in HIV-infected individuals.</td></tr><tr><th>Pharmacodynamics</th><td>Valaciclovir (INN) or Valacyclovir (USAN) is a prodrug and synthetic purine nucleoside analogue with inhibitory activity against herpes simplex virus types 1 (HSV-1), 2 (HSV-2), varicella-zoster virus (VZV), Epstein-Barr virus (EBV), and cytomegalovirus (CMV). Valaciclovir is almost completely converted to acyclovir and L-valine. The inhibitory activity of valaciclovir is highly selective due to its affinity for the enzyme thymidine kinase (TK) encoded by HSV and VZV. This viral enzyme converts acyclovir into acyclovir monophosphate, which is then converted into acyclovir diphosphate and triphosphate by cellular enzymes. Acyclovir is selectively converted to the active triphosphate form by cells infected with herpes viruses.</td></tr><tr><th>Mechanism of action</th><td>Valaciclovir is phosphorylated by viral thymidine kinase to acyclovir triphosphate (the active metabolite) which then inhibits herpes viral DNA replication by competitive inhibition of viral DNA polymerase, and by incorporation into and termination of the growing viral DNA chain. When used as a substrate for viral DNA polymerase, acyclovir triphosphate competitively inhibits dATP leading to the formation of 'faulty' DNA. This is where acyclovir triphosphate is incorporated into the DNA strand replacing many of the adenosine bases. This results in the prevention of DNA synthesis, as phosphodiester bridges can longer to be built, destabilizing the strand.</td></tr><tr><th>Absorption</th><td>After oral administration, valaciclovir hydrochloride is rapidly absorbed from the gastrointestinal tract. The absolute bioavailability of acyclovir after administration of valaciclovir is 54.5% &#177; 9.1%.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>13-18%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Valaciclovir is rapidly and almost entirely (~99%) converted to the active compound, acyclovir, and L-valine by first-pass intestinal and hepatic metabolism by enzymatic hydrolysis. Neither valaciclovir nor acyclovir is metabolized by cytochrome P450 enzymes.</p></td></tr><tr><th>Route of elimination</th><td>Acyclovir accounted for 89% of the radioactivity excreted in the urine.</td></tr><tr><th>Half life</th><td>2.5-3.3 hours</td></tr><tr><th>Clearance</th><td><ul>
+	<li>Renal cl=255 +/- &#160;86 mL/min [healthy]</li>
+	<li>apparent cl=86.3 +/- 21.3 mL/min/1.73&#160;m2 [dialysis patients]</li>
+	<li>apparent cl=679.16 +/- 162.76 mL/min/1.73&#160;m2 [healthy]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Adverse effects of overexposure might include headache and nausea.</td></tr><tr><th>Affected organisms</th><td><ul><li>Human Herpes Virus</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9475</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9389</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8957</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7487</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7467</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9586</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8553</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8941</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8244</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5571</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8155</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8734</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8797</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7944</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9351</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8373</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6139
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9345
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.899
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.2217 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9427
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7378
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Aurobindo pharma ltd</li>
+<li>Dr reddys laboratories ltd</li>
+<li>Matrix laboratories ltd</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Ranbaxy laboratories ltd</li>
+<li>Roxane laboratories inc</li>
+<li>Sandoz inc</li>
+<li>Teva pharmaceuticals usa</li>
+<li>Watson laboratories inc</li>
+<li>Wockhardt ltd</li>
+<li>Glaxosmithkline</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Apotheca Inc.</li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.dsm.com">DSM Corp.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.greenstonellc.com">Greenstone LLC</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.longwing.net">Long Wing International Inc.</a></li>
+<li><a href="http://www.lupinpharmaceuticals.com">Lupin Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li>Promex Medical Inc.</li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li>Redpharm Drug</li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.roxane.com">Roxane Labs</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li>Tya Pharmaceuticals</li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

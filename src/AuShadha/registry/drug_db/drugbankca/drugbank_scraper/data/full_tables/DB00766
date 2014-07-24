@@ -1,0 +1,205 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Clavulanate</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00766</strong>&#160; (APRD00049)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Clavulanic acid and its salts and esters. The acid is a suicide inhibitor of bacterial beta-lactamase enzymes from Streptomyces clavuligerus. Administered alone, it has only weak antibacterial activity against most organisms, but given in combination with beta-lactam antibiotics prevents antibiotic inactivation by microbial lactamase. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00766/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00766/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00766.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00766.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00766.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00766.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00766.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00766">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Clavulanic Acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Amoksiklav</td><td>potassium clavulanate + amoxicillin</td></tr><tr><td>Augmentin</td><td>potassium clavulanate + amoxicillin</td></tr><tr><td>Ciblor</td><td>potassium clavulanate + amoxicillin</td></tr><tr><td>Klavocin</td><td>potassium clavulanate + amoxicillin</td></tr><tr><td>Neo-Duplamox</td><td>potassium clavulanate + amoxicillin</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/enzyme-inhibitors">Enzyme Inhibitors</a></li>
+<li><a href="/mesh/anti-bacterial-agents">Anti-Bacterial Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>58001-44-8</td></tr><tr><th>Weight</th><td>Average: 199.1608<br>Monoisotopic: 199.048072403</td></tr><tr><th>Chemical Formula</th><td>C<sub>8</sub>H<sub>9</sub>NO<sub>5</sub></td></tr><tr><th>InChI Key</th><td>HZZVJAQRINQKSD-PBFISZAISA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C8H9NO5/c10-2-1-4-7(8(12)13)9-5(11)3-6(9)14-4/h1,6-7,10H,2-3H2,(H,12,13)/b4-1-/t6-,7-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2R,3Z,5R)-3-(2-hydroxyethylidene)-7-oxo-4-oxa-1-azabicyclo[3.2.0]heptane-2-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@@]12CC(=O)N1[C@@H](C(O)=O)\C(O2)=C\CO</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Lactams</td></tr><tr><th>Subclass</th><td>Beta Lactams</td></tr><tr><th>Direct parent</th><td>Clavams</td></tr><tr><th>Alternative parents</th><td>Tertiary Carboxylic Acid Amides; Tertiary Amines; Azetidines; Primary Alcohols; Enolates; Carboxylic Acids; Polyamines</td></tr><tr><th>Substituents</th><td>tertiary carboxylic acid amide; azetidine; tertiary amine; carboxamide group; primary alcohol; enolate; carboxylic acid derivative; carboxylic acid; polyamine; amine; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the clavams. These are organic compounds containing a 4-oxa-1-azabicyclo[3.2.0]heptan-7-one moiety. Clavams are similar to penams, but with an oxygen substituted for the sulfur in the penam skeleton.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For use with Amoxicillin, clavulanic acid is suitable for the treatment of infections with <i>Staph. aureus</i> and <i>Bacteroides fragilis</i>, or with beta-lactamase producing <i>H. influenzae</i> and <i>E. coli</i>.</td></tr><tr><th>Pharmacodynamics</th><td>Clavulanic acid, produced by the fermentation of <i>Streptomyces Clavuligerus</i>, is a beta-lactam structurally related to the penicillins. Clavulanic acid is used in conjunction with amoxicillin for the treatment of bronchitis and urinary tract, skin, and soft tissue infections caused by beta-lactamase producing organisms.</td></tr><tr><th>Mechanism of action</th><td>Clavulanic acid competitively and irreversibly inhibits a wide variety of beta-lactamases, commonly found in microorganisms resistant to penicillins and cephalosporins. Binding and irreversibly inhibiting the beta-lactamase results in a restauration of the antimicrobial activity of beta-lactam antibiotics against lactamase-secreting-resistant bacteria. By inactivating beta-lactamase (the bacterial resistance protein), the accompanying penicillin/cephalosporin drugs may be made more potent as well.</td></tr><tr><th>Absorption</th><td>75%</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Low (22 to 30%)</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>1.0 hour</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Gastrointestinal symptoms including stomach and abdominal pain, vomiting, and diarrhea. Rash, hyperactivity, or drowsiness have also been observed in a small number of patients</td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.745</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.6848</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6054</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.7667</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9483</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9902</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8446</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8719</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8279</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5362</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8694</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8957</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9295</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8915</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9798</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9926</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7146
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8718
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Ready biodegradable 
+        </td>
+        <td>
+            0.8501
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.4312 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9875
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9753
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.aidarex.com">Aidarex Pharmacuticals LLC</a></li>
+<li><a href="http://www.amerisourcebergen.com">Amerisource Health Services Corp.</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li>Apotheca Inc.</li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li>Casa De Amigos Pharmacy</li>
+<li>Comprehensive Consultant Services Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li><a href="http://www.hikma.com">Hikma Pharmaceuticals</a></li>
+<li><a href="http://www.innoviantpharmacy.com">Innoviant Pharmacy Inc.</a></li>
+<li><a href="http://www.keltman.com">Keltman Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.lek.si">Lek Pharmaceuticals Inc.</a></li>
+<li>Liberty Pharmaceuticals</li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li>Neuman Distributors Inc.</li>
+<li>Novopharm Ltd.</li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.parpharm.com">Par Pharmaceuticals</a></li>
+<li>PCA LLC</li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li>Prepackage Specialists</li>
+<li>Prescription Dispensing Service Inc.</li>
+<li><a href="http://www.ranbaxy.com">Ranbaxy Laboratories</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Redpharm Drug</li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.stat-scripts.com">Stat Scripts LLC</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li>Tya Pharmaceuticals</li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li><a href="http://www.west-ward.com">West-Ward Pharmaceuticals</a></li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>117.5-118 &#176;C</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>water solubility</td><td>300 mg/mL (potassium salt)</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>-1.5</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>3.37e+02 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-1.2</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-1.5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>0.23</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>3.32</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>-2.6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>87.07</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>44.25</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>18.13</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Dennis Edward Clark, Shaukat Hussain Malik, Paul Gerard Butterly, Clive Elton Badman, Jeffrey David Haseler, &#8220;Process for preparing potassium clavulanate in rossette form.&#8221; U.S. Patent US5750685, issued April, 1978.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=5750685&amp;tbm=pts" target="_blank">US5750685 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C06662" target="_blank">C06662 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280980" target="_blank">5280980 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46508845" target="_blank">46508845 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.4444466.html" target="_blank">4444466 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=3736" target="_blank">3736 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL777" target="_blank">CHEMBL777 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000948" target="_blank">DAP000948 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA164742987" target="_blank">PA164742987 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Clavulanate" target="_blank">Clavulanate <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=3BLM" target="_blank">3BLM <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00766.pdf?1265922744">show</a>(57.7 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00618">Demeclocycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00254">Doxycycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00977">Ethinyl Estradiol</a></td><td>This anti-infectious agent could decrease the effect of the oral contraceptive</td></tr><tr><td><a href="/drugs/DB01357">Mestranol</a></td><td>This anti-infectious agent could decrease the effect of the oral contraceptive</td></tr><tr><td><a href="/drugs/DB00931">Methacycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00563">Methotrexate</a></td><td>The penicillin increases the effect and toxicity of methotrexate</td></tr><tr><td><a href="/drugs/DB01017">Minocycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00595">Oxytetracycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01301">Rolitetracycline</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00759">Tetracycline</a></td><td>Possible antagonism of action</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

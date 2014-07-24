@@ -1,0 +1,200 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Imatinib</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00619</strong>&#160; (APRD01028, DB03261, EXPT02967)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Imatinib is a small molecule kinase inhibitor used to treat certain types of cancer. It is currently marketed by Novartis as Gleevec (<span class="caps">USA</span>) or Glivec (Europe/Australia) as its mesylate salt, imatinib mesilate (<span class="caps">INN</span>). It is occasionally referred to as CGP57148B or STI571 (especially in older publications). It is used in treating chronic myelogenous leukemia (<span class="caps">CML</span>), gastrointestinal stromal tumors (GISTs) and a number of other malignancies.</p>
+<p>It is the first member of a new class of agents that act by inhibiting particular tyrosine kinase enzymes, instead of non-specifically inhibiting rapidly dividing cells.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00619/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00619/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00619.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00619.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00619.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00619.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00619.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00619">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Imatinib</td><td>French/German/Spanish</td><td>INN</td></tr><tr><td>Imatinib Methansulfonate</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Imatinibum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Imatinib Mesylate </strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000098/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000098/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: YLMAHDNUQAMNNX-UHFFFAOYSA-N</li>
+              <li>Monoisotopic Mass: 589.247123333</li>
+              <li>Average Mass: 589.708</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000098">DBSALT000098</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Celonib</td><td>Celon</td></tr><tr><td>Enliven</td><td>Orion</td></tr><tr><td>Gleevec</td><td>Novartis</td></tr><tr><td>Glivec</td><td>Novartis</td></tr><tr><td>Imatib</td><td>Grey Inversiones</td></tr><tr><td>Mesylonib</td><td>Miracalus</td></tr><tr><td>Mitinab</td><td>Glenmark</td></tr><tr><td>Plivatinib</td><td>Pliva</td></tr><tr><td>Shantinib</td><td>Shantha</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents">Antineoplastic Agents</a></li>
+<li><a href="/mesh/protein-kinase-inhibitors">Protein Kinase Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>152459-95-5</td></tr><tr><th>Weight</th><td>Average: 493.6027<br>Monoisotopic: 493.259008649</td></tr><tr><th>Chemical Formula</th><td>C<sub>29</sub>H<sub>31</sub>N<sub>7</sub>O</td></tr><tr><th>InChI Key</th><td>KTUFNOKKBVMGRW-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C29H31N7O/c1-21-5-10-25(18-27(21)34-29-31-13-11-26(33-29)24-4-3-12-30-19-24)32-28(37)23-8-6-22(7-9-23)20-36-16-14-35(2)15-17-36/h3-13,18-19H,14-17,20H2,1-2H3,(H,32,37)(H,31,33,34)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-4-[(4-methylpiperazin-1-yl)methyl]benzamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN1CCN(CC2=CC=C(C=C2)C(=O)NC2=CC(NC3=NC=CC(=N3)C3=CN=CC=C3)=C(C)C=C2)CC1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Benzamides</td></tr><tr><th>Direct parent</th><td>N-phenylbenzamides</td></tr><tr><th>Alternative parents</th><td>Pyridinylpyrimidines; Anilides; Benzoyl Derivatives; Toluenes; Diazinanes; Pyridines and Derivatives; Piperazines; Tertiary Amines; Secondary Carboxylic Acid Amides; Enolates; Carboxylic Acids; Secondary Amines; Polyamines</td></tr><tr><th>Substituents</th><td>pyridinylpyrimidine; acetanilide; benzoyl; toluene; 1,4-diazinane; pyridine; piperazine; pyrimidine; secondary carboxylic acid amide; tertiary amine; carboxamide group; secondary amine; polyamine; enolate; carboxylic acid derivative; carboxylic acid; organonitrogen compound; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the n-phenylbenzamides.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of Philadelphia chromosome positive chronic myeloid leukemia (Ph+ CML), Ph+ acute lymphoblastic leukaemia, myelodysplastic/myeloproliferative diseases, aggressive systemic mastocytosis, hypereosinophilic syndrome and/or chronic eosinophilic leukemia (CEL), dermatofibrosarcoma protuberans, and malignant gastrointestinal stromal tumors (GIST).</td></tr><tr><th>Pharmacodynamics</th><td>Imatinib is an antineoplastic agent used to treat chronic myelogenous leukemia. Imatinib is a 2-phenylaminopyrimidine derivative that functions as a specific inhibitor of a number of tyrosine kinase enzymes. In chronic myelogenous leukemia, the Philadelphia chromosome leads to a fusion protein of Abl with Bcr (breakpoint cluster region), termed Bcr-Abl. As this is now a continuously active tyrosine kinase, Imatinib is used to decrease Bcr-Abl activity.</td></tr><tr><th>Mechanism of action</th><td>Imatinib mesylate is a protein-tyrosine kinase inhibitor that inhibits the Bcr-Abl tyrosine kinase, the constitutive abnormal tyrosine kinase created by the Philadelphia chromosome abnormality in chronic myeloid leukemia (CML). It inhibits proliferation and induces apoptosis in Bcr-Abl positive cell lines as well as fresh leukemic cells from Philadelphia chromosome positive chronic myeloid leukemia. Imatinib also inhibits the receptor tyrosine kinases for platelet derived growth factor (PDGF) and stem cell factor (SCF) - called c-kit. Imatinib was identified in the late 1990s by Dr Brian J. Druker. Its development is an excellent example of rational drug design. Soon after identification of the bcr-abl target, the search for an inhibitor began. Chemists used a high-throughput screen of chemical libraries to identify the molecule 2-phenylaminopyrimidine. This lead compound was then tested and modified by the introduction of methyl and benzamide groups to give it enhanced binding properties, resulting in imatinib.</td></tr><tr><th>Absorption</th><td>The pharmacokinetics in CML and GIST patients are similar. Imatinib is well absorbed with mean absolute bioavailability is 98% and maximum plasma levels achieved within 2-4 hours of dosing</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>95% protein bound, mostly to albumin and alpha-1-acid glycoprotein. </td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Primarily hepatic via CYP3A4. Other cytochrome P450 enzymes, such as CYP1A2, CYP2D6, CYP2C9, and CYP2C19, play a minor role in its metabolism. The main circulating active metabolite in humans is the N-demethylated piperazine derivative, formed predominantly by CYP3A4. This metabolite is similar in potency to the parent compound. </p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Imatinib</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li>
+<li><a href="/biodb/bio_entities/BE0002362" target="_blank">Cytochrome P450 3A5</a></li>
+<li><a href="/biodb/bio_entities/BE0002363" target="_blank">Cytochrome P450 2D6</a></li>
+<li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li>
+<li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET00025">N-desmethylimatinib (CGP74588)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/25">Details</a></td></tr><tr><td>Imatinib</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0000017" target="_blank">Prostaglandin G/H synthase 1</a></li></ul></td><td><a href="/metabolites/DBMET00026">AFN911</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/26">Details</a></td></tr><tr><td>Imatinib</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0000017" target="_blank">Prostaglandin G/H synthase 1</a></li></ul></td><td><a href="/metabolites/DBMET00027">CGP71422</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/27">Details</a></td></tr><tr><td>Imatinib</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0000017" target="_blank">Prostaglandin G/H synthase 1</a></li></ul></td><td><a href="/metabolites/DBMET00028">CGP72383</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/28">Details</a></td></tr><tr><td>Imatinib</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00931">n-demethylated piperazine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/952">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Imatinib elimination is predominately in the feces, mostly as metabolites. 81% of the dose is eliminated within 7 days, in feces (68% of the dose) and urine (13% of the dose). Unchanged imatinib accounted for 25% of the dose (5% urine, 20% faces), the remainder being metabolites. </td></tr><tr><th>Half life</th><td>Following oral administration in healthy volunteers, the elimination half-lives of imatinib and its major active metabolite, the N-demethyl derivative (CGP74588) are approximately 18 and 40 hours, respectively. </td></tr><tr><th>Clearance</th><td><ul>
+	<li>8 L/h [50-year-old <span class="caps">CML</span> and <span class="caps">GIST</span> patient weighing 50 kg]</li>
+	<li>14 L/h [50-year-old <span class="caps">CML</span> and <span class="caps">GIST</span> patient weighing 100 kg]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>The most frequently reported adverse reactions (&gt;30%) were edema, nausea,
+vomiting, muscle cramps, musculoskeletal pain, diarrhea, rash, fatigue and
+abdominal pain. </td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9865</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.7624</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5076</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7863</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8107</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5326</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5299</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8287</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6547</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6602</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8813</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7933</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8516</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9313</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7962</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8134
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.919
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9819
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.6013 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.7709
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.8887
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Novartis pharmaceuticals corp</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.novartis.com">Novartis AG</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td>100 mg, 400 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01418">Acenocoumarol</a></td><td>Imatinib may increase the anticoagulant effect of acenocoumarol.</td></tr><tr><td><a href="/drugs/DB00316">Acetaminophen</a></td><td>Increased hepatic toxicity of both agents</td></tr><tr><td><a href="/drugs/DB01125">Anisindione</a></td><td>Imatinib may increase the anticoagulant effect of anisindione.</td></tr><tr><td><a href="/drugs/DB00673">Aprepitant</a></td><td>Aprepitant may change levels of the chemotherapy agent, imatinib.</td></tr><tr><td><a href="/drugs/DB01076">Atorvastatin</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the effect and toxicity of atorvastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of atorvastatin if imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01558">Bromazepam</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the serum concentration of bromazepam by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of bromazepam if imatinib is initiated, discontinued or dose changed. Dosage adjustments may be required. </td></tr><tr><td><a href="/drugs/DB00564">Carbamazepine</a></td><td>Carbamazepine, a strong CYP3A4 inducer, may increase the metabolism of imatinib. Imatinib, a strong CYP3A4 inhibitor, may increase the metabolism of carbamazepine. Monitor for changes in the therapeutic and adverse effects of both agents if concomitant therapy is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00439">Cerivastatin</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the serum concentration of cerivastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of cerivastatin if imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01211">Clarithromycin</a></td><td>The macrolide, clarithromycin, may increase the serum concentration of imatinib.</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Imatinib increases the effect and toxicity of cyclosporine</td></tr><tr><td><a href="/drugs/DB01219">Dantrolene</a></td><td>Imatinib may increase the serum concentration of dantrolene by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of dantrolene if imatinib is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB01234">Dexamethasone</a></td><td>Dexamethasone may decrease levels of imatinib.</td></tr><tr><td><a href="/drugs/DB00266">Dicoumarol</a></td><td>Imatinib may increase the anticoagulant effect of dicumarol.</td></tr><tr><td><a href="/drugs/DB00199">Erythromycin</a></td><td>The macrolide, erythromycin, may increase the serum concentration of imatinib.</td></tr><tr><td><a href="/drugs/DB00754">Ethotoin</a></td><td>The hydantoin decreases the levels of imatinib</td></tr><tr><td><a href="/drugs/DB06414">Etravirine</a></td><td>Imatinib, when used concomitantly with etravirine, may experience a decrease in serum concentration. It is recommended to avoid this combination if alternative are available. If concurrent use is not avoidable, it is recommended to increase the dosage of cabozantinib by a minimum of 50%, and to monitor therapy.  </td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>The hydantoin decreases the levels of imatinib</td></tr><tr><td><a href="/drugs/DB01167">Itraconazole</a></td><td>Itraconazole may increase the levels of imatinib.</td></tr><tr><td><a href="/drugs/DB01321">Josamycin</a></td><td>The macrolide, josamycin, may increase the serum concentration of imatinib.</td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Ketoconazole may increase the levels of imatinib.</td></tr><tr><td><a href="/drugs/DB00227">Lovastatin</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the effect and toxicity of lovastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of lovastatin if imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB08815">Lurasidone</a></td><td>Concomitant therapy with a strong CYP3A4 inhibitor will increase level or effect of lurasidone. Coadministration with lurasidone is contraindicated. </td></tr><tr><td><a href="/drugs/DB00532">Mephenytoin</a></td><td>The hydantoin decreases the levels of imatinib</td></tr><tr><td><a href="/drugs/DB01115">Nifedipine</a></td><td>Imatinib increases the effect and toxicity of nifedipine</td></tr><tr><td><a href="/drugs/DB01174">Phenobarbital</a></td><td>Phenobarbital decreases levels of imatinib</td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>The hydantoin decreases the levels of imatinib</td></tr><tr><td><a href="/drugs/DB01100">Pimozide</a></td><td>Imatinib may increase the effect and toxicity of pimozide.</td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin decreases levels of imatinib</td></tr><tr><td><a href="/drugs/DB00641">Simvastatin</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the effect and toxicity of simvastatin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of simvastatin if imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01323">St. John's Wort</a></td><td>St. John's Wort decreases levels of imatinib</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>The strong CYP3A4 inhibitor, Imatinib, may decrease the metabolism and clearance of Tacrolimus, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in therapeutic and adverse effects of Tacrolimus if Imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00820">Tadalafil</a></td><td>Imatinib may reduce the metabolism of Tadalafil. Concomitant therapy should be avoided if possible due to high risk of Tadalafil toxicity.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Imatinib may increase the serum concentration of Tamoxifen by decreasing its metabolism and clearance. Imatinib may also decrease the therapeutic effect of Tamoxifen by decreasing active metabolite production. Monitor for changes in the therapeutic/adverse effects of Tamoxifen if Imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Imatinib, a CYP3A4/2D6 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP3A4/2D6 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Imatinib is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Co-administration may result in altered plasma concentrations of Imatinib and/or Telithromycin. Consider alternate therapy or monitor the therapeutic/adverse effects of both agents.</td></tr><tr><td><a href="/drugs/DB06287">Temsirolimus</a></td><td>Imatinib may inhibit the metabolism and clearance of Temsirolimus. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00444">Teniposide</a></td><td>The strong CYP3A4 inhibitor, Imatinib, may decrease the metabolism and clearance of Teniposide, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Teniposide if Imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00906">Tiagabine</a></td><td>The strong CYP3A4 inhibitor, Imatinib, may decrease the metabolism and clearance of Tiagabine, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Tiagabine if Imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01036">Tolterodine</a></td><td>Imatinib may decrease the metabolism and clearance of Tolterodine. Adjust Tolterodine dose and monitor for efficacy and toxicity.</td></tr><tr><td><a href="/drugs/DB01030">Topotecan</a></td><td>The BCRP/ABCG2 inhibitor, Imatinib, may increase the bioavailability and serum concentration of oral Topotecan. Monitor for change in the therapeutic and adverse effects of Topotecan if Imatinib is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Imatinib may increase Tramadol toxicity by decreasing Tramadol metabolism and clearance. Imatinib may decrease the effect of Tramadol by decreasing active metabolite production.  </td></tr><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events. </td></tr><tr><td><a href="/drugs/DB00656">Trazodone</a></td><td>The CYP3A4 inhibitor, Imatinib, may increase Trazodone efficacy/toxicity by decreasing Trazodone metabolism and clearance. Consider alternate therapy or monitor for changes in Trazodone efficacy/toxicity if Imatinib is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>The strong CYP3A4 inhibitor, Imatinib, may decrease the metabolism and clearance of Trimipramine, a CYP3A4 substrate. Consider alternate therapy or monitor for changes in therapeutic and adverse effects of Trimipramine if Imatinib is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00862">Vardenafil</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may reduce the metabolism and clearance of Vardenafil. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of Vardenafil.</td></tr><tr><td><a href="/drugs/DB00285">Venlafaxine</a></td><td>Imatinib, a CYP3A4 inhibitor, may decrease the metabolism and clearance of Venlafaxine, a CYP3A4 substrate. Monitor for changes in therapeutic/adverse effects of Venlafaxine if Imatinib is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00661">Verapamil</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the serum concentration of Veramapil, a CYP3A4 substrate, by decreasing its metabolism and clearance. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Verapamil if Imatinib is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00570">Vinblastine</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may decrease the metabolism of Vinblastine. Consider alternate therapy to avoid Vinblastine toxicity. Monitor for changes in the therapeutic/adverse effects of Vinblastine if Imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00541">Vincristine</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the serum concentration of Vincristine by decreasing its metabolism. Consider alternate therapy to avoid Vincristine toxicity. Monitor for changes in the therapeutic and adverse effects of Vincristine if Imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00361">Vinorelbine</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the serum concentration of Vinorelbine by decreasing its metabolism. Consider alternate therapy to avoid Vinorelbine toxicity. Monitor for changes in the therapeutic and adverse effects of Vinorelbine if Imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of imatinib by decreasing its metabolism. Additive QTc prolongation may also occur. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of imatinib if voriconazole is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00682">Warfarin</a></td><td>Imatinib may increase the anticoagulant effect of warfarin increasing the risk of bleeding. Monitor for changes in prothrombin time and therapeutic and adverse effects of warfarin if imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00909">Zonisamide</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the serum concentration of zonisamide by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zonisamide if imatinib is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01198">Zopiclone</a></td><td>Imatinib, a strong CYP3A4 inhibitor, may increase the serum concentration of zopiclone by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zopiclone if imatinib is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take with food to reduce the incidence of gastric irritation. Follow with a large glass of water. A lipid rich meal will slightly reduce and delay absorption. Avoid grapefruit and grapefruit juice throughout treatment, grapefruit can significantly increase serum levels of this product.</li></ul></td></tr></tbody></table>

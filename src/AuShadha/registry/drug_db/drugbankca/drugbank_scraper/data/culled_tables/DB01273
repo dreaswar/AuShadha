@@ -1,0 +1,193 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Varenicline</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01273</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Varenicline is a prescription medication used to treat smoking addiction. This medication is the first approved nicotinic receptor partial agonist. Specifically, varenicline is a partial agonist of the alpha4/beta2 subtype of the nicotinic acetylcholine receptor. In addition it acts on alpha3/beta4 and weakly on alpha3beta2 and alpha6-containing receptors. A full agonism was displayed on alpha7-receptors.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01273/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01273/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01273.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01273.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01273.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01273.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01273.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01273">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>CP-526,555</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Varenicline tartrate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000548/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000548/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: TWYFGYXQSYOKLK-LREBCSMRSA-N</li>
+              <li>Monoisotopic Mass: 361.127385355</li>
+              <li>Average Mass: 361.3493</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000548">DBSALT000548</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Champix</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Chantix</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/nicotinic-agonists">Nicotinic Agonists</a></li></ul></td></tr><tr><th>CAS number</th><td>249296-44-4</td></tr><tr><th>Weight</th><td>Average: 211.2624<br>Monoisotopic: 211.110947431</td></tr><tr><th>Chemical Formula</th><td>C<sub>13</sub>H<sub>13</sub>N<sub>3</sub></td></tr><tr><th>InChI Key</th><td>JQSHBVHOMNKWFT-DTORHVGOSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C13H13N3/c1-2-16-13-5-11-9-3-8(6-14-7-9)10(11)4-12(13)15-1/h1-2,4-5,8-9,14H,3,6-7H2/t8-,9+</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(1R,12S)-5,8,14-triazatetracyclo[10.3.1.0^{2,11}.0^{4,9}]hexadeca-2(11),3,5,7,9-pentaene</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[H][C@]12C[C@]([H])(CNC1)C1=CC3=NC=CN=C3C=C21</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Benzazepines</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Benzazepines</td></tr><tr><th>Alternative parents</th><td>Quinoxalines; Indanes; Azepines; Piperidines; Pyrazines; Benzene and Substituted Derivatives; Dialkylamines; Polyamines</td></tr><tr><th>Substituents</th><td>indane; azepine; benzene; piperidine; pyrazine; secondary amine; secondary aliphatic amine; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the benzazepines. These are organic compounds containing a benzene ring fused to an azepine ring (unsaturated seven-member heterocycle with one nitrogen atom replacing a carbon atom).</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For use as an aid in smoking cessation.</td></tr><tr><th>Pharmacodynamics</th><td>Varenicline is a partial nicotinic acetylcholine receptor agonist, designed to partially activate this system while displacing nicotine at its sites of action in the brain.</td></tr><tr><th>Mechanism of action</th><td>Varenicline is an alpha-4 beta-2 neuronal nicotinic acetylcholine receptor partial agonist. The drug shows high selectiviyty for this receptor subclass, relative to other nicotinic receptors (&gt;500-fold alpha-3 beta-4, &gt;3500-fold alpha-7, &gt;20,000-fold alpha-1 beta gamma delta) or non-nicotinic receptors and transporters (&gt;2000-fold). The drug competitively inhibits the ability of nicotine to bind to and activate the alpha-4 beta-2 receptor. The drug exerts mild agonistic activity at this site, though at a level much lower than nicotine; it is presumed that this activation eases withdrawal symptoms.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Less than 20%.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Metabolism is limited (</p></td></tr><tr><th>Route of elimination</th><td>Varenicline undergoes minimal metabolism, with 92% excreted unchanged in the urine. Renal elimination of varenicline is primarily through glomerular filtration along with active tubular secretion possibly via the organic cation transporter, OCT2.</td></tr><tr><th>Half life</th><td>The elimination half-life of varenicline is approximately 24 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9969</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9908</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5233</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.5458</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7453</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9637</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5489</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8933</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6522</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7428</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.507</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.881</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6251</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8029</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6589</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.5453</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7128
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9592
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9906
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.5914 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9382
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.5497
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Pfizer inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.cardinal.com">Cardinal Health</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.pfizer.com">Pfizer Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>US Pharmaceutical Group</li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet, film coated</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td>Searched, but no interactions found.</td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

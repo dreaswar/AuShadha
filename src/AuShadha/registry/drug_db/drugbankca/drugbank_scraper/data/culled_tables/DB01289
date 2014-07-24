@@ -1,0 +1,162 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Glisoxepide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01289</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Glisoxepide is one of the sulphonamide-derived oral antidiabetic drugs. It inhibits the uptake of bile acids into isolated rat hepatocytes. However it inhibits taurocholate uptake only in the absence of sodium ions. Glisoxepide uptake could be further inhibited by blockers of the hepatocellular monocarboxylate transporter, by the loop diuretic bumetanide, by 4,4&#8217;-diisothiocyano-2,2&#8217;-stilbenedisulfonate (<span class="caps">DIDS</span>) and by sulphate.  These results are consistent with the transport of glisoxepide via the transport system for the unconjugated bile acid cholate.<br>
+(<span class="caps">PMID</span>:1618280, 9017793)</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01289/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01289/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01289.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01289.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01289.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01289.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01289.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01289">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Glucoben</td><td>Farmades</td></tr><tr><td>Glysepin</td><td>Bayer</td></tr><tr><td>Pro-Diaban</td><td>Bayer</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>25046-79-1</td></tr><tr><th>Weight</th><td>Average: 449.524<br>Monoisotopic: 449.173289689</td></tr><tr><th>Chemical Formula</th><td>C<sub>20</sub>H<sub>27</sub>N<sub>5</sub>O<sub>5</sub>S</td></tr><tr><th>InChI Key</th><td>ZKUDBRCEOBOWLF-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C20H27N5O5S/c1-15-14-18(23-30-15)19(26)21-11-10-16-6-8-17(9-7-16)31(28,29)24-20(27)22-25-12-4-2-3-5-13-25/h6-9,14H,2-5,10-13H2,1H3,(H,21,26)(H2,22,24,27)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">N-{2-[4-({[(azepan-1-yl)carbamoyl]amino}sulfonyl)phenyl]ethyl}-5-methyl-1,2-oxazole-3-carboxamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC1=CC(=NO1)C(=O)NCCC1=CC=C(C=C1)S(=O)(=O)NC(=O)NN1CCCCCC1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Benzenesulfonamides</td></tr><tr><th>Direct parent</th><td>Benzenesulfonamides</td></tr><tr><th>Alternative parents</th><td>Phenethylamines; Sulfonylureas; Azepanes; Semicarbazides; Isoxazoles; Sulfonamides; Sulfonyls; Secondary Carboxylic Acid Amides; Enolates; Carboxylic Acids; Polyamines</td></tr><tr><th>Substituents</th><td>azepane; sulfonylurea; sulfonamide; azole; isoxazole; sulfonic acid derivative; sulfonyl; semicarbazide; carboxamide group; secondary carboxylic acid amide; enolate; polyamine; carboxylic acid derivative; carboxylic acid; amine; hydrazine derivative; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the benzenesulfonamides. These are organic compounds containing a sulfonamide group that is S-linked to a benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of diabetes mellitus type 2.</td></tr><tr><th>Pharmacodynamics</th><td>Glisoxepide is a sulfonylurea agent. It stimulates beta cells of the islet of Langerhans in the pancreas to release insulin. It also enhances peripheral insulin sensitivity. Overall it potentiates insulin release and improves insulin dynamics.</td></tr><tr><th>Mechanism of action</th><td>Glisoxepide is a hypoglycemic sulphonylurea agent. The sulphonylureas are a family of drugs based on a common sulphonylurea core. These drugs act via augmentation of secretion of insulin from pancreatic beta-cells. Sulphonylureas may also cause a reduction in serum glucagon and potentiate the action of insulin at the extrapancreatic tissues.  Glisoxepide functions as a non-selective K(ATP) channel blocker.  It is thought to stimulate insulin secretion by closing the ATP-sensitive K(+) (K(ATP)) channels (Kir6.2/SUR1 complex, KATP channels) in pancreatic beta-cells. This inhibits a tonic, hyperpolarizing efflux of potassium, thus causing the electric potential over the membrane to become more positive. This depolarization opens voltage-gated Ca2+ channels. The rise in intracellular calcium leads to increased fusion of insulin granulae with the cell membrane, and therefore increased secretion of (pro)insulin.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9787</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.741</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6772</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.594</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7578</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9445</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8195</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Substrate</td>
+        <td>0.5621</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8474</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6478</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9188</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6091</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.848</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7913</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6763</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7438</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7018
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7506
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Ready biodegradable 
+        </td>
+        <td>
+            0.5877
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.6845 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.7225
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.6458
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01193">Acebutolol</a></td><td>The beta-blocker, acebutolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00945">Acetylsalicylic acid</a></td><td>Acetylsalicylic acid increases the effect of the sulfonylurea, glisoxepide.</td></tr><tr><td><a href="/drugs/DB00335">Atenolol</a></td><td>The beta-blocker, atenolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00612">Bisoprolol</a></td><td>The beta-blocker, bisoprolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01136">Carvedilol</a></td><td>The beta-blocker, carvedilol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00446">Chloramphenicol</a></td><td>Chloramphenicol may increase the effect of sulfonylurea, glisoxepide.</td></tr><tr><td><a href="/drugs/DB00636">Clofibrate</a></td><td>Clofibrate may increase the effect of sulfonylurea, glisoxepide.</td></tr><tr><td><a href="/drugs/DB00187">Esmolol</a></td><td>The beta-blocker, esmolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00598">Labetalol</a></td><td>The beta-blocker, labetalol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00264">Metoprolol</a></td><td>The beta-blocker, metoprolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01203">Nadolol</a></td><td>The beta-blocker, nadolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01580">Oxprenolol</a></td><td>The beta-blocker, oxprenolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00812">Phenylbutazone</a></td><td>Phenylbutazone increases the effect of the hypoglycemic agent</td></tr><tr><td><a href="/drugs/DB00960">Pindolol</a></td><td>The beta-blocker, pindolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB00571">Propranolol</a></td><td>The beta-blocker, propranolol, may decrease symptoms of hypoglycemia.</td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin may decrease the effect of sulfonylurea, glisoxepide.</td></tr><tr><td><a href="/drugs/DB00373">Timolol</a></td><td>The beta-blocker, timolol, may decrease symptoms of hypoglycemia.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

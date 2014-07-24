@@ -1,0 +1,199 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Aminolevulinic acid</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00855</strong>&#160; (APRD00793, DB05277)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A compound produced from succinyl-CoA and glycine as an intermediate in heme synthesis. It is used as a photochemotherapy for actinic keratosis. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00855/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00855/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00855.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00855.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00855.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00855.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00855.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00855">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>5-Aminolevulinic acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IS</td></tr><tr><td>ALA</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IS</td></tr><tr><td>ALA-PDT</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IS</td></tr><tr><td>Aminolevulinate</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>delta-Aminolevulinic acid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>5-Aminolevulinate hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000934/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000934/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000934">DBSALT000934</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Gliolan</td><td>medac GmbH</td></tr><tr><td>Levulan</td><td>DUSA Pharmaceuticals, Inc.</td></tr><tr><td>Levulan Kerastick</td><td>DUSA Pharmaceuticals, Inc.</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/photosensitizing-agents">Photosensitizing Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>106-60-5</td></tr><tr><th>Weight</th><td>Average: 131.1299<br>Monoisotopic: 131.058243159</td></tr><tr><th>Chemical Formula</th><td>C<sub>5</sub>H<sub>9</sub>NO<sub>3</sub></td></tr><tr><th>InChI Key</th><td>ZGXJTSGNIOSYLO-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C5H9NO3/c6-3-4(7)1-2-5(8)9/h1-3,6H2,(H,8,9)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">5-amino-4-oxopentanoic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NCC(=O)CCC(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Delta Amino Acids and Derivatives</td></tr><tr><th>Alternative parents</th><td>Gamma Keto-Acids and Derivatives; Ketones; Enolates; Polyamines; Carboxylic Acids; Monoalkylamines; Keto Acids and Derivatives</td></tr><tr><th>Substituents</th><td>gamma-keto acid; keto acid; ketone; enolate; carboxylic acid; polyamine; amine; primary amine; primary aliphatic amine; organonitrogen compound; carbonyl group</td></tr><tr><th>Classification description</th><td>This compound belongs to the delta amino acids and derivatives. These are compounds containing a carboxylic acid group and an amino group at the C5 carbon atom.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Aminolevulinic acid plus blue light illumination using a blue light photodynamic therapy illuminator is indicated for the treatment of minimally to moderately thick actinic keratoses of the face or scalp.</td></tr><tr><th>Pharmacodynamics</th><td>The metabolism of aminolevulinic acid (ALA) is the first step in the biochemical pathway resulting in heme synthesis. Aminolevulinic acid is not a photosensitizer, but rather a metabolic precursor of protoporphyrin IX (PpIX), which is a photosensitizer. The synthesis of ALA is normally tightly controlled by feedback inhibition of the enzyme, ALA synthetase, presumably by intracellular heme levels. ALA, when provided to the cell, bypasses this control point and results in the accumulation of PpIX, which is converted into heme by ferrochelatase through the addition of iron to the PpIX nucleus.</td></tr><tr><th>Mechanism of action</th><td>According to the presumed mechanism of action, photosensitization following application of aminolevulinic acid (ALA) topical solution occurs through the metabolic conversion of ALA to protoporphyrin IX (PpIX), which accumulates in the skin to which aminolevulinic acid has been applied. When exposed to light of appropriate wavelength and energy, the accumulated PpIX produces a photodynamic reaction, a cytotoxic process dependent upon the simultaneous presence of light and oxygen. The absorption of light results in an excited state of the porphyrin molecule, and subsequent spin transfer from PpIX to molecular oxygen generates singlet oxygen, which can further react to form superoxide and hydroxyl radicals. Photosensitization of actinic (solar) keratosis lesions using aminolevulinic acid, plus illumination with the BLU-UTM Blue Light Photodynamic Therapy Illuminator (BLU-U), is the basis for aminolevulinic acid photodynamic therapy (PDT).</td></tr><tr><th>Absorption</th><td>Oral bioavailability is 50-60%.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Following topical administration, synthesis into protoporphyrin IX takes place in situ in the skin.</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>Mean half-life is 0.70 &#177; 0.18 h after the oral dose and 0.83 &#177; 0.05 h after the intravenous dose.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Solution overdose have not been reported.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9162</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.7482</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7802</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6653</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9515</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7522</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9017</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8819</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8314</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7939</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9219</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9561</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9608</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9406</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9187</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9784</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8884
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8377
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Ready biodegradable 
+        </td>
+        <td>
+            0.9445
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.1726 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9186
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8944
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Dusa pharmaceuticals inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.dusapharma.com">Dusa Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Powder, for solution</td><td>Topical</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><ul><li><a data-no-turbolink="true" href="/spectra/spectra/nmr_one_d/1650">1H NMR Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1433">MS/MS Spectrum Quattro_QQQ 10</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1434">MS/MS Spectrum Quattro_QQQ 25</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1435">MS/MS Spectrum Quattro_QQQ 40</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5049">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 10</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5050">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 20</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5051">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 30</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5052">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 40</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5053">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 50</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5054">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5055">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5056">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies	) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5057">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies	) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5058">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5059">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5060">MS/MS Spectrum LC-ESI-QTOF (UPLC Q-Tof Premier, Waters) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/nmr_two_d/1591">[1H,13C] 2D NMR Spectrum</a></li></ul></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td>Searched, but no interactions found.</td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

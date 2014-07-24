@@ -1,0 +1,165 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Nelarabine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01280</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Nelarabine is a chemotherapy drug used in T-cell acute lymphoblastic leukemia. Nelarabine is a purine nucleoside analog converted to its corresponding arabinosylguanine nucleotide triphosphate (araGTP), resulting in inhibition of <span class="caps">DNA</span> synthesis and cytotoxicity.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01280/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01280/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01280.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01280.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01280.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01280.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01280.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01280">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>GW-506U78</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Nelzarabine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Arranon</td><td>GlaxoSmithKline</td></tr><tr><td>Atriance</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>121032-29-9</td></tr><tr><th>Weight</th><td>Average: 297.2673<br>Monoisotopic: 297.107318615</td></tr><tr><th>Chemical Formula</th><td>C<sub>11</sub>H<sub>15</sub>N<sub>5</sub>O<sub>5</sub></td></tr><tr><th>InChI Key</th><td>IXOXBSCIXZEQEQ-UHTZMRCNSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C11H15N5O5/c1-20-9-5-8(14-11(12)15-9)16(3-13-5)10-7(19)6(18)4(2-17)21-10/h3-4,6-7,10,17-19H,2H2,1H3,(H2,12,14,15)/t4-,6-,7+,10-/m1/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2R,3S,4S,5R)-2-(2-amino-6-methoxy-9H-purin-9-yl)-5-(hydroxymethyl)oxolane-3,4-diol</div></td></tr><tr><th>SMILES</th><td><div class="wrap">COC1=NC(N)=NC2=C1N=CN2[C@@H]1O[C@H](CO)[C@@H](O)[C@@H]1O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organooxygen Compounds</td></tr><tr><th>Class</th><td>Carbohydrates and Carbohydrate Conjugates</td></tr><tr><th>Subclass</th><td>Glycosyl Compounds</td></tr><tr><th>Direct parent</th><td>Purine Nucleosides and Analogues</td></tr><tr><th>Alternative parents</th><td>Hypoxanthines; Pentoses; Alkyl Aryl Ethers; N-substituted Imidazoles; Primary Aromatic Amines; Pyrimidines and Pyrimidine Derivatives; Oxolanes; Tetrahydrofurans; Secondary Alcohols; 1,2-Diols; Primary Alcohols; Polyamines</td></tr><tr><th>Substituents</th><td>pentose monosaccharide; hypoxanthine; purine; imidazopyrimidine; alkyl aryl ether; primary aromatic amine; pyrimidine; monosaccharide; n-substituted imidazole; tetrahydrofuran; azole; oxolane; imidazole; 1,2-diol; secondary alcohol; polyamine; primary alcohol; ether; amine; organonitrogen compound; primary amine; alcohol</td></tr><tr><th>Classification description</th><td>This compound belongs to the purine nucleosides and analogues. These are compounds comprising a purine base attached to a sugar.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of pediatric and adult patients with acute T-cell lymphoblastic leukemia and T-cell lymphoblastic lymphoma whose disease has not responded to or has relapsed following treatment with at least two chemotherapy regimens.</td></tr><tr><th>Pharmacodynamics</th><td>Nelarabine is a prodrug of the cytotoxic deoxyguanosine analogue 9-&#223;-D-arabinofuranosylguanine (ara-G). Nelarabine is demethylated by adenosine deaminase (ADA) to ara-G. Ara-G is then transported into cells, where it undergoes three phosphorylation steps, resulting in the formation of ara-G triphosphate (ara-GTP). In the first phosphorylation step, ara-G is converted to ara-G monophosphate (ara-GMP). Ara-GMP is then monophosphorylated by deoxyguanosine kinase and deoxycytidine kinase to ara-G diphosphate, and then subsequently to the active ara-G triphosphate (ara-GTP). Ara-GTP is the one that exerts the pharmacological effect. Pre-clinical studies suggest that T-cells are particularly sensitive to nelarabine.</td></tr><tr><th>Mechanism of action</th><td>Once nelarabine is metabolized into ara-GTP, the metabolite accumulates in leukemic blasts and incorporates into DNA to exert its S phase-specific cytotoxic effects, leading to the induction of fragmentation and apoptosis. Ara-GTP competes with endogenous deoxyGTP (dGTP) for incorporation into DNA. Once ara-GTP is incorporated at the 3' end of DNA, further DNA elongation is inhibited, which signals apoptosis and leads to cellular destruction. Additional cytotoxic activities may exist, but these are not fully understood.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Nelarabine and ara-G are not substantially bound to human plasma proteins (</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>The principal route of metabolism for nelarabine is O-demethylation by adenosine deaminase to form ara-G, which undergoes hydrolysis to form guanine. In addition, some nelarabine is hydrolyzed to form methylguanine, which is O-demethylated to form guanine. Guanine is N-deaminated to form xanthine, which is further oxidized to yield uric acid. Ring opening of uric acid followed by further oxidation results in the formation of allantoin.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Nelarabine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002214" target="_blank">Adenosine deaminase</a></li></ul></td><td><a href="/metabolites/DBMET00412">arabinofuranosylguanine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/415">Details</a></td></tr><tr><td>Nelarabine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002804" target="_blank">Deoxycytidine kinase</a></li>
+<li><a href="/biodb/bio_entities/BE0003589" target="_blank">Deoxyguanosine kinase, mitochondrial</a></li></ul></td><td><a href="/metabolites/DBMET00413">ara-G diphosphate</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/416">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Excretion: Nelarabine and ara-G are partially eliminated by the kidneys.</td></tr><tr><th>Half life</th><td>Nelarabine and ara-G are rapidly eliminated from plasma with a half-life of approximately 30 minutes and 3 hours.</td></tr><tr><th>Clearance</th><td><ul>
+	<li>197&#160; +/- &#160;189 L/h/m2 [Adult patients with refractory leukemia or lymphoma receiving doses of 199 to 2,900 mg/m2]</li>
+	<li>259&#160; +/- &#160;409 L/h/m2 [Pediatric patients with refractory leukemia or lymphoma receiving doses of 104 to 2,900 mg/m2]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>A single IV dose of 4,800 mg/m^2 was lethal in monkeys, and was associated with CNS signs including reduced/shallow respiration, reduced reflexes, and flaccid muscle tone. It is anticipated that overdosage would result in severe neurotoxicity (possibly including paralysis, coma), myelosuppression, and potentially death.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9776</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8171</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.8263</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.5664</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9525</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9667</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.929</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8604</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8369</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8729</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9149</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.937</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9352</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9568</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9794</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8799
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9252
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9723
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.9319 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9497
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8711
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Smithkline beecham corp dba glaxosmithkline</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection, solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

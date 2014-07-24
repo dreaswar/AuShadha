@@ -1,0 +1,163 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Metyrapone</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01011</strong>&#160; (APRD01111, EXPT02271)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>An inhibitor of the enzyme steroid 11-beta-monooxygenase. It is used as a test of the feedback hypothalamic-pituitary mechanism in the diagnosis of cushing syndrome. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01011/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01011/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01011.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01011.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01011.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01011.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01011.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01011">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Metopiron</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Metopirone</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/enzyme-inhibitors">Enzyme Inhibitors</a></li>
+<li><a href="/mesh/antimetabolites">Antimetabolites</a></li></ul></td></tr><tr><th>CAS number</th><td>54-36-4</td></tr><tr><th>Weight</th><td>Average: 226.2738<br>Monoisotopic: 226.11061308</td></tr><tr><th>Chemical Formula</th><td>C<sub>14</sub>H<sub>14</sub>N<sub>2</sub>O</td></tr><tr><th>InChI Key</th><td>FJLBFSROUSIWMA-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C14H14N2O/c1-14(2,12-6-4-8-16-10-12)13(17)11-5-3-7-15-9-11/h3-10H,1-2H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-methyl-1,2-bis(pyridin-3-yl)propan-1-one</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC(C)(C(=O)C1=CN=CC=C1)C1=CN=CC=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Pyridines and Derivatives</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Pyridines and Derivatives</td></tr><tr><th>Alternative parents</th><td>Ketones; Polyamines; Enolates</td></tr><tr><th>Substituents</th><td>ketone; enolate; polyamine; organonitrogen compound; carbonyl group</td></tr><tr><th>Classification description</th><td>This compound belongs to the pyridines and derivatives. These are compounds containing a pyridine ring, which is a six-member aromatic heterocycle which consists of one nitrogen atom and five carbon atoms.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used as a diagnostic drug for testing hypothalamic-pituitary ACTH function. Occasionally used in Cushing's syndrome.</td></tr><tr><th>Pharmacodynamics</th><td>Metopirone is an inhibitor of endogenous adrenal corticosteroid synthesis.</td></tr><tr><th>Mechanism of action</th><td>The pharmacological effect of Metopirone is to reduce cortisol and corticosterone production by inhibiting the 11-&#223;-hydroxylation reaction in the adrenal cortex. Removal of the strong inhibitory feedback mechanism exerted by cortisol results in an increase in adrenocorticotropic hormone (ACTH) production by the pituitary. With continued blockade of the enzymatic steps leading to production of cortisol and corticosterone, there is a marked increase in adrenocortical secretion of their immediate precursors, 11-desoxycortisol and desoxycorticosterone, which are weak suppressors of ACTH release, and a corresponding elevation of these steroids in the plasma and of their metabolites in the urine. These metabolites are readily determined by measuring urinary 17-hydroxycorticosteroids (17-OHCS) or 17-ketogenic steroids (17-KGS). Because of these actions, metopirone is used as a diagnostic test, with urinary 17-OHCS measured as an index of pituitary ACTH responsiveness. Metopirone may also suppress biosynthesis of aldosterone, resulting in a mild natriuresis.</td></tr><tr><th>Absorption</th><td>Absorbed rapidly and well when administered orally. Peak plasma concentrations are usually reached 1 hour after administration.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic. The major biotransformation is reduction of the ketone to metyrapol, an active alcohol metabolite. Metyrapone and metyrapol are both conjugated with glucuronide.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Metyrapone</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00909">Metyrapol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/930">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>After administration of 4.5 g metyrapone (750 mg every 4 hours), an average of 5.3% of the dose was excreted in the urine in the form of metyrapone (9.2% free and 90.8% as glucuronide) and 38.5% in the form of metyrapol (8.1% free and 91.9% as glucuronide) within 72 hours after the first dose was given.</td></tr><tr><th>Half life</th><td>1.9 &#177;0.7 hours.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral LD<sub>50</sub> in rats is 521 mg/kg. One case has been recorded in which a 6-year-old girl died after two doses of Metopirone, 2 g. Symptoms of overdose include cardiac arrhythmias, hypotension, dehydration, anxiety, confusion, weakness, impairment of consciousness, nausea, vomiting, epigastric pain, and diarrhea.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9872</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.985</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.7108</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.6099</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6787</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9579</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8039</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8174</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6282</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.9107</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9484</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9026</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.7959</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.5382</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.907
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8616
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9518
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.6066 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9786
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8202
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Novartis pharmaceuticals corp</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.novartis.com">Novartis AG</a></li>
+<li><a href="http://www.rpscherer.de">R.P. Scherer GmbH and Co. KG</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00434">Cyproheptadine</a></td><td>This combination renders test invalid</td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>The combination renders the test invalid</td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>The combination renders the test invalid</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

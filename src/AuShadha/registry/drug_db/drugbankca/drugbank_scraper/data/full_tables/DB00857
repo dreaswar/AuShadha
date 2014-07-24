@@ -1,0 +1,256 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Terbinafine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00857</strong>&#160; (APRD00508)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Terbinafine hydrochloride (Lamisil) is a synthetic allylamine antifungal. It is highly lipophilic in nature and tends to accumulate in skin, nails, and fatty tissues. Like other allylamines, terbinafine inhibits ergosterol synthesis by inhibiting the fungal squalene monooxygenase (squalene 2,3-epoxidase), an enzyme that is part of the fungal cell wall synthesis pathway.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00857/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00857/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00857.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00857.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00857.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00857.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00857.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00857">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Terbinafine Hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000470/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000470/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: BWMISRWJRUSYEX-SZKNIZGXSA-N</li>
+              <li>Monoisotopic Mass: 327.175377544</li>
+              <li>Average Mass: 327.891</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000470">DBSALT000470</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Lamasil</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Lamisil</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Terbinex</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antifungal-agents">Antifungal Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>91161-71-6</td></tr><tr><th>Weight</th><td>Average: 291.4299<br>Monoisotopic: 291.198699805</td></tr><tr><th>Chemical Formula</th><td>C<sub>21</sub>H<sub>25</sub>N</td></tr><tr><th>InChI Key</th><td>DOMXUEMWDBAQBQ-WEVVVXLNSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C21H25N/c1-21(2,3)15-8-5-9-16-22(4)17-19-13-10-12-18-11-6-7-14-20(18)19/h5-7,9-14H,16-17H2,1-4H3/b9-5+</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">[(2E)-6,6-dimethylhept-2-en-4-yn-1-yl](methyl)(naphthalen-1-ylmethyl)amine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN(C\C=C\C#CC(C)(C)C)CC1=CC=CC2=CC=CC=C12</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Acenes and Derivatives</td></tr><tr><th>Subclass</th><td>Naphthalenes</td></tr><tr><th>Direct parent</th><td>Naphthalenes</td></tr><tr><th>Alternative parents</th><td>Benzene and Substituted Derivatives; Tertiary Amines; Polyamines</td></tr><tr><th>Substituents</th><td>benzene; tertiary amine; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the naphthalenes. These are compounds containing a naphthalene moiety, which consists of two fused benzene rings.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of dermatophyte infections of the toenail or fingernail caused by susceptible fungi. Also for the treatment of tinea capitis (scalp ringworm) and tinea corporis (body ringworm) or tinea cruris (jock itch).</td></tr><tr><th>Pharmacodynamics</th><td>Terbinafine is an allylamine antifungal agent and acts by inhibiting squalene epoxidase, thus blocking the biosynthesis of ergosterol, an essential component of fungal cell membranes. <i>In vitro</i>, mammalian squalene monooxygenase (squalene 2,3-epoxidase) is only inhibited at higher (4000 fold) concentrations than is needed for inhibition of the dermatophyte enzyme. Depending on the concentration of the drug and the fungal species test <i>in vitro</i>, Terbinafine may be fungicidal. However, the clinical significance of <i>in vitro</i> data is unknown.</td></tr><tr><th>Mechanism of action</th><td>Terbinafine is hypothesized to act by inhibiting squalene monooxygenase, thus blocking the biosynthesis of ergosterol, an essential component of fungal cell membranes. This inhibition also results in an accumulation of squalene, which is a substrate catalyzed to 2,3-oxydo squalene by squalene monooxygenase. The resultant high concentration of squalene and decreased amount of ergosterol are both thought to contribute to terbinafine's antifungal activity.</td></tr><tr><th>Absorption</th><td>Readily absorbed from gastrointestinal tract.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>&gt;99%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Terbinafine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li>
+<li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li>
+<li><a href="/biodb/bio_entities/BE0003536" target="_blank">Cytochrome P450 2C19</a></li></ul></td><td><a href="/metabolites/DBMET00068">Hydroxyterbinafine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/68">Details</a></td></tr><tr><td>Terbinafine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li>
+<li><a href="/biodb/bio_entities/BE0002887" target="_blank">Cytochrome P450 2C8</a></li>
+<li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li></ul></td><td><a href="/metabolites/DBMET00069">N-Desmethylterbinafine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/69">Details</a></td></tr><tr><td>Terbinafine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET00070">1-Naphtaldehyde</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/70">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00068">Hydroxyterbinafine</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01178">Carboxyterbinafine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1321">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00068">Hydroxyterbinafine</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01179">N-Desmethylhydroxyterbinafine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1322">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00069">N-Desmethylterbinafine</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01179">N-Desmethylhydroxyterbinafine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1323">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00070">1-Naphtaldehyde</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET01180">1-Naphthoic acid</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1324">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00070">1-Naphtaldehyde</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002638" target="_blank">Cytochrome P450 3A4</a></li></ul></td><td><a href="/metabolites/DBMET01181">1-Nahthalenethanol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1325">Details</a></td></tr><tr><td>Terbinafine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li>
+<li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li></ul></td><td><a href="/metabolites/DBMET01203">Terbinafine dihydrodiol derivative (1)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1347">Details</a></td></tr><tr><td>Terbinafine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002433" target="_blank">Cytochrome P450 1A2</a></li>
+<li><a href="/biodb/bio_entities/BE0002793" target="_blank">Cytochrome P450 2C9</a></li></ul></td><td><a href="/metabolites/DBMET01204">Terbinafine dihydrodiol derivative (2)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1348">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00069">N-Desmethylterbinafine</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01205">N-Desmethylterbinafine dihydrodiol derivative (1)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1349">Details</a></td></tr><tr><td><a href="/metabolites/DBMET00069">N-Desmethylterbinafine</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01206">N-Desmethylterbinafine dihydrodiol derivative (2)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1350">Details</a></td></tr><tr><td>Terbinafine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01205">N-Desmethylterbinafine dihydrodiol derivative (1)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1351">Details</a></td></tr><tr><td>Terbinafine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01206">N-Desmethylterbinafine dihydrodiol derivative (2)</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1352">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>Prior to excretion, terbinafine is extensively metabolized.</td></tr><tr><th>Half life</th><td>36 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Fungi</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9876</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9381</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.7436</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6026</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7495</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8205</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.581</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7806</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6461</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8951</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6772</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6194</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6314</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.5884</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.8736
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Carcinogens  
+        </td>
+        <td>
+            0.5109
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.8932 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8785
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.5566
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Novartis consumer health inc</li>
+<li>Novartis pharmaceuticals corp</li>
+<li>Taro pharmaceuticals usa inc</li>
+<li>Apotex corp</li>
+<li>Aurobindo pharma ltd</li>
+<li>Breckenridge pharmaceutical inc</li>
+<li>Dr reddys laboratories inc</li>
+<li>Gedeon richter usa inc</li>
+<li>Genpharm inc</li>
+<li>Glenmark generics ltd</li>
+<li>Harris pharmaceutical inc</li>
+<li>Invagen pharmaceuticals inc</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Orchid healthcare</li>
+<li>Roxane laboratories inc</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Watson laboratories inc</li>
+<li>Wockhardt ltd</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li><a href="http://www.apotex.com">Apotex Inc.</a></li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.aurobindo.com">Aurobindo Pharma Ltd.</a></li>
+<li><a href="http://www.blurx.us">Blu Pharmaceuticals LLC</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.camberpharma.com">Camber Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.cipla.com">Cipla Ltd.</a></li>
+<li><a href="http://www.cvs.com">CVS Pharmacy</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li><a href="http://www.drreddys.com">Doctor Reddys Laboratories Ltd.</a></li>
+<li><a href="http://www.glenmark-generics.com">Glenmark Generics Ltd.</a></li>
+<li><a href="http://harrispharmaceutical.com">Harris Pharmaceutical Inc.</a></li>
+<li><a href="http://www.invagen.com">InvaGen Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.jsjpharm.com">JSJ Pharmaceuticals Inc.</a></li>
+<li>Kaiser Foundation Hospital</li>
+<li><a href="http://www.medisca.com">Medisca Inc.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li>Northstar Rx LLC</li>
+<li><a href="http://www.novartis.com">Novartis AG</a></li>
+<li><a href="http://www.orchidpharma.com">Orchid Healthcare</a></li>
+<li><a href="http://www.patheon.com">Patheon Inc.</a></li>
+<li>Pharmacy Service Center</li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.roxane.com">Roxane Labs</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li><a href="http://www.sunmarkbrand.com">Sunmark</a></li>
+<li><a href="http://www.target.com">Target Corp.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li>The Jay Group Inc.</li>
+<li><a href="http://www.wockhardtin.com">Wockhardt Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Cream</td><td>Topical</td><td></td></tr><tr><td>Spray</td><td>Topical</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="prices"><thead><tr><th>Unit description</th><th>Cost</th><th>Unit</th></tr></thead><tbody><tr><td>LamISIL 14 187.5 mg Packets Packet</td><td>202.16USD</td><td>packet</td></tr><tr><td>LamISIL 1% Solution 30ml Bottle</td><td>88.18USD</td><td>bottle</td></tr><tr><td>Terbinafine hcl powder</td><td>42.84USD</td><td>g</td></tr><tr><td>Terbinafine HCl 1% Cream 24 gm Tube</td><td>17.99USD</td><td>tube</td></tr><tr><td>Lamisil 250 mg tablet</td><td>14.22USD</td><td>tablet</td></tr><tr><td>Terbinafine hcl 250 mg tablet</td><td>13.19USD</td><td>tablet</td></tr><tr><td>Lamisil 250 mg Tablet</td><td>4.79USD</td><td>tablet</td></tr><tr><td>Apo-Terbinafine 250 mg Tablet</td><td>2.64USD</td><td>tablet</td></tr><tr><td>Co Terbinafine 250 mg Tablet</td><td>2.64USD</td><td>tablet</td></tr><tr><td>Mylan-Terbinafine 250 mg Tablet</td><td>2.64USD</td><td>tablet</td></tr><tr><td>Novo-Terbinafine 250 mg Tablet</td><td>2.64USD</td><td>tablet</td></tr><tr><td>Pms-Terbinafine 250 mg Tablet</td><td>2.64USD</td><td>tablet</td></tr><tr><td>Sandoz Terbinafine 250 mg Tablet</td><td>2.64USD</td><td>tablet</td></tr><tr><td>Lamisil 1% cream</td><td>2.13USD</td><td>g</td></tr><tr><td>Lamisil 1 % Solution</td><td>0.58USD</td><td>g</td></tr><tr><td>Lamisil 1 % Cream</td><td>0.57USD</td><td>g</td></tr><tr><td>Sm athlete's 1% foot cream</td><td>0.53USD</td><td>g</td></tr><tr><td>Lamisil at 1% cream</td><td>0.51USD</td><td>g</td></tr><tr><td>CVS Pharmacy jock itch 1% cream</td><td>0.49USD</td><td>g</td></tr><tr><td>CVS Pharmacy athlete's foot 1% cream</td><td>0.4USD</td><td>g</td></tr><tr><td>Athlete's 1% foot cream</td><td>0.27USD</td><td>g</td></tr><tr><td>Lamisil af defense crm to powd</td><td>0.2USD</td><td>g</td></tr><tr><td>Lamisil antifungal 1% spray</td><td>0.07USD</td><td>ml</td></tr><tr><td>Lamisil af defense 1% powder</td><td>0.05USD</td><td>g</td></tr></tbody></table><div class="alert alert-warning clearfix">DrugBank does not sell nor buy drugs. Pricing information is supplied for informational purposes only.</div></td></tr><tr><th>Patents</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="patents"><thead><tr><th>Country</th><th>Patent Number</th><th>Approved</th><th>Expires (estimated)</th></tr></thead><tbody><tr><td>United States</td><td>5681849</td><td>1995-04-28</td><td>2015-04-28</td></tr><tr><td>United States</td><td>5856355</td><td>1995-05-18</td><td>2012-05-18</td></tr><tr><td>Canada</td><td>2062341</td><td>2004-05-11</td><td>2012-03-05</td></tr><tr><td>Canada</td><td>2068957</td><td>2002-12-17</td><td>2012-05-19</td></tr></tbody></table></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>195-198 &#176;C</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>water solubility</td><td>Slightly soluble</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>logP</td><td>5.9</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>7.38e-04 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>5.51</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>5.53</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-5.6</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest basic)</td><td>8.94</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>3.24</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>98.08</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>35.83</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>Graziano Castaldi, &#8220;Process for the preparation of terbinafine.&#8221; U.S. Patent US20020123651, issued September 05, 2002.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=20020123651&amp;tbm=pts" target="_blank">US20020123651 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="citations"><ol>
+	<li>Darkes MJ, Scott LJ, Goa KL: Terbinafine: a review of its use in onychomycosis in adults. Am J Clin Dermatol. 2003;4(1):39-65. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12477372">Pubmed</a></li>
+	<li>Klobucnikova V, Kohut P, Leber R, Fuchsbichler S, Schweighofer N, Turnowsky F, Hapala I: Terbinafine resistance in a pleiotropic yeast mutant is caused by a single point mutation in the ERG1 gene. Biochem Biophys Res Commun. 2003 Sep 26;309(3):666-71. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12963042">Pubmed</a></li>
+	<li>Ryder NS: Terbinafine: mode of action and properties of the squalene epoxidase inhibition. Br J Dermatol. 1992 Feb;126 Suppl 39:2-7. <a href="http://www.ncbi.nlm.nih.gov/pubmed/1543672">Pubmed</a></li>
+	<li>Birnbaum JE: Pharmacology of the allylamines. J Am Acad Dermatol. 1990 Oct;23(4 Pt 2):782-5. <a href="http://www.ncbi.nlm.nih.gov/pubmed/2229523">Pubmed</a></li>
+	<li>McClellan KJ, Wiseman LR, Markham A: Terbinafine. An update of its use in superficial mycoses. Drugs. 1999 Jul;58(1):179-202. <a href="http://www.ncbi.nlm.nih.gov/pubmed/10439936">Pubmed</a></li>
+	<li>Krishnan-Natesan S: Terbinafine: a pharmacological and clinical review. Expert Opin Pharmacother. 2009 Nov;10(16):2723-33. <a href="http://www.ncbi.nlm.nih.gov/pubmed/19874252">Pubmed</a></li>
+	<li>Gianni C: Update on antifungal therapy with Terbinafine. G Ital Dermatol Venereol. 2010 Jun;145(3):415-23. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20461049">Pubmed</a></li>
+	<li>Korting HC, Kiencke P, Nelles S, Rychlik R: Comparable efficacy and safety of various topical formulations of terbinafine in tinea pedis irrespective of the treatment regimen: results of a meta-analysis. Am J Clin Dermatol. 2007;8(6):357-64. <a href="http://www.ncbi.nlm.nih.gov/pubmed/18039018">Pubmed</a></li>
+</ol></span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D02375" target="_blank">D02375 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C08079" target="_blank">C08079 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000753" target="_blank">DAP000753 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA451614" target="_blank">PA451614 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=2240346" target="_blank">2240346 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic/terbin.htm" target="_blank">http://www.rxlist.com/cgi/generic/terbin.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cdi/terbinafine.html" target="_blank">http://www.drugs.com/cdi/terbinafine.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Terbinafine" target="_blank">Terbinafine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>D01AE15<ul class="atc-drug-tree"><li><a href="/atc/D#D">D &#8212; DERMATOLOGICALS</a></li><li><a href="/atc/D01#D01">D01 &#8212; ANTIFUNGALS FOR DERMATOLOGICAL USE</a></li><li><a href="/atc/D01A#D01A">D01A &#8212; ANTIFUNGALS FOR TOPICAL USE</a></li><li><a href="/atc/D01AE#D01AE">D01AE &#8212; Other antifungals for topical use</a></li></ul>D01BA02<ul class="atc-drug-tree"><li><a href="/atc/D#D">D &#8212; DERMATOLOGICALS</a></li><li><a href="/atc/D01#D01">D01 &#8212; ANTIFUNGALS FOR DERMATOLOGICAL USE</a></li><li><a href="/atc/D01B#D01B">D01B &#8212; ANTIFUNGALS FOR SYSTEMIC USE</a></li><li><a href="/atc/D01BA#D01BA">D01BA &#8212; Antifungals for systemic use</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>84:04.08.04</li>
+<li>08:14.04</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00857.pdf?1265922796">show</a>(137 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00857.pdf?1265922736">show</a>(73.2 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01223">Aminophylline</a></td><td>Terbinafine increases the effect and toxicity of theophylline</td></tr><tr><td><a href="/drugs/DB00321">Amitriptyline</a></td><td>Terbinafine may reduce the metabolism and clearance of Amitryptyline. Consider alternate therapy or monitor for therapeutic/adverse effects of Amytriptyline if Terbinafine is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00543">Amoxapine</a></td><td>Terbinafine may reduce the metabolism and clearance of Amoxapine. Consider alternate therapy or monitor for therapeutic/adverse effects of Amoxapine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01238">Aripiprazole</a></td><td>Terbinafine may reduce the metabolism and clearance of Aripiprazole. Consider alternate therapy or monitor for therapeutic/adverse effects of Aripiprazole if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00289">Atomoxetine</a></td><td>Terbinafine, a CYP2D6 inhibitor, may reduce the metabolism and clearance of Atomoxetine. Consider alternate therapy or monitor for therapeutic/adverse effects of Atomoxetine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00201">Caffeine</a></td><td>Terbinafine may increase the plasma concentration of Caffeine.</td></tr><tr><td><a href="/drugs/DB01197">Captopril</a></td><td>Terbinafine may reduce the metabolism and clearance of Captopril. Consider alternate therapy or monitor for therapeutic/adverse effects of Captopril if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01136">Carvedilol</a></td><td>Terbinafine may reduce the metabolism and clearance of Carvedilol. Consider alternate therapy or monitor for therapeutic/adverse effects of Carvedilol if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00608">Chloroquine</a></td><td>Terbinafine may reduce the metabolism and clearance of Chloroquine. Consider alternate therapy or monitor for therapeutic/adverse effects of Chloroquine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00477">Chlorpromazine</a></td><td>Terbinafine may reduce the metabolism and clearance of Chlorpromazine. Consider alternate therapy or monitor for therapeutic/adverse effects of Chlorpromazine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01242">Clomipramine</a></td><td>Terbinafine may reduce the metabolism and clearance of Clomipramine. Consider alternate therapy or monitor for therapeutic/adverse effects of Clomipramine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00318">Codeine</a></td><td>Terbinafine may decrease the efficacy of Codeine by inhibiting active metabolite production. Consider an alternate analgesic or monitor for effectiveness of Codeine. </td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Terbinafine may decrease the plasma concentration and therapeutic effect of cyclosporine.</td></tr><tr><td><a href="/drugs/DB01151">Desipramine</a></td><td>Terbinafine may increase the effect and toxicity of the tricyclic antidepressant, desipramine, by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of desipramine if terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00514">Dextromethorphan</a></td><td>Terbinafine may reduce the metabolism and clearance of Dextromethorphan. Consider alternate therapy or monitor for therapeutic/adverse effects of Dextromethorphan if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01142">Doxepin</a></td><td>Terbinafine may reduce the metabolism and clearance of Doxepin. Consider alternate therapy or monitor for therapeutic/adverse effects of Amytriptyline if Doxepin is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00997">Doxorubicin</a></td><td>Terbinafine may reduce the metabolism and clearance of Doxorubicin. Consider alternate therapy or monitor for therapeutic/adverse effects of Doxorubicin if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB05331">doxorubicin TransDrug</a></td><td>Terbinafine may reduce the metabolism and clearance of Doxorubicin. Consider alternate therapy or monitor for therapeutic/adverse effects of Doxorubicin if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00476">Duloxetine</a></td><td>Terbinafine may reduce the metabolism and clearance of Duloxetine. Consider alternate therapy or monitor for therapeutic/adverse effects of Duloxetine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00651">Dyphylline</a></td><td>Terbinafine increases the effect and toxicity of theophylline</td></tr><tr><td><a href="/drugs/DB01195">Flecainide</a></td><td>Terbinafine may reduce the metabolism and clearance of Flecainide. Consider alternate therapy or monitor for therapeutic/adverse effects of Flecainide if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00472">Fluoxetine</a></td><td>Terbinafine may reduce the metabolism and clearance of Fluoxetine. Consider alternate therapy or monitor for therapeutic/adverse effects of Fluoxetine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00623">Fluphenazine</a></td><td>Terbinafine may reduce the metabolism and clearance of Fluphenazine. Consider alternate therapy or monitor for therapeutic/adverse effects of Fluphenazine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00176">Fluvoxamine</a></td><td>Terbinafine may reduce the metabolism and clearance of Fluvoxamine. Consider alternate therapy or monitor for therapeutic/adverse effects of Fluvoxamine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00502">Haloperidol</a></td><td>Terbinafine may reduce the metabolism and clearance of Haloperidol. Consider alternate therapy or monitor for therapeutic/adverse effects of Haloperidol if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00458">Imipramine</a></td><td>Terbinafine may increase the effect and toxicity of the tricyclic antidepressant, imipramine, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of imipramine if terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00281">Lidocaine</a></td><td>Terbinafine may reduce the metabolism and clearance of Lidocaine. Consider alternate therapy or monitor for therapeutic/adverse effects of Lidocaine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01206">Lomustine</a></td><td>Terbinafine may reduce the metabolism and clearance of Lomustine. Consider alternate therapy or monitor for therapeutic/adverse effects of Lomustine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00934">Maprotiline</a></td><td>Terbinafine may reduce the metabolism and clearance of Maprotiline. Consider alternate therapy or monitor for therapeutic/adverse effects of Maprotiline if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01577">Methamphetamine</a></td><td>Terbinafine may reduce the metabolism and clearance of Methamphetamine. Consider alternate therapy or monitor for therapeutic/adverse effects of Methamphetamine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00264">Metoprolol</a></td><td>Terbinafine may reduce the metabolism and clearance of Metoprolol. Consider alternate therapy or monitor for therapeutic/adverse effects of Metoprolol if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00379">Mexiletine</a></td><td>Terbinafine may reduce the metabolism and clearance of Mexiletine. Consider alternate therapy or monitor for therapeutic/adverse effects of Mexiletine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00370">Mirtazapine</a></td><td>Terbinafine may reduce the metabolism and clearance of Mirtazapine. Consider alternate therapy or monitor for therapeutic/adverse effects of Mirtazapine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01171">Moclobemide</a></td><td>Terbinafine may reduce the metabolism and clearance of Moclobemide. Consider alternate therapy or monitor for therapeutic/adverse effects of Moclobemide if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01149">Nefazodone</a></td><td>Terbinafine may reduce the metabolism and clearance of Nefazodone. Consider alternate therapy or monitor for therapeutic/adverse effects of Nefazodone if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00540">Nortriptyline</a></td><td>Terbinafine may increase the effect and toxicity of the tricyclic antidepressant, nortriptyline, by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of nortriptyline if terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01303">Oxtriphylline</a></td><td>Terbinafine increases the effect and toxicity of theophylline</td></tr><tr><td><a href="/drugs/DB00715">Paroxetine</a></td><td>Terbinafine may reduce the metabolism and clearance of Paroxetine. Consider alternate therapy or monitor for therapeutic/adverse effects of Paroxetine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00850">Perphenazine</a></td><td>Terbinafine may reduce the metabolism and clearance of Perphenazine. Consider alternate therapy or monitor for therapeutic/adverse effects of Perphenazine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01621">Pipotiazine</a></td><td>Terbinafine may reduce the metabolism and clearance of Pipotiazine. Consider alternate therapy or monitor for therapeutic/adverse effects of Pipotiazine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01035">Procainamide</a></td><td>Terbinafine may reduce the metabolism and clearance of Procainamide. Consider alternate therapy or monitor for therapeutic/adverse effects of Procainamide if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01069">Promethazine</a></td><td>Terbinafine may reduce the metabolism and clearance of Promethazine. Consider alternate therapy or monitor for therapeutic/adverse effects of Promethazine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01182">Propafenone</a></td><td>Terbinafine may reduce the metabolism and clearance of Propafenone. Consider alternate therapy or monitor for therapeutic/adverse effects of Propafenone if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00571">Propranolol</a></td><td>Terbinafine may reduce the metabolism and clearance of Propranolol. Consider alternate therapy or monitor for therapeutic/adverse effects of Propranolol if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00344">Protriptyline</a></td><td>Terbinafine may reduce the metabolism and clearance of Protriptyline. Consider alternate therapy or monitor for therapeutic/adverse effects of Protriptyline if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00615">Rifabutin</a></td><td>Rifabutin may increase the metabolism and clearance of Terbinafine. To avoid Terbinafine treatment failure, co-administration should be avoided.</td></tr><tr><td><a href="/drugs/DB01045">Rifampicin</a></td><td>Rifampin may increase the metabolism and clearance of Terbinafine. Co-administration may result in Terbinafine treatment failure.</td></tr><tr><td><a href="/drugs/DB01201">Rifapentine</a></td><td>Rifapentine may increase the metabolism and clearance of Terbinafine. To avoid Terbinafine treatment failure, co-administration should be avoided.</td></tr><tr><td><a href="/drugs/DB00734">Risperidone</a></td><td>Terbinafine may reduce the metabolism and clearance of Risperidone. Consider alternate therapy or monitor for therapeutic/adverse effects of Risperidone if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01104">Sertraline</a></td><td>Terbinafine may reduce the metabolism and clearance of Sertraline. Consider alternate therapy or monitor for therapeutic/adverse effects of Sertraline if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Terbinafine may decrease the therapeutic effect of Tamoxifen by decreasing the production of active metabolites. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Terbinafine, a CYP2D6 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP2D6 substrate. Consider alternate therapy or monitor for changes in therapeutic/adverse effects of Tamsulosin if Terbinafine is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB04844">Tetrabenazine</a></td><td>Terbinafine may reduce the metabolism and clearance of Tetrabenazine. Consider alternate therapy or monitor for therapeutic/adverse effects of Tetrabenazine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00277">Theophylline</a></td><td>Terbinafine increases the effect and toxicity of theophylline</td></tr><tr><td><a href="/drugs/DB00679">Thioridazine</a></td><td>Terbinafine may increase serum concentrations of Thioridazine. Concomitant therapy is contraindicated.</td></tr><tr><td><a href="/drugs/DB00373">Timolol</a></td><td>Terbinafine may reduce the metabolism and clearance of Timolol. Consider alternate therapy or monitor for therapeutic/adverse effects of Amytriptyline if Timolol is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB01036">Tolterodine</a></td><td>Terbinafine may reduce the metabolism and clearance of Tolterodine. Consider alternate therapy or monitor for therapeutic/adverse effects of Tolterodine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Terbinafine may decrease the effect of Tramadol by decreasing active metabolite production. </td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>Terbinafine may decrease the metabolism and clearance of Trimipramine. Consider alternate therapy or monitor for changes in Trimipramine efficacy and toxicity if Terbinafine is initiated, discontinued or dose changed. Alteration in Trimipramine dose may be required.</td></tr><tr><td><a href="/drugs/DB00285">Venlafaxine</a></td><td>Terbinafine, a CYP2D6 inhibitor, may decrease the metabolism and clearance of Venlafaxine, a CYP2D6 substrate. Monitor for changes in therapeutic/adverse effects of Venlafaxine if Terbinafine is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB01624">Zuclopenthixol</a></td><td>Terbinafine, a strong CYP2D6 inhibitor, may increase the serum concentration of zuclopenthixol by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zuclopenthixol if terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB08919">Zuclopenthixol acetate</a></td><td>Terbinafine, a strong CYP2D6 inhibitor, may increase the serum concentration of zuclopenthixol by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zuclopenthixol if terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB08920">Zuclopenthixol decanoate</a></td><td>Terbinafine, a strong CYP2D6 inhibitor, may increase the serum concentration of zuclopenthixol by decreasing its metabolism. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of zuclopenthixol if terbinafine is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

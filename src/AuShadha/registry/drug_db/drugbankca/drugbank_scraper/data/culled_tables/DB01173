@@ -1,0 +1,257 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Orphenadrine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01173</strong>&#160; (APRD00097)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A muscarinic antagonist used to treat drug-induced parkinsonism and to relieve pain from muscle spasm. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01173/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01173/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01173.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01173.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01173.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01173.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01173.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01173">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>2-(phenyl-o-tolylmethoxy)ethyldimethylamine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>2-methyldiphenhydramine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>o-methyldiphenhydramine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>o-monomethyldiphenhydramine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>&#946;-dimethylaminoethyl 2-methylbenzhydryl ether</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Orphenadrine citrate</strong>
+          <div class="cas">4682-36-4</div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000400/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000400/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: MMMNTDFSPSQXJP-UHFFFAOYNA-N</li>
+              <li>Monoisotopic Mass: 461.204966973</li>
+              <li>Average Mass: 461.5048</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000400">DBSALT000400</a></td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Orphenadrine hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT001021/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT001021/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT001021">DBSALT001021</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Antiflex</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Banflex</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Biorphen</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Disipal</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Flexoject</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Mio-Rel</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Myolin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Norflex</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>OrfenAce</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Orfro</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Dolan</td><td>Orphenadrine citrate + Acetaminophen</td></tr><tr><td>Norgesic</td><td>Orphenadrine citrate + Acetaminophen</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antiparkinson-agents">Antiparkinson Agents</a></li>
+<li><a href="/mesh/muscarinic-antagonists">Muscarinic Antagonists</a></li>
+<li><a href="/mesh/parasympatholytics">Parasympatholytics</a></li>
+<li><a href="/mesh/muscle-relaxants-central">Muscle Relaxants, Central</a></li>
+<li><a href="/mesh/antidyskinetics">Antidyskinetics</a></li>
+<li><a href="/mesh/muscle-relaxant-skeletal">Muscle relaxant, Skeletal</a></li></ul></td></tr><tr><th>CAS number</th><td>83-98-7</td></tr><tr><th>Weight</th><td>Average: 269.3813<br>Monoisotopic: 269.177964363</td></tr><tr><th>Chemical Formula</th><td>C<sub>18</sub>H<sub>23</sub>NO</td></tr><tr><th>InChI Key</th><td>QVYRGXJJSLMXQH-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C18H23NO/c1-15-9-7-8-12-17(15)18(20-14-13-19(2)3)16-10-5-4-6-11-16/h4-12,18H,13-14H2,1-3H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">dimethyl({2-[(2-methylphenyl)(phenyl)methoxy]ethyl})amine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN(C)CCOC(C1=CC=CC=C1)C1=CC=CC=C1C</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td>Diphenylmethanes</td></tr><tr><th>Direct parent</th><td>Diphenylmethanes</td></tr><tr><th>Alternative parents</th><td>Benzylethers; Toluenes; Tertiary Amines; Dialkyl Ethers; Polyamines</td></tr><tr><th>Substituents</th><td>benzylether; toluene; tertiary amine; polyamine; ether; dialkyl ether; organonitrogen compound; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the diphenylmethanes. These are compounds containing a diphenylmethane moiety, which consists of a methane wherein two hydrogen atoms are replaced by two phenyl groups.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Indicated for the treatment of Parkinson's disease.</td></tr><tr><th>Pharmacodynamics</th><td>Orphenadrine is indicated as an adjunct to rest, physical therapy, and other measures for the relief of discomfort associated with acute painful musculoskeletal conditions. Orphenadrine is an anticholinergic with a predominantly central effect and only a weak peripheral effect. In addition, it has mild antihistaminic and local anaesthetic properties. Parkinson's syndrome is the consequence of a disturbed balance between cholinergic and dopaminergic neurotransmission in the basal ganglia caused by a decrease in dopamine. Orphenadrine restores the physiological equilibrium and has a favourable effect on the rigidity and tremor of Parkinson's disease and Parkinsonian syndromes. The effect is somewhat less on bradykinesia.</td></tr><tr><th>Mechanism of action</th><td>Orphenadrine binds and inhibits both histamine H1 receptors and NMDA receptors. It restores the motor disturbances induced by neuroleptics, in particular the hyperkinesia. The dopamine deficiency in the striatum increases the stimulating effects of the cholinergic system. This stimulation is counteracted by the anticholinergic effect of orphenadrine. It may have a relaxing effect on skeletal muscle spasms and it has a mood elevating effect.</td></tr><tr><th>Absorption</th><td>Orphenadrine is almost completely absorbed in the gastrointestinal tract.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>95%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Biotransformation occurs mainly in the liver. Pharmacologically active metabolites are N-demethyl orphenadrine and N,N-didemethyl orphenadrine.</p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Orphenadrine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00929">N-demethyl orphenadrine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/950">Details</a></td></tr><tr><td>Orphenadrine</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET00953">N,N-didemethyl orphenadrine</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/974">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>13-20 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral, mouse LD<sub>50</sub> = 100 mg/kg; oral, rat LD<sub>50</sub> = 255 mg/kg</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9881</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9134</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.8654</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.6196</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5825</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6378</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7359</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7658</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.8918</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6958</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6363</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9191</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8949</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9363</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.5979</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9133
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.6341
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9422
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.8405 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.5224
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.7052
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Graceway pharmaceuticals llc</li>
+<li>Akorn inc</li>
+<li>Bedford laboratories</li>
+<li>Watson laboratories inc</li>
+<li>Ascot hosp pharmaceuticals inc div travenol laboratories inc</li>
+<li>Gavis pharmaceuticals llc</li>
+<li>Impax pharmaceuticals</li>
+<li>Kiel laboratories inc</li>
+<li>Sandoz inc</li>
+<li>3m pharmaceuticals inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.abraxisbio.com">Abraxis BioScience Inc.</a></li>
+<li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li><a href="http://www.aidarex.com">Aidarex Pharmacuticals LLC</a></li>
+<li>Alba Pharmacal</li>
+<li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li>Avkare Incorporated</li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://bryantranchprepack.com">Bryant Ranch Prepack</a></li>
+<li><a href="http://www.clintpharmaceuticals.com">Clint Pharmaceutical Inc.</a></li>
+<li><a href="http://www.corepharma.com">Corepharma LLC</a></li>
+<li>DispenseXpress Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.dhscorp.com">Diversified Healthcare Services Inc.</a></li>
+<li>Eon Labs</li>
+<li><a href="http://www.gallipot.com">Gallipot</a></li>
+<li><a href="http://www.gavispharma.com">Gavis Pharmaceuticals LLC</a></li>
+<li><a href="http://www.globalphar.com">Global Pharmaceuticals</a></li>
+<li><a href="http://www.gracewaypharma.com">Graceway Pharmaceuticals</a></li>
+<li><a href="http://hjharkinscompanyinc.com">H.J. Harkins Co. Inc.</a></li>
+<li><a href="http://www.impaxlabs.com">Impax Laboratories Inc.</a></li>
+<li><a href="http://www.innoviantpharmacy.com">Innoviant Pharmacy Inc.</a></li>
+<li><a href="http://www.intetlab.com">International Ethical Labs Inc.</a></li>
+<li><a href="http://www.kielpharm.com">Kiel Laboratories Inc.</a></li>
+<li>Lake Erie Medical and Surgical Supply</li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.palmettopharm.com">Palmetto Pharmaceuticals Inc.</a></li>
+<li>PCA LLC</li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pharmapacllc.com">Pharma Pac LLC</a></li>
+<li>Pharmaceutical Utilization Management Program VA Inc.</li>
+<li><a href="http://www.pharmedixrx.com">Pharmedix</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.preferredpharmaceuticals.com">Preferred Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.prepaksys.com">Prepak Systems Inc.</a></li>
+<li><a href="http://www.rebelrx.com">Rebel Distributors Corp.</a></li>
+<li>Redpharm Drug</li>
+<li>Resource Optimization and Innovation LLC</li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li><a href="http://www.southwoodhealthcare.com">Southwood Pharmaceuticals</a></li>
+<li>St Mary's Medical Park Pharmacy</li>
+<li><a href="http://statrxusa.exporterus.com">Stat Rx Usa</a></li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Liquid</td><td>Intravenous</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr><tr><td>Tablet, extended release</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01248">Docetaxel</a></td><td>Orphenadrine may increase the serum levels and toxicity of docetaxel.</td></tr><tr><td><a href="/drugs/DB00843">Donepezil</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00674">Galantamine</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00502">Haloperidol</a></td><td>The anticholinergic increases the risk of psychosis and tardive dyskinesia</td></tr><tr><td><a href="/drugs/DB00989">Rivastigmine</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB00382">Tacrine</a></td><td>The therapeutic effects of the central acetylcholinesterase inhibitor, Tacrine, and/or the anticholinergic, Orphenadrine, may be reduced due to antagonism. The interaction may be beneficial when the anticholinergic action is a side effect. Monitor for decreased efficacy of both agents.</td></tr><tr><td><a href="/drugs/DB00662">Trimethobenzamide</a></td><td>Trimethobenzamide and Orphenadrine, two anticholinergics, may cause additive anticholinergic effects and enhance their adverse/toxic effects. Monitor for enhanced anticholinergic effects.</td></tr><tr><td><a href="/drugs/DB00427">Triprolidine</a></td><td>Triprolidine and Orphenadrine, two anticholinergics, may cause additive anticholinergic effects and enhance their adverse/toxic effects. Additive CNS depressant effects may also occur. Monitor for enhanced anticholinergic and CNS depressant effects.</td></tr><tr><td><a href="/drugs/DB00209">Trospium</a></td><td>Trospium and Orphenadrine, two anticholinergics, may cause additive anticholinergic effects and enhanced adverse/toxic effects. Monitor for enhanced anticholinergic effects.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take without regard to meals. Avoid alcohol.</li></ul></td></tr></tbody></table>

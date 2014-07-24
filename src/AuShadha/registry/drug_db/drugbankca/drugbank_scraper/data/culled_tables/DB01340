@@ -1,0 +1,163 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Cilazapril</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01340</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>One of the angiotensin-converting enzyme inhibitors (<span class="caps">ACE</span> inhibitors) used for hypertension.  It is a prodrug that is hydrolyzed after absorption to its main metabolite cilazaprilat. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01340/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01340/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01340.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01340.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01340.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01340.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01340.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01340">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Inhibace</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/angiotensin-converting-enzyme-inhibitors">Angiotensin-Converting Enzyme Inhibitors</a></li>
+<li><a href="/mesh/antihypertensive-agents">Antihypertensive Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>92077-78-6</td></tr><tr><th>Weight</th><td>Average: 417.4986<br>Monoisotopic: 417.226371117</td></tr><tr><th>Chemical Formula</th><td>C<sub>22</sub>H<sub>31</sub>N<sub>3</sub>O<sub>5</sub></td></tr><tr><th>InChI Key</th><td>HHHKFGXWKKUNCY-FHWLQOOXSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C22H31N3O5/c1-2-30-22(29)18(13-12-16-8-4-3-5-9-16)23-17-10-6-14-24-15-7-11-19(21(27)28)25(24)20(17)26/h3-5,8-9,17-19,23H,2,6-7,10-15H2,1H3,(H,27,28)/t17-,18-,19-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(1S,9S)-9-{[(2S)-1-ethoxy-1-oxo-4-phenylbutan-2-yl]amino}-10-oxo-octahydro-1H-pyridazino[1,2-a][1,2]diazepine-1-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCOC(=O)[C@H](CCC1=CC=CC=C1)N[C@H]1CCCN2CCC[C@H](N2C1=O)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Alpha Amino Acid Esters</td></tr><tr><th>Alternative parents</th><td>Phenylpropylamines; Fatty Acid Esters; Diazinanes; Pyridazines and Derivatives; Dicarboxylic Acids and Derivatives; Carboxylic Acid Esters; Carboxylic Acid Hydrazides; Enolates; Ethers; Dialkylamines; Polyamines; Carboxylic Acid Amides; Carboxylic Acids; Hydrazines and Derivatives</td></tr><tr><th>Substituents</th><td>phenylpropylamine; fatty acid ester; 1,2-diazinane; dicarboxylic acid derivative; benzene; pyridazine; carboxylic acid ester; carboxamide group; carboxylic acid hydrazide; secondary aliphatic amine; polyamine; secondary amine; enolate; ether; carboxylic acid; hydrazine derivative; organonitrogen compound; amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the alpha amino acid esters. These are ester derivatives of alpha amino acids.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Cilazapril is an ACE inhibtor class drug used in the treatment of hypertension and heart failure.</td></tr><tr><th>Pharmacodynamics</th><td>Cilazapril inhibits the production angiotensin II. By doing so, it decreases sodium and water reabsorption (via aldosterone) and it decreases vasoconstriction. The combined effect of this is a decrease in vascular resistance, and therefore, blood pressure.</td></tr><tr><th>Mechanism of action</th><td>Cilazapril is a pyridazine ACE inhibitor. It competes with angiotensin I for binding at the angiotensin-converting enzyme, blocking the conversion of angiotensin I to angiotensin II. As angiotensin II is a vasoconstrictor and a negative feedback mediator for renin activity, lower angiotensin II levels results in a decrease in blood pressure, an increase in renin activity, and stimulation of baroreceptor reflex mechanisms. Kininase II, an enzyme which degrades the vasodilator bradykinin, is identical to ACE and may also be inhibited.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Cilazapril</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01138">Cilazaprilat</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1260">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Cilazapril Action Pathway</td><td>Drug action</td></tr><tr><td>Cilazapril Metabolism Pathway</td><td>Drug metabolism</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00592?highlight%5Bcompounds%5D%5B%5D=DB01340&amp;highlight%5Bproteins%5D%5B%5D=DB01340">SMP00592</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9157</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9402</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7698</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8727</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7775</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8788</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8318</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7876</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8283</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5396</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.882</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7804</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7503</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.816</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8201</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8376</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6023
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9028
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9942
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.3700 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9311
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6303
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00594">Amiloride</a></td><td>Increased risk of hyperkalemia</td></tr><tr><td><a href="/drugs/DB01395">Drospirenone</a></td><td>Increased risk of hyperkalemia</td></tr><tr><td><a href="/drugs/DB01356">Lithium</a></td><td>The ACE inhibitor increases serum levels of lithium</td></tr><tr><td><a href="/drugs/DB01345">Potassium</a></td><td>Increased risk of hyperkalemia</td></tr><tr><td><a href="/drugs/DB00421">Spironolactone</a></td><td>Increased risk of hyperkalemia</td></tr><tr><td><a href="/drugs/DB00697">Tizanidine</a></td><td>Tizanidine increases the risk of hypotension with the ACE inhibitor</td></tr><tr><td><a href="/drugs/DB00374">Treprostinil</a></td><td>Additive hypotensive effect. Monitor antihypertensive therapy during concomitant use. </td></tr><tr><td><a href="/drugs/DB00384">Triamterene</a></td><td>Increased risk of hyperkalemia</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Food decreases cilazapril absorption with no significant clinical impact.</li>
+<li>Take without regard to meals.</li></ul></td></tr></tbody></table>

@@ -1,0 +1,162 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Cinoxacin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00827</strong>&#160; (APRD00873)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, withdrawn</td></tr><tr><th>Description</th><td><p>Synthetic antimicrobial related to oxolinic acid and nalidixic acid and used in urinary tract infections. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00827/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00827/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00827.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00827.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00827.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00827.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00827.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00827">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Cinoxacin</td><td>German</td><td>INN</td></tr><tr><td>Cinoxacine</td><td>French</td><td>INN</td></tr><tr><td>Cinoxacino</td><td>Spanish</td><td>INN</td></tr><tr><td>Cinoxacinum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Cinobac</td><td>Oclassen</td></tr><tr><td>Mecicon</td><td>Chung Mei</td></tr><tr><td>Tatsulexin</td><td>Tatsumi Kagaku</td></tr><tr><td>Urocinox</td><td>BioHealth Pharmaceuticals</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>28657-80-9</td></tr><tr><th>Weight</th><td>Average: 262.2182<br>Monoisotopic: 262.05897144</td></tr><tr><th>Chemical Formula</th><td>C<sub>12</sub>H<sub>10</sub>N<sub>2</sub>O<sub>5</sub></td></tr><tr><th>InChI Key</th><td>VDUWPHTZYNWKRN-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C12H10N2O5/c1-2-14-7-4-9-8(18-5-19-9)3-6(7)11(15)10(13-14)12(16)17/h3-4H,2,5H2,1H3,(H,16,17)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-ethyl-4-oxo-1H,4H,7H-[1,3]dioxolo[4,5-g]cinnoline-3-carboxylic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCN1N=C(C(O)=O)C(=O)C2=CC3=C(OCO3)C=C12</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Naphthyridines</td></tr><tr><th>Subclass</th><td>Cinnolines</td></tr><tr><th>Direct parent</th><td>Cinnolines</td></tr><tr><th>Alternative parents</th><td>Benzodioxoles; Alkyl Aryl Ethers; Benzene and Substituted Derivatives; Pyridazines and Derivatives; Carboxylic Acids; Enolates; Polyamines; Acetals</td></tr><tr><th>Substituents</th><td>alkyl aryl ether; pyridazine; benzene; acetal; enolate; carboxylic acid derivative; ether; carboxylic acid; polyamine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the cinnolines. These are organic aromatic compounds containing a benzene fused to a pyridazine ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of initial and recurrent urinary tract infections in adults caused by the following susceptible microorganisms: <i>Escherichia coli</i>, <i>Proteus mirabilis</i>, <i>Proteus vulgaris</i>, <i>Klebsiella</i> species (including <i>K. pneumoniae</i>), and <i>Enterobacter</i> species.</td></tr><tr><th>Pharmacodynamics</th><td>Cinoxacin is a synthetic antibacterial agent with <i>in vitro</i> activity against many gram-negative aerobic bacteria, particularly strains of the Enterobacteriaceae family. Cinoxacin inhibits bacterial deoxyribonucleic acid (DNA) synthesis, is bactericidal, and is active over the entire urinary pH range. Cross resistance with nalidixic acid has been demonstrated.</td></tr><tr><th>Mechanism of action</th><td>Evidence exists that cinoxacin binds strongly, but reversibly, to DNA, interfering with synthesis of RNA and, consequently, with protein synthesis. It appears to also inhibit DNA gyrase. This enzyme is necessary for proper replicated DNA separation. By inhibiting this enzyme, DNA replication and cell division is inhibited.</td></tr><tr><th>Absorption</th><td>Rapidly absorbed after oral administration. The presence of food delays absorption but does does not affect total absorption.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>60 to 80%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic, with approximately 30-40% metabolized to inactive metabolites.</p></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>The mean serum half-life is 1.5 hours. Half-life in patients with impaired renal function may exceed 10 hours.</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral, subcutaneous, and intravenous LD<sub>50</sub> in the rat is 3610 mg/kg, 1380 mg/kg, and 860 mg/kg, respectively. Oral, subcutaneous, and intravenous LD<sub>50</sub> in the mouse is 2330 mg/kg, 900 mg/kg, and 850 mg/kg, respectively.Symptoms following an overdose of cinoxacin may include anorexia, nausea, vomiting, epigastric distress, and diarrhea. The severity of the epigastric distress and the diarrhea are dose related. Headache, dizziness, insomnia, photophobia, tinnitus, and a tingling sensation have been reported in some patients.</td></tr><tr><th>Affected organisms</th><td><ul><li>Enteric bacteria and other eubacteria</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9902</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.7001</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.515</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.5087</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8358</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8382</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7213</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8137</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8119</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5503</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8309</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.6</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9106
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8656
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.8917
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.8922 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8812
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9074
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Eli lilly and co</li>
+<li>Teva pharmaceuticals usa inc</li></ul></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>261-262</td><td>White, W.A.; U.S. Patent 3,669,965; June 13, 1972; assigned to Eli Lilly &amp; Company.</td></tr><tr><td>logP</td><td>1.5</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>9.61e-01 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>1.25</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>1.72</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-2.4</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>4.93</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>-4.6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>7</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>88.43</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>73.6</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>24.72</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>White, W.A.; U.S. Patent 3,669,965; June 13, 1972; assigned to Eli Lilly &amp; Company.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=3669965&amp;tbm=pts" target="_blank">US3669965 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D00872" target="_blank">D00872 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C08052" target="_blank">C08052 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=2762" target="_blank">2762 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46507547" target="_blank">46507547 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.2660.html" target="_blank">2660 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=3716" target="_blank">3716 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1208" target="_blank">CHEMBL1208 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000999" target="_blank">DAP000999 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA449007" target="_blank">PA449007 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/cinobac.htm" target="_blank">http://www.rxlist.com/cgi/generic3/cinobac.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/cons/cinoxacin.html" target="_blank">http://www.drugs.com/cons/cinoxacin.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Cinoxacin" target="_blank">Cinoxacin <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>J01MB06<ul class="atc-drug-tree"><li><a href="/atc/J#J">J &#8212; ANTIINFECTIVES FOR SYSTEMIC USE</a></li><li><a href="/atc/J01#J01">J01 &#8212; ANTIBACTERIALS FOR SYSTEMIC USE</a></li><li><a href="/atc/J01M#J01M">J01M &#8212; QUINOLONE ANTIBACTERIALS</a></li><li><a href="/atc/J01MB#J01MB">J01MB &#8212; Other quinolones</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><a href="/system/fda_labels/DB00827.pdf?1265922813">show</a>(37.2 KB)</td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB00827.pdf?1265922750">show</a>(53.7 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

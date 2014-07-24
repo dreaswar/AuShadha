@@ -1,0 +1,191 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Topotecan</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01030</strong>&#160; (APRD00687)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>An antineoplastic agent used to treat ovarian cancer. It works by inhibiting <span class="caps">DNA</span> topoisomerases, type I. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01030/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01030/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01030.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01030.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01030.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01030.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01030.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01030">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Topotecane</td><td>French</td><td>INN</td></tr><tr><td>Topotecanum</td><td>Latin</td><td>INN</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Topotecan Hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000322/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000322/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: DGHHQBMTXTWTJV-BQAIUKQQSA-N</li>
+              <li>Monoisotopic Mass: 457.1404486</li>
+              <li>Average Mass: 457.907</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000322">DBSALT000322</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Hycamtin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/topoisomerase-i-inhibitors">Topoisomerase I Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>119413-54-6</td></tr><tr><th>Weight</th><td>Average: 421.4458<br>Monoisotopic: 421.163770861</td></tr><tr><th>Chemical Formula</th><td>C<sub>23</sub>H<sub>23</sub>N<sub>3</sub>O<sub>5</sub></td></tr><tr><th>InChI Key</th><td>UCFGDBYHRUNTLO-QHCPKHFHSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C23H23N3O5/c1-4-23(30)16-8-18-20-12(9-26(18)21(28)15(16)11-31-22(23)29)7-13-14(10-25(2)3)19(27)6-5-17(13)24-20/h5-8,27,30H,4,9-11H2,1-3H3/t23-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(19S)-8-[(dimethylamino)methyl]-19-ethyl-7,19-dihydroxy-17-oxa-3,13-diazapentacyclo[11.8.0.0^{2,11}.0^{4,9}.0^{15,20}]henicosa-1(21),2(11),3,5,7,9,15(20)-heptaene-14,18-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CC[C@@]1(O)C(=O)OCC2=C1C=C1N(CC3=CC4=C(C=CC(O)=C4CN(C)C)N=C13)C2=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Alkaloids and Derivatives</td></tr><tr><th>Class</th><td>Camptothecins</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Camptothecins</td></tr><tr><th>Alternative parents</th><td>Hydroxyquinolines; Pyranopyridines; Phenols and Derivatives; Pyridinones; Tertiary Alcohols; Tertiary Amines; Carboxylic Acid Esters; Enols; Dialkyl Ethers; Polyamines</td></tr><tr><th>Substituents</th><td>hydroxyquinoline; pyranopyridine; quinoline; phenol derivative; pyridinone; benzene; pyridine; tertiary alcohol; carboxylic acid ester; tertiary amine; carboxylic acid derivative; polyamine; dialkyl ether; enol; amine; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the camptothecins. These are heterocyclic compounds comprising a planar pentacyclic ring structure, that includes a pyrrolo[3,4-beta]-quinoline moiety (rings A, B and C), conjugated pyridone moiety (ring D) and one chiral center at position 20 within the alpha-hydroxy lactone ring with (S) configuration (the E-ring).</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of advanced ovarian cancer in patients with disease that has recurred or progressed following therapy with platinum-based regimens. Also used as a second-line therapy for treatment-sensitive small cell lung cancer, as well as in combination with cisplatin for the treatment of stage IV-B, recurrent, or persistent cervical cancer not amenable to curative treatment with surgery and/or radiation therapy.</td></tr><tr><th>Pharmacodynamics</th><td>Topotecan, a semi-synthetic derivative of camptothecin (a plant alkaloid obtained from the <i>Camptotheca acuminata</i> tree), is an anti-tumor drug with topoisomerase I-inhibitory activity similar to irinotecan. DNA topoisomerases are enzymes in the cell nucleus that regulate DNA topology (3-dimensional conformation) and facilitate nuclear processes such as DNA replication, recombination, and repair. During these processes, DNA topoisomerase I creates reversible single-stranded breaks in double-stranded DNA, allowing intact single DNA strands to pass through the break and relieve the topologic constraints inherent in supercoiled DNA. The 3'-DNA terminus of the broken DNA strand binds covalently with the topoisomerase enzyme to form a catalytic intermediate called a cleavable complex. After DNA is sufficiently relaxed and the strand passage reaction is complete, DNA topoisomerase reattaches the broken DNA strands to form the unaltered topoisomers that allow transcription to proceed. Topotecan interferes with the growth of cancer cells, which are eventually destroyed. Since the growth of normal cells can be affected by the medicine, other effects may also occur. Unlike irinotecan, topotecan is found predominantly in the inactive carboxylate form at neutral pH and it is not a prodrug.</td></tr><tr><th>Mechanism of action</th><td>Topotecan has the same mechanism of action as irinotecan and is believed to exert its cytotoxic effects during the S-phase of DNA synthesis. Topoisomerase I relieves torsional strain in DNA by inducing reversible single strand breaks. Topotecan binds to the topoisomerase I-DNA complex and prevents religation of these single strand breaks. This ternary complex interferes with the moving replication fork, which leads to the induction of replication arrest and lethal double-stranded breaks in DNA. As mammalian cells cannot efficiently repair these double strand breaks, the formation of this ternary complex eventually leads to apoptosis (programmed cell death).
+
+Topotecan mimics a DNA base pair and binds at the site of DNA cleavage by intercalating between the upstream (&#8722;1) and downstream (+1) base pairs. Intercalation displaces the downstream DNA, thus preventing religation of the cleaved strand. By specifically binding to the enzyme&#8211;substrate complex, Topotecan acts as an uncompetitive inhibitor.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>35%</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Topotecan undergoes a reversible pH dependent hydrolysis of its lactone moiety; it is the lactone form that is pharmacologically active.</p></td></tr><tr><th>Route of elimination</th><td>Renal clearance is an important determinant of topotecan elimination. In a mass balance/excretion study in 4 patients with solid tumors, the overall recovery of total topotecan and its N-desmethyl metabolite in urine and feces over 9 days averaged 73.4 &#177; 2.3% of the administered IV dose. Fecal elimination of total topotecan accounted for 9 &#177; 3.6% while fecal elimination of N-desmethyl topotecan was 1.7 &#177; 0.6%.</td></tr><tr><th>Half life</th><td>2-3 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>The primary anticipated complication of overdosage would consist of bone marrow suppression.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.8911</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9659</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6966</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7918</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.6121</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9507</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8844</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8168</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6875</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.5572</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8305</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8918</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.824</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6464</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.7184</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6516
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8504
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          3.0075 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9963
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8302
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Smithkline beecham corp dba glaxosmithkline</li>
+<li>Glaxosmithkline</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.gsk.com">GlaxoSmithKline Inc.</a></li>
+<li><a href="http://www.pfizerah.com">Pfizer Animal Health</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Powder, for solution</td><td>Intravenous</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01118">Amiodarone</a></td><td>The p-glycoprotein inhibitor, Amiodarone, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB01076">Atorvastatin</a></td><td>The p-glycoprotein inhibitor, Atorvastatin, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00958">Carboplatin</a></td><td>Administration of Topotecan after Carboplatin therapy may increase the risk of hematologic toxicity, such as neutropenia and/or thrombocytopenia. A dose adjustment may be required or the sequence of administration reversed. </td></tr><tr><td><a href="/drugs/DB01136">Carvedilol</a></td><td>The p-glycoprotein inhibitor, Carvedilol, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00515">Cisplatin</a></td><td>Administration of Topotecan after Cisplatin therapy may increase the risk of hematologic toxicity, such as neutropenia and/or thrombocytopenia. A dose adjustment may be required or the sequence of administration reversed. </td></tr><tr><td><a href="/drugs/DB01211">Clarithromycin</a></td><td>The p-glycoprotein inhibitor, Clarithromycin, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>The p-glycoprotein inhibitor, Cyclosporine, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB01264">Darunavir</a></td><td>The p-glycoprotein inhibitor, Darunavir, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00975">Dipyridamole</a></td><td>The p-glycoprotein inhibitor, Dipyridamole, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00199">Erythromycin</a></td><td>The p-glycoprotein inhibitor, Erythromycin, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00099">Filgrastim</a></td><td>Filgrastim may increase the adverse effects of Topotecan. Increased risk of prolonged neutropenia. Filgrastim should be administered at least 24 hours following Topotecan therapy. Monitor for signs and symptoms of neutropenia. </td></tr><tr><td><a href="/drugs/DB00317">Gefitinib</a></td><td>The BCRP/ABCG2 inhibitor, Gefitnib, may increase the bioavailability and serum concentration of oral Topotecan. Monitor for change in the therapeutic and adverse effects of Topotecan if Gefitinib is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00619">Imatinib</a></td><td>The BCRP/ABCG2 inhibitor, Imatinib, may increase the bioavailability and serum concentration of oral Topotecan. Monitor for change in the therapeutic and adverse effects of Topotecan if Imatinib is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB01167">Itraconazole</a></td><td>The p-glycoprotein inhibitor, Itraconazole, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>The p-glycoprotein inhibitor, Ketoconazole, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB01259">Lapatinib</a></td><td>The p-glycoprotein inhibitor, Lapatinib, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB01601">Lopinavir</a></td><td>The p-glycoprotein inhibitor, Lopinavir, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00358">Mefloquine</a></td><td>The p-glycoprotein inhibitor, Mefloquine, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00108">Natalizumab</a></td><td>The immunosuppressant, Topotecan, may increase the adverse effects of Natalizumab. Increased risk of Progressive Multifocal Leukoencephalopathy (PML) and other infections. Concurrent therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00220">Nelfinavir</a></td><td>The p-glycoprotein inhibitor, Nelfinavir, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00622">Nicardipine</a></td><td>The p-glycoprotein inhibitor, Nicardipine, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB04868">Nilotinib</a></td><td>The p-glycoprotein inhibitor, Nilotinib, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00526">Oxaliplatin</a></td><td>Administration of Topotecan after Oxaliplatin therapy may increase the risk of hematologic toxicity, such as neutropenia and/or thrombocytopenia. A dose adjustment may be required or the sequence of administration reversed. </td></tr><tr><td><a href="/drugs/DB00213">Pantoprazole</a></td><td>The BCRP/ABCG2 inhibitor, Pantaprazole, may increase the bioavailability and serum concentration of oral Topotecan. Monitor for change in the therapeutic and adverse effects of Topotecan if Pantaprazole is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00396">Progesterone</a></td><td>The p-glycoprotein inhibitor, Progesterone, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00571">Propranolol</a></td><td>The p-glycoprotein inhibitor, Propranolol, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00908">Quinidine</a></td><td>The p-glycoprotein inhibitor, Quinidine, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00243">Ranolazine</a></td><td>The p-glycoprotein inhibitor, Ranolazine, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00206">Reserpine</a></td><td>The p-glycoprotein inhibitor, Reserpine, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00503">Ritonavir</a></td><td>The p-glycoprotein inhibitor, Ritonavir, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB01232">Saquinavir</a></td><td>The p-glycoprotein inhibitor, Saquinavir, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB01268">Sunitinib</a></td><td>The p-glycoprotein inhibitor, Sunitinib, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>The p-glycoprotein inhibitor, Tacrolimus, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>The p-glycoprotein inhibitor, Tamoxifen, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events. </td></tr><tr><td><a href="/drugs/DB00661">Verapamil</a></td><td>The p-glycoprotein inhibitor, Verapamil, may increase the bioavailability of oral Topotecan. A clinically significant effect is also expected with IV Topotecan. Concomitant therapy should be avoided.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

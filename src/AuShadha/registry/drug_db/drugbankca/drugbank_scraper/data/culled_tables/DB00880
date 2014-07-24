@@ -1,0 +1,207 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Chlorothiazide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00880</strong>&#160; (APRD00721)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A thiazide diuretic with actions and uses similar to those of hydrochlorothiazide. (From Martindale, The Extra Pharmacopoeia, 30th ed, p812)</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00880/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00880/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00880.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00880.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00880.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00880.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00880.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00880">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Chlorothiazid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Chlorothiazidum</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>PH: Ph. Eur. 7, Ph. Int. 2</td></tr><tr><td>Chlorthiazide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Mechlozid</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IS</td></tr><tr><td>Uroflux</td><td><span class="wishart wishart-not-available">Not Available</span></td><td>IS</td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Chlorothiazide Sodium</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000926/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000926/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000926">DBSALT000926</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Diuril</td><td>Merck, Lundbeck</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="mixtures"><thead><tr><th>Brand Name</th><th>Ingredients</th></tr></thead><tbody><tr><td>Supres 150 Tab</td><td>Chlorothiazide + Methyldopa</td></tr><tr><td>Supres 250 Tab</td><td>Chlorothiazide + Methyldopa</td></tr></tbody></table></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antihypertensive-agents">Antihypertensive Agents</a></li>
+<li><a href="/mesh/diuretics">Diuretics</a></li>
+<li><a href="/mesh/sodium-chloride-symporter-inhibitors">Sodium Chloride Symporter Inhibitors</a></li></ul></td></tr><tr><th>CAS number</th><td>58-94-6</td></tr><tr><th>Weight</th><td>Average: 295.723<br>Monoisotopic: 294.948824782</td></tr><tr><th>Chemical Formula</th><td>C<sub>7</sub>H<sub>6</sub>ClN<sub>3</sub>O<sub>4</sub>S<sub>2</sub></td></tr><tr><th>InChI Key</th><td>JBMKAUGHUNFTOL-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C7H6ClN3O4S2/c8-4-1-5-7(2-6(4)16(9,12)13)17(14,15)11-3-10-5/h1-3H,(H,10,11)(H2,9,12,13)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">6-chloro-1,1-dioxo-4H-1$l^{6},2,4-benzothiadiazine-7-sulfonamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NS(=O)(=O)C1=C(Cl)C=C2NC=NS(=O)(=O)C2=C1</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB00880.gif?1265922771">show</a>(10.1 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Thiadiazines</td></tr><tr><th>Subclass</th><td>Benzothiadiazines</td></tr><tr><th>Direct parent</th><td>Benzothiadiazines</td></tr><tr><th>Alternative parents</th><td>Benzenesulfonamides; Chlorobenzenes; Aryl Chlorides; Sulfonyls; Sulfonamides; Polyamines; Organochlorides</td></tr><tr><th>Substituents</th><td>chlorobenzene; aryl chloride; aryl halide; benzene; sulfonamide; sulfonyl; sulfonic acid derivative; polyamine; organochloride; organohalogen; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the benzothiadiazines. These are organic compounds containing a benzene fused to a thiadiazine ring (a six-member ring with two nitrogen atoms and a sulfur atom).</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Chlorothiazide is indicated as adjunctive therapy in edema associated with congestive heart failure, hepatic cirrhosis, and corticosteroid and estrogen therapy. It is also indicated in the management of hypertension either as the sole therapeutic agent or to enhance the effectiveness of other antihypertensive drugs in the more severe forms of hypertension.</td></tr><tr><th>Pharmacodynamics</th><td>Like other thiazides, chlorothiazide promotes water loss from the body (diuretics). It inhibits Na<sup>+</sup>/Cl<sup>-</sup> reabsorption from the distal convoluted tubules in the kidneys. Thiazides also cause loss of potassium and an increase in serum uric acid. Thiazides are often used to treat hypertension, but their hypotensive effects are not necessarily due to their diuretic activity. Thiazides have been shown to prevent hypertension-related morbidity and mortality although the mechanism is not fully understood. Thiazides cause vasodilation by activating calcium-activated potassium channels (large conductance) in vascular smooth muscles and inhibiting various carbonic anhydrases in vascular tissue. Chlorothiazide affects the distal renal tubular mechanism of electrolyte reabsorption. At maximal therapeutic dosages, all thiazides are approximately equal in their diuretic efficacy. Chlorothiazide increases excretion of sodium and chloride in approximately equivalent amounts. Natriuresis may be accompanied by some loss of potassium and bicarbonate. After oral doses, 10-15 percent of the dose is excreted unchanged in the urine. Chlorothiazide crosses the placental but not the blood-brain barrier and is excreted in breast milk.</td></tr><tr><th>Mechanism of action</th><td>As a diuretic, chlorothiazide inhibits active chloride reabsorption at the early distal tubule via the Na-Cl cotransporter, resulting in an increase in the excretion of sodium, chloride, and water. Thiazides like chlorothiazide also inhibit sodium ion transport across the renal tubular epithelium through binding to the thiazide sensitive sodium-chloride transporter. This results in an increase in potassium excretion via the sodium-potassium exchange mechanism. The antihypertensive mechanism of chlorothiazide is less well understood although it may be mediated through its action on carbonic anhydrases in the smooth muscle or through its action on the large-conductance calcium-activated potassium (KCa) channel, also found in the smooth muscle.</td></tr><tr><th>Absorption</th><td>Rapidly absorbed following oral administration.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>Approximately 40% bound to plasma proteins.</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Chlorothiazide is not metabolized but is eliminated rapidly by the kidney.</p></td></tr><tr><th>Route of elimination</th><td>Chlorothiazide is not metabolized but is eliminated rapidly by the kidney. After oral doses, 10 to 15 percent of the dose is excreted unchanged in the urine. Chlorothiazide crosses the placental but not the blood-brain barrier and is excreted in breast milk.</td></tr><tr><th>Half life</th><td>45-120 minutes</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral, rat LD<sub>50</sub>: &gt; 10 g/kg. Signs of overdose include those caused by electrolyte depletion (hypokalemia, hypochloremia, hyponatremia) and dehydration resulting from excessive diuresis. If digitalis has also been administered hypokalemia may accentuate cardiac arrhythmias.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Chlorothiazide Action Pathway</td><td>Drug action</td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9119</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9506</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.7368</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.706</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8482</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8381</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8177</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.755</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8379</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.6308</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.923</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9382</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8901</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8658</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9132
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7792
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          1.5023 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9654
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9352
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Salix pharmaceuticals inc</li>
+<li>Abc holding corp</li>
+<li>Lederle laboratories div american cyanamid co</li>
+<li>Mylan pharmaceuticals inc</li>
+<li>Sandoz inc</li>
+<li>Watson laboratories inc</li>
+<li>West ward pharmaceutical corp</li>
+<li>Lundbeck inc</li>
+<li>App pharmaceuticals llc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.endo.com">Endo Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.lundbeckinc.com">Lundbeck Inc.</a></li>
+<li><a href="http://www.majorpharmaceuticals.com">Major Pharmaceuticals</a></li>
+<li><a href="http://www.merck.com">Merck &amp; Co.</a></li>
+<li><a href="http://www.unitdosesupply.com">Murfreesboro Pharmaceutical Nursing Supply</a></li>
+<li><a href="http://www.mylan.com">Mylan</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.salix.com">Salix Pharmaceuticals</a></li>
+<li><a href="http://www.sandhillspackaging.com">Sandhills Packaging Inc.</a></li>
+<li><a href="http://www.udllabs.com">UDL Laboratories</a></li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li>
+<li><a href="http://www.west-ward.com">West-Ward Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Suspension</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01143">Amifostine</a></td><td>Antihypertensives may enhance the hypotensive effect of amifostine. When amifostine is used at doses recommended for chemotherapy, antihypertensive medications should be withheld for 24 hours prior to amifostine administration to avoid excessive hypotension during or immediately after infusion. If antihypertensive therapy can not be withheld, then that patient should not receive amifostine. Caution is recommended when using amifostine at the lower doses recommended for radiotherapy, but routine interruption of antihypertensive therapy is not recommended in these patients. </td></tr><tr><td><a href="/drugs/DB01432">Cholestyramine</a></td><td>Bile acid sequestrants may decrease the absorption of thiazide diuretics such as chlorothiazide. The diuretic response is likewise decreased. Monitor for decreased therapeutic effects of thiazide diuretics if coadministered with a bile acid sequestrant. If these agents are used concomitantly, separate doses 2 or more hours to minimize the interaction. </td></tr><tr><td><a href="/drugs/DB00375">Colestipol</a></td><td>Bile acid sequestrants may decrease the absorption of thiazide diuretics such as chlorothiazide. The diuretic response is likewise decreased. Monitor for decreased therapeutic effects of thiazide diuretics if coadministered with a bile acid sequestrant. If these agents are used concomitantly, separate doses 2 or more hours to minimize the interaction. </td></tr><tr><td><a href="/drugs/DB00390">Digoxin</a></td><td>Possible electrolyte variations and arrhythmias</td></tr><tr><td><a href="/drugs/DB00204">Dofetilide</a></td><td>Thiazide diuretics such as chlorothiazide may enhance the QTc-prolonging effect of dofetilide. Thiazide diuretics may increase the serum concentration of dofetilide. The concomitant use of hydrochlorothiazide and dofetilide is contraindicated by the manufacturer of dofetilide. Monitor for increased risk of QTc-prolongation and associated ventricular arrythmias during concomitant use of dofetilide and thiazide diuretics.</td></tr><tr><td><a href="/drugs/DB01356">Lithium</a></td><td>The thiazide diuretic, chlorothiazide, may increase serum levels of lithium.</td></tr><tr><td><a href="/drugs/DB00073">Rituximab</a></td><td>Antihypertensives such as chlorothiazide may enhance the hypotensive effect of Rituximab. Consider temporarily withholding antihypertensive medications for 12 hours prior to rituximab infusion to avoid excessive hypotension during or immediately after infusion.</td></tr><tr><td><a href="/drugs/DB00273">Topiramate</a></td><td>Thiazide diuretics such as chlorothiazide may enhance the hypokalemic effect of topiramate. Thiazide diuretics may increase the serum concentration of topiramate. Monitor for increased topiramate concentrations/adverse effects (e.g., hypokalemia) with initiation/dose increase of a thiazide diuretic. Closely monitor serum potassium concentrations with concomitant therapy. Topiramate dose reductions may be necessary. </td></tr><tr><td><a href="/drugs/DB00519">Trandolapril</a></td><td>The thiazide diuretic, Chlorothiazide, may increase the hypotensive effect of Trandolapril. Chlorothiazide may also increase the nephrotoxicity of Trandolapril. Monitor for postural hypotension at initiation of concomitant therapy and renal dysfunction during chronic therapy. </td></tr><tr><td><a href="/drugs/DB00374">Treprostinil</a></td><td>Additive hypotensive effect. Monitor antihypertensive therapy during concomitant use. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

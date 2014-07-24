@@ -1,0 +1,212 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Chloroquine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00608</strong>&#160; (APRD00468)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>The prototypical antimalarial agent with a mechanism that is not well understood. It has also been used to treat rheumatoid arthritis, systemic lupus erythematosus, and in the systemic therapy of amebic liver abscesses. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00608/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00608/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00608.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00608.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00608.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00608.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00608.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00608">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Chloraquine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Chlorochine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Chloroquina</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Chloroquinium</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Resochin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Chloroquine Phosphate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000025/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000025/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: AEUAEICGCMSYCQ-UHFFFAOYNA-N</li>
+              <li>Monoisotopic Mass: 417.15842065</li>
+              <li>Average Mass: 417.867</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000025">DBSALT000025</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Aralen</td><td>Sanofi</td></tr><tr><td>Artrichin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Bemaphate</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Capquin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Malarex</td><td>Actavis</td></tr><tr><td>Nivaquine B</td><td>Sanofi</td></tr><tr><td>Resoquine</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Reumachlor</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Sanoquin</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antirheumatic-agents">Antirheumatic Agents</a></li>
+<li><a href="/mesh/antimalarials">Antimalarials</a></li>
+<li><a href="/mesh/amebicides">Amebicides</a></li></ul></td></tr><tr><th>CAS number</th><td>54-05-7</td></tr><tr><th>Weight</th><td>Average: 319.872<br>Monoisotopic: 319.181525554</td></tr><tr><th>Chemical Formula</th><td>C<sub>18</sub>H<sub>26</sub>ClN<sub>3</sub></td></tr><tr><th>InChI Key</th><td>WHTVZRBIWZFKQO-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C18H26ClN3/c1-4-22(5-2)12-6-7-14(3)21-17-10-11-20-18-13-15(19)8-9-16(17)18/h8-11,13-14H,4-7,12H2,1-3H3,(H,20,21)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">{4-[(7-chloroquinolin-4-yl)amino]pentyl}diethylamine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCN(CC)CCCC(C)NC1=C2C=CC(Cl)=CC2=NC=C1</div></td></tr><tr><th>Mass Spec</th><td><a href="/system/mass_specs/DB00608.gif?1265922773">show</a>(8.47 KB)</td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Quinolines and Derivatives</td></tr><tr><th>Subclass</th><td>Aminoquinolines and Derivatives</td></tr><tr><th>Direct parent</th><td>Aminoquinolines and Derivatives</td></tr><tr><th>Alternative parents</th><td>Aminopyridines and Derivatives; Chlorobenzenes; Aryl Chlorides; Tertiary Amines; Polyamines; Secondary Amines; Organochlorides</td></tr><tr><th>Substituents</th><td>aminopyridine; chlorobenzene; aryl chloride; aryl halide; pyridine; benzene; tertiary amine; polyamine; secondary amine; amine; organochloride; organohalogen; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the aminoquinolines and derivatives. These are organic compounds containing an amino group attached to a quinoline ring system.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the suppressive treatment and for acute attacks of malaria due to P. vivax, P.malariae, P. ovale, and susceptible strains of P. falciparum, Second-line agent in treatment of Rheumatoid Arthritis</td></tr><tr><th>Pharmacodynamics</th><td>Chloroquine is the prototype anti malarial drug, most widely used to treat all types of malaria except for disease caused by chloroquine resistant <i>Plasmodium falciparum</i>. It is highly effective against erythrocytic forms of <i>Plasmodium vivax</i>, <i>Plasmodium ovale</i> and <i>Plasmodium malariae</i>, sensitive strains of <i>Plasmodium falciparum</i> and gametocytes of <i>Plasmodium vivax</i>. Being alkaline, the drug reaches high concentration within the food vacuoles of the parasite and raises its pH. It is found to induce rapid clumping of the pigment. Chloroquine inhibits the parasitic enzyme heme polymerase that converts the toxic heme into non-toxic hemazoin, thereby resulting in the accumulation of toxic heme within the parasite. It may also interfere with the biosynthesis of nucleic acids.</td></tr><tr><th>Mechanism of action</th><td>The mechanism of plasmodicidal action of chloroquine is not completely certain. Like other quinoline derivatives, it is thought to inhibit heme polymerase activity. This results in accumulation of free heme, which is toxic to the parasites.  nside red blood cells, the malarial parasite must degrade hemoglobin to acquire essential amino acids, which the parasite requires to construct its own protein and for energy metabolism. Digestion is carried out in a vacuole of the parasite cell.
+
+During this process, the parasite produces the toxic and soluble molecule heme. The heme moiety consists of a porphyrin ring called Fe(II)-protoporphyrin IX (FP). To avoid destruction by this molecule, the parasite biocrystallizes heme to form hemozoin, a non-toxic molecule. Hemozoin collects in the digestive vacuole as insoluble crystals.
+
+Chloroquine enters the red blood cell, inhabiting parasite cell, and digestive vacuole by simple diffusion. Chloroquine then becomes protonated (to CQ2+), as the digestive vacuole is known to be acidic (pH 4.7); chloroquine then cannot leave by diffusion. Chloroquine caps hemozoin molecules to prevent further biocrystallization of heme, thus leading to heme buildup. Chloroquine binds to heme (or FP) to form what is known as the FP-Chloroquine complex; this complex is highly toxic to the cell and disrupts membrane function. Action of the toxic FP-Chloroquine and FP results in cell lysis and ultimately parasite cell autodigestion. In essence, the parasite cell drowns in its own metabolic products.</td></tr><tr><th>Absorption</th><td>Completely absorbed from gastrointestinal tract</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>~55% of the drug in the plasma is bound to nondiffusible plasma constituents</td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic (partially)</p></td></tr><tr><th>Route of elimination</th><td>Excretion of chloroquine is quite slow, but is increased by acidification of the urine.</td></tr><tr><th>Half life</th><td>1-2 months</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><ul><li>Plasmodium</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9939</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.7421</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5804</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.622</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7773</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6046</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8422</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.8804</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.6009</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8586</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9218</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8308</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.5496</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9106
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8374
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.9547 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.6959
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.8293
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Sanofi aventis us llc</li>
+<li>Impax laboratories inc</li>
+<li>Ipca laboratories ltd</li>
+<li>Md pharmaceutical inc</li>
+<li>Purepac pharmaceutical co</li>
+<li>Teva pharmaceuticals usa inc</li>
+<li>Watson laboratories inc</li>
+<li>West ward pharmaceutical corp</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://orders.a-smeds.com">A-S Medication Solutions LLC</a></li>
+<li><a href="http://www.bayerhealthcare.com">Bayer Healthcare</a></li>
+<li>Consolidated Midland Corp.</li>
+<li>Direct Dispensing Inc.</li>
+<li><a href="http://www.drxdispensing.com">Dispensing Solutions</a></li>
+<li><a href="http://www.gallipot.com">Gallipot</a></li>
+<li><a href="http://www.globalphar.com">Global Pharmaceuticals</a></li>
+<li><a href="http://www.impaxlabs.com">Impax Laboratories Inc.</a></li>
+<li><a href="http://www.nucarerx.com">Nucare Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.pdrx.com">PD-Rx Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li>
+<li><a href="http://www.sanofi-aventis.com">Sanofi-Aventis Inc.</a></li>
+<li><a href="http://www.west-ward.com">West-Ward Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01370">Aluminium</a></td><td>The antiacid decreases the absorption of chloroquine</td></tr><tr><td><a href="/drugs/DB06697">Artemether</a></td><td>Chloroquine may increase the adverse effects of artemether. Combination therapy is contraindicated unless there are no other treatment options. </td></tr><tr><td><a href="/drugs/DB00289">Atomoxetine</a></td><td>The CYP2D6 inhibitor could increase the effect and toxicity of atomoxetine</td></tr><tr><td><a href="/drugs/DB01574">Attapulgite</a></td><td>The antiacid decreases the absorption of chloroquine</td></tr><tr><td><a href="/drugs/DB01373">Calcium</a></td><td>The antiacid decreases the absorption of chloroquine</td></tr><tr><td><a href="/drugs/DB00091">Cyclosporine</a></td><td>Chloroquine may increase the therapeutic and adverse effects of cyclosporine.</td></tr><tr><td><a href="/drugs/DB01375">Dihydroxyaluminium</a></td><td>The antiacid decreases the absorption of chloroquine</td></tr><tr><td><a href="/drugs/DB01575">Kaolin</a></td><td>The antiacid decreases the absorption of chloroquine</td></tr><tr><td><a href="/drugs/DB06708">Lumefantrine</a></td><td>Chloroquine may increase the adverse effects of lumefantrine. Combination therapy is contraindicated unless there are no other treatment options. </td></tr><tr><td><a href="/drugs/DB01378">Magnesium</a></td><td>The antiacid decreases the absorption of chloroquine</td></tr><tr><td><a href="/drugs/DB01377">Magnesium oxide</a></td><td>The antiacid decreases the absorption of chloroquine</td></tr><tr><td><a href="/drugs/DB00933">Mesoridazine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01058">Praziquantel</a></td><td>Markedly lower praziquantel levels</td></tr><tr><td><a href="/drugs/DB00675">Tamoxifen</a></td><td>Chloroquine may decrease the therapeutic effect of Tamoxifen by decreasing the production of active metabolites. Consider alternate therapy. </td></tr><tr><td><a href="/drugs/DB00706">Tamsulosin</a></td><td>Chloroquine, a CYP2D6 inhibitor, may decrease the metabolism and clearance of Tamsulosin, a CYP2D6 substrate. Monitor for changes in therapeutic/adverse effects of Tamsulosin if Chloroquine is initiated, discontinued, or dose changed.</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Telithromycin may reduce clearance of Chloroquine. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Chloroquine if Telithromycin is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00857">Terbinafine</a></td><td>Terbinafine may reduce the metabolism and clearance of Chloroquine. Consider alternate therapy or monitor for therapeutic/adverse effects of Chloroquine if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00679">Thioridazine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00193">Tramadol</a></td><td>Chloroquine may decrease the effect of Tramadol by decreasing active metabolite production. </td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of chloroquine by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of chloroquine if voriconazole is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take with food to reduce irritation and increase bioavailability.</li></ul></td></tr></tbody></table>

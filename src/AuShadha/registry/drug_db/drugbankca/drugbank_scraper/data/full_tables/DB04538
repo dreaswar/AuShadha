@@ -1,0 +1,160 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>2s,3s-3-Methylaspartic Acid</strong></td></tr><tr><th>Accession Number</th><td><strong>DB04538</strong>&#160; (EXPT00179)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>experimental</td></tr><tr><th>Description</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB04538/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB04538/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04538.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04538.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04538.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04538.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB04538.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB04538">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Weight</th><td>Average: 147.1293<br>Monoisotopic: 147.053157781</td></tr><tr><th>Chemical Formula</th><td>C<sub>5</sub>H<sub>9</sub>NO<sub>4</sub></td></tr><tr><th>InChI Key</th><td>LXRUAYBIUSUULX-STHAYSLISA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C5H9NO4/c1-2(4(7)8)3(6)5(9)10/h2-3H,6H2,1H3,(H,7,8)(H,9,10)/t2-,3+/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(2R,3S)-2-amino-3-methylbutanedioic acid</div></td></tr><tr><th>SMILES</th><td><div class="wrap">C[C@@H]([C@@H](N)C(O)=O)C(O)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organic Acids and Derivatives</td></tr><tr><th>Class</th><td>Carboxylic Acids and Derivatives</td></tr><tr><th>Subclass</th><td>Amino Acids, Peptides, and Analogues</td></tr><tr><th>Direct parent</th><td>Alpha Amino Acids and Derivatives</td></tr><tr><th>Alternative parents</th><td>Amino Fatty Acids; Dicarboxylic Acids and Derivatives; Polyols; Enolates; Carboxylic Acids; Polyamines; Monoalkylamines</td></tr><tr><th>Substituents</th><td>succinic_acid; dicarboxylic acid derivative; polyol; enolate; polyamine; carboxylic acid; amine; primary amine; primary aliphatic amine; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the alpha amino acids and derivatives. These are amino acids in which the amino group is attached to the carbon atom immediately adjacent to the carboxylate group (alpha carbon), or a derivative thereof.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+        <td><span class="wishart wishart-not-available">Not Available</span></td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          <span class="wishart wishart-not-available">Not Available</span> 
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not Available</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>9.74e+01 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-3.3</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>-3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-0.18</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>1.87</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>9.68</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>-1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>5</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>100.62</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>31.11</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>13.14</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5287600" target="_blank">5287600 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46507874" target="_blank">46507874 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=47980" target="_blank">47980 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td></td></tr><tr><td>HET</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/msd-srv/chempdb/cgi-bin/cgi.pl?FUNCTION=getByCode&amp;CODE=3MD" target="_blank">3MD <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><ul><li><a class="wishart-link-out" href="http://www.rcsb.org/pdb/explore.do?structureId=1KKR" target="_blank">1KKR <span class="glyphicon glyphicon-new-window"> </span></a></li></ul></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

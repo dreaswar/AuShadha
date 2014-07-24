@@ -1,0 +1,227 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Doxorubicin</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00997</strong>&#160; (APRD00185)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Doxorubicin is a cytotoxic anthracycline antibiotic isolated from cultures of Streptomyces peucetius var. caesius. Doxorubicin binds to nucleic acids, presumably by specific intercalation of the planar anthracycline nucleus with the <span class="caps">DNA</span> double helix.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00997/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00997/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00997.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00997.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00997.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00997.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00997.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00997">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>14-hydroxydaunomycin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>14-hydroxydaunorubicine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Hydroxydaunorubicin</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Doxorubicin Hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000060/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000060/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: MWWSFMDVAYGXBV-BADIEKLNSA-N</li>
+              <li>Monoisotopic Mass: 579.150738514</li>
+              <li>Average Mass: 579.98</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000060">DBSALT000060</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Adriablastina</td><td>Pfizer</td></tr><tr><td>Adriamycin</td><td>Pfizer</td></tr><tr><td>Adriblastin</td><td>Actavis</td></tr><tr><td>Caelyx</td><td>Janssen-Cilag</td></tr><tr><td>Doxil</td><td>Janssen</td></tr><tr><td>Myocet</td><td>Cephalon</td></tr><tr><td>Rubex</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antibiotics-antineoplastic">Antibiotics, Antineoplastic</a></li>
+<li><a href="/mesh/antibiotics">Antibiotics</a></li></ul></td></tr><tr><th>CAS number</th><td>23214-92-8</td></tr><tr><th>Weight</th><td>Average: 543.5193<br>Monoisotopic: 543.174060775</td></tr><tr><th>Chemical Formula</th><td>C<sub>27</sub>H<sub>29</sub>NO<sub>11</sub></td></tr><tr><th>InChI Key</th><td>AOJJSUZBOXZQNB-TZSSRYMLSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C27H29NO11/c1-10-22(31)13(28)6-17(38-10)39-15-8-27(36,16(30)9-29)7-12-19(15)26(35)21-20(24(12)33)23(32)11-4-3-5-14(37-2)18(11)25(21)34/h3-5,10,13,15,17,22,29,31,33,35-36H,6-9,28H2,1-2H3/t10-,13-,15-,17-,22+,27-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(8S,10S)-10-{[(2R,4S,5S,6S)-4-amino-5-hydroxy-6-methyloxan-2-yl]oxy}-6,8,11-trihydroxy-8-(2-hydroxyacetyl)-1-methoxy-5,7,8,9,10,12-hexahydrotetracene-5,12-dione</div></td></tr><tr><th>SMILES</th><td><div class="wrap">COC1=CC=CC2=C1C(=O)C1=C(O)C3=C(C[C@](O)(C[C@@H]3O[C@H]3C[C@H](N)[C@H](O)[C@H](C)O3)C(=O)CO)C(O)=C1C2=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Phenylpropanoids and Polyketides</td></tr><tr><th>Class</th><td>Anthracyclines</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Anthracyclines</td></tr><tr><th>Alternative parents</th><td>Tetracenequinones; Anthraquinones; O-glycosyl Compounds; Tetralins; Amino Sugars; Anisoles; Hydroquinones; Alkyl Aryl Ethers; Oxanes; Tertiary Alcohols; Ketones; 1,2-Aminoalcohols; Secondary Alcohols; Polyols; Dialkyl Ethers; Polyamines; Enolates; Acetals; Enols; Primary Alcohols; Aldehydes; Monoalkylamines</td></tr><tr><th>Substituents</th><td>tetracenequinone; 1,4-anthraquinone; 9,10-anthraquinone; anthracene; glycosyl compound; o-glycosyl compound; amino sugar; acene; tetralin; phenol ether; hydroquinone; anisole; alkyl aryl ether; phenol derivative; benzene; saccharide; oxane; tertiary alcohol; 1,2-aminoalcohol; ketone; secondary alcohol; polyol; enol; dialkyl ether; acetal; primary alcohol; ether; polyamine; enolate; amine; primary aliphatic amine; primary amine; aldehyde; carbonyl group; alcohol; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the anthracyclines. These are polyketides containing a tetracenequinone&#160;ring structure with a sugar attached by glycosidic linkage.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Doxorubicin is used to produce regression in disseminated neoplastic conditions like acute lymphoblastic leukemia, acute myeloblastic leukemia, Wilms&#8217; tumor, neuroblastoma, soft tissue and bone sarcomas, breast carcinoma, ovarian carcinoma, transitional cell bladder carcinoma, thyroid carcinoma, gastric carcinoma, Hodgkin&#8217;s disease, malignant lymphoma and bronchogenic carcinoma in which the small cell histologic type is the most responsive compared to other cell types. Doxorubicin is also indicated for use as a component of adjuvant therapy in women with evidence of axillary lymph node involvement following resection of primary breast cancer.</td></tr><tr><th>Pharmacodynamics</th><td>Doxorubicin is an antineoplastic in the anthracycline class. General properties of drugs in this class include: interaction with DNA in a variety of different ways including intercalation (squeezing between the base pairs), DNA strand breakage and inhibition with the enzyme topoisomerase II. Most of these compounds have been isolated from natural sources and antibiotics. However, they lack the specificity of the antimicrobial antibiotics and thus produce significant toxicity. The anthracyclines are among the most important antitumor drugs available. Doxorubicin is widely used for the treatment of several solid tumors while daunorubicin and idarubicin are used exclusively for the treatment of leukemia. Doxorubicin may also inhibit polymerase activity, affect regulation of gene expression, and produce free radical damage to DNA. Doxorubicin possesses an antitumor effect against a wide spectrum of tumors, either grafted or spontaneous. The anthracyclines are cell cycle-nonspecific.</td></tr><tr><th>Mechanism of action</th><td>Doxorubicin has antimitotic and cytotoxic activity through a number of proposed mechanisms of action: Doxorubicin forms complexes with DNA by intercalation between base pairs, and it inhibits topoisomerase II activity by stabilizing the DNA-topoisomerase II complex, preventing the religation portion of the ligation-religation reaction that topoisomerase II catalyzes.</td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><p>The distributive half-life is 5 minutes, which suggests that doxorubicin is rapidly taken up by tissue. <br>
+Steady state volume of distribution = 809 to 1214 L/m2</p></td></tr><tr><th>Protein binding</th><td>Doxorubicin and its major metabolite, doxorubicinol, is 74-76% bound to plasma protein. The extent to binding is independent of plasma concentration up to 1.1 mcg/mL. Doxorubicin does not cross the blood brain barrier. </td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Doxorubicin is capable of undergoing 3 metabolic routes: one-electron reduction, two-electron reduction, and deglycosidation. However, approximately half of the dose is eliminated from the body unchanged. Two electron reduction yields doxorubicinol, a secondary alcohol. This pathway is considered the primary metabolic pathway. The one electron reduction is facilitated by several oxidoreductases to form a doxirubicin-semiquinone radical.  These enzymes include mitochondrial and cystolic NADPH dehydrogenates, xanthine oxidase, and nitric oxide synthases. Deglycosidation is a minor metabolic pathway (1-2% of the dose undergoes this pathway). The resultant metabolites are deoxyaglycone or hydroxyaglycone formed via reduction or hydrolysis respectively. Enzymes that may be involved with this pathway include xanthine oxidase, NADPH-cytochrome P450 reductase, and cytosolic NADPH dehydrogenase. </p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Doxorubicin</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0003074" target="_blank">Carbonyl reductase [NADPH] 1</a></li>
+<li><a href="/biodb/bio_entities/BE0004771" target="_blank">Carbonyl reductase [NADPH] 3</a></li>
+<li><a href="/biodb/bio_entities/BE0000592" target="_blank">Aldo-keto reductase family 1 member C3</a></li>
+<li><a href="/biodb/bio_entities/BE0004352" target="_blank">Alcohol dehydrogenase [NADP(+)]</a></li></ul></td><td><a href="/metabolites/DBMET00647">Doxorubicinol</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/668">Details</a></td></tr><tr><td>Doxorubicin</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0000729" target="_blank">NADH dehydrogenase [ubiquinone] iron-sulfur protein 2, mitochondrial</a></li>
+<li><a href="/biodb/bio_entities/BE0000191" target="_blank">NADH dehydrogenase [ubiquinone] iron-sulfur protein 3, mitochondrial</a></li>
+<li><a href="/biodb/bio_entities/BE0000307" target="_blank">NADH dehydrogenase [ubiquinone] iron-sulfur protein 7, mitochondrial</a></li>
+<li><a href="/biodb/bio_entities/BE0000263" target="_blank">Nitric oxide synthase, endothelial</a></li>
+<li><a href="/biodb/bio_entities/BE0000005" target="_blank">Nitric oxide synthase, inducible</a></li>
+<li><a href="/biodb/bio_entities/BE0000067" target="_blank">Nitric oxide synthase, brain</a></li>
+<li><a href="/biodb/bio_entities/BE0002204" target="_blank">Xanthine dehydrogenase/oxidase</a></li>
+<li><a href="/biodb/bio_entities/BE0001184" target="_blank">NAD(P)H dehydrogenase [quinone] 1</a></li></ul></td><td><a href="/metabolites/DBMET00846">Doxorubicin-semiquinone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/867">Details</a></td></tr><tr><td>Doxorubicin</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002364" target="_blank">NADPH--cytochrome P450 reductase</a></li>
+<li><a href="/biodb/bio_entities/BE0002204" target="_blank">Xanthine dehydrogenase/oxidase</a></li>
+<li><a href="/biodb/bio_entities/BE0001184" target="_blank">NAD(P)H dehydrogenase [quinone] 1</a></li></ul></td><td><a href="/metabolites/DBMET00847">Doxorubicinol deoxaglycone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/868">Details</a></td></tr><tr><td>Doxorubicin</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01078">Doxorubicine hydroxyaglycone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1143">Details</a></td></tr><tr><td><a href="/metabolites/DBMET01078">Doxorubicine hydroxyaglycone</a></td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><span class="wishart wishart-not-available">Not Available</span></td><td><a href="/metabolites/DBMET01079">Doxirubicinol hydroxyaglycone</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1144">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>40% of the dose appears in bile in 5 days. 5-12% of the drug and its metabolites appears in urine during the same time period. </td></tr><tr><th>Half life</th><td>Terminal half life = 20 - 48 hours. </td></tr><tr><th>Clearance</th><td><ul>
+	<li>324-809 mL/min/m2 [by metabolism and biliary excretion]</li>
+	<li>1088 mL/min/m2 [Men]</li>
+	<li>433 mL/min/m2 [Women]</li>
+	<li>1540 mL/min/m2 [children greater than 2 years of age receiving administration of 10 to 75 mg/m2 doses]</li>
+	<li>813 mL/min/m2 [infants younger than 2 years of age receiving administration of 10 to 75 mg/m2 doses]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>LD<sub>50</sub>=21800 ug/kg (rat, subcutaneous)</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Doxorubicin Metabolism Pathway</td><td>Drug metabolism</td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              -
+        </td>
+        <td>0.8092</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              -
+        </td>
+        <td>0.9951</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.799</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7861</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8782</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8382</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9053</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8042</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9116</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5888</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9209</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.831</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8911</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          AMES toxic 
+        </td>
+        <td>
+            0.9198
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9534
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9672
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.6644 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9752
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.7195
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Ortho biotech products lp</li>
+<li>Pharmacia and upjohn co</li>
+<li>App pharmaceuticals llc</li>
+<li>Bedford laboratories div ben venue laboratories inc</li>
+<li>Pharmachemie bv</li>
+<li>Teva parenteral medicines inc</li>
+<li>Bristol myers squibb co</li></ul></td></tr><tr><th>Packagers</th><td><ul><li>Alza Corp.</li>
+<li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li>APPD</li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.bms.com">Bristol-Myers Squibb Co.</a></li>
+<li><a href="http://www.centocororthobiotech.com">Centocor Ortho Biotech Inc.</a></li>
+<li><a href="http://www.meadjohnson.com">Mead Johnson and Co.</a></li>
+<li><a href="http://www.pfizer.com">Pfizer Inc.</a></li>
+<li>Pharmachemie BV</li>
+<li><a href="http://www.pharmaciaupjohn.com">Pharmacia Inc.</a></li>
+<li><a href="http://www.schering-plough.ca">Schering-Plough Inc.</a></li>
+<li><a href="http://www.sopherion.com">Sopherion Therapeutics LLC</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection, powder, for solution</td><td>Intravenous</td><td>10 mg, 20 mg, 50 mg</td></tr><tr><td>Injection, solution</td><td>Intravenous</td><td> 2 mg/mL</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB06695">Dabigatran etexilate</a></td><td>P-Glycoprotein inducers such as doxorubicin may decrease the serum concentration of dabigatran etexilate. This combination should be avoided.</td></tr><tr><td><a href="/drugs/DB00390">Digoxin</a></td><td>The antineoplasic agent decreases the effect of digoxin</td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Telithromycin may reduce clearance of Doxorubicin. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Doxorubicin if Telithromycin is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00857">Terbinafine</a></td><td>Terbinafine may reduce the metabolism and clearance of Doxorubicin. Consider alternate therapy or monitor for therapeutic/adverse effects of Doxorubicin if Terbinafine is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the cardiotoxicity of Doxorubicin. Signs and symptoms of cardiac dysfunction should be monitored for frequently. Increased risk of heart failure. Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of doxorubicin by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of doxorubicin if voriconazole is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB00495">Zidovudine</a></td><td>Additive myelosuppression may occur. Doxorubicin may decrease the efficacy of zidovudine. Concomitant therapy should be avoided. </td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Liberal fluid intake to increase urine output and help the excretion of uric acid.</li></ul></td></tr></tbody></table>

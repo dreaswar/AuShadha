@@ -1,0 +1,186 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Mesoridazine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00933</strong>&#160; (APRD00610)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>A phenothiazine antipsychotic with effects similar to chlorpromazine. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00933/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00933/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00933.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00933.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00933.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00933.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00933.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00933">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>10-(2(1-Methyl-2-piperidyl)ethyl)-2-(methylsulfinyl)phenothiazine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>2-Methanesulfinyl-10-[2-(1-methyl-piperidin-2-yl)-ethyl]-10H-phenothiazine</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Thioridazine Thiomethyl Sulfoxide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>thioridazine-2-sulfoxide</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>TPS-23</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Mesoridazine mesilate</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT001073/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT001073/thumb.png"></a></td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT001073">DBSALT001073</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Lidanar</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Lidanil</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>Serentil</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antipsychotic-agents">Antipsychotic Agents</a></li>
+<li><a href="/mesh/dopamine-antagonists">Dopamine Antagonists</a></li>
+<li><a href="/mesh/phenothiazines">Phenothiazines</a></li></ul></td></tr><tr><th>CAS number</th><td>5588-33-0</td></tr><tr><th>Weight</th><td>Average: 386.574<br>Monoisotopic: 386.148654844</td></tr><tr><th>Chemical Formula</th><td>C<sub>21</sub>H<sub>26</sub>N<sub>2</sub>OS<sub>2</sub></td></tr><tr><th>InChI Key</th><td>SLVMESMUVMCQIY-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C21H26N2OS2/c1-22-13-6-5-7-16(22)12-14-23-18-8-3-4-9-20(18)25-21-11-10-17(26(2)24)15-19(21)23/h3-4,8-11,15-16H,5-7,12-14H2,1-2H3</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">2-methanesulfinyl-10-[2-(1-methylpiperidin-2-yl)ethyl]-10H-phenothiazine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CN1CCCCC1CCN1C2=CC=CC=C2SC2=C1C=C(C=C2)S(C)=O</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Benzothiazines</td></tr><tr><th>Subclass</th><td>Phenothiazines</td></tr><tr><th>Direct parent</th><td>Phenothiazines</td></tr><tr><th>Alternative parents</th><td>Benzene and Substituted Derivatives; Piperidines; Sulfoxides; Tertiary Amines; Polyamines; Thioethers</td></tr><tr><th>Substituents</th><td>piperidine; benzene; sulfoxide; tertiary amine; polyamine; thioether; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenothiazines. These are polycyclic aromatic compounds containing a phenothiazine moiety, which is a linear tricyclic system that consists of a two benzene rings joined by a para-thiazine ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used in the treatment of schizophrenia, organic brain disorders, alcoholism and psychoneuroses.</td></tr><tr><th>Pharmacodynamics</th><td>Mesoridazine, the besylate salt of a metabolite of thioridazine, is a phenothiazine tranquilizer. Pharmacological studies in laboratory animals have established that mesoridazine has a spectrum of pharmacodynamic actions typical of a major tranquilizer. In common with other tranquilizers it inhibits spontaneous motor activity in mice, prolongs thiopental and hexobarbital sleeping time in mice and produces spindles and block of arousal reaction in the EEG of rabbits. It is effective in blocking spinal reflexes in the cut and antagonizes d-amphetamine excitation and toxicity in grouped mice. It shows a moderate adrenergic blocking activity in vitro and in vivo and antagonizes 5-hydroxytryptamine in vivo. Intravenously administered, it lowers the blood pressure of anesthetized dogs. It has a weak antiacetylcholine effect in vitro.</td></tr><tr><th>Mechanism of action</th><td>Based upon animal studies, mesoridazine, as with other phenothiazines, acts indirectly on reticular formation, whereby neuronal activity into reticular formation is reduced without affecting its intrinsic ability to activate the cerebral cortex. In addition, the phenothiazines exhibit at least part of their activities through depression of hypothalamic centers. Neurochemically, the phenothiazines are thought to exert their effects by a central adrenergic blocking action.</td></tr><tr><th>Absorption</th><td>Well absorbed from the gastrointestinal tract.</td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td>4%</td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td>24 to 48 hours</td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td>Oral LD<sub>50</sub> is 560 &#177; 62.5 mg/kg and 644 &#177; 48 mg/kg in mouse and rat, respectively. Symptoms of overdose may include emesis, muscle tremors, decreased food intake and death associated with aspiration of oral-gastric contents into the respiratory system.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9322</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9863</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5609</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7284</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.8978</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5334</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7467</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7962</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.5465</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5561</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9231</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9025</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8309</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.5635</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6982
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8829
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9954
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.7465 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.7565
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.762
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Novartis pharmaceuticals corp</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.novartis.com">Novartis AG</a></li>
+<li><a href="http://www.physicianstotalcare.com">Physicians Total Care Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection, solution</td><td>Intramuscular</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>logP</td><td>3.9</td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>water solubility</td><td>7.67e-02 g/l</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>3.83</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>logP</td><td>3.57</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>logS</td><td>-3.7</td><td><a href="http://www.vcclab.org/lab/alogps/" target="_blank">ALOGPS</a></td></tr><tr><td>pKa (strongest acidic)</td><td>19.36</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>pKa (strongest basic)</td><td>8.19</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>3</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>23.55</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>115.13</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>43.83</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>4</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p><a href="http://www.drugsyn.org/Mesoridazine.htm">DrugSyn.org</a></p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=3084161&amp;tbm=pts" target="_blank">US3084161 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Drug</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?drug:D02671" target="_blank">D02671 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C07143" target="_blank">C07143 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=4078" target="_blank">4078 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46506724" target="_blank">46506724 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.3936.html" target="_blank">3936 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50131440" target="_blank">50131440 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=6780" target="_blank">6780 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chembldb/index.php/compound/inspect/CHEMBL1088" target="_blank">CHEMBL1088 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DAP000252" target="_blank">DAP000252 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA450386" target="_blank">PA450386 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=27464" target="_blank">27464 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>RxList</td><td><a class="wishart-link-out" href="http://www.rxlist.com/cgi/generic3/mesoridazine.htm" target="_blank">http://www.rxlist.com/cgi/generic3/mesoridazine.htm <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drugs.com</td><td><a class="wishart-link-out" href="http://www.drugs.com/mtm/mesoridazine.html" target="_blank">http://www.drugs.com/mtm/mesoridazine.html <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Mesoridazine" target="_blank">Mesoridazine <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>N05AC03<ul class="atc-drug-tree"><li><a href="/atc/N#N">N &#8212; NERVOUS SYSTEM</a></li><li><a href="/atc/N05#N05">N05 &#8212; PSYCHOLEPTICS</a></li><li><a href="/atc/N05A#N05A">N05A &#8212; ANTIPSYCHOTICS</a></li><li><a href="/atc/N05AC#N05AC">N05AC &#8212; Phenothiazines with piperidine structure</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB01118">Amiodarone</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00321">Amitriptyline</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00182">Amphetamine</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB06697">Artemether</a></td><td>Additive QTc-prolongation may occur. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB00637">Astemizole</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00865">Benzphetamine</a></td><td>Antipsychotics may diminish the stimulatory effect of Amphetamines. Monitor effectiveness of amphetamine therapy when altering concurrent antipsychotic therapy as antipsychotic agents may impair the stimulatory effect of amphetamines. </td></tr><tr><td><a href="/drugs/DB01053">Benzylpenicillin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01158">Bretylium</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01200">Bromocriptine</a></td><td>The phenothiazine decreases the effect of bromocriptine</td></tr><tr><td><a href="/drugs/DB00608">Chloroquine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00477">Chlorpromazine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00604">Cisapride</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01191">Dexfenfluramine</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB01576">Dextroamphetamine</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB00937">Diethylpropion</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB00343">Diltiazem</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01075">Diphenhydramine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00280">Disopyramide</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00204">Dofetilide</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00843">Donepezil</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01142">Doxepin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00199">Erythromycin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00574">Fenfluramine</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB01195">Flecainide</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00472">Fluoxetine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00176">Fluvoxamine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00674">Galantamine</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB01044">Gatifloxacin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00365">Grepafloxacin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01170">Guanethidine</a></td><td>Mesoridazine may decrease the effect of guanethidine.</td></tr><tr><td><a href="/drugs/DB01218">Halofantrine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00502">Haloperidol</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00458">Imipramine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01321">Josamycin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01137">Levofloxacin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB06708">Lumefantrine</a></td><td>Additive QTc-prolongation may occur. Concomitant therapy should be avoided. </td></tr><tr><td><a href="/drugs/DB00934">Maprotiline</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00579">Mazindol</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB01577">Methamphetamine</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB01578">Metrizamide</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00715">Paroxetine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00738">Pentamidine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01579">Phendimetrazine</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB00830">Phenmetrazine</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB00191">Phentermine</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB00397">Phenylpropanolamine</a></td><td>Decreased anorexic effect, may increase psychotic symptoms</td></tr><tr><td><a href="/drugs/DB01100">Pimozide</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00960">Pindolol</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01035">Procainamide</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01182">Propafenone</a></td><td>Increased risk of cardiotoxicity and arrhythmias.</td></tr><tr><td><a href="/drugs/DB00571">Propranolol</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00908">Quinidine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01346">Quinidine barbiturate</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00468">Quinine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00989">Rivastigmine</a></td><td>Possible antagonism of action</td></tr><tr><td><a href="/drugs/DB06144">Sertindole</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00489">Sotalol</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB01208">Sparfloxacin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB06145">Spiramycin</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB00382">Tacrine</a></td><td>The therapeutic effects of the central acetylcholinesterase inhibitor (AChEI), Tacrine, and/or the anticholinergic/antipsychotic, Mesoridazine, may be reduced due to antagonism. This interaction may be beneficial when the anticholinergic action is a side effect. AChEIs may also augment the central neurotoxic effect of antipsychotics. Monitor for extrapyramidal symptoms and decreased efficacy of both agents.</td></tr><tr><td><a href="/drugs/DB00864">Tacrolimus</a></td><td>Additive QTc-prolongation may occur increasing the risk of serious ventricular arrhythmias. Concomitant therapy should be used with caution.</td></tr><tr><td><a href="/drugs/DB00342">Terfenadine</a></td><td>Increased risk of cardiotoxicity and arrhythmias</td></tr><tr><td><a href="/drugs/DB04844">Tetrabenazine</a></td><td>May cause dopamine deficiency. Monitor for Tetrabenazine adverse effects.</td></tr><tr><td><a href="/drugs/DB01623">Thiothixene</a></td><td>May cause additive QTc-prolonging effects. Increased risk of ventricular arrhythmias. Consider alternate therapy. Thorough risk:benefit assessment is required prior to co-administration. </td></tr><tr><td><a href="/drugs/DB00539">Toremifene</a></td><td>Additive QTc-prolongation may occur, increasing the risk of serious ventricular arrhythmias. Consider alternate therapy. A thorough risk:benefit assessment is required prior to co-administration.</td></tr><tr><td><a href="/drugs/DB00662">Trimethobenzamide</a></td><td>Trimethobenzamide and Mesoridazine, two anticholinergics, may cause additive anticholinergic effects and enhance their adverse/toxic effects. Monitor for enhanced anticholinergic effects.</td></tr><tr><td><a href="/drugs/DB00726">Trimipramine</a></td><td>Additive QTc-prolongation may occur, increasing the risk of serious ventricular arrhythmias. Concomitant therapy should be used with caution.</td></tr><tr><td><a href="/drugs/DB00427">Triprolidine</a></td><td>The antihistamine, Triprolidine, may increase the arrhythmogenic effect of the phenothiazine, Mesoridazine. Monitor for symptoms of ventricular arrhythmias. Additive anticholinergic and CNS depressant effects may also occur. Monitor for enhanced anticholinergic and CNS depressant effects.</td></tr><tr><td><a href="/drugs/DB00209">Trospium</a></td><td>Trospium and Mesoridazine, two anticholinergics, may cause additive anticholinergic effects and enhanced adverse/toxic effects. Monitor for enhanced anticholinergic effects.</td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB02546">Vorinostat</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB00246">Ziprasidone</a></td><td>Additive QTc-prolonging effects may increase the risk of severe arrhythmias. Concomitant therapy should be avoided.</td></tr><tr><td><a href="/drugs/DB01624">Zuclopenthixol</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or use caution and monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB08919">Zuclopenthixol acetate</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or use caution and monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr><tr><td><a href="/drugs/DB08920">Zuclopenthixol decanoate</a></td><td>Additive QTc prolongation may occur. Consider alternate therapy or use caution and monitor for QTc prolongation as this can lead to Torsade de Pointes (TdP).</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><ul><li>Take with food to reduce irritation.</li></ul></td></tr></tbody></table>

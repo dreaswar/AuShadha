@@ -1,0 +1,165 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Enzalutamide</strong></td></tr><tr><th>Accession Number</th><td><strong>DB08899</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Enzalutamide is an androgen receptor inhibitor for the treatment of castration-resistant prostate cancer. <span class="caps">FDA</span> approved on August 31, 2012.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB08899/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB08899/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08899.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08899.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08899.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08899.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB08899.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB08899">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>MDV3100</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Xtandi</td><td>Astellas Pharma US, Inc</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents">Antineoplastic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>915087-33-1</td></tr><tr><th>Weight</th><td>Average: 464.436<br>Monoisotopic: 464.093009286</td></tr><tr><th>Chemical Formula</th><td>C<sub>21</sub>H<sub>16</sub>F<sub>4</sub>N<sub>4</sub>O<sub>2</sub>S</td></tr><tr><th>InChI Key</th><td>WXCXUHSOUPDCQV-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C21H16F4N4O2S/c1-20(2)18(31)28(12-5-4-11(10-26)15(8-12)21(23,24)25)19(32)29(20)13-6-7-14(16(22)9-13)17(30)27-3/h4-9H,1-3H3,(H,27,30)</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">4-{3-[4-cyano-3-(trifluoromethyl)phenyl]-5,5-dimethyl-4-oxo-2-sulfanylideneimidazolidin-1-yl}-2-fluoro-N-methylbenzamide</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CNC(=O)C1=C(F)C=C(C=C1)N1C(=S)N(C(=O)C1(C)C)C1=CC=C(C#N)C(=C1)C(F)(F)F</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Heterocyclic Compounds</td></tr><tr><th>Class</th><td>Azolidines</td></tr><tr><th>Subclass</th><td>Imidazolidines</td></tr><tr><th>Direct parent</th><td>Phenylimidazolidines</td></tr><tr><th>Alternative parents</th><td>Benzamides; Benzoyl Derivatives; Benzonitriles; Fluorobenzenes; Aryl Fluorides; Imidazolidinones; Tertiary Carboxylic Acid Amides; Secondary Carboxylic Acid Amides; Organic Thiocarbonic Acid Derivatives; Tertiary Amines; Carboxylic Acids; Enolates; Polyamines; Nitriles; Organofluorides; Alkyl Fluorides</td></tr><tr><th>Substituents</th><td>benzamide; benzoyl; benzonitrile; fluorobenzene; aryl halide; aryl fluoride; imidazolidinone; benzene; tertiary carboxylic acid amide; carboxamide group; thiocarbonic acid derivative; tertiary amine; secondary carboxylic acid amide; nitrile; polyamine; enolate; carboxylic acid; carboxylic acid derivative; carbonitrile; organonitrogen compound; organohalogen; organofluoride; amine; alkyl halide; alkyl fluoride</td></tr><tr><th>Classification description</th><td>This compound belongs to the phenylimidazolidines. These are polycyclic compounds containing an imidazoline substituted by a phenyl group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Enzalutamide is indicated for the treatment of patients with metastatic castration-resistant prostate cancer who have previously received docetaxel.</td></tr><tr><th>Pharmacodynamics</th><td>Resitance to enzalutamide therapy has been observed. This may occurred due to an upregulation of NF-&#954;B2/p52. </td></tr><tr><th>Mechanism of action</th><td>Enzalutamide is a competitive androgen receptor inhibitor that effects multiple stages of the signalling pathway. It is able to inhibit androgen binding to its receptor, androgen receptor nuclear translocation, and subsequent interaction with DNA. As a result, proliferation of prostate cancer cells decreases which ultimately leads to apoptosis and decreased tumour volume. </td></tr><tr><th>Absorption</th><td>The pharmacokinetic profile of enzalutamide and N-desmethyl enzalutamide (its major active metabolite) is described by a linear two-compartment model with first-order absorption. Enzalutamide also accumulates. Food does not affect its absorption. 
+Tmax, prostate cancer patients = 1 hour (range of 0.5-3 hours);
+Cmax, steady state, enzalutamide = 16.6 &#956;g/mL;
+Cmax, steady state, N-desmethyl enzalutamide = 12.7 &#956;g/mL;
+Time to steady state, daily dosing = 28 days; </td></tr><tr><th>Volume of distribution</th><td><p>Apparent volume of distribution (Vd/F), single oral dose = 110 L</p></td></tr><tr><th>Protein binding</th><td>Enzalutamide is 97% to 98% bound to plasma proteins, primarily albumin. N-desmethyl enzalutamide is 95% bound to plasma proteins. </td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Enzalutamide is hepatically metabolized, primarily by CYP2C8 and CYP3A4. The enzyme that converts enzalutamide to its active metabolite, N-desmethyl enzalutamide, is CYP2C8. The activity of N-desmethyl-enzalutamide is similar to that of the parent compound. </p></td></tr><tr><th>Route of elimination</th><td>Enzalutamide is primarily eliminated by hepatic metabolism. 71%  of the dose is recovered in urine (including only trace amounts of enzalutamide and N-desmethyl enzalutamide), and 14% is recovered in feces (0.4% of dose as unchanged enzalutamide and 1% as N-desmethyl enzalutamide). </td></tr><tr><th>Half life</th><td>The mean terminal half-life (t1/2) for enzalutamide in patients after a single oral dose is 5.8 days (range 2.8 to 10.2 days). Following a single 160 mg oral dose of enzalutamide in healthy volunteers, the mean terminal t1/2 for N-desmethyl enzalutamide is approximately 7.8 to 8.6 days.</td></tr><tr><th>Clearance</th><td><p>Apparent clearance (CL/F), single oral dose = 0.56 L/h (range of 0.33 &#8211; 1.02 L/h)</p></td></tr><tr><th>Toxicity</th><td>The most common adverse reactions (&#8805; 5%) are asthenia/fatigue, back pain, diarrhea, arthralgia, hot flush, peripheral edema, musculoskeletal pain, headache, upper respiratory infection, muscular weakness, dizziness, insomnia, lower respiratory infection, spinal cord compression and cauda equina syndrome, hematuria, paresthesia, anxiety, and hypertension.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.9356</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8514</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.5219</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.7609</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.6464</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5693</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.899</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7447</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8061</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.5589</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.5613</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.7126</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9148</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6882</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.6184</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.6711</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.683
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.7232
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            1.0
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.4319 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9911
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.7079
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Capsule</td><td>Oral</td><td>40 mg</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

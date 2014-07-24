@@ -1,0 +1,170 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Plerixafor</strong></td></tr><tr><th>Accession Number</th><td><strong>DB06809</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved</td></tr><tr><th>Description</th><td><p>Plerixafor is a hematopoietic stem cell mobilizer. It is used to stimulate the release of stem cells from the bone marrow into the blood in patients with non-Hodgkin lymphoma and multiple myeloma for the purpose of stimulating the immune system. These stem cells are then collected and used in autologous stem cell transplantation to replace blood-forming cells that were destroyed by chemotherapy. Plerixafor has orphan drug status in the United States and European Union; it was approved by the U.S. Food and Drug Administration on December 15, 2008.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB06809/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB06809/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06809.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06809.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06809.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06809.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB06809.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB06809">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>AMD3100</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><td>LM3100</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Mozobil</td><td>Genzyme Corporation</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/anti-hiv-agents">Anti-HIV Agents</a></li>
+<li><a href="/mesh/hematopoietic-agents">Hematopoietic Agents</a></li></ul></td></tr><tr><th>CAS number</th><td>110078-46-1</td></tr><tr><th>Weight</th><td>Average: 502.782<br>Monoisotopic: 502.447143768</td></tr><tr><th>Chemical Formula</th><td>C<sub>28</sub>H<sub>54</sub>N<sub>8</sub></td></tr><tr><th>InChI Key</th><td>YIQPUIGJQJDJOS-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C28H54N8/c1-9-29-15-17-31-13-3-21-35(23-19-33-11-1)25-27-5-7-28(8-6-27)26-36-22-4-14-32-18-16-30-10-2-12-34-20-24-36/h5-8,29-34H,1-4,9-26H2</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">1-{[4-(1,4,8,11-tetraazacyclotetradecan-1-ylmethyl)phenyl]methyl}-1,4,8,11-tetraazacyclotetradecane</div></td></tr><tr><th>SMILES</th><td><div class="wrap">C(N1CCCNCCNCCCNCC1)C1=CC=C(CN2CCCNCCNCCCNCC2)C=C1</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Benzenoids</td></tr><tr><th>Class</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Benzene and Substituted Derivatives</td></tr><tr><th>Alternative parents</th><td>Tertiary Amines; Polyamines; Dialkylamines</td></tr><tr><th>Substituents</th><td>tertiary amine; polyamine; secondary aliphatic amine; secondary amine; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the benzene and substituted derivatives. These are aromatic compounds containing at least one benzene ring.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>Used in combination with granulocyte-colony stimulating factor (G-CSF, filgrastim) to mobilize hematopoietic stem cells to the peripheral blood for collection and subsequent autologous transplantation in patients with non-Hodgkin&#8217;s lymphoma (NHL) and multiple myeloma (MM).</td></tr><tr><th>Pharmacodynamics</th><td>Plerixafor is a bicyclam derivative that antagonizes CXCR4 by binding to three acidic residues in the ligand-binding pocket: Asp171, Asp262, and Glu288. Blood levels of CD34+ cells peaked at 9 hours after administration of 0.24 mg/kg plerixafor in healthy subjects. In patients that have non-Hodgkin&#8217;s lymphoma or multiple myeloma, blood levels of CD34+ peaked at 6 hours. In combination with a G-CSF, circulating CD34+ cells in the peripheral blood peaked at 9-14 hours. </td></tr><tr><th>Mechanism of action</th><td>Plerixafor inhibits the CXCR4 chemokine receptors on CD34+ cells and reversibly blocks binding of the ligand, stromal cell-derived factor-1-alpha (SDF-1&#945;). By blocking the interaction between SDF-1&#945; and CXCR4 with plerixafor, mobilization of progenitor cells is triggered. Filgrastim, a granulocyte-colony stimulating factor, is added to enhance CD34+ cell mobilization, thus increasing the yield of stem cells- an important determinant of graft adequacy. </td></tr><tr><th>Absorption</th><td>Pharmacokinetic profile follows a two-compartment model with first-order absorption. A median peak plasma concentration of 0.24 mg/kg of plerixafor occurred 30-60 minutes after subcutaneous dose. 
+</td></tr><tr><th>Volume of distribution</th><td><p>0.3 L/kg</p></td></tr><tr><th>Protein binding</th><td>58% </td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Metabolism does not involved CYP isoenzymes </p></td></tr><tr><th>Route of elimination</th><td>0.24 mg/kg, healthy subjects: ~70% of the parent drug is excreted in urine in the first 24 hours. </td></tr><tr><th>Half life</th><td>Terminal elimination half-life, NHL patients: 4.4 hours;
+Terminal elimination half-life, MM patients: 5.6 hours;
+Terminal elimination half-life, Hodgkin's lymphoma patients: 3.5 hours; 
+Distribution half-life: 0.3 hours </td></tr><tr><th>Clearance</th><td><p>Total plasma clearance: 4.38 L/h;<br>
+Renal clearance: 3.15 L/h</p></td></tr><tr><th>Toxicity</th><td>LD50, mouse, SC: 16.3 mg/kg;
+LD50, rat, SC: &gt;50 mg/kg;
+LD50, mouse and rat, IV injection: 5.2 mg/kg 
+</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.932</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.6867</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.5403</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.8076</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8119</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.7683</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.5069</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8905</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.5274</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.7818</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8787</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9272</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7149</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9114</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8817</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.926</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.7906
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.9106
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9824
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.1178 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.5
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.6334
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection</td><td>Subcutaneous</td><td>20 mg/mL</td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td>Searched, but no interactions found.</td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

@@ -1,0 +1,232 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Irinotecan</strong></td></tr><tr><th>Accession Number</th><td><strong>DB00762</strong>&#160; (APRD00579)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>approved, investigational</td></tr><tr><th>Description</th><td><p>Irinotecan is an antineoplastic enzyme inhibitor primarily used in the treatment of colorectal cancer. It is a derivative of camptothecin that inhibits the action of topoisomerase I. Irinotecan prevents religation of the <span class="caps">DNA</span> strand by binding to topoisomerase I-<span class="caps">DNA</span> complex, and causes double-strand <span class="caps">DNA</span> breakage and cell death. It is a derivative of camptothecin.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB00762/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB00762/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00762.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00762.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00762.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00762.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB00762.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB00762">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="synonyms"><thead><th>Synonym</th><th>Language</th><th>Code</th></thead><tbody><tr><td>Camptothecin-11</td><td><span class="wishart wishart-not-available">Not Available</span></td><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table></td></tr><tr><th>Salts</th><td class="table-container"><table class="inner">
+  <thead>
+    <tr>
+      <th>Name/CAS</th>
+      <th>Structure</th>
+      <th>Properties</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          <strong>Irinotecan Hydrochloride</strong>
+          <div class="cas"></div>
+        </td>
+        <td><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DBSALT000103/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DBSALT000103/thumb.png"></a></td>
+        <td>
+            <ul>
+              <li>InChI Key: GURKHSYORGJETM-WAQYZQTGSA-N</li>
+              <li>Monoisotopic Mass: 622.255812707</li>
+              <li>Average Mass: 623.139</li>
+            </ul>
+        </td>
+        <td><a class="btn btn-default btn-xs" href="/salts/DBSALT000103">DBSALT000103</a></td>
+      </tr>
+  </tbody>
+</table></td></tr><tr><th>Brand names</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="brands"><thead><tr><th>Name</th><th>Company</th></tr></thead><tbody><tr><td>Campto</td><td>YakultHonsha Co. Ltd.</td></tr><tr><td>Camptosar</td><td>Pfizer</td></tr></tbody></table></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><ul><li><a href="/mesh/antineoplastic-agents-phytogenic">Antineoplastic Agents, Phytogenic</a></li>
+<li><a href="/mesh/radiation-sensitizing-agents">Radiation-Sensitizing Agents</a></li>
+<li><a href="/mesh/topoisomerase-i-inhibitors">Topoisomerase I Inhibitors</a></li>
+<li><a href="/mesh/prodrugs">Prodrugs</a></li></ul></td></tr><tr><th>CAS number</th><td>100286-90-6</td></tr><tr><th>Weight</th><td>Average: 586.678<br>Monoisotopic: 586.279134968</td></tr><tr><th>Chemical Formula</th><td>C<sub>33</sub>H<sub>38</sub>N<sub>4</sub>O<sub>6</sub></td></tr><tr><th>InChI Key</th><td>UWKQSNNFCGGAFS-XIFFEERXSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C33H38N4O6/c1-3-22-23-16-21(43-32(40)36-14-10-20(11-15-36)35-12-6-5-7-13-35)8-9-27(23)34-29-24(22)18-37-28(29)17-26-25(30(37)38)19-42-31(39)33(26,41)4-2/h8-9,16-17,20,41H,3-7,10-15,18-19H2,1-2H3/t33-/m0/s1</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">(19S)-10,19-diethyl-19-hydroxy-14,18-dioxo-17-oxa-3,13-diazapentacyclo[11.8.0.0^{2,11}.0^{4,9}.0^{15,20}]henicosa-1(21),2(11),3,5,7,9,15(20)-heptaen-7-yl 4-(piperidin-1-yl)piperidine-1-carboxylate</div></td></tr><tr><th>SMILES</th><td><div class="wrap">CCC1=C2CN3C(=CC4=C(COC(=O)[C@]4(O)CC)C3=O)C2=NC2=C1C=C(OC(=O)N1CCC(CC1)N1CCCCC1)C=C2</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Alkaloids and Derivatives</td></tr><tr><th>Class</th><td>Camptothecins</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Camptothecins</td></tr><tr><th>Alternative parents</th><td>Hydroxyquinolines; Pyranopyridines; Piperidinecarboxylic Acids; Phenol Ethers; Aminopiperidines; Pyridinones; Dicarboxylic Acids and Derivatives; Tertiary Alcohols; Carbamic Acids and Derivatives; Carboxylic Acid Esters; Tertiary Amines; Polyamines; Dialkyl Ethers</td></tr><tr><th>Substituents</th><td>hydroxyquinoline; pyranopyridine; quinoline; piperidinecarboxylic acid; phenol ether; pyridinone; 4-aminopiperidine; benzene; piperidine; dicarboxylic acid derivative; pyridine; tertiary alcohol; carbamic acid derivative; tertiary amine; carboxylic acid ester; polyamine; ether; carboxylic acid derivative; dialkyl ether; alcohol; amine; organonitrogen compound</td></tr><tr><th>Classification description</th><td>This compound belongs to the camptothecins. These are heterocyclic compounds comprising a planar pentacyclic ring structure, that includes a pyrrolo[3,4-beta]-quinoline moiety (rings A, B and C), conjugated pyridone moiety (ring D) and one chiral center at position 20 within the alpha-hydroxy lactone ring with (S) configuration (the E-ring).</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td>For the treatment of metastatic colorectal cancer (first-line therapy when administered with 5-fluorouracil and leucovorin). Also used in combination with cisplatin for the treatment of extensive small cell lung cancer. Irinotecan is currently under investigation for the treatment of metastatic or recurrent cervical cancer.</td></tr><tr><th>Pharmacodynamics</th><td>Irinotecan is an antineoplastic enzyme inhibitor primarily used in the treatment of colorectal cancer. Irinotecan is a semisynthetic derivative of camptothecin. Camptothecins interact specifically with topoisomerase I, an enzyme in the cell nucleus that regulates DNA topology and facilitates nuclear processes such as DNA replication, recombination, and repair. During these processes, topoisomerase I relieves torsional strain in DNA by inducing reversible single-strand breaks, allowing single DNA strands to pass through the break. The 3'-DNA terminus of the broken DNA strands bind covalently with the topoisomerase enzyme to form a catalytic intermediate called a cleavable complex. After the DNA is sufficiently relaxed and the strand passage reaction is complete, DNA topoisomerase reattaches the broken DNA strands to form the chemically unaltered topoisomers that allow transcription to proceed. Irinotecan and its active metabolite SN-38 bind to the topoisomerase I-DNA complex and prevent religation of these single-strand breaks. Current research suggests that the cytotoxicity of irinotecan is due to double-strand DNA damage produced during DNA synthesis when replication enzymes interact with the ternary complex formed by topoisomerase I, DNA, and either Irinotecan or SN-38. Mammalian cells cannot efficiently repair these double-strand breaks. The precise contribution of SN-38 to the activity of irinotecan in humans is not known. Irinotecan is cell cycle phase-specific (S-phase).</td></tr><tr><th>Mechanism of action</th><td>Irinotecan inhibits the action of topoisomerase I. Irinotecan prevents religation of the DNA strand by binding to topoisomerase I-DNA complex. The formation of this ternary complex interferes with the moving replication fork, which induces replication arrest and lethal double-stranded breaks in DNA. As a result, DNA damage is not efficiently repaired and apoptosis (programmed cell death) occurs.</td></tr><tr><th>Absorption</th><td>The maximum plasma concentration (Cmax) when a dose of 125 mg/m^2 is given to patients with solid tumours is 1660 ng/mL. The AUC (0-24) is 10,200 ng&#183;h/mL. The Cmax when a dose of 340 mg/m^2 is given to patients with solid tumours is 3392 ng/mL. The AUC (0-24) is 20,604 ng&#183;h/mL.</td></tr><tr><th>Volume of distribution</th><td><p>The volume of distribution of terminal elimination phase is 110 L/m^2 when a dose of 125 mg/m^2 is given to patients with solid tumours. The volume of distribution of terminal elimination phase is 234 L/m^2 when a dose of 340 mg/m^2 is given to patients with solid tumours.</p></td></tr><tr><th>Protein binding</th><td>30%-68% protein bound, mainly to albumin. </td></tr><tr><th>Metabolism</th><td class="data-table-container"><p>Hepatic. The metabolic conversion of irinotecan to the active metabolite SN-38 is mediated by carboxylesterase enzymes and primarily occurs in the liver. SN-38 is subsequently conjugated predominantly by the enzyme UDP-glucuronosyl transferase 1A1 (UGT1A1) to form a glucuronide metabolite. </p><table class="table-standard table-condensed" id="experimental-properties"><thead><tr><th>Substrate</th><th>Enzymes</th><th colspan="2">Product</th></tr></thead><tbody><tr><td>Irinotecan</td><td class="enzymes"><div class="arrow"><span class="glyphicon glyphicon-arrow-right"> </span></div><ul><li><a href="/biodb/bio_entities/BE0002180" target="_blank">Cholinesterase</a></li>
+<li><a href="/biodb/bio_entities/BE0002705" target="_blank">Liver carboxylesterase 1</a></li>
+<li><a href="/biodb/bio_entities/BE0004712" target="_blank">Cocaine esterase</a></li></ul></td><td><a href="/metabolites/DBMET01143">SN-38</a></td><td class="actions"><a class="btn btn-info btn-sm" href="/reactions/1265">Details</a></td></tr></tbody></table></td></tr><tr><th>Route of elimination</th><td>The cumulative biliary and urinary excretion of irinotecan and its metabolites (SN-38 and SN-38 glucuronide) over a period of 48 hours following administration of irinotecan in two patients ranged from approximately 25% (100 mg/m2) to 50% (300 mg/m2).</td></tr><tr><th>Half life</th><td>The half life of irinotecan is about 6 - 12 hours. The terminal elimination half-life of the active metabolite, SN-38 is 10 - 20 hours. </td></tr><tr><th>Clearance</th><td><ul>
+	<li>13.3 L/h/m^2 [Dose of 125 mg/m^2, patients with solid tumours]</li>
+	<li>13.9 L/h/m^2 [Dose of 340 mg/m^2, patients with solid tumours]</li>
+</ul></td></tr><tr><th>Toxicity</th><td>Gastrointestinal complications, such as nausea, vomiting, abdominal cramping, diarrhea, and infection.</td></tr><tr><th>Affected organisms</th><td><ul><li>Humans and other mammals</li></ul></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>Irinotecan Action Pathway</td><td>Drug action</td></tr><tr><td>Irinotecan Metabolism Pathway</td><td>Drug metabolism</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00600?highlight%5Bcompounds%5D%5B%5D=DB00762&amp;highlight%5Bproteins%5D%5B%5D=DB00762">SMP00600</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="snp-fx"><thead><tr><th>Interacting Gene/Enzyme</th><th>SNP RS ID</th><th>Allele name</th><th>Defining change</th><th>Adverse Reaction</th><th>Reference(s)</th></tr></thead><tbody><tr><td>Solute carrier organic anion transporter family member 1B1<br>Gene symbol: SLCO1B1<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/Q9Y6L6" target="_blank">Q9Y6L6 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs4149056" target="_blank">rs4149056 <span class="glyphicon glyphicon-new-window"> </span></a></td><td>SLCO1B1*15</td><td>C Allele</td><td>Diarrhea, leucopenia, neutropenia</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/17898662" target="_blank" title="Takane H, Miyata M, Burioka N, Kurai J, Fukuoka Y, Suyama H, Shigeoka Y, Otsubo K, Ieiri I, Shimizu E: Severe toxicities after irinotecan-based chemotherapy in a patient with lung cancer: a homozygote for the SLCO1B1*15 allele. Ther Drug Monit. 2007 Oct;29(5):666-8.">17898662 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>Solute carrier organic anion transporter family member 1B1<br>Gene symbol: SLCO1B1<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/Q9Y6L6" target="_blank">Q9Y6L6 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs2306283" target="_blank">rs2306283 <span class="glyphicon glyphicon-new-window"> </span></a></td><td>SLCO1B1*15</td><td>G Allele</td><td>Diarrhea, leucopenia, neutropenia</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/17898662" target="_blank" title="Takane H, Miyata M, Burioka N, Kurai J, Fukuoka Y, Suyama H, Shigeoka Y, Otsubo K, Ieiri I, Shimizu E: Severe toxicities after irinotecan-based chemotherapy in a patient with lung cancer: a homozygote for the SLCO1B1*15 allele. Ther Drug Monit. 2007 Oct;29(5):666-8.">17898662 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>UDP-glucuronosyltransferase 1-1<br>Gene symbol: UGT1A1<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/P22309" target="_blank">P22309 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs8175347" target="_blank">rs8175347 <span class="glyphicon glyphicon-new-window"> </span></a></td><td>UGT1A1*28 or UGT1A 7/7</td><td>extra TA in promoter</td><td>Leukopenia, thrombpocytopenia</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/17681105" target="_blank" title="Lankisch TO, Schulz C, Zwingers T, Erichsen TJ, Manns MP, Heinemann V, Strassburg CP: Gilbert's Syndrome and irinotecan toxicity: combination with UDP-glucuronosyltransferase 1A7 variants increases risk. Cancer Epidemiol Biomarkers Prev. 2008 Mar;17(3):695-701. [18349289 ]
+    Fakih MG, Ross ME, Starostik P: Increased frequency of uridine diphosphate glucuronosyltransferase 1A1 7/7 in patients experiencing severe irinotecan-induced toxicities. Clin Colorectal Cancer. 2007 Jul;6(8):583-7.">17681105 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>UDP-glucuronosyltransferase 1-7<br>Gene symbol: UGT1A7<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/Q9HAW7" target="_blank">Q9HAW7 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs17868323" target="_blank">rs17868323 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>G allele</td><td>Leukopenia, thrombpocytopenia</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/18349289" target="_blank" title="Lankisch TO, Schulz C, Zwingers T, Erichsen TJ, Manns MP, Heinemann V, Strassburg CP: Gilbert's Syndrome and irinotecan toxicity: combination with UDP-glucuronosyltransferase 1A7 variants increases risk. Cancer Epidemiol Biomarkers Prev. 2008 Mar;17(3):695-701.">18349289 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>UDP-glucuronosyltransferase 1-7<br>Gene symbol: UGT1A7<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/Q9HAW7" target="_blank">Q9HAW7 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs17863778" target="_blank">rs17863778 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>A allele</td><td>Leukopenia, thrombpocytopenia</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/18349289" target="_blank" title="Lankisch TO, Schulz C, Zwingers T, Erichsen TJ, Manns MP, Heinemann V, Strassburg CP: Gilbert's Syndrome and irinotecan toxicity: combination with UDP-glucuronosyltransferase 1A7 variants increases risk. Cancer Epidemiol Biomarkers Prev. 2008 Mar;17(3):695-701.">18349289 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>UDP-glucuronosyltransferase 1-7<br>Gene symbol: UGT1A7<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/Q9HAW7" target="_blank">Q9HAW7 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs17868324" target="_blank">rs17868324 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>A allele</td><td>Leukopenia, thrombpocytopenia</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/18349289" target="_blank" title="Lankisch TO, Schulz C, Zwingers T, Erichsen TJ, Manns MP, Heinemann V, Strassburg CP: Gilbert's Syndrome and irinotecan toxicity: combination with UDP-glucuronosyltransferase 1A7 variants increases risk. Cancer Epidemiol Biomarkers Prev. 2008 Mar;17(3):695-701.">18349289 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr><tr><td>UDP-glucuronosyltransferase 1-1<br>Gene symbol: UGT1A1<br>UniProt: <a class="wishart-link-out" href="http://www.uniprot.org/uniprot/P22309" target="_blank">P22309 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><a class="wishart-link-out" href="http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs10929302" target="_blank">rs10929302 <span class="glyphicon glyphicon-new-window"> </span></a></td><td><span class="wishart wishart-not-available">Not Available</span></td><td>A Allele</td><td>Hematological toxicity, neutropenia</td><td><span class="citation"><a class="pubmed-link wishart-link-out" data-toggle="tooltip" href="http://www.ncbi.nlm.nih.gov/pubmed/17510208" target="_blank" title="Cote JF, Kirzin S, Kramar A, Mosnier JF, Diebold MD, Soubeyran I, Thirouard AS, Selves J, Laurent-Puig P, Ychou M: UGT1A1 polymorphism can predict hematologic toxicity in patients treated with irinotecan. Clin Cancer Res. 2007 Jun 1;13(11):3269-75. Epub 2007 May 17.">17510208 <span class="glyphicon glyphicon-new-window"> </span></a></span></td></tr></tbody></table></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.969</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.6284</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              -
+        </td>
+        <td>0.6065</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Substrate
+        </td>
+        <td>0.7861</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Inhibitor
+        </td>
+        <td>0.7092</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.5337</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8178</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8174</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.9115</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Substrate</td>
+        <td>0.7407</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8564</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7377</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.7779</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.6625</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Inhibitor</td>
+        <td>0.8295</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>High CYP Inhibitory Promiscuity</td>
+        <td>0.5081</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.6977
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.8045
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.9956
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.7960 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9457
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Inhibitor 
+        </td>
+        <td>
+            0.5413
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><ul><li>Pfizer inc</li>
+<li>Accord healthcare inc</li>
+<li>Actavis totowa llc</li>
+<li>Akorn inc</li>
+<li>App pharmaceuticals</li>
+<li>Bedford laboratories</li>
+<li>Dr reddys laboratories ltd</li>
+<li>Ebewe pharma ges mbh nfg kg</li>
+<li>Fresenius kabi oncology plc</li>
+<li>Hospira inc</li>
+<li>Pharmaforce inc</li>
+<li>Pliva lachema as</li>
+<li>Sandoz inc</li>
+<li>Sun pharma global inc</li>
+<li>Teva parenteral medicines inc</li>
+<li>Watson laboratories inc</li></ul></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.actavis.com">Actavis Group</a></li>
+<li><a href="http://www.apppharma.com">APP Pharmaceuticals</a></li>
+<li>Barr Pharmaceuticals</li>
+<li><a href="http://www.baxter.com">Baxter International Inc.</a></li>
+<li><a href="http://www.bedfordlabs.com">Bedford Labs</a></li>
+<li><a href="http://www.benvenue.com">Ben Venue Laboratories Inc.</a></li>
+<li><a href="http://www.cipla.com">Cipla Ltd.</a></li>
+<li><a href="http://www.ebewe.at">Ebewe Pharma</a></li>
+<li><a href="http://www.fresenius-kabi.com">Fresenius Kabi AB</a></li>
+<li><a href="http://www.greenstonellc.com">Greenstone LLC</a></li>
+<li><a href="http://www.hospira.com">Hospira Inc.</a></li>
+<li>Jiangsu Hengrui Medicine Co. Ltd.</li>
+<li><a href="http://www.pfizer.com">Pfizer Inc.</a></li>
+<li><a href="http://www.pharmaciaupjohn.com">Pharmacia Inc.</a></li>
+<li><a href="http://www.pliva.com">Pliva Inc.</a></li>
+<li><a href="http://www.sagentpharma.com">Sagent Pharmaceuticals</a></li>
+<li><a href="http://www.sandoz.ca">Sandoz</a></li>
+<li>SC Sindan Pharma SRL</li>
+<li>Sicor Pharmaceuticals</li>
+<li><a href="http://www.sunpharma.com">Sun Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.tevapharm.com">Teva Pharmaceutical Industries Ltd.</a></li>
+<li><a href="http://www.watson.com">Watson Pharmaceuticals</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Injection, solution</td><td>Intravenous</td><td>40 mg/2 mL; 100 mg/5 mL;  300 mg/15 mL </td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00673">Aprepitant</a></td><td>Aprepitant may change levels of the chemotherapy agent, irinotecan.</td></tr><tr><td><a href="/drugs/DB01072">Atazanavir</a></td><td>Increases levels/effect of irinotecan</td></tr><tr><td><a href="/drugs/DB01320">Fosphenytoin</a></td><td>The hydantoin decreases the effect of irinotecan</td></tr><tr><td><a href="/drugs/DB01026">Ketoconazole</a></td><td>Ketoconazole increases the effect and toxicity of irinotecan</td></tr><tr><td><a href="/drugs/DB06589">Pazopanib</a></td><td>Irinotecan is an uridine diphosphate glucuronosyltransferase 1A1 (UGT1A1) substrate and serum concentrations may increase if administered concurrently with pazopanib, an UGT1A1 inhibitor. </td></tr><tr><td><a href="/drugs/DB00252">Phenytoin</a></td><td>The hydantoin decreases the effect of irinotecan</td></tr><tr><td><a href="/drugs/DB08896">Regorafenib</a></td><td>Regorafenib may increase levels of irinotecan, a UGT1A1 substrate. </td></tr><tr><td><a href="/drugs/DB00976">Telithromycin</a></td><td>Telithromycin may reduce clearance of Irinotecan. Consider alternate therapy or monitor for changes in the therapeutic/adverse effects of Irinotecan if Telithromycin is initiated, discontinued or dose changed.</td></tr><tr><td><a href="/drugs/DB04572">Thiotepa</a></td><td>Thiotepa, a strong CYP2B6 inhibitor, may decrease the metabolism and clearance of Irinotecan, a CYP2B6 substrate. Consider alternate therapy or monitor for changes in the therapeutic and adverse effects of Irinotecan if Thiotepa is initiated, discontinued or dose changed. </td></tr><tr><td><a href="/drugs/DB00072">Trastuzumab</a></td><td>Trastuzumab may increase the risk of neutropenia and anemia. Monitor closely for signs and symptoms of adverse events. </td></tr><tr><td><a href="/drugs/DB00582">Voriconazole</a></td><td>Voriconazole, a strong CYP3A4 inhibitor, may increase the serum concentration of irinotecan by decreasing its metabolism. Monitor for changes in the therapeutic and adverse effects of irinotecan if voriconazole is initiated, discontinued or dose changed.</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

@@ -1,0 +1,180 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Putrescine</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01917</strong>&#160; (EXPT02702)</td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>experimental</td></tr><tr><th>Description</th><td><p>A toxic diamine formed by putrefaction from the decarboxylation of arginine and ornithine. [PubChem]</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01917/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01917/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01917.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01917.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01917.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01917.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01917.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01917">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>110-60-1</td></tr><tr><th>Weight</th><td>Average: 88.1515<br>Monoisotopic: 88.100048394</td></tr><tr><th>Chemical Formula</th><td>C<sub>4</sub>H<sub>12</sub>N<sub>2</sub></td></tr><tr><th>InChI Key</th><td>KIDHWZJUCRJVML-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/C4H12N2/c5-3-1-2-4-6/h1-6H2</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">butane-1,4-diamine</div></td></tr><tr><th>SMILES</th><td><div class="wrap">NCCCCN</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Organic Compounds</td></tr><tr><th>Superclass</th><td>Organonitrogen Compounds</td></tr><tr><th>Class</th><td>Amines</td></tr><tr><th>Subclass</th><td>Polyamines</td></tr><tr><th>Direct parent</th><td>Polyamines</td></tr><tr><th>Alternative parents</th><td>Monoalkylamines</td></tr><tr><th>Substituents</th><td>primary aliphatic amine; primary amine</td></tr><tr><th>Classification description</th><td>This compound belongs to the polyamines. These are compounds containing more than one amine group.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td class="data-table-container"><table class="table table-condensed table-striped" id="pathways"><thead><tr><th>Pathway</th><th>Category</th></tr></thead><tbody><tr><td>S-Adenosylhomocysteine (SAH) Hydrolase Deficiency</td><td>Disease</td></tr><tr><td>Methionine Adenosyltransferase Deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00221?highlight%5Bcompounds%5D%5B%5D=DB01917&amp;highlight%5Bproteins%5D%5B%5D=DB01917">SMP00221</a></td></tr><tr><td>Homocystinuria-megaloblastic anemia due to defect in cobalamin metabolism, cblG complementation type</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00570?highlight%5Bcompounds%5D%5B%5D=DB01917&amp;highlight%5Bproteins%5D%5B%5D=DB01917">SMP00570</a></td></tr><tr><td>Cystathionine Beta-Synthase Deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00177?highlight%5Bcompounds%5D%5B%5D=DB01917&amp;highlight%5Bproteins%5D%5B%5D=DB01917">SMP00177</a></td></tr><tr><td>Spermidine and Spermine Biosynthesis</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00445?highlight%5Bcompounds%5D%5B%5D=DB01917&amp;highlight%5Bproteins%5D%5B%5D=DB01917">SMP00445</a></td></tr><tr><td>Methylenetetrahydrofolate Reductase Deficiency (MTHFRD)</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00340?highlight%5Bcompounds%5D%5B%5D=DB01917&amp;highlight%5Bproteins%5D%5B%5D=DB01917">SMP00340</a></td></tr><tr><td>Glycine N-methyltransferase Deficiency</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00222?highlight%5Bcompounds%5D%5B%5D=DB01917&amp;highlight%5Bproteins%5D%5B%5D=DB01917">SMP00222</a></td></tr><tr><td>Hypermethioninemia</td><td>Disease</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00341?highlight%5Bcompounds%5D%5B%5D=DB01917&amp;highlight%5Bproteins%5D%5B%5D=DB01917">SMP00341</a></td></tr><tr><td>Methionine Metabolism</td><td>Metabolic</td><td><a class="btn btn-default btn-xs" href="http://www.smpdb.ca/view/SMP00033?highlight%5Bcompounds%5D%5B%5D=DB01917&amp;highlight%5Bproteins%5D%5B%5D=DB01917">SMP00033</a></td></tr></tbody></table></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.8896</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.8645</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.8867</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.56</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9692</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.8872</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.647</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.895</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Substrate</td>
+        <td>0.5153</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8448</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9045</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9071</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9497</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9084</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9111</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.8704</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.908
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Non-carcinogens 
+        </td>
+        <td>
+            0.5694
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Not ready biodegradable 
+        </td>
+        <td>
+            0.529
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.3026 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.8553
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.8449
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Dosage forms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><ul><li><a data-no-turbolink="true" href="/spectra/spectra/c_ms/129">Gas-MS Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/nmr_one_d/1300">13C NMR Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/nmr_one_d/1703">1H NMR Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1568">MS/MS Spectrum Quattro_QQQ 10</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1569">MS/MS Spectrum Quattro_QQQ 25</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/1570">MS/MS Spectrum Quattro_QQQ 40</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5291">MS/MS Spectrum EI-B (HITACHI RMU-6L) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5292">MS/MS Spectrum EI-B (HITACHI RMU-6M) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5293">MS/MS Spectrum CI-B (HITACHI M-80) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5294">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 10</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5295">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 20</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5296">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 30</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5297">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 40</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5298">MS/MS Spectrum LC-ESI-QQ (API3000, Applied Biosystems) 50</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5299">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5300">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies	) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5301">MS/MS Spectrum GC-EI-TOF (Pegasus III TOF-MS system, Leco; GC 6890, Agilent Technologies) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/ms_ms/5302">MS/MS Spectrum LC-ESI-QTOF (UPLC Q-Tof Premier, Waters) </a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/nmr_two_d/1069">[1H,1H] 2D NMR Spectrum</a></li>
+<li><a data-no-turbolink="true" href="/spectra/spectra/nmr_two_d/1644">[1H,13C] 2D NMR Spectrum</a></li></ul></td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>

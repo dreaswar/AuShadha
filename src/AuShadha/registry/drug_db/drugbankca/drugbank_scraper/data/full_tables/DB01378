@@ -1,0 +1,181 @@
+<table class="drug-table data-table table table-condensed table-bordered"><tbody><tr id="identification"><th class="divider" colspan="2">Identification</th></tr><tr><th>Name</th><td><strong>Magnesium</strong></td></tr><tr><th>Accession Number</th><td><strong>DB01378</strong></td></tr><tr><th>Type</th><td>small molecule</td></tr><tr><th>Groups</th><td>nutraceutical</td></tr><tr><th>Description</th><td><p>Magnesium hydroxide is used primarily in &#8220;Milk of Magnesia&#8221;, a white aqueous, mildly alkaline suspension of magnesium hydroxide formulated at about 8%w/v. Milk of magnesia is primarily used to alleviate constipation, but can also be used to relieve indigestion and heartburn. When taken internally by mouth as a laxative, the osmotic force of the magnesia suspension acts to draw fluids from the body and to retain those already within the lumen of the intestine, serving to distend the bowel, thus stimulating nerves within the colon wall, inducing peristalsis and resulting in evacuation of colonic contents.</p></td></tr><tr><th>Structure</th><td><div class="structure"><a class="moldbi-thumbnail" href="http://structures.wishartlab.com/molecules/DB01378/image.png"><img alt="Thumb" src="http://structures.wishartlab.com/molecules/DB01378/thumb.png"></a></div><div class="structure-links"><div class="btn-group btn-group-xs"><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01378.mol">MOL</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01378.sdf">SDF</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01378.pdb">PDB</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01378.smiles">SMILES</a><a class="btn btn-default" href="/structures/structures/small_molecule_drugs/DB01378.inchi">InChI</a><a class="btn btn-info" href="/structures/structures/small_molecule_drugs/DB01378">View Structure</a></div></div></td></tr><tr><th>Synonyms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Salts</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand names</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Brand mixtures</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Categories</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>CAS number</th><td>7439-95-4</td></tr><tr><th>Weight</th><td>Average: 24.305<br>Monoisotopic: 23.985041898</td></tr><tr><th>Chemical Formula</th><td>Mg</td></tr><tr><th>InChI Key</th><td>JLVVSXFLKOJNIY-UHFFFAOYSA-N</td></tr><tr><th>InChI</th><td><div class="wrap">InChI=1S/Mg/q+2</div></td></tr><tr><th>IUPAC Name</th><td><div class="wrap">magnesium(2+) ion</div></td></tr><tr><th>SMILES</th><td><div class="wrap">[Mg++]</div></td></tr><tr><th>Mass Spec</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="taxonomy"><th class="divider" colspan="2">Taxonomy</th></tr><tr><th>Kingdom</th><td>Inorganic Compounds</td></tr><tr><th>Superclass</th><td>Homogeneous Metal Compounds</td></tr><tr><th>Class</th><td>Homogeneous Alkaline Earth Metal Compounds</td></tr><tr><th>Subclass</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Direct parent</th><td>Homogeneous Alkaline Earth Metal Compounds</td></tr><tr><th>Alternative parents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Substituents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Classification description</th><td>This compound belongs to the homogeneous alkaline earth metal compounds. These are inorganic compounds containing only metal atoms,with the largest atom being a alkaline earth metal atom.</td></tr><tr id="pharmacology"><th class="divider" colspan="2">Pharmacology</th></tr><tr><th>Indication</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pharmacodynamics</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Mechanism of action</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Absorption</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Volume of distribution</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Protein binding</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Metabolism</th><td class="data-table-container"></td></tr><tr><th>Route of elimination</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Half life</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Clearance</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Toxicity</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Affected organisms</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Pathways</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Effects</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>SNP Mediated Adverse Drug Reactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="admet"><th class="divider" colspan="2">ADMET</th></tr><tr><th>Predicted ADMET features</th><td class="data-table-container"><table class="table table-condensed table-striped" id="predicted-admet">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Probability</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Human Intestinal Absorption</td>
+        <td>
+              +
+        </td>
+        <td>0.8382</td>
+      </tr>
+      <tr>
+        <td>Blood Brain Barrier</td>
+        <td>
+              +
+        </td>
+        <td>0.9708</td>
+      </tr>
+      <tr>
+        <td>Caco-2 permeable</td>
+        <td>
+              +
+        </td>
+        <td>0.7056</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein substrate</td>
+        <td>
+            Non-substrate
+        </td>
+        <td>0.8831</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor I</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9869</td>
+      </tr>
+      <tr>
+        <td>P-glycoprotein inhibitor II</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9855</td>
+      </tr>
+      <tr>
+        <td>Renal organic cation transporter</td>
+        <td>
+            Non-inhibitor
+        </td>
+        <td>0.9176</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8465</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.823</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-substrate</td>
+        <td>0.8094</td>
+      </tr>
+      <tr>
+        <td>CYP450 1A2 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.8824</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C9 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9221</td>
+      </tr>
+      <tr>
+        <td>CYP450 2D6 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9555</td>
+      </tr>
+      <tr>
+        <td>CYP450 2C19 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9469</td>
+      </tr>
+      <tr>
+        <td>CYP450 3A4 substrate</td>
+        <td>Non-inhibitor</td>
+        <td>0.9846</td>
+      </tr>
+      <tr>
+        <td>CYP450 inhibitory promiscuity</td>
+        <td>Low CYP Inhibitory Promiscuity</td>
+        <td>0.9015</td>
+      </tr>
+      <tr>
+        <td>Ames test</td>
+        <td>
+          Non AMES toxic 
+        </td>
+        <td>
+            0.9663
+        </td>
+      </tr>
+      <tr>
+        <td>Carcinogenicity</td>
+        <td>
+          Carcinogens  
+        </td>
+        <td>
+            0.6381
+        </td>
+      </tr>
+      <tr>
+        <td>Biodegradation</td>
+        <td>
+          Ready biodegradable 
+        </td>
+        <td>
+            0.9031
+        </td>
+      </tr>
+      <tr>
+        <td>Rat acute toxicity</td>
+        <td>
+          2.0881 
+            LD50, mol/kg
+        </td>
+        <td>
+            <span class="wishart wishart-not-available">Not applicable</span>
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor I)</td>
+        <td>
+          Weak inhibitor 
+        </td>
+        <td>
+            0.9462
+        </td>
+      </tr>
+      <tr>
+        <td>hERG inhibition (predictor II)</td>
+        <td>
+          Non-inhibitor 
+        </td>
+        <td>
+            0.9716
+        </td>
+      </tr>
+  </tbody>
+</table>
+</td></tr><tr id="pharmacoeconomics"><th class="divider" colspan="2">Pharmacoeconomics</th></tr><tr><th>Manufacturers</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Packagers</th><td><ul><li><a href="http://www.americanregent.com">American Regent</a></li>
+<li>American Therapeutics Medicines Inc.</li>
+<li><a href="http://www.bionichepharmausa.com">Bioniche Pharma</a></li>
+<li><a href="http://www.clarislifesciences.com">Claris Lifesciences Inc.</a></li>
+<li><a href="http://www.dsm.com">DSM Corp.</a></li>
+<li><a href="http://www.luitpold.com">Luitpold Pharmaceuticals Inc.</a></li>
+<li><a href="http://www.mallbaker.com">Mallinckrodt Baker Inc.</a></li>
+<li><a href="http://www.mcguff.com">McGuff Co. Inc.</a></li>
+<li><a href="http://www.meritpharm.com">Merit Pharmaceuticals</a></li>
+<li><a href="http://www.pekana.com">Pekana Naturheilmittel GmbH</a></li>
+<li><a href="http://www.torranceco.com">Torrance Co.</a></li>
+<li><a href="http://www.u-g.com">United Guardian Inc.</a></li></ul></td></tr><tr><th>Dosage forms</th><td class="data-table-container"><table class="table table-condensed table-striped datatable" id="dosages"><thead><tr><th>Form</th><th>Route</th><th>Strength</th></tr></thead><tbody><tr><td>Aerosol</td><td>Oral</td><td></td></tr><tr><td>Capsule</td><td>Oral</td><td></td></tr><tr><td>Liquid</td><td>Intramuscular</td><td></td></tr><tr><td>Liquid</td><td>Intravenous</td><td></td></tr><tr><td>Liquid</td><td>Oral</td><td></td></tr><tr><td>Ointment</td><td>Topical</td><td></td></tr><tr><td>Pellet</td><td>Oral</td><td></td></tr><tr><td>Powder</td><td>Oral</td><td></td></tr><tr><td>Solution</td><td>Intramuscular</td><td></td></tr><tr><td>Solution</td><td>Intravenous</td><td></td></tr><tr><td>Solution</td><td>Oral</td><td></td></tr><tr><td>Solution / drops</td><td>Oral</td><td></td></tr><tr><td>Suspension</td><td>Oral</td><td></td></tr><tr><td>Syrup</td><td>Oral</td><td></td></tr><tr><td>Tablet</td><td>Oral</td><td></td></tr></tbody></table></td></tr><tr><th>Prices</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>Patents</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="properties"><th class="divider" colspan="2">Properties</th></tr><tr><th>State</th><td>solid</td></tr><tr><th>Experimental Properties</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr><tr><td>melting point</td><td>651 &#176;C</td><td>PhysProp</td></tr><tr><td>boiling point</td><td>1100 &#176;C</td><td>PhysProp</td></tr></table></td></tr><tr><th>Predicted Properties</th><td class="data-table-container"><table class="table table-condensed table-striped"><thead><tr><th class="head-medium">Property</th><th class="head-large">Value</th><th>Source</th></tr></thead><tbody><tr><td>logP</td><td>-0.57</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#logp_logd">ChemAxon</a></td></tr><tr><td>physiological charge</td><td>2</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-predictors/#pka">ChemAxon</a></td></tr><tr><td>hydrogen acceptor count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>hydrogen donor count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#h_bond">ChemAxon</a></td></tr><tr><td>polar surface area</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topolgical_surface">ChemAxon</a></td></tr><tr><td>rotatable bond count</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>refractivity</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#refractivity">ChemAxon</a></td></tr><tr><td>polarizability</td><td>1.78</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>number of rings</td><td>0</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/property-calculations/#topology_analysis">ChemAxon</a></td></tr><tr><td>bioavailability</td><td>1</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>rule of five</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Ghose filter</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>Veber's rule</td><td>Yes</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr><tr><td>MDDR-like rule</td><td>No</td><td><a href="http://www.chemaxon.com/products/calculator-plugins/molecular-modelling/#polarization">ChemAxon</a></td></tr></tbody></table></td></tr><tr id="spectra"><th class="divider" colspan="2">Spectra</th></tr><tr><th>Spectra</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr id="references"><th class="divider" colspan="2">References</th></tr><tr><th>Synthesis Reference</th><td><span class="citations"><p>David S. Thompson, John S. Prestley, Jr., Thomas E. Webb, &#8220;Aluminum-magnesium alloys sheet exhibiting improved properties for forming and method aspects of producing such sheet.&#8221; U.S. Patent US4151013, issued 0000.</p></span><a class="wishart-link-out" href="https://www.google.com/?tbm=pts#q=4151013&amp;tbm=pts" target="_blank">US4151013 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><th>General Reference</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>External Links</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>KEGG Compound</td><td><a class="wishart-link-out" href="http://www.genome.jp/dbget-bin/www_bget?cpd:C00305" target="_blank">C00305 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Compound</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=888" target="_blank">888 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PubChem Substance</td><td><a class="wishart-link-out" href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=46508750" target="_blank">46508750 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChemSpider</td><td><a class="wishart-link-out" href="http://www.chemspider.com/Chemical-Structure.865.html" target="_blank">865 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>BindingDB</td><td><a class="wishart-link-out" href="http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=15" target="_blank">15 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEBI</td><td><a class="wishart-link-out" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=25107" target="_blank">25107 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>ChEMBL</td><td></td></tr><tr><td>Therapeutic Targets Database</td><td><a class="wishart-link-out" href="http://bidd.nus.edu.sg/group/cjttd/ZFTTDDRUG.asp?ID=DCL000876" target="_blank">DCL000876 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>PharmGKB</td><td><a class="wishart-link-out" href="http://www.pharmgkb.org/drug/PA450287" target="_blank">PA450287 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Drug Product Database</td><td><a class="wishart-link-out" href="http://205.193.93.51/dpdonline/searchRequest.do?din=13838" target="_blank">13838 <span class="glyphicon glyphicon-new-window"> </span></a></td></tr><tr><td>Wikipedia</td><td><a class="wishart-link-out" href="http://en.wikipedia.org/wiki/Magnesium" target="_blank">Magnesium <span class="glyphicon glyphicon-new-window"> </span></a></td></tr></tbody></table></td></tr><tr><th>ATC Codes</th><td>A12CC08<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A12#A12">A12 &#8212; MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12C#A12C">A12C &#8212; OTHER MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12CC#A12CC">A12CC &#8212; Magnesium</a></li></ul>B05XA11<ul class="atc-drug-tree"><li><a href="/atc/B#B">B &#8212; BLOOD AND BLOOD FORMING ORGANS</a></li><li><a href="/atc/B05#B05">B05 &#8212; BLOOD SUBSTITUTES AND PERFUSION SOLUTIONS</a></li><li><a href="/atc/B05X#B05X">B05X &#8212; I.V. SOLUTION ADDITIVES</a></li><li><a href="/atc/B05XA#B05XA">B05XA &#8212; Electrolyte solutions</a></li></ul>A06AD03<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A06#A06">A06 &#8212; DRUGS FOR CONSTIPATION</a></li><li><a href="/atc/A06A#A06A">A06A &#8212; DRUGS FOR CONSTIPATION</a></li><li><a href="/atc/A06AD#A06AD">A06AD &#8212; Osmotically acting laxatives</a></li></ul>B05XA10<ul class="atc-drug-tree"><li><a href="/atc/B#B">B &#8212; BLOOD AND BLOOD FORMING ORGANS</a></li><li><a href="/atc/B05#B05">B05 &#8212; BLOOD SUBSTITUTES AND PERFUSION SOLUTIONS</a></li><li><a href="/atc/B05X#B05X">B05X &#8212; I.V. SOLUTION ADDITIVES</a></li><li><a href="/atc/B05XA#B05XA">B05XA &#8212; Electrolyte solutions</a></li></ul>A06AD19<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A06#A06">A06 &#8212; DRUGS FOR CONSTIPATION</a></li><li><a href="/atc/A06A#A06A">A06A &#8212; DRUGS FOR CONSTIPATION</a></li><li><a href="/atc/A06AD#A06AD">A06AD &#8212; Osmotically acting laxatives</a></li></ul>A02AA04<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A02#A02">A02 &#8212; DRUGS FOR ACID RELATED DISORDERS</a></li><li><a href="/atc/A02A#A02A">A02A &#8212; ANTACIDS</a></li><li><a href="/atc/A02AA#A02AA">A02AA &#8212; Magnesium compounds</a></li></ul>A12CC09<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A12#A12">A12 &#8212; MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12C#A12C">A12C &#8212; OTHER MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12CC#A12CC">A12CC &#8212; Magnesium</a></li></ul>A02AA01<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A02#A02">A02 &#8212; DRUGS FOR ACID RELATED DISORDERS</a></li><li><a href="/atc/A02A#A02A">A02A &#8212; ANTACIDS</a></li><li><a href="/atc/A02AA#A02AA">A02AA &#8212; Magnesium compounds</a></li></ul>A06AD02<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A06#A06">A06 &#8212; DRUGS FOR CONSTIPATION</a></li><li><a href="/atc/A06A#A06A">A06A &#8212; DRUGS FOR CONSTIPATION</a></li><li><a href="/atc/A06AD#A06AD">A06AD &#8212; Osmotically acting laxatives</a></li></ul>A12CC01<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A12#A12">A12 &#8212; MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12C#A12C">A12C &#8212; OTHER MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12CC#A12CC">A12CC &#8212; Magnesium</a></li></ul>A12CC04<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A12#A12">A12 &#8212; MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12C#A12C">A12C &#8212; OTHER MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12CC#A12CC">A12CC &#8212; Magnesium</a></li></ul>B05CB03<ul class="atc-drug-tree"><li><a href="/atc/B#B">B &#8212; BLOOD AND BLOOD FORMING ORGANS</a></li><li><a href="/atc/B05#B05">B05 &#8212; BLOOD SUBSTITUTES AND PERFUSION SOLUTIONS</a></li><li><a href="/atc/B05C#B05C">B05C &#8212; IRRIGATING SOLUTIONS</a></li><li><a href="/atc/B05CB#B05CB">B05CB &#8212; Salt solutions</a></li></ul>A12CC07<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A12#A12">A12 &#8212; MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12C#A12C">A12C &#8212; OTHER MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12CC#A12CC">A12CC &#8212; Magnesium</a></li></ul>G04BX01<ul class="atc-drug-tree"><li><a href="/atc/G#G">G &#8212; GENITO URINARY SYSTEM AND SEX HORMONES</a></li><li><a href="/atc/G04#G04">G04 &#8212; UROLOGICALS</a></li><li><a href="/atc/G04B#G04B">G04B &#8212; UROLOGICALS</a></li><li><a href="/atc/G04BX#G04BX">G04BX &#8212; Other urologicals</a></li></ul>A12CC03<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A12#A12">A12 &#8212; MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12C#A12C">A12C &#8212; OTHER MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12CC#A12CC">A12CC &#8212; Magnesium</a></li></ul>A02AA03<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A02#A02">A02 &#8212; DRUGS FOR ACID RELATED DISORDERS</a></li><li><a href="/atc/A02A#A02A">A02A &#8212; ANTACIDS</a></li><li><a href="/atc/A02AA#A02AA">A02AA &#8212; Magnesium compounds</a></li></ul>A02AA02<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A02#A02">A02 &#8212; DRUGS FOR ACID RELATED DISORDERS</a></li><li><a href="/atc/A02A#A02A">A02A &#8212; ANTACIDS</a></li><li><a href="/atc/A02AA#A02AA">A02AA &#8212; Magnesium compounds</a></li></ul>A12CC05<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A12#A12">A12 &#8212; MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12C#A12C">A12C &#8212; OTHER MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12CC#A12CC">A12CC &#8212; Magnesium</a></li></ul>A02AA05<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A02#A02">A02 &#8212; DRUGS FOR ACID RELATED DISORDERS</a></li><li><a href="/atc/A02A#A02A">A02A &#8212; ANTACIDS</a></li><li><a href="/atc/A02AA#A02AA">A02AA &#8212; Magnesium compounds</a></li></ul>A06AD01<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A06#A06">A06 &#8212; DRUGS FOR CONSTIPATION</a></li><li><a href="/atc/A06A#A06A">A06A &#8212; DRUGS FOR CONSTIPATION</a></li><li><a href="/atc/A06AD#A06AD">A06AD &#8212; Osmotically acting laxatives</a></li></ul>A12CC06<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A12#A12">A12 &#8212; MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12C#A12C">A12C &#8212; OTHER MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12CC#A12CC">A12CC &#8212; Magnesium</a></li></ul>A12CC30<ul class="atc-drug-tree"><li><a href="/atc/A#A">A &#8212; ALIMENTARY TRACT AND METABOLISM</a></li><li><a href="/atc/A12#A12">A12 &#8212; MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12C#A12C">A12C &#8212; OTHER MINERAL SUPPLEMENTS</a></li><li><a href="/atc/A12CC#A12CC">A12CC &#8212; Magnesium</a></li></ul></td></tr><tr><th>AHFS Codes</th><td><ul><li>88:29.00*</li>
+<li>56:04.00</li>
+<li>84:24.00</li>
+<li>56:12.00</li>
+<li>28:12.92</li>
+<li>92:02.00*</li>
+<li>84:92.00</li>
+<li>28:08.04.24</li>
+<li>40:12.00</li>
+<li>40:34.00*</li></ul></td></tr><tr><th>PDB Entries</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>FDA label</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr><tr><th>MSDS</th><td><a href="/system/msds/DB01378.pdf?1265922747">show</a>(73.4 KB)</td></tr><tr id="interactions"><th class="divider" colspan="2">Interactions</th></tr><tr><th>Drug Interactions</th><td class="data-table-container"><table class="table table-condensed table-striped" id="experimental-properties"><thead><tr><th>Drug</th><th style="width: 75%"></th></tr></thead><tbody><tr><td><a href="/drugs/DB00630">Alendronate</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00701">Amprenavir</a></td><td>The antiacid decreases the absorption of amprenavir</td></tr><tr><td><a href="/drugs/DB01072">Atazanavir</a></td><td>This gastric pH modifier decreases the levels/effects of atazanavir</td></tr><tr><td><a href="/drugs/DB00608">Chloroquine</a></td><td>The antiacid decreases the absorption of chloroquine</td></tr><tr><td><a href="/drugs/DB00537">Ciprofloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00720">Clodronate</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00250">Dapsone</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB08826">Deferiprone</a></td><td>Deferiprone serum concentrations may be decreased by magnesium salts.</td></tr><tr><td><a href="/drugs/DB00705">Delavirdine</a></td><td>Magnesium antacids may decrease the absorption of delavirdine.</td></tr><tr><td><a href="/drugs/DB00618">Demeclocycline</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01341">Dihydroquinidine barbiturate</a></td><td>The antiacid decreases the absorption of quinidine</td></tr><tr><td><a href="/drugs/DB00254">Doxycycline</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00467">Enoxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01077">Etidronic acid</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01319">Fosamprenavir</a></td><td>The antiacid decreases the absorption of amprenavir</td></tr><tr><td><a href="/drugs/DB01044">Gatifloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01155">Gemifloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00365">Grepafloxacin</a></td><td>Magnesium may decrease the absorption of grepafloxacin. Doses should be spaced apart by at least 2 hours.</td></tr><tr><td><a href="/drugs/DB00710">Ibandronate</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00224">Indinavir</a></td><td>Magnesium may decrease the absorption of indinavir.</td></tr><tr><td><a href="/drugs/DB01137">Levofloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00978">Lomefloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00931">Methacycline</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01017">Minocycline</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00218">Moxifloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01059">Norfloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01165">Ofloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00595">Oxytetracycline</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00487">Pefloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01344">Polystyrene sulfonate</a></td><td>Risk of alkalosis in renal impairment</td></tr><tr><td><a href="/drugs/DB00908">Quinidine</a></td><td>Magnesium antacids may decrease the absorption of quindine.</td></tr><tr><td><a href="/drugs/DB01346">Quinidine barbiturate</a></td><td>The antiacid decreases the absorption of quinidine</td></tr><tr><td><a href="/drugs/DB00884">Risedronate</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB01098">Rosuvastatin</a></td><td>Magnesium-containing antacids may decrease the absorption of rosuvastatin.</td></tr><tr><td><a href="/drugs/DB01405">Temafloxacin</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00759">Tetracycline</a></td><td>Formation of non-absorbable complexes</td></tr><tr><td><a href="/drugs/DB00685">Trovafloxacin</a></td><td>Formation of non-absorbable complexes</td></tr></tbody></table></td></tr><tr><th>Food Interactions</th><td><span class="wishart wishart-not-available">Not Available</span></td></tr></tbody></table>
