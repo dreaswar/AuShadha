@@ -39,7 +39,7 @@ panes:
         nested: True
         splitter: True
         style: 
-          width: "45%" 
+          width: "20%" 
         widgets: []
         panes:
 
@@ -62,7 +62,7 @@ panes:
                       placeHolder: "Drug's Chemical / Brand name as in FDA"
                       style:
                          height: 2em
-                         width: 20em 
+                         width: 15em 
 
 #           - id: FDA_DRUG_DB_ADVANCED_SEARCH_CP
 #             type: cp
@@ -130,10 +130,10 @@ panes:
                   - id: FDA_DRUG_DB_DRUGBANK_DISCLAIMER_AND_PUBLICATIONS
                     type: bc
                     region: bottom
-                    splitter: True 
+                    splitter: False 
                     style:
                       background: "#ddd" 
-                      height: 2em
+                      height: "15%"
                     widgets: []
                     panes: 
                        - id: FDA_DRUG_DB_DRUGBANK_DISCLAIMER
