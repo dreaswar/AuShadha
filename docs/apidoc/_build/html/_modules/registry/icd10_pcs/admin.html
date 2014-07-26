@@ -47,11 +47,15 @@
           <div class="body">
             
   <h1>Source code for registry.icd10_pcs.admin</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">registry.icd10_pcs.models</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">registry.icd10_pcs.models</span> <span class="kn">import</span> <span class="n">RootXML</span><span class="p">,</span> <span class="n">PcsTable</span><span class="p">,</span> <span class="n">PcsRow</span><span class="p">,</span> <span class="n">Axis</span><span class="p">,</span> <span class="n">Label</span><span class="p">,</span> <span class="n">Title</span><span class="p">,</span> <span class="n">Definition</span>
+
 <span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 
 
+<div class="viewcode-block" id="RootXMLAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.RootXMLAdmin">[docs]</a><span class="k">class</span> <span class="nc">RootXMLAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+</div>
 <div class="viewcode-block" id="PcsTableAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.PcsTableAdmin">[docs]</a><span class="k">class</span> <span class="nc">PcsTableAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
     <span class="k">pass</span>
 
@@ -60,28 +64,29 @@
     <span class="k">pass</span>
 
 </div>
-<div class="viewcode-block" id="BodyPartAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.BodyPartAdmin">[docs]</a><span class="k">class</span> <span class="nc">BodyPartAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+<div class="viewcode-block" id="AxisAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.AxisAdmin">[docs]</a><span class="k">class</span> <span class="nc">AxisAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
     <span class="k">pass</span>
 
 </div>
-<div class="viewcode-block" id="ApproachAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.ApproachAdmin">[docs]</a><span class="k">class</span> <span class="nc">ApproachAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+<div class="viewcode-block" id="TitleAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.TitleAdmin">[docs]</a><span class="k">class</span> <span class="nc">TitleAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
     <span class="k">pass</span>
 
 </div>
-<div class="viewcode-block" id="DeviceAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.DeviceAdmin">[docs]</a><span class="k">class</span> <span class="nc">DeviceAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+<div class="viewcode-block" id="LabelAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.LabelAdmin">[docs]</a><span class="k">class</span> <span class="nc">LabelAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
     <span class="k">pass</span>
 
 </div>
-<div class="viewcode-block" id="QualifierAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.QualifierAdmin">[docs]</a><span class="k">class</span> <span class="nc">QualifierAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+<div class="viewcode-block" id="DefinitionAdmin"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.admin.DefinitionAdmin">[docs]</a><span class="k">class</span> <span class="nc">DefinitionAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
     <span class="k">pass</span>
 
 </div>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">RootXML</span><span class="p">,</span> <span class="n">RootXMLAdmin</span><span class="p">)</span>
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">PcsTable</span><span class="p">,</span> <span class="n">PcsTableAdmin</span><span class="p">)</span>
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">PcsRow</span><span class="p">,</span> <span class="n">PcsRowAdmin</span><span class="p">)</span>
-<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">BodyPart</span><span class="p">,</span> <span class="n">BodyPartAdmin</span><span class="p">)</span>
-<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Approach</span><span class="p">,</span> <span class="n">ApproachAdmin</span><span class="p">)</span>
-<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Device</span><span class="p">,</span> <span class="n">DeviceAdmin</span><span class="p">)</span>
-<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Qualifier</span><span class="p">,</span> <span class="n">QualifierAdmin</span><span class="p">)</span>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Axis</span><span class="p">,</span> <span class="n">AxisAdmin</span><span class="p">)</span>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Title</span><span class="p">,</span> <span class="n">TitleAdmin</span><span class="p">)</span>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Label</span><span class="p">,</span> <span class="n">LabelAdmin</span><span class="p">)</span>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Definition</span><span class="p">,</span> <span class="n">DefinitionAdmin</span><span class="p">)</span>
 </pre></div>
 
           </div>
@@ -121,7 +126,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2014, Author.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

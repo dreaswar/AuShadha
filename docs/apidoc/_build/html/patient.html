@@ -134,7 +134,7 @@ This should be useful later in URL creation automagically</p>
 
 <dl class="attribute">
 <dt id="patient.models.PatientDetail.objects">
-<tt class="descclassname">PatientDetail.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x3eb8350&gt;</em><a class="headerlink" href="#patient.models.PatientDetail.objects" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">PatientDetail.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x7fb55b513b10&gt;</em><a class="headerlink" href="#patient.models.PatientDetail.objects" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -182,7 +182,7 @@ This should check for:
 
 <dl class="attribute">
 <dt id="patient.models.PatientDetailForm.base_fields">
-<tt class="descclassname">PatientDetailForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'patient_hospital_id': &lt;django.forms.fields.CharField object at 0x3eb84d0&gt;, 'first_name': &lt;django.forms.fields.CharField object at 0x3eb8590&gt;, 'middle_name': &lt;django.forms.fields.CharField object at 0x3eb8650&gt;, 'last_name': &lt;django.forms.fields.CharField object at 0x3eb8710&gt;, 'age': &lt;django.forms.fields.CharField object at 0x3eb87d0&gt;, 'sex': &lt;django.forms.fields.TypedChoiceField object at 0x3eb8890&gt;}</em><a class="headerlink" href="#patient.models.PatientDetailForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">PatientDetailForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'patient_hospital_id': &lt;django.forms.fields.CharField object at 0x7fb55b513c90&gt;, 'first_name': &lt;django.forms.fields.CharField object at 0x7fb55b513d50&gt;, 'middle_name': &lt;django.forms.fields.CharField object at 0x7fb55b513e10&gt;, 'last_name': &lt;django.forms.fields.CharField object at 0x7fb55b513ed0&gt;, 'age': &lt;django.forms.fields.CharField object at 0x7fb55b513f90&gt;, 'sex': &lt;django.forms.fields.TypedChoiceField object at 0x7fb55b49f090&gt;}</em><a class="headerlink" href="#patient.models.PatientDetailForm.base_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -192,7 +192,7 @@ This should check for:
 
 <dl class="attribute">
 <dt id="patient.models.PatientDetailForm.dijit_fields">
-<tt class="descclassname">PatientDetailForm.</tt><tt class="descname">dijit_fields</tt><em class="property"> = {'first_name': {'max_length': 30, 'data-dojo-props': &quot;'required' :'true' ,'regExp':'[\\\\w]+','invalidMessage':'Invalid Character' &quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'last_name': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'[\\\\w]+','invalidMessage' : 'Invalid Character'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'middle_name': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'[\\\\w]+','invalidMessage' : 'Invalid Character'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'age': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'\\\\d{1,3}','invalidMessage' : 'Invalid Character. Only Numbers are allowed'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'sex': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'','invalidMessage' : ''&quot;, 'data-dojo-type': 'dijit.form.Select'}, 'patient_hospital_id': {'max_length': 30, 'data-dojo-props': &quot;'required' : 'true' ,'regExp':'[\\\\w]+','invalidMessage' : 'Invalid Character'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}}</em><a class="headerlink" href="#patient.models.PatientDetailForm.dijit_fields" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">PatientDetailForm.</tt><tt class="descname">dijit_fields</tt><em class="property"> = {'first_name': {'max_length': 30, 'data-dojo-props': &quot;'required' :true ,'regExp':'[a-zA-Z\\'-. ]+','invalidMessage':'Invalid Character' &quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'last_name': {'max_length': 30, 'data-dojo-props': &quot;'required' : false ,'regExp':'[a-zA-Z\\'-. ]+','invalidMessage' : 'Invalid Character'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'middle_name': {'max_length': 30, 'data-dojo-props': &quot;'required' : false ,'regExp':'[a-zA-Z\\'-. ]+','invalidMessage' : 'Invalid Character'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'age': {'max_length': 30, 'data-dojo-props': &quot;'required' : true ,'regExp':'\\\\d{1,3}','invalidMessage' : 'Only Numbers &lt;1000 are allowed'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}, 'sex': {'max_length': 30, 'data-dojo-props': &quot;'required' : true ,'regExp':'[\\\\w]+','invalidMessage' : ''&quot;, 'data-dojo-type': 'dijit.form.Select'}, 'patient_hospital_id': {'max_length': 30, 'data-dojo-props': &quot;'required' : true ,'regExp':'[\\\\w]+','invalidMessage' : 'Invalid Character'&quot;, 'data-dojo-type': 'dijit.form.ValidationTextBox'}}</em><a class="headerlink" href="#patient.models.PatientDetailForm.dijit_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -360,7 +360,7 @@ pass when you run &#8220;manage.py test&#8221;.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2014, Author.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

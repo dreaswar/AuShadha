@@ -67,7 +67,7 @@
 <span class="kn">from</span> <span class="nn">AuShadha.apps.clinic.models</span> <span class="kn">import</span> <span class="n">Clinic</span>
 
 
-<div class="viewcode-block" id="FDADrugs"><a class="viewcode-back" href="../../../registry.drug_db.html#registry.drug_db.models.FDADrugs">[docs]</a><span class="k">class</span> <span class="nc">FDADrugs</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="viewcode-block" id="FDADrugs"><a class="viewcode-back" href="../../../registry.drug_db.html#registry.drug_db.models.FDADrugs">[docs]</a><span class="k">class</span> <span class="nc">FDADrugs</span><span class="p">(</span><span class="n">AuShadhaBaseModel</span><span class="p">):</span>
 
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    The FDA Drug DB as on 26-01-2013. This is subject to change.</span>
@@ -75,27 +75,33 @@
 <span class="sd">    Please refer, test and confirm for yourself before implementation.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;fda_drugs&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">FDADrugs</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span> <span class="o">=</span> <span class="s">&quot;fda_drug_db&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parent_model</span> <span class="o">=</span> <span class="s">&#39;parent_clinic&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_can_add_list_or_json</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;fda_drug_db&#39;</span> <span class="p">]</span>
 
-    <span class="n">drug_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
-        <span class="s">&#39;Drug Name&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">dosage</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
-        <span class="s">&#39;Dosage&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">form</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
-        <span class="s">&#39;Form&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">active_ingredient</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
-        <span class="s">&#39;Active Ingredient&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">drug_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Drug Name&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">dosage</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Dosage&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Form&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">active_ingredient</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="s">&#39;Active Ingredient&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
     <span class="c"># Define the Unicode method ::</span>
     <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> - </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s"> </span><span class="se">\t</span><span class="s"> (</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">drug_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dosage</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">form</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_ingredient</span><span class="p">)</span>
 
+<div class="viewcode-block" id="FDADrugs.get_absolute_url"><a class="viewcode-back" href="../../../registry.drug_db.html#registry.drug_db.models.FDADrugs.get_absolute_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">/</span><span class="si">%s</span><span class="s">/</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">app_label</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__model_label__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</div>
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">&#39;FDA Drugs&#39;</span>
         <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">&quot;FDA Drugs&quot;</span>
-        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s">&#39;drug_name&#39;</span><span class="p">,</span> <span class="s">&#39;active_ingredient&#39;</span><span class="p">,</span> <span class="s">&#39;dosage&#39;</span><span class="p">,</span> <span class="s">&#39;form&#39;</span><span class="p">]</span></div>
-</pre></div>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span> <span class="s">&#39;drug_name&#39;</span><span class="p">,</span> <span class="s">&#39;active_ingredient&#39;</span><span class="p">,</span> <span class="s">&#39;dosage&#39;</span><span class="p">,</span> <span class="s">&#39;form&#39;</span><span class="p">]</span>
+</pre></div></div>
 
           </div>
         </div>
@@ -134,7 +140,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2014, Author.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

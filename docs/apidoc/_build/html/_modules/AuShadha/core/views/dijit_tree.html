@@ -150,7 +150,7 @@
 </div>
 <div class="viewcode-block" id="DijitTreeNode.check_node_attr"><a class="viewcode-back" href="../../../../AuShadha.core.views.html#AuShadha.core.views.dijit_tree.DijitTreeNode.check_node_attr">[docs]</a>  <span class="k">def</span> <span class="nf">check_node_attr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">basic_node_attrs</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">attrs</span><span class="p">[</span><span class="n">attr</span><span class="p">]:</span>
+      <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">attr</span><span class="p">):</span>
         <span class="k">continue</span>
       <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">False</span>
@@ -470,7 +470,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2014, Author.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
