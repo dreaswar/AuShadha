@@ -86,13 +86,13 @@ You may need to install Python development libraries if you are on Linux.
 Project Structure
 ^^^^^^^^^^^^^^^^^
 
-2. docs : Contains the Requirements.txt, License.txt
+1. docs : Contains the Requirements.txt, License.txt along with Sphinx apidoc
 
-3. src : Project Source Code, Media files(Icons,Images, File uploads), Javscript
+2. src : Project Source Code, Media files(Icons,Images, File uploads), Javscript
 
-4. README.md
+3. README.md
 
-5. LICENSE.txt
+4. LICENSE.txt
 
 
 Plan
@@ -119,8 +119,8 @@ Completed Modules
 10. AuShadha-Immunisation   
 11. AuShadha-OPD_Visit Management ( Complaints, HPI, ROS, Physical Exam System Wise )   
 12. AuShadha-ICD10-Disease Code Browser  
-13. AuShadha-ICD10-PCS (Procedure Coding System Browser)   
-14. AuShadha-FDA-Drug List Browser  
+13. AuShadha-ICD10-PCS (Procedure Coding System Browser)     
+14. AuShadha-FDA-Drug List Browser integrated with some Drugbank (http://drugbank.ca) reference information  
 
 
 
@@ -143,11 +143,19 @@ For Developers
 ^^^^^^^^^^^^^^^^^^^^^
 Suggestions and participation are welcome.  
 
-Please email me at dreaswar@gmail.com or Google Groups at aushadha@googlegroups.com
+Please email me at dreaswar@gmail.com 
 
-Visit project website at http://aushadha.org. 
+Mailing list : aushadha@googlegroups.com
 
-Follow the Project news at http://www.facebook.com/AuShadha/
+Website :  http://aushadha.org 
+
+Blog: http://blog.aushadha.org  
+
+Wiki: http://wiki.aushadha.org  
+
+Facebook:  http://www.facebook.com/AuShadha/  
+
+Twitter : @aushadha_emr
 
 
 Repository: 
