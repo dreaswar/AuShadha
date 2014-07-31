@@ -35,6 +35,7 @@ from .models import DrugBankCaDrugs
  
 # Views start here -----------------------------------------
 
+ZIP_FILE_PATH = 'registry/drug_db/drugbankca/drugbank_scraper/data/drugbank_tables.zip'
 
 @login_required
 def get_drugbankca_publications(request):
@@ -79,19 +80,56 @@ def drugbankcadrugs_summary_by_drug_name(request):
                                       For latest updates please search http://drugbankca.ca")
     drugbankca_drug = drugbankca_drug[0]
     drug_id = drugbankca_drug.drug_id
-    try:
-        zip_tables = zipfile.ZipFile('registry/drug_db/drugbankca/drugbank_scraper/data/drugbank_tables.zip')
-        print("Trying to find document with ID: " + drug_id)
-        document = zip_tables.open(drug_id)           
-    except(IOError):
-        return HttpResponse("Drug / Active ingredient Not Listed (OR) \n  \
-                             A bad file path may have been supplied by you")
+#    try:
+    zip_tables = zipfile.ZipFile(ZIP_FILE_PATH)
+    print("Trying to find document with ID: " + drug_id)
+    document = zip_tables.open(drug_id)           
+#    except(IOError):
+#        print("Drug with ID: "+drug_id + " not found")
+#        return HttpResponse("Drug / Active ingredient Not Listed (OR) \n  \
+#                             A bad file path may have been supplied by you")
     html = document.read()
     document.close()
     return HttpResponse(html)
 
   else:
      return Http404("Bad Request Method")
+
+
+@login_required
+def drugbankcadrugs_search_by_drug_name(request):
+
+    if request.method == "GET" and request.is_ajax():
+        try:
+            drug_name = request.GET.get('drug_name')
+        except(KeyError,NameError,TypeError,ValueError):
+            raise Http404("Bad Request Parameters")
+
+        if drug_name == '*' or drug_name == ' ':
+            drug_obj = DrugBankCaDrugs.objects.all()[:25]
+        else:
+            drug_name  = drug_name.split('*')[0]
+            drug_obj = DrugBankCaDrugs.objects.filter(drug_name__istartswith = drug_name)[:25]
+
+        if len(drug_obj) == 0:
+            drug_obj = DrugBankCaDrugs.objects.filter(drug_name__icontains = drug_name)[:25]
+        data = []
+  	for d in drug_obj:
+	   data_to_append = {}
+  	   data_to_append['drug_name'] = d.drug_name.title()
+	   data_to_append['dosage'] = ''
+	   data_to_append['id'] = d.pk
+           data_to_append['absolute_url'] = ''
+	   data_to_append['active_ingredient'] = ''
+           data_to_append['url'] = reverse('drugbankcadrugs_summary_by_drug_name')+\
+                                          "?drug_name="+d.drug_name               +\
+                                          "&active_ingredient="+d.drug_name
+	   data.append(data_to_append)
+           json_data = simplejson.dumps(data)
+	   return HttpResponse(json_data, content_type = 'application/json')
+
+    else:
+        raise Http404("Bad Request Method")
 
 
 
