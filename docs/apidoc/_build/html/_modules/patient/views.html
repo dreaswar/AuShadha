@@ -198,9 +198,6 @@
             <span class="n">var</span> <span class="o">=</span> <span class="n">ModelInstanceSummary</span><span class="p">(</span><span class="n">pat_obj</span><span class="p">)</span><span class="o">.</span><span class="n">variable</span>
             <span class="n">var</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">user</span>
             <span class="n">variable</span> <span class="o">=</span> <span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
-            <span class="k">print</span> <span class="s">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span>
-            <span class="k">print</span> <span class="n">var</span>
-            <span class="k">print</span> <span class="s">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span>
             <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">&#39;patient_detail/summary.html&#39;</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
 
         <span class="k">except</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
@@ -457,7 +454,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2014, Author.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

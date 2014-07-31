@@ -123,6 +123,9 @@
       <span class="n">medication_list_node</span> <span class="o">=</span>  <span class="n">DijitTreeNode</span><span class="p">(</span> <span class="n">y</span><span class="p">[</span><span class="s">&#39;medications&#39;</span><span class="p">])</span>
       <span class="c">#admission_node =  DijitTreeNode( y[&#39;admissions&#39;])</span>
       <span class="n">visit_node</span><span class="o">=</span>  <span class="n">DijitTreeNode</span><span class="p">(</span> <span class="n">y</span><span class="p">[</span><span class="s">&#39;visits&#39;</span><span class="p">])</span>
+      <span class="n">icd10_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">(</span> <span class="n">y</span><span class="p">[</span><span class="s">&#39;icd_10&#39;</span><span class="p">]</span> <span class="p">)</span>
+      <span class="n">icd10_pcs_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">(</span> <span class="n">y</span><span class="p">[</span><span class="s">&#39;icd_10_pcs&#39;</span><span class="p">]</span> <span class="p">)</span>
+      <span class="n">fda_drug_db_node</span> <span class="o">=</span> <span class="n">DijitTreeNode</span><span class="p">(</span> <span class="n">y</span><span class="p">[</span><span class="s">&#39;fda_drug_db&#39;</span><span class="p">]</span> <span class="p">)</span>
 
       <span class="c">#procedure_node = DijitTreeNode( y[&#39;procedures&#39;] )</span>
       <span class="c">#imaging_node = DijitTreeNode( y[&#39;imaging&#39;] )</span>
@@ -134,6 +137,9 @@
       <span class="n">patient_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span> <span class="n">medication_list_node</span> <span class="p">)</span>
       <span class="c">#patient_tree_node.add_child_node( admission_node )</span>
       <span class="n">patient_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span> <span class="n">visit_node</span> <span class="p">)</span>
+      <span class="n">patient_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span> <span class="n">icd10_node</span> <span class="p">)</span>
+      <span class="n">patient_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span> <span class="n">icd10_pcs_node</span> <span class="p">)</span>
+      <span class="n">patient_tree_node</span><span class="o">.</span><span class="n">add_child_node</span><span class="p">(</span> <span class="n">fda_drug_db_node</span> <span class="p">)</span>
 
       <span class="c">#patient_tree_node.add_child_node( procedure_node )</span>
       <span class="c">#patient_tree_node.add_child_node( imaging_node )</span>
@@ -214,7 +220,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2014, Author.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

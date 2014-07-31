@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>registry.icd10_pcs.views &mdash; AuShadha  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AuShadha  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for registry.icd10_pcs.views</h1><div class="highlight"><pre>
+<span class="c">################################################################################</span>
+<span class="c"># Project      : AuShadha</span>
+<span class="c"># Description  : Views for Demographics</span>
+<span class="c"># Author       : Dr.Easwar T.R </span>
+<span class="c"># Date         : 04-10-2013</span>
+<span class="c"># License      : GNU-GPL Version 3, See LICENSE.txt </span>
+<span class="c">################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
+
+<span class="c"># General Django Imports----------------------------------</span>
+
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span><span class="p">,</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">RequestContext</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">simplejson</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+
+<span class="c"># Application Specific Model Imports-----------------------</span>
+<span class="kn">import</span> <span class="nn">AuShadha.settings</span> <span class="kn">as</span> <span class="nn">settings</span>
+<span class="kn">from</span> <span class="nn">AuShadha.settings</span> <span class="kn">import</span> <span class="n">APP_ROOT_URL</span>
+<span class="kn">from</span> <span class="nn">AuShadha.apps.ui.ui</span> <span class="kn">import</span> <span class="n">ui</span> <span class="k">as</span> <span class="n">UI</span>
+<span class="kn">from</span> <span class="nn">AuShadha.core.serializers.data_grid</span> <span class="kn">import</span> <span class="n">generate_json_for_datagrid</span>
+<span class="kn">from</span> <span class="nn">AuShadha.utilities.forms</span> <span class="kn">import</span> <span class="n">aumodelformerrorformatter_factory</span>
+
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">RootXML</span><span class="p">,</span> <span class="n">PcsTable</span><span class="p">,</span> <span class="n">PcsRow</span><span class="p">,</span> <span class="n">Axis</span><span class="p">,</span> <span class="n">Title</span><span class="p">,</span> <span class="n">Label</span><span class="p">,</span> <span class="n">Definition</span>
+
+<span class="c"># Views start here -----------------------------------------</span>
+
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_all_pcstables_json"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_all_pcstables_json">[docs]</a><span class="k">def</span> <span class="nf">get_all_pcstables_json</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">pass</span>
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_all_pcsrows_json"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_all_pcsrows_json">[docs]</a><span class="k">def</span> <span class="nf">get_all_pcsrows_json</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_all_bodyparts_json"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_all_bodyparts_json">[docs]</a><span class="k">def</span> <span class="nf">get_all_bodyparts_json</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+   <span class="k">pass</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_all_approaches_json"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_all_approaches_json">[docs]</a><span class="k">def</span> <span class="nf">get_all_approaches_json</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+   <span class="k">pass</span>
+
+ </div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_all_devices_json"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_all_devices_json">[docs]</a><span class="k">def</span> <span class="nf">get_all_devices_json</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+   <span class="k">pass</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_all_qualifiers_json"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_all_qualifiers_json">[docs]</a><span class="k">def</span> <span class="nf">get_all_qualifiers_json</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+   <span class="k">pass</span>
+
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_pcsrows_for_pcstable"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_pcsrows_for_pcstable">[docs]</a><span class="k">def</span> <span class="nf">get_pcsrows_for_pcstable</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pcstable_id</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_bodyparts_for_pcsrow"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_bodyparts_for_pcsrow">[docs]</a><span class="k">def</span> <span class="nf">get_bodyparts_for_pcsrow</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pcsrow_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_approaches_for_pcsrow"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_approaches_for_pcsrow">[docs]</a><span class="k">def</span> <span class="nf">get_approaches_for_pcsrow</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pcsrow_id</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_devices_for_pcsrow"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_devices_for_pcsrow">[docs]</a><span class="k">def</span> <span class="nf">get_devices_for_pcsrow</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pcsrow_id</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_qualifiers_for_pcsrow"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_qualifiers_for_pcsrow">[docs]</a><span class="k">def</span> <span class="nf">get_qualifiers_for_pcsrow</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pcsrow_id</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="compose_icd10_pcs_code"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.compose_icd10_pcs_code">[docs]</a><span class="k">def</span> <span class="nf">compose_icd10_pcs_code</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">pass</span>
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="icd10_pcs_code_search"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.icd10_pcs_code_search">[docs]</a><span class="k">def</span> <span class="nf">icd10_pcs_code_search</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    
+    <span class="kn">import</span> <span class="nn">random</span>
+
+    <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+    <span class="n">search_for</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;GET&#39;</span><span class="p">:</span>
+
+
+        <span class="k">if</span> <span class="n">search_for</span> <span class="o">==</span> <span class="s">&#39;*&#39;</span> <span class="ow">or</span> <span class="n">search_for</span> <span class="o">==</span> <span class="s">&#39; &#39;</span><span class="p">:</span>
+           <span class="k">pass</span>
+         
+        <span class="k">else</span><span class="p">:</span>
+           <span class="n">search_for</span> <span class="o">=</span> <span class="n">search_for</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+           
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c">#Do your stuff here</span>
+        <span class="n">json</span> <span class="o">=</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">print</span> <span class="n">json</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">content_type</span> <span class="o">=</span> <span class="s">&#39;application/json&#39;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;Bad Request Method&quot;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="get_all_icd10_pcs_codes"><a class="viewcode-back" href="../../../registry.icd10_pcs.html#registry.icd10_pcs.views.get_all_icd10_pcs_codes">[docs]</a><span class="k">def</span> <span class="nf">get_all_icd10_pcs_codes</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="k">pass</span>
+</pre></div></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">AuShadha  documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

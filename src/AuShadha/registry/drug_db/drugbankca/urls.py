@@ -10,6 +10,7 @@ from .views import drugbankcadrugs_json_for_a_drug,\
                    drugbankcadrugs_summary_by_drug_id,\
                    drugbankcadrugs_summary_by_drug_name,\
                    drugbankcadrugs_search, \
+                   drugbankcadrugs_search_by_drug_name, \
                    get_drugbankca_publications
 
 
@@ -49,6 +50,12 @@ urlpatterns = patterns('',
             drugbankcadrugs_search, 
             name = 'drugbankcadrugs_search'
           ),
+
+        url(r'search_by_drug_name/$', 
+            drugbankcadrugs_search_by_drug_name, 
+            name = 'drugbankcadrugs_search_by_drug_name'
+          ),
+
 )
 
 

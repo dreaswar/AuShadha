@@ -39,7 +39,7 @@ panes:
         nested: True
         splitter: True
         style: 
-          width: "45%" 
+          width: "20%" 
         widgets: []
         panes:
 
@@ -48,21 +48,39 @@ panes:
              title: Search
              widgets: 
 
-                 - id: FDA_DRUG_DB_SEARCH_WIDGET
+                 - id: DRUG_DB_SEARCH_WIDGET
                    type: custom_widget
                    js_path: fda_drug_db/search/main
                    args:
-                      id: FDA_DRUG_DB_SEARCH_WIDGET
-                      type: fda_drug_db_search
+                      id: DRUG_DB_SEARCH_WIDGET
+                      type: drug_db_search
                       labelAttr: 'active_ingredient'
                       url: "{%url 'fda_drug_db_search'  %}"
                       hasDownArrow: !!bool False
                       autoComplete: !!bool True
                       searchAttr:  drug_name
-                      placeHolder: "Drug's Chemical / Brand name as in FDA"
+                      placeHolder: "Drug's Chemical / Brand name"
                       style:
                          height: 2em
-                         width: 20em 
+                         width: 15em 
+
+                 - id: DRUG_DB_SEARCH_SOURCE_SELECT
+                   type: custom_widget
+                   js_path: fda_drug_db/search/select 
+                   args:
+                      id: DRUG_DB_SEARCH_SOURCE_SELECT
+                      name: Select a Drug Data Source
+                      options:
+                          - label: 'FDA Drug List'
+                            value: 'fda_drugs'
+                            url: "{%url 'fda_drug_db_search' %}"
+                            selected: True
+                                    
+                          - label: 'Drug Bank'
+                            value: 'drug_bank'
+                            url: "{%url 'drugbankcadrugs_search_by_drug_name' %}"
+
+                      type: drug_db_search_select
 
 #           - id: FDA_DRUG_DB_ADVANCED_SEARCH_CP
 #             type: cp
@@ -130,10 +148,10 @@ panes:
                   - id: FDA_DRUG_DB_DRUGBANK_DISCLAIMER_AND_PUBLICATIONS
                     type: bc
                     region: bottom
-                    splitter: True 
+                    splitter: False 
                     style:
                       background: "#ddd" 
-                      height: 2em
+                      height: "15%"
                     widgets: []
                     panes: 
                        - id: FDA_DRUG_DB_DRUGBANK_DISCLAIMER
