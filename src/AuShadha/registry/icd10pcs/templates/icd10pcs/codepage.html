@@ -1,0 +1,89 @@
+<label for="ICD10PCS_CP4_FilterSelector">
+ Filter by Body Part: 
+</label>
+
+<span id              = "ICD10PCS_CP4_FilterSelector"
+      data-dojo-type  = "dijit/form/Select"
+      data-dojo-props = "required:true"
+      class           = "FilterSelector"
+    >
+        <option name = "All" selected="selected" value= "all"  > All </option>
+        {% for b in unique_body_parts %}
+  	   <option name = "{{b}}"  value= "{{b}}"  > 
+	      {{b.title}} 
+	   </option>
+	{% endfor %}
+
+ <script type="dojo/on" data-dojo-event="change" data-dojo-args="evt">
+
+    require([ 'dojo/dom','dojo/on',
+              'dojo/dom-class','dojo/dom-attr',
+              'dojo/dom-style',
+              'dojo/query',
+              'dojo/NodeList-traverse',
+              'dojo/NodeList-data'
+            ],
+
+   function(dom,on,domClass,domAttr,domStyle,query) {
+
+      var className = (function(evt){ 
+                             var cl = "b";
+                             var cl_list = evt.split(' ');
+                             for( var x=0; x<cl_list.length; x++){
+                                cl += "."+cl_list[x];
+                             }
+                             return cl;
+                       })(evt);
+//      alert(className);
+
+      if (evt == 'all') {
+            query('.rowContainer').forEach(
+                    function(d){ 
+                         domStyle.set(d,{'display': 'block'}); 
+                    });
+      }
+      else {
+            query('.rowContainer').forEach(
+                    function(d){ 
+                         domStyle.set(d,{'display': 'none'}); 
+                     });
+            var rows = query(className).parents('.rowContainer');
+            rows.forEach(
+                    function(d){ 
+                         domStyle.set(d,{'display': 'block'}); 
+                    });
+      } 
+
+   });
+
+ </script>
+
+</span>
+
+<div>
+    {% if codepage_rows %}
+        {% for row in codepage_rows %}
+            <div style="border:solid 1px #759DC0; border-radius: 5px; background: #CFE5FA; margin-bottom: 10px; font-family: Helvetica, Sans-serif, Droid-Sans, Tahoma;"
+		 class="rowContainer"   
+		    >
+               
+                <div style="margin-left: 3px; position:relative; left: 1px; padding: 2px;">
+                {% for axis in row %}
+		<p class="{{axis.title}} axisTitle">  <b> {{axis.title}} </b> </p>
+                    <div style="margin-left: 10px; position:relative; left: 5px;" 
+			 class="axisTextAndCodeContainer">
+                        {% for label in axis.labels %}
+			 <p class="axisCodeAndText">
+			  <b class="{{label.label_fk.txt}}"> {{label.code}}</b> 
+			  - {{label.label_fk.txt}} 
+			 </p>
+                        {% endfor %}     
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class='suggestion_text'> No Rows Specified in coding </p>
+    {% endif %}
+</div>
