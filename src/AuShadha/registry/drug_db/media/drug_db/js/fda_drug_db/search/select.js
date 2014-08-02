@@ -26,7 +26,7 @@ define(
          'dojo/NodeList-data',
          'dojo/NodeList-traverse',
 
-          "dijit/form/Form"
+         "dijit/form/Form"
         ],
 
 function(
@@ -65,14 +65,13 @@ function(
 			                      for (var x=0; x< args.options.length; x++ ) {
 						   if (args.options[x].value == e) { 
                                                        var url = args.options[x].url;
+						       drugDbSearchWidget.set('store',null);
 			                               var widgetStore = new JsonRest({target: url});
   						       drugDbSearchWidget.set('store',widgetStore);
-//						       alert("URL Changed to: " + url);
 					      	   };
-//						   alert(args.options[x].url);
 			                      }
 			                 };
 		    searchBox.startup();
-         }
+        }
       return searchWidget;
 });

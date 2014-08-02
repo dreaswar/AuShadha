@@ -1,0 +1,113 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+# YAML
+
+depends_on: [ search ]
+load_after: search
+load_first: !!bool False
+
+#This is required for DOJO to load the additional scripts provided by this module
+dojoConfig: 
+  - name: icd10_pcs
+    location: {{STATIC_URL}}icd10pcs
+    main: main
+
+id       : ICD10PCS
+type     : bc
+title    : "ICD10 Procedure Code"
+url      : {}
+closable : !!bool True
+widgets: []
+panes:
+
+
+  - id : ICD10PCS_CENTER_BC
+    region: center
+    type: bc
+    splitter: False
+    widgets: []
+    panes: 
+    
+      - id : ICD10PCS_CP_1
+        region: leading
+        type: cp
+        splitter: True
+        style: 
+          width: "25%"
+        panes: []
+        widgets:
+          - id: ICD10_PCS_CP_1_TREE
+            type: custom_widget
+            js_path: icd10pcs/tree/main
+            args:
+                widget_type: icd10_pcs_tree
+                id: ICD10_PCS_CP_1_TREE
+                url: "{%url 'render_axis_tree' '*' 1 %}"
+                mainTabPane: PATIENT_CENTER_CP_TC
+                title: "ICD 10 Procedure"
+
+      - id : ICD10PCS_CP_2
+        region: leading
+        type: cp
+        widgets: []
+        splitter: True
+        style:
+          width: "25%"
+        class: widgetContainer
+        panes: 
+
+          - id: ICD10PCS_CP_2_TREE
+            type: dom
+            domType: div
+            widgets: []
+            panes: []
+            
+            
+
+      - id: ICD10PCS_CP_3
+        region: center
+        type: cp
+        widgets: []
+        splitter: True
+        style:
+          width: "25%"
+        class: widgetContainer
+        panes: 
+
+          - id: ICD10PCS_CP_3_TREE
+            type: dom
+            domType: div
+            widgets: []
+            panes: []
+
+      - id: ICD10PCS_CP_4
+        region: trailing
+        type: cp
+        widgets: []
+        splitter: True
+        style:
+          width: "25%"
+        class: widgetContainer
+        panes: 
+
+          - id: ICD10PCS_CP_4_TREE
+            type: dom
+            domType: div
+            widgets: []
+            panes: []
+
+  - id: ICD10PCS_BOTTOM_CP
+    type: cp
+    region: bottom
+    splitter: False
+    content: "Generated Code: -- -- -- -- -- -- -- "
+    style: 
+        height: 2em
+        background: "#ededed"
+        border: "solid 1px #aaa"
+        borderRadius: 5px
+

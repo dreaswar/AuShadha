@@ -22,7 +22,7 @@ urlpatterns = patterns('',
                       url(r'^AuShadha/ui/'    , include('AuShadha.apps.ui.urls') ),
 
                       url(r'^AuShadha/icd10/'    , include('registry.icd10.urls') ),
-                      url(r'^AuShadha/icd10_pcs/'    , include('registry.icd10_pcs.urls') ),
+                      url(r'^AuShadha/icd10pcs/'    , include('registry.icd10pcs.urls') ),
                       url(r'^AuShadha/fda_drug_db/'    , include('registry.drug_db.urls') ),
                       url(r'^AuShadha/drugbankcadrugs/'    , include('registry.drug_db.drugbankca.urls') ),
 

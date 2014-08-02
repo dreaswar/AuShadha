@@ -139,7 +139,7 @@ STATICFILES_DIRS = (
 
     os.path.join(PARENT_ROOT, 'registry/drug_db/drugbankca/media/drugbankcadrugs/js'),
     os.path.join(PARENT_ROOT, 'registry/drug_db/media/drug_db/js'),
-    os.path.join(PARENT_ROOT, 'registry/icd10_pcs/media/icd10_pcs/js'),
+    os.path.join(PARENT_ROOT, 'registry/icd10pcs/media/icd10pcs/js'),
     os.path.join(PARENT_ROOT, 'registry/icd10/media/icd10/js'),
 
 )
@@ -188,7 +188,7 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'apps/ui/templates/ui/'),
     os.path.join(ROOT_PATH, 'apps/ui/media/ui/'),
     os.path.join(ROOT_PATH, 'registry/icd10/templates/icd10/'),
-    os.path.join(ROOT_PATH, 'registry/icd10_pcs/templates/icd10_pcs/'),
+    os.path.join(ROOT_PATH, 'registry/icd10pcs/templates/icd10pcs/'),
     os.path.join(ROOT_PATH, 'registry/drug_db/templates/drug_db/'),
     os.path.join(ROOT_PATH, 'registry/drug_db/drugbankca/templates/drugbankca/'),
 
@@ -257,7 +257,7 @@ INSTALLED_APPS = (
     # Core AuShadha Registry for ICD 10 codes, ICD 10 PCS codes, Drug Database
     #   and Vaccine Registry
     'registry.icd10',
-    'registry.icd10_pcs',
+    'registry.icd10pcs',
     'registry.drug_db',
     'registry.drug_db.drugbankca',
     'registry.inv_and_imaging',
