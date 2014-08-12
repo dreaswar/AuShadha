@@ -1,0 +1,1406 @@
+[
+    {
+        "age_ranges": [
+            "Birth", 
+            "1", 
+            "2", 
+            "4", 
+            "6", 
+            "9", 
+            "12", 
+            "15"
+        ], 
+        "caption": "Birth to 15 Months", 
+        "map": [
+            {
+                "footnote": "<li>\n <a name=\"f1\">\n </a>\n <span class=\"bold\">\n  Hepatitis B (HepB) vaccine. (Minimum age: birth)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n  <br/>\n  At birth:\n </p>\n <ul>\n  <li>\n   Administer monovalent HepB vaccine to all newborns before hospital\r\n          discharge.\n  </li>\n  <li>\n   For infants born to hepatitis B surface antigen (HBsAg)-positive mothers, administer HepB vaccine and 0.5 mL of hepatitis B immune globulin (HBIG) within 12 hours of birth. These infants should be tested for HBsAg and antibody to HBsAg (anti-HBs) 1 to 2 months after completion of the HepB series, at age 9 through 18 months (preferably at the next well-child visit).\n  </li>\n  <li>\n   If mother's HBsAg status is unknown, within 12 hours of birth administer HepB vaccine regardless of birth weight. For infants weighing less than 2,000 grams, administer HBIG in addition to HepB vaccine within 12 hours of birth. Determine mother\u2019s HBsAg status as soon as possible and, if mother is HBsAg-positive, also administer HBIG for infants weighing 2,000 grams or more as soon as possible, but no later than age 7 days.\n  </li>\n </ul>\n <p class=\"bold\">\n  Doses following the birth dose:\n </p>\n <ul>\n  <li>\n   The second dose should be administered at age 1 or 2 months. Monovalent HepB vaccine should be used for doses administered before age 6 weeks.\n  </li>\n  <li>\n   Infants who did not receive a birth dose should receive 3 doses of a HepB-containing\r\n          vaccine on a schedule of 0, 1 to 2 months, and 6 months starting\r\n          as soon as feasible. See\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n  <li>\n   Administer the second dose 1 to 2 months after the first dose (minimum interval of 4 weeks), administer the third dose at least 8 weeks after the second dose AND at least 16 weeks after the\n   <span class=\"bold\">\n    first\n   </span>\n   dose. The final (third or fourth) dose in the HepB vaccine series should be administered\n   <span class=\"bold\">\n    no earlier than age 24 weeks\n   </span>\n   .\n  </li>\n  <li>\n   Administration of a total of 4 doses of HepB vaccine is permitted when a combination vaccine containing HepB is administered after the birth dose.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Unvaccinated persons should complete a 3-dose series.\n  </li>\n  <li>\n   A 2-dose series (doses separated by at least 4 months) of adult formulation\r\n          Recombivax HB is licensed for use in children aged 11 through 15 years.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Hepatitis B1 (HepB)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "hepb-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1 month2", 
+                            "vaccine_label": "hepb-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "hepb-t1", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6 month9 month12 month15", 
+                            "vaccine_label": "hepb-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f2\">\n </a>\n <span class=\"bold\">\n  Rotavirus (RV) vaccines. (Minimum age: 6 weeks for both RV1 [Rotarix] and RV5 [RotaTeq])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a series of RV vaccine to all infants as follows:\n   <ol>\n    <li>\n     If Rotarix is used, administer a 2-dose series at 2 and 4 months of age.\n    </li>\n    <li>\n     If RotaTeq is used, administer a 3-dose series at ages 2, 4, and 6 months.\n    </li>\n    <li>\n     If any dose in the series was RotaTeq or vaccine product is unknown for any dose in the series, a total of 3 doses of RV vaccine should be administered.\n    </li>\n   </ol>\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   The maximum age for the first dose in the series is 14 weeks, 6 days; vaccination should not be initiated for infants aged 15 weeks, 0 days or older.\n  </li>\n  <li>\n   The maximum age for the final dose in the series is 8 months, 0 days.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Rotavirus2(RV)\r         RV1 (2-dose series); RV5 (3-dose series)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "rota-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "rota-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "rota-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "rota-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "<li>\n <a name=\"f2\">\n </a>\n <span class=\"bold\">\n  Rotavirus (RV) vaccines. (Minimum age: 6 weeks for both RV1 [Rotarix] and RV5 [RotaTeq])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a series of RV vaccine to all infants as follows:\n   <ol>\n    <li>\n     If Rotarix is used, administer a 2-dose series at 2 and 4 months of age.\n    </li>\n    <li>\n     If RotaTeq is used, administer a 3-dose series at ages 2, 4, and 6 months.\n    </li>\n    <li>\n     If any dose in the series was RotaTeq or vaccine product is unknown for any dose in the series, a total of 3 doses of RV vaccine should be administered.\n    </li>\n   </ol>\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   The maximum age for the first dose in the series is 14 weeks, 6 days; vaccination should not be initiated for infants aged 15 weeks, 0 days or older.\n  </li>\n  <li>\n   The maximum age for the final dose in the series is 8 months, 0 days.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                            "age_range": "month6", 
+                            "vaccine_label": "rota-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9", 
+                            "vaccine_label": "rota-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month12", 
+                            "vaccine_label": "rota-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month15", 
+                            "vaccine_label": "rota-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f3\">\n </a>\n <span class=\"bold\">\n  Diphtheria and tetanus toxoids and acellular pertussis (DTaP) vaccine. (Minimum age: 6 weeks. Exception: DTaP-IPV [Kinrix]: 4 years)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 5-dose series of DTaP vaccine at ages 2, 4, 6, 15 through 18 months, and 4 through 6 years. The fourth dose may be administered as early as age 12 months, provided at least 6 months have elapsed since the third dose.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   The fifth dose of DTaP vaccine is not necessary if the fourth dose was administered at age 4 years or older.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Diphtheria, tetanus, & acellular pertussis3(DTaP: <7 yrs)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "dtap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "dtap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "dtap-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "dtap-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6", 
+                            "vaccine_label": "dta-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9 month12", 
+                            "vaccine_label": "dtap-t1", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month15", 
+                            "vaccine_label": "dtap-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f4\">\n </a>\n <span class=\"bold\">\n  Tetanus and diphtheria toxoids and acellular pertussis (Tdap) vaccine. (Minimum age: 10 years for Boostrix, 11 years for Adacel)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer 1 dose of Tdap vaccine to all adolescents aged 11 through 12 years.\n  </li>\n  <li>\n   Tdap may be administered regardless of the interval since the last tetanus and diphtheria toxoid-containing vaccine.\n  </li>\n  <li>\n   Administer 1 dose of Tdap vaccine to pregnant adolescents during each pregnancy (preferred during 27 through 36 weeks gestation) regardless of time since prior Td or Tdap vaccination.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Persons aged 7 years and older who are not fully immunized with DTaP vaccine should receive Tdap vaccine as 1 (preferably the first) dose in the catch-up series; if additional doses are needed, use Td vaccine. For children 7 through 10 years who receive a dose of Tdap as part of the catch-up series, an adolescent Tdap vaccine dose at age 11 through 12 years should NOT be administered. Td should be administered instead 10 years after the Tdap dose.\n  </li>\n  <li>\n   Persons aged 11 through 18 years who have not received Tdap vaccine\r\n          should receive a dose followed by tetanus and diphtheria toxoids (Td)\r\n          booster doses every 10 years thereafter.\n  </li>\n  <li>\n   Inadvertent doses of DTaP vaccine:\n   <ul>\n    <li>\n     If administered inadvertently to a child aged 7 through 10 years may count as part of the catch-up series. This dose may count as the adolescent Tdap dose, or the child can later receive a Tdap booster dose at age 11 through 12 years.\n    </li>\n    <li>\n     If administered inadvertently to an adolescent aged 11 through 18 years, the dose should be counted as the adolescent Tdap booster.\n    </li>\n   </ul>\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Tetanus, diphtheria, & acellular\r         pertussis4 (Tdap: \u22657 yrs)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "tdap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "tdap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "tdap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "tdap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6", 
+                            "vaccine_label": "tdap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9", 
+                            "vaccine_label": "tdap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month12", 
+                            "vaccine_label": "tdap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month15", 
+                            "vaccine_label": "tdap-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f5\">\n </a>\n <span class=\"bold\">\n  <em>\n   Haemophilus influenzae\n  </em>\n  type b (Hib) conjugate vaccine.  (Minimum age:  6 weeks for PRP-T [ACTHIB, DTaP-IPV/Hib (Pentacel) and Hib-MenCY (MenHibrix)], PRP-OMP [PedvaxHIB or COMVAX], 12 months for PRP-T [Hiberix])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 2- or 3-dose Hib vaccine primary series and a booster dose (dose 3 or 4 depending on vaccine used in primary series) at age 12 through 15 months to complete a full Hib vaccine series.\n  </li>\n  <li>\n   The primary series with ActHIB, MenHibrix, or Pentacel consists of 3 doses and should be administered at 2, 4, and 6 months of age. The primary series with PedvaxHib or COMVAX consists of 2 doses and should be administered at 2 and 4 months of age; a dose at age 6 months is not indicated.\n  </li>\n  <li>\n   One booster dose (dose 3 or 4 depending on vaccine used in primary series) of any Hib vaccine should be administered at age 12 through 15 months. An exception is Hiberix vaccine. Hiberix should only be used for the booster (final) dose in children aged 12 months through 4 years who have received at least 1 prior dose of Hib-containing vaccine.\n  </li>\n  <li>\n   For recommendations on the use of MenHibrix in patients at increased risk for meningococcal disease, please refer to the meningococcal vaccine footnotes and also to\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6202.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    March 22, 2013;62(RR02):1-22 [32 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   If dose 1 was administered at ages 12 through 14 months, administer a second (final) dose at least 8 weeks after dose 1, regardless of Hib vaccine used in the primary series.\n  </li>\n  <li>\n   If the first 2 doses were PRP-OMP (PedvaxHIB or COMVAX), and were administered at age 11 months or younger, the third (and final) dose should be administered at age 12 through 15 months and at least 8 weeks after the second dose.\n  </li>\n  <li>\n   If the first dose was administered at age 7 through 11 months, administer the second dose at least 4 weeks later and a third (and final) dose at age 12 through 15 months or 8 weeks after second dose, whichever is later, regardless of Hib vaccine used for first dose.\n  </li>\n  <li>\n   If first dose is administered at younger than 12 months of age and second dose is given between 12 through 14 months of age, a third (and final) dose should be given 8 weeks later.\n  </li>\n  <li>\n   For unvaccinated children aged 15 months or older, administer only 1 dose.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   . For catch-up guidance related to MenHibrix, please see the meningococcal vaccine footnotes and also\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6202.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    March 22, 2013;62(RR02):1-22 [32 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Vaccination of persons with high-risk conditions:\n </p>\n <ul>\n  <li>\n   Children aged 12 through 59 months who are at increased risk for Hib disease, including chemotherapy recipients and those with anatomic or functional asplenia (including sickle cell disease), human immunodeficiency virus (HIV) infection, immunoglobulin deficiency, or early component complement deficiency, who have received either no doses or only 1 dose of Hib vaccine before 12 months of age, should receive 2 additional doses of Hib vaccine 8 weeks apart; children who received 2 or more doses of Hib vaccine before 12 months of age should receive 1 additional dose.\n  </li>\n  <li>\n   For patients younger than 5 years of age undergoing chemotherapy or radiation treatment who received a Hib vaccine dose(s) within 14 days of starting therapy or during therapy, repeat the dose(s) at least 3 months following therapy completion.\n  </li>\n  <li>\n   Recipients of hematopoietic stem cell transplant (HSCT) should be revaccinated with a 3-dose regimen of Hib vaccine starting 6 to 12 months after successful transplant, regardless of vaccination history; doses should be administered at least 4 weeks apart.\n  </li>\n  <li>\n   A single dose of any Hib-containing vaccine should be administered to unimmunized* children and adolescents 15 months of age and older undergoing an elective splenectomy; if possible, vaccine should be administered at least 14 days before procedure.\n  </li>\n  <li>\n   Hib vaccine is not routinely recommended for patients 5 years or older. However, 1 dose of Hib vaccine should be administered to unimmunized* persons aged 5 years or older who have anatomic or functional asplenia (including sickle cell disease) and unvaccinated persons 5 through 18 years of age with human immunodeficiency virus (HIV) infection.\n  </li>\n </ul>\n <p>\n  *\n  <em>\n   Patients who have not received a primary series and booster dose or at least 1 dose of Hib vaccine after 14 months of age are considered unimmunized.\n  </em>\n </p>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Haemophilus influenzae type b5 (Hib)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "hib-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "hib-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "hib-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "hib-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "<li>\n <a name=\"f5\">\n </a>\n <span class=\"bold\">\n  <em>\n   Haemophilus influenzae\n  </em>\n  type b (Hib) conjugate vaccine.  (Minimum age:  6 weeks for PRP-T [ACTHIB, DTaP-IPV/Hib (Pentacel) and Hib-MenCY (MenHibrix)], PRP-OMP [PedvaxHIB or COMVAX], 12 months for PRP-T [Hiberix])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 2- or 3-dose Hib vaccine primary series and a booster dose (dose 3 or 4 depending on vaccine used in primary series) at age 12 through 15 months to complete a full Hib vaccine series.\n  </li>\n  <li>\n   The primary series with ActHIB, MenHibrix, or Pentacel consists of 3 doses and should be administered at 2, 4, and 6 months of age. The primary series with PedvaxHib or COMVAX consists of 2 doses and should be administered at 2 and 4 months of age; a dose at age 6 months is not indicated.\n  </li>\n  <li>\n   One booster dose (dose 3 or 4 depending on vaccine used in primary series) of any Hib vaccine should be administered at age 12 through 15 months. An exception is Hiberix vaccine. Hiberix should only be used for the booster (final) dose in children aged 12 months through 4 years who have received at least 1 prior dose of Hib-containing vaccine.\n  </li>\n  <li>\n   For recommendations on the use of MenHibrix in patients at increased risk for meningococcal disease, please refer to the meningococcal vaccine footnotes and also to\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6202.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    March 22, 2013;62(RR02):1-22 [32 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   If dose 1 was administered at ages 12 through 14 months, administer a second (final) dose at least 8 weeks after dose 1, regardless of Hib vaccine used in the primary series.\n  </li>\n  <li>\n   If the first 2 doses were PRP-OMP (PedvaxHIB or COMVAX), and were administered at age 11 months or younger, the third (and final) dose should be administered at age 12 through 15 months and at least 8 weeks after the second dose.\n  </li>\n  <li>\n   If the first dose was administered at age 7 through 11 months, administer the second dose at least 4 weeks later and a third (and final) dose at age 12 through 15 months or 8 weeks after second dose, whichever is later, regardless of Hib vaccine used for first dose.\n  </li>\n  <li>\n   If first dose is administered at younger than 12 months of age and second dose is given between 12 through 14 months of age, a third (and final) dose should be given 8 weeks later.\n  </li>\n  <li>\n   For unvaccinated children aged 15 months or older, administer only 1 dose.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   . For catch-up guidance related to MenHibrix, please see the meningococcal vaccine footnotes and also\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6202.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    March 22, 2013;62(RR02):1-22 [32 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Vaccination of persons with high-risk conditions:\n </p>\n <ul>\n  <li>\n   Children aged 12 through 59 months who are at increased risk for Hib disease, including chemotherapy recipients and those with anatomic or functional asplenia (including sickle cell disease), human immunodeficiency virus (HIV) infection, immunoglobulin deficiency, or early component complement deficiency, who have received either no doses or only 1 dose of Hib vaccine before 12 months of age, should receive 2 additional doses of Hib vaccine 8 weeks apart; children who received 2 or more doses of Hib vaccine before 12 months of age should receive 1 additional dose.\n  </li>\n  <li>\n   For patients younger than 5 years of age undergoing chemotherapy or radiation treatment who received a Hib vaccine dose(s) within 14 days of starting therapy or during therapy, repeat the dose(s) at least 3 months following therapy completion.\n  </li>\n  <li>\n   Recipients of hematopoietic stem cell transplant (HSCT) should be revaccinated with a 3-dose regimen of Hib vaccine starting 6 to 12 months after successful transplant, regardless of vaccination history; doses should be administered at least 4 weeks apart.\n  </li>\n  <li>\n   A single dose of any Hib-containing vaccine should be administered to unimmunized* children and adolescents 15 months of age and older undergoing an elective splenectomy; if possible, vaccine should be administered at least 14 days before procedure.\n  </li>\n  <li>\n   Hib vaccine is not routinely recommended for patients 5 years or older. However, 1 dose of Hib vaccine should be administered to unimmunized* persons aged 5 years or older who have anatomic or functional asplenia (including sickle cell disease) and unvaccinated persons 5 through 18 years of age with human immunodeficiency virus (HIV) infection.\n  </li>\n </ul>\n <p>\n  *\n  <em>\n   Patients who have not received a primary series and booster dose or at least 1 dose of Hib vaccine after 14 months of age are considered unimmunized.\n  </em>\n </p>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                            "age_range": "month6", 
+                            "vaccine_label": "hib-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9", 
+                            "vaccine_label": "hib-t1", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "<li>\n <a name=\"f5\">\n </a>\n <span class=\"bold\">\n  <em>\n   Haemophilus influenzae\n  </em>\n  type b (Hib) conjugate vaccine.  (Minimum age:  6 weeks for PRP-T [ACTHIB, DTaP-IPV/Hib (Pentacel) and Hib-MenCY (MenHibrix)], PRP-OMP [PedvaxHIB or COMVAX], 12 months for PRP-T [Hiberix])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 2- or 3-dose Hib vaccine primary series and a booster dose (dose 3 or 4 depending on vaccine used in primary series) at age 12 through 15 months to complete a full Hib vaccine series.\n  </li>\n  <li>\n   The primary series with ActHIB, MenHibrix, or Pentacel consists of 3 doses and should be administered at 2, 4, and 6 months of age. The primary series with PedvaxHib or COMVAX consists of 2 doses and should be administered at 2 and 4 months of age; a dose at age 6 months is not indicated.\n  </li>\n  <li>\n   One booster dose (dose 3 or 4 depending on vaccine used in primary series) of any Hib vaccine should be administered at age 12 through 15 months. An exception is Hiberix vaccine. Hiberix should only be used for the booster (final) dose in children aged 12 months through 4 years who have received at least 1 prior dose of Hib-containing vaccine.\n  </li>\n  <li>\n   For recommendations on the use of MenHibrix in patients at increased risk for meningococcal disease, please refer to the meningococcal vaccine footnotes and also to\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6202.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    March 22, 2013;62(RR02):1-22 [32 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   If dose 1 was administered at ages 12 through 14 months, administer a second (final) dose at least 8 weeks after dose 1, regardless of Hib vaccine used in the primary series.\n  </li>\n  <li>\n   If the first 2 doses were PRP-OMP (PedvaxHIB or COMVAX), and were administered at age 11 months or younger, the third (and final) dose should be administered at age 12 through 15 months and at least 8 weeks after the second dose.\n  </li>\n  <li>\n   If the first dose was administered at age 7 through 11 months, administer the second dose at least 4 weeks later and a third (and final) dose at age 12 through 15 months or 8 weeks after second dose, whichever is later, regardless of Hib vaccine used for first dose.\n  </li>\n  <li>\n   If first dose is administered at younger than 12 months of age and second dose is given between 12 through 14 months of age, a third (and final) dose should be given 8 weeks later.\n  </li>\n  <li>\n   For unvaccinated children aged 15 months or older, administer only 1 dose.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   . For catch-up guidance related to MenHibrix, please see the meningococcal vaccine footnotes and also\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6202.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    March 22, 2013;62(RR02):1-22 [32 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Vaccination of persons with high-risk conditions:\n </p>\n <ul>\n  <li>\n   Children aged 12 through 59 months who are at increased risk for Hib disease, including chemotherapy recipients and those with anatomic or functional asplenia (including sickle cell disease), human immunodeficiency virus (HIV) infection, immunoglobulin deficiency, or early component complement deficiency, who have received either no doses or only 1 dose of Hib vaccine before 12 months of age, should receive 2 additional doses of Hib vaccine 8 weeks apart; children who received 2 or more doses of Hib vaccine before 12 months of age should receive 1 additional dose.\n  </li>\n  <li>\n   For patients younger than 5 years of age undergoing chemotherapy or radiation treatment who received a Hib vaccine dose(s) within 14 days of starting therapy or during therapy, repeat the dose(s) at least 3 months following therapy completion.\n  </li>\n  <li>\n   Recipients of hematopoietic stem cell transplant (HSCT) should be revaccinated with a 3-dose regimen of Hib vaccine starting 6 to 12 months after successful transplant, regardless of vaccination history; doses should be administered at least 4 weeks apart.\n  </li>\n  <li>\n   A single dose of any Hib-containing vaccine should be administered to unimmunized* children and adolescents 15 months of age and older undergoing an elective splenectomy; if possible, vaccine should be administered at least 14 days before procedure.\n  </li>\n  <li>\n   Hib vaccine is not routinely recommended for patients 5 years or older. However, 1 dose of Hib vaccine should be administered to unimmunized* persons aged 5 years or older who have anatomic or functional asplenia (including sickle cell disease) and unvaccinated persons 5 through 18 years of age with human immunodeficiency virus (HIV) infection.\n  </li>\n </ul>\n <p>\n  *\n  <em>\n   Patients who have not received a primary series and booster dose or at least 1 dose of Hib vaccine after 14 months of age are considered unimmunized.\n  </em>\n </p>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                            "age_range": "month12 month15", 
+                            "vaccine_label": "hib-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f6\">\n </a>\n <span class=\"bold\">\n  Pneumococcal vaccines. (Minimum age: 6 weeks for PCV13, 2 years for PPSV23)\n </span>\n <p>\n  <span class=\"bold\">\n   Routine vaccination with PCV13:\n  </span>\n </p>\n <ul>\n  <li>\n   Administer a 4-dose series of PCV13 vaccine at ages 2, 4, and 6 months and at age 12 through 15 months.\n  </li>\n  <li>\n   For children ages 14 through 59 months who have received an age-appropriate series of 7-valent PCV (PCV7), administer a single supplemental dose of 13-valent PCV (PCV13).\n  </li>\n </ul>\n <p>\n  <span class=\"bold\">\n   Catch-up vaccination with PCV13:\n  </span>\n </p>\n <ul>\n  <li>\n   Administer 1 dose of PCV13 to all healthy children aged 24 through 59 months who are not completely vaccinated for their age.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p>\n  <span class=\"bold\">\n   Vaccination of persons with high-risk conditions with PCV13 and PPSV23:\n  </span>\n </p>\n <ul>\n  <li>\n   All recommended PCV13 doses should be administered prior to PPSV23 vaccination if possible.\n  </li>\n  <li>\n   For children 2 through 5 years of age with any of the following conditions: chronic heart disease (particularly cyanotic congenital heart disease and cardiac failure); chronic lung disease (including asthma if treated with high-dose oral corticosteroid therapy); diabetes mellitus; cerebrospinal fluid leak; cochlear implant; sickle cell disease and other hemoglobinopathies; anatomic or functional asplenia; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; solid organ transplantation; or congenital immunodeficiency:\n   <ol>\n    <li>\n     Administer 1 dose of PCV13 if 3 doses of PCV (PCV7 and/or PCV13) were received previously.\n    </li>\n    <li>\n     Administer 2 doses of PCV13 at least 8 weeks apart if fewer than 3 doses of PCV (PCV7 and/or PCV13) were received previously.\n    </li>\n    <li>\n     Administer 1 supplemental dose of PCV13 if 4 doses of PCV7 or other age-appropriate complete PCV7 series was received previously.\n    </li>\n    <li>\n     The minimum interval between doses of PCV (PCV7 or PCV13) is 8 weeks.\n    </li>\n    <li>\n     For children with no history of PPSV23 vaccination, administer PPSV23 at least 8 weeks after the most recent dose of PCV13.\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children aged 6 through 18 years who have cerebrospinal fluid leak; cochlear implant; sickle cell disease and other hemoglobinopathies; anatomic or functional asplenia; congenital or acquired immunodeficiencies; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; generalized malignancy; solid organ transplantation; or multiple myeloma:\n   <ol>\n    <li>\n     If neither PCV13 nor PPSV23 has been received previously, administer 1 dose of PCV13 now and 1 dose of PPSV23 at least 8 weeks later.\n    </li>\n    <li>\n     If PCV13 has been received previously but PPSV23 has not, administer 1 dose of PPSV23 at least 8 weeks after the most recent dose of PCV13.\n    </li>\n    <li>\n     If PPSV23 has been received but PCV13 has not, administer 1 dose of PCV13 at least 8 weeks after the most recent dose of PPSV23.\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children aged 6 through 18 years with chronic heart disease (particularly cyanotic congenital heart disease and cardiac failure), chronic lung disease (including asthma if treated with high-dose oral corticosteroid therapy), diabetes mellitus, alcoholism, or chronic liver disease, who have not received PPSV23, administer 1 dose of PPSV23. If PCV13 has been received previously, then PPSV23 should be administered at least 8 weeks after any prior PCV13 dose.\n  </li>\n  <li>\n   A single revaccination with PPSV23 should be administered 5 years after the first dose to children with sickle cell disease or other hemoglobinopathies; anatomic or functional asplenia; congenital or acquired immunodeficiencies; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; generalized malignancy; solid organ transplantation; or multiple myeloma.\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Pneumococcal conjugate6 (PCV13)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "pcv13-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "pcv13-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "pcv13-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "pcv13-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6", 
+                            "vaccine_label": "pcv13-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9", 
+                            "vaccine_label": "pcv13-t1", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month12 month15", 
+                            "vaccine_label": "pcv13-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f6\">\n </a>\n <span class=\"bold\">\n  Pneumococcal vaccines. (Minimum age: 6 weeks for PCV13, 2 years for PPSV23)\n </span>\n <p>\n  <span class=\"bold\">\n   Routine vaccination with PCV13:\n  </span>\n </p>\n <ul>\n  <li>\n   Administer a 4-dose series of PCV13 vaccine at ages 2, 4, and 6 months and at age 12 through 15 months.\n  </li>\n  <li>\n   For children ages 14 through 59 months who have received an age-appropriate series of 7-valent PCV (PCV7), administer a single supplemental dose of 13-valent PCV (PCV13).\n  </li>\n </ul>\n <p>\n  <span class=\"bold\">\n   Catch-up vaccination with PCV13:\n  </span>\n </p>\n <ul>\n  <li>\n   Administer 1 dose of PCV13 to all healthy children aged 24 through 59 months who are not completely vaccinated for their age.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p>\n  <span class=\"bold\">\n   Vaccination of persons with high-risk conditions with PCV13 and PPSV23:\n  </span>\n </p>\n <ul>\n  <li>\n   All recommended PCV13 doses should be administered prior to PPSV23 vaccination if possible.\n  </li>\n  <li>\n   For children 2 through 5 years of age with any of the following conditions: chronic heart disease (particularly cyanotic congenital heart disease and cardiac failure); chronic lung disease (including asthma if treated with high-dose oral corticosteroid therapy); diabetes mellitus; cerebrospinal fluid leak; cochlear implant; sickle cell disease and other hemoglobinopathies; anatomic or functional asplenia; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; solid organ transplantation; or congenital immunodeficiency:\n   <ol>\n    <li>\n     Administer 1 dose of PCV13 if 3 doses of PCV (PCV7 and/or PCV13) were received previously.\n    </li>\n    <li>\n     Administer 2 doses of PCV13 at least 8 weeks apart if fewer than 3 doses of PCV (PCV7 and/or PCV13) were received previously.\n    </li>\n    <li>\n     Administer 1 supplemental dose of PCV13 if 4 doses of PCV7 or other age-appropriate complete PCV7 series was received previously.\n    </li>\n    <li>\n     The minimum interval between doses of PCV (PCV7 or PCV13) is 8 weeks.\n    </li>\n    <li>\n     For children with no history of PPSV23 vaccination, administer PPSV23 at least 8 weeks after the most recent dose of PCV13.\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children aged 6 through 18 years who have cerebrospinal fluid leak; cochlear implant; sickle cell disease and other hemoglobinopathies; anatomic or functional asplenia; congenital or acquired immunodeficiencies; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; generalized malignancy; solid organ transplantation; or multiple myeloma:\n   <ol>\n    <li>\n     If neither PCV13 nor PPSV23 has been received previously, administer 1 dose of PCV13 now and 1 dose of PPSV23 at least 8 weeks later.\n    </li>\n    <li>\n     If PCV13 has been received previously but PPSV23 has not, administer 1 dose of PPSV23 at least 8 weeks after the most recent dose of PCV13.\n    </li>\n    <li>\n     If PPSV23 has been received but PCV13 has not, administer 1 dose of PCV13 at least 8 weeks after the most recent dose of PPSV23.\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children aged 6 through 18 years with chronic heart disease (particularly cyanotic congenital heart disease and cardiac failure), chronic lung disease (including asthma if treated with high-dose oral corticosteroid therapy), diabetes mellitus, alcoholism, or chronic liver disease, who have not received PPSV23, administer 1 dose of PPSV23. If PCV13 has been received previously, then PPSV23 should be administered at least 8 weeks after any prior PCV13 dose.\n  </li>\n  <li>\n   A single revaccination with PPSV23 should be administered 5 years after the first dose to children with sickle cell disease or other hemoglobinopathies; anatomic or functional asplenia; congenital or acquired immunodeficiencies; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; generalized malignancy; solid organ transplantation; or multiple myeloma.\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Pneumococcal polysaccharide6(PPSV23)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "ppsv23-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "ppsv23-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "ppsv23-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "ppsv23-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6", 
+                            "vaccine_label": "ppsv23-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9", 
+                            "vaccine_label": "ppsv23-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month12", 
+                            "vaccine_label": "ppsv23-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month15", 
+                            "vaccine_label": "ppsv23-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f7\">\n </a>\n <span class=\"bold\">\n  Inactivated poliovirus vaccine (IPV). (Minimum age: 6 weeks)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 4-dose series of IPV at ages 2, 4, 6 through 18 months, and 4 through 6 years. The final dose in the series should be administered on or after the fourth birthday and at least 6 months after the previous dose.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   In the first 6 months of life, minimum age and minimum intervals are only recommended if the person is at risk for imminent exposure to circulating poliovirus (i.e., travel to a polio-endemic region or during an outbreak).\n  </li>\n  <li>\n   If 4 or more doses are administered before age 4 years, an additional dose should be administered at age 4 through 6 years and at least 6 months after the previous dose.\n  </li>\n  <li>\n   A fourth dose is not necessary if the third dose was administered at age 4 years or older and at least 6 months after the previous dose.\n  </li>\n  <li>\n   If both OPV and IPV were administered as part of a series, a total of 4 doses should be administered, regardless of the child\u2019s current age. IPV is not routinely recommended for U.S. residents aged 18 years or older.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Inactivated poliovirus7 (IPV)(<18 yrs)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "polio-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "polio-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "polio-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "polio-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6 month9 month12 month15", 
+                            "vaccine_label": "polio-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f8\">\n </a>\n <span class=\"bold\">\n  Influenza vaccines. (Minimum age: 6 months for inactivated influenza vaccine [IIV], 2 years for live, attenuated influenza vaccine [LAIV])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer influenza vaccine annually to all children beginning at age 6 months. For most healthy, nonpregnant persons aged 2 through 49 years, either LAIV or IIV may be used. However, LAIV should NOT be administered to some persons, including 1) those with asthma, 2) children 2 through 4 years who had wheezing in the past 12 months, or 3) those who have any other underlying medical conditions that predispose them to influenza complications. For all other contraindications to use of LAIV, see\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6207.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(No. RR-7):1-43 [48 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  For children aged 6 months through 8 years:\n </p>\n <ul>\n  <li>\n   For the 2013\u201314 season, administer 2 doses (separated by at least 4 weeks) to children who are receiving influenza vaccine for the first time. Some children in this age group who have been vaccinated previously will also need 2 doses. For additional guidance, follow dosing guidelines in the 2013-14 ACIP influenza vaccine recommendations,\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6207.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(No. RR-7):1-43 [48 pages]\n   </a>\n   .\n  </li>\n  <li>\n   For the 2014\u201315 season, follow dosing guidelines in the 2014 ACIP influenza vaccine recommendations.\n  </li>\n </ul>\n <p class=\"bold\">\n  For persons aged 9 years and older:\n </p>\n <ul>\n  <li>\n   Administer 1 dose.\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Influenza8(IIV; LAIV)\r         2 doses for some: See footnote 8": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "flu-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "flu-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "flu-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "flu-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6 month9 month12 month15", 
+                            "vaccine_label": "flu-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f9\">\n </a>\n <span class=\"bold\">\n  Measles, mumps, and rubella (MMR) vaccine. (Minimum age: 12 months for routine vaccination)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 2-dose series of MMR vaccine at ages 12 through 15 months and 4 through 6 years. The second dose may be administered before age 4 years, provided at least 4 weeks have elapsed since the first dose.\n  </li>\n  <li>\n   Administer 1 dose of MMR vaccine to infants aged 6 through 11 months before departure from the United States for international travel. These children should be revaccinated with 2 doses of MMR vaccine, the first at age 12 through 15 months (12 months if the child remains in an area where disease risk is high), and the second dose at least 4 weeks later.\n  </li>\n  <li>\n   Administer 2 doses of MMR vaccine to children aged 12 months and older before departure from the United States for international travel. The first dose should be administered on or after age 12 months and the second dose at least 4 weeks later.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Ensure that all school-aged children and adolescents have had 2 doses of MMR vaccine; the minimum interval between the 2 doses is 4 weeks.\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Measles, mumps, rubella9\r         (MMR)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "mmr-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "mmr-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "mmr-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "mmr-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6", 
+                            "vaccine_label": "mmr-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9", 
+                            "vaccine_label": "mmr-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month12 month15", 
+                            "vaccine_label": "mmr-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f10\">\n </a>\n <span class=\"bold\">\n  Varicella (VAR) vaccine. (Minimum age: 12 months)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 2-dose series of VAR vaccine at ages 12 through 15 months and 4 through 6 years. The second dose may be administered before age 4 years, provided at least 3 months have elapsed since the first dose. If the second dose was administered at least 4 weeks after the first dose, it can be accepted as valid.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Ensure that all persons aged 7 through 18 years without evidence of immunity (see\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr5604.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2007;56[No. RR-4] [48 pages]\n   </a>\n   ), have 2 doses of varicella vaccine. For children aged 7 through 12 years, the recommended minimum interval between doses is 3 months (if the second dose was administered at least 4 weeks after the first dose, it can be accepted as valid); for persons aged 13 years and older, the minimum interval between doses is 4 weeks.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Varicella10 (VAR)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "var-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "var-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "var-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "var-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6", 
+                            "vaccine_label": "var-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9", 
+                            "vaccine_label": "var-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month12 month15", 
+                            "vaccine_label": "var-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f11\">\n </a>\n <span class=\"bold\">\n  Hepatitis A (HepA) vaccine. (Minimum age: 12 months)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Initiate the 2-dose HepA vaccine series at 12 through 23 months; separate the 2 doses by 6 to 18 months.\n  </li>\n  <li>\n   Children who have received 1 dose of HepA vaccine before age 24 months should receive a second dose 6 to 18 months after the first dose.\n  </li>\n  <li>\n   For any person aged 2 years and older who has not already received the HepA vaccine series, 2 doses of HepA vaccine separated by 6 to 18 months may be administered if immunity against hepatitis A virus infection is desired.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   The minimum interval between the two doses is 6 months.\n  </li>\n </ul>\n <p class=\"bold\">\n  Special populations:\n </p>\n <ul>\n  <li>\n   Administer 2 doses of HepA vaccine at least 6 months apart to previously unvaccinated persons who live in areas where vaccination programs target older children, or who are at increased risk for infection. This includes persons traveling to or working in countries that have high or intermediate endemicity of infection; men having sex with men; users of injection and non-injection illicit drugs; persons who work with HAV-infected primates or with HAV in a research laboratory; persons with clotting-factor disorders; persons with chronic liver disease; and  persons who anticipate close, personal contact (e.g., household or regular babysitting) with an international adoptee during the first 60 days after arrival in the United States from a country with high or intermediate endemicity. The first dose should be administered as soon as the adoption is planned, ideally 2 or more weeks before the arrival of the adoptee.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Hepatitis A11 (HepA)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "hepa-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "hepa-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "hepa-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "hepa-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6", 
+                            "vaccine_label": "hepa-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9", 
+                            "vaccine_label": "hepa-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "<li>\n <a name=\"f11\">\n </a>\n <span class=\"bold\">\n  Hepatitis A (HepA) vaccine. (Minimum age: 12 months)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Initiate the 2-dose HepA vaccine series at 12 through 23 months; separate the 2 doses by 6 to 18 months.\n  </li>\n  <li>\n   Children who have received 1 dose of HepA vaccine before age 24 months should receive a second dose 6 to 18 months after the first dose.\n  </li>\n  <li>\n   For any person aged 2 years and older who has not already received the HepA vaccine series, 2 doses of HepA vaccine separated by 6 to 18 months may be administered if immunity against hepatitis A virus infection is desired.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   The minimum interval between the two doses is 6 months.\n  </li>\n </ul>\n <p class=\"bold\">\n  Special populations:\n </p>\n <ul>\n  <li>\n   Administer 2 doses of HepA vaccine at least 6 months apart to previously unvaccinated persons who live in areas where vaccination programs target older children, or who are at increased risk for infection. This includes persons traveling to or working in countries that have high or intermediate endemicity of infection; men having sex with men; users of injection and non-injection illicit drugs; persons who work with HAV-infected primates or with HAV in a research laboratory; persons with clotting-factor disorders; persons with chronic liver disease; and  persons who anticipate close, personal contact (e.g., household or regular babysitting) with an international adoptee during the first 60 days after arrival in the United States from a country with high or intermediate endemicity. The first dose should be administered as soon as the adoption is planned, ideally 2 or more weeks before the arrival of the adoptee.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                            "age_range": "month12 month15", 
+                            "vaccine_label": "hepa-t1", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f12\">\n </a>\n <span class=\"bold\">\n  Human papillomavirus (HPV) vaccines.  (Minimum age:  9 years for HPV2 [Cervarix] and HPV4 [Gardasil])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 3-dose series of HPV vaccine on a schedule of 0, 1-2, and 6 months to all adolescents aged 11 through 12 years. Either HPV4 or HPV2 may be used for females, and only HPV4 may be used for males.\n  </li>\n  <li>\n   The vaccine series may be started at age 9 years.\n  </li>\n  <li>\n   Administer the second dose 1 to 2 months after the first dose (minimum interval of 4 weeks), administer the third dose 24 weeks after the first dose and 16 weeks after the second dose (minimum interval of 12 weeks).\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Administer the vaccine series to females (either HPV2 or HPV4) and males (HPV4) at age 13 through 18 years if not previously vaccinated.\n  </li>\n  <li>\n   Use recommended routine dosing intervals (see above) for vaccine series catch-up.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Human papillomavirus12\r         (HPV2: females only; HPV4: males and females)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "hpv-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "hpv-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month2", 
+                            "vaccine_label": "hpv-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month4", 
+                            "vaccine_label": "hpv-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month6", 
+                            "vaccine_label": "hpv-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month9", 
+                            "vaccine_label": "hpv-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month12", 
+                            "vaccine_label": "hpv-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month15", 
+                            "vaccine_label": "hpv-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f13\">\n </a>\n <span class=\"bold\">\n  Meningococcal conjugate vaccines. (Minimum age: 6 weeks for Hib-MenCY [MenHibrix], 9 months for MenACWY-D [Menactra], 2 months for MenACWY-CRM [Menveo])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a single dose of Menactra or Menveo vaccine at age 11 through 12 years, with a booster dose at age 16 years.\n  </li>\n  <li>\n   Adolescents aged 11 through 18 years with human immunodeficiency virus (HIV) infection should receive a 2-dose primary series of Menactra or Menveo with at least 8 weeks between doses.\n  </li>\n  <li>\n   For children aged 2 months through 18 years with high-risk conditions, see below.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Administer Menactra or Menveo vaccine at age 13 through 18 years if not previously vaccinated.\n  </li>\n  <li>\n   If the first dose is administered at age 13 through 15 years, a booster dose\r\n          should be administered at age 16 through 18 years with a minimum interval\r\n          of at least 8 weeks between doses.\n  </li>\n  <li>\n   If the first dose is administered at age 16 years or older, a booster dose is not needed.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Vaccination of persons with high-risk conditions and other persons at increased risk of disease:\n </p>\n <ul>\n  <li>\n   Children with anatomic or functional asplenia (including sickle cell disease):\n   <ol>\n    <li>\n     For children younger than 19 months of age, administer a 4-dose infant series of MenHibrix or Menveo at 2, 4, 6, and 12 through 15 months of age.\n    </li>\n    <li>\n     For children aged 19 through 23 months who have not completed a series of MenHibrix or Menveo, administer 2 primary doses of Menveo at least 3 months apart.\n    </li>\n    <li>\n     For children aged 24 months and older who have not received a complete series of MenHibrix or Menveo or Menactra, administer 2 primary doses of either Menactra or Menveo at least 2 months apart. If Menactra is administered to a child with asplenia (including sickle cell disease), do not administer Menactra until 2 years of age and at least 4 weeks after the completion of all PCV13 doses.\n    </li>\n   </ol>\n  </li>\n </ul>\n <ul>\n  <li>\n   Children with persistent complement component deficiency:\n   <ol>\n    <li>\n     For children younger than 19 months of age, administer a 4-dose infant series of either MenHibrix or Menveo at 2, 4, 6, and 12 through 15 months of age.\n    </li>\n    <li>\n     For children 7 through 23 months who have not initiated vaccination, two options exist depending on age and vaccine brand:\n     <ol style=\"list-style:lower-alpha\">\n      <li>\n       For children who initiate vaccination with Menveo at 7 months through 23 months of age, a 2-dose series should be administered with the second dose after 12 months of age and at least 3 months after the first dose.\n      </li>\n      <li>\n       For children who initiate vaccination with Menactra at 9 months through 23 months of age, a 2-dose series of Menactra should be administered at least 3 months apart.\n      </li>\n      <li>\n       For children aged 24 months and older who have not received a complete series of MenHibrix, Menveo, or Menactra, administer 2 primary doses of either Menactra or Menveo at least 2 months apart.\n      </li>\n     </ol>\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children who travel to or reside in countries in which meningococcal disease is hyperendemic or epidemic, including countries in the African meningitis belt or the Hajj, administer an age- appropriate formulation and series of Menactra or Menveo for protection against serogroups A and W meningococcal disease. Prior receipt of MenHibrix is not sufficient for children traveling to the meningitis belt or the Hajj because it does not contain serogroups A or W.\n  </li>\n  <li>\n   For children at risk during a community outbreak attributable to a vaccine serogroup, administer or complete an age- and formulation-appropriate series of MenHibrix, Menactra, or Menveo.\n  </li>\n  <li>\n   For booster doses among persons with high-risk conditions, refer to\n   <a href=\"http://www.cdc.gov/mmwr/preview/mmwrhtml/rr6202a1.htm\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(RR02):1-22\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up recommendations for persons with high-risk conditions:\n </p>\n <ol>\n  <li>\n   If MenHibrix is administered to achieve protection against meningococcal disease, a complete age-appropriate series of MenHibrix should be administered.\n  </li>\n  <li>\n   If the first dose of MenHibrix is given at or after 12 months of age, a total of 2 doses should be given at least 8 weeks apart to ensure protection against serogroups C and Y meningococcal disease.\n  </li>\n  <li>\n   For children who initiate vaccination with Menveo at 7 months through 9 months of age, a 2-dose series should be administered with the second dose after 12 months of age and at least 3 months after the first dose.\n  </li>\n  <li>\n   For other catch-up recommendations for these persons, refer to\n   <a href=\"http://www.cdc.gov/mmwr/preview/mmwrhtml/rr6202a1.htm\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(RR02):1-22\n   </a>\n   .\n  </li>\n </ol>\n</li>\n", 
+                "vaccine": {
+                    "Meningococcal13 (Hib-Men-CY \u2265 6 weeks; MenACWY-D\u22659 mos; MenACWY-CRM \u2265 2 mos)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "birth", 
+                            "vaccine_label": "mening-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "month1", 
+                            "vaccine_label": "mening-t1", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "<li>\n <a name=\"f13\">\n </a>\n <span class=\"bold\">\n  Meningococcal conjugate vaccines. (Minimum age: 6 weeks for Hib-MenCY [MenHibrix], 9 months for MenACWY-D [Menactra], 2 months for MenACWY-CRM [Menveo])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a single dose of Menactra or Menveo vaccine at age 11 through 12 years, with a booster dose at age 16 years.\n  </li>\n  <li>\n   Adolescents aged 11 through 18 years with human immunodeficiency virus (HIV) infection should receive a 2-dose primary series of Menactra or Menveo with at least 8 weeks between doses.\n  </li>\n  <li>\n   For children aged 2 months through 18 years with high-risk conditions, see below.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Administer Menactra or Menveo vaccine at age 13 through 18 years if not previously vaccinated.\n  </li>\n  <li>\n   If the first dose is administered at age 13 through 15 years, a booster dose\r\n          should be administered at age 16 through 18 years with a minimum interval\r\n          of at least 8 weeks between doses.\n  </li>\n  <li>\n   If the first dose is administered at age 16 years or older, a booster dose is not needed.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Vaccination of persons with high-risk conditions and other persons at increased risk of disease:\n </p>\n <ul>\n  <li>\n   Children with anatomic or functional asplenia (including sickle cell disease):\n   <ol>\n    <li>\n     For children younger than 19 months of age, administer a 4-dose infant series of MenHibrix or Menveo at 2, 4, 6, and 12 through 15 months of age.\n    </li>\n    <li>\n     For children aged 19 through 23 months who have not completed a series of MenHibrix or Menveo, administer 2 primary doses of Menveo at least 3 months apart.\n    </li>\n    <li>\n     For children aged 24 months and older who have not received a complete series of MenHibrix or Menveo or Menactra, administer 2 primary doses of either Menactra or Menveo at least 2 months apart. If Menactra is administered to a child with asplenia (including sickle cell disease), do not administer Menactra until 2 years of age and at least 4 weeks after the completion of all PCV13 doses.\n    </li>\n   </ol>\n  </li>\n </ul>\n <ul>\n  <li>\n   Children with persistent complement component deficiency:\n   <ol>\n    <li>\n     For children younger than 19 months of age, administer a 4-dose infant series of either MenHibrix or Menveo at 2, 4, 6, and 12 through 15 months of age.\n    </li>\n    <li>\n     For children 7 through 23 months who have not initiated vaccination, two options exist depending on age and vaccine brand:\n     <ol style=\"list-style:lower-alpha\">\n      <li>\n       For children who initiate vaccination with Menveo at 7 months through 23 months of age, a 2-dose series should be administered with the second dose after 12 months of age and at least 3 months after the first dose.\n      </li>\n      <li>\n       For children who initiate vaccination with Menactra at 9 months through 23 months of age, a 2-dose series of Menactra should be administered at least 3 months apart.\n      </li>\n      <li>\n       For children aged 24 months and older who have not received a complete series of MenHibrix, Menveo, or Menactra, administer 2 primary doses of either Menactra or Menveo at least 2 months apart.\n      </li>\n     </ol>\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children who travel to or reside in countries in which meningococcal disease is hyperendemic or epidemic, including countries in the African meningitis belt or the Hajj, administer an age- appropriate formulation and series of Menactra or Menveo for protection against serogroups A and W meningococcal disease. Prior receipt of MenHibrix is not sufficient for children traveling to the meningitis belt or the Hajj because it does not contain serogroups A or W.\n  </li>\n  <li>\n   For children at risk during a community outbreak attributable to a vaccine serogroup, administer or complete an age- and formulation-appropriate series of MenHibrix, Menactra, or Menveo.\n  </li>\n  <li>\n   For booster doses among persons with high-risk conditions, refer to\n   <a href=\"http://www.cdc.gov/mmwr/preview/mmwrhtml/rr6202a1.htm\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(RR02):1-22\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up recommendations for persons with high-risk conditions:\n </p>\n <ol>\n  <li>\n   If MenHibrix is administered to achieve protection against meningococcal disease, a complete age-appropriate series of MenHibrix should be administered.\n  </li>\n  <li>\n   If the first dose of MenHibrix is given at or after 12 months of age, a total of 2 doses should be given at least 8 weeks apart to ensure protection against serogroups C and Y meningococcal disease.\n  </li>\n  <li>\n   For children who initiate vaccination with Menveo at 7 months through 9 months of age, a 2-dose series should be administered with the second dose after 12 months of age and at least 3 months after the first dose.\n  </li>\n  <li>\n   For other catch-up recommendations for these persons, refer to\n   <a href=\"http://www.cdc.gov/mmwr/preview/mmwrhtml/rr6202a1.htm\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(RR02):1-22\n   </a>\n   .\n  </li>\n </ol>\n</li>\n", 
+                            "age_range": "month2 month4 month6 month9 month12 month15", 
+                            "vaccine_label": "mening-t1", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Range of recommended ages for certain high-risk groups"
+                        }
+                    ]
+                }
+            }
+        ]
+    }, 
+    {
+        "age_ranges": [
+            "18", 
+            "19-23", 
+            "2-3", 
+            "4-6", 
+            "7-10", 
+            "11-12", 
+            "13-15", 
+            "16-18"
+        ], 
+        "caption": "18 Months to 18 Years", 
+        "map": [
+            {
+                "footnote": "<li>\n <a name=\"f1\">\n </a>\n <span class=\"bold\">\n  Hepatitis B (HepB) vaccine. (Minimum age: birth)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n  <br/>\n  At birth:\n </p>\n <ul>\n  <li>\n   Administer monovalent HepB vaccine to all newborns before hospital\r\n          discharge.\n  </li>\n  <li>\n   For infants born to hepatitis B surface antigen (HBsAg)-positive mothers, administer HepB vaccine and 0.5 mL of hepatitis B immune globulin (HBIG) within 12 hours of birth. These infants should be tested for HBsAg and antibody to HBsAg (anti-HBs) 1 to 2 months after completion of the HepB series, at age 9 through 18 months (preferably at the next well-child visit).\n  </li>\n  <li>\n   If mother's HBsAg status is unknown, within 12 hours of birth administer HepB vaccine regardless of birth weight. For infants weighing less than 2,000 grams, administer HBIG in addition to HepB vaccine within 12 hours of birth. Determine mother\u2019s HBsAg status as soon as possible and, if mother is HBsAg-positive, also administer HBIG for infants weighing 2,000 grams or more as soon as possible, but no later than age 7 days.\n  </li>\n </ul>\n <p class=\"bold\">\n  Doses following the birth dose:\n </p>\n <ul>\n  <li>\n   The second dose should be administered at age 1 or 2 months. Monovalent HepB vaccine should be used for doses administered before age 6 weeks.\n  </li>\n  <li>\n   Infants who did not receive a birth dose should receive 3 doses of a HepB-containing\r\n          vaccine on a schedule of 0, 1 to 2 months, and 6 months starting\r\n          as soon as feasible. See\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n  <li>\n   Administer the second dose 1 to 2 months after the first dose (minimum interval of 4 weeks), administer the third dose at least 8 weeks after the second dose AND at least 16 weeks after the\n   <span class=\"bold\">\n    first\n   </span>\n   dose. The final (third or fourth) dose in the HepB vaccine series should be administered\n   <span class=\"bold\">\n    no earlier than age 24 weeks\n   </span>\n   .\n  </li>\n  <li>\n   Administration of a total of 4 doses of HepB vaccine is permitted when a combination vaccine containing HepB is administered after the birth dose.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Unvaccinated persons should complete a 3-dose series.\n  </li>\n  <li>\n   A 2-dose series (doses separated by at least 4 months) of adult formulation\r\n          Recombivax HB is licensed for use in children aged 11 through 15 years.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Hepatitis B1 (HepB)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18", 
+                            "vaccine_label": "hepb-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "months19 years2 years4 years7 years11 years13 years16", 
+                            "vaccine_label": "hepb-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f2\">\n </a>\n <span class=\"bold\">\n  Rotavirus (RV) vaccines. (Minimum age: 6 weeks for both RV1 [Rotarix] and RV5 [RotaTeq])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a series of RV vaccine to all infants as follows:\n   <ol>\n    <li>\n     If Rotarix is used, administer a 2-dose series at 2 and 4 months of age.\n    </li>\n    <li>\n     If RotaTeq is used, administer a 3-dose series at ages 2, 4, and 6 months.\n    </li>\n    <li>\n     If any dose in the series was RotaTeq or vaccine product is unknown for any dose in the series, a total of 3 doses of RV vaccine should be administered.\n    </li>\n   </ol>\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   The maximum age for the first dose in the series is 14 weeks, 6 days; vaccination should not be initiated for infants aged 15 weeks, 0 days or older.\n  </li>\n  <li>\n   The maximum age for the final dose in the series is 8 months, 0 days.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Rotavirus2(RV)\r         RV1 (2-dose series); RV5 (3-dose series)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18", 
+                            "vaccine_label": "rota-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "months19", 
+                            "vaccine_label": "rota-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years2", 
+                            "vaccine_label": "rota-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years4", 
+                            "vaccine_label": "rota-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years7", 
+                            "vaccine_label": "rota-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years11", 
+                            "vaccine_label": "rota-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years13", 
+                            "vaccine_label": "rota-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years16", 
+                            "vaccine_label": "rota-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f3\">\n </a>\n <span class=\"bold\">\n  Diphtheria and tetanus toxoids and acellular pertussis (DTaP) vaccine. (Minimum age: 6 weeks. Exception: DTaP-IPV [Kinrix]: 4 years)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 5-dose series of DTaP vaccine at ages 2, 4, 6, 15 through 18 months, and 4 through 6 years. The fourth dose may be administered as early as age 12 months, provided at least 6 months have elapsed since the third dose.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   The fifth dose of DTaP vaccine is not necessary if the fourth dose was administered at age 4 years or older.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Diphtheria, tetanus, & acellular pertussis3(DTaP: <7 yrs)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18", 
+                            "vaccine_label": "dtap-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "months19 years2", 
+                            "vaccine_label": "dtap-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years4", 
+                            "vaccine_label": "dtap-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years7", 
+                            "vaccine_label": "dtap-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years11", 
+                            "vaccine_label": "dtap-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years13", 
+                            "vaccine_label": "dtap-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years16", 
+                            "vaccine_label": "dtap-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f4\">\n </a>\n <span class=\"bold\">\n  Tetanus and diphtheria toxoids and acellular pertussis (Tdap) vaccine. (Minimum age: 10 years for Boostrix, 11 years for Adacel)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer 1 dose of Tdap vaccine to all adolescents aged 11 through 12 years.\n  </li>\n  <li>\n   Tdap may be administered regardless of the interval since the last tetanus and diphtheria toxoid-containing vaccine.\n  </li>\n  <li>\n   Administer 1 dose of Tdap vaccine to pregnant adolescents during each pregnancy (preferred during 27 through 36 weeks gestation) regardless of time since prior Td or Tdap vaccination.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Persons aged 7 years and older who are not fully immunized with DTaP vaccine should receive Tdap vaccine as 1 (preferably the first) dose in the catch-up series; if additional doses are needed, use Td vaccine. For children 7 through 10 years who receive a dose of Tdap as part of the catch-up series, an adolescent Tdap vaccine dose at age 11 through 12 years should NOT be administered. Td should be administered instead 10 years after the Tdap dose.\n  </li>\n  <li>\n   Persons aged 11 through 18 years who have not received Tdap vaccine\r\n          should receive a dose followed by tetanus and diphtheria toxoids (Td)\r\n          booster doses every 10 years thereafter.\n  </li>\n  <li>\n   Inadvertent doses of DTaP vaccine:\n   <ul>\n    <li>\n     If administered inadvertently to a child aged 7 through 10 years may count as part of the catch-up series. This dose may count as the adolescent Tdap dose, or the child can later receive a Tdap booster dose at age 11 through 12 years.\n    </li>\n    <li>\n     If administered inadvertently to an adolescent aged 11 through 18 years, the dose should be counted as the adolescent Tdap booster.\n    </li>\n   </ul>\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Tetanus, diphtheria, & acellular\r         pertussis4 (Tdap: \u22657 yrs)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18", 
+                            "vaccine_label": "tdap-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "months19", 
+                            "vaccine_label": "tdap-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years2", 
+                            "vaccine_label": "tdap-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years4", 
+                            "vaccine_label": "tdap-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years7", 
+                            "vaccine_label": "tdap-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years11", 
+                            "vaccine_label": "tdap-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years13 years16", 
+                            "vaccine_label": "tdap-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f5\">\n </a>\n <span class=\"bold\">\n  <em>\n   Haemophilus influenzae\n  </em>\n  type b (Hib) conjugate vaccine.  (Minimum age:  6 weeks for PRP-T [ACTHIB, DTaP-IPV/Hib (Pentacel) and Hib-MenCY (MenHibrix)], PRP-OMP [PedvaxHIB or COMVAX], 12 months for PRP-T [Hiberix])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 2- or 3-dose Hib vaccine primary series and a booster dose (dose 3 or 4 depending on vaccine used in primary series) at age 12 through 15 months to complete a full Hib vaccine series.\n  </li>\n  <li>\n   The primary series with ActHIB, MenHibrix, or Pentacel consists of 3 doses and should be administered at 2, 4, and 6 months of age. The primary series with PedvaxHib or COMVAX consists of 2 doses and should be administered at 2 and 4 months of age; a dose at age 6 months is not indicated.\n  </li>\n  <li>\n   One booster dose (dose 3 or 4 depending on vaccine used in primary series) of any Hib vaccine should be administered at age 12 through 15 months. An exception is Hiberix vaccine. Hiberix should only be used for the booster (final) dose in children aged 12 months through 4 years who have received at least 1 prior dose of Hib-containing vaccine.\n  </li>\n  <li>\n   For recommendations on the use of MenHibrix in patients at increased risk for meningococcal disease, please refer to the meningococcal vaccine footnotes and also to\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6202.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    March 22, 2013;62(RR02):1-22 [32 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   If dose 1 was administered at ages 12 through 14 months, administer a second (final) dose at least 8 weeks after dose 1, regardless of Hib vaccine used in the primary series.\n  </li>\n  <li>\n   If the first 2 doses were PRP-OMP (PedvaxHIB or COMVAX), and were administered at age 11 months or younger, the third (and final) dose should be administered at age 12 through 15 months and at least 8 weeks after the second dose.\n  </li>\n  <li>\n   If the first dose was administered at age 7 through 11 months, administer the second dose at least 4 weeks later and a third (and final) dose at age 12 through 15 months or 8 weeks after second dose, whichever is later, regardless of Hib vaccine used for first dose.\n  </li>\n  <li>\n   If first dose is administered at younger than 12 months of age and second dose is given between 12 through 14 months of age, a third (and final) dose should be given 8 weeks later.\n  </li>\n  <li>\n   For unvaccinated children aged 15 months or older, administer only 1 dose.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   . For catch-up guidance related to MenHibrix, please see the meningococcal vaccine footnotes and also\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6202.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    March 22, 2013;62(RR02):1-22 [32 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Vaccination of persons with high-risk conditions:\n </p>\n <ul>\n  <li>\n   Children aged 12 through 59 months who are at increased risk for Hib disease, including chemotherapy recipients and those with anatomic or functional asplenia (including sickle cell disease), human immunodeficiency virus (HIV) infection, immunoglobulin deficiency, or early component complement deficiency, who have received either no doses or only 1 dose of Hib vaccine before 12 months of age, should receive 2 additional doses of Hib vaccine 8 weeks apart; children who received 2 or more doses of Hib vaccine before 12 months of age should receive 1 additional dose.\n  </li>\n  <li>\n   For patients younger than 5 years of age undergoing chemotherapy or radiation treatment who received a Hib vaccine dose(s) within 14 days of starting therapy or during therapy, repeat the dose(s) at least 3 months following therapy completion.\n  </li>\n  <li>\n   Recipients of hematopoietic stem cell transplant (HSCT) should be revaccinated with a 3-dose regimen of Hib vaccine starting 6 to 12 months after successful transplant, regardless of vaccination history; doses should be administered at least 4 weeks apart.\n  </li>\n  <li>\n   A single dose of any Hib-containing vaccine should be administered to unimmunized* children and adolescents 15 months of age and older undergoing an elective splenectomy; if possible, vaccine should be administered at least 14 days before procedure.\n  </li>\n  <li>\n   Hib vaccine is not routinely recommended for patients 5 years or older. However, 1 dose of Hib vaccine should be administered to unimmunized* persons aged 5 years or older who have anatomic or functional asplenia (including sickle cell disease) and unvaccinated persons 5 through 18 years of age with human immunodeficiency virus (HIV) infection.\n  </li>\n </ul>\n <p>\n  *\n  <em>\n   Patients who have not received a primary series and booster dose or at least 1 dose of Hib vaccine after 14 months of age are considered unimmunized.\n  </em>\n </p>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Haemophilus influenzae type b5 (Hib)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18 months19 years2", 
+                            "vaccine_label": "hib-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years4 years7 years11 years13 years16", 
+                            "vaccine_label": "hib-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f6\">\n </a>\n <span class=\"bold\">\n  Pneumococcal vaccines. (Minimum age: 6 weeks for PCV13, 2 years for PPSV23)\n </span>\n <p>\n  <span class=\"bold\">\n   Routine vaccination with PCV13:\n  </span>\n </p>\n <ul>\n  <li>\n   Administer a 4-dose series of PCV13 vaccine at ages 2, 4, and 6 months and at age 12 through 15 months.\n  </li>\n  <li>\n   For children ages 14 through 59 months who have received an age-appropriate series of 7-valent PCV (PCV7), administer a single supplemental dose of 13-valent PCV (PCV13).\n  </li>\n </ul>\n <p>\n  <span class=\"bold\">\n   Catch-up vaccination with PCV13:\n  </span>\n </p>\n <ul>\n  <li>\n   Administer 1 dose of PCV13 to all healthy children aged 24 through 59 months who are not completely vaccinated for their age.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p>\n  <span class=\"bold\">\n   Vaccination of persons with high-risk conditions with PCV13 and PPSV23:\n  </span>\n </p>\n <ul>\n  <li>\n   All recommended PCV13 doses should be administered prior to PPSV23 vaccination if possible.\n  </li>\n  <li>\n   For children 2 through 5 years of age with any of the following conditions: chronic heart disease (particularly cyanotic congenital heart disease and cardiac failure); chronic lung disease (including asthma if treated with high-dose oral corticosteroid therapy); diabetes mellitus; cerebrospinal fluid leak; cochlear implant; sickle cell disease and other hemoglobinopathies; anatomic or functional asplenia; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; solid organ transplantation; or congenital immunodeficiency:\n   <ol>\n    <li>\n     Administer 1 dose of PCV13 if 3 doses of PCV (PCV7 and/or PCV13) were received previously.\n    </li>\n    <li>\n     Administer 2 doses of PCV13 at least 8 weeks apart if fewer than 3 doses of PCV (PCV7 and/or PCV13) were received previously.\n    </li>\n    <li>\n     Administer 1 supplemental dose of PCV13 if 4 doses of PCV7 or other age-appropriate complete PCV7 series was received previously.\n    </li>\n    <li>\n     The minimum interval between doses of PCV (PCV7 or PCV13) is 8 weeks.\n    </li>\n    <li>\n     For children with no history of PPSV23 vaccination, administer PPSV23 at least 8 weeks after the most recent dose of PCV13.\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children aged 6 through 18 years who have cerebrospinal fluid leak; cochlear implant; sickle cell disease and other hemoglobinopathies; anatomic or functional asplenia; congenital or acquired immunodeficiencies; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; generalized malignancy; solid organ transplantation; or multiple myeloma:\n   <ol>\n    <li>\n     If neither PCV13 nor PPSV23 has been received previously, administer 1 dose of PCV13 now and 1 dose of PPSV23 at least 8 weeks later.\n    </li>\n    <li>\n     If PCV13 has been received previously but PPSV23 has not, administer 1 dose of PPSV23 at least 8 weeks after the most recent dose of PCV13.\n    </li>\n    <li>\n     If PPSV23 has been received but PCV13 has not, administer 1 dose of PCV13 at least 8 weeks after the most recent dose of PPSV23.\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children aged 6 through 18 years with chronic heart disease (particularly cyanotic congenital heart disease and cardiac failure), chronic lung disease (including asthma if treated with high-dose oral corticosteroid therapy), diabetes mellitus, alcoholism, or chronic liver disease, who have not received PPSV23, administer 1 dose of PPSV23. If PCV13 has been received previously, then PPSV23 should be administered at least 8 weeks after any prior PCV13 dose.\n  </li>\n  <li>\n   A single revaccination with PPSV23 should be administered 5 years after the first dose to children with sickle cell disease or other hemoglobinopathies; anatomic or functional asplenia; congenital or acquired immunodeficiencies; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; generalized malignancy; solid organ transplantation; or multiple myeloma.\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Pneumococcal conjugate6 (PCV13)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18 months19 years2", 
+                            "vaccine_label": "pcv13-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years4 years7 years11 years13 years16", 
+                            "vaccine_label": "pcv13-t2", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Range of recommended ages for certain high-risk groups"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f6\">\n </a>\n <span class=\"bold\">\n  Pneumococcal vaccines. (Minimum age: 6 weeks for PCV13, 2 years for PPSV23)\n </span>\n <p>\n  <span class=\"bold\">\n   Routine vaccination with PCV13:\n  </span>\n </p>\n <ul>\n  <li>\n   Administer a 4-dose series of PCV13 vaccine at ages 2, 4, and 6 months and at age 12 through 15 months.\n  </li>\n  <li>\n   For children ages 14 through 59 months who have received an age-appropriate series of 7-valent PCV (PCV7), administer a single supplemental dose of 13-valent PCV (PCV13).\n  </li>\n </ul>\n <p>\n  <span class=\"bold\">\n   Catch-up vaccination with PCV13:\n  </span>\n </p>\n <ul>\n  <li>\n   Administer 1 dose of PCV13 to all healthy children aged 24 through 59 months who are not completely vaccinated for their age.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p>\n  <span class=\"bold\">\n   Vaccination of persons with high-risk conditions with PCV13 and PPSV23:\n  </span>\n </p>\n <ul>\n  <li>\n   All recommended PCV13 doses should be administered prior to PPSV23 vaccination if possible.\n  </li>\n  <li>\n   For children 2 through 5 years of age with any of the following conditions: chronic heart disease (particularly cyanotic congenital heart disease and cardiac failure); chronic lung disease (including asthma if treated with high-dose oral corticosteroid therapy); diabetes mellitus; cerebrospinal fluid leak; cochlear implant; sickle cell disease and other hemoglobinopathies; anatomic or functional asplenia; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; solid organ transplantation; or congenital immunodeficiency:\n   <ol>\n    <li>\n     Administer 1 dose of PCV13 if 3 doses of PCV (PCV7 and/or PCV13) were received previously.\n    </li>\n    <li>\n     Administer 2 doses of PCV13 at least 8 weeks apart if fewer than 3 doses of PCV (PCV7 and/or PCV13) were received previously.\n    </li>\n    <li>\n     Administer 1 supplemental dose of PCV13 if 4 doses of PCV7 or other age-appropriate complete PCV7 series was received previously.\n    </li>\n    <li>\n     The minimum interval between doses of PCV (PCV7 or PCV13) is 8 weeks.\n    </li>\n    <li>\n     For children with no history of PPSV23 vaccination, administer PPSV23 at least 8 weeks after the most recent dose of PCV13.\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children aged 6 through 18 years who have cerebrospinal fluid leak; cochlear implant; sickle cell disease and other hemoglobinopathies; anatomic or functional asplenia; congenital or acquired immunodeficiencies; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; generalized malignancy; solid organ transplantation; or multiple myeloma:\n   <ol>\n    <li>\n     If neither PCV13 nor PPSV23 has been received previously, administer 1 dose of PCV13 now and 1 dose of PPSV23 at least 8 weeks later.\n    </li>\n    <li>\n     If PCV13 has been received previously but PPSV23 has not, administer 1 dose of PPSV23 at least 8 weeks after the most recent dose of PCV13.\n    </li>\n    <li>\n     If PPSV23 has been received but PCV13 has not, administer 1 dose of PCV13 at least 8 weeks after the most recent dose of PPSV23.\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children aged 6 through 18 years with chronic heart disease (particularly cyanotic congenital heart disease and cardiac failure), chronic lung disease (including asthma if treated with high-dose oral corticosteroid therapy), diabetes mellitus, alcoholism, or chronic liver disease, who have not received PPSV23, administer 1 dose of PPSV23. If PCV13 has been received previously, then PPSV23 should be administered at least 8 weeks after any prior PCV13 dose.\n  </li>\n  <li>\n   A single revaccination with PPSV23 should be administered 5 years after the first dose to children with sickle cell disease or other hemoglobinopathies; anatomic or functional asplenia; congenital or acquired immunodeficiencies; HIV infection; chronic renal failure; nephrotic syndrome; diseases associated with treatment with immunosuppressive drugs or radiation therapy, including malignant neoplasms, leukemias, lymphomas, and Hodgkin disease; generalized malignancy; solid organ transplantation; or multiple myeloma.\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Pneumococcal polysaccharide6(PPSV23)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18", 
+                            "vaccine_label": "ppsv23-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "months19", 
+                            "vaccine_label": "ppsv23-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years2 years4 years7 years11 years13 years16", 
+                            "vaccine_label": "ppsv23-t2", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Range of recommended ages for certain high-risk groups"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f7\">\n </a>\n <span class=\"bold\">\n  Inactivated poliovirus vaccine (IPV). (Minimum age: 6 weeks)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 4-dose series of IPV at ages 2, 4, 6 through 18 months, and 4 through 6 years. The final dose in the series should be administered on or after the fourth birthday and at least 6 months after the previous dose.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   In the first 6 months of life, minimum age and minimum intervals are only recommended if the person is at risk for imminent exposure to circulating poliovirus (i.e., travel to a polio-endemic region or during an outbreak).\n  </li>\n  <li>\n   If 4 or more doses are administered before age 4 years, an additional dose should be administered at age 4 through 6 years and at least 6 months after the previous dose.\n  </li>\n  <li>\n   A fourth dose is not necessary if the third dose was administered at age 4 years or older and at least 6 months after the previous dose.\n  </li>\n  <li>\n   If both OPV and IPV were administered as part of a series, a total of 4 doses should be administered, regardless of the child\u2019s current age. IPV is not routinely recommended for U.S. residents aged 18 years or older.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Inactivated poliovirus7 (IPV)(<18 yrs)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18", 
+                            "vaccine_label": "polio-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "months19 years2", 
+                            "vaccine_label": "polio-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years4", 
+                            "vaccine_label": "polio-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years7 years11 years13 years16", 
+                            "vaccine_label": "polio-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years16", 
+                            "vaccine_label": "polio-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f8\">\n </a>\n <span class=\"bold\">\n  Influenza vaccines. (Minimum age: 6 months for inactivated influenza vaccine [IIV], 2 years for live, attenuated influenza vaccine [LAIV])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer influenza vaccine annually to all children beginning at age 6 months. For most healthy, nonpregnant persons aged 2 through 49 years, either LAIV or IIV may be used. However, LAIV should NOT be administered to some persons, including 1) those with asthma, 2) children 2 through 4 years who had wheezing in the past 12 months, or 3) those who have any other underlying medical conditions that predispose them to influenza complications. For all other contraindications to use of LAIV, see\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6207.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(No. RR-7):1-43 [48 pages]\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  For children aged 6 months through 8 years:\n </p>\n <ul>\n  <li>\n   For the 2013\u201314 season, administer 2 doses (separated by at least 4 weeks) to children who are receiving influenza vaccine for the first time. Some children in this age group who have been vaccinated previously will also need 2 doses. For additional guidance, follow dosing guidelines in the 2013-14 ACIP influenza vaccine recommendations,\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr6207.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(No. RR-7):1-43 [48 pages]\n   </a>\n   .\n  </li>\n  <li>\n   For the 2014\u201315 season, follow dosing guidelines in the 2014 ACIP influenza vaccine recommendations.\n  </li>\n </ul>\n <p class=\"bold\">\n  For persons aged 9 years and older:\n </p>\n <ul>\n  <li>\n   Administer 1 dose.\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Influenza8(IIV; LAIV)\r         2 doses for some: See footnote 8": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18 months19", 
+                            "vaccine_label": "flu-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years2 years4 years7 years11 years13 years16", 
+                            "vaccine_label": "flu-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f9\">\n </a>\n <span class=\"bold\">\n  Measles, mumps, and rubella (MMR) vaccine. (Minimum age: 12 months for routine vaccination)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 2-dose series of MMR vaccine at ages 12 through 15 months and 4 through 6 years. The second dose may be administered before age 4 years, provided at least 4 weeks have elapsed since the first dose.\n  </li>\n  <li>\n   Administer 1 dose of MMR vaccine to infants aged 6 through 11 months before departure from the United States for international travel. These children should be revaccinated with 2 doses of MMR vaccine, the first at age 12 through 15 months (12 months if the child remains in an area where disease risk is high), and the second dose at least 4 weeks later.\n  </li>\n  <li>\n   Administer 2 doses of MMR vaccine to children aged 12 months and older before departure from the United States for international travel. The first dose should be administered on or after age 12 months and the second dose at least 4 weeks later.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Ensure that all school-aged children and adolescents have had 2 doses of MMR vaccine; the minimum interval between the 2 doses is 4 weeks.\n  </li>\n </ul>\n</li>\n", 
+                "vaccine": {
+                    "Measles, mumps, rubella9\r         (MMR)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18 months19 years2", 
+                            "vaccine_label": "mmr-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years4", 
+                            "vaccine_label": "mmr-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years7 years11 years13 years16", 
+                            "vaccine_label": "mmr-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f10\">\n </a>\n <span class=\"bold\">\n  Varicella (VAR) vaccine. (Minimum age: 12 months)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 2-dose series of VAR vaccine at ages 12 through 15 months and 4 through 6 years. The second dose may be administered before age 4 years, provided at least 3 months have elapsed since the first dose. If the second dose was administered at least 4 weeks after the first dose, it can be accepted as valid.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Ensure that all persons aged 7 through 18 years without evidence of immunity (see\n   <a href=\"http://www.cdc.gov/mmwr/pdf/rr/rr5604.pdf\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2007;56[No. RR-4] [48 pages]\n   </a>\n   ), have 2 doses of varicella vaccine. For children aged 7 through 12 years, the recommended minimum interval between doses is 3 months (if the second dose was administered at least 4 weeks after the first dose, it can be accepted as valid); for persons aged 13 years and older, the minimum interval between doses is 4 weeks.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Varicella10 (VAR)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18 months19 years2", 
+                            "vaccine_label": "var-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years4", 
+                            "vaccine_label": "var-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years7 years11 years13 years16", 
+                            "vaccine_label": "var-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f11\">\n </a>\n <span class=\"bold\">\n  Hepatitis A (HepA) vaccine. (Minimum age: 12 months)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Initiate the 2-dose HepA vaccine series at 12 through 23 months; separate the 2 doses by 6 to 18 months.\n  </li>\n  <li>\n   Children who have received 1 dose of HepA vaccine before age 24 months should receive a second dose 6 to 18 months after the first dose.\n  </li>\n  <li>\n   For any person aged 2 years and older who has not already received the HepA vaccine series, 2 doses of HepA vaccine separated by 6 to 18 months may be administered if immunity against hepatitis A virus infection is desired.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   The minimum interval between the two doses is 6 months.\n  </li>\n </ul>\n <p class=\"bold\">\n  Special populations:\n </p>\n <ul>\n  <li>\n   Administer 2 doses of HepA vaccine at least 6 months apart to previously unvaccinated persons who live in areas where vaccination programs target older children, or who are at increased risk for infection. This includes persons traveling to or working in countries that have high or intermediate endemicity of infection; men having sex with men; users of injection and non-injection illicit drugs; persons who work with HAV-infected primates or with HAV in a research laboratory; persons with clotting-factor disorders; persons with chronic liver disease; and  persons who anticipate close, personal contact (e.g., household or regular babysitting) with an international adoptee during the first 60 days after arrival in the United States from a country with high or intermediate endemicity. The first dose should be administered as soon as the adoption is planned, ideally 2 or more weeks before the arrival of the adoptee.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Hepatitis A11 (HepA)": [
+                        {
+                            "footnote": "<li>\n <a name=\"f11\">\n </a>\n <span class=\"bold\">\n  Hepatitis A (HepA) vaccine. (Minimum age: 12 months)\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Initiate the 2-dose HepA vaccine series at 12 through 23 months; separate the 2 doses by 6 to 18 months.\n  </li>\n  <li>\n   Children who have received 1 dose of HepA vaccine before age 24 months should receive a second dose 6 to 18 months after the first dose.\n  </li>\n  <li>\n   For any person aged 2 years and older who has not already received the HepA vaccine series, 2 doses of HepA vaccine separated by 6 to 18 months may be administered if immunity against hepatitis A virus infection is desired.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   The minimum interval between the two doses is 6 months.\n  </li>\n </ul>\n <p class=\"bold\">\n  Special populations:\n </p>\n <ul>\n  <li>\n   Administer 2 doses of HepA vaccine at least 6 months apart to previously unvaccinated persons who live in areas where vaccination programs target older children, or who are at increased risk for infection. This includes persons traveling to or working in countries that have high or intermediate endemicity of infection; men having sex with men; users of injection and non-injection illicit drugs; persons who work with HAV-infected primates or with HAV in a research laboratory; persons with clotting-factor disorders; persons with chronic liver disease; and  persons who anticipate close, personal contact (e.g., household or regular babysitting) with an international adoptee during the first 60 days after arrival in the United States from a country with high or intermediate endemicity. The first dose should be administered as soon as the adoption is planned, ideally 2 or more weeks before the arrival of the adoptee.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                            "age_range": "months18 months19", 
+                            "vaccine_label": "hepa-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years2 years4 years7 years11 years13 years16", 
+                            "vaccine_label": "hepa-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages during which catchup\r\nis encouraged and for certain high-risk groups"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f12\">\n </a>\n <span class=\"bold\">\n  Human papillomavirus (HPV) vaccines.  (Minimum age:  9 years for HPV2 [Cervarix] and HPV4 [Gardasil])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a 3-dose series of HPV vaccine on a schedule of 0, 1-2, and 6 months to all adolescents aged 11 through 12 years. Either HPV4 or HPV2 may be used for females, and only HPV4 may be used for males.\n  </li>\n  <li>\n   The vaccine series may be started at age 9 years.\n  </li>\n  <li>\n   Administer the second dose 1 to 2 months after the first dose (minimum interval of 4 weeks), administer the third dose 24 weeks after the first dose and 16 weeks after the second dose (minimum interval of 12 weeks).\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Administer the vaccine series to females (either HPV2 or HPV4) and males (HPV4) at age 13 through 18 years if not previously vaccinated.\n  </li>\n  <li>\n   Use recommended routine dosing intervals (see above) for vaccine series catch-up.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Human papillomavirus12\r         (HPV2: females only; HPV4: males and females)": [
+                        {
+                            "footnote": "", 
+                            "age_range": "months18", 
+                            "vaccine_label": "hpv-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "months19", 
+                            "vaccine_label": "hpv-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years2", 
+                            "vaccine_label": "hpv-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years4", 
+                            "vaccine_label": "hpv-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years7", 
+                            "vaccine_label": "hpv-t2", 
+                            "class": null, 
+                            "recommendation": "Not routinely recommended"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years11", 
+                            "vaccine_label": "hpv-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years13 years16", 
+                            "vaccine_label": "hpv-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f13\">\n </a>\n <span class=\"bold\">\n  Meningococcal conjugate vaccines. (Minimum age: 6 weeks for Hib-MenCY [MenHibrix], 9 months for MenACWY-D [Menactra], 2 months for MenACWY-CRM [Menveo])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a single dose of Menactra or Menveo vaccine at age 11 through 12 years, with a booster dose at age 16 years.\n  </li>\n  <li>\n   Adolescents aged 11 through 18 years with human immunodeficiency virus (HIV) infection should receive a 2-dose primary series of Menactra or Menveo with at least 8 weeks between doses.\n  </li>\n  <li>\n   For children aged 2 months through 18 years with high-risk conditions, see below.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Administer Menactra or Menveo vaccine at age 13 through 18 years if not previously vaccinated.\n  </li>\n  <li>\n   If the first dose is administered at age 13 through 15 years, a booster dose\r\n          should be administered at age 16 through 18 years with a minimum interval\r\n          of at least 8 weeks between doses.\n  </li>\n  <li>\n   If the first dose is administered at age 16 years or older, a booster dose is not needed.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Vaccination of persons with high-risk conditions and other persons at increased risk of disease:\n </p>\n <ul>\n  <li>\n   Children with anatomic or functional asplenia (including sickle cell disease):\n   <ol>\n    <li>\n     For children younger than 19 months of age, administer a 4-dose infant series of MenHibrix or Menveo at 2, 4, 6, and 12 through 15 months of age.\n    </li>\n    <li>\n     For children aged 19 through 23 months who have not completed a series of MenHibrix or Menveo, administer 2 primary doses of Menveo at least 3 months apart.\n    </li>\n    <li>\n     For children aged 24 months and older who have not received a complete series of MenHibrix or Menveo or Menactra, administer 2 primary doses of either Menactra or Menveo at least 2 months apart. If Menactra is administered to a child with asplenia (including sickle cell disease), do not administer Menactra until 2 years of age and at least 4 weeks after the completion of all PCV13 doses.\n    </li>\n   </ol>\n  </li>\n </ul>\n <ul>\n  <li>\n   Children with persistent complement component deficiency:\n   <ol>\n    <li>\n     For children younger than 19 months of age, administer a 4-dose infant series of either MenHibrix or Menveo at 2, 4, 6, and 12 through 15 months of age.\n    </li>\n    <li>\n     For children 7 through 23 months who have not initiated vaccination, two options exist depending on age and vaccine brand:\n     <ol style=\"list-style:lower-alpha\">\n      <li>\n       For children who initiate vaccination with Menveo at 7 months through 23 months of age, a 2-dose series should be administered with the second dose after 12 months of age and at least 3 months after the first dose.\n      </li>\n      <li>\n       For children who initiate vaccination with Menactra at 9 months through 23 months of age, a 2-dose series of Menactra should be administered at least 3 months apart.\n      </li>\n      <li>\n       For children aged 24 months and older who have not received a complete series of MenHibrix, Menveo, or Menactra, administer 2 primary doses of either Menactra or Menveo at least 2 months apart.\n      </li>\n     </ol>\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children who travel to or reside in countries in which meningococcal disease is hyperendemic or epidemic, including countries in the African meningitis belt or the Hajj, administer an age- appropriate formulation and series of Menactra or Menveo for protection against serogroups A and W meningococcal disease. Prior receipt of MenHibrix is not sufficient for children traveling to the meningitis belt or the Hajj because it does not contain serogroups A or W.\n  </li>\n  <li>\n   For children at risk during a community outbreak attributable to a vaccine serogroup, administer or complete an age- and formulation-appropriate series of MenHibrix, Menactra, or Menveo.\n  </li>\n  <li>\n   For booster doses among persons with high-risk conditions, refer to\n   <a href=\"http://www.cdc.gov/mmwr/preview/mmwrhtml/rr6202a1.htm\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(RR02):1-22\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up recommendations for persons with high-risk conditions:\n </p>\n <ol>\n  <li>\n   If MenHibrix is administered to achieve protection against meningococcal disease, a complete age-appropriate series of MenHibrix should be administered.\n  </li>\n  <li>\n   If the first dose of MenHibrix is given at or after 12 months of age, a total of 2 doses should be given at least 8 weeks apart to ensure protection against serogroups C and Y meningococcal disease.\n  </li>\n  <li>\n   For children who initiate vaccination with Menveo at 7 months through 9 months of age, a 2-dose series should be administered with the second dose after 12 months of age and at least 3 months after the first dose.\n  </li>\n  <li>\n   For other catch-up recommendations for these persons, refer to\n   <a href=\"http://www.cdc.gov/mmwr/preview/mmwrhtml/rr6202a1.htm\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(RR02):1-22\n   </a>\n   .\n  </li>\n </ol>\n</li>\n", 
+                "vaccine": {
+                    "Meningococcal13 (Hib-Men-CY \u2265 6 weeks; MenACWY-D\u22659 mos; MenACWY-CRM \u2265 2 mos)": [
+                        {
+                            "footnote": "<li>\n <a name=\"f13\">\n </a>\n <span class=\"bold\">\n  Meningococcal conjugate vaccines. (Minimum age: 6 weeks for Hib-MenCY [MenHibrix], 9 months for MenACWY-D [Menactra], 2 months for MenACWY-CRM [Menveo])\n </span>\n <p class=\"bold\">\n  Routine vaccination:\n </p>\n <ul>\n  <li>\n   Administer a single dose of Menactra or Menveo vaccine at age 11 through 12 years, with a booster dose at age 16 years.\n  </li>\n  <li>\n   Adolescents aged 11 through 18 years with human immunodeficiency virus (HIV) infection should receive a 2-dose primary series of Menactra or Menveo with at least 8 weeks between doses.\n  </li>\n  <li>\n   For children aged 2 months through 18 years with high-risk conditions, see below.\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up vaccination:\n </p>\n <ul>\n  <li>\n   Administer Menactra or Menveo vaccine at age 13 through 18 years if not previously vaccinated.\n  </li>\n  <li>\n   If the first dose is administered at age 13 through 15 years, a booster dose\r\n          should be administered at age 16 through 18 years with a minimum interval\r\n          of at least 8 weeks between doses.\n  </li>\n  <li>\n   If the first dose is administered at age 16 years or older, a booster dose is not needed.\n  </li>\n  <li>\n   For other catch-up guidance, see\n   <a href=\"/vaccines/schedules/hcp/imz/catchup.html\" target=\"_blank\">\n    Catch-up Schedule\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Vaccination of persons with high-risk conditions and other persons at increased risk of disease:\n </p>\n <ul>\n  <li>\n   Children with anatomic or functional asplenia (including sickle cell disease):\n   <ol>\n    <li>\n     For children younger than 19 months of age, administer a 4-dose infant series of MenHibrix or Menveo at 2, 4, 6, and 12 through 15 months of age.\n    </li>\n    <li>\n     For children aged 19 through 23 months who have not completed a series of MenHibrix or Menveo, administer 2 primary doses of Menveo at least 3 months apart.\n    </li>\n    <li>\n     For children aged 24 months and older who have not received a complete series of MenHibrix or Menveo or Menactra, administer 2 primary doses of either Menactra or Menveo at least 2 months apart. If Menactra is administered to a child with asplenia (including sickle cell disease), do not administer Menactra until 2 years of age and at least 4 weeks after the completion of all PCV13 doses.\n    </li>\n   </ol>\n  </li>\n </ul>\n <ul>\n  <li>\n   Children with persistent complement component deficiency:\n   <ol>\n    <li>\n     For children younger than 19 months of age, administer a 4-dose infant series of either MenHibrix or Menveo at 2, 4, 6, and 12 through 15 months of age.\n    </li>\n    <li>\n     For children 7 through 23 months who have not initiated vaccination, two options exist depending on age and vaccine brand:\n     <ol style=\"list-style:lower-alpha\">\n      <li>\n       For children who initiate vaccination with Menveo at 7 months through 23 months of age, a 2-dose series should be administered with the second dose after 12 months of age and at least 3 months after the first dose.\n      </li>\n      <li>\n       For children who initiate vaccination with Menactra at 9 months through 23 months of age, a 2-dose series of Menactra should be administered at least 3 months apart.\n      </li>\n      <li>\n       For children aged 24 months and older who have not received a complete series of MenHibrix, Menveo, or Menactra, administer 2 primary doses of either Menactra or Menveo at least 2 months apart.\n      </li>\n     </ol>\n    </li>\n   </ol>\n  </li>\n  <li>\n   For children who travel to or reside in countries in which meningococcal disease is hyperendemic or epidemic, including countries in the African meningitis belt or the Hajj, administer an age- appropriate formulation and series of Menactra or Menveo for protection against serogroups A and W meningococcal disease. Prior receipt of MenHibrix is not sufficient for children traveling to the meningitis belt or the Hajj because it does not contain serogroups A or W.\n  </li>\n  <li>\n   For children at risk during a community outbreak attributable to a vaccine serogroup, administer or complete an age- and formulation-appropriate series of MenHibrix, Menactra, or Menveo.\n  </li>\n  <li>\n   For booster doses among persons with high-risk conditions, refer to\n   <a href=\"http://www.cdc.gov/mmwr/preview/mmwrhtml/rr6202a1.htm\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(RR02):1-22\n   </a>\n   .\n  </li>\n </ul>\n <p class=\"bold\">\n  Catch-up recommendations for persons with high-risk conditions:\n </p>\n <ol>\n  <li>\n   If MenHibrix is administered to achieve protection against meningococcal disease, a complete age-appropriate series of MenHibrix should be administered.\n  </li>\n  <li>\n   If the first dose of MenHibrix is given at or after 12 months of age, a total of 2 doses should be given at least 8 weeks apart to ensure protection against serogroups C and Y meningococcal disease.\n  </li>\n  <li>\n   For children who initiate vaccination with Menveo at 7 months through 9 months of age, a 2-dose series should be administered with the second dose after 12 months of age and at least 3 months after the first dose.\n  </li>\n  <li>\n   For other catch-up recommendations for these persons, refer to\n   <a href=\"http://www.cdc.gov/mmwr/preview/mmwrhtml/rr6202a1.htm\" target=\"_blank\">\n    <em>\n     MMWR\n    </em>\n    2013;62(RR02):1-22\n   </a>\n   .\n  </li>\n </ol>\n</li>\n", 
+                            "age_range": "months18 months19", 
+                            "vaccine_label": "mening-t2", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Range of recommended ages for certain high-risk groups"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years2 years4 years7", 
+                            "vaccine_label": "mening-t2", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Range of recommended ages for certain high-risk groups"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years11", 
+                            "vaccine_label": "mening-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years13", 
+                            "vaccine_label": "mening-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years16", 
+                            "vaccine_label": "mening-t2", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "Range of recommended ages for all children"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years16", 
+                            "vaccine_label": "mening-t2", 
+                            "class": [
+                                "schedule-green"
+                            ], 
+                            "recommendation": "Range of recommended ages for catch-up immunization"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,347 @@
+[
+    {
+        "age_ranges": [
+            "Age", 
+            "19-21", 
+            "22-26", 
+            "27-49", 
+            "50-59", 
+            "60-64", 
+            "\u2265"
+        ], 
+        "caption": "adult", 
+        "map": [
+            {
+                "footnote": "<li>\n <a name=\"f2\">\n </a>\n <span class=\"bold\">\n  Influenza vaccination\n </span>\n <ul>\n  <li>\n   Annual vaccination against influenza is recommended for all persons aged 6 months or older.\n  </li>\n  <li>\n   Persons aged 6 months or older, including pregnant women and persons with hives-only allergy to eggs, can receive the inactivated influenza vaccine (IIV). An age-appropriate IIV formulation should be used.\n  </li>\n  <li>\n   Adults aged 18 to 49 years can receive the recombinant influenza vaccine (RIV) (FluBlok). RIV does not contain any egg protein.\n  </li>\n  <li>\n   Healthy, nonpregnant persons aged 2 to 49 years without high-risk medical conditions can receive either intranasally administered live, attenuated influenza vaccine (LAIV) (FluMist), or IIV. Health care personnel who care for severely immunocompromised persons (i.e., those who require care in a protected environment) should receive IIV or RIV rather than LAIV.\n  </li>\n  <li>\n   The intramuscularly or intradermally administered IIV are options for adults aged 18 to 64 years.\n  </li>\n  <li>\n   Adults aged 65 years or older can receive the standard-dose IIV or the high-dose IIV (Fluzone High-Dose).\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Influenza 2,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50 years60 years65", 
+                            "vaccine_label": "flu", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "For all persons in this category who meet the age requirements and who lack documentation of vaccination or have no evidence of previous infection; zoster vaccine recommended regardless of prior episode of zoster"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f3\">\n </a>\n <span class=\"bold\">\n  Tetanus, diphtheria, and acellular pertussis (Td/Tdap) vaccination\n </span>\n <ul>\n  <li>\n   Administer 1 dose of Tdap vaccine to pregnant women during each pregnancy (preferred during 27 to 36 weeks' gestation) regardless of interval since prior Td or Tdap vaccination.\n  </li>\n  <li>\n   Persons aged 11 years or older who have not received Tdap vaccine or for whom vaccine status is unknown should receive a dose of Tdap followed by tetanus and diphtheria toxoids (Td) booster doses every 10 years thereafter. Tdap can be administered regardless of interval since the most recent tetanus or diphtheria-toxoid containing vaccine.\n  </li>\n  <li>\n   Adults with an unknown or incomplete history of completing a 3-dose primary vaccination series with Td-containing vaccines should begin or complete a primary vaccination series including a Tdap dose.\n  </li>\n  <li>\n   For unvaccinated adults, administer the first 2 doses at least 4 weeks apart and the third dose 6 to 12 months after the second.\n  </li>\n  <li>\n   For incompletely vaccinated (i.e., less than 3 doses) adults, administer remaining doses.\n  </li>\n  <li>\n   Refer to the ACIP statement for recommendations for administering Td/Tdap as prophylaxis in wound management (see\n   <a href=\"#f1\">\n    footnote 1\n   </a>\n   ).\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Tetanus, diphtheria, pertussis (Td/Tdap) 3,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50 years60 years65", 
+                            "vaccine_label": "td", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "For all persons in this category who meet the age requirements and who lack documentation of vaccination or have no evidence of previous infection; zoster vaccine recommended regardless of prior episode of zoster"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f4\">\n </a>\n <span class=\"bold\">\n  Varicella vaccination\n </span>\n <ul>\n  <li>\n   All adults without evidence of immunity to varicella (as defined below) should receive 2 doses of single-antigen varicella vaccine or a second dose if they have received only 1 dose.\n  </li>\n  <li>\n   Vaccination should be emphasized for those who have close contact with persons at high risk for severe disease (e.g., health care personnel and family contacts of persons with immunocompromising conditions) or are at high risk for exposure or transmission (e.g., teachers; child care employees; residents and staff members of institutional settings, including correctional institutions; college students; military personnel; adolescents and adults living in households with children; nonpregnant women of childbearing age; and international travelers).\n  </li>\n  <li>\n   Pregnant women should be assessed for evidence of varicella immunity. Women who do not have evidence of immunity should receive the first dose of varicella vaccine upon completion or termination of pregnancy and before discharge from the health care facility. The second dose should be administered 4 to 8 weeks after the first dose.\n  </li>\n  <li>\n   Evidence of immunity to varicella in adults includes any of the following:\n   <ul>\n    <li>\n     documentation of 2 doses of varicella vaccine at least 4 weeks apart;\n    </li>\n    <li>\n     U.S.-born before 1980, except health care personnel and pregnant women;\n    </li>\n    <li>\n     history of varicella based on diagnosis or verification of varicella disease by a health care provider;\n    </li>\n    <li>\n     history of herpes zoster based on diagnosis or verification of herpes zoster disease by a health care provider; or\n    </li>\n    <li>\n     laboratory evidence of immunity or laboratory confirmation of disease.\n    </li>\n   </ul>\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Varicella 4,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50 years60 years65", 
+                            "vaccine_label": "var", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "For all persons in this category who meet the age requirements and who lack documentation of vaccination or have no evidence of previous infection; zoster vaccine recommended regardless of prior episode of zoster"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f5\">\n </a>\n <span class=\"bold\">\n  Human papillomavirus (HPV) vaccination\n </span>\n <ul>\n  <li>\n   Two vaccines are licensed for use in females, bivalent HPV vaccine (HPV2) and quadrivalent HPV vaccine (HPV4), and one HPV vaccine for use in males (HPV4).\n  </li>\n  <li>\n   For females, either HPV4 or HPV2 is recommended in a 3-dose series for routine vaccination at age 11 or 12 years and for those aged 13 through 26 years, if not previously vaccinated.\n  </li>\n  <li>\n   For males, HPV4 is recommended in a 3-dose series for routine vaccination at age 11 or 12 years and for those aged 13 through 21 years, if not previously vaccinated. Males aged 22 through 26 years may be vaccinated.\n  </li>\n  <li>\n   HPV4 is recommended for men who have sex with men through age 26 years for those who did not get any or all doses when they were younger.\n  </li>\n  <li>\n   Vaccination is recommended for immunocompromised persons (including those with HIV infection) through age 26 years for those who did not get any or all doses when they were younger.\n  </li>\n  <li>\n   A complete series for either HPV4 or HPV2 consists of 3 doses. The second dose should be administered 4 to 8 weeks (minimum interval of 4 weeks) after the first dose; the third dose should be administered 24 weeks after the first dose and 16 weeks after the second dose (minimum interval of at least 12 weeks).\n  </li>\n  <li>\n   HPV vaccines are not recommended for use in pregnant women. However, pregnancy testing is not needed before vaccination. If a woman is found to be pregnant after initiating the vaccination series, no intervention is needed; the remainder of the 3-dose series should be delayed until completion of pregnancy.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Human papillomavirus (HPV) Female 5,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22", 
+                            "vaccine_label": "hpv-f", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "For all persons in this category who meet the age requirements and who lack documentation of vaccination or have no evidence of previous infection; zoster vaccine recommended regardless of prior episode of zoster"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years27", 
+                            "vaccine_label": "hpv-f", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years50", 
+                            "vaccine_label": "hpv-f", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years60", 
+                            "vaccine_label": "hpv-f", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years65", 
+                            "vaccine_label": "hpv-f", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f5\">\n </a>\n <span class=\"bold\">\n  Human papillomavirus (HPV) vaccination\n </span>\n <ul>\n  <li>\n   Two vaccines are licensed for use in females, bivalent HPV vaccine (HPV2) and quadrivalent HPV vaccine (HPV4), and one HPV vaccine for use in males (HPV4).\n  </li>\n  <li>\n   For females, either HPV4 or HPV2 is recommended in a 3-dose series for routine vaccination at age 11 or 12 years and for those aged 13 through 26 years, if not previously vaccinated.\n  </li>\n  <li>\n   For males, HPV4 is recommended in a 3-dose series for routine vaccination at age 11 or 12 years and for those aged 13 through 21 years, if not previously vaccinated. Males aged 22 through 26 years may be vaccinated.\n  </li>\n  <li>\n   HPV4 is recommended for men who have sex with men through age 26 years for those who did not get any or all doses when they were younger.\n  </li>\n  <li>\n   Vaccination is recommended for immunocompromised persons (including those with HIV infection) through age 26 years for those who did not get any or all doses when they were younger.\n  </li>\n  <li>\n   A complete series for either HPV4 or HPV2 consists of 3 doses. The second dose should be administered 4 to 8 weeks (minimum interval of 4 weeks) after the first dose; the third dose should be administered 24 weeks after the first dose and 16 weeks after the second dose (minimum interval of at least 12 weeks).\n  </li>\n  <li>\n   HPV vaccines are not recommended for use in pregnant women. However, pregnancy testing is not needed before vaccination. If a woman is found to be pregnant after initiating the vaccination series, no intervention is needed; the remainder of the 3-dose series should be delayed until completion of pregnancy.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Human papillomavirus (HPV) Male 5,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19", 
+                            "vaccine_label": "hpv-m", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "For all persons in this category who meet the age requirements and who lack documentation of vaccination or have no evidence of previous infection; zoster vaccine recommended regardless of prior episode of zoster"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years22", 
+                            "vaccine_label": "hpv-m", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Recommended if some other risk factor is present (e.g., on the basis of medical, occupational, lifestyle, or other indication)"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years27", 
+                            "vaccine_label": "hpv-m", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years50", 
+                            "vaccine_label": "hpv-m", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years60", 
+                            "vaccine_label": "hpv-m", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years65", 
+                            "vaccine_label": "hpv-m", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f6\">\n </a>\n <span class=\"bold\">\n  Zoster vaccination\n </span>\n <ul>\n  <li>\n   A single dose of zoster vaccine is recommended for adults aged 60 years or older regardless of whether they report a prior episode of herpes zoster. Although the vaccine is licensed by the U.S. Food and Drug Administration for use among and can be administered to persons aged 50 years or older, ACIP recommends that vaccination begin at age 60 years.\n  </li>\n  <li>\n   Persons aged 60 years or older with chronic medical conditions may be vaccinated unless their condition constitutes a contraindication, such as pregnancy or severe immunodeficiency.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Zoster 6": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19", 
+                            "vaccine_label": "zoster", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years22", 
+                            "vaccine_label": "zoster", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years27", 
+                            "vaccine_label": "zoster", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years50", 
+                            "vaccine_label": "zoster", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years60 years65", 
+                            "vaccine_label": "zoster", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "For all persons in this category who meet the age requirements and who lack documentation of vaccination or have no evidence of previous infection; zoster vaccine recommended regardless of prior episode of zoster"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f7\">\n </a>\n <span class=\"bold\">\n  Measles, mumps, rubella (MMR) vaccination\n </span>\n <ul>\n  <li>\n   Adults born before 1957 are generally considered immune to measles and mumps. All adults born in 1957 or later should have documentation of 1 or more doses of MMR vaccine unless they have a medical contraindication to the vaccine or laboratory evidence of immunity to each of the three diseases. Documentation of provider-diagnosed disease is not considered acceptable evidence of immunity for measles, mumps, or rubella.\n  </li>\n </ul>\n <p class=\"bold\">\n  Measles component:\n </p>\n <ul>\n  <li>\n   A routine second dose of MMR vaccine, administered a minimum of 28 days after the first dose, is recommended for adults who:\n   <ul>\n    <li>\n     are students in postsecondary educational institutions;\n    </li>\n    <li>\n     work in a health care facility; or\n    </li>\n    <li>\n     plan to travel internationally.\n    </li>\n   </ul>\n  </li>\n  <li>\n   Persons who received inactivated (killed) measles vaccine or measles vaccine of unknown type during 1963\u20131967 should be revaccinated with 2 doses of MMR vaccine.\n  </li>\n </ul>\n <p class=\"bold\">\n  Mumps component:\n </p>\n <ul>\n  <li>\n   A routine second dose of MMR vaccine, administered a minimum of 28 days after the first dose, is recommended for adults who:\n   <ul>\n    <li>\n     are students in a postsecondary educational institution;\n    </li>\n    <li>\n     work in a health care facility; or\n    </li>\n    <li>\n     plan to travel internationally.\n    </li>\n   </ul>\n  </li>\n  <li>\n   Persons vaccinated before 1979 with either killed mumps vaccine or mumps vaccine of unknown type who are at high risk for mumps infection (e.g., persons who are working in a health care facility) should be considered for revaccination with 2 doses of MMR vaccine.\n  </li>\n </ul>\n <p class=\"bold\">\n  Rubella component:\n </p>\n <ul>\n  <li>\n   For women of childbearing age, regardless of birth year, rubella immunity should be determined. If there is no evidence of immunity, women who are not pregnant should be vaccinated. Pregnant women who do not have evidence of immunity should receive MMR vaccine upon completion or termination of pregnancy and before discharge from the health care facility.\n  </li>\n </ul>\n <p class=\"bold\">\n  Health care personnel born before 1957:\n </p>\n <ul>\n  <li>\n   For unvaccinated health care personnel born before 1957 who lack laboratory evidence of measles, mumps, and/or rubella immunity or laboratory confirmation of disease, health care facilities should consider vaccinating personnel with 2 doses of MMR vaccine at the appropriate interval for measles and mumps or 1 dose of MMR vaccine for rubella.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Measles, mumps, rubella (MMR) 7,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50", 
+                            "vaccine_label": "mmr", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "For all persons in this category who meet the age requirements and who lack documentation of vaccination or have no evidence of previous infection; zoster vaccine recommended regardless of prior episode of zoster"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years55", 
+                            "vaccine_label": "mmr", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years60", 
+                            "vaccine_label": "mmr", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years65", 
+                            "vaccine_label": "mmr", 
+                            "class": null, 
+                            "recommendation": "No recommendation"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f8\">\n </a>\n <span class=\"bold\">\n  Pneumococcal conjugate (PCV13) vaccination\n </span>\n <ul>\n  <li>\n   Adults aged 19 years or older with immunocompromising conditions (including chronic renal failure and nephrotic syndrome), functional or anatomic asplenia, cerebrospinal fluid leaks, or cochlear implants who have not previously received PCV13 or PPSV23 should receive a single dose of PCV13 followed by a dose of PPSV23 at least 8 weeks later.\n  </li>\n  <li>\n   Adults aged 19 years or older with the aforementioned conditions who have previously received 1 or more doses of PPSV23 should receive a dose of PCV13 one or more years after the last PPSV23 dose was received. For adults who require additional doses of PPSV23, the first such dose should be given no sooner than 8 weeks after PCV13 and at least 5 years after the most recent dose of PPSV23.\n  </li>\n  <li>\n   When indicated, PCV13 should be administered to patients who are uncertain of their vaccination status history and have no record of previous vaccination.\n  </li>\n  <li>\n   Although PCV13 is licensed by the U.S. Food and Drug Administration for use among and can be administered to persons aged 50 years or older, ACIP recommends PCV13 for adults aged 19 years or older with the specific medical conditions noted above.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Pneumococcal 13-valent conjugate (PCV13)8,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50 years60 years65", 
+                            "vaccine_label": "pcv13", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Recommended if some other risk factor is present (e.g., on the basis of medical, occupational, lifestyle, or other indication)"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f9\">\n </a>\n <span class=\"bold\">\n  Pneumococcal polysaccharide (PPSV23) vaccination\n </span>\n <ul>\n  <li>\n   When PCV13 is also indicated, PCV13 should be given first (see\n   <a href=\"#f8\">\n    footnote 8\n   </a>\n   ).\n  </li>\n  <li>\n   Vaccinate all persons with the following indications:\n   <ul>\n    <li>\n     all adults aged 65 years or older;\n    </li>\n    <li>\n     adults younger than 65 years with chronic lung disease (including chronic obstructive pulmonary disease, emphysema, and asthma), chronic cardiovascular diseases, diabetes mellitus, chronic renal failure, nephrotic syndrome, chronic liver disease (including cirrhosis), alcoholism, cochlear implants, cerebrospinal fluid leaks, immunocompromising conditions, and functional or anatomic asplenia (e.g., sickle cell disease and other hemoglobinopathies, congenital or acquired asplenia, splenic dysfunction, or splenectomy [if elective splenectomy is planned, vaccinate at least 2 weeks before surgery]);\n    </li>\n    <li>\n     residents of nursing homes or long-term care facilities; and\n    </li>\n    <li>\n     adults who smoke cigarettes.\n    </li>\n   </ul>\n  </li>\n  <li>\n   Persons with immunocompromising conditions and other selected conditions are recommended to receive PCV13 and PPSV23 vaccines. See\n   <a href=\"#f8\">\n    footnote 8\n   </a>\n   for information on timing of PCV13 and PPSV23 vaccinations.\n  </li>\n  <li>\n   Persons with asymptomatic or symptomatic HIV infection should be vaccinated as soon as possible after their diagnosis.\n  </li>\n  <li>\n   When cancer chemotherapy or other immunosuppressive therapy is being considered, the interval between vaccination and initiation of immunosuppressive therapy should be at least 2 weeks. Vaccination during chemotherapy or radiation therapy should be avoided.\n  </li>\n  <li>\n   Routine use of PPSV23 vaccine is not recommended for American Indians/Alaska Natives or other persons younger than 65 years unless they have underlying medical conditions that are PPSV23 indications. However, public health authorities may consider recommending PPSV23 for American Indians/Alaska Natives who are living in areas where the risk for invasive pneumococcal disease is increased.\n  </li>\n  <li>\n   When indicated, PPSV23 vaccine should be administered to patients who are uncertain of their vaccination status and have no record of vaccination.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Pneumococcal polysaccharide (PPSV23)9,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50 years60", 
+                            "vaccine_label": "pcv23", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Recommended if some other risk factor is present (e.g., on the basis of medical, occupational, lifestyle, or other indication)"
+                        }, 
+                        {
+                            "footnote": "", 
+                            "age_range": "years65", 
+                            "vaccine_label": "pcv23", 
+                            "class": [
+                                "schedule-yellow"
+                            ], 
+                            "recommendation": "For all persons in this category who meet the age requirements and who lack documentation of vaccination or have no evidence of previous infection; zoster vaccine recommended regardless of prior episode of zoster"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f11\">\n </a>\n <span class=\"bold\">\n  Meningococcal vaccination\n </span>\n <ul>\n  <li>\n   Administer 2 doses of quadrivalent meningococcal conjugate vaccine (MenACWY [Menactra, Menveo]) at least 2 months apart to adults of all ages with functional asplenia or persistent complement component deficiencies. HIV infection is not an indication for routine vaccination with MenACWY. If an HIV-infected person of any age is vaccinated, 2 doses of MenACWY should be administered at least 2 months apart.\n  </li>\n  <li>\n   Administer a single dose of meningococcal vaccine to microbiologists routinely exposed to isolates of\n   <em>\n    Neisseria meningitidis\n   </em>\n   , military recruits, persons at risk during an outbreak attributable to a vaccine serogroup, and persons who travel to or live in countries in which meningococcal disease is hyperendemic or epidemic.\n  </li>\n  <li>\n   First-year college students up through age 21 years who are living in residence halls should be vaccinated if they have not received a dose on or after their 16th birthday.\n  </li>\n  <li>\n   MenACWY is preferred for adults with any of the preceding indications who are aged 55 years or younger as well as for adults aged 56 years or older who a) were vaccinated previously with MenACWY and are recommended for revaccination, or b) for whom multiple doses are anticipated. Meningococcal polysaccharide vaccine (MPSV4 [Menomune]) is preferred for adults aged 56 years or older who have not received MenACWY previously and who require a single dose only (e.g., travelers).\n  </li>\n  <li>\n   Revaccination with MenACWY every 5 years is recommended for adults previously vaccinated with MenACWY or MPSV4 who remain at increased risk for infection (e.g., adults with anatomic or functional asplenia, persistent complement component deficiencies, or microbiologists).\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Meningococcal 11,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50 years60 years65", 
+                            "vaccine_label": "mening", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Recommended if some other risk factor is present (e.g., on the basis of medical, occupational, lifestyle, or other indication)"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f12\">\n </a>\n <span class=\"bold\">\n  Hepatitis A vaccination\n </span>\n <ul>\n  <li>\n   Vaccinate any person seeking protection from hepatitis A virus (HAV) infection and persons with any of the following indications:\n   <ul>\n    <li>\n     men who have sex with men and persons who use injection or noninjection illicit drugs;\n    </li>\n    <li>\n     persons working with HAV-infected primates or with HAV in a research laboratory setting;\n    </li>\n    <li>\n     persons with chronic liver disease and persons who receive clotting factor concentrates;\n    </li>\n    <li>\n     persons traveling to or working in countries that have high or intermediate endemicity of hepatitis A; and\n    </li>\n    <li>\n     unvaccinated persons who anticipate close personal contact (e.g., household or regular babysitting) with an international adoptee during the first 60 days after arrival in the United States from a country with high or intermediate endemicity. (See\n     <a href=\"#f1\">\n      footnote 1\n     </a>\n     for more information on travel recommendations.) The first dose of the 2-dose hepatitis A vaccine series should be administered as soon as adoption is planned, ideally 2 or more weeks before the arrival of the adoptee.\n    </li>\n   </ul>\n  </li>\n  <li>\n   Single-antigen vaccine formulations should be administered in a 2-dose schedule at either 0 and 6 to 12 months (Havrix), or 0 and 6 to 18 months (Vaqta). If the combined hepatitis A and hepatitis B vaccine (Twinrix) is used, administer 3 doses at 0, 1, and 6 months; alternatively, a 4-dose schedule may be used, administered on days 0, 7, and 21 to 30 followed by a booster dose at month 12.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Hepatitis A 12,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50 years60 years65", 
+                            "vaccine_label": "hepa", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Recommended if some other risk factor is present (e.g., on the basis of medical, occupational, lifestyle, or other indication)"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f13\">\n </a>\n <span class=\"bold\">\n  Hepatitis B vaccination\n </span>\n <ul>\n  <li>\n   Vaccinate persons with any of the following indications and any person seeking protection from hepatitis B virus (HBV) infection:\n   <ul>\n    <li>\n     sexually active persons who are not in a long-term, mutually monogamous relationship (e.g., persons with more than 1 sex partner during the previous 6 months); persons seeking evaluation or treatment for a sexually transmitted disease (STD); current or recent injection drug users; and men who have sex with men;\n    </li>\n    <li>\n     health care personnel and public safety workers who are potentially exposed to blood or other infectious body fluids;\n    </li>\n    <li>\n     persons with diabetes who are younger than age 60 years as soon as feasible after diagnosis; persons with diabetes who are age 60 years or older at the discretion of the treating clinician based on the likelihood of acquiring HBV infection, including the risk posed by an increased need for assisted blood glucose monitoring in long-term care facilities, the likelihood of experiencing chronic sequelae if infected with HBV, and the likelihood of immune response to vaccination;\n    </li>\n    <li>\n     persons with end-stage renal disease, including patients receiving hemodialysis, persons with HIV infection, and persons with chronic liver disease;\n    </li>\n    <li>\n     household contacts and sex partners of hepatitis B surface antigen\u2013positive persons, clients and staff members of institutions for persons with developmental disabilities, and international travelers to countries with high or intermediate prevalence of chronic HBV infection; and\n    </li>\n    <li>\n     all adults in the following settings: STD treatment facilities, HIV testing and treatment facilities, facilities providing drug abuse treatment and prevention services, health care settings targeting services to injection drug users or men who have sex with men, correctional facilities, end-stage renal disease programs and facilities for chronic hemodialysis patients, and institutions and nonresidential day care facilities for persons with developmental disabilities.\n    </li>\n   </ul>\n  </li>\n  <li>\n   Administer missing doses to complete a 3-dose series of hepatitis B vaccine to those persons not vaccinated or not completely vaccinated. The second dose should be administered 1 month after the first dose; the third dose should be given at least 2 months after the second dose (and at least 4 months after the first dose). If the combined hepatitis A and hepatitis B vaccine (Twinrix) is used, give 3 doses at 0, 1, and 6 months; alternatively, a 4-dose Twinrix schedule, administered on days 0, 7, and 21 to 30 followed by a booster dose at month 12 may be used.\n  </li>\n  <li>\n   Adult patients receiving hemodialysis or with other immunocompromising conditions should receive 1 dose of 40 mcg/mL (Recombivax HB) administered on a 3-dose schedule at 0, 1, and 6 months or 2 doses of 20 mcg/mL (Engerix-B) administered simultaneously on a 4-dose schedule at 0, 1, 2, and 6 months.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Hepatitis B 13,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50 years60 years65", 
+                            "vaccine_label": "hepb", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Recommended if some other risk factor is present (e.g., on the basis of medical, occupational, lifestyle, or other indication)"
+                        }
+                    ]
+                }
+            }, 
+            {
+                "footnote": "<li>\n <a name=\"f14\">\n </a>\n <span class=\"bold\">\n  <em>\n   Haemophilus influenzae\n  </em>\n  type b (Hib) vaccination\n </span>\n <ul>\n  <li>\n   One dose of Hib vaccine should be administered to persons who have functional or anatomic asplenia or sickle cell disease or are undergoing elective splenectomy if they have not previously received Hib vaccine. Hib vaccination 14 or more days before splenectomy is suggested.\n  </li>\n  <li>\n   Recipients of a hematopoietic stem cell transplant should be vaccinated with a 3-dose regimen 6 to 12 months after a successful transplant, regardless of vaccination history; at least 4 weeks should separate doses.\n  </li>\n  <li>\n   Hib vaccine is not recommended for adults with HIV infection since their risk for Hib infection is low.\n  </li>\n </ul>\n <p class=\"topOPage\">\n  <a href=\"#top\">\n   Top of Page\n  </a>\n </p>\n</li>\n", 
+                "vaccine": {
+                    "Haemophilus influenzae type b (Hib)14,": [
+                        {
+                            "footnote": "", 
+                            "age_range": "years19 years22 years27 years50 years60 years65", 
+                            "vaccine_label": "hib", 
+                            "class": [
+                                "schedule-purple"
+                            ], 
+                            "recommendation": "Recommended if some other risk factor is present (e.g., on the basis of medical, occupational, lifestyle, or other indication)"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]

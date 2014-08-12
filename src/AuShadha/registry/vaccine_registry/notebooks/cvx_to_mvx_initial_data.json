@@ -1,0 +1,1304 @@
+[
+    {
+        "pk": 0, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ACAM2000", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 75, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "vaccinia (smallpox)", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ACAM2000", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 75, 
+            "mvx_code": "ACA", 
+            "mvx_status": "Inactive", 
+            "short_description": "vaccinia (smallpox)", 
+            "product_name_status": "Inactive", 
+            "manufacturer": "Acambis, Inc"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ACEL-IMUNE", 
+            "last_updated": "2010-09-01T00:00:00", 
+            "cvxcode": 20, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "DTaP", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ACTHIB", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 48, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "Hib (PRP-T)", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ADACEL", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 115, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "Tdap", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Adenovirus types 4 and 7", 
+            "last_updated": "2012-08-07T00:00:00", 
+            "cvxcode": 143, 
+            "mvx_code": "BRR", 
+            "mvx_status": "Active", 
+            "short_description": "Adenovirus types 4 and 7", 
+            "product_name_status": "Active", 
+            "manufacturer": "Barr Laboratories"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "AFLURIA", 
+            "last_updated": "2011-04-25T00:00:00", 
+            "cvxcode": 141, 
+            "mvx_code": "CSL", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, seasonal, injectable", 
+            "product_name_status": "Active", 
+            "manufacturer": "CSL Behring, Inc"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Afluria, preservative free", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 140, 
+            "mvx_code": "CSL", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, seasonal, injectable, preservative free", 
+            "product_name_status": null, 
+            "manufacturer": "CSL Behring, Inc"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "AGRIFLU", 
+            "last_updated": "2010-09-27T00:00:00", 
+            "cvxcode": 140, 
+            "mvx_code": "NOV", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, seasonal, injectable, preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "Novartis Pharmaceutical Corporation"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ATTENUVAX", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 5, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "measles", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "BIAVAX II", 
+            "last_updated": "2010-09-01T00:00:00", 
+            "cvxcode": 38, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "rubella/mumps", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "BIOTHRAX", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 24, 
+            "mvx_code": "MIP", 
+            "mvx_status": "Active", 
+            "short_description": "anthrax", 
+            "product_name_status": "Active", 
+            "manufacturer": "Emergent BioDefense Operations Lansing"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "BOOSTRIX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 115, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "Tdap", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "CERTIVA", 
+            "last_updated": "2010-09-01T00:00:00", 
+            "cvxcode": 20, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "DTaP", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "CERVARIX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 118, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "HPV, bivalent", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "COMVAX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 51, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "Hib-Hep B", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "DAPTACEL", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 106, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "DTaP, 5 pertussis antigens", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "DECAVAC", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 113, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "Td (adult) preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "DRYVAX", 
+            "last_updated": "2010-09-01T00:00:00", 
+            "cvxcode": 75, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "vaccinia (smallpox)", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "DT(GENERIC)", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 28, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "DT (pediatric)", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ENGERIX B-PEDS", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 8, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "Hep B, adolescent or pediatric", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ENGERIX-B-ADULT", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 43, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "Hep B, adult", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "FLUARIX", 
+            "last_updated": "2010-09-27T00:00:00", 
+            "cvxcode": 140, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, seasonal, injectable, preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Fluarix, quadrivalent", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 150, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "influenza, injectable, quadrivalent, preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Flublok", 
+            "last_updated": "2013-05-28T00:00:00", 
+            "cvxcode": 155, 
+            "mvx_code": "PSC", 
+            "mvx_status": "Active", 
+            "short_description": "influenza, recombinant, injectable, preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "Protein Sciences"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Flucelvax", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 153, 
+            "mvx_code": "NOV", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, injectable, MDCK, preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "Novartis Pharmaceutical Corporation"
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "FLULAVAL", 
+            "last_updated": "2013-09-10T00:00:00", 
+            "cvxcode": 141, 
+            "mvx_code": "IDB", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, seasonal, injectable", 
+            "product_name_status": "Active", 
+            "manufacturer": "ID Biomedical"
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Flulaval quadrivalent", 
+            "last_updated": "2013-09-10T00:00:00", 
+            "cvxcode": 158, 
+            "mvx_code": "IDB", 
+            "mvx_status": "Active", 
+            "short_description": "influenza, injectable, quadrivalent", 
+            "product_name_status": "Active", 
+            "manufacturer": "ID Biomedical"
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "FLUMIST", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 111, 
+            "mvx_code": "MED", 
+            "mvx_status": "Active", 
+            "short_description": "influenza, live, intranasal", 
+            "product_name_status": "Active", 
+            "manufacturer": "MedImmune, Inc."
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Flumist quadrivalent", 
+            "last_updated": "2012-08-07T00:00:00", 
+            "cvxcode": 149, 
+            "mvx_code": "MED", 
+            "mvx_status": "Active", 
+            "short_description": "influenza, live, intranasal, quadrivalent", 
+            "product_name_status": "Active", 
+            "manufacturer": "MedImmune, Inc."
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "FLUVIRIN", 
+            "last_updated": "2010-09-27T00:00:00", 
+            "cvxcode": 141, 
+            "mvx_code": "NOV", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, seasonal, injectable", 
+            "product_name_status": "Active", 
+            "manufacturer": "Novartis Pharmaceutical Corporation"
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "FLUVIRIN-PRESERVATIVE FREE", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 140, 
+            "mvx_code": "NOV", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, seasonal, injectable, preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "Novartis Pharmaceutical Corporation"
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "FLUZONE", 
+            "last_updated": "2010-09-27T00:00:00", 
+            "cvxcode": 141, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, seasonal, injectable", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Fluzone, intradermal", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 144, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "influenza, seasonal, intradermal, preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Fluzone, Quadrivalent", 
+            "last_updated": "2013-08-08T00:00:00", 
+            "cvxcode": 150, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "influenza, injectable, quadrivalent, preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "FLUZONE-HIGH DOSE", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 135, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, high dose seasonal", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "FLUZONE-PRESERVATIVE FREE", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 140, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza, seasonal, injectable, preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "GARDASIL", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 62, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "HPV, quadrivalent", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "HAVRIX-ADULT", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 52, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "Hep A, adult", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "HAVRIX-PEDS", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 83, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "Hep A, ped/adol, 2 dose", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "HIBERIX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 48, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "Hib (PRP-T)", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "HIBTITER", 
+            "last_updated": "2010-08-18T00:00:00", 
+            "cvxcode": 47, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "Hib (HbOC)", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "IMOVAX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 18, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "rabies, intramuscular injection", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "IMOVAX ID", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 40, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "rabies, intradermal injection", 
+            "product_name_status": "Inactive", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "INFANRIX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 20, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "DTaP", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Influenza A (H5N1) -2013", 
+            "last_updated": "2014-01-16T00:00:00", 
+            "cvxcode": 160, 
+            "mvx_code": "IDB", 
+            "mvx_status": "Active", 
+            "short_description": "Influenza A monovalent (H5N1), ADJUVANTED-2013", 
+            "product_name_status": "Active", 
+            "manufacturer": "ID Biomedical"
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "IPOL", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 10, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "IPV", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "IXIARO", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 134, 
+            "mvx_code": "INT", 
+            "mvx_status": "Active", 
+            "short_description": "Japanese Encephalitis IM", 
+            "product_name_status": "Active", 
+            "manufacturer": "Intercell Biomedical"
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "JE-VAX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 39, 
+            "mvx_code": "JPN", 
+            "mvx_status": "Active", 
+            "short_description": "Japanese encephalitis SC", 
+            "product_name_status": "Active", 
+            "manufacturer": "The Research Foundation for Microbial Diseases of Osaka University (BIKEN)"
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "KINRIX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 130, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "DTaP-IPV", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "MENACTRA", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 114, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "meningococcal MCV4P", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "MENHIBRIX", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 148, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "Meningococcal C/Y-HIB PRP", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "MENOMUNE", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 32, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "meningococcal MPSV4", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "MENVEO", 
+            "last_updated": "2010-08-16T00:00:00", 
+            "cvxcode": 136, 
+            "mvx_code": "NOV", 
+            "mvx_status": "Active", 
+            "short_description": "Meningococcal MCV4O", 
+            "product_name_status": "Active", 
+            "manufacturer": "Novartis Pharmaceutical Corporation"
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "MERUVAX II", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 6, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "rubella", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "M-M-R II", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 3, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "MMR", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "MUMPSVAX", 
+            "last_updated": "2010-09-01T00:00:00", 
+            "cvxcode": 7, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "mumps", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "MYCOBAX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 19, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "BCG", 
+            "product_name_status": "Active", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "OMNIHIB", 
+            "last_updated": "2010-09-01T00:00:00", 
+            "cvxcode": 48, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "Hib (PRP-T)", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ORIMUNE", 
+            "last_updated": "2010-09-01T00:00:00", 
+            "cvxcode": 2, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "OPV", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "PEDIARIX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 110, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "DTaP-Hep B-IPV", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "PEDVAXHIB", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 49, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "Hib (PRP-OMP)", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "PENTACEL", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 120, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "DTaP-Hib-IPV", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "PNEUMOVAX 23", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 33, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "pneumococcal polysaccharide PPV23", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "PREVNAR 13", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 133, 
+            "mvx_code": "PFR", 
+            "mvx_status": "Active", 
+            "short_description": "Pneumococcal conjugate PCV 13", 
+            "product_name_status": "Active", 
+            "manufacturer": "Pfizer, Inc"
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "PREVNAR 13", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 133, 
+            "mvx_code": "WAL", 
+            "mvx_status": "Active", 
+            "short_description": "Pneumococcal conjugate PCV 13", 
+            "product_name_status": "Inactive", 
+            "manufacturer": "Wyeth"
+        }
+    }, 
+    {
+        "pk": 66, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "PREVNAR 7", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 100, 
+            "mvx_code": "WAL", 
+            "mvx_status": "Active", 
+            "short_description": "pneumococcal conjugate PCV 7", 
+            "product_name_status": "Active", 
+            "manufacturer": "Wyeth"
+        }
+    }, 
+    {
+        "pk": 67, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "PROHIBIT", 
+            "last_updated": "2010-09-01T00:00:00", 
+            "cvxcode": 46, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "Hib (PRP-D)", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 68, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "PROQUAD", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 94, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "MMRV", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 69, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "RabAvert", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 40, 
+            "mvx_code": "CHI", 
+            "mvx_status": "Inactive", 
+            "short_description": "rabies, intradermal injection", 
+            "product_name_status": "Inactive", 
+            "manufacturer": "Chiron Corporation"
+        }
+    }, 
+    {
+        "pk": 70, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "RABAVERT", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 18, 
+            "mvx_code": "NOV", 
+            "mvx_status": "Active", 
+            "short_description": "rabies, intramuscular injection", 
+            "product_name_status": "Active", 
+            "manufacturer": "Novartis Pharmaceutical Corporation"
+        }
+    }, 
+    {
+        "pk": 71, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "RECOMBIVAX-ADULT", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 43, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "Hep B, adult", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 72, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "RECOMBIVAX-DIALYSIS", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 44, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "Hep B, dialysis", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 73, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "RECOMBIVAX-PEDS", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 8, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "Hep B, adolescent or pediatric", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 74, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ROTARIX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 119, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "rotavirus, monovalent", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 75, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ROTATEQ", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 116, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "rotavirus, pentavalent", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 76, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "TD(GENERIC)", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 9, 
+            "mvx_code": "MBL", 
+            "mvx_status": "Active", 
+            "short_description": "Td (adult), adsorbed", 
+            "product_name_status": "Active", 
+            "manufacturer": "Massachusetts Biologic Laboratories"
+        }
+    }, 
+    {
+        "pk": 77, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Td, (adult)", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 9, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "Td (adult), adsorbed", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 78, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "Tenivac", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 113, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "Td (adult) preservative free", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 79, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "TETANUS TOXOID (GENERIC)", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 35, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "tetanus toxoid, adsorbed", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 80, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "TETRAMUNE", 
+            "last_updated": "2010-09-01T00:00:00", 
+            "cvxcode": 22, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "DTP-Hib", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 81, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "TICE BCG", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 19, 
+            "mvx_code": "OTC", 
+            "mvx_status": "Active", 
+            "short_description": "BCG", 
+            "product_name_status": "Active", 
+            "manufacturer": "Organon Teknika Corporation"
+        }
+    }, 
+    {
+        "pk": 82, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "TRIHIBIT", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 50, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "DTaP-Hib", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 83, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "TRIPEDIA", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 20, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "DTaP", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 84, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "TWINRIX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 104, 
+            "mvx_code": "SKB", 
+            "mvx_status": "Active", 
+            "short_description": "Hep A-Hep B", 
+            "product_name_status": "Active", 
+            "manufacturer": "GlaxoSmithKline"
+        }
+    }, 
+    {
+        "pk": 85, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "TYPHIM VI", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 101, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "typhoid, ViCPs", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 86, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "TYPHOID-AKD", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 53, 
+            "mvx_code": "", 
+            "mvx_status": "Inactive", 
+            "short_description": "typhoid, parenteral, AKD (U.S. military)", 
+            "product_name_status": "Inactive", 
+            "manufacturer": null
+        }
+    }, 
+    {
+        "pk": 87, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "VAQTA-ADULT", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 52, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "Hep A, adult", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 88, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "VAQTA-PEDS", 
+            "last_updated": "2013-08-09T00:00:00", 
+            "cvxcode": 83, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "Hep A, ped/adol, 2 dose", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 89, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "VARIVAX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 21, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "varicella", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }, 
+    {
+        "pk": 90, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "VIVOTIF BERNA", 
+            "last_updated": "2013-12-13T00:00:00", 
+            "cvxcode": 25, 
+            "mvx_code": "CRU", 
+            "mvx_status": "Active", 
+            "short_description": "typhoid, oral", 
+            "product_name_status": "Active", 
+            "manufacturer": "Crucell"
+        }
+    }, 
+    {
+        "pk": 91, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "YF-VAX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 37, 
+            "mvx_code": "PMC", 
+            "mvx_status": "Active", 
+            "short_description": "yellow fever", 
+            "product_name_status": "Active", 
+            "manufacturer": "sanofi pasteur"
+        }
+    }, 
+    {
+        "pk": 92, 
+        "model": "vaccine_registry.VaccineCVXToMVX", 
+        "fields": {
+            "cdc_product_name": "ZOSTAVAX", 
+            "last_updated": "2010-05-28T00:00:00", 
+            "cvxcode": 121, 
+            "mvx_code": "MSD", 
+            "mvx_status": "Active", 
+            "short_description": "zoster", 
+            "product_name_status": "Active", 
+            "manufacturer": "Merck and Co., Inc."
+        }
+    }
+]
