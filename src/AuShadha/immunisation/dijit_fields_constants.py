@@ -1,6 +1,6 @@
 IMMUNISATION_FORM_CONSTANTS ={'vaccine_detail':{
                                                 'max_length': 30,
-                                                "data-dojo-type": "dijit.form.Select",
+                                                "data-dojo-type": "dijit.form.FilteringSelect",
                                                 "data-dojo-props": r"'required': true"
                                                 },
                               'route':{
@@ -15,7 +15,7 @@ IMMUNISATION_FORM_CONSTANTS ={'vaccine_detail':{
                                 },
                                'dose':{
                                       'max_length': 30,
-                                      "data-dojo-type": "dijit.form.ValidationTextBox",
+                                      "data-dojo-type": "dijit.form.FilteringSelect",
                                       "data-dojo-props": r"'required' : true ,'regExp':'','invalidMessage' : 'Invalid Character'"
                                 },
                                #'administrator':{
