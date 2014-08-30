@@ -7,7 +7,7 @@ We are assuming that the server returns a JSON with json.addData so that the row
 updated.
 */
 
-function addItem(url, form_id, grid_id) {
+function addItem(url, form_id, grid_id,ADD_MORE_ITEMS) {
 
   require(["dojo/dom",
             "dojo/request/xhr",
@@ -21,7 +21,7 @@ function addItem(url, form_id, grid_id) {
 
         var editDialog = registry.byId("editPatientDialog");
         var errorDialog = registry.byId("dialogJsonMessage");
-
+        if (!ADD_MORE_ITEMS){ ADD_MORE_ITEMS = false; }
         xhr(url, 
             {
               handleAs: "text",

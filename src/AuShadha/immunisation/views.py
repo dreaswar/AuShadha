@@ -40,7 +40,7 @@ from immunisation.models import Immunisation, ImmunisationForm
 # Views start here -----------------------------------------
 @login_required
 def immunisation_json(request, patient_id = None):
-    try:
+#    try:
       if patient_id:
         patient_id  = int(patient_id)
       else:
@@ -56,10 +56,10 @@ def immunisation_json(request, patient_id = None):
       json = generate_json_for_datagrid(immunisation_obj)
       return HttpResponse(json, content_type="application/json")
 
-    except(AttributeError, NameError, TypeError, ValueError, KeyError):
-        raise Http404("ERROR:: Bad request.Invalid arguments passed")
-    except(PatientDetail.DoesNotExist):
-        raise Http404("ERROR:: Patient requested does not exist.")
+#    except(AttributeError, NameError, TypeError, ValueError, KeyError):
+#        raise Http404("ERROR:: Bad request.Invalid arguments passed")
+#    except(PatientDetail.DoesNotExist):
+#        raise Http404("ERROR:: Patient requested does not exist.")
 
 
 @login_required

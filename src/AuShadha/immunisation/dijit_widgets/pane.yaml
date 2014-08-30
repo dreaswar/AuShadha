@@ -93,18 +93,18 @@ panes:
           height: 30em
         panes: []
         widgets: 
-#           - *IMMUNISATION_ADD_BUTTON
+          - *IMMUNISATION_ADD_BUTTON
           - *IMMUNISATION_GRID
 
-  - id : IMMUNISATION_BOTTOM_CP
-    region: bottom
-    type: cp
-    splitter: True
-    widgets: []
-    style:
-      height: 15em
-    panes: []
-    url: {{patient_detail_obj.urls.add.immunisation}}
+#  - id : IMMUNISATION_BOTTOM_CP
+#    region: bottom
+#    type: cp
+#    splitter: True
+#    widgets: []
+#    style:
+#      height: 15em
+#    panes: []
+#    url: {{patient_detail_obj.urls.add.immunisation}}
 
   - id: IMMUNISATION_TRAILING_CP
     region: trailing

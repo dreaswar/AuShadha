@@ -64,11 +64,11 @@ class Immunisation(AuShadhaBaseModel):
                                       choices=INJECTION_SITE_CHOICES,
                                       default="Right Upper Arm"
                                       )
-    dose = models.CharField(max_length=100,choices=( (1,1),
-                                                     (2,2),
-                                                     (3,3),
-                                                     (4,4),
-                                                     (5,5),
+    dose = models.CharField(max_length=100,choices=( ('1','1'),
+                                                     ('2','2'),
+                                                     ('3','3'),
+                                                     ('4','4'),
+                                                     ('5','5'),
                                                      ('booster','Booster')
                                                      ) )
     vaccination_date = models.DateField(auto_now_add=False)
