@@ -82,8 +82,8 @@ panes:
               - id: headerPaneSearchBox
                 type: dom
                 domType: span
-                style:
-                  width: 35em
+                #style:
+                  #width: 35em
                 widgets: []
                 panes: 
 
@@ -116,7 +116,7 @@ panes:
             region: trailing
             class: headerPaneWidgetArea            
             style:
-              width: 35em
+              width: 50em
               background: none
               border: none
               padding: 0
@@ -126,16 +126,29 @@ panes:
 
               - id: notificationArea
                 type: dom
+                js_path: aushadha/header_pane/notification_area
                 domType: span
                 widgets: []
                 style:
-                  border: solid 1px slate
+                  border: none
                   minWidth: 2em
-                  marginRight: 5px
-                  marginLeft: 5px
-                  display: none
+                  marginRight: 0px
+                  marginLeft: 0px
+                  display: inline
 
                 panes: 
+                  - id: appsIcon
+                    type: dom
+                    domType: img
+                    class: login_area_img
+                    src: {{STATIC_URL}}images/dashboard_indicator.png
+                    alt: Apps
+                    #title: Apps
+                    style:
+                      cursor: pointer
+                    widgets: []
+                    panes: []
+
                   - id: notesIcon
                     type: dom
                     domType: img

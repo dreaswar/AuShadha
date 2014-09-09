@@ -15,7 +15,7 @@ from dijit_widgets.tree import render_fda_drug_db_tree
 
 urlpatterns = patterns('',
         
-
+	url(r'drug_db/pane/$', render_fda_drug_db_pane, name = 'drug_db_pane'),
 	url(r'render/pane/$', render_fda_drug_db_pane, name = 'render_fda_drug_db_pane'),
 	url(r'render/tree/$', render_fda_drug_db_tree, name = 'render_fda_drug_db_tree'),
 

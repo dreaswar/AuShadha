@@ -3,6 +3,37 @@
   module: models
   class_name: PatientDetail
 
+######################################################
+- role: RegistryApp
+  app: registry.icd10
+  module: models
+  class_name: Chapter
+
+- role: RegistryApp
+  app: registry.icd10pcs
+  module: models
+  class_name: Section
+
+- role: RegistryApp
+  app: registry.drug_db
+  module: models
+  class_name: FDADrugs
+
+- role: RegistryApp
+  app: registry.drug_db.drugbankca
+  module: models
+  class_name: DrugBankCaDrugs
+
+- role: RegistryApp
+  app: registry.vaccine_registry
+  module: models
+  class_name: VaccineDetail
+
+#######################################################
+
+
+
+
 ################################################################################
 
 - role: Admission

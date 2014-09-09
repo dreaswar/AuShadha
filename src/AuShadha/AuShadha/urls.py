@@ -23,6 +23,8 @@ urlpatterns = patterns('',
 
                       url(r'^AuShadha/icd10/'    , include('registry.icd10.urls') ),
                       url(r'^AuShadha/icd10pcs/'    , include('registry.icd10pcs.urls') ),
+
+                      url(r'^AuShadha/drug_db/'    , include('registry.drug_db.urls') ),
                       url(r'^AuShadha/fda_drug_db/'    , include('registry.drug_db.urls') ),
                       url(r'^AuShadha/drugbankcadrugs/'    , include('registry.drug_db.drugbankca.urls') ),
 

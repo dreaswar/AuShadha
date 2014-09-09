@@ -38,11 +38,12 @@ class VaccineDetail(AuShadhaBaseModel):
 
     def get_vaccine_name(self):
         """ returns the vaccine name """ 
-        v_id = int(self.vaccine_id)
-        v_obj = VaccineDetail.objects.get(pk = v_id)
-        v_data = VaccineData.objects.filter(vaccine_fk = v_obj).filter(field_name="ShortDescription")
-        if v_data:
-           return "%s" %(v_data[0].field_value)
+        if self.vaccine_id:
+           v_id = int(self.vaccine_id)
+           v_obj = VaccineDetail.objects.get(pk = v_id)
+           v_data = VaccineData.objects.filter(vaccine_fk = v_obj).filter(field_name="ShortDescription")
+           if v_data:
+             return "%s" %(v_data[0].field_value)
         return ''
 
 class VaccineData(AuShadhaBaseModel):

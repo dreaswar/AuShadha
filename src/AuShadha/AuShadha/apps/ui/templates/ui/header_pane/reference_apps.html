@@ -1,0 +1,11 @@
+<div class="referenceApps">
+{% if app_objs %}
+  {% for a in app_objs %}
+    <p> 
+      <a class="referenceApp" href="#" data-url="{{a.app_url}}">
+        {{a.app_name}}
+      </a> 
+    </p>
+  {% endfor %}
+{% endif %}
+</div>

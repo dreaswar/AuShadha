@@ -33,7 +33,7 @@ def serialise_ui(UI):
     data = []
     registry = UI.registry
     for k,v in registry.items():
-      dict_to_append = {'role': k, 'class': v.__name__}
+      dict_to_append = {'role': k, 'class': v.__name__ if type(v) is str else unicode(v)}
       data.append( dict_to_append )
     return data
 

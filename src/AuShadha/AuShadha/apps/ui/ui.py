@@ -250,10 +250,17 @@ class AuShadhaUI(object):
 
   def register(self, role, class_obj ):
     """ Registers a module with the UI for a particular role. """
+    print("Registering role: ",role," for class", class_obj)
     if self.registry.get(role):
-      raise AlreadyRegisteredException()
+      if role in ['RegistryApp','ReferenceApp']:
+        self.registry[role].append(class_obj)
+      else:
+        raise AlreadyRegisteredException() #This has been commented to allow multi-registration in registry apps
     else:
-      self.registry[role]  = class_obj
+      if role in ['RegistryApp','ReferenceApp']:
+        self.registry[role] = [class_obj]
+      else:
+        self.registry[role]  = class_obj
 
   def check_registry(self):
     """ Checks the registry and raises an AlreadyRegisteredException if the module is registered already """
@@ -281,3 +288,4 @@ class AuShadhaUI(object):
 
 #Creates an instance of the AuShadhaUI
 ui = AuShadhaUI()
+

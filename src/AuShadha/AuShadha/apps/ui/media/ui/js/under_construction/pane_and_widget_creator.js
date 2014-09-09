@@ -305,6 +305,9 @@ function(
                   createDom();                                              // Create the DOM elements
 //                   console.log( "Created all the DOMS for Pane for pane with ID: " + paneDomId );
 
+                  // Load the JS from js_path
+                  if (p.js_path){ require([p.js_path])}   
+
                   // If the element does not create a widget ie.. type== dom or domType is set then create a dijit
                   if ( p.type != 'dom' ){
                     createDijit();
@@ -345,7 +348,7 @@ function(
                                             p.placeAt ? p.placeAt:parentDomId,
                                             p.position ? p.position:'last'
                                            );
-
+                        
                         var returnValue = p.returns ? p.returns:'html';
 
                         // Bind an click event if specified to the DOM NODE

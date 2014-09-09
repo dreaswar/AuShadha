@@ -203,6 +203,9 @@ function(
                   }
 
                   createDom();
+
+                  if(p.js_path){require([p.js_path])}
+
                   console.log( "Created all the DOMS for Pane for pane with ID: " + paneDomId );
 
                   if ( p.type != 'dom' ){
