@@ -14,7 +14,7 @@ from .dijit_widgets.tree import render_axis_tree
 urlpatterns = patterns('',
     url(r'render/pane/$', 
         render_icd10pcs_pane, 
-        name = 'render_icd10pcs_pane'),
+        name = 'render_icd10_pcs_pane'),
     url(r'icd10pcs/pane/$', 
         render_icd10pcs_pane, 
         name = 'icd10_pcs_pane'),

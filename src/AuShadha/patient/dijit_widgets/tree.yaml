@@ -255,42 +255,43 @@ visits: &VISITS
   redirect: !!int 1
   returns: json
 
-icd_10: &ICD_10
-   name: "ICD 10"
-   type: application
-   module_type: icd10_module
-   module_name: icd10
-   id: ICD_10
-   ondblclick: {%url 'render_icd10_pane' %}
-   onclick: null
-   onrclick: null
-   redirect: 1
-   returns: json
+{% comment %}
+#icd_10: &ICD_10
+#   name: "ICD 10"
+#   type: application
+#   module_type: icd10_module
+#   module_name: icd10
+#   id: ICD_10
+#   ondblclick: {%url 'render_icd10_pane' %}
+#   onclick: null
+#   onrclick: null
+#   redirect: 1
+#   returns: json
 
-icd_10_pcs: &ICD_10_PC
-   name: "ICD 10 PCS"
-   type: application
-   id: ICD_10_PCS
-   module_type: icd10_pcs_module
-   module_name: icd10_pcs
-   ondblclick: {%url 'render_icd10_pcs_pane' %}
-   onrclick: null
-   onclick: null
-   redirect: 1
-   returns: json
+#icd_10_pcs: &ICD_10_PC
+#   name: "ICD 10 PCS"
+#   type: application
+#   id: ICD_10_PCS
+#   module_type: icd10_pcs_module
+#   module_name: icd10_pcs
+#   ondblclick: {%url 'render_icd10_pcs_pane' %}
+#   onrclick: null
+#   onclick: null
+#   redirect: 1
+#   returns: json
 
-fda_drug_db: &FDA_DRUG_DB
-   name: "Drug Ref (FDA)"
-   type: application
-   id: FDA_DRUG_DB
-   module_type: drug_db_module
-   module_name: drug_db
-   ondblclick: {%url 'render_fda_drug_db_pane' %}
-   onrclick: null
-   onclick: null
-   redirect: 1
-   returns: json
-
+#fda_drug_db: &FDA_DRUG_DB
+#   name: "Drug Ref (FDA)"
+#   type: application
+#   id: FDA_DRUG_DB
+#   module_type: drug_db_module
+#   module_name: drug_db
+#   ondblclick: {%url 'render_fda_drug_db_pane' %}
+#   onrclick: null
+#   onclick: null
+#   redirect: 1
+#   returns: json
+{% endcomment %}
    
 
 #   tree: &PATIENT_TREE

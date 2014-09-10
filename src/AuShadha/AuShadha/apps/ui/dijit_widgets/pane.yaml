@@ -142,8 +142,20 @@ panes:
                     domType: img
                     class: login_area_img
                     src: {{STATIC_URL}}images/dashboard_indicator.png
-                    alt: Apps
-                    #title: Apps
+                    alt: Reference Apps
+                    title: Reference Apps
+                    style:
+                      cursor: pointer
+                    widgets: []
+                    panes: []
+
+                  - id: dashBoard
+                    type: dom
+                    domType: img
+                    class: login_area_img
+                    src: {{STATIC_URL}}images/dashboard_home.png
+                    alt: Dashboard
+                    title: Dashboard
                     style:
                       cursor: pointer
                     widgets: []
@@ -160,6 +172,7 @@ panes:
                       cursor: pointer
                     widgets: []
                     panes: []
+
 
                   - id: tasksIcon
                     type: dom
@@ -183,7 +196,6 @@ panes:
                     style:
                       cursor: pointer
                     widgets: []
-
                     panes: 
                       - id: notificationsDiv
                         type: dom
