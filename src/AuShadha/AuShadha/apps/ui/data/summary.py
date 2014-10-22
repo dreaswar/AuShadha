@@ -26,7 +26,7 @@ import importlib
 import re
 
 # Django imports
-from django.utils import simplejson
+import json
 
 # AuShadha module imports
 from .json import ModelInstanceJson

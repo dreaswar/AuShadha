@@ -13,10 +13,10 @@
 # General Imports
 from cStringIO import StringIO
 import yaml
+import json
 
 # Django Imports
 from django.http import Http404, HttpResponse
-from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.template import Template, Context
 from django.contrib.auth.decorators import login_required
@@ -44,14 +44,10 @@ def render_aushadha_search_form(request):
   '''
    Renders the AuShadha Search Form
   '''
-
   user = request.user
-  
   if request.method == 'GET' and request.is_ajax():
-
     variable = RequestContext(request, {'user':user} )
     return render_to_response('search/search_filtering_select.html',variable)
-
   else:
     raise Http404("Bad Request Method") 
 
@@ -62,30 +58,21 @@ def render_aushadha_search_pane(request):
     Renders the AuShadha search pane
   '''
   user = request.user
-  
   if request.method == 'GET' and request.is_ajax():
-
       app_wrapper = []
-
       clinic_obj = Clinic.objects.all()
-
       if clinic_obj:
         clinic_id = clinic_obj[0].id
         context = RequestContext(request, {'clinic_id': 1 })
-
         if not getattr(clinic_obj[0],'urls',None):
           print "No Attribute of URLS on Clinic. Saving to generate the same"
           clinic_obj[0].save()
-
         try:
           pane_template = Template( open('AuShadha/apps/search/dijit_widgets/pane.yaml','r').read() )
-
         except( IOError ):
           raise Http404("No template file to render the pane ! ")
-
         rendered_pane = pane_template.render(context)
         pane_yaml = yaml.load( rendered_pane ) 
-
         app_object = {}
         app_object['app'] = MODULE_LABEL
         app_object['ui_sections'] = {
@@ -101,14 +88,11 @@ def render_aushadha_search_pane(request):
                                     }
         app_object['url'] = reverse('aushadha_patient_search')
         app_wrapper.append( app_object )
-
         success = True
         error_message = "Returning "+ MODULE_LABEL + " app pane variables"
-
         data = {'success': success,'error_message':error_message,'app': app_wrapper,'pane': pane_yaml}
-        json  = simplejson.dumps(data)
-
-        return HttpResponse(json, content_type="application/json")
+        jsondata  = json.dumps(data)
+        return HttpResponse(jsondata, content_type="application/json")
 
       else:
         raise Http404("No Clinic registered in AuShadha. Cannot Search! ")

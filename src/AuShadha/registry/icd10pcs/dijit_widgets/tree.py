@@ -39,10 +39,10 @@ from django.template import Template, Context
 #from django.views.decorators.csrf import csrf_protect
 #from django.views.decorators.debug import sensitive_post_parameters
 #from django.core import serializers
-#from django.core.serializers import json
+##from django.core.serializers import json
 #from django.core.serializers.json import DjangoJSONEncoder
 
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 

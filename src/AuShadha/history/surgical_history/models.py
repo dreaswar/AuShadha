@@ -57,7 +57,7 @@ class SurgicalHistory(AuShadhaBaseModel):
                                        blank=True
                                        )
 
-    healed = models.BooleanField()
+    healed = models.BooleanField(default=None)
 
     remarks = models.TextField(max_length=1000,
                                help_text="Any Other Remarks",

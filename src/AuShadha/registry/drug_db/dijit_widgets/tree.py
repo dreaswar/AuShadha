@@ -25,10 +25,10 @@ from django.template import Template, Context
 #from django.views.decorators.csrf import csrf_protect
 #from django.views.decorators.debug import sensitive_post_parameters
 #from django.core import serializers
-#from django.core.serializers import json
+##from django.core.serializers import json
 #from django.core.serializers.json import DjangoJSONEncoder
 
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -102,7 +102,7 @@ class DrugDBTree( object ):
           tree.add_child_node(c)
           print("Added ,", c , " to Tree")
 
-      json = tree.to_json()
+      jsondata = tree.to_json()
       
       return json
 
@@ -139,7 +139,7 @@ def render_fda_drug_db_tree(request):
           json_data = tree.to_json()
                
       print("Returning JSON for Tree")
-      return HttpResponse(json_data, content_type="application/json")    
+      return HttpResponse(jsondata, content_type="application/json")    
 
   else:
       raise Http404("Bad Request")

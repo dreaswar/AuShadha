@@ -9,9 +9,10 @@
 # This can be later extended to class based role
 ################################################################################
 
-from .models import VisitDetail, VisitDetailForm
+from .models import VisitDetail 
+#from .models import VisitDetailForm
 
 from AuShadha.apps.ui.ui import ui as UI
 
 UI.register('OPD_Visit', VisitDetail)
-UI.register('OPD_Visit_Form', VisitDetailForm)
+#UI.register('OPD_Visit_Form', VisitDetailForm)

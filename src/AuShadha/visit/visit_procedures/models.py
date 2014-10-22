@@ -217,7 +217,7 @@ class VisitDetail(AuShadhaBaseModel):
             #raise Exception("User is not a Provider. Only Doctors can save Visits. ")
 
     def get_visit_complaints(self):
-        from django.utils import simplejson
+        import json
         v_id = self.id
         try:
             visit_obj = VisitDetail.objects.get(pk=v_id)
@@ -240,7 +240,7 @@ class VisitDetail(AuShadhaBaseModel):
                 dict_to_append[
                     'visit_active'] = complaint.visit_detail.is_active
                 visit_complaint_list.append(dict_to_append)
-        #json = simplejson.dumps(visit_complaint_list)
+        #jsondata = json.dumps(visit_complaint_list)
         # return json
         return visit_complaint_list
 

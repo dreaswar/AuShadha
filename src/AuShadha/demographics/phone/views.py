@@ -16,7 +16,7 @@ from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -44,8 +44,8 @@ def phone_json(request, patient_id = None):
         patient_id = int(request.GET.get('patient_id'))
       patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
       phone_obj = Phone.objects.filter(patient_detail=patient_detail_obj)
-      json = generate_json_for_datagrid(phone_obj)
-      return HttpResponse(json, content_type="application/json")
+      jsondata = generate_json_for_datagrid(phone_obj)
+      return HttpResponse(jsondata, content_type="application/json")
 
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -113,8 +113,8 @@ def phone_add(request, patient_id = None):
                           "form_errors": form_errors,
                           "addData": addData
                           }
-                  json = simplejson.dumps(data)
-                  return HttpResponse(json, content_type='application/json')
+                  jsondata = json.dumps(data)
+                  return HttpResponse(jsondata, content_type='application/json')
 
           else:
               raise Http404("BadRequest: Unsupported Request Method")
@@ -179,8 +179,8 @@ def phone_edit(request, phone_id):
                           'error_message' : error_message,
                           'form_errors'   : form_errors
                           }
-              json = simplejson.dumps(data)
-              return HttpResponse(json, content_type='application/json')
+              jsondata = json.dumps(data)
+              return HttpResponse(jsondata, content_type='application/json')
 
           else:
               raise Http404("BadRequest: Unsupported Request Method")
@@ -209,8 +209,8 @@ def phone_del(request, phone_id  = None):
                 success = True
                 error_message = "Phone Data Deleted Successfully"
                 data = {'success': success, 'error_message': error_message}
-                json = simplejson.dumps(data)
-                return HttpResponse(json, content_type='application/json')
+                jsondata = json.dumps(data)
+                return HttpResponse(jsondata, content_type='application/json')
 
             except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")

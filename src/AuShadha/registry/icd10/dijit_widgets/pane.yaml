@@ -38,21 +38,21 @@ panes:
         hasDownArrow: !!bool False
         autoComplete: !!bool False
         searchAttr:  name
-        placeHolder: "ICD 10 Disease Codes"
+        placeHolder: "Quick Search ICD 10 Disease Codes"
         style:
            height: 2.2em
            width: 40em
 
-      - id: ICD10_ADD_DIAGNOSIS_BUTTON
-        type: button
-        label: Add Diagnosis
-        title: Add Diagnosis
-        onchange: null
-        onclick: null
-        style: 
-           position: relative
-           top: -10px
-           float: right
+#      - id: ICD10_ADD_DIAGNOSIS_BUTTON
+#        type: button
+#        label: Add Diagnosis
+#        title: Add Diagnosis
+#        onchange: null
+#        onclick: null
+#        style: 
+#           position: relative
+#           top: -10px
+#           float: right
 
  
     panes: []

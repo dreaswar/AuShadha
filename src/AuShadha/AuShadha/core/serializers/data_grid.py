@@ -12,9 +12,9 @@
 """
 
 #Django Imports
-from django.utils import simplejson
+import json
 from django.core import serializers
-from django.core.serializers import json
+#from django.core.serializers import json
 from django.core.serializers.json import DjangoJSONEncoder
 
 def generate_json_for_datagrid(obj, success=True, error_message="Saved Successfully", form_errors=None):
@@ -123,11 +123,11 @@ def generate_json_for_datagrid(obj, success=True, error_message="Saved Successfu
 
         json_data.append(data)
 
-    json_data = simplejson.dumps(json_data, cls=DjangoJSONEncoder)
+    json_data = json.dumps(json_data, cls=DjangoJSONEncoder)
 
 #    json_serializer = serializers.get_serializer('json')()
 #    json_data = json_serializer.serialize(json_data, ensure_ascii = False)
-#    json_data = simplejson.dumps(json_data)
+#    json_data = json.dumps(json_data)
 #    print "RETURNED JSON IS ", unicode(json_data)
 
     return json_data

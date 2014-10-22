@@ -16,7 +16,7 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 #from django.core.context_processors import csrf
 from django.contrib.auth.models import User
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -51,8 +51,8 @@ def surgical_history_json(request, patient_id = None):
       patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
       surgical_history_obj = SurgicalHistory.objects.filter(
           patient_detail=patient_detail_obj)
-      json = generate_json_for_datagrid(surgical_history_obj)
-      return HttpResponse(json, content_type="application/json")
+      jsondata = generate_json_for_datagrid(surgical_history_obj)
+      return HttpResponse(jsondata, content_type="application/json")
 
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -133,8 +133,8 @@ def surgical_history_add(request, patient_id = None):
                 "form_errors": None,
                 "addData": addData
             }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404("BadRequest: Unsupported Request Method")
@@ -217,8 +217,8 @@ def surgical_history_edit(request, surgical_history_id = None):
                 "form_errors": None,
                 "addData": addData
             }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404("BadRequest: Unsupported Request Method")
@@ -251,8 +251,8 @@ def surgical_history_del(request, surgical_history_id = None):
             success = True
             error_message = "Surgical History Data Deleted Successfully"
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404("BadRequest: Unsupported Request Method")

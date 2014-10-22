@@ -27,7 +27,7 @@ from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-from django.utils import simplejson
+import json
 #from django.core.context_processors  import csrf
 #from django.views.decorators.csrf    import csrf_exempt
 from django.template import loader, Context
@@ -170,8 +170,8 @@ def visit_phyexam_json(request,exam_name, visit_id=None):
 
             data.append(data_to_append)
 
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")
+    jsondata = json.dumps(data)
+    return HttpResponse(jsondata, content_type="application/json")
 
 
 @login_required
@@ -243,8 +243,8 @@ def visit_phyexam_add(request,exam_name, visit_id=None):
                     'form_errors': form_errors,
                     'redirectUrl': redirectUrl
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type = 'json/application')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type = 'json/application')
 
         else:
             raise Http404("Bad Request")
@@ -333,8 +333,8 @@ def visit_phyexam_edit(request, exam_name , visit_phyexam_id=None):
               'form_errors': form_errors,
               'redirectUrl': redirectUrl
               }
-      json = simplejson.dumps(data)
-      return HttpResponse(json, content_type = 'json/application')
+      jsondata = json.dumps(data)
+      return HttpResponse(jsondata, content_type = 'json/application')
 
   else:
       raise Http404("Bad Request")
@@ -384,8 +384,8 @@ def visit_phyexam_del(request,exam_name, visit_phyexam_id=None):
                 'error_message': error_message, 
                 'redirectUrl': redirectUrl
                 }
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type='application/json')
+        jsondata = json.dumps(data)
+        return HttpResponse(jsondata, content_type='application/json')
 
       else:
         raise Http404(" Error ! Unsupported Request..")

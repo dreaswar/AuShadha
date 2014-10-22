@@ -3,9 +3,9 @@ from django.conf.urls import patterns, url
 
 import AuShadha.settings
 
-from .views import home,get_reference_apps
+from .views import home,get_reference_apps, installed_apps
 from dijit_widgets.pane import render_aushadha_ui_pane
-from data.views import installed_apps
+#from data.views import installed_apps
 
 urlpatterns = patterns('',
 

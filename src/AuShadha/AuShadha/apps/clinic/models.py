@@ -248,7 +248,7 @@ class Staff(AuShadhaBaseModel):
     clinic_staff_role = models.CharField("Staff Role",max_length=100,
                                          help_text=" This is the Role of the Staff in the Clinic",
                                          choices=CLINIC_STAFF_ROLE)
-    is_staff_hod = models.BooleanField("Is Staff Head of the Department")
+    is_staff_hod = models.BooleanField("Is Staff Head of the Department",default=None)
     department    = models.ForeignKey(Department)
 
     def __unicode__(self):

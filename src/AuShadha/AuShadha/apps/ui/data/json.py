@@ -26,7 +26,7 @@
 import datetime
 
 # Imports from Django
-from django.utils import simplejson
+import json
 
 
 
@@ -88,7 +88,7 @@ class ModelInstanceJson(object):
 
     def as_json(self):
       ''' Returns the data as a serialized JSON '''
-      return simplejson.dumps(self.exportable_fields)
+      return json.dumps(self.exportable_fields)
 
     def get_all_json_exportable_fields(self):
       """ 

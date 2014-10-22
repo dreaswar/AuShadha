@@ -54,7 +54,7 @@ DATABASES = {
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # Or path to database file if using sqlite3.
-        'NAME': 'aushadha',
+        'NAME': 'aushadha_1_7',
         'USER': 'aushadha',                      # Not used with sqlite3.
         'PASSWORD': 'aushadha',                  # Not used with sqlite3.
         # Set to empty string for localhost. Not used with sqlite3.
@@ -123,6 +123,7 @@ STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = APP_ROOT_URL + 'static/'
 
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(ROOT_PATH, 'media/images'),
@@ -130,6 +131,7 @@ STATICFILES_DIRS = (
     os.path.join(ROOT_PATH, 'media/plugins'),
     #os.path.join(ROOT_PATH, 'media/custom/js'),
     os.path.join(ROOT_PATH, 'media/custom/styles'),
+
     os.path.join(ROOT_PATH, 'apps/ui/media'),
 
 
@@ -180,13 +182,14 @@ WSGI_APPLICATION = 'AuShadha.wsgi.application'
 TEMPLATE_DIRS = (
 
     os.path.join(ROOT_PATH, 'templates'),
+
     os.path.join(ROOT_PATH, 'media/custom/js/'),
     os.path.join(ROOT_PATH, 'media/custom/styles'),
 
     os.path.join(ROOT_PATH, 'apps/search/templates/'),
-
     os.path.join(ROOT_PATH, 'apps/ui/templates/ui/'),
     os.path.join(ROOT_PATH, 'apps/ui/media/ui/'),
+
     os.path.join(ROOT_PATH, 'registry/icd10/templates/icd10/'),
     os.path.join(ROOT_PATH, 'registry/icd10pcs/templates/icd10pcs/'),
     os.path.join(ROOT_PATH, 'registry/drug_db/templates/drug_db/'),
@@ -200,7 +203,7 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'history/surgical_history/templates/'),
     os.path.join(ROOT_PATH, 'history/family_history/templates/'),
     os.path.join(ROOT_PATH, 'history/social_history/templates/'),
-    #os.path.join(ROOT_PATH, 'history/obs_and_gyn/templates/'),    
+    os.path.join(ROOT_PATH, 'history/obs_and_gyn/templates/'),    
 
     os.path.join(ROOT_PATH, 'immunisation/templates/'),
     os.path.join(ROOT_PATH, 'medication_list/templates/'),
@@ -218,7 +221,7 @@ TEMPLATE_DIRS = (
 #    os.path.join(ROOT_PATH, 'visit/visit_inv/templates/'),
 #    os.path.join(ROOT_PATH, 'visit/visit_procedures/templates/'),
 
-    os.path.join(ROOT_PATH, 'admission/admission/templates/'),
+#    os.path.join(ROOT_PATH, 'admission/admission/templates/'),
 #    os.path.join(ROOT_PATH, 'admission/admission_complaints/templates/'),
 #    os.path.join(ROOT_PATH, 'admission/admission_hpi/templates/'),
 #    os.path.join(ROOT_PATH, 'admission/admission_ros/templates/'),    
@@ -226,8 +229,6 @@ TEMPLATE_DIRS = (
 #    os.path.join(ROOT_PATH, 'admission/admission_imaging/templates/'),
 #    os.path.join(ROOT_PATH, 'admission/admission_inv/templates/'),
 #    os.path.join(ROOT_PATH, 'admission/admission_procedures/templates/'),    
-
-    #os.path.join(ROOT_PATH, 'phyexam/templates/'),    
 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -237,7 +238,7 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
 
-    # Core Django Apps used 
+# Core Django Apps used 
     'django.contrib.contenttypes',
     'django.contrib.auth',
     'django.contrib.sessions',
@@ -247,15 +248,15 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
 
-    # Core AuShadha Apps, base_models, custom_users:
+# Core AuShadha Apps, base_models, custom_users:
     'AuShadha.apps.ui',
     'AuShadha.apps.aushadha_base_models',
     'AuShadha.apps.aushadha_users',
     'AuShadha.apps.clinic',
     'AuShadha.apps.search',
 
-    # Core AuShadha Registry for ICD 10 codes, ICD 10 PCS codes, Drug Database
-    #   and Vaccine Registry
+# Core AuShadha Registry for ICD 10 codes, ICD 10 PCS codes, Drug Database
+#   and Vaccine Registry
     'registry.icd10',
     'registry.icd10pcs',
     'registry.drug_db',
@@ -263,11 +264,43 @@ INSTALLED_APPS = (
     'registry.inv_and_imaging',
     'registry.vaccine_registry',
 
-    # Custom Apps for Patient Registration
+# Custom Apps for Patient Registration
     'patient',
 
-    #AuShadha Stock apps for Admission and OPD Visits
-    'admission.admission',
+# Custom Apps for Patient Demographics
+    'demographics.demographics',
+    'demographics.contact',
+    'demographics.phone',
+    'demographics.guardian',
+   #'demographics.email_and_fax',
+
+# AuShadha stock apps for History
+    'history.medical_history',
+    'history.surgical_history',
+    'history.social_history',
+    'history.family_history',
+   #'history.obs_and_gyn',
+
+#AuShadha Stock apps for Medication List, Allergy, Immunisaion
+    'medication_list',
+    'allergy_list',
+    'immunisation',
+
+#AuShadha Stock apps for OPD Visits
+#    'visit.visit',
+#    'visit.visit_complaints',
+#    'visit.visit_hpi',
+#    'visit.visit_ros',
+#    'visit.visit_phyexam',
+#    'visit.visit_assessment_and_plan',
+#    'visit.visit_soap',    
+
+#    'visit.visit_inv',
+#    'visit.visit_imaging',
+#    'visit.visit_procedures',
+
+#AuShadha Stock apps for Admission
+#    'admission.admission',
 #    'admission.admission_complaints',
 #    'admission.admission_hpi',
 #    'admission.admission_ros',
@@ -276,40 +309,6 @@ INSTALLED_APPS = (
 #    'admission.admission_imaging',
 #    'admission.admission_inv',
 
-    # Custom Apps for Patient Demographics
-    'demographics.demographics',
-    'demographics.contact',
-    'demographics.phone',
-    'demographics.guardian',
-    #'demographics.email_and_fax',
-
-    # AuShadha stock apps for History
-    'history.medical_history',
-    'history.surgical_history',
-    'history.social_history',
-    'history.family_history',
-    #'history.obs_and_gyn',
-
-    #AuShadha Stock apps for Medication List, Allergy, Immunisaion
-    'medication_list',
-    'allergy_list',
-    'immunisation',
-
-    'visit.visit',
-    'visit.visit_complaints',
-    'visit.visit_hpi',
-    'visit.visit_ros',
-    'visit.visit_phyexam',
-    'visit.visit_assessment_and_plan',
-    'visit.visit_soap',    
-
-#    'visit.visit_inv',
-#    'visit.visit_imaging',
-#    'visit.visit_procedures',
-
-
-    #AuShadha Stock for Physical Examination Management
-    #'phyexam',
 )
 
 try:

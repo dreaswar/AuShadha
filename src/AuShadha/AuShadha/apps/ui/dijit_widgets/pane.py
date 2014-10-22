@@ -8,10 +8,10 @@
 
 from cStringIO import StringIO
 import yaml
+import json
 
 # General Django Imports----------------------------------
 from django.http import Http404, HttpResponse
-from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.template import Template, Context, RequestContext
 from django.contrib.auth.decorators import login_required
@@ -59,9 +59,9 @@ def render_aushadha_ui_pane(request):
         error_message = "Returning UI pane variables"
 
         data = {'success': success,'error_message':error_message,'app': app_wrapper,'pane': pane_yaml}
-        json  = simplejson.dumps(data)
+        jsondata  = json.dumps(data)
 
-        return HttpResponse(json, content_type="application/json")
+        return HttpResponse(jsondata, content_type="application/json")
 
       else:
         raise Http404("No Clinic registered in AuShadha. Cannot Search! ")

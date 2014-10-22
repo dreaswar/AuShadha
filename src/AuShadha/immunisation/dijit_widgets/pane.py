@@ -12,7 +12,7 @@ import yaml
 
 # General Django Imports----------------------------------
 from django.http import Http404, HttpResponse
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.template import Template, Context
 from django.contrib.auth.decorators import login_required
@@ -78,9 +78,9 @@ def render_immunisation_pane(request, patient_id = None):
       error_message = "Returning "+ MODULE_LABEL + " app pane variables"
 
       data = {'success': success,'error_message':error_message,'app': app_wrapper,'pane': pane_yaml}
-      json  = simplejson.dumps(data)
+      jsondata = json.dumps(data)
 
-      return HttpResponse(json, content_type="application/json")
+      return HttpResponse(jsondata, content_type="application/json")
 
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
       raise Http404("Bad Request Parameters")

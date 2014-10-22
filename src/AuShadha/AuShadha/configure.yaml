@@ -36,10 +36,10 @@
 
 ################################################################################
 
-- role: Admission
-  app: admission.admission
-  module: models
-  class_name: AdmissionDetail
+#- role: Admission
+#  app: admission.admission
+#  module: models
+#  class_name: AdmissionDetail
 
 ################################################################################
 
@@ -107,77 +107,76 @@
 
 ################################################################################
 
-- role: OPD_Visit
-  app: visit.visit
-  module: models
-  class_name: VisitDetail
+#- role: OPD_Visit
+#  app: visit.visit
+#  module: models
+#  class_name: VisitDetail
 
-################################################################################
+#################################################################################
 
-- role: OPD_VisitComplaints
-  app: visit.visit_complaints
-  module: models
-  class_name: VisitComplaint
+#- role: OPD_VisitComplaints
+#  app: visit.visit_complaints
+#  module: models
+#  class_name: VisitComplaint
+#################################################################################
 
-################################################################################
+#- role: OPD_VisitHPI
+#  app: visit.visit_hpi
+#  module: models
+#  class_name: VisitHPI
 
-- role: OPD_VisitHPI
-  app: visit.visit_hpi
-  module: models
-  class_name: VisitHPI
+#################################################################################
 
-################################################################################
+#- role: OPD_VisitROS
+#  app: visit.visit_ros
+#  module: models
+#  class_name: VisitROS
 
-- role: OPD_VisitROS
-  app: visit.visit_ros
-  module: models
-  class_name: VisitROS
+#################################################################################
 
-################################################################################
+#- role: PhysicalExamination
+#  app: visit.visit_phyexam
+#  module: models
+#  class_name: PhyExamBaseModel
 
-- role: PhysicalExamination
-  app: visit.visit_phyexam
-  module: models
-  class_name: PhyExamBaseModel
+#- role: OPD_VitalExam
+#  app: visit.visit_phyexam
+#  module: models
+#  class_name: VitalExam
 
-- role: OPD_VitalExam
-  app: visit.visit_phyexam
-  module: models
-  class_name: VitalExam
+#- role: OPD_GenExam
+#  app: visit.visit_phyexam
+#  module: models
+#  class_name: GenExam
 
-- role: OPD_GenExam
-  app: visit.visit_phyexam
-  module: models
-  class_name: GenExam
+#- role: OPD_SysExam
+#  app: visit.visit_phyexam
+#  module: models
+#  class_name: SysExam
 
-- role: OPD_SysExam
-  app: visit.visit_phyexam
-  module: models
-  class_name: SysExam
+#- role: OPD_NeuroExam
+#  app: visit.visit_phyexam
+#  module: models
+#  class_name: NeuroExam
 
-- role: OPD_NeuroExam
-  app: visit.visit_phyexam
-  module: models
-  class_name: NeuroExam
+#- role: OPD_MusculoSkeletalExam
+#  app: visit.visit_phyexam
+#  module: models
+#  class_name: MusculoSkeletalExam
 
-- role: OPD_MusculoSkeletalExam
-  app: visit.visit_phyexam
-  module: models
-  class_name: MusculoSkeletalExam
+#- role: OPD_VascExam
+#  app: visit.visit_phyexam
+#  module: models
+#  class_name: VascExam
 
-- role: OPD_VascExam
-  app: visit.visit_phyexam
-  module: models
-  class_name: VascExam
+#################################################################################
 
-################################################################################
-
-- role: OPD_VisitSOAP
-  app: visit.visit_soap
-  module: models
-  class_name: VisitSOAP
-  
-- role: OPD_AssessmentAndPlan
-  app: visit.visit_assessment_and_plan
-  module: models
-  class_name: VisitAssessmentAndPlan
+#- role: OPD_VisitSOAP
+#  app: visit.visit_soap
+#  module: models
+#  class_name: VisitSOAP
+#  
+#- role: OPD_AssessmentAndPlan
+#  app: visit.visit_assessment_and_plan
+#  module: models
+#  class_name: VisitAssessmentAndPlan

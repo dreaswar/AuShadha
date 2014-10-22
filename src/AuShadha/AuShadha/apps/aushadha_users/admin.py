@@ -17,7 +17,9 @@ class AuShadhaUserInline(admin.StackedInline):
 class AuShadhaUserCreationForm(ModelForm):
 
     class Meta:
-        model = AuShadhaUser
+        #model = AuShadhaUser
+        fields = [x.name for x in AuShadhaUser._meta.fields if x.name != 'id']
+        exclude = []
 
     def save(self, commit=True):
         # Save the provided password in hashed format

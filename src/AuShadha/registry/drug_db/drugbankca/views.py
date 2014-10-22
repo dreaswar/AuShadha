@@ -17,7 +17,7 @@ from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -125,8 +125,8 @@ def drugbankcadrugs_search_by_drug_name(request):
                                           "?drug_name="+d.drug_name               +\
                                           "&active_ingredient="+d.drug_name
 	   data.append(data_to_append)
-           json_data = simplejson.dumps(data)
-	   return HttpResponse(json_data, content_type = 'application/json')
+           json_data = json.dumps(data)
+	   return HttpResponse(jsondata, content_type = 'application/json')
 
     else:
         raise Http404("Bad Request Method")

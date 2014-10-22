@@ -16,7 +16,7 @@ from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -51,8 +51,8 @@ def get_all_chapters_json(request):
            data_to_append['sectionIndex'] = d.sectionIndex
            data.append(data_to_append)
 
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type = 'application/json')
+        jsondata = json.dumps(data)
+        return HttpResponse(jsondata, content_type = 'application/json')
 
     else:
        return Http404("Bad Request Method")   
@@ -78,8 +78,8 @@ def get_all_diagnosis_json(request):
            data_to_append['diag_code'] = d.diag_code
            data.append(data_to_append)
 
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type = 'application/json')
+        jsondata = json.dumps(data)
+        return HttpResponse(jsondata, content_type = 'application/json')
 
     else:
        return Http404("Bad Request Method")
@@ -112,9 +112,9 @@ def icd10_diagnosis_search(request):
 	   data_to_append['diag_code'] = d.diag_code
 	   data_to_append['name'] = '%s - %s ' %(d.diag_name, d.diag_code)
 	   data.append(data_to_append)
-        json = simplejson.dumps(data)
+        jsondata = json.dumps(data)
         print json
-	return HttpResponse(json, content_type = 'application/json')
+	return HttpResponse(jsondata, content_type = 'application/json')
 
     else:
        return Http404("Bad Request Method")
@@ -153,8 +153,8 @@ def get_sections_for_chapter(request, chapter_id, output='html'):
 		 data_to_append['desc'] = section.desc
 		 data.append(data_to_append)
 	     
-	      json = simplejson.dumps(data)
-	      return HttpResponse(json, content_type = 'application/json')
+	      jsondata = json.dumps(data)
+	      return HttpResponse(jsondata, content_type = 'application/json')
 
       elif output == 'html':
           variable = RequestContext(request, {'user': user, 'sections': sections, 'chapter_obj': chapter_obj} )
@@ -204,8 +204,8 @@ def get_diagnosis_for_section(request, section_id, output = 'html'):
 		 data_to_append['diag_code'] = diag.diag_code
 		 data.append(data_to_append)
 	     
-	      json = simplejson.dumps(data)
-	      return HttpResponse(json, content_type = 'application/json')
+	      jsondata = json.dumps(data)
+	      return HttpResponse(jsondata, content_type = 'application/json')
 
       elif output == 'html':
           variable = RequestContext(request, {'user': user, 'diagnosis': diagnosis, 'section_obj': section_obj} )

@@ -22,7 +22,7 @@ from django.contrib.auth.decorators import login_required
 from django.forms.models import modelformset_factory
 from django.forms.formsets import formset_factory
 from django.core.paginator import Paginator
-from django.utils import simplejson
+import json
 
 # General Module imports-----------------------------------
 from datetime import datetime, date, time
@@ -176,8 +176,8 @@ def visit_json(request, patient_id = None):
             data_to_append['del'] = visit.get_del_url()
             data.append(data_to_append)
             i += 1
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")
+    jsondata = json.dumps(data)
+    return HttpResponse(jsondata, content_type="application/json")
 
 
 @login_required
@@ -190,19 +190,19 @@ def render_visit_json(request):
           for visit in all_v:
               print "Evaluating Visit.. "
               print visit
-              json = ModelInstanceJson(visit).return_data()
+              jsondata = ModelInstanceJson(visit).return_data()
               data.append(json)
       else:
         data = {}
-      json = simplejson.dumps(data)
+      jsondata = json.dumps(data)
       print "\n"
       print "-" *100
       print "Printing Sample Visit JSON"
       print "-" *100
-      print (simplejson.dumps(data[0]))
+      print (json.dumps(data[0]))
       print "-" *100
       print "\n"
-      return HttpResponse(json, content_type="application/json")
+      return HttpResponse(jsondata, content_type="application/json")
     else:
       raise Http404("Bad Request Method")
 
@@ -529,8 +529,8 @@ def render_visit_tree(request,patient_id = None):
                     ##dict_to_append['editUrl']     = visit.get_edit_url()
                     ##dict_to_append['delUrl']      = visit.get_del_url()
                     ## children_list.append(dict_to_append)
-            #json = simplejson.dumps(data)
-            #return HttpResponse(json, content_type="application/json")
+            #jsondata = json.dumps(data)
+            #return HttpResponse(jsondata, content_type="application/json")
     #else:
         #raise Http404("Bad Request")
 
@@ -573,8 +573,8 @@ def render_visit_list(request):
         data_to_append['del'] = visit.get_edit_url()
         data_to_append['edit'] = visit.get_del_url()
         data.append(data_to_append)
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")
+    jsondata = json.dumps(data)
+    return HttpResponse(jsondata, content_type="application/json")
 
 #
 
@@ -617,10 +617,10 @@ def get_visit_related_obj_urls(request, id=None):
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
             raise Http404("Error ! Invalid Request Parameters. ")
         except (VisitDetail.DoesNotExist):
-            json = simplejson.dumps(data)
+            jsondata = json.dumps(data)
             return render_to_response('application/json', json)
 
-        json = simplejson.dumps(data)
+        jsondata = json.dumps(data)
         return render_to_response('application/json', json)
 
     else:
@@ -1114,8 +1114,8 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
             data = {'success': success,
                     'error_message': error_message
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404(" Error ! Unsupported Request..")
@@ -1563,8 +1563,8 @@ def visit_detail_edit(request, visit_id = None):
             data = {'success': success,
                     'error_message': error_message
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
         else:
             raise Http404(
                 "ERROR!  The visit has not associated complaints, HPI or ROS to edit")
@@ -1592,14 +1592,14 @@ def visit_detail_del(request, visit_id = None):
             success = True
             error_message = "Successfully Deleted Visit."
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
         else:
             success = False
             error_message = "Insufficient Permission. Could not delete."
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
     else:
         raise Http404(" Error ! Unsupported Request..")
 
@@ -1626,15 +1626,15 @@ def visit_detail_close(request, visit_id = None):
             error_message = "Successfully Closed Visit."
             data = {
                 'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
         else:
             success = False
             error_message = "Insufficient Permissions to Change Visit"
             data = {
                 'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
     else:
         raise Http404(" Error ! Unsupported Request..")
 
@@ -1710,8 +1710,8 @@ def visit_follow_up_add(request, visit_id = None):
             data = {'success': success,
                     'error_message': error_message
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
         
         else:
             raise Http404(" Error ! Unsupported Request..")
@@ -1786,8 +1786,8 @@ def visit_follow_up_edit(request, follow_up_id = None):
             data = {'success': success,
                     'error_message': error_message
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404(" Error ! Unsupported Request..")
@@ -1821,14 +1821,14 @@ def visit_follow_up_del(request, follow_up_id = None):
             success = True
             error_message = "Successfully Deleted Visit."
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
         else:
             success = False
             error_message = "Insufficient Permission. Could not delete."
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
     else:
         raise Http404(" Error ! Unsupported Request..")
 
@@ -1895,8 +1895,8 @@ def visit_complaint_add(request, visit_id=None):
         data = {'success': success,
                 'error_message': error_message
                 }
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type='application/json')
+        jsondata = json.dumps(data)
+        return HttpResponse(jsondata, content_type='application/json')
     else:
         raise Http404(" Error ! Unsupported Request..")
 
@@ -1926,14 +1926,14 @@ def visit_complaint_del(request, complaint_id=None):
             success = True
             error_message = "Successfully Deleted Visit Complaint"
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
         else:
             success = False
             error_message = "Insufficient Permission. Could not delete."
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
     else:
         raise Http404(" Error ! Unsupported Request..")
 

@@ -16,7 +16,7 @@ from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -49,8 +49,8 @@ def demographics_json(request, patient_id = None):
 
         patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
         demographics_obj = Demographics.objects.filter(patient_detail=patient_detail_obj)
-        json = generate_json_for_datagrid(demographics_obj)
-        return HttpResponse(json, content_type="application/json")
+        jsondata = generate_json_for_datagrid(demographics_obj)
+        return HttpResponse(jsondata, content_type="application/json")
 
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
       raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -132,8 +132,8 @@ def demographics_add(request, patient_id = None):
                           'error_message': error_message,
                           'form_errors': form_errors
                           }
-              json = simplejson.dumps(data)
-              return HttpResponse(json, content_type='application/json')
+              jsondata = json.dumps(data)
+              return HttpResponse(jsondata, content_type='application/json')
 
           else:
               raise Http404("BadRequest: Unsupported Request Method")
@@ -201,8 +201,8 @@ def demographics_edit(request, demographics_id  = None):
                     'error_message': error_message, 
                     'form_errors':form_errors
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
     
         else:
             raise Http404("BadRequest: Unsupported Request Method")
@@ -234,8 +234,8 @@ def demographics_del(request, demographics_id = None):
                     'editUrl': None,
                     'delUrl': None
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
           else:
               raise Http404("BadRequest: Unsupported Request Method")

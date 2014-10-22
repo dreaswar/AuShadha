@@ -9,7 +9,7 @@ from django.template import RequestContext
 from django.contrib.auth.models import User
 from django.template import Template, Context
 
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 

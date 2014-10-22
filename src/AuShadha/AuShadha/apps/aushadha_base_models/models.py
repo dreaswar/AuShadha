@@ -28,9 +28,9 @@ from django.db import models
 from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 from django import forms
-from django.utils import simplejson
+import json
 from django.utils.safestring import mark_safe
-from django.core.serializers import json
+#from django.core.serializers import json
 from django.core.serializers.json import DjangoJSONEncoder
 
 

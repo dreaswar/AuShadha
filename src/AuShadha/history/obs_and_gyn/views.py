@@ -24,9 +24,9 @@ from django.views.decorators.debug import sensitive_post_parameters
 
 from django.core.paginator import Paginator
 
-from django.utils import simplejson
+import json
 from django.core import serializers
-from django.core.serializers import json
+#from django.core.serializers import json
 from django.core.serializers.json import DjangoJSONEncoder
 
 from django.contrib.auth.views import login, logout
@@ -136,8 +136,8 @@ def obstetric_history_detail_add(request, id):
             else:
                 data = {"success": False, "error_message":
                         "Error!  Forms could not be saved"}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type="application/json")
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type="application/json")
         else:
             raise Http404(
                 "BadRequest: Unsupported Request Method. AJAX status is:: " + unicode(request.is_ajax()))
@@ -196,8 +196,8 @@ def obstetric_history_detail_edit(request, id):
                             "addUrl": None,
                             }
 #          data             = generate_json_for_datagrid(obs_and_gyn_history_obj)
-                    json = simplejson.dumps(data)
-                    return HttpResponse(json, content_type='application/json')
+                    jsondata = json.dumps(data)
+                    return HttpResponse(jsondata, content_type='application/json')
                 else:
                     success = False
                     error_message = "Error Occured. Obstetric History Data data could not be added."
@@ -206,8 +206,8 @@ def obstetric_history_detail_edit(request, id):
                         form_errors += '<p>' + error + '</p>'
                     data = {'success': success, 'error_message': error_message, 'form_errors':
                             form_errors}
-                    json = simplejson.dumps(data)
-                    return HttpResponse(json, content_type='application/json')
+                    jsondata = json.dumps(data)
+                    return HttpResponse(jsondata, content_type='application/json')
             except ValueError or AttributeError or TypeError:
                 raise Http404("BadRequest: Server Error")
             except ObstetricHistoryDetail.DoesNotExist:
@@ -243,8 +243,8 @@ def obstetric_history_detail_del(request, id):
                     'editUrl': None,
                     'delUrl': None
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
         else:
             raise Http404("BadRequest: Unsupported Request Method")
     else:

@@ -17,7 +17,7 @@ from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -43,7 +43,7 @@ from .models import (
 # ==========================
 
 def to_json(data):
-    return simplejson.dumps(data)
+    return json.dumps(data)
     
 # ==========================
 
@@ -68,10 +68,10 @@ def icd10pcs_code_search(request):
         
         #----------- PERFORM SEARCH HERE ----------
         
-        json = to_json(data)
+        jsondata = to_json(data)
         #print json
         
-        return HttpResponse(json, content_type = 'application/json')
+        return HttpResponse(jsondata, content_type = 'application/json')
     
     return Http404("Bad Request Method")
 

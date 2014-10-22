@@ -8,7 +8,7 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
 from django.template import Template, Context
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -58,5 +58,5 @@ class FamilyHistoryTree( object ):
       y =  self.yaml_file
       tree_node = DijitTree()
       #Render the Nodes here..
-      json = tree_node.to_json()
+      jsondata = tree_node.to_json()
       return json

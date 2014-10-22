@@ -54,10 +54,10 @@ class MedicalHistory(AuShadhaBaseModel):
                                          blank=True
                                          )
 
-    active = models.BooleanField("Active?")
-    infectious_disease = models.BooleanField()
-    allergic_disease = models.BooleanField()
-    pregnancy_warning = models.BooleanField()
+    active = models.BooleanField("Active?",default=None)
+    infectious_disease = models.BooleanField(default=None)
+    allergic_disease = models.BooleanField(default = None)
+    pregnancy_warning = models.BooleanField(default = None)
 
     remarks = models.TextField(max_length=1000,
                                help_text="Any Other Remarks",

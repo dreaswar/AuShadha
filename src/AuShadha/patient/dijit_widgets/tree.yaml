@@ -243,17 +243,19 @@ preventives: &PREVENTIVES
 #   returns: json
 {%endcomment%}
 
-visits: &VISITS
-  name : Visits
-  type: application
-  module_type: visit_module
-  module_name: visit
-  id : VISITS
-  ondblclick: {{patient_detail_obj.urls.pane.visit}}
-  onrclick: null
-  onclick: null
-  redirect: !!int 1
-  returns: json
+{%comment%}
+#visits: &VISITS
+#  name : Visits
+#  type: application
+#  module_type: visit_module
+#  module_name: visit
+#  id : VISITS
+#  ondblclick: {{patient_detail_obj.urls.pane.visit}}
+#  onrclick: null
+#  onclick: null
+#  redirect: !!int 1
+#  returns: json
+{%endcomment%}
 
 {% comment %}
 #icd_10: &ICD_10

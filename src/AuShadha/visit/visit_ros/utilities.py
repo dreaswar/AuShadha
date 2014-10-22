@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
-from django.utils import simplejson
+import json
 
 #from django.template.loader import get_template
 #from django.template import Context
@@ -152,5 +152,5 @@ def import_active_visit_ros(request, visit_id = None):
         error_message = "No ROS to import..."
 
     data = {'success': success, 'error_message': error_message, 'return_data': ros_data }
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")  
+    jsondata = json.dumps(data)
+    return HttpResponse(jsondata, content_type="application/json")  

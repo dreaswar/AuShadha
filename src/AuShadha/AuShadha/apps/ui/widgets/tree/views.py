@@ -17,7 +17,7 @@
 #from django.views.decorators.csrf import csrf_protect
 #from django.views.decorators.debug import sensitive_post_parameters
 #from django.core import serializers
-#from django.core.serializers import json
+##from django.core.serializers import json
 #from django.core.serializers.json import DjangoJSONEncoder
 #from django.core.urlresolvers import reverse
 
@@ -25,7 +25,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.utils import simplejson
+import json
 
 # Application Specific Model Imports-----------------------
 import AuShadha.settings as settings
@@ -199,8 +199,8 @@ def patient(request):
                                               #"id": "ICD_10_PROCEDURE_CODES"
                                             #})
 
-            json = tree.to_json()
-            return HttpResponse(json, content_type="application/json")
+            jsondata = tree.to_json()
+            return HttpResponse(jsondata, content_type="application/json")
 
     else:
         raise Http404("Bad Request")
@@ -456,7 +456,7 @@ def visit(request, patient_id=None):
             media.add_child_node(images)
 
 
-            json = tree.to_json()
-            return HttpResponse(json, content_type="application/json")
+            jsondata = tree.to_json()
+            return HttpResponse(jsondata, content_type="application/json")
     else:
         raise Http404("Bad Request")

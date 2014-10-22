@@ -11,7 +11,7 @@ from cStringIO import StringIO
 
 # General Django Imports----------------------------------
 from django.http import Http404, HttpResponse
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.template import Template, Context
@@ -65,9 +65,9 @@ def render_fda_drug_db_pane(request):
               'app': app_wrapper,
               'pane': pane_yaml
               }
-      json  = simplejson.dumps(data)
+      jsondata = json.dumps(data)
 
-      return HttpResponse(json, content_type="application/json")
+      return HttpResponse(jsondata, content_type="application/json")
 
   
   else:

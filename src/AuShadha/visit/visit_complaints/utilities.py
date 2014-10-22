@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.forms.models import modelformset_factory
 from django.forms.formsets import formset_factory
 from django.core.paginator import Paginator
-from django.utils import simplejson
+import json
 
 # General Module imports-----------------------------------
 from datetime import datetime, date, time
@@ -122,8 +122,8 @@ def get_all_patient_complaints(request, visit_id = None):
             data_to_append['del'] = medhistory.urls['del']
             data.append(data_to_append)
 
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")
+    jsondata = json.dumps(data)
+    return HttpResponse(jsondata, content_type="application/json")
 
 
 @login_required
@@ -210,5 +210,5 @@ def import_active_complaints(request, visit_id = None):
         error_message = "No Active Complaints to import..."
         data = {'success': success, 'error_message': error_message, 'return_data': complaint_data }
 
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")  
+    jsondata = json.dumps(data)
+    return HttpResponse(jsondata, content_type="application/json")  

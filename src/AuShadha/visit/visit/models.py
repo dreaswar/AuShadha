@@ -296,7 +296,7 @@ class VisitDetail(AuShadhaBaseModel):
 
     def get_visit_complaints(self):
 
-        from django.utils import simplejson
+        import json
         v_id = self.id
 
         try:
@@ -323,7 +323,7 @@ class VisitDetail(AuShadhaBaseModel):
                 dict_to_append['visit_active'] = complaint.visit_detail.is_active
                 visit_complaint_list.append(dict_to_append)
 
-        #json = simplejson.dumps(visit_complaint_list)
+        #jsondata = json.dumps(visit_complaint_list)
         # return json
         return visit_complaint_list
 

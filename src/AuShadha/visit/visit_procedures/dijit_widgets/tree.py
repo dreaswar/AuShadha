@@ -14,10 +14,10 @@ from django.contrib.auth.models import User
 #from django.views.decorators.csrf import csrf_protect
 #from django.views.decorators.debug import sensitive_post_parameters
 #from django.core import serializers
-#from django.core.serializers import json
+##from django.core.serializers import json
 #from django.core.serializers.json import DjangoJSONEncoder
 
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -187,5 +187,5 @@ class VisitTree(object):
       procedures_node = DijitTreeNode(y['procedures'])
       visit_tree_node.add_child_node(procedures_node)
 
-      json = visit_tree_node.to_json()
+      jsondata = visit_tree_node.to_json()
       return json

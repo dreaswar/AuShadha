@@ -22,7 +22,7 @@ from django.contrib.auth.decorators import login_required
 from django.forms.models import modelformset_factory
 from django.forms.formsets import formset_factory
 from django.core.paginator import Paginator
-from django.utils import simplejson
+import json
 
 # General Module imports-----------------------------------
 from datetime import datetime, date, time
@@ -184,8 +184,8 @@ def visit_assessment_and_plan_json(request, visit_id = None):
             data.append(data_to_append)
             i += 1
 
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")
+    jsondata = json.dumps(data)
+    return HttpResponse(jsondata, content_type="application/json")
 
 
 
@@ -267,8 +267,8 @@ def visit_assessment_and_plan_add(request, visit_id = None):
                     'error_message': error_message,
                     'redirectUrl': redirectUrl
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404(" Error ! Unsupported Request..")
@@ -353,8 +353,8 @@ def visit_assessment_and_plan_edit(request, visit_assessment_and_plan_id = None)
                 redirectUrl = None
 
             data = {'success': success, 'error_message': error_message , 'redirectUrl': redirectUrl }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
              raise Http404(" Error ! Unsupported Request..")
@@ -394,8 +394,8 @@ def visit_assessment_and_plan_del(request, visit_assessment_and_plan_id = None):
                     'error_message': error_message, 
                     'redirectUrl': visit_detail_obj.urls['add']['visit_assessment_and_plan'] 
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
             raise Http404("Error ! Invalid Request Parameters. ")

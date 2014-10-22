@@ -10,7 +10,7 @@
 ########################### General Module imports #############################
 
 from datetime import datetime, date, time
-
+import json
 
 ########################### General Django Imports #############################
 
@@ -23,9 +23,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
-from django.utils import simplejson
 from django.core import serializers
-from django.core.serializers import json
 from django.core.serializers.json import DjangoJSONEncoder
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
@@ -118,19 +116,12 @@ def render_patient_json(request):
           for patient in all_p:
               print "Evaluating Patient: "
               print patient
-              json = ModelInstanceJson(patient).return_data()
-              data.append(json)
+              jsondata = ModelInstanceJson(patient).return_data()
+              data.append(jsondata)
       else:
         data = {}
-      json = simplejson.dumps(data)
-      #print "\n"
-      #print "-" *100
-      #print "Printing Sample Patient JSON"
-      #print "-" *100
-      #print (simplejson.dumps(data[0]))
-      #print "-" *100
-      #print "\n"
-      return HttpResponse(json, content_type="application/json")
+      jsondata = json.dumps(data)
+      return HttpResponse(jsondata, content_type="application/json")
     else:
       raise Http404("Bad Request Method")
 
@@ -174,8 +165,8 @@ def render_patient_info(request,patient_id = None):
               #'error_message': 'Successfully retrieved patient info',
               #'info': patient_detail_obj.__unicode__()
               #}
-      #json = simplejson.dumps(data)
-      #return HttpResponse(json, content_type='application/json')
+      #jsondata = json.dumps(data)
+      #return HttpResponse(jsondata, content_type='application/json')
       variable = RequestContext(request,
                                 {'info': patient_detail_obj}
                                 )
@@ -222,7 +213,7 @@ def patient_detail_add(request, clinic_id = None):
               success = True
               error_message = "Patient Saved Successfully"
               form_errors = None
-              #json = return_patient_json(saved_patient,success)
+              #jsondata = return_patient_json(saved_patient,success)
           else:
               form_errors = aumodelformerrorformatter_factory(patient_detail_form)
               saved_patient = None
@@ -231,7 +222,7 @@ def patient_detail_add(request, clinic_id = None):
                   'error_message':form_errors,
                   'form_errors': form_errors
                   }
-          json = simplejson.dumps(data)
+          jsondata = json.dumps(data)
 
       else:
           raise Http404('Bad Request:: Unsupported Request Method.')
@@ -240,9 +231,9 @@ def patient_detail_add(request, clinic_id = None):
         saved_patient = None
         success = False
         data = {'success':success,'error_message':"No Clinic by the specified id"}
-        json = simplejson.dumps(data)
+        jsondata = json.dumps(data)
 
-    return HttpResponse(json, content_type='application/json')
+    return HttpResponse(jsondata, content_type='application/json')
 
 
 
@@ -252,17 +243,12 @@ def patient_detail_edit(request, id):
 
     if request.user:
         user = request.user
-
         try:
             id = int(id)
             patient_detail_obj = PatientDetail.objects.get(pk=id)
-
             if not getattr(patient_detail_obj,'urls',None):
               patient_detail_obj.save()
-              #print "*" * 100
-              #print patient_detail_obj.urls['info']
-              #print "*" * 100
-        
+
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
 
@@ -270,42 +256,36 @@ def patient_detail_edit(request, id):
             raise Http404("BadRequest: Patient detail Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-
             patient_detail_edit_form = PatientDetailForm(auto_id = False, instance=patient_detail_obj)
-
             variable = RequestContext(request,
                                       {"user"   : user,
                                         "patient_detail_obj" : patient_detail_obj,
                                         "patient_detail_edit_form"   : patient_detail_edit_form
                                         }
                                       )
-
             return render_to_response('patient_detail/edit.html', variable)
 
         elif request.method == 'POST' and request.is_ajax():
             patient_detail_edit_form = PatientDetailForm(request.POST, instance=patient_detail_obj)
-
             if patient_detail_edit_form.is_valid():
                 detail_object = patient_detail_edit_form.save()
                 success = True
                 error_message = "Patient Edited Successfully"
                 form_errors = None
-                #json = return_patient_json(detail_object, success=True)
-
+                #jsondata = return_patient_json(detail_object, success=True)
             else:
                 success = False
                 error_message = "Error:: Patient Detail could not be edited."
                 form_errors = ''
                 for error in patient_detail_edit_form.errors:
                     form_errors += '<p>' + error + '</p>'
-                #json = return_patient_json(detail_object=None, success=False)
-
+                #jsondata = return_patient_json(detail_object=None, success=False)
             data  = {'success': success, 
                      'error_message': error_message, 
                      'form_errors': form_errors 
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404("BadRequest: Unsupported Request Method")
@@ -326,8 +306,8 @@ def patient_detail_del(request, id):
                             ERROR!! Bad Request. Please refresh page and try again.
                            '''
                     data = {"success": success, "error_message": error_message}
-                    json = simplejson.dumps(data)
-                    return HttpResponse(json, content_type="application/json")
+                    jsondata = json.dumps(data)
+                    return HttpResponse(jsondata, content_type="application/json")
                 else:
                     raise Http404("BadRequest")
             except PatientDetail.DoesNotExist:
@@ -338,8 +318,8 @@ def patient_detail_del(request, id):
                             Refresh Page and try again..
                            '''
                     data = {"success": success, "error_message": error_message}
-                    json = simplejson.dumps(data)
-                    return HttpResponse(json, content_type="application/json")
+                    jsondata = json.dumps(data)
+                    return HttpResponse(jsondata, content_type="application/json")
                 else:
                     raise Http404(
                         "BadRequest: Patient detail Data Does Not Exist")
@@ -349,8 +329,8 @@ def patient_detail_del(request, id):
                     success = True
                     error_message = "Patient Deleted Successfully"
                     data = {"success": success, "error_message": error_message}
-                    json = simplejson.dumps(data)
-                    return HttpResponse(json, content_type="application/json")
+                    jsondata = json.dumps(data)
+                    return HttpResponse(jsondata, content_type="application/json")
                 else:
                     return HttpResponseRedirect('/')
             else:
@@ -358,8 +338,8 @@ def patient_detail_del(request, id):
                     success = False
                     error_message = "ERROR ! No Priviliges to Delete..."
                     data = {"success": success, "error_message": error_message}
-                    json = simplejson.dumps(data)
-                    return HttpResponse(json, content_type="application/json")
+                    jsondata = json.dumps(data)
+                    return HttpResponse(jsondata, content_type="application/json")
                 else:
                     return HttpResponseRedirect('/')
         else:

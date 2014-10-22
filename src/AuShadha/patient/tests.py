@@ -6,7 +6,7 @@ Replace this with more appropriate tests for your application.
 """
 
 from django.test import TestCase
-from django.utils import simplejson
+import json
 #from .models import PatientDetail
 
 DIJIT_TREE_LIST = [ 
@@ -55,7 +55,7 @@ class SimpleTest(TestCase):
       #return unicode(self.__call__())
 
     #def as_json(self):
-      #return simplejson.dumps(self.exportable_fields)
+      #return json.dumps(self.exportable_fields)
 
     #def get_all_json_exportable_fields(self):
       #""" 

@@ -15,10 +15,7 @@
 
 """
 
-import json as JSON
-#from django.utils import simplejson
-#from django.core import serializers
-#from django.core.serializers import json
+import json 
 #from django.core.serializers.json import DjangoJSONEncoder
 
 
@@ -88,7 +85,7 @@ class DijitTreeNode(object):
     return self.node
 
   def to_json(self):
-    return JSON.dumps(self.node)
+    return json.dumps(self.node)
 
   #def set(self,key,value):
     #return self.__setitem__(key,value)
@@ -244,7 +241,7 @@ class DijitTree(object):
     return self.node
 
   def to_json(self):
-    return JSON.dumps(self.node)
+    return json.dumps(self.node)
 
 
 

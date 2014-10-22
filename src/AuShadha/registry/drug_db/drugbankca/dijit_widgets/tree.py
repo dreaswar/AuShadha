@@ -18,7 +18,7 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
 from django.template import Template, Context
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -83,7 +83,7 @@ class DrugBankCaDrugsTree( object ):
           c  =  DijitTreeNode( v )
           tree.add_child_node(c)
           print("Added ,", c , " to Tree")
-      json = tree.to_json()
+      jsondata = tree.to_json()
       return json
 
 

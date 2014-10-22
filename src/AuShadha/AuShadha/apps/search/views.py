@@ -14,6 +14,7 @@
 # General Module imports-----------------------------------
 from datetime import datetime, date, time
 import importlib
+import json
 
 # General Django Imports----------------------------------
 from django.shortcuts import render_to_response
@@ -25,9 +26,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
-from django.utils import simplejson
 from django.core import serializers
-from django.core.serializers import json
 from django.core.serializers.json import DjangoJSONEncoder
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
@@ -76,7 +75,7 @@ def aushadha_patient_search(request, patient_id= None):
               pat_obj = PatientDetail.objects.filter(full_name__icontains=name)
           else:
               pat_obj = PatientDetail.objects.filter(full_name__icontains=name)
-          json = []
+          jsondata = []
 
           if pat_obj:
               for patient in pat_obj:
@@ -93,17 +92,16 @@ def aushadha_patient_search(request, patient_id= None):
                   data_to_append['paneUrl'] = reverse('render_patient_pane_with_id', 
                                                       kwargs={'patient_id': patient.id}
                                                       )
-                  json.append(data_to_append)
-          json = simplejson.dumps(json)
-          return HttpResponse(json, content_type="application/json")
+                  jsondata.append(data_to_append)
+          jsondump = json.dumps(jsondata)
+          return HttpResponse(jsondump, content_type="application/json")
 
       elif patient_id:
 
           try:
             patient_id = int( patient_id )
             patient = PatientDetail.objects.get(pk= patient_id)
-            json = []
-
+            jsondata = []
             if patient:
                 data_to_append = {}
                 data_to_append['name'] = patient.full_name
@@ -118,11 +116,9 @@ def aushadha_patient_search(request, patient_id= None):
                 data_to_append['paneUrl'] = reverse( 'render_patient_pane_with_id', 
                                                       kwargs={'patient_id': patient.id} 
                                                     )
-
-                json.append(data_to_append)
-
-            json = simplejson.dumps(json)
-            return HttpResponse(json, content_type="application/json")
+                jsondata.append(data_to_append)
+            jsondump = json.dumps(jsondata)
+            return HttpResponse(jsondump, content_type="application/json")
 
           except(TypeError, KeyError, NameError, AttributeError):
               raise Http404("ERROR ! Bad Parameters. No Patients in result.")
@@ -269,13 +265,13 @@ def aushadha_patient_search(request, patient_id= None):
                               #"sex": "",
                               #}
             #patient_id_list.append(dict_to_append)
-        #json = simplejson.dumps(patient_id_list)
-        #str_to_construct = simplejson.dumps(patient_id_list)
+        #jsondata = json.dumps(patient_id_list)
+        #str_to_construct = json.dumps(patient_id_list)
         #f = open(
             #os.path.join(settings.CUSTOM_SCRIPT_ROOT, 'patient_id_list.json'), 'w')
         #f.write(str_to_construct)
         #f.close()
-        #return HttpResponse(json, content_type='application/json')
+        #return HttpResponse(jsondata, content_type='application/json')
     #else:
         #raise Http404("Bad Request..")
 
@@ -326,15 +322,15 @@ def aushadha_patient_search(request, patient_id= None):
                               #"sex": "",
                               #}
             #hospital_id_list.append(dict_to_append)
-        #json = simplejson.dumps(hospital_id_list)
+        #jsondata = json.dumps(hospital_id_list)
 
 ##    str_to_construct = "var PATIENT_LIST = " + str(hospital_id_list) +";"
-        #str_to_construct = simplejson.dumps(hospital_id_list)
+        #str_to_construct = json.dumps(hospital_id_list)
         #f = open(
             #os.path.join(settings.CUSTOM_SCRIPT_ROOT, 'patient_list.json'), 'w')
         #f.write(str_to_construct)
         #f.close()
-        #return HttpResponse(json, content_type='application/json')
+        #return HttpResponse(jsondata, content_type='application/json')
     #else:
         #raise Http404("Bad Request..")
 
@@ -390,14 +386,14 @@ def aushadha_patient_search(request, patient_id= None):
                               #"sex": "",
                               #}
             #patient_name_list.append(dict_to_append)
-        #json = simplejson.dumps(patient_name_list)
+        #jsondata = json.dumps(patient_name_list)
 
-        #str_to_construct = simplejson.dumps(patient_name_list)
+        #str_to_construct = json.dumps(patient_name_list)
         #f = open(
             #os.path.join(settings.CUSTOM_SCRIPT_ROOT, 'patient_name_list.json'), 'w')
         #f.write(str_to_construct)
         #f.close()
-        #return HttpResponse(json, content_type='application/json')
+        #return HttpResponse(jsondata, content_type='application/json')
     #else:
         #raise Http404("Bad Request..")
 

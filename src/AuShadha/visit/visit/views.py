@@ -22,7 +22,7 @@ from django.contrib.auth.decorators import login_required
 from django.forms.models import modelformset_factory
 from django.forms.formsets import formset_factory
 from django.core.paginator import Paginator
-from django.utils import simplejson
+import json
 
 # General Module imports-----------------------------------
 from datetime import datetime, date, time
@@ -151,8 +151,8 @@ def visit_json(request, patient_id = None):
               data_to_append['del'] = visit.urls['del']
               data.append(data_to_append)
 
-      json = simplejson.dumps(data)
-      return HttpResponse(json, content_type="application/json")
+      jsondata = json.dumps(data)
+      return HttpResponse(jsondata, content_type="application/json")
 
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -227,19 +227,19 @@ def render_visit_json(request):
           for visit in all_v:
               print "Evaluating Visit.. "
               print visit
-              json = ModelInstanceJson(visit).return_data()
+              jsondata = ModelInstanceJson(visit).return_data()
               data.append(json)
       else:
         data = {}
-      json = simplejson.dumps(data)
+      jsondata = json.dumps(data)
       print "\n"
       print "-" *100
       print "Printing Sample Visit JSON"
       print "-" *100
-      print (simplejson.dumps(data[0]))
+      print (json.dumps(data[0]))
       print "-" *100
       print "\n"
-      return HttpResponse(json, content_type="application/json")
+      return HttpResponse(jsondata, content_type="application/json")
     else:
       raise Http404("Bad Request Method")
 
@@ -319,8 +319,8 @@ def render_visit_list(request):
         data_to_append['del'] = visit.get_edit_url()
         data_to_append['edit'] = visit.get_del_url()
         data.append(data_to_append)
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")
+    jsondata = json.dumps(data)
+    return HttpResponse(jsondata, content_type="application/json")
 
 
 
@@ -395,12 +395,12 @@ def get_visit_detail_edit_pane_header(request, visit_id = None):
       if not getattr(visit_detail_obj, 'urls', None):
         visit_detail_obj.save()
 
-      json = simplejson.dumps({'id': 'EDIT_ACTIVE_VISIT_'+ str(visit_detail_obj.id), 
+      jsondata = json.dumps({'id': 'EDIT_ACTIVE_VISIT_'+ str(visit_detail_obj.id), 
                               'title': visit_detail_obj.visit_date.date().isoformat(), 
                               'url': visit_detail_obj.urls['edit'],
                               'parentTab': "OPD_VISITS_CENTER_CP_TC"
                               })
-      return HttpResponse(json, content_type='application/json')
+      return HttpResponse(jsondata, content_type='application/json')
 
     except ( NameError, TypeError, AttributeError, ValueError):
       raise Http404("Bad Parameters")
@@ -508,8 +508,8 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                         'error_message': error_message, 
                         'returnData' : returnData 
                       }
-                json = simplejson.dumps(data)
-                return HttpResponse(json, content_type='application/json')
+                jsondata = json.dumps(data)
+                return HttpResponse(jsondata, content_type='application/json')
 
             else:
                 raise Http404(" Error ! Unsupported Request..")
@@ -584,8 +584,8 @@ def visit_detail_edit(request, visit_id = None):
             data = {'success': success,
                     'error_message': error_message
                     }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404(" Error ! Unsupported Request..")          
@@ -613,8 +613,8 @@ def visit_detail_del(request, visit_id = None):
             success = True
             error_message = "Successfully Deleted Visit."
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
             raise Http404("Error ! Invalid Request Parameters. ")
@@ -645,8 +645,8 @@ def visit_detail_close(request, visit_id = None):
             success = True
             error_message = "Successfully Closed Visit."
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         except (TypeError, NameError, ValueError, AttributeError, KeyError):
             raise Http404("Error ! Invalid Request Parameters. ")

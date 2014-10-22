@@ -13,12 +13,12 @@
 # General Module imports
 from datetime import datetime, date, time
 import importlib
+import json
 
 # General Django Imports
 from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
-from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -95,8 +95,9 @@ def installed_apps(request):
             'installed_apps':installed_apps,
             'UI': serialise_ui(UI)
             }
-    json = simplejson.dumps(data)
-    return HttpResponse(json, content_type='application/json')
+    print( dir(json))
+    jsondata = json.dumps(data)
+    return HttpResponse(jsondata, content_type='application/json')
 
   else:
     raise Http404("Bad Request Method")

@@ -17,7 +17,7 @@ from django.template import RequestContext
 #from django.core.context_processors import csrf
 from django.contrib.auth.models import User
 
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -51,8 +51,8 @@ def allergy_list_json(request, patient_id = None):
       patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
       allergy_list_obj = Allergy.objects.filter(
           patient_detail=patient_detail_obj)
-      json = generate_json_for_datagrid(allergy_list_obj)
-      return HttpResponse(json, content_type="application/json")
+      jsondata = generate_json_for_datagrid(allergy_list_obj)
+      return HttpResponse(jsondata, content_type="application/json")
 
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -131,8 +131,8 @@ def allergy_list_add(request, patient_id = None):
                 "form_errors": None,
                 "addData": addData
             }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404("BadRequest: Unsupported Request Method")
@@ -208,8 +208,8 @@ def allergy_list_edit(request, allergy_list_id = None):
                 "form_errors": None,
                 "addData": addData
             }
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404("BadRequest: Unsupported Request Method")
@@ -242,8 +242,8 @@ def allergy_list_del(request, allergy_list_id = None):
             success = True
             error_message = "Allergy Data Deleted Successfully"
             data = {'success': success, 'error_message': error_message}
-            json = simplejson.dumps(data)
-            return HttpResponse(json, content_type='application/json')
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404("BadRequest: Unsupported Request Method")

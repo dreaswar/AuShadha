@@ -12,7 +12,7 @@
  They are old code that needs to be moved into the respective app/queries.py module.
 """
 
-#from django.utils import simplejson
+#import json
 
 #from AuShadha.apps.ui.ui import ui as UI
 
@@ -193,7 +193,7 @@ def get_patient_complaints(patient):
                     dict_to_append[
                         'visit_fu'] = complaint.visit_detail.has_fu_visits()
                     visit_complaint_list.append(dict_to_append)
-    #json = simplejson.dumps(visit_complaint_list)
+    #jsondata = json.dumps(visit_complaint_list)
     #return json
     return visit_complaint_list
 

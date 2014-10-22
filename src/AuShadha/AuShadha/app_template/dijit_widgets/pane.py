@@ -11,7 +11,7 @@ import yaml
 
 # General Django Imports----------------------------------
 from django.http import Http404, HttpResponse
-from django.utils import simplejson
+import json
 from django.core.urlresolvers import reverse
 from django.template import Template, Context
 from django.contrib.auth.decorators import login_required

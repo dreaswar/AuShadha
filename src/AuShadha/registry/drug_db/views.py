@@ -9,6 +9,7 @@
 import os
 import sys
 from datetime import datetime, date, time
+import json
 
 # General Django Imports----------------------------------
 
@@ -16,7 +17,6 @@ from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
-from django.utils import simplejson
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -68,8 +68,8 @@ def fda_drug_db_json_all_drugs(request):
            data.append(json_data)
      else:
         data = {}
-     json_output = simplejson.dumps(data)
-     response = HttpResponse(json_output, content_type="application/json")
+     jsondata_output = json.dumps(data)
+     response = HttpResponse(jsondata_output, content_type="application/json")
      response['Content-Range'] = 'items'+str(query_start)+'-'+str(query_end)+'/'+ str( len(all_drugs))
      return response
   else:
@@ -107,42 +107,38 @@ def fda_drug_db_search(request):
 
     user = request.user
     search_for = request.GET.get('drug_name')
-
     if request.method == 'GET':
-
         if search_for == '*' or search_for == ' ':
           drugs = FDADrugs.objects.all()[:25]
-
         else:
            search_for = search_for.split('*')[0]
            print( "Searching for FDA Drugs containing ", search_for)
            drugs = FDADrugs.objects.filter(drug_name__istartswith = search_for)[:25]
-
         data = []
         print drugs
-	for d in drugs:
-	   data_to_append = {}
-	   data_to_append['drug_name'] = d.drug_name.title()
-	   data_to_append['dosage'] = d.dosage
-	   data_to_append['id'] = d.id
-           data_to_append['absolute_url'] = d.get_absolute_url()
-	   data_to_append['active_ingredient'] = '%s - %s as %s ' %(d.drug_name.title(), d.dosage,d.form)
-           data_to_append['url'] = reverse('drugbankcadrugs_summary_by_drug_name')+"?drug_name="+d.drug_name+"&active_ingredient="+d.active_ingredient
-	   data.append(data_to_append)
-        json_data = simplejson.dumps(data)
-	return HttpResponse(json_data, content_type = 'application/json')
-
+        for d in drugs:
+            data_to_append = {}
+            data_to_append['drug_name'] = d.drug_name.title()
+            data_to_append['dosage'] = d.dosage
+            data_to_append['id'] = d.id
+            data_to_append['absolute_url'] = d.get_absolute_url()
+            data_to_append['active_ingredient'] = '%s - %s as %s ' %(d.drug_name.title(), 
+                                                                     d.dosage,d.form)
+            data_to_append['url'] = reverse('drugbankcadrugs_summary_by_drug_name')+ \
+                                    "?drug_name="+d.drug_name+\
+                                    "&active_ingredient="+d.active_ingredient
+            data.append(data_to_append)
+        jsondata = json.dumps(data)
+        return HttpResponse(jsondata, content_type = 'application/json')
     else:
        return Http404("Bad Request Method")
 
 @login_required
 def fda_drug_db_advanced_search(request):
     user = request.user
-
     if request.method == 'GET' and request.is_ajax():
        variable = RequestContext(request, {'user': user})
        return render_to_response('drug_db/fda_drugs/advanced_search.html', variable)
-
     elif request.method == 'POST' and request.is_ajax():
         filter_by = request.POST.get('fda_drug_db_filter_by', None)   
         filter_criteria = request.POST.get('fda_drug_db_filter_criteria', None)
@@ -154,19 +150,14 @@ def fda_drug_db_advanced_search(request):
            drugs = FDADrugs.objects.filter(**d)
            if drugs:
              for d in drugs:
-   	         data_to_append = {}
-	         data_to_append['drug_name'] = d.drug_name.title()
-	         data_to_append['dosage'] = d.dosage
-	         data_to_append['id'] = d.id
+                 data_to_append = {}
+                 data_to_append['drug_name'] = d.drug_name.title()
+                 data_to_append['dosage'] = d.dosage
+                 data_to_append['id'] = d.id
                  data_to_append['absolute_url'] = d.get_absolute_url()
-	         data_to_append['active_ingredient'] = '%s - %s as %s ' %(d.drug_name.title(), d.dosage,d.form)
-	         data.append(data_to_append)
-        json_data = simplejson.dumps(data)
-	return HttpResponse(json_data, content_type = 'application/json')
-                    
+                 data_to_append['active_ingredient'] = '%s - %s as %s ' %(d.drug_name.title(), d.dosage,d.form)
+                 data.append(data_to_append)
+        jsondata = json.dumps(data)
+        return HttpResponse(jsondata, content_type = 'application/json')
     else:
        raise Http404("Bad Request. Handles only GET / POST via Ajax")
-
-
-
-

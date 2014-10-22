@@ -10,7 +10,7 @@ import os
 import sys
 import urlparse
 from datetime import datetime, date, time
-
+import json
 
 # General Django Imports
 
@@ -25,9 +25,9 @@ from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
 from django.core.paginator import Paginator
-from django.utils import simplejson
+#import json
 from django.core import serializers
-from django.core.serializers import json
+##from django.core.serializers import json
 from django.core.serializers.json import DjangoJSONEncoder
 from django.contrib.auth.views import login, logout
 from django.contrib.auth.decorators import login_required
@@ -90,8 +90,8 @@ def login_view(request, template_name='registration/login.html',
                                          </i>
                                        ''',
                     }
-        json = simplejson.dumps(data)
-        return HttpResponse(json, content_type='application/json')
+        jsondata = json.dumps(data)
+        return HttpResponse(jsondata, content_type='application/json')
     else:
         form = authentication_form(request)
 
