@@ -109,3 +109,28 @@ def home(request):
 
   else:
     raise Http404("Bad Request Method")
+
+
+@login_required
+def get_reference_apps(request):
+    if request.method == 'GET':
+        from .ui import ui as UI
+        apps = UI.get_module('ReferenceApp')
+        data = {'success': True,'apps': [app._meta.app_label.replace('_',' ').upper() for app in apps]}
+        jsondata = simplejson.dumps(data)
+        app_objs = [{'app_url': app.get_pane_url(),
+                     'app_name':app._meta.app_label.replace('_',' ').upper()
+                    } 
+                    for app in apps]
+        variable = RequestContext(request,
+                                   {'user': request.user,
+                                    #'apps': [app._meta.app_label.replace('_',' ').upper() for app in apps],
+                                    'app_objs': app_objs
+                                   })
+
+        return render_to_response('header_pane/reference_apps.html', variable)
+        #print("Reference Apps are: ")
+        #print(apps)
+        #return HttpResponse(jsondata,content_type='application/json')
+    else:
+        raise Http404("Bad Request Method")

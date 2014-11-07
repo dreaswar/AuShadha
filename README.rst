@@ -133,22 +133,11 @@ Project Structure
 
 1. docs : Contains the Requirements.txt, License.txt along with Sphinx apidoc
 
-<<<<<<< HEAD
-
-3. src : Project Source Code, Media files(Icons,Images, File uploads), Javscript
-
-
-4. README.md
-
-
-5. LICENSE.txt
-=======
 2. src : Project Source Code, Media files(Icons,Images, File uploads), Javscript
 
 3. README.md
 
 4. LICENSE.txt
->>>>>>> au_pluggable
 
 
 Plan
@@ -156,71 +145,63 @@ Plan
 
 AuShadha project is split between AuShadha-stock ( which contains AuShadha-core and some Stock applications) and Au-Pluggable ( the pluggable modules for AuShadha ). 
 
-User can freely mix and match the modules he wants to create his own AuShadha brew. 
+These two repositories are maintained side by side to encourage a basic application which most users would want to use and also provide an easy way for regional/per-user customisation. User can freely mix and match the modules he wants to create his own AuShadha brew. In other words he is not stuck with what the developer has packaged and is free to repackage it in any way he wants. 
 
-In other words he is not stuck with what the developer has packaged and is free to repackage it in any way he wants. 
-
-The AuShadha-core will help him / her create pluggable applications that integrate well into AuShadha, but user is also free to create a completely different Django application. 
-
-As long as he / she sticks to the Django pluggable practices the application can be easily integrated into AuShadha. 
-
-Of course if he were to use AuShadha-core's API to develop he can do it more easily. 
-
-AuShadha-core API is very young, mostly untested. It is very thin layer on top of Django. 
-
-<<<<<<< HEAD
-It does not force the developer to re-learn anything that would not be useful outside AuShadha. 
+The AuShadha-core will help him / her create pluggable applications that integrate well into AuShadha, but user is also free to create a completely different Django application. As long as he / she sticks to the Django pluggable practices the application can be easily integrated into AuShadha. Of course if he were to use AuShadha-core's API to develop he can do it more easily. AuShadha-core API is very young, mostly untested. It is very thin layer on top of Django. It does not force the developer to re-learn anything that would not be useful outside AuShadha. 
 
 
 
 Completed Modules
 ^^^^^^^^^^^^^^^^^^
-
-<<<<<<< HEAD
-1. AuShadha ( or AuShadha-core ) with its bundled core-apps
-2. AuShadha-PatientRegistration (aushadha_patient )
-3. AuShadha-Contact ( aushadha_demographics_contact )
-4. AuShadha-Phone  ( aushadha_demographics_phone )
-5. AuShadha-Guardian ( aushadha_demographics_guardian )
-6. AuShadha-Demographics ( aushadha_demographics )
-7. AuShadha-MedicationList ( aushadha_medication_list )
-8. AuShadha-AllergyList ( aushadha_allergy_list )
-9. AuShadha-History ( aushadha_history )
-10. AuShadha-OPD_Visit ( aushadha_visit )
-=======
-1. AuShadha-core
-2. AuShadha-PatientRegistration
-3. AuShadha-Contact
-4. AuShadha-Phone
-5. AuShadha-Guardian
-6. AuShadha-Demographics
-7. AuShadha-MedicationList
-8. AuShadha-AllergyList
-9. AuShadha-History ( Medical History, Surgical History, Social History, Family History )
-10. AuShadha-Immunisation 
-11. AuShadha-OPD_Visit Management ( Complaints, HPI, ROS, Physical Exam System Wise ) 
-12. AuShadha-ICD10-Disease Code Browser
-13. AuShadha-ICD10-PCS (Procedure Coding System Browser)
-14. AuShadha-FDA-Drug List Browser
-=======
 1. AuShadha-core  
+    - Core of AuShadha, 
+    - Providing basic utilities for fast app building and scaffolding
+
 2. AuShadha-PatientRegistration  
+    - Registration of Patient to the Clinic
+
 3. AuShadha-Contact  
-4. AuShadha-Phone  
-5. AuShadha-Guardian  
+    - Patient Address management
+
+4. AuShadha-Phone   
+    - Phone contact management
+
+5. AuShadha-Guardian   
+    - Guardian information
+
 6. AuShadha-Demographics  
+    - Management of Demographics Data
+
 7. AuShadha-MedicationList  
+    - Management of Prescriptions and Medications
+
 8. AuShadha-AllergyList  
-9. AuShadha-History ( Medical History, Surgical History, Social History, Family History )  
+    - Management of Allergies
+
+9. AuShadha-History 
+    - Medical History, Surgical History, Social History, Family History
+
 10. AuShadha-Immunisation   
-11. AuShadha-OPD_Visit Management ( Complaints, HPI, ROS, Physical Exam System Wise )   
+    - Immunisation Status management application
+
+11. AuShadha-OPD_Visit Management 
+    - Complaints, HPI, ROS, Physical Exam System Wise
+    - Orders, Prescription, Procedures (in progress)
+
 12. AuShadha-ICD10-Disease Code Browser  
-13. AuShadha-ICD10-PCS (Procedure Coding System Browser)     
-14. AuShadha-FDA-Drug List Browser integrated with some Drugbank (http://drugbank.ca) reference information  
 
->>>>>>> au_pluggable
+13. AuShadha-ICD10-PCS 
+    - Procedure Coding System Browser
 
->>>>>>> au_pluggable
+14. AuShadha-FDA-Drug List Browser integrated with some Drugbank
+    - http://drugbank.ca for reference information  
+
+15. AuShadha-vaccine_registry  
+     - CDC-Vaccine List(CVX),
+     - CDC CVX-MVX mapping, 
+     - CDC VIS 
+     - CDC Vaccine schedules for Children, Adolescents, Adults
+     - Further info at http://cdc.gov/
 
 
 Pluggable Modules under Developement
@@ -228,8 +209,12 @@ Pluggable Modules under Developement
 
 - currently under development
 
-1. aushadha_demographics_us
-2. aushadha_demographics_in
+1. aushadha_demographics_us 
+    -  Patient Demographics data collection as done in USA 
+2. aushadha_demographics_in 
+    -  Patient Demographics data collection as done in India 
+3. icd10_pcs
+    -  An alternate implementation of Derek's version of ICD10PCS app by Easwar 
 
 
 Pluggable Modules Planned

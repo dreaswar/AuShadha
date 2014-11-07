@@ -49,6 +49,7 @@ from django.core.exceptions import ValidationError
 from django import forms
 from django.contrib.auth.models import User
 
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel
 
 #======================================================================
 # CONSTANTS
@@ -148,7 +149,7 @@ class TableAxisLabel(models.Model):
     objects = TableAxisLabelManager()
     
     def __unicode__(self):
-        return "%s %s" % (self.code, self.label_fk.txt)
+        return "%s %s" % (self.code, getattr(self,'label_fk.txt', '') )
         
     class Meta:
         ordering = ['codepage','code']
@@ -167,13 +168,13 @@ class RowAxisLabel(TableAxisLabel, TableAxisLabelMixin):
 #======================================================================
 # MODELS: Table axis labels, first three axes
 
-class Section(TableAxisLabel):
+class Section(TableAxisLabel,AuShadhaBaseModel):
     pass
 
-class BodySystem(TableAxisLabel):
+class BodySystem(TableAxisLabel,AuShadhaBaseModel):
     pass
     
-class Operation(TableAxisLabel):
+class Operation(TableAxisLabel,AuShadhaBaseModel):
     defn_fk = models.ForeignKey('AppTxt', related_name='+')
     
 

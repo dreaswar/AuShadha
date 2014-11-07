@@ -69,11 +69,18 @@ def generate_json_for_datagrid(obj, success=True, error_message="Saved Successfu
                             if i.name == 'aushadhabasemodel_ptr':
                                 data[i.name] = "AuShadhaBaseModel"
                             elif i.name == "administrator":
-                                data[i.name] = getattr(
-                                    element, '__unicode__()', element.administrator.__unicode__())
+                                if element is not None: 
+                                   data[i.name] = getattr(element, 
+                                                          '__unicode__()', 
+                                                          element.administrator if getattr(element,'administrator',None) else None)
+                                else:
+                                   data[i.name] = 'None'
+
                             elif i.name == "vaccine_detail":
-                                data[i.name] = getattr(
-                                    element, '__unicode__()', element.vaccine_detail.vaccine_name)
+                                if element is not None: 
+                                    data[i.name] = getattr(element, '__unicode__()', element.vaccine_detail.__unicode__())
+                                else:
+                                    data[i.name] = 'None'
                             else:
                                 data[i.name] = getattr(element, i.name, None)
 

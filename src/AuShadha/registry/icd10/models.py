@@ -17,7 +17,7 @@ from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel
 from AuShadha.apps.clinic.models import Clinic
 
 
-class Chapter(models.Model):
+class Chapter(AuShadhaBaseModel):
 
     '''
     The ICD 10 Chapters and the sub-fields.
@@ -49,7 +49,7 @@ class Chapter(models.Model):
         return "%s: %s" % (self.chapter_name, self.chapter_desc)
 
 
-class Section(models.Model):
+class Section(AuShadhaBaseModel):
 
     '''
     The ICD 10 Section and the sub-fields.
@@ -74,7 +74,7 @@ class Section(models.Model):
         return "%s: %s" % (self.sec_id, self.diag_id)
 
 
-class Diagnosis(models.Model):
+class Diagnosis(AuShadhaBaseModel):
 
     '''
     The ICD 10 Diagnosis and the sub-fields.

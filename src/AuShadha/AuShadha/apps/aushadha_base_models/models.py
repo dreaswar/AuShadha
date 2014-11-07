@@ -235,6 +235,13 @@ class AuShadhaBaseModel(models.Model):
     def get_object_json_url(self):
         return "/AuShadha/%s_json/%s/" % (self.__model_label__, self.id)
 
+    @classmethod
+    def get_pane_url(cls):
+        return "/AuShadha/%s/%s/pane/" %(cls._meta.app_label,cls._meta.app_label)
+
+    @classmethod
+    def get_tree_url(cls):
+        return "/AuShadha/%s/%s/tree/" %(cls._meta.app_label,cls._meta.app_label)
 
 
 

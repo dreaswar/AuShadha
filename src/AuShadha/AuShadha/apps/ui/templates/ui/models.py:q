@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+  <meta name    = "generator"
+        content = "HTML Tidy for Linux (vers 6 November 2007), see www.w3.org"
+  >
+
+  {% block title %}
+  
+    <title> AuShadha </title>
+
+  {% endblock title %}
+
+
+
+<!--The global non template tagged style sheet and Dojo specific Style sheets from here-->
+
+  {% block media %}
+    <!-- Edit the file below to include custom style paths -->
+    {% include 'ui/style_links.html' %}
+
+  {% endblock media %}
+
+
+  {% block style_bits %}
+
+    <style  type="text/css">
+
+      {% include "style.css" %}
+
+    </style>
+
+  {% endblock style_bits %}
+
+
+
+  <script type="text/javascript">
+
+      /* This sets the AuShadha loading screen.
+         This has to run before DOJO loads. 
+         Hence Native JS has been used. 
+         DOM ready checks are not done.
+         The background of the DOM 'loadingOverlayLogo' is set to
+         AuShadha logo in CSS
+     */
+
+    var LOADER_STATUS_INDEX = 0;
+
+    var LOADER_TIMER = window.setInterval(setLoaderMessage,1000);
+
+    var loaderStatusMessages=[ "Starting to load the scripts...",
+                               "Finished the header pane and search widgets ...",
+                               "Finished adding the Patient Registration UI elements ...",
+                               "Added Autofiltering to patient search..",
+                               //{% if user.is_authenticated %}
+                               "Customising UI for {{user.username}}",
+                               //{% endif %}
+                               "Getting ready to load page.."
+                            ];
+
+    function setLoaderMessage(){
+      if(LOADER_STATUS_INDEX<loaderStatusMessages.length){
+        document.getElementById('aushadhaLoaderStatusMessage').innerHTML = loaderStatusMessages[LOADER_STATUS_INDEX];
+
+        console.log(document.getElementById('aushadhaLoaderStatusMessage').innerHTML);
+        LOADER_STATUS_INDEX ++;
+      }
+
+      window.onload = function(){
+        window.clearInterval(LOADER_TIMER);
+      }
+
+    }
+
+  </script>
+
+  {% block js %}
+    <!-- 
+     */
+      This is where DOJO library and other custom library are loaded.
+      Custom script links can be inserted here
+
+      dojoConfig variable is set here
+      Any alteration to the variable or adding additional packages which has be to 
+      there at load time can be done here.
+
+      This is also the file to add paths to additional JS plugins to be used. 
+
+     */
+    -->
+    {% include 'ui/script_links.html' %}
+
+  {% endblock js %}
+
+
+ <!-- Defining Global Events in Jasvascript -->
+  <script type="text/javascript">
+    /* 
+      These are Global JS files that declare several functions that are useful at many places 
+      These require DOJO library to have loaded before they are run. 
+      Hence these are listed below the 'block js' 
+    */
+
+    /* Declares several CONSTANTS useful in AuShadha */
+    {% include 'js/constants.js' %}
+
+    /* Several URLS are useful as JS variables. 
+       These require Django template substitutions. 
+       Hence put here 
+    */
+    {% include 'js/urls.js' %}
+
+    /* These are ICON paths mainly for CRUD needs. 
+       These paths are using Django template substitutions. 
+    */
+    {% include 'js/resources.js' %}
+
+    /* Forms do add, edit / delete function. 
+       Their AJAX calls updates Grids. 
+       These are common functions for AJAX POST calls
+    */
+    {% include 'js/crud.js' %}
+
+    /*Notifications are important. 
+      Dojox/Toaster class provides a excellent tool for the same. 
+      Site wide notification funcions are here 
+    */
+    {% include 'js/notification_dialog.js' %}
+
+    /* 
+       Aim
+       ---
+        The idea was to make AuShadha vim-like for the power user who wants to use keyboard
+        The idea was to have a 'modal'UI which has a COMMAND and EDIT mode
+        key_bindings allows us to access random objects with GET commands
+        on key_bindings capture, by the Dojo on event system, Dialog pops up that allows easy access
+
+       Rationale:
+       ----------
+         Medical applications are designed traditionally to be linear work flow ones. 
+         This is completely opposite to the usual workflow in a hospital where its common
+         scenario for workflow to be completely non-linear. It is tiresome to click around for this. 
+
+         It is common to have to refer to a random note from the past while typing something for a patient. 
+         As implemented in usual EMRS, it usually requires the user to leave the sceen, go elsewhere 
+         and get the information.
+
+         Keyboard events will allow the whole thing to be done with keystrokes using Dijit/Dialog
+
+       State of Development
+       --------------------
+        This JS file lags behind since it was started. 
+        This development will be reactivated once the core API of AuShadha is settled. 
+    */
+
+    {% include 'js/key_bindings.js' %}
+
+  </script>
+  
+
+
+  {% block js_bits %}
+  <!-- Any assorted JS scripts can be inserted here -->
+  {% endblock js_bits %}
+
+</head>
+
+<body class="claro">
+
+  <!-- 
+    This is the topmost container for the AuShadha application 
+
+    This is dijitised and parsed by the Dojo to make the BorderContainer
+    that houses all the widgets and layout containers under it
+  -->
+  <div id="APP_LAYOUT" 
+       style="height:100%;">
+
+    <!-- 
+      This is the container for the loading... indicator when AuShadha loads  
+      Customisation to the styles can be done at the CSS file style.css
+
+      The timings and messages displayed are done via inline JS at the top of this file
+    -->
+    <div id="aushadhaLoaderIndicator"> 
+
+      <div class="loadingOverlayLogo">        </div>  
+      <div class="loadingOverlay">            </div>  
+      <div class="loadingMessage"> 
+          <div> Loading...                       </div>
+          <div id="aushadhaLoaderStatusMessage"> </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!--
+    Several Tooltips and Dialog popups are declared here. 
+    To add a tooltip and bind it to a DOM node, 
+    please edit the tooltips.html file
+
+    To add a Dialog widgets edit the dialogs_and_misc.html file
+
+    Many JS scripts use the editPatientDialog Dijit. 
+    The naming was done at a time very early AuShadha's dev course. 
+    Though a misnomer now, the same dialog does everything from 
+    grid listing, to adding, editing and deleting items. 
+    Its left there unchanged as Im too lazy to change the name :)
+  -->
+  <div id="tooltipsAndDialogs" style="display: none; ">
+    <!-- TOOLTIPS --> 
+    {% include 'tooltips.html' %} 
+    <!-- END TOOLTIPS -->
+
+    <!--  DIALOGS AND MISC  -->
+      {%include 'dialogs_and_misc.html' %}
+    <!--  END DIALOGS AND MISC  -->
+  </div>
+
+</body>
+</html>
+
+

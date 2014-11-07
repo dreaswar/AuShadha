@@ -7,51 +7,49 @@
      action         = "" 
      method         = "">
 
-  <script type= "dojo/on" data-dojo-event = "submit">
-
+  <script type= "dojo/on" data-dojo-event = "submit" data-dojo-args = 'evt'>
    if( this.validate() ) {
-      
       require([
        "dijit/registry", 
       ],
-      
       function(registry){
-
         addItem("{{patient_detail_obj.urls.add.immunisation}}", 
                 "newImmunisationAddForm", 
-                "IMMUNISATION_GRID"
+                "IMMUNISATION_GRID",
+                IMMUNISATION_ADD_FORM_SUBMIT_MORE
                 );
-
       });
-
      return false;
-
     }
-
     else{
-
       raiseInvalidFormSubmission();
       return false;
-    
     }
-
   </script>
 
   <table>
-
     {{immunisation_form}}
-
   </table>
   
 
-  <button 	type 	          = "submit" 
+  <button   type 	      = "submit" 
             data-dojo-type    = "dijit/form/Button"
             data-dojo-props   = "iconClass:'dijitIconSave'"
-            name 	          = "submitbutton" 
-            id 		          = "immunisation_form_submit"
             value             = "Add">
     Add
+    <script type="dojo/on" data-dojo-event="click">
+       IMMUNISATION_ADD_FORM_SUBMIT_MORE  = false;
+    </script>
+  </button>
 
+  <button   type 	      = "submit" 
+            data-dojo-type    = "dijit/form/Button"
+            data-dojo-props   = "iconClass:'dijitIconSave'"
+            value             = "Save &amp; Add More">
+    Save &amp; Add More
+    <script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+       IMMUNISATION_ADD_FORM_SUBMIT_MORE  = true;
+    </script>
   </button>
 
   <button   type            = "reset" 
@@ -61,13 +59,9 @@
             value           = "Reset"
             >
     Reset
-
     <script type = "dojo/on" data-dojo-event = "click">
-
       return confirm( 'This will reset the form. Proceed ? ' );
-
     </script>
-
   </button>
 
 </div>

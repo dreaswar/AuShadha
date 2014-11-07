@@ -170,8 +170,8 @@ define([
                 }
         );
         tree.startup();
-//      tree.expandAll();
-        tree.collapseAll();
+        tree.expandAll();
+        //tree.collapseAll();
 
         tree.refresh = function(){
           var treeStore = new ItemFileReadStore({url: url,
