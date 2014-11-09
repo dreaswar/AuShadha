@@ -38,26 +38,15 @@ MedicalHistory = UI.get_module("MedicalHistory")
 from .models import VisitComplaint
 
 
+# Returns True if there are no duplicates and False if there are duplicates
 def check_duplicates(complaint_to_check, visit_obj):
+  all_complaints = VisitComplaint.objects.filter(visit_detail = visit_obj)
+  for complaint in all_complaints:
 
-    all_complaints = VisitComplaint.objects.filter(visit_detail = visit_obj)
+    if complaint.complaint == complaint_to_check.complaint:
+      return False
 
-    if all_complaints:
-      for complaint in all_complaints:
-
-          if complaint.complaint != complaint_to_check.complaint:
-              continue
-
-          else:
-              if not getattr(complaint_to_check, 'id', None):
-                  return False
-              else:
-                  if complaint.id == complaint_to_check.id:
-                      continue
-                  else:
-                      return False
-    else:
-      return True
+  return True
 
 
 @login_required
@@ -67,17 +56,17 @@ def get_all_patient_complaints(request, visit_id = None):
         if visit_id:
           visit_id = int(visit_id)
         else:
-          visit_id = int(request.GET.get('visit_id'))          
+          visit_id = int(request.GET.get('visit_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         patient_detail_obj = visit_detail_obj.patient_detail
 
         if not getattr(visit_detail_obj, 'urls', None):
           visit_detail_obj.save()
-    
+
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
-    
+
     except(VisitDetail.DoesNotExist):
         raise Http404("ERROR:: Visit requested does not exist.")
 
@@ -133,17 +122,17 @@ def import_active_complaints(request, visit_id = None):
         if visit_id:
           visit_id = int(visit_id)
         else:
-          visit_id = int(request.GET.get('visit_id'))          
+          visit_id = int(request.GET.get('visit_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         patient_detail_obj = visit_detail_obj.patient_detail
 
         if not getattr(visit_detail_obj, 'urls', None):
           visit_detail_obj.save()
-    
+
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
-    
+
     except(VisitDetail.DoesNotExist):
         raise Http404("ERROR:: Visit requested does not exist.")
 
@@ -169,13 +158,13 @@ def import_active_complaints(request, visit_id = None):
 
         for complaint in visit_complaint_objs:
             if complaint.complaint not in complaint_list:
-                data = {'complaint': complaint.complaint, 
+                data = {'complaint': complaint.complaint,
                         'duration': complaint.duration + " ( As recorded on: " + complaint.visit_detail.visit_date.date().isoformat() + " )"
                         }
                 new_complaint = VisitComplaint(**data)
                 new_complaint.visit_detail = visit_detail_obj
                 new_complaint.save()
-                complaint_data.append({'complaint': new_complaint.complaint, 
+                complaint_data.append({'complaint': new_complaint.complaint,
                                     'duration': new_complaint.duration,
                                     'edit' : new_complaint.urls['edit'],
                                     'del' : new_complaint.urls['del'],
@@ -186,13 +175,13 @@ def import_active_complaints(request, visit_id = None):
 
         for medhistory in all_med_history:
             if medhistory.disease not in complaint_list:
-                data = {'complaint': medhistory.disease, 
-                        'duration': "From " + medhistory.date_of_diagnosis.isoformat() 
+                data = {'complaint': medhistory.disease,
+                        'duration': "From " + medhistory.date_of_diagnosis.isoformat()
                         }
                 new_complaint = VisitComplaint(**data)
                 new_complaint.visit_detail = visit_detail_obj
-                new_complaint.save()            
-                complaint_data.append({'complaint': new_complaint.complaint, 
+                new_complaint.save()
+                complaint_data.append({'complaint': new_complaint.complaint,
                                     'duration': new_complaint.duration,
                                     'edit' : new_complaint.urls['edit'],
                                     'del' : new_complaint.urls['del'],
@@ -211,4 +200,4 @@ def import_active_complaints(request, visit_id = None):
         data = {'success': success, 'error_message': error_message, 'return_data': complaint_data }
 
     json = simplejson.dumps(data)
-    return HttpResponse(json, content_type="application/json")  
+    return HttpResponse(json, content_type="application/json")
