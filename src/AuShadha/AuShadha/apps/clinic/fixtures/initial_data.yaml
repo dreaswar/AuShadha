@@ -42,5 +42,50 @@
         "clinic_staff_role": "doctor",
         "aushadha_user_role": 'aushadha_admin'
     }
+},
+{
+    "pk": 2, 
+    "model": "clinic.staff", 
+    "fields": {
+        "is_staff_hod": true, 
+        "department": 2, 
+        "user": 2, 
+        "clinic_staff_role": "doctor",
+        "aushadha_user_role": 'aushadha_admin'
+    }
+},
+{
+    "pk": 3, 
+    "model": "clinic.staff", 
+    "fields": {
+        "is_staff_hod": true, 
+        "department": 2, 
+        "user": 4, 
+        "clinic_staff_role": "doctor",
+        "aushadha_user_role": 'aushadha_admin'
+    }
+},
+{
+    "pk": 4, 
+    "model": "clinic.staff", 
+    "fields": {
+        "is_staff_hod": true, 
+        "department": 2, 
+        "user": 5, 
+        "clinic_staff_role": "secretary",
+        "aushadha_user_role": 'aushadha_user'
+    }
+},
+{
+    "pk": 5, 
+    "model": "clinic.staff", 
+    "fields": {
+        "is_staff_hod": true, 
+        "department": 2, 
+        "user": 3, 
+        "clinic_staff_role": "non_clinical_staff",
+        "aushadha_user_role": 'aushadha_admin'
+    }
 }
+
 ]

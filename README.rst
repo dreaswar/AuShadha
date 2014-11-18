@@ -58,7 +58,7 @@ Installing Dependencies for AuShadha
 
 1. For AuShadha requirements please refer to REQUIREMENTS.txt in docs/
 
-2. AuShadha has been tested and developed with Python 2.7, Django 1.6x and Dojo 1.9x in Linux. It should work as long as dependencies are satisfied.
+2. AuShadha has been tested and developed with Python 2.7, Django 1.7x and Dojo 1.9x in Linux. It should work as long as dependencies are satisfied.
 
 
 Creating a Virtual Environment to run:
@@ -96,12 +96,14 @@ Prepare and Download Dojo Javascript Library
 
 
    Download the latest Dojo library and extract it into `AuShadha/src/AuShadha/AuShadha/media/plugins/dojo/`
+ 
+   You may need to create a 'dojo' directory inside `AuShadha/src/AuShadha/AuShadha/media/plugins/` directory
 
 
    After extracting the folder structure should be like: dojo/dojo/ dojo/dojox/ dojo/dijit/ 
 
   
-   AuShadha has been tested with Dojo 1.8.1
+   AuShadha has been tested with Dojo 1.9x
 
 
 
@@ -109,7 +111,9 @@ Prepare the database and install the fixtures
 -----------------------------------------------
 
 
-9. run `$ python manage.py syncdb && python manage.py runserver`
+9. run `$ python manage.py makmigrations && python.manage.py migrate`
+
+10. Run the server with `python manage.py runserver`
 
 
 
@@ -121,11 +125,21 @@ See it in action & login
 
     You will be greeted with a login page. Use username = admin, password = admin for a trial run.
 
+    By default some accounts for developers are created viz.. `dreaswar`, `richard`, `derek`. 
+
+    Users `dreaswar` and `derek` are enrolled as `doctors`
+
+    There is also a `secretary` account with same username and password of `password`
+
+    You may tweak, update or delete these in Django's admin site and assign them to groups with permission
+
+
 
 11. Please read the issues, license before using. 
 
 
     Currently AuShadha is under active development and is not fit in anyway for real world use.
+
 
 
 Project Structure
@@ -216,6 +230,12 @@ Pluggable Modules under Developement
 3. icd10_pcs
     -  An alternate implementation of Derek's version of ICD10PCS app by Easwar 
 
+4. dynamic_aushadha_models
+    - A solution to autogenerate an app, its files with scaffolding and CRUD 
+      from a model structure given as YAML file. This was designed to work with
+      South project and before Django1.7 introduced support for migrations. 
+      This is just a work in progress as South is no longer relevant for this and
+      needs to be removed. 
 
 Pluggable Modules Planned
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
