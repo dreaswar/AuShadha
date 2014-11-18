@@ -16,6 +16,7 @@
 
 # Import Django modules
 from django.db import models
+from django.contrib.auth.models import User
 
 # AuShadha Imports
 from AuShadha.apps.aushadha_users.models import AuShadhaUser
@@ -40,6 +41,14 @@ CLINIC_STAFF_ROLE = (
     ('physio', "Physiotherapist"),
     ("doctor", "Doctor"),
 )
+
+AUSHADHA_USER_ROLES = (('audhadha_admin', 'AuShadha Admin'),
+                       ('aushadha_user', 'AuShadha User'),
+                       ('aushadha_staff', 'AuShadha Staff '),
+                       ('aushadha_developer', 'AuShadha Developer'),
+                       )
+
+
 
 
 class Clinic(AuShadhaBaseModel):
@@ -244,15 +253,24 @@ class Staff(AuShadhaBaseModel):
       self._extra_url_actions = []
 
 
-    staff_detail  = models.ForeignKey(AuShadhaUser)
+#    staff_detail  = models.ForeignKey(AuShadhaUser)
     clinic_staff_role = models.CharField("Staff Role",max_length=100,
                                          help_text=" This is the Role of the Staff in the Clinic",
                                          choices=CLINIC_STAFF_ROLE)
+    aushadha_user_role = models.CharField("AuShadha User Role",
+                                          help_text=""" Users Role in AuShadha Software.
+                                                           This is different from the role in the Clinic""",
+                                          max_length=30,
+                                          choices=AUSHADHA_USER_ROLES,
+                                          default="aushadha_user"
+                                          )
+    user = models.OneToOneField(User)
     is_staff_hod = models.BooleanField("Is Staff Head of the Department",default=None)
     department    = models.ForeignKey(Department)
 
+
     def __unicode__(self):
-        return "%s" % self.staff_detail.username
+        return "%s" % self.user.username
 
     def is_staff_provider(self):
         staff_obj = self

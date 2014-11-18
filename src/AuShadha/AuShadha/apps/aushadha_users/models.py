@@ -33,7 +33,7 @@ AUSHADHA_USER_ROLES = (('audhadha_admin', 'AuShadha Admin'),
 
 
 
-class AuShadhaUser(User):
+class AuShadhaUser(models.Model):
 
     """
 
@@ -51,6 +51,7 @@ class AuShadhaUser(User):
                                           choices=AUSHADHA_USER_ROLES,
                                           default="aushadha_user"
                                           )
+    user = models.OneToOneField(User)
 
 
 class AuShadhaUserForm(AuthenticationForm):

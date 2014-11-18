@@ -30,56 +30,60 @@ class AuShadhaUserCreationForm(ModelForm):
         return user
 
 
-class AuShadhaUserAdmin(UserAdmin):
+class AuShadhaUserAdmin(admin.ModelAdmin):
+    #model = AuShadhaUser
+    pass
+
+#class AuShadhaUserAdmin(UserAdmin):
     #inlines  = [ AuShadhaUserInline ]
-    extra = 2
-    add_form = AuShadhaUserCreationForm
-    change_form = AuShadhaUserCreationForm
+#    extra = 2
+#    add_form = AuShadhaUserCreationForm
+#    change_form = AuShadhaUserCreationForm
 
     # fieldsets = (
         #(None, {'fields': ('email', 'password', 'first_name', 'last_name')}),
         #)
 
-    add_fieldsets = (
-        (None,
-         {'classes': ('wide',),
-          'fields': ('username',
-                     'email',
-                     'password',
-                     'first_name',
-                     'last_name',
-                     'is_superuser',
-                     'is_staff',
-                     'is_active',
-                     'last_login',
-                     'date_joined',
-                     'groups',
-                     'user_permissions',
-                     'aushadha_user_role'
-                     )
-          }
-         ),
-    )
+#    add_fieldsets = (
+#        (None,
+#         {'classes': ('wide',),
+#          'fields': ('username',
+#                     'email',
+#                     'password',
+#                     'first_name',
+#                     'last_name',
+#                     'is_superuser',
+#                     'is_staff',
+#                     'is_active',
+#                     'last_login',
+#                     'date_joined',
+#                     'groups',
+#                     'user_permissions',
+#                     'aushadha_user_role'
+#                     )
+#          }
+#         ),
+#    )
 
-    change_fieldsets = (
-        (None,
-         {'classes': ('wide',),
-          'fields': ('username',
-                     'email',
-                     'password',
-                     'first_name',
-                     'last_name',
-                     'is_superuser',
-                     'is_staff',
-                     'is_active',
-                     'last_login',
-                     'date_joined',
-                     'groups',
-                     'user_permissions',
-                     'aushadha_user_role'
-                     )
-          }
-         ),
-    )
+#    change_fieldsets = (
+#        (None,
+#         {'classes': ('wide',),
+#          'fields': ('username',
+#                     'email',
+#                     'password',
+#                     'first_name',
+#                     'last_name',
+#                     'is_superuser',
+#                     'is_staff',
+#                     'is_active',
+#                     'last_login',
+#                     'date_joined',
+#                     'groups',
+#                     'user_permissions',
+#                     'aushadha_user_role'
+#                     )
+#          }
+#         ),
+#    )
 
 admin.site.register(AuShadhaUser, AuShadhaUserAdmin)

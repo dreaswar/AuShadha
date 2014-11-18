@@ -1,5 +1,4 @@
 [
-
 {
     "pk": 1, 
     "model": "clinic.clinic", 
@@ -38,9 +37,38 @@
     "fields": {
         "is_staff_hod": true, 
         "department": 2, 
-        "user": 1, 
-        "clinic_staff_role": "doctor",
-        "aushadha_user_role": 'aushadha_admin'
+        "staff_detail": 2, 
+        "clinic_staff_role": "doctor"
+    }
+},
+{
+    "pk": 2, 
+    "model": "clinic.staff", 
+    "fields": {
+        "is_staff_hod": true, 
+        "department": 3, 
+        "staff_detail": 3, 
+        "clinic_staff_role": "non_clinical_staff"
+    }
+},
+{
+    "pk": 3, 
+    "model": "clinic.staff", 
+    "fields": {
+        "is_staff_hod": true, 
+        "department": 1, 
+        "staff_detail": 4, 
+        "clinic_staff_role": "doctor"
+    }
+},
+{
+    "pk": 5, 
+    "model": "clinic.staff", 
+    "fields": {
+        "is_staff_hod": false, 
+        "department": 2, 
+        "staff_detail": 5, 
+        "clinic_staff_role": "secretary"
     }
 }
 ]
