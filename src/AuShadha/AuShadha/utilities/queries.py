@@ -108,7 +108,7 @@ def can_add_new_visit(patient):
     """
 
     from patient.models import PatientDetail
-    from admission.admission.models import AdmissionDetail
+#    from admission.admission.models import AdmissionDetail
     from visit.visit.models import VisitDetail
     from visit.visit_complaints.models import VisitComplaint
 
@@ -122,13 +122,13 @@ def can_add_new_visit(patient):
 
     # if not has_active_visit(patient):
 
-    if not has_active_admission(patient):
-        return True
-    else:
-        return False
+    #if not has_active_admission(patient):
+        #return True
+    #else:
+        #return False
     # else:
         # return False
-
+    return True
 
 def visit_for_pat(patient):
     

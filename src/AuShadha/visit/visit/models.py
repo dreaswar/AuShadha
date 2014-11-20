@@ -25,7 +25,7 @@ from registry.inv_and_imaging.models import ImagingInvestigationRegistry, LabInv
 #from admission.models import AdmissionDetail
 
 PatientDetail = UI.get_module("PatientRegistration")
-AdmissionDetail = UI.get_module("Admission")
+#AdmissionDetail = UI.get_module("Admission")
 VisitComplaint = UI.get_module('OPD_Visit_Complaint')
 
 from dijit_fields_constants import VISIT_DETAIL_FORM_CONSTANTS
@@ -351,11 +351,13 @@ class VisitDetail(AuShadhaBaseModel):
 
 class VisitDetailForm(AuShadhaBaseModelForm):
     
-    __form_name__ = "Visit Detail Form"
 
-    op_surgeon = ModelChoiceField(queryset=Staff.objects.filter(clinic_staff_role='doctor'))
+    def __init__(self, *args, **kwargs):
+        self.__form_name__ = "Visit Detail Form"
 
-    dijit_fields = VISIT_DETAIL_FORM_CONSTANTS
+        op_surgeon = ModelChoiceField(queryset=Staff.objects.filter(clinic_staff_role='doctor'))
+
+        self.dijit_fields = VISIT_DETAIL_FORM_CONSTANTS
 
     class Meta:
         model = VisitDetail

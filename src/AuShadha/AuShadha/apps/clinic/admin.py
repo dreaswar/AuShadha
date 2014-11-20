@@ -12,6 +12,8 @@
 
 
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.models import User
 
 from AuShadha.apps.clinic.models import Clinic, Department, Phone, Fax, Email, Website, Staff
 
@@ -58,7 +60,8 @@ class StaffInline(admin.StackedInline):
       from add clinic form 
     """
     model = Staff
-
+    can_delete=True
+    verbose_name_plural = 'Clinic Staff'
 
 class ClinicAdmin(admin.ModelAdmin):
     """
@@ -111,6 +114,14 @@ class StaffAdmin(admin.ModelAdmin):
     """ Staff Admin """
     pass
 
+# Define a new User admin
+class UserAdmin(UserAdmin):
+    inlines = (StaffInline, )
+
+# Re-register UserAdmin
+admin.site.unregister(User)
+
+admin.site.register(User, UserAdmin)
 
 admin.site.register(Clinic, ClinicAdmin)
 admin.site.register(Department, DepartmentAdmin)
@@ -118,4 +129,4 @@ admin.site.register(Phone, PhoneAdmin)
 admin.site.register(Fax, FaxAdmin)
 admin.site.register(Email, EmailAdmin)
 admin.site.register(Website, WebsiteAdmin)
-admin.site.register(Staff, StaffAdmin)
+#admin.site.register(Staff, StaffAdmin)

@@ -257,7 +257,7 @@ INSTALLED_APPS = (
 # Core AuShadha Apps, base_models, custom_users:
     'AuShadha.apps.ui',
     'AuShadha.apps.aushadha_base_models',
-    'AuShadha.apps.aushadha_users',
+#    'AuShadha.apps.aushadha_users',
     'AuShadha.apps.clinic',
     'AuShadha.apps.search',
 
@@ -293,13 +293,13 @@ INSTALLED_APPS = (
     'immunisation',
 
 #AuShadha Stock apps for OPD Visits
-#    'visit.visit',
-#    'visit.visit_complaints',
-#    'visit.visit_hpi',
-#    'visit.visit_ros',
-#    'visit.visit_phyexam',
-#    'visit.visit_assessment_and_plan',
-#    'visit.visit_soap',    
+    'visit.visit',
+    'visit.visit_complaints',
+    'visit.visit_hpi',
+    'visit.visit_ros',
+    'visit.visit_phyexam',
+    'visit.visit_assessment_and_plan',
+    'visit.visit_soap',    
 
 #    'visit.visit_inv',
 #    'visit.visit_imaging',

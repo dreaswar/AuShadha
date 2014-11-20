@@ -14,10 +14,12 @@ from AuShadha.apps.aushadha_base_models.models import (
     AuShadhaBaseModel, 
     AuShadhaBaseModelForm )
 
-from AuShadha.apps.aushadha_users.models import AuShadhaUser
+#from AuShadha.apps.aushadha_users.models import AuShadhaUser
 from AuShadha.apps.ui.ui import ui as UI
+from AuShadha.apps.clinic.models import Staff
 
-from patient.models import PatientDetail
+#from patient.models import PatientDetail
+
 from registry.vaccine_registry.models import (
         VaccineRegistry,
         VaccineDetail,
@@ -76,7 +78,8 @@ class Immunisation(AuShadhaBaseModel):
     adverse_reaction = models.TextField(max_length=100, default="None")
 
     patient_detail = models.ForeignKey(PatientDetail, null=True, blank=True)
-    administrator = models.ForeignKey(AuShadhaUser,null=True,blank=True)
+#    administrator = models.ForeignKey(AuShadhaUser,null=True,blank=True)
+    administrator = models.ForeignKey(Staff,null=True,blank=True)
 
 
     def __unicode__(self):

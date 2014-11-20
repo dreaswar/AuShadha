@@ -113,29 +113,32 @@ Prepare the database and install the fixtures
 
 9. run `$ python manage.py makmigrations && python.manage.py migrate`
 
-10. Run the server with `python manage.py runserver`
+10. You need to create a superuser for logging in to the Django administration site. 
+    Do that with `python manage.py createsuperuser` 
+
+11. Run the server with `python manage.py runserver`
+
+12. Navigate to http://localhost:8000/AuShadha/admin and login with the user you just created. 
+
+13. You will need to add `Users` as needed and assign them Roles & permissions
+
+14. Please note that AuShadha has role and permission based UI. Hence for evaluation, you would need to login as the user with
+    appropriate permissions. For a superuser please set the option in Staff's `ausshadha_user_role` to `aushadha_admin` and 
+    `clinic_staff_role` to `doctor`. Any other lesser permission setting would shut parts of the UI.
 
 
 
 See it in action & login
 ----------------------------
 
-10. Use your browser to navigate to http://localhost:8000/AuShadha/ 
+15. Use your browser to navigate to http://localhost:8000/AuShadha/ 
 
 
-    You will be greeted with a login page. Use username = admin, password = admin for a trial run.
-
-    By default some accounts for developers are created viz.. `dreaswar`, `richard`, `derek`. 
-
-    Users `dreaswar` and `derek` are enrolled as `doctors`
-
-    There is also a `secretary` account with same username and password of `password`
-
-    You may tweak, update or delete these in Django's admin site and assign them to groups with permission
+    You will be greeted with a login page. 
 
 
 
-11. Please read the issues, license before using. 
+16. Please read the issues, license before using. 
 
 
     Currently AuShadha is under active development and is not fit in anyway for real world use.

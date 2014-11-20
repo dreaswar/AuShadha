@@ -9,12 +9,10 @@
         "is_active": true, 
         "is_superuser": true, 
         "is_staff": true, 
-        "last_login": "2014-05-19T06:54:44.700Z", 
         "groups": [], 
         "user_permissions": [], 
         "password": "pbkdf2_sha256$12000$pq8H2HbpIIry$jpVbX1rzG3kyELSOQZy57J9+hAK25scs1jXhM0zu7bA=", 
-        "email": "dreaswar@gmail.com", 
-        "date_joined": "2014-05-19T05:25:50.499Z"
+        "email": "dreaswar@gmail.com" 
     }
 },
 {
@@ -27,12 +25,10 @@
         "is_active": true, 
         "is_superuser": true, 
         "is_staff": true, 
-        "last_login": "2014-05-19T07:03:19Z", 
         "groups": [], 
         "user_permissions": [],
         "password": "pbkdf2_sha256$12000$ztnRuQgtbyKW$Vtf7KSZMObhsmwHG9R/OxbsVgcm+HKvGUjK3BegLZUQ=", 
-        "email": "dreaswar@gmail.com", 
-        "date_joined": "2014-05-19T07:03:19Z"
+        "email": "dreaswar@gmail.com" 
     }
 },
 {
@@ -45,12 +41,10 @@
         "is_active": true, 
         "is_superuser": true, 
         "is_staff": true, 
-        "last_login": "2014-05-19T07:03:48Z", 
         "groups": [], 
         "user_permissions": [], 
         "password": "pbkdf2_sha256$12000$5fgv0ZEo5XBa$5+ZcC8rVuQa0n03nbzw5HCySxkpBOwAzqw8bEy6h8oc=", 
-        "email": "", 
-        "date_joined": "2014-05-19T07:03:48Z"
+        "email": "" 
     }
 },
 {
@@ -63,12 +57,10 @@
         "is_active": true, 
         "is_superuser": true, 
         "is_staff": true, 
-        "last_login": "2014-05-19T07:04:15Z", 
         "groups": [], 
         "user_permissions": [],
         "password": "pbkdf2_sha256$12000$zCl5mtwaWAMU$oKy1yISeU6ZK7KpDjz/14fnAjhxAASWQUbb5aMjSUvA=", 
-        "email": "", 
-        "date_joined": "2014-05-19T07:04:15Z"
+        "email": "" 
     }
 },
 {
@@ -81,14 +73,10 @@
         "is_active": true, 
         "is_superuser": false, 
         "is_staff": true, 
-        "last_login": "2014-05-19T07:04:44Z", 
         "groups": [], 
-        "user_permissions": [
-
-        ], 
+        "user_permissions": [], 
         "password": "pbkdf2_sha256$12000$MYtBrlGktFv0$Of5voyRcRvxq5A1RDd8ESisbG+dPB5gATRDN7AUthOE=", 
         "email": "", 
-        "date_joined": "2014-05-19T07:04:44Z"
     }
 }
 ]
