@@ -187,8 +187,8 @@ def visit_complaint_add(request, visit_id = None):
             raise Http404(" Error ! Unsupported Request..")
 
 
-    except (TypeError, NameError, ValueError, AttributeError, KeyError):
-        raise Http404("Error ! Invalid Request Parameters. ")
+#    except (TypeError, NameError, ValueError, AttributeError, KeyError):
+#        raise Http404("Error ! Invalid Request Parameters. ")
 
     except (VisitDetail.DoesNotExist):
         raise Http404("Requested Visit Does not exist.")

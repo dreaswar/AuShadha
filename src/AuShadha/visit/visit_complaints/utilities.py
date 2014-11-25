@@ -40,25 +40,11 @@ from .models import VisitComplaint
 
 def check_duplicates(complaint_to_check, visit_obj):
 
-    all_complaints = VisitComplaint.objects.filter(visit_detail = visit_obj)
-
-    if all_complaints:
-      for complaint in all_complaints:
-
-          if complaint.complaint != complaint_to_check.complaint:
-              continue
-
-          else:
-              if not getattr(complaint_to_check, 'id', None):
-                  return False
-              else:
-                  if complaint.id == complaint_to_check.id:
-                      continue
-                  else:
-                      return False
-    else:
-      return True
-
+    all_complaints = lambda :[x.complaint for x in VisitComplaint.objects.filter(visit_detail =visit_obj) if x]
+    if complaint_to_check.complaint not in all_complaints(): 
+        return True
+    return False
+       
 
 @login_required
 def get_all_patient_complaints(request, visit_id = None):

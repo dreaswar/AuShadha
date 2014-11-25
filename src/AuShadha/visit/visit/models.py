@@ -30,7 +30,7 @@ VisitComplaint = UI.get_module('OPD_Visit_Complaint')
 
 from dijit_fields_constants import VISIT_DETAIL_FORM_CONSTANTS
 
-DEFAULT_VISIT_DETAIL_FORM_EXCLUDES = ('patient_detail',)
+DEFAULT_VISIT_DETAIL_FORM_EXCLUDES = ('patient_detail','op_surgeon')
 
 
 CONSULT_NATURE_CHOICES = (
@@ -105,7 +105,7 @@ class VisitDetail(AuShadhaBaseModel):
 
     patient_detail = models.ForeignKey(PatientDetail)
     visit_date = models.DateTimeField(auto_now=False, default=datetime.now())
-    op_surgeon = models.ForeignKey(Staff)
+    op_surgeon = models.ForeignKey(Staff,editable=False,null=True,blank=True)
 
     referring_doctor = models.CharField(max_length=30, 
                                         default="Self"
@@ -351,14 +351,14 @@ class VisitDetail(AuShadhaBaseModel):
 
 class VisitDetailForm(AuShadhaBaseModelForm):
     
+#    op_surgeon = ModelChoiceField(queryset=Staff.objects.filter(clinic_staff_role='doctor'))
+    
+    dijit_fields = VISIT_DETAIL_FORM_CONSTANTS
 
     def __init__(self, *args, **kwargs):
         self.__form_name__ = "Visit Detail Form"
-
-        op_surgeon = ModelChoiceField(queryset=Staff.objects.filter(clinic_staff_role='doctor'))
-
-        self.dijit_fields = VISIT_DETAIL_FORM_CONSTANTS
-
+        super(VisitDetailForm,self).__init__(*args,**kwargs)
+        
     class Meta:
         model = VisitDetail
         exclude = DEFAULT_VISIT_DETAIL_FORM_EXCLUDES

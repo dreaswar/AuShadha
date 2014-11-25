@@ -3,10 +3,13 @@
               <th> <label for="id_visit_date"> Date</label></th>
               <td> {{visit_detail_form.visit_date}} </td>
             </tr>
-            <tr>           
+{% comment %}
+<!--            <tr>           
               <th> <label for="id_op_surgeon">Physician</label>
               <td> {{visit_detail_form.op_surgeon}} </td>
             </tr>
+-->
+{%endcomment %}
             <tr>           
               <th> <label for="id_refering_doctor">Referred</label> </th>
               <td> {{visit_detail_form.referring_doctor}}</td>
