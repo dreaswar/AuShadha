@@ -34,25 +34,9 @@
             function(json){
 
                 var jsondata = JSON.parse(json);
-//                 var summaryTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP');
-//                 var visitTree = registry.byId('OPD_VISITS_LEADING_BC_TOP_CP_TREE');
-//                 var parentTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP').getParent();
-
-//                 var visitGridCP = registry.byId('OPD_VISITS_CENTER_CP_TC_GRID_CP');
-//                 var visitGrid = registry.byId('OPD_VISITS_GRID');
-//                 var parentTab = registry.byId('OPD_VISITS_CENTER_CP_TC_GRID_CP').getParent();
-
-//                 var newVisitTab = registry.byId('NEW_VISIT');
-
-//                 var visitAddFormTabContainer =  registry.byId('NEW_VISIT_ADD_FORM_TAB_CONTAINER');
-
                 if ( jsondata.success == true ) {
 
                   publishInfo( jsondata.error_message );
-//                   summaryTab.set( 'href', "{{ patient_detail_obj.urls.summary.visit }}" );
-//                   visitTree.refresh();
-//                   visitGrid.render();
-
                 }
 
                 else {
@@ -64,7 +48,6 @@
             },
 
             function(err){
-//                   var jsondata = JSON.parse(json); 
                   publishError("ERROR!: "+ err.response.text );
             },
 
