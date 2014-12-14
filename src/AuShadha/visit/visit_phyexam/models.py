@@ -174,11 +174,11 @@ class SysExam(PhyExamBaseModel):
         self.__model_label__ = 'sys'
         self._parent_model = ['visit_detail',]
 
-    heent = models.TextField(max_length=75, default=HEENT_EX)
-    cns = models.TextField(max_length=100, default=CNS_EX)
-    cvs = models.TextField(max_length=100, default=CVS_EX)
-    respiratory_system = models.TextField(max_length=100, default=RESP_EX)
-    git_and_gut = models.TextField(max_length=100, default=GIT_GUT_EX)
+    heent = models.TextField(max_length=1250, default=HEENT_EX)
+    cns = models.TextField(max_length=1250, default=CNS_EX)
+    cvs = models.TextField(max_length=1250, default=CVS_EX)
+    respiratory_system = models.TextField(max_length=1250, default=RESP_EX)
+    git_and_gut = models.TextField(max_length=1250, default=GIT_GUT_EX)
     phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)
 
 
@@ -198,38 +198,38 @@ class NeuroExam(PhyExamBaseModel):
         self._parent_model = ['visit_detail',]
 
     plantar = models.TextField('Plantar Reflex',
-                               max_length=30,
+                               max_length=100,
                                default="Bilateral Flexor response",
                                        help_text='limit to 30 words')
 
     abdominal = models.TextField('Abdominal Reflex',
-                                 max_length=30,
+                                 max_length=100,
                                  default="Ellicited well in all four quadrants",
                                  help_text='limit to 30 words'
                                  )
 
-    cremasteric = models.TextField(max_length=30, default="Present")
+    cremasteric = models.TextField(max_length=100, default="Present")
 
-    anal_wink = models.TextField(max_length=30, default="Present")
+    anal_wink = models.TextField(max_length=100, default="Present")
 
     motor = models.TextField('Motor Exam',
-                             max_length=100,
+                             max_length=250,
                              default="Normal Bulk, Tone and Power in all four limbs. No Fasciculations",
                              help_text='limit to 100 words')
 
     sensory = models.TextField('Sensory Exam',
-                               max_length=100,
+                               max_length=250,
                                default="Normal Sensation in all four limbs. Perianal sensation intact",
                                        help_text='limit to 100 words')
 
     dtr = models.TextField('Deep Tendon Reflex',
-                           max_length=50,
+                           max_length=100,
                            default="Equally ellicitable in all four limbs. No Clonus",
                            help_text='limit to 50 words'
                            )
 
     cranial_nerve = models.TextField('Cranial Nerve Exam',
-                                     max_length=30,
+                                     max_length=100,
                                      default="All Cranial Nerves NAD",
                                      help_text='limit to 30 words')
 
@@ -252,7 +252,7 @@ class MusculoSkeletalExam(PhyExamBaseModel):
         self._parent_model = ['visit_detail',]
 
     ms_exam = models.TextField('Findings',
-                               max_length=1000,
+                               max_length=3000,
                                default = "NAD")
 
     phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)

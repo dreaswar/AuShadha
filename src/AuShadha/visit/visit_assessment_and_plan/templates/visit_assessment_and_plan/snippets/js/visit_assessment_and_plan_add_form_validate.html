@@ -50,7 +50,7 @@
 //                 var visitAddFormTabContainer =  registry.byId('NEW_VISIT_ADD_FORM_TAB_CONTAINER');
 //                 var visitAssessmentAndPlanAddUrl = "{{visit_detail_obj.urls.add.visit_assessment_and_plan}}";
 
-                var editTab = query( "#newVisitAssessmentAndPlanAddForm_{{visit_detail_obj.id}}" ).parents( '.subTabContainer' )[0];
+                var editTab = query( "#newVisitAssessmentAndPlanAddForm_{{visit_detail_obj.id}}" ).closest( '.subTabContainer' )[0];
 
                 if ( jsondata.success == true ) {
 

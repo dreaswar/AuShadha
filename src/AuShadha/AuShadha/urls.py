@@ -50,6 +50,7 @@ urlpatterns = patterns('',
                       url(r'^AuShadha/visit_phyexam/'             , include('visit.visit_phyexam.urls') ),
                       url(r'^AuShadha/visit_assessment_and_plan/' , include('visit.visit_assessment_and_plan.urls') ),
                       url(r'^AuShadha/visit_soap/'                , include('visit.visit_soap.urls') ),
+		      url(r'^AuShadha/visit_prescription/'                , include('visit.visit_prescription.urls') ),
 
 #                      url(r'^AuShadha/follow_up/', include('visit.urls')),
 #                      url(r'^AuShadha/phyexam/'  , include('phyexam.urls')),

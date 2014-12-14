@@ -4,11 +4,11 @@ VISIT_DETAIL_FORM_CONSTANTS = {
                 "data-dojo-type": "dijit.form.DateTextBox",
                 "data-dojo-props": r"'required' :true"
   },
-  'op_surgeon':{
-                'max_length': 100,
-                "data-dojo-type": "dijit.form.Select",
-                "data-dojo-props": r"'required' : true"
-  },
+#  'op_surgeon':{
+#                'max_length': 100,
+#                "data-dojo-type": "dijit.form.Select",
+#                "data-dojo-props": r"'required' : true"
+#  },
   'referring_doctor':{
                 'max_length': 100,
                 "data-dojo-type": "dijit.form.ValidationTextBox",

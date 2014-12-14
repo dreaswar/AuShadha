@@ -46,7 +46,7 @@
 //                 var visitAddFormTabContainer =  registry.byId('NEW_VISIT_ADD_FORM_TAB_CONTAINER');
 //                 var visitPhyExamAddUrl = "{{visit_detail_obj.urls.add.visit_phyexam}}";
 
-                var editTab = query( "#newVisitPhyExamAddForm_{{exam_name}}_{{visit_detail_obj.id}}" ).parents( '.subTabContainer' )[0];
+                var editTab = query( "#newVisitPhyExamAddForm_{{exam_name}}_{{visit_detail_obj.id}}" ).closest( '.subTabContainer' )[0];
 
                 if ( jsondata.success == true ) {
 

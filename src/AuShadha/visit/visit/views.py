@@ -487,7 +487,9 @@ def visit_detail_add(request, patient_id = None, nature='initial'):
                 visit_detail_form = VisitDetailForm(request.POST, instance=visit_detail_obj)
 
                 if visit_detail_form.is_valid():
-                    saved_visit = visit_detail_form.save()
+                    saved_visit = visit_detail_form.save(commit=False)
+                    saved_visit.op_surgeon = user.staff
+                    saved_visit.save()
                     success = True
                     error_message = "Visit Added Successfully"
                     returnData = {'id': 'EDIT_ACTIVE_VISIT_'+ str(saved_visit.id), 
@@ -568,7 +570,9 @@ def visit_detail_edit(request, visit_id = None):
             visit_detail_form = VisitDetailForm(request.POST, instance=visit_detail_obj)
 
             if visit_detail_form.is_valid():
-                saved_visit = visit_detail_form.save()
+                saved_visit = visit_detail_form.save(commit=False)
+                saved_visit.op_surgeon = user.staff
+                saved_visit.save()
                 success = True
                 error_message = "Visit Edited Successfully"
 

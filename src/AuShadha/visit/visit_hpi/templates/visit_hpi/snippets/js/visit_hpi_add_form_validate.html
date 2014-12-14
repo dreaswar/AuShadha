@@ -50,7 +50,7 @@
 //                 var visitAddFormTabContainer =  registry.byId('NEW_VISIT_ADD_FORM_TAB_CONTAINER');
 //                 var visitHPIAddUrl = "{{visit_detail_obj.urls.add.visit_hpi}}";
 
-                var editTab = query( "#newVisitHPIAddForm_{{visit_detail_obj.id}}" ).parents( '.subTabContainer' )[0];
+                var editTab = query( "#newVisitHPIAddForm_{{visit_detail_obj.id}}" ).closest( '.subTabContainer' )[0];
 
                 if ( jsondata.success == true ) {
 

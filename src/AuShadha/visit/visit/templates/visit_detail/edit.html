@@ -172,7 +172,7 @@
           {% if perms.visit_soap %}
           {% if visit_detail_obj.has_previous_visits %}
               <div data-dojo-type="dojox/layout/ContentPane"
-                  data-dojo-props="'title': 'SOAP', 
+                   data-dojo-props="'title': 'SOAP', 
 
                                     'href': '{%url 'visit_soap_add' visit_detail_obj.id %}' , 
 
@@ -184,7 +184,7 @@
 
                                     'disabled': false
                                     "
-                  class="subTabContainer"
+                   class="subTabContainer"
                   >
 
               </div>
@@ -206,7 +206,17 @@
     </div>
     {% endif %}
 
-
+    {% if perms.visit_prescription %}
+    <div data-dojo-type="dijit/layout/TabContainer"
+         data-dojo-props="'title': 'Prescription',
+                          'href': '{%url 'visit_prescription_list' visit_detail_obj.id %}', 
+                          disabled: false"
+         class="subTabContainer"
+         >
+        
+    </div>
+    {% endif %}
+    
 {% comment %}
     <div data-dojo-type="dijit/layout/TabContainer"
          data-dojo-props="'title': 'Labs','href': '', disabled: true"
@@ -229,12 +239,7 @@
 
     </div>
 
-    <div data-dojo-type="dijit/layout/TabContainer"
-         data-dojo-props="'title': 'Prescription','href': '', disabled: true"
-         class="subTabContainer"
-         >
 
-    </div>
 {% endcomment %}
 
   </div>

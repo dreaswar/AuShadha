@@ -123,7 +123,7 @@ SYS_EXAM_FORM_CONSTANTS = {
 
 MUSCULOSKELETAL_EXAM_FORM_CONSTANTS = {
     'ms_exam': {
-        'max_length': 1000,
+        'max_length': 3000,
         "data-dojo-type": "dijit.Editor",
         "data-dojo-props": r"'required' :true",
         'class': r"ms_exam_textarea"
@@ -133,27 +133,27 @@ MUSCULOSKELETAL_EXAM_FORM_CONSTANTS = {
 
 NEURO_EXAM_FORM_CONSTANTS = {
     'plantar': {
-        'max_length': 30,
+        'max_length': 100,
         "data-dojo-type": "dijit.form.Textarea",
         "data-dojo-props": r"'required' :false"
     },
     'abdominal': {
-        'max_length': 30,
+        'max_length': 100,
         "data-dojo-type": "dijit.form.Textarea",
         "data-dojo-props": r"'required' :false"
     },
     'cremasteric': {
-        'max_length': 30,
+        'max_length': 100,
         "data-dojo-type": "dijit.form.Textarea",
         "data-dojo-props": r"'required' : false"
     },
     'anal_wink': {
-        'max_length': 30,
+        'max_length': 100,
         "data-dojo-type": "dijit.form.Textarea",
         "data-dojo-props": r"'required' :false"
     },
     'motor': {
-        'max_length': 100,
+        'max_length': 250,
         "data-dojo-type": "dijit.form.Textarea",
                           "data-dojo-props": r"'required' : false"
     },
@@ -163,7 +163,7 @@ NEURO_EXAM_FORM_CONSTANTS = {
         "data-dojo-props": r"'required' : false"
     },
     'dtr': {
-        'max_length': 50,
+        'max_length': 100,
         "data-dojo-type": "dijit.form.Textarea",
         "data-dojo-props": r"'required' : false"
     },

@@ -17,7 +17,7 @@
 //       var summaryTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP');
 //       var parentTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP').getParent();
 //       var visitTree = registry.byId('OPD_VISITS_LEADING_BC_TOP_CP_TREE');
-      var editTab = query("#newVisitPhyExamEditForm_{{exam_name}}_{{exam_obj.id}}").parents('.subTabContainer')[0];
+      var editTab = query("#newVisitPhyExamEditForm_{{exam_name}}_{{exam_obj.id}}").closest('.subTabContainer')[0];
 //       editTab = registry.byId( domAttr.get(editTab, 'id') );
 //       var visitPhyExamAddUrl = "{{visit_detail_obj.urls.add.visit_phyexam}}";
 

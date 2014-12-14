@@ -26,6 +26,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+#AUTH_USER_MODEL = 'AuShadha.apps.aushadha_users.AuShadhaUser'
 
 # Preferred DB for running AuShadha is PostgreSQL. 
 
@@ -157,12 +158,14 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 's25nwc+6sai0li&amp;g*0a97jjukn_(#sm1!8ublq%$1@o0c%@_^x'
 
+
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     #     'django.template.loaders.eggs.Loader',
 )
+
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -174,10 +177,13 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+
 ROOT_URLCONF = 'AuShadha.urls'
+
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'AuShadha.wsgi.application'
+
 
 TEMPLATE_DIRS = (
 
@@ -216,6 +222,7 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'visit/visit_phyexam/templates/'),
     os.path.join(ROOT_PATH, 'visit/visit_assessment_and_plan/templates/'),
     os.path.join(ROOT_PATH, 'visit/visit_soap/templates/'),
+    os.path.join(ROOT_PATH, 'visit/visit_prescription/templates/'),
 
 #    os.path.join(ROOT_PATH, 'visit/visit_imaging/templates/'),
 #    os.path.join(ROOT_PATH, 'visit/visit_inv/templates/'),
@@ -251,7 +258,7 @@ INSTALLED_APPS = (
 # Core AuShadha Apps, base_models, custom_users:
     'AuShadha.apps.ui',
     'AuShadha.apps.aushadha_base_models',
-    'AuShadha.apps.aushadha_users',
+#    'AuShadha.apps.aushadha_users',
     'AuShadha.apps.clinic',
     'AuShadha.apps.search',
 
@@ -287,13 +294,14 @@ INSTALLED_APPS = (
     'immunisation',
 
 #AuShadha Stock apps for OPD Visits
-#    'visit.visit',
-#    'visit.visit_complaints',
-#    'visit.visit_hpi',
-#    'visit.visit_ros',
-#    'visit.visit_phyexam',
-#    'visit.visit_assessment_and_plan',
-#    'visit.visit_soap',    
+    'visit.visit',
+    'visit.visit_complaints',
+    'visit.visit_hpi',
+    'visit.visit_ros',
+    'visit.visit_phyexam',
+    'visit.visit_assessment_and_plan',
+    'visit.visit_soap',    
+    'visit.visit_prescription',
 
 #    'visit.visit_inv',
 #    'visit.visit_imaging',
