@@ -1,0 +1,82 @@
+[
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "admin", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$pq8H2HbpIIry$jpVbX1rzG3kyELSOQZy57J9+hAK25scs1jXhM0zu7bA=", 
+        "email": "dreaswar@gmail.com" 
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "dreaswar", 
+        "first_name": "Easwar", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "groups": [], 
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$ztnRuQgtbyKW$Vtf7KSZMObhsmwHG9R/OxbsVgcm+HKvGUjK3BegLZUQ=", 
+        "email": "dreaswar@gmail.com" 
+    }
+},
+{
+    "pk": 3, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "dmoco", 
+        "first_name": "Derek ", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$5fgv0ZEo5XBa$5+ZcC8rVuQa0n03nbzw5HCySxkpBOwAzqw8bEy6h8oc=", 
+        "email": "" 
+    }
+},
+{
+    "pk": 4, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "richard", 
+        "first_name": "Richard", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "groups": [], 
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$zCl5mtwaWAMU$oKy1yISeU6ZK7KpDjz/14fnAjhxAASWQUbb5aMjSUvA=", 
+        "email": "" 
+    }
+},
+{
+    "pk": 5, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "secretary", 
+        "first_name": "Secretary", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": true, 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$MYtBrlGktFv0$Of5voyRcRvxq5A1RDd8ESisbG+dPB5gATRDN7AUthOE=", 
+        "email": "", 
+    }
+}
+]

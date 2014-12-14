@@ -58,7 +58,7 @@ Installing Dependencies for AuShadha
 
 1. For AuShadha requirements please refer to REQUIREMENTS.txt in docs/
 
-2. AuShadha has been tested and developed with Python 2.7, Django 1.6x and Dojo 1.9x in Linux. It should work as long as dependencies are satisfied.
+2. AuShadha has been tested and developed with Python 2.7, Django 1.7x and Dojo 1.9x in Linux. It should work as long as dependencies are satisfied.
 
 
 Creating a Virtual Environment to run:
@@ -96,12 +96,14 @@ Prepare and Download Dojo Javascript Library
 
 
    Download the latest Dojo library and extract it into `AuShadha/src/AuShadha/AuShadha/media/plugins/dojo/`
+ 
+   You may need to create a 'dojo' directory inside `AuShadha/src/AuShadha/AuShadha/media/plugins/` directory
 
 
    After extracting the folder structure should be like: dojo/dojo/ dojo/dojox/ dojo/dijit/ 
 
   
-   AuShadha has been tested with Dojo 1.8.1
+   AuShadha has been tested with Dojo 1.9x
 
 
 
@@ -109,23 +111,38 @@ Prepare the database and install the fixtures
 -----------------------------------------------
 
 
-9. run `$ python manage.py syncdb && python manage.py runserver`
+9. run `$ python manage.py makmigrations && python.manage.py migrate`
+
+10. You need to create a superuser for logging in to the Django administration site. 
+    Do that with `python manage.py createsuperuser` 
+
+11. Run the server with `python manage.py runserver`
+
+12. Navigate to http://localhost:8000/AuShadha/admin and login with the user you just created. 
+
+13. You will need to add `Users` as needed and assign them Roles & permissions
+
+14. Please note that AuShadha has role and permission based UI. Hence for evaluation, you would need to login as the user with
+    appropriate permissions. For a superuser please set the option in Staff's `ausshadha_user_role` to `aushadha_admin` and 
+    `clinic_staff_role` to `doctor`. Any other lesser permission setting would shut parts of the UI.
 
 
 
 See it in action & login
 ----------------------------
 
-10. Use your browser to navigate to http://localhost:8000/AuShadha/ 
+15. Use your browser to navigate to http://localhost:8000/AuShadha/ 
 
 
-    You will be greeted with a login page. Use username = admin, password = admin for a trial run.
+    You will be greeted with a login page. 
 
 
-11. Please read the issues, license before using. 
+
+16. Please read the issues, license before using. 
 
 
     Currently AuShadha is under active development and is not fit in anyway for real world use.
+
 
 
 Project Structure
@@ -216,6 +233,12 @@ Pluggable Modules under Developement
 3. icd10_pcs
     -  An alternate implementation of Derek's version of ICD10PCS app by Easwar 
 
+4. dynamic_aushadha_models
+    - A solution to autogenerate an app, its files with scaffolding and CRUD 
+      from a model structure given as YAML file. This was designed to work with
+      South project and before Django1.7 introduced support for migrations. 
+      This is just a work in progress as South is no longer relevant for this and
+      needs to be removed. 
 
 Pluggable Modules Planned
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
