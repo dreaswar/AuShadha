@@ -180,11 +180,9 @@
   app: visit.visit_assessment_and_plan
   module: models
   class_name: VisitAssessmentAndPlan
-<<<<<<< HEAD
+
 
 - role: OPD_Prescription
   app: visit.visit_prescription
   module: models
   class_name: VisitPrescription
-=======
->>>>>>> fb827d90b3d4a30004942d9c4b9ac91ab5953cf5

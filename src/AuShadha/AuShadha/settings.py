@@ -301,10 +301,8 @@ INSTALLED_APPS = (
     'visit.visit_phyexam',
     'visit.visit_assessment_and_plan',
     'visit.visit_soap',    
-<<<<<<< HEAD
+
     'visit.visit_prescription',
-=======
->>>>>>> fb827d90b3d4a30004942d9c4b9ac91ab5953cf5
 
 #    'visit.visit_inv',
 #    'visit.visit_imaging',
