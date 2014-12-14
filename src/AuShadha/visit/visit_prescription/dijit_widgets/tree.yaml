@@ -1,0 +1,11 @@
+# MODEL_YAML:
+#   name: --
+#   type: application will list the item on the tree as a root node
+#   id: SOME_ID
+#   module_type: sub_module / main_module / module_name in verbose way
+#   module_name: module-name
+#   ondblclick: null URL on dblclick
+#   onrclick: null URL on Right click
+#   onclick: null  URL on click
+#   redirect: 1  to redirect to new pane as maintab or not -- 0/1
+#   returns: HTML / JSON
