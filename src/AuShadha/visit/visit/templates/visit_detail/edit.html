@@ -207,9 +207,9 @@
     {% endif %}
 
     {% if perms.visit_prescription %}
-    <div data-dojo-type="dijit/layout/TabContainer"
+    <div data-dojo-type="dojox/layout/ContentPane"
          data-dojo-props="'title': 'Prescription',
-                          'href': '{%url 'visit_prescription_list' visit_detail_obj.id %}', 
+                          'href': '{%url 'visit_prescription_add' visit_detail_obj.id %}', 
                           disabled: false"
          class="subTabContainer"
          >

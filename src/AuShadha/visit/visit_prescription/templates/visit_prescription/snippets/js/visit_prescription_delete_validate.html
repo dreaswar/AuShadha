@@ -1,0 +1,48 @@
+<script type="dojo/on" data-dojo-event="click" >
+
+  require(
+          ["dojo/dom", 
+            "dojo/query",
+            "dojo/dom-attr",
+            "dojo/_base/xhr",
+            "dojo/json",
+            "dijit/registry",
+            "dijit/Dialog",
+            "dojo/NodeList-traverse",
+            "dojo/NodeList-data"
+          ],
+
+  function(dom, query, domAttr, xhr, JSON, registry, Dialog){
+
+//       var summaryTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP');
+//       var parentTab = registry.byId('OPD_VISITS_CENTER_CP_TC_SUMMARY_CP').getParent();
+//       var visitTree = registry.byId('OPD_VISITS_LEADING_BC_TOP_CP_TREE');
+//       var editTab = query("#newVisitEditForm_{{visit_detail_obj.id}}").parents('.subTabContainer')[0];
+//       editTab = registry.byId( domAttr.get(editTab, 'id') );
+
+      xhr.get({
+
+        url: "{{visit_prescription_obj.urls.del}}",
+
+        load: function(json){
+                 var jsondata = JSON.parse(json);
+
+                  if( jsondata.success == true ){
+                    publishInfo( jsondata.error_message );
+//                     summaryTab.set('href',"{{patient_detail_obj.urls.summary.visit}}");
+//                     visitTree.refresh();
+                    registry.byId("visitPrescriptionGrid_{{visit_detail_obj.id}}").render();
+                    registry.byId("editPatientDialog").hide();
+                    return false;                    
+//                     parentTab.removeChild( editTab );
+//                     editTab.destroyRecursive();
+                  }
+
+                  else{
+                    publishError("ERROR ! :" + jsondata.error_message );
+                  }
+            }
+      });
+  });
+
+</script>

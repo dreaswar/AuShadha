@@ -1370,6 +1370,82 @@ define(function () {
 
       ],
 
+OPD_VISIT_PRESCIPTION: [
+
+            {
+                name: "ID",
+                field: "id",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Edit",
+                field: "edit",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Del",
+                field: "del",
+                width: "50px",
+                hidden: true,
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Medicament",
+                field: "medicament",
+                width: "200px",
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Dose",
+                field: "dose",
+                width: "100px",
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "Unit",
+                field: "dose_unit",
+                width: "100px",
+                cellStyles: "text-align:center;"
+            },
+
+            {
+                name: "No.",
+                field: "units",
+                width: "100px",
+                cellStyles: "text-align:center;"
+            },
+       
+            {
+                name: "Frequency",
+                field: "frequency",
+                width: "100px",
+                cellStyles: "text-align:center;"
+            },
+       
+            {
+                name: "Start",
+                field: "start_date",
+                width: "100px",
+                cellStyles: "text-align:center;"
+            },
+       
+            {
+                name: "End",
+                field: "end_date",
+                width: "100px",
+                cellStyles: "text-align:center;"
+            },
+      ],
+       
     };
 
 });

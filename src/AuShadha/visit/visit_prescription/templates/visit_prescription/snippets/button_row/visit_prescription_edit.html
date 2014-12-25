@@ -1,0 +1,22 @@
+<span>
+{% if perms.visit_prescription.change_visitprescription %}
+  <button data-dojo-type = "dijit/form/Button" 
+          data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
+          type           = "submit" 
+          name           = "editButton" 
+          value          = "Edit">
+    Edit
+  </button>
+{%endif%}
+
+{% if perms.visit_prescription.delete_visitprescription %}
+  <button data-dojo-type  = "dijit/form/Button" 
+          data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"    
+          type            = "button"
+          name            = "delVisit"
+          id              = "delVisitBtn_{{visit_prescription_obj.id}}">
+    Delete
+    {% include 'visit_prescription/snippets/js/visit_prescription_delete_validate.html' %}
+  </button>
+{% endif %}
+</span>

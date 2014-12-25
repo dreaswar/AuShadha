@@ -1,0 +1,79 @@
+<div data-dojo-type="dijit/form/Form"
+     id             = "visitPrescriptionEditForm_{{visit_prescription_obj.id}}"
+     data-dojo-id   = "visitPrescriptionEditForm_{{visit_prescription_obj.id}}"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = ""
+    >
+
+  <script type="dojo/on" data-dojo-event="reset" >
+
+      return confirm("This will reset the form")
+
+  </script>
+
+  <script type="dojo/on" data-dojo-event="submit" >
+
+      if( this.validate() ){
+
+        require(["dojo/dom",
+                "dojo/request/xhr",
+                "dijit/registry"  ,
+                "dojo/json"       ,
+                "dojo/dom-form"   ,
+                "dijit/Dialog"    ,
+                'aushadha/panes/dynamic_html_pane_creator',
+                'aushadha/grid/generic_grid_setup'
+        ],
+        function(dom, 
+                 xhr, 
+                 registry, 
+                 JSON, 
+                 domForm, 
+                 Dialog,
+                 genericGridSetup
+                 ){
+
+          xhr( "{%url 'visit_prescription_edit' visit_prescription_obj.id %}",
+              {handleAs: "text",
+               method  : "POST",
+               data    : domForm.toObject("visitPrescriptionEditForm_{{visit_prescription_obj.id}}")
+              }
+          ).
+          then(
+            function(json){
+                var jsondata = JSON.parse(json);
+                if ( jsondata.success == true ) {
+                  publishInfo( jsondata.error_message );
+                  registry.byId("visitPrescriptionGrid_{{visit_detail_obj.id}}").render();
+                  registry.byId("editPatientDialog").hide();
+                  return false;
+                }
+                else {
+                  publishError("ERROR ! :" + jsondata.error_message );
+                }
+            },
+            function(json){
+                  var jsondata = JSON.parse(json); 
+                  publishError("ERROR!: "+ jsondata.error_message );
+            },
+            function(evt){
+              console.log("Adding Data Finished Successfully...")
+            }
+          );
+        });
+        return false;
+      }
+      else{
+        return false;
+      }
+
+  </script>
+
+  <table class="content_pane_table">
+    <tbody>
+        {{form.as_table}}
+    </tbody>
+  </table>
+
+</div>

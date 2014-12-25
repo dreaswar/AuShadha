@@ -1,0 +1,242 @@
+<div id="visitPrescriptionGrid_{{visit_detail_obj.id}}" 
+     style="height: 10em; overflow: auto; "
+     > 
+
+  <script type="text/javascript">
+
+          require(
+            ["dojo/dom",
+            "dojo/request/xhr",
+            "dijit/registry"  ,
+            "dojo/json"       ,
+            "dojo/dom-form"   ,
+            "dijit/Dialog"    ,
+            'dojo/ready',
+            'aushadha/grid/generic_grid_setup',
+            'aushadha/grid/grid_structures'
+            ],
+
+          function(dom, 
+                  xhr, 
+                  registry, 
+                  JSON, 
+                  domForm, 
+                  Dialog,
+                  ready,
+                  genericGridSetup,
+                  GRID_STRUCTURES 
+                  ){
+                        var prescriptionGridDom = 'visitPrescriptionGrid_{{visit_detail_obj.id}}';
+                        var prescriptionGridUrl = "{%url 'visit_prescription_json_with_id' visit_detail_obj.id %}";
+                        var prescriptionGridStr = GRID_STRUCTURES.OPD_VISIT_PRESCRIPTION;
+                        var activateRowClick = false;
+                        var gridName = "Visit Prescription ";
+                        var storeToUse = "OPD_VISIT_PRESCRIPTION_GRID_STORE_{{visit_detail_obj.id}}";
+
+                        console.log(genericGridSetup);
+
+                        genericGridSetup.setupGrid(prescriptionGridUrl, 
+                                                  prescriptionGridDom, 
+                                                  prescriptionGridStr, 
+                                                  activateRowClick, 
+                                                  gridName, 
+                                                  storeToUse);
+                  });
+  </script>
+
+</div>
+
+
+
+<div data-dojo-type="dijit/form/Form"
+     id             = "visitPrescriptionAddForm_{{visit_detail_obj.id}}"
+     data-dojo-id   = "visitPrescriptionAddForm_{{visit_detail_obj.id}}"
+     encType        = "multipart/form-data" 
+     action         = "" 
+     method         = ""
+    >
+
+  <script type="dojo/on" data-dojo-event="reset" >
+
+      return confirm("This will reset the form")
+
+  </script>
+
+  <script type="dojo/on" data-dojo-event="submit" >
+
+      if( this.validate() ){
+
+        require(["dojo/dom",
+                "dojo/request/xhr",
+                "dijit/registry"  ,
+                "dojo/json"       ,
+                "dojo/dom-form"   ,
+                "dijit/Dialog"    ,
+                'aushadha/panes/dynamic_html_pane_creator',
+                'aushadha/grid/generic_grid_setup'
+        ],
+
+        function(dom, 
+                 xhr, 
+                 registry, 
+                 JSON, 
+                 domForm, 
+                 Dialog,
+                 genericGridSetup
+                 ){
+
+          xhr( "{%url 'visit_prescription_add' visit_detail_obj.id %}",
+              {handleAs: "text",
+               method  : "POST",
+               data    : domForm.toObject("visitPrescriptionAddForm_{{visit_detail_obj.id}}")
+              }
+          ).
+          then(
+            function(json){
+                var jsondata = JSON.parse(json);
+                if ( jsondata.success == true ) {
+                  publishInfo( jsondata.error_message );
+                  registry.byId("visitPrescriptionGrid_{{visit_detail_obj.id}}").render();
+                  return false;
+                }
+                else {
+                  publishError("ERROR ! :" + jsondata.error_message );
+                }
+            },
+            function(json){
+                  var jsondata = JSON.parse(json); 
+                  publishError("ERROR!: "+ jsondata.error_message );
+            },
+            function(evt){
+              console.log("Adding Data Finished Successfully...")
+            }
+          );
+        });
+        return false;
+      }
+      else{
+        return false;
+      }
+
+  </script>
+
+
+  <table class="content_pane_table">
+    <thead> 
+    </thead>
+    <tbody>
+        <tr> 
+            <td> 
+                <label for="id_medicament"> Medicament </label> 
+                </br>
+                {{form.dispensing_form}} 
+                {{form.medicament}} 
+            </td>
+            <td> 
+                <label for="id_dose"> Dose </label> 
+                </br>
+                {{form.dose}} 
+                {{form.dose_unit}}
+            </td>
+            <td> 
+                <label for="id_route"> Route </label> 
+                </br>
+                {{form.route}} 
+             </td>
+            <td> 
+                <label for="id_frequency"> Frequency </label> 
+                </br>
+                {{form.frequency}}
+                
+                <div data-dojo-type="dijit/form/DropDownButton" 
+                     data-dojo-props="label:'Custom Entry'"
+                     > 
+                    <div data-dojo-type="dijit/TooltipDialog"> 
+                        <p><label for="id_admin_hours">Custom Admin Hours </label></p>
+                        {{form.admin_hours}} 
+                    </div>
+                 </div>
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <label for="id_treatment_duration"> No. of Days </label> 
+                </br>
+                {{form.treatment_duration}}
+
+                <div data-dojo-type="dijit/form/DropDownButton" data-dojo-props="label: 'Custom Dates'">
+
+                    <div data-dojo-type="dijit/TooltipDialog"> 
+                        <p> Treatment Dates: </p>
+                        <label for="id_start_date"> From </label> {{form.start_date}} 
+                        <label for="id_end_date"> To  </label> {{form.end_date}} 
+                    </div>
+                </div>
+
+            </td>
+            <td> 
+                <label for="id_units"> Units/No. to Dispense </label> 
+                </br>
+                {{form.units}} 
+            </td>
+            <td> 
+                <label for="id_refills"> Refills </label>  
+                </br>
+                {{form.refills}} 
+            </td>
+        </tr>
+        {% comment %}
+            {{form.as_table}}
+        {% endcomment %}
+    </tbody>
+  </table>
+
+    <div>
+        <div data-dojo-type="dijit/TitlePane"
+            data-dojo-props="'title': 'Optional Instructions', 'open': false"
+            >
+            <p> 
+                <label for="id_indication"> Indication </label>  
+                </br>
+                {{form.indication}} 
+                <label for="id_review"> Review Date</label>
+                {{form.review}} 
+                <label for="id_comment"> Comment </label> 
+                {{form.comment}} 
+            </p>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+            <tr style="position:relative; float:right; clear: both;">
+                <td style="position:relative; float:left;"> 
+                    {{form.allow_substitution}} 
+                    <label for="id_allow_substitution"> Allow Substitution </label> 
+                </td>
+                <td>
+                    {{form.print_prescription}} 
+                    <label for="id_print_prescription"> Print </label> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button data-dojo-type="dijit/form/Button"
+                            type="submit" 
+                            iconClass="save"
+                            id="visitPrescriptionAddFormSubmitButton_{{visit_detail_obj.id}}"
+                            > 
+                            Save
+                    </button>
+                    <button data-dojo-type="dijit/form/Button"
+                            type="reset" 
+                            iconClass="reset"
+                            id="visitPrescriptionAddFormResetButton_{{visit_detail_obj.id}}"
+                            > 
+                            Reset
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

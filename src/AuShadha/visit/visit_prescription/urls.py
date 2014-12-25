@@ -16,24 +16,24 @@ urlpatterns = patterns('',
                            name='visit_prescription_list'
                            ),
 
-                       url(r'visit_prescription/add/(?P<id>\d+)/$',
+                       url(r'visit_prescription/add/(?P<visit_detail_id>\d+)/$',
                            'visit.visit_prescription.views.visit_prescription_add',
                            name='visit_prescription_add'
                            ),
 
-                       url(r'visit_prescription/edit/(?P<id>\d+)/$',
+                       url(r'visit_prescription/edit/(?P<visit_prescription_id>\d+)/$',
                            'visit.visit_prescription.views.visit_prescription_edit',
                            name='visit_prescription_edit'
                            ),
 
-                       url(r'visit_prescription/del/(?P<id>\d+)/$',
+                       url(r'visit_prescription/del/(?P<visit_prescription_id>\d+)/$',
                            'visit.visit_prescription.views.visit_prescription_del',
                            name='visit_prescription_del'
                            ),
 
 ################################ JSON, UI-PANE & TREE #########################
 
-                      url(r'visit_prescription/pane/(?P<id>\d+)/$',
+                      url(r'visit_prescription/pane/(?P<visit_detail_id>\d+)/$',
                            'visit.visit_prescription.dijit_widgets.pane.render_visit_prescription_pane',
                            name='render_visit_prescription_pane_with_id'
                            ),
@@ -54,13 +54,13 @@ urlpatterns = patterns('',
                            ),
 
                        url(r'visit_prescription/json/$',
-                           'visit.visit_prescription.views.render_visit_prescription_json',
-                           name='render_visit_prescription_json_without_id'
+                           'visit.visit_prescription.views.visit_prescription_json',
+                           name='visit_prescription_json_without_id'
                            ),
 
-                       url(r'visit_prescription/json/(?P<id>\d+)/$',
-                           'visit.visit_prescription.views.render_visit_prescription_json',
-                           name='render_visit_prescription_json_with_id'
+                       url(r'visit_prescription/json/(?P<visit_detail_id>\d+)/$',
+                           'visit.visit_prescription.views.visit_prescription_json',
+                           name='visit_prescription_json_with_id'
                            ),
 
 ################################ SUMMARY ###############################
@@ -70,7 +70,7 @@ urlpatterns = patterns('',
                            name='render_visit_prescription_summary_without_id'
                            ),
 
-                       url(r'visit_prescription/summary/(?P<id>\d+)/$',
+                       url(r'visit_prescription/summary/(?P<visit_detail_id>\d+)/$',
                            'visit.visit_prescription.views.render_visit_prescription_summary',
                            name='render_visit_prescription_summary_with_id'
                            ),
