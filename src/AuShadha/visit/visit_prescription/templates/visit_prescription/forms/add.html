@@ -28,10 +28,10 @@
                   ){
                         var prescriptionGridDom = 'visitPrescriptionGrid_{{visit_detail_obj.id}}';
                         var prescriptionGridUrl = "{%url 'visit_prescription_json_with_id' visit_detail_obj.id %}";
-                        var prescriptionGridStr = GRID_STRUCTURES.OPD_VISIT_PRESCRIPTION;
+                        var prescriptionGridStr = GRID_STRUCTURES.VISIT_PRESCRIPTION;
                         var activateRowClick = false;
                         var gridName = "Visit Prescription ";
-                        var storeToUse = "OPD_VISIT_PRESCRIPTION_GRID_STORE_{{visit_detail_obj.id}}";
+                        var storeToUse = "VISIT_PRESCRIPTION_GRID_STORE_{{visit_detail_obj.id}}";
 
                         console.log(genericGridSetup);
 

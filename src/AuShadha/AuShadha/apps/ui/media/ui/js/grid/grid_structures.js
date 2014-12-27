@@ -1370,7 +1370,7 @@ define(function () {
 
       ],
 
-OPD_VISIT_PRESCIPTION: [
+VISIT_PRESCRIPTION: [
 
             {
                 name: "ID",

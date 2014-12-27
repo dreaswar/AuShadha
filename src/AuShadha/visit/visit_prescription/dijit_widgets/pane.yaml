@@ -1,5 +1,58 @@
 {% verbatim %}
   # YAML to describe the Visit pane and the contained widgets. 
   # This can be parsed and values changed before its outputted on XHR
-  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+  # Render this as a Django template with {{'patient_id' : <patient_id> }} before loading yaml
 {% endverbatim %}
+ 
+# VARS
+
+VARS:
+
+  visit_prescription_grid: &VISIT_PRESCRIPTION_GRID
+        id : VISIT_PRESCRIPTION_GRID
+        type: dynamic_pane_grid
+        url: {%url 'visit_prescription_json_with_id' visit_detail_id %}
+        str: VISIT_PRESCRIPTION
+        activateRowClick: !!bool False
+        title:  Visit Prescription
+        storeToUse:  VISIT_PRESCRIPTION_STORE
+
+# YAML
+
+depends_on: [ visit ]
+load_after: visit
+load_first: !!bool False
+
+id: VISIT_PRESCRIPTION_BC
+type: bc
+title: Visit Prescription
+url: {%url 'render_visit_prescription_pane_with_id' visit_detail_id %}
+closable: !!bool True
+widgets: []
+panes:
+
+  - id: VISIT_PRESCRIPTION_CENTER_CP
+    region: center
+    type: cp
+    splitter: True
+    widgets: []
+    panes: 
+        - id: VISIT_PRESCRIPTION_GRID_CONTAINER
+          type: dom
+          domType: div
+          style:
+             height: 30em
+          panes: []
+          widgets: 
+             - *VISIT_PRESCRIPTION_GRID
+
+  - id: VISIT_PRESCRIPTION_BOTTOM_CP
+    region: bottom
+    type: cp
+    url: {%url 'visit_prescription_add' visit_detail_id %}
+    style: 
+        minHeight: 30em
+        height: 30em
+    splitter: True
+    widgets: []
+    panes: []
