@@ -1,0 +1,114 @@
+<!-- All the Dialogs and Tooltips that Dijit widgets use throughout AuShadha -->
+
+    <!--
+
+      This is by far the most commonly used Dialog. 
+      Initially started for editing Patient with a form.
+      There after it was used for everything and has become the 
+      most commonly used Dialog. 
+
+      Many post-AJAX call pop up assumes that it was this dialog that brought up
+      the form and calls its hide() method. 
+
+      The name needs to be changed to something more appropriate.
+
+    -->
+    <div id              = "editPatientDialog"
+         data-dojo-type  = "dijit/Dialog"
+         data-dojo-id    = "editPatientDialog"
+         data-dojo-props = "title: 'New Patient'"
+    >
+
+    </div>
+
+    <div id="loginDialog">         </div>
+
+    <div id              = "genericDialog"
+         data-dojo-type  = "dijit/Dialog"
+         data-dojo-id    = "genericDialog"
+         data-dojo-props = "title: ''"    
+    >
+
+    </div>
+
+    <div id="selectedGridId" style="display:none;"> </div>
+
+    <div id             = "dialogJsonMessage"
+         data-dojo-type = "dijit/Dialog"
+         data-dojo-id   = "dialogJsonMessage"
+         data-dojo-props = "title: 'ERROR!'"
+    >
+    </div>
+
+    <!--  Dialog to display that the permission was denied    -->
+    <div id              = "permissionDeniedErrorDialog"
+         data-dojo-id    = "permissionDeniedErrorDialog"
+         data-dojo-type  = "dijit/Dialog"
+         data-dojo-props = "title  : 'ERROR! Permission Denied'"
+    >
+      <p class="error_text"> Permission Denied </p>
+    </div>
+
+    <!--  Dialog to display that the submitted form contains error  -->
+    <div id              = "invalidFormSubmissionErrorDialog"
+         data-dojo-id    = "invalidFormSubmissionErrorDialog"
+         data-dojo-type  = "dijit/Dialog"
+         data-dojo-props = "title  : 'ERROR!'"
+    >
+      <p class="error_text"> Invalid Form Submission         </p>
+      <p class="suggestion_text">Please Correct & Resubmit </p>
+    </div>
+
+    <!--  
+      An attempt to replace the editPatientDialog app wide  
+      For some reason this does not work.
+    -->
+    <div id              = "appwideNotificationPopup"
+         data-dojo-id    = "appwideNotificationPopup"
+         data-dojo-type  = "dojox/widget/Toaster"
+         data-dojo-props = "positionDirection : 'tr-down',
+                            duration          : 0,
+                            messageTopic      : 'appwideNotificationMessage'
+                            "
+    >
+
+    </div>
+
+    <!--  
+      Miscelaneous Dialogs that needs to be removed after cleansing dependencies in JS code 
+      These are redundant
+    -->
+    <div id             = "addDialog"
+         data-dojo-type = "dijit/Dialog"
+         data-dojo-id   = "addDialog"
+         data-dojo-props = "title: 'Add'"
+    >
+      <div data-dojo-type = "dijit/form/Form"
+          id              = "addDialogForm"
+          data-dojo-id    = "addDialogForm"
+          encType         = "multipart/form-data"
+          action          = ""
+          method          = ""
+      >
+      </div>
+
+      <div id              = "addDialogContent"
+      >
+      </div>
+
+    </div>
+
+
+    <div id              = "gridDialog"
+         data-dojo-type  = "dijit/Dialog"
+         data-dojo-id    = "gridDialog"
+         data-dojo-props = "title: 'List'"
+    >
+      <div id     = "gridDialogContent"
+           style  = "height   : 600px;
+                     width    : 600px;
+                     overflow : auto;
+                    "
+      >
+      </div>
+    </div>

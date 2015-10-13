@@ -1,0 +1,360 @@
+{% verbatim %}
+  # YAML to describe the Visit pane and the contained widgets. 
+  # This can be parsed and values changed before its outputted on XHR
+  # Render this as a Django template with {{'clinic_id' : <clinic_id> }} before loading yaml
+{% endverbatim %}
+ 
+
+# YAML
+
+depends_on: [ aushadha ]
+load_after: first
+load_first: !!bool True
+
+id       : APP_LAYOUT
+type     : bc
+class    : demoLayout
+url      : {%url 'render_aushadha_ui_pane' %}
+closable : !!bool False
+widgets: []
+panes:
+
+
+  - id: topPane
+    type: cp
+    region: top
+    widgets: []
+    panes:
+
+      - id: header_area
+        type: bc
+        design: layout
+        widgets: []
+        panes:
+
+          - id: logoDiv
+            type: cp
+            region: leading
+            class: headerPaneWidgetArea
+            style:
+              width: 20em
+              background: none
+              border: none
+              padding: 0
+              margin: 1px
+            widgets: []
+            panes: 
+
+              - id: header_with_logo
+                type: dom
+                domType: h3
+                widgets: []
+                panes:
+
+                  - id: logo_a_tag
+                    type: dom
+                    domType: a
+                    href: {%url 'render_aushadha_ui_pane' %}
+                    alt: AuShadha
+                    widgets: []
+                    panes: 
+
+                      - id: AuShadhaHeaderIcon
+                        type: dom
+                        domType: img
+                        src:  {{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_text.svg
+                        alt: AuShadha
+                        widgets: []
+                        panes: []
+
+          - id: headerPaneSearchBoxCP
+            type: cp
+            region: center
+            class: headerPaneWidgetArea            
+            style:
+              background: none
+              border: none
+              padding: 0
+              margin: 1px
+            widgets: []
+            panes:
+              
+              - id: headerPaneSearchBox
+                type: dom
+                domType: span
+                #style:
+                  #width: 35em
+                widgets: []
+                panes: 
+
+                  - id: headerPaneSearchWidgetIcon
+                    type: dom
+                    domType: img
+                    src: {{MEDIA_URL}}images/patient/search_small.svg
+                    style:
+                      width: 16px
+                      height: 16px
+                      padding: 0
+                      margin: 0
+                      verticalAlign: middle
+                    panes: []
+                    widgets: []
+
+                  - id: headerPaneSearchWidget
+                    type: dom
+                    domType: div
+                    style:
+                      padding: 2px
+                      margin: 2px
+                      minWidth: 30em
+                      height: 1em
+                    panes: []
+                    widgets: []
+
+          - id: login_area
+            type: cp
+            region: trailing
+            class: headerPaneWidgetArea            
+            style:
+              width: 50em
+              background: none
+              border: none
+              padding: 0
+              margin: 1px
+            widgets: []
+            panes:
+
+              - id: notificationArea
+                type: dom
+                js_path: aushadha/header_pane/notification_area
+                domType: span
+                widgets: []
+                style:
+                  border: none
+                  minWidth: 2em
+                  marginRight: 0px
+                  marginLeft: 0px
+                  display: inline
+
+                panes: 
+                  - id: appsIcon
+                    type: dom
+                    domType: img
+                    class: login_area_img
+                    src: {{STATIC_URL}}images/dashboard_indicator.png
+                    alt: Reference Apps
+                    title: Reference Apps
+                    style:
+                      cursor: pointer
+                    widgets: []
+                    panes: []
+
+                  - id: dashBoard
+                    type: dom
+                    domType: img
+                    class: login_area_img
+                    src: {{STATIC_URL}}images/dashboard_home.png
+                    alt: Dashboard
+                    title: Dashboard
+                    style:
+                      cursor: pointer
+                    widgets: []
+                    panes: []
+
+                  - id: notesIcon
+                    type: dom
+                    domType: img
+                    class: login_area_img
+                    src: {{STATIC_URL}}images/generic/notes/note.png
+                    alt: Notes
+                    title: Notes
+                    style:
+                      cursor: pointer
+                    widgets: []
+                    panes: []
+
+
+                  - id: tasksIcon
+                    type: dom
+                    domType: img
+                    class: login_area_img
+                    src: {{STATIC_URL}}images/generic/notes/view_pim_tasks.png
+                    alt: Tasks
+                    title: Tasks
+                    style:
+                      cursor: pointer
+                    widgets: []
+                    panes: []
+
+                  - id: notificationIcon
+                    type: dom
+                    domType: img
+                    class: login_area_img
+                    src: {{STATIC_URL}}images/generic/notifications/info_128.png
+                    alt: Notifications
+                    title: Notifications
+                    style:
+                      cursor: pointer
+                    widgets: []
+                    panes: 
+                      - id: notificationsDiv
+                        type: dom
+                        domType: div
+                        widgets: []
+                        panes: []
+
+              - id: timeBox
+                type: dom
+                domType: span
+                panes: []
+                widgets: []
+                style:
+                  border: solid 1px slate
+                  marginLeft: 99px
+                  position: relative
+                  top: 0
+
+              - id: authArea
+                type: dom
+                domType: span
+                widgets: []
+                style:
+                  position: relative
+                  float: right
+                  marginLeft: 10px
+                panes:               
+
+                  {% if user %}
+
+                  - id: loggedInUserIcon
+                    type: dom
+                    domType: img
+                    class: login_area_img
+                    src: {{STATIC_URL}}images/generic/auth/user_16.png
+                    alt: {{user.username}}
+                    title: {{user.username}}
+                    widgets: []
+                    panes: []
+
+                  {% endif %}
+
+                  {% if user.is_staff %}
+
+                  - id: adminAreaHref
+                    type: dom
+                    domType: a
+                    target: _blank
+                    onclick: /AuShadha/admin/
+                    alt: Admin
+                    widgets: []
+                    panes:
+
+                      - id: adminAreaIcon
+                        type: dom
+                        domType: img
+                        class: login_area_img
+                        src: {{STATIC_URL}}images/generic/dashboard_and_settings/settings_16.png
+                        alt: Admin
+                        onclick: /AuShadha/admin/
+                        alt: Admin
+                        title: Redirect to Admin area (Opens a new window)
+
+                  {% endif %}
+
+                  {% if user.is_authenticated %}
+
+                  - id: logoutHref
+                    type: dom
+                    domType: a
+                    onclick: /AuShadha/logout/
+                    alt: Logout
+                    title: Logout
+                    widgets: []
+                    panes: 
+
+                      - id: logOutImg
+                        type: dom
+                        domType: img
+                        src: {{STATIC_URL}}images/generic/auth/system-shutdown-panel-restart.svg
+                        onclick: /AuShadha/logout/
+                        alt: Logout
+                        title: Logout
+                        class: login_area_img
+
+                  {% else %}
+
+                  - id: loginHref
+                    type: dom
+                    domType: a
+                    onclick: /AuShadha/login/
+                    alt: Login
+                    title: Login
+                    widgets: []
+                    panes: 
+                      
+                      - id: loginImg
+                        type: dom
+                        domType: img
+                        src: {{STATIC_URL}}images/generic/auth/login_128.png
+                        onclick: /AuShadha/login/
+                        alt: Login
+                        title: Login
+                        class: login_area_img
+
+                  {% endif %}
+
+
+      - id: headerPaneActionIconsBox
+        type: dom
+        domType: span
+        class: dijitTabInner dijitTabContent dijitTab dijitTabChecked dijitChecked
+        style:
+          float: right
+          margin: 3px
+          padding: 2px
+          boxShadow: 1px 1px slate
+          borderRadius: 5px
+        
+
+  - id: centerMainPane
+    type: cp
+    region: center
+    executeScripts: True
+    scriptHasHooks: True
+    widgets: []
+    panes:
+
+      - id: centerTopTabPane
+        class: centerTopTabPane mainTabContainer
+        type: tc
+        tabPosition: top
+        tabStrip: True
+        panes: []
+        widgets: []
+
+  - id: bottomPane
+    type: cp
+    class: edgePanel
+    region: bottom
+    widgets: []
+    panes:
+
+      - id: footer
+        type: dom
+        domType: div
+        class: footer
+        widgets: []
+        panes: 
+
+          - id: licenseAndEmail
+            type: dom
+            domType: span
+            widgets: []
+            panes: []
+            innerHTML: |
+              <i> AuShadha and Logo are &copy;of Dr. Easwar T.R 2012,<i> 
+              &nbsp;
+              <i id="click_for_gpl3"> GNU GPL Version 3 License</i> 
+              &nbsp;
+              <a href="mailto:dreaswar@gmail.com">dreaswar@gmail.com</a> 
+              &nbsp;

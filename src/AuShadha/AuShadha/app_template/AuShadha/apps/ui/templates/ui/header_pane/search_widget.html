@@ -1,0 +1,41 @@
+<!-- 
+  This is the search widget that appears on the Header pane   
+  Only the DOM has been created here. 
+
+  Afer Dijit and Dojo library loads, this DOM will be parsed and widget constructed.
+
+  This requires the Search Module to have loaded for parsing to happen.
+
+-->
+
+  <div style="position : relative; 
+               top      : 0em; ">
+
+    <!--{%if perms.patient.add_patientdetail %}
+        <img id             = "addPatientButtonSmall"
+              src            = "{{MEDIA_URL}}images/patient/patient_add.svg"
+              style          = " position     : relative;
+                                  width        : 16px;
+                                  height       : 16px;
+                                  margin-right : 20px;
+                                  cursor       : pointer;
+                                "
+        >
+     {% endif %}-->
+
+      <img id            = "headerPaneSearchWidgetIcon"
+          src            = "{{MEDIA_URL}}images/patient/search_small.svg"
+          style          = " position    : relative;
+                             width       : 16px; 
+                             height      : 16px;
+                             margin-left : 10px;
+                            "
+      >
+      <span  id             = "headerPaneSearchWidget"
+            style          = " position    : relative;
+                               margin-left : 20px;
+                             "
+      >
+
+      </span>
+  </div>

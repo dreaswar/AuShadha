@@ -1,0 +1,28 @@
+<div class="referenceApps">
+{% if app_objs %}
+  {% for a in app_objs %}
+    <div class="referenceApp"
+         data-url="{{a.app_url}}" 
+         style="background: #eee; 
+                width: 75%; 
+                vertical-align: middle; 
+                padding: 2px; 
+                border: none; 
+                box-radius: 2px;  
+                margin: 2px;
+                cursor: pointer;
+                " 
+      > 
+      <img src="{{STATIC_URL}}images/archive.png" 
+           class="large_img" 
+           alt="{{a.app_name}}" 
+           title="{{a.app_name}}">
+      <a class="referenceApp" 
+         href="#" 
+         data-url="{{a.app_url}}">
+        {{a.app_name}}
+      </a> 
+    </div>
+  {% endfor %}
+{% endif %}
+</div>

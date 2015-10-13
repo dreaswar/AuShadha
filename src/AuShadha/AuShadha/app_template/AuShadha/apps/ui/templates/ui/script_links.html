@@ -1,0 +1,58 @@
+<!-- Dojo library -->
+
+    <!-- Configuration parameters are set here for the Dojo library -->
+    <!-- This specifies the 'aushadha' package where all the custom JS files are located -->
+    <!-- Custom modules, JS packages while installing additional apps can be added below / inserted at runtime as stated below -->
+    <script type="text/javascript">
+
+      var dojoConfig = {
+          baseUrl           : "{{STATIC_URL}}", // This value is from the settings.py file
+          tlmSiblingOfDojo  : false,
+          packages: [
+              { name: "dojo"    , location: "{{STATIC_URL}}plugins/dojo/dojo" },
+              { name: "dijit"   , location: "{{STATIC_URL}}plugins/dojo/dijit" },
+              { name: "dojox"   , location: "{{STATIC_URL}}plugins/dojo/dojox" },
+              { name: "aushadha", location: "{{STATIC_URL}}/ui/js"  , main: "main" },
+
+              /* Additional modules can be added as below to be loaded at runtime.
+                 Dojo AMD does allow the dojoConfig to be set at runtime by doing
+
+                 var packages = dojoConfig.packages;
+                 packages.push({name: <my_package>, location: <my_location_of_js_file>}, main: <main_or_another_file});
+
+                 There after we can load the package. 
+              */
+
+              // Add on Modules Javascript Paths
+              // { name: "demographics", location: "{{STATIC_URL}}/demographics/js"  , main: "main" }
+          ]
+      };
+
+    </script>
+
+    <!-- This configures the Dojo library and the parameters to set on load -->
+
+    <!-- If the parent dojo directory does not exist inside the src/AuShadha/media/plugins/ directory
+         it has to be created and the Dojo library with folders of 'dojo', 'dijit', 'dojox' has to be 
+         extracted here 
+    -->
+    <script type="text/javascript"
+            src="{{STATIC_URL}}plugins/dojo/dojo/dojo.js"    
+            data-dojo-config="async: true, parseOnLoad: false, scriptHasHooks: true, executeScripts:true, isDebug:true">
+    </script>
+
+<!-- end of Dojo library links -->
+
+
+<!-- Custom script to run at startup -->  
+{% if user.is_authenticated %}
+    <!-- Script checks for logged in user and runs the AJAX calls to get INSTALLED_APPS and builds the UI -->
+    <script type    =   "text/javascript" 
+            src     =   "{{STATIC_URL}}ui/js/script.js"> 
+    </script>
+{% else %}
+    <!-- If user is not logged in redirect and login routine is taken care by this script -->
+    <script type=   "text/javascript" 
+            src =   "{{STATIC_URL}}ui/js/login.js"> 
+    </script>  
+{% endif %}

@@ -1,0 +1,44 @@
+<div data-dojo-type="dijit/layout/ContentPane"
+     data-dojo-id ="aushadha_license_dialog_content_pane"
+     style        = "width:auto; height: 110em;"
+>
+
+	<div data-dojo-type="dijit/layout/TabContainer"
+	     data-dojo-props="region:'top',tabPosition:'top', tabStrip:true"
+	     data-dojo-id ="aushadha_license_dialog_tab_container"
+	>
+
+                <div data-dojo-type="dijit/layout/ContentPane"
+                      data-dojo-props="title:'About AuShadha'"
+                      data-dojo-id ="aushadha_about_text_contentpane"
+                >
+                    {% include 'introduction_to_aushadha_project.html' %}
+                </div>
+
+                <div data-dojo-type="dijit/layout/ContentPane"
+                      data-dojo-props="title:'License'"
+                      data-dojo-id ="aushadha_license_text_contentpane"
+                >
+                    {%include 'license.html' %}
+                </div>
+
+                <div data-dojo-type="dijit/layout/ContentPane"
+                      data-dojo-props="title:'Credits'"
+                      data-dojo-id ="aushadha_credits_text_contentpane"
+                >
+                        {%include 'credits.html' %}	
+
+                </div>
+
+                <div data-dojo-type="dijit/layout/ContentPane"
+                      data-dojo-props="title:'AuShadha Wiki'"
+                      data-dojo-id ="aushadha_credits_text_contentpane"
+                      href="https://github.com/dreaswar/AuShadha/wiki"
+                >
+                </div>
+
+	</div>
+	<!--END OF TAB CONTAINER -->
+
+</div>
+<!--END OF CONTENT PANE -->

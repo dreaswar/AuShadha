@@ -1,0 +1,661 @@
+html, body {
+	height   : 100%;
+	width    : 100%;
+	margin   : 0;
+	overflow : hidden;
+	padding  : 0;
+}
+
+body{
+  background    : -moz-linear-gradient(center top , #D0DFEA, whitesmoke) repeat scroll 0 0 transparent;
+  font-family   : Droid-Sans, Sans-Serif, Ubuntu, Helvetica, Cantarell;
+  font-size     : 12px;
+}
+
+
+/* Loader */
+
+#aushadhaLoaderIndicator {
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100000;
+    opacity: 1;
+    background: #D0DFEA;
+}
+
+.loadingOverlayLogo {
+    background:  #D0DFEA url('{{STATIC_URL}}images/AuShadha_logo/AuShadha_logo_256.png') no-repeat 0% 0%;
+    position:relative;
+    width : 256px;
+    height: 256px;
+    top   : 3%;
+    left  : 40%;
+}
+ 
+.loadingOverlay {
+    background:  #D0DFEA url('{{STATIC_URL}}plugins/dojo/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
+    position : relative;
+    top      : 10px;
+    width    : 200px;
+    height   : 200px;
+    left     : 40%;
+}
+ 
+
+.loadingMessage {
+    background  : #D0DFEA;
+    color       : navy;
+    position    : relative;
+    top         : -200px;
+    width       : 200px;
+    height      : 200px;
+    left        : 45%;
+    padding-top : 35px;
+    font-weight : bold;
+    font-size   : 20px;
+}
+
+.loadingMessage>div{
+  position:relative;
+  top:0;
+}
+
+#aushadhaLoaderStatusMessage{
+  font-style: italic;
+  color: black;
+  position:relative;
+  top:10px;
+}
+
+
+/* End of Loader */
+
+
+hr {
+    border    : 0;
+    height    : 1px;
+    background: #333;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,hsla(0,0%,0%,0)), color-stop(50%,hsla(0,0%,0%,.75)), color-stop(100%,hsla(0,0%,0%,0)));
+    background: -webkit-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background: -moz-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background: -ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background: -o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background: linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+}
+/* The credit for the above is at : http://jsfiddle.net/joshnh/HdwKA/ */
+
+hr.shadow_line { 
+    margin-top:10px;
+    height: 1px;
+    border:none;
+    background: #cccccc;
+    width:100%;
+    background: -webkit-gradient( 
+                linear, 
+                0 0, 
+                100% 0,  
+                from(rgba(50,50,50,0.01)),
+                to(rgba(80,80,80,0.01)), 
+                color-stop(.5,#c9c9c9)
+                );
+    background: -moz-linear-gradient(
+                left,
+                rgba(0,0,0,0.001) 0%,
+                rgba(201,201,201,1) 50%,
+                rgba(0,0,0,0.001) 100%
+                );
+    
+    background:-ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:-o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    
+    box-shadow: -5px 7px 13px 1px #dad2d2;
+    -moz-box-shadow: -5px 7px 13px 1px #dad2d2;
+    -webkit-box-shadow: -5px 7px 13px 1px #dad2d2;
+}
+/* The credit for the above is at : http://jsfiddle.net/4yZNN/  Slightly modified */
+
+
+#appLayout {
+  height: 100%;
+}
+
+#topPane, #header_area {
+  position    : relative;
+  top         : 0px !important;
+  left        : 0px !important;
+  margin      : 0px !important;
+  padding     : 0px !important;
+  height      : 22px !important;
+  width       : 100% !important;
+  background  : -moz-linear-gradient(center top , #C8C8C8, #EDF2F7 ) repeat scroll 0 0 transparent;
+  color       : Navy;
+  overflow    : visible;
+}
+
+.dijitContentPane.topContentPane.nonSelected{
+  background     : none  !important;
+  border         : none !important;
+  height         : 0em !important;
+}
+
+.dijitContentPane.topContentPane.selected{
+  background     : none repeat scroll 0 0 #A2C1DE !important;
+  border-radius  : 10px 10px 10px 10px !important;
+  font-family    : Helvetica !important;
+  font-weight    : bold !important;
+  height         : 1em !important;
+  left           : 5px !important;
+  letter-spacing : 0.1em !important;
+  position       : absolute !important;
+  text-align     : center !important;
+  top            : 5px !important;
+  width          : 1221px !important;
+  box-shadow     : 0px 1px #aaa;
+}
+
+
+
+#topPane{
+  box-shadow    : 1px 1px 3px #aaa;
+  z-index       : 10000;
+  border-bottom : none !important;
+}
+
+#header_area{
+  border:none;
+  background:none;
+}
+
+
+#logoDiv{
+  overflow : visible;
+  position : absolute;
+  top      : 0px;
+  left     : 0px;
+  height   : 22px;
+  width    : 100px;
+}
+
+#logoDiv img{
+ position : relative;
+ top      : -20px;
+ left     : 10px;
+ width    : 100px;
+ height   : 20px;
+}
+
+#login_area{
+  position    : relative;
+  width       : 400px;
+  border      : none; 
+  margin      : 0px; 
+  padding     : 0px; 
+  background  : none; 
+  overflow    : visible;
+}
+
+#login_area img{
+ width       : 16px;
+ height      : 16px;
+ margin      : 0 5px 0 5px;
+ padding     : 0;
+ vertical-align: middle;
+}
+
+#timeBox{
+  position      : relative;
+  left          : 0px;
+  margin-right  : 5px;
+  padding-right : 5px;
+  top           : -5px;
+  border-right  : solid #aaa 1px;
+  border-left  : solid #aaa 1px;
+  color         : #404040;
+  font-size     : 10px;
+  min-width     : 5em;
+}
+
+#centerTopPane, 
+#centerBottomPane{
+    background: -moz-linear-gradient(center top ,whitesmoke, white) repeat scroll 0 0 transparent;
+}
+
+#centerMainPane{
+  position      : absolute !important;
+  top           : 35px !important;
+  left          : 0px !important;
+  width         : 99% !important;
+  border        : none !important;
+  background    : -moz-linear-gradient(center top , #D0DFEA, whitesmoke) repeat scroll 0 0 transparent;
+}
+
+#bottomPane{
+  position    : absolute !important;
+  bottom      : 0px !important; 
+  left        : 0px !important;
+  margin      : 0px !important;
+  padding     : 0px !important;
+  height      : 16px !important;
+  width       : 100% !important;
+  background    : -moz-linear-gradient(center top , #EDF2F7, white) repeat scroll 0 0 transparent;
+  color         : Navy;
+}
+
+
+
+div[id $= '_list'].dojoxGrid,
+div.auGridContainer
+{
+  min-height : 230px;
+  margin-top : 5px;
+  margin-top : 5px;
+}
+
+
+
+#patientSynopsisBottomContentPane{
+	height   : 18em;
+	overflow : auto;
+}
+
+
+
+#demographics_add_or_edit_form,
+#demographics_add_or_edit_form form{
+  width    : 36em;
+  height   : 35em;
+  overflow : auto;
+}
+
+
+.headerPaneWidgetArea {
+  border: solid 1px slate !important;
+  border-radius: 5px !important;
+}
+
+
+span.opdVisitNotesHeader {
+    background: none repeat scroll 0 0 whitesmoke; 
+    box-shadow: 1px 2px 5px whitesmoke; 
+    border-radius: 5px;
+    border: solid 1px #aaa;
+/*     float: left;  */
+    font-size: 1.1em; 
+/*     font-weight: bold;  */
+/*     font-family: Ubuntu, Sans-Serif, Tahoma,Helvetica; */
+    position: relative; 
+    left: -15px; 
+    height: 3.3em;
+    width: auto;
+    line-height: 1.5em; 
+    margin: -1px 5px 11px -10px; 
+    padding: 3px; 
+    -moz-transform: rotate(-32deg);
+    -webkit-transform: rotate(-32deg); 
+}
+
+span.opdVisitNotesSubHeader {
+/*     background: none repeat scroll 0 0 whitesmoke;  */
+    box-shadow: 1px 2px 5px whitesmoke; 
+/*     border-radius: 2px; */
+/*     border: solid 1px #ddd; */
+/*     border-bottom: solid 1px lightblue; */
+    
+    background-color: #CFE5FA;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+    background-repeat: repeat-x;
+    border-color: #759DC0;
+    border-width: 1px 0;
+    color: #000000;
+
+    font-size: 1em; 
+    position: relative; 
+    left: -5px; 
+    height: 3.1em;
+    min-width: 200px;
+    line-height: 1.5em; 
+    margin: -1px 5px 11px -10px; 
+    padding: 3px; 
+}
+
+/* Sidebar Inner Div Styles */
+
+
+
+
+.login_area_img{
+  width    : 28px;
+  height   : 28px;
+  border   : none;
+  margin   : 0px;
+  padding  : 0px;
+  position : relative;
+  top      : 0px;
+}
+
+
+.small_img{
+  width   : 12px;
+  height  : 12px;
+  border  : none;
+  margin  : 0px;
+  padding : 0px;
+}
+
+
+a{
+  outline : none;
+  border  : none;
+  text-decoration:none;
+}
+
+
+.help_text{
+  font-size         : 9px;
+  font-style        : italic;
+  color             :  navy;
+  background-image  : url('{{STATIC_URL}}images/generic/notification/info_128.png');
+  background-repeat : no-repeat;
+  background-size   : 12px 12px;
+  padding           : 0px 0px 0px 14px; 
+  margin            : 10px 0px 20px 0px;
+}
+
+.helptext{
+  font-size         : 10px;
+  font-style        : italic;
+  color             : navy;
+  padding           : 0px 0px 0px 14px; 
+  margin            : 10px 0px 20px 0px;
+}
+
+.label_text{
+  font-size    : 12px;
+  color        : navy;
+  font-weight  : bold;
+  margin-right : 5px;
+  float        : left;
+  line-height  : 1.5em;
+}
+
+
+.error_text{
+  font-size           : 12px;
+  font-weight         : bold;
+  color               : red;
+  background-image    : url('{{STATIC_URL}}images/generic/notifications/critical_128.png');
+  background-repeat   : no-repeat;
+  background-size     : 12px 12px;
+  padding             : 0px 0px 0px 15px; 
+  margin              : 10px 5px 20px 5px;
+}
+
+   
+.suggestion_text{
+  font-size             : 10px;
+  font-style            : italic;
+  color                 :  RoyalBlue;
+  background-image      : url('{{STATIC_URL}}images/generic/notifications/bulb_32.png');
+  background-repeat     : no-repeat;
+  background-size       : 12px 12px;
+  padding               : 0px 0px 0px 14px; 
+  margin                : 10px 0px 20px 0px;
+}
+
+.patientIcon{
+  background-image     : url("{{STATIC_URL}}images/generic/auth/user_16.png");
+  background-repeat    : no-repeat;
+  background-position  : center center;
+  width                : 16px;
+  height               : 16px;
+} 
+
+.patientContactTreeIcon{
+  background-image    : url("{{STATIC_URL}}images/patient/patient_contact_list_16.png");
+  background-repeat   : no-repeat;
+  background-position : center center;
+  width               : 16px;
+  height              : 16px;
+}    
+
+.likeARow{
+  position : relative;
+  top      : 0;
+  float    : left;
+}
+
+  /* dijit Custom Classess */
+
+.settingsIcon{
+  background-image    : url('{{STATIC_URL}}images/generic/dashboard_and_settings/settings_16.png');
+  background-repeat   : no-repeat;
+  height              : 16px;
+  width               : 16px;
+  text-align          : center;
+}
+
+.contactIcon{
+  background-image    : url('{{STATIC_URL}}images/patient/addressbook.svg');
+  background-repeat   : no-repeat;
+  height              : 16px;
+  width               : 16px;
+  text-align          : center;
+}
+
+.addItemIcon{
+  background-image    : url('{{STATIC_URL}}images/generic/crud/add.png');
+  background-repeat   : no-repeat;
+  height              : 16px;
+  width               : 16px;
+  text-align          : center;
+}
+
+.navigationIcon{
+  background-image    : url('{{STATIC_URL}}images/patient/view-list.svg');
+  background-repeat   : no-repeat;
+  height              : 16px;
+  width               : 16px;
+  text-align          : center;
+}
+
+.mediaIcon{
+  background-image    : url('{{STATIC_URL}}images/generic/mimes/word_document_media.svg');
+  background-repeat   : no-repeat;
+  height              : 16px;
+  width               : 16px;
+  text-align          : center;
+}
+
+
+#addPatientButton >*{
+  text-align     : center;
+  vertical-align : middle;
+  padding        : 2px;
+  margin         : 0px;
+}
+
+.attachment_small{
+  background-image  : url('{{STATIC_URL}}images/attachment_small.png');
+  background-repeat : no-repeat;     
+  height            : 16px;
+  width             : 16px;
+  text-align        : center;
+}
+
+
+.addPatientIcon_32{
+  background-image    : url('{{STATIC_URL}}images/patient/patient_add.svg');
+  background-repeat   : no-repeat;
+  height              : 16px;
+  width               : 16px;
+  text-align          : center;
+}
+
+.addPatientIcon_16{
+  background-image    : url('{{STATIC_URL}}images/patient/patient_add.svg');
+  background-repeat   : no-repeat;
+  height              : 16px;
+  width               : 16px;
+  text-align          : center;
+}
+
+.addPatientIcon_16_small{
+  background-image    : url('{{STATIC_URL}}images/patient/patient_add_small.svg');
+  background-repeat   : no-repeat;
+  height              : 16px;
+  width               : 16px;
+  text-align          : center;
+}
+
+.addPatientContactIcon_32{
+  background-image    : url('{{STATIC_URL}}images/patient/patient_contact_add_32.png');
+  background-repeat   : no-repeat;
+  height              : 32px;
+  width               : 32px;
+  text-align          : center;
+}
+
+.addPatientContactIcon_16{
+  background-image    : url('{{STATIC_URL}}images/patient/patient_contact_add_16.png');
+  background-repeat   : no-repeat;
+  height              : 16px;
+  width               : 16px;
+  text-align          : center;
+}
+
+.addPatientPhoneIcon_32{
+    background-image    : url('{{STATIC_URL}}images/patient/phone_32.png');
+    background-repeat   : no-repeat;
+    height: 32px;
+    width:32px;
+    text-align:center;
+}
+
+.addPatientPhoneIcon_16{
+    background-image    : url('{{STATIC_URL}}images/patient/phone_16.png');
+    background-repeat   : no-repeat;
+    height: 16px;
+    width:16px;
+    text-align:center;
+}
+
+.dndDropIndicator {
+  border        : 2px dashed #99BBE8;
+  cursor        : default;
+  margin-bottom : 5px;
+}
+
+
+  /* End of Dijit Custom Classes */
+
+
+#editPatientDialog, 
+#jsonMessageDialog,
+{
+  background : white;
+  opacity    : 100;
+}
+
+
+
+
+/*TABLES*/
+
+table.content_pane_table{
+  text-align      : center;
+  border          : solid 1px #aaa;
+  border-radius   : 2px;
+  border-collapse : collapse;
+  margin          : 10px;
+  padding         : 5px;
+}
+
+table.content_pane_table thead th {
+  border      : solid 1px #aaa;
+  padding     : 3px;
+  background  : whitesmoke;
+  text-align  : center;
+}
+
+table.content_pane_table tbody tr.even_row {
+  border      : solid 1px #ddd;
+  padding     : 10px;
+  background  : white;
+  text-align  : center;
+}
+
+table.content_pane_table tbody tr td {
+  padding    : 10px;
+  text-align : center;
+}
+
+table.content_pane_table tbody tr.odd_row {
+  border     : solid 1px white;
+  padding    : 3px;
+  background : whitesmoke;
+  text-align : center;
+}
+
+.normal_value_indicator_text{
+  color       : green;
+  background  : oldlace;
+  font-weight : bold;
+}
+
+.abnormal_value_indicator_text{
+  color        : red;
+  background   : lightyellow;
+  font-weight  : bold;
+}
+
+
+.examTable{
+  border          : solid 1pt #759DC0; 
+  border-collapse : collapse; 
+  background      : #CFE5FA; 
+  min-width       : 500px;
+}
+
+.examTable tbody tr{
+  background-color  : #CFE5FA;
+  background-image  : url("{{CUSTOM_SCRIPT_ROOT}}images/commonHighlight.png");
+  background-repeat : repeat-x;
+}
+
+.examTable tbody tr td{
+  border-bottom : solid 1pt #759DC0; 
+  padding       : 5px; 
+  font-size     : 11px;
+}
+
+#social_history_form_table tr {
+  margin: 25px 0px 25px 0px;
+}
+
+
+/* Toaster Notification CSS */
+
+.dijitToasterMessage{
+  color      : #fff;
+  text-align : center;
+}
+
+.dijitToasterContent {
+  padding        : 1em;
+  padding-top    : 0.25em;
+  background     : #000;
+  border-radius  : 8px;
+  text-align     : center;
+  vertical-align : middle;
+}
+
+
+/* Custom CSS for Non-modal Dijit Dialogs */
+
+.nonModalDialog_underlay{
+  display : none;
+}

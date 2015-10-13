@@ -1,0 +1,188 @@
+- role: PatientRegistration
+  app: patient
+  module: models
+  class_name: PatientDetail
+
+######################################################
+- role: RegistryApp
+  app: registry.icd10
+  module: models
+  class_name: Chapter
+
+- role: RegistryApp
+  app: registry.icd10pcs
+  module: models
+  class_name: Section
+
+- role: RegistryApp
+  app: registry.drug_db
+  module: models
+  class_name: FDADrugs
+
+- role: RegistryApp
+  app: registry.drug_db.drugbankca
+  module: models
+  class_name: DrugBankCaDrugs
+
+- role: RegistryApp
+  app: registry.vaccine_registry
+  module: models
+  class_name: VaccineDetail
+
+#######################################################
+
+
+
+
+################################################################################
+
+#- role: Admission
+#  app: admission.admission
+#  module: models
+#  class_name: AdmissionDetail
+
+################################################################################
+
+- role: Demographics
+  app: demographics.demographics
+  module: models
+  class_name: Demographics
+
+- role: Contact
+  app: demographics.contact
+  module: models
+  class_name: Contact
+
+- role: Phone
+  app: demographics.phone
+  module: models
+  class_name: Phone
+
+- role: Guardian
+  app: demographics.guardian
+  module: models
+  class_name: Guardian
+
+################################################################################
+
+- role: MedicalHistory
+  app: history.medical_history
+  module: models
+  class_name: MedicalHistory
+
+- role: SurgicalHistory
+  app: history.surgical_history
+  module: models
+  class_name: SurgicalHistory
+
+- role: FamilyHistory
+  app: history.family_history
+  module: models
+  class_name: FamilyHistory
+
+- role: SocialHistory
+  app: history.social_history
+  module: models
+  class_name: SocialHistory
+
+################################################################################
+
+- role: Immunisation
+  app: immunisation
+  module: models
+  class_name: Immunisation
+
+################################################################################
+
+- role: MedicationList
+  app: medication_list
+  module: models
+  class_name: MedicationList
+
+- role: AllergyList
+  app: allergy_list
+  module: models
+  class_name: Allergy
+
+
+################################################################################
+
+- role: OPD_Visit
+  app: visit.visit
+  module: models
+  class_name: VisitDetail
+
+#################################################################################
+
+- role: OPD_VisitComplaints
+  app: visit.visit_complaints
+  module: models
+  class_name: VisitComplaint
+#################################################################################
+
+- role: OPD_VisitHPI
+  app: visit.visit_hpi
+  module: models
+  class_name: VisitHPI
+
+#################################################################################
+
+- role: OPD_VisitROS
+  app: visit.visit_ros
+  module: models
+  class_name: VisitROS
+
+#################################################################################
+
+- role: PhysicalExamination
+  app: visit.visit_phyexam
+  module: models
+  class_name: PhyExamBaseModel
+
+- role: OPD_VitalExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: VitalExam
+
+- role: OPD_GenExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: GenExam
+
+- role: OPD_SysExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: SysExam
+
+- role: OPD_NeuroExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: NeuroExam
+
+- role: OPD_MusculoSkeletalExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: MusculoSkeletalExam
+
+- role: OPD_VascExam
+  app: visit.visit_phyexam
+  module: models
+  class_name: VascExam
+
+#################################################################################
+
+- role: OPD_VisitSOAP
+  app: visit.visit_soap
+  module: models
+  class_name: VisitSOAP
+  
+- role: OPD_AssessmentAndPlan
+  app: visit.visit_assessment_and_plan
+  module: models
+  class_name: VisitAssessmentAndPlan
+
+
+- role: OPD_Prescription
+  app: visit.visit_prescription
+  module: models
+  class_name: VisitPrescription
