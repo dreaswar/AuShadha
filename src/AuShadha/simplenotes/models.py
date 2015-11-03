@@ -96,11 +96,11 @@ class SimpleNotesFirstVisitForm(AuShadhaBaseModelForm):
         ModelForm for Simple Notes First Visit
     """
 
-    __form_name__ = "Visit Notes First Visit Form"
+    __form_name__ = "Visit Notes -First Visit"
 
     dijit_fields = SIMPLENOTES_FIRST_VISIT_FORM_CONSTANTS
 
     class Meta:
         model = SimpleNotes_FirstVisit
-        exclude = DEFAULT_SIMPLENOTES_FIRST_VISIT_FORM_EXCLUDES
+        exclude = SIMPLENOTES_FIRST_VISIT_FORM_EXCLUDES
 

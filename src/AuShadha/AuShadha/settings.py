@@ -318,6 +318,10 @@ INSTALLED_APPS = (
 #    'admission.admission_imaging',
 #    'admission.admission_inv',
 
+#App for Substitution of the entire history and visit taking with 
+# Simplenotes
+   'simplenotes',
+
 )
 
 try:
