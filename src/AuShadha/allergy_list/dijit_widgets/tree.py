@@ -28,9 +28,7 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
-
-
-class AllergyTree( object ):
+class AllergyTree(object):
 
     """
      Defines the Dijit UI for Allergy Tree

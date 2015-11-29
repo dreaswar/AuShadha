@@ -19,9 +19,7 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
-
-
-class VisitPrescriptionTree( object ):
+class VisitPrescriptionTree(object):
 
     """
      Defines the Dijit UI for Visit_prescription Tree
@@ -30,4 +28,4 @@ class VisitPrescriptionTree( object ):
 
 
 def render_visit_prescription_tree(request, visit_detail_id=None):
-  pass
+    pass

@@ -1,10 +1,10 @@
-#################################################################################
+##########################################################################
 # Project     : AuShadha
 # Description : AuShadha Views for OPD Visits History
-# Author      : Dr.Easwar T.R 
+# Author      : Dr.Easwar T.R
 # Date        : 27-12-2012
 # License     : GNU - GPL Version 3, see AuShadha/LICENSE.txt
-#################################################################################
+##########################################################################
 
 
 # General Django Imports----------------------------------
@@ -52,37 +52,38 @@ from .models import VisitAssessmentAndPlan, VisitAssessmentAndPlanForm
 # views start here;;
 
 @login_required
-def visit_assessment_and_plan_template(request, assessment_name, visit_id = None):
+def visit_assessment_and_plan_template(
+        request, assessment_name, visit_id=None):
 
     if request.method == "GET":
         user = request.user
 
         try:
             if visit_id:
-                visit_id = int( visit_id )
+                visit_id = int(visit_id)
 
             else:
-                visit_id = int( request.GET.get('visit_id') )
+                visit_id = int(request.GET.get('visit_id'))
 
             visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
-            exam_class = EXAM_NAME_MODEL_MAP.get(assessment_name,'')
+            exam_class = EXAM_NAME_MODEL_MAP.get(assessment_name, '')
 
             if not exam_class:
                 raise Http404("Invalid Exam Requested")
 
             try:
-                template_file = 'visit_assessment_and_plan/%s/template.html' %(assessment_name)
+                template_file = 'visit_assessment_and_plan/%s/template.html' % (
+                    assessment_name)
                 #template = loader.get_template(template_file)
-                variable = RequestContext(request, {'user': user,
-                                                    'assessment_name': assessment_name ,
-                                                    'visit_detail_obj': visit_detail_obj
-                                                    })
+                variable = RequestContext(request,
+                                          {'user': user,
+                                           'assessment_name': assessment_name,
+                                           'visit_detail_obj': visit_detail_obj})
                 #rendered_html = template.render(variable)
-                return render_to_response(template_file, variable )
+                return render_to_response(template_file, variable)
 
             except Exception as ex:
-                raise Http404("ERROR! " , ex)
-
+                raise Http404("ERROR! ", ex)
 
         except (ValueError, KeyError, NameError, AttributeError):
             raise Http404("Invalid Exam template. ")
@@ -92,7 +93,7 @@ def visit_assessment_and_plan_template(request, assessment_name, visit_id = None
 
 
 @login_required
-def get_visit_assessment_and_plan(request, visit_id = None):
+def get_visit_assessment_and_plan(request, visit_id=None):
 
     if request.method == 'GET':
         user = request.user
@@ -115,9 +116,11 @@ def get_visit_assessment_and_plan(request, visit_id = None):
             raise Http404("ERROR:: Patient requested does not exist.")
 
         data = []
-        for visit in VisitDetail.objects.filter(patient_detail = patient_detail_obj):
+        for visit in VisitDetail.objects.filter(
+                patient_detail=patient_detail_obj):
             if visit != visit_detail_obj:
-                visit_assessment_and_plan_obj = VisitAssessmentAndPlan.objects.filter(visit_detail = visit)
+                visit_assessment_and_plan_obj = VisitAssessmentAndPlan.objects.filter(
+                    visit_detail=visit)
                 if visit_assessment_and_plan_obj:
                     data.append(visit_assessment_and_plan_obj[0])
 
@@ -126,32 +129,32 @@ def get_visit_assessment_and_plan(request, visit_id = None):
                 if not getattr(assessment_and_plan, 'urls', None):
                     assessment_and_plan.save()
 
-        variable = RequestContext(request, {'user': user, 
-                                            'visit_assessment_and_plan_objs': data,
-                                            'visit_detail_obj': visit_detail_obj,
-                                            'patient_detail_obj': patient_detail_obj
-                                            })
-        return render_to_response('visit_assessment_and_plan/get_all_visit_assessment_and_plan.html', variable)
+        variable = RequestContext(request,
+                                  {'user': user,
+                                   'visit_assessment_and_plan_objs': data,
+                                   'visit_detail_obj': visit_detail_obj,
+                                   'patient_detail_obj': patient_detail_obj})
+        return render_to_response(
+            'visit_assessment_and_plan/get_all_visit_assessment_and_plan.html', variable)
 
     else:
         raise Http404("Bad Request Method")
 
 
-
 @login_required
-def visit_assessment_and_plan_json(request, visit_id = None):
+def visit_assessment_and_plan_json(request, visit_id=None):
 
     try:
         if visit_id:
-          visit_id = int(visit_id)
+            visit_id = int(visit_id)
         else:
-          visit_id = int(request.GET.get('visit_id'))          
+            visit_id = int(request.GET.get('visit_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         patient_detail_obj = visit_detail_obj.patient_detail
 
         if not getattr(visit_detail_obj, 'urls', None):
-          visit_detail_obj.save()
+            visit_detail_obj.save()
 
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -161,22 +164,24 @@ def visit_assessment_and_plan_json(request, visit_id = None):
 
     #visit_assessment_and_plan_objs  = []
     #all_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj)
-    #for visit in all_visits:
+    # for visit in all_visits:
       #vc = VisitAssessmentAndPlan.objects.filter(visit_detail = visit)
-      #for c in vc:
-        #visit_assessment_and_plan_objs.append(c)
+      # for c in vc:
+        # visit_assessment_and_plan_objs.append(c)
 
-    visit_assessment_and_plan_objs = VisitAssessmentAndPlan.objects.filter(visit_detail = visit_detail_obj)
+    visit_assessment_and_plan_objs = VisitAssessmentAndPlan.objects.filter(
+        visit_detail=visit_detail_obj)
     data = []
 
     if visit_assessment_and_plan_objs:
         for assessment_and_plan in visit_assessment_and_plan_objs:
             if not getattr(assessment_and_plan, 'urls', None):
-              assessment_and_plan.save()
+                assessment_and_plan.save()
             i = 0
             data_to_append = {}
             data_to_append['id'] = assessment_and_plan.id
-            data_to_append['possible_diagnosis'] = assessment_and_plan.possible_diagnosis
+            data_to_append[
+                'possible_diagnosis'] = assessment_and_plan.possible_diagnosis
             data_to_append['case_summary'] = assessment_and_plan.case_summary
             data_to_append['plan'] = assessment_and_plan.plan
             data_to_append['edit'] = assessment_and_plan.urls['edit']
@@ -188,11 +193,9 @@ def visit_assessment_and_plan_json(request, visit_id = None):
     return HttpResponse(jsondata, content_type="application/json")
 
 
-
 @login_required
-def visit_assessment_and_plan_add(request, visit_id = None):
-
-    """ 
+def visit_assessment_and_plan_add(request, visit_id=None):
+    """
     Adds a Visit assessment_and_plan
     """
 
@@ -203,49 +206,54 @@ def visit_assessment_and_plan_add(request, visit_id = None):
 
     try:
         if visit_id:
-          visit_id = int(visit_id)
+            visit_id = int(visit_id)
         else:
-          visit_id = int(request.GET.get('visit_id'))
+            visit_id = int(request.GET.get('visit_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         patient_detail_obj = visit_detail_obj.patient_detail
 
         if not getattr(patient_detail_obj, 'urls', None):
-          patient_detail_obj.save()
+            patient_detail_obj.save()
 
         if not getattr(visit_detail_obj, 'urls', None):
-          visit_detail_obj.save()
+            visit_detail_obj.save()
 
-        visit_assessment_and_plan_objs = VisitAssessmentAndPlan.objects.filter(visit_detail = visit_detail_obj)
+        visit_assessment_and_plan_objs = VisitAssessmentAndPlan.objects.filter(
+            visit_detail=visit_detail_obj)
         if visit_assessment_and_plan_objs:
-          return visit_assessment_and_plan_edit(request, visit_assessment_and_plan_id = visit_assessment_and_plan_objs[0].id)
+            return visit_assessment_and_plan_edit(
+                request, visit_assessment_and_plan_id=visit_assessment_and_plan_objs[0].id)
 
-        visit_assessment_and_plan_obj = VisitAssessmentAndPlan(visit_detail=visit_detail_obj)
+        visit_assessment_and_plan_obj = VisitAssessmentAndPlan(
+            visit_detail=visit_detail_obj)
 
         if request.method == "GET" and request.is_ajax():
 
-            visit_assessment_and_plan_form = VisitAssessmentAndPlanForm(instance = visit_assessment_and_plan_obj,
-                                                      auto_id  = "id_add_visit_assessment_and_plan"+ str(visit_id)+"_%s")
+            visit_assessment_and_plan_form = VisitAssessmentAndPlanForm(
+                instance=visit_assessment_and_plan_obj,
+                auto_id="id_add_visit_assessment_and_plan" + str(visit_id) + "_%s")
             variable = RequestContext(request, {
-                                                'user': user,
-                                                'visit_detail_obj': visit_detail_obj,
-                                                'visit_assessment_and_plan_form': visit_assessment_and_plan_form,
-                                                'patient_detail_obj': patient_detail_obj,
-                                                'error_message': error_message,
-                                                'success': success,
-                                                'visit_assessment_and_plan_action':'add'
-                                            })
+                'user': user,
+                'visit_detail_obj': visit_detail_obj,
+                'visit_assessment_and_plan_form': visit_assessment_and_plan_form,
+                'patient_detail_obj': patient_detail_obj,
+                'error_message': error_message,
+                'success': success,
+                'visit_assessment_and_plan_action': 'add'
+            })
 
-            return render_to_response('visit_assessment_and_plan/add_or_edit_form.html', variable)
+            return render_to_response(
+                'visit_assessment_and_plan/add_or_edit_form.html', variable)
 
         elif request.method == "POST" and request.is_ajax():
 
-            visit_assessment_and_plan_form = VisitAssessmentAndPlanForm(request.POST, 
-                                                                        instance = visit_assessment_and_plan_obj
-                                                                        )
+            visit_assessment_and_plan_form = VisitAssessmentAndPlanForm(
+                request.POST, instance=visit_assessment_and_plan_obj)
 
-            if visit_assessment_and_plan_form.is_valid() :
-                saved_visit_assessment_and_plan = visit_assessment_and_plan_form.save(commit=False)
+            if visit_assessment_and_plan_form.is_valid():
+                saved_visit_assessment_and_plan = visit_assessment_and_plan_form.save(
+                    commit=False)
                 saved_visit_assessment_and_plan.visit_detail = visit_detail_obj
                 saved_visit_assessment_and_plan.save()
                 success = True
@@ -258,7 +266,8 @@ def visit_assessment_and_plan_add(request, visit_id = None):
                                       Please check the forms for errors
                                     </h4>
                                 '''
-                errors += aumodelformerrorformatter_factory(visit_assessment_and_plan_form)
+                errors += aumodelformerrorformatter_factory(
+                    visit_assessment_and_plan_form)
                 error_message += ('\n' + errors)
                 redirectUrl = None
                 success = False
@@ -273,7 +282,6 @@ def visit_assessment_and_plan_add(request, visit_id = None):
         else:
             raise Http404(" Error ! Unsupported Request..")
 
-
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
         raise Http404("Error ! Invalid Request Parameters. ")
 
@@ -282,59 +290,64 @@ def visit_assessment_and_plan_add(request, visit_id = None):
 
 
 @login_required
-def visit_assessment_and_plan_edit(request, visit_assessment_and_plan_id = None):
+def visit_assessment_and_plan_edit(request, visit_assessment_and_plan_id=None):
 
     user = request.user
-    error_message = None    
-    
+    error_message = None
+
     try:
 
         if visit_assessment_and_plan_id:
-          visit_assessment_and_plan_id = int(visit_assessment_and_plan_id)
+            visit_assessment_and_plan_id = int(visit_assessment_and_plan_id)
 
         else:
-          visit_assessment_and_plan_id = int(request.GET.get('visit_assessment_and_plan_id'))
+            visit_assessment_and_plan_id = int(
+                request.GET.get('visit_assessment_and_plan_id'))
 
-        visit_assessment_and_plan_obj = VisitAssessmentAndPlan.objects.get(pk=visit_assessment_and_plan_id)
+        visit_assessment_and_plan_obj = VisitAssessmentAndPlan.objects.get(
+            pk=visit_assessment_and_plan_id)
         visit_detail_obj = visit_assessment_and_plan_obj.visit_detail
         patient_detail_obj = visit_detail_obj.patient_detail
 
-        if not getattr(visit_detail_obj,'urls',None):
-          visit_detail_obj.save()
+        if not getattr(visit_detail_obj, 'urls', None):
+            visit_detail_obj.save()
 
-        if not getattr(patient_detail_obj,'urls',None):
-          patient_detail_obj.save()
+        if not getattr(patient_detail_obj, 'urls', None):
+            patient_detail_obj.save()
 
-        if not getattr(visit_assessment_and_plan_obj,'urls',None):
-          visit_assessment_and_plan_obj.save()
+        if not getattr(visit_assessment_and_plan_obj, 'urls', None):
+            visit_assessment_and_plan_obj.save()
 
         if request.method == "GET" and request.is_ajax():
 
-            visit_assessment_and_plan_form = VisitAssessmentAndPlanForm(instance = visit_assessment_and_plan_obj, 
-                                                                        auto_id = "id_edit_visit_assessment_and_plan"+    str(visit_assessment_and_plan_id)+"_%s"
-                                                                        )
+            visit_assessment_and_plan_form = VisitAssessmentAndPlanForm(
+                instance=visit_assessment_and_plan_obj,
+                auto_id="id_edit_visit_assessment_and_plan" +
+                str(visit_assessment_and_plan_id) +
+                "_%s")
 
             variable = RequestContext(
                 request, {'user': user,
                           'visit_detail_obj': visit_detail_obj,
                           'visit_assessment_and_plan_obj': visit_assessment_and_plan_obj,
-                          'visit_assessment_and_plan_form'  : visit_assessment_and_plan_form  ,
+                          'visit_assessment_and_plan_form': visit_assessment_and_plan_form,
                           'patient_detail_obj': visit_detail_obj.patient_detail,
                           'error_message': error_message,
-                          'visit_assessment_and_plan_action':'edit'
+                          'visit_assessment_and_plan_action': 'edit'
                           })
 
-            return render_to_response('visit_assessment_and_plan/add_or_edit_form.html', variable)
+            return render_to_response(
+                'visit_assessment_and_plan/add_or_edit_form.html', variable)
 
         if request.method == "POST" and request.is_ajax():
 
-            visit_assessment_and_plan_form   = VisitAssessmentAndPlanForm(request.POST, 
-                                                                          instance = visit_assessment_and_plan_obj 
-                                                                          )
+            visit_assessment_and_plan_form = VisitAssessmentAndPlanForm(
+                request.POST, instance=visit_assessment_and_plan_obj)
 
-            if visit_assessment_and_plan_form.is_valid()    :
+            if visit_assessment_and_plan_form.is_valid():
 
-                saved_visit_assessment_and_plan = visit_assessment_and_plan_form.save(commit=False)
+                saved_visit_assessment_and_plan = visit_assessment_and_plan_form.save(
+                    commit=False)
                 saved_visit_assessment_and_plan.visit_detail = visit_detail_obj
                 saved_visit_assessment_and_plan.save()
                 success = True
@@ -348,17 +361,20 @@ def visit_assessment_and_plan_edit(request, visit_assessment_and_plan_id = None)
                                       Please check the forms for errors
                                     </h4>
                                 '''
-                errors += aumodelformerrorformatter_factory(visit_assessment_and_plan_form)
+                errors += aumodelformerrorformatter_factory(
+                    visit_assessment_and_plan_form)
                 error_message += ('\n' + errors)
                 redirectUrl = None
 
-            data = {'success': success, 'error_message': error_message , 'redirectUrl': redirectUrl }
+            data = {
+                'success': success,
+                'error_message': error_message,
+                'redirectUrl': redirectUrl}
             jsondata = json.dumps(data)
             return HttpResponse(jsondata, content_type='application/json')
 
         else:
-             raise Http404(" Error ! Unsupported Request..")
-
+            raise Http404(" Error ! Unsupported Request..")
 
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
         raise Http404("Error ! Invalid Request Parameters. ")
@@ -368,32 +384,35 @@ def visit_assessment_and_plan_edit(request, visit_assessment_and_plan_id = None)
 
 
 @login_required
-def visit_assessment_and_plan_del(request, visit_assessment_and_plan_id = None):
-    
+def visit_assessment_and_plan_del(request, visit_assessment_and_plan_id=None):
+
     if request.method == "GET" and request.is_ajax():
 
         user = request.user
 
         try:
             if visit_assessment_and_plan_id:
-              visit_assessment_and_plan_id = int(visit_assessment_and_plan_id)
+                visit_assessment_and_plan_id = int(
+                    visit_assessment_and_plan_id)
             else:
-              visit_assessment_and_plan_id = int(request.GET.get('visit_assessment_and_plan_id'))
+                visit_assessment_and_plan_id = int(
+                    request.GET.get('visit_assessment_and_plan_id'))
 
-            visit_assessment_and_plan_obj = VisitAssessmentAndPlan.objects.get(pk=visit_assessment_and_plan_id)
+            visit_assessment_and_plan_obj = VisitAssessmentAndPlan.objects.get(
+                pk=visit_assessment_and_plan_id)
             visit_detail_obj = visit_assessment_and_plan_obj.visit_detail
 
-            if not getattr(visit_detail_obj,'urls', None):
-              visit_detail_obj.save()
+            if not getattr(visit_detail_obj, 'urls', None):
+                visit_detail_obj.save()
 
             visit_assessment_and_plan_obj.delete()
             error_message = None
             success = True
             error_message = "Successfully Deleted Visit Assessment and Plan "
-            data = {'success': success, 
-                    'error_message': error_message, 
-                    'redirectUrl': visit_detail_obj.urls['add']['visit_assessment_and_plan'] 
-                    }
+            data = {
+                'success': success,
+                'error_message': error_message,
+                'redirectUrl': visit_detail_obj.urls['add']['visit_assessment_and_plan']}
             jsondata = json.dumps(data)
             return HttpResponse(jsondata, content_type='application/json')
 
@@ -401,7 +420,8 @@ def visit_assessment_and_plan_del(request, visit_assessment_and_plan_id = None):
             raise Http404("Error ! Invalid Request Parameters. ")
 
         except (VisitAssessmentAndPlan.DoesNotExist):
-            raise Http404("Requested Visit Assessment and Plan Does not exist.")
+            raise Http404(
+                "Requested Visit Assessment and Plan Does not exist.")
 
     else:
         raise Http404(" Error ! Unsupported Request..")

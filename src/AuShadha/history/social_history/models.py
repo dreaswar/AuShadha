@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # PROJECT     : AuShadha
-# Description : Social History Models         
+# Description : Social History Models
 # Author      : Dr. Easwar T R
 # Date        : 16-09-2013
 # Licence     : GNU GPL V3. Please see AuShadha/LICENSE.txt
-################################################################################
+##########################################################################
 
 import importlib
 
@@ -12,7 +12,7 @@ from django.db import models
 #from django.forms import ModelForm
 #from django.contrib.auth.models import User
 
-from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 
 #from patient.models import PatientDetail
 from AuShadha.apps.ui.ui import ui as UI
@@ -30,10 +30,10 @@ exercise_choices = (('sendentary', "Sedentary"),
                     )
 
 sexual_preference_choices = (("opposite_sex", "Opposite Sex"),
-                              ('same_sex', "Same Sex"),
-                            ("both", "Both"),
-                            ('neither', 'Neither')
-                              )
+                             ('same_sex', "Same Sex"),
+                             ("both", "Both"),
+                             ('neither', 'Neither')
+                             )
 
 marital_status_choices = (('single', "Single"),
                           ("married", "Married"),
@@ -44,8 +44,8 @@ marital_status_choices = (('single', "Single"),
                           )
 
 abuse_frequency = (('none', "None"), ('former', "Former"),
-                    ('everyday', "Everyday"), ("periodic", "Periodic")
-                    )
+                   ('everyday', "Everyday"), ("periodic", "Periodic")
+                   )
 
 diet_choices = (
     ('well_balanced', "Well Balanced"),
@@ -57,17 +57,17 @@ diet_choices = (
     ("others", "Others")
 )
 
+
 class SocialHistory(AuShadhaBaseModel):
 
     """
-      This defines the Social History that the patient has 
+      This defines the Social History that the patient has
     """
 
     def __init__(self, *args, **kwargs):
-      super(SocialHistory,self).__init__(*args, **kwargs)
-      self.__model_label__ = "social_history"
-      self._parent_model = 'patient_detail'
-
+        super(SocialHistory, self).__init__(*args, **kwargs)
+        self.__model_label__ = "social_history"
+        self._parent_model = 'patient_detail'
 
     marital_status = models.CharField(max_length=250,
                                       choices=marital_status_choices,
@@ -132,13 +132,13 @@ class SocialHistory(AuShadhaBaseModel):
     sexual_preference = models.CharField(max_length=100,
                                          choices=sexual_preference_choices,
                                          default="Opposite Sex"
-                                             )
+                                         )
     sexual_preference_notes = models.CharField(
         max_length=100, null=True, blank=True)
-    current_events = models.TextField(max_length=300,
-                                      help_text="Any ongoing / coming up issues in family having a bearing on treatment",
-                                      default="None"
-                                      )
+    current_events = models.TextField(
+        max_length=300,
+        help_text="Any ongoing / coming up issues in family having a bearing on treatment",
+        default="None")
     patient_detail = models.ForeignKey(
         PatientDetail, null=True, blank=True, unique=True)
 
@@ -146,17 +146,15 @@ class SocialHistory(AuShadhaBaseModel):
         return "%s" % (self.patient_detail)
 
 
-
 class SocialHistoryForm(AuShadhaBaseModelForm):
     """
       ModelForm for Social History
     """
 
-    __form_name__  = "Social History Form"
+    __form_name__ = "Social History Form"
 
     dijit_fields = SOCIAL_HISTORY_FORM_CONSTANTS
 
     class Meta:
         model = SocialHistory
         exclude = DEFAULT_SOCIAL_HISTORY_FORM_EXCLUDES
-

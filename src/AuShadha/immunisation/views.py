@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # Project      : AuShadha
 # Description  : Immunisation Views
-# Author       : Dr.Easwar T.R 
+# Author       : Dr.Easwar T.R
 # Date         : 16-09-2013
 # License      : GNU-GPL Version 3,Please see AuShadha/LICENSE.txt for details
-################################################################################
+##########################################################################
 
 
 # General Module imports-----------------------------------
@@ -39,22 +39,22 @@ from immunisation.models import Immunisation, ImmunisationForm
 
 # Views start here -----------------------------------------
 @login_required
-def immunisation_json(request, patient_id = None):
-#    try:
-      if patient_id:
-        patient_id  = int(patient_id)
-      else:
+def immunisation_json(request, patient_id=None):
+    #    try:
+    if patient_id:
+        patient_id = int(patient_id)
+    else:
         action = unicode(request.GET.get('action'))
         patient_id = int(request.GET.get('patient_id'))
 
         if action == 'add':
             return immunisation_add(request, patient_id)
 
-      patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-      immunisation_obj = Immunisation.objects.filter(
-          patient_detail=patient_detail_obj)
-      jsondata = generate_json_for_datagrid(immunisation_obj)
-      return HttpResponse(jsondata, content_type="application/json")
+    patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+    immunisation_obj = Immunisation.objects.filter(
+        patient_detail=patient_detail_obj)
+    jsondata = generate_json_for_datagrid(immunisation_obj)
+    return HttpResponse(jsondata, content_type="application/json")
 
 #    except(AttributeError, NameError, TypeError, ValueError, KeyError):
 #        raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -63,7 +63,7 @@ def immunisation_json(request, patient_id = None):
 
 
 @login_required
-def immunisation_add(request, patient_id = None):
+def immunisation_add(request, patient_id=None):
 
     success = True
     error_message = None
@@ -73,14 +73,14 @@ def immunisation_add(request, patient_id = None):
     if request.user:
         user = request.user
         try:
-          if patient_id:
-            patient_id = int(patient_id)
-          else:
-            patient_id  = int(request.GET.get('patient_id'))
-          patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-          immunisation_obj = Immunisation(patient_detail=patient_detail_obj)
-          if not getattr(patient_detail_obj, 'urls', None):
-            patient_detail_obj.save()
+            if patient_id:
+                patient_id = int(patient_id)
+            else:
+                patient_id = int(request.GET.get('patient_id'))
+            patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+            immunisation_obj = Immunisation(patient_detail=patient_detail_obj)
+            if not getattr(patient_detail_obj, 'urls', None):
+                patient_detail_obj.save()
 
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
@@ -88,43 +88,47 @@ def immunisation_add(request, patient_id = None):
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            immunisation_form = ImmunisationForm( instance=immunisation_obj, auto_id = False )
+            immunisation_form = ImmunisationForm(
+                instance=immunisation_obj, auto_id=False)
             variable = RequestContext(request,
                                       {"user": user,
-                                        "patient_detail_obj": patient_detail_obj,
-                                        "immunisation_form": immunisation_form,
-                                        "immunisation_obj": immunisation_obj,
-                                        })
+                                       "patient_detail_obj": patient_detail_obj,
+                                       "immunisation_form": immunisation_form,
+                                       "immunisation_obj": immunisation_obj,
+                                       })
             return render_to_response('immunisation/add.html', variable)
 
         elif request.method == 'POST' and request.is_ajax():
-            immunisation_form = ImmunisationForm(request.POST, 
-                                                      instance=immunisation_obj)
+            immunisation_form = ImmunisationForm(request.POST,
+                                                 instance=immunisation_obj)
             if immunisation_form.is_valid():
                 immunisation_obj = immunisation_form.save()
-                #immunisation_obj.generate_urls()
+                # immunisation_obj.generate_urls()
                 m_urls = immunisation_obj.urls
-                #print "Immunisation URLS: "
-                #print m_urls
+                # print "Immunisation URLS: "
+                # print m_urls
                 if not getattr(patient_detail_obj, 'urls', None):
-                  patient_detail_obj.save()
+                    patient_detail_obj.save()
                 p_urls = patient_detail_obj.urls
 
-                fields_list = [field for field in immunisation_obj._meta.fields if field.serialize]
+                fields_list = [
+                    field for field in immunisation_obj._meta.fields if field.serialize]
 
                 success = True
                 error_message = "Immunisation Data Edited Successfully"
                 form_errors = None
 
-                addData = {f.name:f.value_to_string(immunisation_obj) for f in fields_list}
+                addData = {f.name: f.value_to_string(
+                    immunisation_obj) for f in fields_list}
                 addData['add'] = p_urls['add']['immunisation']
-                addData['json']= p_urls['json']['immunisation']
-                addData['edit']= m_urls['edit']
+                addData['json'] = p_urls['json']['immunisation']
+                addData['edit'] = m_urls['edit']
                 addData['del'] = m_urls['del']
 
             else:
                 success = False
-                error_message = aumodelformerrorformatter_factory(immunisation_form)
+                error_message = aumodelformerrorformatter_factory(
+                    immunisation_form)
                 form_errors = True
                 addData = None
 
@@ -143,71 +147,73 @@ def immunisation_add(request, patient_id = None):
         raise Http404("You need to Login")
 
 
-
 @login_required
-def immunisation_edit(request, immunisation_id = None):
+def immunisation_edit(request, immunisation_id=None):
 
     if request.user:
         user = request.user
         try:
-          immunisation_id = int(immunisation_id)
-          immunisation_obj = Immunisation.objects.get(pk= immunisation_id)
-          patient_detail_obj = immunisation_obj.patient_detail
-          if not getattr(immunisation_obj, 'urls', None):
-            immunisation_obj.save()
-          #immunisation_obj.generate_urls()
-          m_urls = immunisation_obj.urls
-          if not getattr(patient_detail_obj, 'urls', None):
-            patient_detail_obj.save()
-          
+            immunisation_id = int(immunisation_id)
+            immunisation_obj = Immunisation.objects.get(pk=immunisation_id)
+            patient_detail_obj = immunisation_obj.patient_detail
+            if not getattr(immunisation_obj, 'urls', None):
+                immunisation_obj.save()
+            # immunisation_obj.generate_urls()
+            m_urls = immunisation_obj.urls
+            if not getattr(patient_detail_obj, 'urls', None):
+                patient_detail_obj.save()
 
         except TypeError or ValueError or AttributeError:
-                raise Http404("BadRequest")
+            raise Http404("BadRequest")
         except Immunisation.DoesNotExist:
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing Immunisation"
-            #print "Immunisation URLS is, ", m_urls
-            immunisation_form = ImmunisationForm(instance=immunisation_obj, auto_id = False )
+            # print "Immunisation URLS is, ", m_urls
+            immunisation_form = ImmunisationForm(
+                instance=immunisation_obj, auto_id=False)
             variable = RequestContext(request,
-                                      { "user": user,
-                                        "patient_detail_obj"  : immunisation_obj.patient_detail,
-                                        "immunisation_form": immunisation_form,
-                                        "immunisation_obj" : immunisation_obj,
-                                        'editUrl'            : m_urls['edit'],
-                                        'delUrl'             : m_urls['del'],
-                                      })
+                                      {"user": user,
+                                       "patient_detail_obj": immunisation_obj.patient_detail,
+                                       "immunisation_form": immunisation_form,
+                                       "immunisation_obj": immunisation_obj,
+                                       'editUrl': m_urls['edit'],
+                                       'delUrl': m_urls['del'],
+                                       })
             return render_to_response('immunisation/edit.html', variable)
 
         elif request.method == 'POST' and request.is_ajax():
-            immunisation_form = ImmunisationForm(request.POST, 
-                                                           instance=immunisation_obj)
+            immunisation_form = ImmunisationForm(request.POST,
+                                                 instance=immunisation_obj)
 
             if immunisation_form.is_valid():
                 immunisation_obj = immunisation_form.save()
 
-                #immunisation_obj.generate_urls()
+                # immunisation_obj.generate_urls()
                 m_urls = immunisation_obj.urls
 
-                #immunisation_obj.patient_detail.generate_urls()
+                # immunisation_obj.patient_detail.generate_urls()
                 p_urls = immunisation_obj.patient_detail.urls
 
-                fields_list = [field for field in immunisation_obj._meta.fields if field.serialize]
+                fields_list = [
+                    field for field in immunisation_obj._meta.fields if field.serialize]
 
                 success = True
                 error_message = "Immunisation Data Edited Successfully"
                 form_errors = None
 
-                addData = {f.name:f.value_to_string(immunisation_obj) for f in fields_list}
+                addData = {f.name: f.value_to_string(
+                    immunisation_obj) for f in fields_list}
                 addData['add'] = p_urls['add']['immunisation']
-                addData['json']= p_urls['json']['immunisation']
-                addData['edit']= m_urls['edit']
+                addData['json'] = p_urls['json']['immunisation']
+                addData['edit'] = m_urls['edit']
                 addData['del'] = m_urls['del']
 
             else:
                 success = False
-                error_message = aumodelformerrorformatter_factory(immunisation_form)
+                error_message = aumodelformerrorformatter_factory(
+                    immunisation_form)
                 form_errors = True
                 addData = None
 
@@ -227,7 +233,7 @@ def immunisation_edit(request, immunisation_id = None):
 
 
 @login_required
-def immunisation_del(request, immunisation_id = None):
+def immunisation_del(request, immunisation_id=None):
     user = request.user
 
     if request.user and user.is_superuser:
@@ -235,10 +241,10 @@ def immunisation_del(request, immunisation_id = None):
         if request.method == "GET":
 
             try:
-                if immunisation_id: 
-                  immunisation_id = int(immunisation_id)
+                if immunisation_id:
+                    immunisation_id = int(immunisation_id)
                 else:
-                  immunisation_id = int(request.GET.get('immunisation_id'))
+                    immunisation_id = int(request.GET.get('immunisation_id'))
                 immunisation_obj = Immunisation.objects.get(pk=immunisation_id)
                 patient_detail_obj = immunisation_obj.patient_detail
             except TypeError or ValueError or AttributeError:

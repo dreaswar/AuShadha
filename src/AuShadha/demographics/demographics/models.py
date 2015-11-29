@@ -1,9 +1,9 @@
-################################################################################
-# Description  : Patient Models for managing Patient Demographics 
+##########################################################################
+# Description  : Patient Models for managing Patient Demographics
 # Author       : Dr. Easwar T R
 # Date         : 16-09-2013
 # Licence      : GNU GPL V3. Please see AuShadha/LICENSE.txt
-################################################################################
+##########################################################################
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -28,19 +28,19 @@ class Demographics(AuShadhaBaseModel):
     """
 
     def __init__(self, *args, **kwargs):
-      super(Demographics,self).__init__(*args, **kwargs)
-      self.__model_label__ = "demographics"
-      self._parent_model = 'patient_detail'
+        super(Demographics, self).__init__(*args, **kwargs)
+        self.__model_label__ = "demographics"
+        self._parent_model = 'patient_detail'
 
     date_of_birth = models.DateField(auto_now_add=False,
                                      null=True,
                                      blank=True
-                                         )
+                                     )
     socioeconomics = models.CharField(max_length=100, default="Middle",
                                       choices=(("low", "Low"),
                                                ("middle", "Middle"),
                                                ("high", "High")
-                                                   )
+                                               )
                                       )
     education = models.CharField(max_length=100,
                                  default="Graduate",
@@ -51,9 +51,8 @@ class Demographics(AuShadhaBaseModel):
                                                   ('i', "Iliterate")
                                                   )
                                  )
-    housing_conditions = models.TextField(max_length=250,
-                                          default="Comfortable, with good sanitary conditions"
-                                          )
+    housing_conditions = models.TextField(
+        max_length=250, default="Comfortable, with good sanitary conditions")
     religion = models.CharField(max_length=200)
     religion_notes = models.CharField(max_length=100,
                                       null=True,
@@ -87,9 +86,7 @@ class Demographics(AuShadhaBaseModel):
         return str_obj
 
 
-
-
-############################# Model Forms ######################################
+############################# Model Forms ################################
 
 
 class DemographicsForm(AuShadhaBaseModelForm):

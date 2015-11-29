@@ -34,15 +34,15 @@ class AuShadhaUserAdmin(admin.ModelAdmin):
     #model = AuShadhaUser
     pass
 
-#class AuShadhaUserAdmin(UserAdmin):
+# class AuShadhaUserAdmin(UserAdmin):
     #inlines  = [ AuShadhaUserInline ]
 #    extra = 2
 #    add_form = AuShadhaUserCreationForm
 #    change_form = AuShadhaUserCreationForm
 
     # fieldsets = (
-        #(None, {'fields': ('email', 'password', 'first_name', 'last_name')}),
-        #)
+    #(None, {'fields': ('email', 'password', 'first_name', 'last_name')}),
+    #)
 
 #    add_fieldsets = (
 #        (None,

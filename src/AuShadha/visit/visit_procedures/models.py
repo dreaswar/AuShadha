@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # Project      : AuShadha
 # Description  : Models for AuShadha OPD Visits.
-# Author       : Dr. Easwar TR 
+# Author       : Dr. Easwar TR
 # Date         : 17-09-2013
 # LICENSE      : GNU-GPL Version 3, Please see AuShadha/LICENSE.txt
-################################################################################
+##########################################################################
 
 # General Imports
 from datetime import datetime, date, time
@@ -17,7 +17,7 @@ from django.forms import ModelForm, ModelChoiceField, Textarea, TextInput
 
 # Application model imports
 from AuShadha.apps.ui.ui import ui as UI
-from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 from AuShadha.apps.clinic.models import Clinic, Staff
 
 from registry.inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
@@ -29,14 +29,14 @@ AdmissionDetail = UI.get_module("Admission")
 
 
 from dijit_fields_constants import VISIT_DETAIL_FORM_CONSTANTS,\
-                                   VISIT_COMPLAINTS_FORM_CONSTANTS,\
-                                   VISIT_HPI_FORM_CONSTANTS,\
-                                   VISIT_PAST_HISTORY_FORM_CONSTANTS,\
-                                   VISIT_IMAGING_FORM_CONSTANTS,\
-                                   VISIT_INVESTIGATION_FORM_CONSTANTS,\
-                                   VISIT_ROS_FORM_CONSTANTS,\
-                                   VISIT_FOLLOW_UP_FORM_CONSTANTS,\
-                                   VISIT_SOAP_FORM_CONSTANTS
+    VISIT_COMPLAINTS_FORM_CONSTANTS,\
+    VISIT_HPI_FORM_CONSTANTS,\
+    VISIT_PAST_HISTORY_FORM_CONSTANTS,\
+    VISIT_IMAGING_FORM_CONSTANTS,\
+    VISIT_INVESTIGATION_FORM_CONSTANTS,\
+    VISIT_ROS_FORM_CONSTANTS,\
+    VISIT_FOLLOW_UP_FORM_CONSTANTS,\
+    VISIT_SOAP_FORM_CONSTANTS
 
 DEFAULT_VISIT_DETAIL_FORM_EXCLUDES = ('patient_detail',)
 
@@ -62,43 +62,47 @@ CONSULT_STATUS_CHOICES = (
 )
 
 
-
 class VisitDetail(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-      super(VisitDetail,self).__init__(*args, **kwargs)
-      self.__model_label__ = "visit"
-      self._parent_model = 'patient_detail'
-      self._can_add_list_or_json = ['complaint',
-                                    'follow_up',
-                                    'ros',
-                                    'hpi',
-                                    'soap',
-                                    'phy_exam',
-                                    #'past_history',
-                                    #'inv',
-                                    #'imaging',
-                                    #'procedure',
-                                    #'discharge'
-                                    ]
+        super(VisitDetail, self).__init__(*args, **kwargs)
+        self.__model_label__ = "visit"
+        self._parent_model = 'patient_detail'
+        self._can_add_list_or_json = ['complaint',
+                                      'follow_up',
+                                      'ros',
+                                      'hpi',
+                                      'soap',
+                                      'phy_exam',
+                                      #'past_history',
+                                      #'inv',
+                                      #'imaging',
+                                      #'procedure',
+                                      #'discharge'
+                                      ]
 
-      self._extra_url_actions = ['close','change_nature']
+        self._extra_url_actions = ['close', 'change_nature']
 
     patient_detail = models.ForeignKey(PatientDetail)
     visit_date = models.DateTimeField(auto_now=False, default=datetime.now())
     op_surgeon = models.ForeignKey(Staff)
     referring_doctor = models.CharField(max_length=30, default="Self")
-    consult_nature = models.CharField(max_length=30, choices=CONSULT_NATURE_CHOICES)
+    consult_nature = models.CharField(
+        max_length=30, choices=CONSULT_NATURE_CHOICES)
     status = models.CharField(max_length=30, choices=CONSULT_STATUS_CHOICES)
     is_active = models.BooleanField(default=True, editable=False)
-    remarks = models.TextField(max_length=200,default="NAD",help_text="limit to 200 words")
+    remarks = models.TextField(
+        max_length=200,
+        default="NAD",
+        help_text="limit to 200 words")
 
     class Meta:
         verbose_name = "Visit Details"
         verbose_name_plural = "Visit Details"
 
     def __unicode__(self):
-        return '%s(%s): %s: %s' % (self.patient_detail,self.id, self.visit_date, self.op_surgeon)
+        return '%s(%s): %s: %s' % (self.patient_detail,
+                                   self.id, self.visit_date, self.op_surgeon)
 
     def get_absolute_url(self):
         return '/AuShadha/visit/detail/%d/' % (self.id)
@@ -138,7 +142,13 @@ class VisitDetail(AuShadhaBaseModel):
         except (TypeError, NameError, ValueError):
             print "ERROR:: Invalid CONSULT_NATURE_CHOICE supplied.."
             return False
-        if consult_nature in ['initial', 'fu', 'na', 'emer', 'pre_op', 'post_op']:
+        if consult_nature in [
+                'initial',
+                'fu',
+                'na',
+                'emer',
+                'pre_op',
+                'post_op']:
             self.save()
             return unicode(self.consult_nature)
         else:
@@ -154,7 +164,12 @@ class VisitDetail(AuShadhaBaseModel):
         except (TypeError, NameError, ValueError):
             print "ERROR:: Invalid CONSULT_STATUS_CHOICE supplied.."
             return False
-        if status in ['discharged', 'admission', 'review_awaited', 'inv_awaited', 'consults_awaited']:
+        if status in [
+                'discharged',
+                'admission',
+                'review_awaited',
+                'inv_awaited',
+                'consults_awaited']:
             if self.status == 'discharged' or \
                self.status == 'admission':
                 self._close_visit()
@@ -244,12 +259,13 @@ class VisitDetail(AuShadhaBaseModel):
         # return json
         return visit_complaint_list
 
+
 class VisitComplaint(AuShadhaBaseModel):
-    
+
     def __init__(self, *args, **kwargs):
-      super(VisitComplaint,self).__init__(*args, **kwargs)
-      self.__model_label__ = "complaint"
-      self._parent_model = 'visit_detail'
+        super(VisitComplaint, self).__init__(*args, **kwargs)
+        self.__model_label__ = "complaint"
+        self._parent_model = 'visit_detail'
 
     complaint = models.CharField(
         max_length=30, help_text='limit to 30 words')
@@ -262,7 +278,7 @@ class VisitComplaint(AuShadhaBaseModel):
     def __unicode__(self):
         return '%s : %s' % (self.complaint, self.duration)
 
-    #def save(self, *args, **kwargs):
+    # def save(self, *args, **kwargs):
         #super(VisitComplaint, self).save(*args, **kwargs)
 
     # def get_edit_url(self):
@@ -280,20 +296,33 @@ class VisitComplaint(AuShadhaBaseModel):
 class VisitFollowUp(AuShadhaBaseModel):
 
     """Model to describe the Follow up OPD Visit Notes  or SOAP notes."""
-    
+
     def __init__(self, *args, **kwargs):
-      super(VisitFollowUp,self).__init__(*args, **kwargs)      
-      self.__model_label__ = "follow_up"
-      self._parent_model = 'visit_detail'
+        super(VisitFollowUp, self).__init__(*args, **kwargs)
+        self.__model_label__ = "follow_up"
+        self._parent_model = 'visit_detail'
 
     visit_date = models.DateTimeField(auto_now=False, default=datetime.now())
     op_surgeon = models.ForeignKey(Staff)
-    consult_nature = models.CharField(max_length=30, choices=CONSULT_NATURE_CHOICES)
+    consult_nature = models.CharField(
+        max_length=30, choices=CONSULT_NATURE_CHOICES)
     status = models.CharField(max_length=30, choices=CONSULT_STATUS_CHOICES)
-    subjective = models.TextField("Subjective", max_length=1000, help_text="Restrict to 1000 words")
-    objective = models.TextField("Objective", max_length=1000, help_text="Restrict to 1000 words")
-    assessment = models.TextField("Assessment", max_length=1000, help_text="Restrict to 1000 words")
-    plan = models.TextField("Plan", max_length=1000, help_text="Restrict to 1000 words")
+    subjective = models.TextField(
+        "Subjective",
+        max_length=1000,
+        help_text="Restrict to 1000 words")
+    objective = models.TextField(
+        "Objective",
+        max_length=1000,
+        help_text="Restrict to 1000 words")
+    assessment = models.TextField(
+        "Assessment",
+        max_length=1000,
+        help_text="Restrict to 1000 words")
+    plan = models.TextField(
+        "Plan",
+        max_length=1000,
+        help_text="Restrict to 1000 words")
     visit_detail = models.ForeignKey(VisitDetail)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
@@ -310,10 +339,10 @@ class VisitFollowUp(AuShadhaBaseModel):
         )
 
     def get_edit_url(self):
-        return '/AuShadha/visit/follow_up/edit/%s/' %(self.id)
+        return '/AuShadha/visit/follow_up/edit/%s/' % (self.id)
 
     def get_del_url(self):
-        return '/AuShadha/visit/follow_up/del/%s/' %(self.id)
+        return '/AuShadha/visit/follow_up/del/%s/' % (self.id)
 
     def formatted_obj(self):
         return '''<b> Seen On   :</b> %s\n</br>
@@ -347,9 +376,9 @@ class VisitSOAP(AuShadhaBaseModel):
     """Model to describe the Follow up OPD Visit Notes  or SOAP notes."""
 
     def __init__(self, *args, **kwargs):
-      super(VisitSOAP,self).__init__(*args, **kwargs)      
-      self.__model_label__ = "soap"
-      self._parent_model = 'visit_detail'
+        super(VisitSOAP, self).__init__(*args, **kwargs)
+        self.__model_label__ = "soap"
+        self._parent_model = 'visit_detail'
 
     subjective = models.TextField(
         "Subjective", max_length=1000, help_text="Restrict to 1000 words")
@@ -376,16 +405,17 @@ class VisitSOAP(AuShadhaBaseModel):
         )
 
 
-
 class VisitHPI(AuShadhaBaseModel):
-    
+
     def __init__(self, *args, **kwargs):
-      super(VisitHPI,self).__init__(*args, **kwargs)      
-      self.__model_label__ = "hpi"
-      self._parent_model = 'visit_detail'
-    
+        super(VisitHPI, self).__init__(*args, **kwargs)
+        self.__model_label__ = "hpi"
+        self._parent_model = 'visit_detail'
+
     hpi = models.TextField(
-        'History of Presenting Illness', max_length=1000, help_text='limit to 1000 words')
+        'History of Presenting Illness',
+        max_length=1000,
+        help_text='limit to 1000 words')
     visit_detail = models.ForeignKey(VisitDetail)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
@@ -402,10 +432,9 @@ class VisitHPI(AuShadhaBaseModel):
 class VisitPastHistory(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-      super(VisitPastHistory,self).__init__(*args, **kwargs)      
-      self.__model_label__ = "past_history"
-      self._parent_model = 'visit_detail'
-
+        super(VisitPastHistory, self).__init__(*args, **kwargs)
+        self.__model_label__ = "past_history"
+        self._parent_model = 'visit_detail'
 
     past_history = models.TextField(
         'Past History ', max_length=1000, help_text='limit to 1000 words')
@@ -426,9 +455,9 @@ class VisitPastHistory(AuShadhaBaseModel):
 class VisitImaging(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-      super(VisitImaging,self).__init__(*args, **kwargs)      
-      self.__model_label__ = "imaging"
-      self._parent_model = 'visit_detail'
+        super(VisitImaging, self).__init__(*args, **kwargs)
+        self.__model_label__ = "imaging"
+        self._parent_model = 'visit_detail'
 
     modality = models.ForeignKey(
         'inv_and_imaging.ImagingInvestigationRegistry')
@@ -438,10 +467,12 @@ class VisitImaging(AuShadhaBaseModel):
     created_at = models.DateTimeField(auto_now_add=True, editable=True)
 
     def __unicode__(self):
-        return '''%s: %s \n(%s)''' % (self.modality, self.finding, self.created_at.date().isoformat() )
+        return '''%s: %s \n(%s)''' % (
+            self.modality, self.finding, self.created_at.date().isoformat())
 
     def __trimmed_unicode__(self):
-        return '''%s: %s ... \n(%s)''' % (self.modality, self.finding[0:5], self.created_at.date().isoformat() )
+        return '''%s: %s ... \n(%s)''' % (self.modality, self.finding[
+            0:5], self.created_at.date().isoformat())
 
     class Meta:
         verbose_name = "Imaging Studies"
@@ -452,9 +483,9 @@ class VisitImaging(AuShadhaBaseModel):
 class VisitROS(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-      super(VisitROS,self).__init__(*args, **kwargs)
-      self.__model_label__ = 'visit_ros'
-      self._parent_model = 'visit_detail'
+        super(VisitROS, self).__init__(*args, **kwargs)
+        self.__model_label__ = 'visit_ros'
+        self._parent_model = 'visit_detail'
 
     const_symp = models.TextField(
         'Constitutional', max_length=500, default="Nil")
@@ -491,8 +522,8 @@ class VisitROS(AuShadhaBaseModel):
 
     def __unicode__(self):
         return '''%s \n %s \n
-              %s \n %s \n %s \n 
-              %s \n %s \n %s \n 
+              %s \n %s \n %s \n
+              %s \n %s \n %s \n
               %s \n %s \n %s \n
               %s \n %s \n %s \n %s
            ''' % (self.const_symp,
@@ -519,9 +550,9 @@ class VisitROS(AuShadhaBaseModel):
 class VisitInv(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-      super(VisitInv,self).__init__(*args, **kwargs)
-      self.__model_label__ = "inv"
-      self._parent_model = 'visit_detail'    
+        super(VisitInv, self).__init__(*args, **kwargs)
+        self.__model_label__ = "inv"
+        self._parent_model = 'visit_detail'
 
     investigation = models.ForeignKey(
         'inv_and_imaging.LabInvestigationRegistry')
@@ -530,7 +561,8 @@ class VisitInv(AuShadhaBaseModel):
     created_at = models.DateTimeField(auto_now_add=True, editable=True)
 
     def __unicode__(self):
-        return "%s: %s \n(%s)" % (self.investigation, self.value, self.created_at.date().isoformat())
+        return "%s: %s \n(%s)" % (self.investigation,
+                                  self.value, self.created_at.date().isoformat())
 
     class Meta:
         verbose_name = "Lab Investigation"
@@ -538,10 +570,8 @@ class VisitInv(AuShadhaBaseModel):
         ordering = ('visit_detail', 'created_at', 'investigation')
 
 
-
-
 class VisitDetailForm(AuShadhaBaseModelForm):
-    
+
     __form_name__ = "Visit Detail Form"
 
     op_surgeon = ModelChoiceField(
@@ -560,7 +590,6 @@ class VisitComplaintAddForm(AuShadhaBaseModelForm):
 
     dijit_fields = VISIT_COMPLAINTS_FORM_CONSTANTS
 
-
     class Meta:
         model = VisitComplaint
         exclude = ('visit_detail',)
@@ -569,7 +598,7 @@ class VisitComplaintAddForm(AuShadhaBaseModelForm):
 class VisitComplaintEditForm(AuShadhaBaseModelForm):
 
     __form_name__ = "Visit Complaint Form"
-    
+
     dijit_fields = VISIT_COMPLAINTS_FORM_CONSTANTS
 
     class Meta:
@@ -580,46 +609,45 @@ class VisitComplaintEditForm(AuShadhaBaseModelForm):
 class VisitHPIForm(AuShadhaBaseModelForm):
 
     __form_name__ = "Visit HPI Form"
-    
+
     dijit_fields = VISIT_HPI_FORM_CONSTANTS
 
     class Meta:
         model = VisitHPI
-        exclude = ('visit_detail','patient_detail')
+        exclude = ('visit_detail', 'patient_detail')
 
 
 class VisitPastHistoryForm(AuShadhaBaseModelForm):
 
     __form_name__ = "Visit Past History Form"
-    
+
     dijit_fields = VISIT_PAST_HISTORY_FORM_CONSTANTS
 
     class Meta:
         model = VisitPastHistory
-        exclude = ('visit_detail','patient_detail')
+        exclude = ('visit_detail', 'patient_detail')
 
 
 class VisitImagingForm(AuShadhaBaseModelForm):
 
     __form_name__ = "Visit Imaging Form"
-    
+
     dijit_fields = VISIT_IMAGING_FORM_CONSTANTS
 
     class Meta:
         model = VisitImaging
-        exclude = ('visit_detail','patient_detail')
-
+        exclude = ('visit_detail', 'patient_detail')
 
 
 class VisitInvForm(AuShadhaBaseModelForm):
 
     __form_name__ = "Visit Investigation Form"
-    
+
     dijit_fields = VISIT_INVESTIGATION_FORM_CONSTANTS
 
     class Meta:
         model = VisitInv
-        exclude = ('visit_detail','patient_detail')
+        exclude = ('visit_detail', 'patient_detail')
 
 
 class VisitROSForm(AuShadhaBaseModelForm):
@@ -631,6 +659,7 @@ class VisitROSForm(AuShadhaBaseModelForm):
     class Meta:
         model = VisitROS
         exclude = ('visit_detail', 'parent_clinic', 'created_at')
+
 
 class VisitFollowUpForm(AuShadhaBaseModelForm):
 

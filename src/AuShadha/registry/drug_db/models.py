@@ -30,7 +30,7 @@ class FDADrugs(AuShadhaBaseModel):
         super(FDADrugs, self).__init__(*args, **kwargs)
         self.__model_label__ = "fda_drug_db"
         self._parent_model = 'parent_clinic'
-        self._can_add_list_or_json = ['fda_drug_db' ]
+        self._can_add_list_or_json = ['fda_drug_db']
 
     drug_name = models.TextField(
         'Drug Name', max_length=1000, null=True, blank=True)
@@ -43,16 +43,14 @@ class FDADrugs(AuShadhaBaseModel):
 
     # Define the Unicode method ::
     def __unicode__(self):
-        return "%s - %s, %s \t (%s)" % (self.drug_name, self.dosage, self.form, self.active_ingredient)
+        return "%s - %s, %s \t (%s)" % (self.drug_name,
+                                        self.dosage, self.form, self.active_ingredient)
 
     def get_absolute_url(self):
-        return "%s/%s/%s" %(self._meta.app_label, self.__model_label__, self.id)
+        return "%s/%s/%s" % (self._meta.app_label,
+                             self.__model_label__, self.id)
 
     class Meta:
         verbose_name = 'FDA Drugs'
         verbose_name_plural = "FDA Drugs"
-        ordering = [ 'drug_name', 'active_ingredient', 'dosage', 'form']
-
-
-
-
+        ordering = ['drug_name', 'active_ingredient', 'dosage', 'form']

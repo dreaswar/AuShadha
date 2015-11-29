@@ -10,14 +10,14 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-################################ PATIENT CRUD ##################################
+                       ################################ PATIENT CRUD ##########
 
-                       url(r'new/add/(?P<clinic_id>\d+)/$'                             ,
+                       url(r'new/add/(?P<clinic_id>\d+)/$',
                            'patient.views.patient_detail_add',
                            name='patient_detail_add'
                            ),
 
-                       url(r'new/add/$'                             ,
+                       url(r'new/add/$',
                            'patient.views.patient_detail_add',
                            name='patient_detail_add_without_id'
                            ),
@@ -32,7 +32,7 @@ urlpatterns = patterns('',
                            ),
 
 
-################################ PATIENT JSON ##################################
+                       ################################ PATIENT JSON ##########
 
                        url(r'patient/json/$',
                            'patient.views.render_patient_json',
@@ -40,7 +40,7 @@ urlpatterns = patterns('',
                            ),
 
 
-################################ PATIENT SUMMARY ###############################
+                       ################################ PATIENT SUMMARY #######
 
                        url(r'patient/summary/$',
                            'patient.views.render_patient_summary',
@@ -52,26 +52,26 @@ urlpatterns = patterns('',
                            name='render_patient_summary_with_id'
                            ),
 
-################################ PATIENT INFO  #################################
+                       ################################ PATIENT INFO  #########
 
-                      url(r'patient/info/(?P<patient_id>\d+)/$',
+                       url(r'patient/info/(?P<patient_id>\d+)/$',
                            'patient.views.render_patient_info',
                            name='render_patient_info'
                            ),
 
-################################ PATIENT PANE ##################################
+                       ################################ PATIENT PANE ##########
 
-                      url(r'patient/pane/(?P<patient_id>\d+)/$',
+                       url(r'patient/pane/(?P<patient_id>\d+)/$',
                            'patient.dijit_widgets.pane.render_patient_pane',
                            name='render_patient_pane_with_id'
                            ),
 
-                      url(r'patient/pane/$',
+                       url(r'patient/pane/$',
                            'patient.dijit_widgets.pane.render_patient_pane',
                            name='render_patient_pane_without_id'
                            ),
 
-################################ PATIENT TREE ##################################
+                       ################################ PATIENT TREE ##########
 
                        url(r'patient/tree/(?P<patient_id>\d+)/$',
                            'patient.dijit_widgets.tree.render_patient_tree',
@@ -83,23 +83,23 @@ urlpatterns = patterns('',
                            name='render_patient_tree_without_id'
                            ),
 
-############################ PATIENT INDEX ######################################
+                       ############################ PATIENT INDEX #############
 
-                       #url(r'patient/index/$',
-                           #'patient.views.patient_index',
-                           #name='patient_index'
-                           #),
+                       # url(r'patient/index/$',
+                       #'patient.views.patient_index',
+                       # name='patient_index'
+                       #),
 
-############################ PATIENT LIST ######################################
+                       ############################ PATIENT LIST ##############
 
-                       #url(r'patient/list/$',
-                           #'patient.views.render_patient_list' ,
-                           #name='render_patient_list'
-                           #),
+                       # url(r'patient/list/$',
+                       #'patient.views.render_patient_list' ,
+                       # name='render_patient_list'
+                       #),
 
                        #    url(r'patient/list/(?P<id>\d+)/$',
                        #            'patient.views.patient_detail_list',
                        #            name = 'patient_detail_list'
                        #    ),
 
-)
+                       )

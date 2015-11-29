@@ -59,13 +59,14 @@ from patient.views import *
 
 # Obstetric History Formset##################################
 
-ObstetricHistoryFormset = modelformset_factory(model=ObstetricHistory,
-                                               form=ObstetricHistoryForm,
-                                               max_num=10,
-                                               extra=10,
-                                               exclude=(
-                                                   'obstetric_detail', 'parent_clinic')
-                                               )
+ObstetricHistoryFormset = modelformset_factory(
+    model=ObstetricHistory,
+    form=ObstetricHistoryForm,
+    max_num=10,
+    extra=10,
+    exclude=(
+        'obstetric_detail',
+        'parent_clinic'))
 
 
 # Views start here -----------------------------------------
@@ -84,35 +85,37 @@ def obstetric_history_detail_add(request, id):
                     obs_and_gyn_detail_obj = obs_and_gyn_history_obj[0]
                     obs_and_gyn_detail_form = ObstetricHistoryDetailForm(
                         instance=obs_and_gyn_detail_obj)
-                    variable = {'user': user,
-                                'patient_detail_obj': patient_detail_obj,
-                                'obs_and_gyn_detail_obj': obs_and_gyn_detail_obj,
-                                'obs_and_gyn_detail_form': obs_and_gyn_detail_form,
-                                'button_label': 'Edit',
-                                'action': obs_and_gyn_detail_obj.get_edit_url(),
-                                'canDel': True,
-                                "addUrl": None,
-                                'editUrl': obs_and_gyn_detail_obj.get_edit_url(),
-                                'delUrl': obs_and_gyn_detail_obj.get_del_url()
-                                }
+                    variable = {
+                        'user': user,
+                        'patient_detail_obj': patient_detail_obj,
+                        'obs_and_gyn_detail_obj': obs_and_gyn_detail_obj,
+                        'obs_and_gyn_detail_form': obs_and_gyn_detail_form,
+                        'button_label': 'Edit',
+                        'action': obs_and_gyn_detail_obj.get_edit_url(),
+                        'canDel': True,
+                        "addUrl": None,
+                        'editUrl': obs_and_gyn_detail_obj.get_edit_url(),
+                        'delUrl': obs_and_gyn_detail_obj.get_del_url()}
                 else:
                     obs_and_gyn_detail_obj = ObstetricHistoryDetail(
                         patient_detail=patient_detail_obj)
                     obs_and_gyn_detail_form = ObstetricHistoryDetailForm(
                         instance=obs_and_gyn_detail_obj)
-                    variable = RequestContext(request,
-                                              {"user": user,
-                                               "patient_detail_obj": patient_detail_obj,
-                                               "obs_and_gyn_detail_form": obs_and_gyn_detail_form,
-                                               "obs_and_gyn_detail_obj": obs_and_gyn_detail_obj,
-                                               'button_label': "Add",
-                                               "action": patient_detail_obj.get_patient_obstetric_history_detail_add_url(),
-                                               "addUrl": patient_detail_obj.get_patient_obstetric_history_detail_add_url(),
-                                               'canDel': False,
-                                               'editUrl': None,
-                                               'delUrl': None
-                                               })
-                return render_to_response('patient/obs_and_gyn_history/add_or_edit_form.html', variable)
+                    variable = RequestContext(
+                        request,
+                        {
+                            "user": user,
+                            "patient_detail_obj": patient_detail_obj,
+                            "obs_and_gyn_detail_form": obs_and_gyn_detail_form,
+                            "obs_and_gyn_detail_obj": obs_and_gyn_detail_obj,
+                            'button_label': "Add",
+                            "action": patient_detail_obj.get_patient_obstetric_history_detail_add_url(),
+                            "addUrl": patient_detail_obj.get_patient_obstetric_history_detail_add_url(),
+                            'canDel': False,
+                            'editUrl': None,
+                            'delUrl': None})
+                return render_to_response(
+                    'patient/obs_and_gyn_history/add_or_edit_form.html', variable)
             except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")
             except PatientDetail.DoesNotExist:
@@ -140,7 +143,9 @@ def obstetric_history_detail_add(request, id):
             return HttpResponse(jsondata, content_type="application/json")
         else:
             raise Http404(
-                "BadRequest: Unsupported Request Method. AJAX status is:: " + unicode(request.is_ajax()))
+                "BadRequest: Unsupported Request Method. AJAX status is:: " +
+                unicode(
+                    request.is_ajax()))
 
 
 @login_required
@@ -172,7 +177,8 @@ def obstetric_history_detail_edit(request, id):
             except ObstetricHistoryDetail.DoesNotExist:
                 raise Http404(
                     "BadRequest: Patient Obstetric History Data Does Not Exist")
-            return render_to_response('patient/obs_and_gyn_history/add_or_edit_form.html', variable)
+            return render_to_response(
+                'patient/obs_and_gyn_history/add_or_edit_form.html', variable)
         elif request.method == 'POST' and request.is_ajax():
             try:
                 id = int(id)
@@ -186,28 +192,33 @@ def obstetric_history_detail_edit(request, id):
                     success = True
                     error_message = "Obstetric History Data Edited Successfully"
                     form_errors = ''
-                    data = {'success': success,
-                            'error_message': error_message,
-                            'form_errors': form_errors,
-                            "savedObj": obs_and_gyn_history_obj.patient_detail.__unicode__(),
-                            "editUrl": obs_and_gyn_history_obj.get_edit_url(),
-                            "delUrl": obs_and_gyn_history_obj.get_del_url(),
-                            'canDel': True,
-                            "addUrl": None,
-                            }
+                    data = {
+                        'success': success,
+                        'error_message': error_message,
+                        'form_errors': form_errors,
+                        "savedObj": obs_and_gyn_history_obj.patient_detail.__unicode__(),
+                        "editUrl": obs_and_gyn_history_obj.get_edit_url(),
+                        "delUrl": obs_and_gyn_history_obj.get_del_url(),
+                        'canDel': True,
+                        "addUrl": None,
+                    }
 #          data             = generate_json_for_datagrid(obs_and_gyn_history_obj)
                     jsondata = json.dumps(data)
-                    return HttpResponse(jsondata, content_type='application/json')
+                    return HttpResponse(
+                        jsondata, content_type='application/json')
                 else:
                     success = False
                     error_message = "Error Occured. Obstetric History Data data could not be added."
                     form_errors = ''
                     for error in obs_and_gyn_detail_form.errors:
                         form_errors += '<p>' + error + '</p>'
-                    data = {'success': success, 'error_message': error_message, 'form_errors':
-                            form_errors}
+                    data = {
+                        'success': success,
+                        'error_message': error_message,
+                        'form_errors': form_errors}
                     jsondata = json.dumps(data)
-                    return HttpResponse(jsondata, content_type='application/json')
+                    return HttpResponse(
+                        jsondata, content_type='application/json')
             except ValueError or AttributeError or TypeError:
                 raise Http404("BadRequest: Server Error")
             except ObstetricHistoryDetail.DoesNotExist:
@@ -215,7 +226,8 @@ def obstetric_history_detail_edit(request, id):
                     "BadRequest: Requested Patient Obstetric History Data DoesNotExist")
         else:
             raise Http404(
-                "BadRequest: Unsupported Request Method. request's AJAX status was:: ", request.is_ajax())
+                "BadRequest: Unsupported Request Method. request's AJAX status was:: ",
+                request.is_ajax())
 
 
 @login_required
@@ -236,13 +248,13 @@ def obstetric_history_detail_del(request, id):
             obs_and_gyn_detail_obj.delete()
             success = True
             error_message = "Obstetric History Data Deleted Successfully"
-            data = {'success': success,
-                    'error_message': error_message,
-                    'addUrl': patient_detail_obj.get_patient_obstetric_history_detail_add_url(),
-                    'canDel': False,
-                    'editUrl': None,
-                    'delUrl': None
-                    }
+            data = {
+                'success': success,
+                'error_message': error_message,
+                'addUrl': patient_detail_obj.get_patient_obstetric_history_detail_add_url(),
+                'canDel': False,
+                'editUrl': None,
+                'delUrl': None}
             jsondata = json.dumps(data)
             return HttpResponse(jsondata, content_type='application/json')
         else:

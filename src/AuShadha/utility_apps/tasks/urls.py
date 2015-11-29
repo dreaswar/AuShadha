@@ -10,7 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-################################ CRUD ##################################
+                       ################################ CRUD ##################
                        url(r'tasks/list/(?P<id>\d+)/$',
                            'tasks.views.tasks_detail_list',
                            name='tasks_detail_list'
@@ -31,14 +31,14 @@ urlpatterns = patterns('',
                            name='tasks_detail_del'
                            ),
 
-################################ JSON, UI-PANE & TREE #########################
+                       ################################ JSON, UI-PANE & TREE ##
 
-                      url(r'tasks/pane/(?P<id>\d+)/$',
+                       url(r'tasks/pane/(?P<id>\d+)/$',
                            'tasks.dijit_widgets.pane.render_tasks_pane',
                            name='render_tasks_pane_with_id'
                            ),
 
-                      url(r'tasks/pane/$',
+                       url(r'tasks/pane/$',
                            'tasks.dijit_widgets.pane.render_tasks_pane',
                            name='render_tasks_pane_without_id'
                            ),
@@ -63,7 +63,7 @@ urlpatterns = patterns('',
                            name='render_tasks_json_with_id'
                            ),
 
-################################ SUMMARY ###############################
+                       ################################ SUMMARY ###############
 
                        url(r'tasks/summary/$',
                            'tasks.views.render_tasks_summary',
@@ -75,4 +75,4 @@ urlpatterns = patterns('',
                            name='render_tasks_summary_with_id'
                            ),
 
-)
+                       )

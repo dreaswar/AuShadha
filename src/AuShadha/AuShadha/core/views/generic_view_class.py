@@ -1,18 +1,18 @@
-################################################################################
-# 
+##########################################################################
+#
 # This is a ' Experimental Effort ' to do something like Django Class Based Views.
 #
 # Eventually I hope to do something Generic Class Based Views dont. Something
 #   specific to AuShadha .....
 #
-# visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass was a sandbox 
-#   which works well. 
+# visit.visit_phyexam.presentation_classes.PhyExamBasePresentationClass was a sandbox
+#   which works well.
 #
 # This is an attempt to make it Project wide. PhyExamBasePresentationClass
 #   has been imported here just to extend it. Actually when it is implemented fully,
 #   this will be the base class
 #
-#################################################################################
+##########################################################################
 
 import json
 import datetime
@@ -21,8 +21,9 @@ from django.core.serializers.json import Serializer, Deserializer, DjangoJSONEnc
 from phyexam.models import DEFAULT_VITALS
 from phyexam.phy_exam_constants import PC
 from phyexam.presentation_classes import PhyExamBasePresentationClass
-from phyexam.validator import Validator,validator_factory
-from AuShadha.utilities.forms import AuModelFormErrorFormatter,aumodelformerrorformatter_factory
+from phyexam.validator import Validator, validator_factory
+from AuShadha.utilities.forms import AuModelFormErrorFormatter, aumodelformerrorformatter_factory
+
 
 class SingleModelInstanceView(object):
 

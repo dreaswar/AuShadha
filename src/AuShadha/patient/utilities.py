@@ -1,9 +1,9 @@
-################################################################################
+##########################################################################
 # Project     : AuShadha
 # Description : Utilities for Patient
 # Author      : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
 # Date        : 16-09-2013
-################################################################################
+##########################################################################
 
 
 # General Module imports-----------------------------------
@@ -66,7 +66,8 @@ VisitImaging = UI.get_module("OPD_Visit_Imaging")
 VisitInv = UI.get_module("OPD_Visit_Inv")
 VisitComplaint = UI.get_module("OPD_Visit_Complaint")
 
-################ Some Utilities #################################################
+################ Some Utilities ##########################################
+
 
 def check_before_adding(patient_obj):
     patient_object = patient_obj
@@ -80,50 +81,55 @@ def check_before_adding(patient_obj):
         id_list.append(patient.patient_hospital_id)
     if patient_id in id_list:
         error = "This ID is already Taken. Please renter and retry"
-        #print error
+        # print error
         return False
     else:
-        if active_visit == False:
-            if active_admissions == False:
+        if not active_visit:
+            if not active_admissions:
                 print 'All checked.. Everything ok.. '
                 return True
             else:
                 error = 'This patient has active admissions. Please discharge and retry.'
-                #print error
+                # print error
                 return False
         else:
             error = "This patient has active visit. Please discharge and retry."
-            #print error
+            # print error
             return False
 
 
-def return_patient_json(patient,success = True):
-   p = ModelInstanceJson(patient)
-   return p()
+def return_patient_json(patient, success=True):
+    p = ModelInstanceJson(patient)
+    return p()
 
 
 def get_all_complaints(visit):
 
     v_id = visit.id
-    pat_obj  = visit.patient_detail
+    pat_obj = visit.patient_detail
 
-    visit_obj = VisitDetail.objects.filter(patient_detail = pat_obj).order_by('-visit_date')
+    visit_obj = VisitDetail.objects.filter(
+        patient_detail=pat_obj).order_by('-visit_date')
     visit_complaint_list = []
 
     if visit_obj:
 
         for visit in visit_obj:
-            visit_complaints = VisitComplaint.objects.filter( visit_detail = visit )
+            visit_complaints = VisitComplaint.objects.filter(
+                visit_detail=visit)
 
             if visit_complaints:
                 for complaint in visit_complaints:
                     dict_to_append = {}
                     dict_to_append['complaint'] = complaint.complaint
                     dict_to_append['duration'] = complaint.duration
-                    dict_to_append['visit_date'] = complaint.visit_detail.visit_date.date().isoformat()
-                    dict_to_append['is_active'] = complaint.visit_detail.is_active
+                    dict_to_append[
+                        'visit_date'] = complaint.visit_detail.visit_date.date().isoformat()
+                    dict_to_append[
+                        'is_active'] = complaint.visit_detail.is_active
                     dict_to_append['visit_detail'] = complaint.visit_detail
-                    dict_to_append['visit_fu'] = complaint.visit_detail.has_fu_visits()
+                    dict_to_append[
+                        'visit_fu'] = complaint.visit_detail.has_fu_visits()
 
                     visit_complaint_list.append(dict_to_append)
 

@@ -1,9 +1,9 @@
-################################################################################
+##########################################################################
 # Project     : AuShadha
 # Description : Views for / dashboard
 # Author      : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
 # Date        : 16-09-2013
-################################################################################
+##########################################################################
 
 
 # General Module imports-----------------------------------
@@ -49,33 +49,40 @@ from dijit_widgets.tree import dashboardTree
 
 
 @login_required
-def dashboard_detail_list(request, id = None):
-  pass
+def dashboard_detail_list(request, id=None):
+    pass
+
 
 @login_required
-def dashboard_detail_add(request,id = None):
-  pass
+def dashboard_detail_add(request, id=None):
+    pass
+
 
 @login_required
 def dashboard_detail_edit(request, id):
-  pass
+    pass
+
 
 @login_required
 def dashboard_detail_del(request, id):
-  pass
+    pass
 
-def return_dashboard_json( instance ,success = True):
-   json_obj = ModelInstanceJson(instance)
-   return json_obj()
+
+def return_dashboard_json(instance, success=True):
+    json_obj = ModelInstanceJson(instance)
+    return json_obj()
+
 
 @login_required
-def render_dashboard_tree(request,id = None):
-  pass
+def render_dashboard_tree(request, id=None):
+    pass
+
 
 @login_required
 def render_dashboard_summary(request, id=None):
-  pass
+    pass
+
 
 @login_required
-def render_dashboard_json(request, id = None):
-  pass
+def render_dashboard_json(request, id=None):
+    pass

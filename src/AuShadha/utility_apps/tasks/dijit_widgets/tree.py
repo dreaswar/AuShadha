@@ -19,9 +19,7 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
-
-
-class TasksTree( object ):
+class TasksTree(object):
 
     """
      Defines the Dijit UI for Tasks Tree

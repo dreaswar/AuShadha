@@ -3,7 +3,7 @@ from django.contrib import admin
 import AuShadha.settings
 admin.autodiscover()
 
-from .views import phone_json,phone_add,phone_edit,phone_del
+from .views import phone_json, phone_add, phone_edit, phone_del
 
 urlpatterns = patterns('',
 
@@ -22,11 +22,11 @@ urlpatterns = patterns('',
                        #        name = 'patient_phone_list'
                        #    ),
 
-                        url(r'add/$',
+                       url(r'add/$',
                            phone_add,
                            name='phone_add_without_id'
                            ),
-                       
+
                        url(r'add/(?P<patient_id>\d+)/$',
                            phone_add,
                            name='phone_add_with_id'
@@ -50,4 +50,4 @@ urlpatterns = patterns('',
                            phone_del,
                            name='phone_del_with_id'
                            )
-)
+                       )

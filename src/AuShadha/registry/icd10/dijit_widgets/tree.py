@@ -29,7 +29,7 @@ from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 from registry.icd10.models import Chapter, Section, Diagnosis
 
 
-class ICD10Tree( object ):
+class ICD10Tree(object):
 
     """
      Defines the Dijit UI for ICD 10 Tree
@@ -37,68 +37,69 @@ class ICD10Tree( object ):
 
     def __init__(self, *args, **kwargs):
 
-      try:
-        self.request = kwargs.get('request')
-      except KeyError:
-        raise Exception("ICD10 Tree Object should be initialized with a HttpRequest object at a named parameter")
+        try:
+            self.request = kwargs.get('request')
+        except KeyError:
+            raise Exception(
+                "ICD10 Tree Object should be initialized with a HttpRequest object at a named parameter")
 
-      self.node_name = kwargs.get('node_name', 'chapters')
-      self.yaml_path =  kwargs.get('yaml_path','registry/icd10/dijit_widgets/tree.yaml')
-      self.variables = RequestContext(self.request, kwargs)
+        self.node_name = kwargs.get('node_name', 'chapters')
+        self.yaml_path = kwargs.get(
+            'yaml_path', 'registry/icd10/dijit_widgets/tree.yaml')
+        self.variables = RequestContext(self.request, kwargs)
 
-      try:
-        d = open(self.yaml_path,'r')
-        f = d.read()
-        d.close()
-        pane_template = Template( f )
-        rendered_pane = pane_template.render(self.variables)
-        self.yaml_file = yaml.load( rendered_pane ) 
+        try:
+            d = open(self.yaml_path, 'r')
+            f = d.read()
+            d.close()
+            pane_template = Template(f)
+            rendered_pane = pane_template.render(self.variables)
+            self.yaml_file = yaml.load(rendered_pane)
 
-      except( IOError ):
-        raise Http404("No template file to render the pane ! ")
+        except(IOError):
+            raise Http404("No template file to render the pane ! ")
 
-      try:
-        self.user = self.request.user
-      
-      except(AttributeError,ValueError,NameError,TypeError):
-        raise Exception("Invalid User or no user supplied")
+        try:
+            self.user = self.request.user
+
+        except(AttributeError, ValueError, NameError, TypeError):
+            raise Exception("Invalid User or no user supplied")
 
     def __unicode__(self):
-      return self.__call__()
+        return self.__call__()
 
     def __call__(self):
 
-      y =  self.yaml_file
-      icd10_tree_node = DijitTree()
-#      print y      
-      for node in y[self.node_name]:
-        for k, v in node.iteritems():
-          c  =  DijitTreeNode( v )
-          icd10_tree_node.add_child_node(c)
+        y = self.yaml_file
+        icd10_tree_node = DijitTree()
+#      print y
+        for node in y[self.node_name]:
+            for k, v in node.iteritems():
+                c = DijitTreeNode(v)
+                icd10_tree_node.add_child_node(c)
 
-      jsondata = icd10_tree_node.to_json()
-      return jsondata
-
+        jsondata = icd10_tree_node.to_json()
+        return jsondata
 
 
 @login_required
 def render_icd10_tree(request):
 
-  if request.method == "GET" and request.is_ajax():
-      print "Received request to build ICD10 Chapter tree"
-      user = request.user
-      all_chapters = Chapter.objects.all()
-      all_sections = Section.objects.all()
-      all_diagnosis = Diagnosis.objects.all()
-      d = {'request' : request,
-           'user': user,
-           'all_chapters': all_chapters,
-           'all_sections': all_sections, 
-           'all_diagnosis': all_diagnosis,
-           'node_name': 'chapters'
-          }
-      tree = ICD10Tree(**d)()
-      return HttpResponse(tree, content_type="application/json")    
+    if request.method == "GET" and request.is_ajax():
+        print "Received request to build ICD10 Chapter tree"
+        user = request.user
+        all_chapters = Chapter.objects.all()
+        all_sections = Section.objects.all()
+        all_diagnosis = Diagnosis.objects.all()
+        d = {'request': request,
+             'user': user,
+             'all_chapters': all_chapters,
+             'all_sections': all_sections,
+             'all_diagnosis': all_diagnosis,
+             'node_name': 'chapters'
+             }
+        tree = ICD10Tree(**d)()
+        return HttpResponse(tree, content_type="application/json")
 
-  else:
-      raise Http404("Bad Request")
+    else:
+        raise Http404("Bad Request")

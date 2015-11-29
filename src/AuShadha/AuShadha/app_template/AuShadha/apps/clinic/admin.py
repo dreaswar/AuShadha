@@ -1,10 +1,10 @@
-#################################################################################
+##########################################################################
 # Project     : AuShadha
 # Description : Admin Models for Clinic
 # Author      : Weldan Jamili, Dr.Easwar T.R (see credits)
 # License     : GNU-GPL Version 3 , see docs/LICENSE.txt
 # Date        : 30-09-2013
-################################################################################
+##########################################################################
 
 """
   Admin site for Clinic module
@@ -28,21 +28,23 @@ class DepartmentInline(admin.StackedInline):
 class PhoneInline(admin.StackedInline):
     """
       to show add clinic phone numbers form
-      from add clinic form 
+      from add clinic form
     """
     model = Phone
+
 
 class FaxInline(admin.StackedInline):
     """
       to show add clinic fax numbers form
-      from add clinic form 
+      from add clinic form
     """
     model = Fax
+
 
 class EmailInline(admin.StackedInline):
     """
       to show add clinic email addresses form
-      from add clinic form 
+      from add clinic form
     """
     model = Email
 
@@ -50,18 +52,20 @@ class EmailInline(admin.StackedInline):
 class WebsiteInline(admin.StackedInline):
     """
       to show add clinic website address form
-      from add clinic form 
+      from add clinic form
     """
     model = Website
+
 
 class StaffInline(admin.StackedInline):
     """
       to show add clinic staff form
-      from add clinic form 
+      from add clinic form
     """
     model = Staff
-    can_delete=True
+    can_delete = True
     verbose_name_plural = 'Clinic Staff'
+
 
 class ClinicAdmin(admin.ModelAdmin):
     """
@@ -80,31 +84,34 @@ class DepartmentAdmin(admin.ModelAdmin):
 class PhoneAdmin(admin.ModelAdmin):
     """
       phone module for clinic
-      will remove this if not needed 
+      will remove this if not needed
       (since we can manage this from AuShadha.apps.clinic form)
     """
     pass
+
 
 class FaxAdmin(admin.ModelAdmin):
     """
       fax module for clinic
-      will remove this if not needed 
+      will remove this if not needed
       (since we can manage this from AuShadha.apps.clinic form)
     """
     pass
+
 
 class EmailAdmin(admin.ModelAdmin):
     """
       email module for clinic
-      will remove this if not needed 
+      will remove this if not needed
       (since we can manage this from AuShadha.apps.clinic form)
     """
     pass
 
+
 class WebsiteAdmin(admin.ModelAdmin):
     """
       website module for clinic
-      will remove this if not needed 
+      will remove this if not needed
       (since we can manage this from AuShadha.apps.clinic form)
     """
     pass
@@ -115,6 +122,8 @@ class StaffAdmin(admin.ModelAdmin):
     pass
 
 # Define a new User admin
+
+
 class UserAdmin(UserAdmin):
     inlines = (StaffInline, )
 

@@ -10,7 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-################################ CRUD ##################################
+                       ################################ CRUD ##################
                        url(r'{{app_name}}/list/(?P<id>\d+)/$',
                            '{{app_name}}.views.{{app_name}}_detail_list',
                            name='{{app_name}}_detail_list'
@@ -31,14 +31,14 @@ urlpatterns = patterns('',
                            name='{{app_name}}_detail_del'
                            ),
 
-################################ JSON, UI-PANE & TREE #########################
+                       ################################ JSON, UI-PANE & TREE ##
 
-                      url(r'{{app_name}}/pane/(?P<id>\d+)/$',
+                       url(r'{{app_name}}/pane/(?P<id>\d+)/$',
                            '{{app_name}}.dijit_widgets.pane.render_{{app_name}}_pane',
                            name='render_{{app_name}}_pane_with_id'
                            ),
 
-                      url(r'{{app_name}}/pane/$',
+                       url(r'{{app_name}}/pane/$',
                            '{{app_name}}.dijit_widgets.pane.render_{{app_name}}_pane',
                            name='render_{{app_name}}_pane_without_id'
                            ),
@@ -63,7 +63,7 @@ urlpatterns = patterns('',
                            name='render_{{app_name}}_json_with_id'
                            ),
 
-################################ SUMMARY ###############################
+                       ################################ SUMMARY ###############
 
                        url(r'{{app_name}}/summary/$',
                            '{{app_name}}.views.render_{{app_name}}_summary',
@@ -75,4 +75,4 @@ urlpatterns = patterns('',
                            name='render_{{app_name}}_summary_with_id'
                            ),
 
-)
+                       )

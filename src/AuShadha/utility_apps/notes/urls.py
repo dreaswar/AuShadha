@@ -10,7 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-################################ CRUD ##################################
+                       ################################ CRUD ##################
                        url(r'notes/list/(?P<id>\d+)/$',
                            'notes.views.notes_detail_list',
                            name='notes_detail_list'
@@ -31,14 +31,14 @@ urlpatterns = patterns('',
                            name='notes_detail_del'
                            ),
 
-################################ JSON, UI-PANE & TREE #########################
+                       ################################ JSON, UI-PANE & TREE ##
 
-                      url(r'notes/pane/(?P<id>\d+)/$',
+                       url(r'notes/pane/(?P<id>\d+)/$',
                            'notes.dijit_widgets.pane.render_notes_pane',
                            name='render_notes_pane_with_id'
                            ),
 
-                      url(r'notes/pane/$',
+                       url(r'notes/pane/$',
                            'notes.dijit_widgets.pane.render_notes_pane',
                            name='render_notes_pane_without_id'
                            ),
@@ -63,7 +63,7 @@ urlpatterns = patterns('',
                            name='render_notes_json_with_id'
                            ),
 
-################################ SUMMARY ###############################
+                       ################################ SUMMARY ###############
 
                        url(r'notes/summary/$',
                            'notes.views.render_notes_summary',
@@ -75,4 +75,4 @@ urlpatterns = patterns('',
                            name='render_notes_summary_with_id'
                            ),
 
-)
+                       )

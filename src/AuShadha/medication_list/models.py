@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # PROJECT     : AuShadha
 # Description : Models to manage Medication Lists..
 # Author      : Dr. Easwar T R
 # Date        : 17-09-2013
 # Licence     : GNU GPL V3. Please see AuShadha/LICENSE.txt
-################################################################################
+##########################################################################
 
 import importlib
 
@@ -32,10 +32,11 @@ class MedicationList(AuShadhaBaseModel):
     add, edit, del methods defined on him.
 
     """
+
     def __init__(self, *args, **kwargs):
-      super(MedicationList,self).__init__(*args, **kwargs)
-      self.__model_label__ = "medication_list"
-      self._parent_model = 'patient_detail'
+        super(MedicationList, self).__init__(*args, **kwargs)
+        self.__model_label__ = "medication_list"
+        self._parent_model = 'patient_detail'
 
     medication = models.CharField(max_length=100,
                                   help_text="Only Generic Names.."
@@ -48,8 +49,8 @@ class MedicationList(AuShadhaBaseModel):
     prescribed_by = models.CharField(max_length=100,
                                      choices=(("internal", "Internal"),
                                               ("external", "External")
-                                                  ),
-                                     default = "Internal"
+                                              ),
+                                     default="Internal"
                                      )
     currently_active = models.BooleanField(default=True)
     patient_detail = models.ForeignKey(
@@ -60,13 +61,13 @@ class MedicationList(AuShadhaBaseModel):
 
 
 class MedicationListForm(AuShadhaBaseModelForm):
-    
+
     """
       Form to deal with MedicationList entries
-    
+
     """
     __form_name__ = "Medication List Form"
-    
+
     dijit_fields = MEDICATION_LIST_FORM_CONSTANTS
 
     class Meta:

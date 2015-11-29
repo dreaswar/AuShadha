@@ -8,4 +8,3 @@ class EmailAndFaxAdmin(admin.ModelAdmin):
 
 
 admin.site.register(EmailAndFax, EmailAndFaxAdmin)
-

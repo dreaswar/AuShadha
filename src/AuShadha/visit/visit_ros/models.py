@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # Project      : AuShadha
 # Description  : Models for AuShadha OPD Visits ROS.
-# Author       : Dr. Easwar TR 
+# Author       : Dr. Easwar TR
 # Date         : 17-09-2013
 # LICENSE      : GNU-GPL Version 3, Please see AuShadha/LICENSE.txt
-################################################################################
+##########################################################################
 
 # General Imports
 from datetime import datetime, date, time
@@ -17,7 +17,7 @@ from django.forms import ModelForm, ModelChoiceField, Textarea, TextInput
 
 # Application model imports
 from AuShadha.apps.ui.ui import ui as UI
-from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 
 #from AuShadha.apps.clinic.models import Clinic, Staff
 #from registry.inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
@@ -36,13 +36,12 @@ from dijit_fields_constants import VISIT_ROS_FORM_CONSTANTS
 DEFAULT_VISIT_ROS_FORM_EXCLUDES = ('patient_detail',)
 
 
-
 class VisitROS(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-      super(VisitROS,self).__init__(*args, **kwargs)
-      self.__model_label__ = 'visit_ros'
-      self._parent_model = 'visit_detail'
+        super(VisitROS, self).__init__(*args, **kwargs)
+        self.__model_label__ = 'visit_ros'
+        self._parent_model = 'visit_detail'
 
     const_symp = models.TextField(
         'Constitutional', max_length=500, default="Nil")
@@ -78,19 +77,19 @@ class VisitROS(AuShadhaBaseModel):
 
     def __unicode__(self):
         return """Constitutional: %s
-                  Eye: %s 
-                  ENT: %s 
-                  CVS: %s 
+                  Eye: %s
+                  ENT: %s
+                  CVS: %s
                   Respiratory: %s
-                  GIT: %s 
-                  GUT: %s 
+                  GIT: %s
+                  GUT: %s
                   Musculoskeletal: %s
-                  Integumentary: %s 
-                  Neurological: %s 
+                  Integumentary: %s
+                  Neurological: %s
                   Psychiatric: %s
-                  Endocrine: %s 
-                  Hematological: %s 
-                  Immunologic: %s 
+                  Endocrine: %s
+                  Hematological: %s
+                  Immunologic: %s
                   Created at : %s
            """ % (self.const_symp,
                   self.eye_symp,
@@ -109,14 +108,12 @@ class VisitROS(AuShadhaBaseModel):
                   self.created_at.date().isoformat())
 
     def present(self):
-        return visitrospresentationclass_factory( VisitROS.objects.get(pk = self.id) )
+        return visitrospresentationclass_factory(
+            VisitROS.objects.get(pk=self.id))
 
     class Meta:
         verbose_name = "Visit Review of Systems"
         verbose_name_plural = "Visit Review of Systems"
-
-
-
 
 
 class VisitROSForm(AuShadhaBaseModelForm):

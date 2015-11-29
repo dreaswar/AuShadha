@@ -17,9 +17,6 @@ from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel
 from AuShadha.apps.clinic.models import Clinic
 
 
-
-
-
 class DrugBankCaDrugs(AuShadhaBaseModel):
 
     '''
@@ -27,14 +24,14 @@ class DrugBankCaDrugs(AuShadhaBaseModel):
       Primary list of medications maintained would be as per FDA list
       DrugbankCa has been appended to enable drug referencing data
       Please see their website for usage terms
-  
+
     '''
 
     def __init__(self, *args, **kwargs):
         super(DrugBankCaDrugs, self).__init__(*args, **kwargs)
         self.__model_label__ = "drugbank_ca_drugs"
         self._parent_model = 'parent_clinic'
-        self._can_add_list_or_json = ['drugbank_ca_drugs' ]
+        self._can_add_list_or_json = ['drugbank_ca_drugs']
 
     drug_name = models.TextField(
         'Drug Name', max_length=1000, primary_key=True)
@@ -44,4 +41,3 @@ class DrugBankCaDrugs(AuShadhaBaseModel):
     # Define the Unicode method ::
     def __unicode__(self):
         return "%s - %s" % (self.drug_name, self.drug_id)
-

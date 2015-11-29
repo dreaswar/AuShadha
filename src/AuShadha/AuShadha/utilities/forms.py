@@ -1,16 +1,17 @@
-################################################################################
+##########################################################################
 # Description : AuShadha Base ModelForm and Several Form Utilities
 # Author      : Dr. Easwar T.R
 # Date        : 16-09-2013
 # License     : Part of AuShadha Project. Licensed under GNU-GPL Version 3
-#                Please see AuShadha/LICENSE 
-################################################################################
+#                Please see AuShadha/LICENSE
+##########################################################################
 
 """
  Defines a generic AuShadhaModelForm error formatter and its factory
  Returns a well formatted error_message on Form Submit errors
  with relevent CSS styles.
 """
+
 
 class AuModelFormErrorFormatter(object):
 

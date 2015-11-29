@@ -1,10 +1,10 @@
-#####################################################################################
+##########################################################################
 # PROJECT      : AuShadha
 # Description  : Social History Views
 # Author       : Dr. Easwar T R
 # Date         : 16-09-2013
 # Licence      : GNU GPL V3. Please see AuShadha/LICENSE.txt
-#####################################################################################
+##########################################################################
 
 
 import importlib
@@ -55,144 +55,155 @@ from .models import SocialHistory, SocialHistoryForm
 # Views start here -----------------------------------------
 
 @login_required
-def social_history_json(request, patient_id = None):
+def social_history_json(request, patient_id=None):
     try:
-        
+
         if patient_id:
-          patient_id = int(patient_id)
+            patient_id = int(patient_id)
         else:
-          patient_id = int(request.GET.get('patient_id'))
-          action = unicode(request.GET.get('action'))          
+            patient_id = int(request.GET.get('patient_id'))
+            action = unicode(request.GET.get('action'))
 
         if action == 'add':
             return social_history_add(request, patient_id)
 
         patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-        social_history_obj = SocialHistory.objects.filter(patient_detail=patient_detail_obj)
+        social_history_obj = SocialHistory.objects.filter(
+            patient_detail=patient_detail_obj)
         jsondata = generate_json_for_datagrid(social_history_obj)
         return HttpResponse(jsondata, content_type="application/json")
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
-      raise Http404("ERROR:: Bad request.Invalid arguments passed")
+        raise Http404("ERROR:: Bad request.Invalid arguments passed")
     except(PatientDetail.DoesNotExist):
         raise Http404("ERROR:: Patient requested does not exist.")
 
 
 @login_required
-def social_history_add(request, patient_id = None):
+def social_history_add(request, patient_id=None):
 
     if request.user:
         user = request.user
         try:
-          if patient_id:
-            patient_id = int(patient_id)
-          else:
-            patient_id = int(request.GET.get('patient_id'))
+            if patient_id:
+                patient_id = int(patient_id)
+            else:
+                patient_id = int(request.GET.get('patient_id'))
 
-          patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-          #patient_detail_obj.generate_urls()
+            patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+            # patient_detail_obj.generate_urls()
 
-          if not getattr(patient_detail_obj, 'urls',None):
-            patient_detail_obj.save()
+            if not getattr(patient_detail_obj, 'urls', None):
+                patient_detail_obj.save()
 
-          social_history_obj = SocialHistory.objects.filter(patient_detail=patient_detail_obj)
+            social_history_obj = SocialHistory.objects.filter(
+                patient_detail=patient_detail_obj)
 
-          if social_history_obj:
-              return social_history_edit(request, social_history_obj[0].id)
-          else:
-              social_history_obj = SocialHistory(patient_detail=patient_detail_obj)
+            if social_history_obj:
+                return social_history_edit(request, social_history_obj[0].id)
+            else:
+                social_history_obj = SocialHistory(
+                    patient_detail=patient_detail_obj)
 
-          if request.method == "GET" and request.is_ajax():
-                social_history_form = SocialHistoryForm(instance=social_history_obj)
+            if request.method == "GET" and request.is_ajax():
+                social_history_form = SocialHistoryForm(
+                    instance=social_history_obj)
 
-                variable = RequestContext(request,
-                                          {"user": user,
-                                            "patient_detail_obj": patient_detail_obj,
-                                            "social_history_form": social_history_form,
-                                            "social_history_obj": social_history_obj,
-                                            'button_label': "Add",
-                                            "action": patient_detail_obj.urls['add']['social_history'],
-                                            "addUrl": patient_detail_obj.urls['add']['social_history'],
-                                            'canDel': False,
-                                            'editUrl': None,
-                                            'delUrl': None
-                                            })
-                return render_to_response('social_history/add_or_edit_form.html', variable)
+                variable = RequestContext(
+                    request,
+                    {
+                        "user": user,
+                        "patient_detail_obj": patient_detail_obj,
+                        "social_history_form": social_history_form,
+                        "social_history_obj": social_history_obj,
+                        'button_label': "Add",
+                        "action": patient_detail_obj.urls['add']['social_history'],
+                        "addUrl": patient_detail_obj.urls['add']['social_history'],
+                        'canDel': False,
+                        'editUrl': None,
+                        'delUrl': None})
+                return render_to_response(
+                    'social_history/add_or_edit_form.html', variable)
 
-          elif request.method == 'POST' and request.is_ajax():
-                  copy_post = request.POST.copy()
+            elif request.method == 'POST' and request.is_ajax():
+                copy_post = request.POST.copy()
 
-                  #print "Received POST Request with", request.POST
-                  #print "Home Occupants received are", copy_post.getlist('home_occupants')
+                # print "Received POST Request with", request.POST
+                # print "Home Occupants received are",
+                # copy_post.getlist('home_occupants')
 
-                  copy_post['home_occupants'] = ",".join(copy_post.getlist('home_occupants'))
-                  copy_post['pets'] = ",".join(copy_post.getlist('pets'))
-                  
-                  social_history_form = SocialHistoryForm(copy_post, instance=social_history_obj)
+                copy_post['home_occupants'] = ",".join(
+                    copy_post.getlist('home_occupants'))
+                copy_post['pets'] = ",".join(copy_post.getlist('pets'))
 
-                  if social_history_form.is_valid():
-                      try:
-                          social_history_obj = social_history_form.save()
-                          success = True
-                          error_message = "SocialHistory Data Added Successfully"
-                          form_errors = None
-                          addData = {
-                              "marital_status": social_history_obj.marital_status,
-                              "marital_status_notes": social_history_obj.marital_status_notes,
-                              "occupation": social_history_obj.occupation,
-                              "occupation_notes": social_history_obj.occupation_notes,
-                              "exercise": social_history_obj.exercise,
-                              "exercise_notes": social_history_obj.exercise_notes,
-                              "diet": social_history_obj.diet,
-                              "diet_notes": social_history_obj.diet_notes,
-                              "home_occupants": social_history_obj.home_occupants,
-                              "home_occupants_notes": social_history_obj.home_occupants_notes,
-                              "pets": social_history_obj.pets,
-                              "pets_notes": social_history_obj.pets_notes,
-                              "alcohol": social_history_obj.alcohol,
-                              "alcohol_no": social_history_obj.alcohol_no,
-                              "alcohol_notes": social_history_obj.alcohol_notes,
-                              "tobacco": social_history_obj.tobacco,
-                              "tobacco_no": social_history_obj.tobacco_no,
-                              "tobacco_notes": social_history_obj.tobacco_notes,
-                              "drug_abuse": social_history_obj.drug_abuse,
-                              "drug_abuse_notes": social_history_obj.drug_abuse_notes,
-                              "sexual_preference": social_history_obj.sexual_preference,
-                              "sexual_preference_notes": social_history_obj.sexual_preference_notes,
-                              "current_events": social_history_obj.current_events
-                          }
+                social_history_form = SocialHistoryForm(
+                    copy_post, instance=social_history_obj)
 
-                          if not hasattr(social_history_obj,'urls'):
+                if social_history_form.is_valid():
+                    try:
+                        social_history_obj = social_history_form.save()
+                        success = True
+                        error_message = "SocialHistory Data Added Successfully"
+                        form_errors = None
+                        addData = {
+                            "marital_status": social_history_obj.marital_status,
+                            "marital_status_notes": social_history_obj.marital_status_notes,
+                            "occupation": social_history_obj.occupation,
+                            "occupation_notes": social_history_obj.occupation_notes,
+                            "exercise": social_history_obj.exercise,
+                            "exercise_notes": social_history_obj.exercise_notes,
+                            "diet": social_history_obj.diet,
+                            "diet_notes": social_history_obj.diet_notes,
+                            "home_occupants": social_history_obj.home_occupants,
+                            "home_occupants_notes": social_history_obj.home_occupants_notes,
+                            "pets": social_history_obj.pets,
+                            "pets_notes": social_history_obj.pets_notes,
+                            "alcohol": social_history_obj.alcohol,
+                            "alcohol_no": social_history_obj.alcohol_no,
+                            "alcohol_notes": social_history_obj.alcohol_notes,
+                            "tobacco": social_history_obj.tobacco,
+                            "tobacco_no": social_history_obj.tobacco_no,
+                            "tobacco_notes": social_history_obj.tobacco_notes,
+                            "drug_abuse": social_history_obj.drug_abuse,
+                            "drug_abuse_notes": social_history_obj.drug_abuse_notes,
+                            "sexual_preference": social_history_obj.sexual_preference,
+                            "sexual_preference_notes": social_history_obj.sexual_preference_notes,
+                            "current_events": social_history_obj.current_events}
+
+                        if not hasattr(social_history_obj, 'urls'):
                             social_history_obj.save()
-                            urls  = social_history_obj.urls
+                            urls = social_history_obj.urls
 
-                          data = {'success': success,
-                                  'error_message': error_message,
-                                  'form_errors': form_errors,
-                                  'canDel': True,
-                                  'addUrl': None,
-                                  "addData": addData,
-                                  'editUrl': social_history_obj.urls['edit'],
-                                  'delUrl': social_history_obj.urls['del'],
-                                  }
-                      except (Exception("SocialHistoryExistsError")):
-                          data = {'success': False,
-                                  'error_message': "Social History Already Exists ! Cannot add More",
-                                  'form_errors': error_message,
-                                  'addData':None
-                                  }
-                  else:
-                      error_message = aumodelformerrorformatter_factory(social_history_form)
-                      data = {'success': False,
-                              'error_message': error_message,
-                              'form_errors': error_message,
-                              'addData':None
-                              }
-                  jsondata = json.dumps(data)
-                  return HttpResponse(jsondata, content_type='application/json')
+                        data = {'success': success,
+                                'error_message': error_message,
+                                'form_errors': form_errors,
+                                'canDel': True,
+                                'addUrl': None,
+                                "addData": addData,
+                                'editUrl': social_history_obj.urls['edit'],
+                                'delUrl': social_history_obj.urls['del'],
+                                }
+                    except (Exception("SocialHistoryExistsError")):
+                        data = {
+                            'success': False,
+                            'error_message': "Social History Already Exists ! Cannot add More",
+                            'form_errors': error_message,
+                            'addData': None}
+                else:
+                    error_message = aumodelformerrorformatter_factory(
+                        social_history_form)
+                    data = {'success': False,
+                            'error_message': error_message,
+                            'form_errors': error_message,
+                            'addData': None
+                            }
+                jsondata = json.dumps(data)
+                return HttpResponse(jsondata, content_type='application/json')
 
-          else:
-              raise Http404(
-                  "BadRequest: Unsupported Request Method. AJAX status is:: " + unicode(request.is_ajax()))
+            else:
+                raise Http404(
+                    "BadRequest: Unsupported Request Method. AJAX status is:: " +
+                    unicode(
+                        request.is_ajax()))
 
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
@@ -201,38 +212,94 @@ def social_history_add(request, patient_id = None):
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
 
-
 @login_required
-def social_history_edit(request, social_history_id = None):
+def social_history_edit(request, social_history_id=None):
 
     if request.user:
         user = request.user
 
         try:
-          if social_history_id:
-            social_history_id = int(social_history_id)
-          else:
-            social_history_id = int(request.GET.get('social_history_id'))
-          social_history_obj = SocialHistory.objects.get(pk=social_history_id)
-          patient_detail_obj = social_history_obj.patient_detail
+            if social_history_id:
+                social_history_id = int(social_history_id)
+            else:
+                social_history_id = int(request.GET.get('social_history_id'))
+            social_history_obj = SocialHistory.objects.get(
+                pk=social_history_id)
+            patient_detail_obj = social_history_obj.patient_detail
 
-          if not getattr(patient_detail_obj, 'urls',None):
-            patient_detail_obj.save()
+            if not getattr(patient_detail_obj, 'urls', None):
+                patient_detail_obj.save()
 
-          if not getattr(social_history_obj,'urls',None):
-            social_history_obj.save()
-            urls  = social_history_obj.urls
-          else:
-            urls  = social_history_obj.urls
+            if not getattr(social_history_obj, 'urls', None):
+                social_history_obj.save()
+                urls = social_history_obj.urls
+            else:
+                urls = social_history_obj.urls
 
         except ValueError or AttributeError or TypeError:
             raise Http404("BadRequest: Server Error")
         except SocialHistory.DoesNotExist:
-            raise Http404("BadRequest: Requested Patient SocialHistory Data DoesNotExist")
+            raise Http404(
+                "BadRequest: Requested Patient SocialHistory Data DoesNotExist")
 
         if request.method == "GET" and request.is_ajax():
-                social_history_form = SocialHistoryForm(instance=social_history_obj)
-                patient_detail_obj = social_history_obj.patient_detail
+            social_history_form = SocialHistoryForm(
+                instance=social_history_obj)
+            patient_detail_obj = social_history_obj.patient_detail
+            addData = {
+                "marital_status": social_history_obj.marital_status,
+                "marital_status_notes": social_history_obj.marital_status_notes,
+                "occupation": social_history_obj.occupation,
+                "occupation_notes": social_history_obj.occupation_notes,
+                "exercise": social_history_obj.exercise,
+                "exercise_notes": social_history_obj.exercise_notes,
+                "diet": social_history_obj.diet,
+                "diet_notes": social_history_obj.diet_notes,
+                "home_occupants": social_history_obj.home_occupants,
+                "home_occupants_notes": social_history_obj.home_occupants_notes,
+                "pets": social_history_obj.pets,
+                "pets_notes": social_history_obj.pets_notes,
+                "alcohol": social_history_obj.alcohol,
+                "alcohol_no": social_history_obj.alcohol_no,
+                "alcohol_notes": social_history_obj.alcohol_notes,
+                "tobacco": social_history_obj.tobacco,
+                "tobacco_no": social_history_obj.tobacco_no,
+                "tobacco_notes": social_history_obj.tobacco_notes,
+                "drug_abuse": social_history_obj.drug_abuse,
+                "drug_abuse_notes": social_history_obj.drug_abuse_notes,
+                "sexual_preference": social_history_obj.sexual_preference,
+                "sexual_preference_notes": social_history_obj.sexual_preference_notes,
+                "current_events": social_history_obj.current_events}
+            variable = RequestContext(request,
+                                      {"user": user,
+                                       "patient_detail_obj": patient_detail_obj,
+                                       "social_history_form": social_history_form,
+                                       "social_history_obj": social_history_obj,
+                                       "addData": addData,
+                                       'action': urls['edit'],
+                                       'button_label': "Edit",
+                                       'canDel': True,
+                                       'addUrl': None,
+                                       'editUrl': urls['edit'],
+                                       'delUrl': urls['del'],
+                                       })
+            return render_to_response(
+                'social_history/add_or_edit_form.html', variable)
+
+        elif request.method == 'POST' and request.is_ajax():
+            copy_post = request.POST.copy()
+            copy_post['home_occupants'] = ",".join(
+                copy_post.getlist('home_occupants'))
+            copy_post['pets'] = ",".join(copy_post.getlist('pets'))
+            social_history_form = SocialHistoryForm(
+                copy_post, instance=social_history_obj)
+            patient_detail_obj = social_history_obj.patient_detail
+
+            if social_history_form.is_valid():
+                social_history_obj = social_history_form.save()
+                success = True
+                error_message = "SocialHistory Data Edited Successfully"
+                form_errors = ''
                 addData = {
                     "marital_status": social_history_obj.marital_status,
                     "marital_status_notes": social_history_obj.marital_status_notes,
@@ -240,8 +307,7 @@ def social_history_edit(request, social_history_id = None):
                     "occupation_notes": social_history_obj.occupation_notes,
                     "exercise": social_history_obj.exercise,
                     "exercise_notes": social_history_obj.exercise_notes,
-                    "diet": social_history_obj.diet,
-                    "diet_notes": social_history_obj.diet_notes,
+                    "diet": social_history_obj.diet_notes,
                     "home_occupants": social_history_obj.home_occupants,
                     "home_occupants_notes": social_history_obj.home_occupants_notes,
                     "pets": social_history_obj.pets,
@@ -256,72 +322,17 @@ def social_history_edit(request, social_history_id = None):
                     "drug_abuse_notes": social_history_obj.drug_abuse_notes,
                     "sexual_preference": social_history_obj.sexual_preference,
                     "sexual_preference_notes": social_history_obj.sexual_preference_notes,
-                    "current_events": social_history_obj.current_events
-                }
-                variable = RequestContext(request,
-                                          {"user": user,
-                                           "patient_detail_obj": patient_detail_obj,
-                                           "social_history_form": social_history_form,
-                                           "social_history_obj": social_history_obj,
-                                           "addData": addData,
-                                           'action': urls['edit'],
-                                           'button_label': "Edit",
-                                           'canDel': True,
-                                           'addUrl': None,
-                                           'editUrl': urls['edit'],
-                                           'delUrl': urls['del'],
-                                           })
-                return render_to_response('social_history/add_or_edit_form.html', variable)
-
-        elif request.method == 'POST' and request.is_ajax():
-                copy_post = request.POST.copy()
-                copy_post['home_occupants'] = ",".join(copy_post.getlist('home_occupants'))
-                copy_post['pets'] = ",".join(copy_post.getlist('pets'))
-                social_history_form = SocialHistoryForm(copy_post, instance=social_history_obj)
-                patient_detail_obj = social_history_obj.patient_detail
-
-                if social_history_form.is_valid():
-                    social_history_obj = social_history_form.save()
-                    success = True
-                    error_message = "SocialHistory Data Edited Successfully"
-                    form_errors = ''
-                    addData = {
-                        "marital_status": social_history_obj.marital_status,
-                        "marital_status_notes": social_history_obj.marital_status_notes,
-                        "occupation": social_history_obj.occupation,
-                        "occupation_notes": social_history_obj.occupation_notes,
-                        "exercise": social_history_obj.exercise,
-                        "exercise_notes": social_history_obj.exercise_notes,
-                        "diet": social_history_obj.diet_notes,
-                        "home_occupants": social_history_obj.home_occupants,
-                        "home_occupants_notes": social_history_obj.home_occupants_notes,
-                        "pets": social_history_obj.pets,
-                        "pets_notes": social_history_obj.pets_notes,
-                        "alcohol": social_history_obj.alcohol,
-                        "alcohol_no": social_history_obj.alcohol_no,
-                        "alcohol_notes": social_history_obj.alcohol_notes,
-                        "tobacco": social_history_obj.tobacco,
-                        "tobacco_no": social_history_obj.tobacco_no,
-                        "tobacco_notes": social_history_obj.tobacco_notes,
-                        "drug_abuse": social_history_obj.drug_abuse,
-                        "drug_abuse_notes": social_history_obj.drug_abuse_notes,
-                        "sexual_preference": social_history_obj.sexual_preference,
-                        "sexual_preference_notes": social_history_obj.sexual_preference_notes,
-                        "current_events": social_history_obj.current_events
-                    }
-                    data = {'success': success,
-                            'error_message': error_message,
-                            'form_errors': form_errors,
-                            "addData": addData
-                            }
-                else:
-                    data = {'success': False, 
-                            'error_message': aumodelformerrorformatter_factory(social_history_form), 
-                            'form_errors':error_message,
-                            'addData':None
-                            }
-                jsondata = json.dumps(data)
-                return HttpResponse(jsondata, content_type='application/json')
+                    "current_events": social_history_obj.current_events}
+                data = {'success': success,
+                        'error_message': error_message,
+                        'form_errors': form_errors,
+                        "addData": addData
+                        }
+            else:
+                data = {'success': False, 'error_message': aumodelformerrorformatter_factory(
+                    social_history_form), 'form_errors': error_message, 'addData': None}
+            jsondata = json.dumps(data)
+            return HttpResponse(jsondata, content_type='application/json')
 
         else:
             raise Http404("BadRequest: Unsupported Request Method")
@@ -333,13 +344,15 @@ def social_history_del(request, social_history_id):
     if user and user.is_superuser:
         if request.method == "GET":
             try:
-              if social_history_id:
-                social_history_id = int(social_history_id)
-              else:
-                social_history_id = int(request.GET.get('social_history_id'))
-              social_history_obj = SocialHistory.objects.get(pk=social_history_id)
-              patient_detail_obj  = social_history_obj.patient_detail
-              patient_detail_obj.generate_urls()
+                if social_history_id:
+                    social_history_id = int(social_history_id)
+                else:
+                    social_history_id = int(
+                        request.GET.get('social_history_id'))
+                social_history_obj = SocialHistory.objects.get(
+                    pk=social_history_id)
+                patient_detail_obj = social_history_obj.patient_detail
+                patient_detail_obj.generate_urls()
             except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")
             except SocialHistory.DoesNotExist:

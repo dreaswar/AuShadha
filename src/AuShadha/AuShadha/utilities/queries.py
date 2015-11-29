@@ -1,14 +1,14 @@
-################################################################################
+##########################################################################
 # Project     : AuShadha
-# Description : Generic Queries for models 
+# Description : Generic Queries for models
 #               A dump for useful functions used everywhere
 # Author      : Dr. Easwar T.R
 # Date        : 19-09-2013
 # License     : GNU-GPL Version 3, See AuShadha/License.txt
-################################################################################
+##########################################################################
 
 """
- These are Queries that have been left here. 
+ These are Queries that have been left here.
  They are old code that needs to be moved into the respective app/queries.py module.
 """
 
@@ -24,8 +24,8 @@
 #Phone = UI.get_module("Phone")
 #Guardian = UI.get_module("Guardian")
 
+
 def has_active_admission(patient):
-    
     """Queries whether a given patient has an active admission."""
 
     from patient.models import PatientDetail
@@ -44,8 +44,8 @@ def has_active_admission(patient):
     else:
         return False
 
+
 def adm_for_pat(patient):
-    
     """
       Returns the number of admissions for a patient after calling
       has_active_admission.
@@ -70,11 +70,11 @@ def adm_for_pat(patient):
         all_adm_obj = AdmissionDetail.objects.filter(patient_detail=pat_obj)
         return all_adm_obj
 
+
 def has_active_visit(patient):
-    
     """
       Queries whether a given patient has a active visit.
-      Returns Boolean. 
+      Returns Boolean.
       Returns False in case of error.
     """
 
@@ -95,7 +95,6 @@ def has_active_visit(patient):
 
 
 def can_add_new_visit(patient):
-
     """
       Queries whether a given patient Can add a new visit.
       Takes a patient instance as a argument.
@@ -122,23 +121,23 @@ def can_add_new_visit(patient):
 
     # if not has_active_visit(patient):
 
-    #if not has_active_admission(patient):
-        #return True
-    #else:
-        #return False
+    # if not has_active_admission(patient):
+        # return True
+    # else:
+        # return False
     # else:
         # return False
     return True
 
+
 def visit_for_pat(patient):
-    
     """
       Details the visit details for each patient.
       This is useful for display on the Patient List table in
-        template. 
+        template.
       Can just call this method and format a table with
-        results for a quick view. 
-      Can use the return value of "VisitObject" 
+        results for a quick view.
+      Can use the return value of "VisitObject"
         to call the is_visit_active method if needed
     """
 
@@ -194,10 +193,8 @@ def get_patient_complaints(patient):
                         'visit_fu'] = complaint.visit_detail.has_fu_visits()
                     visit_complaint_list.append(dict_to_append)
     #jsondata = json.dumps(visit_complaint_list)
-    #return json
+    # return json
     return visit_complaint_list
-
-
 
 
 def has_contact(patient):
@@ -219,6 +216,7 @@ def has_contact(patient):
     else:
         return False
 
+
 def has_phone(patient):
     """Returns a Boolean whether a particular patient has a contact or not
     in Database."""
@@ -238,8 +236,8 @@ def has_phone(patient):
     else:
         return False
 
-def has_guardian(patient):
 
+def has_guardian(patient):
     """Returns a Boolean whether a particular patient has a contact or not
     in Database."""
 

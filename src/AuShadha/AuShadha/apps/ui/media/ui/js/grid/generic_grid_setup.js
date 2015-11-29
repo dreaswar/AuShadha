@@ -56,6 +56,12 @@ define(["dojo/dom",
           var edit = gridToUse.store.getValue(item, "edit");
           var del = gridToUse.store.getValue(item, "del");
 
+          //catch the new API- lousy and needs change
+          if (edit === undefined) { 
+              var edit = gridToUse.store.getValue(item, "urls").edit;
+              var del = gridToUse.store.getValue(item, "urls").del;
+          }
+
           gridToUse.selection.clear();
           gridToUse.selection.setSelected(item, true);
 
@@ -70,7 +76,7 @@ define(["dojo/dom",
                     myDialog = new Dialog({
                                           title: titleToUse,
                                           content: html,
-                                          style: "width: 500px; height:500px;"
+//                                          style: "width: 500px; height:500px; overflow:auto;"
                                       },
                                       "editPatientDialog"
                                   );

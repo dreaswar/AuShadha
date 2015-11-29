@@ -37,13 +37,10 @@ from django.template.response import TemplateResponse
 from django.contrib.sites.models import get_current_site
 
 
-
 # AuShadha Imports
 import AuShadha.settings as settings
 from AuShadha.settings import APP_ROOT_URL
 from AuShadha.apps.aushadha_users.models import AuShadhaUser, AuShadhaUserForm
-
-
 
 
 @sensitive_post_parameters()
@@ -82,10 +79,10 @@ def login_view(request, template_name='registration/login.html',
                     }
         else:
             data = {'success': False,
-                    'error_message' : '''<em class='error_text'>ERROR! Could not login</em>
+                    'error_message': '''<em class='error_text'>ERROR! Could not login</em>
                                          <p class='suggestion_text'>Please Check your Username & Password.</p>
-                                         <i class='help_text'>If you are sure they are correct, 
-                                         Please contact Administrator to find 
+                                         <i class='help_text'>If you are sure they are correct,
+                                         Please contact Administrator to find
                                          out whether you need to activate your account.
                                          </i>
                                        ''',
@@ -115,6 +112,6 @@ def login_view(request, template_name='registration/login.html',
 def logout_view(request):
     """View for logging out of AuShadha."""
     logout(request)
-    #return HttpResponseRedirect('/AuShadha/')
+    # return HttpResponseRedirect('/AuShadha/')
     return HttpResponseRedirect('/login/')
 # Create your views here.

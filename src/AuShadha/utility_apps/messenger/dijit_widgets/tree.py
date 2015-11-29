@@ -19,9 +19,7 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
-
-
-class MessengerTree( object ):
+class MessengerTree(object):
 
     """
      Defines the Dijit UI for Messenger Tree

@@ -32,47 +32,47 @@ from AuShadha.apps.ui.ui import ui as UI
 from registry.inv_and_imaging.models import LabInvestigationRegistry, ImagingInvestigationRegistry
 
 PatientDetail = UI.get_module("PatientRegistration")
-VisitDetail  = UI.get_module("OPD_Visit")
+VisitDetail = UI.get_module("OPD_Visit")
 
 
 from .models import VisitHPI
 
 
 @login_required
-def get_all_visit_hpi(request, visit_id = None):
+def get_all_visit_hpi(request, visit_id=None):
 
     user = request.user
 
     try:
         if visit_id:
-          visit_id = int(visit_id)
+            visit_id = int(visit_id)
         else:
-          visit_id = int(request.GET.get('visit_id'))          
+            visit_id = int(request.GET.get('visit_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         patient_detail_obj = visit_detail_obj.patient_detail
 
         if not getattr(visit_detail_obj, 'urls', None):
-          visit_detail_obj.save()
-    
+            visit_detail_obj.save()
+
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
-    
+
     except(VisitDetail.DoesNotExist):
         raise Http404("ERROR:: Visit requested does not exist.")
 
-    visit_hpi_objs  = []
-    all_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj)
+    visit_hpi_objs = []
+    all_visits = VisitDetail.objects.filter(patient_detail=patient_detail_obj)
     for visit in all_visits:
-      if visit != visit_detail_obj:
-        vc = VisitHPI.objects.filter(visit_detail = visit)
-        for c in vc:
-          visit_hpi_objs.append(c)
+        if visit != visit_detail_obj:
+            vc = VisitHPI.objects.filter(visit_detail=visit)
+            for c in vc:
+                visit_hpi_objs.append(c)
 
     #visit_hpi_objs = VisitHPI.objects.filter(visit_detail = visit_detail_obj)
     #data = []
 
-    #if visit_hpi_objs:
+    # if visit_hpi_objs:
     for hpi in visit_hpi_objs:
         if not getattr(hpi, 'urls', None):
             hpi.save()
@@ -83,67 +83,69 @@ def get_all_visit_hpi(request, visit_id = None):
         #data_to_append['hpi']  = hpi.hpi
         #data_to_append['edit'] = hpi.urls['edit']
         #data_to_append['del']  = hpi.urls['del']
-        #data.append(data_to_append)
-    variable = RequestContext(request, 
-                              {'user': user, 
+        # data.append(data_to_append)
+    variable = RequestContext(request,
+                              {'user': user,
                                'visit_detail_obj': visit_detail_obj,
                                'visit_hpi_objs': visit_hpi_objs
-                              })
+                               })
     return render_to_response('visit_hpi/get_all_visit_hpi.html', variable)
-    #else:
-        #data.append( "No History Recorded so far" );
+    # else:
+    #data.append( "No History Recorded so far" );
 
     #jsondata = json.dumps(data)
-    #return HttpResponse(jsondata, content_type="application/json")
+    # return HttpResponse(jsondata, content_type="application/json")
 
 
 @login_required
-def import_active_visit_hpi(request, visit_id = None):
+def import_active_visit_hpi(request, visit_id=None):
 
     try:
         if visit_id:
-          visit_id = int(visit_id)
+            visit_id = int(visit_id)
         else:
-          visit_id = int(request.GET.get('visit_id'))          
+            visit_id = int(request.GET.get('visit_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         patient_detail_obj = visit_detail_obj.patient_detail
 
         if not getattr(visit_detail_obj, 'urls', None):
-          visit_detail_obj.save()
-    
+            visit_detail_obj.save()
+
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
-    
+
     except(VisitDetail.DoesNotExist):
         raise Http404("ERROR:: Visit requested does not exist.")
 
-    visit_hpi_objs  = []
+    visit_hpi_objs = []
 
-    all_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj).filter(is_active = True).order_by('visit_date')
-    hpi_list = [] # prevents duplication of hpi while importing
+    all_visits = VisitDetail.objects.filter(
+        patient_detail=patient_detail_obj).filter(
+        is_active=True).order_by('visit_date')
+    hpi_list = []  # prevents duplication of hpi while importing
 
     for visit in all_visits:
-      if visit != visit_detail_obj:
-        vc = VisitHPI.objects.filter(visit_detail = visit)
-        for c in vc:
-          if c.hpi not in hpi_list:
-            print c.hpi + " Not in list.. adding the same"
-            hpi_list.append(c.hpi)
-            visit_hpi_objs.append(c)
+        if visit != visit_detail_obj:
+            vc = VisitHPI.objects.filter(visit_detail=visit)
+            for c in vc:
+                if c.hpi not in hpi_list:
+                    print c.hpi + " Not in list.. adding the same"
+                    hpi_list.append(c.hpi)
+                    visit_hpi_objs.append(c)
 
     hpi_data = []
     if visit_hpi_objs:
         for hpi in visit_hpi_objs:
-            data = {'hpi': hpi.hpi }
+            data = {'hpi': hpi.hpi}
             new_hpi = VisitHPI(**data)
             new_hpi.visit_detail = visit_detail_obj
             new_hpi.save()
-            hpi_data.append({'hpi': new_hpi.hpi, 
-                             'edit' : new_hpi.urls['edit'],
-                             'del' : new_hpi.urls['del'],
+            hpi_data.append({'hpi': new_hpi.hpi,
+                             'edit': new_hpi.urls['edit'],
+                             'del': new_hpi.urls['del'],
                              'id': new_hpi.id
-                           })
+                             })
         success = True
         error_message = "Successfully imported hpi"
 
@@ -151,6 +153,9 @@ def import_active_visit_hpi(request, visit_id = None):
         success = False
         error_message = "No HPI to import..."
 
-    data = {'success': success, 'error_message': error_message, 'return_data': hpi_data }
+    data = {
+        'success': success,
+        'error_message': error_message,
+        'return_data': hpi_data}
     jsondata = json.dumps(data)
-    return HttpResponse(jsondata, content_type="application/json")  
+    return HttpResponse(jsondata, content_type="application/json")

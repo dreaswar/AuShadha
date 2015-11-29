@@ -10,7 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-################################ CRUD ##################################
+                       ################################ CRUD ##################
                        url(r'dashboard/list/(?P<id>\d+)/$',
                            'dashboard.views.dashboard_detail_list',
                            name='dashboard_detail_list'
@@ -31,14 +31,14 @@ urlpatterns = patterns('',
                            name='dashboard_detail_del'
                            ),
 
-################################ JSON, UI-PANE & TREE #########################
+                       ################################ JSON, UI-PANE & TREE ##
 
-                      url(r'dashboard/pane/(?P<id>\d+)/$',
+                       url(r'dashboard/pane/(?P<id>\d+)/$',
                            'dashboard.dijit_widgets.pane.render_dashboard_pane',
                            name='render_dashboard_pane_with_id'
                            ),
 
-                      url(r'dashboard/pane/$',
+                       url(r'dashboard/pane/$',
                            'dashboard.dijit_widgets.pane.render_dashboard_pane',
                            name='render_dashboard_pane_without_id'
                            ),
@@ -63,7 +63,7 @@ urlpatterns = patterns('',
                            name='render_dashboard_json_with_id'
                            ),
 
-################################ SUMMARY ###############################
+                       ################################ SUMMARY ###############
 
                        url(r'dashboard/summary/$',
                            'dashboard.views.render_dashboard_summary',
@@ -75,4 +75,4 @@ urlpatterns = patterns('',
                            name='render_dashboard_summary_with_id'
                            ),
 
-)
+                       )

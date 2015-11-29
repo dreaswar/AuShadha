@@ -18,45 +18,43 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
-
-
-class MedicationListTree( object ):
+class MedicationListTree(object):
 
     """
      Defines the Dijit UI for Medication List Tree
     """
 
-    def __init__(self,kwargs):
+    def __init__(self, kwargs):
 
-      self.request = kwargs['request']
-      self.variables = RequestContext(self.request, kwargs)
-      if not getattr(self.variables['patient_detail_obj'],'urls',None):
-        self.variables['patient_detail_obj'].save()
+        self.request = kwargs['request']
+        self.variables = RequestContext(self.request, kwargs)
+        if not getattr(self.variables['patient_detail_obj'], 'urls', None):
+            self.variables['patient_detail_obj'].save()
 
-      try:
-        d = open('medication_list/dijit_widgets/tree.yaml','r')
-        f = d.read()
-        d.close()
-        pane_template = Template( f )
-        rendered_pane = pane_template.render(self.variables)
-        self.yaml_file = yaml.load( rendered_pane ) 
+        try:
+            d = open('medication_list/dijit_widgets/tree.yaml', 'r')
+            f = d.read()
+            d.close()
+            pane_template = Template(f)
+            rendered_pane = pane_template.render(self.variables)
+            self.yaml_file = yaml.load(rendered_pane)
 
-      except( IOError ):
-        raise Http404("No template file to render the pane ! ")
+        except(IOError):
+            raise Http404("No template file to render the pane ! ")
 
-      try:
-        self.user = self.request.user
-      
-      except(AttributeError,ValueError,NameError,TypeError):
-        raise Exception("Invalid User or no user supplied")
+        try:
+            self.user = self.request.user
+
+        except(AttributeError, ValueError, NameError, TypeError):
+            raise Exception("Invalid User or no user supplied")
 
     def __unicode__(self):
-      return self.__call__()
+        return self.__call__()
 
     def __call__(self):
 
-      y =  self.yaml_file
-      tree = DijitTree()
-      #Add all the branches from the yaml
-      jsondata = tree.to_json()
-      return json
+        y = self.yaml_file
+        tree = DijitTree()
+        # Add all the branches from the yaml
+        jsondata = tree.to_json()
+        return json

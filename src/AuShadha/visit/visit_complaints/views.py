@@ -1,10 +1,10 @@
-#################################################################################
+##########################################################################
 # Project     : AuShadha
 # Description : AuShadha Views for OPD Visits
-# Author      : Dr.Easwar T.R 
+# Author      : Dr.Easwar T.R
 # Date        : 27-12-2012
 # License     : GNU - GPL Version 3, see AuShadha/LICENSE.txt
-#################################################################################
+##########################################################################
 
 
 # General Django Imports----------------------------------
@@ -53,40 +53,41 @@ from .utilities import check_duplicates
 
 
 @login_required
-def visit_complaint_json(request, visit_id = None):
+def visit_complaint_json(request, visit_id=None):
 
     try:
         if visit_id:
-          visit_id = int(visit_id)
+            visit_id = int(visit_id)
         else:
-          visit_id = int(request.GET.get('visit_id'))          
+            visit_id = int(request.GET.get('visit_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         patient_detail_obj = visit_detail_obj.patient_detail
 
         if not getattr(visit_detail_obj, 'urls', None):
-          visit_detail_obj.save()
-    
+            visit_detail_obj.save()
+
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
-    
+
     except(VisitDetail.DoesNotExist):
         raise Http404("ERROR:: Patient requested does not exist.")
 
     #visit_complaint_objs  = []
     #all_visits = VisitDetail.objects.filter(patient_detail = patient_detail_obj)
-    #for visit in all_visits:
+    # for visit in all_visits:
       #vc = VisitComplaint.objects.filter(visit_detail = visit)
-      #for c in vc:
-        #visit_complaint_objs.append(c)
+      # for c in vc:
+        # visit_complaint_objs.append(c)
 
-    visit_complaint_objs = VisitComplaint.objects.filter(visit_detail = visit_detail_obj)
+    visit_complaint_objs = VisitComplaint.objects.filter(
+        visit_detail=visit_detail_obj)
     data = []
 
     if visit_complaint_objs:
         for complaint in visit_complaint_objs:
             if not getattr(complaint, 'urls', None):
-              complaint.save()
+                complaint.save()
             i = 0
             data_to_append = {}
             data_to_append['id'] = complaint.id
@@ -101,11 +102,9 @@ def visit_complaint_json(request, visit_id = None):
     return HttpResponse(jsondata, content_type="application/json")
 
 
-
 @login_required
-def visit_complaint_add(request, visit_id = None):
-
-    """ 
+def visit_complaint_add(request, visit_id=None):
+    """
     Adds a Visit complaint
     """
 
@@ -116,42 +115,43 @@ def visit_complaint_add(request, visit_id = None):
 
     try:
         if visit_id:
-          visit_id = int(visit_id)
+            visit_id = int(visit_id)
         else:
-          visit_id = int(request.GET.get('visit_id'))
+            visit_id = int(request.GET.get('visit_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_id)
         patient_detail_obj = visit_detail_obj.patient_detail
         visit_complaint_obj = VisitComplaint(visit_detail=visit_detail_obj)
 
         if not getattr(patient_detail_obj, 'urls', None):
-          patient_detail_obj.save()
+            patient_detail_obj.save()
 
         if not getattr(visit_detail_obj, 'urls', None):
-          visit_detail_obj.save()
+            visit_detail_obj.save()
 
         if request.method == "GET" and request.is_ajax():
 
-            visit_complaint_form = VisitComplaintAddForm(instance = visit_complaint_obj,
-                                                      auto_id  =
-                                                      "id_add_visit_complaint"+
-                                                      str(visit_id)+"_%s")
+            visit_complaint_form = VisitComplaintAddForm(
+                instance=visit_complaint_obj,
+                auto_id="id_add_visit_complaint" + str(visit_id) + "_%s")
             variable = RequestContext(request, {
-                                                'user': user,
-                                                'visit_detail_obj': visit_detail_obj,
-                                                'visit_complaint_form': visit_complaint_form,
-                                                'patient_detail_obj': patient_detail_obj,
-                                                'error_message': error_message,
-                                                'success': success,
-                                            })
+                'user': user,
+                'visit_detail_obj': visit_detail_obj,
+                'visit_complaint_form': visit_complaint_form,
+                'patient_detail_obj': patient_detail_obj,
+                'error_message': error_message,
+                'success': success,
+            })
 
-            return render_to_response('visit_complaints/forms/add.html', variable)
+            return render_to_response(
+                'visit_complaints/forms/add.html', variable)
 
         elif request.method == "POST" and request.is_ajax():
 
-            visit_complaint_form = VisitComplaintAddForm(request.POST, instance = visit_complaint_obj)
+            visit_complaint_form = VisitComplaintAddForm(
+                request.POST, instance=visit_complaint_obj)
 
-            if visit_complaint_form.is_valid() :
+            if visit_complaint_form.is_valid():
                 saved_visit_complaint = visit_complaint_form.save(commit=False)
                 saved_visit_complaint.visit_detail = visit_detail_obj
 
@@ -174,7 +174,8 @@ def visit_complaint_add(request, visit_id = None):
                                       Please check the forms for errors
                                     </h4>
                                 '''
-                errors += aumodelformerrorformatter_factory(visit_complaint_form)
+                errors += aumodelformerrorformatter_factory(
+                    visit_complaint_form)
                 error_message += ('\n' + errors)
 
             data = {'success': success,
@@ -195,53 +196,54 @@ def visit_complaint_add(request, visit_id = None):
 
 
 @login_required
-def visit_complaint_edit(request, visit_complaint_id = None):
+def visit_complaint_edit(request, visit_complaint_id=None):
 
     user = request.user
-    error_message = None    
-    
+    error_message = None
+
     try:
 
         if visit_complaint_id:
-          visit_complaint_id = int(visit_complaint_id)
+            visit_complaint_id = int(visit_complaint_id)
 
         else:
-          visit_complaint_id = int(request.GET.get('visit_complaint_id'))
+            visit_complaint_id = int(request.GET.get('visit_complaint_id'))
 
         visit_complaint_obj = VisitComplaint.objects.get(pk=visit_complaint_id)
         visit_detail_obj = visit_complaint_obj.visit_detail
         patient_detail_obj = visit_detail_obj.patient_detail
 
-        if not getattr(visit_detail_obj,'urls',None):
-          visit_detail_obj.save()
+        if not getattr(visit_detail_obj, 'urls', None):
+            visit_detail_obj.save()
 
-        if not getattr(patient_detail_obj,'urls',None):
-          patient_detail_obj.save()
+        if not getattr(patient_detail_obj, 'urls', None):
+            patient_detail_obj.save()
 
-        if not getattr(visit_complaint_obj,'urls',None):
-          visit_complaint_obj.save()
-        
+        if not getattr(visit_complaint_obj, 'urls', None):
+            visit_complaint_obj.save()
+
         if request.method == "GET" and request.is_ajax():
 
-            visit_complaint_form = VisitComplaintEditForm(instance = visit_complaint_obj, 
-                                                          auto_id = False
-                                                        )
+            visit_complaint_form = VisitComplaintEditForm(
+                instance=visit_complaint_obj, auto_id=False)
 
             variable = RequestContext(
                 request, {'user': user,
                           'visit_detail_obj': visit_detail_obj,
                           'visit_complaint_obj': visit_complaint_obj,
-                          'visit_complaint_form'  : visit_complaint_form  ,
+                          'visit_complaint_form': visit_complaint_form,
                           'patient_detail_obj': visit_detail_obj.patient_detail,
                           'error_message': error_message,
-                          'form_action':'edit'
+                          'form_action': 'edit'
                           })
 
-            return render_to_response('visit_complaints/forms/edit.html', variable)
+            return render_to_response(
+                'visit_complaints/forms/edit.html', variable)
 
         if request.method == "POST" and request.is_ajax():
 
-            visit_complaint_form   = VisitComplaintEditForm(request.POST, instance = visit_complaint_obj )
+            visit_complaint_form = VisitComplaintEditForm(
+                request.POST, instance=visit_complaint_obj)
 
             if visit_complaint_form.is_valid():
 
@@ -268,16 +270,16 @@ def visit_complaint_edit(request, visit_complaint_id = None):
                                       Please check the forms for errors
                                     </h4>
                                 '''
-                errors += aumodelformerrorformatter_factory(visit_complaint_form)
+                errors += aumodelformerrorformatter_factory(
+                    visit_complaint_form)
                 error_message += ('\n' + errors)
 
-            data = {'success': success, 'error_message': error_message }
+            data = {'success': success, 'error_message': error_message}
             jsondata = json.dumps(data)
             return HttpResponse(jsondata, content_type='application/json')
 
         else:
-             raise Http404(" Error ! Unsupported Request..")
-
+            raise Http404(" Error ! Unsupported Request..")
 
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
         raise Http404("Error ! Invalid Request Parameters. ")
@@ -287,7 +289,7 @@ def visit_complaint_edit(request, visit_complaint_id = None):
 
 
 @login_required
-def visit_complaint_del(request, visit_complaint_id = None):
+def visit_complaint_del(request, visit_complaint_id=None):
 
     if request.method == "GET" and request.is_ajax():
 
@@ -296,12 +298,13 @@ def visit_complaint_del(request, visit_complaint_id = None):
         try:
 
             if visit_complaint_id:
-              visit_complaint_id = int(visit_complaint_id)
+                visit_complaint_id = int(visit_complaint_id)
 
             else:
-              visit_complaint_id = int(request.GET.get('visit_complaint_id'))
+                visit_complaint_id = int(request.GET.get('visit_complaint_id'))
 
-            visit_complaint_obj = VisitComplaint.objects.get(pk=visit_complaint_id)
+            visit_complaint_obj = VisitComplaint.objects.get(
+                pk=visit_complaint_id)
             error_message = None
             visit_complaint_obj.delete()
             success = True

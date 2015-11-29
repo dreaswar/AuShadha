@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # Project      : AuShadha
 # Description  : Surgical History Views
-# Author       : Dr.Easwar T.R 
+# Author       : Dr.Easwar T.R
 # Date         : 16-09-2013
 # License      : GNU-GPL Version 3,Please see AuShadha/LICENSE.txt for details
-################################################################################
+##########################################################################
 
 # General Module imports-----------------------------------
 import importlib
@@ -34,25 +34,24 @@ from history.surgical_history.models import SurgicalHistory, SurgicalHistoryForm
 PatientDetail = UI.get_module("PatientRegistration")
 
 
-
 # Views start here -----------------------------------------
 @login_required
-def surgical_history_json(request, patient_id = None):
+def surgical_history_json(request, patient_id=None):
     try:
-      if patient_id:
-        patient_id  = int(patient_id)
-      else:
-        action = unicode(request.GET.get('action'))
-        patient_id = int(request.GET.get('patient_id'))
+        if patient_id:
+            patient_id = int(patient_id)
+        else:
+            action = unicode(request.GET.get('action'))
+            patient_id = int(request.GET.get('patient_id'))
 
-        if action == 'add':
-            return surgical_history_add(request, patient_id)
+            if action == 'add':
+                return surgical_history_add(request, patient_id)
 
-      patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-      surgical_history_obj = SurgicalHistory.objects.filter(
-          patient_detail=patient_detail_obj)
-      jsondata = generate_json_for_datagrid(surgical_history_obj)
-      return HttpResponse(jsondata, content_type="application/json")
+        patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+        surgical_history_obj = SurgicalHistory.objects.filter(
+            patient_detail=patient_detail_obj)
+        jsondata = generate_json_for_datagrid(surgical_history_obj)
+        return HttpResponse(jsondata, content_type="application/json")
 
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -61,7 +60,7 @@ def surgical_history_json(request, patient_id = None):
 
 
 @login_required
-def surgical_history_add(request, patient_id = None):
+def surgical_history_add(request, patient_id=None):
 
     success = True
     error_message = None
@@ -71,59 +70,63 @@ def surgical_history_add(request, patient_id = None):
     if request.user:
         user = request.user
         try:
-          if patient_id:
-            patient_id = int(patient_id)
-          else:
-            patient_id  = int(request.GET.get('patient_id'))
-          patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-          #patient_detail_obj.generate_urls()
-          if not getattr(patient_detail_obj, 'urls', None):
-            patient_detail_obj.save()
-          p_urls = patient_detail_obj.urls
-          surgical_history_obj = SurgicalHistory(patient_detail=patient_detail_obj)
+            if patient_id:
+                patient_id = int(patient_id)
+            else:
+                patient_id = int(request.GET.get('patient_id'))
+            patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+            # patient_detail_obj.generate_urls()
+            if not getattr(patient_detail_obj, 'urls', None):
+                patient_detail_obj.save()
+            p_urls = patient_detail_obj.urls
+            surgical_history_obj = SurgicalHistory(
+                patient_detail=patient_detail_obj)
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
         except PatientDetail.DoesNotExist:
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            surgical_history_form = SurgicalHistoryForm( instance=surgical_history_obj, auto_id = False )
+            surgical_history_form = SurgicalHistoryForm(
+                instance=surgical_history_obj, auto_id=False)
             variable = RequestContext(request,
                                       {"user": user,
-                                        "patient_detail_obj": patient_detail_obj,
-                                        "surgical_history_form": surgical_history_form,
-                                        "surgical_history_obj": surgical_history_obj,
-                                        'addUrl' : p_urls['add']['surgical_history']
-                                        })
+                                       "patient_detail_obj": patient_detail_obj,
+                                       "surgical_history_form": surgical_history_form,
+                                       "surgical_history_obj": surgical_history_obj,
+                                       'addUrl': p_urls['add']['surgical_history']})
             return render_to_response('surgical_history/add.html', variable)
 
         elif request.method == 'POST' and request.is_ajax():
-            surgical_history_form = SurgicalHistoryForm(request.POST, 
-                                                      instance=surgical_history_obj)
+            surgical_history_form = SurgicalHistoryForm(
+                request.POST, instance=surgical_history_obj)
             if surgical_history_form.is_valid():
                 surgical_history_obj = surgical_history_form.save()
-                #surgical_history_obj.generate_urls()
+                # surgical_history_obj.generate_urls()
                 m_urls = surgical_history_obj.urls
                 print "Surgical History URLS: "
                 print m_urls
-                #patient_detail_obj.generate_urls()
+                # patient_detail_obj.generate_urls()
                 p_urls = patient_detail_obj.urls
 
-                fields_list = [field for field in surgical_history_obj._meta.fields if field.serialize]
+                fields_list = [
+                    field for field in surgical_history_obj._meta.fields if field.serialize]
 
                 success = True
                 error_message = "Surgical History Data Edited Successfully"
                 form_errors = None
 
-                addData = {f.name:f.value_to_string(surgical_history_obj) for f in fields_list}
+                addData = {f.name: f.value_to_string(
+                    surgical_history_obj) for f in fields_list}
                 addData['add'] = p_urls['add']['surgical_history']
-                addData['json']= p_urls['json']['surgical_history']
-                addData['edit']= m_urls['edit']
+                addData['json'] = p_urls['json']['surgical_history']
+                addData['edit'] = m_urls['edit']
                 addData['del'] = m_urls['del']
 
             else:
                 success = False
-                error_message = aumodelformerrorformatter_factory(surgical_history_form)
+                error_message = aumodelformerrorformatter_factory(
+                    surgical_history_form)
                 form_errors = True
                 addData = None
 
@@ -142,72 +145,78 @@ def surgical_history_add(request, patient_id = None):
         raise Http404("You need to Login")
 
 
-
 @login_required
-def surgical_history_edit(request, surgical_history_id = None):
+def surgical_history_edit(request, surgical_history_id=None):
 
     if request.user:
         user = request.user
         try:
-          surgical_history_id = int(surgical_history_id)
-          surgical_history_obj = SurgicalHistory.objects.get(pk= surgical_history_id)
-          #surgical_history_obj.generate_urls()
-          if not getattr(surgical_history_obj, 'urls', None):
-            surgical_history_obj.save()
-          m_urls = surgical_history_obj.urls
+            surgical_history_id = int(surgical_history_id)
+            surgical_history_obj = SurgicalHistory.objects.get(
+                pk=surgical_history_id)
+            # surgical_history_obj.generate_urls()
+            if not getattr(surgical_history_obj, 'urls', None):
+                surgical_history_obj.save()
+            m_urls = surgical_history_obj.urls
 
         except TypeError or ValueError or AttributeError:
-                raise Http404("BadRequest")
+            raise Http404("BadRequest")
         except SurgicalHistory.DoesNotExist:
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing Surgical History"
             print "Surgical History URLS is, ", m_urls
-            surgical_history_form = SurgicalHistoryForm(instance=surgical_history_obj, auto_id = False )
-            variable = RequestContext(request,
-                                      { "user": user,
-                                        "patient_detail_obj"  : surgical_history_obj.patient_detail,
-                                        "surgical_history_form": surgical_history_form,
-                                        "surgical_history_obj" : surgical_history_obj,
-                                        'editUrl'            : m_urls['edit'],
-                                        'delUrl'             : m_urls['del'],
-                                      })
+            surgical_history_form = SurgicalHistoryForm(
+                instance=surgical_history_obj, auto_id=False)
+            variable = RequestContext(
+                request,
+                {
+                    "user": user,
+                    "patient_detail_obj": surgical_history_obj.patient_detail,
+                    "surgical_history_form": surgical_history_form,
+                    "surgical_history_obj": surgical_history_obj,
+                    'editUrl': m_urls['edit'],
+                    'delUrl': m_urls['del'],
+                })
             return render_to_response('surgical_history/edit.html', variable)
 
         elif request.method == 'POST' and request.is_ajax():
-            surgical_history_form = SurgicalHistoryForm(request.POST, 
-                                                           instance=surgical_history_obj)
+            surgical_history_form = SurgicalHistoryForm(
+                request.POST, instance=surgical_history_obj)
 
             if surgical_history_form.is_valid():
                 surgical_history_obj = surgical_history_form.save()
 
-                #surgical_history_obj.generate_urls()
+                # surgical_history_obj.generate_urls()
                 m_urls = surgical_history_obj.urls
 
-                #surgical_history_obj.patient_detail.generate_urls()
+                # surgical_history_obj.patient_detail.generate_urls()
                 patient_detail_obj = surgical_history_obj.patient_detail
 
                 if not getattr(patient_detail_obj, 'urls', None):
-                  patient_detail_obj.save()
+                    patient_detail_obj.save()
 
                 p_urls = patient_detail_obj.urls
 
-                fields_list = [field for field in surgical_history_obj._meta.fields if field.serialize]
+                fields_list = [
+                    field for field in surgical_history_obj._meta.fields if field.serialize]
 
                 success = True
                 error_message = "Surgical History Data Edited Successfully"
                 form_errors = None
 
-                addData = {f.name:f.value_to_string(surgical_history_obj) for f in fields_list}
+                addData = {f.name: f.value_to_string(
+                    surgical_history_obj) for f in fields_list}
                 addData['add'] = p_urls['add']['surgical_history']
-                addData['json']= p_urls['json']['surgical_history']
-                addData['edit']= m_urls['edit']
+                addData['json'] = p_urls['json']['surgical_history']
+                addData['edit'] = m_urls['edit']
                 addData['del'] = m_urls['del']
 
             else:
                 success = False
-                error_message = aumodelformerrorformatter_factory(surgical_history_form)
+                error_message = aumodelformerrorformatter_factory(
+                    surgical_history_form)
                 form_errors = True
                 addData = None
 
@@ -227,7 +236,7 @@ def surgical_history_edit(request, surgical_history_id = None):
 
 
 @login_required
-def surgical_history_del(request, surgical_history_id = None):
+def surgical_history_del(request, surgical_history_id=None):
     user = request.user
 
     if request.user and user.is_superuser:
@@ -235,11 +244,13 @@ def surgical_history_del(request, surgical_history_id = None):
         if request.method == "GET":
 
             try:
-                if surgical_history_id: 
-                  surgical_history_id = int(surgical_history_id)
+                if surgical_history_id:
+                    surgical_history_id = int(surgical_history_id)
                 else:
-                  surgical_history_id = int(request.GET.get('surgical_history_id'))
-                surgical_history_obj = SurgicalHistory.objects.get(pk=surgical_history_id)
+                    surgical_history_id = int(
+                        request.GET.get('surgical_history_id'))
+                surgical_history_obj = SurgicalHistory.objects.get(
+                    pk=surgical_history_id)
                 patient_detail_obj = surgical_history_obj.patient_detail
             except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")

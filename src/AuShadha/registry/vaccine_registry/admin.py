@@ -3,7 +3,6 @@ from registry.vaccine_registry.models import VaccineRegistry
 
 
 class VaccineRegistryAdmin(admin.ModelAdmin):
-  pass
+    pass
 
 admin.site.register(VaccineRegistry, VaccineRegistryAdmin)
-

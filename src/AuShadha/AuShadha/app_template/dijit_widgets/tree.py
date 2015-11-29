@@ -19,9 +19,7 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
-
-
-class {{app_name.capitalize}}Tree( object ):
+class {{app_name.capitalize}}Tree(object):
 
     """
      Defines the Dijit UI for {{app_name.capitalize}} Tree

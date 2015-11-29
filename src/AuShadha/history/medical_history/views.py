@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # Project      : AuShadha
 # Description  : Medical History Views
-# Author       : Dr.Easwar T.R 
+# Author       : Dr.Easwar T.R
 # Date         : 16-09-2013
 # License      : GNU-GPL Version 3,Please see AuShadha/LICENSE.txt for details
-################################################################################
+##########################################################################
 
 import importlib
 
@@ -37,27 +37,24 @@ from history.medical_history.models import MedicalHistory, MedicalHistoryForm
 PatientDetail = UI.get_module('PatientRegistration')
 
 
-
-
-
 # Views start here -----------------------------------------
 @login_required
-def medical_history_json(request, patient_id = None):
+def medical_history_json(request, patient_id=None):
     try:
-      if patient_id:
-        patient_id  = int(patient_id)
-      else:
-        action = unicode(request.GET.get('action'))
-        patient_id = int(request.GET.get('patient_id'))
+        if patient_id:
+            patient_id = int(patient_id)
+        else:
+            action = unicode(request.GET.get('action'))
+            patient_id = int(request.GET.get('patient_id'))
 
-        if action == 'add':
-            return medical_history_add(request, patient_id)
+            if action == 'add':
+                return medical_history_add(request, patient_id)
 
-      patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-      medical_history_obj = MedicalHistory.objects.filter(
-          patient_detail=patient_detail_obj)
-      jsondata = generate_json_for_datagrid(medical_history_obj)
-      return HttpResponse(jsondata, content_type="application/json")
+        patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+        medical_history_obj = MedicalHistory.objects.filter(
+            patient_detail=patient_detail_obj)
+        jsondata = generate_json_for_datagrid(medical_history_obj)
+        return HttpResponse(jsondata, content_type="application/json")
 
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -66,7 +63,7 @@ def medical_history_json(request, patient_id = None):
 
 
 @login_required
-def medical_history_add(request, patient_id = None):
+def medical_history_add(request, patient_id=None):
 
     success = True
     error_message = None
@@ -76,33 +73,34 @@ def medical_history_add(request, patient_id = None):
     if request.user:
         user = request.user
         try:
-          if patient_id:
-            patient_id = int(patient_id)
-          else:
-            patient_id  = int(request.GET.get('patient_id'))
-          patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-          patient_detail_obj.generate_urls()
-          p_urls = patient_detail_obj.urls
-          medical_history_obj = MedicalHistory(patient_detail=patient_detail_obj)
+            if patient_id:
+                patient_id = int(patient_id)
+            else:
+                patient_id = int(request.GET.get('patient_id'))
+            patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+            patient_detail_obj.generate_urls()
+            p_urls = patient_detail_obj.urls
+            medical_history_obj = MedicalHistory(
+                patient_detail=patient_detail_obj)
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
         except PatientDetail.DoesNotExist:
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            medical_history_form = MedicalHistoryForm( instance=medical_history_obj, auto_id = False )
+            medical_history_form = MedicalHistoryForm(
+                instance=medical_history_obj, auto_id=False)
             variable = RequestContext(request,
                                       {"user": user,
-                                        "patient_detail_obj": patient_detail_obj,
-                                        "medical_history_form": medical_history_form,
-                                        "medical_history_obj": medical_history_obj,
-                                        'addUrl' : p_urls['add']['medical_history']
-                                        })
+                                       "patient_detail_obj": patient_detail_obj,
+                                       "medical_history_form": medical_history_form,
+                                       "medical_history_obj": medical_history_obj,
+                                       'addUrl': p_urls['add']['medical_history']})
             return render_to_response('medical_history/add.html', variable)
 
         elif request.method == 'POST' and request.is_ajax():
-            medical_history_form = MedicalHistoryForm(request.POST, 
-                                                      instance=medical_history_obj)
+            medical_history_form = MedicalHistoryForm(
+                request.POST, instance=medical_history_obj)
             if medical_history_form.is_valid():
                 medical_history_obj = medical_history_form.save()
                 medical_history_obj.generate_urls()
@@ -112,21 +110,24 @@ def medical_history_add(request, patient_id = None):
                 patient_detail_obj.generate_urls()
                 p_urls = patient_detail_obj.urls
 
-                fields_list = [field for field in medical_history_obj._meta.fields if field.serialize]
+                fields_list = [
+                    field for field in medical_history_obj._meta.fields if field.serialize]
 
                 success = True
                 error_message = "Medical History Data Edited Successfully"
                 form_errors = None
 
-                addData = {f.name:f.value_to_string(medical_history_obj) for f in fields_list}
+                addData = {f.name: f.value_to_string(
+                    medical_history_obj) for f in fields_list}
                 addData['add'] = p_urls['add']['medical_history']
-                addData['json']= p_urls['json']['medical_history']
-                addData['edit']= m_urls['edit']
+                addData['json'] = p_urls['json']['medical_history']
+                addData['edit'] = m_urls['edit']
                 addData['del'] = m_urls['del']
 
             else:
                 success = False
-                error_message = aumodelformerrorformatter_factory(medical_history_form)
+                error_message = aumodelformerrorformatter_factory(
+                    medical_history_form)
                 form_errors = True
                 addData = None
 
@@ -145,40 +146,41 @@ def medical_history_add(request, patient_id = None):
         raise Http404("You need to Login")
 
 
-
 @login_required
-def medical_history_edit(request, medical_history_id = None):
+def medical_history_edit(request, medical_history_id=None):
 
     if request.user:
         user = request.user
         try:
-          medical_history_id = int(medical_history_id)
-          medical_history_obj = MedicalHistory.objects.get(pk= medical_history_id)
-          medical_history_obj.generate_urls()
-          m_urls = medical_history_obj.urls
+            medical_history_id = int(medical_history_id)
+            medical_history_obj = MedicalHistory.objects.get(
+                pk=medical_history_id)
+            medical_history_obj.generate_urls()
+            m_urls = medical_history_obj.urls
 
         except TypeError or ValueError or AttributeError:
-                raise Http404("BadRequest")
+            raise Http404("BadRequest")
         except MedicalHistory.DoesNotExist:
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing Medical History"
             print "Medical History URLS is, ", m_urls
-            medical_history_form = MedicalHistoryForm(instance=medical_history_obj, auto_id = False )
+            medical_history_form = MedicalHistoryForm(
+                instance=medical_history_obj, auto_id=False)
             variable = RequestContext(request,
-                                      { "user": user,
-                                        "patient_detail_obj"  : medical_history_obj.patient_detail,
-                                        "medical_history_form": medical_history_form,
-                                        "medical_history_obj" : medical_history_obj,
-                                        'editUrl'            : m_urls['edit'],
-                                        'delUrl'             : m_urls['del'],
-                                      })
+                                      {"user": user,
+                                       "patient_detail_obj": medical_history_obj.patient_detail,
+                                       "medical_history_form": medical_history_form,
+                                       "medical_history_obj": medical_history_obj,
+                                       'editUrl': m_urls['edit'],
+                                       'delUrl': m_urls['del'],
+                                       })
             return render_to_response('medical_history/edit.html', variable)
 
         elif request.method == 'POST' and request.is_ajax():
-            medical_history_form = MedicalHistoryForm(request.POST, 
-                                                           instance=medical_history_obj)
+            medical_history_form = MedicalHistoryForm(
+                request.POST, instance=medical_history_obj)
 
             if medical_history_form.is_valid():
                 medical_history_obj = medical_history_form.save()
@@ -189,21 +191,24 @@ def medical_history_edit(request, medical_history_id = None):
                 medical_history_obj.patient_detail.generate_urls()
                 p_urls = medical_history_obj.patient_detail.urls
 
-                fields_list = [field for field in medical_history_obj._meta.fields if field.serialize]
+                fields_list = [
+                    field for field in medical_history_obj._meta.fields if field.serialize]
 
                 success = True
                 error_message = "Medical History Data Edited Successfully"
                 form_errors = None
 
-                addData = {f.name:f.value_to_string(medical_history_obj) for f in fields_list}
+                addData = {f.name: f.value_to_string(
+                    medical_history_obj) for f in fields_list}
                 addData['add'] = p_urls['add']['medical_history']
-                addData['json']= p_urls['json']['medical_history']
-                addData['edit']= m_urls['edit']
+                addData['json'] = p_urls['json']['medical_history']
+                addData['edit'] = m_urls['edit']
                 addData['del'] = m_urls['del']
 
             else:
                 success = False
-                error_message = aumodelformerrorformatter_factory(medical_history_form)
+                error_message = aumodelformerrorformatter_factory(
+                    medical_history_form)
                 form_errors = True
                 addData = None
 
@@ -223,7 +228,7 @@ def medical_history_edit(request, medical_history_id = None):
 
 
 @login_required
-def medical_history_del(request, medical_history_id = None):
+def medical_history_del(request, medical_history_id=None):
     user = request.user
 
     if request.user and user.is_superuser:
@@ -231,11 +236,13 @@ def medical_history_del(request, medical_history_id = None):
         if request.method == "GET":
 
             try:
-                if medical_history_id: 
-                  medical_history_id = int(medical_history_id)
+                if medical_history_id:
+                    medical_history_id = int(medical_history_id)
                 else:
-                  medical_history_id = int(request.GET.get('medical_history_id'))
-                medical_history_obj = MedicalHistory.objects.get(pk=medical_history_id)
+                    medical_history_id = int(
+                        request.GET.get('medical_history_id'))
+                medical_history_obj = MedicalHistory.objects.get(
+                    pk=medical_history_id)
                 patient_detail_obj = medical_history_obj.patient_detail
             except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")

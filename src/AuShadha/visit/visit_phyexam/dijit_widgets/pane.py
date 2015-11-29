@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # Project: AuShadha
 # Description: Pane of the UI
 # Author ; Dr.Easwar T.R
 # Date: 04-11-2013
 # License: GNU-GPL Version3, see LICENSE.txt for details
-################################################################################
+##########################################################################
 
 from cStringIO import StringIO
 import yaml
@@ -24,6 +24,7 @@ PatientDetail = UI.get_module("PatientRegistration")
 VisitDetail = UI.get_module("OPD_Visit")
 AdmissionDetail = UI.get_module("Admission")
 
+
 @login_required
-def render_phyexam_pane(request, visit_id = None):
-  pass
+def render_phyexam_pane(request, visit_id=None):
+    pass

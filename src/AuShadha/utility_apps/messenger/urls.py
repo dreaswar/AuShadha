@@ -10,7 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-################################ CRUD ##################################
+                       ################################ CRUD ##################
                        url(r'messenger/list/(?P<id>\d+)/$',
                            'messenger.views.messenger_detail_list',
                            name='messenger_detail_list'
@@ -31,14 +31,14 @@ urlpatterns = patterns('',
                            name='messenger_detail_del'
                            ),
 
-################################ JSON, UI-PANE & TREE #########################
+                       ################################ JSON, UI-PANE & TREE ##
 
-                      url(r'messenger/pane/(?P<id>\d+)/$',
+                       url(r'messenger/pane/(?P<id>\d+)/$',
                            'messenger.dijit_widgets.pane.render_messenger_pane',
                            name='render_messenger_pane_with_id'
                            ),
 
-                      url(r'messenger/pane/$',
+                       url(r'messenger/pane/$',
                            'messenger.dijit_widgets.pane.render_messenger_pane',
                            name='render_messenger_pane_without_id'
                            ),
@@ -63,7 +63,7 @@ urlpatterns = patterns('',
                            name='render_messenger_json_with_id'
                            ),
 
-################################ SUMMARY ###############################
+                       ################################ SUMMARY ###############
 
                        url(r'messenger/summary/$',
                            'messenger.views.render_messenger_summary',
@@ -75,4 +75,4 @@ urlpatterns = patterns('',
                            name='render_messenger_summary_with_id'
                            ),
 
-)
+                       )

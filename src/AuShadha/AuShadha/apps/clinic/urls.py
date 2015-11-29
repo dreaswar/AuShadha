@@ -13,21 +13,21 @@ urlpatterns = patterns('',
 
                        # PATIENT ###############################
 
-                       url(	r'/list/$'				,
-                            'AuShadha.patient.views.render_patient_list'	,
+                       url(	r'/list/$',
+                            'AuShadha.patient.views.render_patient_list',
                             name='render_patient_list'
                             ),
 
-                       url(r'search/$'	,
+                       url(r'search/$',
                            'AuShadha.patient.views.patient_search',
                            name="patient_search"
                            ),
 
-                      (r'search/(?P<search_by>\w+)/(?P<search_for>\w+)/$'	,
-                       'AuShadha.patient.views.patient_search'
-                       ),
+                       (r'search/(?P<search_by>\w+)/(?P<search_for>\w+)/$',
+                           'AuShadha.patient.views.patient_search'
+                        ),
 
-                       url(r'new/add/$'								,
+                       url(r'new/add/$',
                            'AuShadha.patient.views.patient_new_add',
                            name='patient_new_add'
                            ),
@@ -113,8 +113,8 @@ urlpatterns = patterns('',
                            'AuShadha.patient.views.patient_email_and_fax_edit',
                            name='patient_email_and_fax_edit'
                            ),
-                       url(r'email_and_fax/del/(?P<id>\d+)/$'		,
-                           'AuShadha.patient.views.patient_email_and_fax_del'	,
+                       url(r'email_and_fax/del/(?P<id>\d+)/$',
+                           'AuShadha.patient.views.patient_email_and_fax_del',
                            name='patient_email_and_fax_del'
                            ),
 
@@ -130,7 +130,7 @@ urlpatterns = patterns('',
                        #    		name = 'patient_guardian_list'
                        #    ),
 
-                       url(r'guardian/add/(?P<id>\d+)/$'	,
+                       url(r'guardian/add/(?P<id>\d+)/$',
                            'AuShadha.patient.views.patient_guardian_add',
                            name='patient_guardian_add'
                            ),
@@ -153,11 +153,11 @@ urlpatterns = patterns('',
                        #		    'AuShadha.patient.views.patient_admission_list'	,
                        #		    name = 'get_patient_admission_list'
                        #    ),
-                       url(r'admission/add/(?P<id>\d+)/$'	,
+                       url(r'admission/add/(?P<id>\d+)/$',
                            'AuShadha.patient.views.patient_admission_add',
                            name='patient_admission_add'
                            ),
-                       url(r'admission/add/$'	,
+                       url(r'admission/add/$',
                            'AuShadha.patient.views.patient_admission_add',
                            name='patient_admission_add'
                            ),
@@ -171,19 +171,19 @@ urlpatterns = patterns('',
                        url(r'index/$', 'ds.patient.views.patient_index',
                            name='patient_index'),
 
-                       url(	r'patient_id/autocompleter/$'				,
-                            'AuShadha.patient.views.patient_id_autocompleter'	,
+                       url(	r'patient_id/autocompleter/$',
+                            'AuShadha.patient.views.patient_id_autocompleter',
                             name='patient_id_autocompleter'
                             ),
 
-                       url(	r'patient_hospital_id/autocompleter/$'				,
-                            'AuShadha.patient.views.hospital_id_autocompleter'	,
+                       url(	r'patient_hospital_id/autocompleter/$',
+                            'AuShadha.patient.views.hospital_id_autocompleter',
                             name='patient_hospital_id_autocompleter'
                             ),
 
 
-                       url(	r'patient_name/autocompleter/$'				,
-                            'AuShadha.patient.views.patient_name_autocompleter'	,
+                       url(	r'patient_name/autocompleter/$',
+                            'AuShadha.patient.views.patient_name_autocompleter',
                             name='patient_name_autocompleter'
                             ),
 

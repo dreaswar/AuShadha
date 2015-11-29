@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # Project: AuShadha
 # Description: Pane of the UI
 # Author ; Dr.Easwar T.R
 # Date: 04-11-2013
 # License: GNU-GPL Version3, see LICENSE.txt for details
-################################################################################
+##########################################################################
 
 import yaml
 from cStringIO import StringIO
@@ -20,54 +20,55 @@ from django.contrib.auth.decorators import login_required
 from AuShadha.apps.ui.ui import ui as UI
 
 
-
 @login_required
 def render_icd10_pane(request):
-  
-  user = request.user
-  
-  if request.method == 'GET':
 
-      app_wrapper = []
-      context = RequestContext(request, {'user': user })
+    user = request.user
 
-      try:
-        pane_template = Template( open('registry/icd10/dijit_widgets/pane.yaml','r').read() )
+    if request.method == 'GET':
 
-      except( IOError ):
-        raise Http404("No template file to render the pane ! ")
+        app_wrapper = []
+        context = RequestContext(request, {'user': user})
 
-      rendered_pane = pane_template.render(context)
-      pane_yaml = yaml.load( rendered_pane ) 
+        try:
+            pane_template = Template(
+                open(
+                    'registry/icd10/dijit_widgets/pane.yaml',
+                    'r').read())
 
-      app_object = {}
-      app_object['app'] = 'ICD_10'
-      app_object['ui_sections'] = {
-                                  'app_type': 'sub_module',
-                                  'load_after': 'patient',
-                                  'load_first': False,
-                                  'layout'  :['trailing','top','center'],
-                                  'widgets' :{ 'tree'    : None,
-                                              'summary'  : None,
-                                              'grid'     : None,
-                                              'search'   : None
-                                              }
-                                  }
-      app_object['url'] = ''
-      app_wrapper.append( app_object )
+        except(IOError):
+            raise Http404("No template file to render the pane ! ")
 
-      success = True
-      error_message = "Returning ICD10 app pane variables"
+        rendered_pane = pane_template.render(context)
+        pane_yaml = yaml.load(rendered_pane)
 
-      data = {'success': success,
-              'error_message':error_message,
-              'app': app_wrapper,
-              'pane': pane_yaml
-              }
-      jsondata = json.dumps(data)
+        app_object = {}
+        app_object['app'] = 'ICD_10'
+        app_object['ui_sections'] = {
+            'app_type': 'sub_module',
+            'load_after': 'patient',
+            'load_first': False,
+            'layout': ['trailing', 'top', 'center'],
+            'widgets': {'tree': None,
+                        'summary': None,
+                        'grid': None,
+                        'search': None
+                        }
+        }
+        app_object['url'] = ''
+        app_wrapper.append(app_object)
 
-      return HttpResponse(jsondata, content_type="application/json")
+        success = True
+        error_message = "Returning ICD10 app pane variables"
 
-  
-  else:
-    raise Http404("Bad Request Method")
+        data = {'success': success,
+                'error_message': error_message,
+                'app': app_wrapper,
+                'pane': pane_yaml
+                }
+        jsondata = json.dumps(data)
+
+        return HttpResponse(jsondata, content_type="application/json")
+
+    else:
+        raise Http404("Bad Request Method")

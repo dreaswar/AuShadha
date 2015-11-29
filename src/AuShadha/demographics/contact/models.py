@@ -1,9 +1,9 @@
-################################################################################
-# Description  : Patient Models for managing Patient Demographics & Contact 
+##########################################################################
+# Description  : Patient Models for managing Patient Demographics & Contact
 # Author       : Dr. Easwar T R
 # Date         : 16-09-2013
 # Licence      : GNU GPL V3. Please see AuShadha/LICENSE.txt
-################################################################################
+##########################################################################
 
 from django.db import models
 #from django.contrib.auth.models import User
@@ -21,7 +21,6 @@ from dijit_fields_constants import CONTACT_FORM_CONSTANTS
 DEFAULT_DEMOGRAPHICS_FORM_EXCLUDES = ('patient_detail',)
 
 
-
 class Contact(AuShadhaBaseModel):
 
     """
@@ -29,9 +28,9 @@ class Contact(AuShadhaBaseModel):
     """
 
     def __init__(self, *args, **kwargs):
-      super(Contact,self).__init__(*args, **kwargs)
-      self.__model_label__ = "contact"
-      self._parent_model = 'patient_detail'
+        super(Contact, self).__init__(*args, **kwargs)
+        self.__model_label__ = "contact"
+        self._parent_model = 'patient_detail'
 
     address_type = models.CharField('Type',
                                     max_length=10,
@@ -39,7 +38,7 @@ class Contact(AuShadhaBaseModel):
                                              ("Office", "Office"),
                                              ("Others", "Others")
                                              ),
-                                    default = "Home")
+                                    default="Home")
     address = models.TextField(max_length=100,
                                help_text='limit to 100 words'
                                )
@@ -55,7 +54,7 @@ class Contact(AuShadhaBaseModel):
     pincode = models.PositiveIntegerField(max_length=8,
                                           null=True,
                                           blank=True
-                                              )
+                                          )
     patient_detail = models.ForeignKey(PatientDetail,
                                        null=True,
                                        blank=True
@@ -99,9 +98,7 @@ class Contact(AuShadhaBaseModel):
         return str_obj
 
 
-
-
-############################# Model Forms ######################################
+############################# Model Forms ################################
 
 class ContactForm(AuShadhaBaseModelForm):
 

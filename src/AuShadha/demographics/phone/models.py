@@ -1,9 +1,9 @@
-################################################################################
-# Description  : Patient Models for managing Patient Demographics & Contact 
+##########################################################################
+# Description  : Patient Models for managing Patient Demographics & Contact
 # Author       : Dr. Easwar T R
 # Date         : 16-09-2013
 # Licence      : GNU GPL V3. Please see AuShadha/LICENSE.txt
-################################################################################
+##########################################################################
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -21,7 +21,6 @@ from dijit_fields_constants import PHONE_FORM_CONSTANTS
 DEFAULT_DEMOGRAPHICS_FORM_EXCLUDES = ('patient_detail',)
 
 
-
 class Phone(AuShadhaBaseModel):
 
     """
@@ -29,9 +28,9 @@ class Phone(AuShadhaBaseModel):
     """
 
     def __init__(self, *args, **kwargs):
-      super(Phone,self).__init__(*args, **kwargs)
-      self.__model_label__ = "phone"
-      self._parent_model = 'patient_detail'
+        super(Phone, self).__init__(*args, **kwargs)
+        self.__model_label__ = "phone"
+        self._parent_model = 'patient_detail'
 
     phone_type = models.CharField('Type',
                                   max_length=10,
@@ -41,7 +40,7 @@ class Phone(AuShadhaBaseModel):
                                            ("Fax", "Fax"),
                                            ("Others", "Others")
                                            ),
-                                  default = "Home")
+                                  default="Home")
     ISD_Code = models.PositiveIntegerField('ISD',
                                            max_length=4,
                                            null=True,
@@ -94,7 +93,7 @@ class Phone(AuShadhaBaseModel):
             str_obj += _str
         str_obj += "</ul>"
         return str_obj
-############################# Model Forms ######################################
+############################# Model Forms ################################
 
 
 class PhoneForm(AuShadhaBaseModelForm):

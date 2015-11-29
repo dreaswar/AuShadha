@@ -3,7 +3,7 @@ from django.contrib import admin
 import AuShadha.settings
 admin.autodiscover()
 
-from .views import guardian_json,guardian_add,guardian_edit,guardian_del
+from .views import guardian_json, guardian_add, guardian_edit, guardian_del
 
 urlpatterns = patterns('',
 
@@ -22,11 +22,11 @@ urlpatterns = patterns('',
                        #        name = 'patient_guardian_list'
                        #    ),
 
-                        url(r'add/$',
+                       url(r'add/$',
                            guardian_add,
                            name='guardian_add_without_id'
                            ),
-                       
+
                        url(r'add/(?P<patient_id>\d+)/$',
                            guardian_add,
                            name='guardian_add_with_id'
@@ -50,4 +50,4 @@ urlpatterns = patterns('',
                            guardian_del,
                            name='guardian_del_with_id'
                            )
-)
+                       )

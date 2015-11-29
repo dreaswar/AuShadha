@@ -28,19 +28,25 @@ class ObstetricHistoryDetail(AuShadhaBaseModel):
     """
 
     def __init__(self, *args, **kwargs):
-      super(ObstetricHistoryDetail, self).__init__(*args, **kwargs)
-      self.__model_label__ = "obstetric_history_detail"
-      self._parent_model = 'patient_detail'
+        super(ObstetricHistoryDetail, self).__init__(*args, **kwargs)
+        self.__model_label__ = "obstetric_history_detail"
+        self._parent_model = 'patient_detail'
 
     never_been_pregnant = models.BooleanField(
         'Never been pregnant', default=False)
     adoped_children = models.BooleanField(
         "Adopted Children ?", default=False)
     adoped_children_names = models.TextField(
-        "Adopted Children Names", default="Not Applicable", blank=True, null=True)
-    pregnancy_listing      = models.TextField(help_text='''List all pregnancies in order,including still, premature births, ectopics and abortions''', blank=True, null=True
-                                              )
-    patient_detail = models.ForeignKey(PatientDetail, null=True, blank=True, unique=True)
+        "Adopted Children Names",
+        default="Not Applicable",
+        blank=True,
+        null=True)
+    pregnancy_listing = models.TextField(
+        help_text='''List all pregnancies in order,including still, premature births, ectopics and abortions''',
+        blank=True,
+        null=True)
+    patient_detail = models.ForeignKey(
+        PatientDetail, null=True, blank=True, unique=True)
 
     def __unicode__(self):
         return "%s" % (self.patient_detail)
@@ -49,9 +55,9 @@ class ObstetricHistoryDetail(AuShadhaBaseModel):
 class ObstetricHistory(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-      super(ObstetricHistory, self).__init__(*args, **kwargs)
-      self.__model_label__ = "obstetric_history"
-      self._parent_model = 'obstetric_detail'
+        super(ObstetricHistory, self).__init__(*args, **kwargs)
+        self.__model_label__ = "obstetric_history"
+        self._parent_model = 'obstetric_detail'
 
     year = models.PositiveIntegerField()
     sex = models.CharField(max_length=10,
@@ -73,11 +79,11 @@ class ObstetricHistory(AuShadhaBaseModel):
     age = models.CharField(max_length=100)
     breast_feeding = models.CharField(
         "Periods of exclusive breast feeding", max_length=100)
-    obstetric_detail = models.ForeignKey(ObstetricHistoryDetail, null=True, blank=True)
+    obstetric_detail = models.ForeignKey(
+        ObstetricHistoryDetail, null=True, blank=True)
 
     def __unicode__(self):
         return "%s" % (self.obstetric_detail)
-
 
 
 # Obstetric Modelform ##################################

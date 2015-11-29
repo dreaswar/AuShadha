@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # Project      : AuShadha
 # Description  : Family History Views
-# Author       : Dr.Easwar T.R 
+# Author       : Dr.Easwar T.R
 # Date         : 16-09-2013
 # License      : GNU-GPL Version 3,Please see AuShadha/LICENSE.txt for details
-################################################################################
+##########################################################################
 
 
 # General Module imports-----------------------------------
@@ -36,26 +36,24 @@ from history.family_history.models import FamilyHistory, FamilyHistoryForm
 PatientDetail = UI.get_module("PatientRegistration")
 
 
-
-
 # Views start here -----------------------------------------
 @login_required
-def family_history_json(request, patient_id = None):
+def family_history_json(request, patient_id=None):
     try:
-      if patient_id:
-        patient_id  = int(patient_id)
-      else:
-        action = unicode(request.GET.get('action'))
-        patient_id = int(request.GET.get('patient_id'))
+        if patient_id:
+            patient_id = int(patient_id)
+        else:
+            action = unicode(request.GET.get('action'))
+            patient_id = int(request.GET.get('patient_id'))
 
-        if action == 'add':
-            return family_history_add(request, patient_id)
+            if action == 'add':
+                return family_history_add(request, patient_id)
 
-      patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-      family_history_obj = FamilyHistory.objects.filter(
-          patient_detail=patient_detail_obj)
-      jsondata = generate_json_for_datagrid(family_history_obj)
-      return HttpResponse(jsondata, content_type="application/json")
+        patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+        family_history_obj = FamilyHistory.objects.filter(
+            patient_detail=patient_detail_obj)
+        jsondata = generate_json_for_datagrid(family_history_obj)
+        return HttpResponse(jsondata, content_type="application/json")
 
     except(AttributeError, NameError, TypeError, ValueError, KeyError):
         raise Http404("ERROR:: Bad request.Invalid arguments passed")
@@ -64,7 +62,7 @@ def family_history_json(request, patient_id = None):
 
 
 @login_required
-def family_history_add(request, patient_id = None):
+def family_history_add(request, patient_id=None):
 
     success = True
     error_message = None
@@ -74,33 +72,34 @@ def family_history_add(request, patient_id = None):
     if request.user:
         user = request.user
         try:
-          if patient_id:
-            patient_id = int(patient_id)
-          else:
-            patient_id  = int(request.GET.get('patient_id'))
-          patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
-          patient_detail_obj.generate_urls()
-          p_urls = patient_detail_obj.urls
-          family_history_obj = FamilyHistory(patient_detail=patient_detail_obj)
+            if patient_id:
+                patient_id = int(patient_id)
+            else:
+                patient_id = int(request.GET.get('patient_id'))
+            patient_detail_obj = PatientDetail.objects.get(pk=patient_id)
+            patient_detail_obj.generate_urls()
+            p_urls = patient_detail_obj.urls
+            family_history_obj = FamilyHistory(
+                patient_detail=patient_detail_obj)
         except TypeError or ValueError or AttributeError:
             raise Http404("BadRequest")
         except PatientDetail.DoesNotExist:
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
-            family_history_form = FamilyHistoryForm( instance=family_history_obj, auto_id = False )
+            family_history_form = FamilyHistoryForm(
+                instance=family_history_obj, auto_id=False)
             variable = RequestContext(request,
                                       {"user": user,
-                                        "patient_detail_obj": patient_detail_obj,
-                                        "family_history_form": family_history_form,
-                                        "family_history_obj": family_history_obj,
-                                        'addUrl' : p_urls['add']['family_history']
-                                        })
+                                       "patient_detail_obj": patient_detail_obj,
+                                       "family_history_form": family_history_form,
+                                       "family_history_obj": family_history_obj,
+                                       'addUrl': p_urls['add']['family_history']})
             return render_to_response('family_history/add.html', variable)
 
         elif request.method == 'POST' and request.is_ajax():
-            family_history_form = FamilyHistoryForm(request.POST, 
-                                                      instance=family_history_obj)
+            family_history_form = FamilyHistoryForm(
+                request.POST, instance=family_history_obj)
             if family_history_form.is_valid():
                 family_history_obj = family_history_form.save()
                 family_history_obj.generate_urls()
@@ -110,21 +109,24 @@ def family_history_add(request, patient_id = None):
                 patient_detail_obj.generate_urls()
                 p_urls = patient_detail_obj.urls
 
-                fields_list = [field for field in family_history_obj._meta.fields if field.serialize]
+                fields_list = [
+                    field for field in family_history_obj._meta.fields if field.serialize]
 
                 success = True
                 error_message = "Family History Data Edited Successfully"
                 form_errors = None
 
-                addData = {f.name:f.value_to_string(family_history_obj) for f in fields_list}
+                addData = {f.name: f.value_to_string(
+                    family_history_obj) for f in fields_list}
                 addData['add'] = p_urls['add']['family_history']
-                addData['json']= p_urls['json']['family_history']
-                addData['edit']= m_urls['edit']
+                addData['json'] = p_urls['json']['family_history']
+                addData['edit'] = m_urls['edit']
                 addData['del'] = m_urls['del']
 
             else:
                 success = False
-                error_message = aumodelformerrorformatter_factory(family_history_form)
+                error_message = aumodelformerrorformatter_factory(
+                    family_history_form)
                 form_errors = True
                 addData = None
 
@@ -143,40 +145,41 @@ def family_history_add(request, patient_id = None):
         raise Http404("You need to Login")
 
 
-
 @login_required
-def family_history_edit(request, family_history_id = None):
+def family_history_edit(request, family_history_id=None):
 
     if request.user:
         user = request.user
         try:
-          family_history_id = int(family_history_id)
-          family_history_obj = FamilyHistory.objects.get(pk= family_history_id)
-          family_history_obj.generate_urls()
-          m_urls = family_history_obj.urls
+            family_history_id = int(family_history_id)
+            family_history_obj = FamilyHistory.objects.get(
+                pk=family_history_id)
+            family_history_obj.generate_urls()
+            m_urls = family_history_obj.urls
 
         except TypeError or ValueError or AttributeError:
-                raise Http404("BadRequest")
+            raise Http404("BadRequest")
         except FamilyHistory.DoesNotExist:
             raise Http404("BadRequest: Patient Data Does Not Exist")
 
         if request.method == "GET" and request.is_ajax():
             print "Received request for Editing Family History"
             print "Family History URLS is, ", m_urls
-            family_history_form = FamilyHistoryForm(instance=family_history_obj, auto_id = False )
+            family_history_form = FamilyHistoryForm(
+                instance=family_history_obj, auto_id=False)
             variable = RequestContext(request,
-                                      { "user": user,
-                                        "patient_detail_obj"  : family_history_obj.patient_detail,
-                                        "family_history_form": family_history_form,
-                                        "family_history_obj" : family_history_obj,
-                                        'editUrl'            : m_urls['edit'],
-                                        'delUrl'             : m_urls['del'],
-                                      })
+                                      {"user": user,
+                                       "patient_detail_obj": family_history_obj.patient_detail,
+                                       "family_history_form": family_history_form,
+                                       "family_history_obj": family_history_obj,
+                                       'editUrl': m_urls['edit'],
+                                       'delUrl': m_urls['del'],
+                                       })
             return render_to_response('family_history/edit.html', variable)
 
         elif request.method == 'POST' and request.is_ajax():
-            family_history_form = FamilyHistoryForm(request.POST, 
-                                                           instance=family_history_obj)
+            family_history_form = FamilyHistoryForm(
+                request.POST, instance=family_history_obj)
 
             if family_history_form.is_valid():
                 family_history_obj = family_history_form.save()
@@ -187,21 +190,24 @@ def family_history_edit(request, family_history_id = None):
                 family_history_obj.patient_detail.generate_urls()
                 p_urls = family_history_obj.patient_detail.urls
 
-                fields_list = [field for field in family_history_obj._meta.fields if field.serialize]
+                fields_list = [
+                    field for field in family_history_obj._meta.fields if field.serialize]
 
                 success = True
                 error_message = "Family History Data Edited Successfully"
                 form_errors = None
 
-                addData = {f.name:f.value_to_string(family_history_obj) for f in fields_list}
+                addData = {f.name: f.value_to_string(
+                    family_history_obj) for f in fields_list}
                 addData['add'] = p_urls['add']['family_history']
-                addData['json']= p_urls['json']['family_history']
-                addData['edit']= m_urls['edit']
+                addData['json'] = p_urls['json']['family_history']
+                addData['edit'] = m_urls['edit']
                 addData['del'] = m_urls['del']
 
             else:
                 success = False
-                error_message = aumodelformerrorformatter_factory(family_history_form)
+                error_message = aumodelformerrorformatter_factory(
+                    family_history_form)
                 form_errors = True
                 addData = None
 
@@ -221,7 +227,7 @@ def family_history_edit(request, family_history_id = None):
 
 
 @login_required
-def family_history_del(request, family_history_id = None):
+def family_history_del(request, family_history_id=None):
     user = request.user
 
     if request.user and user.is_superuser:
@@ -229,11 +235,13 @@ def family_history_del(request, family_history_id = None):
         if request.method == "GET":
 
             try:
-                if family_history_id: 
-                  family_history_id = int(family_history_id)
+                if family_history_id:
+                    family_history_id = int(family_history_id)
                 else:
-                  family_history_id = int(request.GET.get('family_history_id'))
-                family_history_obj = FamilyHistory.objects.get(pk=family_history_id)
+                    family_history_id = int(
+                        request.GET.get('family_history_id'))
+                family_history_obj = FamilyHistory.objects.get(
+                    pk=family_history_id)
                 patient_detail_obj = family_history_obj.patient_detail
             except TypeError or ValueError or AttributeError:
                 raise Http404("BadRequest")

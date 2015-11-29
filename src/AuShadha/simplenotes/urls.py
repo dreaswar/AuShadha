@@ -10,9 +10,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-################################ PATIENT CRUD ##################################
+                       ################################ PATIENT CRUD ##########
 
-                       url(r'add/(?P<visit_detail_id>\d+)/$'                             ,
+                       url(r'add/(?P<visit_detail_id>\d+)/$',
                            'simplenotes.views.simplenotes_firstvisit_add',
                            name='simplenotes_firstvisit_add'
                            ),
@@ -27,7 +27,7 @@ urlpatterns = patterns('',
                            ),
 
 
-################################  JSON ##################################
+                       ################################  JSON #################
 
                        url(r'simplenotes/json/$',
                            'simplenotes.views.render_simplenotes_json',
@@ -35,7 +35,7 @@ urlpatterns = patterns('',
                            ),
 
 
-################################  SUMMARY ###############################
+                       ################################  SUMMARY ##############
 
                        url(r'simplenotes/summary/$',
                            'simplenotes.views.render_summary',
@@ -48,19 +48,19 @@ urlpatterns = patterns('',
                            ),
 
 
-################################  PANE ##################################
+                       ################################  PANE #################
 
-                      url(r'simplenotes/pane/(?P<visit_detail_id>\d+)/$',
+                       url(r'simplenotes/pane/(?P<visit_detail_id>\d+)/$',
                            'simplenotes.dijit_widgets.pane.render_pane',
                            name='render_simplenotes_pane_with_id'
                            ),
 
-                      url(r'simplenotes/pane/$',
+                       url(r'simplenotes/pane/$',
                            'simplenotes.dijit_widgets.pane.render_pane',
                            name='render_simplenotes_pane_without_id'
                            ),
 
-################################  TREE ##################################
+                       ################################  TREE #################
 
                        url(r'simplenotes/tree/(?P<visit_detail_id>\d+)/$',
                            'simplenotes.dijit_widgets.tree.render_tree',
@@ -72,4 +72,4 @@ urlpatterns = patterns('',
                            name='render_simplenotes_tree_without_id'
                            ),
 
-)
+                       )

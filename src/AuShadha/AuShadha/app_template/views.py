@@ -1,9 +1,9 @@
-################################################################################
+##########################################################################
 # Project     : AuShadha
 # Description : Views for {{project_name}}/ {{app_name}}
 # Author      : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
 # Date        : 16-09-2013
-################################################################################
+##########################################################################
 
 
 # General Module imports-----------------------------------
@@ -49,33 +49,40 @@ from dijit_widgets.tree import {{app_name}}Tree
 
 
 @login_required
-def {{app_name}}_detail_list(request, id = None):
-  pass
+def {{app_name}}_detail_list(request, id=None):
+    pass
+
 
 @login_required
-def {{app_name}}_detail_add(request,id = None):
-  pass
+def {{app_name}}_detail_add(request, id=None):
+    pass
+
 
 @login_required
 def {{app_name}}_detail_edit(request, id):
-  pass
+    pass
+
 
 @login_required
 def {{app_name}}_detail_del(request, id):
-  pass
+    pass
 
-def return_{{app_name}}_json( instance ,success = True):
-   json_obj = ModelInstanceJson(instance)
-   return json_obj()
+
+def return_{{app_name}}_json(instance, success=True):
+    json_obj = ModelInstanceJson(instance)
+    return json_obj()
+
 
 @login_required
-def render_{{app_name}}_tree(request,id = None):
-  pass
+def render_{{app_name}}_tree(request, id=None):
+    pass
+
 
 @login_required
 def render_{{app_name}}_summary(request, id=None):
-  pass
+    pass
+
 
 @login_required
-def render_{{app_name}}_json(request, id = None):
-  pass
+def render_{{app_name}}_json(request, id=None):
+    pass

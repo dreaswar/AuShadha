@@ -1,9 +1,9 @@
-################################################################################
+##########################################################################
 # Project      : AuShadha
 # Description  : Immunisation Models.
 # Author       : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
 # Date         : 16-09-2013
-################################################################################
+##########################################################################
 
 import importlib
 
@@ -11,8 +11,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from AuShadha.apps.aushadha_base_models.models import (
-    AuShadhaBaseModel, 
-    AuShadhaBaseModelForm )
+    AuShadhaBaseModel,
+    AuShadhaBaseModelForm)
 
 #from AuShadha.apps.aushadha_users.models import AuShadhaUser
 from AuShadha.apps.ui.ui import ui as UI
@@ -21,9 +21,9 @@ from AuShadha.apps.clinic.models import Staff
 #from patient.models import PatientDetail
 
 from registry.vaccine_registry.models import (
-        VaccineRegistry,
-        VaccineDetail,
-        VaccineData )
+    VaccineRegistry,
+    VaccineDetail,
+    VaccineData)
 
 PatientDetail = UI.get_module("PatientRegistration")
 
@@ -36,51 +36,51 @@ INJECTION_SITE_CHOICES = (("lue", "Left Upper Arm"),
                           ("rb", "Right Buttock"),
                           ("abd", "Abdomen"),
                           ("oral", "Oral")
-                        )
+                          )
 INJECTION_ROUTE_CHOICES = (("im", "IM"),
                            ("deep_im", "Deep IM"),
                            ("iv", "Intravenous"),
                            ("sc", "Sub Cutaneous"),
                            ("oral", "Oral")
-                          )
+                           )
 
-DEFAULT_IMMUNISATION_FORM_EXCLUDES = ('patient_detail','administrator',)
+DEFAULT_IMMUNISATION_FORM_EXCLUDES = ('patient_detail', 'administrator',)
+
 
 class Immunisation(AuShadhaBaseModel):
 
     """
-      This defines the Immunisation that the patient has had. 
+      This defines the Immunisation that the patient has had.
     """
 
     def __init__(self, *args, **kwargs):
-      super(Immunisation,self).__init__(*args, **kwargs)
-      self.__model_label__ = "immunisation"
-      self._parent_model = 'patient_detail'    
+        super(Immunisation, self).__init__(*args, **kwargs)
+        self.__model_label__ = "immunisation"
+        self._parent_model = 'patient_detail'
 
     vaccine_detail = models.ForeignKey(VaccineDetail)
     route = models.CharField(max_length=30,
-                             choices= INJECTION_ROUTE_CHOICES,
+                             choices=INJECTION_ROUTE_CHOICES,
                              default="IM"
                              )
     injection_site = models.CharField(max_length=100,
                                       choices=INJECTION_SITE_CHOICES,
                                       default="Right Upper Arm"
                                       )
-    dose = models.CharField(max_length=100,choices=( ('1','1'),
-                                                     ('2','2'),
-                                                     ('3','3'),
-                                                     ('4','4'),
-                                                     ('5','5'),
-                                                     ('booster','Booster')
-                                                     ) )
+    dose = models.CharField(max_length=100, choices=(('1', '1'),
+                                                     ('2', '2'),
+                                                     ('3', '3'),
+                                                     ('4', '4'),
+                                                     ('5', '5'),
+                                                     ('booster', 'Booster')
+                                                     ))
     vaccination_date = models.DateField(auto_now_add=False)
     next_due = models.DateField(auto_now_add=False)
     adverse_reaction = models.TextField(max_length=100, default="None")
 
     patient_detail = models.ForeignKey(PatientDetail, null=True, blank=True)
 #    administrator = models.ForeignKey(AuShadhaUser,null=True,blank=True)
-    administrator = models.ForeignKey(Staff,null=True,blank=True)
-
+    administrator = models.ForeignKey(Staff, null=True, blank=True)
 
     def __unicode__(self):
         return "%s" % (self.vaccine_detail)
@@ -89,13 +89,13 @@ class Immunisation(AuShadhaBaseModel):
 class ImmunisationForm(AuShadhaBaseModelForm):
 
     """
-      This defines the Immunisation Form 
+      This defines the Immunisation Form
     """
 
     __form_name__ = "Immunisation Form"
 
     dijit_fields = IMMUNISATION_FORM_CONSTANTS
-    
+
     class Meta:
-      model = Immunisation
-      exclude = DEFAULT_IMMUNISATION_FORM_EXCLUDES
+        model = Immunisation
+        exclude = DEFAULT_IMMUNISATION_FORM_EXCLUDES

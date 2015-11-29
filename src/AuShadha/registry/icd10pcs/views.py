@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-################################################################################
+##########################################################################
 # Project      : AuShadha
 # Description  : Views for Demographics
-# Author       : Dr.Easwar T.R 
+# Author       : Dr.Easwar T.R
 # Date         : 04-10-2013
-# License      : GNU-GPL Version 3, See LICENSE.txt 
-################################################################################
+# License      : GNU-GPL Version 3, See LICENSE.txt
+##########################################################################
 
 import os
 import sys
@@ -44,12 +44,13 @@ from .models import (
 
 def to_json(data):
     return json.dumps(data)
-    
+
 # ==========================
 
 # Views start here -----------------------------------------
 
 # ================== SEARCH
+
 
 @login_required
 def icd10pcs_code_search(request):
@@ -63,15 +64,14 @@ def icd10pcs_code_search(request):
             pass
         else:
             search_for = search_for.split('*')[0]
-           
-        data = []
-        
-        #----------- PERFORM SEARCH HERE ----------
-        
-        jsondata = to_json(data)
-        #print json
-        
-        return HttpResponse(jsondata, content_type = 'application/json')
-    
-    return Http404("Bad Request Method")
 
+        data = []
+
+        #----------- PERFORM SEARCH HERE ----------
+
+        jsondata = to_json(data)
+        # print json
+
+        return HttpResponse(jsondata, content_type='application/json')
+
+    return Http404("Bad Request Method")

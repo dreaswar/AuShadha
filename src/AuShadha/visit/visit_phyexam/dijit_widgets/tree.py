@@ -28,7 +28,7 @@ from AuShadha.settings import APP_ROOT_URL
 from AuShadha.core.views.dijit_tree import DijitTreeNode, DijitTree
 
 
-class PhyExamTree( object ):
+class PhyExamTree(object):
 
     """
      Defines the Dijit UI for PhysicalExamination Tree

@@ -1,10 +1,10 @@
-################################################################################
+##########################################################################
 # Project      : AuShadha
 # Description  : Models for AuShadha OPD Visits.
-# Author       : Dr. Easwar TR 
+# Author       : Dr. Easwar TR
 # Date         : 17-09-2013
 # LICENSE      : GNU-GPL Version 3, Please see AuShadha/LICENSE.txt
-################################################################################
+##########################################################################
 
 # General Imports
 from datetime import datetime, date, time
@@ -17,7 +17,7 @@ from django.forms import ModelForm, ModelChoiceField, Textarea, TextInput
 
 # Application model imports
 from AuShadha.apps.ui.ui import ui as UI
-from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 from AuShadha.apps.clinic.models import Clinic, Staff
 
 from registry.inv_and_imaging.models import ImagingInvestigationRegistry, LabInvestigationRegistry
@@ -43,23 +43,23 @@ CONSULT_NATURE_CHOICES = (
 CONSULT_BOOKING_CATEGORY_CHOICES = (
     ('appointment', "Appointment"),
     ('telephonic', 'Telephonic / Web'),
-    ('na', 'Walk-in / Emergency'),    
+    ('na', 'Walk-in / Emergency'),
     ('referral', 'Referral'),
-    ('starred', 'Starred'),        
+    ('starred', 'Starred'),
 )
 
 
 CONSULT_REASON_CHOICES = (
     ('opd_consult', "OPD Consult"),
-    ('inv_review',"Investigations Review"),
-    ('emergency',"Emergency"),
-    ('pre_op',"Pre-op Counselling"),
-    ('post_op',"Post-op Counselling"),
-    ('dressing',"Dressing"),
-    ('minor_opd_procedures',"Minor OPD Procedures"),    
-    ('prescription_top_up',"Prescription Top Up"),
-    ('admission',"Admission"),
-    ('others',"Others"),
+    ('inv_review', "Investigations Review"),
+    ('emergency', "Emergency"),
+    ('pre_op', "Pre-op Counselling"),
+    ('post_op', "Post-op Counselling"),
+    ('dressing', "Dressing"),
+    ('minor_opd_procedures', "Minor OPD Procedures"),
+    ('prescription_top_up', "Prescription Top Up"),
+    ('admission', "Admission"),
+    ('others', "Others"),
 )
 
 CONSULT_STATUS_CHOICES = (
@@ -72,60 +72,54 @@ CONSULT_STATUS_CHOICES = (
 )
 
 
-
-
-
-
 class VisitDetail(AuShadhaBaseModel):
 
     def __init__(self, *args, **kwargs):
-      super(VisitDetail,self).__init__(*args, **kwargs)
-      self.__model_label__ = "visit"
-      self._parent_model = 'patient_detail'
-      self._can_add_list_or_json = ['visit_complaint',
-                                    'visit_follow_up',
-                                    'visit_ros',
-                                    'visit_hpi',
-                                    'visit_phyexam',
-                                    'vitals',
-                                    'gen',
-                                    'sys',
-                                    'neuro',
-                                    'vasc',
-                                    'visit_assessment_and_plan',
-                                    'visit_soap',
-                                    #'past_history',
-                                    #'visit_inv',
-                                    #'visit_imaging',
-                                    #'visit_procedures',
-                                    #'discharge'
-                                    ]
+        super(VisitDetail, self).__init__(*args, **kwargs)
+        self.__model_label__ = "visit"
+        self._parent_model = 'patient_detail'
+        self._can_add_list_or_json = ['visit_complaint',
+                                      'visit_follow_up',
+                                      'visit_ros',
+                                      'visit_hpi',
+                                      'visit_phyexam',
+                                      'vitals',
+                                      'gen',
+                                      'sys',
+                                      'neuro',
+                                      'vasc',
+                                      'visit_assessment_and_plan',
+                                      'visit_soap',
+                                      #'past_history',
+                                      #'visit_inv',
+                                      #'visit_imaging',
+                                      #'visit_procedures',
+                                      #'discharge'
+                                      ]
 
-      self._extra_url_actions = ['close','change_nature']
+        self._extra_url_actions = ['close', 'change_nature']
 
     patient_detail = models.ForeignKey(PatientDetail)
     visit_date = models.DateTimeField(auto_now=False, default=datetime.now())
     op_surgeon = models.ForeignKey(Staff)
 
-    referring_doctor = models.CharField(max_length=30, 
-                                        default="Self"
-                                        )                          # Should be an FK to referring doctors model / Contacts
+    # Should be an FK to referring doctors model / Contacts
+    referring_doctor = models.CharField(max_length=30, default="Self")
 
-    consult_nature = models.CharField(max_length=30, 
-                                      choices=CONSULT_NATURE_CHOICES
-                                      )                            # Should be an FK to appointment model
-    
-    booking_category = models.CharField(max_length=30, 
-                                        choices=CONSULT_BOOKING_CATEGORY_CHOICES
-                                        )                          # Should ideally be an FK to appointment model
-    
-    consult_reason = models.CharField(max_length=30, 
-                                      choices=CONSULT_REASON_CHOICES
-                                      )                            # Should be an FK to appointment model
-    
-    status = models.CharField(max_length=30, 
-                              choices=CONSULT_STATUS_CHOICES
-                              )                                    # Should update via FK the appointment model
+    consult_nature = models.CharField(
+        max_length=30,
+        choices=CONSULT_NATURE_CHOICES)  # Should be an FK to appointment model
+
+    # Should ideally be an FK to appointment model
+    booking_category = models.CharField(
+        max_length=30, choices=CONSULT_BOOKING_CATEGORY_CHOICES)
+
+    consult_reason = models.CharField(
+        max_length=30,
+        choices=CONSULT_REASON_CHOICES)  # Should be an FK to appointment model
+
+    # Should update via FK the appointment model
+    status = models.CharField(max_length=30, choices=CONSULT_STATUS_CHOICES)
 
     is_active = models.BooleanField(default=True, editable=False)
 
@@ -140,8 +134,8 @@ class VisitDetail(AuShadhaBaseModel):
 
     def __unicode__(self):
         return '%s(%s): %s: %s' % (self.patient_detail,
-                                   self.id, 
-                                   self.visit_date, 
+                                   self.id,
+                                   self.visit_date,
                                    self.op_surgeon
                                    )
 
@@ -149,19 +143,21 @@ class VisitDetail(AuShadhaBaseModel):
         return '/AuShadha/visit/detail/%d/' % (self.id)
 
     def get_all_patient_complaints_url(self):
-        return '/AuShadha/visit_complaints/complaint/get/%s/' %(self.id)
+        return '/AuShadha/visit_complaints/complaint/get/%s/' % (self.id)
 
     def import_active_complaints_url(self):
-        return '/AuShadha/visit_complaints/complaint/import_active_complaints/%s/' %(self.id)
+        return '/AuShadha/visit_complaints/complaint/import_active_complaints/%s/' % (
+            self.id)
 
     def get_all_visit_hpi_url(self):
-        return '/AuShadha/visit_hpi/hpi/get_all_visit_hpi/%s/' %(self.id)
+        return '/AuShadha/visit_hpi/hpi/get_all_visit_hpi/%s/' % (self.id)
 
     def get_all_visit_ros_url(self):
-        return '/AuShadha/visit_ros/ros/get_all_visit_ros/%s/' %(self.id)
+        return '/AuShadha/visit_ros/ros/get_all_visit_ros/%s/' % (self.id)
 
     def get_edit_pane_header_url(self):
-        return '/AuShadha/visit/get/visit_detail/edit_pane_header/%s/' %(self.id)
+        return '/AuShadha/visit/get/visit_detail/edit_pane_header/%s/' % (
+            self.id)
 
     def get_visit_detail_close_url(self):
         if self.is_active:
@@ -176,28 +172,27 @@ class VisitDetail(AuShadhaBaseModel):
             # return False
         return '/AuShadha/visit/follow_up/add/?visit_id=%s' % (self.id)
 
-    
     def get_visit_phyexam_add_vitals_url(self):
-        return '/AuShadha/visit_phyexam/vitals/add/%s/' %(self.id)
-    
-    def get_visit_phyexam_add_gen_url(self):
-        return '/AuShadha/visit_phyexam/gen/add/%s/' %(self.id)
-    
-    def get_visit_phyexam_add_sys_url(self):
-        return '/AuShadha/visit_phyexam/sys/add/%s/' %(self.id)
-    
-    def get_visit_phyexam_add_neuro_url(self):
-        return '/AuShadha/visit_phyexam/neuro/add/%s/' %(self.id)
-    
-    def get_visit_phyexam_add_vasc_url(self):
-        return '/AuShadha/visit_phyexam/vasc/add/%s/' %(self.id)
+        return '/AuShadha/visit_phyexam/vitals/add/%s/' % (self.id)
 
+    def get_visit_phyexam_add_gen_url(self):
+        return '/AuShadha/visit_phyexam/gen/add/%s/' % (self.id)
+
+    def get_visit_phyexam_add_sys_url(self):
+        return '/AuShadha/visit_phyexam/sys/add/%s/' % (self.id)
+
+    def get_visit_phyexam_add_neuro_url(self):
+        return '/AuShadha/visit_phyexam/neuro/add/%s/' % (self.id)
+
+    def get_visit_phyexam_add_vasc_url(self):
+        return '/AuShadha/visit_phyexam/vasc/add/%s/' % (self.id)
 
     def has_fu_visits(self):
         id = self.id
         try:
             visit_obj = VisitDetail.objects.get(pk=id)
-            fu = VisitFollowUp.objects.filter(visit_detail=visit_obj).order_by('-visit_date')
+            fu = VisitFollowUp.objects.filter(
+                visit_detail=visit_obj).order_by('-visit_date')
             if fu:
                 return fu
             else:
@@ -214,7 +209,7 @@ class VisitDetail(AuShadhaBaseModel):
         except (TypeError, NameError, ValueError):
             print "ERROR:: Invalid CONSULT_NATURE_CHOICE supplied.."
             return False
-        if consult_nature in ['initial', 'fu','emer']:
+        if consult_nature in ['initial', 'fu', 'emer']:
             self.save()
             return unicode(self.consult_nature)
         else:
@@ -302,15 +297,16 @@ class VisitDetail(AuShadhaBaseModel):
         try:
             visit_obj = VisitDetail.objects.get(pk=v_id)
             pat_obj = visit_obj.patient_detail
-        
+
         except(TypeError, AttributeError, NameError):
             raise Exception("Invalid ID. Raised Error")
-        
+
         except(VisitDetail.DoesNotExist):
             raise Exception("Invalid Visit. No Such Visit recorded")
 
         #visit_fu            = VisitFollowUp.objects.filter(visit_detail = visit_obj)
-        visit_complaints = VisitComplaint.objects.filter(visit_detail=visit_obj)
+        visit_complaints = VisitComplaint.objects.filter(
+            visit_detail=visit_obj)
         visit_complaint_list = []
 
         if visit_complaints:
@@ -319,41 +315,44 @@ class VisitDetail(AuShadhaBaseModel):
                 dict_to_append = {}
                 dict_to_append['complaint'] = complaint.complaint
                 dict_to_append['duration'] = complaint.duration
-                dict_to_append['visit_date'] = complaint.visit_detail.visit_date.date().isoformat()
-                dict_to_append['visit_active'] = complaint.visit_detail.is_active
+                dict_to_append[
+                    'visit_date'] = complaint.visit_detail.visit_date.date().isoformat()
+                dict_to_append[
+                    'visit_active'] = complaint.visit_detail.is_active
                 visit_complaint_list.append(dict_to_append)
 
         #jsondata = json.dumps(visit_complaint_list)
         # return json
         return visit_complaint_list
 
-
     def has_previous_visits(self):
 
-      try:
-        visit_id = self.id
+        try:
+            visit_id = self.id
 
-      except AttributeError:
-        raise Exception("Invalid Visit Id: Null")
+        except AttributeError:
+            raise Exception("Invalid Visit Id: Null")
 
-      visit_detail_obj = VisitDetail.objects.get(pk = int(visit_id) )
-      patient_detail_obj = visit_detail_obj.patient_detail
-      all_visits = VisitDetail.objects.get(patient_detail = patient_detail_obj).order_by('visit_date')
+        visit_detail_obj = VisitDetail.objects.get(pk=int(visit_id))
+        patient_detail_obj = visit_detail_obj.patient_detail
+        all_visits = VisitDetail.objects.get(
+            patient_detail=patient_detail_obj).order_by('visit_date')
 
-      for v in all_visits:
-        if (v.visit_date <= visit_detail_obj.visit_date) and (v != visit_detail_obj):
-          return True
-        else:
-          continue
-
-
+        for v in all_visits:
+            if (v.visit_date <= visit_detail_obj.visit_date) and (
+                    v != visit_detail_obj):
+                return True
+            else:
+                continue
 
 
 class VisitDetailForm(AuShadhaBaseModelForm):
-    
+
     __form_name__ = "Visit Detail Form"
 
-    op_surgeon = ModelChoiceField(queryset=Staff.objects.filter(clinic_staff_role='doctor'))
+    op_surgeon = ModelChoiceField(
+        queryset=Staff.objects.filter(
+            clinic_staff_role='doctor'))
 
     dijit_fields = VISIT_DETAIL_FORM_CONSTANTS
 

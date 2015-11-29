@@ -1,9 +1,9 @@
-################################################################################
+##########################################################################
 # Project     : AuShadha
 # Description : Views for / visit_prescription
 # Author      : Dr.Easwar T.R , All Rights reserved with Dr.Easwar T.R.
 # Date        : 16-09-2013
-################################################################################
+##########################################################################
 
 
 # General Module imports-----------------------------------
@@ -41,7 +41,7 @@ from AuShadha.utilities.forms import aumodelformerrorformatter_factory
 from AuShadha.apps.clinic.models import Clinic
 from AuShadha.apps.ui.ui import ui as UI
 
-from .models import VisitPrescription, VisitPrescriptionForm 
+from .models import VisitPrescription, VisitPrescriptionForm
 from dijit_widgets.tree import VisitPrescriptionTree
 
 VisitDetail = UI.get_module('OPD_Visit')
@@ -51,19 +51,20 @@ VisitDetail = UI.get_module('OPD_Visit')
 
 
 @login_required
-def visit_prescription_list(request, visit_detail_id = None):
-   """ lists the prescriptions for a visit """
+def visit_prescription_list(request, visit_detail_id=None):
+    """ lists the prescriptions for a visit """
 
-   try:
-        if visit_detail_id: 
+    try:
+        if visit_detail_id:
             visit_detail_id = int(visit_detail_id)
         else:
             try:
-                visit_detail_id = int( request.GET.get('visit_detail_id') )
-            except(TypeError,KeyError,NameError,ValueError):
+                visit_detail_id = int(request.GET.get('visit_detail_id'))
+            except(TypeError, KeyError, NameError, ValueError):
                 raise Http404("Bad Request Parameter.")
         visit_detail_obj = VisitDetail.objects.get(pk=visit_detail_id)
-        visit_prescription_objs = VisitPrescription.objects.filter(visit_detail = visit_detail_obj)
+        visit_prescription_objs = VisitPrescription.objects.filter(
+            visit_detail=visit_detail_obj)
         jsondata = []
         for prescription in visit_prescription_objs:
             jsondata.append(ModelInstanceJson(prescription).return_data())
@@ -71,18 +72,22 @@ def visit_prescription_list(request, visit_detail_id = None):
         print(data)
         return HttpResponse(data, content_type='application/json')
 
-   except(ValueError,NameError,KeyError,TypeError):
-       raise Http404("Bad Request Parameters")
-   except(VisitDetail.DoesNotExist):
-       raise Http404("Invalid Visit Request.No Visit with the ID specified exists")
-   
-@login_required
-def visit_prescription_json(request,visit_detail_id=None):
-    return visit_prescription_list(request,visit_detail_id)
+    except(ValueError, NameError, KeyError, TypeError):
+        raise Http404("Bad Request Parameters")
+    except(VisitDetail.DoesNotExist):
+        raise Http404(
+            "Invalid Visit Request.No Visit with the ID specified exists")
+
 
 @login_required
-def visit_prescription_add(request,visit_detail_id = None):
-    """ 
+def visit_prescription_json(request, visit_detail_id=None):
+    print visit_prescription_list(request, visit_detail_id)
+    return visit_prescription_list(request, visit_detail_id)
+
+
+@login_required
+def visit_prescription_add(request, visit_detail_id=None):
+    """
     Adds a Visit prescription
     """
 
@@ -93,46 +98,49 @@ def visit_prescription_add(request,visit_detail_id = None):
 
     try:
         if visit_detail_id:
-          visit_detail_id = int(visit_detail_id)
+            visit_detail_id = int(visit_detail_id)
         else:
-          visit_detail_id = int(request.GET.get('visit_detail_id'))
+            visit_detail_id = int(request.GET.get('visit_detail_id'))
 
         visit_detail_obj = VisitDetail.objects.get(pk=visit_detail_id)
         patient_detail_obj = visit_detail_obj.patient_detail
-        visit_prescription_obj = VisitPrescription(visit_detail=visit_detail_obj)
+        visit_prescription_obj = VisitPrescription(
+            visit_detail=visit_detail_obj)
 
         if not getattr(patient_detail_obj, 'urls', None):
-          patient_detail_obj.save()
+            patient_detail_obj.save()
 
         if not getattr(visit_detail_obj, 'urls', None):
-          visit_detail_obj.save()
+            visit_detail_obj.save()
 
         if request.method == "GET" and request.is_ajax():
 
-            visit_prescription_form = VisitPrescriptionForm(instance = visit_prescription_obj,
-                                                      auto_id  =
-                                                      "id_add_visit_prescription"+
-                                                      str(visit_detail_id)+"_%s")
+            visit_prescription_form = VisitPrescriptionForm(
+                instance=visit_prescription_obj,
+                auto_id="id_add_visit_prescription" + str(visit_detail_id) + "_%s")
             variable = RequestContext(request, {
-                                                'user': user,
-                                                'visit_detail_obj': visit_detail_obj,
-                                                'form': visit_prescription_form,
-                                                'patient_detail_obj': patient_detail_obj,
-                                                'error_message': error_message,
-                                                'success': success,
-                                            })
+                'user': user,
+                'visit_detail_obj': visit_detail_obj,
+                'form': visit_prescription_form,
+                'patient_detail_obj': patient_detail_obj,
+                'error_message': error_message,
+                'success': success,
+            })
 
-            return render_to_response('visit_prescription/forms/add.html', variable)
+            return render_to_response(
+                'visit_prescription/forms/add.html', variable)
 
         elif request.method == "POST" and request.is_ajax():
 
-            visit_prescription_form = VisitPrescriptionForm(request.POST, instance = visit_prescription_obj)
+            visit_prescription_form = VisitPrescriptionForm(
+                request.POST, instance=visit_prescription_obj)
 
-            if visit_prescription_form.is_valid() :
-                saved_visit_prescription = visit_prescription_form.save(commit=False)
+            if visit_prescription_form.is_valid():
+                saved_visit_prescription = visit_prescription_form.save(
+                    commit=False)
                 saved_visit_prescription.visit_detail = visit_detail_obj
-                #TODO: Custom date-range handling
-                #TODO: Custom admin hours handling
+                # TODO: Custom date-range handling
+                # TODO: Custom admin hours handling
                 saved_visit_prescription.save()
                 success = True
                 error_message = "Prescription Added Successfully"
@@ -143,7 +151,8 @@ def visit_prescription_add(request,visit_detail_id = None):
                                       Please check the forms for errors
                                     </h4>
                                 '''
-                errors += aumodelformerrorformatter_factory(visit_prescription_form)
+                errors += aumodelformerrorformatter_factory(
+                    visit_prescription_form)
                 error_message += ('\n' + errors)
 
             data = {'success': success,
@@ -164,61 +173,65 @@ def visit_prescription_add(request,visit_detail_id = None):
 
 @login_required
 def visit_prescription_edit(request, visit_prescription_id):
-  
+
     user = request.user
-    error_message = None    
+    error_message = None
     try:
         if visit_prescription_id:
-          visit_prescription_id = int(visit_prescription_id)
+            visit_prescription_id = int(visit_prescription_id)
         else:
-          visit_prescription_id = int(request.GET.get('visit_prescription_id'))
-        visit_prescription_obj = VisitPrescription.objects.get(pk=visit_prescription_id)
+            visit_prescription_id = int(
+                request.GET.get('visit_prescription_id'))
+        visit_prescription_obj = VisitPrescription.objects.get(
+            pk=visit_prescription_id)
         visit_detail_obj = visit_prescription_obj.visit_detail
         patient_detail_obj = visit_detail_obj.patient_detail
 
-        if not getattr(visit_detail_obj,'urls',None):
-          visit_detail_obj.save()
+        if not getattr(visit_detail_obj, 'urls', None):
+            visit_detail_obj.save()
 
-        if not getattr(patient_detail_obj,'urls',None):
-          patient_detail_obj.save()
+        if not getattr(patient_detail_obj, 'urls', None):
+            patient_detail_obj.save()
 
-        if not getattr(visit_prescription_obj,'urls',None):
-          visit_prescription_obj.save()
-        
+        if not getattr(visit_prescription_obj, 'urls', None):
+            visit_prescription_obj.save()
+
         if request.method == "GET" and request.is_ajax():
-            visit_prescription_form = VisitPrescriptionForm(instance = visit_prescription_obj, 
-                                                          auto_id = False
-                                                        )
+            visit_prescription_form = VisitPrescriptionForm(
+                instance=visit_prescription_obj, auto_id=False)
             variable = RequestContext(
                 request, {'user': user,
                           'visit_detail_obj': visit_detail_obj,
                           'visit_prescription_obj': visit_prescription_obj,
-                          'form'  : visit_prescription_form  ,
+                          'form': visit_prescription_form,
                           'patient_detail_obj': visit_detail_obj.patient_detail,
                           'error_message': error_message,
-                          'form_action':'edit'
+                          'form_action': 'edit'
                           })
-            return render_to_response('visit_prescription/forms/edit.html', variable)
+            return render_to_response(
+                'visit_prescription/forms/edit.html', variable)
 
         if request.method == "POST" and request.is_ajax():
-            visit_prescription_form   = VisitPrescriptionForm(request.POST, instance = visit_prescription_obj )
+            visit_prescription_form = VisitPrescriptionForm(
+                request.POST, instance=visit_prescription_obj)
             if visit_prescription_form.is_valid():
-                saved_visit_prescription = visit_prescription_form.save(commit=False)
+                saved_visit_prescription = visit_prescription_form.save(
+                    commit=False)
                 saved_visit_prescription.visit_detail = visit_detail_obj
                 saved_visit_prescription.save()
                 success = True
                 error_message = "Visit Edited Successfully"
-                #if check_duplicates(saved_visit_prescription, visit_detail_obj):
-                    #saved_visit_prescription.save()
-                    #success = True
-                    #error_message = "Visit Edited Successfully"
-                #else:
-                    #success = False
-                    #error_message = ''' <h4>
-                                        #Visit Could not be Saved as there are duplicate prescription.
-                                        #Please check the forms for errors
-                                        #</h4>
-                                    #'''
+                # if check_duplicates(saved_visit_prescription, visit_detail_obj):
+                # saved_visit_prescription.save()
+                #success = True
+                #error_message = "Visit Edited Successfully"
+                # else:
+                #success = False
+                # error_message = ''' <h4>
+                # Visit Could not be Saved as there are duplicate prescription.
+                # Please check the forms for errors
+                #</h4>
+                #'''
             else:
                 success = False
                 error_message = ''' <h4>
@@ -226,13 +239,14 @@ def visit_prescription_edit(request, visit_prescription_id):
                                       Please check the forms for errors
                                     </h4>
                                 '''
-                errors += aumodelformerrorformatter_factory(visit_prescription_form)
+                errors += aumodelformerrorformatter_factory(
+                    visit_prescription_form)
                 error_message += ('\n' + errors)
-            data = {'success': success, 'error_message': error_message }
+            data = {'success': success, 'error_message': error_message}
             jsondata = json.dumps(data)
             return HttpResponse(jsondata, content_type='application/json')
         else:
-             raise Http404(" Error ! Unsupported Request..")
+            raise Http404(" Error ! Unsupported Request..")
     except (TypeError, NameError, ValueError, AttributeError, KeyError):
         raise Http404("Error ! Invalid Request Parameters. ")
     except (VisitPrescription.DoesNotExist):
@@ -245,10 +259,12 @@ def visit_prescription_del(request, visit_prescription_id):
         user = request.user
         try:
             if visit_prescription_id:
-              visit_prescription_id = int(visit_prescription_id)
+                visit_prescription_id = int(visit_prescription_id)
             else:
-              visit_prescription_id = int(request.GET.get('visit_prescription_id'))
-            visit_prescription_obj = VisitPrescription.objects.get(pk=visit_prescription_id)
+                visit_prescription_id = int(
+                    request.GET.get('visit_prescription_id'))
+            visit_prescription_obj = VisitPrescription.objects.get(
+                pk=visit_prescription_id)
             error_message = None
             visit_prescription_obj.delete()
             success = True
@@ -264,18 +280,21 @@ def visit_prescription_del(request, visit_prescription_id):
         raise Http404(" Error ! Unsupported Request..")
 
 
-def return_visit_prescription_json( instance ,success = True):
-   json_obj = ModelInstanceJson(instance)
-   return json_obj()
+def return_visit_prescription_json(instance, success=True):
+    json_obj = ModelInstanceJson(instance)
+    return json_obj()
+
 
 @login_required
-def render_visit_prescription_tree(request,visit_detail_id = None):
-  pass
+def render_visit_prescription_tree(request, visit_detail_id=None):
+    pass
+
 
 @login_required
 def render_visit_prescription_summary(request, visit_detail_id=None):
-  pass
+    pass
+
 
 @login_required
-def render_visit_prescription_json(request, id = None):
-  pass
+def render_visit_prescription_json(request, id=None):
+    pass

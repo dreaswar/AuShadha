@@ -5,7 +5,6 @@ import sys
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "AuShadha.settings")
 
-    
     print "Trying to run custom code at startup..."
     print "Loading apps and roles from configure.yaml"
     import AuShadha.startup as startup

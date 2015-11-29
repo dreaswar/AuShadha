@@ -13,15 +13,15 @@ from django.forms import ModelForm
 
 
 # Application specific imports
-        #from patient.models 	import *
-        #from admission.models import *
+#from patient.models 	import *
+#from admission.models import *
 
 # Define some constants
-imaging_choices = (("X-Ray"			, "X-Ray"			),
-                  ("CT Scan"		, "CT Scan"		),
-                  ("Ultrasound"	, "Ultrasound"),
-                  ("MRI"				, "MRI"				),
-                  ('Others'			, 'Others'		)
+imaging_choices = (("X-Ray", "X-Ray"			),
+                   ("CT Scan", "CT Scan"		),
+                   ("Ultrasound", "Ultrasound"),
+                   ("MRI", "MRI"				),
+                   ('Others', 'Others'		)
                    )
 
 

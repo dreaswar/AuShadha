@@ -17,8 +17,8 @@ import sys
 import site
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-PARENT_ROOT=os.path.abspath(os.path.join(PROJECT_ROOT, os.pardir))
-site_packages = os.path.join( PARENT_ROOT, 'venv/lib/python2.7/site-packages')
+PARENT_ROOT = os.path.abspath(os.path.join(PROJECT_ROOT, os.pardir))
+site_packages = os.path.join(PARENT_ROOT, 'venv/lib/python2.7/site-packages')
 site.addsitedir(os.path.abspath(site_packages))
 sys.path.insert(0, PROJECT_ROOT)
 

@@ -1,9 +1,9 @@
-################################################################################
+##########################################################################
 # Description  : Patient Models for managing Patient Email and Fax
 # Author       : Dr. Easwar T R
 # Date         : 16-09-2013
 # Licence      : GNU GPL V3. Please see AuShadha/LICENSE.txt
-################################################################################
+##########################################################################
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -21,18 +21,16 @@ from dijit_fields_constants import EMAIL_AND_FAX_FORM_CONSTANTS
 DEFAULT_DEMOGRAPHICS_FORM_EXCLUDES = ('patient_detail',)
 
 
-
 class EmailAndFax(models.Model):
 
     """
        Model that manages the Email, Fax and Web contact details of a patient.
     """
 
-
     def __init__(self, *args, **kwargs):
-      super(EmailAndFax,self).__init__(*args, **kwargs)
-      self.__model_label__ = "email_and_fax"
-      self._parent_model = 'patient_detail'
+        super(EmailAndFax, self).__init__(*args, **kwargs)
+        self.__model_label__ = "email_and_fax"
+        self._parent_model = 'patient_detail'
 
     date_entered = models.DateTimeField(auto_now_add=True)
     email = models.EmailField(max_length=75, blank=True, null=True)
@@ -68,9 +66,7 @@ class EmailAndFax(models.Model):
         return str_obj
 
 
-
-
-############################# Model Forms ######################################
+############################# Model Forms ################################
 
 class EmailAndFaxForm(AuShadhaBaseModelForm):
 

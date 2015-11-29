@@ -14,13 +14,19 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='visitprescription',
             name='end_date',
-            field=models.DateTimeField(null=True, verbose_name=b'Treatment End Date', blank=True),
+            field=models.DateTimeField(
+                null=True,
+                verbose_name=b'Treatment End Date',
+                blank=True),
             preserve_default=True,
         ),
         migrations.AlterField(
             model_name='visitprescription',
             name='start_date',
-            field=models.DateTimeField(null=True, verbose_name=b'Treatment Start Date', blank=True),
+            field=models.DateTimeField(
+                null=True,
+                verbose_name=b'Treatment Start Date',
+                blank=True),
             preserve_default=True,
         ),
     ]

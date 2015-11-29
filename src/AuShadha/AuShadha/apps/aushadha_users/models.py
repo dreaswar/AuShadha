@@ -8,11 +8,11 @@
 
 """
  Defining the models for AuShadha users
- 
+
  This is a custom class to bind a logged in user to a Clinic and a Role
- 
+
  All AuShadha uses should therefore be logged in and should have a role
- 
+
  Fine grained permissions throughout the application can be set on role and
    permissions defined here
 
@@ -32,15 +32,14 @@ AUSHADHA_USER_ROLES = (('audhadha_admin', 'AuShadha Admin'),
                        )
 
 
-
 class AuShadhaUser(models.Model):
 
     """
 
      Defines AuShadhaUser class
      This is a model inheriting from User class that defines who uses AuShadha
-     The user can have many roles pertaining to usage of the software. 
-     This is NOT the permission on the Clinic / the Patient. 
+     The user can have many roles pertaining to usage of the software.
+     This is NOT the permission on the Clinic / the Patient.
      This is for managing / using AuShadha
 
     """

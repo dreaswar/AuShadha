@@ -1,11 +1,11 @@
-################################################################################
+##########################################################################
 # Physical Examination Models for AuShadha
 # Takes care of all the Physical Examination Related Data.
 # Author    : Dr.Easwar T.R
 # Copyright : 2012
 # Date      : 2012-12-31
 # License   : GNU-GPL Version 3
-################################################################################
+##########################################################################
 
 # General Imports
 import datetime
@@ -15,14 +15,14 @@ import yaml
 
 # General Django Imports
 from django.db import models
-from django.forms import ModelForm,Textarea,CharField,Widget,TextInput,HiddenInput,ModelChoiceField
+from django.forms import ModelForm, Textarea, CharField, Widget, TextInput, HiddenInput, ModelChoiceField
 from django.contrib.auth.models import User
 from django.contrib import admin
 from django.core.exceptions import ValidationError
 
 # Application specific django imports::
 from AuShadha.apps.ui.ui import ui as UI
-from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel,AuShadhaBaseModelForm
+from AuShadha.apps.aushadha_base_models.models import AuShadhaBaseModel, AuShadhaBaseModelForm
 #from AuShadha.apps.aushadha_users.models import AuShadhaUser
 #from AuShadha.apps.clinic.models import Clinic, Staff
 
@@ -41,20 +41,20 @@ VisitDetail = UI.get_module("OPD_Visit")
 from .phyexam_constants import *
 from .phy_exam_constants import PC
 from presentation_classes import vitalexamobjpresentationclass_factory,\
-                                 genexamobjpresentationclass_factory,\
-                                 sysexamobjpresentationclass_factory,\
-                                 musexamobjpresentationclass_factory,\
-                                 neuroexamobjpresentationclass_factory,\
-                                 vascexamobjpresentationclass_factory,\
-                                 vascexamobjpresentationclass_querysetfactory
+    genexamobjpresentationclass_factory,\
+    sysexamobjpresentationclass_factory,\
+    musexamobjpresentationclass_factory,\
+    neuroexamobjpresentationclass_factory,\
+    vascexamobjpresentationclass_factory,\
+    vascexamobjpresentationclass_querysetfactory
 
 from dijit_fields_constants import VITAL_FORM_CONSTANTS, \
-                                    GEN_EXAM_FORM_CONSTANTS, \
-                                    SYS_EXAM_FORM_CONSTANTS, \
-                                    MUSCULOSKELETAL_EXAM_FORM_CONSTANTS,\
-                                    NEURO_EXAM_FORM_CONSTANTS,\
-                                    VASCULAR_EXAM_FORM_CONSTANTS,\
-                                    PHY_EXAM_BASE_MODEL_FORM_CONSTANTS
+    GEN_EXAM_FORM_CONSTANTS, \
+    SYS_EXAM_FORM_CONSTANTS, \
+    MUSCULOSKELETAL_EXAM_FORM_CONSTANTS,\
+    NEURO_EXAM_FORM_CONSTANTS,\
+    VASCULAR_EXAM_FORM_CONSTANTS,\
+    PHY_EXAM_BASE_MODEL_FORM_CONSTANTS
 
 # Constants
 
@@ -71,34 +71,40 @@ DEFAULT_VITALS = {
 }
 
 DEFAULT_PHYEXAM_FORM_EXCLUDES = (
-                                 'visit_detail',
-                                 'remarks'
-                                 )
+    'visit_detail',
+    'remarks'
+)
 
 VASC_EXAM_FORM_EXCLUDES = (
-                          'visit_detail',
-                          'remarks'
-                          )
+    'visit_detail',
+    'remarks'
+)
 
 
 ############################################################
-# PHYEXAM MODELS 
+# PHYEXAM MODELS
 ############################################################
 
 class PhyExamBaseModel(AuShadhaBaseModel):
-    
+
     def __init__(self, *args, **kwargs):
-      super(PhyExamBaseModel,self).__init__(*args, **kwargs)
-      self.__model_label__ = "phyexam"
-      self._parent_model = ['visit_detail',]
+        super(PhyExamBaseModel, self).__init__(*args, **kwargs)
+        self.__model_label__ = "phyexam"
+        self._parent_model = ['visit_detail', ]
 
-    remarks = models.TextField( blank=True, null=True, default="NAD", max_length=200)
+    remarks = models.TextField(
+        blank=True,
+        null=True,
+        default="NAD",
+        max_length=200)
 
-    created_at = models.DateTimeField(auto_now=True, auto_now_add=True, editable=False)
+    created_at = models.DateTimeField(
+        auto_now=True, auto_now_add=True, editable=False)
 
     modified_at = models.DateTimeField(auto_now=True, editable=True)
 
-    visit_detail = models.ForeignKey('visit.VisitDetail', null=True, blank=True)
+    visit_detail = models.ForeignKey(
+        'visit.VisitDetail', null=True, blank=True)
 
     #physician = models.ForeignKey(Staff)
 
@@ -113,42 +119,64 @@ class VitalExam(PhyExamBaseModel):
     def __init__(self, *args, **kwargs):
         super(VitalExam, self).__init__(*args, **kwargs)
         self.__model_label__ = "vital"
-        self._parent_model = ['visit_detail',]
+        self._parent_model = ['visit_detail', ]
 
-    sys_bp = models.PositiveIntegerField('Systolic B.P', max_length=3, default=120 , help_text="mmHg")
-    dia_bp = models.PositiveIntegerField('Diastolic B.P', max_length=3, default=80, help_text="mmHg")
-    pulse_rate = models.PositiveIntegerField('Pulse Rate', max_length=3, default=82, help_text="per min.")
-    resp_rate = models.PositiveIntegerField('Respiratory Rate', max_length=2, default=20, help_text="per min.")
-    gcs = models.PositiveIntegerField('GCS', max_length=2, default=15, help_text="out of 15")
-    height = models.PositiveIntegerField(max_length=3, null=True, blank=True, help_text= "in Cms.")
-    weight = models.PositiveIntegerField(max_length=3, null=True, blank=True, help_text="in Kg.")
+    sys_bp = models.PositiveIntegerField(
+        'Systolic B.P',
+        max_length=3,
+        default=120,
+        help_text="mmHg")
+    dia_bp = models.PositiveIntegerField(
+        'Diastolic B.P',
+        max_length=3,
+        default=80,
+        help_text="mmHg")
+    pulse_rate = models.PositiveIntegerField(
+        'Pulse Rate', max_length=3, default=82, help_text="per min.")
+    resp_rate = models.PositiveIntegerField(
+        'Respiratory Rate',
+        max_length=2,
+        default=20,
+        help_text="per min.")
+    gcs = models.PositiveIntegerField(
+        'GCS', max_length=2, default=15, help_text="out of 15")
+    height = models.PositiveIntegerField(
+        max_length=3, null=True, blank=True, help_text="in Cms.")
+    weight = models.PositiveIntegerField(
+        max_length=3, null=True, blank=True, help_text="in Kg.")
     bmi = models.DecimalField('BMI', decimal_places=2, max_digits=4)
-    temp = models.DecimalField('Temparature', decimal_places=2, max_digits=4, help_text="in Farenheit")
-    phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)
+    temp = models.DecimalField(
+        'Temparature',
+        decimal_places=2,
+        max_digits=4,
+        help_text="in Farenheit")
+    phy_exam_base_model = models.OneToOneField(
+        'PhyExamBaseModel', parent_link=True)
 
     class Meta:
         verbose_name_plural = "Vital"
         verbose_name = "Vital"
-        ordering = ['sys_bp', 
-                    'dia_bp', 
+        ordering = ['sys_bp',
+                    'dia_bp',
                     'pulse_rate',
-                    'resp_rate', 
-                    'height', 
-                    'weight', 
-                    'bmi', 
+                    'resp_rate',
+                    'height',
+                    'weight',
+                    'bmi',
                     'gcs'
-                  ]
+                    ]
 
     def present(self):
-        return vitalexamobjpresentationclass_factory( VitalExam.objects.get(pk = self.id) )
+        return vitalexamobjpresentationclass_factory(
+            VitalExam.objects.get(pk=self.id))
+
 
 class GenExam(PhyExamBaseModel):
 
     def __init__(self, *args, **kwargs):
         super(GenExam, self).__init__(*args, **kwargs)
         self.__model_label__ = "gen"
-        self._parent_model = ['visit_detail',]
-
+        self._parent_model = ['visit_detail', ]
 
     pallor = models.BooleanField(default=False)
     icterus = models.BooleanField(default=False)
@@ -156,7 +184,8 @@ class GenExam(PhyExamBaseModel):
     clubbing = models.BooleanField(default=False)
     lymphadenopathy = models.BooleanField(default=False)
     edema = models.BooleanField(default=False)
-    phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)
+    phy_exam_base_model = models.OneToOneField(
+        'PhyExamBaseModel', parent_link=True)
 
     class Meta:
         verbose_name_plural = "General Examination"
@@ -165,22 +194,24 @@ class GenExam(PhyExamBaseModel):
                     'clubbing', 'lymphadenopathy', 'edema']
 
     def present(self):
-        return genexamobjpresentationclass_factory( GenExam.objects.get(pk = self.id) )
+        return genexamobjpresentationclass_factory(
+            GenExam.objects.get(pk=self.id))
+
 
 class SysExam(PhyExamBaseModel):
 
     def __init__(self, *args, **kwargs):
         super(SysExam, self).__init__(*args, **kwargs)
         self.__model_label__ = 'sys'
-        self._parent_model = ['visit_detail',]
+        self._parent_model = ['visit_detail', ]
 
     heent = models.TextField(max_length=1250, default=HEENT_EX)
     cns = models.TextField(max_length=1250, default=CNS_EX)
     cvs = models.TextField(max_length=1250, default=CVS_EX)
     respiratory_system = models.TextField(max_length=1250, default=RESP_EX)
     git_and_gut = models.TextField(max_length=1250, default=GIT_GUT_EX)
-    phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)
-
+    phy_exam_base_model = models.OneToOneField(
+        'PhyExamBaseModel', parent_link=True)
 
     class Meta:
         verbose_name_plural = "System Examination"
@@ -188,60 +219,65 @@ class SysExam(PhyExamBaseModel):
         ordering = ['heent', 'cns', 'cvs', 'respiratory_system', 'git_and_gut']
 
     def present(self):
-        return sysexamobjpresentationclass_factory( SysExam.objects.get(pk = self.id) )
+        return sysexamobjpresentationclass_factory(
+            SysExam.objects.get(pk=self.id))
+
 
 class NeuroExam(PhyExamBaseModel):
 
     def __init__(self, *args, **kwargs):
         super(NeuroExam, self).__init__(*args, **kwargs)
         self.__model_label__ = 'neuro'
-        self._parent_model = ['visit_detail',]
+        self._parent_model = ['visit_detail', ]
 
     plantar = models.TextField('Plantar Reflex',
                                max_length=100,
                                default="Bilateral Flexor response",
                                        help_text='limit to 30 words')
 
-    abdominal = models.TextField('Abdominal Reflex',
-                                 max_length=100,
-                                 default="Ellicited well in all four quadrants",
-                                 help_text='limit to 30 words'
-                                 )
+    abdominal = models.TextField(
+        'Abdominal Reflex',
+        max_length=100,
+        default="Ellicited well in all four quadrants",
+        help_text='limit to 30 words')
 
     cremasteric = models.TextField(max_length=100, default="Present")
 
     anal_wink = models.TextField(max_length=100, default="Present")
 
-    motor = models.TextField('Motor Exam',
-                             max_length=250,
-                             default="Normal Bulk, Tone and Power in all four limbs. No Fasciculations",
-                             help_text='limit to 100 words')
+    motor = models.TextField(
+        'Motor Exam',
+        max_length=250,
+        default="Normal Bulk, Tone and Power in all four limbs. No Fasciculations",
+        help_text='limit to 100 words')
 
-    sensory = models.TextField('Sensory Exam',
-                               max_length=250,
-                               default="Normal Sensation in all four limbs. Perianal sensation intact",
-                                       help_text='limit to 100 words')
+    sensory = models.TextField(
+        'Sensory Exam',
+        max_length=250,
+        default="Normal Sensation in all four limbs. Perianal sensation intact",
+        help_text='limit to 100 words')
 
-    dtr = models.TextField('Deep Tendon Reflex',
-                           max_length=100,
-                           default="Equally ellicitable in all four limbs. No Clonus",
-                           help_text='limit to 50 words'
-                           )
+    dtr = models.TextField(
+        'Deep Tendon Reflex',
+        max_length=100,
+        default="Equally ellicitable in all four limbs. No Clonus",
+        help_text='limit to 50 words')
 
     cranial_nerve = models.TextField('Cranial Nerve Exam',
                                      max_length=100,
                                      default="All Cranial Nerves NAD",
                                      help_text='limit to 30 words')
 
-    phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)
-
+    phy_exam_base_model = models.OneToOneField(
+        'PhyExamBaseModel', parent_link=True)
 
     class Meta:
         verbose_name_plural = "Neuro Examination"
         verbose_name = "Neuro Examination"
 
     def present(self):
-        return neuroexamobjpresentationclass_factory( NeuroExam.objects.get(pk = self.id) )
+        return neuroexamobjpresentationclass_factory(
+            NeuroExam.objects.get(pk=self.id))
 
 
 class MusculoSkeletalExam(PhyExamBaseModel):
@@ -249,22 +285,22 @@ class MusculoSkeletalExam(PhyExamBaseModel):
     def __init__(self, *args, **kwargs):
         super(MusculoSkeletalExam, self).__init__(*args, **kwargs)
         self.__model_label__ = 'musculoskeletal'
-        self._parent_model = ['visit_detail',]
+        self._parent_model = ['visit_detail', ]
 
     ms_exam = models.TextField('Findings',
                                max_length=3000,
-                               default = "NAD")
+                               default="NAD")
 
-    phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)
-
+    phy_exam_base_model = models.OneToOneField(
+        'PhyExamBaseModel', parent_link=True)
 
     class Meta:
         verbose_name_plural = "Musculo Skeletal Examination"
         verbose_name = "Musculo Skeletal Examination"
 
     def present(self):
-        return musexamobjpresentationclass_factory( MusculoSkeletalExam.objects.get(pk = self.id) )
-
+        return musexamobjpresentationclass_factory(
+            MusculoSkeletalExam.objects.get(pk=self.id))
 
 
 class VascExam(PhyExamBaseModel):
@@ -272,10 +308,10 @@ class VascExam(PhyExamBaseModel):
     def __init__(self, *args, **kwargs):
         super(VascExam, self).__init__(*args, **kwargs)
         self.__model_label__ = 'vasc'
-        self._parent_model = ['visit_detail',]
+        self._parent_model = ['visit_detail', ]
 
 #  pulse      = models.BooleanField()
-    location = models.CharField(max_length=20, 
+    location = models.CharField(max_length=20,
                                 choices=(('DP', "Dorsalis Pedis"),
                                          ("PT", "Posterior Tibial"),
                                          ('P', "Popliteal"),
@@ -285,10 +321,13 @@ class VascExam(PhyExamBaseModel):
                                          ('B', "Brachial"),
                                          ('R', "Radial"),
                                          ('U', "Ulnar")
-                                        )
-                               )
+                                         )
+                                )
 
-    side = models.CharField(max_length=10, choices=EXAMINATION_SIDES, default='Right')
+    side = models.CharField(
+        max_length=10,
+        choices=EXAMINATION_SIDES,
+        default='Right')
 
     character = models.CharField(max_length=20,
                                  choices=(('bounding', 'Bounding'),
@@ -296,18 +335,19 @@ class VascExam(PhyExamBaseModel):
                                           ('weak', 'Weak'),
                                           ('absent', "Absent")
                                           ),
-                                 default = 'Normal'
+                                 default='Normal'
                                  )
 
-    phy_exam_base_model = models.OneToOneField('PhyExamBaseModel', parent_link=True)
-
+    phy_exam_base_model = models.OneToOneField(
+        'PhyExamBaseModel', parent_link=True)
 
     class Meta:
         verbose_name_plural = "Vascular Examination"
         verbose_name = "Vascular Examination"
 
     def present(self):
-        return vascexamobjpresentationclass_factory( VascExam.objects.get(pk = self.id) )
+        return vascexamobjpresentationclass_factory(
+            VascExam.objects.get(pk=self.id))
 
 ##############################################################
 # MODEL FORMS
@@ -385,7 +425,6 @@ class MusculoSkeletalExamForm(PhyExamBaseModelForm):
     class Meta:
         model = MusculoSkeletalExam
         exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
-
 
 
 class NeuroExamForm(PhyExamBaseModelForm):

@@ -3,7 +3,7 @@ from django.contrib import admin
 import AuShadha.settings
 admin.autodiscover()
 
-from .views import demographics_json,demographics_add,demographics_edit,demographics_del
+from .views import demographics_json, demographics_add, demographics_edit, demographics_del
 from .dijit_widgets.pane import render_demographics_pane
 
 urlpatterns = patterns('',
@@ -33,11 +33,11 @@ urlpatterns = patterns('',
                        #        name = 'patient_demographics_list'
                        #    ),
 
-                        url(r'add/$',
+                       url(r'add/$',
                            demographics_add,
                            name='demographics_add_without_id'
                            ),
-                       
+
                        url(r'add/(?P<patient_id>\d+)/$',
                            demographics_add,
                            name='demographics_add_with_id'
@@ -61,4 +61,4 @@ urlpatterns = patterns('',
                            demographics_del,
                            name='demographics_del_with_id'
                            )
-)
+                       )
