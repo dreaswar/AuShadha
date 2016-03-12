@@ -13,7 +13,8 @@
 import importlib
 import copy
 
-from django.utils.importlib import import_module
+from importlib import import_module
+#from django.utils.importlib import import_module
 from django.utils.module_loading import module_has_submodule
 
 from AuShadha import settings
