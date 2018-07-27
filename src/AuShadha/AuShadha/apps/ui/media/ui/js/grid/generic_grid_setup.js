@@ -51,14 +51,19 @@ define(["dojo/dom",
 
           var idx = e.rowIndex,
               item = gridToUse.getItem(idx);
-
+          console.log("You have double clicked the GRID");
           var id = gridToUse.store.getValue(item, "id");
-          var edit = gridToUse.store.getValue(item, "edit");
-          var del = gridToUse.store.getValue(item, "del");
+          var edit = gridToUse.store.getValue(item, "edit") ?
+                           gridToUse.store.getValue(item, "edit") : 
+                           gridToUse.store.getValue(item['urls'], "edit");
+          var del = gridToUse.store.getValue(item, "del") ? 
+                        gridToUse.store.getValue(item, "del") : 
+                        gridToUse.store.getValue(item['urls'], "del") ;
 
           gridToUse.selection.clear();
           gridToUse.selection.setSelected(item, true);
-
+          console.log("this is the item you have DblClicked on..");
+          console.log(item);
           request(edit).then(
             function(html){
 
@@ -272,7 +277,8 @@ define(["dojo/dom",
                                                 grid.selection.setSelected(item, true);
 
                                                 dynamicPaneUrl = item.dynamic_pane_url;
-
+                                                console.log("This is aDynamic Grid!");
+                                                console.log(dynamicPaneUrl);
                                                 request(dynamicPaneUrl).then(
 
                                                   function(json){

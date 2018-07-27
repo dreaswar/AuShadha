@@ -10,10 +10,10 @@ VARS:
 
   visit_prescription_grid: &VISIT_PRESCRIPTION_GRID
         id : VISIT_PRESCRIPTION_GRID
-        type: dynamic_pane_grid
+        type: grid
         url: {%url 'visit_prescription_json_with_id' visit_detail_id %}
         str: VISIT_PRESCRIPTION
-        activateRowClick: !!bool False
+        activateRowClick: !!bool True
         title:  Visit Prescription
         storeToUse:  VISIT_PRESCRIPTION_STORE
 

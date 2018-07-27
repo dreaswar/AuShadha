@@ -1,0 +1,18 @@
+{
+  "name": "aushadha",
+  "homepage": "https://github.com/dreaswar/AuShadha",
+  "authors": [
+    "Dr.Easwar T.R <dreaswar@gmail.com>"
+  ],
+  "description": "aushadha-emr",
+  "main": "",
+  "license": "GNU-GPL V3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

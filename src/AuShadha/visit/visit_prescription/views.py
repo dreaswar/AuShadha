@@ -53,7 +53,7 @@ VisitDetail = UI.get_module('OPD_Visit')
 @login_required
 def visit_prescription_list(request, visit_detail_id = None):
    """ lists the prescriptions for a visit """
-
+   print("Listing Visit Prescriptions")
    try:
         if visit_detail_id: 
             visit_detail_id = int(visit_detail_id)
@@ -68,6 +68,7 @@ def visit_prescription_list(request, visit_detail_id = None):
         for prescription in visit_prescription_objs:
             jsondata.append(ModelInstanceJson(prescription).return_data())
         data = json.dumps(jsondata)
+        print("Prescriptions requested are: ")
         print(data)
         return HttpResponse(data, content_type='application/json')
 
