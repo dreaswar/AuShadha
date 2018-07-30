@@ -138,7 +138,7 @@
         {% if demographics_obj %}
             {{demographics_obj.0.formatted_obj_data}}
         {% else %}
-          <p class="suggestion_text">  Demographics data </p>
+          <p class="suggestion_text">  No Demographics data on record </p>
         {% endif %}
       </div>
 
@@ -188,7 +188,7 @@
           <li> {{obj.formatted_obj_data}} </li>
         {% endfor %}
       {% else %}
-        <p class="suggestion_text"> Family History Recorded </p>
+        <p class="suggestion_text"> No Family History Recorded </p>
       {% endif %}
 
     </div>
@@ -201,7 +201,7 @@
           <li> {{obj.formatted_obj_data}} </li>
         {% endfor %}
       {% else %}
-        <p class="suggestion_text"> Social History data </p>
+        <p class="suggestion_text"> No Social History data </p>
       {% endif %}
     </div>
 
@@ -213,7 +213,7 @@
           <li> {{obj.formatted_obj_data}} </li>
         {% endfor %}
       {% else %}
-        <p class="suggestion_text"> Medical History data </p>
+        <p class="suggestion_text"> No Medical History data </p>
       {% endif %}
     </div>
 
@@ -225,7 +225,7 @@
             <li> {{obj.formatted_obj_data}} </li>
           {% endfor %}
         {% else %}
-          <p class="suggestion_text"> Surgical History data </p>
+          <p class="suggestion_text"> No Surgical History data </p>
         {% endif %}
     </div>
 
