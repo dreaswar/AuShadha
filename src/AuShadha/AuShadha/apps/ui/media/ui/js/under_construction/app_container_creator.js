@@ -289,11 +289,12 @@ function(
                                                   });
                                             }
                                             else {
-                                                if (confirm ("This will redirect and trigger: "+ p.title + " ... Proceed ?") ) {
-                                                    window.location.href = p.onclick;
+                                                var confirmRedirect = confirm("This will redirect and trigger " + p.title + " .. Proceed?");
+                                                if ( confirmRedirect) {
+                                                     window.location.href = p.onclick;
                                                 }
                                                 else {
-                                                    return false;
+                                                    e.preventDefault();
                                                 }
                                             }
                                         }
@@ -383,17 +384,17 @@ function(
                                                                         console.log("OnClinic DOM Type is::  " + returnValue);  
                                                                         window.location.href = p.onclick;
                                                                     }
-
                                                       }
                                                   });
                                             }
                                             else {
                                                 console.log("OnClinic DOM Type is::  " + returnValue);  
-                                                if ( confirm("This will redirect and trigger " + p.title + " .. Proceed?") ) {
+                                                var confirmRedirect = confirm("This will redirect and trigger " + p.title + " .. Proceed?");
+                                                if ( confirmRedirect) {
                                                   window.location.href = p.onclick;
                                                 }
                                                 else {
-                                                    return;
+                                                    e.preventDefault();
                                                 }
                                             }
                                         }
