@@ -251,7 +251,7 @@
         {% for obj in medication_list_obj %}
           <tr class="{%cycle 'even_row' 'odd_row' %}"> 
             <td> {{forloop.counter}} </td>
-            <td> {{obj.medication}} </td>
+            <td> <strong>{{obj.medication.capitalize}} </strong> </td>
             <td> {{obj.strength}} </td>
             <td> {{obj.dosage}} </td>
             <td> {{obj.prescribed_by}} </td>
@@ -283,7 +283,7 @@
             {% for obj in allergy_obj %}
               <tr class="{%cycle 'even_row' 'odd_row' %}"> 
                 <td> {{forloop.counter}}       </td>
-                <td> {{obj.allergic_to}}              </td>
+                <td> <strong> {{obj.allergic_to.capitalize}} </strong>              </td>
                 <td> {{obj.reaction_observed}} </td>
               </tr>
             {% endfor %}

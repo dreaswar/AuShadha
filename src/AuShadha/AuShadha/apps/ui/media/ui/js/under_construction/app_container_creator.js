@@ -260,6 +260,8 @@ function(
                                     on(dom.byId(paneDomId),
                                         "click",
                                         function () {
+                                            console.log("You just clicked an IMG");
+                                            if (returnValue != 'redirect') {
                                                   var myDialog = registry.byId("editPatientDialog");
                                                   xhr.get({
                                                       url: p.onclick,
@@ -278,8 +280,22 @@ function(
                                                                         
                                                                       }
                                                                     }
+                                                                   else if (returnValue == 'redirect'){
+                                                                        console.log("OnClick DOM redirect is::  " + returnValue);  
+                                                                        window.location.href = p.onclick;
+                                                                    }
+
                                                       }
                                                   });
+                                            }
+                                            else {
+                                                if (confirm ("This will redirect and trigger: "+ p.title + " ... Proceed ?") ) {
+                                                    window.location.href = p.onclick;
+                                                }
+                                                else {
+                                                    return false;
+                                                }
+                                            }
                                         }
                                     );
                                 });
@@ -341,6 +357,9 @@ function(
                                     on(dom.byId(paneDomId),
                                         "click",
                                         function (e) {
+                                            console.log("You just clicked on HREF");
+                                            console.log("returnValue is : " + returnValue);
+                                            if (returnValue != 'redirect'){
                                                   e.preventDefault();
                                                   var myDialog = registry.byId("editPatientDialog");
                                                   xhr.get({
@@ -360,8 +379,23 @@ function(
                                                                         
                                                                       }
                                                                     }
+                                                                    else if (returnValue == 'redirect'){
+                                                                        console.log("OnClinic DOM Type is::  " + returnValue);  
+                                                                        window.location.href = p.onclick;
+                                                                    }
+
                                                       }
                                                   });
+                                            }
+                                            else {
+                                                console.log("OnClinic DOM Type is::  " + returnValue);  
+                                                if ( confirm("This will redirect and trigger " + p.title + " .. Proceed?") ) {
+                                                  window.location.href = p.onclick;
+                                                }
+                                                else {
+                                                    return;
+                                                }
+                                            }
                                         }
                                     );
                                 });

@@ -172,7 +172,9 @@ function(
         pane.container.grandParentDomNode = dom.byId('centerTopTabPane');
         pane.container.grandParentDijit = registry.byId('centerTopTabPane');
 
-        // If you are attaching DOMS under the main tab DOM Node ie.. the centerTopTabPane
+        /* If you are attaching DOMS under the main tab DOM Node ie.. 
+           the centerTopTabPane
+        */
         if ( redirectToMainTab == 1 ) {
           pane.container.parentDomNode = dom.byId('centerTopTabPane');
           pane.container.parentDijit = registry.byId('centerTopTabPane');
@@ -189,9 +191,10 @@ function(
           alert("This redirect directive will not work now.... Currently directives of 0 or 1 are supported ")
         }
 
-
-        pane.container.id = json.id;                                                           // This is the DOM element ID
-        pane.container.title = json.title;                                                     // This is the title of the Dijit generated
+        // This is the DOM element ID
+        pane.container.id = json.id;
+        // This is the title of the Dijit generated
+        pane.container.title = json.title;
         pane.container.type = dijit_types[json.type] ? dijit_types[json.type]: BorderContainer;// If skipped assumed that you want to create BC
 //         console.log("Creating the panes and widgets");
 //         console.log("Received JSON: ");
@@ -365,7 +368,7 @@ function(
                                     on(dom.byId(paneDomId),
                                         "click",
                                         function () {
-
+                                            if ( returnValue != 'redirect') {
                                                   var myDialog = registry.byId("editPatientDialog");
                                                   xhr.get({
                                                       url: p.onclick,
@@ -390,6 +393,11 @@ function(
                                                                     }
                                                       }
                                                   });
+                                            }
+                                            else {
+                                                  console.log("OnClinic DOM Type is::  " + returnValue);  
+                                                  location.href(p.onclick);
+                                            }
                                         }
                                     );
                                 });
@@ -455,6 +463,7 @@ function(
                                     on(dom.byId(paneDomId),
                                         "click",
                                         function (e) {
+                                            console.log("You just clicked a 'HREF' tag");
                                                   e.preventDefault();
                                                   var myDialog = registry.byId("editPatientDialog");
                                                   xhr.get({
@@ -473,6 +482,10 @@ function(
                                                                       else {
 
                                                                       }
+                                                                    }
+                                                                    else if (returnValue == 'redirect'){
+                                                                        console.log("OnClinic DOM Type is::  " + returnValue);  
+                                                                        location.href(p.onclick);
                                                                     }
                                                       }
                                                   });

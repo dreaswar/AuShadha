@@ -116,5 +116,5 @@ def logout_view(request):
     """View for logging out of AuShadha."""
     logout(request)
     #return HttpResponseRedirect('/AuShadha/')
-    return HttpResponseRedirect('/login/')
+    return HttpResponseRedirect('/AuShadha/login/')
 # Create your views here.
