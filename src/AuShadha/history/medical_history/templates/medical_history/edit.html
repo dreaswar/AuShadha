@@ -12,7 +12,7 @@
                "dojo/domReady!"
       ],
        function(dom,registry){
-         //	{% if perms.medical_history.change_patientmedicalhistory %}
+         //	{% if perms.medical_history.change_medicalhistory %}
           editItem("{{editUrl}}","newMedicalHistoryEditForm", window.CHOSEN_GRID);
          // {% else %}
           registry.byId("permissionDeniedErrorDialog").show();
@@ -35,7 +35,7 @@
 
     </table>
 
-    {% if perms.medical_history.change_medical_history %}
+    {% if perms.medical_history.change_medicalhistory %}
 
         <button data-dojo-type = "dijit/form/Button" 
                 data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconSave'"
@@ -48,7 +48,7 @@
 
     {% endif %}
 
-    {% if perms.medical_history.delete_medical_history %}
+    {% if perms.medical_history.delete_medicalhistory %}
 
       <button data-dojo-type  = "dijit/form/Button" 
               data-dojo-props = "iconClass: 'dijitEditorIcon dijitEditorIconDelete'"

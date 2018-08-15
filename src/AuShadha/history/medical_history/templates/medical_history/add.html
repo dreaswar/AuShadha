@@ -38,8 +38,7 @@
     }
   
   </script>
-
-    {% if perms.medical_history.add_medical_history %}
+     {% if perms.medical_history.add_medicalhistory %}
 
         <table>
         {{medical_history_form}}
@@ -89,7 +88,7 @@
         </button>
 
     {% else %}
-      <p class="suggestion_text"> Insufficient Permissions to add medical_history </p>
+      <p class="suggestion_text"> {{user|upper}} has insufficient Permissions to add medical_history </p>
     {%endif%}
 
 </div>
