@@ -181,7 +181,71 @@ class AuShadhaBaseModel(models.Model):
     def formatted_obj_data_as_table(self):
       ''' Return formatted data as mark_safe HTML table '''
 
-      pass
+      print("Calling function to print data as table")
+
+      table_open = "<table>"
+      table_row_open = "<tr>"
+      table_row_close = "</tr>"
+      table_header_open = "<th>"
+      table_header_close = "</th>"
+      table_cell_open = "<td>"
+      table_cell_close = "</td>"
+      table_close = "</table>"
+      
+      def build_header(obj):
+          _str_obj += table_row_open
+          if obj.__class__.__name__ not in ['AutoField','ForeignKey']:
+              _str_obj += table_header_open
+              field_name = (obj.name).replace('_',' ').title()
+              _str_obj += field_name
+              _str_obj += table_header_close 
+          _str_obj += table_row_close
+          return _str_obj
+        
+      
+      try:
+        if not self.field_list:
+            self._field_list()
+
+        str_obj = ''
+        str_obj += table_open
+        str_obj += build_header(self.field_list[0])
+        
+        print(str_obj)
+        
+        for obj in self.field_list:
+            str_obj += table_row_open
+            if obj.__class__.__name__ not in ['AutoField','ForeignKey']:
+              str_obj += table_cell_open
+              #field_name = (obj.name).replace('_',' ').title()
+              #str_obj += field_name
+              #str_obj += table_header_close
+              field_value = (obj.value_to_string(self)).replace('_',' ').title()
+
+              if field_value in['',None]:
+                field_value = '--'
+
+              if field_value == True:
+                field_value = "Yes"
+              elif field_value == False:
+                field_value = "No"
+
+              str_obj += field_value
+              str_obj += table_cell_close
+
+              #_str = "<span> %s </span></br>" %(field_name, field_value)
+              #str_obj += (_str + table_cell_close + table_row_close)
+
+            else:
+              continue
+        str_obj += table_close
+        print(str_obj)
+        return mark_safe(str_obj)
+
+      except (Exception) as e:
+        raise e
+
+
 
     def formatted_obj_data(self):
 

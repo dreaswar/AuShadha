@@ -219,14 +219,24 @@
 
     <div id="patientSurgicalHistoryContainer"> 
       <h4> Surgical History </h4>
-      {% if pat_surgical_history_obj %}
+      
+      {% if surgical_history_obj %}
           <ul>
-          {% for obj in pat_surgical_history_obj %}
+          {% for obj in surgical_history_obj %}
             <li> {{obj.formatted_obj_data}} </li>
           {% endfor %}
         {% else %}
           <p class="suggestion_text"> No Surgical History data </p>
         {% endif %}
+      
+        {% comment %}
+        {% if surgical_history_obj %}
+        {% for obj in surgical_history_obj %}
+           {{obj.formatted_obj_data_as_table}}
+        {%endfor%}
+        {% endif %}
+          {% endcomment %}
+        
     </div>
 
   </div>
