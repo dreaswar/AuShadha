@@ -94,7 +94,7 @@ class PhyExamBaseModel(AuShadhaBaseModel):
 
     remarks = models.TextField( blank=True, null=True, default="NAD", max_length=200)
 
-    created_at = models.DateTimeField(auto_now=True, auto_now_add=True, editable=False)
+    created_at = models.DateTimeField(auto_now=True, editable=False)
 
     modified_at = models.DateTimeField(auto_now=True, editable=True)
 
@@ -323,6 +323,7 @@ class PhyExamBaseModelForm(ModelForm):
 
     class Meta:
         model = PhyExamBaseModel
+        fields = "__all__"
         #exclude = DEFAULT_PHYEXAM_FORM_EXCLUDES
 
     def __init__(self, *args, **kwargs):

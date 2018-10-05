@@ -104,9 +104,12 @@ class LabInvestigationRegistryForm(ModelForm):
 
     class Meta:
         model = LabInvestigationRegistry
+        fields = "__all__"
 
 
 class ImagingInvestigationRegistryForm(ModelForm):
 
     class Meta:
         model = ImagingInvestigationRegistry
+        fields = "__all__"
+

@@ -352,3 +352,4 @@ class AuShadhaBaseModelForm(ModelForm):
 
     class Meta:
         model = AuShadhaBaseModel
+        fields = "__all__"
